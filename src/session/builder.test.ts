@@ -14,7 +14,7 @@ import { createLoader } from '../content/loader';
 import { fixtureFetch } from '../content/fixtures';
 import { toKana, toPlain } from '../content/ruby';
 import { CardFlag } from '../shared/store-types';
-import { newPerDayFor } from '../store';
+import { effectiveNewPerDay as storeNewPerDay, newPerDayFor } from '../store';
 import { interleaveViolations, type QueueCard } from '../learn';
 import { isIntroCheck, isPretestStep } from './scroll';
 import { MICHIKUSA_AFTER_REP } from './blocks';
@@ -371,10 +371,11 @@ describe('new-item budget (design 03 §5 cramming cap, 02 §6.1)', () => {
     expect(after.newTarget).toBe(Math.max(0, before.newTarget - plan.meta.newCount));
   });
 
-  it('the budget follows the belt table at every preset; the stored mix is the custom override only', async () => {
+  it('the budget follows the belt table at every preset; the stored mix is the custom override only — one rule, shared with the store', async () => {
     await makeTestStore({ save: { progress: { station: 4 }, settings: { intensity: 'standard', newPerDay: { vocab: 4, kanji: 0, grammar: 0 } } }, cards: allCards() });
     const ctx = await loadPlanContext({ loader, station: 4 });
     const table = newPerDayFor(ctx.belt, 'standard');
+    expect(effectiveNewPerDay).toBe(storeNewPerDay);
     expect(effectiveNewPerDay(ctx.settings, ctx.belt)).toEqual(table);
     expect(ctx.newTarget).toBe(Math.round(table.vocab + table.kanji + table.grammar));
     expect(ctx.newTarget).not.toBe(4);

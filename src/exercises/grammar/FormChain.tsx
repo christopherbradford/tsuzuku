@@ -13,22 +13,34 @@
  *
  * On a grammar `prod` card the item is the GrammarItem and the verb the
  * planner picked travels in `params.sentence` (its dictionary form),
- * `params.kana` (its reading) and `params.promptEn` (its gloss); those stand
- * in for the head word's display when the item is not a vocab item, and
- * `inferHeadWord` recovers its part of speech from `params.answers` so the
- * engine's alternates are accepted there too.
+ * `params.kana` (its reading), `params.pos` (its part of speech),
+ * `params.promptEn` (its gloss) and `params.accepts` (accepted surfaces per
+ * form). The head word is derived from them (`head-word.inferHeadWord`: the
+ * given pos, else the one pos whose engine answers reproduce `params.answers`)
+ * so every link's kana comes from the engine exactly; `params.accepts` rows
+ * are graded as given; the flat `params.accept` tail heuristic
+ * (`attachFlatAccept`) is the last resort for a step that carries neither.
+ * The frame's `?` / Hint button opens the current form's rule (withdrawn once
+ * shown): each link mounts a fresh `<TextAnswer>`, so the hint is registered
+ * by `<ChainHintKey>` mounted beside it with the same key, after it — `?`
+ * reads the last registered set, and a parent-level registration would be
+ * hidden by the second link's widget.
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
-import type { ConjForm, ConjugablePos, ContentItem, VocabItem } from '@/content/types';
-import { applicableForms, conjugate, isConjugable } from '@/learn';
+import type { ConjForm } from '@/content/types';
+import { applicableForms, conjugate } from '@/learn';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { attempt } from '../check';
 import { S as SD } from '../strings';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
+import { type HeadWord, acceptsRow, headWordOf, inferHeadWord, isVocabItem } from './head-word';
 import { FORM_HINT, FORM_LABEL, POS_GROUP_LABEL, S, fill } from './strings';
 import './grammar.css';
+
+export { headWordOf, inferHeadWord, isVocabItem, type HeadWord } from './head-word';
 
 export const meta: ExerciseMeta = {
   id: 'form-chain',
@@ -41,21 +53,6 @@ export const meta: ExerciseMeta = {
 };
 
 export const CHAIN_LENGTH = 5;
-
-export function isVocabItem(i: ContentItem | null | undefined): i is VocabItem {
-  return !!i && 'word' in i && 'kana' in i && 'meanings' in i && 'pos' in i;
-}
-
-export interface HeadWord {
-  word: string;
-  kana: string;
-  pos: ConjugablePos;
-}
-
-export function headWordOf(item: ContentItem | null): HeadWord | null {
-  if (!isVocabItem(item) || !isConjugable(item.pos)) return null;
-  return { word: item.word, kana: item.kana, pos: item.pos };
-}
 
 export interface ChainLink {
   form: ConjForm;
@@ -70,11 +67,11 @@ function kanaTail(surface: string): string {
 }
 
 /**
- * Without a head word the engine cannot supply the kana of each form, yet the
- * planner's flat `params.accept` carries them (kanji, kana and alternates of
- * every form in one list). Each extra surface is attached to the link whose
+ * Last resort for a step without a head word and without `params.accepts`:
+ * the planner's flat `params.accept` carries the kana and alternates of
+ * every form in one list. Each extra surface is attached to the link whose
  * answer has the longest kana tail that ends it (のみません → 飲みません, not
- * 飲みます), so a kana answer is Good on a grammar prod card too.
+ * 飲みます), so a kana answer is still Good on such a grammar prod card.
  */
 function attachFlatAccept(links: ChainLink[], flat: readonly string[] | undefined): void {
   if (!flat || links.length === 0) return;
@@ -91,36 +88,12 @@ function attachFlatAccept(links: ChainLink[], flat: readonly string[] | undefine
   }
 }
 
-const CONJUGABLE_POS: readonly ConjugablePos[] = ['v1', 'v5', 'v-irr', 'adj-i', 'adj-na'];
-
 /**
- * On a grammar prod card the planner sends the picked verb (`params.sentence`,
- * its reading in `params.kana`) and its per-form `answers`, but not its part
- * of speech. The pos is recovered as the one whose engine answers reproduce
- * every given answer, so the engine's own kana and alternates (ら抜き
- * potential, short causative, よ imperative) are accepted exactly as with a
- * vocab head word. `null` when nothing matches (legacy steps → flat accept).
- */
-export function inferHeadWord(params: ExerciseProps['step']['params']): HeadWord | null {
-  const word = (params.sentence ?? '').trim();
-  const kana = (params.kana ?? '').trim() || word;
-  const forms = params.forms ?? [];
-  const answers = (params.answers ?? []).map((a) => a.trim());
-  if (!word || forms.length === 0 || !answers.some((a) => a.length > 0)) return null;
-  for (const pos of CONJUGABLE_POS) {
-    const fits = forms.every((f, i) => {
-      const want = answers[i] ?? '';
-      return want.length === 0 || conjugate(word, kana, pos, f)?.answer === want;
-    });
-    if (fits) return { word, kana, pos };
-  }
-  return null;
-}
-
-/**
- * The chain: step forms + answers merged with the engine — through the head
- * word, or on a grammar prod card through `inferHeadWord` (falling back to the
- * flat `params.accept`) — else the first five applicable forms of the head word.
+ * The chain: step forms + answers + `params.accepts` rows merged with the
+ * engine — through the head word, or on a grammar prod card through
+ * `inferHeadWord` (`params.pos`, else the pos the answers prove); without
+ * either, the flat `params.accept` is attached by tail — else the first five
+ * applicable forms of the head word.
  */
 export function buildChain(head: HeadWord | null, params: ExerciseProps['step']['params']): ChainLink[] | null {
   const engineHead = head ?? inferHeadWord(params);
@@ -140,6 +113,7 @@ export function buildChain(head: HeadWord | null, params: ExerciseProps['step'][
       if (t && !accept.includes(t)) accept.push(t);
     };
     push(params.answers?.[i]);
+    for (const a of acceptsRow(params, i)) push(a);
     if (engineHead) {
       const c = conjugate(engineHead.word, engineHead.kana, engineHead.pos, form);
       if (c) {
@@ -150,7 +124,7 @@ export function buildChain(head: HeadWord | null, params: ExerciseProps['step'][
     }
     if (accept.length > 0) links.push({ form, accept });
   });
-  if (!head) attachFlatAccept(links, params.accept);
+  if (!engineHead) attachFlatAccept(links, params.accept);
   return links.length > 0 ? links : null;
 }
 
@@ -178,6 +152,18 @@ export function chainResult(log: readonly LinkLog[], n: number, ctx: { ms: numbe
   return Object.assign(r, { hits });
 }
 
+/**
+ * Registers the chain's hint with the frame after the current link's
+ * `<TextAnswer>`: rendered right after it with a parallel key, it mounts (and
+ * so registers) last on every link, where a parent-level `useExerciseKeys`
+ * would be hidden by the second link's widget. Hint-only, so the widget keeps
+ * Enter.
+ */
+function ChainHintKey(p: { onHint: (() => void) | undefined }): null {
+  useExerciseKeys({ onHint: p.onHint });
+  return null;
+}
+
 const MARK: Record<LinkState, string> = { right: '○', close: '△', miss: '×' };
 const STATE_TEXT: Record<LinkState, string> = { right: S.chainStepRight, close: S.chainStepClose, miss: S.chainStepMiss };
 
@@ -185,6 +171,7 @@ type Phase = 'chain' | 'done';
 
 export function FormChain(p: ExerciseProps): JSX.Element {
   const head = useMemo(() => headWordOf(p.item), [p.item]);
+  const engineHead = useMemo(() => head ?? inferHeadWord(p.step.params), [head, p.step.params]);
   const chain = useMemo(() => buildChain(head, p.step.params), [head, p.step.params]);
   const vocab = isVocabItem(p.item) ? p.item : null;
   const n = chain?.length ?? 0;
@@ -227,7 +214,7 @@ export function FormChain(p: ExerciseProps): JSX.Element {
   };
 
   const fromStep = (p.step.params.sentence ?? '').trim();
-  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : fromStep.length > 0 ? { word: fromStep, kana: (p.step.params.kana ?? '').trim() || fromStep, pos: null } : null;
+  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : fromStep.length > 0 ? { word: fromStep, kana: (p.step.params.kana ?? '').trim() || fromStep, pos: engineHead?.pos ?? null } : null;
   const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
 
   if (!chain || !display) {
@@ -335,6 +322,7 @@ export function FormChain(p: ExerciseProps): JSX.Element {
             </div>
           ) : null}
           <TextAnswer key={index} mode="ja" accept={current.accept} onSubmit={onSubmit} autoFocus reveal={false} label={SD.answerField} particleSlip={false} kanaOnlyPolicy="good" missTags={['conjugation']} />
+          <ChainHintKey key={`hint-${index}`} onHint={hintOpen ? undefined : showHint} />
         </div>
       ) : null}
 

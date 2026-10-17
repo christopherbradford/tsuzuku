@@ -13,7 +13,9 @@
  *    the result under exercise `nemesis-duel`; `learn.duelProgress` counts
  *    Good rows on distinct days and E's `afterDuel` calls the defeat flow.
  * Confusables, look-alikes and related points come from `content.get`.
- * Facet `null`; keys `none` (the typed widget owns Enter inside its field).
+ * Facet `null`; keys `none` (the typed widget owns Enter inside its field);
+ * the frame's `?` / Hint button opens the duel hint. The dossier's Continue
+ * button takes focus through `useAutoFocus` (it is rendered after load).
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -30,6 +32,7 @@ import type { CardTuple, EpochDay, LogEntry } from '@/shared/store-types';
 import { dayOf } from '@/shared/time';
 import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
+import { useAutoFocus } from '@/shared/ui/use-auto-focus';
 import { store } from '@/store';
 import { acceptForms, attempt } from '../check';
 import { voiceAudible } from '../voice';
@@ -342,7 +345,12 @@ export function NemesisDossier(p: ExerciseProps): JSX.Element {
     p.onResult(attempt({ ms: Math.max(0, store.now() - startedAt.current), correct: true }));
   };
 
-  useExerciseKeys(prompt?.speak ? { onReplay: replay } : {});
+  // Space replays a spoken prompt; `?` / the frame's Hint button open the duel hint while one is on offer.
+  const hintOffer = duelRep && prompt !== null && !hint && !done ? useHint : undefined;
+  useExerciseKeys(prompt?.speak ? { onReplay: replay, onHint: hintOffer } : { onHint: hintOffer });
+  // The dossier's Continue button is rendered after load: focus it imperatively (a dynamic `autofocus` is ignored).
+  const continueRef = useRef<HTMLButtonElement>(null);
+  useAutoFocus(continueRef, [step.id, duelRep]);
 
   const surface = surfaceOf(item);
   const hasVoice = voiceAudible(services.audio);
@@ -600,7 +608,7 @@ export function NemesisDossier(p: ExerciseProps): JSX.Element {
       ) : null}
 
       {!done ? (
-        <button type="button" class="hanko nemesis__continue" onClick={continueDossier} autoFocus>
+        <button type="button" class="hanko nemesis__continue" onClick={continueDossier} ref={continueRef}>
           {S.continueDossier}
         </button>
       ) : null}

@@ -1,6 +1,7 @@
 /**
  * TSUZUKU — 意味想起 Meaning Recall (design 04 §2): the word (furigana per
- * mode, fog tap = hint) plus audio → type the English. Fuzzy: any entry of
+ * mode, fog tap = hint; the frame's `?` / Hint button shows the reading under
+ * the word while it is hidden, the same hint) plus audio → type the English. Fuzzy: any entry of
  * `meanings` / `params.accept`, articles and "to" stripped, Levenshtein ≤ 1
  * on ≥ 5 chars, ≤ 2 on ≥ 9 (`<TextAnswer mode="en">`). A miss offers
  * 「I meant that」: the override is reported as `correct: true, selfRating: 3`
@@ -17,7 +18,7 @@ import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
 import { gradeEn } from '../check';
 import { S as X } from '../strings';
 import { MissingItem, missingResult, useDrillKeys, useLatency } from '../kana/KanaFlash';
-import { Speaker, VocabAfter, WordHead, isVocabItem, speakWord } from './MeaningGuard';
+import { Speaker, VocabAfter, WordHead, isVocabItem, readingHidden, speakWord } from './MeaningGuard';
 import { S } from './strings';
 import './vocab.css';
 
@@ -53,6 +54,8 @@ function MeaningRecallBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const hinted = useRef(false);
+  const [hintTaken, setHintTaken] = useState(false);
+  const [readingShown, setReadingShown] = useState(false);
   const fired = useRef(false);
   const accept = item ? acceptEn(item.meanings, p.step.params) : [];
   const jjReveal = p.jj && item?.definitionJa !== undefined;
@@ -68,8 +71,6 @@ function MeaningRecallBody(p: ExerciseProps): JSX.Element {
     void speakWord(item);
     p.onReplay();
   };
-  useDrillKeys(root, { onReplay: replay });
-
   const finish = (r: AttemptResult): void => {
     if (fired.current) return;
     fired.current = true;
@@ -77,11 +78,21 @@ function MeaningRecallBody(p: ExerciseProps): JSX.Element {
     p.onResult(r);
   };
 
+  /** A fogged reading tapped open: the hint is taken (Hard ceiling). */
   const reveal = (): void => {
     if (hinted.current || fired.current) return;
     hinted.current = true;
+    setHintTaken(true);
     p.onHint();
   };
+  /** The frame's `?` / Hint button: show the reading under the word — the same hint as a fog tap. */
+  const showReading = (): void => {
+    if (hinted.current || fired.current) return;
+    setReadingShown(true);
+    reveal();
+  };
+  const canShowReading = !!item && !hintTaken && done === null && readingHidden(item, p.furigana);
+  useDrillKeys(root, { onReplay: replay, onHint: canShowReading ? showReading : undefined });
 
   const submit = (r: TextAnswerResult): void => {
     const g = gradeEn(r.given, accept, { ms: ms(), hintUsed: hinted.current, replays: replaysRef.current, override: r.override, missTags: ['word-choice'] });
@@ -93,7 +104,7 @@ function MeaningRecallBody(p: ExerciseProps): JSX.Element {
   return (
     <div class="drill meaning-recall" data-exercise="meaning-recall" ref={root}>
       <p class="drill__prompt">{X.typeMeaning}</p>
-      <WordHead item={item} mode={p.furigana} onReveal={reveal} />
+      <WordHead item={item} mode={p.furigana} onReveal={reveal} kana={readingShown} />
       <div class="drill__row drill__row--between">
         <Speaker onClick={replay} disabled={done !== null} replays={replays} />
         <span class="drill__hint">{S.replayHint}</span>

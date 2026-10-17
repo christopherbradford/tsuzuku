@@ -1,7 +1,8 @@
 import { fnv1a32 } from '../../shared/hash';
+import { NAME_MAX_GLYPHS } from '../../shared/store-types';
 import { glyphCount, layerBounds } from '../jtext';
 import { normalizeData, sampleData } from './data';
-import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
+import { canvasViolations, hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES, type Composition } from './spec';
 import { S } from './strings-4';
 import { spec } from './waveform';
 
@@ -41,6 +42,27 @@ describe('waveform', () => {
       expect(a.texts).toMatchSnapshot();
     });
   }
+
+  it('the name/date footer is fitted to the caption width: a name at NAME_MAX_GLYPHS shrinks on the phone and stays inside the canvas', () => {
+    const name = 'クリストファー・ブラッドフォード・ジュニアだよね';
+    expect(glyphCount(name)).toBe(NAME_MAX_GLYPHS);
+    const footOf = (c: Composition, n: string) => c.texts.find((t) => t.text.startsWith(`${n}　`))!;
+    for (const size of WALLPAPER_SIZES) {
+      const short = spec.compose(1, DATA, size);
+      const long = spec.compose(1, normalizeData({ ...DATA, nameKana: name }), size);
+      const sf = footOf(short, DATA.nameKana);
+      const lf = footOf(long, name);
+      expect(sf).toBeDefined();
+      expect(lf).toBeDefined();
+      const b = layerBounds(lf);
+      expect(b.x, size).toBeGreaterThanOrEqual(0);
+      expect(b.x + b.w, size).toBeLessThanOrEqual(size === 'phone' ? 1080 : 1920);
+      if (size === 'phone') expect(lf.size).toBeLessThan(sf.size);
+      else expect(lf.size).toBe(sf.size); // the desktop caption box is wide enough; nothing changes there
+      expect(canvasViolations(long, size)).toEqual([]);
+      expect(canvasViolations(short, size)).toEqual([]);
+    }
+  });
 
   it('phone: every TextLayer stays inside the safe zones for many seeds and long sentences', () => {
     const long = { ...DATA, dictatedSentence: '昨日の夜、友達と一緒に新しいレストランで晩ご飯を食べてから、駅まで歩いて帰りました。' };

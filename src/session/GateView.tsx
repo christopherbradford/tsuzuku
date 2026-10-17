@@ -12,7 +12,8 @@
  *  No lives, no hearts, no retreat: leaving mid-fight abandons the run (the
  *  Leave button and unmounting alike), and the fight's runner never touches the
  *  training snapshot (`persist: false`). Intro, result and the Station page
- *  all read `rematchAllowed`, so the rematch copy agrees everywhere.
+ *  all read `rematchAllowed`, so the rematch copy agrees everywhere; the Grudge
+ *  List shown is `grudgeItems()` (well-formed keys only).
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -24,7 +25,7 @@ import { parseCardKey } from '../shared/ids';
 import type { SessionPlan, Step, StepResult } from '../shared/session-types';
 import { store } from '../store';
 import { BELT_NAME, S as ES, fill } from './engine-strings';
-import { GATE_ASSISTED_PASS, GATE_PASS, GATE_PHASE_PASS, buildGate, finishGate, gateAvailable, gateOutcome, rematchAllowed, scoreGate, stepHit, type GateScore } from './gatekeeper';
+import { GATE_ASSISTED_PASS, GATE_PASS, GATE_PHASE_PASS, buildGate, finishGate, gateAvailable, gateOutcome, grudgeItems, rematchAllowed, scoreGate, stepHit, type GateScore } from './gatekeeper';
 import { dayStartMs } from '../shared/time';
 import { SessionRunner } from './runner';
 import { SessionHost, type SessionViewComponent } from './ScrollView';
@@ -322,6 +323,7 @@ export function GateView(p: GateViewProps): JSX.Element {
     const assistedCleared = cleared && progress.assisted.includes(n);
     const attempts = progress.gateAttempts[n] ?? 0;
     const rm = rematchAllowed(n);
+    const grudgeIds = grudgeItems();
     const ready = avail?.ready ?? false;
     return (
       <section class="gate-view" aria-label={S.gateAria} data-stage="intro">
@@ -356,7 +358,7 @@ export function GateView(p: GateViewProps): JSX.Element {
         ) : (
           <p class="gate-view__status">{fill(S.rematchGrudge, { n: rm.grudgeRepsNeeded })}</p>
         )}
-        {!cleared && progress.grudge.length > 0 ? <GrudgeList ids={Array.from(new Set(progress.grudge.map((k) => parseCardKey(k).itemId)))} loader={loader} /> : null}
+        {!cleared && grudgeIds.length > 0 ? <GrudgeList ids={grudgeIds} loader={loader} /> : null}
         {!cleared && ready && rm.offerAssisted ? <p class="notice notice--shu gate-view__banner">{S.assistedBanner}</p> : null}
         <div class="gate-view__actions">
           {!cleared && ready && rm.allowed ? (

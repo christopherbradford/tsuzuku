@@ -11,13 +11,16 @@
  * Palette: sumi, neon-c. Unlock: Golden Ear badge.
  *
  * Seed → base frequency, accent nuclei, graticule style, afterglow, jitter.
- * Without a dictated sentence (not persisted; the Studio supplies it) the
- * trace is a flat "no signal" line and the caption says so honestly.
+ * Without a dictated sentence (`profile.dictatedSentence`, else the Studio's
+ * sentence of choice) the trace is a flat "no signal" line and the caption
+ * says so honestly.
  *
  * The caption block (up to four lines plus the name/date footer) is laid
  * out as one unit: when it would run past the bottom of the safe area it
  * moves up into the gap under the trace and, if still too tall, its line
- * size shrinks, so the footer never lands on the last caption line.
+ * size shrinks, so the footer never lands on the last caption line. The
+ * footer is fitted to the caption width too, so a long name shrinks instead
+ * of leaving the canvas.
  */
 import { chance, mulberry32, range, uniform } from '../../shared/hash';
 import { moraSplit, stripPunctuation, toHiragana } from '../../shared/jp';
@@ -272,13 +275,15 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   const minTop = midY + ampMax * 1.12 + 18; // just under the mora ticks
   if (blockTop + lineSize * blockEm > bottom) lineSize = Math.max(18, Math.min(lineSize, (bottom - minTop) / blockEm));
   const pitch = lineSize * 1.55;
-  const footSize = Math.round(lineSize * 0.5);
+  // The footer shrinks for a long name instead of running past the canvas (review round 2); the usual half line otherwise.
+  const foot = `${data.nameKana}　${eraDate(data.date)}`;
+  const footFit = fitSize(foot, lineBoxW, lineSize * 0.5);
+  const footSize = Math.round(footFit < lineSize * 0.5 - 0.02 ? footFit : lineSize * 0.5);
   const blockH = (lines.length - 1) * pitch + lineSize * 1.6 + footSize * 0.3;
   const firstY = Math.min(blockTop, bottom - blockH - lineSize * 0.88) + lineSize * 0.88;
   lines.forEach((l, i) => texts.push(pixel(l, w / 2, firstY + i * pitch, live ? NEON : MUTED, 'middle', lineSize)));
 
   const footY = firstY + (lines.length - 1) * pitch + lineSize * 1.6;
-  const foot = `${data.nameKana}　${eraDate(data.date)}`;
   texts.push(pixel(foot, w / 2, Math.min(footY, bottom - footSize * 0.3), MUTED, 'middle', footSize, 0.9));
 
   const svg = svgDoc({ w, h, title: WALLPAPER_NAMES[ID].en, bg: SUMI, defs, body });

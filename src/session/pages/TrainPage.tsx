@@ -8,7 +8,9 @@
  * `<SessionView>`. Rapid Fire and Gojūon Fighter are ordinary plans with one
  * arcade step. `gate`, `shinsa` and `dan` have their own rooms and redirect; a
  * stale snapshot of such a fight (boss rooms never resume) is abandoned on the
- * way so the Dojo stops offering it. Leaving keeps the snapshot (the runner
+ * way so the Dojo stops offering it. Snapshots are read through `loadSnapshot`
+ * (one whose card keys are malformed is neither offered nor resumed; the next
+ * run's save replaces it). Leaving keeps the snapshot (the runner
  * saves after every rep); "Another Kata?" on the end card starts a fresh Kata
  * at once. Mode titles render the Japanese half under `lang="ja"`. The
  * Begin / Resume buttons take focus imperatively (`useAutoFocus`): a dynamic
@@ -26,6 +28,7 @@ import { beltOfStation } from '../../store/derived';
 import { buildPlan } from '../builder';
 import { buildKage, finishKage, hiScoreTable, kageResultLine, kageStanding, scoreKage } from '../kage';
 import { SessionRunner } from '../runner';
+import { loadSnapshot } from '../snapshot';
 import { SessionView } from '../SessionView';
 import { S, fill } from '../strings';
 import { useAutoFocus } from '../use-auto-focus';
@@ -117,7 +120,7 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
     const redirect = redirectFor(mode, store.progress.value.station);
     if (redirect) {
       // A boss / exam fight is never resumed (design 04 §11): a snapshot left by an older build is abandoned, not offered.
-      const stale = store.session.load();
+      const stale = loadSnapshot();
       if (stale && stale.plan.mode === mode) new SessionRunner(stale.plan, { resumed: stale, loader }).abandon();
       setPhase({ kind: 'redirect' });
       navigate(redirect, { replace: true });
@@ -125,7 +128,7 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
         alive.current = false;
       };
     }
-    const snap = store.session.load();
+    const snap = loadSnapshot();
     if (snap && snapshotStepsLeft(snap) > 0) setPhase({ kind: 'resume', snap });
     else void build(mode, false);
     return () => {

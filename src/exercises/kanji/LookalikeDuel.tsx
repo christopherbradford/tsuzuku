@@ -9,7 +9,9 @@
  * blanks the kanji inside one of its example words and shows the word's kana
  * as the clue. A blank that cuts through a ruby group ({未来|みらい} blanked
  * at 未) leaves the rest of the word bare beside it and keeps the group's
- * reading as the hint (`ruby-split`), so nothing is duplicated on reveal. The
+ * reading as the hint (`ruby-split`; in sentence mode it sits behind the
+ * Reading button and the frame's `?` / Hint button), so nothing is
+ * duplicated on reveal. The
  * blank fills with the right kanji after the pick; a wrong pick → Again
  * tagged `kanji-meaning`. Fewer than two choices → the kanji is
  * shown, not tested (an honest Hard-ceiling result on Continue).
@@ -22,6 +24,7 @@ import { kanjiLookalikes } from '@/learn';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { rngFor, shuffle } from '@/shared/hash';
 import { containsHiragana, containsKatakana } from '@/shared/jp';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
 import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
@@ -123,6 +126,8 @@ export function LookalikeDuel(p: ExerciseProps): JSX.Element {
     setHintShown(true);
     p.onHint();
   };
+  // The frame's `?` / Hint button shows the reading in sentence mode (hint-only set: the ChoiceGrid keeps 1–9).
+  useExerciseKeys({ onHint: prompt?.mode === 'sentence' && !!prompt.clue && phase === 'answer' && !hintShown ? showHint : undefined });
 
   const onPick = (i: number): void => {
     if (picked !== undefined || phase !== 'answer') return;

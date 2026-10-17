@@ -1,13 +1,15 @@
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { bus } from '@/shared/events';
-import { buildBackup, resetStoreForTests, store, type BackupDocument } from '@/store';
+import { IMPORT_MAX_BYTES, STORE_STRINGS, buildBackup, resetStoreForTests, store, type BackupDocument } from '@/store';
 import { captureEvents, card, makeTestStore } from '@/store/testing';
 import BackupPage, { downloadBlob, hasCompressionStream, kbOf, storageLevelText } from './BackupPage';
 import { S, fmt } from './strings';
 
 /** Lets one test make `applyImport` throw mid-apply (a malformed slice the preview did not catch). */
 const applyHook = vi.hoisted(() => ({ throwing: false }));
+/** Counts `previewImportBlob` calls: an oversize file must be refused before the store ever sees it. */
+const previewSpy = vi.hoisted(() => vi.fn());
 vi.mock('@/store', async (importOriginal) => {
   const mod = await importOriginal<typeof import('@/store')>();
   return {
@@ -15,6 +17,10 @@ vi.mock('@/store', async (importOriginal) => {
     applyImport: (...args: Parameters<typeof mod.applyImport>) => {
       if (applyHook.throwing) throw new TypeError('e.join is not a function');
       return mod.applyImport(...args);
+    },
+    previewImportBlob: (...args: Parameters<typeof mod.previewImportBlob>) => {
+      previewSpy();
+      return mod.previewImportBlob(...args);
     },
   };
 });
@@ -32,6 +38,7 @@ afterEach(() => {
   resetStoreForTests();
   bus.reset();
   applyHook.throwing = false;
+  previewSpy.mockClear();
 });
 
 const tick = (): Promise<void> => new Promise((r) => setTimeout(r, 2));
@@ -241,6 +248,27 @@ describe('<BackupPage>', () => {
     await chooseFile(new File([JSON.stringify({ hello: 'world' })], 'other.json', { type: 'application/json' }));
     expect(q('[data-import-error]').textContent?.length).toBeGreaterThan(0);
     expect(store.profile.value.xp).toBe(5);
+  });
+
+  it('a file over IMPORT_MAX_BYTES is refused by its size before it is read, with the store’s own line', async () => {
+    await makeTestStore({ save: { profile: { xp: 5 } } });
+    mount();
+    const file = new File(['{}'], 'huge.json', { type: 'application/json' });
+    Object.defineProperty(file, 'size', { value: IMPORT_MAX_BYTES + 1, configurable: true });
+    await chooseFile(file);
+    expect(previewSpy).not.toHaveBeenCalled();
+    expect(q('[data-import-error]').textContent).toContain(STORE_STRINGS.importTooLarge);
+    expect(root.querySelector('[data-import-preview]')).toBeNull();
+    expect(q<HTMLButtonElement>('[data-choose-file]').disabled).toBe(false);
+    expect(q<HTMLButtonElement>('[data-export]').disabled).toBe(false);
+    expect(store.profile.value.xp).toBe(5);
+
+    // Exactly at the cap the file is read as usual (the store validates the contents).
+    const atCap = new File([JSON.stringify({ hello: 'world' })], 'other.json', { type: 'application/json' });
+    Object.defineProperty(atCap, 'size', { value: IMPORT_MAX_BYTES, configurable: true });
+    await chooseFile(atCap);
+    expect(previewSpy).toHaveBeenCalledTimes(1);
+    expect(q('[data-import-error]').textContent).not.toContain(STORE_STRINGS.importTooLarge);
   });
 
   it('an import that throws while applying shows the calm error and re-enables Export and Choose-file (Merge and Replace alike)', async () => {

@@ -17,6 +17,8 @@
  *    of the day only) and `stats.rapidBest`. Then Continue hands the runner a
  *    clean summary result (facet null, nothing to grade).
  * Keys `kana` (the frame forwards Enter; the typed widgets own the field).
+ * The Start / Continue buttons are rendered after load and take focus through
+ * `useAutoFocus` (a dynamic `autofocus` attribute is ignored).
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -29,6 +31,7 @@ import type { ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { rngFor, shuffle } from '@/shared/hash';
 import { parseCardKey } from '@/shared/ids';
 import type { AttemptResult, Step } from '@/shared/session-types';
+import { useAutoFocus } from '@/shared/ui/use-auto-focus';
 import { useTimer } from '@/shared/ui/use-timer';
 import { store } from '@/store';
 import { attempt } from '../check';
@@ -182,6 +185,10 @@ export function RapidFire(p: ExerciseProps): JSX.Element {
     promptAt.current = store.now();
   }, [prompt?.at]);
 
+  // The one primary button of the intro / summary screens (Start, Continue).
+  const primary = useRef<HTMLButtonElement>(null);
+  useAutoFocus(primary, [phase]);
+
   const start = (): void => {
     if (live.current.phase !== 'intro') return;
     setTally(freshTally());
@@ -284,7 +291,7 @@ export function RapidFire(p: ExerciseProps): JSX.Element {
           </span>
         </p>
         {pool.length > 0 ? (
-          <button type="button" class="hanko hanko--lg" onClick={start} autoFocus>
+          <button type="button" class="hanko hanko--lg" onClick={start} ref={primary}>
             {S.start}
           </button>
         ) : (
@@ -292,7 +299,7 @@ export function RapidFire(p: ExerciseProps): JSX.Element {
             <p class="rapid__empty" role="status">
               {S.emptyPool}
             </p>
-            <button type="button" class="hanko" onClick={continueOut}>
+            <button type="button" class="hanko" onClick={continueOut} ref={primary}>
               {S.continue}
             </button>
           </>
@@ -331,7 +338,7 @@ export function RapidFire(p: ExerciseProps): JSX.Element {
         {newBest ? <p class="rapid__best">{S.newBest}</p> : null}
         <p class="rapid__note">{S.recheckNote}</p>
         {summary.paid === true ? <p class="rapid__xp">{S.firstRunXp}</p> : summary.paid === false ? <p class="rapid__xp">{S.freePlay}</p> : null}
-        <button type="button" class="hanko" onClick={continueOut} autoFocus>
+        <button type="button" class="hanko" onClick={continueOut} ref={primary}>
           {S.continue}
         </button>
       </div>

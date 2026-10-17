@@ -6,8 +6,9 @@
  * mode switches on by itself for a katakana item, a small-kana or long-vowel
  * slip is a Block tagged by kind. The romaji shown is the IME spelling
  * (`imeRomaji`: を → wo, ティ → thi) so what is read can be typed. With a
- * voice available the romaji sits behind 「Show romaji」, which counts as a
- * hint (`onHint`, Hard ceiling) — except for を/ヲ (`SPOKEN_HOMOPHONES`),
+ * voice available the romaji sits behind 「Show romaji」 (also the frame's
+ * `?` / Hint button), which counts as a hint (`onHint`, Hard ceiling) —
+ * except for を/ヲ (`SPOKEN_HOMOPHONES`),
  * which the voice pronounces exactly like お/オ: their romaji is shown up
  * front at no cost, with the audio still playing. Space replays; replays are
  * counted.
@@ -78,8 +79,6 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
     play();
     p.onReplay();
   };
-  useDrillKeys(root, { onReplay: replay });
-
   const finish = (r: AttemptResult): void => {
     if (fired.current) return;
     fired.current = true;
@@ -92,6 +91,7 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
     setRomajiShown(true);
     if (hasVoice) p.onHint();
   };
+  useDrillKeys(root, { onReplay: replay, onHint: item && !showRomaji && done === null ? reveal : undefined });
 
   const submit = (r: TextAnswerResult): void => {
     finish(attempt({ ms: ms(), correct: r.correct, nearMiss: r.nearMiss, errorTags: r.tags, answer: r.given, hintUsed, replays: replaysRef.current }));

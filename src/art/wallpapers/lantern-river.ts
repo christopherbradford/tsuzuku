@@ -209,7 +209,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   const safe = safeRect(size);
   const texts: TextLayer[] = [];
   const nameMaxW = phone ? w * 0.62 : w * 0.45;
-  const nameSize = fitSize(data.nameKana, nameMaxW, phone ? 84 : 76, { min: 30, max: phone ? 84 : 76 });
+  // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+  const nameSize = fitSize(data.nameKana, nameMaxW, phone ? 84 : 76, { max: phone ? 84 : 76 });
   const nameX = phone ? w * 0.08 : w * 0.06;
   const nameY = phone ? safe.y + 150 : h * 0.17;
   texts.push({ text: data.nameKana, x: nameX, y: nameY, size: nameSize, font: FONTS.brush, fill: WASHI, opacity: 0.94, lang: 'ja' });

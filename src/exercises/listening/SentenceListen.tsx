@@ -22,8 +22,9 @@
  * exists AND the master volume is above 0) the sentence is shown (honest
  * degrade). In typed mode the frame's Enter (focus outside the field)
  * finalizes the IME buffer before grading, as the field's own Enter does
- * (hon → ほん), so a pending romaji tail never counts as a slip. Facet
- * `null`; keys `kana`; `needsTts`.
+ * (hon → ほん), so a pending romaji tail never counts as a slip, and the
+ * frame's `?` / Hint button opens the typed-mode hint. Facet `null`; keys
+ * `kana`; `needsTts`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -364,7 +365,7 @@ export function SentenceListen(p: ExerciseProps<SentenceListenParams>): JSX.Elem
     submit(final);
   };
 
-  useExerciseKeys(choiceMode ? { onReplay: replay, onChoice: pick } : { onReplay: replay, onSubmit: submitLive });
+  useExerciseKeys(choiceMode ? { onReplay: replay, onChoice: pick } : { onReplay: replay, onSubmit: submitLive, onHint: !hint && !done ? useHint : undefined });
 
   const replaysLeft = MAX_REPLAYS - replays;
   const bandLine = done ? (done.result.correct ? S.bandGood : done.result.nearMiss ? S.bandHard : S.bandAgain) : '';

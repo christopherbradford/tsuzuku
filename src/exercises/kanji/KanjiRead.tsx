@@ -12,7 +12,8 @@
  * `examples` by exposure count, so on and kun readings are learned in words. Graded with `checkJa` through
  * `<TextAnswer mode="ja">` with no particle tolerance: exact or canonical
  * equivalent → Good, a slip → Block, a miss → Again tagged `kanji-reading`.
- * Showing the English gloss before answering is a hint (Hard ceiling).
+ * Showing the English gloss before answering is a hint (Hard ceiling); the
+ * frame's `?` / Hint button opens it too (`useExerciseKeys({ onHint })`).
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
@@ -20,6 +21,7 @@ import { toPlain } from '@/content/ruby';
 import type { ContentItem, KanjiItem, WordExample } from '@/content/types';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { equivalentJa } from '@/shared/jp';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
 import { store } from '@/store';
 import { attempt } from '../check';
@@ -126,6 +128,8 @@ export function KanjiRead(p: ExerciseProps): JSX.Element {
     setHintShown(true);
     p.onHint();
   };
+  // The frame's `?` / Hint button shows the gloss (withdrawn once shown).
+  useExerciseKeys({ onHint: prompt?.gloss && phase === 'answer' && !hintShown ? showHint : undefined });
 
   const onSubmit = (r: TextAnswerResult): void => {
     emit(attempt({ ms: elapsed(), correct: r.correct, nearMiss: r.nearMiss, hintUsed: hintShown, errorTags: r.tags, answer: r.given }));

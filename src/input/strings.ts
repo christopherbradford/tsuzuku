@@ -161,7 +161,7 @@ export const S = {
   writingEmpty: 'Write at least one sentence first.',
   writingDone: 'Finished. {hit} of {total} patterns used, {sentences} sentences.',
   writingDoneNote: 'No grade here: the checks are the feedback, and a tutor is the judge of style.',
-  writingKept: 'Kept with your bookmarks.',
+  writingKept: 'Kept with your bookmarks — your wall scrolls can carry it.',
   writingJudgeWaiting: 'The inspector has a question.',
   writingJudgePass: 'The inspector found it. Well calibrated.',
   writingJudgeFail: 'The inspector did not find it. Look again at that pattern.',

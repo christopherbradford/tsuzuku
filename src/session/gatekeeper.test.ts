@@ -23,6 +23,9 @@ import {
   finishGate,
   gateAvailable,
   gateOutcome,
+  grudgeItems,
+  grudgeKeys,
+  grudgeRepsToday,
   rematchAllowed,
   resetGateAttemptsForTests,
   sampleLowR,
@@ -371,6 +374,30 @@ describe('rematch gate regressions (design 04 §11)', () => {
   it('a save without a recorded attempt day (older build) is never locked', async () => {
     await makeTestStore({ save: { progress: { station: 4, gateAttempts: { 4: 1 }, grudge: [`${V.人}#rec`] } }, cards: stationCards() });
     expect(rematchAllowed(4).allowed).toBe(true);
+  });
+
+  it('Grudge List entries that are not card keys (hand-edited or older save) are ignored, never lock the rematch, and leave the list when a lost fight rewrites it', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: stationCards() });
+    const bad = 'v-n5-0001' as CardKey; // no facet
+    const today = store.today();
+    store.patch('progress', (p) => ({ ...p, grudge: [bad, 'x#nope' as CardKey, `${V.犬}#rec`], gateAttempts: { 4: 1 }, gateAttemptDay: { 4: today }, gateAttemptAt: { 4: DEFAULT_TEST_NOW - 60_000 } }));
+    expect(grudgeKeys()).toEqual([`${V.犬}#rec`]);
+    expect(grudgeItems()).toEqual([V.犬]);
+    expect(() => grudgeRepsToday()).not.toThrow();
+    // the one real key still locks the same-day rematch …
+    expect(rematchAllowed(4)).toMatchObject({ allowed: false, grudgeRepsNeeded: GRUDGE_REPS_FOR_REMATCH });
+    // … but a list holding nothing trainable cannot: no rep could ever count against it
+    store.patch('progress', (p) => ({ ...p, grudge: [bad] }));
+    expect(rematchAllowed(4)).toMatchObject({ allowed: true, grudgeRepsNeeded: 0 });
+    // a lost fight rewrites the list from well-formed keys only
+    store.patch('progress', (p) => ({ ...p, grudge: [bad, `${V.犬}#rec`] }));
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 2, loader, available: all });
+    finishGate(4, scoreGate(plan, answerAll(plan, () => true)), { assisted: false, revenge: false });
+    const grudge = store.progress.value.grudge;
+    expect(grudge).not.toContain(bad);
+    expect(grudge).toContain(`${V.犬}#rec`);
+    expect(grudge.length).toBeGreaterThan(1);
+    expect(grudge.every((k) => grudgeKeys().includes(k))).toBe(true);
   });
 });
 

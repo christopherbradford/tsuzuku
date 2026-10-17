@@ -10,6 +10,9 @@
  *  `roadEstimate` follows design 02 §6.2 with one honest addition: stations
  *  whose bundle is not loaded count their `STATIONS` quota (plus the kana for
  *  Stations 1–3) as remaining, so one bundle fetch is enough for the page.
+ *  The full-pace rate is the store's `effectiveNewPerDay` (the belt table at
+ *  every preset, the stored mix only at custom), so the road, the Dojo
+ *  forecast and the builder agree on the budget.
  */
 import type { JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
@@ -18,7 +21,7 @@ import { BELTS, STATIONS, type Belt, type StationBundle } from '../../content/ty
 import { href, navigate, type Route } from '../../shared/routes';
 import { dayToCivil } from '../../shared/time';
 import type { CardsApi, EpochDay, LogEntry, SaveMeta } from '../../shared/store-types';
-import { newPerDayFor, newPerDayTotal, store } from '../../store';
+import { effectiveNewPerDay, newPerDayTotal, store } from '../../store';
 import { SHINSA_STATIONS, activeDaysIn, beltOfStation, bundleItemIds, itemsIntroducedIn, lifetimeActiveDays } from '../../store/derived';
 import { BELT_NAME, fill } from '../engine-strings';
 import { KageStrip } from '../KageView';
@@ -51,7 +54,7 @@ export function quotaTotal(n: number): number {
 }
 
 function fullRate(m: SaveMeta, belt: Belt): number {
-  const npd = m.settings.intensity === 'custom' ? m.settings.newPerDay : newPerDayFor(belt, m.settings.intensity);
+  const npd = effectiveNewPerDay(m.settings, belt);
   return Math.max(1, newPerDayTotal(npd));
 }
 

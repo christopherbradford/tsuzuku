@@ -12,7 +12,8 @@
  * `[start, end]` of the piece, `params.answer` the piece itself; without
  * them the drill rotates the point's examples by exposure and blanks the
  * first `clozeHints` entry found, so the surface cannot be memorized.
- * Showing the pattern before answering is a hint (Hard ceiling).
+ * Showing the pattern before answering is a hint (Hard ceiling); the frame's
+ * `?` / Hint button shows it too.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -189,6 +190,7 @@ export function PatternCloze(p: ExerciseProps): JSX.Element {
     onChoice: pickTile,
     onReplay: replay,
     onSubmit: () => submit(value),
+    onHint: prompt && item && phase === 'answer' && !hintShown ? showHint : undefined,
   });
 
   if (!prompt || !item) {

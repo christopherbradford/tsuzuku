@@ -6,7 +6,7 @@
  */
 export { buildPlan } from './builder';
 export { SessionRunner } from './runner';
-export { dojoFeed } from './dojo-feed';
+export { dojoFeed, gateForecast } from './dojo-feed';
 export { default as TrainPage } from './pages/TrainPage';
 export { default as ScrollPage } from './pages/ScrollPage';
 export { default as StationPage } from './pages/StationPage';

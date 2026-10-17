@@ -205,6 +205,22 @@ describe('<ParticleDuel>', () => {
     expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
   });
 
+  it("the frame's ? key opens the pattern once (hintUsed) beside the particle keys, then the Hint button is withdrawn", () => {
+    const pr = props();
+    mount(pr, true);
+    expect(q('.exercise-frame__hint')).not.toBeNull();
+    press('?');
+    expect(q('[data-hint="true"]')?.textContent).toContain('〜は');
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    expect(q('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    press('1'); // digits still reach the particle keyboard through the same keyed set
+    press('3');
+    press('Enter');
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
+  });
+
   it('derives the slot from the point when the step carries none; a point without particle hints is shown, not tested', () => {
     const pr = props({ step: step({ params: {} }), exposures: 0, furigana: 'off' });
     mount(pr);

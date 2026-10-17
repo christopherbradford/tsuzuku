@@ -6,6 +6,7 @@
  */
 import { WALLPAPER_IDS, type WallpaperId } from '../../shared/catalog';
 import { fnv1a32, hashSeed } from '../../shared/hash';
+import { textLayersSvg } from '../jtext';
 import { makeTestStore, TEST_SEED } from '../../store/testing';
 import { sampleData } from './data';
 import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES, type WallpaperSize } from './spec';
@@ -77,6 +78,23 @@ describe.skipIf(!registry)(`wallpapers registry${registry ? '' : ` (skipped: ${l
       expect(wallpaperSeed(TEST_SEED, id, 1)).not.toBe(wallpaperSeed(TEST_SEED, id, 0));
     });
   }
+
+  it('imported-save strings reach the SVG only XML-escaped: a hostile name, sentences and seal glyph parse clean in every piece', () => {
+    const hostile = '<script>alert(1)</script>"&\'';
+    const d = sampleData(1, { nameKana: hostile, sentenceOfChoice: hostile, dictatedSentence: hostile, writingSentences: [hostile, hostile], chosenKanji: '<' });
+    expect(d.nameKana.startsWith('<script>')).toBe(true);
+    for (const id of WALLPAPER_IDS) {
+      for (const size of WALLPAPER_SIZES) {
+        const c = R().WALLPAPERS[id].compose(1, d, size);
+        const layers = textLayersSvg(c.texts);
+        const baked = c.svg.slice(0, c.svg.lastIndexOf('</svg>')) + layers + '</svg>';
+        expect(baked, `${id} ${size}`).not.toMatch(/<\/?script|"&'/i); // raw tag or raw quote run = an unescaped sink
+        if (c.texts.some((t) => t.text.includes('<'))) expect(layers, `${id} ${size}`).toContain('&lt;');
+        const doc = new DOMParser().parseFromString(baked, 'image/svg+xml');
+        expect(doc.querySelector('parsererror'), `${id} ${size}`).toBeNull();
+      }
+    }
+  });
 
   it('renderWallpaper seeds from the profile and the reforge count, honours data/overrides and post modes', async () => {
     const { renderWallpaper, composeWallpaper, WALLPAPERS, wallpaperSeed } = R();

@@ -274,6 +274,14 @@ describe('<NemesisDossier> duel', () => {
     expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true });
   });
 
+  it('the dossier Continue button takes focus on mount (useAutoFocus, no autofocus attribute)', async () => {
+    await setup({ [K_PROD]: nemesisCard(0) });
+    await mount(step());
+    const cont = q<HTMLButtonElement>('.nemesis__continue') as HTMLButtonElement;
+    expect(document.activeElement).toBe(cont);
+    expect(cont.hasAttribute('autofocus')).toBe(false);
+  });
+
   it('a card that is not flagged still duels, with the honest intro', async () => {
     await setup({ [K_REC]: card({ s: 40, reps: 12, lapses: 1, state: 2, last: today - 1 }) });
     await mount(step({ cardKey: K_REC }));

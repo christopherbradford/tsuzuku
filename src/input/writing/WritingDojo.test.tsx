@@ -6,6 +6,7 @@ import { bus } from '@/shared/events';
 import type { JudgeRequest } from '@/shared/exercise-types';
 import type { AttemptResult, Step } from '@/shared/session-types';
 import { epochDay } from '@/shared/time';
+import { WRITING_PREFIX as SHARED_PREFIX, writingSentencesFrom as sharedWritingSentencesFrom } from '@/shared/writing';
 import { store } from '@/store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore, type TestStoreOptions } from '@/store/testing';
 import { S } from '../strings';
@@ -125,6 +126,9 @@ describe('writing-dojo helpers', () => {
   });
 
   it('keepSentences keeps readable sentences (≥ 4 chars, ≤ 12); writingSentencesFrom reads them back from bookmarks', () => {
+    // The bookmark convention is the contract tier's (`@/shared/writing`), which the art tier reads for the wall scrolls (contract #11).
+    expect(WRITING_PREFIX).toBe(SHARED_PREFIX);
+    expect(writingSentencesFrom).toBe(sharedWritingSentencesFrom);
     // sentencesOf strips the closing punctuation
     expect(keepSentences('私はハナです。はい。毎朝コーヒーを飲みます。')).toEqual(['私はハナです', '毎朝コーヒーを飲みます']);
     const many = Array.from({ length: 15 }, (_, i) => `文${i}です。`).join('');
@@ -184,6 +188,11 @@ describe('<WritingDojo>', () => {
     expect(out).toEqual([['output:done', { kind: 'writing', patternsHit: 2, seconds: 120, path: 'self' }]]);
     expect(writingSentencesFrom(store.bookmarks.value)).toEqual(['私はハナです', '毎朝コーヒーを飲みます', 'パンも食べます']);
     expect(q('.dojo-write__verdict')?.textContent).toBe('Finished. 2 of 2 patterns used, 3 sentences.');
+    // The closing line is honest both ways: what the art tier reads back is exactly what was kept, and it names the wall scrolls.
+    expect(sharedWritingSentencesFrom(store.bookmarks.value)).toEqual(['私はハナです', '毎朝コーヒーを飲みます', 'パンも食べます']);
+    expect(q('.dojo-write__result .dojo-write__meta')?.textContent).toBe(S.writingKept);
+    expect(S.writingKept).toMatch(/bookmarks/);
+    expect(S.writingKept).toMatch(/wall scrolls/);
     if (judged > 0) expect(q('.dojo-write__judge')).not.toBeNull();
     cap.stop();
   });
@@ -247,5 +256,19 @@ describe('<WritingDojo>', () => {
       document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
     });
     expect(onResult).not.toHaveBeenCalled();
+  });
+
+  it('the textarea takes focus on mount even after something else held focus (useAutoFocus, no autofocus attribute)', async () => {
+    await setup();
+    const outside = document.createElement('button');
+    document.body.appendChild(outside);
+    outside.focus();
+    expect(document.activeElement).toBe(outside);
+    await mount(step());
+    const ta = q<HTMLTextAreaElement>('.dojo-write__text');
+    expect(ta).not.toBeNull();
+    expect(document.activeElement).toBe(ta);
+    expect(ta!.hasAttribute('autofocus')).toBe(false);
+    outside.remove();
   });
 });

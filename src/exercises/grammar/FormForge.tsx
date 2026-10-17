@@ -13,21 +13,30 @@
  *
  * On a grammar `prod` card the item is the GrammarItem and the verb the
  * planner picked travels in `params.sentence` (its dictionary form),
- * `params.kana` (its reading) and `params.promptEn` (its gloss + the form);
- * those stand in for the head word when the item is not a conjugable vocab
- * item.
+ * `params.kana` (its reading), `params.pos` (its part of speech),
+ * `params.promptEn` (its gloss + the form) and `params.accepts` (accepted
+ * surfaces per form). The head word is derived from them
+ * (`head-word.inferHeadWord`: the given pos, else the one pos whose engine
+ * answer reproduces `params.answer`), so the engine's kana and alternates
+ * are accepted exactly as for a vocab head word; the `accepts` row of the
+ * target form is graded as given. The frame's `?` / Hint button shows the
+ * form's rule (`useExerciseKeys({ onHint })`, withdrawn once shown).
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
-import type { ConjForm, ConjugablePos, ContentItem, VocabItem } from '@/content/types';
-import { conjugate, isConjugable } from '@/learn';
+import type { ConjForm } from '@/content/types';
+import { conjugate } from '@/learn';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { attempt } from '../check';
 import { S as SD } from '../strings';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
+import { type HeadWord, acceptsRow, headWordOf, inferHeadWord, isVocabItem } from './head-word';
 import { FORM_HINT, FORM_LABEL, POS_GROUP_LABEL, S, fill } from './strings';
 import './grammar.css';
+
+export { headWordOf, inferHeadWord, isVocabItem, type HeadWord } from './head-word';
 
 export const meta: ExerciseMeta = {
   id: 'form-forge',
@@ -39,27 +48,12 @@ export const meta: ExerciseMeta = {
   keys: 'kana',
 };
 
-export function isVocabItem(i: ContentItem | null | undefined): i is VocabItem {
-  return !!i && 'word' in i && 'kana' in i && 'meanings' in i && 'pos' in i;
-}
-
-/** A conjugable head word, from the vocab item. */
-export interface HeadWord {
-  word: string;
-  kana: string;
-  pos: ConjugablePos;
-}
-
-export function headWordOf(item: ContentItem | null): HeadWord | null {
-  if (!isVocabItem(item) || !isConjugable(item.pos)) return null;
-  return { word: item.word, kana: item.kana, pos: item.pos };
-}
-
 /**
- * Every surface to accept for `form`: step answer/accept first, then the
- * engine's answer, kana and alternates (adapter for `learn/conjugate.acceptedSurfaces`,
- * which the barrel does not re-export). The first entry is the display form.
- * `null` when nothing can be built; `{ accept: [] }` means the form does not exist.
+ * Every surface to accept for `form`: step answer / accept and the form's
+ * `params.accepts` row first, then the engine's answer, kana and alternates
+ * (adapter for `learn/conjugate.acceptedSurfaces`, which the barrel does not
+ * re-export). The first entry is the display form. `null` when nothing can
+ * be built; `{ accept: [] }` means the form does not exist.
  */
 export function forgeAccept(head: HeadWord | null, form: ConjForm | undefined, params: ExerciseProps['step']['params']): { accept: string[]; defective: boolean } | null {
   const out: string[] = [];
@@ -69,6 +63,10 @@ export function forgeAccept(head: HeadWord | null, form: ConjForm | undefined, p
   };
   push(params.answer);
   for (const a of params.accept ?? []) push(a);
+  if (form) {
+    const row = params.forms ? params.forms.indexOf(form) : 0;
+    for (const a of acceptsRow(params, row)) push(a);
+  }
   let defective = false;
   if (head && form) {
     const c = conjugate(head.word, head.kana, head.pos, form);
@@ -85,7 +83,7 @@ export function forgeAccept(head: HeadWord | null, form: ConjForm | undefined, p
 type Phase = 'answer' | 'done';
 
 export function FormForge(p: ExerciseProps): JSX.Element {
-  const head = useMemo(() => headWordOf(p.item), [p.item]);
+  const head = useMemo(() => headWordOf(p.item) ?? inferHeadWord(p.step.params), [p.item, p.step.params]);
   const form = p.step.params.targetForm;
   const built = useMemo(() => forgeAccept(head, form, p.step.params), [head, form, p.step.params]);
   const vocab = isVocabItem(p.item) ? p.item : null;
@@ -118,6 +116,10 @@ export function FormForge(p: ExerciseProps): JSX.Element {
   const dictionary = head?.word ?? vocab?.word ?? (fromStep.length > 0 ? fromStep : null);
   const dictionaryKana = head?.kana ?? vocab?.kana ?? ((p.step.params.kana ?? '').trim() || null);
   const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
+  const testable = !!built && !!form && !!label && built.accept.length > 0;
+
+  // The frame's `?` / Hint button shows the form's rule; withdrawn once shown or when nothing is tested.
+  useExerciseKeys({ onHint: testable && phase === 'answer' && !hintShown ? showHint : undefined });
 
   if (!built || !form || !label || built.accept.length === 0) {
     const defective = Boolean(built?.defective);

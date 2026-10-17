@@ -7,7 +7,9 @@ import { epochDay } from '@/shared/time';
 import { resetStoreForTests, store } from '@/store';
 import { forecastCounts } from '@/store/derived';
 import { DEFAULT_TEST_NOW, card, makeTestStore } from '@/store/testing';
-import DojoPage, { dueLine, fallbackForecast, isFreshSave, stepsLeft, type Feed } from './DojoPage';
+// E's module, imported here only so the test can prove the injected fallback agrees with it (the page gets it through pages.ts).
+import { SCROLL_BLOCK_MINUTES, gateForecast } from '@/session/dojo-feed';
+import DojoPage, { dueLine, fallbackFeed, fallbackForecast, isFreshSave, stepsLeft, type Feed, type GateForecast } from './DojoPage';
 import { S, fmt } from './strings';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
@@ -72,9 +74,9 @@ function snapshot(total: number, cursor: number): SessionSnapshot {
   };
 }
 
-async function mount(props: { feed?: (() => Promise<DojoFeed>) | null; Scene?: (() => null) | null } = {}): Promise<void> {
+async function mount(props: { feed?: (() => Promise<DojoFeed>) | null; Scene?: (() => null) | null; gate?: GateForecast | null } = {}): Promise<void> {
   await act(async () => {
-    render(<DojoPage route={ROUTE} feed={props.feed ?? null} Scene={props.Scene ?? null} />, root);
+    render(<DojoPage route={ROUTE} feed={props.feed ?? null} Scene={props.Scene ?? null} gate={props.gate ?? null} />, root);
     await tick();
     await tick();
   });
@@ -183,6 +185,29 @@ describe('<DojoPage>', () => {
     expect(root.textContent).toContain(S.dojoFeedFailed);
     expect(root.querySelectorAll('.dojo__session').length).toBe(3);
     expect(root.querySelector('.dojo__kage')).toBeNull();
+  });
+
+  it('with E’s gateForecast injected, the fallback forecast takes the Scroll block minutes off like the live feed does on a day without a Scroll', async () => {
+    await makeTestStore({ save: ACTIVE, cards: { 'v-n5-0001#rec': card({ due: TODAY - 1, s: 3, state: 2 }), 'v-n5-0002#rec': card({ due: TODAY, s: 3, state: 2 }) } });
+    const raw = forecastCounts();
+    expect(raw.newItems).toBeGreaterThan(0); // a Standard-pace save has a new-item budget, so the raw estimate carries the Scroll block
+    const gated = gateForecast(raw, 0);
+    expect(gated.minutes.kumite).toBe(raw.minutes.kumite - SCROLL_BLOCK_MINUTES.kumite);
+    expect(gated.minutes.shugyo).toBe(raw.minutes.shugyo - SCROLL_BLOCK_MINUTES.shugyo);
+    expect(gated.minutes.kata).toBe(raw.minutes.kata);
+
+    await mount({ feed: () => Promise.reject(new Error('engine down')), gate: gateForecast });
+    expect(root.querySelector('.dojo')?.getAttribute('data-feed')).toBe('failed');
+    expect(text('[data-forecast]')).toBe(fallbackForecast(2, gated.minutes.kumite));
+    const links = Array.from(root.querySelectorAll<HTMLAnchorElement>('.dojo__session'));
+    expect(links[1]?.textContent).toContain(fmt(S.dojoMinutes, { n: Math.max(1, Math.round(gated.minutes.kumite)) }));
+    expect(links[2]?.textContent).toContain(fmt(S.dojoMinutes, { n: Math.max(1, Math.round(gated.minutes.shugyo)) }));
+    expect(links[1]?.textContent).not.toContain(fmt(S.dojoMinutes, { n: raw.minutes.kumite }));
+
+    // The pure helper says the same; without the gate the raw estimate stands (the session barrel is absent).
+    expect(fallbackFeed(gateForecast).minutes).toEqual(gated.minutes);
+    expect(fallbackFeed(null).minutes).toEqual(raw.minutes);
+    expect(fallbackFeed(gateForecast).due).toBe(raw.due);
   });
 
   it('renders without a feed or scene at all', async () => {

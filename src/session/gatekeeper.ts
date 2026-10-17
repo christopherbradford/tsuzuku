@@ -18,7 +18,11 @@
  *  opens the rematch by itself (`progress.gateAttemptDay`); the third non-pass offers the Assisted
  *  Gate (no timers, Final Form → 3 cloze, 80 %, provisional stamp); the
  *  Revenge Match is the full fight again. `rematchAllowed` is the one
- *  predicate every screen (intro, result, Station page) reads.
+ *  predicate every screen (intro, result, Station page) reads. Grudge List
+ *  keys are read through `grudgeKeys()`: only `isCardKey` entries count, so a
+ *  hand-edited or older save can neither crash the views (`parseCardKey`
+ *  throws) nor lock the rematch behind reps nobody can train, and a lost fight
+ *  rewrites the list from well-formed keys only.
  *  `finishGate` writes `progress` (attempts, attempt day and time, cleared,
  *  perfect, assisted, grudge, station advance — a pass at or past the current
  *  station moves `progress.station` to n + 1, so a save still at station 0
@@ -29,7 +33,7 @@ import type { ContentLoader } from '../content/loader';
 import { toPlain } from '../content/ruby';
 import { bus, type Events } from '../shared/events';
 import { weighted, type Rng } from '../shared/hash';
-import { cardKey as makeKey, parseCardKey } from '../shared/ids';
+import { cardKey as makeKey, isCardKey, parseCardKey } from '../shared/ids';
 import type { SessionPlan, Step, StepResult } from '../shared/session-types';
 import { dayStartMs } from '../shared/time';
 import { CardFlag, hasFlag, type EpochDay, type Store } from '../shared/store-types';
@@ -407,7 +411,7 @@ export function finishGate(n: number, score: GateScore, o: { assisted: boolean; 
   store.patch('progress', (p) => {
     const attempts = { ...p.gateAttempts, [n]: (p.gateAttempts[n] ?? 0) + 1 };
     if (!score.passed) {
-      const grudge = p.grudge.slice();
+      const grudge = p.grudge.filter(isCardKey);
       for (const k of score.misses) if (!grudge.includes(k)) grudge.push(k);
       return { ...p, gateAttempts: attempts, gateAttemptDay: { ...(p.gateAttemptDay ?? {}), [n]: today }, gateAttemptAt: { ...(p.gateAttemptAt ?? {}), [n]: now }, grudge };
     }
@@ -441,9 +445,14 @@ export function finishGate(n: number, score: GateScore, o: { assisted: boolean; 
 /* Rematch                                                                    */
 /* ────────────────────────────────────────────────────────────────────────── */
 
+/** The Grudge List as card keys: a saved entry that is not well-formed (`isCardKey`) is ignored, never parsed or counted. */
+export function grudgeKeys(): CardKey[] {
+  return store.progress.value.grudge.filter(isCardKey);
+}
+
 /** Grudge reps answered today (log rows on Grudge List cards since 04:00, or since `after` when later). */
 export function grudgeRepsToday(after = 0): number {
-  const grudge = new Set(store.progress.value.grudge);
+  const grudge = new Set(grudgeKeys());
   if (grudge.size === 0) return 0;
   const since = Math.max(after, dayStartMs(store.today(), store.profile.value.tz));
   let n = 0;
@@ -465,7 +474,7 @@ export function rematchAllowed(n: number): { allowed: boolean; grudgeRepsNeeded:
   if (cleared) return { allowed: p.assisted.includes(n), grudgeRepsNeeded: 0, offerAssisted: false };
   const lostDay = p.gateAttemptDay?.[n];
   if (attempts === 0 || lostDay === undefined || lostDay < store.today()) return { allowed: true, grudgeRepsNeeded: 0, offerAssisted };
-  if (p.grudge.length === 0) return { allowed: true, grudgeRepsNeeded: 0, offerAssisted };
+  if (grudgeKeys().length === 0) return { allowed: true, grudgeRepsNeeded: 0, offerAssisted };
   const done = grudgeRepsToday(attemptEndedAt.get(n) ?? p.gateAttemptAt?.[n] ?? 0);
   const needed = Math.max(0, GRUDGE_REPS_FOR_REMATCH - done);
   return { allowed: needed === 0, grudgeRepsNeeded: needed, offerAssisted };
@@ -482,5 +491,5 @@ export function dominantTags(steps: readonly StepResult[]): ErrorTag[] {
 
 /** Items behind the Grudge List, for the view. */
 export function grudgeItems(): string[] {
-  return Array.from(new Set(store.progress.value.grudge.map((k) => parseCardKey(k).itemId)));
+  return Array.from(new Set(grudgeKeys().map((k) => parseCardKey(k).itemId)));
 }

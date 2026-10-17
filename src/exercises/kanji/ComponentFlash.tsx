@@ -7,7 +7,8 @@
  * through `<TextAnswer>`. An "I meant that" override reports
  * `correct:true, selfRating:3`, and when three distractors are at hand the
  * Judge is asked right away (design 05 §6). The `hint` is the writer's
- * visual cue; showing it before answering counts as a hint (Hard ceiling).
+ * visual cue; showing it before answering counts as a hint (Hard ceiling);
+ * the frame's `?` / Hint button shows it too.
  * Latency is measured with `store.now()` from mount to the answer.
  */
 import type { JSX } from 'preact';
@@ -15,6 +16,7 @@ import { useMemo, useRef, useState } from 'preact/hooks';
 import type { ComponentDef, ContentItem } from '@/content/types';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { normalizeEn } from '@/shared/jp';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
 import { attempt, gradeChoice, gradeEn } from '../check';
@@ -90,6 +92,8 @@ export function ComponentFlash(p: ExerciseProps): JSX.Element {
     setHintShown(true);
     p.onHint();
   };
+  // The frame's `?` / Hint button shows the writer's cue (hint-only set: ChoiceGrid / TextAnswer keep their keys).
+  useExerciseKeys({ onHint: def?.hint && phase === 'answer' && !hintShown ? showHint : undefined });
 
   const onPick = (i: number): void => {
     if (picked !== undefined || phase !== 'answer') return;

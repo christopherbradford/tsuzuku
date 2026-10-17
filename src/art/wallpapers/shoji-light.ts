@@ -199,7 +199,8 @@ export const spec: WallpaperSpec = {
     const safe = safeRect(size, 0);
     const last = panels[panels.length - 1]!;
     const plaqueW = phone ? 96 : 72;
-    const nameSize = fitSize(data.nameKana, plaqueW * 0.6, safe.h * 0.36, { vertical: true, min: 16, max: phone ? 54 : 42 });
+    // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+    const nameSize = fitSize(data.nameKana, plaqueW * 0.6, safe.h * 0.36, { vertical: true, max: phone ? 54 : 42 });
     const chars = Array.from(data.nameKana).length;
     const plaqueH = nameSize * (1 + (chars - 1) * 1.12) + nameSize * 1.4;
     const px = last.box.x + last.box.w - frame - plaqueW - (phone ? 30 : 24);

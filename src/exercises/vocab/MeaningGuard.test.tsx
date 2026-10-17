@@ -7,7 +7,7 @@ import type { AttemptResult, ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
 import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { card, makeTestStore } from '@/store/testing';
-import { MeaningGuard, correctChoice, fogFor, meta, wordRuby } from './MeaningGuard';
+import { MeaningGuard, correctChoice, fogFor, meta, readingHidden, wordRuby } from './MeaningGuard';
 
 let root: HTMLDivElement;
 let clock = 1_000_000;
@@ -230,5 +230,38 @@ describe('helpers', () => {
     expect(correctChoice(['tasty', 'bitter'], OISHII, {})).toBe(0);
     expect(correctChoice(['tasty', 'delicious'], OISHII, { answer: 'tasty' })).toBe(0);
     expect(correctChoice(['Tasty', 'delicious'], OISHII, { accept: ['tasty'] })).toBe(1);
+  });
+});
+
+describe('frame hint key', () => {
+  it('readingHidden: a kana-only word has nothing to show; off / tap hide the reading; fog only when the kanji core is fogged', () => {
+    expect(readingHidden(MIZU, 'always')).toBe(false);
+    expect(readingHidden(MIZU, 'off')).toBe(true);
+    expect(readingHidden(MIZU, 'tap')).toBe(true);
+    expect(readingHidden(MIZU, 'fog')).toBe(true); // 水#read is mature in this store
+    expect(readingHidden(NOMU, 'fog')).toBe(false); // 飲#read is young
+    expect(readingHidden({ ...MIZU, word: 'みず' }, 'off')).toBe(false);
+  });
+
+  it("the frame's ? / Hint button shows the reading under the word while it is hidden (the same hint as a fog tap); nothing is on offer with furigana always", () => {
+    const p = props({ furigana: 'off' });
+    mount(p, true);
+    expect(q('.vocab__kana')).toBeNull();
+    expect(q('.exercise-frame__hint')).not.toBeNull();
+    key('?');
+    expect(q('.vocab__kana')?.textContent).toBe('みず');
+    expect(p.onHint).toHaveBeenCalledTimes(1);
+    expect(q('.exercise-frame__hint')).toBeNull();
+    key('?');
+    expect(p.onHint).toHaveBeenCalledTimes(1);
+    act(() => cells()[1]?.click());
+    expect(result(p)).toMatchObject({ correct: true, hintUsed: true });
+
+    const plain = props();
+    mount(plain, true);
+    expect(q('.exercise-frame__hint')).toBeNull();
+    key('?');
+    expect(plain.onHint).not.toHaveBeenCalled();
+    expect(q('.vocab__kana')).toBeNull();
   });
 });

@@ -294,7 +294,8 @@ export const spec: WallpaperSpec = {
     texts.push(...tategakiLayers({ text: S.koiCaption, x: margin + capSize / 2, y: top, size: capSize, font: FONTS.brush, fill: KIN }));
     const small = phone ? 30 : 24;
     texts.push({ text: `${kanji.length}${S.kanjiUnit}`, x: margin + capSize / 2, y: top + capSize * (1 + 2.24) + small * 1.6, size: small, font: FONTS.mincho, fill: WASHI, anchor: 'middle', opacity: 0.85, lang: 'ja' });
-    const nameSize = fitSize(data.nameKana, phone ? 64 : 52, safe.h * 0.42, { vertical: true, min: 18, max: phone ? 56 : 44 });
+    // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+    const nameSize = fitSize(data.nameKana, phone ? 64 : 52, safe.h * 0.42, { vertical: true, max: phone ? 56 : 44 });
     texts.push(...tategakiLayers({ text: data.nameKana, x: w - margin - nameSize / 2, y: top, size: nameSize, font: FONTS.mincho, fill: WASHI }));
     texts.push({ text: eraDate(data.date), x: w - margin, y: safe.y + safe.h - (phone ? 56 : 44), size: small, font: FONTS.mincho, fill: WASHI, anchor: 'end', opacity: 0.8, lang: 'ja' });
 

@@ -6,16 +6,19 @@
  * the store emits `backup:exported` and counts `stats.exports`. Import: a
  * file picker → `previewImportBlob()` → a diff summary (streak max, XP max,
  * collections union, cards newer-wins, ledger union) → Merge, or Replace
- * after a confirm → `applyImport()` → reload hint. An unreadable file shows
- * one calm line and changes nothing; so does an import that throws while
- * applying (the page returns to idle with Export and Choose-file enabled
- * instead of staying inert). The storage meter mirrors `store.storage`.
+ * after a confirm → `applyImport()` → reload hint. A file over
+ * `IMPORT_MAX_BYTES` is refused by its size before a byte is read (the
+ * store's own `importTooLarge` line, so the page and `previewImportBlob`
+ * agree). An unreadable file shows one calm line and changes nothing; so does
+ * an import that throws while applying (the page returns to idle with Export
+ * and Choose-file enabled instead of staying inert). The storage meter
+ * mirrors `store.storage`.
  */
 import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
 import { href, type Route } from '@/shared/routes';
 import { epochDay, isoDate } from '@/shared/time';
-import { CEILING_BYTES, applyImport, exportSave, previewImportBlob, store, type ImportPreview } from '@/store';
+import { CEILING_BYTES, IMPORT_MAX_BYTES, STORE_STRINGS, applyImport, exportSave, previewImportBlob, store, type ImportPreview } from '@/store';
 import { useDialogFocus } from '../use-dialog-focus';
 import { S, fmt, num } from './strings';
 import './pages.css';
@@ -198,6 +201,12 @@ export default function BackupPage(p: BackupPageProps): JSX.Element {
     setErrors([]);
     setStatus('');
     setReplaceAsk(false);
+    if (file.size > IMPORT_MAX_BYTES) {
+      // Far beyond any backup: refuse on the size alone, before the reader (or a gunzip) touches it.
+      setErrors([STORE_STRINGS.importTooLarge]);
+      setPhase({ kind: 'idle' });
+      return;
+    }
     setPhase({ kind: 'reading' });
     try {
       const preview = await previewImportBlob(file);

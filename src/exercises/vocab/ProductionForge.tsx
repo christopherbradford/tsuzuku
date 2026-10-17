@@ -9,7 +9,8 @@
  * word, kana, altForms). Kana-only is Good through Orange; from Green it is
  * Hard once the word's kanji `read` cards are ≥ 7 d (`params.kanaOnlyPolicy`,
  * else computed here with `kanaOnlyPolicyFor`). A particle slip is a Block
- * tagged `particle`, never a fail. 「Show the first kana」 is a hint. A
+ * tagged `particle`, never a fail. 「Show the first kana」 is a hint (also
+ * behind the frame's `?` / Hint button until shown). A
  * missing or broken `params.blank` is re-located with `findBlank` from
  * `@/learn` (the planner's rule: 〜-affixed words inside their host word,
  * conjugated stems), so the drill and the planner agree on the blank.
@@ -80,8 +81,6 @@ function ProductionForgeBody(p: ExerciseProps): JSX.Element {
   const policy = item ? kanaOnlyPolicy(item, p.step.params) : 'good';
   const prompt = item ? forgePrompt(item, p.step.params) : null;
 
-  useDrillKeys(root, {});
-
   const finish = (r: AttemptResult): void => {
     if (fired.current) return;
     fired.current = true;
@@ -94,6 +93,8 @@ function ProductionForgeBody(p: ExerciseProps): JSX.Element {
     setFirstKana(true);
     p.onHint();
   };
+  // Digits / Enter reach the widget; the frame's `?` / Hint button shows the first kana (withdrawn once shown).
+  useDrillKeys(root, { onHint: item && prompt && !firstKana && done === null ? hint : undefined });
 
   const submit = (r: TextAnswerResult): void => {
     finish(attempt({ ms: ms(), correct: r.correct, nearMiss: r.nearMiss, errorTags: r.tags, answer: r.given, hintUsed: firstKana }));

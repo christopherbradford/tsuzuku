@@ -3,6 +3,8 @@
  * meaning silently → Reveal shows the J-J definition (`definitionJa`; the
  * English sits behind a tap; without a definition the English stands in,
  * said plainly) → self-rate Again / Hard / Good (keys 1–3, Enter reveals).
+ * During recall the frame's `?` / Hint button shows the reading under the
+ * word while it is hidden — the same hint as a fog tap (Hard ceiling).
  *
  * Judge mechanic: a deterministic sample of self-rated Goods —
  * `shouldJudge(seed, cardKey, reps, judgeRate(honesty, checks))`, 25 % at
@@ -25,7 +27,7 @@ import { store } from '@/store';
 import { attempt } from '../check';
 import { S as X } from '../strings';
 import { MissingItem, missingResult, useLatency } from '../kana/KanaFlash';
-import { VocabAfter, WordHead, isVocabItem, vocabPoolFrom } from './MeaningGuard';
+import { VocabAfter, WordHead, isVocabItem, readingHidden, vocabPoolFrom } from './MeaningGuard';
 import { S } from './strings';
 import './vocab.css';
 
@@ -73,6 +75,8 @@ function MeaningJudgeBody(p: ExerciseProps): JSX.Element {
   phaseRef.current = phase;
   const recallMs = useRef(0);
   const hinted = useRef(false);
+  const [hintTaken, setHintTaken] = useState(false);
+  const [readingShown, setReadingShown] = useState(false);
   const fired = useRef(false);
   const def = item?.definitionJa;
 
@@ -111,18 +115,28 @@ function MeaningJudgeBody(p: ExerciseProps): JSX.Element {
       });
   };
 
+  /** A fogged reading tapped open: the hint is taken (Hard ceiling). */
+  const hint = (): void => {
+    if (hinted.current || fired.current) return;
+    hinted.current = true;
+    setHintTaken(true);
+    p.onHint();
+  };
+  /** The frame's `?` / Hint button during recall: show the reading under the word — the same hint as a fog tap. */
+  const showReading = (): void => {
+    if (hinted.current || fired.current || phaseRef.current !== 'recall') return;
+    setReadingShown(true);
+    hint();
+  };
+  const canShowReading = !!item && phase === 'recall' && !hintTaken && readingHidden(item, p.furigana);
+
   useExerciseKeys({
     onSubmit: reveal,
     onChoice: (i) => {
       if (i === 0 || i === 1 || i === 2) rate((i + 1) as SelfRating);
     },
+    onHint: canShowReading ? showReading : undefined,
   });
-
-  const hint = (): void => {
-    if (hinted.current || fired.current) return;
-    hinted.current = true;
-    p.onHint();
-  };
 
   if (!item) return <MissingItem onContinue={() => finish(missingResult(ms()))} />;
 
@@ -136,7 +150,7 @@ function MeaningJudgeBody(p: ExerciseProps): JSX.Element {
   return (
     <div class="drill meaning-judge" data-exercise="meaning-judge" data-phase={phase}>
       <p class="drill__prompt">{phase === 'recall' ? X.recallSilently : X.rateYourself}</p>
-      <WordHead item={item} mode={p.furigana} onReveal={hint} kana={phase !== 'recall'} />
+      <WordHead item={item} mode={p.furigana} onReveal={hint} kana={phase !== 'recall' || readingShown} />
 
       {phase === 'recall' ? (
         <div class="drill__row">

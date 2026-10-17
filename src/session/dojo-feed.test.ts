@@ -93,6 +93,10 @@ describe('welcome and resume', () => {
     expect(resumeInfo()).toEqual({ stepsLeft: 3 });
     store.session.save({ schema: SESSION_SCHEMA, plan, cursor: 5, results: [], kiai: kiaiInit() });
     expect(resumeInfo()).toBeUndefined();
+    // a snapshot whose step key is not a card key (hand-edited save) is never offered
+    const garbage = { ...plan, steps: plan.steps.map((s, i) => (i === 0 ? { ...s, cardKey: 'v-n5-0001' as CardKey } : s)) };
+    store.session.save({ schema: SESSION_SCHEMA, plan: garbage, cursor: 2, results: [], kiai: kiaiInit() });
+    expect(resumeInfo()).toBeUndefined();
   });
 });
 

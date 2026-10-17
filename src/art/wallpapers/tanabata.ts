@@ -222,7 +222,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   ];
 
   // Captions.
-  const nameSize = fitSize(data.nameKana, phone ? w * 0.55 : w * 0.3, phone ? 56 : 48, { min: 24, max: phone ? 56 : 48 });
+  // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+  const nameSize = fitSize(data.nameKana, phone ? w * 0.55 : w * 0.3, phone ? 56 : 48, { max: phone ? 56 : 48 });
   const nameY = phone ? safe.y + safe.h - 70 : h * 0.9;
   texts.push({ text: data.nameKana, x: phone ? w * 0.08 : w * 0.05, y: nameY, size: nameSize, font: FONTS.mincho, fill: WASHI, opacity: 0.9, lang: 'ja' });
   texts.push({ text: eraDate(data.date), x: phone ? w * 0.08 : w * 0.05, y: nameY + (phone ? 40 : 34), size: phone ? 24 : 22, font: FONTS.mincho, fill: WASHI, opacity: 0.65, lang: 'ja' });

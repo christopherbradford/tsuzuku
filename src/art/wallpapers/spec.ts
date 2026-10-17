@@ -313,6 +313,16 @@ export function safeZoneViolations(c: Composition, size: WallpaperSize): TextLay
   return c.texts.filter((t) => !inSafeZone(t, size));
 }
 
+/** Texts whose estimated bounds (`layerBounds`) leave the canvas; rotated layers are skipped (their box depends on the angle). */
+export function canvasViolations(c: Composition, size: WallpaperSize): TextLayer[] {
+  const { w, h } = sizeOf(size);
+  return c.texts.filter((t) => {
+    if (t.rotate) return false;
+    const b = layerBounds(t);
+    return b.x < -0.01 || b.y < -0.01 || b.x + b.w > w + 0.01 || b.y + b.h > h + 0.01;
+  });
+}
+
 /** The root element declares the expected canvas (`width`/`height`/`viewBox` = `SIZES[size]`). */
 export function hasCanvasSize(c: Composition, size: WallpaperSize): boolean {
   const vb = viewBoxOf(c.svg);

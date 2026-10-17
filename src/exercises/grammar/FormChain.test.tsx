@@ -4,6 +4,7 @@ import { FIXTURE, G, V } from '@/content/fixtures';
 import type { ConjForm, GrammarItem, VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { makeTestStore } from '@/store/testing';
 import { CHAIN_LENGTH, FormChain, buildChain, chainResult, headWordOf, inferHeadWord, meta, type LinkLog } from './FormChain';
 
@@ -285,5 +286,70 @@ describe('<FormChain>', () => {
     expect(root.textContent).toContain('犬');
     act(() => (q('.hanko') as HTMLButtonElement).click());
     expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
+  });
+});
+
+describe('head word from the step (grammar prod cards: params.pos / params.accepts)', () => {
+  const MASU = FIXTURE.items[G.ます] as GrammarItem;
+  /** 帰る is godan despite its る-tail: 帰ります · 帰って · 帰らない · 帰った · 帰れる */
+  const KAERU = ['帰ります', '帰って', '帰らない', '帰った', '帰れる'];
+
+  it('inferHeadWord takes params.pos as given; without it the answers decide, uniquely (a godan る-verb is not read as ichidan; 〜ば alone is ambiguous; する is irregular)', () => {
+    expect(inferHeadWord({ sentence: '帰る', kana: 'かえる', pos: 'v5', forms: ['masu'] })).toEqual({ word: '帰る', kana: 'かえる', pos: 'v5' });
+    expect(inferHeadWord({ sentence: '帰る', kana: 'かえる', forms: ['masu'], answers: ['帰ります'] })).toEqual({ word: '帰る', kana: 'かえる', pos: 'v5' });
+    expect(inferHeadWord({ sentence: '切る', kana: 'きる', forms: ['te'], answers: ['切って'] })?.pos).toBe('v5');
+    expect(inferHeadWord({ sentence: '着る', kana: 'きる', forms: ['te'], answers: ['着て'] })?.pos).toBe('v1');
+    expect(inferHeadWord({ sentence: '勉強する', kana: 'べんきょうする', forms: ['masu'], answers: ['勉強します'] })?.pos).toBe('v-irr');
+    expect(inferHeadWord({ sentence: '食べる', kana: 'たべる', forms: ['ba'], answers: ['食べれば'] })).toBeNull(); // ichidan and godan agree: no guess
+    expect(inferHeadWord({ sentence: '食べる', kana: 'たべる', forms: ['ba', 'masu'], answers: ['食べれば', '食べます'] })?.pos).toBe('v1');
+  });
+
+  it('buildChain conjugates every link from params.pos + kana, so 帰る / 切る are godan and 着る ichidan on the same kana; a params.accepts row is graded as given', () => {
+    const kaeru = buildChain(null, { sentence: '帰る', kana: 'かえる', pos: 'v5', forms: [...FORMS] });
+    expect(kaeru?.map((l) => l.accept[0])).toEqual(KAERU);
+    expect(kaeru?.map((l) => l.accept[1])).toEqual(['かえります', 'かえって', 'かえらない', 'かえった', 'かえれる']);
+    expect(kaeru?.[4]?.accept).not.toContain('帰られる');
+    expect(buildChain(null, { sentence: '切る', kana: 'きる', pos: 'v5', forms: ['masu'] })?.[0]?.accept).toEqual(['切ります', 'きります']);
+    expect(buildChain(null, { sentence: '着る', kana: 'きる', pos: 'v1', forms: ['masu'] })?.[0]?.accept).toEqual(['着ます', 'きます']);
+    const rows = buildChain(null, { sentence: '帰る', kana: 'かえる', pos: 'v5', forms: ['masu', 'potential'], answers: ['帰ります', '帰れる'], accepts: [['帰ります', 'かえります'], ['帰れる', 'かえれる', '帰られる']] });
+    expect(rows?.[1]?.accept).toEqual(['帰れる', 'かえれる', '帰られる']);
+  });
+
+  it('on a grammar prod card with params.pos the chain names the group and grades the kana of every link exactly (5/5 Good)', () => {
+    const params = { forms: [...FORMS] as ConjForm[], answers: KAERU, pos: 'v5' as const, sentence: '帰る', kana: 'かえる', promptEn: 'to return', accepts: KAERU.map((a) => [a]) };
+    const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    mount(pr);
+    expect(q('[data-dictionary="true"]')?.textContent).toBe('帰る');
+    expect(root.textContent).toContain('Group 1 verb');
+    for (const t of ['kaerimasu', 'kaette', 'kaeranai', 'kaetta', 'kaereru']) answer(t);
+    expect(states()).toEqual(['right', 'right', 'right', 'right', 'right']);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [], answer: 'かえります / かえって / かえらない / かえった / かえれる' });
+  });
+
+  it("the frame's ? key opens the current form's rule once (hintUsed), then the Hint button is withdrawn until the next form", () => {
+    const pr = props();
+    act(() =>
+      render(
+        <ExerciseFrame step={pr.step} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => 0} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <FormChain {...pr} />
+        </ExerciseFrame>,
+        root,
+      ),
+    );
+    const press = (k: string): void => {
+      act(() => {
+        document.body.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+      });
+    };
+    expect(q('.exercise-frame__hint')).not.toBeNull();
+    press('?');
+    expect(q('[data-hint="true"]')).not.toBeNull();
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    expect(q('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    answer('tabemasu');
+    expect(q('[data-hint="true"]')).toBeNull();
+    expect(q('.exercise-frame__hint')).not.toBeNull(); // the next form has its own rule to offer
   });
 });

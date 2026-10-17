@@ -3,10 +3,11 @@ import type { ContentLoader } from '../../content/loader';
 import { DRILL_IDS, type CardKey, type GrammarItem } from '../../content/types';
 import { BADGE_IDS } from '../../shared/catalog';
 import { cardKey } from '../../shared/ids';
-import type { CardTuple } from '../../shared/store-types';
+import { NAME_MAX_GLYPHS, type CardTuple } from '../../shared/store-types';
+import { WRITING_PREFIX } from '../../shared/writing';
 import { epochDay } from '../../shared/time';
 import { card, DEFAULT_TEST_NOW, makeTestStore } from '../../store/testing';
-import { isWallpaperData, masteredItems, normalizeData, sampleData, validateData, wallpaperData } from './data';
+import { isWallpaperData, masteredItems, normalizeData, sampleData, SENTENCE_MAX_GLYPHS, validateData, wallpaperData } from './data';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const DAY_MS = 86_400_000;
@@ -160,6 +161,38 @@ describe('wallpaperData', () => {
     expect(d.minutes90.every((m) => m === 0)).toBe(true);
     expect(normalizeData({ nameKana: '   ' }).nameKana).toBe('無名');
   });
+  it('writing sentences come from the 作文: bookmarks (prefix stripped, other bookmarks ignored); a Studio override still wins', async () => {
+    const s = await makeTestStore({
+      save: { bookmarks: [`${WRITING_PREFIX}毎朝、駅まで歩きます。`, '二つの言えなかったこと', `${WRITING_PREFIX}雨の日は本を読みます。`, '作文のない栞', `${WRITING_PREFIX}   `] },
+    });
+    const d = await wallpaperData({}, { store: s, content: createFakeLoader() });
+    expect(d.writingSentences).toEqual(['毎朝、駅まで歩きます。', '雨の日は本を読みます。']);
+    const o = await wallpaperData({ writingSentences: ['上書きの一文。'] }, { store: s, content: createFakeLoader() });
+    expect(o.writingSentences).toEqual(['上書きの一文。']);
+    const none = await wallpaperData({}, { store: await makeTestStore({ save: { bookmarks: ['栞だけ'] } }), content: createFakeLoader() });
+    expect(none.writingSentences).toEqual([]);
+  });
+  it('a perfect dictation on the profile reaches the Waveform (trimmed); absent → undefined', async () => {
+    const s = await makeTestStore({ save: { profile: { dictatedSentence: ' 継続は力なり。 ' } } });
+    const d = await wallpaperData({}, { store: s, content: createFakeLoader() });
+    expect(d.dictatedSentence).toBe('継続は力なり。');
+    const o = await wallpaperData({ dictatedSentence: '上書き。' }, { store: s, content: createFakeLoader() });
+    expect(o.dictatedSentence).toBe('上書き。');
+    expect((await wallpaperData({}, { store: await makeTestStore(), content: createFakeLoader() })).dictatedSentence).toBeUndefined();
+  });
+  it('an imported save with a 40-glyph name is cut to NAME_MAX_GLYPHS (code points, so a surrogate pair is never split)', async () => {
+    const long = 'あいうえおかきくけこ'.repeat(4);
+    expect(Array.from(long).length).toBe(40);
+    const s = await makeTestStore({ save: { profile: { name: long, nameKana: '' } } });
+    const d = await wallpaperData({}, { store: s, content: createFakeLoader() });
+    expect(d.nameKana).toBe(Array.from(long).slice(0, NAME_MAX_GLYPHS).join(''));
+    expect(Array.from(d.nameKana).length).toBe(NAME_MAX_GLYPHS);
+    const astral = '𠮷'.repeat(40);
+    const cut = normalizeData({ nameKana: `  ${astral}  ` }).nameKana;
+    expect(cut).toBe('𠮷'.repeat(NAME_MAX_GLYPHS));
+    expect(Array.from(cut).length).toBe(NAME_MAX_GLYPHS);
+    expect(normalizeData({ nameKana: ' ハナ ' }).nameKana).toBe('ハナ');
+  });
 });
 
 describe('sampleData', () => {
@@ -208,5 +241,17 @@ describe('validateData / normalizeData', () => {
     expect(fixed.badgesInOrder).toEqual(['seven']);
     expect(fixed.gojuonMs).toEqual({ あ: 500 });
     expect(fixed.station).toBe(53);
+  });
+  it('sentences are trimmed, emptied when blank and cut to SENTENCE_MAX_GLYPHS', () => {
+    const long = 'あ'.repeat(SENTENCE_MAX_GLYPHS + 10);
+    const n = normalizeData({ sentenceOfChoice: ` ${long} `, dictatedSentence: long, writingSentences: [long, '   ', ' 短い。 ', 42 as never] });
+    expect(n.sentenceOfChoice).toBe('あ'.repeat(SENTENCE_MAX_GLYPHS));
+    expect(n.dictatedSentence).toBe('あ'.repeat(SENTENCE_MAX_GLYPHS));
+    expect(n.writingSentences).toEqual([]); // a non-string entry invalidates the list, as before
+    const w = normalizeData({ writingSentences: [long, '   ', ' 短い。 '] }).writingSentences;
+    expect(w).toEqual(['あ'.repeat(SENTENCE_MAX_GLYPHS), '短い。']);
+    expect(normalizeData({ sentenceOfChoice: '   ', dictatedSentence: '' }).sentenceOfChoice).toBeUndefined();
+    expect(normalizeData({ dictatedSentence: '  ' }).dictatedSentence).toBeUndefined();
+    expect(validateData(n)).toEqual([]);
   });
 });

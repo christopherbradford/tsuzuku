@@ -13,8 +13,9 @@
  *    permutation of the expected form always adds `word-order`.
  *  · Grading goes through `<TextAnswer mode="ja">` (equivalence → particle
  *    slip → near miss → wrong), so づ/ず, long vowels and katakana folds are
- *    handled centrally. Hint reveals the pattern or the first two characters
- *    and caps the rep at Hard (`hintUsed`).
+ *    handled centrally. Hint (the button or the frame's `?` / Hint button)
+ *    reveals the pattern or the first two characters and caps the rep at
+ *    Hard (`hintUsed`).
  * Facet `grammar:prod`; keys `kana`.
  */
 import type { JSX } from 'preact';
@@ -25,6 +26,7 @@ import { conjugate, isConjugable } from '@/learn';
 import type { ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { normalizeAnswer } from '@/shared/jp';
 import type { StepParams } from '@/shared/session-types';
+import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
 import { store } from '@/store';
 import { attempt } from '../check';
@@ -142,6 +144,8 @@ export function Transform(p: ExerciseProps): JSX.Element {
     setHint(true);
     p.onHint();
   };
+  // The frame's `?` / Hint button (hint-only set: the TextAnswer keeps Enter); withdrawn once used.
+  useExerciseKeys({ onHint: !hint && !done && accept.length > 0 ? useHint : undefined });
 
   const hintText = isGrammar(item) ? `${S2.hintPattern}: ${item.pattern}` : `${S2.hintStartsWith} ${Array.from(display).slice(0, 2).join('')}…`;
 

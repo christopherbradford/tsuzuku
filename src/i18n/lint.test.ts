@@ -11,6 +11,12 @@
  *     contract tier (docs/module-plan.json owners + [CONTRACT] entries +
  *     ARCHITECTURE §0 paths). Exceptions: src/main.tsx, src/app/pages.ts.
  *     Type-only imports are erased at build and are allowed.
+ *  5. Focus: no `autoFocus` attribute on an intrinsic element (`<button>`,
+ *     `<input>`, `<textarea>`, `<select>`, `<a>`) in a `.tsx`, multi-line JSX
+ *     included — Chrome ignores it once anything on the page was focused.
+ *     Use `useAutoFocus(ref, deps)` (shared/ui/use-auto-focus.ts). The
+ *     `autoFocus` prop of `<KanaInput>` / `<TextAnswer>` is fine: those
+ *     components focus imperatively.
  *
  * The lints are pure functions over {path, text}; inline fixtures prove each
  * one fails on a deliberate violation, then the real tree must come up clean.
@@ -129,8 +135,8 @@ export function stripCommentsAndStrings(code: string, keepStrings = false): stri
       lastSignificant = '`';
       continue;
     }
-    if (c === '/' && next !== undefined && next !== '/' && next !== '*' && /[(,=:[!&|?{};\n]|^$/.test(lastSignificant)) {
-      // regex literal
+    if (c === '/' && next !== undefined && next !== '/' && next !== '*' && !(next === '>' && lastSignificant === '}') && /[(,=:[!&|?{};\n]|^$/.test(lastSignificant)) {
+      // regex literal (`onClick={f} />` is a self-closing tag, not one)
       let j = i + 1;
       let inClass = false;
       while (j < n && code[j] !== '\n') {
@@ -315,6 +321,42 @@ export function importViolations(file: SourceFile, own: Ownership): string[] {
   return hits;
 }
 
+/* ── 5. no autoFocus on intrinsic elements ───────────────────────────── */
+
+const INTRINSIC_TAG = /<(button|input|textarea|select|a)\b/g;
+const AUTO_FOCUS = /\bauto[Ff]ocus\b/;
+
+/**
+ * The attribute text of the opening tag whose name ends at `start`: up to the
+ * first `>` outside `{…}`, with the `{…}` expressions blanked, so multi-line
+ * JSX and `onClick={() => …}` props are read whole and only attribute names
+ * (not `title={S.autoFocus}`) are seen.
+ */
+function tagAttributes(code: string, start: number): string {
+  let depth = 0;
+  let out = '';
+  for (let i = start; i < code.length; i++) {
+    const c = code[i]!;
+    if (c === '{') depth++;
+    else if (c === '}') depth = Math.max(0, depth - 1);
+    else if (c === '>' && depth === 0) return out;
+    out += depth === 0 ? c : ' ';
+  }
+  return out;
+}
+
+export function intrinsicAutoFocus(file: SourceFile): string[] {
+  if (!file.path.endsWith('.tsx')) return [];
+  const code = stripCommentsAndStrings(file.text);
+  const hits: string[] = [];
+  for (const m of code.matchAll(INTRINSIC_TAG)) {
+    const at = (m.index ?? 0) + m[0].length;
+    if (!AUTO_FOCUS.test(tagAttributes(code, at))) continue;
+    hits.push(`${file.path}:${lineAt(code, m.index ?? 0)}  <${m[1]}> autoFocus — use useAutoFocus(ref, deps) from shared/ui/use-auto-focus`);
+  }
+  return hits;
+}
+
 /* ── fixtures: each lint must catch a deliberate violation ───────────── */
 
 const PLAN = readPlan();
@@ -329,7 +371,15 @@ const BAD: SourceFile = {
     "const label = 'Rest. Reload.'; // Hurry is only in a comment",
     'export default function Bad(): JSX.Element {',
     '  const seed = Math.random();',
-    '  return <div title={label}>Hello there my friend</div>;',
+    '  return (',
+    '    <div title={label}>',
+    '      Hello there my friend',
+    '      <button type="button" onClick={() => seed}',
+    '        autoFocus>',
+    '        Go',
+    '      </button>',
+    '    </div>',
+    '  );',
     '}',
   ].join('\n'),
 };
@@ -340,10 +390,27 @@ const GOOD: SourceFile = {
     "import { rngFor } from '@/shared/hash';",
     "import { S } from '../strings';",
     "import { ChoiceGrid } from '../ChoiceGrid';",
+    "import { TextAnswer } from '../TextAnswer';",
+    "import { KanaInput } from '@/shared/ui/KanaInput';",
+    "import { useAutoFocus } from '@/shared/ui/use-auto-focus';",
     'export function Good(p: { n: number }): JSX.Element {',
     '  const rows = useMemo<Array<string | null>>(() => [], []);',
     '  const t = p.n > 3 ? S.a : S.b;',
-    '  return <div lang="ja">{S.title}<span>{t}</span> 一本 <b>XP</b> 12 reps</div>;',
+    '  const ref = useRef<HTMLButtonElement>(null);',
+    '  useAutoFocus(ref, [p.n]);',
+    '  return (',
+    '    <div lang="ja">',
+    '      {S.title}<span>{t}</span> 一本 <b>XP</b> 12 reps',
+    '      <button type="button" onClick={() => p.n} ref={ref} />',
+    '      <KanaInput autoFocus />',
+    '      <TextAnswer',
+    '        autoFocus',
+    '        onSubmit={() => p.n}',
+    '      />',
+    '      <a href={S.a}>{S.b}</a>',
+    '      <article data-n={p.n > 3}>{S.b}</article>',
+    '    </div>',
+    '  );',
     '}',
   ].join('\n'),
 };
@@ -366,6 +433,9 @@ describe('lint fixtures', () => {
     const imports = importViolations(BAD, OWN);
     expect(imports).toHaveLength(1);
     expect(imports[0]).toContain('@/session/Hud');
+    const focus = intrinsicAutoFocus(BAD);
+    expect(focus).toHaveLength(1);
+    expect(focus[0]).toContain('<button> autoFocus');
   });
 
   it('passes a well-behaved module (contract imports, own folder, strings via S, generics)', () => {
@@ -373,6 +443,19 @@ describe('lint fixtures', () => {
     expect(clockUse(GOOD)).toEqual([]);
     expect(defaultExport(GOOD)).toEqual([]);
     expect(importViolations(GOOD, OWN)).toEqual([]);
+    expect(intrinsicAutoFocus(GOOD)).toEqual([]);
+  });
+
+  it('intrinsicAutoFocus reads multi-line tags and arrow props, and ignores component autoFocus props', () => {
+    const file = (text: string): SourceFile => ({ path: 'src/exercises/kana/X.tsx', text });
+    expect(intrinsicAutoFocus(file('<input\n  type="text"\n  onInput={(e) => set(e.currentTarget.value)}\n  autoFocus\n/>'))).toHaveLength(1);
+    expect(intrinsicAutoFocus(file('<textarea autofocus onInput={f} />'))).toHaveLength(1);
+    expect(intrinsicAutoFocus(file('<a href={x} autoFocus>{y}</a>'))).toHaveLength(1);
+    expect(intrinsicAutoFocus(file('<select disabled={a > b} autoFocus>{opts}</select>'))).toHaveLength(1);
+    expect(intrinsicAutoFocus(file('<button onClick={f} />\n<KanaInput autoFocus />'))).toEqual([]);
+    expect(intrinsicAutoFocus(file('<button title={S.autoFocus} />'))).toEqual([]);
+    expect(intrinsicAutoFocus(file('<article autoFocus /><abbr autoFocus />'))).toEqual([]);
+    expect(intrinsicAutoFocus({ path: 'src/x/strings.ts', text: '<button autoFocus />' })).toEqual([]);
   });
 
   it('stripCommentsAndStrings keeps line numbers and blanks literals', () => {
@@ -413,5 +496,10 @@ describe('src/** architecture lint', () => {
   it('cross-group imports target only the contract tier', () => {
     const hits = files.flatMap((f) => importViolations(f, OWN));
     expect(hits, `import rule:\n${hits.join('\n')}`).toEqual([]);
+  });
+
+  it('no autoFocus attribute on intrinsic elements (useAutoFocus(ref, deps) from shared/ui/use-auto-focus)', () => {
+    const hits = files.flatMap(intrinsicAutoFocus);
+    expect(hits, `autoFocus on intrinsic elements:\n${hits.join('\n')}`).toEqual([]);
   });
 });

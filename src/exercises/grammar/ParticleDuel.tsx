@@ -6,7 +6,8 @@
  * overrides it) → fill each slot from the particle keyboard
  * は・が・を・に・で・と・へ・から・まで・より・の (`params.choices` narrows it),
  * then Check (Enter). Digits 1–9 press the first nine keys through the
- * enclosing frame. Graded with `gradeSlots`: every slot right → Good, some →
+ * enclosing frame, whose `?` / Hint button shows the point's meaning (a
+ * hint, Hard ceiling). Graded with `gradeSlots`: every slot right → Good, some →
  * Hard (Block), none → Again; every miss is tagged `particle`. Without
  * blanks the drill blanks the point's particle `clozeHints` in a rotating
  * example; a point without particle hints is shown, not tested.
@@ -194,7 +195,7 @@ export function ParticleDuel(p: ExerciseProps): JSX.Element {
     emit(gradeSlots(picked, prompt.expected, { ms: elapsed(), hintUsed: hintShown }));
   };
 
-  useExerciseKeys({ onChoice: pressKey, onSubmit: check });
+  useExerciseKeys({ onChoice: pressKey, onSubmit: check, onHint: prompt && item && phase === 'fill' && !hintShown ? showHint : undefined });
 
   if (!prompt || !item) {
     return (

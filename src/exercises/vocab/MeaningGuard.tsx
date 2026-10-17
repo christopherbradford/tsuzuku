@@ -1,7 +1,9 @@
 /**
  * TSUZUKU — 意味ガード Meaning Guard (design 04 §2): the word (furigana per
  * the learner's mode, fog hides a reading once that kanji's `read` card has
- * S ≥ 7 d; a fog tap is a hint) plus audio → four meaning choices. Exact →
+ * S ≥ 7 d; a fog tap is a hint, and so is the frame's `?` / Hint button,
+ * which shows the reading under the word while it is hidden) plus audio →
+ * four meaning choices. Exact →
  * Good, wrong → Again tagged `word-choice`. First two exposures only; the
  * planner hands the choices in `params.choices` (`learn/distractors
  * .meaningChoices`); without them the grid is built here from the loaded
@@ -10,7 +12,7 @@
  * definition with English behind a tap.
  *
  * This file also hosts the helpers the vocab drills share: `isVocabItem`,
- * `wordRuby`, `fogFor`, `vocabPoolFrom`, `speakWord`, `beltNow`,
+ * `wordRuby`, `fogFor`, `readingHidden`, `vocabPoolFrom`, `speakWord`, `beltNow`,
  * `correctChoice` (`params.answer`, then the primary gloss, before any
  * secondary meaning — so the choice the planner placed is the graded one),
  * `<WordHead>`, `<VocabAfter>`, `<Speaker>`.
@@ -18,7 +20,7 @@
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { content } from '@/content/loader';
-import { kanjiIn } from '@/content/ruby';
+import { kanjiIn, parseRuby } from '@/content/ruby';
 import type { Belt, ContentItem, VocabItem } from '@/content/types';
 import { speak } from '@/shared/audio';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
@@ -86,6 +88,18 @@ export function fogFor(base: string): boolean {
     const c = store.cards.get(`j-${ch}#read`);
     return !!c && c[1] >= FOG_READ_DAYS;
   });
+}
+
+/**
+ * Whether `<WordHead>` keeps the word's reading from the learner in `mode`
+ * (so a reveal has something to show): a kana-only word has none; `off` and
+ * `tap` hide it; `fog` hides it only when `fogFor` fogs the kanji core.
+ */
+export function readingHidden(item: VocabItem, mode: FuriganaMode): boolean {
+  if (item.kana === item.word) return false;
+  if (mode === 'always') return false;
+  if (mode === 'off' || mode === 'tap') return true;
+  return parseRuby(wordRuby(item.word, item.kana)).some((seg) => seg.reading !== null && fogFor(seg.base));
 }
 
 /** Vocab items behind `params.distractorIds`, else the item's `confusables`, that are loaded. */
@@ -236,6 +250,8 @@ function MeaningGuardBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const hinted = useRef(false);
+  const [hintTaken, setHintTaken] = useState(false);
+  const [readingShown, setReadingShown] = useState(false);
   const fired = useRef(false);
 
   const choices = useMemo<string[]>(() => {
@@ -258,8 +274,6 @@ function MeaningGuardBody(p: ExerciseProps): JSX.Element {
     void speakWord(item);
     p.onReplay();
   };
-  useDrillKeys(root, { onReplay: replay });
-
   const finish = (r: AttemptResult): void => {
     if (fired.current) return;
     fired.current = true;
@@ -272,11 +286,21 @@ function MeaningGuardBody(p: ExerciseProps): JSX.Element {
     finish(r);
   };
 
+  /** A fogged reading tapped open: the hint is taken (Hard ceiling). */
   const reveal = (): void => {
     if (hinted.current || fired.current) return;
     hinted.current = true;
+    setHintTaken(true);
     p.onHint();
   };
+  /** The frame's `?` / Hint button: show the reading under the word — the same hint as a fog tap. */
+  const showReading = (): void => {
+    if (hinted.current || fired.current) return;
+    setReadingShown(true);
+    reveal();
+  };
+  const canShowReading = !!item && !hintTaken && done === null && readingHidden(item, p.furigana);
+  useDrillKeys(root, { onReplay: replay, onHint: canShowReading ? showReading : undefined });
 
   if (!item) return <MissingItem onContinue={() => finish(missingResult(ms()))} />;
 
@@ -285,7 +309,7 @@ function MeaningGuardBody(p: ExerciseProps): JSX.Element {
   return (
     <div class="drill meaning-guard" data-exercise="meaning-guard" ref={root}>
       <p class="drill__prompt">{X.chooseMeaning}</p>
-      <WordHead item={item} mode={p.furigana} onReveal={reveal} />
+      <WordHead item={item} mode={p.furigana} onReveal={reveal} kana={readingShown} />
       <div class="drill__row drill__row--between">
         <Speaker onClick={replay} disabled={done !== null} replays={replays} />
         <span class="drill__hint">{S.replayHint}</span>

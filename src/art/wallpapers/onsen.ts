@@ -9,13 +9,14 @@
  * Layers: sky and stars → moon → ridges and cedars → ground → fence, noren,
  * lantern → rim and back stones → water with moon ripples → front stones,
  * bucket, towel → steam. Text (name on the fence sign, rest-day caption,
- * era date) is returned as TextLayers inside the phone safe zone.
+ * era date) is returned as TextLayers inside the phone safe zone; a long
+ * name is set in up to three columns and the sign widens to hold them.
  * Pure for (seed, data, size).
  */
 import { chance, hashSeed, mulberry32, pick, range, uniform } from '../../shared/hash';
 import { FOAM, INK, NIGHT, PALETTE, STONE, STONE_DARK, WASHI, darken, mix } from '../color';
 import { chaikin, TAU, type Pt } from '../geom';
-import { FONTS, eraDate, fitSize, tategakiLayers, type TextLayer } from '../jtext';
+import { FONTS, columnHeight, columnsFor, eraDate, fitSize, glyphCount, splitColumns, tategakiLayers, type TextLayer } from '../jtext';
 import { ridge } from '../noise';
 import { blur, circle, el, ellipse, g, line, linearGradient, mask, path, polyPath, polygon, radialGradient, rect, safeRect, sizeOf, svgDoc, text, turbulence, url } from '../svg';
 import type { WallpaperSpec } from './spec';
@@ -26,7 +27,8 @@ const KON_DEEP = '#1F2A6B';
 const WARM = '#FFD166';
 const WOOD = '#3B2A1E';
 const WOOD_LIGHT = '#5A4330';
-const SIGN = '#8B6B4A';
+/** Sign-board colour (exported for the sign-fit test). */
+export const SIGN = '#8B6B4A';
 const MAX_STONES = 60;
 
 export const spec: WallpaperSpec = {
@@ -112,8 +114,14 @@ export const spec: WallpaperSpec = {
     planks.push(rect(fenceL - 10, fenceTop + (fenceBottom - fenceTop) * 0.35, fenceR - fenceL + 20, 10, { fill: darken(WOOD, 0.3) }));
     body.push(g(undefined, planks));
     const sign = { x: cx - rx * 1.2, y: fenceTop + 24, w: phone ? 96 : 72, h: 0 };
-    const nameSize = fitSize(data.nameKana, sign.w * 0.6, (fenceBottom - fenceTop) * 0.85, { vertical: true, min: 14, max: phone ? 48 : 36 });
-    sign.h = nameSize * (1 + (Array.from(data.nameKana).length - 1) * 1.12) + nameSize * 1.2;
+    // A long name splits into up to three columns (right to left) and the sign widens with them, so a name at
+    // NAME_MAX_GLYPHS stays legible and inside the fence instead of a floored size running past it (review round 2).
+    const nameColumns = splitColumns(data.nameKana, Math.min(3, columnsFor(data.nameKana, 8)));
+    const longestColumn = nameColumns.reduce((a, b) => (glyphCount(b) > glyphCount(a) ? b : a), '');
+    const nameSize = fitSize(longestColumn, sign.w * 0.6, (fenceBottom - fenceTop) * 0.85, { vertical: true, max: phone ? 48 : 36 });
+    const colPitch = nameSize * 1.6;
+    sign.w += (nameColumns.length - 1) * colPitch;
+    sign.h = columnHeight(longestColumn, nameSize) + nameSize * 1.2;
     body.push(el('rect', { x: sign.x, y: sign.y, width: sign.w, height: sign.h, rx: 3, fill: SIGN, stroke: darken(SIGN, 0.45), 'stroke-width': 3 }));
     // noren on the right end of the fence
     const nx = cx + rx * 0.72;
@@ -205,7 +213,8 @@ export const spec: WallpaperSpec = {
     const texts: TextLayer[] = [];
     const safe = safeRect(size, 0);
     const margin = phone ? 84 : 72;
-    texts.push(...tategakiLayers({ text: data.nameKana, x: sign.x + sign.w / 2, y: sign.y + nameSize * 0.6, size: nameSize, font: FONTS.mincho, fill: INK }));
+    const firstColX = sign.x + sign.w / 2 + ((nameColumns.length - 1) * colPitch) / 2;
+    texts.push(...tategakiLayers({ text: data.nameKana, x: firstColX, y: sign.y + nameSize * 0.6, size: nameSize, columns: nameColumns.length, font: FONTS.mincho, fill: INK }));
     const small = phone ? 30 : 24;
     const bottomY = safe.y + safe.h - (phone ? 56 : 48);
     texts.push({ text: `${S.restLabel}${Math.max(0, Math.floor(data.restDays))}${S.daysUnit}`, x: margin, y: bottomY, size: small, font: FONTS.mincho, fill: WASHI, anchor: 'start', opacity: 0.85, lang: 'ja' });

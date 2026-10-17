@@ -1,20 +1,8 @@
 /**
- * TSUZUKU — `useAutoFocus(ref, deps)`: imperative focus for a control that
- * appears after page load (design 01 §7 full keyboard).
- *
- * The `autofocus` attribute is honoured only while the document's
- * autofocus-processed flag is unset; Chrome sets it as soon as anything has
- * been focused (the skip link, a Dojo button), so a Begin / Resume / Continue
- * button rendered later leaves keyboard focus on `<body>` and Enter does
- * nothing. This hook focuses the element after mount (and whenever `deps`
- * change) the way `KanaInput` / `TextAnswer` already do for their inputs.
+ * TSUZUKU — `useAutoFocus(ref, deps)` for the session rooms: the contract-tier
+ * hook (`shared/ui/use-auto-focus.ts`, ARCHITECTURE §4 — the one way to focus a
+ * control rendered after load; never `autoFocus` on an intrinsic element),
+ * re-exported so `SessionView` / `TrainPage` keep their import path. No second
+ * implementation lives here.
  */
-import type { RefObject } from 'preact';
-import { useEffect } from 'preact/hooks';
-
-export function useAutoFocus<T extends HTMLElement>(ref: RefObject<T>, deps: readonly unknown[] = []): void {
-  useEffect(() => {
-    ref.current?.focus();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
-}
+export { useAutoFocus } from '../shared/ui/use-auto-focus';

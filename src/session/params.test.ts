@@ -9,10 +9,12 @@ import { epochDay } from '../shared/time';
 import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests } from '../store';
 import { DEFAULT_TEST_NOW, card, makeTestStore } from '../store/testing';
+import { conjugate } from '../learn';
 import { loadPlanContext, resolveParams, splitBunsetsu } from './builder';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const loader = createFakeLoader();
+const CONJUGABLE = ['v1', 'v5', 'v-irr', 'adj-i', 'adj-na'];
 
 function due(s = 5): CardTuple {
   return card({ due: TODAY, s, d: 5, reps: 6, lapses: 0, state: 2, last: TODAY - 1, flags: 0 });
@@ -74,6 +76,16 @@ describe('Form Chain links (design 04 §4 "one verb, 5 target forms")', () => {
     expect(one.answers).toHaveLength(5);
     for (const a of one.answers!) expect(a.length).toBeGreaterThan(0);
     expect(one.accept!.length).toBeGreaterThanOrEqual(5);
+    // the head word travels whole (contract #10/#27): its part of speech and the accepted surfaces per form, parallel
+    // to `forms`, so the drill never infers the group from the answers
+    expect(CONJUGABLE).toContain(one.pos);
+    expect(one.accepts).toHaveLength(5);
+    one.forms!.forEach((f, i) => {
+      const row = one.accepts![i]!;
+      expect(row[0]).toBe(one.answers![i]);
+      expect(conjugate(one.sentence!, one.kana!, one.pos!, f)?.answer).toBe(one.answers![i]);
+      for (const s of row) expect(one.accept).toContain(s);
+    });
     // forms unlocked by an already-introduced point (station ≤ current) are preferred over arbitrary padding
     const met: GrammarItem = { ...ta, id: 'g-n5-046', unlocksForms: ['te', 'te-iru'], station: 4 };
     const chain = resolveParams({ ...ctx, grammarPool: [met] }, 'form-chain', ta, { rep: 0 });
@@ -84,5 +96,18 @@ describe('Form Chain links (design 04 §4 "one verb, 5 target forms")', () => {
     const ahead: GrammarItem = { ...met, id: 'g-n5-077', unlocksForms: ['potential'], station: 14 };
     const known = resolveParams({ ...ctx, grammarPool: [ahead], known: new Set([...ctx.known, ahead.id]) }, 'form-chain', ta, { rep: 0 });
     expect(known.forms![1]).toBe('potential');
+  });
+
+  it('Form Forge sends the verb whole as well: pos, and a one-row accepts parallel to [targetForm]', async () => {
+    await makeTestStore({ save: { progress: { station: 12 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const p = resolveParams(ctx, 'form-forge', loader.get(G.ます)!, { rep: 0 });
+    expect(p.targetForm).toBe('masu');
+    expect(CONJUGABLE).toContain(p.pos);
+    expect(p.accepts).toEqual([p.accept]);
+    expect(p.accepts![0]![0]).toBe(p.answer);
+    const c = conjugate(p.sentence!, p.kana!, p.pos!, 'masu')!;
+    expect(p.answer).toBe(c.answer);
+    expect(p.accepts![0]).toContain(c.answerKana);
   });
 });

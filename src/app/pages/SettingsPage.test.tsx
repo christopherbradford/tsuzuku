@@ -1,4 +1,4 @@
-import { signal } from '@preact/signals';
+import { effect, signal } from '@preact/signals';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { installServices, nullAudio, resetServices, type VoiceInfo } from '@/shared/audio';
@@ -7,8 +7,21 @@ import { route, syncRouteFromLocation } from '@/shared/routes';
 import type { Settings } from '@/shared/store-types';
 import { INTENSITY_PRESETS, newPerDayFor, resetStoreForTests, store } from '@/store';
 import { DEFAULT_TEST_NOW, makeTestStore, card } from '@/store/testing';
-import SettingsPage, { applyFeel, japaneseVoices, kbOf, parseTime, resetSave } from './SettingsPage';
+import SettingsPage, { applyFeel, japaneseVoices, kbOf, parseTime } from './SettingsPage';
 import { S, fmt } from './strings';
+
+/** Counts the store's `resetSave` calls: the danger zone must delegate to it, not run a wipe of its own. */
+const resetSpy = vi.hoisted(() => vi.fn());
+vi.mock('@/store', async (importOriginal) => {
+  const mod = await importOriginal<typeof import('@/store')>();
+  return {
+    ...mod,
+    resetSave: () => {
+      resetSpy();
+      mod.resetSave();
+    },
+  };
+});
 
 const ROUTE = { name: 'settings' } as const;
 
@@ -18,6 +31,7 @@ beforeEach(() => {
   document.body.appendChild(root);
   location.hash = '#/settings';
   syncRouteFromLocation();
+  resetSpy.mockClear();
 });
 afterEach(() => {
   render(null, root);
@@ -392,9 +406,23 @@ describe('<SettingsPage>', () => {
       q<HTMLButtonElement>('[data-reset]').click();
     });
     expect(q('[data-confirm="reset"]')).toBeDefined();
+    expect(resetSpy).not.toHaveBeenCalled();
+    // One batched write: an effect over three slices and the card version runs once for the whole wipe.
+    let runs = 0;
+    const dispose = effect(() => {
+      void store.profile.value;
+      void store.streak.value;
+      void store.stats.value;
+      void store.cards.version.value;
+      runs++;
+    });
+    expect(runs).toBe(1);
     act(() => {
       q<HTMLButtonElement>('[data-confirm-yes]').click();
     });
+    expect(resetSpy).toHaveBeenCalledTimes(1);
+    expect(runs).toBe(2);
+    dispose();
     expect(store.profile.value.name).toBe('無名');
     expect(store.profile.value.xp).toBe(0);
     expect(store.profile.value.tz).toBe('Asia/Tokyo');
@@ -405,7 +433,7 @@ describe('<SettingsPage>', () => {
     expect(route.value.name).toBe('onboarding');
   });
 
-  it('resetSave keeps the time zone and clears cards, the log ring and the seed/createdAt header', async () => {
+  it('the confirmed reset keeps the time zone and clears cards, the log ring and the seed/createdAt header (the store wipe, through the page)', async () => {
     let t = DEFAULT_TEST_NOW;
     await makeTestStore({ now: () => t, save: { profile: { tz: 'Europe/Paris', xp: 5 } }, cards: { 'k-h-a#rec': card({ due: 1 }) } });
     store.log.push([1000, 'k-h-a#rec', 3, 900, 0, 0]);
@@ -413,7 +441,22 @@ describe('<SettingsPage>', () => {
     const oldCreated = store.meta().createdAt;
     expect(store.log.recent(10).length).toBe(1);
     t += 60_000;
-    resetSave();
+    mount();
+    const input = q<HTMLInputElement>('.set__danger .kana-input__field');
+    for (const ch of 'tsuduku') {
+      act(() => {
+        input.value = input.value + ch;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    }
+    act(() => {
+      q<HTMLButtonElement>('[data-reset]').click();
+    });
+    act(() => {
+      q<HTMLButtonElement>('[data-confirm-yes]').click();
+    });
+    expect(resetSpy).toHaveBeenCalledTimes(1);
+    expect(root.textContent).toContain(S.setResetDone);
     expect(store.profile.value.tz).toBe('Europe/Paris');
     expect(store.profile.value.xp).toBe(0);
     expect(store.cards.count()).toBe(0);

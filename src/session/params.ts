@@ -14,10 +14,13 @@
  * `blank` / `blanks` are offsets into `toPlain(sentence)`; `answer` / `accept`
  * are plain surfaces. Production Forge keeps a plain sentence. Form Forge /
  * Form Chain on a grammar prod card carry the picked verb in `sentence`
- * (dictionary form) and `kana` (its reading), so the drills can conjugate it;
- * the chain is always 5 links (`formChain`: the point's own forms, then forms
- * of points already met, then any form the verb takes). Minimal Pair speaks
- * either half of the pair (`answer` = the one played).
+ * (dictionary form), `kana` (its reading) and `pos` (its part of speech), and
+ * `accepts` = the accepted surfaces per form (kanji, kana, engine alternates),
+ * parallel to `forms` (chain) or `[targetForm]` (forge), so the drills never
+ * infer the head word from the answers; the chain is always 5 links
+ * (`formChain`: the point's own forms, then forms of points already met, then
+ * any form the verb takes). Minimal Pair speaks either half of the pair
+ * (`answer` = the one played).
  *
  * `pickStories` serves unread episodes first (`progress.storiesRead`), then the
  * best coverage, so the builder never re-serves the same episode while an
@@ -29,6 +32,7 @@ import {
   type Belt,
   type ComponentDef,
   type ConjForm,
+  type ConjugablePos,
   type ContentItem,
   type DrillId,
   type GrammarItem,
@@ -489,29 +493,36 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
       const pool = verbs.length > 0 ? verbs : ctx.vocabPool.filter((v) => isConjugable(v.pos));
       const verb = pool[((rep % Math.max(1, pool.length)) + pool.length) % Math.max(1, pool.length)];
       if (!verb || !isConjugable(verb.pos)) break;
+      const pos: ConjugablePos = verb.pos;
+      /** Accepted surfaces of one form, display form first (kanji, kana, engine alternates); `null` when the verb lacks it. */
+      const surfaces = (f: ConjForm): string[] | null => {
+        const c = conjugate(verb.word, verb.kana, pos, f);
+        return c ? dedupe([c.answer, c.answerKana, ...c.alt]) : null;
+      };
       // Only the forms the point declares are drillable (design 04 §4); `stepForCard` routes a point without them elsewhere.
-      const forms = (item.unlocksForms ?? []).filter((f) => conjugate(verb.word, verb.kana, verb.pos as never, f) !== null);
+      const forms = (item.unlocksForms ?? []).filter((f) => surfaces(f) !== null);
       if (forms.length === 0) break;
       p.sentence = verb.word;
-      // The verb's reading rides along (StepParams.kana): the drills conjugate the kana form of every link from it.
+      // The verb's reading and part of speech ride along (StepParams.kana / pos), and `accepts` carries the accepted
+      // surfaces of every form the step asks for, so the drills never infer the head word from the answers.
       p.kana = verb.kana;
+      p.pos = pos;
       p.promptEn = verb.meanings[0] ?? '';
       if (exercise === 'form-forge') {
         const form = forms[((rep % forms.length) + forms.length) % forms.length] as ConjForm;
-        const c = conjugate(verb.word, verb.kana, verb.pos as never, form);
-        if (!c) break;
+        const row = surfaces(form);
+        if (!row || row.length === 0) break;
         p.targetForm = form;
-        p.answer = c.answer;
-        p.accept = dedupe([c.answer, c.answerKana, ...c.alt]);
+        p.answer = row[0] as string;
+        p.accept = row;
+        p.accepts = [row];
         p.promptEn = fill(S.formForgePrompt, { word: verb.meanings[0] ?? verb.word, form: FORM_LABEL[form] });
       } else {
         p.forms = formChain(ctx, item, verb, forms, rep);
-        const chain = p.forms;
-        p.answers = chain.map((f) => conjugate(verb.word, verb.kana, verb.pos as never, f)?.answer ?? '');
-        p.accept = dedupe(chain.flatMap((f) => {
-          const c = conjugate(verb.word, verb.kana, verb.pos as never, f);
-          return c ? [c.answer, c.answerKana, ...c.alt] : [];
-        }));
+        const rows = p.forms.map((f) => surfaces(f) ?? []);
+        p.answers = rows.map((r) => r[0] ?? '');
+        p.accepts = rows;
+        p.accept = dedupe(rows.flat());
       }
       break;
     }

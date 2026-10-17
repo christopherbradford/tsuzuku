@@ -17,11 +17,14 @@
  *    {kind:'writing', patternsHit, seconds}`; the result carries the
  *    findings' error tags (particle / conjugation / register) for Weak Points
  *    and `answer` = the text.
- *  · The finished sentences join `store.bookmarks` under `作文: `
- *    (`writingSentencesFrom` reads them back); the closing line says only
- *    that ("Kept with your bookmarks") because `WallpaperData.writingSentences`
- *    is not yet gathered from them (SaveMeta has no dedicated slot, v1).
- * Facet `null`; keys `none`.
+ *  · The finished sentences join `store.bookmarks` under `WRITING_PREFIX`
+ *    (`@/shared/writing`, SaveMeta has no `writings` slice in v1); the art
+ *    tier reads them back with `writingSentencesFrom` for the Tanabata wall
+ *    scrolls (`WallpaperData.writingSentences`). Both names are re-exported
+ *    here for the tests. The closing line says exactly that: kept with the
+ *    bookmarks, and the wall scrolls can carry it.
+ * Facet `null`; keys `none`. The textarea takes focus through `useAutoFocus`
+ * (a bare `autoFocus` attribute is ignored once anything on the page was focused).
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -35,6 +38,8 @@ import { normalizeJa } from '@/shared/jp';
 import type { StepParams } from '@/shared/session-types';
 import type { CardsApi } from '@/shared/store-types';
 import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
+import { useAutoFocus } from '@/shared/ui/use-auto-focus';
+import { WRITING_PREFIX, writingSentencesFrom } from '@/shared/writing';
 import { store } from '@/store';
 import { itemBeltOf } from '@/store/derived';
 import { FINDING_COPY, REGISTER_NAME, S, fill } from '../strings';
@@ -52,8 +57,8 @@ export const meta: ExerciseMeta = {
   keys: 'none',
 };
 
-/** Bookmark prefix under which finished Writing Dojo sentences are kept. */
-export const WRITING_PREFIX = '作文: ';
+/** The bookmark convention shared with the art tier (`@/shared/writing`), re-exported for the tests. */
+export { WRITING_PREFIX, writingSentencesFrom };
 /** Sentences kept per finished piece. */
 export const KEEP_MAX = 12;
 /** A kept sentence has at least this many readable characters. */
@@ -106,11 +111,6 @@ export function keepSentences(text: string): string[] {
   return sentencesOf(text)
     .filter((s) => Array.from(normalizeJa(s)).length >= KEEP_MIN_CHARS)
     .slice(0, KEEP_MAX);
-}
-
-/** The sentences of every finished piece, in order, from `store.bookmarks`. */
-export function writingSentencesFrom(bookmarks: readonly string[]): string[] {
-  return bookmarks.filter((b) => b.startsWith(WRITING_PREFIX)).map((b) => b.slice(WRITING_PREFIX.length));
 }
 
 /** Distinct error tags of the findings (particle / conjugation / register). */
@@ -195,6 +195,9 @@ function WritingDojoBody(p: ExerciseProps & WritingDojoExtraProps): JSX.Element 
   const alive = useRef(true);
   const live = useRef({ text, done, judging });
   live.current = { text, done, judging };
+  // The textarea is focused imperatively (design 01 §7): a bare `autoFocus` attribute is ignored once anything was focused.
+  const textRef = useRef<HTMLTextAreaElement>(null);
+  useAutoFocus(textRef, [p.step.id]);
 
   useEffect(() => {
     alive.current = true;
@@ -328,7 +331,7 @@ function WritingDojoBody(p: ExerciseProps & WritingDojoExtraProps): JSX.Element 
             value={text}
             placeholder={S.writingPlaceholder}
             spellcheck={false}
-            autoFocus
+            ref={textRef}
             onInput={(e) => {
               setText(e.currentTarget.value);
               if (status) setStatus('');

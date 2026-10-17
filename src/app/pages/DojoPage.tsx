@@ -1,12 +1,17 @@
 /**
  * TSUZUKU — 道場 the home screen (group A, design 03 §3, §6–§8, §11–§12; 06 §5).
  *
- * `pages.ts` injects `Scene` (G's DojoScene, or nothing while it lands) and
- * `feed` (E's `dojoFeed`, or null). The page renders synchronously from the
- * store — flame, quests, resume card, belt line — and fills the forecast,
- * teaser, Kage, Nemesis, Gatekeeper and Shinsa panels when the feed resolves.
- * A missing or failing feed degrades to `derived.forecastCounts()`: the three
- * session buttons always work. Never a countdown, never a red number.
+ * `pages.ts` injects `Scene` (G's DojoScene, or nothing while it lands),
+ * `feed` (E's `dojoFeed`, or null) and `gate` (E's `gateForecast`, or null).
+ * The page renders synchronously from the store — flame, quests, resume card,
+ * belt line — and fills the forecast, teaser, Kage, Nemesis, Gatekeeper and
+ * Shinsa panels when the feed resolves. A missing or failing feed degrades to
+ * `derived.forecastCounts()`: the three session buttons always work. That
+ * fallback knows of no Scroll for today, so when `gate` is present it is run
+ * with 0 scrolls and the Scroll block minutes come off the Kumite / Shugyō
+ * estimates exactly as the live feed takes them off (`gateForecast` is E's;
+ * A only imports its type and receives the function through `pages.ts`).
+ * Never a countdown, never a red number.
  */
 import type { FunctionComponent, JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
@@ -15,7 +20,7 @@ import { href, type Route } from '@/shared/routes';
 import type { DojoFeed, SessionMode, SessionSnapshot } from '@/shared/session-types';
 import { QUESTS, questProgress, store, type QuestProgress } from '@/store';
 import { forecastCounts, streakState, type FlameState } from '@/store/derived';
-import type { DojoFeedFull } from '@/session/dojo-feed';
+import type { DojoFeedFull, gateForecast } from '@/session/dojo-feed';
 import { isFirstRun } from '../first-run';
 import { BELT_NAME, S, fmt, num } from './strings';
 import './pages.css';
@@ -27,12 +32,17 @@ import './pages.css';
 /** The contract feed plus whatever extras E's full feed carries (all optional). */
 export type Feed = DojoFeed & Partial<Omit<DojoFeedFull, keyof DojoFeed>>;
 
+/** E's `gateForecast(fc, scrolls)`: the store forecast with the Scroll block taken off when nothing is left to teach. */
+export type GateForecast = typeof gateForecast;
+
 export interface DojoPageProps {
   route: Route;
   /** G's `DojoScene`; `pages.ts` passes an empty component until the art lands. */
   Scene?: FunctionComponent<{ compact?: boolean }> | null;
   /** E's `dojoFeed`; null while the session barrel is missing. */
   feed?: (() => Promise<DojoFeed>) | null;
+  /** E's `gateForecast`; null while the session barrel does not export it. The fallback forecast then stands ungated. */
+  gate?: GateForecast | null;
 }
 
 type FeedStatus = 'loading' | 'ready' | 'failed' | 'none';
@@ -69,9 +79,14 @@ export function fallbackForecast(due: number, kumiteMinutes: number): string {
   return `${dueLine(due)}${S.separator}${fmt(S.dojoMinutes, { n: Math.max(1, Math.round(kumiteMinutes)) })}`;
 }
 
-/** What the store alone can say about today. */
-export function fallbackFeed(): Feed {
-  const fc = forecastCounts();
+/**
+ * What the store alone can say about today. The store knows of no Scroll, so
+ * with E's `gate` the forecast is gated at 0 scrolls (no new-item minutes),
+ * the same cut the live feed makes on a day without a Scroll.
+ */
+export function fallbackFeed(gate?: GateForecast | null): Feed {
+  const raw = forecastCounts();
+  const fc = gate ? { ...raw, ...gate(raw, 0) } : raw;
   const p = store.progress.value;
   return {
     forecastLine: fallbackForecast(fc.due, fc.minutes.kumite),
@@ -329,14 +344,14 @@ export default function DojoPage(p: DojoPageProps): JSX.Element {
   const progress = store.progress.value;
   const cardsVersion = store.cards.version.value;
   const [status, setStatus] = useState<FeedStatus>(p.feed ? 'loading' : 'none');
-  const [feed, setFeed] = useState<Feed>(() => fallbackFeed());
+  const [feed, setFeed] = useState<Feed>(() => fallbackFeed(p.gate));
   const [snap, setSnap] = useState<SessionSnapshot | null>(() => store.session.load());
 
   useEffect(() => {
     let alive = true;
     setSnap(store.session.load());
     if (!p.feed) {
-      setFeed(fallbackFeed());
+      setFeed(fallbackFeed(p.gate));
       setStatus('none');
       return;
     }
@@ -344,20 +359,20 @@ export default function DojoPage(p: DojoPageProps): JSX.Element {
     p.feed().then(
       (f) => {
         if (!alive) return;
-        setFeed({ ...fallbackFeed(), ...(f as Feed) });
+        setFeed({ ...fallbackFeed(p.gate), ...(f as Feed) });
         setStatus('ready');
       },
       (err: unknown) => {
         if (!alive) return;
         console.warn('[dojo] feed failed', err);
-        setFeed(fallbackFeed());
+        setFeed(fallbackFeed(p.gate));
         setStatus('failed');
       },
     );
     return () => {
       alive = false;
     };
-  }, [p.feed, cardsVersion]);
+  }, [p.feed, p.gate, cardsVersion]);
 
   const fresh = isFreshSave();
   const flame = streakState();

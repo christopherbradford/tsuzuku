@@ -4,7 +4,7 @@
  * THE module (with `src/main.tsx`) allowed to import other groups' barrels.
  * Every page is loaded lazily so each group ships as its own chunk:
  *   A  src/app/pages/*Page.tsx   Dojo · Onboarding · Settings · Backup · About
- *   E  src/session/index.ts      Train · Scroll · Station · Gate · Shinsa · Road · Dan · dojoFeed
+ *   E  src/session/index.ts      Train · Scroll · Station · Gate · Shinsa · Road · Dan · dojoFeed (· gateForecast)
  *   F  src/input/index.ts        Story · Listen · Taiwa (+ registerAll for 9 drills)
  *   B  src/records/index.ts      Records · Ledger
  *   G  src/collections/index.ts  Collections · Studio · Library
@@ -185,15 +185,18 @@ async function optional(file: string): Promise<AnyModule | null> {
 }
 
 /**
- * Dojo props: `Scene` from G's art barrel, `feed` from E's session barrel; both
- * degrade. The feed reads the exercise registry synchronously (`isRegistered`),
- * so the registry is filled here rather than at boot.
+ * Dojo props: `Scene` from G's art barrel, `feed` and `gate` (`gateForecast`,
+ * which the Dojo's fallback forecast runs at 0 scrolls so it agrees with the
+ * live feed) from E's session barrel; all three degrade to nothing. The feed
+ * reads the exercise registry synchronously (`isRegistered`), so the registry
+ * is filled here rather than at boot.
  */
 async function dojoProps(): Promise<Record<string, unknown>> {
   const [art, session] = await Promise.all([optional(ART_BARREL), optional(SESSION_BARREL), ensureExercises()]);
   const Scene = typeof art?.DojoScene === 'function' ? art.DojoScene : EmptyScene;
   const feed = typeof session?.dojoFeed === 'function' ? session.dojoFeed : null;
-  return { Scene, feed };
+  const gate = typeof session?.gateForecast === 'function' ? session.gateForecast : null;
+  return { Scene, feed, gate };
 }
 
 /**

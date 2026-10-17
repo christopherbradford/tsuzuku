@@ -14,6 +14,14 @@
  * "Mastered" = item belt Brown or Black (`learn/item-belt`). Lists are sorted
  * by base-facet stability (strongest first), ties by id, so the same save
  * always yields the same picture.
+ *
+ * Learner text: `nameKana` (or the display name it falls back to) is cut to
+ * `NAME_MAX_GLYPHS` and every sentence to `SENTENCE_MAX_GLYPHS` in
+ * `normalizeData`, so an imported save can never hand a generator more than
+ * its boxes were drawn for. Writing Dojo pieces are read back from the
+ * `作文: ` bookmarks (`shared/writing`) and a perfect dictation from
+ * `profile.dictatedSentence`; the Studio's overrides still win
+ * (review round 2, contract #15/#28).
  */
 import { BELT_ORDER, baseFacet, groupByItem, itemBelt, kindOfCards } from '@/learn';
 import { content as defaultContent, type ContentLoader } from '../../content/loader';
@@ -31,9 +39,10 @@ import {
 import { BADGE_IDS, type BadgeId } from '../../shared/catalog';
 import { mulberry32, range, uniform } from '../../shared/hash';
 import { parseCardKey } from '../../shared/ids';
-import { isKatakana } from '../../shared/jp';
-import type { CardTuple, EpochDay, ItemKind, Store } from '../../shared/store-types';
+import { clampGlyphs, isKatakana } from '../../shared/jp';
+import { NAME_MAX_GLYPHS, type CardTuple, type EpochDay, type ItemKind, type Store } from '../../shared/store-types';
 import { epochDay, monthKey } from '../../shared/time';
+import { writingSentencesFrom } from '../../shared/writing';
 import { store as defaultStore } from '../../store';
 import type { MasteredVocab, WallpaperData } from './spec';
 
@@ -181,9 +190,9 @@ export async function wallpaperData(overrides: Partial<WallpaperData> = {}, src:
     stamps,
     station: meta.progress.station,
     minutes90,
-    // Writing Dojo output and perfect dictations are not persisted in SaveMeta (v1); the Studio supplies them via overrides.
-    writingSentences: [],
-    dictatedSentence: undefined,
+    // Writing Dojo pieces live under `作文: ` bookmarks (shared/writing); a perfect dictation sits on the profile. Overrides still win.
+    writingSentences: writingSentencesFrom(meta.bookmarks),
+    dictatedSentence: meta.profile.dictatedSentence,
     gojuonMs,
     rapidBest: meta.stats.rapidBest,
     freezes: meta.streak.freezes,
@@ -278,6 +287,16 @@ function isNonNeg(x: unknown): x is number {
   return typeof x === 'number' && Number.isFinite(x) && x >= 0;
 }
 
+/** Glyph cap for every learner sentence a kakejiku may set (sentence of choice, dictation, Writing Dojo strips); the store itself allows 500. */
+export const SENTENCE_MAX_GLYPHS = 96;
+
+/** Trimmed text cut to `max` glyphs (code points, so a surrogate pair is never split), or undefined when nothing is left. */
+function cappedText(v: unknown, max: number): string | undefined {
+  if (typeof v !== 'string') return undefined;
+  const t = clampGlyphs(v.trim(), max).trim();
+  return t || undefined;
+}
+
 /** Problems with a candidate `WallpaperData` (empty when valid). */
 export function validateData(d: unknown): string[] {
   const out: string[] = [];
@@ -313,7 +332,7 @@ export function isWallpaperData(d: unknown): d is WallpaperData {
   return validateData(d).length === 0;
 }
 
-/** Fill defaults, clamp ranges, trim lists; never throws. */
+/** Fill defaults, clamp ranges and text lengths (`NAME_MAX_GLYPHS`, `SENTENCE_MAX_GLYPHS`), trim lists; never throws. */
 export function normalizeData(p: Partial<WallpaperData>): WallpaperData {
   const num = (v: unknown, dflt = 0): number => (typeof v === 'number' && Number.isFinite(v) && v >= 0 ? v : dflt);
   const strs = (v: unknown): string[] => (isStrList(v) ? v.filter((s) => s.length > 0) : []);
@@ -326,7 +345,8 @@ export function normalizeData(p: Partial<WallpaperData>): WallpaperData {
     : [];
   const gojuonMs: Record<string, number> = {};
   if (p.gojuonMs && typeof p.gojuonMs === 'object') for (const [k, v] of Object.entries(p.gojuonMs)) if (isNonNeg(v) && k) gojuonMs[k] = v;
-  const name = typeof p.nameKana === 'string' ? p.nameKana.trim() : '';
+  const name = cappedText(p.nameKana, NAME_MAX_GLYPHS) ?? '';
+  const sentences = (v: unknown): string[] => (isStrList(v) ? v.map((s) => cappedText(s, SENTENCE_MAX_GLYPHS)).filter((s): s is string => s !== undefined) : []);
   return {
     nameKana: name || '無名',
     chosenKanji: chosen,
@@ -342,15 +362,15 @@ export function normalizeData(p: Partial<WallpaperData>): WallpaperData {
     stamps: Array.isArray(p.stamps) ? Array.from(new Set(p.stamps.filter((n) => Number.isInteger(n) && n >= 1 && n <= 53))).sort((a, b) => a - b) : [],
     station: Math.min(53, Math.floor(num(p.station))),
     minutes90: minutes.slice(-90),
-    writingSentences: strs(p.writingSentences),
-    dictatedSentence: typeof p.dictatedSentence === 'string' && p.dictatedSentence.trim() ? p.dictatedSentence.trim() : undefined,
+    writingSentences: sentences(p.writingSentences),
+    dictatedSentence: cappedText(p.dictatedSentence, SENTENCE_MAX_GLYPHS),
     gojuonMs,
     rapidBest: Math.floor(num(p.rapidBest)),
     freezes: Math.floor(num(p.freezes)),
     restDays: Math.floor(num(p.restDays)),
     wordsThisMonth: Math.floor(num(p.wordsThisMonth)),
     arcGrammar: strs(p.arcGrammar),
-    sentenceOfChoice: typeof p.sentenceOfChoice === 'string' && p.sentenceOfChoice.trim() ? p.sentenceOfChoice.trim() : undefined,
+    sentenceOfChoice: cappedText(p.sentenceOfChoice, SENTENCE_MAX_GLYPHS),
     date: Math.floor(num(p.date)),
   };
 }

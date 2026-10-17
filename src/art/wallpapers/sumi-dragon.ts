@@ -225,7 +225,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
 
   // Text layers.
   const texts: TextLayer[] = [];
-  const nameSize = fitSize(data.nameKana, phone ? w * 0.6 : w * 0.4, phone ? 86 : 78, { min: 30, max: phone ? 86 : 78 });
+  // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+  const nameSize = fitSize(data.nameKana, phone ? w * 0.6 : w * 0.4, phone ? 86 : 78, { max: phone ? 86 : 78 });
   const nameX = phone ? w * 0.08 : w * 0.06;
   const nameY = phone ? safe.y + 140 : h * 0.16;
   texts.push({ text: data.nameKana, x: nameX, y: nameY, size: nameSize, font: FONTS.brush, fill: INK, opacity: 0.95, lang: 'ja' });

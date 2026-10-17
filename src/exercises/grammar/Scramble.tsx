@@ -15,7 +15,8 @@
  *    button) grades through `gradeOrdering`: first try Good, one fix Hard,
  *    more Again, wrong order Again — every non-clean outcome tagged
  *    `word-order`. `params.accept` lists alternate orders as sentences.
- *  · Hint places the next correct piece (hintUsed → Hard ceiling).
+ *  · Hint (the button or the frame's `?` / Hint button) places the next
+ *    correct piece (hintUsed → Hard ceiling).
  * Drag-free by design: tap-to-place works on touch and keyboard alike.
  * Facet `grammar:cloze`; keys `choices`.
  */
@@ -204,7 +205,7 @@ export function Scramble(p: ExerciseProps): JSX.Element {
     p.onResult(r);
   };
 
-  useExerciseKeys({ onChoice: placeByKey, onSubmit: check });
+  useExerciseKeys({ onChoice: placeByKey, onSubmit: check, onHint: !outcome && !complete && expected.length > 0 ? hint : undefined });
 
   const kind = outcome ? (outcome.result.correct ? (outcome.result.nearMiss ? 'near' : 'correct') : outcome.result.nearMiss ? 'near' : 'wrong') : undefined;
 

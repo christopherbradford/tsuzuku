@@ -229,7 +229,8 @@ export function challengerTexts(L0: VsLayout, data: WallpaperData, size: Wallpap
   // Desktop: centred in, and fitted to, the free width left of the VS plate.
   const right = phone ? w : vsPlate(L0).left - PLATE_GAP;
   const x = phone ? w / 2 : right / 2;
-  const nameSize = fitSize(data.nameKana, phone ? w * 0.86 : right - 2 * PLATE_GAP, phone ? 170 : 190, { min: phone ? 40 : 32, max: phone ? 170 : 190 });
+  // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+  const nameSize = fitSize(data.nameKana, phone ? w * 0.86 : right - 2 * PLATE_GAP, phone ? 170 : 190, { max: phone ? 170 : 190 });
   const nameY = phone ? safe.y + 560 : h * 0.57;
   return [
     { text: S.challenger, x, y: nameY - nameSize * 0.95 - 18, size: phone ? 40 : 40, font: FONTS.pixel, fill: NEON_C, anchor: 'middle', letterSpacing: 6, lang: 'ja' },

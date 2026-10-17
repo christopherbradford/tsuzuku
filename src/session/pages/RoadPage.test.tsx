@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { STATION_4, createFakeLoader } from '../../content/fixtures';
 import { bus } from '../../shared/events';
 import { epochDay } from '../../shared/time';
-import type { DailyRow } from '../../shared/store-types';
+import type { DailyRow, SaveMeta } from '../../shared/store-types';
 import { resetStoreForTests, store } from '../../store';
 import { DEFAULT_TEST_NOW, makeTestStore, testSave } from '../../store/testing';
 import RoadPage, { KANA_PER_STATION, monthYear, quotaTotal, roadEstimate, roadTargets, spanLabel, targetLabel } from './RoadPage';
@@ -62,6 +62,18 @@ describe('roadEstimate', () => {
     // Kyoto from Station 4 at Standard: on the order of two years (design 02 §6.1)
     expect(kyoto.full).toBeGreaterThan(400);
     expect(kyoto.full).toBeLessThan(1000);
+  });
+
+  it('the full-pace rate is the store rule: a stale stored mix at a preset changes nothing, the custom mix is honoured', () => {
+    const fullDays = (settings: Partial<SaveMeta['settings']>): number[] =>
+      roadEstimate({ meta: testSave({ save: { progress: { station: 4 }, settings } }), cards: store.cards, log: [], bundle: null, today: TODAY }).map((l) => (l.kind === 'onboarding' ? l.full : -1));
+    const standard = fullDays({ intensity: 'standard' });
+    expect(standard.every((d) => d > 0)).toBe(true);
+    // onboarding stores the White mix; at a preset the belt table rules, so a stale mix moves no estimate
+    expect(fullDays({ intensity: 'standard', newPerDay: { vocab: 1, kanji: 0, grammar: 0 } })).toEqual(standard);
+    // the custom preset is the one place the stored mix is the budget
+    const custom = fullDays({ intensity: 'custom', newPerDay: { vocab: 1, kanji: 0, grammar: 0 } });
+    expect(custom[1]!).toBeGreaterThan(standard[1]! * 3);
   });
 
   it('after fourteen active days: pace and daily dates, daily never later than pace, cleared stations skipped', () => {

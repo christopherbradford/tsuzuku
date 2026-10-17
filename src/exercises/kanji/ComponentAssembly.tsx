@@ -17,7 +17,8 @@
  * A kanji that repeats a part (林 = tree + tree, 協, 営, 禁) gets one tile
  * per occurrence: the 2nd+ copy carries an `#n` key suffix so each copy is
  * placed once and the set compare behaves as a multiset compare.
- * Digits 1–8 pick tiles through the enclosing `<ExerciseFrame>`.
+ * Digits 1–8 pick tiles through the enclosing `<ExerciseFrame>`; its `?` /
+ * Hint button shows the mnemonic.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -244,7 +245,7 @@ export function ComponentAssembly(p: ExerciseProps): JSX.Element {
     );
   };
 
-  useExerciseKeys({ onChoice: pickTile, onSubmit: check });
+  useExerciseKeys({ onChoice: pickTile, onSubmit: check, onHint: !!kanji && !loadError && !!built && phase === 'build' && !hintShown ? showHint : undefined });
 
   if (!kanji || loadError) {
     return (

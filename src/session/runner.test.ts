@@ -443,6 +443,18 @@ describe('SessionRunner — regressions', () => {
     cap.stop();
   });
 
+  it('a snapshot whose step carries a malformed card key (hand-edited save) is not resumed; a sound one is', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards() });
+    const r = new SessionRunner(plan(vocabSteps(3)), { loader });
+    r.submit(ok());
+    r.next();
+    const saved = store.session.load() as RunnerSnapshot;
+    expect(SessionRunner.resume({ loader })?.step.value?.id).toBe('s1');
+    const steps = saved.plan.steps.map((s, i) => (i === 2 ? { ...s, cardKey: 'v-n5-0001' as CardKey } : s));
+    store.session.save({ ...saved, plan: { ...saved.plan, steps } });
+    expect(SessionRunner.resume({ loader })).toBeNull();
+  });
+
   it('a session resumed the next day earns its active minutes, not the night (tally, stats, daily row)', async () => {
     let clock = DEFAULT_TEST_NOW;
     await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards(), now: () => clock, reducers: true });

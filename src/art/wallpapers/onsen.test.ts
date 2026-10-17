@@ -1,7 +1,9 @@
 import { fnv1a32 } from '../../shared/hash';
+import { NAME_MAX_GLYPHS } from '../../shared/store-types';
+import { glyphCount, layerBounds } from '../jtext';
 import { normalizeData, sampleData } from './data';
-import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
-import { spec } from './onsen';
+import { canvasViolations, hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
+import { SIGN, spec } from './onsen';
 
 const DATA = sampleData(1);
 const fingerprint = (svg: string): string => `${svg.length}:${fnv1a32(svg).toString(16)}`;
@@ -79,5 +81,34 @@ describe('onsen', () => {
     expect(e.texts.some((t) => t.text === '休み0日')).toBe(true);
     parse(e.svg);
     expect(safeZoneViolations(e, 'phone')).toEqual([]);
+  });
+
+  it('a name at NAME_MAX_GLYPHS is set in three columns inside a widened sign instead of a floored size running past the fence', () => {
+    const name = 'クリストファー・ブラッドフォード・ジュニアだよね';
+    expect(glyphCount(name)).toBe(NAME_MAX_GLYPHS);
+    for (const size of WALLPAPER_SIZES) {
+      const c = spec.compose(1, normalizeData({ ...DATA, nameKana: name }), size);
+      const cols = c.texts.filter((t) => t.vertical && name.includes(t.text));
+      expect(cols.length, size).toBe(3);
+      expect(cols.map((t) => t.text).join('')).toBe(name);
+      expect(cols[0]!.x).toBeGreaterThan(cols[1]!.x); // right to left, like real tategaki
+      const sign = Array.from(parse(c.svg).querySelectorAll('rect[rx="3"]')).find((r) => r.getAttribute('fill') === SIGN)!;
+      expect(sign).toBeDefined();
+      const [sx, sy, sw, sh] = ['x', 'y', 'width', 'height'].map((a) => Number(sign.getAttribute(a)));
+      for (const t of cols) {
+        const b = layerBounds(t);
+        expect(b.x, `${size} left`).toBeGreaterThanOrEqual(sx! - 0.5);
+        expect(b.x + b.w, `${size} right`).toBeLessThanOrEqual(sx! + sw! + 0.5);
+        expect(b.y, `${size} top`).toBeGreaterThanOrEqual(sy! - 0.5);
+        expect(b.y + b.h, `${size} bottom`).toBeLessThanOrEqual(sy! + sh! + 0.5);
+        expect(t.size, `${size} legible`).toBeGreaterThanOrEqual(16);
+      }
+      expect(canvasViolations(c, size)).toEqual([]);
+      // the short sample name keeps one column and the original sign width
+      const one = spec.compose(1, DATA, size);
+      expect(one.texts.filter((t) => t.vertical && t.text === DATA.nameKana).length).toBe(1);
+      const signOne = Array.from(parse(one.svg).querySelectorAll('rect[rx="3"]')).find((r) => r.getAttribute('fill') === SIGN)!;
+      expect(Number(signOne.getAttribute('width'))).toBe(size === 'phone' ? 96 : 72);
+    }
   });
 });

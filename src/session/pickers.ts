@@ -4,17 +4,18 @@
  * The pure, store-reading helpers the builders share: the 7-day accuracy, the
  * items introduced today (counted from the review log so the cramming cap
  * survives the +3 / +10 graduations), today's new-item budget by belt
- * (`effectiveNewPerDay`), the due queue in Kata order, the easiest cards for
+ * (`effectiveNewPerDay`, the store's one rule, re-exported here), the due
+ * queue in Kata order, the easiest cards for
  * cooldowns and the Welcome Back set, today's Scrolls, the Michikusa draw and
  * the week's strand minutes. Split out of `builder.ts` (which re-exports
  * them); nothing here calls back into the builder at runtime.
  */
-import type { Belt, CardKey } from '../content/types';
+import type { CardKey } from '../content/types';
 import { hashSeed } from '../shared/hash';
 import { parseCardKey, tryKindOfId } from '../shared/ids';
-import { CardFlag, hasFlag, type EpochDay, type SaveMeta, type Settings } from '../shared/store-types';
+import { CardFlag, hasFlag, type EpochDay, type SaveMeta } from '../shared/store-types';
 import { dayStartMs } from '../shared/time';
-import { newPerDayFor, store } from '../store';
+import { effectiveNewPerDay, store } from '../store';
 import { beltOfStation } from '../store/derived';
 import { dueCards, kaidenQuota, nextScrolls, queueCardFor, type QueueCard, type Scroll } from '../learn';
 import type { Strand } from './blocks';
@@ -81,14 +82,14 @@ export function introducedToday(today: EpochDay): { vocab: number; kanji: number
 }
 
 /**
- * Today's new-item budget: the stored `settings.newPerDay` is the custom
- * override only; every preset follows the belt table (`newPerDayFor`), the same
- * rule `derived.forecastCounts` and the projection apply. Onboarding stores the
- * White mix, which must not freeze the budget at later belts.
+ * Today's new-item budget is the store's one rule (`effectiveNewPerDay` in
+ * `store/defaults.ts`, shared with `derived.forecastCounts` and the projection):
+ * the stored `settings.newPerDay` is the custom override only; every preset
+ * follows the belt table, so the White mix onboarding stores never freezes the
+ * budget at later belts. Re-exported so `builder.ts` / `SessionView.tsx` keep
+ * importing it from here; no second copy of the rule lives in this group.
  */
-export function effectiveNewPerDay(settings: Pick<Settings, 'intensity' | 'newPerDay'>, belt: Belt): Settings['newPerDay'] {
-  return settings.intensity === 'custom' ? settings.newPerDay : newPerDayFor(belt, settings.intensity);
-}
+export { effectiveNewPerDay };
 
 /** Load bound for due-card content: the cards the planners can draw plus the extra the sparring pool and `exclude` sets reach past `showDue`. */
 export const DUE_LOAD_RESERVE = 40;

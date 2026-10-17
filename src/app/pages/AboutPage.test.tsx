@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { bus } from '@/shared/events';
@@ -73,6 +75,22 @@ describe('<AboutPage>', () => {
     const hrefs = Array.from(root.querySelectorAll('a')).map((a) => a.getAttribute('href'));
     expect(hrefs).toContain(href({ name: 'backup' }));
     expect(hrefs).toContain(href({ name: 'settings' }));
+  });
+
+  it('the licence copy is backed by the repository: LICENSE (MIT), CONTENT_LICENSE.md (CC BY-SA 4.0, fonts OFL) and package.json "license"', () => {
+    const read = (rel: string): string => readFileSync(resolve(process.cwd(), rel), 'utf8');
+    expect(S.aboutLicenseCode).toContain('LICENSE');
+    expect(S.aboutLicenseContent).toContain('CONTENT_LICENSE.md');
+    const code = read('LICENSE');
+    expect(code).toMatch(/^MIT License/);
+    expect(code).toContain('Copyright (c) 2026 Christopher Bradford');
+    const content = read('CONTENT_LICENSE.md');
+    expect(content).toMatch(/Attribution-ShareAlike 4\.0/);
+    expect(content).toContain('public/content/');
+    expect(content).toContain('docs/allowlists/');
+    expect(content).toMatch(/SIL Open Font License/);
+    expect(content).toContain('public/fonts/OFL-');
+    expect((JSON.parse(read('package.json')) as { license?: string }).license).toBe('MIT');
   });
 
   it('debug panel: no load errors and the recent bus events, newest first', async () => {

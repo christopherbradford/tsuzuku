@@ -153,6 +153,9 @@ describe('pageFor', () => {
           expect(mod.props).toBeDefined();
           expect(mod.props).toHaveProperty('Scene');
           expect(mod.props).toHaveProperty('feed');
+          expect(mod.props).toHaveProperty('gate');
+          // The barrel's own exports, or null — never something else.
+          for (const k of ['feed', 'gate'] as const) expect(mod.props![k] === null || typeof mod.props![k] === 'function', k).toBe(true);
         }
       },
       name === 'dojo' ? 30_000 : undefined,

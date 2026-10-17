@@ -171,7 +171,8 @@ export const spec: WallpaperSpec = {
     const kSize = W * 0.3;
     texts.push({ text: kanji, x: cx, y: cy + D * 0.3 + kSize * 0.36, size: kSize, font: FONTS.brush, fill: GOLD, anchor: 'middle', rotate: tilt, lang: 'ja' });
     const colTop = safe.y + (phone ? 70 : 56);
-    const nameSize = fitSize(data.nameKana, phone ? 70 : 56, safe.h * 0.42, { vertical: true, min: 18, max: phone ? 58 : 46 });
+    // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+    const nameSize = fitSize(data.nameKana, phone ? 70 : 56, safe.h * 0.42, { vertical: true, max: phone ? 58 : 46 });
     texts.push(...tategakiLayers({ text: data.nameKana, x: w - margin - nameSize / 2, y: colTop, size: nameSize, font: FONTS.mincho, fill: INK }));
     const small = phone ? 30 : 24;
     texts.push({ text: eraDate(data.date), x: w - margin, y: safe.y + safe.h - (phone ? 56 : 48), size: small, font: FONTS.mincho, fill: INK_WASH, anchor: 'end', lang: 'ja' });

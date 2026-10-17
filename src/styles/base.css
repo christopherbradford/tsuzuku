@@ -11,7 +11,7 @@
  * No color literals: every color is a token from tokens.css.
  */
 
-/* ── webfonts: 24 unicode-range slices of the four OFL faces, generated into fonts.css ─ */
+/* ── webfonts: 23 unicode-range slices of the four OFL faces (no brush rest face), generated into fonts.css ─ */
 @import "./fonts.css";
 
 /* ── reset ───────────────────────────────────────────────────────────── */

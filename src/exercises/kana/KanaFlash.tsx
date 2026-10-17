@@ -110,10 +110,13 @@ function clickShortcut(root: RefObject<HTMLElement>, key: string): boolean {
  * parent's `useExerciseKeys` registers after its children's (`ChoiceGrid`,
  * `TextAnswer`, `PitchLine`). A drill that needs its own Space / Enter
  * therefore registers one set here and forwards digits and Enter to the
- * widget buttons through their `aria-keyshortcuts` attributes.
+ * widget buttons through their `aria-keyshortcuts` attributes. `onHint` is
+ * the drill's own reveal for the frame's `?` key / Hint button: pass it only
+ * while there is something to reveal (the button follows it).
  */
-export function useDrillKeys(root: RefObject<HTMLElement>, h: { onReplay?: () => void; onSubmit?: () => void; onChoice?: (i: number) => void }): void {
+export function useDrillKeys(root: RefObject<HTMLElement>, h: { onReplay?: () => void; onSubmit?: () => void; onChoice?: (i: number) => void; onHint?: () => void }): void {
   useExerciseKeys({
+    onHint: h.onHint,
     onChoice: (i) => {
       if (h.onChoice) h.onChoice(i);
       else clickShortcut(root, String(i + 1));

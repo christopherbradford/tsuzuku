@@ -5,7 +5,8 @@
  *  ("42 reviews · 1 scroll · 1 episode · ~18 min") from `derived.forecastCounts`
  *  plus today's Scroll / episode availability, minutes per session size, the
  *  sentence of the day (`hash(seed, day)` over Brown items with examples), the
- *  next milestone, the welcome state, resume info — and, additively, the Three
+ *  next milestone, the welcome state, resume info (`loadSnapshot`: a snapshot
+ *  with malformed card keys is never offered) — and, additively, the Three
  *  Kata, the flame, the Kage standing, the Nemesis callout, the Gatekeeper and
  *  Shinsa availability, the governor notes and the 次回予告 teaser.
  *
@@ -30,6 +31,7 @@ import { jikaiYokoku, milestoneLine, omikuji } from './end-card';
 import { gateAvailable } from './gatekeeper';
 import { kageStanding, type KageStanding } from './kage';
 import { duelsReady } from './nemesis';
+import { loadSnapshot } from './snapshot';
 import { shinsaEligibleAsync, type ShinsaEligibility } from './shinsa';
 import { toPlain } from '../content/ruby';
 
@@ -111,7 +113,7 @@ export function welcomeState(): DojoFeed['welcome'] {
 
 /** Resume info from the saved snapshot, when reps remain. */
 export function resumeInfo(): { stepsLeft: number } | undefined {
-  const snap = store.session.load();
+  const snap = loadSnapshot();
   if (!snap) return undefined;
   const left = snap.plan.steps.length - snap.cursor;
   return left > 0 ? { stepsLeft: left } : undefined;

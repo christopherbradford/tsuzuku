@@ -4,8 +4,9 @@ import { FIXTURE, G, V } from '@/content/fixtures';
 import type { GrammarItem, VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { makeTestStore } from '@/store/testing';
-import { FormForge, forgeAccept, headWordOf, isVocabItem, meta } from './FormForge';
+import { FormForge, forgeAccept, headWordOf, inferHeadWord, isVocabItem, meta } from './FormForge';
 
 const TABERU = FIXTURE.items[V.食べる] as VocabItem; // v1
 const NOMU = FIXTURE.items[V.飲む] as VocabItem; // v5
@@ -228,5 +229,64 @@ describe('<FormForge>', () => {
     mount(pr2);
     expect(q('.gr-forge')?.getAttribute('data-state')).toBe('unavailable');
     expect(root.textContent).toContain('could not be built');
+  });
+});
+
+describe('head word from the step (params.pos / params.accepts) and the frame hint key', () => {
+  const MASU = FIXTURE.items[G.ます] as GrammarItem;
+  const press = (k: string): void => {
+    act(() => {
+      document.body.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+    });
+  };
+
+  it("forgeAccept grades the target form's params.accepts row (the row parallel to params.forms when given); inferHeadWord reads the forge shape", () => {
+    expect(forgeAccept(null, 'masu', { answer: '帰ります', accepts: [['帰ります', 'かえります']] })?.accept).toEqual(['帰ります', 'かえります']);
+    expect(forgeAccept(null, 'masu', { forms: ['te', 'masu'], answer: '帰ります', accepts: [['帰って', 'かえって'], ['帰ります', 'かえります']] })?.accept).toEqual(['帰ります', 'かえります']);
+    expect(inferHeadWord({ sentence: '帰る', kana: 'かえる', targetForm: 'potential', answer: '帰れる' })).toEqual({ word: '帰る', kana: 'かえる', pos: 'v5' });
+    expect(inferHeadWord({ sentence: '帰る', kana: 'かえる', targetForm: 'potential' })).toBeNull();
+  });
+
+  it('on a grammar prod card params.pos names the group, so 帰る conjugates as godan: かえれる is right and the ichidan かえられる is a miss', () => {
+    const params = { targetForm: 'potential' as const, pos: 'v5' as const, sentence: '帰る', kana: 'かえる', promptEn: 'to return: potential' };
+    const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    const input = mount(pr);
+    expect(q('.gr-forge')?.getAttribute('data-state')).toBeNull();
+    expect(root.textContent).toContain('Group 1 verb');
+    type(input, 'kaereru');
+    enter(input);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, answer: 'かえれる' });
+
+    act(() => render(null, root));
+    const pr2 = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    const input2 = mount(pr2);
+    type(input2, 'kaerareru');
+    enter(input2);
+    expect(pr2.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: false, errorTags: ['conjugation'] });
+    expect(q('.text-answer__form')?.textContent).toBe('帰れる');
+  });
+
+  it("the frame's ? key opens the rule once (hintUsed), then the Hint button is withdrawn", () => {
+    const pr = props();
+    act(() =>
+      render(
+        <ExerciseFrame step={pr.step} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => 0} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <FormForge {...pr} />
+        </ExerciseFrame>,
+        root,
+      ),
+    );
+    expect(q('.exercise-frame__hint')).not.toBeNull();
+    expect(q('[data-hint="true"]')).toBeNull();
+    press('?');
+    expect(q('[data-hint="true"]')?.textContent).toContain('え-row');
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    expect(q('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(pr.onHint).toHaveBeenCalledTimes(1);
+    const input = root.querySelector('input') as HTMLInputElement;
+    type(input, 'taberareru');
+    enter(input);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
   });
 });

@@ -3,8 +3,9 @@
  *
  * What TSUZUKU is and how it teaches, the scheduler / grading map / ki /
  * Judge / governors in plain language, the ten rules of the dojo (道場の掟),
- * privacy, credits, licences (code MIT; content and art CC BY-SA 4.0; fonts
- * OFL; wanakana and Preact MIT), the app and content versions, and a small
+ * privacy, credits, licences (code MIT, `LICENSE`; content and art CC BY-SA
+ * 4.0, `CONTENT_LICENSE.md`; fonts OFL under `public/fonts/OFL-*.txt`;
+ * wanakana and Preact MIT), the app and content versions, and a small
  * debug panel: rooms that did not load (`pages.loadErrors`) and the last bus
  * events. No franchise references anywhere.
  */

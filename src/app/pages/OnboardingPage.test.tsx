@@ -4,9 +4,9 @@ import { act } from 'preact/test-utils';
 import { installServices, nullAudio, resetServices } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import { route, syncRouteFromLocation } from '@/shared/routes';
-import { INTENSITY_PRESETS, newPerDayFor, resetStoreForTests, store } from '@/store';
-import { makeTestStore } from '@/store/testing';
-import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, NAME_MAX_GLYPHS, TILE_COUNT, beltAfterDays, clampName, hoursInApp, kanaMatches, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
+import { INTENSITY_PRESETS, NAME_MAX_GLYPHS, newPerDayFor, resetStoreForTests, store } from '@/store';
+import { DEFAULT_TEST_NOW, makeTestStore } from '@/store/testing';
+import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, TILE_COUNT, beltAfterDays, hoursInApp, kanaMatches, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
 import { S, fmt } from './strings';
 
 const markKnownSpy = vi.fn();
@@ -82,6 +82,7 @@ function answerCurrent(how: 'right' | 'wrong' | 'skip'): string {
 describe('<OnboardingPage>', () => {
   it('completing the flow patches profile and settings and navigates to the dojo', async () => {
     await makeTestStore();
+    expect(store.profile.value.onboardedAt).toBeUndefined();
     mount();
     stepIs('name');
     typeKanaName('hana');
@@ -110,6 +111,8 @@ describe('<OnboardingPage>', () => {
     expect(profile.name).toBe('はな');
     expect(profile.nameKana).toBe('はな');
     expect(profile.goals.length).toBeGreaterThan(0);
+    // The store's clock, so the stamp agrees with createdAt / the ledger (never Date.now in a page).
+    expect(profile.onboardedAt).toBe(DEFAULT_TEST_NOW);
     const s = store.settings.value;
     expect(s.intensity).toBe('standard');
     expect(s.newPerDay).toEqual(newPerDayFor('white', 'standard'));
@@ -132,14 +135,18 @@ describe('<OnboardingPage>', () => {
     click('[data-next]');
     click('[data-finish]');
     expect(store.progress.value.station).toBe(4);
+    expect(store.profile.value.onboardedAt).toBe(DEFAULT_TEST_NOW);
   });
 
-  it('a pasted 100-glyph name is cut to NAME_MAX_GLYPHS as typed and in the save', async () => {
+  it('a pasted 100-glyph name is cut to NAME_MAX_GLYPHS (the shared cap, via KanaInput maxLength) as typed and in the save', async () => {
     await makeTestStore();
     mount();
+    const field = q<HTMLInputElement>('.kana-input__field');
+    // The cap rides the IME path, not a native attribute (it would count UTF-16 units of kana + pending romaji).
+    expect(field.getAttribute('maxlength')).toBeNull();
     const long = 'あいうえおかきくけこ'.repeat(10);
     expect(Array.from(long).length).toBe(100);
-    setInput(q<HTMLInputElement>('.kana-input__field'), long);
+    setInput(field, long);
     expect(Array.from(q<HTMLInputElement>('.kana-input__field').value).length).toBe(NAME_MAX_GLYPHS);
     click('[data-next]');
     click('[data-choice="kana-none"]');
@@ -151,9 +158,6 @@ describe('<OnboardingPage>', () => {
     expect(Array.from(store.profile.value.nameKana).length).toBe(NAME_MAX_GLYPHS);
     expect(store.profile.value.nameKana).toBe(long.slice(0, NAME_MAX_GLYPHS));
     expect(store.profile.value.name).toBe(long.slice(0, NAME_MAX_GLYPHS));
-    // Code points, not UTF-16 units: an astral glyph counts once.
-    expect(clampName('😀'.repeat(30))).toBe('😀'.repeat(NAME_MAX_GLYPHS));
-    expect(clampName('はな')).toBe('はな');
   });
 
   it('a blank name trains as 無名 / むめい', async () => {

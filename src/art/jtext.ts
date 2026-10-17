@@ -148,6 +148,9 @@ export interface FitOptions {
  * Largest font size at which `text` fits a `maxW × maxH` box, as one
  * horizontal line (height ≤ maxH, width ≤ maxW) or one vertical column
  * (width ≤ maxW, height ≤ maxH). Empty text → `max`-bounded `maxH`.
+ * `min` is a legibility floor: when it binds the text overruns its box, so
+ * pass it only for fixed strings (titles, labels) — learner text such as the
+ * name or a sentence must shrink to fit, or be split into columns/lines.
  */
 export function fitSize(text: string, maxW: number, maxH: number, o: FitOptions = {}): number {
   const lo = o.min ?? 8;

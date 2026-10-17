@@ -256,6 +256,19 @@ describe('<RapidFire>', () => {
     expect(cap.events.some(([n]) => n === 'arcade:done')).toBe(false);
   });
 
+  it('Start takes focus on the intro screen and Continue on the summary (useAutoFocus, no autofocus attribute)', () => {
+    mount(step());
+    const start = Array.from(root.querySelectorAll<HTMLButtonElement>('button')).find((x) => x.textContent?.trim() === 'Start') as HTMLButtonElement;
+    expect(document.activeElement).toBe(start);
+    expect(start.hasAttribute('autofocus')).toBe(false);
+    clickText('Start');
+    clickText('Finish');
+    expect(q('.rapid')?.getAttribute('data-phase')).toBe('over');
+    const cont = Array.from(root.querySelectorAll<HTMLButtonElement>('button')).find((x) => x.textContent?.trim() === 'Continue') as HTMLButtonElement;
+    expect(document.activeElement).toBe(cont);
+    expect(cont.hasAttribute('autofocus')).toBe(false);
+  });
+
   it('a pool whose items are not loaded offers Finish instead of a dead prompt', () => {
     fake.loader = null; // actual loader: nothing loaded
     mount(step({ params: { pool: [K_INU] } }));

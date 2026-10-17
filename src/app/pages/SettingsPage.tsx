@@ -6,20 +6,22 @@
  * motion, CRT), audio (voices from `services.audio.voices()`, speed tier,
  * volume, speaking mode with the network notice), reminders and rest (rest
  * day, neutral `.ics`), privacy and data (storage meter, slot, backup and
- * the dojo's rules) and the danger zone (reset after typing つづく). Every
- * change is `store.patch` immediately; Intense asks first (03 §4). Both
- * confirms share `useDialogFocus` (initial focus, Escape, Tab trap, opener
- * restore), like the Backup page's Replace dialog.
+ * the dojo's rules) and the danger zone (reset after typing つづく, which
+ * delegates to the store's `resetSave()`: header, slices, cards, log and
+ * session back to fresh in one batched write, shard keys removed; the page
+ * only confirms, flushes and goes to Nihonbashi). Every change is
+ * `store.patch` immediately; Intense asks first (03 §4). Both confirms share
+ * `useDialogFocus` (initial focus, Escape, Tab trap, opener restore), like
+ * the Backup page's Replace dialog.
  */
 import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
-import type { CardKey } from '@/content/types';
 import { services, speak, type VoiceInfo } from '@/shared/audio';
 import { equivalentJa } from '@/shared/jp';
 import { href, navigate, type Route } from '@/shared/routes';
-import { SLICE_KEYS, type Feel, type FuriganaMode, type Intensity, type Retention, type Settings, type SpeakingMode, type SpeedTier, type Theme } from '@/shared/store-types';
+import type { Feel, FuriganaMode, Intensity, Retention, Settings, SpeakingMode, SpeedTier, Theme } from '@/shared/store-types';
 import { KanaInput } from '@/shared/ui/KanaInput';
-import { CEILING_BYTES, INTENSITY_PRESETS, freshSave, newPerDayFor, replaceHeader, replaceLog, store } from '@/store';
+import { CEILING_BYTES, INTENSITY_PRESETS, newPerDayFor, resetSave, store } from '@/store';
 import { currentBelt } from '@/store/derived';
 import { ICS_FILENAME, buildIcs, downloadIcs } from '../ics';
 import { useDialogFocus } from '../use-dialog-focus';
@@ -87,24 +89,6 @@ export function applyPreset(preset: Preset): void {
 /** Feel change: speed grading defaults off in Zen, on otherwise (ARCHITECTURE §1). */
 export function applyFeel(feel: Feel): void {
   patchSettings((s) => (s.feel === feel ? s : { ...s, feel, speedGrading: feel !== 'zen' }));
-}
-
-/**
- * Replace this browser's save with a fresh one: header (a new seed, so the
- * next learner's Mon, stamps and wallpapers are their own, and a new
- * createdAt), every slice, the cards, the review-log ring and the session.
- * Only the time zone survives.
- */
-export function resetSave(): void {
-  const fresh = freshSave(store.now(), store.profile.value.tz);
-  replaceHeader({ seed: fresh.seed, createdAt: fresh.createdAt, contentVersion: fresh.contentVersion });
-  for (const k of SLICE_KEYS) store.patch(k, () => fresh[k] as never);
-  replaceLog([]);
-  const keys: CardKey[] = [];
-  store.cards.forEach((k) => keys.push(k));
-  for (const k of keys) store.cards.delete(k);
-  store.session.clear();
-  void store.flush();
 }
 
 export function japaneseVoices(voices: readonly VoiceInfo[]): VoiceInfo[] {
@@ -227,7 +211,9 @@ export default function SettingsPage(p: SettingsPageProps): JSX.Element {
   const resetReady = equivalentJa(resetTyped.trim(), RESET_WORD);
   const doReset = (): void => {
     setResetAsk(false);
+    // The store's wipe (one batched write, shard keys removed); flush so the fresh save is on disk before Nihonbashi.
     resetSave();
+    void store.flush();
     setResetDone(true);
     setResetTyped('');
     navigate({ name: 'onboarding' }, { replace: true });

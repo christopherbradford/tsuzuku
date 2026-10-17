@@ -20,7 +20,9 @@
  *    it also carries the active milliseconds so far (`SessionSnapshot.activeMs`), and
  *    the tally's minutes are that active time, never the wall clock across a
  *    night. Rooms that never resume (Gatekeeper, Shinsa, Kage) pass
- *    `persist: false` and leave the training snapshot alone.
+ *    `persist: false` and leave the training snapshot alone. Resuming reads
+ *    `loadSnapshot()` (`./snapshot`): a snapshot whose card keys fail
+ *    `isCardKey` (hand-edited save, older build) is never offered or scheduled.
  *  - Emits `session:started` (fresh runs), `session:finished` with the
  *    `SessionResult`, `session:abandoned`, `weak-point:set-done` per tag of a
  *    completed Weak Point block, `welcome-back:done` for a `welcome` plan.
@@ -51,6 +53,7 @@ import { itemKindOf } from './builder';
 import { tally, trackCeremonies, type CeremonyEvent } from './end-card';
 import { afterDuel } from './nemesis';
 import { completeScrollById, isIntroCheck, isPretestStep } from './scroll';
+import { loadSnapshot } from './snapshot';
 import { NOTES_PLAN_PREFIX, completeNotesSession } from './shinsa';
 import { S } from './engine-strings';
 
@@ -219,11 +222,10 @@ export class SessionRunner {
     else this.startStep();
   }
 
-  /** Resume the saved session, if any. */
+  /** Resume the saved session, if any (`loadSnapshot`: a snapshot carrying malformed card keys is not one). */
   static resume(o: { loader?: ContentLoader } = {}): SessionRunner | null {
-    const snap = store.session.load();
-    if (!snap || snap.schema !== SESSION_SCHEMA) return null;
-    return new SessionRunner(snap.plan, { resumed: snap, loader: o.loader });
+    const snap = loadSnapshot();
+    return snap ? new SessionRunner(snap.plan, { resumed: snap, loader: o.loader }) : null;
   }
 
   get sessionId(): string {

@@ -158,7 +158,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
     const y = headY + pitch * (i + 1);
     const fill = i === 0 ? ph.hue : ph.dim;
     const nameMax = scoreX - nameX - (phone ? 180 : 220);
-    const labelSize = i === 0 ? fitSize(label, nameMax, rowSize, { min: 18, max: rowSize }) : rowSize;
+    // No floor: a name at NAME_MAX_GLYPHS must shrink to fit its box (review round 2).
+    const labelSize = i === 0 ? fitSize(label, nameMax, rowSize, { max: rowSize }) : rowSize;
     texts.push({ text: rank, x: rankX, y, size: rowSize, font: pixel, fill, lang: 'en' });
     texts.push({ text: label, x: nameX, y, size: labelSize, font: pixel, fill, lang: 'ja' });
     texts.push({ text: score, x: scoreX, y, size: rowSize, font: pixel, fill, anchor: 'end', lang: 'en' });
