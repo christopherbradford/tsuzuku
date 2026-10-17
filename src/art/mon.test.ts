@@ -271,6 +271,14 @@ describe('monParts', () => {
     expect(p.glyphLayer.fill).toMatch(/^#[0-9a-f]{6}$/);
     expect(p.glyphLayer.size).toBeGreaterThan(40);
     expect(p.glyphLayer.y).toBeGreaterThan(MON_VIEW / 2);
+    // tomoe fields: the glyph is at least 66 units (≈ 18.5 px in the 72 px
+    // Collections grid) and its ≈ 0.9 em ink box stays inside the r = 38 void
+    // between the tomoe heads
+    for (const id of ['tsuzuku', 'kyoto', 'hundred', 'gojuon-perfect'] as const) {
+      const g = monParts(MON_SPECS[id], { size: 72, earned: true, seed: monSeed(id) }).glyphLayer;
+      expect(g.size, id).toBeGreaterThanOrEqual(66);
+      expect((g.size * 0.9) / 2, id).toBeLessThan(38);
+    }
     expect(p.defs.length).toBeGreaterThan(0);
     expect(p.body.join('')).toContain('mon__glyph');
     // the glyph colour is readable on the field

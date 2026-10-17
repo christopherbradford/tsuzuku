@@ -1,11 +1,13 @@
 /**
  * TSUZUKU — 仮名鍛造 Kana Forge (design 04 §1): the voice says the kana (or,
- * without a Japanese voice, the romaji is the prompt) → type the kana through
- * the IME. Exact kana required: カタカナ and ひらがな are different answers
- * (`allowKatakanaFold: false`), katakana mode switches on by itself for a
- * katakana item, a small-kana or long-vowel slip is a Block tagged by kind.
- * With a voice available the romaji sits behind 「Show romaji」, which counts
- * as a hint (`onHint`, Hard ceiling). Space replays; replays are counted.
+ * without a Japanese voice, the romaji is the prompt and the Listen button is
+ * not shown) → type the kana through the IME. Exact kana required: カタカナ
+ * and ひらがな are different answers (`allowKatakanaFold: false`), katakana
+ * mode switches on by itself for a katakana item, a small-kana or long-vowel
+ * slip is a Block tagged by kind. The romaji shown is the IME spelling
+ * (`imeRomaji`: を → wo, ティ → thi) so what is read can be typed. With a
+ * voice available the romaji sits behind 「Show romaji」, which counts as a
+ * hint (`onHint`, Hard ceiling). Space replays; replays are counted.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -14,7 +16,7 @@ import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exerci
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
 import { acceptForms, attempt } from '../check';
 import { S as X } from '../strings';
-import { MissingItem, isKanaItem, missingResult, useDrillKeys, useLatency } from './KanaFlash';
+import { MissingItem, imeRomaji, isKanaItem, missingResult, romajiLabel, useDrillKeys, useLatency } from './KanaFlash';
 import { S } from './strings';
 import './kana.css';
 
@@ -43,7 +45,7 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
   const replaysRef = useRef(0);
   const fired = useRef(false);
   const hasVoice = services.audio.hasJaVoice.value;
-  const romaji = p.step.params.promptEn ?? item?.romaji ?? '';
+  const romaji = item ? imeRomaji(item) : (p.step.params.promptEn ?? '');
   const showRomaji = !hasVoice || romajiShown;
   const hintUsed = hasVoice && romajiShown;
   const accept = acceptForms(item, p.step.params);
@@ -57,7 +59,7 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
   }, [kana]);
 
   const replay = (): void => {
-    if (fired.current || !item) return;
+    if (fired.current || !item || !hasVoice) return;
     replaysRef.current += 1;
     setReplays(replaysRef.current);
     play();
@@ -101,12 +103,14 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
             {S.showRomaji}
           </button>
         )}
-        <button type="button" class="kana-ear__speaker" onClick={replay} disabled={done !== null} aria-keyshortcuts="Space" aria-label={X.replay}>
-          <span class="kana-ear__glyph" aria-hidden="true" lang="ja">
-            耳
-          </span>
-          <span>{replays > 0 ? X.replay : S.listen}</span>
-        </button>
+        {hasVoice ? (
+          <button type="button" class="kana-ear__speaker" onClick={replay} disabled={done !== null} aria-keyshortcuts="Space" aria-label={X.replay}>
+            <span class="kana-ear__glyph" aria-hidden="true" lang="ja">
+              耳
+            </span>
+            <span>{replays > 0 ? X.replay : S.listen}</span>
+          </button>
+        ) : null}
       </div>
       {hintUsed ? (
         <p class="drill__hint" role="status">
@@ -123,7 +127,7 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
             <span class="drill__ja" lang="ja">
               {item.kana}
             </span>{' '}
-            <span>{item.romaji}</span>
+            <span>{romajiLabel(item)}</span>
           </p>
           <p>
             <span class="drill__label">{S.seenIn}</span>{' '}

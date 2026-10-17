@@ -197,6 +197,38 @@ describe('<ExerciseFrame> keys', () => {
     expect(s.onContinue).not.toHaveBeenCalled();
   });
 
+  it('Enter/Space mid-IME-composition (isComposing or keyCode 229) never reach onSubmit or onReplay', () => {
+    const s = spies();
+    const submit = vi.fn();
+    function Child() {
+      useExerciseKeys({ onSubmit: submit });
+      return <div class="x" />;
+    }
+    mount(props(s, { children: <Child /> }));
+    expect(press('Enter', { isComposing: true }).defaultPrevented).toBe(false);
+    expect(press('Enter', { keyCode: 229 }).defaultPrevented).toBe(false);
+    press(' ', { isComposing: true });
+    press(' ', { keyCode: 229 });
+    expect(submit).not.toHaveBeenCalled();
+    expect(s.onReplay).not.toHaveBeenCalled();
+    press('Enter');
+    expect(submit).toHaveBeenCalledTimes(1);
+  });
+
+  it('feedback shown: Enter/Space mid-IME-composition never reach onContinue', () => {
+    const s = spies();
+    mount(props(s, { feedback: feedback() }));
+    const input = document.createElement('input');
+    root.appendChild(input);
+    press('Enter', { isComposing: true }, input);
+    press('Enter', { keyCode: 229 }, input);
+    press(' ', { isComposing: true }, input);
+    press('Enter', { isComposing: true });
+    expect(s.onContinue).not.toHaveBeenCalled();
+    press('Enter');
+    expect(s.onContinue).toHaveBeenCalledTimes(1);
+  });
+
   it('ignores modifier combos and key repeat', () => {
     const s = spies();
     mount(props(s));

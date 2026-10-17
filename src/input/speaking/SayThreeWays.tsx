@@ -8,7 +8,8 @@
  * when its register is exactly the one asked for (a mixed line never lands).
  *  · Speak mode (`params.mode === 'speak'` and recognition opted in): a
  *    per-row Speak button fills the field from the recognizer's first
- *    alternative; the learner may still edit before checking.
+ *    alternative; the learner may still edit before checking. A typed
+ *    recognizer failure (`sttFailure`) is named in place of "nothing heard".
  *  · Emits `output:done {kind:'three-ways', registersCorrect, path}`; the
  *    result tags `register` on any slip and carries an implicit `prod` grade
  *    for the step's grammar point when its card is due within 3 days.
@@ -16,7 +17,7 @@
  */
 import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
-import { SHADOW_MAX_MS } from '@/audio';
+import { SHADOW_MAX_MS, sttFailure } from '@/audio';
 import { toPlain } from '@/content/ruby';
 import type { CardKey, ContentItem, GrammarItem } from '@/content/types';
 import { services } from '@/shared/audio';
@@ -143,7 +144,7 @@ function ThreeWaysBody(p: ExerciseProps): JSX.Element {
     if (text) {
       setSpoke(true);
       set(r, text);
-    } else setNudge(S.shadowNoSpeech);
+    } else setNudge(sttFailure(services.stt)?.label ?? S.shadowNoSpeech);
   };
 
   const revealModel = (): void => {

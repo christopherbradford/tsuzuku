@@ -10,10 +10,16 @@ import { epochDay } from '../shared/time';
 import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, card, makeTestStore } from '../store/testing';
+import { createLoader } from '../content/loader';
+import { fixtureFetch } from '../content/fixtures';
+import { toKana, toPlain } from '../content/ruby';
+import { CardFlag } from '../shared/store-types';
+import { newPerDayFor } from '../store';
 import { interleaveViolations, type QueueCard } from '../learn';
 import { isIntroCheck, isPretestStep } from './scroll';
 import { MICHIKUSA_AFTER_REP } from './blocks';
-import { accuracy7, buildPlan, itemKindOf, loadPlanContext, michikusaFor, pickStories, pitchPattern, resolveParams, storyCoverage } from './builder';
+import { SessionRunner } from './runner';
+import { accuracy7, buildPlan, effectiveNewPerDay, introducedToday, itemKindOf, loadPlanContext, michikusaFor, pickStories, pitchPattern, resolveParams, splitBunsetsu, stepForCard, storyCoverage } from './builder';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const loader = createFakeLoader();
@@ -127,8 +133,11 @@ describe('buildPlan — Kata', () => {
     expect(grammar.params.sentence).toContain('です');
     expect(grammar.params.blank![1]! - grammar.params.blank![0]!).toBe(2);
     const kanji = plan.steps.find((s) => s.cardKey === 'j-飲#comp')!;
-    expect(kanji.params.answers).toEqual(['食', '欠']);
-    expect(kanji.params.tiles).toContain('食');
+    // the drill builds its tiles from the component definitions; the builder seeds the distractors by id
+    expect(kanji.params.answer).toBe('飲');
+    expect(kanji.params.distractorIds).toEqual(expect.arrayContaining(['c-person', 'c-sun']));
+    expect(kanji.params.distractorIds).not.toContain('c-eat');
+    expect(kanji.params.tiles).toBeUndefined();
   });
 
   it('includes an untimed recheck step for an arcade miss and clears nothing else', async () => {
@@ -314,5 +323,196 @@ describe('helpers', () => {
     expect(plan.createdAt).toBe(DEFAULT_TEST_NOW);
     expect(plan.day).toBe(TODAY);
     expect(plan.id.startsWith('kata-')).toBe(true);
+  });
+});
+
+/* ── regressions ─────────────────────────────────────────────────────── */
+
+const ok = { correct: true, nearMiss: false, hintUsed: false, guard: false, timedOut: false, ms: 2500, errorTags: [] as never[] };
+
+/** Runs a plan to the end through the real runner, answering every graded step correctly. */
+function runToEnd(plan: SessionPlan): SessionRunner {
+  const r = new SessionRunner(plan, { loader });
+  let guard = 0;
+  while (!r.done.value && guard++ < 400) {
+    r.submit({ ...ok, answer: r.step.value?.params.answer ?? 'x' });
+    r.next();
+  }
+  return r;
+}
+
+describe('new-item budget (design 03 §5 cramming cap, 02 §6.1)', () => {
+  it('introducedToday keeps counting after the +3 / +10 graduations, so a second Kumite does not re-offer the budget', async () => {
+    const cards = allCards();
+    for (const id of STATION_4.vocabIds) delete cards[`${id}#rec`];
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const before = await loadPlanContext({ loader, mode: 'kumite', available: all });
+    const plan = await buildPlan('kumite', { loader, available: all });
+    expect(plan.meta.newCount).toBeGreaterThan(0);
+    runToEnd(plan);
+    const intro = introducedToday(TODAY);
+    expect(intro.vocab + intro.kanji + intro.grammar + intro.kana + intro.component).toBe(plan.meta.newCount);
+    const after = await loadPlanContext({ loader, mode: 'kumite', available: all });
+    expect(after.newAllowed).toBe(Math.max(0, before.newAllowed - plan.meta.newCount));
+    expect(after.newTarget).toBe(Math.max(0, before.newTarget - plan.meta.newCount));
+  });
+
+  it('the budget follows the belt table at every preset; the stored mix is the custom override only', async () => {
+    await makeTestStore({ save: { progress: { station: 4 }, settings: { intensity: 'standard', newPerDay: { vocab: 4, kanji: 0, grammar: 0 } } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const table = newPerDayFor(ctx.belt, 'standard');
+    expect(effectiveNewPerDay(ctx.settings, ctx.belt)).toEqual(table);
+    expect(ctx.newTarget).toBe(Math.round(table.vocab + table.kanji + table.grammar));
+    expect(ctx.newTarget).not.toBe(4);
+    expect(effectiveNewPerDay({ intensity: 'custom', newPerDay: { vocab: 4, kanji: 0, grammar: 0 } }, 'blue')).toEqual({ vocab: 4, kanji: 0, grammar: 0 });
+  });
+});
+
+describe('Nemesis inside a Kumite (design 04 §9)', () => {
+  const nemesisCard = (daysAgo: number): CardTuple => card({ due: TODAY, s: 1.5, d: 8, reps: 20, lapses: 9, state: 2, last: TODAY - daysAgo, flags: CardFlag.nemesis });
+
+  it('a duel-ready item gets exactly one nemesis-duel step and is held out of the review draws', async () => {
+    const cards = allCards();
+    cards[`${V.飲む}#prod`] = nemesisCard(20);
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const plan = await buildPlan('kumite', { loader, available: all });
+    const duels = plan.steps.filter((s) => s.exercise === 'nemesis-duel');
+    expect(duels).toHaveLength(1);
+    expect(duels[0]!.cardKey).toBe(`${V.飲む}#prod`);
+    expect(duels[0]!.params.phase).toBe(3);
+    expect(duels[0]!.params.answer).toBe('飲む');
+    expect(plan.steps.filter((s) => s.cardKey === `${V.飲む}#prod`)).toHaveLength(1);
+    const block = plan.blocks.find((b) => b.stepIds.includes(duels[0]!.id))!;
+    expect(block.kind).toBe('weak');
+    expect(plan.blocks.indexOf(block)).toBeLessThan(plan.blocks.findIndex((b) => b.kind === 'sparring'));
+  });
+
+  it('a Kata never carries the duel and the context window yields none', async () => {
+    const cards = allCards();
+    cards[`${V.飲む}#prod`] = nemesisCard(5);
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    expect((await buildPlan('kumite', { loader, available: all })).steps.some((s) => s.exercise === 'nemesis-duel')).toBe(false);
+    cards[`${V.飲む}#prod`] = nemesisCard(20);
+    resetStoreForTests();
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    expect((await buildPlan('kata', { loader, available: all })).steps.some((s) => s.exercise === 'nemesis-duel')).toBe(false);
+  });
+});
+
+describe('particles and bunsetsu (design 04 §4)', () => {
+  it('Particle Duel blanks only the point’s particle hints, never で inside です', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const wa = resolveParams(ctx, 'particle-duel', loader.get(G.は)!, { rep: 0 });
+    const plain = toPlain(wa.sentence!);
+    expect(wa.blanks!.length).toBeGreaterThanOrEqual(1);
+    for (const [a, b] of wa.blanks!) expect(plain.slice(a, b)).toBe('は');
+    expect(wa.answers!.every((x) => x === 'は')).toBe(true);
+    const desu = resolveParams(ctx, 'particle-duel', loader.get(G.です)!, { rep: 2 });
+    expect(toPlain(desu.sentence!)).toContain('です');
+    expect(desu.blanks).toEqual([]);
+  });
+
+  it('splitBunsetsu keeps です・でした・ので・こと whole and still splits on real particles', () => {
+    expect(splitBunsetsu('私は毎朝コーヒーを飲みます。')).toEqual(['私は', '毎朝コーヒーを', '飲みます', '。']);
+    const tiles = splitBunsetsu('本日に限り、全品二割引です。');
+    expect(tiles).not.toContain('す');
+    expect(tiles.join('')).toBe('本日に限り、全品二割引です。');
+    for (const s of ['個人情報ですので、お教えしかねます。', '皆さんにまたお会いできて、嬉しい限りです。', 'これは私のものではない。']) {
+      const t = splitBunsetsu(s);
+      expect(t.join('')).toBe(s);
+      expect(t.some((x) => /^(す|した|しょう|の|もの|こと)$/.test(x))).toBe(false);
+    }
+  });
+
+  it('a particle point’s cloze card becomes Particle Duel from Station 5 after the two choice exposures', async () => {
+    const cards = allCards();
+    cards[`${G.は}#cloze`] = due(5, { reps: 6 });
+    await makeTestStore({ save: { progress: { station: 5 } }, cards });
+    const ctx = await loadPlanContext({ loader, station: 5, available: all });
+    const qc: QueueCard = { cardKey: `${G.は}#cloze`, itemId: G.は, kind: 'grammar', facet: 'cloze', r: 0.9, mature: false, exposures: 6 };
+    expect(stepForCard(ctx, qc, 'reviews')!.exercise).toBe('particle-duel');
+    expect(stepForCard(ctx, { ...qc, exposures: 1 }, 'reviews')!.exercise).toBe('pattern-cloze');
+    const desu: QueueCard = { ...qc, cardKey: `${G.です}#cloze`, itemId: G.です };
+    expect(stepForCard(ctx, desu, 'reviews')!.exercise).toBe('pattern-cloze');
+    const four = await loadPlanContext({ loader, station: 4, available: all });
+    expect(stepForCard(four, qc, 'reviews')!.exercise).toBe('pattern-cloze');
+  });
+});
+
+describe('Form Forge gate (design 04 §4 unlocksForms)', () => {
+  it('a point without unlocksForms keeps its cloze shape at Station 10; a declaring point drills only its forms', async () => {
+    const cards = allCards();
+    cards[`${G.です}#prod`] = due(5, { reps: 6 });
+    cards[`${G.ます}#prod`] = due(5, { reps: 6 });
+    await makeTestStore({ save: { progress: { station: 10 } }, cards });
+    const ctx = await loadPlanContext({ loader, station: 10, available: all });
+    const desu: QueueCard = { cardKey: `${G.です}#prod`, itemId: G.です, kind: 'grammar', facet: 'prod', r: 0.9, mature: false, exposures: 6 };
+    expect(stepForCard(ctx, desu, 'reviews')!.exercise).toBe('pattern-cloze');
+    expect(resolveParams(ctx, 'form-forge', loader.get(G.です)!, { rep: 3 })).toEqual({});
+    const masu = stepForCard(ctx, { ...desu, cardKey: `${G.ます}#prod`, itemId: G.ます }, 'reviews')!;
+    expect(masu.exercise).toBe('form-forge');
+    expect(['masu', 'masen', 'mashita']).toContain(masu.params.targetForm);
+  });
+});
+
+describe('sentence params carry ruby (design 04 §3, §5, §7)', () => {
+  it('dictation and shadow grade against the kana of the sentence; sentence drills keep furigana with plain offsets', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const nomu = loader.get(V.飲む)! as { examples: { ja: string; kana: string }[] };
+    for (const drill of ['sentence-listen', 'shadow'] as const) {
+      const p = resolveParams(ctx, drill, loader.get(V.飲む)!, { rep: 0 });
+      expect(toKana(p.sentence!)).toBe(nomu.examples[0]!.kana);
+      expect(p.answer).toBe(nomu.examples[0]!.kana);
+      expect(p.accept).toContain(toPlain(nomu.examples[0]!.ja));
+    }
+    const word = resolveParams(ctx, 'sentence-listen', { ...(loader.get(V.飲む)! as object), examples: [] } as never, { rep: 0 });
+    expect(toKana(word.sentence!)).toBe('のむ');
+    expect(toPlain(word.sentence!)).toBe('飲む');
+    const cloze = resolveParams(ctx, 'pattern-cloze', loader.get(G.です)!, { rep: 0 });
+    expect(cloze.sentence).toContain('{');
+    expect(toPlain(cloze.sentence!).slice(cloze.blank![0], cloze.blank![1])).toBe('です');
+    const read = resolveParams(ctx, 'kanji-read', loader.get('j-人')!, { rep: 0 });
+    expect(read.sentence).toContain('{');
+    expect(toPlain(read.sentence!).slice(read.blank![0], read.blank![1])).toBe('人');
+    expect(read.answer).toBe('ひと');
+    const scramble = resolveParams(ctx, 'scramble', loader.get(G.です)!, { rep: 0 });
+    expect(scramble.sentence).toContain('{');
+    expect(scramble.answer).toBe(toPlain(scramble.sentence!));
+    const forge = resolveParams(ctx, 'production-forge', loader.get(V.飲む)!, { rep: 0 });
+    expect(forge.sentence).not.toContain('{');
+  });
+});
+
+describe('station entry stays light (design 07 §6, §9)', () => {
+  it('the Dojo loads no due-card files; a plan loads only the due queue it can draw; the next station is prefetched', async () => {
+    const cards: Record<CardKey, CardTuple> = { [`${V.私}#rec`]: due(5) };
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const dojoFetch = fixtureFetch();
+    await loadPlanContext({ loader: createLoader(dojoFetch as unknown as typeof fetch), station: 4, mode: 'dojo' });
+    expect(dojoFetch.calls.some((c) => c.endsWith('vocab-n5-001.json'))).toBe(false);
+    expect(dojoFetch.calls.some((c) => c.endsWith('vocab-n5-002.json'))).toBe(true);
+    const kataFetch = fixtureFetch();
+    await loadPlanContext({ loader: createLoader(kataFetch as unknown as typeof fetch), station: 4, mode: 'kata' });
+    expect(kataFetch.calls.some((c) => c.endsWith('vocab-n5-001.json'))).toBe(true);
+    const prefetch: number[] = [];
+    const spy = { ...loader, prefetchStation: (n: number) => prefetch.push(n) };
+    await loadPlanContext({ loader: spy, station: 4 });
+    expect(prefetch).toEqual([5]);
+  });
+});
+
+describe('first session after Nihonbashi (BUILD_STATUS first-run walk)', () => {
+  it('Station 1 with no cards: Kata is honestly empty, Kumite is the two kana Scrolls', async () => {
+    await makeTestStore({ save: { progress: { station: 1 }, profile: { onboardedAt: 1 } } });
+    const kata = await buildPlan('kata', { loader, available: all });
+    expect(kata.steps).toHaveLength(0);
+    const k = await buildPlan('kumite', { loader, available: all });
+    expect(k.steps.length).toBeGreaterThan(0);
+    expect(k.blocks.map((b) => b.kind)).toEqual(['scroll']);
+    expect(k.meta.scrollIds).toEqual(['1-1', '1-2']);
+    expect(k.steps.filter(isIntroCheck).length).toBe(k.meta.newCount);
+    expect(k.steps.every((s) => s.isNew && s.block === 'scroll')).toBe(true);
   });
 });

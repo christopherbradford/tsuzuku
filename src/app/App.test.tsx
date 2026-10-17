@@ -1,3 +1,4 @@
+import { signal } from '@preact/signals';
 import { render, type FunctionComponent } from 'preact';
 import { act } from 'preact/test-utils';
 import { navigate, syncRouteFromLocation, type Route } from '@/shared/routes';
@@ -134,6 +135,21 @@ describe('<App>', () => {
     await flush();
     expect(root.querySelector('#overlay')).not.toBeNull();
     expect(root.querySelector('.app-error')).toBeNull();
+    expect(root.querySelector('#page')?.textContent).toBe('dojo');
+  });
+
+  it('overlays handed over as a signal mount when the art barrel resolves after first paint', async () => {
+    await makeTestStore();
+    const Overlay: FunctionComponent = () => <div id="overlay" />;
+    const overlays = signal<FunctionComponent[]>([]);
+    act(() => render(<App pageFor={pages} overlays={overlays} />, root));
+    await flush();
+    expect(root.querySelector('#overlay')).toBeNull();
+    act(() => {
+      overlays.value = [Overlay];
+    });
+    await flush();
+    expect(root.querySelector('#overlay')).not.toBeNull();
     expect(root.querySelector('#page')?.textContent).toBe('dojo');
   });
 

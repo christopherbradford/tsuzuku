@@ -26,6 +26,13 @@
   --hai: #8A8578;
   --focus: #1F2A6B;
 
+  /* text-safe variants (design 01 §7: text meets 4.5:1 in both themes).
+     --kin / --shu stay as accents (rings, stitching, borders); small text uses these. */
+  --kin-text: #7A5A05;
+  --shu-text: #B0241F;
+  /* dark ink for text on a gold background (theme-invariant) */
+  --ink: #1A1A1F;
+
   /* belts (same in both themes) */
   --belt-white: #F4EDE0;
   --belt-yellow: #F2D54A;
@@ -102,6 +109,8 @@
     --kon: #4F6FD6;
     --hai: #6E6A61;
     --focus: #2EE6D6;
+    --kin-text: #E0B341;
+    --shu-text: #FF6A5E;
   }
 }
 
@@ -124,6 +133,8 @@
   --kon: #4F6FD6;
   --hai: #6E6A61;
   --focus: #2EE6D6;
+  --kin-text: #E0B341;
+  --shu-text: #FF6A5E;
 }
 
 html {

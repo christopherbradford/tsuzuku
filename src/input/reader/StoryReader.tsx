@@ -12,13 +12,17 @@
  * `<Comprehension>`; ≥ 2/3 is full credit. On finish:
  *   - a gloss tap on an introduced word graded Hard through `capture.onGlossTap`
  *     only when the card is due today and this is not the first read (05 §4);
- *   - 「捕まえる」Capture / Bookmark on the gloss writes `store.captured` / `bookmarks`;
+ *   - 「捕まえる」Capture / Bookmark on the gloss writes `store.captured` / `bookmarks`
+ *     (vocab only: grammar / kanji tokens show "comes with its station Scroll",
+ *     since `intro-policy` routes only `v-` captures into Scrolls);
  *   - Kaiden words read with no gloss tap and ≥ 2/3 log Good on their base
  *     card (`recordImplicit`, 05 §2 "implicit evidence counts");
  *   - `story:read` is emitted once (B grants XP, stats, ledger minutes, the
  *     辞書要らず badge); `ledgerLogged` tells a standalone host whether B's
  *     ledger reducer took the minutes, so nothing is logged twice.
- * Registered by the F barrel as `story-read` (`meta`). Copy in `./strings.ts`.
+ * Speech is cancelled on unmount (a line must not keep speaking into the
+ * next session step). Registered by the F barrel as `story-read` (`meta`).
+ * Copy in `./strings.ts`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -26,11 +30,11 @@ import { content, type ContentLoader } from '@/content/loader';
 import { segmentsToTokens, toKana, toPlain } from '@/content/ruby';
 import type { CardKey, ContentItem, StoryItem, StoryLine } from '@/content/types';
 import { recordImplicit } from '@/learn/apply';
-import { speak } from '@/shared/audio';
+import { services, speak } from '@/shared/audio';
 import { bus, type Events } from '@/shared/events';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { rngFor } from '@/shared/hash';
-import { cardKey } from '@/shared/ids';
+import { cardKey, tryKindOfId } from '@/shared/ids';
 import { CardFlag, hasFlag, type Feel, type FuriganaMode } from '@/shared/store-types';
 import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
@@ -175,11 +179,16 @@ export function toAttemptResult(r: StoryReadResult): AttemptResult {
   };
 }
 
-/** The capture button's meaning for a tapped token. */
+/**
+ * The capture button's meaning for a tapped token. Only vocab is capturable:
+ * `learn/intro-policy` routes `v-` captures into the next Scroll and skips
+ * every other kind, so a grammar point or kanji gets the `station` line.
+ */
 export function captureStateFor(itemId: string | null, token: string, introduced: boolean): CaptureState {
   if (!itemId) return store.bookmarks.value.includes(token.trim()) ? 'bookmarked' : 'bookmark';
   if (!isCapturableId(itemId)) return 'none';
   if (introduced) return 'introduced';
+  if (tryKindOfId(itemId) !== 'vocab') return 'station';
   return isCaptured(itemId) ? 'captured' : 'capture';
 }
 
@@ -267,6 +276,8 @@ export function StoryReaderView(p: StoryReaderProps): JSX.Element {
   latest.current = p;
 
   const timer = useMemo(() => createReadingTimer(store.now), []);
+  // A line still being spoken must not carry into the next step.
+  useEffect(() => () => services.audio.cancel(), []);
   useEffect(() => {
     if (!story || timer.started()) return;
     timer.start();
@@ -362,7 +373,7 @@ export function StoryReaderView(p: StoryReaderProps): JSX.Element {
     };
 
   const onCapture = (): void => {
-    if (!gloss) return;
+    if (!gloss || (gloss.capture !== 'capture' && gloss.capture !== 'bookmark')) return;
     const out = onGlossTap({ token: gloss.token, itemId: gloss.itemId, introduced: false, dueWithin3: false, sessionId, exercise: 'story-read' });
     const next_: CaptureState = out.kind === 'captured' || out.kind === 'already-captured' ? 'captured' : out.kind === 'bookmarked' || out.kind === 'already-bookmarked' ? 'bookmarked' : gloss.capture;
     setGloss({ ...gloss, capture: next_ });

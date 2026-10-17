@@ -11,7 +11,8 @@ import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { KIAI_RULES } from '../learn';
-import { SessionRunner, correctFormOf } from './runner';
+import { SessionRunner, correctFormOf, type RunnerSnapshot } from './runner';
+import { toPlain } from '../content/ruby';
 import { checkStepId, pretestStepId, resetScrollCompletions } from './scroll';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
@@ -385,5 +386,74 @@ describe('helpers', () => {
     r.submit(ok({ selfRating: 3 }), { judge: 'fail' });
     expect(r.results[0]?.rating).toBe(1);
     expect(r.feedback.value?.judge).toBe('fail');
+  });
+});
+
+describe('SessionRunner — regressions', () => {
+  it('a boss runner with persist: false never touches the training snapshot, finished or abandoned', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards() });
+    const kata = new SessionRunner(plan(vocabSteps(4)), { loader });
+    kata.submit(ok());
+    kata.next();
+    const kept = store.session.load()!;
+    expect(kept.plan.mode).toBe('kata');
+    expect(kept.cursor).toBe(1);
+    const gate = new SessionRunner(plan(vocabSteps(2), 'gate'), { loader, persist: false });
+    expect(store.session.load()).toEqual(kept);
+    gate.submit(ok());
+    gate.next();
+    expect(store.session.load()).toEqual(kept);
+    gate.submit(ok());
+    gate.next();
+    expect(gate.done.value).not.toBeNull();
+    expect(store.session.load()).toEqual(kept);
+    const cap = captureEvents();
+    const kage = new SessionRunner(plan(vocabSteps(2), 'kage'), { loader, persist: false });
+    kage.abandon();
+    expect(cap.events.some((e) => e[0] === 'session:abandoned')).toBe(true);
+    expect(store.session.load()).toEqual(kept);
+    cap.stop();
+  });
+
+  it('a session resumed the next day earns its active minutes, not the night (tally, stats, daily row)', async () => {
+    let clock = DEFAULT_TEST_NOW;
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards(), now: () => clock, reducers: true });
+    const r = new SessionRunner(plan(vocabSteps(3)), { loader });
+    clock += 30_000;
+    r.submit(ok());
+    r.next();
+    expect((store.session.load() as RunnerSnapshot | null)?.activeMs).toBe(30_000);
+    clock += 86_400_000;
+    const back = SessionRunner.resume({ loader })!;
+    clock += 20_000;
+    back.submit(ok());
+    back.next();
+    clock += 10_000;
+    back.submit(ok());
+    back.next();
+    const done = back.done.value!;
+    expect(done.tally.minutes).toBe(1);
+    expect(done.endedAt - done.startedAt).toBe(60_000);
+    expect(store.stats.value.minutes).toBe(1);
+    expect(store.daily.value[store.today()]?.minutes).toBe(1);
+  });
+
+  it('the つづく XP matches the profile: introduction and Scroll XP ride on the step that earned them', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, reducers: true });
+    const sid = '4-1';
+    const items = [V.水, V.犬, V.人];
+    const steps: Step[] = items.map((id) => step({ id: checkStepId(sid, id), cardKey: `${id}#rec`, isNew: true, stepTag: 'intro', exposures: 0, exercise: 'meaning-guard', block: 'scroll', params: { scrollId: sid, answer: 'x', choices: ['x', 'a', 'b', 'c'] } }));
+    const before = store.profile.value.xp;
+    const r = new SessionRunner(plan(steps, 'kumite', { scrollIds: [sid], newCount: 3 }), { loader });
+    let guard = 0;
+    while (!r.done.value && guard++ < 40) {
+      r.submit(ok({ answer: 'x' }));
+      r.next();
+    }
+    const done = r.done.value!;
+    expect(done.tally.xp).toBe(store.profile.value.xp - before);
+    expect(done.tally.xp).toBeGreaterThan(0);
+    expect(done.steps.reduce((a, s) => a + s.xpDelta, 0)).toBeLessThanOrEqual(done.tally.xp);
+    expect(toPlain('{水|みず}')).toBe('水');
   });
 });

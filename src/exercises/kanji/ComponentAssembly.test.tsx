@@ -148,9 +148,26 @@ describe('ComponentAssembly helpers', () => {
     expect(f?.answer.map((t) => t.char)).toEqual(['食', '欠']);
     expect(f?.tiles.map((t) => t.char)).toEqual(['欠', '人', '食', '日']);
     expect(fastTiles({ accept: ['食'], choices: ['人'] })?.tiles.map((t) => t.char)).toEqual(['人', '食']);
+    expect(fastTiles({ accept: ['食'], choices: ['人', '人', '食'] })?.tiles.map((t) => t.char)).toEqual(['人', '食']);
     expect(sameSet(['a', 'b'], ['b', 'a'])).toBe(true);
     expect(sameSet(['a', 'b'], ['a', 'a'])).toBe(false);
     expect(sameSet(['a'], ['a', 'b'])).toBe(false);
+  });
+
+  it('a repeated part gets one tile per occurrence: keys are unique while chars repeat (resolveParts, buildTiles, fastTiles)', () => {
+    const parts = resolveParts(['tree', 'tree', 'altar'], POOL);
+    expect(parts.map((t) => t.char)).toEqual(['木', '木', 'altar']);
+    expect(parts.map((t) => t.key)).toEqual(['c-tree', 'c-tree#2', 'name:altar']);
+    expect(resolveParts(['ladder', 'ladder'], POOL).map((t) => t.key)).toEqual(['name:ladder', 'name:ladder#2']);
+    const tiles = buildTiles(parts.slice(0, 2), POOL, mulberry32(7));
+    expect(tiles.length).toBe(TILE_COUNT);
+    expect(new Set(tiles.map((t) => t.key)).size).toBe(TILE_COUNT);
+    expect(tiles.filter((t) => t.char === '木').length).toBe(2);
+    const f = fastTiles({ accept: ['木', '木'], choices: ['木', '人'] });
+    expect(f?.answer.map((t) => t.key)).toEqual(['g:木', 'g:木#2']);
+    expect(f?.tiles.map((t) => t.char).sort()).toEqual(['人', '木', '木']);
+    expect(new Set(f?.tiles.map((t) => t.key)).size).toBe(3);
+    expect(sameSet(f?.answer.map((t) => t.key) ?? [], ['g:木#2', 'g:木'])).toBe(true);
   });
 });
 
@@ -186,6 +203,27 @@ describe('<ComponentAssembly>', () => {
     expect(root.textContent).toContain(DRINK.mnemonic);
     expect(slots().map((s) => s.getAttribute('data-state'))).toEqual(['correct', 'correct']);
     expect(q('[data-order-note="true"]')).toBeNull();
+  });
+
+  it('a kanji with a repeated part (林 = tree + tree) can be completed: both 木 tiles place, Check enables and grades correct', async () => {
+    const HAYASHI: KanjiItem = { ...DRINK, id: 'j-林', char: '林', meanings: ['grove', 'woods'], on: ['リン'], kun: ['はやし'], components: ['tree', 'tree'], mnemonic: 'Two trees side by side make a grove.' };
+    const pr = props({ item: HAYASHI, step: step({ itemId: HAYASHI.id, cardKey: 'j-林#comp' }) });
+    await mount(pr, true);
+    expect(slots().length).toBe(2);
+    const trees = tiles().filter((b) => b.textContent?.replace(/^\d/, '').startsWith('木'));
+    expect(trees.length).toBe(2);
+    act(() => (trees[0] as HTMLButtonElement).click());
+    expect(slots().map((s) => s.getAttribute('data-filled'))).toEqual(['true', 'false']);
+    expect((trees[1] as HTMLButtonElement).disabled).toBe(false);
+    act(() => (trees[1] as HTMLButtonElement).click());
+    expect(slots().map((s) => s.textContent)).toEqual(['木', '木']);
+    expect(tiles().filter((b) => b.getAttribute('data-used') === 'true').length).toBe(2);
+    expect(check().disabled).toBe(false);
+    press('Enter');
+    expect(pr.onResult).toHaveBeenCalledTimes(1);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, errorTags: [], answer: '木木' });
+    expect(q('[data-order-note="true"]')).toBeNull();
+    expect(slots().map((s) => s.getAttribute('data-state'))).toEqual(['correct', 'correct']);
   });
 
   it('the exact set in swapped order is still correct on a left-right frame, with a note on where the first part sits', async () => {

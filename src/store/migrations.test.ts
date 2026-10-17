@@ -1,11 +1,12 @@
 import { CARDS_SCHEMA, LOG_SCHEMA, type CardShard, type CardTuple, type LogEntry } from '../shared/store-types';
-import { freshSave } from './defaults';
+import { freshSave, freshWeakPoints } from './defaults';
 import {
   CURRENT,
   MigrationError,
   applyRedirects,
   migrateLog,
   migrateMeta,
+  migrateMetaChecked,
   migrateShard,
   redirectKey,
   resolveRedirect,
@@ -53,10 +54,84 @@ describe('migrateMeta', () => {
     delete s.stats.rapidBest;
     delete s.settings.verticalText;
     delete s.weakPoints.aizuchi;
+    delete s.progress.gateAttemptAt;
     const out = migrateMeta(s);
     expect(out.stats.rapidBest).toBe(0);
+    expect(out.progress.gateAttemptAt).toEqual({});
     expect(out.settings.verticalText).toBe(false);
     expect(out.weakPoints.aizuchi).toEqual({ n: 0, ewma: 0, active: false, peak: 0 });
+  });
+
+  it('repairs fields of the wrong type to the fresh-save default and reports the paths', () => {
+    const tag = Object.keys(freshWeakPoints())[0];
+    const raw = JSON.parse(
+      '{"schema":"tsuzuku.save/1","profile":{"name":null,"xp":1e999,"level":"abc","belt":"rainbow","goals":"notarray","tz":"UTC"},' +
+        '"settings":{"newPerDay":null,"restDay":"mon"},"streak":{"current":"7","longest":{}},"progress":{"station":"7","stationsCleared":[1,null,2]},' +
+        `"bookmarks":[null,"b"],"stats":{"reviews":"x"},"weakPoints":{"${tag}":{"n":"3","ewma":0.5,"active":1,"peak":0}}}`,
+    ) as unknown;
+    const { meta, coerced } = migrateMetaChecked(raw);
+    const d = freshSave(0, 'UTC');
+    expect(meta.profile).toMatchObject({ name: d.profile.name, xp: 0, level: 1, belt: 'white', goals: [], tz: 'UTC' });
+    expect(meta.settings.newPerDay).toEqual(d.settings.newPerDay);
+    expect(meta.settings.restDay).toBeNull();
+    expect(meta.streak).toMatchObject({ current: 0, longest: 0 });
+    expect(meta.progress.station).toBe(0);
+    expect(meta.progress.stationsCleared).toEqual([1, 2]);
+    expect(meta.bookmarks).toEqual(['b']);
+    expect(meta.stats.reviews).toBe(0);
+    expect(meta.weakPoints[tag as keyof typeof meta.weakPoints]).toEqual({ n: 0, ewma: 0.5, active: false, peak: 0 });
+    expect(coerced).toEqual(
+      expect.arrayContaining(['profile.name', 'profile.xp', 'profile.level', 'profile.belt', 'profile.goals', 'settings.newPerDay', 'settings.restDay', 'streak.current', 'streak.longest', 'progress.station', 'progress.stationsCleared', 'bookmarks', 'stats.reviews', `weakPoints.${tag}.n`, `weakPoints.${tag}.active`]),
+    );
+    // Idempotent: a repaired save needs no further repair.
+    expect(migrateMetaChecked(meta)).toEqual({ meta, coerced: [] });
+    expect(migrateMetaChecked(freshSave(NOW, 'UTC')).coerced).toEqual([]);
+  });
+
+  it('repairs an unresolvable or unsafe profile.tz to UTC and reports the path; valid zones pass', () => {
+    const typo = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    typo.profile.tz = 'Nowhere/Town';
+    expect(migrateMetaChecked(typo)).toMatchObject({ meta: { profile: { tz: 'UTC' } }, coerced: ['profile.tz'] });
+    const injected = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    injected.profile.tz = 'UTC\nX:1';
+    expect(migrateMetaChecked(injected)).toMatchObject({ meta: { profile: { tz: 'UTC' } }, coerced: ['profile.tz'] });
+    const padded = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    padded.profile.tz = ' Asia/Tokyo ';
+    expect(migrateMetaChecked(padded).meta.profile.tz).toBe('Asia/Tokyo');
+    for (const tz of ['Asia/Tokyo', 'America/Los_Angeles', 'US/Pacific', 'Etc/GMT+8']) {
+      const ok = freshSave(NOW, tz);
+      expect(migrateMetaChecked(ok)).toEqual({ meta: ok, coerced: [] });
+    }
+  });
+
+  it('keeps optional fields and record entries the template lacks', () => {
+    const s = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    s.streak.ember = 123;
+    s.streak.repairWindow = { start: 5, done: 1 };
+    s.quests.n = { 'clear-due': 4 };
+    s.progress.gateAttempts = { 1: 2 };
+    s.progress.gateAttemptAt = { 4: 1_700_000_000_000 };
+    s.daily = { 20000: { reps: 1, ok: 1, minutes: 1, xp: 1, input: 0 } };
+    s.profile.onboardedAt = 77;
+    const out = migrateMeta(s) as unknown as Record<string, Record<string, unknown>>;
+    expect(out.streak.ember).toBe(123);
+    expect(out.streak.repairWindow).toEqual({ start: 5, done: 1 });
+    expect(out.quests.n).toEqual({ 'clear-due': 4 });
+    expect(out.progress.gateAttempts).toEqual({ 1: 2 });
+    expect(out.progress.gateAttemptAt).toEqual({ 4: 1_700_000_000_000 });
+    expect(out.daily).toEqual(s.daily);
+    expect(out.profile.onboardedAt).toBe(77);
+  });
+
+  it('lifts a save that finished onboarding at station 0 to the first uncleared station', () => {
+    const fresh = freshSave(NOW, 'UTC');
+    expect(migrateMeta(fresh).progress.station).toBe(0);
+    const onboarded = { ...fresh, profile: { ...fresh.profile, goals: ['road:sanjo-ohashi'] } };
+    expect(migrateMeta(onboarded).progress.station).toBe(1);
+    const trained = { ...fresh, stats: { ...fresh.stats, sessions: 3 }, progress: { ...fresh.progress, stationsCleared: [1, 2, 3] } };
+    expect(migrateMeta(trained).progress.station).toBe(4);
+    const moved = { ...onboarded, progress: { ...fresh.progress, station: 5 } };
+    expect(migrateMeta(moved).progress.station).toBe(5);
   });
 
   it('throws a typed MigrationError on an unknown schema', () => {

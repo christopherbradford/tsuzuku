@@ -1,3 +1,4 @@
+import { signal } from '@preact/signals';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { FIXTURE } from '@/content/fixtures';
@@ -17,7 +18,7 @@ beforeEach(async () => {
   clock = 1_000_000;
   speak.mockClear();
   await makeTestStore({ now: () => clock });
-  installServices({ audio: { ...nullAudio, speak } });
+  installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true) } });
   root = document.createElement('div');
   document.body.appendChild(root);
 });
@@ -107,6 +108,34 @@ describe('<KanaEar>', () => {
     expect(root.querySelector('.kana-ear__speaker')?.textContent).toContain('Replay');
     act(() => cells()[2]?.click());
     expect(result(p)).toMatchObject({ correct: true, replays: 2, answer: 'ね' });
+  });
+
+  it('without a Japanese voice the prompt names the romaji, the Listen button is gone and Space does not count a replay', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(false) } });
+    const p = props();
+    mount(p, true);
+    expect(root.querySelector('.kana-ear')?.getAttribute('data-voice')).toBe('false');
+    expect(root.querySelector('.drill__prompt')?.textContent).toBe('Tap the kana for ne.');
+    expect(root.querySelector('.kana-ear__novoice')?.textContent).toContain('No Japanese voice');
+    expect(root.querySelector('.kana-ear__speaker')).toBeNull();
+    expect(root.textContent).not.toContain('Listen');
+    key(' ');
+    expect(p.onReplay).not.toHaveBeenCalled();
+    expect(cells().length).toBe(9);
+    act(() => cells()[2]?.click());
+    expect(result(p)).toMatchObject({ correct: true, replays: 0, answer: 'ね' });
+    expect(root.querySelector('.drill__after')?.textContent).toContain('The kana');
+  });
+
+  it('without a voice the romaji prompt for を carries the IME spelling too (o · wo)', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(false) } });
+    const WO: KanaItem = { ...NE, id: 'k-h-wo', kana: 'を', romaji: 'o', row: 'w', lookalikes: [], exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };
+    const grid = ['を', 'お', 'わ', 'ね', 'れ', 'め', 'ぬ', 'る', 'ろ'];
+    const p = props({ item: WO, step: step({ itemId: WO.id, cardKey: 'k-h-wo#prod', params: { answer: 'を', choices: grid } }) });
+    mount(p);
+    expect(root.querySelector('.drill__prompt')?.textContent).toBe('Tap the kana for o · wo.');
+    act(() => cells()[0]?.click());
+    expect(result(p)).toMatchObject({ correct: true, answer: 'を' });
   });
 
   it('renders the 3×3 grid from params.choices and grades the correct index', () => {

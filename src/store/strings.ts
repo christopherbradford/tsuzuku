@@ -95,6 +95,7 @@ export const S = {
   importCompressed: 'That is a compressed backup. Choose the file itself, not its text.',
   importNoShard: 'A card shard in the backup could not be read and was skipped.',
   importNoLog: 'The review log in the backup could not be read and was skipped.',
+  importRepaired: 'Some fields in that backup were not readable and will start from their defaults.',
   importMerge: 'Merge: keeps the higher streak and XP, every badge from both, and the newer copy of each card.',
   importReplace: 'Replace: this browser takes the backup exactly, cards included.',
   importApplied: 'Imported. Reload to start from the new save.',

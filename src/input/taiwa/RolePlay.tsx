@@ -10,7 +10,8 @@
  *   type    KanaInput, matched against plain ja ∪ accept ∪ mustInclude +
  *           the register markers (`gradeTyped`), recasts mid-flow
  *   speak   `services.stt` → best of ≤ 5 alternatives (`speaking/scoring`),
- *           graded like Type; falls back to Type when recognition is missing
+ *           graded like Type; falls back to Type when recognition is missing;
+ *           a typed failure (mic blocked, network: `sttFailure`) is named
  * Aizuchi slots (`aizuchi.ts`): after a marked NPC line the learner must
  * backchannel by chip within the belt's window; the NPC pauses visibly, then
  * continues. A miss is tagged `aizuchi` only from Green. Register switching:
@@ -30,6 +31,7 @@ import { content, type ContentLoader } from '@/content/loader';
 import { toPlain } from '@/content/ruby';
 import type { Belt, CardKey, ErrorTag, RegisterTag, StoryItem } from '@/content/types';
 import { recordImplicit } from '@/learn/apply';
+import { sttFailure } from '@/audio';
 import { SPEED_TIER_RATES, services, sfx, speak } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
@@ -203,6 +205,8 @@ function Play(p: PlayProps): JSX.Element {
   const [note, setNote] = useState<string | null>(null);
   const [hint, setHint] = useState(false);
   const [stt, setStt] = useState<'idle' | 'listening' | 'none'>('idle');
+  /** The recognizer's typed failure (mic blocked, network…) in place of "nothing heard". */
+  const [sttNote, setSttNote] = useState<string | null>(null);
   const [typeFallback, setTypeFallback] = useState(false);
   const [heard, setHeard] = useState<string | null>(null);
   const [result, setResult] = useState<RolePlayResult | null>(null);
@@ -371,6 +375,7 @@ function Play(p: PlayProps): JSX.Element {
       .then((r) => {
         if (run.current !== id) return;
         if (!r || r.alternatives.length === 0) {
+          setSttNote(sttFailure(services.stt)?.label ?? null);
           setStt('none');
           return;
         }
@@ -381,7 +386,9 @@ function Play(p: PlayProps): JSX.Element {
         settle(o.kind === 'wrong' && bandFor(rec.score) === 3 ? { ...o, kind: 'ok', tags: [], registerOk: true } : o);
       })
       .catch(() => {
-        if (run.current === id) setStt('none');
+        if (run.current !== id) return;
+        setSttNote(sttFailure(services.stt)?.label ?? null);
+        setStt('none');
       });
   };
 
@@ -731,7 +738,7 @@ function Play(p: PlayProps): JSX.Element {
               </div>
               {stt === 'none' ? (
                 <p class="taiwa__note" role="status">
-                  {S.nothingHeard}
+                  {sttNote ?? S.nothingHeard}
                 </p>
               ) : null}
             </div>

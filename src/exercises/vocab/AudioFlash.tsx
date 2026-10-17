@@ -10,10 +10,16 @@
  *
  * `keys` is `text` so the slow rule never grades the typed half (it needs a
  * mature card, which a choices-mode card — exposures < 2 — can never be).
+ *
+ * Without a Japanese voice (`services.audio.hasJaVoice`, read at render) the
+ * word and its kana are shown up front with a no-voice note instead of the
+ * Speaker, and a miss is tagged `word-choice` rather than `listening` — the
+ * card is then a meaning card, not a listening card.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
-import { BELT_IDS } from '@/content/types';
+import { BELT_IDS, type ErrorTag } from '@/content/types';
+import { services } from '@/shared/audio';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { ChoiceGrid } from '../ChoiceGrid';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
@@ -54,6 +60,8 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const fired = useRef(false);
+  const hasVoice = services.audio.hasJaVoice.value;
+  const missTags: ErrorTag[] = hasVoice ? ['listening'] : ['word-choice'];
   const text = useMemo(() => (item ? spokenText(item, beltNow()) : ''), [item]);
   const choices = p.step.params.choices ?? [];
   const mc = item !== null && choices.length >= 2 && correctChoice(choices, item, p.step.params) >= 0;
@@ -69,7 +77,7 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
   }, [item, text]);
 
   const replay = (): void => {
-    if (fired.current || !item) return;
+    if (fired.current || !item || !hasVoice) return;
     replaysRef.current += 1;
     setReplays(replaysRef.current);
     play();
@@ -85,11 +93,11 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
   };
 
   const pick = (i: number): void => {
-    finish(gradeChoice(i, correctIdx, { ms: ms(), replays: replaysRef.current, answer: choices[i] ?? '', missTags: ['listening'] }));
+    finish(gradeChoice(i, correctIdx, { ms: ms(), replays: replaysRef.current, answer: choices[i] ?? '', missTags }));
   };
 
   const typed = (r: TextAnswerResult): void => {
-    finish(gradeEn(r.given, accept, { ms: ms(), replays: replaysRef.current, override: r.override, missTags: ['listening'] }));
+    finish(gradeEn(r.given, accept, { ms: ms(), replays: replaysRef.current, override: r.override, missTags }));
   };
 
   if (!item) return <MissingItem onContinue={() => finish(missingResult(ms()))} />;
@@ -98,9 +106,16 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
   const heardIn = text !== item.word;
 
   return (
-    <div class="drill audio-flash" data-exercise="audio-flash" data-mode={mc ? 'choices' : 'text'} data-revealed={done ? 'true' : 'false'} ref={root}>
+    <div class="drill audio-flash" data-exercise="audio-flash" data-mode={mc ? 'choices' : 'text'} data-voice={hasVoice ? 'true' : 'false'} data-revealed={done ? 'true' : 'false'} ref={root}>
       <p class="drill__prompt">{mc ? X.chooseMeaning : S.typeWhatItMeans}</p>
-      {!done ? (
+      {!done && !hasVoice ? (
+        <div class="vocab__head">
+          <WordHead item={item} mode={p.furigana} kana />
+          <p class="drill__hint audio-flash__novoice" role="status">
+            {S.noVoice}
+          </p>
+        </div>
+      ) : !done ? (
         <div class="vocab__head">
           <Speaker onClick={replay} disabled={false} replays={replays} big />
           <p class="drill__hint">{S.listenFirst}</p>
@@ -109,7 +124,7 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
       ) : (
         <div class="vocab__head">
           <WordHead item={item} mode={p.furigana} kana />
-          {heardIn ? (
+          {heardIn && hasVoice ? (
             <p class="drill__hint">
               <span class="drill__label">{S.heardIn}</span>{' '}
               <span class="drill__ja" lang="ja">
@@ -117,7 +132,7 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
               </span>
             </p>
           ) : null}
-          <Speaker onClick={replay} disabled replays={replays} />
+          {hasVoice ? <Speaker onClick={replay} disabled replays={replays} /> : null}
         </div>
       )}
 

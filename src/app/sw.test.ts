@@ -1,10 +1,18 @@
+// @vitest-environment node
 /**
- * public/sw.js evaluated inside a fake ServiceWorkerGlobalScope.
+ * public/sw.js evaluated inside a fake ServiceWorkerGlobalScope, plus the
+ * build stamp vite.config.ts applies to it (node environment: the worker
+ * needs no DOM, and importing vite.config.ts pulls in esbuild, which refuses jsdom).
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { SW_STAMP_PLACEHOLDER, buildStamp, stampSw } from '../../vite.config';
 
 const code = readFileSync(resolve(process.cwd(), 'public/sw.js'), 'utf8');
+const VERSION = /const CACHE_VERSION = '([^']+)'/.exec(code)![1]!;
+const SHELL = `tsuzuku-shell-${VERSION}`;
+const RUNTIME = `tsuzuku-runtime-${VERSION}`;
+const FONTS = 'tsuzuku-fonts-v1';
 const ORIGIN = 'https://user.github.io';
 const BASE = `${ORIGIN}/repo/`;
 
@@ -125,14 +133,29 @@ describe('public/sw.js', () => {
     expect(code).toContain("'SKIP_WAITING'");
   });
 
+  it('CACHE_VERSION is the build placeholder, and the build stamp changes the worker bytes per release', () => {
+    expect(VERSION).toBe(SW_STAMP_PLACEHOLDER);
+    expect(code.split(SW_STAMP_PLACEHOLDER).length - 1).toBe(1);
+    const a = buildStamp('0.1.0', ['<html>a</html>', 'index-aaa.js']);
+    const b = buildStamp('0.1.0', ['<html>a</html>', 'index-bbb.js']);
+    expect(a).toMatch(/^0\.1\.0-[0-9a-f]{8}$/);
+    expect(a).not.toBe(b);
+    expect(buildStamp('0.1.0', ['<html>a</html>', 'index-aaa.js'])).toBe(a);
+    const stamped = stampSw(code, a);
+    expect(stamped).not.toContain(SW_STAMP_PLACEHOLDER);
+    expect(stamped).toContain(`const CACHE_VERSION = '${a}'`);
+    expect(stamped).not.toBe(code);
+    expect(() => stampSw(stamped, b)).toThrow(/placeholder/);
+  });
+
   it('install precaches the shell (index.html + manifest) under the versioned cache', async () => {
     const sw = load(async (req) => ok(`<!doctype html>${urlOf(req)}`, 'text/html'));
     const ev = extendable();
     sw.dispatch('install', ev);
     await ev.done;
     const names = await sw.caches.keys();
-    expect(names).toEqual([expect.stringMatching(/^tsuzuku-shell-v/)]);
-    const shell = sw.caches.caches.get(names[0]!)!;
+    expect(names).toEqual([SHELL]);
+    const shell = sw.caches.caches.get(SHELL)!;
     expect(shell.store.has(`${BASE}index.html`)).toBe(true);
     expect(shell.store.has(`${BASE}manifest.webmanifest`)).toBe(true);
     expect(shell.store.has(BASE)).toBe(true);
@@ -147,35 +170,42 @@ describe('public/sw.js', () => {
     await expect(ev.done).resolves.toBeUndefined();
   });
 
-  it('serves a content request from cache when present, without touching the network', async () => {
+  it('content item and bundle requests are not intercepted, even when an old runtime cache holds a stale copy', async () => {
     const sw = load(async () => ok('{"fresh":true}'));
-    const url = `${BASE}content/vocab/n5/vocab-n5-001.json`;
-    const runtime = await sw.caches.open('tsuzuku-runtime-v1');
-    await runtime.put(url, ok('{"cached":true}'));
-    sw.fetch.mockClear();
-    const ev = fetchEvent({ url, method: 'GET', mode: 'cors' });
-    sw.dispatch('fetch', ev);
-    expect(ev.response).not.toBeNull();
-    const res = await ev.response!;
-    expect(await res.text()).toBe('{"cached":true}');
+    const item = `${BASE}content/vocab/n5/vocab-n5-001.json`;
+    const bundle = `${BASE}content/stations/04.json`;
+    const stale = await sw.caches.open('tsuzuku-runtime-v1');
+    await stale.put(item, ok('{"cached":true}'));
+    const first = fetchEvent({ url: item, method: 'GET', mode: 'cors' });
+    sw.dispatch('fetch', first);
+    const second = fetchEvent({ url: bundle, method: 'GET' });
+    sw.dispatch('fetch', second);
+    // The browser goes to the network itself; the loader's tsuzuku-content-<version> cache is the offline store.
+    expect(first.response).toBeNull();
+    expect(second.response).toBeNull();
     expect(sw.fetch).not.toHaveBeenCalled();
+    expect(sw.caches.caches.has(RUNTIME)).toBe(false);
   });
 
-  it('a content miss is fetched once, cached, and served from cache the next time', async () => {
-    const sw = load(async () => ok('{"n":1}'));
-    const url = `${BASE}content/stations/04.json`;
+  it('content/manifest.json is stale-while-revalidate: cached copy now, fresh copy for the next load', async () => {
+    const sw = load(async () => ok('{"contentVersion":"2026.11"}'));
+    const url = `${BASE}content/manifest.json`;
     const first = fetchEvent({ url, method: 'GET' });
     sw.dispatch('fetch', first);
-    expect(await (await first.response!).text()).toBe('{"n":1}');
+    expect(await (await first.response!).text()).toBe('{"contentVersion":"2026.11"}');
     expect(sw.fetch).toHaveBeenCalledTimes(1);
-    // putIfOk is awaited inside cacheFirst, so the cache is populated when the response resolves
+    sw.fetch.mockImplementation(async () => ok('{"contentVersion":"2026.12"}'));
     const second = fetchEvent({ url, method: 'GET' });
     sw.dispatch('fetch', second);
-    expect(await (await second.response!).text()).toBe('{"n":1}');
-    expect(sw.fetch).toHaveBeenCalledTimes(1);
+    expect(await (await second.response!).text()).toBe('{"contentVersion":"2026.11"}');
+    expect(sw.fetch).toHaveBeenCalledTimes(2);
+    await new Promise((r) => setTimeout(r, 0));
+    const third = fetchEvent({ url, method: 'GET' });
+    sw.dispatch('fetch', third);
+    expect(await (await third.response!).text()).toBe('{"contentVersion":"2026.12"}');
   });
 
-  it('hashed assets and fonts are cache-first too; failed responses are never cached', async () => {
+  it('hashed assets are cache-first in the runtime cache; failed responses are never cached', async () => {
     const sw = load(async (req) => (urlOf(req).endsWith('.woff2') ? new Response('', { status: 404 }) : ok('js')));
     const js = fetchEvent({ url: `${BASE}assets/index-abc123.js`, method: 'GET' });
     sw.dispatch('fetch', js);
@@ -183,9 +213,27 @@ describe('public/sw.js', () => {
     const font = fetchEvent({ url: `${BASE}fonts/missing.woff2`, method: 'GET' });
     sw.dispatch('fetch', font);
     expect((await font.response!).status).toBe(404);
-    const runtime = sw.caches.caches.get('tsuzuku-runtime-v1')!;
+    const runtime = sw.caches.caches.get(RUNTIME)!;
     expect(runtime.store.has(`${BASE}assets/index-abc123.js`)).toBe(true);
-    expect(runtime.store.has(`${BASE}fonts/missing.woff2`)).toBe(false);
+    expect(sw.caches.caches.get(FONTS)?.store.has(`${BASE}fonts/missing.woff2`) ?? false).toBe(false);
+    const again = fetchEvent({ url: `${BASE}assets/index-abc123.js`, method: 'GET' });
+    sw.dispatch('fetch', again);
+    expect((await again.response!).status).toBe(200);
+    expect(sw.fetch).toHaveBeenCalledTimes(2);
+  });
+
+  it('fonts are cache-first in the stable fonts cache that no release clears', async () => {
+    const sw = load(async () => new Response('woff', { status: 200 }));
+    const url = `${BASE}fonts/DotGothic16-base.woff2`;
+    const ev = fetchEvent({ url, method: 'GET' });
+    sw.dispatch('fetch', ev);
+    expect((await ev.response!).status).toBe(200);
+    expect(sw.caches.caches.get(FONTS)!.store.has(url)).toBe(true);
+    expect(sw.caches.caches.has(RUNTIME)).toBe(false);
+    const act = extendable();
+    sw.dispatch('activate', act);
+    await act.done;
+    expect(await sw.caches.keys()).toContain(FONTS);
   });
 
   it('navigations are network-first and fall back to the cached index.html offline', async () => {
@@ -205,6 +253,32 @@ describe('public/sw.js', () => {
     expect(await res.text()).toBe('<!doctype html>live');
   });
 
+  it('a navigation to a non-HTML file under scope never replaces the cached shell', async () => {
+    let online = true;
+    const sw = load(async (req) => {
+      if (!online) throw new TypeError('offline');
+      const u = urlOf(req);
+      if (u.endsWith('.json')) return ok('{"kana":[]}');
+      if (u.endsWith('sw.js')) return ok("'use strict';", 'application/javascript');
+      return ok('<!doctype html>shell', 'text/html');
+    });
+    const nav = fetchEvent({ url: `${BASE}`, method: 'GET', mode: 'navigate' });
+    sw.dispatch('fetch', nav);
+    await (await nav.response!).text();
+    const json = fetchEvent({ url: `${BASE}content/kana/hiragana.json`, method: 'GET', mode: 'navigate' });
+    sw.dispatch('fetch', json);
+    expect(await (await json.response!).text()).toBe('{"kana":[]}');
+    const js = fetchEvent({ url: `${BASE}sw.js`, method: 'GET', mode: 'navigate' });
+    sw.dispatch('fetch', js);
+    await (await js.response!).text();
+    const shell = sw.caches.caches.get(SHELL)!;
+    expect(shell.store.get(`${BASE}index.html`)!.headers.get('Content-Type')).toMatch(/^text\/html/);
+    online = false;
+    const offline = fetchEvent({ url: `${BASE}`, method: 'GET', mode: 'navigate' });
+    sw.dispatch('fetch', offline);
+    expect(await (await offline.response!).text()).toBe('<!doctype html>shell');
+  });
+
   it('ignores non-GET, cross-origin and out-of-scope requests', () => {
     const sw = load(async () => ok('x'));
     const post = fetchEvent({ url: `${BASE}content/x.json`, method: 'POST' });
@@ -219,17 +293,19 @@ describe('public/sw.js', () => {
     expect(sw.fetch).not.toHaveBeenCalled();
   });
 
-  it('activate deletes our caches from other versions, keeps the loader caches, and claims clients', async () => {
+  it('activate deletes our shell/runtime caches from other builds, keeps the loader and fonts caches, and claims clients', async () => {
     const sw = load(async () => ok('x'));
-    await sw.caches.open('tsuzuku-shell-v0');
-    await sw.caches.open('tsuzuku-runtime-v0');
     await sw.caches.open('tsuzuku-shell-v1');
+    await sw.caches.open('tsuzuku-runtime-v1');
+    await sw.caches.open('tsuzuku-shell-0.1.0-deadbeef');
+    await sw.caches.open(SHELL);
     await sw.caches.open('tsuzuku-content-2026.10');
+    await sw.caches.open(FONTS);
     const ev = extendable();
     sw.dispatch('activate', ev);
     await ev.done;
     const names = (await sw.caches.keys()).sort();
-    expect(names).toEqual(['tsuzuku-content-2026.10', 'tsuzuku-shell-v1']);
+    expect(names).toEqual([SHELL, 'tsuzuku-content-2026.10', FONTS].sort());
     expect(sw.self.clients.claim).toHaveBeenCalledTimes(1);
   });
 

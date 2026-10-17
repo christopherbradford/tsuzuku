@@ -123,3 +123,33 @@
 .reduced-motion .session__judge {
   animation: none;
 }
+
+/* ── Scroll teach phase (cards before the first intro check) ──────────── */
+
+.session__teach {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.session__teach-title {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-3);
+  letter-spacing: 0.04em;
+}
+
+.session__teach-line {
+  margin: 0;
+}
+
+.session__teach-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.session__teach-actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -8,7 +8,10 @@
  * Updates are learner-driven: when a new worker is installed behind a live
  * page, `swUpdate` turns true and the Layout shows a quiet toast with a
  * reload button. `applySwUpdate()` tells the waiting worker to take over and
- * reloads once it controls the page. Nothing here reloads on its own.
+ * reloads once it controls the page. Nothing here reloads on its own: the
+ * `controllerchange` that `clients.claim()` fires on the very first install is
+ * ignored unless the learner asked for the update (`wantReload`), so a first
+ * visit never reloads under a half-typed name.
  */
 import { signal, type Signal } from '@preact/signals';
 
@@ -36,6 +39,8 @@ let reloadFn: () => void = () => {
   if (typeof location !== 'undefined') location.reload();
 };
 let reloading = false;
+/** Set by `applySwUpdate()`: only a learner-requested update may reload on controllerchange. */
+let wantReload = false;
 
 function defaultContainer(): ServiceWorkerContainer | null {
   try {
@@ -68,7 +73,7 @@ export async function registerSw(env: SwEnv = {}): Promise<void> {
     if (reg.installing) watchInstalling(reg, container);
     reg.addEventListener('updatefound', () => watchInstalling(reg, container));
     container.addEventListener('controllerchange', () => {
-      if (reloading) return;
+      if (!wantReload || reloading) return;
       reloading = true;
       reloadFn();
     });
@@ -88,6 +93,7 @@ export async function registerSw(env: SwEnv = {}): Promise<void> {
 export function applySwUpdate(): void {
   const waiting = registration?.waiting;
   if (waiting) {
+    wantReload = true;
     waiting.postMessage({ type: 'SKIP_WAITING' });
     return;
   }
@@ -103,6 +109,7 @@ export function dismissSwUpdate(): void {
 export function resetSwForTests(): void {
   registration = null;
   reloading = false;
+  wantReload = false;
   swUpdate.value = false;
   swOfflineReady.value = false;
   reloadFn = () => {

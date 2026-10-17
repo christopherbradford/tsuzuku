@@ -184,9 +184,13 @@ async function optional(file: string): Promise<AnyModule | null> {
   }
 }
 
-/** Dojo props: `Scene` from G's art barrel, `feed` from E's session barrel; both degrade. */
+/**
+ * Dojo props: `Scene` from G's art barrel, `feed` from E's session barrel; both
+ * degrade. The feed reads the exercise registry synchronously (`isRegistered`),
+ * so the registry is filled here rather than at boot.
+ */
 async function dojoProps(): Promise<Record<string, unknown>> {
-  const [art, session] = await Promise.all([optional(ART_BARREL), optional(SESSION_BARREL)]);
+  const [art, session] = await Promise.all([optional(ART_BARREL), optional(SESSION_BARREL), ensureExercises()]);
   const Scene = typeof art?.DojoScene === 'function' ? art.DojoScene : EmptyScene;
   const feed = typeof session?.dojoFeed === 'function' ? session.dojoFeed : null;
   return { Scene, feed };

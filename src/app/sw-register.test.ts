@@ -144,6 +144,33 @@ describe('registerSw', () => {
     expect(reload).toHaveBeenCalledTimes(1);
   });
 
+  it('the first install (clients.claim fires controllerchange) never reloads the page on its own', async () => {
+    const reg = registration();
+    const c = container(reg, null);
+    const reload = vi.fn();
+    await registerSw({ prod: true, container: asContainer(c), doc: null, reload });
+    const first = worker();
+    reg.installing = first;
+    fire(reg.listeners, 'updatefound');
+    first.state = 'installed';
+    fire(first.listeners, 'statechange');
+    first.state = 'activated';
+    fire(first.listeners, 'statechange');
+    c.controller = first;
+    fire(c.listeners, 'controllerchange');
+    expect(reload).not.toHaveBeenCalled();
+    expect(swOfflineReady.value).toBe(true);
+
+    // The learner later asks for an update: the same event now reloads exactly once.
+    const waiting = worker('installed');
+    reg.waiting = waiting;
+    applySwUpdate();
+    expect(waiting.postMessage).toHaveBeenCalledWith({ type: 'SKIP_WAITING' });
+    fire(c.listeners, 'controllerchange');
+    fire(c.listeners, 'controllerchange');
+    expect(reload).toHaveBeenCalledTimes(1);
+  });
+
   it('applySwUpdate without a waiting worker falls back to a plain reload', async () => {
     const reload = vi.fn();
     await registerSw({ prod: true, container: asContainer(container(registration())), doc: null, reload });

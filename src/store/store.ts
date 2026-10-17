@@ -5,7 +5,14 @@
  * map sharded by kind + level, the 5,000-entry review log ring, the opaque
  * session snapshot slot, the storage meter and `flush()`. `initStore()` reads
  * everything back through `persist.ts` (migrating on the way), then wires
- * the reducers registered in `REDUCERS` unless `reducers: false`.
+ * the reducers registered in `REDUCERS` unless `reducers: false`. A document
+ * the store cannot read (corrupt text, a newer schema) is stashed as
+ * `<key>.bak` — meta AND every card shard — before a fresh one takes its
+ * place; nothing is ever silently overwritten. Re-initialising flushes the
+ * outgoing slot's pending writes first.
+ *
+ * B-internal extras for `backup.ts`: `replaceHeader` (seed/createdAt/
+ * contentVersion on import) and `replaceLog` (bulk ring assignment).
  *
  * `now()` is the one sanctioned `Date.now()` outside `shared/hash.ts`;
  * `today()` is the 04:00-boundary EpochDay in the profile's zone.
@@ -192,22 +199,27 @@ function scheduleSession(): void {
   persist?.schedule(persist.key(SESSION_KEY), () => sessionCache);
 }
 
-/** Ceiling ladder (ARCHITECTURE §1): ring → 2,000, old rows → monthly, then gzip the largest shard. */
+/**
+ * Ceiling ladder (ARCHITECTURE §1): ring → 2,000, old rows → monthly, then
+ * gzip the largest shard. Holds the Persist it started on, so a re-init
+ * mid-ladder never lets it touch the next slot.
+ */
 async function runLadder(): Promise<void> {
-  if (!persist || laddering) return;
+  const p = persist;
+  if (!p || laddering) return;
   laddering = true;
   try {
-    const { meta: m, log } = persist.compact(meta(), logEntries, today());
+    const { meta: m, log } = p.compact(meta(), logEntries, today());
     if (m.daily !== sliceSignal('daily').value) patch('daily', () => m.daily);
     if (m.ledger !== sliceSignal('ledger').value) patch('ledger', () => m.ledger);
     if (log !== logEntries) {
       logEntries = log;
       scheduleLog();
     }
-    await persist.flush();
-    if (persist.level() === 'ceiling') {
-      const did = await persist.compressLargest();
-      if (did) await persist.flush();
+    await p.flush();
+    if (p.level() === 'ceiling') {
+      const did = await p.compressLargest();
+      if (did) await p.flush();
     }
   } finally {
     laddering = false;
@@ -328,6 +340,37 @@ export function shardSizes(): Record<string, number> {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
+/* B-internal bulk setters (backup import)                                    */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+export interface SaveHeader {
+  seed: string;
+  createdAt: number;
+  contentVersion: string;
+}
+
+/**
+ * Replace the save header (`seed`, `createdAt`, `contentVersion`) — the
+ * fields outside every slice, which `patch()` cannot reach. A restored
+ * backup carries its own seed so wallpapers, Mon and stamps render as they
+ * did on the original device. Schedules the meta write.
+ */
+export function replaceHeader(h: SaveHeader): void {
+  if (header.seed === h.seed && header.createdAt === h.createdAt && header.contentVersion === h.contentVersion) return;
+  header.seed = h.seed;
+  header.createdAt = h.createdAt;
+  header.contentVersion = h.contentVersion;
+  header.updatedAt = nowFn();
+  scheduleMeta();
+}
+
+/** Replace the review log ring wholesale (sorted by the caller; the newest `LOG_RING` are kept). */
+export function replaceLog(entries: LogEntry[]): void {
+  logEntries = entries.length > LOG_RING ? entries.slice(entries.length - LOG_RING) : entries.slice();
+  scheduleLog();
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
 /* Log                                                                        */
 /* ────────────────────────────────────────────────────────────────────────── */
 
@@ -435,6 +478,8 @@ function ingestShard(id: ShardId, shard: CardShard): void {
 }
 
 export async function initStore(o: InitOptions = {}): Promise<void> {
+  // A re-init (slot switch) must not drop up to 1 s of debounced reviews.
+  if (persist) await persist.flush();
   teardown();
   ready.value = false;
   slot = o.slot ?? 0;
@@ -448,19 +493,26 @@ export async function initStore(o: InitOptions = {}): Promise<void> {
   });
   persist = p;
 
+  // Never overwrite a save we cannot read: stash its text as `<key>.bak`, then start fresh.
+  function stash(key: string, why: unknown): void {
+    if (why instanceof MigrationError) console.warn('[store] ' + why.message);
+    else console.warn(`[store] ${key} is not readable; kept as ${key}.bak`);
+    const text = p.readRaw(key);
+    if (text !== null) p.writeRaw(`${key}.bak`, text);
+  }
+
   // meta
   const metaKey = p.key(META_KEY);
   const rawMeta = await p.read<unknown>(metaKey);
   let m: SaveMeta;
   if (rawMeta === null) {
+    if (p.readRaw(metaKey) !== null) stash(metaKey, null);
     m = freshSave(nowFn(), resolveTz());
   } else {
     try {
       m = migrateMeta(rawMeta);
     } catch (e) {
-      // Never overwrite a save we cannot read: stash it, then start fresh.
-      if (e instanceof MigrationError) console.warn('[store] ' + e.message);
-      p.write(`${metaKey}.bak`, rawMeta);
+      stash(metaKey, e);
       m = freshSave(nowFn(), resolveTz());
     }
   }
@@ -468,12 +520,16 @@ export async function initStore(o: InitOptions = {}): Promise<void> {
 
   // cards
   for (const spec of SHARD_SPECS) {
-    const raw = await p.read<unknown>(p.shardKey(spec.kind, spec.level));
-    if (raw === null) continue;
+    const key = p.shardKey(spec.kind, spec.level);
+    const raw = await p.read<unknown>(key);
+    if (raw === null) {
+      if (p.readRaw(key) !== null) stash(key, null);
+      continue;
+    }
     try {
       ingestShard(shardIdOf(spec.kind, spec.level), migrateShard(raw));
     } catch (e) {
-      if (e instanceof MigrationError) console.warn('[store] ' + e.message);
+      stash(key, e);
     }
   }
 

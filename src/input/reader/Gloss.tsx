@@ -14,8 +14,10 @@
  *   - a token the corpus does not carry: the surface, its reading from the
  *     line's ruby, and a Bookmark;
  *   - TTS of the word (`speak(word, {kana})`, isolated word → kana reading);
- *   - 「捕まえる」Capture for an unintroduced word (the host writes
- *     `store.captured` through `capture.ts`), "In training" for one with cards.
+ *   - 「捕まえる」Capture for an unintroduced WORD (the host writes
+ *     `store.captured` through `capture.ts`), "In training" for one with cards;
+ *     grammar and kanji are never captured (`intro-policy` routes only vocab
+ *     captures into Scrolls): they get the `station` line instead.
  * Esc, the backdrop and the close button all close it. Focus moves into the
  * dialog on open. Copy lives in `./strings.ts`.
  */
@@ -30,7 +32,8 @@ import { S } from './strings';
 import './reader.css';
 
 /** What the action button means for this token. */
-export type CaptureState = 'capture' | 'captured' | 'bookmark' | 'bookmarked' | 'introduced' | 'none';
+/** `station`: a grammar point / kanji that comes with its station Scroll (not capturable). */
+export type CaptureState = 'capture' | 'captured' | 'bookmark' | 'bookmarked' | 'introduced' | 'station' | 'none';
 
 export interface GlossProps {
   /** Item behind the token; `null` when the corpus has none (or while loading). */
@@ -88,7 +91,8 @@ export function headwordRuby(v: VocabItem): string {
 
 function defaultCapture(item: ContentItem | null): CaptureState {
   if (!item) return 'bookmark';
-  return isVocabItem(item) || isGrammarItem(item) || isKanjiItem(item) ? 'capture' : 'none';
+  if (isVocabItem(item)) return 'capture';
+  return isGrammarItem(item) || isKanjiItem(item) ? 'station' : 'none';
 }
 
 export function Gloss(p: GlossProps): JSX.Element {
@@ -296,6 +300,11 @@ export function Gloss(p: GlossProps): JSX.Element {
           </p>
         ) : null}
         {capture === 'captured' ? <p class="gloss__status">{S.capturedHint}</p> : null}
+        {capture === 'station' ? (
+          <p class="gloss__status" data-field="station-scroll">
+            {S.stationScrollHint}
+          </p>
+        ) : null}
 
         {actionButton ? <div class="gloss__actions">{actionButton}</div> : null}
       </section>

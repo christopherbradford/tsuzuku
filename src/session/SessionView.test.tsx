@@ -15,7 +15,7 @@ import type { CardTuple, LogEntry } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { SessionRunner } from './runner';
-import { resetScrollCompletions } from './scroll';
+import { checkStepId, resetScrollCompletions } from './scroll';
 import { SessionView, comboTierOf, previousSessionErrorRate } from './SessionView';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
@@ -355,5 +355,45 @@ describe('<SessionView>', () => {
     expect(previousSessionErrorRate(log, t0 + 1_000_000)).toBeCloseTo(2 / 3);
     expect(previousSessionErrorRate(log, t0)).toBeNull();
     expect(previousSessionErrorRate([], t0)).toBeNull();
+  });
+});
+
+describe('<SessionView> Scroll teach phase (design 03 §2.2)', () => {
+  const scrollSteps = (sid: string): Step[] => [
+    step({ id: 'w0', cardKey: `${ITEMS[0]}#rec` }),
+    ...[V.食べる, V.飲む].map((id) => step({ id: checkStepId(sid, id), cardKey: `${id}#rec`, isNew: true, stepTag: 'intro', exposures: 0, block: 'scroll', params: { scrollId: sid, answer: 'x', accept: ['x'] } })),
+  ];
+
+  it('pauses at the first intro check and unrolls one teach card per item of that Scroll; Begin the checks resumes', async () => {
+    const { runner } = await setup({ steps: scrollSteps('4-1') });
+    expect(root.querySelector('.stub')?.getAttribute('data-step')).toBe('w0');
+    expect(root.querySelector('.session--teach')).toBeNull();
+    click('.stub-answer');
+    click('.exercise-frame__controls .hanko');
+    expect(runner.step.value?.id).toBe(checkStepId('4-1', V.食べる));
+    expect(runner.paused.value).toBe(true);
+    expect(root.querySelector('.session--teach')?.getAttribute('data-scroll')).toBe('4-1');
+    expect(root.querySelectorAll('.teach-card')).toHaveLength(2);
+    expect(root.textContent).toContain('飲む');
+    expect(root.querySelector('.stub')).toBeNull();
+    click('.session__teach-begin');
+    expect(runner.paused.value).toBe(false);
+    expect(root.querySelector('.session--teach')).toBeNull();
+    expect(root.querySelector('.stub')?.getAttribute('data-step')).toBe(checkStepId('4-1', V.食べる));
+    // the second check of the same Scroll does not teach again
+    click('.stub-answer');
+    click('.exercise-frame__controls .hanko');
+    expect(root.querySelector('.session--teach')).toBeNull();
+    expect(runner.paused.value).toBe(false);
+  });
+
+  it('a host that teaches itself passes teach={false} and the checks run straight away', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: cards(ITEMS), now: () => clock });
+    registerStubs();
+    const runner = new SessionRunner(plan(scrollSteps('4-2').slice(1)), { loader });
+    act(() => render(<SessionView runner={runner} onExit={vi.fn()} loader={loader} teach={false} />, root));
+    expect(root.querySelector('.session--teach')).toBeNull();
+    expect(runner.paused.value).toBe(false);
+    expect(root.querySelector('.stub')?.getAttribute('data-step')).toBe(checkStepId('4-2', V.食べる));
   });
 });

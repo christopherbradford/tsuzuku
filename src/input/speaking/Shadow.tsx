@@ -18,7 +18,7 @@
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
-import { SHADOW_MAX_MS, STT_STATE_LABEL, type SttState } from '@/audio';
+import { SHADOW_MAX_MS, sttFailure, voiceAudible } from '@/audio';
 import { content, type ContentLoader } from '@/content/loader';
 import { hasKanji, segmentsToTokens, toKana, toPlain } from '@/content/ruby';
 import type { CardKey, ContentItem, ErrorTag, GrammarItem, StoryItem, VocabItem } from '@/content/types';
@@ -235,7 +235,7 @@ function ShadowBody(p: ExerciseProps & ShadowExtraProps): JSX.Element {
   const hideWhenGreen = useMemo(() => allGreen(ids), [ids]);
   const settings = store.settings.value;
   const recognition = recognitionAllowed(settings, services.stt);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
   const rate = p.step.params.rate ?? services.audio.rateForTier(p.speedTier);
 
   const [phase, setPhase] = useState<Phase>('playing');
@@ -330,9 +330,7 @@ function ShadowBody(p: ExerciseProps & ShadowExtraProps): JSX.Element {
     }
     if (!alive.current || live.current.done) return;
     if (!res || res.alternatives.length === 0) {
-      const st = (services.stt as Partial<{ state: { value: SttState } }>).state?.value;
-      const label = st && st !== 'done' && st !== 'listening' && st !== 'idle' ? STT_STATE_LABEL[st] : '';
-      setNudge(label || S.shadowNoSpeech);
+      setNudge(sttFailure(services.stt)?.label ?? S.shadowNoSpeech);
       setPhase('ready');
       return;
     }
@@ -434,7 +432,7 @@ function ShadowBody(p: ExerciseProps & ShadowExtraProps): JSX.Element {
       ) : null}
       {!hasVoice ? (
         <p class="speak__note" role="status">
-          {S.shadowNoVoice}
+          {services.audio.hasJaVoice.value ? S.shadowMuted : S.shadowNoVoice}
         </p>
       ) : null}
 

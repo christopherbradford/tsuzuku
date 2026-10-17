@@ -12,8 +12,9 @@
  *    `listen` of the same word;
  *  - +3/+10 step insertion for new items; Weak Point sets; Rapid Fire / Gojūon
  *    pools (facet S ≥ 14 d); recheck cards (arcade misses, flag 16); prod
- *    prompt rotation; Kage pools (15 recent / 15 mature) seeded; exercise
- *    choice per card (04 §13 + the first-2-exposures multiple-choice rule).
+ *    prompt rotation (`findBlank`: 〜-affixed words are blanked inside their
+ *    host word); Kage pools (15 recent / 15 mature) seeded; exercise choice
+ *    per card (04 §13 + the first-2-exposures multiple-choice rule).
  *
  * `RECHECK_FLAG` is `CardFlag.recheck` (16), the arcade-miss bit on `CardTuple[7]`.
  */
@@ -202,13 +203,37 @@ export interface ProdPrompt {
 }
 
 const CONJUGABLE = new Set(['v1', 'v5', 'v-irr', 'adj-i', 'adj-na']);
+const TILDE_RE = /[〜～]/g;
 
-function findBlank(plain: string, item: VocabItem): [number, number] {
-  const candidates = [item.word, ...(item.altForms ?? []), item.kana];
-  for (const c of candidates) {
+/**
+ * `[start, end)` of the target surface in a plain sentence, `[0, 0]` when not
+ * found. Candidates: the word and its alt forms, then — for 〜-prefixed
+ * suffixes / counters and 〜-suffixed prefixes (〜放題, 〜巻, お〜) — the bare
+ * form attached inside its host word (the last occurrence for a suffix, so
+ * 人 in 三人 beats 友人 earlier in the sentence; the first for a prefix), then
+ * the kana, then for conjugables the longest stem that occurs. Shared by the
+ * prod prompt here, Production Forge and the Nemesis duel.
+ */
+export function findBlank(plain: string, item: Pick<VocabItem, 'word' | 'kana' | 'pos' | 'altForms'>): [number, number] {
+  const full = [item.word, ...(item.altForms ?? [])];
+  for (const c of full) {
     if (!c) continue;
     const i = plain.indexOf(c);
     if (i >= 0) return [i, i + c.length];
+  }
+  for (const c of full) {
+    if (!c || !TILDE_RE.test(c)) continue;
+    TILDE_RE.lastIndex = 0;
+    const bare = c.replace(TILDE_RE, '');
+    if (!bare) continue;
+    const suffix = /^[〜～]/.test(c);
+    const i = suffix ? plain.lastIndexOf(bare) : plain.indexOf(bare);
+    if (i >= 0) return [i, i + bare.length];
+  }
+  TILDE_RE.lastIndex = 0;
+  if (item.kana) {
+    const i = plain.indexOf(item.kana);
+    if (i >= 0) return [i, i + item.kana.length];
   }
   if (CONJUGABLE.has(item.pos)) {
     for (const c of [item.word, item.kana]) {
@@ -510,8 +535,12 @@ export function weakPointSet(tag: ErrorTag, cards: CardsApi, log: LogEntry[], to
 
 /**
  * Kage Ghost Set pools: 15 items introduced in the last 14 days (first log
- * entry within the window, base facet card) and 15 mature cards (S ≥ 14 d,
- * not archived, other items). Deterministic per seed.
+ * entry within the window, base facet card, S < 14 d) and 15 mature cards
+ * (S ≥ 14 d, not archived, other items). Deterministic per seed.
+ *
+ * `log` is the 5,000-row ring, so a mature card's older rows roll off and its
+ * only surviving row may sit inside the window; the S < 14 d guard keeps such
+ * cards in the mature pool (the two pools are disjoint by construction).
  */
 export function kagePools(cards: CardsApi, log: LogEntry[], today: EpochDay, seed: number): { recent: QueueCard[]; mature: QueueCard[] } {
   const cutoff = dayStartMs(today - KAGE_RECENT_DAYS);
@@ -531,7 +560,7 @@ export function kagePools(cards: CardsApi, log: LogEntry[], today: EpochDay, see
     const kind = kindOfCards(wk.itemId, facets.get(wk.itemId) ?? []);
     if (!kind) continue;
     if (hasFlag(wk.t[7], CardFlag.archived) || wk.t[5] === 0) continue;
-    if (recentItems.has(wk.itemId)) {
+    if (recentItems.has(wk.itemId) && wk.t[1] < MATURE_DAYS) {
       if (wk.facet === baseFacet(kind)) recentCandidates.push(toQueueCard(wk, kind, today));
     } else if (wk.t[1] >= MATURE_DAYS) {
       matureCandidates.push(toQueueCard(wk, kind, today));

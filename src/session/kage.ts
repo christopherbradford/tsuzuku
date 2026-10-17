@@ -138,10 +138,11 @@ export async function buildKage(today: EpochDay, seed: string, o: KageOptions = 
   const week = weekOf(today);
   const weekSeed = hashSeed(seed, week);
   const ctx = await loadPlanContext({ loader: o.loader, available: o.available, seed: weekSeed, mode: 'kage' });
-  // The whole week runs the same set in the same order: draws and retrievability are anchored on the week's Monday.
+  // The whole week runs the same set in the same order: draws, the 14-day recency window and retrievability are
+  // all anchored on the week's Monday, so items do not age in or out of the Ghost Set mid-week.
   ctx.rng = rngFor(seed, 'kage', week);
   const anchor = kageWeekStart(today);
-  const pools = kagePools(store.cards, store.log.recent(5000), today, weekSeed);
+  const pools = kagePools(store.cards, store.log.recent(5000), anchor, weekSeed);
   const matureKeys = new Set(pools.mature.map((c) => c.cardKey));
   const anchored = (c: QueueCard): QueueCard => {
     const t = store.cards.get(c.cardKey);

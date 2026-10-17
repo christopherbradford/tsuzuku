@@ -12,6 +12,7 @@ import {
   detectRecognitionCtor,
   finalAlternatives,
   stateForError,
+  sttFailure,
   type RecognitionEventLike,
   type RecognitionLike,
   type RecognitionResultListLike,
@@ -344,6 +345,21 @@ describe('continuous', () => {
     last().error('network');
     await expect(p2).resolves.toBeNull();
     expect(stt.state.value).toBe('network');
+  });
+
+  it('sttFailure names the typed failure after a null result and is null while idle / listening / done or without state', async () => {
+    expect(sttFailure(nullStt)).toBeNull();
+    const stt = createStt({ ctor: FakeRecognition });
+    expect(sttFailure(stt)).toBeNull();
+    const p = stt.recognize({ maxMs: 30_000, continuous: true });
+    expect(sttFailure(stt)).toBeNull();
+    last().error('not-allowed');
+    await expect(p).resolves.toBeNull();
+    expect(sttFailure(stt)).toEqual({ state: 'denied', label: STT_STATE_LABEL.denied });
+    const p2 = stt.recognize({ maxMs: 30_000 });
+    last().final(['はい']);
+    await expect(p2).resolves.toEqual({ alternatives: ['はい'] });
+    expect(sttFailure(stt)).toBeNull();
   });
 
   it('silence for the whole window → null with state timeout', async () => {

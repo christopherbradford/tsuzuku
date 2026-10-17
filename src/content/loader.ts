@@ -31,7 +31,11 @@
  *       column predicts which file holds sequence 0123; because dedupe
  *       leaves gaps the real ids drift upward, so the order is the guessed
  *       file, then its later neighbours, then the earlier ones;
- *     - kanji → no level in the id; every kanji file in manifest order;
+ *     - kanji → no level in the id; every kanji file in INTRODUCTION order
+ *       (ascending first `stations` entry: n5 → n4 → n3 → n2). A learner
+ *       only holds cards for stations ≤ their own, so the scan reaches the
+ *       holding file before touching any later-level file (an N5 kanji is
+ *       one fetch, never the whole 860 KB of kanji files);
  *     - conjugation / station → not items: resolves `undefined`, no fetch.
  *  3. A station hint beats the estimate: every loaded bundle records
  *     `id → station`, and the manifest's `ManifestFile.stations` says which
@@ -330,6 +334,13 @@ export function createLoader(fetchImpl?: typeof fetch, base = './content/'): Con
     return m.files.filter((f) => f.type === kind);
   }
 
+  /** Earliest station whose items live in `f` (files with no stations sort last). */
+  function firstStation(f: ManifestFile): number {
+    let min = Number.POSITIVE_INFINITY;
+    for (const n of f.stations) if (n < min) min = n;
+    return min;
+  }
+
   /** Files of one level ordered by the cumulative-count estimate for `seq` (guess, later, earlier …). */
   function orderBySequence(files: ManifestFile[], seq: number | undefined): ManifestFile[] {
     if (seq === undefined || files.length < 2) return files;
@@ -381,8 +392,11 @@ export function createLoader(fetchImpl?: typeof fetch, base = './content/'): Con
         files.filter((f) => f.level === level),
         seqOf(id),
       );
+    } else if (ck === 'kanji') {
+      // No level in a kanji id: scan in introduction order (first station ascending), so the
+      // first guess `load()` takes and the sequential fallback both start at the earliest level.
+      files = [...files].sort((a, b) => firstStation(a) - firstStation(b));
     }
-    // kanji: every kanji file in manifest order (no level in the id)
 
     const hint = stationHint.get(id);
     if (hint !== undefined) {

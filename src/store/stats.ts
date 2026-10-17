@@ -13,6 +13,8 @@
  *            200 reps without storing them).
  *  honesty   Judge passes ÷ checks as a rolling mean over the last 200
  *            checks (`stats.honesty`, 0–1; `honesty(m)` is null before any check).
+ *  storiesRead  `story:read` (any mode/score) appends the id to
+ *            `progress.storiesRead` once — the "first read" record.
  */
 import { DRILL_IDS, type ContentItem, type DrillId, type VocabItem } from '../content/types';
 import { content } from '../content/loader';
@@ -198,6 +200,10 @@ export function startStats(store: Store, o: StatsOptions = {}): () => void {
     bus.on('scroll:completed', (p) => bump({ scrolls: 1, scrollsFlawless: p.flawless ? 1 : 0 })),
     bus.on('michikusa:read', () => bump({ michikusaRead: 1 })),
     bus.on('story:read', (p) => {
+      // Any read to the end, any mode, any score: the episode is no longer a first read
+      // (`Progress.storiesRead`, ARCHITECTURE §1; the Reader's gloss-tap Hard path and
+      // the builder's unread-first pick read it).
+      store.patch('progress', (pr) => (pr.storiesRead?.includes(p.storyId) ? pr : { ...pr, storiesRead: [...(pr.storiesRead ?? []), p.storyId] }));
       const passed = p.total > 0 && p.correct / p.total >= 2 / 3;
       if (p.mode === 'speed') {
         const ok = p.total > 0 && p.correct >= p.total;

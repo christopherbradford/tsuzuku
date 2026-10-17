@@ -6,7 +6,9 @@
  * (two lines, a ±20 % band, never red, never a countdown; the onboarding
  * estimates before 14 active days), the belt timeline, the Perapera radar,
  * the Weak Point map, Kage history, Kiai totals, reading and speaking, and
- * one honest "what to do next" line. Everything is recomputed on open from
+ * one honest "what to do next" line (the first line, before any session has
+ * been trained, points at Nihonbashi rather than the ledger). Everything is
+ * recomputed on open from
  * the live store; the current station's bundle is fetched once so the
  * projection counts real remaining items, and every other station is
  * counted from its quota (the page says so).
@@ -47,11 +49,15 @@ function pct(x: number | null): string {
   return x === null ? S.unavailable : fill(S.percent, { n: Math.round(x * 100) });
 }
 
-/** Station label for a belt's Shinsa station: `N3 (Okazaki)` style, from STATIONS. */
+/**
+ * Station label for a belt's Shinsa station: `N3 (Okazaki)` style, from
+ * STATIONS. The White belt's level is the kana band, not a JLPT level, so it
+ * stays lower-case like RoadNav shows it (`kana (Kanagawa)`).
+ */
 export function beltTargetLabel(belt: Belt): string {
   const def = BELTS.find((b) => b.id === belt);
   const st = def ? STATIONS.find((s) => s.number === def.stations[1]) : undefined;
-  const level = def ? def.level.toUpperCase() : '';
+  const level = def ? (def.level === 'kana' ? S.levelKana : def.level.toUpperCase()) : '';
   return st ? `${level} (${st.nameRomaji})` : level;
 }
 
@@ -62,10 +68,13 @@ export interface NextStepInput {
   weakTag: string | null;
   weekMinutes: number;
   weekTargetHours: number;
+  /** Lifetime sessions trained; 0 means the road has not started yet. */
+  sessions?: number;
 }
 
-/** One honest line: backlog > due > weak point > ledger behind > rest. */
+/** One honest line: first session > backlog > due > weak point > ledger behind > rest. */
 export function nextStepLine(i: NextStepInput): string {
+  if (i.sessions === 0) return S.nextFirst;
   if (i.backlog) return fill(S.nextBacklog, { shown: i.shown, due: i.due });
   if (i.due > 0) return fill(S.nextDue, { n: i.due });
   if (i.weakTag) return fill(S.nextWeak, { tag: i.weakTag });
@@ -233,6 +242,7 @@ export default function RecordsPage(p: RecordsPageProps): JSX.Element {
     weakTag: weak[0] ? TAG_LABEL[weak[0]] : null,
     weekMinutes: week.minutes,
     weekTargetHours: week.targetHours,
+    sessions: stats.sessions,
   });
   const speakingTested = stats.shadowLines > 0 || stats.monologues > 0;
 

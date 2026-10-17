@@ -113,6 +113,21 @@ describe('<Gloss>', () => {
     expect(q('[data-action="capture"]')).toBeNull();
   });
 
+  it('a grammar point or kanji defaults to the station-Scroll line: no Capture (only vocab captures reach a Scroll)', () => {
+    mount({ item: WA, token: 'は' });
+    expect(q('[data-action="capture"]')).toBeNull();
+    expect(q('[data-action="bookmark"]')).toBeNull();
+    expect(text('[data-field="station-scroll"]')).toBe(S.stationScrollHint);
+    render(null, root);
+    mount({ item: FIXTURE.items['j-飲'] ?? null, token: '飲' });
+    expect(q('[data-action="capture"]')).toBeNull();
+    expect(q('[data-field="station-scroll"]')).not.toBeNull();
+    render(null, root);
+    mount({ item: WA, token: 'は', capture: 'station' });
+    expect(q('[data-action="capture"]')).toBeNull();
+    expect(q('[data-field="station-scroll"]')).not.toBeNull();
+  });
+
   it('an introduced word shows "In training" and no capture button', () => {
     mount({ capture: 'introduced' });
     expect(q('[data-field="in-training"]')).not.toBeNull();

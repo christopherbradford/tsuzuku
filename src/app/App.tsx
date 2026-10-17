@@ -8,6 +8,7 @@
  * down only the page area: the nav keeps working and the next navigation
  * resets the boundary.
  */
+import type { ReadonlySignal } from '@preact/signals';
 import { Component, type ComponentChildren, type FunctionComponent, type JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { href, route, sameRoute, type Route } from '@/shared/routes';
@@ -20,8 +21,8 @@ import { startThemeSync } from './theme';
 import './App.css';
 
 export interface AppProps {
-  /** Overlay components rendered above the layout (G's CeremonyHost). */
-  overlays?: FunctionComponent[];
+  /** Overlay components rendered above the layout (G's CeremonyHost); a signal lets main.tsx add them after first paint. */
+  overlays?: FunctionComponent[] | ReadonlySignal<FunctionComponent[]>;
   /** Page resolver; defaults to `pages.pageFor` (tests inject their own). */
   pageFor?: (r: Route) => Promise<PageModule>;
   /** Defaults to `location.reload()`. */
@@ -187,7 +188,7 @@ export function App(p: AppProps): JSX.Element {
     );
   }
 
-  const overlays = p.overlays ?? [];
+  const overlays = p.overlays === undefined ? [] : Array.isArray(p.overlays) ? p.overlays : p.overlays.value;
   return (
     <ErrorBoundary reload={p.reload}>
       <Layout>

@@ -11,12 +11,16 @@ const SIZES = ['--fs-1', '--fs-2', '--fs-3', '--fs-4', '--fs-5', '--fs-6', '--fs
 const MOTION = ['--ease', '--dur-1', '--dur-2'];
 const LAYOUT = ['--gutter', '--touch', '--radius', '--sp-1', '--sp-2', '--sp-3', '--sp-4', '--sp-5', '--sp-6'];
 
+const TEXT_TOKENS = ['--kin-text', '--shu-text', '--ink'];
+
 const LIGHT: Record<string, string> = {
+  '--kin-text': '#7A5A05', '--shu-text': '#B0241F', '--ink': '#1A1A1F',
   '--bg': '#F4EDE0', '--surface': '#FFFBF3', '--raised': '#EADFCB', '--fg': '#1A1A1F', '--fg-muted': '#5E5A52', '--line': '#D9CDB6',
   '--shu': '#C9302C', '--kin': '#B8860B', '--ai': '#1F2A6B', '--sakura': '#C9718A', '--matcha': '#4E8A3C', '--neon-c': '#0E8F86',
   '--neon-m': '#B8257A', '--kon': '#1F3A93', '--hai': '#8A8578', '--focus': '#1F2A6B',
 };
 const DARK: Record<string, string> = {
+  '--kin-text': '#E0B341', '--shu-text': '#FF6A5E', '--ink': '#1A1A1F',
   '--bg': '#0B0B10', '--surface': '#15151D', '--raised': '#1F1F2A', '--fg': '#F4EDE0', '--fg-muted': '#A9A49A', '--line': '#2C2C3A',
   '--shu': '#E63B2E', '--kin': '#E0B341', '--ai': '#6C7BD9', '--sakura': '#F7B2C4', '--matcha': '#7BB661', '--neon-c': '#2EE6D6',
   '--neon-m': '#FF3DA6', '--kon': '#4F6FD6', '--hai': '#6E6A61', '--focus': '#2EE6D6',
@@ -94,6 +98,24 @@ describe('tokens.css', () => {
     for (const theme of [LIGHT, DARK]) {
       expect(contrast(theme['--fg']!, theme['--bg']!)).toBeGreaterThanOrEqual(12);
       expect(contrast(theme['--fg-muted']!, theme['--bg']!)).toBeGreaterThanOrEqual(4.5);
+    }
+  });
+
+  it('text-safe accent variants exist in both themes and meet 4.5:1 on every surface they are used on', () => {
+    for (const t of TEXT_TOKENS) expect(root[t]?.toUpperCase(), t).toBe(LIGHT[t]);
+    for (const t of ['--kin-text', '--shu-text']) {
+      expect(darkAuto[t]?.toUpperCase(), `dark auto ${t}`).toBe(DARK[t]);
+      expect(darkForced[t]?.toUpperCase(), `dark forced ${t}`).toBe(DARK[t]);
+    }
+    // --ink is theme-invariant (text on the gold --kin background)
+    expect(darkAuto['--ink']).toBeUndefined();
+    expect(darkForced['--ink']).toBeUndefined();
+    for (const theme of [LIGHT, DARK]) {
+      for (const bg of ['--bg', '--surface', '--raised']) {
+        expect(contrast(theme['--kin-text']!, theme[bg]!), `kin-text on ${bg}`).toBeGreaterThanOrEqual(4.5);
+        expect(contrast(theme['--shu-text']!, theme[bg]!), `shu-text on ${bg}`).toBeGreaterThanOrEqual(4.5);
+      }
+      expect(contrast(theme['--ink']!, theme['--kin']!), 'ink on kin').toBeGreaterThanOrEqual(4.5);
     }
   });
 

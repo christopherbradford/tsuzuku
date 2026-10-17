@@ -26,6 +26,7 @@ import {
   kageDueThisWeek,
   kageResultLine,
   kageStanding,
+  kageWeekStart,
   matureStepId,
   recentStepId,
   scoreKage,
@@ -217,5 +218,19 @@ describe('availability and standing', () => {
     expect(table.filter((r) => r.factory).every((r) => r.score <= 1100)).toBe(true);
     expect(hiScoreTable({ week: 0, best4: [], wins: 0, history: [] })).toEqual([]);
     expect(FIXTURE_IDS.vocab).toContain(V.飲む);
+  });
+});
+
+describe('Ghost Set anchoring (design 03 §11)', () => {
+  it('items first seen 13 days before the Monday stay in the set all week: Monday and Wednesday build the same keys', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: kageCards() });
+    const monday = kageWeekStart(TODAY);
+    const t = dayStartMs(monday - 13, 'UTC') + 1000;
+    for (const id of STATION_4.kanjiIds) store.log.push([t, `${id}#comp`, 3, 4000, 11, 0]);
+    const a = await buildKage(monday, 'seed-w', { loader, available: all });
+    const b = await buildKage(monday + 2, 'seed-w', { loader, available: all });
+    expect(a.steps.filter((s) => s.id.startsWith('kage:r:')).length).toBe(4);
+    expect(b.steps.map((s) => s.cardKey)).toEqual(a.steps.map((s) => s.cardKey));
+    expect(b.steps.map((s) => s.id)).toEqual(a.steps.map((s) => s.id));
   });
 });

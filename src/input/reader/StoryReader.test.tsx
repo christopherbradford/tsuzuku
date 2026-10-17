@@ -16,7 +16,7 @@ vi.mock('@/content/loader', async (importOriginal) => {
   return { ...orig, content };
 });
 
-import { FIXTURE, FIXTURE_STORY_ID, V, createFakeLoader } from '@/content/fixtures';
+import { FIXTURE, FIXTURE_STORY_ID, G, V, createFakeLoader } from '@/content/fixtures';
 import type { StoryItem } from '@/content/types';
 import { installServices, nullAudio, resetServices, type AudioService } from '@/shared/audio';
 import { bus } from '@/shared/events';
@@ -25,7 +25,7 @@ import type { Step } from '@/shared/session-types';
 import { CardFlag } from '@/shared/store-types';
 import { store } from '@/store';
 import { captureEvents, card, makeTestStore } from '@/store/testing';
-import { StoryReader, StoryReaderView, isDictionaryFree, kaidenEvidence, meta, speakerSlots, storyStation, toAttemptResult, type StoryReadResult } from './StoryReader';
+import { StoryReader, StoryReaderView, captureStateFor, isDictionaryFree, kaidenEvidence, meta, speakerSlots, storyStation, toAttemptResult, type StoryReadResult } from './StoryReader';
 import { S } from './strings';
 
 const STORY = FIXTURE.items[FIXTURE_STORY_ID] as StoryItem;
@@ -316,6 +316,33 @@ describe('<StoryReaderView>', () => {
     expect(store.bookmarks.value).toEqual(['います']);
     expect(q('[data-action="bookmarked"]')).not.toBeNull();
     expect(store.captured.value).toEqual([V.水]);
+  });
+
+  it('a grammar token (は → g-n5-002) before its station offers no Capture: it comes with its station Scroll, and store.captured stays empty', async () => {
+    await makeStore();
+    mount();
+    expect(captureStateFor(G.は, 'は', false)).toBe('station');
+    expect(captureStateFor('j-飲', '飲', false)).toBe('station');
+    expect(captureStateFor(V.水, '水', false)).toBe('capture');
+    expect(captureStateFor(G.は, 'は', true)).toBe('introduced');
+    revealAll();
+    click(tokenEl(1, 'は'));
+    expect(q('[role="dialog"]')).not.toBeNull();
+    expect(q('[data-action="capture"]')).toBeNull();
+    expect(q('[data-action="bookmark"]')).toBeNull();
+    expect(q('[data-field="station-scroll"]')?.textContent).toBe(S.stationScrollHint);
+    expect(store.captured.value).toEqual([]);
+  });
+
+  it('unmounting cancels speech so a line never carries into the next step', async () => {
+    await makeStore();
+    const cancel = vi.fn();
+    installServices({ audio: { ...nullAudio, speak: () => Promise.resolve(), cancel } });
+    mount();
+    click(q('li[data-line="0"] [data-action="listen"]'));
+    expect(cancel).not.toHaveBeenCalled();
+    act(() => render(null, root));
+    expect(cancel).toHaveBeenCalledTimes(1);
   });
 
   it('Gloss reading for a kanji token the corpus lacks comes from the line ruby', async () => {

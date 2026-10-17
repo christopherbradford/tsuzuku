@@ -1,4 +1,4 @@
-import { ICS_FILENAME, ICS_SUMMARY, buildIcs, downloadIcs, icsEscape, icsFold } from './ics';
+import { ICS_FILENAME, ICS_SUMMARY, buildIcs, downloadIcs, icsEscape, icsFold, safeTz } from './ics';
 
 const base = { hour: 7, minute: 30, tz: 'America/Los_Angeles', start: { year: 2026, month: 1, day: 15 } };
 
@@ -47,6 +47,25 @@ describe('buildIcs', () => {
     // EpochDay 0 is 1970-01-01 at the 04:00 boundary.
     const lines = unfold(buildIcs({ hour: 6, minute: 0, tz: 'Asia/Tokyo', startDay: 0 }));
     expect(lines).toContain('DTSTART;TZID=Asia/Tokyo:19700101T060000');
+  });
+
+  it('a zone with CR/LF or other junk from an imported save cannot inject lines; it falls back to UTC', () => {
+    const evil = buildIcs({ hour: 9, minute: 0, tz: 'UTC\r\nX-EVIL:1', start: { year: 2026, month: 2, day: 1 } });
+    expect(evil).not.toMatch(/X-EVIL/);
+    expect(unfold(evil)).toContain('DTSTART;TZID=UTC:20260201T090000');
+    for (const tz of ['Europe/Paris;X=1', 'Asia/Tokyo:junk', 'Not/AZone', '   ', 'Mars/Olympus_Mons']) {
+      expect(unfold(buildIcs({ hour: 9, minute: 0, tz, start: { year: 2026, month: 2, day: 1 } }))).toContain('DTSTART;TZID=UTC:20260201T090000');
+    }
+  });
+
+  it('safeTz keeps every zone the host resolves and rejects the rest', () => {
+    expect(safeTz('Asia/Tokyo')).toBe('Asia/Tokyo');
+    expect(safeTz(' America/Los_Angeles ')).toBe('America/Los_Angeles');
+    expect(safeTz('Etc/GMT+8')).toBe('Etc/GMT+8');
+    expect(safeTz(undefined)).toBe('UTC');
+    expect(safeTz(null)).toBe('UTC');
+    expect(safeTz('UTC\nX:1')).toBe('UTC');
+    expect(safeTz('Nowhere/Town')).toBe('UTC');
   });
 
   it('folds long lines at 75 octets with a leading space', () => {

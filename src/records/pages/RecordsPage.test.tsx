@@ -136,7 +136,19 @@ describe('<RecordsPage>', () => {
     expect(text).not.toContain('!');
   });
 
-  it('nextStepLine picks backlog > due > weak point > ledger > rest', () => {
+  it('a fresh save points at Nihonbashi, not at the ledger', async () => {
+    await makeTestStore();
+    await mount();
+    const text = root.textContent ?? '';
+    expect(text).toContain('The road starts at Nihonbashi. One Kata opens it.');
+    expect(text).not.toContain('outside the app. Log what you listen to.');
+    expect(findBanned(text)).toEqual([]);
+    expect(text).not.toContain('!');
+  });
+
+  it('nextStepLine picks first session > backlog > due > weak point > ledger > rest', () => {
+    expect(nextStepLine({ backlog: false, due: 0, shown: 0, weakTag: null, weekMinutes: 0, weekTargetHours: 0.5, sessions: 0 })).toBe('The road starts at Nihonbashi. One Kata opens it.');
+    expect(nextStepLine({ backlog: false, due: 0, shown: 0, weakTag: null, weekMinutes: 0, weekTargetHours: 0.5, sessions: 1 })).toBe('The week is 0 h of 0.5 h outside the app. Log what you listen to.');
     expect(nextStepLine({ backlog: true, due: 310, shown: 120, weakTag: null, weekMinutes: 0, weekTargetHours: 1 })).toBe('The gatekeeper holds the line. 120 of your 310 reviews today; the rest wait without penalty.');
     expect(nextStepLine({ backlog: false, due: 12, shown: 12, weakTag: 'particle', weekMinutes: 0, weekTargetHours: 1 })).toBe('12 reviews are due. Clear them before anything new.');
     expect(nextStepLine({ backlog: false, due: 0, shown: 0, weakTag: 'particle', weekMinutes: 0, weekTargetHours: 1 })).toContain('particle');
@@ -145,6 +157,7 @@ describe('<RecordsPage>', () => {
   });
 
   it('beltTargetLabel names the belt level and its Shinsa station', () => {
+    expect(beltTargetLabel('white')).toBe('kana (Kanagawa)');
     expect(beltTargetLabel('purple')).toBe('N3 (Okazaki)');
     expect(beltTargetLabel('yellow')).toBe('N5 (Odawara)');
   });

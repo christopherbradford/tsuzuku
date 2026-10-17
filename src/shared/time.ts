@@ -23,6 +23,27 @@ export interface CivilParts extends CivilDate {
   second: number;
 }
 
+/** IANA zone ids are ASCII words joined by `/`, `_`, `+`, `-` (also covers `Etc/GMT+8`, `US/Pacific`). */
+const TZ_SHAPE = /^[A-Za-z0-9_+\-\/]+$/;
+
+/**
+ * A zone id the host can resolve, or `'UTC'`. Structural check first (no
+ * CR/LF/`;`/`:` can leak into an ICS content line), then the same `Intl`
+ * probe `civilParts` relies on, so legacy-but-valid ids are kept and typos
+ * fall back quietly. The save migration runs every imported `profile.tz`
+ * through this, so every tz consumer (day math, ICS export) can trust it.
+ */
+export function safeTz(tz: string | null | undefined): string {
+  const t = (tz ?? '').trim();
+  if (!t || !TZ_SHAPE.test(t)) return 'UTC';
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone: t });
+    return t;
+  } catch {
+    return 'UTC';
+  }
+}
+
 const fmtCache = new Map<string, Intl.DateTimeFormat>();
 function formatter(tz: string): Intl.DateTimeFormat {
   let f = fmtCache.get(tz);

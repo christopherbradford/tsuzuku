@@ -11,6 +11,13 @@
  * raked gravel lines curving around moss stones. A larger name seal and a
  * belt-colour sash sit in the corner. Palette washi, shu; post pass grain.
  *
+ * Layout (`gardenBoxes`): the seal grid fills one box, the name seal a
+ * square in the bottom-right corner. The stones (with their ripple rings)
+ * sit only in the margins outside both — the bottom strip left of the
+ * name seal on desktop, the top/bottom safe bands on the phone — and the
+ * 判子の庭 title runs down the rail right of the grid, so no crest is ever
+ * covered by a stone or the title.
+ *
  * Glyph, field and tier come from `BADGE_DEFS` (store contract tier), so
  * the seals always match the Mon shown in the Collections screen.
  */
@@ -83,6 +90,20 @@ export function layoutSeals(seed: number, ids: readonly BadgeId[], box: Box): Se
   return out;
 }
 
+/** The seal grid box and the name-seal square per canvas size (stones and the title keep clear of both). */
+export function gardenBoxes(size: WallpaperSize): { box: Box; name: Box } {
+  const { w, h } = sizeOf(size);
+  const phone = size === 'phone';
+  const safe = safeRect(size);
+  const nameSeal = phone ? 220 : 190;
+  const nameX = phone ? w - w * 0.08 - nameSeal : w - w * 0.05 - nameSeal;
+  const nameY = phone ? safe.y + safe.h - nameSeal - 40 : h - h * 0.08 - nameSeal;
+  const box: Box = phone
+    ? { x: w * 0.08, y: safe.y + 60, w: w * 0.84, h: safe.h - 60 - (nameSeal + 130) }
+    : { x: w * 0.07, y: h * 0.1, w: w * 0.86, h: h * 0.68 };
+  return { box, name: { x: nameX, y: nameY, w: nameSeal, h: nameSeal } };
+}
+
 function sealMarkup(p: SealPlacement, i: number, seed: number): string {
   const { x, y, size, rot, look } = p;
   const op = p.partial ? 0.6 : 0.92;
@@ -103,9 +124,10 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   const rng = mulberry32(seed);
   const safe = safeRect(size);
   const belt = beltColor(data.belt);
-  const nameSeal = phone ? 220 : 190;
-  const nameX = phone ? w - w * 0.08 - nameSeal : w - w * 0.05 - nameSeal;
-  const nameY = phone ? safe.y + safe.h - nameSeal - 40 : h - h * 0.08 - nameSeal;
+  const { box, name } = gardenBoxes(size);
+  const nameSeal = name.w;
+  const nameX = name.x;
+  const nameY = name.y;
 
   const defs = [
     inkBleed('bleed', seed % 991, { scale: 5, blur: 0.5, frequency: 0.04 }),
@@ -114,12 +136,15 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   ];
 
   // Karesansui: moss stones with ripple rings, raked gravel lines bending around them.
+  // Phone: the top/bottom safe bands. Desktop: the strip below the seal box
+  // (bottom 0.78 h; a stone with its rings reaches ≤ 87 px) and left of the
+  // name seal (x ≥ 0.85 w; rings reach ≤ 108 px right of the centre).
   const stones: Pt[] = [];
   const nStones = range(rng, 2, 3);
   for (let i = 0; i < nStones; i++) {
     const left = rng() < 0.5;
-    const sx = (left ? uniform(rng, 0.06, 0.2) : uniform(rng, 0.8, 0.94)) * w;
-    const sy = phone ? (i % 2 === 0 ? uniform(rng, 0.03, 0.09) : uniform(rng, 0.9, 0.96)) * h : uniform(rng, 0.55, 0.9) * h;
+    const sx = phone ? (left ? uniform(rng, 0.06, 0.2) : uniform(rng, 0.8, 0.94)) * w : (left ? uniform(rng, 0.06, 0.26) : uniform(rng, 0.4, 0.66)) * w;
+    const sy = phone ? (i % 2 === 0 ? uniform(rng, 0.03, 0.09) : uniform(rng, 0.9, 0.96)) * h : uniform(rng, 0.87, 0.92) * h;
     stones.push([sx, sy]);
   }
   const gravel: string[] = [];
@@ -155,9 +180,6 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   }
 
   // Seals.
-  const box: Box = phone
-    ? { x: w * 0.08, y: safe.y + 60, w: w * 0.84, h: safe.h - 60 - (nameSeal + 130) }
-    : { x: w * 0.07, y: h * 0.1, w: w * 0.86, h: h * 0.68 };
   const seals = layoutSeals(seed, data.badgesInOrder, box);
   const sealMarkupAll = seals.map((p, i) => sealMarkup(p, i, seed));
 
@@ -210,7 +232,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   const n = data.badgesInOrder.length;
   texts.push({ text: `${n}${S.crestsUnit}`, x: nameX - 26, y: nameY + nameSeal - 36, size: phone ? 30 : 28, font: FONTS.mincho, fill: INK, anchor: 'end', lang: 'ja' });
   texts.push({ text: eraDate(data.date), x: nameX - 26, y: nameY + nameSeal - 4, size: phone ? 24 : 22, font: FONTS.mincho, fill: INK_WASH, anchor: 'end', lang: 'ja' });
-  texts.push({ text: S.gardenTitle, x: phone ? w * 0.9 : w * 0.955, y: phone ? safe.y + 40 : h * 0.05, size: phone ? 40 : 34, font: FONTS.brush, fill: INK, vertical: true, opacity: 0.85, lang: 'ja' });
+  // Title column on the rail right of the seal box (box ends at 0.92 w / 0.93 w).
+  texts.push({ text: S.gardenTitle, x: w * 0.955, y: phone ? safe.y + 40 : h * 0.05, size: phone ? 40 : 34, font: FONTS.brush, fill: INK, vertical: true, opacity: 0.85, lang: 'ja' });
 
   const svg = svgDoc({ w, h, bg: WASHI, defs, body: [el('g', { 'aria-hidden': 'true' }, body)] });
   return { svg, texts, post: 'grain' };

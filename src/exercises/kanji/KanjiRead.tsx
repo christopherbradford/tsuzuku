@@ -6,16 +6,17 @@
  * learner's furigana setting) → type the word's reading. `params.sentence`
  * carries ruby markup, `params.blank` the target's `[start, end]` in plain
  * coordinates (else the first example word found in the sentence is used),
- * `params.answer` the kana reading (else the example's kana). Without a
- * sentence the drill rotates through `examples` by exposure count, so on and
- * kun readings are learned in words. Graded with `checkJa` through
+ * `params.answer` the kana reading (else the example's kana). A blank that
+ * cuts through a ruby group leaves bare kanji on each side (`ruby-split`),
+ * never a duplicated base. Without a sentence the drill rotates through
+ * `examples` by exposure count, so on and kun readings are learned in words. Graded with `checkJa` through
  * `<TextAnswer mode="ja">` with no particle tolerance: exact or canonical
  * equivalent → Good, a slip → Block, a miss → Again tagged `kanji-reading`.
  * Showing the English gloss before answering is a hint (Hard ceiling).
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
-import { segmentsToTokens, toPlain } from '@/content/ruby';
+import { toPlain } from '@/content/ruby';
 import type { ContentItem, KanjiItem, WordExample } from '@/content/types';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { equivalentJa } from '@/shared/jp';
@@ -24,6 +25,7 @@ import { store } from '@/store';
 import { attempt } from '../check';
 import { S as SD } from '../strings';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
+import { splitAtPlainRange } from './ruby-split';
 import { S } from './strings';
 import './kanji.css';
 
@@ -41,13 +43,9 @@ export function isKanjiItem(i: ContentItem | null | undefined): i is KanjiItem {
   return !!i && 'char' in i && 'strokes' in i && 'examples' in i;
 }
 
-/** Splits ruby'd `ja` at plain-text offsets into `[before, target, after]`, each keeping its ruby markup. */
+/** Splits ruby'd `ja` at plain-text offsets into `[before, target, after]`, each keeping the ruby markup that fits inside it (`splitAtPlainRange`). */
 export function splitRuby(ja: string, start: number, end: number): [string, string, string] {
-  const plain = toPlain(ja);
-  const a = Math.max(0, Math.min(start, plain.length));
-  const b = Math.max(a, Math.min(end, plain.length));
-  const parts = segmentsToTokens(ja, [plain.slice(0, a), plain.slice(a, b), plain.slice(b)]);
-  return [parts[0]?.ja ?? '', parts[1]?.ja ?? '', parts[2]?.ja ?? ''];
+  return splitAtPlainRange(ja, start, end).pieces;
 }
 
 export interface ReadPrompt {

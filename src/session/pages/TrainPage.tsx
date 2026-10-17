@@ -6,9 +6,11 @@
  * "Start fresh"), shows a short pre-roll of what is coming (blocks, reps,
  * minutes; the versus table for Kage), then hands a `SessionRunner` to
  * `<SessionView>`. Rapid Fire and Gojūon Fighter are ordinary plans with one
- * arcade step. `gate`, `shinsa` and `dan` have their own rooms and redirect.
- * Leaving keeps the snapshot (the runner saves after every rep); "Another
- * Kata?" on the end card starts a fresh Kata at once.
+ * arcade step. `gate`, `shinsa` and `dan` have their own rooms and redirect; a
+ * stale snapshot of such a fight (boss rooms never resume) is abandoned on the
+ * way so the Dojo stops offering it. Leaving keeps the snapshot (the runner
+ * saves after every rep); "Another Kata?" on the end card starts a fresh Kata
+ * at once. Mode titles render the Japanese half under `lang="ja"`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -67,6 +69,15 @@ function fmtReps(n: number): string {
   return n === 1 ? S.repsCountOne : fill(S.repsCount, { n });
 }
 
+/** `型 Kata`: the Japanese half under `lang="ja"`, the English half plain (design 01 §7). */
+function ModeTitle(p: { mode: SessionMode }): JSX.Element {
+  return (
+    <>
+      <span lang="ja">{S.modeNameJa[p.mode]}</span> {S.modeNameEn[p.mode]}
+    </>
+  );
+}
+
 export default function TrainPage(p: TrainPageProps): JSX.Element {
   const loader = p.loader ?? appContent;
   const mode: SessionMode = p.route.name === 'train' ? p.route.mode : 'kata';
@@ -99,6 +110,9 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
     kageDone.current = null;
     const redirect = redirectFor(mode, store.progress.value.station);
     if (redirect) {
+      // A boss / exam fight is never resumed (design 04 §11): a snapshot left by an older build is abandoned, not offered.
+      const stale = store.session.load();
+      if (stale && stale.plan.mode === mode) new SessionRunner(stale.plan, { resumed: stale, loader }).abandon();
       setPhase({ kind: 'redirect' });
       navigate(redirect, { replace: true });
       return () => {
@@ -186,7 +200,9 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
     case 'empty':
       return (
         <section class="train" data-mode={mode} data-phase="empty" aria-label={S.trainAria}>
-          <h1 class="train__title">{S.modeName[mode]}</h1>
+          <h1 class="train__title">
+            <ModeTitle mode={mode} />
+          </h1>
           <p class="train__status empty" role="status">
             {S.emptyPlan}
           </p>
@@ -198,7 +214,9 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
       return (
         <section class="train train__resume" data-mode={mode} data-phase="resume" aria-label={S.trainAria}>
           <h1 class="train__title">{S.resumeTitle}</h1>
-          <p class="train__line">{S.modeName[phase.snap.plan.mode]}</p>
+          <p class="train__line">
+            <ModeTitle mode={phase.snap.plan.mode} />
+          </p>
           <p class="train__body muted">{S.resumeBody}</p>
           <div class="train__actions">
             <button type="button" class="hanko train__resume-btn" onClick={() => resume(phase.snap)} autoFocus>
@@ -221,7 +239,9 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
       return (
         <section class="train train__preroll" data-mode={mode} data-phase="preroll" aria-label={S.trainAria}>
           <header class="train__head">
-            <h1 class="train__title">{S.modeName[plan.mode]}</h1>
+            <h1 class="train__title">
+              <ModeTitle mode={plan.mode} />
+            </h1>
             <p class="train__line">{S.modeLine[plan.mode]}</p>
           </header>
           <section class="train__coming status-window" aria-label={S.preRollAria}>

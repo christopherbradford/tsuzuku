@@ -37,9 +37,19 @@ export const BLOCK_KINDS = [
 ] as const;
 export type BlockKind = (typeof BLOCK_KINDS)[number];
 
+/**
+ * Sentence contract (builder → exercises): `sentence` carries RUBY MARKUP
+ * (`{漢字|かんじ}`) for every sentence drill; render it with `<Ruby>` and
+ * derive the plain surface with `toPlain(sentence)`. `blank` / `blanks` are
+ * `[start, end)` offsets into `toPlain(sentence)`, and `answer` / `accept`
+ * hold plain surfaces (no markup). Exception: production-forge keeps a plain
+ * `sentence` (the kanji candidates are the exercise's own ruby).
+ */
 export type StepParams = Partial<{
   choices: string[];
+  /** Plain surface (sentence drills) or kana (kana items). */
   answer: string;
+  /** Accepted plain surfaces besides `answer`. */
   accept: string[];
   /** Per-form answers (form-chain). */
   answers: string[];
@@ -47,9 +57,13 @@ export type StepParams = Partial<{
   candidates: string[];
   targetForm: ConjForm;
   forms: ConjForm[];
+  /** Ruby markup (plain for production-forge); see the type comment. */
   sentence: string;
+  /** Reading of the picked item (e.g. the verb's kana for grammar prod cards). */
+  kana: string;
+  /** `[start, end)` into `toPlain(sentence)`. */
   blank: [number, number];
-  /** 1–3 particle slots (particle-duel). */
+  /** 1–3 particle slots (particle-duel), offsets into `toPlain(sentence)`. */
   blanks: [number, number][];
   tiles: string[];
   /** Component-assembly frame. */
@@ -192,6 +206,8 @@ export interface SessionSnapshot {
   cursor: number;
   results: StepResult[];
   kiai: KiaiState;
+  /** Active milliseconds accumulated before this segment (resume credit); older snapshots load as 0. */
+  activeMs?: number;
 }
 
 /** 次回予告 — three informational lines on the つづく card (design 03 §10). */

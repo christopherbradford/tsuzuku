@@ -155,13 +155,39 @@ describe('<KanaForge>', () => {
     expect(q('.drill__after')?.getAttribute('data-correct')).toBe('near');
   });
 
-  it('without a Japanese voice the romaji is the prompt and costs nothing', () => {
+  it('without a Japanese voice the romaji is the prompt and costs nothing; the Listen button is not shown and Space counts no replay', () => {
     const p = props(NE);
-    mount(p);
+    const input = mount(p, true);
     expect(q('.kana-forge__romaji')?.textContent).toBe('ne');
     expect(q('.drill__prompt')?.textContent).toBe('Type this in kana.');
     expect(root.textContent).not.toContain('Show romaji');
+    expect(q('.kana-ear__speaker')).toBeNull();
+    expect(root.textContent).not.toContain('Listen');
+    key(document.body, ' ');
+    expect(p.onReplay).not.toHaveBeenCalled();
     expect(p.onHint).not.toHaveBeenCalled();
+    type(input, 'ne');
+    key(input, 'Enter');
+    expect(result(p)).toMatchObject({ correct: true, replays: 0, hintUsed: false });
+  });
+
+  it('the romaji prompt is the IME spelling where display Hepburn does not round-trip (を → wo, ティ → thi), and typing it is right', () => {
+    const WO: KanaItem = { ...NE, id: 'k-h-wo', kana: 'を', romaji: 'o', row: 'w', exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };
+    const p = props(WO);
+    const input = mount(p);
+    expect(q('.kana-forge__romaji')?.textContent).toBe('wo');
+    type(input, 'wo');
+    key(input, 'Enter');
+    expect(result(p)).toMatchObject({ correct: true, answer: 'を' });
+    expect(q('.drill__after')?.textContent).toContain('o · wo');
+
+    const THI: KanaItem = { ...NE, id: 'k-k-thi', kana: 'ティ', romaji: 'ti', script: 'katakana', row: 'ext', type: 'extended', exampleWord: { word: 'パーティー', kana: 'パーティー', en: 'party' } };
+    const t = props(THI);
+    const i2 = mount(t);
+    expect(q('.kana-forge__romaji')?.textContent).toBe('thi');
+    type(i2, 'thi');
+    key(i2, 'Enter');
+    expect(result(t)).toMatchObject({ correct: true, answer: 'ティ' });
   });
 
   it('with a voice the romaji hides behind a hint button that counts as a hint', () => {
@@ -181,6 +207,7 @@ describe('<KanaForge>', () => {
   });
 
   it('speaks the kana on mount; Space replays through the frame and is counted; Enter outside the field submits', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true) } });
     const p = props(NE);
     const input = mount(p, true);
     expect(speak).toHaveBeenCalledTimes(1);

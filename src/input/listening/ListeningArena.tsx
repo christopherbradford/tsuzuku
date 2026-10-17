@@ -17,10 +17,12 @@
  * Export convention (D): `meta` + the component; `ListeningArena` takes the
  * standalone props OR `ExerciseProps` (`params.storyId`, `params.rate`):
  * `registerExercise(meta, ListeningArena)`. Deterministic: the set draws from
- * `rngFor(seed, today, storyId)`; time comes from `store.now()`.
+ * `rngFor(seed, today, storyId)`; time comes from `store.now()`. The text
+ * fallback gates on `voiceAudible` (a voice AND volume > 0), not `hasJaVoice`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { voiceAudible } from '@/audio';
 import { content, type ContentLoader } from '@/content/loader';
 import { segmentsToTokens, toKana, toPlain } from '@/content/ruby';
 import type { CardKey, ComprehensionQuestion, ContentItem, ErrorTag, StoryItem, StoryLine, VocabItem } from '@/content/types';
@@ -324,7 +326,7 @@ function Arena(p: ArenaProps): JSX.Element {
     () => (story ? buildListeningSet(story, { rng: rngFor(store.seed(), store.today(), story.id), station }) : []),
     [story, station],
   );
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
   const relisten = relistenRate(p.rate);
 
   const [phase, setPhase] = useState<Phase>('listen');
@@ -604,7 +606,7 @@ function Arena(p: ArenaProps): JSX.Element {
           <p class="arena__hint">{S.audioOnly}</p>
         ) : (
           <div class="notice notice--warn arena__notice" role="status">
-            {S.noVoice}
+            {services.audio.hasJaVoice.value ? S.volumeOff : S.noVoice}
           </div>
         )}
         <div class="arena__stage status-window" aria-live="polite">

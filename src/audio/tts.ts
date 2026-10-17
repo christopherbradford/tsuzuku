@@ -21,10 +21,15 @@
  *    `hasJaVoice` false, sfx still plays.
  *  - SFX via `sfx.ts`; master volume from `settings.sound`; muted in Zen or
  *    at volume 0 (voices still speak in Zen: listening drills need them).
+ *  - `canSpeak` = a Japanese voice exists AND the master volume is above 0:
+ *    at volume 0 `speak()` resolves at once without an utterance, so drills
+ *    that gate their text fallback on audio read `canSpeak` (or the
+ *    `voiceAudible()` helper, which falls back to `hasJaVoice` for services
+ *    without it), not `hasJaVoice`.
  *
  * Everything browser-shaped is injectable so the module runs under jsdom.
  */
-import { effect, signal, type Signal } from '@preact/signals';
+import { computed, effect, signal, type Signal } from '@preact/signals';
 import { toPlain } from '../content/ruby';
 import { SPEED_TIER_RATES, type AudioService, type SpeakOptions, type SpeedTier, type VoiceInfo } from '../shared/audio';
 import type { SfxName } from '../shared/catalog';
@@ -105,6 +110,8 @@ export interface WebAudioOptions {
 }
 
 export interface WebAudioService extends AudioService {
+  /** A Japanese voice exists and the master volume is above 0: `speak()` will be heard. */
+  canSpeak: Signal<boolean>;
   /** Re-read `getVoices()` now. */
   refreshVoices(): void;
   /** Ranked Japanese voices with tier / default facts. */
@@ -224,6 +231,16 @@ function defaultVibrate(): ((pattern: number | number[]) => unknown) | undefined
 
 const GESTURES = ['pointerdown', 'keydown', 'touchend'] as const;
 
+/**
+ * Whether `speak()` on `audio` will actually be heard: `canSpeak` when the
+ * service exposes it (the web service), else `hasJaVoice` (`nullAudio`, test
+ * doubles). Drills that show text in place of audio gate on this.
+ */
+export function voiceAudible(audio: AudioService): boolean {
+  const can = (audio as Partial<Pick<WebAudioService, 'canSpeak'>>).canSpeak;
+  return can ? can.value : audio.hasJaVoice.value;
+}
+
 export function createWebAudio(o: WebAudioOptions = {}): WebAudioService {
   const synth = o.synth === undefined ? defaultSynth() : o.synth;
   const Utterance = o.utteranceCtor === undefined ? defaultUtteranceCtor() : o.utteranceCtor;
@@ -236,6 +253,8 @@ export function createWebAudio(o: WebAudioOptions = {}): WebAudioService {
 
   const muted = signal(false);
   const hasJaVoice = signal(false);
+  const audible = signal(true);
+  const canSpeak = computed(() => hasJaVoice.value && audible.value);
   let volume = 1;
   let ranked: RankedVoice[] = [];
   const queue: Pending[] = [];
@@ -249,6 +268,7 @@ export function createWebAudio(o: WebAudioOptions = {}): WebAudioService {
 
   const applySettings = (s: TtsSettings): void => {
     volume = Math.max(0, Math.min(1, Number.isFinite(s.sound) ? s.sound : 1));
+    audible.value = volume > 0;
     muted.value = volume <= 0 || s.feel === 'zen';
   };
 
@@ -478,10 +498,12 @@ export function createWebAudio(o: WebAudioOptions = {}): WebAudioService {
     },
     setVolume(v: number) {
       volume = Math.max(0, Math.min(1, Number.isFinite(v) ? v : 0));
+      audible.value = volume > 0;
       muted.value = volume <= 0 || readSettings().feel === 'zen';
     },
     muted,
     hasJaVoice,
+    canSpeak,
     voices: () => ranked.map((r) => ({ uri: r.uri, name: r.name, lang: r.lang, local: r.local, network: r.network })),
     rateForTier: (t: SpeedTier) => SPEED_TIER_RATES[t],
     refreshVoices,

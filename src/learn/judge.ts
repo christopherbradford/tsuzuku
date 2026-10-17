@@ -12,7 +12,7 @@ import type { CardKey, ContentItem, GrammarItem, KanjiItem, VocabItem } from '..
 import { toPlain } from '../content/ruby';
 import { hashSeed, type Rng } from '../shared/hash';
 import { normalizeEn } from '../shared/jp';
-import { FALLBACK_GLOSSES, fillTiers, meaningDistractors, minimalPairPartner } from './distractors';
+import { FALLBACK_GLOSSES, fillTiers, meaningDistractors, meaningKeys, minimalPairPartner, sharesMeaning } from './distractors';
 
 export type JudgeRate = 25 | 50 | 100;
 
@@ -86,7 +86,8 @@ function padGlosses(correct: string, picked: string[], n: number): string[] {
  * 4-option meaning Judge: the correct meaning, one confusable / look-alike /
  * related entry, and two same-POS (same-level for kanji and grammar)
  * distractors, so a guess passes 25 %, not 50 %. Distractors are distinct and
- * never equal the correct meaning.
+ * never equal ANY accepted meaning of the item (vocab and kanji carry
+ * `meanings[]`; a secondary gloss must not be gradable as a miss).
  */
 export function judgeOptions(item: VocabItem | KanjiItem | GrammarItem, pool: ContentItem[], rng: Rng): { correct: string; distractors: [string, string, string] } {
   if (isVocab(item)) {
@@ -96,15 +97,17 @@ export function judgeOptions(item: VocabItem | KanjiItem | GrammarItem, pool: Co
   }
   if (isKanji(item)) {
     const correct = item.meanings[0] ?? '';
-    const others = pool.filter(isKanji).filter((k) => k.id !== item.id);
+    const targetKeys = meaningKeys(item);
+    const taken = [...targetKeys, normalizeEn(correct)];
+    const others = pool.filter(isKanji).filter((k) => k.id !== item.id && !sharesMeaning(k, targetKeys));
     const byId = new Map(others.map((k) => [k.id, k] as const));
     const key = (k: KanjiItem) => normalizeEn(k.meanings[0] ?? '');
     const lookalikes = (item.lookalikes ?? []).map((id) => byId.get(id)).filter((k): k is KanjiItem => !!k);
     const comps = new Set(item.components);
     const shareComp = others.filter((k) => k.components.some((c) => comps.has(c)));
-    const first = fillTiers(rng, [lookalikes, shareComp], 1, key, [normalizeEn(correct)]);
+    const first = fillTiers(rng, [lookalikes, shareComp], 1, key, taken);
     const sameLevel = others.filter((k) => k.jlpt === item.jlpt);
-    const rest = fillTiers(rng, [sameLevel, others], 3 - first.length, key, [normalizeEn(correct), ...first.map(key)]);
+    const rest = fillTiers(rng, [sameLevel, others], 3 - first.length, key, [...taken, ...first.map(key)]);
     const d = padGlosses(correct, [...first, ...rest].map((k) => k.meanings[0] ?? ''), 3);
     return { correct, distractors: [d[0] as string, d[1] as string, d[2] as string] };
   }

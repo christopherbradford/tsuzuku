@@ -4,16 +4,20 @@
  * The ONLY module that may hand `() => Date.now()` to `initStore()` and the
  * only one (with `app/pages.ts`) that imports other groups' barrels:
  *
- *   initStore({slot, now, storage})   → await ready
+ *   render(<App overlays={signal}/>)  first paint: the つづく loading mark while the save loads
+ *   initStore({slot, now, storage})   → await ready → the Layout and the page render
  *   startPerapera(store)              monthly Perapera snapshot (now + every day:rolled)
- *   installServices(createWebAudio(), createStt())   from @/audio (F)
- *   ensureExercises()                 registry filled from @/exercises + @/input
- *   render(<App overlays=[CeremonyHost]/>)            CeremonyHost from @/art (G)
  *   startRouter() · registerSw()
+ *   installServices(createWebAudio(), createStt())   from @/audio (F), fire-and-forget
+ *   loadOverlays() → overlays.value   CeremonyHost from @/art (G), fire-and-forget
  *
- * Every optional barrel degrades: no audio module → silent `nullAudio`;
- * no art → no ceremonies; the shell itself always renders.
+ * Nothing but the store blocks first paint (design 07 §9 budgets): audio, the
+ * ceremony overlay and the exercise registry load behind it (`pages.ts`
+ * fills the registry per route, the Dojo included). Every optional barrel
+ * degrades: no audio module → silent `nullAudio`; no art → no ceremonies;
+ * the shell itself always renders.
  */
+import { signal } from '@preact/signals';
 import { render } from 'preact';
 import { installServices } from '@/shared/audio';
 import { navigate, route } from '@/shared/routes';
@@ -25,7 +29,6 @@ import '@/styles/base.css';
 import '@/styles/components.css';
 import '@/styles/arcade.css';
 import { App } from './app/App';
-import { ensureExercises } from './app/pages';
 import { startRouter } from './app/router';
 import { registerSw } from './app/sw-register';
 import type { FunctionComponent } from 'preact';
@@ -131,22 +134,30 @@ export async function boot(root: HTMLElement, o: BootOptions = {}): Promise<void
   stopPerapera?.();
   stopPerapera = null;
   const now = o.now ?? ((): number => Date.now());
+
+  // Paint first: `store.ready` is false until initStore resolves, so the App
+  // shows its loading mark instead of a blank screen while the save loads.
+  const overlays = signal<FunctionComponent[]>([]);
+  render(<App overlays={overlays} />, root);
+
   await initStore({ slot: o.slot ?? 0, now, storage: o.storage ?? browserStorage() });
   // store/day.ts leaves the month snapshot to perapera (it needs @/learn, which
   // the store barrel may not import), so the composition root wires it here.
   stopPerapera = startPerapera(store);
 
-  if (o.audio !== false) await installAudio();
-  await ensureExercises();
-  const overlays = o.overlays === false ? [] : await loadOverlays();
-
   // A brand-new learner lands at Nihonbashi; deep links are left alone.
   if (route.peek().name === 'dojo' && isFirstRun()) navigate({ name: 'onboarding' }, { replace: true });
 
   stopRouter = startRouter();
-  render(<App overlays={overlays} />, root);
-
   if (o.sw !== false) void registerSw();
+
+  // Behind first paint: audio services and the ceremony overlay.
+  if (o.audio !== false) void installAudio();
+  if (o.overlays !== false) {
+    void loadOverlays().then((list) => {
+      overlays.value = list;
+    });
+  }
 }
 
 function showFatal(root: HTMLElement, err: unknown): void {

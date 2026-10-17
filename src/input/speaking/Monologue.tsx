@@ -11,12 +11,17 @@
  *    passage `params.storyId` is shown, then retold in 60 → 45 → 30 s.
  *  · "Finish early" aborts the recognizer (its transcript is gone by
  *    contract) and falls back to the rubric for that round — said plainly.
+ *  · A recognizer that gives up before the bell (microphone blocked, no
+ *    network, no microphone: `sttFailure`) switches the round to the self
+ *    path at once and says why under the clock; the clock runs on and the
+ *    rubric follows, so the learner keeps speaking (06 §7 #10).
  *  · Emits one `output:done {kind:'monologue'|'reduce-expand', seconds,
  *    words?, path}` at the end; XP only (ungraded), words/min feeds Perapera 口.
  * Facet `null`; keys `none`. Time comes from `store.now()` through `useTimer`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { sttFailure } from '@/audio';
 import { content, type ContentLoader } from '@/content/loader';
 import type { Belt, ContentItem, StoryItem } from '@/content/types';
 import { services, type SttResult } from '@/shared/audio';
@@ -191,6 +196,8 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
   const [rubric, setRubric] = useState<Rubric>({ kept: false, topic: false, pauses: false });
   const [transcript, setTranscript] = useState<string | null>(null);
   const [path, setPath] = useState<'recognition' | 'self'>(recognition ? 'recognition' : 'self');
+  /** Why the recognizer gave up this round (`STT_STATE_LABEL`), shown under the clock and in the report. */
+  const [sttNote, setSttNote] = useState('');
 
   const live = useRef({ phase, round, results, rubric, transcript, path });
   live.current = { phase, round, results, rubric, transcript, path };
@@ -239,6 +246,7 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
     sttDone.current = false;
     sttResult.current = null;
     setTranscript(null);
+    setSttNote('');
     setRubric({ kept: false, topic: false, pauses: false });
     timer.reset();
     setPhase('running');
@@ -249,6 +257,12 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
           if (!alive.current) return;
           sttDone.current = true;
           sttResult.current = res;
+          if (!res) {
+            const gaveUp = sttFailure(services.stt);
+            if (gaveUp) setSttNote(gaveUp.label);
+            // Gave up before the bell (mic blocked, network, no mic): the round goes on as self-report.
+            if (gaveUp && !timedOut.current) setPath('self');
+          }
           if (timedOut.current && live.current.phase !== 'report' && live.current.phase !== 'review') toReview(res?.alternatives[0] ?? '');
         })
         .catch(() => {
@@ -390,6 +404,11 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
           <p class="speak__status" role="status">
             {phase === 'waiting' ? S.monologueTime : fill(S.monologueSpeaking, { n: remaining })}
           </p>
+          {sttNote ? (
+            <p class="speak__note" role="status" data-field="stt-note">
+              {sttNote}
+            </p>
+          ) : null}
           {phase === 'running' ? (
             <button type="button" class="btn btn--ghost btn--sm" onClick={finishEarly} title={path === 'recognition' ? S.monologueFinishEarlyNote : undefined} data-action="finish-early">
               {S.monologueFinishEarly}
@@ -401,7 +420,13 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
       {phase === 'report' ? (
         <fieldset class="monologue__rubric">
           <legend>{S.monologueReportTitle}</legend>
-          {path === 'recognition' ? <p class="speak__note">{S.monologueFinishEarlyNote}</p> : null}
+          {sttNote ? (
+            <p class="speak__note" data-field="stt-note">
+              {sttNote}
+            </p>
+          ) : path === 'recognition' ? (
+            <p class="speak__note">{S.monologueFinishEarlyNote}</p>
+          ) : null}
           <label class="recorder__check">
             <input type="checkbox" checked={rubric.kept} onChange={() => setRubric((r) => ({ ...r, kept: !r.kept }))} data-rubric="kept" />
             <span>{S.monologueReportKept}</span>
@@ -438,7 +463,7 @@ function MonologueBody(p: ExerciseProps & MonologueExtraProps): JSX.Element {
               </p>
             </>
           ) : (
-            <p class="speak__note">{S.monologueNoTranscript}</p>
+            <p class="speak__note">{sttNote ? `${sttNote} ${S.monologueNoTranscript}` : S.monologueNoTranscript}</p>
           )}
           <div class="speak__row">
             <button type="button" class="hanko" onClick={acceptReview} aria-keyshortcuts="Enter" data-action="accept">

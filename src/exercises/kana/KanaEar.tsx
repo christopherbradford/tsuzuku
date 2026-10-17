@@ -6,12 +6,17 @@
  * without it the grid is built here from the item's `lookalikes` that are
  * loaded, seeded by `store.seed() + today + step.id`. A miss is tagged
  * `voicing` when the picked kana differs only by a dakuten.
+ *
+ * Without a Japanese voice (`services.audio.hasJaVoice`, read at render) the
+ * drill is honest: the prompt names the romaji (display spelling, plus the
+ * IME spelling when they differ) with a no-voice note, the Listen button is
+ * not shown and Space does nothing, so the first prod cards stay answerable.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { content } from '@/content/loader';
 import type { KanaItem } from '@/content/types';
-import { speak } from '@/shared/audio';
+import { services, speak } from '@/shared/audio';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { rngFor } from '@/shared/hash';
 import { equivalentJa } from '@/shared/jp';
@@ -20,8 +25,8 @@ import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
 import { checkJa, gradeChoice } from '../check';
 import { S as X } from '../strings';
-import { MissingItem, isKanaItem, missingResult, useDrillKeys, useLatency } from './KanaFlash';
-import { S } from './strings';
+import { MissingItem, isKanaItem, missingResult, romajiLabel, useDrillKeys, useLatency } from './KanaFlash';
+import { S, fill } from './strings';
 import './kana.css';
 
 export const meta: ExerciseMeta = {
@@ -47,6 +52,7 @@ function KanaEarBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const fired = useRef(false);
+  const hasVoice = services.audio.hasJaVoice.value;
 
   const choices = useMemo<string[]>(() => {
     if (!item) return [];
@@ -71,7 +77,7 @@ function KanaEarBody(p: ExerciseProps): JSX.Element {
   }, [kana]);
 
   const replay = (): void => {
-    if (fired.current || !item) return;
+    if (fired.current || !item || !hasVoice) return;
     replaysRef.current += 1;
     setReplays(replaysRef.current);
     play();
@@ -97,28 +103,39 @@ function KanaEarBody(p: ExerciseProps): JSX.Element {
   const pickedIdx = done?.answer !== undefined ? choices.indexOf(done.answer) : undefined;
 
   return (
-    <div class="drill kana-ear" data-exercise="kana-ear" ref={root}>
-      <p class="drill__prompt">{X.tapKanaHeard}</p>
-      <div class="drill__row drill__row--between">
-        <button type="button" class="kana-ear__speaker" onClick={replay} disabled={done !== null} aria-keyshortcuts="Space" aria-label={X.replay}>
-          <span class="kana-ear__glyph" aria-hidden="true" lang="ja">
-            耳
-          </span>
-          <span>{replays > 0 ? X.replay : S.listen}</span>
-        </button>
-        <span class="drill__hint">{S.replayHint}</span>
-      </div>
+    <div class="drill kana-ear" data-exercise="kana-ear" data-voice={hasVoice ? 'true' : 'false'} ref={root}>
+      {hasVoice ? (
+        <>
+          <p class="drill__prompt">{X.tapKanaHeard}</p>
+          <div class="drill__row drill__row--between">
+            <button type="button" class="kana-ear__speaker" onClick={replay} disabled={done !== null} aria-keyshortcuts="Space" aria-label={X.replay}>
+              <span class="kana-ear__glyph" aria-hidden="true" lang="ja">
+                耳
+              </span>
+              <span>{replays > 0 ? X.replay : S.listen}</span>
+            </button>
+            <span class="drill__hint">{S.replayHint}</span>
+          </div>
+        </>
+      ) : (
+        <>
+          <p class="drill__prompt">{fill(S.earPromptRomaji, { romaji: romajiLabel(item) })}</p>
+          <p class="drill__hint kana-ear__novoice" role="status">
+            {S.earNoVoice}
+          </p>
+        </>
+      )}
 
       <ChoiceGrid choices={choices} correct={correctIdx} picked={pickedIdx !== undefined && pickedIdx >= 0 ? pickedIdx : undefined} onPick={pick} columns={3} ja size="lg" label={S.earGridLabel} />
 
       {done ? (
         <div class="drill__after" data-correct={done.correct ? 'true' : 'false'}>
           <p>
-            <span class="drill__label">{S.earHeard}</span>{' '}
+            <span class="drill__label">{hasVoice ? S.earHeard : S.earTarget}</span>{' '}
             <span class="drill__ja" lang="ja">
               {item.kana}
             </span>{' '}
-            <span>{item.romaji}</span>
+            <span>{romajiLabel(item)}</span>
           </p>
           <p>
             <span class="drill__label">{S.seenIn}</span>{' '}

@@ -36,6 +36,7 @@ export const S = {
 
   /* ── Audio Flash ─────────────────────────────────────────────────────── */
   listenFirst: 'Listen. The word appears after you answer.',
+  noVoice: 'No Japanese voice is available. The word is shown instead.',
   heardIn: 'Heard in',
   typeWhatItMeans: 'Type what it means.',
 

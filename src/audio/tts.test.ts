@@ -3,7 +3,7 @@
  * fake timers. Settings come from a signal so no store is needed.
  */
 import { signal } from '@preact/signals';
-import { SPEED_TIER_RATES } from '../shared/audio';
+import { SPEED_TIER_RATES, nullAudio } from '../shared/audio';
 import { PAIR_OFFSET, type VoiceLike } from './voices';
 import {
   MAX_UTTERANCE_CHARS,
@@ -14,6 +14,7 @@ import {
   estimateMs,
   splitUtterance,
   textToSpeak,
+  voiceAudible,
   type SynthLike,
   type TtsSettings,
   type UtteranceLike,
@@ -461,6 +462,28 @@ describe('volume and mute', () => {
     expect(svc.muted.value).toBe(true);
     await expect(svc.speak('はい。')).resolves.toBeUndefined();
     expect(synth.spoken.length).toBe(0);
+  });
+
+  it('canSpeak is false at volume 0 even with a voice, true again once audible; voiceAudible reads it (hasJaVoice for plain services)', () => {
+    const synth = new FakeSynth([ja('Kyoko')]);
+    const settings = signal({ ...baseSettings(), sound: 0 });
+    const svc = make(synth, settings);
+    expect(svc.hasJaVoice.value).toBe(true);
+    expect(svc.canSpeak.value).toBe(false);
+    expect(voiceAudible(svc)).toBe(false);
+    settings.value = { ...settings.value, sound: 0.4 };
+    expect(svc.canSpeak.value).toBe(true);
+    expect(voiceAudible(svc)).toBe(true);
+    svc.setVolume(0);
+    expect(svc.canSpeak.value).toBe(false);
+    svc.setVolume(1);
+    expect(svc.canSpeak.value).toBe(true);
+    // no Japanese voice: never speakable, whatever the volume
+    const silent = make(new FakeSynth([en('Alex')]));
+    expect(silent.canSpeak.value).toBe(false);
+    // a service without `canSpeak` falls back to hasJaVoice
+    expect(voiceAudible(nullAudio)).toBe(false);
+    expect(voiceAudible({ ...nullAudio, hasJaVoice: signal(true) })).toBe(true);
   });
 
   it('Zen mutes sfx but voices still speak', () => {

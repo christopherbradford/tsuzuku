@@ -2,7 +2,9 @@ import { BADGE_IDS, type BadgeId } from '../../shared/catalog';
 import { fnv1a32 } from '../../shared/hash';
 import { BADGE_DEFS } from '../../store';
 import { normalizeData, sampleData } from './data';
-import { layoutSeals, sealLook, spec } from './hanko-garden';
+import type { Box } from '../geom';
+import { layerBounds } from '../jtext';
+import { gardenBoxes, layoutSeals, sealLook, spec } from './hanko-garden';
 import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
 import { S } from './strings-2';
 
@@ -17,6 +19,18 @@ function parse(svg: string): Document {
 }
 
 const sealCount = (svg: string): number => parse(svg).querySelectorAll('g.seal').length;
+
+const overlaps = (a: Box, b: Box): boolean => a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+const sealBox = (p: { x: number; y: number; size: number }): Box => ({ x: p.x - p.size / 2, y: p.y - p.size / 2, w: p.size, h: p.size });
+/** Bounding boxes of every stone part (body, highlight, ripple rings): the only ellipses in the piece. */
+function stoneBoxes(svg: string): Box[] {
+  const out: Box[] = [];
+  for (const m of svg.matchAll(/<ellipse\b([^>]*)>/g)) {
+    const n = (a: string): number => Number(new RegExp(`\\b${a}="([^"]+)"`).exec(m[1]!)?.[1]);
+    out.push({ x: n('cx') - n('rx'), y: n('cy') - n('ry'), w: 2 * n('rx'), h: 2 * n('ry') });
+  }
+  return out;
+}
 
 describe('hanko-garden', () => {
   it('exports the spec under its catalog id and is a living piece', () => {
@@ -51,6 +65,39 @@ describe('hanko-garden', () => {
     expect(sealCount(all.svg)).toBe(66);
     parse(all.svg);
     expect(all.svg.length).toBeLessThan(400_000);
+  });
+
+  it('karesansui stones and their ripple rings never sit on a seal, the name seal or any text, even with all 66 badges', () => {
+    const all = sampleData(3, { badgesInOrder: [...BADGE_IDS] });
+    for (const size of WALLPAPER_SIZES) {
+      const { box, name } = gardenBoxes(size);
+      for (let seed = 1; seed <= (size === 'desktop' ? 50 : 16); seed++) {
+        const c = spec.compose(seed, all, size);
+        const stones = stoneBoxes(c.svg);
+        expect(stones.length).toBeGreaterThanOrEqual(10);
+        const seals = layoutSeals(seed, all.badgesInOrder, box).map(sealBox);
+        const texts = c.texts.map(layerBounds);
+        for (const st of stones) {
+          expect(overlaps(st, name), `${size} seed ${seed}: stone on the name seal`).toBe(false);
+          expect(seals.some((b) => overlaps(st, b)), `${size} seed ${seed}: stone on a crest`).toBe(false);
+          expect(texts.some((b) => overlaps(st, b)), `${size} seed ${seed}: stone on text`).toBe(false);
+        }
+      }
+    }
+  }, 20_000);
+
+  it('the 判子の庭 title column stays on the rail right of the seal grid on both sizes', () => {
+    const all = sampleData(3, { badgesInOrder: [...BADGE_IDS] });
+    for (const size of WALLPAPER_SIZES) {
+      const { box } = gardenBoxes(size);
+      for (let seed = 1; seed <= 12; seed++) {
+        const c = spec.compose(seed, all, size);
+        const title = layerBounds(c.texts.find((t) => t.text === S.gardenTitle)!);
+        expect(title.x).toBeGreaterThan(box.x + box.w);
+        for (const p of layoutSeals(seed, all.badgesInOrder, box)) expect(overlaps(title, sealBox(p)), `${size} seed ${seed}`).toBe(false);
+        expect(title.x + title.w).toBeLessThanOrEqual(size === 'phone' ? 1080 : 1920);
+      }
+    }
   });
 
   it('one seal per badge in unlock order, each with its crest glyph as a rotated brush TextLayer', () => {

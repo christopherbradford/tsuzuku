@@ -157,12 +157,13 @@ describe('<ProductionForge>', () => {
     expect(kanaOnlyPolicy(NOMU, { kanaOnlyPolicy: 'hard' })).toBe('hard');
   });
 
-  it('Space cycles the kanji candidates in the field; the kanji form is Good even under the hard policy', () => {
+  it('Space cycles the kanji candidates in the field once the kana reads as the word; the kanji form is Good even under the hard policy', () => {
     const p = props(NOMU, { step: step(NOMU, { params: { ...step(NOMU).params, kanaOnlyPolicy: 'hard', candidates: ['飲む', '呑む'] } }) });
     const input = mount(p);
-    expect(q('.kana-input__hint')).not.toBeNull();
+    expect(q('.kana-input__hint')).toBeNull();
     type(input, 'nomu');
     expect(input.value).toBe('のむ');
+    expect(q('.kana-input__hint')).not.toBeNull();
     key(input, ' ');
     expect(input.value).toBe('飲む');
     key(input, ' ');
@@ -172,6 +173,18 @@ describe('<ProductionForge>', () => {
     key(input, ' ');
     key(input, 'Enter');
     expect(result(p)).toMatchObject({ correct: true, nearMiss: false, answer: '飲む' });
+  });
+
+  it('Space does not hand over the kanji while the typed kana is not the word (one letter, Space, Enter is a miss)', () => {
+    const p = props(NOMU, { step: step(NOMU, { params: { ...step(NOMU).params, candidates: ['飲む'] } }) });
+    const input = mount(p, true);
+    type(input, 'a');
+    expect(input.value).toBe('あ');
+    const e = key(input, ' ');
+    expect(e.defaultPrevented).toBe(false);
+    expect(input.value).toBe('あ');
+    key(input, 'Enter');
+    expect(result(p)).toMatchObject({ correct: false, nearMiss: false, answer: 'あ' });
   });
 
   it('a particle slip is a Block tagged particle, not a fail; a wrong word is Again', () => {

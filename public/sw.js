@@ -1,14 +1,24 @@
 /*
- * TSUZUKU — service worker (group A, design 07 §10). Plain JS, no build step.
+ * TSUZUKU — service worker (group A, design 07 §10). Plain JS, no build step
+ * beyond one stamp: `vite build` replaces the CACHE_VERSION placeholder with
+ * `<pkg.version>-<hash of the built shell>` (vite.config.ts), so the worker's
+ * bytes change with every release, a new worker installs, the Layout update
+ * toast fires, and `cleanOldCaches` drops the previous release's shell and
+ * hashed assets. Fonts live in their own stable cache that no release clears.
  *
  * Scope is wherever this file is served from, so it works at
  * https://<user>.github.io/<repo>/ and at a custom root alike.
  *
  *   install   precache the shell (./, index.html, manifest, favicon)
- *   activate  drop our caches from other versions, claim clients
- *   fetch     navigations / index.html     → network-first, shell fallback
+ *   activate  drop our shell/runtime caches from other builds, claim clients
+ *   fetch     navigations / index.html     → network-first; only an HTML
+ *                                            response is stored as the shell
  *             content/manifest.json        → stale-while-revalidate (new content versions flow)
- *             content/** assets/** fonts/** → cache-first (immutable per release)
+ *             content/**                   → NOT intercepted: the loader's own
+ *                                            `tsuzuku-content-<version>` cache is the
+ *                                            single offline store and is pruned per manifest
+ *             assets/**                    → cache-first (hashed, immutable per release)
+ *             fonts/**                     → cache-first in the stable fonts cache
  *             manifest / favicon / sw.js   → stale-while-revalidate
  *   message   {type:'SKIP_WAITING'} → skipWaiting (the page asks after the learner taps Reload)
  *
@@ -16,9 +26,10 @@
  */
 'use strict';
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = '__TSUZUKU_BUILD__';
 const SHELL_CACHE = 'tsuzuku-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'tsuzuku-runtime-' + CACHE_VERSION;
+const FONTS_CACHE = 'tsuzuku-fonts-v1';
 const OWN_PREFIXES = ['tsuzuku-shell-', 'tsuzuku-runtime-'];
 const BASE = new URL('./', self.location.href);
 const SHELL_URLS = ['./', './index.html', './manifest.webmanifest', './favicon.svg'].map(function (p) {
@@ -28,6 +39,11 @@ const INDEX_URL = new URL('./index.html', BASE).href;
 
 function relativePath(url) {
   return url.href.startsWith(BASE.href) ? url.href.slice(BASE.href.length).split('?')[0].split('#')[0] : null;
+}
+
+function isHtml(response) {
+  const type = (response && response.headers && response.headers.get('Content-Type')) || '';
+  return type.toLowerCase().startsWith('text/html');
 }
 
 async function precacheShell() {
@@ -70,11 +86,11 @@ async function putIfOk(cacheName, request, response) {
   return response;
 }
 
-async function cacheFirst(request) {
+async function cacheFirst(request, cacheName) {
   const cached = await caches.match(request);
   if (cached) return cached;
   const res = await fetch(request);
-  return putIfOk(RUNTIME_CACHE, request, res);
+  return putIfOk(cacheName, request, res);
 }
 
 async function staleWhileRevalidate(request, cacheName) {
@@ -98,7 +114,9 @@ async function networkFirst(request) {
   try {
     const res = await fetch(request);
     if (res && res.ok) {
-      await putIfOk(SHELL_CACHE, INDEX_URL, res.clone());
+      // Only the app shell may become the offline fallback: a navigation to a
+      // JSON file or sw.js under scope must never overwrite index.html.
+      if (isHtml(res)) await putIfOk(SHELL_CACHE, INDEX_URL, res.clone());
       return res;
     }
     const cached = (await caches.match(request)) || (await caches.match(INDEX_URL));
@@ -150,8 +168,16 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(staleWhileRevalidate(request, RUNTIME_CACHE));
     return;
   }
-  if (rel.startsWith('content/') || rel.startsWith('assets/') || rel.startsWith('fonts/')) {
-    event.respondWith(cacheFirst(request));
+  if (rel.startsWith('content/')) {
+    // Unversioned paths: left to the network and the loader's versioned cache.
+    return;
+  }
+  if (rel.startsWith('assets/')) {
+    event.respondWith(cacheFirst(request, RUNTIME_CACHE));
+    return;
+  }
+  if (rel.startsWith('fonts/')) {
+    event.respondWith(cacheFirst(request, FONTS_CACHE));
     return;
   }
   if (rel === 'manifest.webmanifest' || rel === 'favicon.svg' || rel === 'sw.js') {

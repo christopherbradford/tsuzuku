@@ -14,9 +14,14 @@
  * entries older than 2 years → monthly; then gzip the largest card shard via
  * `CompressionStream('gzip')`, stored base64 behind `GZIP_PREFIX` and decoded
  * on load. Every storage call is wrapped in try/catch; a `QuotaExceededError`
- * sets the level to `ceiling`, keeps the write dirty for a retry and never
- * throws into the caller. Only this module (through `store.ts`) touches
- * storage; the `Storage` is injectable for tests.
+ * on a debounced key records that key in a per-key `failed` set, keeps the
+ * write dirty for a retry and never throws into the caller. The level reads
+ * `ceiling` while ANY key is still failing (a later successful write of a
+ * small key never masks a meta document that keeps failing), and `onState`
+ * re-fires after every flush while something fails so the UI stays told.
+ * `readRaw`/`writeRaw` move the stored text untouched (the `.bak` stash of a
+ * document the store cannot read). Only this module (through `store.ts`)
+ * touches storage; the `Storage` is injectable for tests.
  */
 import { BELTS, type CardKey, type Level } from '../content/types';
 import { levelOfId, parseCardKey, tryKindOfId } from '../shared/ids';
@@ -325,13 +330,19 @@ export interface Persist {
   read<T>(key: string): T | null | Promise<T | null>;
   /** Synchronous read; `null` for a compressed value (use `read`). */
   readSync<T>(key: string): T | null;
-  /** Immediate write (try/catch; quota → `ceiling`). */
+  /** The stored text as is (`null` when absent or unreadable); for stashing what `read` could not parse. */
+  readRaw(key: string): string | null;
+  /** Immediate write (try/catch; a failure returns `false` and is not retried, so it does not pin the level). */
   write(key: string, value: unknown): boolean;
+  /** Immediate write of text as is (same failure semantics as `write`). */
+  writeRaw(key: string, text: string): boolean;
   remove(key: string): void;
   /** Debounced write: `getValue` is called at flush time. */
   schedule(key: string, getValue: () => unknown): void;
   /** Keys with a pending write. */
   pending(): string[];
+  /** Debounced keys whose last write failed (quota); the level is `ceiling` while non-empty. */
+  failing(): string[];
   /** Write every pending key now. */
   flush(): Promise<void>;
   bytes(): number;
@@ -351,7 +362,8 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   const timers = new Map<string, ReturnType<typeof setTimeout>>();
   const compressed = new Set<string>();
   const compression = opts.compression ?? hasCompression();
-  let quotaHit = false;
+  /** Debounced keys whose last write threw; cleared per key on the next success. */
+  const failed = new Set<string>();
   let last: StorageState | null = null;
   let disposed = false;
 
@@ -393,13 +405,14 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     return parse<T>(raw);
   }
 
-  function setItem(k: string, str: string): boolean {
+  /** `track` = a debounced key that stays dirty and is retried; only those count toward the `ceiling` level. */
+  function setItem(k: string, str: string, track = false): boolean {
     try {
       storage.setItem(k, str);
-      quotaHit = false;
+      if (track) failed.delete(k);
       return true;
     } catch (e) {
-      quotaHit = true;
+      if (track) failed.add(k);
       if (!isQuotaError(e)) console.warn(`[persist] setItem(${k}) failed`, e);
       return false;
     }
@@ -434,24 +447,25 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   }
 
   function level(): StorageLevel {
-    return quotaHit ? 'ceiling' : levelForBytes(bytes());
+    return failed.size > 0 ? 'ceiling' : levelForBytes(bytes());
   }
 
   function state(): StorageState {
     const b = bytes();
-    return { bytes: b, level: quotaHit ? 'ceiling' : levelForBytes(b) };
+    return { bytes: b, level: failed.size > 0 ? 'ceiling' : levelForBytes(b) };
   }
 
+  /** Notify on a change — and on every flush while a key is still failing, so a repeated failure is never silent. */
   function settle(): void {
     const s = state();
-    if (last && last.bytes === s.bytes && last.level === s.level) return;
+    if (failed.size === 0 && last && last.bytes === s.bytes && last.level === s.level) return;
     last = s;
     opts.onState?.(s);
   }
 
   async function writeKey(k: string, getValue: () => unknown): Promise<boolean> {
     const str = await encode(k, getValue());
-    const ok = setItem(k, str);
+    const ok = setItem(k, str, true);
     // Keep the write dirty so the next flush retries after the ladder ran.
     if (!ok && !dirty.has(k)) dirty.set(k, getValue);
     return ok;
@@ -512,10 +526,19 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     return ok;
   }
 
+  function writeRaw(k: string, text: string): boolean {
+    clearTimer(k);
+    dirty.delete(k);
+    const ok = setItem(k, String(text));
+    settle();
+    return ok;
+  }
+
   function remove(k: string): void {
     clearTimer(k);
     dirty.delete(k);
     compressed.delete(k);
+    failed.delete(k);
     try {
       storage.removeItem(k);
     } catch {
@@ -589,10 +612,13 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     shardKey: (kind, lvl) => shardKey(kind, lvl, slot),
     read,
     readSync,
+    readRaw: getItem,
     write,
+    writeRaw,
     remove,
     schedule,
     pending: () => Array.from(dirty.keys()),
+    failing: () => Array.from(failed),
     flush,
     bytes,
     level,

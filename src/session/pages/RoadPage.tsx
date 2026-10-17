@@ -198,7 +198,7 @@ export default function RoadPage(p: RoadPageProps): JSX.Element {
   const danOpen = profile.dan >= 1 || progress.stationsCleared.includes(53);
 
   return (
-    <section class="page page--road" aria-label={S.roadTitle}>
+    <section class="page page--road" aria-label={S.roadTitleEn}>
       <header class="page__head">
         <h2 class="page__title">
           <span lang="ja">東海道</span> {S.roadTitleEn}

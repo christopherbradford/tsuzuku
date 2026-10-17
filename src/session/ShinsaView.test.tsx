@@ -262,3 +262,21 @@ describe('<ShinsaView> exam', () => {
     expect(root.querySelectorAll('.shinsa-cov')).toHaveLength(2);
   });
 });
+
+describe('<ShinsaView> stale Notes', () => {
+  it('Notes that hold no cards complete on the spot: the retake opens instead of an empty session', async () => {
+    await makeTestStore({ save: { progress: { station: 9, stationsCleared: YELLOW_GATES, shinsaNotes: { belt: 'yellow', items: [], tags: ['particle'] } } }, cards: brownCards() });
+    await mount('yellow');
+    expect(stage()).toBe('eligibility');
+    expect(text()).toContain('Train one Sensei’s Notes session first.');
+    const notesBtn = Array.from(root.querySelectorAll('button')).find((b) => b.textContent === 'Train Sensei’s Notes') as HTMLButtonElement;
+    expect(notesBtn).toBeDefined();
+    click(notesBtn);
+    await settle(4);
+    expect(stage()).toBe('eligibility');
+    expect(store.progress.value.shinsaNotes).toBeUndefined();
+    expect(text()).toContain('Notes session done. The retake is open.');
+    expect(text()).not.toContain('Train one Sensei’s Notes session first.');
+    expect(text()).not.toContain('The exam has no sections to run yet');
+  });
+});

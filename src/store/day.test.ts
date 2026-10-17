@@ -2,8 +2,9 @@ import { bus } from '../shared/events';
 import { dayStartMs, epochDay } from '../shared/time';
 import type { DailyRow, EpochDay } from '../shared/store-types';
 import { awayStatus, monthRolled, msUntilNextDay, rollIfNeeded, startDayRoll } from './day';
+import { pickQuests } from './quests';
 import { resetStoreForTests, store } from './store';
-import { DEFAULT_TEST_NOW, captureEvents, makeTestStore } from './testing';
+import { DEFAULT_TEST_NOW, TEST_SEED, captureEvents, makeTestStore } from './testing';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const DAY_MS = 86_400_000;
@@ -40,11 +41,12 @@ describe('rollIfNeeded', () => {
     expect(store.progress.value.welcomeBackDue).toBe(false);
   });
 
-  it('at Nihonbashi (station 0) the roll draws no quests; the draw comes with the first station', async () => {
+  it('at Nihonbashi (station 0) the roll draws as at the first station (Three Kata from day one)', async () => {
     await makeTestStore();
     expect(rollIfNeeded(store)).toBe(true);
     expect(store.quests.value.day).toBe(TODAY);
-    expect(store.quests.value.ids).toEqual([]);
+    expect(store.quests.value.ids.length).toBeGreaterThan(0);
+    expect(store.quests.value.ids).toEqual(pickQuests(TEST_SEED, TODAY, 'white', { station: 1 }));
   });
 
   it('does not roll within the same day, rolls across 04:00 in the profile zone', async () => {

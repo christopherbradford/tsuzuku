@@ -192,6 +192,36 @@ describe('<KanaInput>', () => {
     expect(input.value).toBe('つづくか');
   });
 
+  it('Enter during native IME composition never submits; Enter after compositionend submits the finalized value once', () => {
+    const { input, onSubmit } = mount();
+    act(() => {
+      input.dispatchEvent(new CompositionEvent('compositionstart', { bubbles: true }));
+    });
+    act(() => {
+      input.value = 'つd';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    // the IME's own Enter (candidate confirm) is flagged isComposing on modern browsers …
+    const e1 = key(input, 'Enter', { isComposing: true });
+    expect(e1.defaultPrevented).toBe(false);
+    // … and only as keyCode 229 on older Android keyboards
+    const e2 = key(input, 'Enter', { keyCode: 229 });
+    expect(e2.defaultPrevented).toBe(false);
+    expect(onSubmit).not.toHaveBeenCalled();
+    expect(input.value).toBe('つd');
+    act(() => {
+      input.value = 'つづく';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    act(() => {
+      input.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true, data: 'つづく' }));
+    });
+    const e3 = key(input, 'Enter');
+    expect(e3.defaultPrevented).toBe(true);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledWith('つづく');
+  });
+
   it('has a 44px-friendly field with aria label and lang="ja"', () => {
     const { input } = mount();
     expect(input.getAttribute('lang')).toBe('ja');

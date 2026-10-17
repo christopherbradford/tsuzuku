@@ -9,10 +9,12 @@
  *
  *  One `SessionRunner` runs pretest and checks as a single `scroll` session so
  *  the snapshot, the つづく bookkeeping and `scroll:completed` stay honest; the
- *  view pauses the runner at the first intro check while the cards are read.
- *  `buildPlan('scroll')` teaches today's budgeted scrolls, so this view builds
- *  the plan for the scroll the learner picked with the same plumbing
- *  (`loadPlanContext` → `scrollSteps` → `finalizePlan`).
+ *  view pauses the runner at the first intro check while the cards are read,
+ *  and hands `<SessionView>` `teach={false}` so the hosted view does not show
+ *  the same cards a second time. (A Scroll block inside a Kumite / Shugyō is
+ *  taught by `<SessionView>` itself with the same `<TeachCard>`s.) This view
+ *  builds the plan for the scroll the learner picked with the builder's
+ *  plumbing (`loadPlanContext` → `scrollSteps` → `finalizePlan`).
  *
  *  `<SessionHost>` mounts E's `<SessionView>` on demand (import.meta.glob) so this
  *  folder's pages work, and test, before that file lands; an injected `view`
@@ -26,9 +28,8 @@ import { segmentsToTokens, toPlain } from '../content/ruby';
 import type { ContentItem, DrillId, StoryItem } from '../content/types';
 import { speak } from '../shared/audio';
 import { hashSeed } from '../shared/hash';
-import { containsJapanese, moraSplit } from '../shared/jp';
 import type { SessionPlan } from '../shared/session-types';
-import type { FuriganaMode, ItemKind } from '../shared/store-types';
+import type { ItemKind } from '../shared/store-types';
 import { Ruby } from '../shared/ui/Ruby';
 import { store } from '../store';
 import { pretestFor, scrollsForStation, type Scroll } from '../learn';
@@ -38,8 +39,12 @@ import { finalizePlan, loadPlanContext, resolveParams } from './builder';
 import { S as ES } from './engine-strings';
 import { SessionRunner } from './runner';
 import { isIntroCheck, scrollSteps, teachModel, type TeachModel } from './scroll';
+import { TeachCard } from './TeachCard';
 import { S, SCROLL_KIND_LABEL, fill } from './pages/strings';
 import './ScrollView.css';
+
+// The teach card and the pitch mark live in `./TeachCard` (shared with `<SessionView>`); re-exported for callers.
+export { PitchMark, TeachCard, pitchHighs, type TeachCardProps } from './TeachCard';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* SessionHost — deferred <SessionView>                                       */
@@ -48,6 +53,8 @@ import './ScrollView.css';
 export interface SessionViewProps {
   runner: SessionRunner;
   onExit(): void;
+  /** Additive: show the teach cards before a Scroll's first intro check (default on; a host that teaches itself passes `false`). */
+  teach?: boolean;
 }
 export type SessionViewComponent = FunctionComponent<SessionViewProps>;
 
@@ -85,7 +92,7 @@ export function SessionHost(p: SessionViewProps & { view?: SessionViewComponent 
       alive = false;
     };
   }, [View]);
-  if (View) return <View runner={p.runner} onExit={p.onExit} />;
+  if (View) return <View runner={p.runner} onExit={p.onExit} teach={p.teach} />;
   return (
     <div class="session-host" role="status">
       <p>{missing ? S.sessionViewMissing : S.sessionLoading}</p>
@@ -181,162 +188,6 @@ export async function buildScrollPlan(scroll: Scroll, o: ScrollPlanOptions = {})
   const out: ScrollPlanResult = { plan, teach: parts.teach };
   if (parts.noticing) out.noticing = parts.noticing;
   return out;
-}
-
-/* ────────────────────────────────────────────────────────────────────────── */
-/* Pitch mark                                                                 */
-/* ────────────────────────────────────────────────────────────────────────── */
-
-/** Tokyo pitch: nucleus 0 = low then high (particle high); 1 = high then low; n = low, high up to mora n, then low. */
-export function pitchHighs(moraCount: number, nucleus: number): { high: boolean[]; particleHigh: boolean } {
-  const high: boolean[] = [];
-  for (let i = 0; i < moraCount; i++) {
-    if (nucleus === 0) high.push(i >= 1);
-    else if (nucleus === 1) high.push(i === 0);
-    else high.push(i >= 1 && i < nucleus);
-  }
-  return { high, particleHigh: nucleus === 0 };
-}
-
-export function PitchMark(p: { kana: string; pitch: number }): JSX.Element {
-  const morae = moraSplit(p.kana);
-  const { high, particleHigh } = pitchHighs(morae.length, p.pitch);
-  const step = 18;
-  const w = (morae.length + 1) * step;
-  const y = (h: boolean): number => (h ? 7 : 19);
-  const pts = [...high.map((h, i) => `${9 + i * step},${y(h)}`), `${9 + morae.length * step},${y(particleHigh)}`].join(' ');
-  const label = p.pitch === 0 ? S.pitchFlat : fill(S.pitchDrop, { n: p.pitch });
-  return (
-    <span class="pitch-mark">
-      <svg viewBox={`0 0 ${w} 26`} width={w} height="26" role="img" aria-label={`${S.pitchAria}: ${label}`}>
-        <polyline class="pitch-mark__line" points={pts} />
-        {high.map((h, i) => (
-          <circle key={i} class="pitch-mark__dot" cx={9 + i * step} cy={y(h)} r="3.2" />
-        ))}
-        <circle class="pitch-mark__dot pitch-mark__dot--particle" cx={9 + morae.length * step} cy={y(particleHigh)} r="3.2" />
-      </svg>
-      <span class="pitch-mark__morae" lang="ja" aria-hidden="true">
-        {morae.map((m, i) => (
-          <span key={i} style={{ width: `${step}px` }}>
-            {m}
-          </span>
-        ))}
-      </span>
-      <span class="pitch-mark__label">
-        {S.pitchLabel}: {label}
-      </span>
-    </span>
-  );
-}
-
-/* ────────────────────────────────────────────────────────────────────────── */
-/* Teach card                                                                 */
-/* ────────────────────────────────────────────────────────────────────────── */
-
-const PARTS_LABEL: Partial<Record<ItemKind, string>> = { vocab: S.partsVocab, chunk: S.partsVocab, kanji: S.partsKanji, grammar: S.partsGrammar, component: S.partsComponent };
-
-function Ja(p: { text: string; class?: string }): JSX.Element {
-  return containsJapanese(p.text) ? (
-    <span lang="ja" class={p.class}>
-      {p.text}
-    </span>
-  ) : (
-    <span class={p.class}>{p.text}</span>
-  );
-}
-
-export interface TeachCardProps {
-  item: ContentItem;
-  model: TeachModel;
-  index: number;
-  total: number;
-  furigana: FuriganaMode;
-  known: boolean;
-  onKnown(): void;
-  contrast?: TeachModel | null;
-}
-
-export function TeachCard(p: TeachCardProps): JSX.Element {
-  const m = p.model;
-  const say = (text: string, kana?: string): void => {
-    void speak(text, kana ? { kana } : undefined);
-  };
-  const headKana = m.kana && m.kana !== m.head ? m.kana : undefined;
-  const parts = PARTS_LABEL[m.kind];
-  return (
-    <article class="scroll-card teach-card" data-kind={m.kind} style={{ '--i': p.index } as JSX.CSSProperties} aria-label={fill(S.cardOf, { i: p.index + 1, n: p.total })}>
-      <header class="teach-card__head">
-        <button type="button" class="teach-card__word" lang="ja" onClick={() => say(m.kind === 'kana' ? m.head : m.head, m.kana)} title={S.speakButton}>
-          {m.head}
-        </button>
-        {headKana ? (
-          <span class="teach-card__kana" lang="ja">
-            {headKana}
-          </span>
-        ) : null}
-        <span class="teach-card__meaning">{m.meaning.join(' · ')}</span>
-      </header>
-      {m.pitch !== undefined && m.kana ? <PitchMark kana={m.kana} pitch={m.pitch} /> : null}
-      {m.lines.length > 0 ? (
-        <section class="teach-card__lines">
-          <h4 class="teach-card__label">{m.kind === 'grammar' ? S.formationTitle : m.kind === 'vocab' || m.kind === 'chunk' ? S.notesTitle : S.mnemonicTitle}</h4>
-          {m.lines.map((l, i) => (
-            <p key={i} class="teach-card__line">
-              <Ja text={l} />
-            </p>
-          ))}
-        </section>
-      ) : null}
-      {m.examples.length > 0 ? (
-        <section class="teach-card__examples">
-          <h4 class="teach-card__label">{S.examplesTitle}</h4>
-          <ul>
-            {m.examples.map((ex, i) => (
-              <li key={i} class="teach-card__example">
-                <Ruby ja={ex.ja} mode={p.furigana} />
-                <span class="teach-card__en">{ex.en}</span>
-                <button type="button" class="btn btn--sm btn--ghost" onClick={() => say(toPlain(ex.ja), ex.kana)} aria-label={`${S.speakButton}: ${ex.kana}`}>
-                  {S.speakButton}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-      {parts && m.parts.length > 0 ? (
-        <section class="teach-card__parts">
-          <h4 class="teach-card__label">{parts}</h4>
-          <ul class="teach-card__chips">
-            {m.parts.map((x, i) => (
-              <li key={i} class="chip">
-                <Ja text={x} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-      {p.contrast ? (
-        <section class="teach-card__contrast">
-          <h4 class="teach-card__label">{S.contrastTitle}</h4>
-          <p>
-            <span lang="ja">{p.contrast.head}</span>
-            {p.contrast.kana && p.contrast.kana !== p.contrast.head ? (
-              <span lang="ja" class="teach-card__kana">
-                {p.contrast.kana}
-              </span>
-            ) : null}
-            <span class="teach-card__en">{p.contrast.meaning.join(' · ')}</span>
-          </p>
-        </section>
-      ) : null}
-      <footer class="teach-card__foot">
-        <button type="button" class="btn btn--sm" aria-pressed={p.known} disabled={p.known} onClick={p.onKnown}>
-          {S.knownButton}
-        </button>
-        {p.known ? <span class="teach-card__known">{S.knownMarked}</span> : null}
-      </footer>
-    </article>
-  );
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -494,7 +345,7 @@ export function ScrollView(p: ScrollViewProps): JSX.Element {
       <section class="scroll-view" aria-label={S.scrollAria} data-phase={phase}>
         {head}
         <p class="scroll-view__phase">{phase === 'pretest' ? `${S.pretestTitle} · ${S.pretestLine}` : S.checksTitle}</p>
-        <SessionHost runner={runner} onExit={exit} view={p.view} />
+        <SessionHost runner={runner} onExit={exit} view={p.view} teach={false} />
       </section>
     );
   }

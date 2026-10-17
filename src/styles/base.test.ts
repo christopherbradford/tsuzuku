@@ -82,6 +82,23 @@ describe('base.css', () => {
     expect(outsideFontFace).not.toMatch(/font-family:\s*"/);
   });
 
+  it('Japanese wraps between characters under strict kinsoku: word-break normal, never keep-all', () => {
+    const ja = bodyOf('.ja');
+    expect(ja).toMatch(/word-break:\s*normal/);
+    expect(ja).not.toMatch(/keep-all/);
+    expect(ja).toMatch(/line-break:\s*strict/);
+    expect(ja).toMatch(/overflow-wrap:\s*anywhere/);
+    expect(noComments).not.toMatch(/keep-all/);
+  });
+
+  it('resets the fieldset border so form groups inherit the theme (no UA groove)', () => {
+    const fs = bodyOf('fieldset');
+    expect(fs).toMatch(/border:\s*0/);
+    expect(fs).toMatch(/padding:\s*0/);
+    expect(fs).toMatch(/min-inline-size:\s*0/);
+    expect(bodyOf('legend')).toMatch(/padding:\s*0/);
+  });
+
   it('has .visually-hidden / .sr-only, a focusable variant, and 0.5em ruby text', () => {
     expect(hasRule('visually-hidden')).toBe(true);
     expect(hasRule('sr-only')).toBe(true);

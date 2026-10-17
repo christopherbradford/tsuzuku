@@ -140,6 +140,45 @@ describe('<BackupPage>', () => {
     expect(reload).toHaveBeenCalledTimes(1);
   });
 
+  it('the storage hint names no second usage figure (only the meter shows KB of MB)', async () => {
+    await makeTestStore();
+    mount();
+    const text = q('[data-storage]').textContent ?? '';
+    expect(text.match(/KB of/g)).toHaveLength(1);
+    expect(text).toContain(S.bakAdvice);
+  });
+
+  it('the Replace dialog manages focus: Cancel first, Tab wraps, Escape closes and returns focus to Replace', async () => {
+    await makeTestStore({ save: { profile: { xp: 500 } } });
+    const file = otherBackup((doc) => {
+      doc.meta.profile.xp = 50;
+      doc.shards = {};
+    });
+    mount();
+    await chooseFile(file);
+    act(() => q<HTMLButtonElement>('[data-replace]').focus());
+    click('[data-replace]');
+    const dialog = q('[data-confirm="replace"]');
+    const yes = q<HTMLButtonElement>('[data-confirm-yes]');
+    const no = q<HTMLButtonElement>('[data-confirm-no]');
+    expect(document.activeElement).toBe(no);
+    // Tab from the last control wraps to the first; Shift+Tab from the first wraps to the last.
+    act(() => {
+      no.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true }));
+    });
+    expect(document.activeElement).toBe(yes);
+    act(() => {
+      yes.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true, cancelable: true }));
+    });
+    expect(document.activeElement).toBe(no);
+    act(() => {
+      dialog.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    });
+    expect(root.querySelector('[data-confirm="replace"]')).toBeNull();
+    expect(store.profile.value.xp).toBe(500);
+    expect(document.activeElement).toBe(q('[data-replace]'));
+  });
+
   it('Replace confirms first, then takes the file as is', async () => {
     await makeTestStore({ save: { profile: { xp: 500 }, streak: { current: 9 } }, cards: { 'v-n5-0001#rec': card({ due: 5, s: 3, state: 2 }) } });
     const file = otherBackup((doc) => {

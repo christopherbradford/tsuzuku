@@ -8,9 +8,20 @@
  * pure and idempotent; unknown or newer schemas throw `MigrationError` so the
  * caller can stash the raw document instead of overwriting it.
  *
+ * `fillMeta` is type-aware against `freshSave()` as the template: a field
+ * whose runtime kind differs from the default (a string where a number
+ * belongs, `null`, `Infinity`, an object for an array…) falls back to the
+ * default, recursively through nested objects; `profile.belt` must be a
+ * known belt and `profile.tz` a zone the host resolves (`shared/time.safeTz`,
+ * else `'UTC'`). Keys the template lacks (optional fields, record entries) pass
+ * through untouched. `migrateMetaChecked` also reports the repaired paths
+ * so an import can warn. A save that finished onboarding (goals set, or any
+ * training recorded) while `progress.station` is still 0 is lifted to the
+ * first station past its cleared gates (Nihonbashi is onboarding only).
+ *
  * `applyRedirects` is the id-rename pass driven by `ContentManifest.redirects`.
  */
-import { FACETS, type CardKey } from '../content/types';
+import { BELT_IDS, FACETS, type CardKey } from '../content/types';
 import {
   CARDS_SCHEMA,
   LOG_SCHEMA,
@@ -22,6 +33,7 @@ import {
   type LogEntry,
   type SaveMeta,
 } from '../shared/store-types';
+import { safeTz } from '../shared/time';
 import { freshSave } from './defaults';
 
 export const CURRENT = { meta: 1, cards: 1, log: 1 } as const;
@@ -81,12 +93,50 @@ function num(x: unknown, fallback: number): number {
   return typeof x === 'number' && Number.isFinite(x) ? x : fallback;
 }
 
+const BELT_SET: ReadonlySet<string> = new Set(BELT_IDS);
+
+/**
+ * `have` if its runtime kind matches `def`, else `def`; objects recurse key
+ * by key (keys absent from `def` pass through), arrays drop `null`/`undefined`
+ * entries. Repaired paths are appended to `coerced`.
+ */
+function coerce(def: unknown, have: unknown, path: string, coerced: string[]): unknown {
+  if (have === undefined) return def;
+  if (def === null) {
+    if (have === null || (typeof have === 'number' && Number.isFinite(have))) return have;
+    coerced.push(path);
+    return def;
+  }
+  if (Array.isArray(def)) {
+    if (!Array.isArray(have)) {
+      coerced.push(path);
+      return def;
+    }
+    const clean = have.filter((x) => x !== null && x !== undefined);
+    if (clean.length !== have.length) coerced.push(path);
+    return clean;
+  }
+  if (isObject(def)) {
+    if (!isObject(have)) {
+      coerced.push(path);
+      return def;
+    }
+    const out: Raw = { ...have };
+    for (const [k, dv] of Object.entries(def)) out[k] = coerce(dv, have[k], `${path}.${k}`, coerced);
+    return out;
+  }
+  const kind = typeof def;
+  if (typeof have === kind && (kind !== 'number' || Number.isFinite(have))) return have;
+  coerced.push(path);
+  return def;
+}
+
 /**
  * Fill every slice with defaults for keys the document lacks (additive fields
- * of newer builds). Shallow per slice: a slice value the save already has wins.
+ * of newer builds) and repair fields of the wrong type (see the module header).
  */
-function fillMeta(raw: Raw): SaveMeta {
-  const tz = isObject(raw.profile) && typeof raw.profile.tz === 'string' ? raw.profile.tz : 'UTC';
+function fillMeta(raw: Raw, coerced: string[]): SaveMeta {
+  const tz = safeTz(isObject(raw.profile) && typeof raw.profile.tz === 'string' ? raw.profile.tz : 'UTC');
   const d = freshSave(num(raw.createdAt, 0), tz);
   const out = {} as Record<string, unknown>;
   out.schema = SAVE_SCHEMA;
@@ -94,26 +144,40 @@ function fillMeta(raw: Raw): SaveMeta {
   out.createdAt = num(raw.createdAt, d.createdAt);
   out.updatedAt = num(raw.updatedAt, out.createdAt as number);
   out.contentVersion = typeof raw.contentVersion === 'string' ? raw.contentVersion : '';
-  for (const k of SLICE_KEYS) {
-    const def = d[k];
-    const have = raw[k];
-    if (Array.isArray(def)) {
-      out[k] = Array.isArray(have) ? have : def;
-    } else if (isObject(def)) {
-      out[k] = isObject(have) ? { ...(def as Raw), ...have } : def;
-    } else {
-      out[k] = have ?? def;
-    }
+  for (const k of SLICE_KEYS) out[k] = coerce(d[k], raw[k], k, coerced);
+  const meta = out as unknown as SaveMeta;
+  if (!BELT_SET.has(meta.profile.belt)) {
+    coerced.push('profile.belt');
+    meta.profile = { ...meta.profile, belt: d.profile.belt };
   }
-  return out as unknown as SaveMeta;
+  // An unresolvable or unsafe zone id would throw in `Intl` day math and could leak into an ICS line.
+  if (meta.profile.tz !== tz) {
+    coerced.push('profile.tz');
+    meta.profile = { ...meta.profile, tz };
+  }
+  // Onboarding done at station 0 (Nihonbashi is onboarding only): lift to the first uncleared station.
+  const pr = meta.progress;
+  const trained = meta.profile.goals.length > 0 || meta.stats.sessions > 0 || meta.streak.totalDays > 0;
+  if (pr.station === 0 && trained) {
+    const cleared = pr.stationsCleared.filter((n): n is number => typeof n === 'number' && Number.isFinite(n));
+    meta.progress = { ...pr, station: Math.min(53, Math.max(1, ...cleared.map((n) => n + 1))) };
+  }
+  return meta;
 }
 
-export function migrateMeta(raw: unknown): SaveMeta {
+/** `migrateMeta` plus the paths whose values were repaired to defaults (empty on a well-typed save). */
+export function migrateMetaChecked(raw: unknown): { meta: SaveMeta; coerced: string[] } {
   if (!isObject(raw)) throw new MigrationError('meta', 'document is not an object');
   if (raw.schema === undefined && !isObject(raw.profile) && !isObject(raw.settings)) {
     throw new MigrationError('meta', 'document has no schema and does not look like a save');
   }
-  return fillMeta(runChain('meta', raw, META_STEPS, CURRENT.meta));
+  const coerced: string[] = [];
+  const meta = fillMeta(runChain('meta', raw, META_STEPS, CURRENT.meta), coerced);
+  return { meta, coerced };
+}
+
+export function migrateMeta(raw: unknown): SaveMeta {
+  return migrateMetaChecked(raw).meta;
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */

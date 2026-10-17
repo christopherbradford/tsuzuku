@@ -3,7 +3,7 @@ import { SESSION_SCHEMA, type SessionSnapshot } from '../shared/session-types';
 import { epochDay } from '../shared/time';
 import { CardFlag, type CardShard, type LogEntry, type ReviewLog, type SaveMeta } from '../shared/store-types';
 import { CEILING_BYTES, GZIP_PREFIX, LOG_RING, hasCompression } from './persist';
-import { initStore, registerReducer, resetStoreForTests, shardOfKey, shardSizes, store, storeCards } from './store';
+import { initStore, registerReducer, replaceHeader, replaceLog, resetStoreForTests, shardOfKey, shardSizes, store, storeCards } from './store';
 import { MemoryStorage, card } from './testing';
 
 const NOW = Date.UTC(2026, 0, 15, 12);
@@ -52,11 +52,18 @@ describe('initStore', () => {
     expect(store.today()).toBe(epochDay(NOW));
   });
 
-  it('a corrupted meta document is ignored, an unreadable schema is stashed as .bak', async () => {
+  it('a corrupted meta document is stashed as .bak and a fresh save starts; an unreadable schema is stashed too', async () => {
     const s = new MemoryStorage();
     s.setItem('tsuzuku.meta.v1', '{broken');
+    const warn0 = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
     await initStore({ storage: s, now: () => NOW, reducers: false });
+    warn0.mockRestore();
     expect(store.profile.value.name).toBe('無名');
+    expect(s.getItem('tsuzuku.meta.v1.bak')).toBe('{broken');
+    store.patch('profile', (p) => ({ ...p, name: 'fresh' }));
+    await store.flush();
+    expect(s.getItem('tsuzuku.meta.v1.bak')).toBe('{broken');
+    expect(JSON.parse(s.getItem('tsuzuku.meta.v1') as string).profile.name).toBe('fresh');
 
     const s2 = new MemoryStorage();
     s2.setItem('tsuzuku.meta.v1', JSON.stringify({ schema: 'tsuzuku.save/99', profile: { name: 'Future' } }));
@@ -65,6 +72,39 @@ describe('initStore', () => {
     warn.mockRestore();
     expect(store.profile.value.name).toBe('無名');
     expect(JSON.parse(s2.getItem('tsuzuku.meta.v1.bak') as string).profile.name).toBe('Future');
+  });
+
+  it('an unreadable card shard (truncated text or a newer schema) is stashed as .bak and never overwritten by the next write', async () => {
+    const s = new MemoryStorage();
+    const truncated = '{"schema":"tsuzuku.cards/1","kind":"vocab","lev';
+    const future = JSON.stringify({ schema: 'tsuzuku.cards/7', kind: 'vocab', level: 'n3', cards: { 'v-n3-0001#rec': card({ reps: 9 }), 'v-n3-0002#rec': card() } });
+    s.setItem('tsuzuku.cards.v1.vocab.n4', truncated);
+    s.setItem('tsuzuku.cards.v1.vocab.n3', future);
+    s.setItem('tsuzuku.cards.v1.vocab.n5', JSON.stringify({ schema: 'tsuzuku.cards/1', kind: 'vocab', level: 'n5', cards: { 'v-n5-0001#rec': card(), 'v-n5-0002#rec': card() } }));
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    warn.mockRestore();
+    expect(store.cards.count()).toBe(2);
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n4.bak')).toBe(truncated);
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n3.bak')).toBe(future);
+    store.cards.set('v-n4-0009#rec', card());
+    store.cards.set('v-n3-0009#rec', card());
+    await store.flush();
+    expect(JSON.parse(s.getItem('tsuzuku.cards.v1.vocab.n3') as string).cards).toEqual({ 'v-n3-0009#rec': card() });
+    expect(JSON.parse(s.getItem('tsuzuku.cards.v1.vocab.n3.bak') as string).cards['v-n3-0001#rec']).toEqual(card({ reps: 9 }));
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n4.bak')).toBe(truncated);
+  });
+
+  it('re-initialising flushes the outgoing slot\'s debounced writes first', async () => {
+    const s = new MemoryStorage();
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    store.patch('profile', (p) => ({ ...p, xp: 999 }));
+    store.cards.set('v-n5-0001#rec', card({ reps: 5 }));
+    await initStore({ storage: s, slot: 1, now: () => NOW, reducers: false });
+    expect(store.profile.value.xp).toBe(0);
+    await initStore({ storage: s, slot: 0, now: () => NOW, reducers: false });
+    expect(store.profile.value.xp).toBe(999);
+    expect(store.cards.get('v-n5-0001#rec')).toEqual(card({ reps: 5 }));
   });
 
   it('wires registered reducers unless reducers:false, and stops them on re-init', async () => {
@@ -228,6 +268,35 @@ describe('log', () => {
     const doc = JSON.parse(s.getItem('tsuzuku.log.v1') as string) as ReviewLog;
     expect(doc.schema).toBe('tsuzuku.log/1');
     expect(doc.entries).toHaveLength(LOG_RING);
+  });
+});
+
+describe('backup extras: replaceHeader / replaceLog', () => {
+  it('replaceHeader swaps seed, createdAt and contentVersion and persists them', async () => {
+    const s = new MemoryStorage();
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    replaceHeader({ seed: 'feedfacefeedface', createdAt: 5, contentVersion: 'c1' });
+    expect(store.seed()).toBe('feedfacefeedface');
+    expect(store.meta()).toMatchObject({ seed: 'feedfacefeedface', createdAt: 5, contentVersion: 'c1', updatedAt: NOW });
+    await store.flush();
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    expect(store.seed()).toBe('feedfacefeedface');
+    expect(store.meta().createdAt).toBe(5);
+  });
+
+  it('replaceLog assigns the ring wholesale, keeping the last 5,000 as given', async () => {
+    const s = new MemoryStorage();
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    store.log.push([99, 'v-n5-0001#rec', 3, 1, 0, 0]);
+    const entries: LogEntry[] = [];
+    for (let i = 0; i < LOG_RING + 5; i++) entries.push([i, 'v-n5-0002#rec', 3, 1, 0, 0]);
+    replaceLog(entries);
+    const all = store.log.recent(LOG_RING + 100);
+    expect(all).toHaveLength(LOG_RING);
+    expect(all[0][0]).toBe(5);
+    expect(store.log.forCard('v-n5-0001#rec')).toEqual([]);
+    await store.flush();
+    expect((JSON.parse(s.getItem('tsuzuku.log.v1') as string) as ReviewLog).entries).toHaveLength(LOG_RING);
   });
 });
 

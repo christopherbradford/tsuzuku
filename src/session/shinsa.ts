@@ -13,8 +13,12 @@
  *    書 3–6 sentences to a prompt (from Green)
  *  Not passed → `progress.shinsaNotes` (items + dominant tags); a retake needs
  *  one Notes session (`buildNotesPlan` → the runner calls
- *  `completeNotesSession`). Passed → `progress.shinsaPassed`, `profile.belt`;
- *  `shinsa:result` is emitted either way (B emits `belt:promoted`).
+ *  `completeNotesSession`). Notes are written only when a missed step had a
+ *  card behind it: failing only the card-less sections (Reading, Speaking,
+ *  Writing) leaves nothing to drill, so the retake opens at once instead of
+ *  waiting on a Notes session that can never be built. Passed →
+ *  `progress.shinsaPassed`, `profile.belt`; `shinsa:result` is emitted either
+ *  way (B emits `belt:promoted`).
  */
 import { BELT_IDS, ERROR_TAGS, STATIONS, type Belt, type CardKey, type DrillId, type ErrorTag, type StationBundle, type StoryItem } from '../content/types';
 import type { ContentLoader } from '../content/loader';
@@ -373,7 +377,11 @@ export function senseiNotes(steps: StepResult[]): { items: CardKey[]; tags: Erro
   return { items, tags };
 }
 
-/** Writes the result: pass → `shinsaPassed` + `profile.belt`; fail → Sensei's Notes. Emits `shinsa:result`. */
+/**
+ * Writes the result: pass → `shinsaPassed` + `profile.belt`; fail with missed
+ * cards → Sensei's Notes (a fail with nothing to drill clears any stale notes
+ * so the retake is open). Emits `shinsa:result`.
+ */
 export function finishShinsa(belt: Belt, s: ShinsaScore): void {
   if (s.passed) {
     store.patch('progress', (p) => {
@@ -382,8 +390,15 @@ export function finishShinsa(belt: Belt, s: ShinsaScore): void {
       return next;
     });
     store.patch('profile', (p) => (BELT_IDS.indexOf(belt) > BELT_IDS.indexOf(p.belt) ? { ...p, belt, ...(belt === 'black' && p.dan < 1 ? { dan: 1 } : {}) } : p));
-  } else {
+  } else if (s.notes.items.length > 0) {
     store.patch('progress', (p) => ({ ...p, shinsaNotes: { belt, items: s.notes.items.slice(), tags: s.notes.tags.slice() } }));
+  } else {
+    store.patch('progress', (p) => {
+      if (p.shinsaNotes?.belt !== belt) return p;
+      const next = { ...p };
+      delete next.shinsaNotes;
+      return next;
+    });
   }
   bus.emit('shinsa:result', { belt, passed: s.passed, sections: { ...s.sections } });
 }

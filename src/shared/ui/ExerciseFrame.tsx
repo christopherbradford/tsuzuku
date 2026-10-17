@@ -154,7 +154,8 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
-      if (e.defaultPrevented || e.repeat || e.isComposing || e.ctrlKey || e.metaKey || e.altKey) return;
+      // keyCode 229 = a key swallowed by an IME (older Android keyboards leave isComposing false)
+      if (e.defaultPrevented || e.repeat || e.isComposing || e.keyCode === 229 || e.ctrlKey || e.metaKey || e.altKey) return;
       const cur = props.current;
       const fb = cur.feedback;
       const editing = isEditable(e.target);

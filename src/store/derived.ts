@@ -8,6 +8,10 @@
  * `./perapera` and `./projection`, which own the formulas) take explicit data
  * so Records can recompute on open and tests can run without the singleton.
  *
+ * `dueCount` counts due REVIEWS (state ≠ 0, not archived/Kaiden — `./due`),
+ * not every card whose due day has passed, so the end card and the forecast
+ * agree with what a session serves.
+ *
  * Module-plan API: dueCount, isBacklog, beltEligibility, stationProgress,
  * forecastCounts, knownVocabCount, projectedArrival, peraperaNow. Extras:
  * currentBelt, currentStation, knownCounts, itemBeltOf, peraperaIndex,
@@ -19,6 +23,7 @@ import { BELTS, type Belt, type Facet, type StationBundle } from '../content/typ
 import { tryKindOfId } from '../shared/ids';
 import type { CardTuple, CardsApi, EpochDay, ItemBelt, ItemKind, Streak } from '../shared/store-types';
 import { newPerDayFor, newPerDayTotal } from './defaults';
+import { isDueReview } from './due';
 import { store } from './store';
 import { peraperaNow, type PeraperaResult } from './perapera';
 import { ARRIVAL_STATION, SHINSA_STATIONS, beltOfStation, bundleItemIds, projectedArrival, type Projection } from './projection';
@@ -90,8 +95,16 @@ export function reviewCap(): number {
   return capFor(s.intensity, currentBelt(), s.maxReviews);
 }
 
+/**
+ * Due reviews on `day` (`./due.isDueReview`: never-reviewed state-0 cards,
+ * archived and Kaiden excluded), the same set a session will actually serve.
+ */
 export function dueCount(day: EpochDay = store.today()): number {
-  return store.cards.dueOn(day).length;
+  let n = 0;
+  store.cards.forEach((_k, t) => {
+    if (isDueReview(t, day)) n++;
+  });
+  return n;
 }
 
 /** Backlog mode: due > 2 × the belt-scaled cap (design 03 §5). */

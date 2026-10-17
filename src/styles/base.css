@@ -2,7 +2,8 @@
  * TSUZUKU — base styles (group A). Imported once by src/main.tsx after
  * tokens.css. Imports fonts.css (self-hosted OFL subsets in unicode-range slices,
  * swap + local() fallbacks so everything renders before — or without — them), reset, type scale,
- * Japanese typography, focus ring, scrollbars, print, utility classes.
+ * Japanese typography (normal CJK wrapping under strict kinsoku; never
+ * keep-all, which leaves ragged lines), focus ring, scrollbars, print, utility classes.
  *
  * Classes: .ja .pixel .brush .mincho .neon .visually-hidden .sr-only
  *          .container .stack .row .grid .muted .center .right .truncate
@@ -82,6 +83,15 @@ button {
 }
 button:disabled {
   cursor: default;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+legend {
+  padding: 0;
 }
 a {
   color: var(--ai);
@@ -179,7 +189,10 @@ small,
   font-family: var(--font-ja);
   font-feature-settings: "palt";
   line-height: var(--lh-ja);
-  word-break: keep-all;
+  /* CJK text may break between any two characters; `strict` keeps small kana,
+     ー and punctuation off line starts, `anywhere` only rescues romaji/URLs. */
+  word-break: normal;
+  word-break: auto-phrase;
   overflow-wrap: anywhere;
   line-break: strict;
 }

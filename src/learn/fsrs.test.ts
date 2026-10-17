@@ -124,6 +124,18 @@ describe('difficulty update', () => {
     expect(d).toBeLessThan(8);
     expect(d).toBeGreaterThan(d0);
   });
+  it('matches FSRS-5 (linear damping ΔD·(10−D)/9, then mean reversion) on hand-computed values', () => {
+    // ΔD = −w6·(g−3) = 1.4604 for Again; D″ = D + ΔD·(10−D)/9; D' = w7·D0(4) + (1−w7)·D″.
+    expect(nextDifficulty(8, 1)).toBeCloseTo(8.6241, 3);
+    expect(nextDifficulty(5, 1)).toBeCloseTo(6.607, 3);
+    expect(nextDifficulty(7, 1)).toBeCloseTo(7.9518, 3);
+    expect(nextDifficulty(9, 2)).toBeCloseTo(9.135, 3);
+    expect(nextDifficulty(7, 4)).toBeCloseTo(6.4981, 3);
+    // Difficulty never saturates from a single Again below D = 10 (the FSRS-4.5 regression).
+    for (let d = 1; d < 10; d += 0.5) expect(nextDifficulty(d, 1)).toBeLessThan(10);
+    // Good from the Good start barely moves; one Again from there stays below the Ippon D ≥ 7 line.
+    expect(nextDifficulty(initialDifficulty(3), 1)).toBeLessThan(7);
+  });
   it('clamps to 1..10', () => {
     expect(nextDifficulty(10, 1)).toBeLessThanOrEqual(10);
     expect(nextDifficulty(1, 4)).toBeGreaterThanOrEqual(1);

@@ -14,6 +14,9 @@
  * distractors are a seeded sample of the component pool (`params.distractorIds`
  * first when given). A fast path skips the loader: `params.accept` = the
  * answer glyphs in slot order and `params.choices` = the tile glyphs.
+ * A kanji that repeats a part (林 = tree + tree, 協, 営, 禁) gets one tile
+ * per occurrence: the 2nd+ copy carries an `#n` key suffix so each copy is
+ * placed once and the set compare behaves as a multiset compare.
  * Digits 1–8 pick tiles through the enclosing `<ExerciseFrame>`.
  */
 import type { JSX } from 'preact';
@@ -44,7 +47,7 @@ export const TILE_COUNT = 8;
 export type Layout = NonNullable<ExerciseProps['step']['params']['layout']>;
 
 export interface Tile {
-  /** Stable identity: the component id, or `g:<glyph>` / `name:<keyword>` fallbacks. */
+  /** Stable identity: the component id, or `g:<glyph>` / `name:<keyword>` fallbacks; a repeated part's 2nd+ copy adds `#<n>`. */
   key: string;
   /** What the tile shows (glyph, or the keyword when no glyph is known). */
   char: string;
@@ -66,13 +69,24 @@ function kebab(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-/** Component keywords → tiles; a keyword with no definition becomes a text tile (honest degradation). */
+/** Per-occurrence keys: the first copy of `base` is `base`, the n-th is `base#n`. */
+function occurrenceKeys(): (base: string) => string {
+  const seen = new Map<string, number>();
+  return (base) => {
+    const n = (seen.get(base) ?? 0) + 1;
+    seen.set(base, n);
+    return n === 1 ? base : `${base}#${n}`;
+  };
+}
+
+/** Component keywords → tiles; a keyword with no definition becomes a text tile (honest degradation). A repeated part yields one tile per occurrence. */
 export function resolveParts(names: readonly string[], defs: ReadonlyMap<string, ComponentDef>): Tile[] {
   const byName = new Map<string, ComponentDef>();
   for (const d of defs.values()) byName.set(d.name.trim().toLowerCase(), d);
+  const keyFor = occurrenceKeys();
   return names.map((n) => {
     const d = byName.get(n.trim().toLowerCase()) ?? defs.get(`c-${kebab(n)}`);
-    return d ? { key: d.id, char: d.char, name: d.name } : { key: `name:${n}`, char: n, name: n, text: true };
+    return d ? { key: keyFor(d.id), char: d.char, name: d.name } : { key: keyFor(`name:${n}`), char: n, name: n, text: true };
   });
 }
 
@@ -94,15 +108,23 @@ export function buildTiles(answer: readonly Tile[], defs: ReadonlyMap<string, Co
   return shuffle(rng, [...answer, ...pool]);
 }
 
-/** `params.accept` (answer glyphs) + `params.choices` (tile glyphs) → tiles without the loader. */
+/** `params.accept` (answer glyphs) + `params.choices` (tile glyphs) → tiles without the loader; a glyph the answer repeats gets as many tiles. */
 export function fastTiles(params: ExerciseProps['step']['params']): { answer: Tile[]; tiles: Tile[] } | null {
   const accept = (params.accept ?? []).map((s) => s.trim()).filter(Boolean);
   const choices = (params.choices ?? []).map((s) => s.trim()).filter(Boolean);
   if (accept.length === 0 || choices.length === 0) return null;
-  const tile = (g: string): Tile => ({ key: `g:${g}`, char: g, name: '' });
-  const set = new Set(choices);
-  const all = [...choices, ...accept.filter((g) => !set.has(g))];
-  return { answer: accept.map(tile), tiles: Array.from(new Set(all)).map(tile) };
+  const count = (list: readonly string[]): Map<string, number> => {
+    const m = new Map<string, number>();
+    for (const g of list) m.set(g, (m.get(g) ?? 0) + 1);
+    return m;
+  };
+  const need = new Map<string, number>(choices.map((g) => [g, 1]));
+  for (const [g, n] of count(accept)) need.set(g, Math.max(need.get(g) ?? 0, n));
+  const answerKey = occurrenceKeys();
+  const tileKey = occurrenceKeys();
+  const tiles: Tile[] = [];
+  for (const [g, n] of need) for (let i = 0; i < n; i++) tiles.push({ key: tileKey(`g:${g}`), char: g, name: '' });
+  return { answer: accept.map((g) => ({ key: answerKey(`g:${g}`), char: g, name: '' })), tiles };
 }
 
 export function sameSet(a: readonly string[], b: readonly string[]): boolean {

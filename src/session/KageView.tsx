@@ -8,6 +8,9 @@
  *  in the same week is free play: `finishKage` writes nothing. Arcade skin via
  *  tokens (`--neon-c` / `--neon-m`, `--font-pixel`); nothing here taunts.
  *
+ *  The Ghost Set's runner never touches the training snapshot (`persist:
+ *  false`) and leaving the room mid-run abandons it.
+ *
  *  `<KageStrip>` is the compact race strip the Road page shows.
  */
 import type { JSX } from 'preact';
@@ -135,6 +138,13 @@ export function KageView(p: KageViewProps): JSX.Element {
     setOutcome({ ...out, firstRun });
   }, [stage, runner]);
 
+  useEffect(
+    () => () => {
+      if (runner && !runner.done.peek() && !runner.abandoned.peek()) runner.abandon();
+    },
+    [runner],
+  );
+
   const begin = async (): Promise<void> => {
     setStage('building');
     setScore(null);
@@ -146,7 +156,7 @@ export function KageView(p: KageViewProps): JSX.Element {
         setStage('empty');
         return;
       }
-      const r = new SessionRunner(plan, { loader });
+      const r = new SessionRunner(plan, { loader, persist: false });
       p.onRunner?.(r);
       setRunner(r);
       setStage('run');

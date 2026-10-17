@@ -11,11 +11,16 @@
  *                      Accepts the envelope, a bare SaveMeta, or the design-07
  *                      `{meta, shards, log}` shape. Never writes.
  *  previewImportBlob() the file itself (gzip bytes or text) → previewImport.
+ *                      Fields of the wrong type are repaired to defaults by
+ *                      the migration layer and reported as one warning.
  *  applyImport(p,mode) `merge` (streak max, XP max, collections union, cards
  *                      newer-wins, ledger union) or `replace` (the backup as
- *                      is; cards included). The review log is unioned in both
- *                      modes (the ring keeps the newest 5,000). Flushes; the
- *                      caller shows the reload hint.
+ *                      is; cards included, and the backup's seed/createdAt/
+ *                      contentVersion header, so art renders as on the
+ *                      original device). The review log is unioned in both
+ *                      modes: deduped on `t|cardKey`, sorted by time, the
+ *                      ring keeps the newest 5,000 by time (never by push
+ *                      order). Flushes; the caller shows the reload hint.
  */
 import { BELT_IDS, type Belt, type CardKey } from '../content/types';
 import { bus } from '../shared/events';
@@ -39,9 +44,9 @@ import {
   type Streak,
   type WeakPoints,
 } from '../shared/store-types';
-import { MigrationError, migrateLog, migrateMeta, migrateShard, newerCard } from './migrations';
+import { MigrationError, migrateLog, migrateMetaChecked, migrateShard, newerCard } from './migrations';
 import { LOG_RING, gunzipText, hasCompression, isCompressed, parseShardId, type ShardId } from './persist';
-import { shardOfKey, store, storeCards } from './store';
+import { replaceHeader, replaceLog, shardOfKey, store, storeCards } from './store';
 import { S } from './strings';
 import { levelFor } from './xp';
 
@@ -267,7 +272,9 @@ export function previewImport(json: string): ImportPreview {
 
   let meta: SaveMeta;
   try {
-    meta = migrateMeta(rawMeta);
+    const checked = migrateMetaChecked(rawMeta);
+    meta = checked.meta;
+    if (checked.coerced.length > 0) warnings.push(S.importRepaired);
   } catch (e) {
     if (e instanceof MigrationError && /newer/.test(e.message)) return invalid([S.importNewer]);
     return invalid([S.importNotBackup]);
@@ -411,6 +418,11 @@ function mergeProgress(a: Progress, b: Progress): Progress {
     for (const [k, v] of Object.entries(b.gateAttemptDay ?? {})) days[Number(k)] = Math.max(days[Number(k)] ?? 0, v);
     out.gateAttemptDay = days;
   }
+  if (a.gateAttemptAt || b.gateAttemptAt) {
+    const at: Record<number, number> = { ...(a.gateAttemptAt ?? {}) };
+    for (const [k, v] of Object.entries(b.gateAttemptAt ?? {})) at[Number(k)] = Math.max(at[Number(k)] ?? 0, v);
+    out.gateAttemptAt = at;
+  }
   return out;
 }
 
@@ -553,15 +565,29 @@ export function mergeSaves(cur: SaveMeta, inc: SaveMeta, now: number): SaveMeta 
 /* Apply                                                                      */
 /* ────────────────────────────────────────────────────────────────────────── */
 
+/** Slices through `patch()`, then the header (seed, createdAt, contentVersion) that lives outside them. */
 function applyMeta(next: SaveMeta): void {
   for (const k of SLICE_KEYS) store.patch(k, () => next[k] as never);
+  replaceHeader({ seed: next.seed, createdAt: next.createdAt, contentVersion: next.contentVersion });
+}
+
+/** Union by `t|cardKey`, ordered by time; the ring keeps the newest 5,000 by time. */
+export function unionLogs(current: LogEntry[], incoming: LogEntry[]): LogEntry[] {
+  const seen = new Set<string>();
+  const merged: LogEntry[] = [];
+  for (const e of [...current, ...incoming]) {
+    const k = `${e[0]}|${e[1]}`;
+    if (seen.has(k)) continue;
+    seen.add(k);
+    merged.push(e);
+  }
+  merged.sort((a, b) => a[0] - b[0]);
+  return merged.length > LOG_RING ? merged.slice(merged.length - LOG_RING) : merged;
 }
 
 function unionLog(incoming: LogEntry[]): void {
   if (incoming.length === 0) return;
-  const have = new Set(store.log.recent(LOG_RING).map((e) => `${e[0]}|${e[1]}`));
-  const fresh = incoming.filter((e) => !have.has(`${e[0]}|${e[1]}`)).sort((a, b) => a[0] - b[0]);
-  for (const e of fresh) store.log.push(e);
+  replaceLog(unionLogs(store.log.recent(LOG_RING), incoming));
 }
 
 /**

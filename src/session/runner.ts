@@ -16,13 +16,18 @@
  *    `introduceItem` first. `scroll:completed` fires when the last intro check
  *    of a scroll is answered.
  *  - A snapshot (`store.session`) is saved after every submit, pause and
- *    re-queue, so a closed tab resumes at the next step with its kiai state.
+ *    re-queue, so a closed tab resumes at the next step with its kiai state;
+ *    it also carries the active milliseconds so far (`RunnerSnapshot`), and
+ *    the tally's minutes are that active time, never the wall clock across a
+ *    night. Rooms that never resume (Gatekeeper, Shinsa, Kage) pass
+ *    `persist: false` and leave the training snapshot alone.
  *  - Emits `session:started` (fresh runs), `session:finished` with the
  *    `SessionResult`, `session:abandoned`, `weak-point:set-done` per tag of a
  *    completed Weak Point block, `welcome-back:done` for a `welcome` plan.
- *    `kiai:entered` is emitted by the writer. XP: `xpDelta` per step is what B
- *    granted synchronously; session-level XP granted during `session:finished`
- *    is folded into `tally.xp`.
+ *    `kiai:entered` is emitted by the writer. XP: `xpDelta` per step is every
+ *    `xp:gained` B emitted during the rep (introduction, attempt, completed
+ *    Scroll); session-level XP granted during `session:finished` is folded
+ *    into `tally.xp`.
  *  - A Michikusa step has no result: the view calls `next()` when read.
  */
 import { signal, type Signal } from '@preact/signals';
@@ -53,6 +58,21 @@ export interface RunnerOptions {
   resumed?: SessionSnapshot;
   /** Additive: content source for item lookups (tests pass `createFakeLoader()`). */
   loader?: ContentLoader;
+  /**
+   * Additive: write the snapshot to `store.session` (default `true`). Boss, exam
+   * and Kage rooms pass `false`: a fight is never resumed (design 04 §11 "no
+   * retreat"), so it must not overwrite the training snapshot the Dojo offers.
+   */
+  persist?: boolean;
+}
+
+/**
+ * The stored snapshot, extended with the active time accumulated before the
+ * current segment so a session resumed tomorrow earns tonight's minutes, not
+ * the night's. Optional and additive: older snapshots load as `activeMs` 0.
+ */
+export interface RunnerSnapshot extends SessionSnapshot {
+  activeMs?: number;
 }
 
 export interface SubmitOptions {
@@ -141,9 +161,15 @@ export class SessionRunner {
 
   private queue: Step[];
   private readonly loader: ContentLoader;
+  private readonly persist: boolean;
   private stepStartedAt: number;
   private pausedAt: number | null = null;
   private pausedMs = 0;
+  /** Paused time over the whole run (every step), excluded from the tally. */
+  private pausedTotalMs = 0;
+  /** Active time from earlier segments (a resumed snapshot) and the clock this segment started on. */
+  private readonly activeBaseMs: number;
+  private readonly segmentStartedAt: number;
   private hintCount = 0;
   private answered = false;
   private finished = false;
@@ -152,12 +178,15 @@ export class SessionRunner {
 
   constructor(plan: SessionPlan, o: RunnerOptions = {}) {
     this.loader = o.loader ?? appContent;
+    this.persist = o.persist ?? true;
     const snap = o.resumed;
     this.plan = snap ? snap.plan : plan;
     this.queue = (snap ? snap.plan.steps : plan.steps).slice();
     this.results = snap ? snap.results.slice() : [];
     this.resumed = !!snap;
     this.startedAt = snap ? snap.plan.createdAt : store.now();
+    this.activeBaseMs = Math.max(0, (snap as RunnerSnapshot | undefined)?.activeMs ?? 0);
+    this.segmentStartedAt = store.now();
     const cursor = snap ? Math.min(snap.cursor, this.queue.length) : 0;
     this.index = signal(cursor);
     this.total = signal(this.queue.length);
@@ -207,18 +236,25 @@ export class SessionRunner {
     return Math.max(0, now - this.stepStartedAt - this.pausedMs);
   }
 
-  snapshot(cursor = this.index.value): SessionSnapshot {
+  /** Active milliseconds so far: earlier segments plus this one, paused time excluded. */
+  activeMs(): number {
+    const now = this.pausedAt ?? store.now();
+    return this.activeBaseMs + Math.max(0, now - this.segmentStartedAt - this.pausedTotalMs);
+  }
+
+  snapshot(cursor = this.index.value): RunnerSnapshot {
     return {
       schema: SESSION_SCHEMA,
       plan: { ...this.plan, steps: this.queue.slice() },
       cursor,
       results: this.results.slice(),
       kiai: this.kiai.value,
+      activeMs: this.activeMs(),
     };
   }
 
   private save(cursor: number): void {
-    if (this.finished) return;
+    if (this.finished || !this.persist) return;
     store.session.save(this.snapshot(cursor));
   }
 
@@ -274,7 +310,11 @@ export class SessionRunner {
 
   resume(): void {
     if (!this.paused.value) return;
-    if (this.pausedAt !== null) this.pausedMs += Math.max(0, store.now() - this.pausedAt);
+    if (this.pausedAt !== null) {
+      const slept = Math.max(0, store.now() - this.pausedAt);
+      this.pausedMs += slept;
+      this.pausedTotalMs += slept;
+    }
     this.pausedAt = null;
     this.paused.value = false;
     const step = this.step.value;
@@ -295,41 +335,55 @@ export class SessionRunner {
     const intro = isIntroCheck(step);
     const item = step.itemId ? this.loader.get(step.itemId) : undefined;
     const kind = step.itemId ? itemKindOf(step.itemId, item) : null;
-    if (step.itemId && kind && (intro || (pretest && result.correct))) introduceItem(step.itemId, kind, this.plan.station);
 
-    const out = recordAttempt({
-      sessionId: this.plan.id,
-      step,
-      result,
-      kiai: this.kiai.value,
-      repIndex: idx,
-      rng: rngFor(store.seed(), this.plan.id, step.id, idx),
-      boss: step.block === 'phase' && step.timed,
-      pretest,
-      ...(o.judge ? { judge: o.judge } : {}),
-      ...(item ? { item } : {}),
-      ...(kind ? { kind } : {}),
+    // Every XP B grants for this rep — the introduction, the graded attempt and a completed Scroll — is the step's
+    // `xpDelta`, so the つづく card's XP matches the profile (the writer alone sees only its own emits).
+    let xpThisStep = 0;
+    const offXp = bus.on('xp:gained', (p) => {
+      xpThisStep += p.amount;
     });
+    let out: RecordAttemptOutcome;
+    try {
+      if (step.itemId && kind && (intro || (pretest && result.correct))) introduceItem(step.itemId, kind, this.plan.station);
 
-    if (out.kiaiState) this.kiai.value = out.kiaiState;
-    this.results.push(toStepResult(out));
-    this.answered = true;
+      out = recordAttempt({
+        sessionId: this.plan.id,
+        step,
+        result,
+        kiai: this.kiai.value,
+        repIndex: idx,
+        rng: rngFor(store.seed(), this.plan.id, step.id, idx),
+        boss: step.block === 'phase' && step.timed,
+        pretest,
+        ...(o.judge ? { judge: o.judge } : {}),
+        ...(item ? { item } : {}),
+        ...(kind ? { kind } : {}),
+      });
 
-    if (REQUEUE_MODES.has(this.plan.mode) && !pretest) {
-      // A lapse that broke the combo returns as the Recovery rep (3–8 later); the +5 relearn is the same return, not a second one.
-      const recovery = step.cardKey && out.kiaiResult?.comboBroken ? this.kiai.value.recoveryQueue.find((q) => q.cardKey === step.cardKey) : undefined;
-      for (const offset of out.stepOffsets) {
-        const tag: StepTag = offset === 3 ? '+3' : offset === 10 ? '+10' : 'relearn';
-        if (tag === 'relearn' && recovery) continue;
-        this.requeue(step, idx + offset, tag);
+      if (out.kiaiState) this.kiai.value = out.kiaiState;
+      this.results.push(toStepResult(out));
+      this.answered = true;
+
+      if (REQUEUE_MODES.has(this.plan.mode) && !pretest) {
+        // A lapse that broke the combo returns as the Recovery rep (3–8 later); the +5 relearn is the same return, not a second one.
+        const recovery = step.cardKey && out.kiaiResult?.comboBroken ? this.kiai.value.recoveryQueue.find((q) => q.cardKey === step.cardKey) : undefined;
+        for (const offset of out.stepOffsets) {
+          const tag: StepTag = offset === 3 ? '+3' : offset === 10 ? '+10' : 'relearn';
+          if (tag === 'relearn' && recovery) continue;
+          this.requeue(step, idx + offset, tag);
+        }
+        if (recovery) this.requeue(step, Math.max(idx + 1, recovery.at), 'recovery');
       }
-      if (recovery) this.requeue(step, Math.max(idx + 1, recovery.at), 'recovery');
+
+      if (intro && step.params.scrollId) this.checkScroll(step.params.scrollId);
+      if (step.exercise === 'nemesis-duel' && step.itemId) afterDuel(step.itemId, this.results, store.today());
+    } finally {
+      offXp();
     }
 
-    this.feedback.value = feedbackFor(step, result, out, pretest);
-
-    if (intro && step.params.scrollId) this.checkScroll(step.params.scrollId);
-    if (step.exercise === 'nemesis-duel' && step.itemId) afterDuel(step.itemId, this.results, store.today());
+    const last = this.results[this.results.length - 1];
+    if (last && last.stepId === step.id) last.xpDelta = xpThisStep;
+    this.feedback.value = feedbackFor(step, result, { ...out, xpDelta: xpThisStep }, pretest);
 
     this.save(idx + 1);
   }
@@ -397,25 +451,30 @@ export class SessionRunner {
     if (this.finished) return;
     this.finished = true;
     const endedAt = store.now();
+    // Minutes are active time: earlier segments of a resumed run plus this one, pauses excluded. The result's
+    // `startedAt` is `endedAt − active`, so B's `endedAt − startedAt` minutes agree with the tally; the wall-clock
+    // start stays on `plan.createdAt` / `runner.startedAt`.
+    const activeMs = Math.min(this.activeMs(), Math.max(0, endedAt - this.startedAt));
+    const activeStart = endedAt - activeMs;
     const quests = store.quests.value;
     const t = tally(this.results, {
-      startedAt: this.startedAt,
+      startedAt: activeStart,
       endedAt,
       questsDone: quests.day === store.today() ? quests.done.slice() : [],
       backlogWaiting: this.plan.meta.backlog ? Math.max(0, this.plan.meta.dueTotal - this.plan.meta.dueTaken) : 0,
-      pausedMs: this.pausedMs,
+      pausedMs: 0,
     });
     const result: SessionResult = {
       planId: this.plan.id,
       mode: this.plan.mode,
-      startedAt: this.startedAt,
+      startedAt: activeStart,
       endedAt,
       steps: this.results.slice(),
       tally: t,
       zen: store.settings.value.feel === 'zen',
       resumed: this.resumed,
     };
-    store.session.clear();
+    if (this.persist) store.session.clear();
     let extraXp = 0;
     const off = bus.on('xp:gained', (p) => {
       extraXp += p.amount;
@@ -439,7 +498,7 @@ export class SessionRunner {
     if (this.done.value || this.abandoned.value) return;
     this.abandoned.value = true;
     this.finished = true;
-    store.session.clear();
+    if (this.persist) store.session.clear();
     bus.emit('session:abandoned', { sessionId: this.plan.id, steps: this.results.length });
     this.stopCeremonies();
     this.timer.value = null;

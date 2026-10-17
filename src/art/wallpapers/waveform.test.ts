@@ -1,4 +1,5 @@
 import { fnv1a32 } from '../../shared/hash';
+import { glyphCount, layerBounds } from '../jtext';
 import { normalizeData, sampleData } from './data';
 import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
 import { S } from './strings-4';
@@ -46,6 +47,34 @@ describe('waveform', () => {
     for (let seed = 1; seed <= 6; seed++) {
       expect(safeZoneViolations(spec.compose(seed, DATA, 'phone'), 'phone').map((t) => `${t.text}@${t.y}`)).toEqual([]);
       expect(safeZoneViolations(spec.compose(seed, long, 'phone'), 'phone').map((t) => `${t.text}@${t.y}`)).toEqual([]);
+    }
+  });
+
+  it('the name/date footer never collides with a wrapped caption, on either size, and nothing leaves the canvas', () => {
+    // dictatedSentence is never persisted; the app supplies the sentence of choice
+    const sentences = [
+      '毎朝、駅まで歩いて友達と新しいレストランに行きました。',
+      '昨日の夜、友達と一緒に新しいレストランで晩ご飯を食べてから、駅まで歩いて帰りました。',
+      '来年の春には、京都のお寺をゆっくり回って、おいしい抹茶と和菓子を楽しみながら、日本語で店の人と話してみたいです。',
+      '子どものころから、毎日少しずつ続けることがいちばん大切だと先生に教わりましたが、本当にそうだと最近ようやく分かってきました。',
+    ];
+    expect(sentences.map(glyphCount)).toEqual([27, 42, 56, 62]);
+    for (const sentence of sentences) {
+      const d = { ...sampleData(3, { sentenceOfChoice: sentence, nameKana: 'クリストファー・ブラッドフォード' }), dictatedSentence: undefined };
+      for (const size of WALLPAPER_SIZES) {
+        const { h } = size === 'phone' ? { h: 2340 } : { h: 1080 };
+        for (let seed = 1; seed <= 4; seed++) {
+          const c = spec.compose(seed, d, size);
+          const lines = c.texts.filter((t) => t.fill === '#2EE6D6' && t.anchor === 'middle');
+          expect(lines.map((t) => t.text).join('')).toBe(sentence);
+          const foot = layerBounds(c.texts.find((t) => t.text.includes('クリストファー'))!);
+          const last = layerBounds(lines[lines.length - 1]!);
+          expect(foot.y, `${size} seed ${seed} ${glyphCount(sentence)} glyphs`).toBeGreaterThanOrEqual(last.y + last.h);
+          for (let i = 1; i < lines.length; i++) expect(layerBounds(lines[i]!).y).toBeGreaterThanOrEqual(layerBounds(lines[i - 1]!).y + layerBounds(lines[i - 1]!).h);
+          for (const t of c.texts) expect(layerBounds(t).y + layerBounds(t).h, `${size} ${t.text}`).toBeLessThanOrEqual(h);
+          if (size === 'phone') expect(safeZoneViolations(c, 'phone')).toEqual([]);
+        }
+      }
     }
   });
 

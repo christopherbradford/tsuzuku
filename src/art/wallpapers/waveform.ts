@@ -13,6 +13,11 @@
  * Seed → base frequency, accent nuclei, graticule style, afterglow, jitter.
  * Without a dictated sentence (not persisted; the Studio supplies it) the
  * trace is a flat "no signal" line and the caption says so honestly.
+ *
+ * The caption block (up to four lines plus the name/date footer) is laid
+ * out as one unit: when it would run past the bottom of the safe area it
+ * moves up into the gap under the trace and, if still too tall, its line
+ * size shrinks, so the footer never lands on the last caption line.
  */
 import { chance, mulberry32, range, uniform } from '../../shared/hash';
 import { moraSplit, stripPunctuation, toHiragana } from '../../shared/jp';
@@ -258,15 +263,23 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   const maxLine = phone ? 11 : 24;
   const lines = splitColumns(caption, Math.min(4, Math.max(1, Math.ceil(glyphCount(caption) / maxLine))));
   const lineMax = phone ? 78 : 64;
-  const lineSize = Math.max(18, Math.min(...lines.map((l) => fitSize(l, lineBoxW, lineMax * 1.2, { max: lineMax }))));
+  let lineSize = Math.max(18, Math.min(...lines.map((l) => fitSize(l, lineBoxW, lineMax * 1.2, { max: lineMax }))));
+  // One block: first baseline 0.88 em below its top, (n − 1) pitches of 1.55 em,
+  // the footer baseline 1.6 em under the last line and 0.3 of its size below.
+  const blockEm = 0.88 + (lines.length - 1) * 1.55 + 1.6 + 0.5 * 0.3;
+  const blockTop = midY + ampMax + (phone ? safe.h * 0.09 : safe.h * 0.12);
+  const bottom = safe.y + safe.h;
+  const minTop = midY + ampMax * 1.12 + 18; // just under the mora ticks
+  if (blockTop + lineSize * blockEm > bottom) lineSize = Math.max(18, Math.min(lineSize, (bottom - minTop) / blockEm));
   const pitch = lineSize * 1.55;
-  const firstY = midY + ampMax + (phone ? safe.h * 0.09 : safe.h * 0.12) + lineSize * 0.88;
+  const footSize = Math.round(lineSize * 0.5);
+  const blockH = (lines.length - 1) * pitch + lineSize * 1.6 + footSize * 0.3;
+  const firstY = Math.min(blockTop, bottom - blockH - lineSize * 0.88) + lineSize * 0.88;
   lines.forEach((l, i) => texts.push(pixel(l, w / 2, firstY + i * pitch, live ? NEON : MUTED, 'middle', lineSize)));
 
-  const footSize = Math.round(lineSize * 0.5);
   const footY = firstY + (lines.length - 1) * pitch + lineSize * 1.6;
   const foot = `${data.nameKana}　${eraDate(data.date)}`;
-  texts.push(pixel(foot, w / 2, Math.min(footY, safe.y + safe.h - footSize * 0.3), MUTED, 'middle', footSize, 0.9));
+  texts.push(pixel(foot, w / 2, Math.min(footY, bottom - footSize * 0.3), MUTED, 'middle', footSize, 0.9));
 
   const svg = svgDoc({ w, h, title: WALLPAPER_NAMES[ID].en, bg: SUMI, defs, body });
   return { svg, texts, post: 'scanlines' };

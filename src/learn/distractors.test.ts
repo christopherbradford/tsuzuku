@@ -83,6 +83,30 @@ describe('meaningChoices', () => {
     expect(a).toContain('to eat');
     expect(b).toContain('to eat');
   });
+  it('never offers a secondary meaning of the target, nor a word whose secondary meaning is the answer', () => {
+    // 風情 [taste | charm | air]: same-POS words whose primary gloss is one of its other meanings.
+    const target = vocab('v-n1-0024', '風情', 'ふぜい', 'taste', 'n', { meanings: ['taste', 'charm', 'air'], jlpt: 1, station: 47 });
+    const pool = [
+      target,
+      vocab('v-n1-0100', '魅力', 'みりょく', 'charm', 'n', { jlpt: 1, station: 47 }),
+      vocab('v-n1-0101', '空気', 'くうき', 'air', 'n', { jlpt: 1, station: 47 }),
+      vocab('v-n1-0102', '強盗', 'ごうとう', 'robbery', 'n', { jlpt: 1, station: 47 }),
+      vocab('v-n1-0103', '配慮', 'はいりょ', 'consideration', 'n', { jlpt: 1, station: 47 }),
+      vocab('v-n1-0104', '味', 'あじ', 'flavour', 'n', { meanings: ['flavour', 'taste'], jlpt: 1, station: 47 }),
+      vocab('v-n1-0105', '時間', 'じかん', 'time', 'n', { jlpt: 1, station: 47 }),
+    ];
+    for (let seed = 0; seed < 40; seed++) {
+      const d = meaningDistractors(target, pool, mulberry32(seed));
+      expect(d).toHaveLength(3);
+      for (const x of d) expect(['charm', 'air', 'taste', 'flavour']).not.toContain(x);
+      const c = meaningChoices(target, pool, mulberry32(seed));
+      expect(c.filter((x) => ['taste', 'charm', 'air', 'flavour'].includes(x))).toEqual(['taste']);
+    }
+    // the unit shape from the report: target [instant, moment], a same-POS word glossed 'moment'
+    const t2 = vocab('v-n3-0001', '瞬間', 'しゅんかん', 'instant', 'n', { meanings: ['instant', 'moment'] });
+    const p2 = [t2, vocab('v-n3-0002', '一瞬', 'いっしゅん', 'moment', 'n'), vocab('v-n3-0003', '山', 'やま', 'mountain', 'n')];
+    for (let seed = 0; seed < 20; seed++) expect(meaningDistractors(t2, p2, mulberry32(seed))).not.toContain('moment');
+  });
   it('falls back when the pool is small', () => {
     const c = meaningChoices(POOL[0]!, [POOL[0]!, POOL[1]!], mulberry32(5));
     expect(c).toHaveLength(4);

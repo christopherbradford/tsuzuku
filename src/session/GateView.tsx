@@ -9,7 +9,10 @@
  *  result: stamp or "Not yet", phase scores, Grudge List, rematch / Assisted
  *  Gate / Revenge Match per `rematchAllowed`. `finishGate` writes progress and
  *  emits `gate:result`; B stamps and G's StampPress fires through the bus.
- *  No lives, no hearts, no retreat: leaving mid-fight abandons the run.
+ *  No lives, no hearts, no retreat: leaving mid-fight abandons the run (the
+ *  Leave button and unmounting alike), and the fight's runner never touches the
+ *  training snapshot (`persist: false`). Intro, result and the Station page
+ *  all read `rematchAllowed`, so the rematch copy agrees everywhere.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -21,7 +24,7 @@ import { parseCardKey } from '../shared/ids';
 import type { SessionPlan, Step, StepResult } from '../shared/session-types';
 import { store } from '../store';
 import { BELT_NAME, S as ES, fill } from './engine-strings';
-import { GATE_ASSISTED_PASS, GATE_PASS, GATE_PHASE_PASS, GRUDGE_REPS_FOR_REMATCH, buildGate, finishGate, gateAvailable, gateOutcome, rematchAllowed, scoreGate, stepHit, type GateScore } from './gatekeeper';
+import { GATE_ASSISTED_PASS, GATE_PASS, GATE_PHASE_PASS, buildGate, finishGate, gateAvailable, gateOutcome, rematchAllowed, scoreGate, stepHit, type GateScore } from './gatekeeper';
 import { dayStartMs } from '../shared/time';
 import { SessionRunner } from './runner';
 import { SessionHost, type SessionViewComponent } from './ScrollView';
@@ -78,10 +81,8 @@ function phaseLine(plan: SessionPlan, bi: number, assisted: boolean): string {
 }
 
 /**
- * Grudge reps logged since `t` (ms). `rematchAllowed` counts every Grudge rep
- * of the day, which right after a lost fight includes the fight's own misses;
- * the result screen counts only training done after the fight ended
- * (design 04 §11: same-day rematch after ≥ 20 Grudge reps).
+ * Grudge reps logged since `t` (ms) and today. Kept for callers that hold the
+ * fight's end time; `rematchAllowed` applies the same rule from the save.
  */
 export function grudgeRepsSince(t: number): number {
   const grudge = new Set(store.progress.value.grudge);
@@ -215,6 +216,14 @@ export function GateView(p: GateViewProps): JSX.Element {
     setScore(sc);
   }, [stage, runner, mode, n]);
 
+  // No retreat: leaving the room (browser Back, route change) mid-fight abandons the run honestly.
+  useEffect(
+    () => () => {
+      if (runner && !runner.done.peek() && !runner.abandoned.peek()) runner.abandon();
+    },
+    [runner],
+  );
+
   const begin = async (m: FightMode): Promise<void> => {
     setMode(m);
     setStage('building');
@@ -228,7 +237,7 @@ export function GateView(p: GateViewProps): JSX.Element {
         setStage('empty');
         return;
       }
-      const r = new SessionRunner(plan, { loader });
+      const r = new SessionRunner(plan, { loader, persist: false });
       r.pause();
       p.onRunner?.(r);
       setRunner(r);
@@ -431,8 +440,8 @@ export function GateView(p: GateViewProps): JSX.Element {
               : S.gateNotYet;
     const misses = Array.from(new Set(sc.misses.map((k) => parseCardKey(k).itemId)));
     const passMark = Math.round((mode.assisted ? GATE_ASSISTED_PASS : GATE_PASS) * 100);
-    const repsNeeded = sc.passed ? 0 : Math.max(0, GRUDGE_REPS_FOR_REMATCH - grudgeRepsSince(runner.done.value?.endedAt ?? runner.startedAt));
-    const canRematch = !sc.passed && (misses.length === 0 || repsNeeded === 0);
+    const repsNeeded = sc.passed ? 0 : rm.grudgeRepsNeeded;
+    const canRematch = !sc.passed && rm.allowed;
     return (
       <section class="gate-view" aria-label={S.gateAria} data-stage="result" data-outcome={outcome}>
         {header}

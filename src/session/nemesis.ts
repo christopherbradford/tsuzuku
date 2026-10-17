@@ -120,7 +120,7 @@ export function dossierFor(itemId: string, loader: ContentLoader = appContent, s
     return d;
   }
   if (isKanji(item)) {
-    const d: Dossier = { itemId, head: item.char, kana: item.on[0] ?? item.kun[0] ?? '', meanings: item.meanings.slice(), mnemonic: item.mnemonic, components: item.components.slice(), sentences: item.examples.slice(0, 3).map((e) => ({ ja: e.word, kana: e.kana, en: e.en })) };
+    const d: Dossier = { itemId, head: item.char, kana: item.on[0] ?? item.kun[0]?.replace('.', '') ?? '', meanings: item.meanings.slice(), mnemonic: item.mnemonic, components: item.components.slice(), sentences: item.examples.slice(0, 3).map((e) => ({ ja: e.word, kana: e.kana, en: e.en })) };
     const l = item.lookalikes?.[0] ? loader.get(item.lookalikes[0]) : undefined;
     if (l) d.confusable = l;
     return d;

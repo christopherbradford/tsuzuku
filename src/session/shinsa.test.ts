@@ -269,3 +269,29 @@ describe('scoring and Sensei’s Notes', () => {
     expect(FIXTURE_STORY_ID).toBe('s-04-1');
   });
 });
+
+describe('retake after a card-less fail (design 04 §12)', () => {
+  it('failing only Reading / Speaking / Writing leaves no Notes to drill, so the retake is open at once', async () => {
+    await makeTestStore({ save: { progress: { station: 9, stationsCleared: [4, 5, 6, 7, 8, 9] } }, cards: brownCards() });
+    const plan = await buildShinsa('yellow', 1, { loader, available: all });
+    expect(plan.steps.some((s) => s.cardKey === null)).toBe(true);
+    const cardless = new Set(plan.steps.filter((s) => s.cardKey === null).map((s) => s.id));
+    const sc = scoreShinsa(plan, answers(plan, (id) => cardless.has(id)));
+    expect(sc.passed).toBe(false);
+    expect(sc.notes.items).toEqual([]);
+    finishShinsa('yellow', sc);
+    expect(store.progress.value.shinsaNotes).toBeUndefined();
+    const e = shinsaEligible('yellow', { bundles: [STATION_4] });
+    expect(e.notesPending).toBe(false);
+    expect(e.reasons).not.toContain(S.shinsaReasonNotes);
+    expect(await buildNotesPlan({ loader, available: all })).toBeNull();
+  });
+
+  it('a card-less fail also clears stale Notes left by an older build', async () => {
+    await makeTestStore({ save: { progress: { station: 9, stationsCleared: [4, 5, 6, 7, 8, 9], shinsaNotes: { belt: 'yellow', items: [], tags: ['particle'] } } }, cards: brownCards() });
+    const plan = await buildShinsa('yellow', 1, { loader, available: all });
+    const cardless = new Set(plan.steps.filter((s) => s.cardKey === null).map((s) => s.id));
+    finishShinsa('yellow', scoreShinsa(plan, answers(plan, (id) => cardless.has(id))));
+    expect(store.progress.value.shinsaNotes).toBeUndefined();
+  });
+});

@@ -4,6 +4,7 @@ import { act } from 'preact/test-utils';
 import { FIXTURE, FIXTURE_DIALOGUE_ID, FIXTURE_STORY_ID, V, createFakeLoader } from '@/content/fixtures';
 import { toPlain } from '@/content/ruby';
 import type { StoryItem, StoryLine } from '@/content/types';
+import { STT_STATE_LABEL } from '@/audio';
 import { installServices, nullAudio, nullStt, resetServices, type AudioService, type SpeakOptions, type SttService } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { ExerciseProps } from '@/shared/exercise-types';
@@ -271,6 +272,19 @@ describe('<RolePlay>', () => {
     clickText(S.submit);
     expect(root.querySelector('.taiwa__feedback-line')?.textContent).toBe(S.wrong);
     expect(root.querySelector('.taiwa__tags .chip')?.getAttribute('data-tag')).toBe('word-order');
+  });
+
+  it('speak mode names a typed recognizer failure (microphone blocked) in place of "nothing heard"', async () => {
+    const stt = { ...fakeStt(null), state: signal<'denied'>('denied') };
+    installServices({ audio: fakeAudio().audio, stt });
+    mount('speak');
+    clickText(S.begin);
+    await tick();
+    clickText(S.speak);
+    await tick();
+    expect(root.querySelector('.taiwa__note')?.textContent).toBe(STT_STATE_LABEL.denied);
+    expect(root.textContent).not.toContain(S.nothingHeard);
+    expect(buttonByText(S.typeInstead)).toBeDefined();
   });
 
   it('speak mode: recognition is scored best-of-alternatives; nothing heard offers a retry or typing; no recognizer → Type mode with a notice', async () => {

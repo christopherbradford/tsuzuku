@@ -1,7 +1,16 @@
-import type { GrammarItem, KanjiItem, StoryItem, VocabItem } from './types';
+import type { ContentFile, ContentItem, ContentManifest, GrammarItem, KanjiItem, ManifestFile, StoryItem, VocabItem } from './types';
 import { ContentError, createLoader, isChunk, type ContentLoader } from './loader';
 import * as loaderModule from './loader';
-import { FIXTURE, FIXTURE_REDIRECT_FROM, G, PATHS, V, createFakeLoader, fixtureFetch, type FixtureFetchOptions } from './fixtures';
+import { FIXTURE, FIXTURE_REDIRECT_FROM, G, KANJI, PATHS, V, createFakeLoader, fixtureFetch, type Fixture, type FixtureFetchOptions } from './fixtures';
+
+/** The fixture with its manifest (and the served `manifest.json`) replaced, plus extra file bodies. */
+function withManifest(manifest: ContentManifest, files: Record<string, unknown> = {}): Fixture {
+  return { ...FIXTURE, manifest, files: { ...FIXTURE.files, ...files, [PATHS.manifest]: manifest } };
+}
+
+function kanjiFile(level: ContentFile<KanjiItem>['level'], items: readonly KanjiItem[]): ContentFile<ContentItem> {
+  return { schema: 'tsuzuku.content/1', type: 'kanji', level, writer: 'fixture-kanji', generatedAt: '2026-10-17T00:00:00Z', items: [...items] };
+}
 
 function make(opts?: FixtureFetchOptions): { loader: ContentLoader; fetch: ReturnType<typeof fixtureFetch> } {
   const fetch = fixtureFetch(FIXTURE, opts);
@@ -119,6 +128,41 @@ describe('lazy resolution', () => {
     expect(fetch.calls).toHaveLength(3);
   });
 
+  it('kanji ids without a station hint scan files in introduction order, not manifest order', async () => {
+    // Manifest lists later levels first (sorted paths put kanji/n2 before kanji/n5, as the real index does).
+    const n2 = 'kanji/n2/kanji-n2-001.json';
+    const n3 = 'kanji/n3/kanji-n3-001.json';
+    const n4 = 'kanji/n4/kanji-n4-001.json';
+    const base = FIXTURE.manifest.files.find((f) => f.path === PATHS.kanji) as ManifestFile;
+    const extra = (path: string, level: ManifestFile['level'], stations: number[]): ManifestFile => ({ ...base, path, level, count: 0, stations });
+    const manifest: ContentManifest = {
+      ...FIXTURE.manifest,
+      files: [extra(n2, 'n2', [39, 40]), extra(n3, 'n3', [25, 30]), extra(n4, 'n4', [16]), ...FIXTURE.manifest.files],
+    };
+    const f = withManifest(manifest, { [n2]: kanjiFile('n2', []), [n3]: kanjiFile('n3', []), [n4]: kanjiFile('n4', []) });
+
+    // getAsync: the N5 file (first station 4) is the first and only fetch.
+    const a = fixtureFetch(f);
+    const la = createLoader(a, './content/');
+    expect((await la.getAsync<KanjiItem>('j-食'))?.char).toBe('食');
+    expect(a.calls).toEqual([PATHS.manifest, PATHS.kanji]);
+
+    // load(): the first-pass guess is the N5 file too, so no second pass is needed.
+    const b = fixtureFetch(f);
+    const lb = createLoader(b, './content/');
+    await lb.load(['j-飲', 'j-人']);
+    expect(b.calls).toEqual([PATHS.manifest, PATHS.kanji]);
+    expect(lb.get('j-人')).toBeDefined();
+
+    // A kanji nobody holds scans n5 → n4 → n3 → n2 and stops; nothing is refetched.
+    const c = fixtureFetch(f);
+    const lc = createLoader(c, './content/');
+    expect(await lc.getAsync('j-零')).toBeUndefined();
+    expect(c.calls).toEqual([PATHS.manifest, PATHS.kanji, n4, n3, n2]);
+    expect(await lc.getAsync('j-零')).toBeUndefined();
+    expect(c.calls).toHaveLength(5);
+  });
+
   it('concurrent requests for the same file fetch it once', async () => {
     const { loader, fetch } = make();
     await Promise.all([loader.getAsync(V.飲む), loader.getAsync(V.人), loader.load([V.日, V.パン])]);
@@ -209,6 +253,82 @@ describe('stations', () => {
     expect(() => broken.loader.prefetchStation(4)).not.toThrow();
     await tick();
     expect(broken.loader.get(V.飲む)).toBeUndefined();
+  });
+});
+
+describe('Cache API mirror (the only offline store for content/**)', () => {
+  /** In-memory `caches`: one `Map<url, Response>` per cache name. */
+  function fakeCaches(): { cs: CacheStorage; stores: Map<string, Map<string, Response>> } {
+    const stores = new Map<string, Map<string, Response>>();
+    const open = (name: string): Promise<Cache> => {
+      let m = stores.get(name);
+      if (!m) {
+        m = new Map();
+        stores.set(name, m);
+      }
+      const store = m;
+      const cache = {
+        match: (req: RequestInfo | URL) => Promise.resolve(store.get(String(req))?.clone()),
+        put: (req: RequestInfo | URL, res: Response) => {
+          store.set(String(req), res);
+          return Promise.resolve();
+        },
+      };
+      return Promise.resolve(cache as unknown as Cache);
+    };
+    const cs = {
+      open,
+      keys: () => Promise.resolve([...stores.keys()]),
+      has: (name: string) => Promise.resolve(stores.has(name)),
+      delete: (name: string) => Promise.resolve(stores.delete(name)),
+      match: () => Promise.resolve(undefined),
+    };
+    return { cs: cs as unknown as CacheStorage, stores };
+  }
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('a new contentVersion yields fresh bytes: the old mirror is never consulted and is pruned', async () => {
+    const { cs, stores } = fakeCaches();
+    vi.stubGlobal('caches', cs);
+    const v1 = FIXTURE.manifest.contentVersion;
+
+    // First visit mirrors the item file under the version's cache.
+    const a = make();
+    expect((await a.loader.getAsync<KanjiItem>('j-飲'))?.meanings).toEqual(KANJI.find((k) => k.id === 'j-飲')?.meanings);
+    expect(a.fetch.calls).toEqual([PATHS.manifest, PATHS.kanji]);
+    expect([...stores.keys()]).toEqual([`tsuzuku-content-${v1}`]);
+    expect(stores.get(`tsuzuku-content-${v1}`)?.size).toBe(1);
+
+    // Same version, fresh loader (reload / offline): the item file comes from the mirror, not the network.
+    const b = make();
+    expect((await b.loader.getAsync<KanjiItem>('j-飲'))?.char).toBe('飲');
+    expect(b.fetch.calls).toEqual([PATHS.manifest]);
+
+    // A content fix ships under a new contentVersion: the loader must read the new bytes.
+    const v2 = `${v1}.fix1`;
+    const fixed = KANJI.map((k) => (k.id === 'j-飲' ? { ...k, meanings: ['drink (fixed)'] } : k));
+    const f2 = withManifest({ ...FIXTURE.manifest, contentVersion: v2 }, { [PATHS.kanji]: kanjiFile('n5', fixed) });
+    const c = fixtureFetch(f2);
+    const lc = createLoader(c, './content/');
+    expect((await lc.getAsync<KanjiItem>('j-飲'))?.meanings).toEqual(['drink (fixed)']);
+    expect(c.calls).toEqual([PATHS.manifest, PATHS.kanji]);
+    expect(lc.version.value).toBe(v2);
+    // … and the stale mirror is dropped once the new manifest is in.
+    await tick();
+    expect([...stores.keys()]).toEqual([`tsuzuku-content-${v2}`]);
+    expect(stores.get(`tsuzuku-content-${v2}`)?.size).toBe(1);
+  });
+
+  it('the manifest itself is never served from the mirror', async () => {
+    const { cs, stores } = fakeCaches();
+    vi.stubGlobal('caches', cs);
+    const a = make();
+    await a.loader.manifest();
+    await a.loader.station(4);
+    expect([...(stores.get(`tsuzuku-content-${FIXTURE.manifest.contentVersion}`)?.keys() ?? [])]).toEqual([`./content/${PATHS.station4}`]);
   });
 });
 

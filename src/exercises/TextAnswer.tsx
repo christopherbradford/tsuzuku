@@ -12,6 +12,11 @@
  *    kanji `candidates`) graded with `checkJa`: equivalence first (づ/ず,
  *    long vowels, katakana fold), then particle slip, then `nearMissKind`
  *    for Block feedback; the diff against the expected form is shown inline.
+ *    Candidates behave like an IME conversion: they are handed to the field
+ *    only while the typed kana reads as `candidateReading` (or the field
+ *    already shows one of them, so cycling back works); otherwise Space is a
+ *    plain character and no kanji is offered. Without a reading, candidates
+ *    never cycle from kana.
  *
  * `onSubmit` fires exactly once per widget life; `onAttempt` fires at the
  * first submit (before any override step) so the exercise can stamp latency.
@@ -22,8 +27,8 @@
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import type { ErrorTag } from '@/content/types';
-import { diffChars, fuzzyEn, normalizeJa } from '@/shared/jp';
-import { wantsKatakana } from '@/shared/kana-ime';
+import { diffChars, equivalentJa, fuzzyEn, normalizeJa } from '@/shared/jp';
+import { finalizeIme, wantsKatakana } from '@/shared/kana-ime';
 import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { KanaInput } from '@/shared/ui/KanaInput';
 import { checkJa, whyFor, type CheckResult } from './check';
@@ -56,6 +61,8 @@ export interface TextAnswerProps {
   katakana?: boolean;
   /** `ja`: kanji candidates Space cycles (production-forge). */
   candidates?: string[];
+  /** `ja`: the kana every candidate reads as; candidates are offered only once the field reads this way. */
+  candidateReading?: string;
   /** `ja`: kana reading of a kanji word → Good (default) or Hard. */
   kanaOnlyPolicy?: 'good' | 'hard';
   /** `ja`: `false` keeps カタカナ and ひらがな distinct (kana-forge). */
@@ -80,6 +87,20 @@ export interface TextAnswerProps {
 type Phase = 'input' | 'confirm' | 'done';
 
 const DIFF_CLASS = ['diff--same', 'diff--extra', 'diff--missing'] as const;
+
+/**
+ * The candidates the kana field may cycle for the current display `value`:
+ * all of them while the field shows one of them (cycling back) or its kana
+ * finalizes to `reading`; otherwise none, so Space stays a plain character.
+ */
+export function offeredCandidates(candidates: readonly string[] | undefined, reading: string | undefined, value: string): string[] | undefined {
+  if (!candidates || candidates.length === 0) return undefined;
+  const v = value.trim();
+  if (v.length === 0) return undefined;
+  if (candidates.includes(v)) return [...candidates];
+  if (reading && reading.trim().length > 0 && equivalentJa(finalizeIme(v), reading)) return [...candidates];
+  return undefined;
+}
 
 function Diff(p: { given: string; expected: string; ja: boolean }): JSX.Element {
   const d = diffChars(p.given, p.expected);
@@ -221,7 +242,7 @@ export function TextAnswer(p: TextAnswerProps): JSX.Element {
             onChange={change}
             onSubmit={submit}
             katakana={katakana}
-            candidates={p.candidates}
+            candidates={offeredCandidates(p.candidates, p.candidateReading, value)}
             placeholder={p.placeholder}
             autoFocus={p.autoFocus}
             disabled={locked}

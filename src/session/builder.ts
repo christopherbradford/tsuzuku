@@ -15,9 +15,31 @@
  * a resumed session and a fresh one behave the same. The sparring block is
  * sized to leave room for them.
  *
+ * A Kumite or Shugyō also carries today's Nemesis steps (dossier / duel,
+ * `nemesisBlockSteps`) as a small block ahead of the sparring, their cards held
+ * out of the review draws. Grammar cloze on a particle point becomes Particle
+ * Duel from Station 5; Form Forge / Form Chain run only on points that declare
+ * `unlocksForms`.
+ *
+ * `loadPlanContext` keeps station entry light (design 07 §6/§9): the current
+ * station is preloaded, the next prefetched on idle, and only the cards a plan
+ * can draw (the due queue to `showDue` + a reserve, rechecks, Weak Point sets,
+ * Nemesis items) have their files fetched; the Dojo (`mode: 'dojo'`) loads none
+ * of them. The new-item budget follows the belt table unless the preset is
+ * custom (`effectiveNewPerDay`), and `introducedToday` counts from the review
+ * log so the cramming cap survives the +3 / +10 graduations.
+ *
+ * `StepParams.sentence` carries ruby markup for every sentence drill that
+ * renders through `<Ruby>` (pattern-cloze, particle-duel, kanji-read,
+ * lookalike-duel, transform, judgment-call, scramble, sentence-listen, shadow);
+ * `blank` / `blanks` are offsets into `toPlain(sentence)`, and `answer` /
+ * `accept` hold plain surfaces. Production Forge keeps a plain sentence.
+ *
  * The lower-level pieces (`loadPlanContext`, `stepForCard`, `resolveParams`,
  * `makeStep`, `finalizePlan`, pickers) are exported for the boss, exam, Kage
- * and Dan builders in this folder. Everything is seeded from `store.seed()` +
+ * and Dan builders in this folder; `resolveParams` and the item helpers live
+ * in `./params`, the pickers and day counters in `./pickers`, both re-exported
+ * here. Everything is seeded from `store.seed()` +
  * `store.today()` + the mode; no clock or `Math.random`.
  *
  * Modes `gate`, `shinsa`, `kage` and `dan` have their own builders
@@ -25,87 +47,80 @@
  * rejects them with a `RangeError` naming the right function.
  */
 import {
-  DRILL_IDS,
-  coverageTargetFor,
   type Belt,
   type CardKey,
   type ComponentDef,
-  type ConjForm,
-  type ContentItem,
   type DrillId,
   type ErrorTag,
   type GrammarItem,
   type KanaItem,
   type KanjiItem,
-  type SentenceExample,
   type StationBundle,
   type StoryItem,
-  type StoryLine,
   type VocabItem,
 } from '../content/types';
-import { content as appContent, isChunk, type ContentLoader } from '../content/loader';
+import { content as appContent, type ContentLoader } from '../content/loader';
 import { toPlain } from '../content/ruby';
-import { SPEED_TIER_RATES } from '../shared/audio';
-import { MISSIONS } from '../shared/catalog';
 import { isRegistered } from '../shared/exercise-types';
-import { hashSeed, rngFor, sample, shuffle, type Rng } from '../shared/hash';
-import { cardKey as makeKey, parseCardKey, tryKindOfId } from '../shared/ids';
-import { moraCount } from '../shared/jp';
+import { hashSeed, rngFor, type Rng } from '../shared/hash';
+import { cardKey as makeKey, parseCardKey } from '../shared/ids';
 import type { BlockKind, SessionMode, SessionPlan, SessionSnapshot, Step, StepParams, StepTag } from '../shared/session-types';
 import { CardFlag, hasFlag, type CardTuple, type EpochDay, type ItemKind, type SaveMeta, type Settings } from '../shared/store-types';
 import { store } from '../store';
 import { beltOfStation } from '../store/derived';
 import {
   EXPECTED_MAX_MINUTES,
-  applicableForms,
   capFor,
   cardRetrievability,
-  clozeTiles,
-  conjugate,
   dueCards,
   exerciseFor,
-  gojuonPool,
   governor,
   interleave,
-  isConjugable,
   kaidenQuota,
-  kanaGrid,
-  kanjiLookalikes,
   kindOfCards,
   knownSet,
-  meaningChoices,
-  nextScrolls,
   orderWave,
-  perceptionJudge,
-  prodPrompt,
   queueCardFor,
-  rapidFirePool,
   recheckCards,
-  scrambleTiles,
   weakPointSet,
   type QueueCard,
   type Scroll,
 } from '../learn';
-import { MICHIKUSA_AFTER_REP, MICHIKUSA_DRILL, MODE_MINUTES, estimateStepMs, fitToTime, strandDeficitFor, templateFor, type OutputKind, type PlannedBlock, type Strand, type TemplateCtx } from './blocks';
-import { S, fill } from './engine-strings';
+import { MICHIKUSA_AFTER_REP, MICHIKUSA_DRILL, MODE_MINUTES, estimateStepMs, fitToTime, strandDeficitFor, templateFor, type OutputKind, type PlannedBlock, type TemplateCtx } from './blocks';
+import { S } from './engine-strings';
+import { duelsReady, nemesisItems, nemesisSteps } from './nemesis';
+import { PARTICLE_DUEL_FROM, dedupe, hasParticleHint, isDrillId, isGrammar, isKana, isKanji, isStory, isVocab, knownSentences, pickStories, rateFor, resolveParams } from './params';
+import { DUE_LOAD_RESERVE, accuracy7, dueQueue, easiestCards, effectiveNewPerDay, introducedToday, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
 import { scrollSteps } from './scroll';
 
-/* ────────────────────────────────────────────────────────────────────────── */
-/* Local adapters for helpers the `@/learn` barrel does not re-export          */
-/* ────────────────────────────────────────────────────────────────────────── */
-
-/** Particle Duel keys (design 04 §4; `learn/distractors.PARTICLES` is not in the barrel). */
-export const PARTICLES: readonly string[] = ['は', 'が', 'を', 'に', 'で', 'と', 'へ', 'から', 'まで', 'より', 'の'];
-
-const ROMAJI_46 = ['a', 'i', 'u', 'e', 'o', 'ka', 'ki', 'ku', 'ke', 'ko', 'sa', 'shi', 'su', 'se', 'so', 'ta', 'chi', 'tsu', 'te', 'to', 'na', 'ni', 'nu', 'ne', 'no', 'ha', 'hi', 'fu', 'he', 'ho', 'ma', 'mi', 'mu', 'me', 'mo', 'ya', 'yu', 'yo', 'ra', 'ri', 'ru', 're', 'ro', 'wa', 'wo', 'n'];
-
-const DRILL_SET: ReadonlySet<string> = new Set(DRILL_IDS);
-export function isDrillId(x: string): x is DrillId {
-  return DRILL_SET.has(x);
-}
-
-/** Speed-read cpm targets by level (design 04 §7). */
-export const SPEED_READ_CPM: Record<Belt, number> = { white: 80, yellow: 80, orange: 80, green: 150, blue: 250, purple: 250, brown: 350, black: 450 };
+// Re-exported from `./pickers` and `./params` (see the header).
+export { DUE_LOAD_RESERVE, accuracy7, dueQueue, easiestCards, effectiveNewPerDay, introducedToday, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
+export {
+  FORM_LABEL,
+  PARTICLES,
+  PARTICLE_ATOMS,
+  PARTICLE_DUEL_FROM,
+  PITCH_PATTERNS,
+  SPEED_READ_CPM,
+  isComponent,
+  isDrillId,
+  isGrammar,
+  isKana,
+  isKanji,
+  isStory,
+  isVocab,
+  itemKindOf,
+  knownSentences,
+  linesWith,
+  particleHints,
+  pickStories,
+  pitchPattern,
+  rateFor,
+  resolveParams,
+  splitBunsetsu,
+  storyCoverage,
+  type ResolveOpts,
+} from './params';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Context                                                                    */
@@ -160,65 +175,7 @@ export interface PlanOptions {
   available?: (id: DrillId) => boolean;
 }
 
-function isVocab(i: ContentItem | null | undefined): i is VocabItem {
-  return !!i && 'meanings' in i && 'pos' in i && 'kana' in i;
-}
-function isKanji(i: ContentItem | null | undefined): i is KanjiItem {
-  return !!i && 'char' in i && 'strokes' in i;
-}
-function isGrammar(i: ContentItem | null | undefined): i is GrammarItem {
-  return !!i && 'pattern' in i && 'clozeHints' in i;
-}
-function isKana(i: ContentItem | null | undefined): i is KanaItem {
-  return !!i && 'romaji' in i && 'script' in i;
-}
-function isStory(i: ContentItem | null | undefined): i is StoryItem {
-  return !!i && 'lines' in i && 'stationId' in i;
-}
-function isComponent(i: ContentItem | null | undefined): i is ComponentDef {
-  return !!i && 'char' in i && 'name' in i && !('strokes' in i);
-}
-export { isVocab, isKanji, isGrammar, isKana, isStory, isComponent };
 
-/** Item kind from an id and (when loaded) its content: set-phrase / aizuchi vocab is `chunk`. */
-export function itemKindOf(itemId: string, item?: ContentItem): ItemKind | null {
-  const k = tryKindOfId(itemId);
-  if (k === 'vocab') return item && isChunk(item) ? 'chunk' : 'vocab';
-  if (k === 'kana' || k === 'kanji' || k === 'grammar' || k === 'component') return k;
-  return null;
-}
-
-/** 7-day accuracy from the daily rows (`ok / reps`), with the rep count behind it. */
-export function accuracy7(daily: SaveMeta['daily'], today: EpochDay): { acc7: number; n: number } {
-  let ok = 0;
-  let reps = 0;
-  for (let d = today - 6; d <= today; d++) {
-    const row = daily[d];
-    if (!row) continue;
-    ok += row.ok;
-    reps += row.reps;
-  }
-  return { acc7: reps > 0 ? ok / reps : 1, n: reps };
-}
-
-/** Items introduced today, by kind (base-facet cards whose `last` is today with one rep or fewer, or state-0 cards created today). */
-export function introducedToday(today: EpochDay): { vocab: number; kanji: number; grammar: number; kana: number; component: number } {
-  const out = { vocab: 0, kanji: 0, grammar: 0, kana: 0, component: 0 };
-  const seen = new Set<string>();
-  store.cards.forEach((k, t) => {
-    const { itemId, facet } = parseCardKey(k);
-    if (seen.has(itemId)) return;
-    const kind = tryKindOfId(itemId);
-    if (!kind || !(kind in out)) return;
-    const base = kind === 'kanji' ? 'comp' : kind === 'grammar' ? 'cloze' : 'rec';
-    if (facet !== base && !(kind === 'vocab' && facet === 'prod')) return;
-    if (t[6] === today && t[3] <= 2 && (t[5] === 0 || t[5] === 1)) {
-      seen.add(itemId);
-      out[kind as keyof typeof out]++;
-    }
-  });
-  return out;
-}
 
 async function tryStation(loader: ContentLoader, n: number): Promise<StationBundle | null> {
   if (n < 1 || n > 53) return null;
@@ -245,6 +202,8 @@ export async function loadPlanContext(o: PlanOptions & { mode?: string } = {}): 
     } catch {
       /* the bundle's files failed; whatever is in memory is used */
     }
+    // The next station warms on idle (design 07 §6); the loader dedupes and swallows errors.
+    if (station < 53) loader.prefetchStation(station + 1);
   }
   const prev = station > 1 ? await tryStation(loader, station - 1) : null;
   const nextBundle = await tryStation(loader, station + 1);
@@ -256,16 +215,57 @@ export async function loadPlanContext(o: PlanOptions & { mode?: string } = {}): 
     /* no components file yet */
   }
 
-  // Items behind every due card must be in memory for params (Kaiden lane included; archived excluded).
-  const dueKeys: CardKey[] = [];
+  // Governor first: it needs only card tuples and the save, and its `showDue` bounds what has to be in memory.
+  const cap = capFor(settings.intensity, belt, settings.maxReviews);
+  let dueTotal = 0;
   store.cards.forEach((k, t) => {
-    if (t[0] <= today && t[5] !== 0 && !hasFlag(t[7], CardFlag.archived)) dueKeys.push(k);
+    void k;
+    if (t[0] <= today && t[5] !== 0 && !hasFlag(t[7], CardFlag.archived)) dueTotal++;
   });
-  const dueItems = Array.from(new Set(dueKeys.map((k) => parseCardKey(k).itemId)));
-  try {
-    await loader.load(dueItems.filter((id) => loader.get(id) === undefined));
-  } catch {
-    /* offline: cards whose content is missing are skipped by stepForCard */
+  const { acc7, n } = accuracy7(store.daily.value, today);
+  const intro = introducedToday(today);
+  const npd = effectiveNewPerDay(settings, belt);
+  const target = Math.round(npd.vocab + npd.kanji + npd.grammar);
+  const minutesToday = store.daily.value[today]?.minutes ?? 0;
+  const expected = settings.intensity === 'custom' ? EXPECTED_MAX_MINUTES.standard : EXPECTED_MAX_MINUTES[settings.intensity];
+  const gov = governor({
+    due: dueTotal,
+    cap,
+    acc7,
+    acc7n: n,
+    retention: settings.retention,
+    halved: false,
+    recoveredDays: 0,
+    newToday: intro.vocab + intro.kanji + intro.grammar,
+    target,
+    minutesToday,
+    expectedMaxMinutes: expected,
+    awayDays: progress.awayDays,
+    daysBack: 0,
+  });
+
+  // Only the cards a plan can draw need their items in memory (design 07 §6/§9: station entry ≤ 400 KB, not
+  // the whole corpus behind every due card): the due queue up to `showDue` plus a reserve, in the same order
+  // `dueQueue` uses, arcade rechecks, and the Weak Point set when a tag is in play. The Dojo needs counts only.
+  const dueItems: string[] = [];
+  if (o.mode !== 'dojo') {
+    const wanted = new Set<string>();
+    for (const c of dueCards({ cards: store.cards, today, limit: gov.showDue + DUE_LOAD_RESERVE, backlog: gov.backlog, kaidenQuota: kaidenQuota(cap) })) wanted.add(c.itemId);
+    for (const c of recheckCards(store.cards)) wanted.add(c.itemId);
+    for (const e of nemesisItems(today)) wanted.add(e.itemId);
+    const weak = store.weakPoints.value;
+    const tags = new Set<ErrorTag>((Object.keys(weak) as ErrorTag[]).filter((t) => weak[t].active));
+    if (o.tag) tags.add(o.tag);
+    if (tags.size > 0) {
+      const log = store.log.recent(5000);
+      for (const tag of tags) for (const c of weakPointSet(tag, store.cards, log, today).slice(0, 20)) wanted.add(c.itemId);
+    }
+    dueItems.push(...wanted);
+    try {
+      await loader.load(dueItems.filter((id) => loader.get(id) === undefined));
+    } catch {
+      /* offline: cards whose content is missing are skipped by stepForCard */
+    }
   }
 
   const vocabPool: VocabItem[] = [];
@@ -288,30 +288,6 @@ export async function loadPlanContext(o: PlanOptions & { mode?: string } = {}): 
   for (const id of dueItems) addItem(id);
   // Every item the learner holds a card for and whose content is already in memory (older stations' words for pools and the sentence of the day).
   store.cards.forEach((k) => addItem(parseCardKey(k).itemId));
-
-  const cap = capFor(settings.intensity, belt, settings.maxReviews);
-  const dueTotal = dueKeys.length;
-  const { acc7, n } = accuracy7(store.daily.value, today);
-  const intro = introducedToday(today);
-  const npd = settings.newPerDay;
-  const target = Math.round(npd.vocab + npd.kanji + npd.grammar);
-  const minutesToday = store.daily.value[today]?.minutes ?? 0;
-  const expected = settings.intensity === 'custom' ? EXPECTED_MAX_MINUTES.standard : EXPECTED_MAX_MINUTES[settings.intensity];
-  const gov = governor({
-    due: dueTotal,
-    cap,
-    acc7,
-    acc7n: n,
-    retention: settings.retention,
-    halved: false,
-    recoveredDays: 0,
-    newToday: intro.vocab + intro.kanji + intro.grammar,
-    target,
-    minutesToday,
-    expectedMaxMinutes: expected,
-    awayDays: progress.awayDays,
-    daysBack: 0,
-  });
 
   const planKey = `${o.mode ?? 'plan'}-${today}-${hashSeed(store.seed(), today, o.mode ?? 'plan', o.seed ?? 0, station).toString(16)}`;
   return {
@@ -431,7 +407,15 @@ export function stepForCard(
 ): Step | null {
   const item = ctx.loader.get(qc.itemId);
   if (!item) return null;
-  const wantedRaw = o.exercise ?? exerciseFor(qc, ctx.station, ctx.settings);
+  let wantedRaw: string = o.exercise ?? exerciseFor(qc, ctx.station, ctx.settings);
+  // Form Forge / Form Chain drill only the forms a point declares (design 04 §4 "unlocksForms"); a point
+  // without them keeps its cloze / transform shape instead of cycling every form of a random verb.
+  if ((wantedRaw === 'form-forge' || wantedRaw === 'form-chain') && !(isGrammar(item) && item.unlocksForms && item.unlocksForms.length > 0)) {
+    wantedRaw = ctx.station >= 16 ? 'transform' : 'pattern-cloze';
+  }
+  // Particle Duel: grammar cloze on a particle point from Station 5, once the two multiple-choice exposures are past (design 04 §4).
+  if (wantedRaw === 'pattern-cloze' && o.exercise === undefined && qc.facet === 'cloze' && ctx.station >= PARTICLE_DUEL_FROM && qc.exposures >= 2 && hasParticleHint(item)) wantedRaw = 'particle-duel';
+  if (wantedRaw === 'particle-duel' && !hasParticleHint(item)) wantedRaw = exerciseFor(qc, ctx.station, ctx.settings);
   if (!isDrillId(wantedRaw)) return null;
   const exercise = pickDrill(ctx, wantedRaw);
   if (!exercise) return null;
@@ -463,507 +447,9 @@ export function freshQueueCard(itemId: string, kind: ItemKind, facet: QueueCard[
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* Params                                                                     */
-/* ────────────────────────────────────────────────────────────────────────── */
-
-export const FORM_LABEL: Record<ConjForm, string> = {
-  masu: 'polite (ます)',
-  masen: 'polite negative (ません)',
-  mashita: 'polite past (ました)',
-  'masen-deshita': 'polite past negative (ませんでした)',
-  masho: 'polite volitional (ましょう)',
-  te: 'te-form',
-  nai: 'plain negative (ない)',
-  ta: 'plain past (た)',
-  nakatta: 'plain past negative (なかった)',
-  potential: 'potential',
-  volitional: 'volitional',
-  passive: 'passive',
-  causative: 'causative',
-  'causative-passive': 'causative-passive',
-  imperative: 'imperative',
-  prohibitive: 'prohibitive (な)',
-  ba: 'conditional (ば)',
-  tara: 'conditional (たら)',
-  tai: 'want to (たい)',
-  'te-iru': 'progressive (ている)',
-  'adj-neg': 'negative',
-  'adj-past': 'past',
-  'adj-past-neg': 'past negative',
-  'adj-te': 'te-form',
-  'adj-adv': 'adverbial',
-  'adj-ba': 'conditional (ば)',
-};
-
-function dedupe(xs: readonly (string | undefined)[]): string[] {
-  const out: string[] = [];
-  for (const x of xs) if (x && !out.includes(x)) out.push(x);
-  return out;
-}
-
-function exampleAt(examples: readonly SentenceExample[], rep: number): SentenceExample | undefined {
-  if (examples.length === 0) return undefined;
-  return examples[((rep % examples.length) + examples.length) % examples.length];
-}
-
-/** Pitch pattern name from the nucleus and the mora count (design 04 §2). */
-export function pitchPattern(pitch: number, kana: string): string {
-  const n = moraCount(kana);
-  if (pitch === 0) return '平板';
-  if (pitch === 1) return '頭高';
-  if (pitch >= n) return '尾高';
-  return '中高';
-}
-export const PITCH_PATTERNS = ['平板', '頭高', '中高', '尾高'] as const;
-
-/** Rate preset for the learner's speed tier (design 04 §5). */
-export function rateFor(ctx: PlanContext): number {
-  return SPEED_TIER_RATES[ctx.settings.speedTier];
-}
-
-/** Story lines (station ≤ current) whose `tokenIds` name `itemId`. */
-export function linesWith(ctx: PlanContext, itemId: string): { story: StoryItem; index: number }[] {
-  const out: { story: StoryItem; index: number }[] = [];
-  for (const story of ctx.stories) {
-    story.lines.forEach((line, index) => {
-      if (line.tokenIds?.includes(itemId)) out.push({ story, index });
-    });
-  }
-  return out;
-}
-
-/** Fraction of resolved tokens the learner knows (`tokenIds` non-null entries). */
-export function storyCoverage(story: StoryItem, known: ReadonlySet<string>): number {
-  let total = 0;
-  let hit = 0;
-  for (const line of story.lines) {
-    for (const id of line.tokenIds ?? []) {
-      if (id === null) continue;
-      total++;
-      if (known.has(id)) hit++;
-    }
-  }
-  return total === 0 ? 1 : hit / total;
-}
-
-/** Stories of the loaded bundles that meet the live coverage target, best coverage first. */
-export function pickStories(ctx: PlanContext, o: { kind?: StoryItem['kind']; station?: number } = {}): StoryItem[] {
-  const st = o.station ?? ctx.station;
-  return ctx.stories
-    .filter((s) => (o.kind ? s.kind === o.kind : true))
-    .map((s) => ({ s, c: storyCoverage(s, ctx.known) }))
-    .filter(({ s, c }) => c >= coverageTargetFor(st, s.bridge === true))
-    .sort((a, b) => b.c - a.c || (a.s.id < b.s.id ? -1 : 1))
-    .map(({ s }) => s);
-}
-
-/** Sentences whose resolved tokens are all known (shadow warm-up), as story lines or vocab examples. */
-export function knownSentences(ctx: PlanContext, n: number): { sentence: string; kana: string; en: string; storyId?: string; lineIndex?: number }[] {
-  const out: { sentence: string; kana: string; en: string; storyId?: string; lineIndex?: number }[] = [];
-  for (const story of ctx.stories) {
-    story.lines.forEach((line, lineIndex) => {
-      const ids = (line.tokenIds ?? []).filter((x): x is string => x !== null);
-      if (ids.length === 0 || !ids.every((id) => ctx.known.has(id))) return;
-      out.push({ sentence: toPlain(line.ja), kana: line.kana, en: line.en, storyId: story.id, lineIndex });
-    });
-  }
-  if (out.length < n) {
-    for (const v of ctx.vocabPool) {
-      if (!ctx.known.has(v.id)) continue;
-      const ex = v.examples[0];
-      if (ex) out.push({ sentence: toPlain(ex.ja), kana: ex.kana, en: ex.en });
-    }
-  }
-  return sample(ctx.rng, out, n);
-}
-
-function splitBunsetsu(plain: string): string[] {
-  const particles = PARTICLES.slice().sort((a, b) => b.length - a.length);
-  const tiles: string[] = [];
-  let cur = '';
-  let i = 0;
-  while (i < plain.length) {
-    const ch = plain[i] as string;
-    if ('、。！？'.includes(ch)) {
-      if (cur) tiles.push(cur);
-      tiles.push(ch);
-      cur = '';
-      i++;
-      continue;
-    }
-    const p = particles.find((x) => plain.startsWith(x, i) && cur.length > 0);
-    if (p) {
-      tiles.push(cur + p);
-      cur = '';
-      i += p.length;
-      continue;
-    }
-    cur += ch;
-    i++;
-  }
-  if (cur) tiles.push(cur);
-  return tiles;
-}
-
-export interface ResolveOpts {
-  qc?: QueueCard;
-  /** Rotation index (prompt rotation). */
-  rep?: number;
-  storyId?: string;
-  lineIndex?: number;
-}
-
-/**
- * Resolved `StepParams` for a drill over an item (design 04 interaction specs).
- * Deterministic: every draw goes through `ctx.rng`.
- */
-export function resolveParams(ctx: PlanContext, exercise: DrillId, item: ContentItem | null, o: ResolveOpts = {}): StepParams {
-  const rep = o.rep ?? 0;
-  const rng = ctx.rng;
-  const p: StepParams = {};
-  switch (exercise) {
-    case 'kana-flash': {
-      if (!isKana(item)) break;
-      p.answer = item.romaji;
-      p.accept = dedupe([item.romaji]);
-      if ((o.qc?.exposures ?? 0) < 2) {
-        const others = shuffle(rng, ctx.kanaPool.filter((k) => k.id !== item.id && k.romaji !== item.romaji).map((k) => k.romaji));
-        const pool = others.length >= 3 ? others : others.concat(shuffle(rng, ROMAJI_46.filter((r) => r !== item.romaji && !others.includes(r))));
-        p.choices = shuffle(rng, [item.romaji, ...dedupe(pool).slice(0, 3)]);
-      }
-      break;
-    }
-    case 'kana-ear': {
-      if (!isKana(item)) break;
-      p.answer = item.kana;
-      p.choices = kanaGrid(item, ctx.kanaPool, rng);
-      break;
-    }
-    case 'kana-forge': {
-      if (!isKana(item)) break;
-      p.answer = item.kana;
-      p.accept = [item.kana];
-      p.promptEn = item.romaji;
-      break;
-    }
-    case 'meaning-guard':
-    case 'audio-flash': {
-      if (!isVocab(item)) break;
-      p.answer = item.meanings[0] ?? '';
-      p.accept = dedupe(item.meanings);
-      if (exercise === 'meaning-guard' || (o.qc?.exposures ?? 0) < 2) p.choices = meaningChoices(item, ctx.vocabPool, rng);
-      break;
-    }
-    case 'meaning-recall':
-    case 'meaning-judge': {
-      if (!isVocab(item)) break;
-      p.answer = item.meanings[0] ?? '';
-      p.accept = dedupe(item.meanings);
-      if (item.definitionJa) p.sentence = toPlain(item.definitionJa.ja);
-      break;
-    }
-    case 'production-forge': {
-      if (!isVocab(item)) break;
-      const prompt = prodPrompt(item, ctx.stories, rep);
-      p.sentence = prompt.sentence;
-      p.blank = prompt.blank;
-      p.promptEn = `${item.meanings[0] ?? ''} — ${prompt.en}`;
-      p.answer = item.word;
-      p.accept = dedupe([item.word, item.kana, ...(item.altForms ?? [])]);
-      const homophones = ctx.vocabPool.filter((v) => v.id !== item.id && v.kana === item.kana && v.word !== item.word).map((v) => v.word);
-      p.candidates = dedupe([item.word, ...homophones]);
-      const kanjiRead7 = (item.kanjiIds ?? []).some((kid) => {
-        const c = store.cards.get(makeKey(kid, 'read'));
-        return !!c && c[1] >= 7;
-      });
-      p.kanaOnlyPolicy = ctx.station >= 16 && kanjiRead7 ? 'hard' : 'good';
-      break;
-    }
-    case 'pitch-ear': {
-      if (!isVocab(item) || item.pitch === undefined) break;
-      p.answer = pitchPattern(item.pitch, item.kana);
-      p.choices = [...PITCH_PATTERNS];
-      break;
-    }
-    case 'component-flash': {
-      if (!isComponent(item)) break;
-      p.answer = item.name;
-      p.accept = [item.name];
-      if ((o.qc?.exposures ?? 0) < 2) {
-        const others = shuffle(rng, Array.from(ctx.components.values()).filter((c) => c.id !== item.id).map((c) => c.name));
-        p.choices = shuffle(rng, [item.name, ...dedupe(others).slice(0, 3)]);
-      }
-      break;
-    }
-    case 'component-assembly': {
-      if (!isKanji(item)) break;
-      const names = item.components;
-      const chars = names.map((n) => Array.from(ctx.components.values()).find((c) => c.name === n)?.char ?? n);
-      const fillers = shuffle(rng, Array.from(ctx.components.values()).filter((c) => !names.includes(c.name)).map((c) => c.char));
-      p.tiles = shuffle(rng, dedupe([...chars, ...fillers]).slice(0, Math.max(8, chars.length)));
-      p.answers = chars;
-      p.answer = item.char;
-      p.accept = [item.char];
-      p.layout = names.length <= 1 ? 'enc' : hashSeed(ctx.seed, item.id) % 2 === 0 ? 'lr' : 'tb';
-      p.promptEn = `${item.meanings[0] ?? ''} · ${item.on[0] ?? item.kun[0] ?? ''}`;
-      break;
-    }
-    case 'kanji-read':
-    case 'lookalike-duel': {
-      if (!isKanji(item)) break;
-      const ex = item.examples[((rep % item.examples.length) + item.examples.length) % item.examples.length] ?? item.examples[0];
-      const word = ex?.word ?? item.char;
-      let sentence = word;
-      let en = ex?.en ?? '';
-      let kana = ex?.kana ?? '';
-      const vocab = ctx.vocabPool.find((v) => v.word === word);
-      const line = vocab ? linesWith(ctx, vocab.id)[0] : undefined;
-      const sx = line ? line.story.lines[line.index] : vocab?.examples[0];
-      if (sx) {
-        const plain = toPlain(sx.ja);
-        if (plain.includes(word)) {
-          sentence = plain;
-          en = sx.en;
-        }
-      }
-      const start = sentence.indexOf(exercise === 'kanji-read' ? word : item.char);
-      p.sentence = sentence;
-      p.blank = start >= 0 ? [start, start + (exercise === 'kanji-read' ? word.length : item.char.length)] : [0, 0];
-      p.promptEn = en;
-      if (exercise === 'kanji-read') {
-        p.answer = kana;
-        p.accept = dedupe([kana]);
-      } else {
-        p.answer = item.char;
-        p.choices = kanjiLookalikes(item, ctx.kanjiPool, rng);
-        p.accept = [item.char];
-      }
-      break;
-    }
-    case 'pattern-cloze': {
-      if (!isGrammar(item)) break;
-      const ex = exampleAt(item.examples, rep);
-      const sentence = ex ? toPlain(ex.ja) : item.pattern;
-      const hint = item.clozeHints.find((h) => sentence.includes(h)) ?? item.clozeHints[0] ?? item.pattern;
-      const start = sentence.indexOf(hint);
-      p.sentence = sentence;
-      p.blank = start >= 0 ? [start, start + hint.length] : [0, 0];
-      p.answer = hint;
-      p.accept = dedupe([hint]);
-      p.promptEn = ex?.en ?? item.meaning;
-      if ((o.qc?.exposures ?? 0) < 2) p.tiles = clozeTiles(item, ctx.grammarPool, rng, hint);
-      break;
-    }
-    case 'particle-duel': {
-      if (!isGrammar(item)) break;
-      const ex = exampleAt(item.examples, rep);
-      const sentence = ex ? toPlain(ex.ja) : item.pattern;
-      const blanks: [number, number][] = [];
-      const answers: string[] = [];
-      const sorted = PARTICLES.slice().sort((a, b) => b.length - a.length);
-      for (let i = 0; i < sentence.length && blanks.length < 3; i++) {
-        const prt = sorted.find((x) => sentence.startsWith(x, i));
-        if (prt && i > 0) {
-          blanks.push([i, i + prt.length]);
-          answers.push(prt);
-          i += prt.length - 1;
-        }
-      }
-      p.sentence = sentence;
-      p.blanks = blanks;
-      p.answers = answers;
-      p.answer = answers[0] ?? '';
-      p.choices = [...PARTICLES];
-      p.promptEn = ex?.en ?? item.meaning;
-      break;
-    }
-    case 'form-forge':
-    case 'form-chain': {
-      if (!isGrammar(item)) break;
-      const verbs = ctx.vocabPool.filter((v) => isConjugable(v.pos) && v.pos !== 'adj-na' && v.pos !== 'adj-i');
-      const pool = verbs.length > 0 ? verbs : ctx.vocabPool.filter((v) => isConjugable(v.pos));
-      const verb = pool[((rep % Math.max(1, pool.length)) + pool.length) % Math.max(1, pool.length)];
-      if (!verb || !isConjugable(verb.pos)) break;
-      const forms = (item.unlocksForms && item.unlocksForms.length > 0 ? item.unlocksForms : applicableForms(verb.pos)).filter((f) => conjugate(verb.word, verb.kana, verb.pos as never, f) !== null);
-      if (forms.length === 0) break;
-      p.sentence = verb.word;
-      p.promptEn = verb.meanings[0] ?? '';
-      if (exercise === 'form-forge') {
-        const form = forms[((rep % forms.length) + forms.length) % forms.length] as ConjForm;
-        const c = conjugate(verb.word, verb.kana, verb.pos as never, form);
-        if (!c) break;
-        p.targetForm = form;
-        p.answer = c.answer;
-        p.accept = dedupe([c.answer, c.answerKana, ...c.alt]);
-        p.promptEn = fill(S.formForgePrompt, { word: verb.meanings[0] ?? verb.word, form: FORM_LABEL[form] });
-      } else {
-        const chain = forms.slice(0, 5);
-        p.forms = chain;
-        p.answers = chain.map((f) => conjugate(verb.word, verb.kana, verb.pos as never, f)?.answer ?? '');
-        p.accept = dedupe(chain.flatMap((f) => {
-          const c = conjugate(verb.word, verb.kana, verb.pos as never, f);
-          return c ? [c.answer, c.answerKana, ...c.alt] : [];
-        }));
-      }
-      break;
-    }
-    case 'transform': {
-      if (!isGrammar(item)) break;
-      const target = exampleAt(item.examples, rep);
-      const source = exampleAt(item.examples, rep + 1) ?? target;
-      if (!target) break;
-      p.sentence = source ? toPlain(source.ja) : '';
-      p.answer = toPlain(target.ja);
-      p.accept = dedupe([toPlain(target.ja), target.kana]);
-      p.promptEn = fill(S.transformPrompt, { pattern: item.pattern, en: target.en });
-      break;
-    }
-    case 'scramble': {
-      if (!isGrammar(item)) break;
-      const line = linesWith(ctx, item.id)[rep % Math.max(1, linesWith(ctx, item.id).length)];
-      const ex = line ? line.story.lines[line.index] : exampleAt(item.examples, rep);
-      if (!ex) break;
-      const plain = toPlain(ex.ja);
-      const tokens = line && (ex as StoryLine).tokens.length > 1 ? (ex as StoryLine).tokens : splitBunsetsu(plain);
-      p.tiles = scrambleTiles(ex, tokens, rng);
-      p.answer = plain;
-      p.accept = [plain, ex.kana];
-      p.sentence = plain;
-      p.promptEn = ex.en;
-      break;
-    }
-    case 'judgment-call': {
-      if (!isGrammar(item)) break;
-      const mistakes = item.mistakes.map((m) => /×\s*(.+?)\s*→\s*○\s*(.+?)\s*(?:\((.*)\))?\s*$/.exec(m)).filter((m): m is RegExpExecArray => m !== null);
-      const useWrong = mistakes.length > 0 && rng() < 0.5;
-      if (useWrong) {
-        const m = mistakes[Math.floor(rng() * mistakes.length)] as RegExpExecArray;
-        p.sentence = (m[1] ?? '').trim();
-        p.answer = '×';
-        p.accept = [(m[2] ?? '').trim()];
-        p.promptEn = (m[3] ?? '').trim() || item.meaning;
-      } else {
-        const ex = exampleAt(item.examples, rep);
-        p.sentence = ex ? toPlain(ex.ja) : item.pattern;
-        p.answer = '○';
-        p.accept = ['○'];
-        p.promptEn = ex?.en ?? item.meaning;
-      }
-      p.choices = ['○', '×'];
-      break;
-    }
-    case 'sentence-listen':
-    case 'shadow': {
-      const sx = o.storyId !== undefined && o.lineIndex !== undefined ? ctx.loader.get<StoryItem>(o.storyId)?.lines[o.lineIndex] : undefined;
-      const ex = sx ?? (isVocab(item) || isGrammar(item) ? exampleAt(item.examples, rep) : undefined);
-      if (ex) {
-        p.sentence = toPlain(ex.ja);
-        p.answer = ex.kana;
-        p.accept = dedupe([toPlain(ex.ja), ex.kana]);
-        p.promptEn = ex.en;
-      } else if (isVocab(item)) {
-        p.sentence = item.word;
-        p.answer = item.kana;
-        p.accept = dedupe([item.word, item.kana]);
-        p.promptEn = item.meanings[0] ?? '';
-      }
-      if (o.storyId !== undefined) p.storyId = o.storyId;
-      if (o.lineIndex !== undefined) p.lineIndex = o.lineIndex;
-      p.rate = rateFor(ctx);
-      break;
-    }
-    case 'minimal-pair': {
-      if (!isVocab(item)) break;
-      const pair = perceptionJudge(item, ctx.vocabPool).minimalPair;
-      p.answer = item.kana;
-      p.choices = shuffle(rng, [pair[0], pair[1]]);
-      p.rate = rateFor(ctx);
-      break;
-    }
-    case 'listening-set':
-    case 'story-read':
-    case 'speed-read':
-    case 'role-play': {
-      if (o.storyId !== undefined) p.storyId = o.storyId;
-      else if (isStory(item)) p.storyId = item.id;
-      if (exercise === 'speed-read') p.rate = SPEED_READ_CPM[ctx.belt];
-      else p.rate = rateFor(ctx);
-      if (exercise === 'role-play') {
-        p.mode = ctx.station < 10 ? 'choose' : ctx.station < 16 ? 'type' : ctx.settings.speaking === 'self' || ctx.settings.speaking === 'off' ? 'type' : 'speak';
-        const story = p.storyId ? ctx.loader.get<StoryItem>(p.storyId) : undefined;
-        if (story) p.registerTarget = story.register;
-      }
-      break;
-    }
-    case 'say-three-ways': {
-      const ex = isVocab(item) || isGrammar(item) ? exampleAt(item.examples, rep) : undefined;
-      if (ex) {
-        p.sentence = toPlain(ex.ja);
-        p.promptEn = fill(S.threeWaysPrompt, { en: ex.en });
-      }
-      p.mode = ctx.settings.speaking === 'self' || ctx.settings.speaking === 'off' ? 'type' : 'speak';
-      break;
-    }
-    case 'monologue': {
-      const topics = S.topics;
-      const topic = topics[hashSeed(ctx.seed, ctx.today, 'monologue') % topics.length] as string;
-      const long = ctx.belt === 'brown' || ctx.belt === 'black';
-      p.seconds = long ? 120 : 60;
-      p.promptEn = fill(long ? S.monologuePromptLong : S.monologuePrompt, { topic });
-      if (ctx.station >= 37 && o.storyId) {
-        p.mode = 'reduce-expand';
-        p.storyId = o.storyId;
-        p.promptEn = fill(S.reduceExpandPrompt, { n: 60 });
-      }
-      break;
-    }
-    case 'writing-dojo': {
-      const patterns = ctx.grammarPool.filter((g) => ctx.known.has(g.id)).slice(-3);
-      p.patternIds = (patterns.length > 0 ? patterns : ctx.grammarPool.slice(0, 2)).map((g) => g.id);
-      const n = ctx.belt === 'green' ? 3 : ctx.belt === 'blue' || ctx.belt === 'purple' ? 6 : ctx.belt === 'brown' ? 9 : ctx.belt === 'black' ? 12 : 3;
-      p.seconds = n * 60;
-      const topic = S.topics[hashSeed(ctx.seed, ctx.today, 'writing') % S.topics.length] as string;
-      p.promptEn = fill(S.writingPrompt, { n, topic });
-      break;
-    }
-    case 'rapid-fire': {
-      p.pool = rapidFirePool(store.cards, ctx.today).map((c) => c.cardKey);
-      p.seconds = 60;
-      break;
-    }
-    case 'gojuon-fighter': {
-      p.pool = gojuonPool(store.cards, ctx.today).map((c) => c.cardKey);
-      break;
-    }
-    case 'field-mission': {
-      const m = MISSIONS.filter((x) => x.fromStation <= ctx.station).slice(-1)[0] ?? MISSIONS[0];
-      if (m) p.missionId = m.id;
-      break;
-    }
-    case 'nemesis-duel':
-    case 'kanji-write':
-      break;
-  }
-  return p;
-}
-
-/* ────────────────────────────────────────────────────────────────────────── */
 /* Pickers                                                                    */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-/** One Michikusa for today: `hash(seed, day)` over the un-collected pool of stations ≤ current + 1; a collected one (`isNew: false`) when exhausted. */
-export function michikusaFor(ctx: PlanContext): { id: string; isNew: boolean } | null {
-  const pool: string[] = [];
-  for (const b of ctx.bundles) pool.push(...b.michikusaIds);
-  if (ctx.nextBundle) pool.push(...ctx.nextBundle.michikusaIds);
-  const uniq = Array.from(new Set(pool)).sort();
-  if (uniq.length === 0) return null;
-  const collected = new Set(store.collections.value.michikusa);
-  const fresh = uniq.filter((id) => !collected.has(id));
-  const h = hashSeed(ctx.seed, ctx.today, 'michikusa');
-  if (fresh.length > 0) return { id: fresh[h % fresh.length] as string, isNew: true };
-  return { id: uniq[h % uniq.length] as string, isNew: false };
-}
 
 export function michikusaStep(ctx: PlanContext): Step | null {
   const m = michikusaFor(ctx);
@@ -971,50 +457,6 @@ export function michikusaStep(ctx: PlanContext): Step | null {
   return makeStep(ctx, { block: 'michikusa', exercise: MICHIKUSA_DRILL, itemId: m.id, cardKey: null, params: { michikusaId: m.id }, isNew: m.isNew, estMs: 10_000 });
 }
 
-/** Due cards for today in Kata order, `limit` at most, honoring backlog mode and the Kaiden lane. */
-export function dueQueue(ctx: PlanContext, limit: number, exclude: ReadonlySet<CardKey> = new Set()): QueueCard[] {
-  const all = dueCards({ cards: store.cards, today: ctx.today, limit: limit + exclude.size, backlog: ctx.backlog, kaidenQuota: kaidenQuota(ctx.cap) });
-  return all.filter((c) => !exclude.has(c.cardKey)).slice(0, Math.max(0, limit));
-}
-
-/** Highest-R review-state cards (not due), for cooldowns when nothing due remains. */
-export function easiestCards(ctx: PlanContext, n: number, exclude: ReadonlySet<CardKey>): QueueCard[] {
-  const out: QueueCard[] = [];
-  store.cards.forEach((k, t) => {
-    if (exclude.has(k) || t[5] === 0 || hasFlag(t[7], CardFlag.archived)) return;
-    const qc = queueCardFor(store.cards, k, ctx.today);
-    if (qc) out.push(qc);
-  });
-  return out.sort((a, b) => b.r - a.r || (a.cardKey < b.cardKey ? -1 : 1)).slice(0, n);
-}
-
-/** Cards the learner most likely still knows (Welcome Back set: highest R, review state). */
-export function welcomeSet(ctx: PlanContext, n: number): QueueCard[] {
-  return easiestCards(ctx, n, new Set());
-}
-
-/** Scrolls for today (captured words, kana, components, vocab, kanji, grammar), limited to `max`. */
-export function scrollsForToday(ctx: PlanContext, max: number): Scroll[] {
-  if (!ctx.bundle || max <= 0) return [];
-  const intro = introducedToday(ctx.today);
-  const npd = ctx.settings.newPerDay;
-  const kanaPerDay = ctx.belt === 'white' ? 20 : 0;
-  const scrolls = nextScrolls({
-    bundle: ctx.bundle,
-    cards: store.cards,
-    captured: store.captured.value,
-    newPerDay: { vocab: Math.max(npd.vocab, 1), kanji: Math.max(npd.kanji, ctx.bundle.kanjiIds.length > 0 ? 1 : 0), grammar: Math.max(npd.grammar, ctx.bundle.grammarIds.length > 0 ? 1 : 0) },
-    introducedToday: { vocab: intro.vocab, kanji: intro.kanji, grammar: intro.grammar },
-    belt: beltOfStation(ctx.station),
-    components: ctx.components,
-    get: (id) => ctx.loader.get(id),
-    today: ctx.today,
-    kanaPerDay,
-    introducedKanaToday: intro.kana,
-    introducedComponentsToday: intro.component,
-  });
-  return scrolls.slice(0, max);
-}
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Assembly                                                                   */
@@ -1105,7 +547,7 @@ export function outputBlockSteps(ctx: PlanContext, kind: OutputKind | undefined,
       if (ex !== 'shadow') return out;
       for (const s of knownSentences(ctx, count)) {
         const vocabId = s.storyId ? ctx.loader.get<StoryItem>(s.storyId)?.lines[s.lineIndex ?? 0]?.tokenIds?.find((x): x is string => x !== null && x.startsWith('v-')) : undefined;
-        const params = s.storyId !== undefined ? resolveParams(ctx, ex, null, { storyId: s.storyId, lineIndex: s.lineIndex }) : { sentence: s.sentence, answer: s.kana, accept: [s.sentence, s.kana], promptEn: s.en, rate: rateFor(ctx) };
+        const params = s.storyId !== undefined ? resolveParams(ctx, ex, null, { storyId: s.storyId, lineIndex: s.lineIndex }) : { sentence: s.sentence, answer: s.kana, accept: dedupe([toPlain(s.sentence), s.kana]), promptEn: s.en, rate: rateFor(ctx) };
         out.push(makeStep(ctx, { block: 'output', exercise: ex, itemId: vocabId ?? null, cardKey: null, params }));
       }
       return out;
@@ -1173,21 +615,6 @@ function recheckSteps(ctx: PlanContext, used: Set<CardKey>, max: number): Step[]
   return out;
 }
 
-/** Strand minutes trained this week, from the ledger (in-app rows: kind listen/watch → input, speak → output, read → input) and the daily rows (form). */
-export function weekStrandMinutes(today: EpochDay): Record<Strand, number> {
-  const from = today - 6;
-  const out: Record<Strand, number> = { form: 0, input: 0, output: 0 };
-  for (const e of store.ledger.value.entries) {
-    if (e[0] < from || e[0] > today) continue;
-    if (e[2] === 3) out.output += e[1];
-    else out.input += e[1];
-  }
-  for (let d = from; d <= today; d++) {
-    const row = store.daily.value[d];
-    if (row) out.form += Math.max(0, row.minutes - row.input);
-  }
-  return out;
-}
 
 /** The context's template inputs. */
 export function templateCtx(ctx: PlanContext, o: { tag?: ErrorTag; kageDue?: boolean } = {}): TemplateCtx {
@@ -1213,6 +640,19 @@ export function fitBudgetMinutes(mode: SessionMode): number {
   return MODE_MINUTES[mode] + slack;
 }
 
+/**
+ * Today's Nemesis steps (design 04 §9): the day-0 dossier of every newly flagged
+ * item and one duel per duel-ready item, with the builder's full params. They
+ * ride inside a Kumite or larger as a small block ahead of the sparring.
+ */
+export function nemesisBlockSteps(ctx: PlanContext): Step[] {
+  if (pickDrill(ctx, 'nemesis-duel') !== 'nemesis-duel') return [];
+  const entries = [...nemesisItems(ctx.today).filter((e) => e.phase === 'dossier'), ...duelsReady(ctx.today)];
+  const out: Step[] = [];
+  for (const e of entries) out.push(...nemesisSteps(e.itemId, ctx.today, { loader: ctx.loader, resolve: (d, i, qc) => resolveParams(ctx, d, i, { qc, rep: ctx.today }) }));
+  return out;
+}
+
 /** `buildPlan` for the training modes; see the module header for the boss / exam / Kage / Dan builders. */
 export async function buildPlan(mode: SessionMode, o: PlanOptions = {}): Promise<SessionPlan> {
   if (mode === 'gate' || mode === 'shinsa' || mode === 'kage' || mode === 'dan') {
@@ -1225,6 +665,10 @@ export async function buildPlan(mode: SessionMode, o: PlanOptions = {}): Promise
   const blocks: (PlannedBlock & { steps: Step[] })[] = [];
   const meta: PlanMeta = { dueTotal: ctx.dueTotal, dueTaken: 0, backlog: ctx.backlog, newCount: 0, scrollIds: [] };
   let dueBudget = ctx.showDue;
+
+  // Nemesis dossier / duel steps come first so their cards are held out of every review draw: the duel is the item's rep of the day.
+  const nemesis = mode === 'kumite' || mode === 'shugyo' ? nemesisBlockSteps(ctx) : [];
+  for (const s of nemesis) if (s.cardKey) used.add(s.cardKey);
 
   // Sparring wants ≥ 2 listen reps where available (design 03 §2.2): hold them back from the warm-up.
   const sparringSpec = template.find((t) => t.kind === 'sparring')?.spec;
@@ -1243,6 +687,10 @@ export async function buildPlan(mode: SessionMode, o: PlanOptions = {}): Promise
   for (const t of template) {
     const spec = t.spec;
     let steps: Step[] = [];
+    if (t.kind === 'sparring' && nemesis.length > 0) {
+      const minutes = Math.round((nemesis.reduce((a, s) => a + s.estMs, 0) / 60_000) * 10) / 10;
+      blocks.push({ kind: 'weak', label: S.blockNemesis, minutes, spec: { kind: 'weak', minutes, count: nemesis.length }, stepIds: nemesis.map((s) => s.id), steps: nemesis });
+    }
     switch (t.kind) {
       case 'reviews': {
         if (mode === 'welcome') {

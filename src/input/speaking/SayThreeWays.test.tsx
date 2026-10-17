@@ -1,7 +1,9 @@
+import { signal } from '@preact/signals';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { FIXTURE, G } from '@/content/fixtures';
 import type { GrammarItem } from '@/content/types';
+import { STT_STATE_LABEL } from '@/audio';
 import { installServices, nullStt, resetServices, type SttService } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { AttemptResult, Step } from '@/shared/session-types';
@@ -188,6 +190,15 @@ describe('<SayThreeWays>', () => {
     expect(onResult.mock.calls[0]![0].correct).toBe(true);
     expect(cap.events.filter(([n]) => n === 'output:done')[0]![1]).toMatchObject({ kind: 'three-ways', registersCorrect: 3, path: 'recognition' });
     cap.stop();
+  });
+
+  it('speak mode names a typed recognizer failure (no network) instead of "nothing heard"', async () => {
+    const stt = { available: true, recognize: () => Promise.resolve(null), abort: () => undefined, state: signal<'network'>('network') };
+    await setup({ stt, store: { save: { settings: { speaking: 'recognition' } } } });
+    await mount(step({ params: { sentence: 'パンを食べます。', promptEn: 'I eat bread.', mode: 'speak' } }));
+    await clickAsync('[data-action="speak-casual"]');
+    expect(root.querySelector('.speak__status')?.textContent).toBe(STT_STATE_LABEL.network);
+    expect(root.textContent).not.toContain(S.shadowNoSpeech);
   });
 
   it('speak mode falls back to typing when recognition is not opted in', async () => {

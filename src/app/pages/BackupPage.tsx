@@ -13,7 +13,8 @@ import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
 import { href, type Route } from '@/shared/routes';
 import { epochDay, isoDate } from '@/shared/time';
-import { CEILING_BYTES, WARN_BYTES, applyImport, exportSave, previewImportBlob, store, type ImportPreview } from '@/store';
+import { CEILING_BYTES, applyImport, exportSave, previewImportBlob, store, type ImportPreview } from '@/store';
+import { useDialogFocus } from '../use-dialog-focus';
 import { S, fmt, num } from './strings';
 import './pages.css';
 
@@ -99,12 +100,30 @@ function StorageMeter(): JSX.Element {
         {S.separator}
         {storageLevelText(st.level)}
       </span>
-      <span class="field__hint">
-        {fmt(S.setStorageOf, { kb: num(kbOf(WARN_BYTES)), mb: (CEILING_BYTES / (1024 * 1024)).toFixed(1) })}
-        {S.separator}
-        {S.bakAdvice}
-      </span>
+      <span class="field__hint">{S.bakAdvice}</span>
     </section>
+  );
+}
+
+/** "Replace?" confirmation: focus lands on Cancel, Escape closes, Tab stays inside, focus returns to the opener. */
+function ReplaceDialog(p: { onYes: () => void; onNo: () => void }): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
+  useDialogFocus(ref, { onClose: p.onNo, initial: '[data-confirm-no]' });
+  return (
+    <div class="modal" role="dialog" aria-modal="true" aria-label={S.bakReplaceConfirm} data-confirm="replace" ref={ref} tabIndex={-1}>
+      <div class="modal__card">
+        <p class="page__modal-text">{S.bakReplaceConfirm}</p>
+        <p class="field__hint">{S.bakReplaceHint}</p>
+        <div class="modal__actions page__actions">
+          <button type="button" class="btn btn--danger" onClick={p.onYes} data-confirm-yes>
+            {S.bakReplace}
+          </button>
+          <button type="button" class="btn btn--ghost" onClick={p.onNo} data-confirm-no>
+            {S.bakCancel}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -314,22 +333,7 @@ export default function BackupPage(p: BackupPageProps): JSX.Element {
           </div>
         ) : null}
 
-        {replaceAsk && phase.kind === 'preview' ? (
-          <div class="modal" role="dialog" aria-modal="true" aria-label={S.bakReplaceConfirm} data-confirm="replace">
-            <div class="modal__card">
-              <p class="page__modal-text">{S.bakReplaceConfirm}</p>
-              <p class="field__hint">{S.bakReplaceHint}</p>
-              <div class="modal__actions page__actions">
-                <button type="button" class="btn btn--danger" onClick={() => apply('replace')} data-confirm-yes>
-                  {S.bakReplace}
-                </button>
-                <button type="button" class="btn btn--ghost" onClick={() => setReplaceAsk(false)} data-confirm-no>
-                  {S.bakCancel}
-                </button>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        {replaceAsk && phase.kind === 'preview' ? <ReplaceDialog onYes={() => apply('replace')} onNo={() => setReplaceAsk(false)} /> : null}
 
         {phase.kind === 'applied' ? (
           <div class="notice page__section" role="status" data-import-applied>

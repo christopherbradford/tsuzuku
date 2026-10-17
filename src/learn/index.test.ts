@@ -1,9 +1,10 @@
 /**
- * The barrel re-exports the grading half (grading, judge, kiai, leech,
- * distractors, conjugate), which may not be on disk yet while the halves are
- * written in parallel. The barrel is loaded dynamically so this file reports
- * "pending" instead of failing to resolve; the integrator sees it go green.
+ * The barrel must export every module-plan name of both halves. A static
+ * import makes a broken barrel fail at `tsc` time and here; the loop below
+ * pins the name list.
  */
+import * as learn from './index';
+
 const SCHEDULING_NAMES = [
   // fsrs
   'W',
@@ -52,6 +53,11 @@ const SCHEDULING_NAMES = [
   'weakPointSet',
   'rapidFirePool',
   'kagePools',
+  'buildQueue',
+  'interleaveViolations',
+  'prodPrompts',
+  'findBlank',
+  'RECHECK_FLAG',
 ];
 
 const GRADING_NAMES = [
@@ -79,26 +85,33 @@ const GRADING_NAMES = [
   'conjugate',
   'applicableForms',
   'isConjugable',
+  // additive re-exports (CHANGELOG 2026-10-17)
+  'SHADOW_BANDS',
+  'MATURE_S',
+  'rubricPasses',
+  'honestyRate',
+  'comboTier',
+  'dueRecoveries',
+  'nextDuelKey',
+  'wonToday',
+  'PARTICLES',
+  'particleOptions',
+  'minimalPairPartner',
+  'acceptedSurfaces',
+  'applicableFormsFor',
+  'conjugateAll',
 ];
 
-async function loadBarrel(): Promise<Record<string, unknown> | null> {
-  try {
-    const path = './index';
-    return (await import(/* @vite-ignore */ path)) as Record<string, unknown>;
-  } catch {
-    return null;
-  }
-}
-
 describe('learn barrel', () => {
-  it('exports every scheduling-half and grading-half name (pending until the grading half lands)', async () => {
-    const mod = await loadBarrel();
-    if (!mod) {
-      console.warn('learn/index: grading half not on disk yet — barrel check pending');
-      return;
-    }
+  const mod: Record<string, unknown> = learn;
+  it('exports every scheduling-half and grading-half name', () => {
     for (const name of [...SCHEDULING_NAMES, ...GRADING_NAMES]) {
       expect(mod[name], name).toBeDefined();
     }
+  });
+  it('is not empty and has no undefined export', () => {
+    const names = Object.keys(mod);
+    expect(names.length).toBeGreaterThan(SCHEDULING_NAMES.length + GRADING_NAMES.length);
+    for (const n of names) expect(mod[n], n).toBeDefined();
   });
 });

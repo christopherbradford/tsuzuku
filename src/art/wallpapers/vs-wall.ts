@@ -10,8 +10,11 @@
  * idiom only: no characters, logos or franchise designs.
  *
  * The building blocks (`vsLayout`, `speedLines`, `vsSlab`, `brickPattern`,
- * `challengerSide`, `challengerTexts`, `vsCentre`, `splitEdge`) are exported
- * for 'wall-broken', which keeps this composition and shatters the wall.
+ * `challengerSide`, `challengerTexts`, `vsCentre`, `vsPlate`, `splitEdge`)
+ * are exported for 'wall-broken', which keeps this composition and shatters
+ * the wall. On desktop the name is fitted to the free width left of the VS
+ * plate (`vsPlate(L0).left`) and 壁 is kept right of it, so neither glyph
+ * run ever slides under the slab.
  */
 import { mulberry32, uniform } from '../../shared/hash';
 import { PALETTE, SUMI, WASHI, alpha, beltColor, darken, mix } from '../color';
@@ -133,23 +136,50 @@ export function vsSlab(cx: number, cy: number, px: number, o: { face: string; si
   return g({ transform: `translate(${cx} ${cy}) skewX(${-skew}) translate(${-cx} ${-cy})` }, parts);
 }
 
+export interface VsPlate {
+  /** Pixel unit of the slab. */
+  px: number;
+  /** Skewed plate corners, clockwise from the top-left. */
+  corners: [Pt, Pt, Pt, Pt];
+  /** Outermost x of the plate on either side (the skew included). */
+  left: number;
+  right: number;
+  top: number;
+  bottom: number;
+}
+
+/** Geometry of the plate behind the VS slab; texts keep clear of `left`/`right`. */
+export function vsPlate(L0: VsLayout): VsPlate {
+  const px = L0.phone ? 26 : 22;
+  const pw = px * (LETTER_COLS * 2 + 1.4) + px * 4;
+  const ph = px * LETTER_ROWS + px * 3.2;
+  const sk = ph * 0.14;
+  const corners: [Pt, Pt, Pt, Pt] = [
+    [L0.cx - pw / 2 + sk, L0.cy - ph / 2],
+    [L0.cx + pw / 2 + sk, L0.cy - ph / 2],
+    [L0.cx + pw / 2 - sk, L0.cy + ph / 2],
+    [L0.cx - pw / 2 - sk, L0.cy + ph / 2],
+  ];
+  return { px, corners, left: L0.cx - pw / 2 - sk, right: L0.cx + pw / 2 + sk, top: L0.cy - ph / 2, bottom: L0.cy + ph / 2 };
+}
+
 /** Burst, plate and slab at the layout centre. */
 export function vsCentre(L0: VsLayout, seed: number): string {
-  const px = L0.phone ? 26 : 22;
+  const { px, corners } = vsPlate(L0);
   const r = px * 10;
-  const plate = [px * (LETTER_COLS * 2 + 1.4) + px * 4, px * LETTER_ROWS + px * 3.2];
-  const sk = plate[1]! * 0.14;
-  const plateD = polyPath([
-    [L0.cx - plate[0]! / 2 + sk, L0.cy - plate[1]! / 2],
-    [L0.cx + plate[0]! / 2 + sk, L0.cy - plate[1]! / 2],
-    [L0.cx + plate[0]! / 2 - sk, L0.cy + plate[1]! / 2],
-    [L0.cx - plate[0]! / 2 - sk, L0.cy + plate[1]! / 2],
-  ]);
   return g(undefined, [
     path(rays(L0.cx, L0.cy, r * 0.6, r * 1.4, 24, seed % 7), { fill: WASHI, opacity: 0.32 }),
-    path(plateD, { fill: SUMI, opacity: 0.9, stroke: WASHI, 'stroke-width': 5 }),
+    path(polyPath(corners), { fill: SUMI, opacity: 0.9, stroke: WASHI, 'stroke-width': 5 }),
     vsSlab(L0.cx, L0.cy, px, { face: KIN, side: darken(KIN, 0.55) }),
   ]);
+}
+
+/** Clearance between a glyph run and the plate (desktop). */
+const PLATE_GAP = 48;
+
+/** Centre x for the wall glyph on desktop: 0.75 w, pushed right when the plate would touch it. */
+export function wallGlyphX(L0: VsLayout, glyphSize: number): number {
+  return L0.phone ? L0.w / 2 : Math.max(L0.w * 0.75, vsPlate(L0).right + PLATE_GAP + glyphSize / 2);
 }
 
 function polyPath(pts: Pt[]): string {
@@ -196,8 +226,10 @@ export function challengerSide(L0: VsLayout, belt: string): { defs: string[]; bo
 export function challengerTexts(L0: VsLayout, data: WallpaperData, size: WallpaperSize): TextLayer[] {
   const { w, h, phone } = L0;
   const safe = safeRect(size);
-  const x = phone ? w / 2 : w * 0.25;
-  const nameSize = fitSize(data.nameKana, phone ? w * 0.86 : w * 0.42, phone ? 170 : 190, { min: 40, max: phone ? 170 : 190 });
+  // Desktop: centred in, and fitted to, the free width left of the VS plate.
+  const right = phone ? w : vsPlate(L0).left - PLATE_GAP;
+  const x = phone ? w / 2 : right / 2;
+  const nameSize = fitSize(data.nameKana, phone ? w * 0.86 : right - 2 * PLATE_GAP, phone ? 170 : 190, { min: phone ? 40 : 32, max: phone ? 170 : 190 });
   const nameY = phone ? safe.y + 560 : h * 0.57;
   return [
     { text: S.challenger, x, y: nameY - nameSize * 0.95 - 18, size: phone ? 40 : 40, font: FONTS.pixel, fill: NEON_C, anchor: 'middle', letterSpacing: 6, lang: 'ja' },
@@ -238,8 +270,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
   ];
 
   const texts: TextLayer[] = [...challengerTexts(L0, data, size)];
-  const wx = phone ? w / 2 : w * 0.75;
   const wallSize = phone ? 320 : 340;
+  const wx = wallGlyphX(L0, wallSize);
   const wallY = phone ? safe.y + safe.h - 300 : h * 0.68;
   texts.push({ text: S.wallArc, x: wx, y: wallY - wallSize * 0.95 - 18, size: 40, font: FONTS.pixel, fill: NEON_M, anchor: 'middle', letterSpacing: 6, lang: 'ja' });
   texts.push({ text: S.wall, x: wx, y: wallY, size: wallSize, font: FONTS.neon, fill: WASHI, anchor: 'middle', lang: 'ja' });

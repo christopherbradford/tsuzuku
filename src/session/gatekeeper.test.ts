@@ -11,6 +11,7 @@ import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { isMature } from '../learn';
+import { toKana } from '../content/ruby';
 import {
   ASSISTED_AFTER_ATTEMPTS,
   FLASH_MS,
@@ -23,6 +24,7 @@ import {
   gateAvailable,
   gateOutcome,
   rematchAllowed,
+  resetGateAttemptsForTests,
   sampleLowR,
   scoreGate,
 } from './gatekeeper';
@@ -68,6 +70,7 @@ function answerAll(plan: SessionPlan, wrong: (i: number, stepId: string) => bool
 
 afterEach(() => {
   resetStoreForTests();
+  resetGateAttemptsForTests();
   bus.reset();
 });
 
@@ -239,12 +242,14 @@ describe('finishGate and rematch', () => {
     const ev = cap.events.filter((e) => e[0] === 'gate:result');
     expect(ev).toHaveLength(1);
     expect(ev[0]![1]).toMatchObject({ station: 4, outcome: 'fail', score: fail.overall });
-    // rematch needs 20 Grudge reps today
+    // rematch needs 20 Grudge reps today, trained AFTER the fight: its own rows (at the fight's clock) do not count
+    for (let i = 0; i < 30; i++) store.log.push([DEFAULT_TEST_NOW, p.grudge[i % p.grudge.length]!, 1, 3000, 5, 0]);
     let r = rematchAllowed(4);
     expect(r.allowed).toBe(false);
     expect(r.grudgeRepsNeeded).toBe(GRUDGE_REPS_FOR_REMATCH);
     expect(r.offerAssisted).toBe(false);
-    for (let i = 0; i < GRUDGE_REPS_FOR_REMATCH; i++) store.log.push([DEFAULT_TEST_NOW - 1000 * i, p.grudge[i % p.grudge.length]!, 3, 3000, 5, 0]);
+    expect(p.gateAttemptDay?.[4]).toBe(TODAY);
+    for (let i = 0; i < GRUDGE_REPS_FOR_REMATCH; i++) store.log.push([DEFAULT_TEST_NOW + 1000 * (i + 1), p.grudge[i % p.grudge.length]!, 3, 3000, 5, 0]);
     r = rematchAllowed(4);
     expect(r.allowed).toBe(true);
     expect(r.grudgeRepsNeeded).toBe(0);
@@ -319,5 +324,44 @@ describe('sampleLowR', () => {
     expect(sampleLowR(mk(), pool, 50)).toHaveLength(10);
     const lowCount = a.filter((c) => c.r < 0.5).length;
     expect(lowCount).toBeGreaterThanOrEqual(3);
+  });
+});
+
+describe('rematch gate regressions (design 04 §11)', () => {
+  it('losing every rep locks the rematch for the day although the fight wrote 20+ Grudge rows; the next day opens it', async () => {
+    let clock = DEFAULT_TEST_NOW;
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: stationCards({ matureProd: true, matureRec: true }), now: () => clock });
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 5, loader, available: all });
+    // the fight itself: one Again row per carded step, at the fight's clock
+    for (const s of plan.steps) if (s.cardKey) store.log.push([clock, s.cardKey, 1, 3000, 5, 0]);
+    const lost = scoreGate(plan, answerAll(plan, () => true));
+    expect(lost.overall).toBe(0);
+    finishGate(4, lost, { assisted: false, revenge: false });
+    expect(store.progress.value.grudge.length).toBeGreaterThan(GRUDGE_REPS_FOR_REMATCH);
+    expect(rematchAllowed(4)).toMatchObject({ allowed: false, grudgeRepsNeeded: GRUDGE_REPS_FOR_REMATCH });
+    // five training reps later the count has moved; a new day frees the rematch without them
+    for (let i = 0; i < 5; i++) store.log.push([clock + 60_000 + i, store.progress.value.grudge[i]!, 3, 3000, 5, 0]);
+    expect(rematchAllowed(4).grudgeRepsNeeded).toBe(GRUDGE_REPS_FOR_REMATCH - 5);
+    clock += 86_400_000;
+    expect(rematchAllowed(4)).toMatchObject({ allowed: true, grudgeRepsNeeded: 0 });
+  });
+
+  it('a save without a recorded attempt day (older build) is never locked', async () => {
+    await makeTestStore({ save: { progress: { station: 4, gateAttempts: { 4: 1 }, grudge: [`${V.人}#rec`] } }, cards: stationCards() });
+    expect(rematchAllowed(4).allowed).toBe(true);
+  });
+});
+
+describe('Ear phase params (design 04 §5, §11)', () => {
+  it('every sentence-listen step grades against the kana of its ruby sentence', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: stationCards({ matureProd: true, matureRec: true }) });
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 2, loader, available: all });
+    const ear = plan.steps.filter((s) => s.exercise === 'sentence-listen');
+    expect(ear.length).toBeGreaterThan(0);
+    for (const s of ear) {
+      expect(s.params.answer).toBeTruthy();
+      expect(toKana(s.params.sentence!)).toBe(s.params.answer);
+      expect(s.params.sentence).toMatch(/[ぁ-ゖァ-ヺ]/);
+    }
   });
 });

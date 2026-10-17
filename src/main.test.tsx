@@ -93,6 +93,19 @@ describe('boot()', () => {
     expect(typeof services.audio.cancel).toBe('function');
   });
 
+  it('paints the loading mark before the store is ready: nothing else blocks first paint', async () => {
+    const storage = await seeded(ACTIVE);
+    expect(store.ready.value).toBe(false);
+    const booting = boot(root, { storage, now, audio: true, overlays: true, sw: false });
+    // Synchronously after the call: the shell has rendered its loading state (no blank screen).
+    expect(root.querySelector('.app-loading')).not.toBeNull();
+    expect(root.querySelector('.layout')).toBeNull();
+    await booting;
+    await flush();
+    expect(root.querySelector('.app-loading')).toBeNull();
+    expect(root.querySelector('.layout')).not.toBeNull();
+  });
+
   it('uses an injected clock for store.now()', async () => {
     const storage = await seeded(ACTIVE);
     await boot(root, { storage, now: () => 1234, audio: false, overlays: false, sw: false });

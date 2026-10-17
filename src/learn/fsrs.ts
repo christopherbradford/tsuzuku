@@ -2,7 +2,8 @@
  * TSUZUKU — FSRS-5 in pure TypeScript (design 05 §1).
  *
  * No runtime dependency: the 19 default weights, retrievability, the interval
- * for a desired retention, initial S/D, the mean-reverting difficulty update,
+ * for a desired retention, initial S/D, the damped mean-reverting difficulty
+ * update (FSRS-5 ΔD·(10−D)/9, not the FSRS-4.5 form in design 05 §1's D' line),
  * success / lapse / same-day stability and `schedule()` over a `CardTuple`.
  *
  * Conventions
@@ -82,10 +83,16 @@ export function initialDifficulty(g: Rating): number {
   return clampDifficulty(w(4) - Math.exp(w(5) * (g - 1)) + 1);
 }
 
-/** D' = w7 · D0(4) + (1 − w7) · (D − w6 · (g − 3)), clamped 1..10 (mean reversion toward the Easy start). */
+/**
+ * FSRS-5 difficulty update, clamped 1..10:
+ *   ΔD = −w6 · (g − 3);  D″ = D + ΔD · (10 − D) / 9   (linear damping: a hard card moves less)
+ *   D' = w7 · D0(4) + (1 − w7) · D″                     (mean reversion toward the Easy start)
+ * The FSRS-4.5 form without the (10 − D)/9 factor saturated at 10 after one or two Agains.
+ */
 export function nextDifficulty(d: number, g: Rating): number {
-  const shifted = d - w(6) * (g - 3);
-  return clampDifficulty(w(7) * initialDifficulty(RATING_EASY) + (1 - w(7)) * shifted);
+  const delta = -w(6) * (g - 3);
+  const damped = d + (delta * (MAX_DIFFICULTY - d)) / 9;
+  return clampDifficulty(w(7) * initialDifficulty(RATING_EASY) + (1 - w(7)) * damped);
 }
 
 /** S'_success = S · (e^w8 · (11 − D) · S^(−w9) · (e^(w10 · (1 − R)) − 1) · [g=2 ? w15 : 1] · [g=4 ? w16 : 1] + 1). */

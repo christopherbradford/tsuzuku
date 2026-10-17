@@ -4,8 +4,11 @@
  * Scans every strings module (`src/<folder>/**\/strings.ts`, split files
  * `strings-2.ts`, and prefixed ones such as `engine-strings.ts`) AND every
  * `.tsx` (tests excluded) as text, plus the exported string values of every
- * strings module that can be imported. Files that do not exist yet are simply not scanned; the report
- * names file:line and the offending phrase.
+ * strings module that can be imported, plus the learner-facing copy that lives
+ * in data tables outside strings files (quest and mission text in
+ * `shared/catalog`, station gate names and belt titles in `content/types`, the
+ * `.ics` reminder text). Files that do not exist yet are simply not scanned;
+ * the report names file:line and the offending phrase.
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -173,5 +176,24 @@ describe('banned phrases: the codebase', () => {
     }
     expect(scanned).toBeGreaterThan(0);
     expect(problems, `banned copy in exported strings:\n${problems.join('\n')}`).toEqual([]);
+  });
+
+  it('learner-facing copy outside strings files (quests, missions, gates, belts, .ics) is clean and never shouts', async () => {
+    const { QUESTS, MISSIONS } = await import('@/shared/catalog');
+    const { STATIONS, BELTS } = await import('@/content/types');
+    const { ICS_SUMMARY, ICS_DESCRIPTION } = await import('@/app/ics');
+    const values: { path: string; value: string }[] = [];
+    collectStrings(QUESTS, 'shared/catalog#QUESTS', values);
+    collectStrings(MISSIONS, 'shared/catalog#MISSIONS', values);
+    collectStrings(STATIONS, 'content/types#STATIONS', values);
+    collectStrings(BELTS, 'content/types#BELTS', values);
+    collectStrings({ ICS_SUMMARY, ICS_DESCRIPTION }, 'app/ics', values);
+    expect(values.length).toBeGreaterThan(50);
+    const problems: string[] = [];
+    for (const { path: p, value } of values) {
+      for (const hit of findBanned(value)) problems.push(`${p} = ${JSON.stringify(value)}  (rule ${hit.rule.source})`);
+      if (value.includes('!')) problems.push(`${p} = ${JSON.stringify(value)}  (exclamation mark)`);
+    }
+    expect(problems, `banned copy outside strings files:\n${problems.join('\n')}`).toEqual([]);
   });
 });

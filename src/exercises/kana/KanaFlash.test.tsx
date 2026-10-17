@@ -9,7 +9,7 @@ import { rngFor } from '@/shared/hash';
 import type { Step } from '@/shared/session-types';
 import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { card, makeTestStore } from '@/store/testing';
-import { KANA_FLASH_TARGET_MS, KanaFlash, kanaFromId, meta, romajiDistractors, romajiMatches, useDrillKeys } from './KanaFlash';
+import { KANA_FLASH_TARGET_MS, KanaFlash, imeRomaji, kanaFromId, meta, romajiDistractors, romajiLabel, romajiMatches, useDrillKeys } from './KanaFlash';
 
 let root: HTMLDivElement;
 let clock = 1_000_000;
@@ -231,6 +231,56 @@ describe('<KanaFlash> multiple-choice path', () => {
     mount(p, true);
     key(document.body, '2');
     expect(result(p)).toMatchObject({ correct: true, answer: 'ka' });
+  });
+
+  it('display romaji that does not round-trip through the IME still counts: を "o" in choices and typed, ティ "ti" typed', () => {
+    const WO: KanaItem = { ...SHI, id: 'k-h-wo', kana: 'を', romaji: 'o', row: 'w', exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };
+    // choices mode: the builder puts item.romaji ('o') in the grid
+    const mc = props({ item: WO, exposures: 0, step: step({ itemId: WO.id, cardKey: 'k-h-wo#rec', exposures: 0, params: { choices: ['ka', 'o', 'wa', 'n'] } }) });
+    mount(mc);
+    const cells = Array.from(root.querySelectorAll<HTMLButtonElement>('.choice'));
+    expect(cells.map((c) => c.querySelector('.choice__text')?.textContent)).toEqual(['ka', 'o', 'wa', 'n']);
+    act(() => cells[1]?.click());
+    expect(result(mc)).toMatchObject({ correct: true, answer: 'o' });
+    expect(root.querySelector('.kana-flash__romaji')?.textContent).toBe('o · wo');
+
+    // typed mode: 'o' is right before the IME turns it into お; so is the IME spelling 'wo'
+    for (const [romaji, answer] of [
+      ['o', 'o'],
+      ['wo', 'を'],
+    ] as const) {
+      const p = props({ item: WO, step: step({ itemId: WO.id, cardKey: 'k-h-wo#rec' }) });
+      const input = mount(p) as HTMLInputElement;
+      type(input, romaji);
+      expect(p.onResult).toHaveBeenCalledTimes(1);
+      expect(result(p)).toMatchObject({ correct: true, nearMiss: false, answer });
+    }
+
+    const THI: KanaItem = { ...SHI, id: 'k-k-thi', kana: 'ティ', romaji: 'ti', script: 'katakana', row: 'ext', type: 'extended', exampleWord: { word: 'パーティー', kana: 'パーティー', en: 'party' } };
+    const t = props({ item: THI, step: step({ itemId: THI.id, cardKey: 'k-k-thi#rec' }) });
+    const i2 = mount(t) as HTMLInputElement;
+    type(i2, 'ti');
+    expect(result(t)).toMatchObject({ correct: true, answer: 'ti' });
+    expect(root.querySelector('.kana-flash__romaji')?.textContent).toBe('ti · thi');
+
+    // the self-built grid for を never offers 'wo' as a distractor beside 'o'
+    const auto = props({ item: WO, exposures: 0, step: step({ itemId: WO.id, cardKey: 'k-h-wo#rec', exposures: 0 }) });
+    mount(auto);
+    const texts = Array.from(root.querySelectorAll('.choice__text')).map((c) => c.textContent);
+    expect(texts).toContain('o');
+    expect(texts).not.toContain('wo');
+  });
+
+  it('imeRomaji / romajiLabel: display romaji when it round-trips, else the id spelling', () => {
+    expect(imeRomaji(SHI)).toBe('shi');
+    expect(romajiLabel(SHI)).toBe('shi');
+    expect(imeRomaji({ id: 'k-h-wo', kana: 'を', romaji: 'o' })).toBe('wo');
+    expect(romajiLabel({ id: 'k-h-wo', kana: 'を', romaji: 'o' })).toBe('o · wo');
+    expect(imeRomaji({ id: 'k-k-thi', kana: 'ティ', romaji: 'ti' })).toBe('thi');
+    expect(imeRomaji({ id: 'k-k-dhu', kana: 'デュ', romaji: 'dyu' })).toBe('dhu');
+    expect(imeRomaji({ id: 'k-k-who', kana: 'ウォ', romaji: 'wo' })).toBe('who');
+    expect(imeRomaji({ id: 'k-k-wo', kana: 'ヲ', romaji: 'o' })).toBe('wo');
+    expect(romajiDistractors('o', rngFor('seed', 3), 3, 'を')).not.toContain('wo');
   });
 
   it('a Kunrei option counts as the answer (si for し)', () => {

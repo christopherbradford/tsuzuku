@@ -66,7 +66,8 @@ describe('scrollSteps', () => {
   it('kanji, grammar and component Scrolls use their base-facet drills', () => {
     const k = scrollSteps(kanjiScroll, get, rng());
     expect(k.checks.every((s) => s.exercise === 'component-assembly' && s.cardKey?.endsWith('#comp'))).toBe(true);
-    expect(k.checks[0]!.params.answers?.length).toBeGreaterThan(0);
+    expect(k.checks[0]!.params.accept).toEqual([k.checks[0]!.params.answer]);
+    expect(k.checks[0]!.params.layout).toBeDefined();
     const g = scrollSteps(grammarScroll, get, rng());
     expect(g.checks.every((s) => s.exercise === 'pattern-cloze' && s.cardKey?.endsWith('#cloze'))).toBe(true);
     expect(g.checks[0]!.params.tiles).toContain(g.checks[0]!.params.answer);
@@ -173,5 +174,15 @@ describe('completion', () => {
     expect(events).toHaveLength(1);
     expect(events[0]![1]).toEqual({ scrollId: sid, itemIds: grammarScroll.itemIds, flawless: true });
     cap.stop();
+  });
+});
+
+describe('kun-only kanji reading', () => {
+  it('the spoken / shown reading drops the okurigana dot; the 訓: line keeps it', () => {
+    const base = get('j-飲')! as import('../content/types').KanjiItem;
+    const m = teachModel({ ...base, id: 'j-届', char: '届', on: [], kun: ['とど.く'] })!;
+    expect(m.kana).toBe('とどく');
+    expect(m.lines.some((l) => l.includes('とど.く'))).toBe(true);
+    expect(teachModel(base)!.kana).toBe('イン');
   });
 });

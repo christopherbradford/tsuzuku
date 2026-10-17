@@ -350,6 +350,17 @@ describe('<Shadow> self path (no recognizer)', () => {
     expect(root.textContent).toContain(S.shadowNoVoice);
   });
 
+  it('with a voice but the master volume at 0 (canSpeak false) the text is never hidden and the muted note shows', async () => {
+    const green = card({ due: TODAY + 20, s: 12, reps: 6, state: 2 });
+    await setup({ store: { cards: { [`${V.私}#rec`]: green, [`${V.コーヒー}#rec`]: green, [`${V.飲む}#rec`]: green, [`${G.は}#cloze`]: green } } });
+    installServices({ audio: { ...fakeAudio(true), canSpeak: signal(false) } as AudioService });
+    await mount(step());
+    expect(q('.shadow')?.getAttribute('data-hidden')).toBeNull();
+    expect(q('[data-line="true"]')).not.toBeNull();
+    expect(root.textContent).toContain(S.shadowMuted);
+    expect(root.textContent).not.toContain(S.shadowNoVoice);
+  });
+
   it('a missing line renders the calm note and never calls onResult', async () => {
     await setup();
     const { onResult } = await mount(step({ params: {} }));

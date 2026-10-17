@@ -184,7 +184,7 @@
   font-family: var(--font-pixel);
   font-size: var(--fs-2);
   letter-spacing: 0.06em;
-  color: var(--kin);
+  color: var(--kin-text);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   border: 2px solid var(--neon-c);
 }

@@ -179,3 +179,16 @@ describe('<TrainPage>', () => {
     expect(root.querySelector('.train__title')?.textContent).toBe('影 Kage');
   });
 });
+
+describe('mode titles', () => {
+  it('wrap the Japanese half in lang="ja" and keep the joined text', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: dueCards() });
+    registerExercise({ id: 'meaning-recall', facet: 'rec', needsTts: false, needsStt: false, selfGraded: false, timeable: true, keys: 'text' }, Stub);
+    mount('kata');
+    await settle();
+    const title = root.querySelector('.train__title')!;
+    expect(title.textContent).toBe('型 Kata');
+    const ja = title.querySelector('[lang="ja"]');
+    expect(ja?.textContent).toBe('型');
+  });
+});

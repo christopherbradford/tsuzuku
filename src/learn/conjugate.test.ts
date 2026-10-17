@@ -34,6 +34,11 @@ const VERBS: Row[] = [
   ['洗う', 'あらう', 'v5', { te: '洗って', nai: '洗わない', ta: '洗った', potential: '洗える', masu: '洗います' }],
   ['習う', 'ならう', 'v5', { te: '習って', nai: '習わない', ta: '習った', potential: '習える', masu: '習います' }],
   ['歌う', 'うたう', 'v5', { te: '歌って', nai: '歌わない', ta: '歌った', potential: '歌える', masu: '歌います' }],
+  // う-onbin (問う → 問うて, never 問って); 雇う stays regular
+  ['問う', 'とう', 'v5', { masu: '問います', te: '問うて', nai: '問わない', ta: '問うた', tara: '問うたら', 'te-iru': '問うている', potential: '問える', volitional: '問おう', ba: '問えば' }],
+  ['請う', 'こう', 'v5', { te: '請うて', ta: '請うた', tara: '請うたら', nai: '請わない', masu: '請います' }],
+  ['乞う', 'こう', 'v5', { te: '乞うて', ta: '乞うた' }],
+  ['雇う', 'やとう', 'v5', { te: '雇って', ta: '雇った', tara: '雇ったら', nai: '雇わない' }],
   // godan つ
   ['待つ', 'まつ', 'v5', { te: '待って', nai: '待たない', ta: '待った', potential: '待てる', masu: '待ちます', volitional: '待とう', passive: '待たれる', causative: '待たせる', imperative: '待て', ba: '待てば', tara: '待ったら' }],
   ['持つ', 'もつ', 'v5', { te: '持って', nai: '持たない', ta: '持った', potential: '持てる', masu: '持ちます' }],
@@ -145,6 +150,16 @@ describe('in-test golden table', () => {
         if (c) expect(c.answer).toBe(c.answerKana);
       }
     }
+  });
+});
+
+describe('う-onbin', () => {
+  it('問う te/ta/tara kana surfaces are とうて / とうた / とうたら', () => {
+    expect(conjugate('問う', 'とう', 'v5', 'te')!.answerKana).toBe('とうて');
+    expect(conjugate('問う', 'とう', 'v5', 'ta')!.answerKana).toBe('とうた');
+    expect(conjugate('問う', 'とう', 'v5', 'tara')!.answerKana).toBe('とうたら');
+    expect(conjugate('請う', 'こう', 'v5', 'te')!.answer).toBe('請うて');
+    expect(conjugate('雇う', 'やとう', 'v5', 'te')!.answerKana).toBe('やとって');
   });
 });
 

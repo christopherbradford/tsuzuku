@@ -92,9 +92,14 @@ export function vocabPoolFrom(item: VocabItem, params: StepParams): VocabItem[] 
   return ids.map((id) => content.get(id)).filter(isVocabItem);
 }
 
-/** The word through the audio slot (plain surface + kana reading for the voice). */
+/**
+ * The word through the audio slot: the bare word goes with its kana reading
+ * (single kanji are misread in isolation); any other `text` (a collocation)
+ * is spoken as written, since passing the word's kana would make the engine
+ * say the bare word instead of the phrase.
+ */
 export function speakWord(item: VocabItem, text?: string): Promise<void> {
-  return text !== undefined ? speak(text, { kana: item.kana }) : speak(item.word, { kana: item.kana });
+  return text === undefined || text === item.word ? speak(item.word, { kana: item.kana }) : speak(text);
 }
 
 export function beltNow(): Belt {

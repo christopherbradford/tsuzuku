@@ -15,6 +15,8 @@
  *    the level meter is CSS-only and animates while recording.
  *  · Keyboard: every control is a button or a checkbox; Space/Enter on the
  *    focused record button start and stop it.
+ *  · The take's blob URL is revoked when a new take replaces it and on
+ *    unmount (one effect keyed on the URL), so a Shadow set leaks nothing.
  */
 import type { JSX } from 'preact';
 import { useEffect, useId, useMemo, useRef, useState } from 'preact/hooks';
@@ -109,10 +111,14 @@ export function Recorder(p: RecorderProps): JSX.Element {
         /* already stopped */
       }
       releaseStream();
-      if (takeUrl) URL.revokeObjectURL(takeUrl);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // One revocation site: the previous URL goes when a take replaces it, the last one on unmount.
+  useEffect(() => {
+    if (!takeUrl) return;
+    return () => URL.revokeObjectURL(takeUrl);
+  }, [takeUrl]);
 
   const start = async (): Promise<void> => {
     if (!media || p.disabled || state === 'recording' || state === 'requesting') return;
@@ -146,10 +152,7 @@ export function Recorder(p: RecorderProps): JSX.Element {
       releaseStream();
       if (!alive.current) return;
       const blob = new Blob(chunks.current, { type: rec.mimeType || 'audio/webm' });
-      setTakeUrl((prev) => {
-        if (prev) URL.revokeObjectURL(prev);
-        return blob.size > 0 ? URL.createObjectURL(blob) : null;
-      });
+      setTakeUrl(blob.size > 0 ? URL.createObjectURL(blob) : null);
       setState('recorded');
     };
     rec.onerror = () => {

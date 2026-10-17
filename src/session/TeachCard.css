@@ -1,0 +1,160 @@
+/* TSUZUKU — <TeachCard> + <PitchMark> (group E). Tokens from tokens.css; .scroll-card / .btn / .chip from components.css. */
+
+/* ── teach card ──────────────────────────────────────────────────────── */
+
+.teach-card {
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+.teach-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2) var(--sp-3);
+}
+
+.teach-card__word {
+  margin: 0;
+  padding: 0 var(--sp-1);
+  font: inherit;
+  font-family: var(--font-ja);
+  font-size: var(--fs-6);
+  line-height: 1.2;
+  color: var(--fg);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.teach-card[data-kind="kana"] .teach-card__word,
+.teach-card[data-kind="kanji"] .teach-card__word,
+.teach-card[data-kind="component"] .teach-card__word {
+  font-size: var(--fs-7);
+}
+
+.teach-card__word:hover {
+  background: var(--raised);
+}
+
+.teach-card__kana {
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+}
+
+.teach-card__meaning {
+  font-size: var(--fs-4);
+}
+
+.teach-card__label {
+  margin: var(--sp-3) 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.teach-card__line {
+  margin: 0 0 var(--sp-1);
+}
+
+.teach-card__examples ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.teach-card__example {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-1) var(--sp-3);
+  padding: var(--sp-2) 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-4);
+}
+
+.teach-card__en {
+  flex: 1 1 100%;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.teach-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.teach-card__contrast p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: baseline;
+  margin: 0;
+}
+
+.teach-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.teach-card__known {
+  font-size: var(--fs-2);
+  color: var(--matcha);
+}
+
+/* ── pitch mark ──────────────────────────────────────────────────────── */
+
+.pitch-mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--sp-2);
+}
+
+.pitch-mark__line {
+  fill: none;
+  stroke: var(--ai);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.pitch-mark__dot {
+  fill: var(--ai);
+}
+
+.pitch-mark__dot--particle {
+  fill: var(--bg);
+  stroke: var(--ai);
+  stroke-width: 2;
+}
+
+.pitch-mark__morae {
+  display: flex;
+  font-size: var(--fs-1);
+  line-height: 1;
+}
+
+.pitch-mark__morae span {
+  display: inline-block;
+  text-align: center;
+}
+
+.pitch-mark__label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teach-card {
+    animation: none;
+  }
+}

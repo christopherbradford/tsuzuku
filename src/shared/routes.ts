@@ -145,7 +145,47 @@ export function sameRoute(a: Route, b: Route): boolean {
 
 const APP = 'TSUZUKU';
 
-/** `document.title` per screen. */
+/*
+ * Display labels for `document.title`. `shared/` must not import the page
+ * string tables (session/strings, collections/strings …), so the closed
+ * unions get a small local map here (kept in step with `session/strings.ts
+ * modeName`, `collections/strings.ts tab*`), and free-text content ids
+ * (scroll/story/listen/taiwa/wallpaper) show only the kind: their names live
+ * in async loader content. Pages may set a richer title themselves.
+ */
+const MODE_TITLE: Record<SessionMode, string> = {
+  kata: '型 Kata',
+  kumite: '組手 Kumite',
+  shugyo: '修行 Shugyō',
+  kage: '影 Kage',
+  weak: '弱点 Weak Point',
+  rapid: '連続技 Rapid Fire',
+  gojuon: '五十音ファイター Gojūon Fighter',
+  gate: '関守 Gatekeeper',
+  shinsa: '審査 Shinsa',
+  scroll: '巻物 Scroll',
+  welcome: 'おかえり Welcome Back',
+  dan: '道場破り Dōjō Yaburi',
+};
+
+const BELT_TITLE: Record<Belt, string> = {
+  white: '白帯 White',
+  yellow: '黄帯 Yellow',
+  orange: '橙帯 Orange',
+  green: '緑帯 Green',
+  blue: '青帯 Blue',
+  purple: '紫帯 Purple',
+  brown: '茶帯 Brown',
+  black: '黒帯 Black',
+};
+
+const TAB_TITLE: Record<CollectionsTab, string> = {
+  mon: '紋 Mon',
+  kakejiku: '掛け軸 Kakejiku',
+  goshuin: '御朱印帳 Goshuin-chō',
+};
+
+/** `document.title` per screen (display names, never raw route ids). */
 export function titleFor(r: Route): string {
   switch (r.name) {
     case 'dojo':
@@ -153,9 +193,9 @@ export function titleFor(r: Route): string {
     case 'onboarding':
       return `日本橋 Nihonbashi · ${APP}`;
     case 'train':
-      return `${r.mode} · ${APP}`;
+      return `${MODE_TITLE[r.mode]} · ${APP}`;
     case 'scroll':
-      return `巻物 Scroll ${r.id} · ${APP}`;
+      return `巻物 Scroll · ${APP}`;
     case 'road':
       return `東海道 Road · ${APP}`;
     case 'station':
@@ -163,21 +203,21 @@ export function titleFor(r: Route): string {
     case 'gate':
       return `関守 Gatekeeper ${r.n} · ${APP}`;
     case 'shinsa':
-      return `審査 Shinsa ${r.belt} · ${APP}`;
+      return `審査 Shinsa ${BELT_TITLE[r.belt]} · ${APP}`;
     case 'story':
-      return `旅日記 ${r.id} · ${APP}`;
+      return `旅日記 Story · ${APP}`;
     case 'listen':
-      return `聴解 ${r.id} · ${APP}`;
+      return `聴解 Listening · ${APP}`;
     case 'taiwa':
-      return `対話 ${r.id} · ${APP}`;
+      return `対話 Taiwa · ${APP}`;
     case 'dan':
       return `段 Dan · ${APP}`;
     case 'library':
-      return `道草 Library · ${APP}`;
+      return `書庫 Library · ${APP}`;
     case 'collections':
-      return `Collections ${r.tab} · ${APP}`;
+      return `${TAB_TITLE[r.tab]} · ${APP}`;
     case 'studio':
-      return `Print Studio ${r.wallpaperId} · ${APP}`;
+      return `Print Studio · ${APP}`;
     case 'records':
       return `Records · ${APP}`;
     case 'ledger':

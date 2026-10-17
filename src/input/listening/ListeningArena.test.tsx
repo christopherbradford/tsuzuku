@@ -357,6 +357,19 @@ describe('<ListeningArena>', () => {
     expect(root.querySelector('.arena__result')).not.toBeNull();
   });
 
+  it('with a voice but the master volume at 0 (canSpeak false) it shows the lines as text with the volume notice instead of a silent Play', async () => {
+    const { audio, calls } = fakeAudio(true);
+    installServices({ audio: { ...audio, canSpeak: signal(false) } as AudioService });
+    mountStandalone();
+    expect(root.querySelector('.arena__notice')?.textContent).toBe(S.volumeOff);
+    expect(root.querySelectorAll('.arena__lines .arena__line')).toHaveLength(DIALOGUE.lines.length);
+    expect(Array.from(root.querySelectorAll('button')).find((b) => b.textContent === S.play)).toBeUndefined();
+    act(() => buttonByText(S.toQuestions).click());
+    expect(calls).toEqual([]);
+    await answerAll(expectedItems());
+    expect(buttonByText(S.finish).disabled).toBe(false);
+  });
+
   it('as an exercise it reads params.storyId / rate, reports once through onResult with implicit listen grades, and never writes cards itself', async () => {
     const today = store.today();
     await makeTestStore({

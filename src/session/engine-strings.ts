@@ -25,6 +25,7 @@ export const S = {
   blockKage: 'Kage Ghost Set',
   blockWelcome: 'Welcome Back',
   blockNotes: "Sensei's Notes",
+  blockNemesis: 'Nemesis',
   blockGauntlet: 'Dōjō Yaburi',
   blockRapid: 'Rapid Fire',
   blockGojuon: 'Gojūon Fighter',

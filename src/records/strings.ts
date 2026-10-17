@@ -64,6 +64,8 @@ export const S = {
   beltPassed: '{belt} belt · passed {date}',
   beltAhead: '{belt} belt · {pace} at your pace · {daily} at daily practice',
   beltCurrentMark: 'current',
+  /** The White belt's band is kana, not a JLPT level; lower-case like RoadNav. */
+  levelKana: 'kana',
   arrivalMeansTitle: 'What arrival means',
   arrivalMeans:
     'Sanjō Ōhashi is the N1 core: 6,350 words, 1,000 kanji, 450 patterns, 137 graded texts. Reading N1 texts comfortably also needs the jōyō remainder, about 1,136 more kanji and 3,500 more words, plus the hours in the ledger. The road continues past Kyoto.',
@@ -126,6 +128,7 @@ export const S = {
 
   // Next step
   nextTitle: 'What to do next',
+  nextFirst: 'The road starts at Nihonbashi. One Kata opens it.',
   nextBacklog: 'The gatekeeper holds the line. {shown} of your {due} reviews today; the rest wait without penalty.',
   nextDue: '{n} reviews are due. Clear them before anything new.',
   nextWeak: 'A weak point is active: {tag}. A Shugyō carries the set.',

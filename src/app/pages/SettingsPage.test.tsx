@@ -208,7 +208,8 @@ describe('<SettingsPage>', () => {
       store.storage.value = { bytes: 4.6 * 1024 * 1024, level: 'ceiling' };
     });
     expect(q('[data-storage-text]').textContent).toContain(S.setStorageLevelCeiling);
-    expect(q('[data-slot]').textContent).toBe(fmt(S.setSlotCurrent, { n: 0 }));
+    expect(q('[data-slot]').textContent?.trim()).toBe(S.setSlotHint);
+    expect(q('[data-slot]').textContent).not.toMatch(/slot 0|Three slots/i);
   });
 
   it('voice picker lists Japanese voices with their network mark and patches ttsVoiceURI', async () => {
@@ -234,6 +235,32 @@ describe('<SettingsPage>', () => {
     expect(speak).toHaveBeenCalledWith('こんにちは', { kana: 'こんにちは', voiceURI: 'v-net' });
     select('ttsVoiceURI', '');
     expect(settings().ttsVoiceURI).toBeUndefined();
+  });
+
+  it('voices that arrive after mount (voiceschanged) fill the pickers once hasJaVoice flips', async () => {
+    await makeTestStore();
+    let list: VoiceInfo[] = [];
+    const hasJaVoice = signal(false);
+    installServices({ audio: { ...nullAudio, voices: () => list, hasJaVoice } });
+    mount();
+    expect(Array.from(q<HTMLSelectElement>('select[data-setting="ttsVoiceURI"]').options).map((o) => o.textContent)).toEqual([S.setVoiceNone]);
+    act(() => {
+      list = [{ uri: 'v-local', name: 'Kyoko', lang: 'ja-JP', local: true, network: false }];
+      hasJaVoice.value = true;
+    });
+    const options = Array.from(q<HTMLSelectElement>('select[data-setting="ttsVoiceURI"]').options).map((o) => o.textContent);
+    expect(options).toEqual([S.setVoiceDefault, `Kyoko · ${S.setVoiceLocal}`]);
+  });
+
+  it('the pace hint describes the chosen preset; the review-cap hint appears only under the cap', async () => {
+    await makeTestStore({ save: { settings: { intensity: 'standard' } } });
+    mount();
+    expect(q('[data-pace-hint]').textContent).toBe(S.onbPaceStandardDesc);
+    expect(root.textContent!.split(S.setMaxReviewsHint).length - 1).toBe(1);
+    radio('intensity', 'casual');
+    expect(q('[data-pace-hint]').textContent).toBe(S.onbPaceCasualDesc);
+    radio('intensity', 'custom');
+    expect(q('[data-pace-hint]').textContent).toBe(S.setCustomHint);
   });
 
   it('with no Japanese voice the picker says so', async () => {

@@ -165,6 +165,7 @@ export function freshSave(now: number, tz: string): SaveMeta {
       assisted: [],
       gateAttempts: {},
       gateAttemptDay: {},
+      gateAttemptAt: {},
       grudge: [],
       shinsaPassed: [],
       awayDays: 0,

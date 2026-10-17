@@ -8,18 +8,24 @@
  * one strand). Because the order is fixed per (seed, day), dropping an
  * ineligible quest never reshuffles the others, so a re-draw once the
  * exercise registry has filled keeps the quests the learner already saw.
+ * Two gates beyond `fromStation`: `requires` (the drill is registered) and
+ * `NEEDS_FACET` (a card of that facet exists — `pitch-five` needs a `pitch`
+ * card, which only a `pitchConfidence: high` item creates), both injected
+ * through `PickOptions` so the draw stays pure. The live draw clamps the
+ * station to ≥ 1 like the session builder (station 0 is onboarding only).
  *
  * Per-quest counts persist on the quests slice as an extra JSON-safe prop
  * (`QuestsMemory.n`, like kiai's `lostCombo`); `done` is the contract field.
  * All three done = Full Training Day: `quest:completed { allDone: true }`
  * fires exactly once per day; XP (+50) and `stats.fullDays` follow it.
  */
-import { BELTS, type Belt, type DrillId } from '../content/types';
+import { BELTS, type Belt, type DrillId, type Facet } from '../content/types';
 import { QUESTS as CATALOG, type QuestDef, type QuestId, type Strand } from '../shared/catalog';
 import { bus, type Events } from '../shared/events';
 import { isRegistered, listExercises } from '../shared/exercise-types';
 import { rngFor, shuffle } from '../shared/hash';
 import type { EpochDay, Quests, Store } from '../shared/store-types';
+import { isDueReview } from './due';
 
 export const QUEST_COUNT = 3;
 
@@ -76,22 +82,34 @@ export interface PickOptions {
   station?: number;
   /** Drill availability; default: the shared registry, or everything while it is still empty (boot). */
   isRegistered?: (id: DrillId) => boolean;
+  /** Whether the learner holds any card of a facet (default: yes); gates the quests in `NEEDS_FACET`. */
+  hasFacet?: (facet: Facet) => boolean;
 }
+
+/** Quests that can only advance once a card of this facet exists in the save. */
+export const NEEDS_FACET: Partial<Record<QuestId, Facet>> = { 'pitch-five': 'pitch' };
 
 /** While nothing is registered yet (before `ensureExercises()`), every drill counts as available. */
 export function defaultRegistered(id: DrillId): boolean {
   return listExercises().length === 0 || isRegistered(id);
 }
 
-export function eligibleQuests(station: number, reg: (id: DrillId) => boolean = defaultRegistered): QuestRule[] {
-  return QUESTS.filter((q) => q.fromStation <= station && (q.requires === undefined || reg(q.requires)));
+const ANY_FACET = (): boolean => true;
+
+export function eligibleQuests(station: number, reg: (id: DrillId) => boolean = defaultRegistered, hasFacet: (facet: Facet) => boolean = ANY_FACET): QuestRule[] {
+  return QUESTS.filter((q) => {
+    if (q.fromStation > station) return false;
+    if (q.requires !== undefined && !reg(q.requires)) return false;
+    const facet = NEEDS_FACET[q.id];
+    return facet === undefined || hasFacet(facet);
+  });
 }
 
 /** Deterministic Three Kata for (seed, day): one quest per strand, in catalog-shuffled order. */
 export function pickQuests(seed: string, day: EpochDay, belt: Belt, o: PickOptions = {}): QuestId[] {
   const station = o.station ?? firstStationOf(belt);
   const reg = o.isRegistered ?? defaultRegistered;
-  const eligible = new Set(eligibleQuests(station, reg).map((q) => q.id));
+  const eligible = new Set(eligibleQuests(station, reg, o.hasFacet ?? ANY_FACET).map((q) => q.id));
   const order = shuffle(rngFor(seed, 'three-kata', day), QUESTS);
   const used = new Set<Strand>();
   const out: QuestId[] = [];
@@ -104,9 +122,22 @@ export function pickQuests(seed: string, day: EpochDay, belt: Belt, o: PickOptio
   return out;
 }
 
-/** `pickQuests` over the live store (belt + station from the save). */
+/** `true` when any card key ends in `#facet`. */
+export function storeHasFacet(store: Store, facet: Facet): boolean {
+  const suffix = `#${facet}`;
+  let found = false;
+  store.cards.forEach((k) => {
+    if (!found && k.endsWith(suffix)) found = true;
+  });
+  return found;
+}
+
+/** `pickQuests` over the live store (belt + station from the save; station 0 draws as station 1, like the builder). */
 export function pickDailyQuests(store: Store, day: EpochDay = store.today()): QuestId[] {
-  return pickQuests(store.seed(), day, store.profile.value.belt, { station: store.progress.value.station });
+  return pickQuests(store.seed(), day, store.profile.value.belt, {
+    station: Math.max(1, store.progress.value.station),
+    hasFacet: (f) => storeHasFacet(store, f),
+  });
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -179,6 +210,15 @@ export function advanceQuest(q: Quests, id: QuestId, value: number | ((prev: num
 
 const ARCADE: ReadonlySet<string> = new Set(['rapid-fire', 'gojuon-fighter']);
 
+/** Reviews due on `day` (same predicate as the builder: never-reviewed state-0 cards are not reviews). */
+function dueReviewCount(store: Store, day: EpochDay): number {
+  let n = 0;
+  store.cards.forEach((_k, t) => {
+    if (isDueReview(t, day)) n++;
+  });
+  return n;
+}
+
 export function startQuests(store: Store): () => void {
   function advance(id: QuestId, value: number | ((prev: number) => number)): void {
     const q = store.quests.value;
@@ -218,7 +258,7 @@ export function startQuests(store: Store): () => void {
       if (ARCADE.has(p.mode) || p.mode === 'rapid' || p.mode === 'gojuon') return;
       const today = store.today();
       const n = questCounts(store.quests.value)['clear-due'] ?? 0;
-      if (n > 0 && store.cards.dueOn(today).length === 0) advance('clear-due', BY_ID.get('clear-due')?.target ?? 50);
+      if (n > 0 && dueReviewCount(store, today) === 0) advance('clear-due', BY_ID.get('clear-due')?.target ?? 50);
     }),
     bus.on('scroll:completed', () => advance('learn-scroll', (n) => n + 1)),
     bus.on('story:read', (p) => {

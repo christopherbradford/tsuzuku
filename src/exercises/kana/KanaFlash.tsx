@@ -12,9 +12,16 @@
  * (`step.timerMs` when the planner set one) and the reaction time afterwards;
  * the speed ring itself is drawn by `<ExerciseFrame>`.
  *
+ * The corpus romaji is display Hepburn (CONTENT_GUIDE §3: を = o, ティ = ti …)
+ * and nine kana do not round-trip through the IME (o → お, ti → チ). The
+ * item's own romaji therefore always counts — as a choice and as typed text,
+ * before the IME step — and the after-card adds the IME spelling
+ * (`imeRomaji`: wo, thi …) when it differs, so Kana Forge and Gojūon Fighter
+ * can be typed.
+ *
  * This file also hosts the helpers every D drill shares (kana/ and vocab/):
  * `useLatency`, `useDrillKeys`, `MissingItem`, `missingResult`, `isKanaItem`,
- * `kanaFromId`, `romajiDistractors`.
+ * `kanaFromId`, `imeRomaji`, `romajiLabel`, `romajiDistractors`.
  */
 import type { JSX, RefObject } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -65,6 +72,23 @@ export function kanaFromId(id: string): { glyph: string; romaji: string; script:
   const glyph = romajiToKana(romaji, { katakana: script === 'katakana' });
   if (/[a-z]/.test(glyph)) return null;
   return { glyph, romaji, script };
+}
+
+/**
+ * The romaji spelling the IME turns into exactly this kana: the display romaji
+ * when it round-trips (ka → か), else the id's spelling (を → wo, ティ → thi),
+ * else the display romaji unchanged.
+ */
+export function imeRomaji(item: Pick<KanaItem, 'id' | 'kana' | 'romaji'>): string {
+  if (romajiMatches(item.romaji, item.kana)) return item.romaji;
+  const d = kanaFromId(item.id);
+  return d && equivalentJa(d.glyph, item.kana) ? d.romaji : item.romaji;
+}
+
+/** Display romaji, with the IME spelling after it when the two differ (`o · wo`). */
+export function romajiLabel(item: Pick<KanaItem, 'id' | 'kana' | 'romaji'>): string {
+  const ime = imeRomaji(item);
+  return ime === item.romaji ? item.romaji : `${item.romaji} · ${ime}`;
 }
 
 /** Latency clock for a step: `ms()` is `store.now()` minus the mount time (re-based per step id). */
@@ -139,10 +163,10 @@ function vowelOf(r: string): string {
   return m ? m[0] : '';
 }
 
-/** Three romaji distractors: same consonant first, then same vowel, then anything; never the answer. */
-export function romajiDistractors(romaji: string, rng: Rng, n = 3): string[] {
+/** Three romaji distractors: same consonant first, then same vowel, then anything; never the answer (nor, given `kana`, another spelling of it). */
+export function romajiDistractors(romaji: string, rng: Rng, n = 3, kana?: string): string[] {
   const r = romaji.toLowerCase();
-  const others = ROMAJI_TABLE.filter((x) => x !== r && !equivalentJa(romajiToKana(x), romajiToKana(r)));
+  const others = ROMAJI_TABLE.filter((x) => x !== r && !equivalentJa(romajiToKana(x), romajiToKana(r)) && !(kana && romajiMatches(x, kana)));
   const c = consonantOf(r);
   const v = vowelOf(r);
   const tiers = [others.filter((x) => consonantOf(x) === c), others.filter((x) => vowelOf(x) === v), others];
@@ -195,9 +219,10 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
     const given = p.step.params.choices;
     if (given && given.length >= 2) return given;
     const rng = rngFor(store.seed(), store.today(), p.step.id, 'kana-flash');
-    return shuffle(rng, [item.romaji, ...romajiDistractors(item.romaji, rng)]);
+    return shuffle(rng, [item.romaji, ...romajiDistractors(item.romaji, rng, 3, item.kana)]);
   }, [item, p.step.id, p.step.params.choices]);
-  const correctIdx = useMemo(() => (item ? choices.findIndex((c) => romajiMatches(c, item.kana)) : -1), [choices, item]);
+  // The item's own (display) romaji always counts, even where the IME reads it as another kana (を 'o').
+  const correctIdx = useMemo(() => (item ? choices.findIndex((c) => c.trim().toLowerCase() === item.romaji || romajiMatches(c, item.kana)) : -1), [choices, item]);
 
   // TTS plays once.
   useEffect(() => {
@@ -220,7 +245,14 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
     return attempt({ ms: ms(), correct: check.correct, nearMiss: check.nearMiss, errorTags: check.tags, answer: given });
   };
 
+  /** Where the display romaji does not round-trip through the IME (を 'o', ティ 'ti'), typing it is right before any conversion. */
+  const isDisplayRomaji = (raw: string): boolean => item !== null && !romajiMatches(item.romaji, item.kana) && raw.trim().toLowerCase() === item.romaji;
+
   const judge = (raw: string): void => {
+    if (isDisplayRomaji(raw)) {
+      finish(attempt({ ms: ms(), correct: true, answer: raw.trim() }));
+      return;
+    }
     const st = imeStep(raw);
     if (st.pending !== '' || st.text.length === 0) return;
     const given = toHiragana(st.text);
@@ -241,6 +273,10 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
 
   const submit = (): void => {
     if (fired.current) return;
+    if (isDisplayRomaji(value)) {
+      finish(attempt({ ms: ms(), correct: true, answer: value.trim() }));
+      return;
+    }
     const final = finalizeIme(value.trim());
     if (final.length === 0) {
       setNudge(X.nothingTyped);
@@ -313,7 +349,7 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
       {done ? (
         <div class="drill__after" data-correct={afterKind}>
           <p>
-            <span class="drill__label">{S.romajiLabel}</span> <span class="kana-flash__romaji">{item.romaji}</span>
+            <span class="drill__label">{S.romajiLabel}</span> <span class="kana-flash__romaji">{romajiLabel(item)}</span>
             {showTarget && inTime !== null ? (
               <span class="chip kana-flash__reaction" data-in-time={inTime ? 'true' : 'false'}>
                 {fill(S.flashReaction, { s: fmtSeconds(done.ms) })} · {inTime ? S.flashInTime : S.flashOverTime}

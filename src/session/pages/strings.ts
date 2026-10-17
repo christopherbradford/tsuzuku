@@ -57,7 +57,6 @@ export const S = {
   levelKana: 'kana',
 
   // ── RoadPage ──────────────────────────────────────────────────────────
-  roadTitle: '東海道 The Road',
   roadTitleEn: 'The Road',
   roadSub: 'Fifty-three stations from Nihonbashi to Kyoto. One gate at a time.',
   legendTitle: 'Belts',
@@ -172,7 +171,8 @@ export const S = {
   cardOf: 'Card {i} of {n}',
 
   // ── GateView ──────────────────────────────────────────────────────────
-  gateAria: '関守 Gatekeeper',
+  // aria-labels take no markup, so they carry the English half only (design 01 §7).
+  gateAria: 'Gatekeeper',
   gateIntroLine: 'Four phases. No retreat; misses are information, not damage.',
   gatePhases: 'Phases',
   phaseTitle: 'Phase {n} of {total}',

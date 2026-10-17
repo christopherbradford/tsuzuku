@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { bus } from '@/shared/events';
@@ -170,5 +172,34 @@ describe('<Layout>', () => {
     expect(skip?.textContent).toBe(S.skipToContent);
     act(() => skip?.click());
     expect(document.activeElement?.id).toBe('main');
+  });
+});
+
+describe('Layout.css', () => {
+  const css = readFileSync(resolve(process.cwd(), 'src/app/Layout.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const block = (selector: string): string => {
+    const i = css.indexOf(selector);
+    expect(i, selector).toBeGreaterThanOrEqual(0);
+    const open = css.indexOf('{', i);
+    return css.slice(open + 1, css.indexOf('}', open));
+  };
+
+  it('the header is not sticky below 900 px (the fixed bottom nav already anchors phones)', () => {
+    const m = /@media \(max-width: 899px\)\s*\{\s*\.layout__header\s*\{([^}]*)\}/.exec(css);
+    expect(m, 'phone header rule').not.toBeNull();
+    expect(m![1]).toMatch(/position:\s*static/);
+  });
+
+  it('drills collapse the header to the brand row: status hidden on train / gate / shinsa', () => {
+    for (const r of ['train', 'gate', 'shinsa']) {
+      const re = new RegExp(`\\.layout\\[data-route="${r}"\\] \\.layout__status[^{]*\\{[^}]*display:\\s*none`);
+      expect(css, r).toMatch(re);
+    }
+    expect(css).not.toMatch(/\.layout\[data-route="dojo"\] \.layout__status/);
+  });
+
+  it('the Dan label uses the text-safe gold and the header height tracks the brand row', () => {
+    expect(block('.layout__dan {')).toMatch(/color:\s*var\(--kin-text\)/);
+    expect(block('.layout {')).toMatch(/--header-height:\s*calc\(var\(--touch\)/);
   });
 });

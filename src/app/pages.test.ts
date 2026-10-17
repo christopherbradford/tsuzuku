@@ -1,7 +1,6 @@
 /**
- * Route → page wiring. Other groups' barrels land concurrently: a route whose
- * source files are not on disk yet is reported as skipped (never as green),
- * and becomes a real assertion the moment the files appear.
+ * Route → page wiring. Every route's module must be on disk: a renamed or
+ * deleted page fails this file instead of becoming a silent skip.
  */
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -144,27 +143,34 @@ describe('route table', () => {
 describe('pageFor', () => {
   for (const name of ALL_ROUTE_NAMES) {
     const src = PAGE_SOURCES[name];
-    const ready = src.files.every(exists);
-    it.skipIf(!ready)(`${name} → ${src.module}#${src.export} resolves to a component`, async () => {
-      const mod = await pageFor(sampleRoute(name));
-      expect(typeof mod.Page).toBe('function');
-      if (name === 'dojo') {
-        expect(mod.props).toBeDefined();
-        expect(mod.props).toHaveProperty('Scene');
-        expect(mod.props).toHaveProperty('feed');
-      }
-    });
+    // The dojo case cold-imports the art, session, exercises and input barrels: give it room.
+    it(
+      `${name} → ${src.module}#${src.export} resolves to a component`,
+      async () => {
+        const mod = await pageFor(sampleRoute(name));
+        expect(typeof mod.Page).toBe('function');
+        if (name === 'dojo') {
+          expect(mod.props).toBeDefined();
+          expect(mod.props).toHaveProperty('Scene');
+          expect(mod.props).toHaveProperty('feed');
+        }
+      },
+      name === 'dojo' ? 30_000 : undefined,
+    );
   }
 
-  const missing = ALL_ROUTE_NAMES.filter((n) => !PAGE_SOURCES[n].files.every(exists));
-  it.skipIf(missing.length === 0)(`a route whose module is not built yet rejects with a clear error (${missing.join(', ')})`, async () => {
-    const name = missing[0]!;
-    await expect(pageFor(sampleRoute(name))).rejects.toBeInstanceOf(Error);
+  it('every route module is on disk (a renamed page fails here, never as a skip)', () => {
+    const missing = ALL_ROUTE_NAMES.filter((n) => !PAGE_SOURCES[n].files.every(exists));
+    expect(missing).toEqual([]);
   });
 
-  it('reports which routes are still waiting on other groups', () => {
-    console.info(`[pages] missing barrels: ${missing.length ? missing.join(', ') : 'none'}`);
-    expect(Array.isArray(missing)).toBe(true);
+  it('the dojo page waits for the exercise registry, so its feed never sees an empty registry', async () => {
+    resetRegistryForTests();
+    resetExercisesForTests();
+    expect(exercisesReady()).toBe(false);
+    const mod = await pageFor({ name: 'dojo' });
+    expect(typeof mod.Page).toBe('function');
+    expect(exercisesReady()).toBe(true);
   });
 });
 

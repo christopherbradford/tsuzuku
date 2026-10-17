@@ -160,6 +160,36 @@ describe('<Recorder> with media devices', () => {
     (URL as unknown as { revokeObjectURL: (u: string) => void }).revokeObjectURL = () => undefined;
   });
 
+  it('revokes the take URL on unmount (and the previous one when a new take replaces it)', async () => {
+    vi.useFakeTimers();
+    const revoked: string[] = [];
+    (URL as unknown as { revokeObjectURL: (u: string) => void }).revokeObjectURL = (u) => {
+      revoked.push(u);
+    };
+    const media = fakeMedia();
+    act(() => render(<Recorder modelKana="おはよう" onSelfGrade={() => undefined} media={media} maxMs={1000} />, root));
+    const take = async (): Promise<void> => {
+      await act(async () => {
+        q<HTMLButtonElement>('.recorder__rec')!.click();
+        await Promise.resolve();
+        await Promise.resolve();
+      });
+      await act(async () => {
+        vi.advanceTimersByTime(1000);
+        await Promise.resolve();
+      });
+    };
+    await take();
+    expect(urls).toEqual(['blob:take-0-1']);
+    expect(revoked).toEqual([]);
+    await take();
+    expect(urls.length).toBe(2);
+    expect(revoked).toEqual(['blob:take-0-1']);
+    act(() => render(null, root));
+    expect(revoked).toEqual(['blob:take-0-1', 'blob:take-1-1']);
+    vi.useRealTimers();
+  });
+
   it('records, stops (releasing the stream) and offers "Play yours"', async () => {
     vi.useFakeTimers();
     const media = fakeMedia();

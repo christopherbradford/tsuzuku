@@ -128,6 +128,26 @@ describe('<LookalikeDuel>', () => {
     expect(root.textContent).toContain('ショク');
   });
 
+  it('a blank that cuts through a ruby group shows the rest of the word bare and never duplicates the kanji on reveal', () => {
+    const MI: KanjiItem = { ...EAT, id: 'j-未', char: '未', meanings: ['not yet'], on: ['ミ'], kun: [], examples: [{ word: '未来', kana: 'みらい', en: 'future' }], lookalikes: ['j-末'] };
+    const pr = props({ item: MI, step: step({ itemId: MI.id, cardKey: 'j-未#read', params: { sentence: '{未来|みらい}は{明|あか}るい。', blank: [0, 1], choices: ['未', '末'] } }) });
+    act(() => render(<LookalikeDuel {...pr} />, root));
+    const sentence = q('.kj__sentence') as HTMLElement;
+    const visible = (): string => Array.from(sentence.querySelectorAll('rt')).reduce((t, rt) => t.replace(rt.textContent ?? '', ''), sentence.textContent ?? '');
+    expect(visible()).toBe('＿来は明るい。');
+    expect(q('[data-blank="true"]')?.textContent).toBe('＿');
+    // the reading of the cut word is still the hint
+    const readingBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('button')).find((b) => b.textContent === 'Reading') as HTMLButtonElement;
+    act(() => readingBtn.click());
+    expect(q('[data-hint="true"]')?.textContent).toContain('みらい');
+    act(() => choices()[0]?.click());
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, answer: '未', hintUsed: true });
+    expect(q('[data-blank="true"]')?.textContent).toBe('未');
+    expect(q('[data-blank="true"] rt')).toBeNull();
+    expect(visible()).toBe('未来は明るい。');
+    expect(sentence.textContent?.match(/来/g)?.length).toBe(1);
+  });
+
   it('a wrong pick through a digit → Again tagged kanji-meaning, right answer marked missed, fires once', () => {
     const s = step();
     const pr = props({ step: s });

@@ -4,9 +4,11 @@
  * The app sends no notifications. A learner who wants a nudge downloads one
  * neutral `.ics`: a daily VEVENT at their chosen local time whose title is
  * exactly "The dojo is open." No countdown copy, no streak talk. RFC 5545
- * lines end in CRLF and fold at 75 octets.
+ * lines end in CRLF and fold at 75 octets. The zone comes from the save
+ * (an import can carry anything), so `safeTz` validates it before it is
+ * written into the TZID parameter; anything else falls back to UTC.
  */
-import { dayToCivil } from '@/shared/time';
+import { dayToCivil, safeTz } from '@/shared/time';
 
 export const ICS_SUMMARY = 'The dojo is open.';
 export const ICS_DESCRIPTION = 'To be continued. Every day.';
@@ -42,6 +44,9 @@ export interface IcsOptions {
 }
 
 const pad = (n: number, w = 2): string => String(Math.trunc(n)).padStart(w, '0');
+
+/** A zone id the host can resolve, or `'UTC'` — the shared helper the save migration also applies to `profile.tz`. */
+export { safeTz };
 
 function clampInt(n: number, min: number, max: number): number {
   if (!Number.isFinite(n)) return min;
@@ -93,7 +98,7 @@ export function buildIcs(o: IcsOptions): string {
   const hour = clampInt(o.hour, 0, 23);
   const minute = clampInt(o.minute, 0, 59);
   const start = resolveStart(o);
-  const tz = (o.tz || 'UTC').trim() || 'UTC';
+  const tz = safeTz(o.tz);
   const duration = clampInt(o.durationMinutes ?? 20, 1, 24 * 60);
   const local = `${start.year}${pad(start.month)}${pad(start.day)}T${pad(hour)}${pad(minute)}00`;
   const stamp = utcStamp(o.stampMs ?? Date.UTC(start.year, start.month - 1, start.day));

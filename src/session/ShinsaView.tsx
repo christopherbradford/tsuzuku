@@ -9,6 +9,10 @@
  *  that opens the retake. `finishShinsa` writes the save and emits
  *  `shinsa:result`; B emits `belt:promoted` and G runs the ceremony.
  *  Speaking passed on the typed path is said so (design 04 §12).
+ *  The exam runner never touches the training snapshot (`persist: false`) and
+ *  leaving the room mid-exam abandons the run; a Notes plan with nothing to
+ *  drill (stale notes whose cards are gone) completes the Notes session on the
+ *  spot so the retake can never be locked.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -27,7 +31,7 @@ import { BELT_NAME, SHINSA_LABEL, fill } from './engine-strings';
 import { itemHead } from './GateView';
 import { SessionRunner } from './runner';
 import { SessionHost, type SessionViewComponent } from './ScrollView';
-import { SHINSA_BROWN, SHINSA_GREEN, SHINSA_PASS, buildNotesPlan, buildShinsa, finishShinsa, scoreShinsa, sectionOfStep, shinsaEligibleAsync, type ShinsaEligibility, type ShinsaScore } from './shinsa';
+import { SHINSA_BROWN, SHINSA_GREEN, SHINSA_PASS, buildNotesPlan, buildShinsa, completeNotesSession, finishShinsa, scoreShinsa, sectionOfStep, shinsaEligibleAsync, type ShinsaEligibility, type ShinsaScore } from './shinsa';
 import { S } from './pages/strings';
 import './ShinsaView.css';
 
@@ -146,6 +150,14 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
     setScore(sc);
   }, [stage, runner, belt]);
 
+  // No retreat: leaving the room (browser Back, route change) mid-run abandons the fight honestly.
+  useEffect(
+    () => () => {
+      if (runner && !runner.done.peek() && !runner.abandoned.peek()) runner.abandon();
+    },
+    [runner],
+  );
+
   const beginExam = async (): Promise<void> => {
     setStage('building');
     setScore(null);
@@ -157,7 +169,7 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
         setStage('empty');
         return;
       }
-      const r = new SessionRunner(plan, { loader });
+      const r = new SessionRunner(plan, { loader, persist: false });
       r.pause();
       p.onRunner?.(r);
       setRunner(r);
@@ -173,8 +185,15 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
     setNotesDone(false);
     try {
       const plan = await buildNotesPlan({ loader, available: p.available });
-      if (!plan || plan.steps.length === 0) {
+      if (!plan) {
         setStage('empty');
+        return;
+      }
+      if (plan.steps.length === 0) {
+        // Nothing left to drill behind the notes: the Notes session is done by definition and the retake opens.
+        completeNotesSession();
+        setNotesDone(true);
+        setStage('loading');
         return;
       }
       const r = new SessionRunner(plan, { loader });

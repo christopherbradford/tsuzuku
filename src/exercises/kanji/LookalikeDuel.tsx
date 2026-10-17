@@ -7,13 +7,16 @@
  * (`params.choices`, else the item's declared `lookalikes` through
  * `kanjiLookalikes`) → tap the one that fits. Without a sentence the drill
  * blanks the kanji inside one of its example words and shows the word's kana
- * as the clue. The blank fills with the right kanji after the pick; a wrong
- * pick → Again tagged `kanji-meaning`. Fewer than two choices → the kanji is
+ * as the clue. A blank that cuts through a ruby group ({未来|みらい} blanked
+ * at 未) leaves the rest of the word bare beside it and keeps the group's
+ * reading as the hint (`ruby-split`), so nothing is duplicated on reveal. The
+ * blank fills with the right kanji after the pick; a wrong pick → Again
+ * tagged `kanji-meaning`. Fewer than two choices → the kanji is
  * shown, not tested (an honest Hard-ceiling result on Continue).
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
-import { segmentsToTokens, toKana, toPlain } from '@/content/ruby';
+import { toPlain } from '@/content/ruby';
 import type { ContentItem, KanjiItem } from '@/content/types';
 import { kanjiLookalikes } from '@/learn';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
@@ -24,6 +27,7 @@ import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
 import { attempt, gradeChoice } from '../check';
 import { S as SD } from '../strings';
+import { splitAtPlainRange } from './ruby-split';
 import { S } from './strings';
 import './kanji.css';
 
@@ -55,14 +59,6 @@ function containsKana(s: string): boolean {
   return containsHiragana(s) || containsKatakana(s);
 }
 
-function cut(ja: string, start: number, end: number): [string, string, string] {
-  const plain = toPlain(ja);
-  const a = Math.max(0, Math.min(start, plain.length));
-  const b = Math.max(a, Math.min(end, plain.length));
-  const t = segmentsToTokens(ja, [plain.slice(0, a), plain.slice(a, b), plain.slice(b)]);
-  return [t[0]?.ja ?? '', t[1]?.ja ?? '', t[2]?.ja ?? ''];
-}
-
 /** What to show: the sentence with the kanji blanked, else an example word with the kanji blanked. */
 export function buildDuelPrompt(kanji: KanjiItem, params: ExerciseProps['step']['params'], exposures: number): DuelPrompt | null {
   if (params.sentence) {
@@ -75,8 +71,8 @@ export function buildDuelPrompt(kanji: KanjiItem, params: ExerciseProps['step'][
       if (i >= 0) range = [i, i + kanji.char.length];
     }
     if (!range) return null;
-    const pieces = cut(params.sentence, range[0], range[1]);
-    const kana = toKana(pieces[1]);
+    const { pieces, reading } = splitAtPlainRange(params.sentence, range[0], range[1]);
+    const kana = reading ?? '';
     return { pieces, clue: kana !== toPlain(pieces[1]) && containsKana(kana) ? kana : null, mode: 'sentence' };
   }
   const examples = kanji.examples.filter((e) => e.word.includes(kanji.char));

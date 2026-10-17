@@ -1,6 +1,8 @@
+import { signal } from '@preact/signals';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { FIXTURE_STORY_ID, createFakeLoader } from '@/content/fixtures';
+import { STT_STATE_LABEL } from '@/audio';
 import { installServices, nullStt, resetServices, type SttResult, type SttService } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { AttemptResult, Step } from '@/shared/session-types';
@@ -241,6 +243,35 @@ describe('<Monologue> recognition path', () => {
     expect(root.textContent).toContain(S.monologueNoTranscript);
     await click('[data-action="accept"]');
     expect(phase()).toBe('report');
+  });
+
+  it('a recognizer that gives up before the bell (microphone blocked) names it, switches the round to the self path and keeps the clock running', async () => {
+    const stt = deferredStt();
+    const denied = { ...stt, state: signal<'listening' | 'denied'>('listening') } as SttService & { state: { value: 'listening' | 'denied' } };
+    await setup({ stt: denied, store: { save: { settings: { speaking: 'recognition' } } } });
+    const cap = captureEvents();
+    await mount(step({ params: { seconds: 30 } }));
+    await click('[data-action="start"]');
+    expect(q('.monologue')?.getAttribute('data-path')).toBe('recognition');
+    await elapse(2_000);
+    await act(async () => {
+      denied.state.value = 'denied';
+      stt.resolve(null);
+      await Promise.resolve();
+    });
+    // still running, but on the self path with the reason under the clock
+    expect(phase()).toBe('running');
+    expect(q('.monologue')?.getAttribute('data-path')).toBe('self');
+    expect(q('[data-field="stt-note"]')?.textContent).toBe(STT_STATE_LABEL.denied);
+    expect(root.textContent).not.toContain(S.monologueNoTranscript);
+    await elapse(28_000);
+    expect(phase()).toBe('report');
+    expect(q('[data-field="stt-note"]')?.textContent).toBe(STT_STATE_LABEL.denied);
+    expect(root.textContent).not.toContain(S.monologueFinishEarlyNote);
+    await click('[data-action="report"]');
+    expect(phase()).toBe('done');
+    expect(cap.events.filter(([n]) => n === 'output:done')[0]![1]).toEqual({ kind: 'monologue', seconds: 30, path: 'self' });
+    cap.stop();
   });
 
   it('finishing early aborts the recognizer and reports the round by rubric', async () => {

@@ -177,6 +177,8 @@ export interface Progress {
   gateAttempts: Record<number, number>;
   /** Station → EpochDay of the latest Gatekeeper attempt (one attempt per day). */
   gateAttemptDay?: Record<number, EpochDay>;
+  /** Station → ms the last LOST fight ended (Grudge reps count from here across reloads); cleared on a pass. */
+  gateAttemptAt?: Record<number, number>;
   /** 遺恨帳 Grudge List. */
   grudge: CardKey[];
   shinsaPassed: Belt[];

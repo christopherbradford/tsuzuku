@@ -452,7 +452,9 @@ function glyphSize(field: MonField, flat: boolean, glyph: string): number {
       s = 92;
       break;
     case 'tomoe':
-      s = 56;
+      // the void inside the tomoe heads is r ≈ 38; a CJK ink box is ≈ 0.9 em,
+      // so 68 keeps the glyph clear of the swirls yet legible at the 64–72 px grid
+      s = 68;
       break;
   }
   // combining-style marks (゛) draw small and off-centre at natural size

@@ -3,8 +3,9 @@
  * context sentence with the word blanked out (the sentence constrains the
  * word choice; the planner rotates it between the item's examples and story
  * lines) → type the Japanese through the IME. Space cycles the kanji
- * candidates (`params.candidates`: the target and its known homophones),
- * Enter submits. Any listed form counts (`acceptForms`: answer, accept,
+ * candidates (`params.candidates`: the target and its known homophones) once
+ * the typed kana reads as the word (`item.kana`, like an IME conversion;
+ * before that Space is a plain character), Enter submits. Any listed form counts (`acceptForms`: answer, accept,
  * word, kana, altForms). Kana-only is Good through Orange; from Green it is
  * Hard once the word's kanji `read` cards are ≥ 7 d (`params.kanaOnlyPolicy`,
  * else computed here with `kanaOnlyPolicyFor`). A particle slip is a Block
@@ -139,7 +140,7 @@ function ProductionForgeBody(p: ExerciseProps): JSX.Element {
         </p>
       ) : null}
 
-      <TextAnswer mode="ja" accept={accept} candidates={candidates} kanaOnlyPolicy={policy} autoFocus label={X.answerField} onSubmit={submit} />
+      <TextAnswer mode="ja" accept={accept} candidates={candidates} candidateReading={item.kana} kanaOnlyPolicy={policy} autoFocus label={X.answerField} onSubmit={submit} />
 
       {done ? <VocabAfter item={item} correct={done.nearMiss ? 'near' : done.correct ? 'true' : 'false'} jj={p.jj} furigana={p.furigana} meaning={false} /> : null}
     </div>

@@ -1,7 +1,7 @@
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
-import { FIXTURE, V } from '@/content/fixtures';
-import type { VocabItem } from '@/content/types';
+import { FIXTURE, G, V } from '@/content/fixtures';
+import type { ConjForm, GrammarItem, VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
 import { makeTestStore } from '@/store/testing';
@@ -108,6 +108,19 @@ describe('FormChain helpers', () => {
     expect(buildChain(null, { forms: ['te', 'ta'], answers: ['行って'] })?.length).toBe(1);
     expect(buildChain(null, {})).toBeNull();
     expect(buildChain(null, { forms: ['te'] })).toBeNull();
+    // without a head word the planner's flat accept list is split by kana tail: のみません → 飲みません, not 飲みます
+    const e = buildChain(null, { forms: ['masu', 'masen', 'ta'], answers: ['飲みます', '飲みません', '飲んだ'], accept: ['飲みます', 'のみます', '飲みません', 'のみません', '飲んだ', 'のんだ'] });
+    expect(e?.map((l) => l.accept)).toEqual([
+      ['飲みます', 'のみます'],
+      ['飲みません', 'のみません'],
+      ['飲んだ', 'のんだ'],
+    ]);
+    // the longest tail wins: いかなかった ends with った but belongs to 行かなかった
+    const f = buildChain(null, { forms: ['ta', 'nakatta'], answers: ['行った', '行かなかった'], accept: ['いった', 'いかなかった'] });
+    expect(f?.map((l) => l.accept)).toEqual([
+      ['行った', 'いった'],
+      ['行かなかった', 'いかなかった'],
+    ]);
   });
 
   it('chainResult: aggregate grading bands 5/5 Good, 4/5 Hard (near miss), ≤ 3/5 Again, misses tagged conjugation', () => {
@@ -145,6 +158,21 @@ describe('<FormChain>', () => {
     expect(q('[data-band="true"]')?.textContent).toBe('Every form clean. Good.');
     expect(q('.gr__reveal')?.getAttribute('data-kind')).toBe('correct');
     expect(root.querySelector('input')).toBeNull();
+  });
+
+  it('on a grammar prod card (item = GrammarItem) the verb comes from params.sentence / promptEn and the chain runs to Good', () => {
+    const MASU = FIXTURE.items[G.ます] as GrammarItem;
+    // what the session builder sets for form-chain on g-n5-003 with 飲む picked
+    const params = { forms: ['masu', 'masen', 'mashita'] as ConjForm[], answers: ['飲みます', '飲みません', '飲みました'], accept: ['飲みます', 'のみます', '飲みません', 'のみません', '飲みました', 'のみました'], sentence: '飲む', promptEn: 'to drink' };
+    const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    mount(pr);
+    expect(q('.gr-chain')?.getAttribute('data-state')).toBeNull();
+    expect(q('[data-dictionary="true"]')?.textContent).toBe('飲む');
+    expect(q('[data-gloss="true"]')?.textContent).toBe('to drink');
+    expect(root.textContent).toContain('One word, 3 forms.');
+    for (const t of ['nomimasu', 'nomimasen', 'nomimashita']) answer(t);
+    expect(pr.onResult).toHaveBeenCalledTimes(1);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, errorTags: [], answer: 'のみます / のみません / のみました' });
   });
 
   it('4/5 → Hard: nearMiss with tag conjugation, the missed form shows given, expected and its rule', () => {

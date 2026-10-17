@@ -5,8 +5,9 @@
  * (`src/store/derived.ts`, which imports `@/learn`). This barrel must never
  * (transitively) import `src/learn`.
  */
-export { store, storeCards, initStore, resetStoreForTests, registerReducer, currentSlot, shardOfKey, shardSizes } from './store';
-export type { InitOptions, ReducerStarter, DueOptions, SetHint, StoreCardsApi } from './store';
+export { store, storeCards, initStore, resetStoreForTests, registerReducer, currentSlot, shardOfKey, shardSizes, replaceHeader, replaceLog } from './store';
+export type { InitOptions, ReducerStarter, DueOptions, SetHint, StoreCardsApi, SaveHeader } from './store';
+export { isDueReview } from './due';
 export {
   freshSave,
   INTENSITY_PRESETS,
@@ -17,7 +18,7 @@ export {
   newPerDayTotal,
   beltForStation,
 } from './defaults';
-export { CURRENT, MigrationError, migrateMeta, migrateShard, migrateLog, applyRedirects } from './migrations';
+export { CURRENT, MigrationError, migrateMeta, migrateMetaChecked, migrateShard, migrateLog, applyRedirects } from './migrations';
 export {
   META_KEY,
   CARDS_KEY,
@@ -37,7 +38,7 @@ export type * from '../shared/store-types';
 export { exportSave, previewImport, previewImportBlob, applyImport, mergeSaves, buildBackup, BACKUP_SCHEMA } from './backup';
 export type { ImportPreview, ImportSummary, ImportData, BackupDocument } from './backup';
 export { XP_TABLE, COMBO_XP, MAX_LEVEL, levelFor, xpToNext, xpAtLevel, xpFor, repXp, comboXp } from './xp';
-export { QUESTS, QUEST_COUNT, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests } from './quests';
+export { QUESTS, QUEST_COUNT, NEEDS_FACET, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests, storeHasFacet } from './quests';
 export type { QuestRule, QuestProgress, PickOptions } from './quests';
 export { STAT_KEYS, updateMedian, honesty, HONESTY_WINDOW } from './stats';
 export {

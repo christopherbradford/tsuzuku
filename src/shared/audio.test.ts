@@ -7,6 +7,8 @@ describe('audio slot', () => {
     await expect(nullAudio.speak('こんにちは', { kana: 'こんにちは' })).resolves.toBeUndefined();
     expect(nullAudio.voices()).toEqual([]);
     expect(nullAudio.hasJaVoice.value).toBe(false);
+    // left unset on purpose: `{ ...nullAudio, hasJaVoice: signal(true) }` doubles must stay audible via the fallback
+    expect(nullAudio.canSpeak).toBeUndefined();
     expect(nullAudio.rateForTier(5)).toBe(SPEED_TIER_RATES[5]);
     expect(nullStt.available).toBe(false);
     await expect(nullStt.recognize({ maxMs: 100 })).resolves.toBeNull();

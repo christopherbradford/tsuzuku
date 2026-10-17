@@ -64,6 +64,7 @@ export const S = {
   captureJa: 'つかまえる',
   captured: 'Captured',
   capturedHint: 'It joins your next Scroll ahead of the station list.',
+  stationScrollHint: 'Grammar and kanji arrive with their station Scroll, in road order. Nothing to capture here.',
   bookmark: 'Bookmark',
   bookmarked: 'Bookmarked',
   inTraining: 'In training',

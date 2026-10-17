@@ -13,13 +13,16 @@
  *    (alternative 0 is the full transcript).
  *  - Errors never throw: they become typed `state` values (`denied`,
  *    `no-speech`, `network`, `audio-capture`, `aborted`, `timeout`, `error`)
- *    the speaking exercises can surface with `STT_STATE_LABEL`, and the
- *    promise resolves with whatever was heard so far, else `null`.
+ *    the speaking exercises can surface with `STT_STATE_LABEL` (or
+ *    `sttFailure()`, which also tolerates a plain `SttService` without
+ *    `state`), and the promise resolves with whatever was heard so far,
+ *    else `null`.
  *
  * The recognizer constructor is injectable so the module runs under jsdom.
  */
 import { signal, type Signal } from '@preact/signals';
 import type { SttResult, SttService } from '../shared/audio';
+import { STT_STATE_LABEL } from './strings';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Minimal Web Speech shapes (lib.dom lacks `SpeechRecognition` itself)       */
@@ -128,6 +131,24 @@ export function stateForError(code: string | undefined): SttState {
 
 /** `denied` / `network` / `audio-capture` end a continuous session; the rest let it restart. */
 const FATAL: ReadonlySet<SttState> = new Set(['denied', 'network', 'audio-capture', 'aborted']);
+
+export interface SttFailure {
+  state: SttState;
+  /** `STT_STATE_LABEL[state]`, Sensei voice. */
+  label: string;
+}
+
+/**
+ * The recognizer's typed failure after a `null` result, read from the
+ * optional `state` signal (`nullStt` and plain test doubles have none):
+ * `null` while idle / listening / done or when no state is exposed. Exercises
+ * show `label` in place of a generic "nothing heard".
+ */
+export function sttFailure(stt: SttService): SttFailure | null {
+  const st = (stt as Partial<Pick<SttServiceEx, 'state'>>).state?.value;
+  if (!st || st === 'idle' || st === 'listening' || st === 'done') return null;
+  return { state: st, label: STT_STATE_LABEL[st] };
+}
 
 function at<T>(list: { length: number; item?(i: number): T; [index: number]: T }, i: number): T | undefined {
   return typeof list.item === 'function' ? list.item(i) : list[i];

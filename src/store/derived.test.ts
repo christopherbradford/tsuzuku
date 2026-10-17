@@ -1,19 +1,10 @@
-/**
- * derived.ts imports the pure learning core `@/learn` (group C). Until that
- * barrel lands this file skips itself instead of failing the suite.
- */
 import type { CardKey, StationBundle } from '../content/types';
 import { bus } from '../shared/events';
 import { epochDay } from '../shared/time';
 import { CardFlag, type CardTuple, type LogEntry } from '../shared/store-types';
 import { resetStoreForTests, store } from './store';
 import { DEFAULT_TEST_NOW, card, makeTestStore, testSave } from './testing';
-
-type Derived = typeof import('./derived');
-const derived: Derived | null = await import('./derived').then(
-  (m) => m,
-  () => null,
-);
+import * as d from './derived';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 
@@ -39,16 +30,14 @@ function live(s: number, extra: Partial<{ due: number; reps: number; flags: numb
   return card({ due: extra.due ?? TODAY + 1, s, reps: extra.reps ?? 3, state: 2, last: extra.last ?? TODAY, flags: extra.flags ?? 0 });
 }
 
-describe.skipIf(!derived)('derived read-model', () => {
-  const d = derived as Derived;
-
+describe('derived read-model', () => {
   afterEach(() => {
     resetStoreForTests();
     bus.reset();
   });
 
   describe('dueCount / isBacklog', () => {
-    it('counts due cards excluding archived and kaiden', async () => {
+    it('counts due reviews excluding archived, kaiden and never-reviewed (state 0) cards', async () => {
       await makeTestStore({
         cards: {
           'v-n5-0001#rec': live(1, { due: TODAY - 2 }),
@@ -56,9 +45,13 @@ describe.skipIf(!derived)('derived read-model', () => {
           'v-n5-0003#rec': live(1, { due: TODAY + 1 }),
           'v-n5-0004#rec': live(1, { due: TODAY, flags: CardFlag.archived }),
           'v-n5-0005#rec': live(1, { due: TODAY, flags: CardFlag.kaiden }),
+          'v-n5-0006#rec': card({ due: TODAY - 1, state: 0 }),
+          'k-h-a#prod': card({ due: TODAY, state: 0 }),
         },
       });
+      expect(store.cards.dueOn(TODAY)).toHaveLength(4);
       expect(d.dueCount()).toBe(2);
+      expect(d.forecastCounts().due).toBe(2);
       expect(d.dueCount(TODAY - 1)).toBe(1);
       expect(d.isBacklog()).toBe(false);
     });

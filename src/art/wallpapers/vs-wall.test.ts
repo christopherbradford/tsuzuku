@@ -1,9 +1,10 @@
 import { fnv1a32 } from '../../shared/hash';
 import { pointInPolygon } from '../geom';
+import { layerBounds } from '../jtext';
 import { normalizeData, sampleData } from './data';
 import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
 import { S } from './strings-2';
-import { brickPattern, challengerTexts, spec, speedLines, vsLayout, vsSlab } from './vs-wall';
+import { brickPattern, challengerTexts, spec, speedLines, vsLayout, vsPlate, vsSlab } from './vs-wall';
 
 const DATA = sampleData(1);
 const fp = (svg: string): string => `${svg.length}:${fnv1a32(svg).toString(16)}`;
@@ -88,6 +89,27 @@ describe('vs-wall', () => {
     expect(doc.querySelectorAll('rect[fill="#E0B341"]').length).toBeGreaterThan(20);
     expect(doc.querySelector('g[transform*="skewX"]')).not.toBeNull();
     parse(`<svg xmlns="http://www.w3.org/2000/svg">${brickPattern('b', 80, 36, '#333', '#111')}</svg>`);
+  });
+
+  it('desktop: long katakana names stop short of the VS plate and 壁 starts right of it, over many seeds', () => {
+    for (const nameKana of ['クリストファー', 'ジョナサン・スミス', 'エリザベス・ジョンソン', 'クリストファー・ブラッドフォード']) {
+      for (let seed = 1; seed <= 8; seed++) {
+        const L0 = vsLayout(seed, 'desktop');
+        const plate = vsPlate(L0);
+        expect(plate.left).toBeLessThan(plate.right);
+        expect(plate.corners[3]![0]).toBe(plate.left);
+        expect(plate.corners[1]![0]).toBe(plate.right);
+        const c = spec.compose(seed, sampleData(1, { nameKana }), 'desktop');
+        const name = layerBounds(c.texts.find((t) => t.text === nameKana)!);
+        const cap = layerBounds(c.texts.find((t) => t.text === S.challenger)!);
+        const wall = layerBounds(c.texts.find((t) => t.text === S.wall)!);
+        expect(name.x, `${nameKana} seed ${seed}`).toBeGreaterThan(0);
+        expect(name.x + name.w, `${nameKana} seed ${seed}`).toBeLessThan(plate.left);
+        expect(cap.x + cap.w).toBeLessThan(plate.left);
+        expect(wall.x, `壁 seed ${seed}`).toBeGreaterThan(plate.right);
+        expect(wall.x + wall.w).toBeLessThan(1920);
+      }
+    }
   });
 
   it('long names shrink to fit; empty data degrades gracefully; the belt colour appears as the sash', () => {

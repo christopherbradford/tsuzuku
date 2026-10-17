@@ -15,6 +15,7 @@ import {
   localToMs,
   minutesUntilDayEnd,
   monthKey,
+  safeTz,
   startOfDay,
   weekOf,
   weekStartDay,
@@ -149,5 +150,20 @@ describe('formatting', () => {
     expect(formatMinutes(65)).toBe('1 h 05 min');
     expect(formatMinutes(135)).toBe('2 h 15 min');
     expect(formatMinutes(-3)).toBe('0 min');
+  });
+});
+
+describe('safeTz', () => {
+  it('keeps every zone the host resolves (trimmed) and falls back to UTC for the rest', () => {
+    expect(safeTz('Asia/Tokyo')).toBe('Asia/Tokyo');
+    expect(safeTz(' America/Los_Angeles ')).toBe('America/Los_Angeles');
+    expect(safeTz('Etc/GMT+8')).toBe('Etc/GMT+8');
+    expect(safeTz('US/Pacific')).toBe('US/Pacific');
+    expect(safeTz(undefined)).toBe('UTC');
+    expect(safeTz(null)).toBe('UTC');
+    expect(safeTz('')).toBe('UTC');
+    expect(safeTz('UTC\nX:1')).toBe('UTC');
+    expect(safeTz('Asia/Tokyo;TZID=x')).toBe('UTC');
+    expect(safeTz('Nowhere/Town')).toBe('UTC');
   });
 });

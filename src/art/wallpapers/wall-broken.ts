@@ -17,7 +17,7 @@ import { FONTS, fitSize, inSafeZone, type TextLayer } from '../jtext';
 import { L, M, Z, blur, clipPath, el, g, path, polygon, radialGradient, rect, svgDoc, url } from '../svg';
 import { safeRect, sizeOf, type Composition, type WallpaperData, type WallpaperSize, type WallpaperSpec } from './spec';
 import { S } from './strings-2';
-import { KIN, NEON_M, brickPattern, challengerSide, challengerTexts, speedLines, splitEdge, vsCentre, vsLayout } from './vs-wall';
+import { KIN, NEON_M, brickPattern, challengerSide, challengerTexts, speedLines, splitEdge, vsCentre, vsLayout, wallGlyphX } from './vs-wall';
 
 export const MIN_PIECES = 10;
 export const MAX_PIECES = 40;
@@ -134,8 +134,8 @@ function compose(seed: number, data: WallpaperData, size: WallpaperSize): Compos
 
   // Texts: challenger, 越 with its caption, and the grammar patterns on the fragments (largest pieces first).
   const texts: TextLayer[] = [...challengerTexts(L0, data, size)];
-  const gx = phone ? w / 2 : w * 0.75;
   const gSize = phone ? 300 : 320;
+  const gx = wallGlyphX(L0, gSize);
   const gy = phone ? safe.y + safe.h - 300 : h * 0.68;
   texts.push({ text: S.beyondTitle, x: gx, y: gy - gSize * 0.95 - 18, size: 40, font: FONTS.pixel, fill: KIN, anchor: 'middle', letterSpacing: 6, lang: 'ja' });
   texts.push({ text: S.beyond, x: gx, y: gy, size: gSize, font: FONTS.neon, fill: WASHI, anchor: 'middle', lang: 'ja' });

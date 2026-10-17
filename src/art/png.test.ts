@@ -15,9 +15,10 @@ function fakeCanvas(w: number, h: number, log: string[], pixels?: Uint8ClampedAr
     textAlign: 'start',
     textBaseline: 'alphabetic',
     globalAlpha: 1,
+    letterSpacing: '0px',
     drawImage: (_img, dx, dy, dw, dh) => void log.push(`drawImage ${dx},${dy},${dw},${dh}`),
     fillRect: (x, y, ww, hh) => void log.push(`fillRect ${x},${y},${ww},${hh}`),
-    fillText: (t, x, y) => void log.push(`fillText ${t} ${Math.round(x)},${Math.round(y)} ${ctx.font} ${ctx.textAlign}/${ctx.textBaseline}`),
+    fillText: (t, x, y) => void log.push(`fillText ${t} ${Math.round(x)},${Math.round(y)} ${ctx.font} ${ctx.textAlign}/${ctx.textBaseline} ls=${ctx.letterSpacing}`),
     save: () => void log.push('save'),
     restore: () => void log.push('restore'),
     translate: (x, y) => void log.push(`translate ${Math.round(x)},${Math.round(y)}`),
@@ -173,6 +174,23 @@ describe('drawTexts', () => {
     expect(fills[1]).toContain('end/alphabetic');
     expect(log).toContain('rotate -6');
   });
+  it('horizontal text carries the layer letterSpacing to the canvas (and resets it to 0 otherwise); engines without it are left alone', () => {
+    const log: string[] = [];
+    const c = fakeCanvas(10, 10, log);
+    const ctx = c.getContext('2d')!;
+    ctx.letterSpacing = '3px'; // stale state from a previous caller
+    drawTexts(ctx, [{ ...TEXTS[0]!, text: '挑戦者', letterSpacing: 6 }, TEXTS[0]!], 1, 1);
+    const fills = log.filter((l) => l.startsWith('fillText'));
+    expect(fills[0]).toContain('挑戦者');
+    expect(fills[0]).toContain('ls=6px');
+    expect(fills[1]).toContain('ハナ');
+    expect(fills[1]).toContain('ls=0px');
+    // an engine whose context has no letterSpacing property is never given one
+    const bare = fakeCanvas(10, 10, []).getContext('2d')! as Ctx2D & { letterSpacing?: string };
+    delete bare.letterSpacing;
+    drawTexts(bare, [{ ...TEXTS[0]!, letterSpacing: 6 }], 1, 1);
+    expect('letterSpacing' in bare).toBe(false);
+  });
   it('fontsOf lists only webfonts, once each', () => {
     expect(fontsOf(TEXTS)).toEqual(['Yuji Syuku', 'Shippori Mincho B1']);
     expect(fontsOf([{ ...TEXTS[0]!, font: FONTS.ja }])).toEqual([]);
@@ -263,13 +281,16 @@ describe('download / gating / filenames', () => {
     expect(isIos({ userAgent: 'Mozilla/5.0 (Macintosh)', platform: 'MacIntel', maxTouchPoints: 0 })).toBe(false);
     expect(isIos(undefined)).toBe(false);
   });
-  it('4K gate needs deviceMemory ≥ 4 and a desktop media query', () => {
-    expect(canRender4k()).toBe(false);
-    Object.defineProperty(navigator, 'deviceMemory', { value: 8, configurable: true });
+  it('4K gate needs a desktop media query and refuses only a reported deviceMemory < 4 (unknown memory passes: Firefox/Safari)', () => {
     expect(canRender4k()).toBe(false); // jsdom has no matchMedia
+    Object.defineProperty(navigator, 'deviceMemory', { value: 8, configurable: true });
+    expect(canRender4k()).toBe(false);
     const w = window as unknown as { matchMedia?: (q: string) => { matches: boolean } };
     w.matchMedia = (q) => ({ matches: q.includes('pointer: fine') });
     try {
+      expect(canRender4k()).toBe(true);
+      expect(exportSizes('desktop').length).toBe(3);
+      Object.defineProperty(navigator, 'deviceMemory', { value: undefined, configurable: true });
       expect(canRender4k()).toBe(true);
       expect(exportSizes('desktop').length).toBe(3);
       Object.defineProperty(navigator, 'deviceMemory', { value: 2, configurable: true });

@@ -18,6 +18,12 @@
  * answer → resolves `true`, nothing to verify) and `heard` for a perception
  * Judge (absent → seeded here, and the heard word is spoken through `speak()`).
  *
+ * Scroll blocks (design 03 §2.2: pretest → teach → check): when the runner
+ * reaches the first intro check of a Scroll it has not taught yet, the view
+ * pauses the runner and unrolls that Scroll's `<TeachCard>`s (its item ids are
+ * the intro-check steps that carry the same `scrollId`); "Begin the checks"
+ * resumes. A host that teaches itself (`<ScrollView>`) passes `teach={false}`.
+ *
  * Leaving mid-session keeps the snapshot (the runner saves after every submit
  * and step), so the Dojo offers "Resume (n reps left)" next time.
  */
@@ -33,14 +39,19 @@ import type { LogEntry } from '../shared/store-types';
 import { ExerciseFrame } from '../shared/ui/ExerciseFrame';
 import { JudgeCard, type JudgeShape } from '../shared/ui/JudgeCard';
 import { store } from '../store';
+import { beltOfStation } from '../store/derived';
 import { EXPECTED_MAX_MINUTES } from '../learn';
-import { introducedToday } from './builder';
+import { markKnown } from '../learn/apply';
+import { effectiveNewPerDay, introducedToday } from './builder';
 import { endCardNotes, jikaiYokoku } from './end-card';
 import { S as ENGINE } from './engine-strings';
 import { EndCard } from './EndCard';
 import { Hud } from './Hud';
 import { MichikusaStep } from './MichikusaStep';
 import type { SessionRunner } from './runner';
+import { isIntroCheck, teachModel, type TeachModel } from './scroll';
+import { TeachCard } from './TeachCard';
+import { S as PS } from './pages/strings';
 import { S } from './strings';
 import './SessionView.css';
 
@@ -54,6 +65,8 @@ export interface SessionViewProps {
   notes?: readonly string[];
   /** Additive: content source (tests pass `createFakeLoader()`). */
   loader?: ContentLoader;
+  /** Additive: unroll a Scroll's teach cards before its first intro check (default `true`). */
+  teach?: boolean;
 }
 
 /** Combo tier thresholds (design 01 §4.4; `learn/kiai.comboTier` is not in the `@/learn` barrel). */
@@ -96,7 +109,7 @@ export function notesFor(result: SessionResult, plan: SessionRunner['plan']): st
   const minutesToday = store.daily.value[today]?.minutes ?? result.tally.minutes;
   const preset = settings.intensity === 'custom' ? 'standard' : settings.intensity;
   const intro = introducedToday(today);
-  const npd = settings.newPerDay;
+  const npd = effectiveNewPerDay(settings, beltOfStation(Math.max(1, plan.station)));
   const target = Math.round(npd.vocab + npd.kanji + npd.grammar);
   const crammingCap = target > 0 && intro.vocab + intro.kanji + intro.grammar >= 2 * target;
   const prev = settings.feel === 'arcade' ? previousSessionErrorRate(store.log.recent(2000), result.startedAt) : null;
@@ -134,6 +147,11 @@ export function SessionView(p: SessionViewProps): JSX.Element {
   const [yokoku, setYokoku] = useState<JikaiYokoku | null>(null);
   const [notes, setNotes] = useState<string[] | null>(null);
   const judgeReplay = useRef<(() => void) | null>(null);
+  /** Scroll ids whose cards have been unrolled in this view (a resumed run shows them once more; harmless). */
+  const taughtScrolls = useRef(new Set<string>());
+  const [teaching, setTeaching] = useState<{ scrollId: string; itemIds: string[] } | null>(null);
+  const [known, setKnown] = useState<ReadonlySet<string>>(new Set());
+  const teachOn = p.teach !== false;
 
   const openJudge = (j: PendingJudge | null): void => {
     judgeRef.current = j;
@@ -152,6 +170,19 @@ export function SessionView(p: SessionViewProps): JSX.Element {
     submitted.current = undefined;
     judgeReplay.current = null;
   }, [stepId]);
+
+  // Scroll block: the first intro check of a Scroll pauses the runner while its cards are read (design 03 §2.2).
+  useEffect(() => {
+    if (!teachOn || !step || done || abandoned) return;
+    const scrollId = step.params.scrollId;
+    if (!scrollId || !isIntroCheck(step) || taughtScrolls.current.has(scrollId)) return;
+    taughtScrolls.current.add(scrollId);
+    const itemIds: string[] = [];
+    for (const s of runner.steps()) if (isIntroCheck(s) && s.params.scrollId === scrollId && s.itemId && !itemIds.includes(s.itemId)) itemIds.push(s.itemId);
+    if (itemIds.length === 0) return;
+    if (!runner.paused.peek()) runner.pause();
+    setTeaching({ scrollId, itemIds });
+  }, [stepId, teachOn, done, abandoned]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // The runner stops: leave, or read the 次回予告 for the card.
   useEffect(() => {
@@ -231,6 +262,55 @@ export function SessionView(p: SessionViewProps): JSX.Element {
   ) : null;
 
   const hud = <Hud plan={livePlan} index={index} feel={feel} backlog={runner.plan.meta.backlog} />;
+
+  if (teaching) {
+    const models = teaching.itemIds.map((id) => {
+      const item = loader.get(id);
+      const model = item ? teachModel(item) : null;
+      const contrast = model?.contrastId ? loader.get(model.contrastId) : undefined;
+      return { id, item, model, contrast: contrast ? teachModel(contrast) : null };
+    });
+    const beginChecks = (): void => {
+      setTeaching(null);
+      runner.resume();
+    };
+    return (
+      <div class="session session--teach" data-feel={feel} aria-label={S.sessionLabel} data-scroll={teaching.scrollId}>
+        {leaveBar}
+        {hud}
+        <section class="session__teach" aria-label={PS.teachTitle}>
+          <h3 class="session__teach-title">{PS.teachTitle}</h3>
+          <p class="session__teach-line muted">{PS.teachLine}</p>
+          <div class="session__teach-cards">
+            {models.map((m, i) =>
+              m.item && m.model ? (
+                <TeachCard
+                  key={m.id}
+                  item={m.item}
+                  model={m.model}
+                  index={i}
+                  total={models.length}
+                  furigana={settings.furigana}
+                  known={known.has(m.id)}
+                  onKnown={() => {
+                    markKnown(m.id, (m.model as TeachModel).kind);
+                    setKnown((prev) => new Set([...prev, m.id]));
+                  }}
+                  contrast={m.contrast}
+                />
+              ) : null,
+            )}
+          </div>
+          <div class="session__teach-actions">
+            <button type="button" class="hanko session__teach-begin" onClick={beginChecks} autoFocus>
+              {PS.beginChecks}
+            </button>
+          </div>
+        </section>
+        {leaveDialog}
+      </div>
+    );
+  }
 
   if (step.block === 'michikusa') {
     const id = step.params.michikusaId ?? step.itemId ?? '';

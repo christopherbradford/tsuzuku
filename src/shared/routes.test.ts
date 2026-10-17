@@ -70,6 +70,18 @@ describe('href / parseHash', () => {
     }
     expect(titleFor({ name: 'station', n: 7 })).toContain('7');
   });
+
+  it('titleFor shows display names, never raw route ids', () => {
+    expect(titleFor({ name: 'train', mode: 'kata' })).not.toBe('kata · TSUZUKU');
+    expect(titleFor({ name: 'train', mode: 'kata' })).toBe('型 Kata · TSUZUKU');
+    expect(titleFor({ name: 'collections', tab: 'goshuin' })).toContain('Goshuin-chō');
+    expect(titleFor({ name: 'collections', tab: 'mon' })).not.toContain('Collections mon');
+    expect(titleFor({ name: 'shinsa', belt: 'orange' })).toContain('Orange');
+    expect(titleFor({ name: 'studio', wallpaperId: WALLPAPER_IDS[0] })).not.toContain(WALLPAPER_IDS[0]);
+    expect(titleFor({ name: 'story', id: 's-04-1' })).not.toContain('s-04-1');
+    expect(titleFor({ name: 'library' })).toContain('書庫');
+    for (const mode of SESSION_MODES) expect(titleFor({ name: 'train', mode })).not.toMatch(new RegExp(`^${mode} ·`));
+  });
 });
 
 describe('navigate', () => {

@@ -1,10 +1,14 @@
 /*
  * TSUZUKU — shell layout (group A). Header, main, bottom nav, notices.
  * Mobile-first (works at 320 px), safe-area aware, tokens only.
+ * The header is sticky only from 900 px up (phones already have the fixed
+ * bottom nav, so it scrolls away with the page) and collapses to the brand
+ * row during drills (train / gate / shinsa) so the exercise has the viewport.
  */
 .layout {
   --nav-height: 60px;
-  --header-height: 56px;
+  /* brand row (44 px touch target) + vertical padding + border */
+  --header-height: calc(var(--touch) + var(--sp-2) * 2 + 1px);
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
@@ -57,7 +61,7 @@
 }
 .layout__dan {
   font-size: var(--fs-1);
-  color: var(--kin);
+  color: var(--kin-text);
 }
 .layout__level {
   display: inline-flex;
@@ -76,6 +80,18 @@
   justify-content: center;
 }
 
+/* drills: only the brand link stays; SessionView has its own Leave button */
+.layout[data-route="train"] .layout__status,
+.layout[data-route="gate"] .layout__status,
+.layout[data-route="shinsa"] .layout__status {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .layout__header {
+    position: static;
+  }
+}
 @media (max-width: 480px) {
   .layout__brand-en {
     display: none;

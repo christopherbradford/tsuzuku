@@ -2,7 +2,8 @@ import { fnv1a32 } from '../../shared/hash';
 import { normalizeData, sampleData } from './data';
 import { hasCanvasSize, isComposition, isSelfContained, safeZoneViolations, usesReservedIds, WALLPAPER_SIZES } from './spec';
 import { S } from './strings-2';
-import { spec as vsWall, vsLayout } from './vs-wall';
+import { layerBounds } from '../jtext';
+import { spec as vsWall, vsLayout, vsPlate } from './vs-wall';
 import { MAX_PIECES, MIN_PIECES, fragments, spec } from './wall-broken';
 
 const DATA = sampleData(1);
@@ -58,6 +59,18 @@ describe('wall-broken', () => {
     expect(a.texts.map((t) => t.text)).toContain(S.beyondTitle);
     expect(a.texts.map((t) => t.text)).not.toContain(S.wall);
     expect(a.svg).not.toContain(DATA.nameKana);
+  });
+
+  it('desktop: a long katakana name stops short of the VS plate and 越 starts right of it', () => {
+    const nameKana = 'エリザベス・ジョンソン';
+    for (let seed = 1; seed <= 8; seed++) {
+      const plate = vsPlate(vsLayout(seed, 'desktop'));
+      const c = spec.compose(seed, sampleData(1, { nameKana }), 'desktop');
+      const name = layerBounds(c.texts.find((t) => t.text === nameKana)!);
+      expect(name.x + name.w, `seed ${seed}`).toBeLessThan(plate.left);
+      const beyond = layerBounds(c.texts.find((t) => t.text === S.beyond)!);
+      expect(beyond.x, `seed ${seed}`).toBeGreaterThan(plate.right);
+    }
   });
 
   it('one fragment per grammar point mastered in the arc, clamped 10–40; Brown grammar is the fallback', () => {

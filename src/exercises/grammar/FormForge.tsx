@@ -10,6 +10,11 @@
  * answer. Exact → Good, a slip → Block, a miss → Again tagged `conjugation`;
  * no particle tolerance. Showing the form's rule first is a hint (Hard
  * ceiling). A form the word lacks (ある → potential) is shown, not tested.
+ *
+ * On a grammar `prod` card the item is the GrammarItem and the verb the
+ * planner picked travels in `params.sentence` (its dictionary form) and
+ * `params.promptEn` (its gloss + the form); those stand in for the head word
+ * when the item is not a conjugable vocab item.
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
@@ -108,8 +113,10 @@ export function FormForge(p: ExerciseProps): JSX.Element {
   };
 
   const label = form ? FORM_LABEL[form] : null;
-  const dictionary = head?.word ?? vocab?.word ?? null;
+  const fromStep = (p.step.params.sentence ?? '').trim();
+  const dictionary = head?.word ?? vocab?.word ?? (fromStep.length > 0 ? fromStep : null);
   const dictionaryKana = head?.kana ?? vocab?.kana ?? null;
+  const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
 
   if (!built || !form || !label || built.accept.length === 0) {
     const defective = Boolean(built?.defective);
@@ -156,7 +163,11 @@ export function FormForge(p: ExerciseProps): JSX.Element {
           </span>
         ) : null}
         {head ? <span class="gr__gloss">{POS_GROUP_LABEL[head.pos]}</span> : null}
-        {vocab && vocab.meanings.length > 0 ? <span class="gr__gloss">{vocab.meanings.join(' · ')}</span> : null}
+        {gloss ? (
+          <span class="gr__gloss" data-gloss="true">
+            {gloss}
+          </span>
+        ) : null}
       </div>
       <p class="gr__gloss">
         <span class="gr__label">{S.forgeTarget}</span> <span class="gr__target" data-target-form="true">{label}</span>

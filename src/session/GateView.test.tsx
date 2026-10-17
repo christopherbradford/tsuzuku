@@ -12,7 +12,9 @@ import { epochDay } from '../shared/time';
 import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
-import { buildGate } from './gatekeeper';
+import { buildGate, rematchAllowed, resetGateAttemptsForTests } from './gatekeeper';
+import { S as ES } from './engine-strings';
+import { SessionRunner as Runner } from './runner';
 import type { SessionRunner } from './runner';
 import type { SessionViewComponent } from './ScrollView';
 import { GateView, grudgeRepsSince, itemHead, missesIn, phaseIndexOf } from './GateView';
@@ -56,6 +58,7 @@ afterEach(() => {
   render(null, root);
   root.remove();
   resetStoreForTests();
+  resetGateAttemptsForTests();
   bus.reset();
 });
 
@@ -273,5 +276,52 @@ describe('helpers', () => {
     const misses = missesIn(plan, results, plan.blocks[0]!.stepIds);
     expect(misses).toEqual(first.itemId ? [first.itemId] : []);
     expect(missesIn(plan, [], plan.blocks[0]!.stepIds)).toEqual([]);
+  });
+});
+
+describe('<GateView> and the training snapshot (design 03 §12, 04 §11)', () => {
+  it('entering a fight leaves a kept Kata snapshot untouched; unmounting mid-fight abandons the run', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: stationCards({ mature: true }) });
+    const kata: SessionPlan = { id: 'kata-kept', mode: 'kata', day: TODAY, createdAt: DEFAULT_TEST_NOW, station: 4, steps: [], blocks: [], meta: { dueTotal: 0, dueTaken: 0, backlog: false, newCount: 0, scrollIds: [] } };
+    store.session.save({ schema: 'tsuzuku.session/1', plan: { ...kata, steps: [{ id: 'k1', block: 'reviews', exercise: 'meaning-recall', itemId: V.犬, cardKey: `${V.犬}#rec`, params: { answer: 'dog' }, timed: false, isNew: false, stepTag: null, exposures: 3, estMs: 5000 }] }, cursor: 0, results: [], kiai: { ki: 0, combo: 0, bestCombo: 0, kiaiLeft: 0, ippon: 0, recoveryQueue: [] } });
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 6, loader, available: all });
+    await mountReady(plan);
+    click(hanko());
+    await settle(2);
+    const r = current();
+    click(hanko());
+    answer(r, true);
+    expect(store.session.load()?.plan.id).toBe('kata-kept');
+    expect(store.session.load()?.plan.mode).toBe('kata');
+    const cap = captureEvents();
+    act(() => render(null, root));
+    expect(r.abandoned.value).toBe(true);
+    expect(cap.events.some((e) => e[0] === 'session:abandoned')).toBe(true);
+    expect(store.session.load()?.plan.id).toBe('kata-kept');
+    cap.stop();
+    expect(Runner.resume({ loader })?.plan.id).toBe('kata-kept');
+  });
+
+  it('after a loss the result screen and a fresh intro agree on the rematch rule', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: stationCards({ mature: true }) });
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 9, loader, available: all });
+    await mountReady(plan);
+    click(hanko());
+    await settle(2);
+    const r = current();
+    for (let bi = 0; bi < plan.blocks.length; bi++) {
+      click(hanko());
+      answerBlock(r, plan, bi, false);
+    }
+    await settle(2);
+    // the fight's own Again rows are not Grudge training: the result screen and the engine agree the rematch is locked
+    expect(text()).toContain('Train 20 more Grudge reps today');
+    expect(Array.from(root.querySelectorAll('button')).some((b) => b.textContent === 'Fight again')).toBe(false);
+    expect(rematchAllowed(4)).toMatchObject({ allowed: false, grudgeRepsNeeded: 20 });
+    act(() => render(null, root));
+    await mountReady(plan);
+    expect(root.querySelector('.gate-view')?.getAttribute('data-stage')).toBe('intro');
+    expect(text()).not.toContain(ES.rematchOpen);
+    expect(Array.from(root.querySelectorAll('button')).some((b) => b.textContent === 'Face the Gatekeeper')).toBe(false);
   });
 });

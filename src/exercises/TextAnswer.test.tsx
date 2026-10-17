@@ -2,7 +2,7 @@ import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import type { Step } from '@/shared/session-types';
 import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
-import { TextAnswer, type TextAnswerProps, type TextAnswerResult } from './TextAnswer';
+import { TextAnswer, offeredCandidates, type TextAnswerProps, type TextAnswerResult } from './TextAnswer';
 
 let root: HTMLDivElement;
 beforeEach(() => {
@@ -254,12 +254,47 @@ describe('<TextAnswer> Japanese mode', () => {
     expect(q('.text-answer__why')?.textContent).toBe('Katakana here.');
   });
 
-  it('passes candidates to the kana field and refuses an empty kana submit', () => {
-    const { onSubmit, input } = mount({ accept: ['続く', 'つづく'], mode: 'ja', candidates: ['続く', '着く'] });
-    expect(q('.kana-input__hint')).not.toBeNull();
+  it('offers candidates to the kana field only once the kana reads as candidateReading, and refuses an empty kana submit', () => {
+    const { onSubmit, input } = mount({ accept: ['続く', 'つづく'], mode: 'ja', candidates: ['続く', '着く'], candidateReading: 'つづく' });
+    expect(q('.kana-input__hint')).toBeNull();
     key(input, 'Enter');
     expect(onSubmit).not.toHaveBeenCalled();
     expect(q('.text-answer__nudge')).not.toBeNull();
+    type(input, 'tsu');
+    expect(input.value).toBe('つ');
+    const early = key(input, ' ');
+    expect(early.defaultPrevented).toBe(false);
+    expect(input.value).toBe('つ');
+    expect(q('.kana-input__hint')).toBeNull();
+    type(input, 'duku');
+    expect(input.value).toBe('つづく');
+    expect(q('.kana-input__hint')).not.toBeNull();
+    const e = key(input, ' ');
+    expect(e.defaultPrevented).toBe(true);
+    expect(input.value).toBe('続く');
+    key(input, ' ');
+    expect(input.value).toBe('着く');
+    key(input, ' ');
+    expect(input.value).toBe('つづく');
+  });
+
+  it('without candidateReading the candidates never cycle from kana (Space stays a plain character)', () => {
+    const { input } = mount({ accept: ['続く', 'つづく'], mode: 'ja', candidates: ['続く', '着く'] });
+    type(input, 'tsuduku');
+    const e = key(input, ' ');
+    expect(e.defaultPrevented).toBe(false);
+    expect(input.value).toBe('つづく');
+  });
+
+  it('offeredCandidates: all while the field shows a candidate or its kana finalizes to the reading, else none', () => {
+    expect(offeredCandidates(['飲む', '呑む'], 'のむ', 'のむ')).toEqual(['飲む', '呑む']);
+    expect(offeredCandidates(['飲む', '呑む'], 'のむ', 'のm')).toBeUndefined();
+    expect(offeredCandidates(['飲む', '呑む'], 'のむ', 'あ')).toBeUndefined();
+    expect(offeredCandidates(['飲む', '呑む'], 'のむ', '呑む')).toEqual(['飲む', '呑む']);
+    expect(offeredCandidates(['飲む', '呑む'], 'のむ', '')).toBeUndefined();
+    expect(offeredCandidates(['飲む'], undefined, 'のむ')).toBeUndefined();
+    expect(offeredCandidates([], 'のむ', 'のむ')).toBeUndefined();
+    expect(offeredCandidates(undefined, 'のむ', 'のむ')).toBeUndefined();
   });
 
   it('starts over when the same instance receives a new accept list (next step without a remount)', () => {

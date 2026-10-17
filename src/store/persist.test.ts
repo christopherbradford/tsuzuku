@@ -276,6 +276,47 @@ describe('quota', () => {
     p.dispose();
   });
 
+  it('a key that keeps failing holds the level at ceiling even when a later small key succeeds, and re-notifies every flush', async () => {
+    const s = new MemoryStorage();
+    const states: StorageState[] = [];
+    const p = createPersist(s, 0, { hooks: null, onState: (st) => states.push(st) });
+    p.schedule('big', () => 'y'.repeat(500));
+    p.schedule('small', () => 1);
+    s.quota = 300;
+    await p.flush();
+    expect(s.getItem('big')).toBeNull();
+    expect(s.getItem('small')).toBe('1');
+    expect(p.level()).toBe('ceiling');
+    expect(p.state().level).toBe('ceiling');
+    expect(states.at(-1)?.level).toBe('ceiling');
+    expect(p.pending()).toEqual(['big']);
+    expect(p.failing()).toEqual(['big']);
+    // The same failure again: the UI is told again (nothing else changed).
+    const n = states.length;
+    await p.flush();
+    expect(states.length).toBe(n + 1);
+    expect(states.at(-1)?.level).toBe('ceiling');
+    s.quota = undefined;
+    await p.flush();
+    expect(p.level()).toBe('ok');
+    expect(p.failing()).toEqual([]);
+    expect(JSON.parse(s.getItem('big') as string)).toBe('y'.repeat(500));
+    p.dispose();
+  });
+
+  it('an immediate write() that fails returns false without pinning the level; readRaw/writeRaw move text as is', () => {
+    const s = new MemoryStorage(40);
+    const p = createPersist(s, 0, { hooks: null });
+    expect(p.write('k', 'z'.repeat(100))).toBe(false);
+    expect(p.level()).toBe('ok');
+    s.quota = undefined;
+    expect(p.writeRaw('raw', '{broken')).toBe(true);
+    expect(p.readRaw('raw')).toBe('{broken');
+    expect(p.read('raw')).toBeNull();
+    expect(p.readRaw('missing')).toBeNull();
+    p.dispose();
+  });
+
   it('recognises browser quota errors', () => {
     expect(isQuotaError(new DOMException('x', 'QuotaExceededError'))).toBe(true);
     expect(isQuotaError({ code: 22 })).toBe(true);

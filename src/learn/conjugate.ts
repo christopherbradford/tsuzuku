@@ -4,7 +4,8 @@
  * POS × ConjForm → `{answer, answerKana, alt}`; works on kanji or kana
  * surfaces. Godan endings are read from the final kana; ichidan from the
  * stem; irregulars する / 来る (and their compounds), 行く (te/ta), ある
- * (defective: ない / なかった), 要る (defective), honorific godan
+ * (defective: ない / なかった), 要る (defective), う-onbin 問う / 請う / 乞う
+ * (te/ta 〜うて / 〜うた), honorific godan
  * (くださる → ください・くださいます), いい/よい (stem よ), ない. ら抜き
  * potentials and short causatives come back as `alt`. Pure, table-driven.
  */
@@ -178,6 +179,9 @@ function buildPairs(pairs: readonly [word: string, kana: string][]): Conjugation
 /* Verbs                                                                      */
 /* ────────────────────────────────────────────────────────────────────────── */
 
+/** Whole-kana keys of the う-onbin verbs (問う / 訪う, 請う / 乞う). */
+const U_ONBIN: ReadonlySet<string> = new Set(['とう', 'こう']);
+
 function godan(word: string, kana: string, form: ConjForm): Conjugation | null {
   const last = lastChar(kana);
   const row = GODAN[last];
@@ -187,10 +191,13 @@ function godan(word: string, kana: string, form: ConjForm): Conjugation | null {
   const wStem = dropLast(w);
   const kStem = dropLast(kana);
   const isIku = (kana.endsWith('いく') || kana.endsWith('ゆく')) && last === 'く';
+  // う-onbin: 問う・請う・乞う take 〜うて / 〜うた, not 〜って. Keyed on the whole
+  // kana word (雇う/やとう is regular 雇って, so `endsWith('とう')` would be wrong).
+  const uOnbin = last === 'う' && U_ONBIN.has(kana);
   const honorific = HONORIFIC.some((h) => kana.endsWith(h));
   const iStem = honorific ? 'い' : row.i;
-  const te = isIku ? 'って' : row.te;
-  const ta = isIku ? 'った' : row.ta;
+  const te = isIku ? 'って' : uOnbin ? 'うて' : row.te;
+  const ta = isIku ? 'った' : uOnbin ? 'うた' : row.ta;
 
   switch (form) {
     case 'masu':

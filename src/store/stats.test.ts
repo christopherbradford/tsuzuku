@@ -157,6 +157,19 @@ describe('startStats reducer', () => {
     expect(FIXTURE.items[V.コーヒー]).toBeDefined();
   });
 
+  it('story:read records the episode in progress.storiesRead once, whatever the mode or score', async () => {
+    await makeTestStore();
+    stop = startStats(store);
+    expect(store.progress.value.storiesRead).toEqual([]);
+    bus.emit('story:read', { storyId: 's-04-1', mode: 'read', chars: 300, cpm: 100, correct: 0, total: 3, glossTaps: 9, minutes: 3, bridge: false });
+    expect(store.progress.value.storiesRead).toEqual(['s-04-1']);
+    const before = store.progress.value;
+    bus.emit('story:read', { storyId: 's-04-1', mode: 'read', chars: 300, cpm: 100, correct: 3, total: 3, glossTaps: 0, minutes: 3, bridge: false });
+    expect(store.progress.value).toBe(before);
+    bus.emit('story:read', { storyId: 's-04-2', mode: 'speed', chars: 300, cpm: 400, correct: 1, total: 1, glossTaps: 0, minutes: 1, bridge: false });
+    expect(store.progress.value.storiesRead).toEqual(['s-04-1', 's-04-2']);
+  });
+
   it('input, output and arcade counters', async () => {
     await makeTestStore();
     stop = startStats(store);

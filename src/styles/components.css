@@ -199,11 +199,12 @@
   background: transparent;
 }
 .btn--danger {
-  color: var(--shu);
+  color: var(--shu-text);
   border-color: color-mix(in srgb, var(--shu) 50%, var(--line));
 }
+/* compact look, full 44 px hit area (design 01 §7) */
 .btn--sm {
-  min-height: 36px;
+  min-height: var(--touch);
   padding: var(--sp-1) var(--sp-3);
   font-size: var(--fs-2);
 }
@@ -227,12 +228,12 @@
   white-space: nowrap;
 }
 .chip--kiai {
-  color: var(--bg);
+  color: var(--ink);
   background: var(--kin);
   border-color: var(--kin);
 }
 .chip--tag {
-  color: var(--shu);
+  color: var(--shu-text);
   border-color: color-mix(in srgb, var(--shu) 40%, var(--line));
 }
 .chip--accent {
@@ -333,6 +334,10 @@ kbd.kbd {
 .field__label {
   font-size: var(--fs-2);
   font-weight: 600;
+}
+/* a legend sits outside the fieldset's flex flow, so the gap needs spelling out */
+legend.field__label {
+  margin-bottom: var(--sp-1);
 }
 .field__hint {
   font-size: var(--fs-1);
@@ -705,7 +710,7 @@ textarea.input {
   transition: color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
 }
 .nav__item[aria-current="page"] {
-  color: var(--shu);
+  color: var(--shu-text);
   border-top-color: var(--shu);
 }
 .nav__glyph {

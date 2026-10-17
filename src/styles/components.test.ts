@@ -111,6 +111,14 @@ describe('components.css', () => {
     }
   });
 
+  it('small text on accent colours uses the text-safe tokens (design 01 §7 AA)', () => {
+    expect(bodyOf('.btn--danger')).toMatch(/color:\s*var\(--shu-text\)/);
+    expect(bodyOf('.chip--tag')).toMatch(/color:\s*var\(--shu-text\)/);
+    expect(bodyOf('.chip--kiai')).toMatch(/color:\s*var\(--ink\)/);
+    expect(bodyOf('.nav__item[aria-current="page"]')).toMatch(/color:\s*var\(--shu-text\)/);
+    expect(bodyOf('.nav__item[aria-current="page"]')).toMatch(/border-top-color:\s*var\(--shu\)/);
+  });
+
   it('Status Window: double border, notched corners, 92% raised', () => {
     const b = bodyOf('.status-window');
     expect(b).toMatch(/border:\s*2px double/);
@@ -138,8 +146,10 @@ describe('components.css', () => {
     expect(rules.some((r) => r.selector.includes('.nav__item[aria-current="page"]'))).toBe(true);
   });
 
-  it('touch targets: buttons and nav items use the 44 px token', () => {
+  it('touch targets: buttons (compact ones included) and nav items use the 44 px token', () => {
     expect(bodyOf('.btn')).toMatch(/min-height:\s*var\(--touch\)/);
+    expect(bodyOf('.btn--sm')).toMatch(/min-height:\s*var\(--touch\)/);
+    expect(bodyOf('.btn--sm')).not.toMatch(/min-height:\s*\d+px/);
     expect(bodyOf('.nav__item')).toMatch(/min-height:\s*var\(--touch\)/);
     expect(bodyOf('.list__item')).toMatch(/min-height:\s*var\(--touch\)/);
   });

@@ -52,6 +52,15 @@ export interface AudioService {
   setVolume(v: number): void;
   muted: Signal<boolean>;
   hasJaVoice: Signal<boolean>;
+  /**
+   * `speak()` will actually be heard: a Japanese voice exists AND the master
+   * volume is above 0. Set by the web service; `voiceAudible(audio)`
+   * (`@/audio`) falls back to `hasJaVoice` when it is absent. Deliberately
+   * NOT set on `nullAudio`, so a test double `{ ...nullAudio, hasJaVoice:
+   * signal(true) }` stays audible. Text fallbacks gate on this, not on
+   * `hasJaVoice` (which only reports voice availability).
+   */
+  canSpeak?: Signal<boolean>;
   voices(): VoiceInfo[];
   rateForTier(t: SpeedTier): number;
 }

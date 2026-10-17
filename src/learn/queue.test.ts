@@ -11,6 +11,7 @@ import {
   buildQueue,
   dueCards,
   exerciseFor,
+  findBlank,
   gojuonPool,
   insertSteps,
   interleave,
@@ -196,6 +197,20 @@ describe('prodPrompt', () => {
     const bare = { ...item, examples: [] };
     expect(prodPrompt(bare, [], 0)).toEqual({ sentence: '食べる', kana: 'たべる', en: 'to eat', blank: [0, 3] });
   });
+  it('blanks a 〜-affixed suffix / counter / prefix inside its host word', () => {
+    const suf: VocabItem = { ...item, id: 'v-n1-0336', word: '〜放題', kana: 'ほうだい', meanings: ['all you can …'], pos: 'suf', examples: [{ ja: 'この{店|みせ}は{食|た}べ{放題|ほうだい}です。', kana: 'このみせはたべほうだいです。', en: 'This place is all-you-can-eat.' }] };
+    const p = prodPrompt(suf, [], 0);
+    expect(p.sentence).toBe('この店は食べ放題です。');
+    expect(p.sentence.slice(...p.blank)).toBe('放題');
+    expect(findBlank('この店は食べ放題です。', suf)).toEqual([6, 8]);
+    // single-kanji counter: the LAST occurrence (三人), not 人 inside 友人
+    expect(findBlank('友人が三人来た。', { word: '〜人', kana: 'にん', pos: 'counter' } as VocabItem)).toEqual([4, 5]);
+    // prefix: the first occurrence
+    expect(findBlank('お茶とお菓子。', { word: 'お〜', kana: 'お', pos: 'pref' } as VocabItem)).toEqual([0, 1]);
+    // full-width tilde and altForms
+    expect(findBlank('今月限りです。', { word: '～限り', kana: 'かぎり', pos: 'suf', altForms: ['～限'] } as VocabItem)).toEqual([2, 4]);
+    expect(findBlank('何もない。', { word: '〜放題', kana: 'ほうだい', pos: 'suf' } as VocabItem)).toEqual([0, 0]);
+  });
 });
 
 describe('orderWave', () => {
@@ -281,6 +296,19 @@ describe('interleave (design 03 §2.4 wording)', () => {
     const out = interleave(input);
     expect(interleaveViolations(out)).toBe(0);
     expect(interleaveViolations(input)).toBeGreaterThan(0);
+  });
+  it('unsatisfiable input: best effort — length and key set preserved, violations reported, no throw', () => {
+    const same = [qc('v-n5-0001', 'rec', 'vocab'), qc('v-n5-0001', 'listen', 'vocab'), qc('v-n5-0001', 'prod', 'vocab')];
+    const out = interleave(same);
+    expect(out).toHaveLength(3);
+    expect(new Set(out.map((c) => c.cardKey)).size).toBe(3);
+    expect(interleaveViolations(out)).toBeGreaterThan(0);
+    expect(interleave([])).toEqual([]);
+    const five = [1, 2, 3, 4, 5].map((i) => qc(`v-n5-000${i}`, 'rec', 'vocab'));
+    const out5 = interleave(five);
+    expect(out5).toHaveLength(5);
+    expect(new Set(out5.map((c) => c.cardKey)).size).toBe(5);
+    expect(interleaveViolations(out5)).toBe(2);
   });
   it('uses the resolved exercise as the type when present', () => {
     const input = [1, 2, 3, 4].map((i) => qc(`v-n5-000${i}`, 'rec', 'vocab', 0.9, { exercise: i % 2 ? 'meaning-guard' : 'meaning-recall' }));
@@ -408,6 +436,17 @@ describe('kagePools', () => {
     mature.forEach((c) => expect(c.mature).toBe(true));
     expect(mature.some((c) => c.itemId === 'v-n5-0061')).toBe(false);
     expect(mature.some((c) => c.itemId === 'v-n5-0062')).toBe(false);
+  });
+  it('a mature card whose older log rows rolled off the ring stays in the mature pool', () => {
+    // S = 60 d, 20 reps, reviewed 3 days ago; the ring only kept that last row.
+    const c2 = fakeCards({ 'v-n5-0001#rec': [TODAY + 40, 60, 5, 20, 0, 2, TODAY - 3, 0], 'v-n5-0002#rec': rc(3, 0, 1, 0, 1) });
+    const l2: LogEntry[] = [
+      [dayStartMs(TODAY - 3) + 1000, 'v-n5-0001#rec', 3, 2000, 0, 0],
+      [dayStartMs(TODAY - 1) + 1000, 'v-n5-0002#rec', 3, 2000, 0, 0],
+    ];
+    const { recent, mature } = kagePools(c2, l2, TODAY, 1);
+    expect(recent.map((c) => c.cardKey)).toEqual(['v-n5-0002#rec']);
+    expect(mature.map((c) => c.cardKey)).toEqual(['v-n5-0001#rec']);
   });
   it('is deterministic per seed', () => {
     const a = kagePools(cards, log, TODAY, 7);

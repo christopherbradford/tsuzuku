@@ -114,6 +114,17 @@
   background: var(--kon);
   border-color: var(--kon);
 }
+/* dark: --surface on --kon is 3.9:1; light text on a kon/bg mix clears 4.5:1 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .kana-input__kata[aria-pressed='true'] {
+    color: var(--fg);
+    background: color-mix(in srgb, var(--kon) 55%, var(--bg));
+  }
+}
+:root[data-theme='dark'] .kana-input__kata[aria-pressed='true'] {
+  color: var(--fg);
+  background: color-mix(in srgb, var(--kon) 55%, var(--bg));
+}
 .kana-input__meta {
   grid-column: 1 / -1;
   display: flex;
@@ -124,7 +135,7 @@
 }
 .kana-input__pending {
   font-family: var(--font-pixel);
-  color: var(--kin);
+  color: var(--kin-text);
 }
 .kana-input__pending:empty {
   display: none;
@@ -173,6 +184,8 @@
   gap: var(--sp-2);
   justify-content: flex-end;
   padding-top: var(--sp-2);
+  /* sticky pins to the scrollport edge, not the parent's padding: carry the home-indicator inset here */
+  padding-bottom: var(--safe-bottom, 0px);
   background: linear-gradient(to top, var(--bg) 70%, transparent);
 }
 .exercise-frame__controls .btn,
@@ -373,7 +386,7 @@
 }
 .xp-delta {
   font-family: var(--font-pixel);
-  color: var(--kin);
+  color: var(--kin-text);
 }
 
 /* character diff: color is always paired with a glyph (01 §7) */

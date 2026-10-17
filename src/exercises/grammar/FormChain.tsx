@@ -10,6 +10,11 @@
  * one form missed → Hard (reported as a near miss), two or more → Again;
  * any miss is tagged `conjugation` and the missed forms' rules are listed.
  * Showing a form's rule first is a hint (Hard ceiling for the chain).
+ *
+ * On a grammar `prod` card the item is the GrammarItem and the verb the
+ * planner picked travels in `params.sentence` (its dictionary form) and
+ * `params.promptEn` (its gloss); those stand in for the head word's display
+ * when the item is not a vocab item.
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
@@ -56,7 +61,35 @@ export interface ChainLink {
   accept: string[];
 }
 
-/** The chain: step forms + answers merged with the engine, else the first five applicable forms of the head word. */
+/** Trailing non-kanji run of a conjugated surface (飲みます → みます; a kana-only surface is its own tail). */
+function kanaTail(surface: string): string {
+  const m = /[^㐀-䶿一-鿿々〆]*$/.exec(surface);
+  return m ? m[0] : surface;
+}
+
+/**
+ * Without a head word the engine cannot supply the kana of each form, yet the
+ * planner's flat `params.accept` carries them (kanji, kana and alternates of
+ * every form in one list). Each extra surface is attached to the link whose
+ * answer has the longest kana tail that ends it (のみません → 飲みません, not
+ * 飲みます), so a kana answer is Good on a grammar prod card too.
+ */
+function attachFlatAccept(links: ChainLink[], flat: readonly string[] | undefined): void {
+  if (!flat || links.length === 0) return;
+  const tails = links.map((l) => kanaTail(l.accept[0] ?? ''));
+  for (const raw of flat) {
+    const s = raw.trim();
+    if (!s || links.some((l) => l.accept.includes(s))) continue;
+    let best = -1;
+    for (let i = 0; i < links.length; i++) {
+      const t = tails[i] as string;
+      if (t.length > 0 && s.endsWith(t) && (best < 0 || t.length > (tails[best] as string).length)) best = i;
+    }
+    if (best >= 0) (links[best] as ChainLink).accept.push(s);
+  }
+}
+
+/** The chain: step forms + answers merged with the engine (or, without a head word, with the flat `params.accept`), else the first five applicable forms of the head word. */
 export function buildChain(head: HeadWord | null, params: ExerciseProps['step']['params']): ChainLink[] | null {
   const forms: ConjForm[] =
     params.forms && params.forms.length > 0
@@ -84,6 +117,7 @@ export function buildChain(head: HeadWord | null, params: ExerciseProps['step'][
     }
     if (accept.length > 0) links.push({ form, accept });
   });
+  if (!head) attachFlatAccept(links, params.accept);
   return links.length > 0 ? links : null;
 }
 
@@ -159,7 +193,9 @@ export function FormChain(p: ExerciseProps): JSX.Element {
     else emit(chainResult(next, n, { ms: elapsed(), hintUsed }));
   };
 
-  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : null;
+  const fromStep = (p.step.params.sentence ?? '').trim();
+  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : fromStep.length > 0 ? { word: fromStep, kana: fromStep, pos: null } : null;
+  const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
 
   if (!chain || !display) {
     return (
@@ -202,7 +238,11 @@ export function FormChain(p: ExerciseProps): JSX.Element {
           </span>
         ) : null}
         {display.pos ? <span class="gr__gloss">{POS_GROUP_LABEL[display.pos]}</span> : null}
-        {vocab && vocab.meanings.length > 0 ? <span class="gr__gloss">{vocab.meanings.join(' · ')}</span> : null}
+        {gloss ? (
+          <span class="gr__gloss" data-gloss="true">
+            {gloss}
+          </span>
+        ) : null}
       </div>
 
       <ol class="gr-chain__log" aria-label={S.chainLog}>

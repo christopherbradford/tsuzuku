@@ -33,6 +33,9 @@ export const S = {
   /* ── Kana Ear ────────────────────────────────────────────────────────── */
   earGridLabel: 'Kana grid',
   earHeard: 'You heard',
+  earPromptRomaji: 'Tap the kana for {romaji}.',
+  earNoVoice: 'No Japanese voice is available. The romaji is the prompt instead.',
+  earTarget: 'The kana',
 
   /* ── Kana Forge ──────────────────────────────────────────────────────── */
   forgePromptAudio: 'Type the kana you heard.',

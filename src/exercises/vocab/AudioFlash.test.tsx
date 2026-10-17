@@ -1,3 +1,4 @@
+import { signal } from '@preact/signals';
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { FIXTURE, V } from '@/content/fixtures';
@@ -18,7 +19,7 @@ beforeEach(async () => {
   clock = 1_000_000;
   speak.mockClear();
   await makeTestStore({ now: () => clock, save: { progress: { station: 5 } } });
-  installServices({ audio: { ...nullAudio, speak } });
+  installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true) } });
   root = document.createElement('div');
   document.body.appendChild(root);
 });
@@ -125,6 +126,32 @@ describe('<AudioFlash>', () => {
     expect(q('.vocab__meaning-en')?.textContent).toContain('to drink');
   });
 
+  it('without a Japanese voice the word and kana are shown up front with a note, no Speaker, and a miss is tagged word-choice', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(false) } });
+    store.patch('progress', (pr) => ({ ...pr, station: 16 })); // Green: a collocation would otherwise be "heard"
+    const p = props();
+    mount(p, true);
+    expect(q('.audio-flash')?.getAttribute('data-voice')).toBe('false');
+    expect(q('.drill__word')?.textContent).toContain('飲');
+    expect(q('.vocab__kana')?.textContent).toBe('のむ');
+    expect(q('.audio-flash__novoice')?.textContent).toContain('No Japanese voice');
+    expect(q('.vocab__speaker')).toBeNull();
+    expect(root.textContent).not.toContain('Listen. The word appears after you answer.');
+    key(document.body, ' ');
+    expect(p.onReplay).not.toHaveBeenCalled();
+    act(() => cells()[0]?.click());
+    expect(result(p)).toMatchObject({ correct: false, errorTags: ['word-choice'], answer: 'to eat', replays: 0 });
+    expect(root.textContent).not.toContain('Heard in');
+
+    const t = props({ exposures: 3, step: step({ exposures: 3, params: { answer: 'to drink', accept: ['to drink'] } }) });
+    mount(t);
+    const input = q('input') as HTMLInputElement;
+    type(input, 'to swim');
+    key(input, 'Enter');
+    act(() => (q('.text-answer__decline') as HTMLButtonElement).click());
+    expect(result(t)).toMatchObject({ correct: false, errorTags: ['word-choice'] });
+  });
+
   it('Space replays through the frame; replays are counted and reported upward', () => {
     const p = props();
     mount(p, true);
@@ -147,7 +174,9 @@ describe('<AudioFlash>', () => {
     store.patch('progress', (pr) => ({ ...pr, station: 16 }));
     const p = props();
     mount(p);
-    expect(speak).toHaveBeenCalledWith('お茶を飲む', { kana: 'のむ' });
+    // the collocation is spoken as written: no kana override, which would make TTS say the bare word (のむ)
+    expect(speak).toHaveBeenCalledWith('お茶を飲む', undefined);
+    expect(speak).not.toHaveBeenCalledWith('お茶を飲む', expect.objectContaining({ kana: expect.anything() }));
     act(() => cells()[1]?.click());
     expect(root.textContent).toContain('Heard in');
     expect(root.textContent).toContain('お茶を飲む');

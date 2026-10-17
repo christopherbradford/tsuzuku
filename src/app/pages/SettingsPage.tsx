@@ -10,14 +10,14 @@
  * change is `store.patch` immediately; Intense asks first (03 §4).
  */
 import type { JSX } from 'preact';
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import type { CardKey } from '@/content/types';
 import { services, speak, type VoiceInfo } from '@/shared/audio';
 import { equivalentJa } from '@/shared/jp';
 import { href, navigate, type Route } from '@/shared/routes';
 import { SLICE_KEYS, type Feel, type FuriganaMode, type Intensity, type Retention, type Settings, type SpeakingMode, type SpeedTier, type Theme } from '@/shared/store-types';
 import { KanaInput } from '@/shared/ui/KanaInput';
-import { CEILING_BYTES, INTENSITY_PRESETS, currentSlot, freshSave, newPerDayFor, store } from '@/store';
+import { CEILING_BYTES, INTENSITY_PRESETS, freshSave, newPerDayFor, store } from '@/store';
 import { currentBelt } from '@/store/derived';
 import { ICS_FILENAME, buildIcs, downloadIcs } from '../ics';
 import { steadyReviewsInAYear } from './OnboardingPage';
@@ -33,6 +33,8 @@ export interface SettingsPageProps {
 type Preset = Exclude<Intensity, 'custom'>;
 const PRESETS: readonly Preset[] = ['casual', 'standard', 'intense'];
 const PRESET_LABEL: Record<Intensity, string> = { casual: S.setPaceCasual, standard: S.setPaceStandard, intense: S.setPaceIntense, custom: S.setCustom };
+/** Hint under the pace radios: the preset's own description (custom gets its own line). */
+const PACE_HINT: Record<Intensity, string> = { casual: S.onbPaceCasualDesc, standard: S.onbPaceStandardDesc, intense: S.onbPaceIntenseDesc, custom: S.setCustomHint };
 const FEELS: readonly { id: Feel; name: string; ja: string; desc: string }[] = [
   { id: 'zen', name: S.setFeelZen, ja: S.setFeelZenJa, desc: S.setFeelZenDesc },
   { id: 'dojo', name: S.setFeelDojo, ja: S.setFeelDojoJa, desc: S.setFeelDojoDesc },
@@ -183,8 +185,10 @@ export default function SettingsPage(p: SettingsPageProps): JSX.Element {
   const [resetTyped, setResetTyped] = useState('');
   const [resetAsk, setResetAsk] = useState(false);
   const [resetDone, setResetDone] = useState(false);
-  const voices = useMemo(() => japaneseVoices(services.audio.voices()), []);
+  // Read the signal first: voices arrive asynchronously (voiceschanged / poll), and the
+  // list is recomputed on every render so a late batch fills the pickers.
   const hasJaVoice = services.audio.hasJaVoice.value;
+  const voices = japaneseVoices(services.audio.voices());
   const download = p.download ?? downloadIcs;
 
   const choosePace = (v: Intensity): void => {
@@ -248,7 +252,7 @@ export default function SettingsPage(p: SettingsPageProps): JSX.Element {
             options={[...PRESETS.map((id) => ({ id, name: PRESET_LABEL[id] })), { id: 'custom' as Intensity, name: S.setCustom }]}
             onChange={choosePace}
           />
-          <span class="field__hint">{s.intensity === 'custom' ? S.setCustomHint : S.setMaxReviewsHint}</span>
+          <span class="field__hint" data-pace-hint>{PACE_HINT[s.intensity]}</span>
         </div>
         {intenseAsk ? (
           <Confirm
@@ -472,9 +476,8 @@ export default function SettingsPage(p: SettingsPageProps): JSX.Element {
         </div>
         <div class="field">
           <span class="field__label">{S.setSlot}</span>
-          <span data-slot>{fmt(S.setSlotCurrent, { n: currentSlot() })}</span>
-          <span class="field__hint">
-            {S.setSlotHint} {S.setSlotNote}
+          <span class="field__hint" data-slot>
+            {S.setSlotHint}
           </span>
         </div>
         <p class="muted">{S.onbPrivacy}</p>

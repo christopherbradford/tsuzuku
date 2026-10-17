@@ -122,6 +122,36 @@ describe('judgeOptions — 4-option meaning Judge', () => {
     expect(new Set(o.distractors).size).toBe(3);
     expect(o.distractors).not.toContain('not yet');
   });
+  it('never uses a secondary meaning of the item as a distractor (vocab and kanji)', () => {
+    const v = [
+      vocab('v-n1-0001', '因果', 'いんが', 'cause and effect', 'n', { meanings: ['cause and effect', 'karma'], station: 40 }),
+      vocab('v-n1-0002', '業', 'ごう', 'karma', 'n', { station: 40 }),
+      vocab('v-n1-0003', '山', 'やま', 'mountain', 'n', { station: 40 }),
+      vocab('v-n1-0004', '川', 'かわ', 'river', 'n', { station: 40 }),
+      vocab('v-n1-0005', '海', 'うみ', 'sea', 'n', { station: 40 }),
+    ];
+    for (let seed = 0; seed < 25; seed++) {
+      const o = judgeOptions(v[0]!, v, mulberry32(seed));
+      expect(o.correct).toBe('cause and effect');
+      expect(o.distractors).not.toContain('karma');
+      expect(new Set(o.distractors.map(normalizeEn)).size).toBe(3);
+    }
+    const k = [
+      kanji('日', 'sun', ['sun'], 5, { meanings: ['sun', 'day'] }),
+      kanji('曜', 'day', ['sun'], 4, { meanings: ['day of the week', 'day'] }),
+      kanji('月', 'moon', ['moon'], 5),
+      kanji('木', 'tree', ['tree'], 5),
+      kanji('火', 'fire', ['fire'], 5),
+      kanji('水', 'water', ['water'], 5),
+    ];
+    for (let seed = 0; seed < 25; seed++) {
+      const o = judgeOptions(k[0]!, k, mulberry32(seed));
+      expect(o.correct).toBe('sun');
+      expect(o.distractors).not.toContain('day');
+      expect(o.distractors).not.toContain('day of the week');
+      expect(new Set(o.distractors.map(normalizeEn)).size).toBe(3);
+    }
+  });
   it('grammar: related point first', () => {
     const g = [
       grammar('g-n5-001', '〜てください', 'please do …', ['てください'], { related: ['g-n5-002'] }),

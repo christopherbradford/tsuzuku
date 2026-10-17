@@ -51,6 +51,7 @@ export const S = {
   shadowShowText: 'Show the text',
   shadowShowTextHint: 'Showing the text counts as a hint.',
   shadowNoVoice: 'No Japanese voice on this device. Read the line, say it aloud, then grade yourself.',
+  shadowMuted: 'Volume is 0, so the model line stays silent. Read it, say it aloud, then grade yourself.',
   shadowNoSpeech: 'Nothing heard. Try once more, a little closer to the microphone.',
   shadowTryAgain: 'Try again',
   shadowSelfInstead: 'Grade myself instead',

@@ -20,6 +20,8 @@
   line-height: 1.15;
 }
 .page__title-ja {
+  /* the kanji never shrinks or breaks mid-word; the English half wraps instead */
+  flex-shrink: 0;
   color: var(--shu);
 }
 .page__lead {

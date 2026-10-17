@@ -130,10 +130,9 @@ function minimalParams(exercise: DrillId, item: ContentItem, peers: ContentItem[
       p.choices = shuffleLocal([item.romaji, ...Array.from(new Set(others)).slice(0, 3)]);
     }
   } else if (isKanji(item)) {
+    // Component Assembly builds its tiles from the component definitions; the params carry the answer and the frame only.
     p.answer = item.char;
     p.accept = [item.char];
-    p.answers = item.components.slice();
-    p.tiles = shuffleLocal(Array.from(new Set([...item.components, ...peers.filter(isKanji).flatMap((k) => k.components)]))).slice(0, 8);
     p.layout = item.components.length <= 1 ? 'enc' : 'lr';
     p.promptEn = item.meanings[0] ?? '';
   } else if (isGrammar(item)) {
@@ -220,7 +219,8 @@ export function teachModel(item: ContentItem): TeachModel | null {
     const m: TeachModel = {
       kind: 'kanji',
       head: item.char,
-      kana: item.on[0] ?? item.kun[0] ?? '',
+      // The headline reading is spoken and shown: a kun-only kanji drops the okurigana dot (とど.く → とどく); the 訓: line keeps it.
+      kana: item.on[0] ?? item.kun[0]?.replace('.', '') ?? '',
       meaning: item.meanings.slice(),
       lines: [item.mnemonic, ...(item.on.length ? [`音: ${item.on.join('・')}`] : []), ...(item.kun.length ? [`訓: ${item.kun.join('・')}`] : [])],
       examples: item.examples.map((e) => ({ ja: e.word, kana: e.kana, en: e.en })),

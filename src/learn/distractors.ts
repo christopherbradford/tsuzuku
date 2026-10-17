@@ -1,8 +1,9 @@
 /**
  * TSUZUKU — distractor selection (design 04 §1–§4), pure and seeded.
  *
- * Every picker takes an injected `rng`, never returns the answer twice,
- * never returns duplicates, and degrades gracefully on a small pool
+ * Every picker takes an injected `rng`, never returns the answer twice
+ * (meaning pickers exclude every accepted meaning of the target, not only
+ * `meanings[0]`), never returns duplicates, and degrades gracefully on a small pool
  * (tiered preference lists, then built-in fallbacks) so the UI always gets
  * a full set of choices.
  */
@@ -123,15 +124,35 @@ function gloss(v: VocabItem): string {
   return v.meanings[0] ?? '';
 }
 
+/** Normalized keys of every meaning of an item (empty keys dropped). */
+export function meaningKeys(item: { meanings: readonly string[] }): Set<string> {
+  const out = new Set<string>();
+  for (const m of item.meanings) {
+    const k = normalizeEn(m);
+    if (k) out.add(k);
+  }
+  return out;
+}
+
+/** True when any meaning of `candidate` normalizes to any meaning of the target (`targetKeys`). */
+export function sharesMeaning(candidate: { meanings: readonly string[] }, targetKeys: ReadonlySet<string>): boolean {
+  return candidate.meanings.some((m) => targetKeys.has(normalizeEn(m)));
+}
+
 /**
  * Three meaning distractors for `target` in preference order: one confusable
  * (or the nearest kana neighbour as a minimal-pair distractor), then same
  * POS + same station, same POS, same level, anything. Never the answer,
- * never duplicates (compared through `normalizeEn`).
+ * never duplicates (compared through `normalizeEn`). A candidate is excluded
+ * when ANY of its meanings matches ANY of the target's meanings, so a
+ * secondary gloss of the target (風情: taste | charm) never shows up as a
+ * "wrong" option, and a word whose secondary gloss is the target's primary
+ * one is skipped too.
  */
 export function meaningDistractors(target: VocabItem, pool: readonly VocabItem[], rng: Rng, n = 3): string[] {
+  const targetKeys = meaningKeys(target);
   const answerKey = normalizeEn(gloss(target));
-  const others = pool.filter((v) => v.id !== target.id && gloss(v).length > 0);
+  const others = pool.filter((v) => v.id !== target.id && gloss(v).length > 0 && !sharesMeaning(v, targetKeys));
   const byId = new Map(others.map((v) => [v.id, v] as const));
   const key = (v: VocabItem) => normalizeEn(gloss(v));
 
@@ -139,16 +160,17 @@ export function meaningDistractors(target: VocabItem, pool: readonly VocabItem[]
   const nearKana = confusables.length
     ? []
     : others.filter((v) => kanaDistance(v.kana, target.kana) === 1);
-  const first = fillTiers(rng, [confusables, nearKana], 1, key, [answerKey]);
+  const taken = [...targetKeys, answerKey];
+  const first = fillTiers(rng, [confusables, nearKana], 1, key, taken);
 
   const samePosStation = others.filter((v) => v.pos === target.pos && target.station !== undefined && v.station === target.station);
   const samePos = others.filter((v) => v.pos === target.pos);
   const sameLevel = others.filter((v) => v.jlpt === target.jlpt);
-  const rest = fillTiers(rng, [samePosStation, samePos, sameLevel, others], n - first.length, key, [answerKey, ...first.map(key)]);
+  const rest = fillTiers(rng, [samePosStation, samePos, sameLevel, others], n - first.length, key, [...taken, ...first.map(key)]);
 
   const picked = [...first, ...rest].map(gloss);
   if (picked.length < n) {
-    const have = new Set([answerKey, ...picked.map(normalizeEn)]);
+    const have = new Set([...taken, ...picked.map(normalizeEn)]);
     for (const f of FALLBACK_GLOSSES) {
       if (picked.length >= n) break;
       if (!have.has(normalizeEn(f))) picked.push(f);

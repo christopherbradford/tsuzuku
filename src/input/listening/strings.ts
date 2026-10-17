@@ -26,6 +26,7 @@ export const S = {
   lineOf: 'Line {i} of {n}',
   toQuestions: 'To the questions',
   noVoice: 'No Japanese voice is available on this device. The lines are shown as text instead; the questions still count.',
+  volumeOff: 'Volume is 0, so nothing would be heard. The lines are shown as text instead; turn the sound up in Settings for audio only.',
 
   /* ── questions phase ─────────────────────────────────────────────────── */
   questionOf: 'Question {i} of {n}',

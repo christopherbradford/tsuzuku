@@ -2,9 +2,9 @@ import { QUEST_IDS, QUESTS as CATALOG, type QuestId } from '../shared/catalog';
 import { bus, type Events } from '../shared/events';
 import { registerExercise, resetRegistryForTests } from '../shared/exercise-types';
 import { epochDay } from '../shared/time';
-import { QUESTS, QUEST_COUNT, advanceQuest, eligibleQuests, isFullDay, pickQuests, questCounts, questProgress, questsForDay, startQuests } from './quests';
+import { NEEDS_FACET, QUESTS, QUEST_COUNT, advanceQuest, eligibleQuests, isFullDay, pickDailyQuests, pickQuests, questCounts, questProgress, questsForDay, startQuests, storeHasFacet } from './quests';
 import { resetStoreForTests, store } from './store';
-import { DEFAULT_TEST_NOW, TEST_SEED, captureEvents, makeTestStore } from './testing';
+import { DEFAULT_TEST_NOW, TEST_SEED, captureEvents, card, makeTestStore } from './testing';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const ALL = (): boolean => true;
@@ -77,6 +77,26 @@ describe('pickQuests', () => {
         expect(req === undefined || req === 'shadow').toBe(true);
       }
     }
+  });
+
+  it('pitch-five is drawable only once a pitch card exists (NEEDS_FACET); dropping it keeps the other two', async () => {
+    let day = -1;
+    for (let d = 0; d < 120 && day < 0; d++) if (pickQuests(TEST_SEED, TODAY + d, 'yellow', { station: 7, isRegistered: ALL }).includes('pitch-five')) day = d;
+    expect(day).toBeGreaterThanOrEqual(0);
+    const full = pickQuests(TEST_SEED, TODAY + day, 'yellow', { station: 7, isRegistered: ALL });
+    const gated = pickQuests(TEST_SEED, TODAY + day, 'yellow', { station: 7, isRegistered: ALL, hasFacet: (f) => f !== 'pitch' });
+    expect(gated).not.toContain('pitch-five');
+    for (const id of full) if (id !== 'pitch-five') expect(gated).toContain(id);
+    expect(eligibleQuests(53, ALL, () => false).map((q) => q.id)).not.toContain('pitch-five');
+    expect(NEEDS_FACET['pitch-five']).toBe('pitch');
+
+    // Over the live store: no `#pitch` card → never drawn; one appears → drawn.
+    await makeTestStore({ now: DEFAULT_TEST_NOW + day * 86_400_000, cards: { 'v-n5-0001#rec': card() }, save: { profile: { belt: 'yellow' }, progress: { station: 7 } } });
+    expect(storeHasFacet(store, 'pitch')).toBe(false);
+    expect(pickDailyQuests(store)).not.toContain('pitch-five');
+    store.cards.set('v-n5-0001#pitch', card());
+    expect(storeHasFacet(store, 'pitch')).toBe(true);
+    expect(pickDailyQuests(store)).toEqual(full);
   });
 
   it('dropping an ineligible quest keeps the others in place (stable re-draw)', () => {
@@ -191,15 +211,32 @@ describe('startQuests reducer', () => {
     expect(store.quests.value.done.sort()).toEqual(['outside-twenty', 'read-episode', 'speed-read-one']);
   });
 
-  it('re-draws on session:started after onboarding moved the learner off station 0', async () => {
+  it('station 0 draws as station 1 (Nihonbashi is onboarding only) and the draw survives the move to station 1', async () => {
     await makeTestStore({ save: { quests: { day: TODAY, ids: [], done: [] } } });
     stop = startQuests(store);
     bus.emit('session:started', { sessionId: 's', mode: 'kata', zen: false });
-    expect(store.quests.value.ids).toEqual([]);
+    const first = store.quests.value.ids;
+    expect(first.length).toBeGreaterThan(0);
+    expect(first).toEqual(pickQuests(TEST_SEED, TODAY, 'white', { station: 1 }));
     store.patch('progress', (p) => ({ ...p, station: 1 }));
     bus.emit('session:started', { sessionId: 's', mode: 'kata', zen: false });
-    expect(store.quests.value.ids.length).toBeGreaterThan(0);
+    expect(store.quests.value.ids).toEqual(first);
     expect(store.quests.value.day).toBe(TODAY);
+  });
+
+  it('clear-due completes at session end only when no due REVIEW remains (a never-reviewed state-0 card is not one)', async () => {
+    await makeTestStore({
+      cards: { 'v-n5-0001#rec': card({ due: TODAY, state: 0 }), 'v-n5-0002#rec': card({ due: TODAY, state: 2, reps: 3 }) },
+      save: { progress: { station: 3 }, quests: { day: TODAY, ids: ['clear-due'], done: [] } },
+    });
+    stop = startQuests(store);
+    const finished: Events['session:finished'] = { planId: 'p', mode: 'kata', startedAt: 0, endedAt: 1, steps: [], tally: { reps: 1, correct: 1, accuracy: 1, bestCombo: 1, ippon: 0, xp: 2, minutes: 1, promotions: [], questsDone: [], backlogWaiting: 0 }, zen: false, resumed: false };
+    bus.emit('attempt:graded', graded());
+    bus.emit('session:finished', finished);
+    expect(store.quests.value.done).toEqual([]);
+    store.cards.set('v-n5-0002#rec', card({ due: TODAY + 3, state: 2, reps: 4 }));
+    bus.emit('session:finished', finished);
+    expect(store.quests.value.done).toEqual(['clear-due']);
   });
 
   it('re-draws on session:started once the registry shows a drawn drill is missing', async () => {

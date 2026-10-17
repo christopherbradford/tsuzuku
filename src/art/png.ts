@@ -10,8 +10,14 @@
  * so UI shows `S.exportUnavailable` rather than a stack trace. Everything the
  * pipeline touches in the browser goes through a `RasterEnv`, which tests
  * replace with a recording stub. OffscreenCanvas and requestIdleCallback are
- * used when present; `canRender4k()` gates 3840×2160 to desktops with
- * `deviceMemory ≥ 4`.
+ * used when present; `canRender4k()` gates 3840×2160 to desktops (fine
+ * pointer, ≥ 1024 px, not iOS) and refuses only when the browser reports
+ * `deviceMemory` below 4 GB — Firefox and Safari never report it, so an
+ * unknown value is not a reason to withhold 4K.
+ *
+ * `drawTexts` honours `TextLayer.letterSpacing` through the canvas
+ * `letterSpacing` property where the engine has it (Chrome 99+, Safari 17+,
+ * Firefox 126+), so tracked captions line up with the inline SVG preview.
  */
 import { mulberry32 } from '../shared/hash';
 import { isoDate } from '../shared/time';
@@ -35,6 +41,8 @@ export interface Ctx2D {
   textAlign: CanvasTextAlign;
   textBaseline: CanvasTextBaseline;
   globalAlpha: number;
+  /** CSS length, e.g. `'6px'` (absent on engines without canvas letter spacing). */
+  letterSpacing?: string;
   drawImage(img: CanvasImageSource, dx: number, dy: number, dw: number, dh: number): void;
   fillRect(x: number, y: number, w: number, h: number): void;
   fillText(text: string, x: number, y: number): void;
@@ -186,6 +194,8 @@ export function drawTexts(ctx: Ctx2D, texts: readonly TextLayer[], sx: number, s
     if (!t.vertical) {
       ctx.textBaseline = 'alphabetic';
       ctx.textAlign = t.anchor === 'middle' ? 'center' : t.anchor === 'end' ? 'end' : 'start';
+      // Same tracking as textEl()'s `letter-spacing` (trailing space included, so middle/end anchors match).
+      if ('letterSpacing' in ctx) ctx.letterSpacing = `${t.letterSpacing ?? 0}px`;
       ctx.fillText(t.text, t.x, t.y);
     } else {
       ctx.textAlign = 'center';
@@ -366,11 +376,15 @@ export function download(blob: Blob, filename: string): DownloadOutcome {
   return 'download';
 }
 
-/** Desktop (fine pointer, ≥ 1024 px) with `navigator.deviceMemory ≥ 4`. */
+/**
+ * Desktop (fine pointer, ≥ 1024 px, not iOS) that is not a known low-memory
+ * device: `navigator.deviceMemory` is Chromium-only, so only a reported value
+ * below 4 GB refuses; an unknown value (Firefox, Safari) passes.
+ */
 export function canRender4k(): boolean {
   if (typeof navigator === 'undefined') return false;
   const mem = (navigator as { deviceMemory?: number }).deviceMemory;
-  if (typeof mem !== 'number' || mem < 4) return false;
+  if (typeof mem === 'number' && mem < 4) return false;
   if (isIos()) return false;
   if (typeof matchMedia !== 'function') return false;
   try {
