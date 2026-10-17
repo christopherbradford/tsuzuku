@@ -1,0 +1,133 @@
+{
+  "scores": [
+    {
+      "key": "pedagogy",
+      "fluency_effectiveness": 9,
+      "engagement": 6,
+      "feasibility_static_site": 8,
+      "originality": 7,
+      "total": 30,
+      "best_ideas_to_keep": [
+        "Separate FSRS cards per facet (vocab rec/listen/prod/pitch; kanji comp/read; grammar cloze/prod) with staggered facet unlock keyed to stability thresholds, so a new word never spawns four cards at once",
+        "Input Ledger with a 1,500-hour lifetime goal and an input share that rises from 25% (N5) to 50% (N2+), enforced per week rather than per session",
+        "The Plateau Arc as mandatory curriculum at 4級–2級: Native Bridge passages (coverage 97%→93%, contractions, fillers, dropped particles), Breadth Campaign with J-J definitions, Say It Three Ways (casual/polite/keigo), Monologue Marathon, Reduce & Expand (Nation's 4/3/2), escalating Field Missions",
+        "Aizuchi slots in NPC lines (backchannel within 1.2 s) — the most under-taught conversational skill, actually drilled",
+        "Judge mechanic: 25% of self-rated Good answers verified against a confusable; visible Honesty % calibrates self-rating",
+        "Error tags → EWMA weak-point rates → 3-minute targeted sets within 48 h; recast correction mid-role-play, explicit correction only in debrief",
+        "Rapid Fire restricted to S ≥ 14 d items where only wrong answers touch FSRS — isolates speed pressure (automaticity) from accuracy practice",
+        "Perapera Index: 5-axis radar of real skill measures (vocab, highest listening tier, reading cpm, speaking wpm, register), separate from XP",
+        "Load governor plus cramming cap (new items stop at 2× daily target) and 'Enough for today' copy",
+        "Retire Scramble after N4, drop English-translation drills past N4, furigana fog tied to kanji read-facet stability",
+        "Weekly Mini-Shinsa sampling the last two weeks regardless of due dates (testing effect)",
+        "Shinsa fail → 'Sensei's Notes' listing exact items/tags, 3-day retake, no XP loss; belts mastery-gated, never time-gated",
+        "Data-art wallpapers: Fuji ridge = last 90 days of practice minutes, torii count = training days, Daruma eye painted in place at 2級 and 初段",
+        "Dual-adherence timeline (100% vs 70%) shown at onboarding; explicit 'what we cut and why' table"
+      ],
+      "weaknesses": [
+        "Deliberately austere engagement: no serialized story, rank-up vignettes ≤ 80 words, no mid-session combo/boss/quest feel; rank moments arrive months apart — attrition risk over a 3-year habit",
+        "Content targets (12,000 vocab, ~40,000 fully tokenized sentences, 1,200 passages) are enormous for AI writers; coverage-based passage selection depends on complete, correct token tagging",
+        "Perapera speaking axis and Monologue Marathon lean on Chromium-only SpeechRecognition; self-check fallbacks are noisy",
+        "50,000-entry review log plus ~30k card tuples in localStorage is tight even with lz-string",
+        "Role-play 'Choose' mode is still recognition; register scoring via marker regex is shallow",
+        "Much output credit (Writing Dojo, Field Missions) is unverified self-report — honest, but the app cannot confirm it happened"
+      ]
+    },
+    {
+      "key": "gamedesign",
+      "fluency_effectiveness": 7,
+      "engagement": 9,
+      "feasibility_static_site": 8,
+      "originality": 9,
+      "total": 33,
+      "best_ideas_to_keep": [
+        "Nested loop with three session sizes (Kata 3 min / Kumite 10 / Shugyō 30), easy items at open and close (peak-end rule), and a morning forecast line ('42 reviews · 1 scroll · ~18 min')",
+        "つづく end card + 次回予告: one sentence from tomorrow's episode with exactly one ??? word — curiosity without countdowns",
+        "Tabi Nikki: second-person serialized travel diary written strictly from each station's allowlist; tapped unknowns become bookmarks that feed the new-item queue (learner-driven acquisition)",
+        "Tōkaidō 53-station road as the curriculum map, Goshuin-chō stamp book, and a truthful Projected Arrival date",
+        "Combo rules that protect learning: training-dummy rule (misses on <3-review items don't break combo), Guard halves rather than resets for honest 'don't know', Block for near-misses, Recovery re-test 3–5 reps later",
+        "Item belts derived from FSRS stability, with Brown requiring at least one production success — per-item 'level up' tied to real consolidation",
+        "Kage ghost rival: weekly deterministic set, you vs your own best of the last 4 weeks, with a factory hi-score table for the first weeks",
+        "Gatekeeper boss phases (Flash/Strike/Ear/Final Form), Grudge List → same-day rematch, Assisted Gate after three defeats, Revenge Match — content never locked more than a day",
+        "Load governor copy that hides the scary backlog number without penalty; Welcome Back session built from items the scheduler predicts you still know",
+        "Zen mode: hides timers, ki, combo, sounds with identical scheduling and XP",
+        "Second Wind at Station 21: reading becomes the primary XP source past N4",
+        "Nemesis dossier and duel for leeches; `era` tag on slang; dialect receptive-only",
+        "Mechanic-to-learning audit table and Three Kata daily quests with strand-variety constraint",
+        "Procedural Dojo home screen reflecting state (bonsai L-system depth = training days, chosen kanji wall scroll)"
+      ],
+      "weaknesses": [
+        "Single FSRS schedule per item with a facet bitmask: receptive and productive knowledge are dissociable; one schedule will mis-time production practice, and 'graded against the hardest facet attempted' muddles the memory signal",
+        "Ki/combo/Ippon speed pressure applies to every rep including new and learning items; invites guessing and anxiety despite mitigations — fluency and accuracy practice are not isolated",
+        "Omikuji is a slot-machine costume with XP modifiers: zero learning value and it normalizes luck framing even though deterministic",
+        "No tracking or driving of external input hours; conversational pragmatics (aizuchi, register switching, monologue) largely absent until Beyond",
+        "Boss 'Guard 6' mistakes → Retreat is a lives system on cumulative material; can teach avoidance",
+        "Auto-Easy at <0.6× median risks over-long intervals; XP economy (1,800–2,500/day, 7.5M to 十段) inflates numbers without meaning",
+        "Allowlist-constrained serialized fiction at N5 (~800 words) is very hard to write engagingly — stilted-prose risk for the main input engine"
+      ]
+    },
+    {
+      "key": "curriculum",
+      "fluency_effectiveness": 7,
+      "engagement": 7,
+      "feasibility_static_site": 9,
+      "originality": 6,
+      "total": 29,
+      "best_ideas_to_keep": [
+        "Phase A canonical lists (wordlist/kanjilist/grammarlist with every item pre-assigned to a chapter) so the known-set for any chapter is computable before a single writer starts — the enabler for genuinely parallel content production",
+        "kuromoji-based i+1 validator (V13): sentences ≤ 1 unknown lemma, stories' unknowns ⊆ plusOne (≤ 3) with ≥ 95% known tokens, per-level length bands — the only proposal that mechanically guarantees comprehensible input",
+        "Arc number as writer namespace inside IDs; immutable IDs with manifest.redirects; full V01–V40 rule list with repair loop fed back to the same writer",
+        "The chapter-by-chapter N5 grammar sequence (ch 011–050) — a ready-to-use syllabus",
+        "Conjugation engine (POS × ConjForm, golden table of 60 verbs × 20 forms) driving Form Forge transform drills without hand-written content",
+        "Canonical 250 component names enforced in every kanji mnemonic (V19) for cross-writer consistency",
+        "Facet retirement: kana archived at S > 180 d, sentence cards graduate at S > 60 d, Kaiden lane capped at 10/day — keeps the queue from drowning in mature trivia",
+        "Return-from-absence spreads backlog over 7 days; Vacation mode; Weekly Flame; Rekindle floored at 50%",
+        "Chapter Kata (Forge → Kata → Field → Boss) with 'stop after any scene'; Field scene always includes role-play, Saga read, and shadowing",
+        "Saga Bible with a fixed original cast (and the cat Taishō as the real master); cliffhanger every 10th chapter; recapEn",
+        "Furigana markup grammar {base|reading} with validator that reconstructs jp and kana",
+        "pitchVerified flag; Field Training log with capped XP",
+        "v1 ships Belts 0–2 fully with later belts visible as locked milestones; release trains add content without app changes",
+        "Wallpapers: Great Wave built from the learner's own glyphs sized by mastery; koi with kanji scales becoming a dragon"
+      ],
+      "weaknesses": [
+        "Timeline is not honest: 430 chapters at 30 min ≈ 215 structured hours, yet it claims N1+ in ~14–20 months; contradicts its own default of 15 new items/day (chapters carry ~25)",
+        "Pedagogy section is thin: no isolated fluency-development mode, no monologue/4-3-2, no register-switching drills until Arc 38, aizuchi is only a writer style rule, no plateau strategy",
+        "Input volume per chapter (one dialogue + one story) is low for the 40–50% input share needed from N3 up",
+        "Boss hearts (5) is a lives system; auto-Easy when fast",
+        "Game feel is conventional (Duolingo/WaniKani-shaped); combo multiplier only — least original mechanics",
+        "Pitch stored only for N5–N4; Mojikata depends on KanjiVG (CC BY-SA share-alike consideration)"
+      ]
+    },
+    {
+      "key": "nostalgia",
+      "fluency_effectiveness": 5,
+      "engagement": 8,
+      "feasibility_static_site": 7,
+      "originality": 9,
+      "total": 29,
+      "best_ideas_to_keep": [
+        "Typography system: DotGothic16 for pixel Japanese, Yuji Syuku brush for ceremony, Dela Gothic One for neon, Press Start 2P for Latin, `palt` feature settings",
+        "Pigment-named color tokens (sumi/washi/shu/kin/ai/sakura/matcha) and category colors used consistently across UI, flames, badges, and wallpapers; Arcade Night / Dojo Morning themes",
+        "Fully synthesized chiptune SFX recipes (Web Audio, zero samples): two-note arpeggio, anvil click, Karplus-Strong koto, taiko ceremony, wind-chime unlock; haptic patterns",
+        "12-second skippable rank ceremony: taiko, rank kanji brush-written via stroke-dasharray, belt knot animation, hanko slam, wallpaper rising from ink",
+        "Hitodama spirit flames on the home shrine, one per mastered item, colored by category (render-capped at 400)",
+        "Chikaradameshi 'try first' — three items tested before teaching (pretesting effect is real and under-used)",
+        "Ember state: 48-hour grace before a streak resets; Longest Streak permanent; 'The dojo kept your place' copy and the banned-phrases list",
+        "Mon badge declarative icon spec (ring/field/glyph/accent) with bronze/silver/gold rings — 55 badges from one renderer",
+        "Wallpaper personalization: Neon Alley signs are your words, Kanji Constellations linked by shared components, Tanabata strips are your Randori sentences, Hanko Garden of your badges, Gojūon Select heatmap of your reaction times, Shihan composite of every motif",
+        "Forge Bar (due reviews as an HP bar), JRPG Status Window, torii-gate rank nav, tategaki sentence of the day",
+        "Makimono reading: gloss taps grade the word's card Hard and offer 'add to forge'; Dictionary-Free badge for a zero-gloss passage",
+        "Milestone → visual → sound matrix; export pipeline notes (canvas text pass after document.fonts.load, no foreignObject)"
+      ],
+      "weaknesses": [
+        "Single card per item with no facet separation; 4-choice Recognition used broadly (including EN→JP); auto-Easy on multiple choice under 2 s inflates intervals and under-trains production",
+        "Timeline (N1 in ~3 years at 150 XP/day ≈ 15–20 min) implies ~300 hours for a 2,000+ hour skill — the least honest number of the four",
+        "No external input tracking, no plateau strategy, no fluency-vs-accuracy separation (combo multiplier on reviews), no aizuchi or register drills before Sandan",
+        "12-hour Shinsa cooldown is a mild punishment; no checkpoints between ranks that are months apart",
+        "Content pipeline and i+1 validation are thin (requiredItems coverage rather than tokenized validation); schemas lack chapter/station sequencing",
+        "3840×2160 export is heavy on phones; brush-stroke glyph-to-path pipeline needs build tooling"
+      ]
+    }
+  ],
+  "winner": "gamedesign",
+  "rationale": "Judged as what will actually produce a fluent speaker over the 2,000–3,000 hours it takes, with skepticism about gimmicks. The pedagogy proposal is the most scientifically rigorous (separate facets, input ledger, explicit plateau countermeasures, aizuchi, Judge calibration, isolated fluency drills) and scores highest on effectiveness, but it deliberately strips out the retention machinery; attrition is the dominant failure mode of self-study apps, so its austerity is a real effectiveness cost over three years, not a stylistic one. The gamedesign proposal (TSUZUKU) wins on total because it pairs a sound pedagogy section (Nation's four strands with shifting shares, FSRS, coverage-gated i+1 reader whose bookmarks drive acquisition, production required for mastery, Second Wind at the N3 wall, honest Projected Arrival) with the strongest, least manipulative habit design seen here: nested 3/10/30 sessions, つづく end card with next-episode preview, serialized reader, combo rules that protect honest failure, Zen mode, self-referential Kage rival, and an explicit mechanic-to-learning audit. Its gimmicks are identifiable and removable (Omikuji, universal speed pressure, boss lives), and its biggest pedagogical flaw (one FSRS schedule per item) is a schema decision, not a design philosophy. The curriculum proposal is the most buildable and owns the single most important engineering idea — pre-assigned canonical lists plus a kuromoji i+1 validator — but its timeline is dishonest and its pedagogy is thin. The nostalgia proposal has the best aesthetic, sound, and ceremony design and should supply the visual identity, but its learning model (single card, MC-heavy, auto-Easy) and its 300-hour-to-N1 math would not produce fluency. Recommended build: gamedesign's loop and reward architecture as the skeleton; graft in pedagogy's separate facets, Input Ledger, Plateau Arc drills (Say It Three Ways, Monologue Marathon, 4/3/2, Native Bridge), aizuchi slots, Judge mechanic, and the rule that speed pressure only touches S ≥ 14 d items; adopt curriculum's content pipeline (canonical lists, arc-namespaced IDs, kuromoji validation, conjugation engine, facet retirement); dress it in nostalgia's typography, tokens, synthesized sound, rank ceremony, and personalized wallpapers. Drop Omikuji, boss lives, auto-Easy on multiple choice, and any timeline shorter than pedagogy's 70%-adherence numbers."
+}

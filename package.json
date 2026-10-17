@@ -1,0 +1,30 @@
+{
+  "name": "japanlangrace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A gamified path from zero to fluent Japanese — static web app for GitHub Pages.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "content:validate": "node scripts/validate-content.mjs",
+    "content:index": "node scripts/build-content-index.mjs"
+  },
+  "dependencies": {
+    "@preact/signals": "2.11.3",
+    "preact": "10.29.8",
+    "wanakana": "5.3.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "2.10.6",
+    "@types/node": "24.19.2",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "3.2.7"
+  }
+}
