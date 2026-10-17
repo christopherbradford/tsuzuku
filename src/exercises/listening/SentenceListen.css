@@ -1,0 +1,210 @@
+/*
+ * TSUZUKU — <SentenceListen> (src/exercises/listening, group D).
+ * Player window, kana field + submit on one row (bottom third on phones),
+ * mora diff colored by tag — always paired with a glyph (struck = extra,
+ * dotted = missing; .diff classes from shared/ui/ui.css). Tokens only.
+ */
+.listen {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.listen__prompt,
+.listen__note,
+.listen__nudge,
+.listen__ceiling,
+.listen__novoice,
+.listen__line,
+.listen__score,
+.listen__yours,
+.listen__sentence,
+.listen__tags,
+.listen__hint {
+  margin: 0;
+}
+.listen__prompt {
+  font-size: var(--fs-3);
+  line-height: var(--lh-latin);
+}
+
+.listen__player {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-3);
+  align-items: center;
+}
+.listen__play {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: var(--sp-2) var(--sp-4);
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--ai);
+  border: 2px solid var(--ai);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity var(--dur-1) var(--ease), transform 60ms var(--ease);
+}
+.listen__play:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.listen__play:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.listen__play-icon {
+  font-family: var(--font-pixel);
+}
+.listen__meta {
+  display: grid;
+  gap: var(--sp-1);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.listen__rate {
+  font-family: var(--font-pixel);
+}
+.listen__ceiling,
+.listen__novoice {
+  grid-column: 1 / -1;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.listen__novoice {
+  display: grid;
+  gap: var(--sp-2);
+}
+.listen__shown {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+  color: var(--fg);
+}
+
+.listen__answer {
+  display: grid;
+  gap: var(--sp-2);
+}
+.listen__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--sp-2);
+  align-items: start;
+}
+.listen__submit {
+  min-width: var(--touch);
+  min-height: var(--touch);
+  padding: 0 var(--sp-3);
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--shu);
+  border: 2px solid var(--shu);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 60ms var(--ease), opacity var(--dur-1) var(--ease);
+}
+.listen__submit:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.listen__submit:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+.listen__nudge {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.listen__tools {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: start;
+}
+.listen__hint {
+  display: grid;
+  gap: var(--sp-1);
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 4px solid var(--kin);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--kin) 10%, var(--surface));
+}
+.listen__hint [lang='ja'] {
+  font-family: var(--font-ja);
+}
+.listen__hint small {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+.listen__result {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.listen__result[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.listen__result[data-kind='near'] {
+  border-left-color: var(--kin);
+}
+.listen__result[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.listen__label {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.listen__sentence {
+  font-size: var(--fs-4);
+}
+.listen__diff {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  font-family: var(--font-ja);
+}
+/* the slip's tag tints the glyph; the glyph (strike / dotted underline) still carries the meaning */
+.listen__diff .diff[data-tag='vowel-length'] {
+  color: var(--kin);
+}
+.listen__diff .diff[data-tag='voicing'] {
+  color: var(--neon-m);
+}
+.listen__diff .diff[data-tag='small-kana'] {
+  color: var(--sakura);
+}
+.listen__diff .diff[data-tag='particle'] {
+  color: var(--ai);
+}
+.listen__diff .diff[data-tag='transcription'] {
+  color: var(--shu);
+}
+.listen__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen__play,
+  .listen__submit {
+    transition: none;
+  }
+}
+.reduced-motion .listen__play,
+.reduced-motion .listen__submit {
+  transition: none;
+}

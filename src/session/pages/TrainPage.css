@@ -1,0 +1,157 @@
+/* TSUZUKU — TrainPage (group E): pre-roll, resume offer, versus table; the session itself is styled by SessionView. */
+
+.train {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-4) 0 var(--sp-6);
+  color: var(--fg);
+}
+
+.train__running {
+  padding: 0 0 var(--sp-5);
+}
+
+.train__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.train__title {
+  margin: 0;
+  font-family: var(--font-brush);
+  font-weight: 400;
+  font-size: var(--fs-5);
+  line-height: 1.2;
+}
+
+.train__h2 {
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-3);
+}
+
+.train__line,
+.train__body {
+  margin: 0;
+}
+
+.train__status {
+  margin: 0;
+}
+
+.train__coming,
+.train__kage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+}
+
+.train__blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: block;
+}
+
+.train__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px dashed var(--line);
+}
+
+.train__block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.train__block-label::before {
+  counter-increment: block;
+  content: counter(block) ' ';
+  font-family: var(--font-pixel);
+  color: var(--fg-muted);
+}
+
+.train__block-meta {
+  font-size: var(--fs-2);
+  white-space: nowrap;
+}
+
+.train__totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+  margin: 0;
+  font-size: var(--fs-2);
+}
+
+.train__total:first-child,
+.train__total:nth-child(2) {
+  font-family: var(--font-pixel);
+  color: var(--fg);
+}
+
+.train__backlog {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+
+.train__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+}
+
+.train__table td {
+  padding: var(--sp-1) var(--sp-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.train__rank {
+  width: 2ch;
+  color: var(--kin);
+}
+
+.train__score {
+  text-align: right;
+}
+
+.train__when {
+  text-align: right;
+  font-size: var(--fs-1);
+}
+
+.train__table tr[data-factory='true'] {
+  color: var(--fg-muted);
+}
+
+.train__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.train__back {
+  text-decoration: none;
+}
+
+@media (max-width: 420px) {
+  .train__block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}

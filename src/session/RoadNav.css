@@ -1,0 +1,261 @@
+/* TSUZUKU — <RoadNav>: vertical Tōkaidō (group E). Tokens from tokens.css; .seal / .belt / [data-belt] from components.css. */
+
+.tokaido {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--fg);
+}
+
+.tokaido__where {
+  margin: 0 0 var(--sp-1);
+  font-weight: 600;
+}
+
+.tokaido__hint {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+.tokaido__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* the road: each row paints its own belt-coloured segment */
+.tokaido__row,
+.tokaido__band,
+.tokaido__node {
+  position: relative;
+  padding-left: 40px;
+}
+
+.tokaido__row::before,
+.tokaido__band::before,
+.tokaido__node::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--belt-color, var(--belt-white));
+  border-inline: 1px solid var(--line);
+}
+
+.tokaido__node {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: var(--touch);
+  padding-block: var(--sp-2);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.tokaido__node--start::before {
+  top: 50%;
+}
+
+.tokaido__node--arrival::before {
+  bottom: 50%;
+}
+
+.tokaido__band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-block: var(--sp-3) var(--sp-2);
+}
+
+.tokaido__band-line {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+.tokaido__station {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 48px 1fr auto;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 72px;
+  padding: var(--sp-2) var(--sp-2) var(--sp-2) 0;
+  color: var(--fg);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-1) var(--ease);
+}
+
+.tokaido__station:hover {
+  background: color-mix(in srgb, var(--raised) 60%, transparent);
+}
+
+.tokaido__station[data-state="locked"] {
+  color: var(--hai);
+}
+
+.tokaido__station[data-state="locked"] .tokaido__name {
+  color: var(--fg-muted);
+}
+
+.tokaido__marker {
+  display: grid;
+  place-items: center;
+  margin-left: -40px;
+  width: 40px;
+}
+
+.tokaido__marker .seal {
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--fg) 20%, transparent);
+}
+
+.tokaido__seal--assisted {
+  background: linear-gradient(135deg, var(--shu) 0 70%, var(--hai) 70%);
+  border-color: var(--shu);
+}
+
+.tokaido__lantern {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-brush);
+  font-size: var(--fs-2);
+  line-height: 1;
+  color: var(--bg);
+  background: var(--kin);
+  border: 2px solid var(--kin);
+  border-radius: 10px 10px 6px 6px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--kin) 25%, transparent);
+}
+
+.tokaido__art {
+  display: block;
+  color: var(--kon);
+}
+
+.tokaido__station[data-state="locked"] .tokaido__art {
+  color: var(--hai);
+}
+
+.tokaido__hill {
+  fill: currentColor;
+  opacity: 0.25;
+}
+
+.tokaido__fill {
+  fill: currentColor;
+  opacity: 0.8;
+}
+
+.tokaido__stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tokaido__art--torii .tokaido__stroke {
+  stroke: var(--shu);
+}
+
+.tokaido__station[data-state="locked"] .tokaido__art--torii .tokaido__stroke {
+  stroke: currentColor;
+}
+
+.tokaido__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.tokaido__name {
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+}
+
+.tokaido__romaji {
+  font-size: var(--fs-2);
+}
+
+.tokaido__keeper {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tokaido__you {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  font-family: var(--font-pixel);
+  color: var(--bg);
+  background: var(--shu);
+  border-radius: 50%;
+}
+
+.tokaido__gate {
+  position: absolute;
+  left: 9px;
+  bottom: -8px;
+  z-index: 1;
+  font-family: var(--font-brush);
+  font-size: var(--fs-1);
+  line-height: 1;
+  padding: 1px 2px;
+  color: var(--hai);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.tokaido__row[data-state="cleared"] .tokaido__gate,
+.tokaido__row[data-state="perfect"] .tokaido__gate,
+.tokaido__row[data-state="assisted"] .tokaido__gate {
+  color: var(--shu);
+  border-color: var(--shu);
+}
+
+.tokaido__row[data-state="current"] .tokaido__gate {
+  color: var(--kin);
+  border-color: var(--kin);
+}
+
+.tokaido .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 600px) {
+  .tokaido__station {
+    grid-template-columns: 40px 64px 1fr auto;
+  }
+  .tokaido__art {
+    width: 64px;
+    height: 53px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tokaido__station {
+    transition: none;
+  }
+}

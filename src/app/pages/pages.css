@@ -1,0 +1,612 @@
+/*
+ * TSUZUKU — the five shell pages (group A): Dojo home, Onboarding, Settings,
+ * Backup, About. Mobile-first (360 px), tokens only, every transform removed
+ * under reduced motion. Shared looks (.hanko .btn .panel .status-window
+ * .field .input .select .switch .progress .notice .list .empty .tategaki)
+ * come from src/styles/components.css; this file only lays the pages out.
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.page__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-5);
+  line-height: 1.15;
+}
+.page__title-ja {
+  color: var(--shu);
+}
+.page__lead {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.page__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.page__section > h2 {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.2;
+}
+.page__section > h2 .ja {
+  margin-left: var(--sp-2);
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+}
+.page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.page__status {
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--fg-muted);
+}
+
+/* ── Dojo ───────────────────────────────────────────────────────────── */
+.dojo__scene {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.dojo__status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.dojo__forecast {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.3;
+}
+.dojo__line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.dojo__sessions {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .dojo__sessions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.dojo__session {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-1);
+  min-height: 96px;
+  padding: var(--sp-3) var(--sp-4);
+  text-align: left;
+  text-decoration: none;
+}
+.dojo__session-name {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-size: var(--fs-4);
+}
+.dojo__session-ja {
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+.dojo__session-min {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-3);
+}
+.dojo__session-desc {
+  font-size: var(--fs-2);
+  opacity: 0.9;
+}
+.dojo__session-count {
+  font-size: var(--fs-1);
+  opacity: 0.85;
+}
+.dojo__resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+.dojo__resume-text {
+  flex: 1 1 200px;
+  margin: 0;
+}
+.dojo__quests {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.dojo__quest {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+}
+.dojo__quest-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  font-size: var(--fs-1);
+  color: var(--surface);
+}
+.dojo__quest[data-done="true"] .dojo__quest-mark {
+  background: var(--matcha);
+  border-color: var(--matcha);
+}
+.dojo__quest[data-done="true"] .dojo__quest-title {
+  color: var(--fg-muted);
+}
+.dojo__quest-count {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.dojo__banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+.dojo__banner-text {
+  flex: 1 1 200px;
+  margin: 0;
+}
+.dojo__side {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .dojo__side {
+    grid-template-columns: 1fr auto;
+  }
+}
+.dojo__tategaki {
+  display: flex;
+  justify-content: center;
+  min-height: 160px;
+  padding: var(--sp-3);
+}
+.dojo__tategaki .tategaki {
+  font-size: var(--fs-4);
+}
+.dojo__words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dojo__word {
+  font-size: var(--fs-4);
+}
+.dojo__kage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  border-left: 4px solid var(--neon-m);
+}
+.dojo__kage-text {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+}
+.dojo__kage-score {
+  font-family: var(--font-pixel);
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.dojo__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.dojo__proverb {
+  margin: 0;
+  font-family: var(--font-mincho);
+  font-size: var(--fs-4);
+}
+
+/* ── Onboarding ─────────────────────────────────────────────────────── */
+.onb {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.onb__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.onb__progress .progress {
+  flex: 1 1 auto;
+}
+.onb__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.onb__step > h2 {
+  margin: 0;
+  font-size: var(--fs-5);
+  line-height: 1.15;
+}
+.onb__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+.onb__choices {
+  display: grid;
+  gap: var(--sp-2);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) {
+  .onb__choices--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.onb__choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-1);
+  min-height: var(--touch);
+  padding: var(--sp-3);
+  text-align: left;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease);
+}
+.onb__choice[aria-pressed="true"],
+.onb__choice[aria-checked="true"] {
+  border-color: var(--shu);
+  background: var(--raised);
+}
+.onb__choice-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-weight: 600;
+}
+.onb__choice-ja {
+  color: var(--shu);
+}
+.onb__choice-desc {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.onb__kana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+}
+.onb__kana-glyph {
+  font-size: var(--fs-8);
+  line-height: 1;
+  font-family: var(--font-ja);
+}
+.onb__kana-input {
+  width: min(100%, 240px);
+  text-align: center;
+  font-size: var(--fs-5);
+}
+.onb__kana-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+.onb__kana-verdict {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--fg-muted);
+}
+.onb__kana-verdict[data-ok="true"] {
+  color: var(--matcha);
+}
+.onb__timeline {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) {
+  .onb__timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.onb__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.onb__stat-label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+}
+.onb__stat-value {
+  font-size: var(--fs-4);
+}
+.onb__guide {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  font-size: var(--fs-2);
+}
+.onb__summary {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+/* ── Settings ───────────────────────────────────────────────────────── */
+.set__grid {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .set__grid--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.set__radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.set__radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  padding: 0 var(--sp-3);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.set__radio:has(input:checked) {
+  border-color: var(--shu);
+  background: var(--raised);
+}
+.set__radio input {
+  margin: 0;
+}
+.set__radio-ja {
+  color: var(--fg-muted);
+}
+.set__switches {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.set__switch {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--sp-2) var(--sp-3);
+  min-height: var(--touch);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.set__switch:last-child {
+  border-bottom: none;
+}
+.set__switch input {
+  margin-top: 0.35em;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.set__switch-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.set__range {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.set__range input {
+  flex: 1 1 auto;
+  min-height: var(--touch);
+}
+.set__range-value {
+  min-width: 3.5em;
+  text-align: right;
+  font-family: var(--font-pixel);
+}
+.set__meter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.set__meter .progress {
+  height: 12px;
+}
+.set__meter[data-level="warn"] .progress__fill {
+  background: var(--kin);
+}
+.set__meter[data-level="ceiling"] .progress__fill {
+  background: var(--shu);
+}
+.set__ics {
+  margin: 0;
+  max-height: 160px;
+  overflow: auto;
+  padding: var(--sp-2);
+  font-size: var(--fs-1);
+  white-space: pre-wrap;
+  background: var(--raised);
+  border-radius: var(--radius-sm);
+}
+.set__danger {
+  border-color: var(--shu);
+}
+.set__danger > h2 {
+  color: var(--shu);
+}
+
+/* ── Backup ─────────────────────────────────────────────────────────── */
+.bak__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.bak__table th,
+.bak__table td {
+  padding: var(--sp-2) var(--sp-2);
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+}
+.bak__table th:first-child,
+.bak__table td:first-child {
+  text-align: left;
+}
+.bak__table thead th {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  font-weight: 400;
+}
+.bak__file {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.bak__file input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+.bak__notes {
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+
+/* ── About ──────────────────────────────────────────────────────────── */
+.about__rules {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rule;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.about__rule {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: var(--sp-2);
+  align-items: start;
+}
+.about__rule-n {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+  color: var(--surface);
+  background: var(--shu);
+  transform: rotate(-6deg);
+  border-radius: 3px;
+}
+.about__rule p {
+  margin: 0;
+}
+.about__dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-1) var(--sp-3);
+}
+.about__dl dt {
+  color: var(--fg-muted);
+}
+.about__dl dd {
+  margin: 0;
+}
+.about__events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 240px;
+  overflow: auto;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+}
+.about__events li {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Modal (confirm dialogs on Settings / Backup) ───────────────────── */
+.page__modal-text {
+  margin: 0 0 var(--sp-3);
+}
+
+/* ── reduced motion ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .about__rule-n {
+    transform: none;
+  }
+}
+.reduced-motion .about__rule-n {
+  transform: none;
+}

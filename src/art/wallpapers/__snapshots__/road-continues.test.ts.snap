@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`road-continues > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"20677:3fde46c3"`;
+
+exports[`road-continues > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 37.497600000000006,
+    "text": "ハナ",
+    "weight": 700,
+    "x": 1459.728,
+    "y": 548.141184,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 37.497600000000006,
+    "text": "96日連続",
+    "weight": 500,
+    "x": 1459.728,
+    "y": 629.789184,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 37.497600000000006,
+    "text": "通算240日",
+    "weight": 500,
+    "x": 1459.728,
+    "y": 711.437184,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#2A1F2E",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 8.64,
+    "size": 216,
+    "text": "つづく",
+    "x": 960,
+    "y": 324,
+  },
+]
+`;
+
+exports[`road-continues > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"23744:8ffdb7b2"`;
+
+exports[`road-continues > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 58.032000000000004,
+    "text": "ハナ",
+    "weight": 700,
+    "x": 671.4000000000001,
+    "y": 1363.6508800000004,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 58.032000000000004,
+    "text": "96日連続",
+    "weight": 500,
+    "x": 671.4000000000001,
+    "y": 1490.0108800000005,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": -0.2962722557131201,
+    "size": 58.032000000000004,
+    "text": "通算240日",
+    "weight": 500,
+    "x": 671.4000000000001,
+    "y": 1616.3708800000004,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#2A1F2E",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 11.232000000000001,
+    "size": 280.8,
+    "text": "つづく",
+    "x": 540,
+    "y": 702,
+  },
+]
+`;

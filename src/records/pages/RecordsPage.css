@@ -1,0 +1,228 @@
+/*
+ * TSUZUKU — Records page (group B). JRPG status screen in tokens only;
+ * mobile-first from 360 px, 16 px gutters, no horizontal scroll.
+ */
+
+.records {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+.records__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.records__h1 {
+  margin: 0;
+  font-size: var(--fs-5);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.records__h1 [lang="ja"] {
+  font-family: var(--font-brush);
+  color: var(--shu);
+}
+.records__h1-en {
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.records__lede,
+.records__muted {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.records__line {
+  margin: 0;
+}
+.records__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.records__block--next {
+  background: color-mix(in srgb, var(--raised) 92%, transparent);
+  border: 2px double var(--fg-muted);
+  border-radius: 2px;
+}
+.records__h2 {
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.records__h2 [lang="ja"] {
+  font-family: var(--font-brush);
+}
+.records__h2-en {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.records__block--next .records__h2 {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.records__next {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.4;
+}
+.records__h3 {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+
+/* tiles */
+.records__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2);
+}
+@media (min-width: 560px) {
+  .records__tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.records__tiles--inline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: var(--touch);
+  padding: var(--sp-3);
+  background: color-mix(in srgb, var(--raised) 92%, transparent);
+  border: 2px double var(--fg-muted);
+  border-radius: 2px;
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+}
+.tile__value {
+  font-size: var(--fs-5);
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+.tile__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.tile__sub {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+/* activity */
+.records__activity {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+@media (min-width: 640px) {
+  .records__activity {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+}
+.records__sparks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* bars */
+.records__bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+/* projection */
+.records__projection-line {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.4;
+}
+.records__projection,
+.records__onboarding {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+/* belt timeline */
+.belts {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.belts__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  min-height: var(--touch);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-muted);
+}
+.belts__row:last-child {
+  border-bottom: 0;
+}
+.belts__row--passed,
+.belts__row--current {
+  color: var(--fg);
+}
+.belts__text {
+  flex: 1 1 200px;
+  font-size: var(--fs-2);
+}
+
+/* lists */
+.records__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.records__list li {
+  padding: var(--sp-1) 0;
+  border-bottom: 1px solid var(--line);
+}
+.records__list li:last-child {
+  border-bottom: 0;
+}
+.records__kage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.records__footer {
+  margin: 0;
+  padding-bottom: var(--sp-4);
+}

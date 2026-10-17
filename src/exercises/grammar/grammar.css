@@ -1,0 +1,302 @@
+/*
+ * TSUZUKU — grammar drills (src/exercises/grammar, group D).
+ * Pattern Cloze, Particle Duel, Form Forge, Form Chain (Transform, Scramble and
+ * Judgment Call may reuse these classes). Tokens only; mobile-first (360 px),
+ * 44 px targets; every state is shape + text, never color alone. Shared
+ * widgets (.choice-grid, .text-answer, .kana-input, .ruby, .btn, .hanko,
+ * .status-window, .diff) keep their own styles.
+ */
+
+/* ── common ──────────────────────────────────────────────────────────── */
+.gr {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+.gr__prompt {
+  margin: 0;
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+}
+.gr__sentence {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.gr__sentence .ruby {
+  font-size: inherit;
+}
+.gr__gloss {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.gr__label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.gr__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  margin: 0;
+}
+.gr__meta dt {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.gr__meta dd {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+.gr__meta dd[lang='ja'] {
+  font-family: var(--font-ja);
+}
+.gr__word {
+  display: grid;
+  gap: var(--sp-1);
+  justify-items: start;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+}
+.gr__word-ja {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: 1.3;
+}
+.gr__word-kana {
+  font-family: var(--font-ja);
+  color: var(--fg-muted);
+}
+.gr__target {
+  font-weight: 600;
+}
+.gr__reveal {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.gr__reveal[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.gr__reveal[data-kind='near'] {
+  border-left-color: var(--kin);
+}
+.gr__reveal[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.gr__reveal[data-kind='info'] {
+  border-left-color: var(--ai);
+}
+.gr__reveal p {
+  margin: 0;
+}
+.gr__why {
+  color: var(--fg-muted);
+}
+.gr__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.gr__actions .btn,
+.gr__actions .hanko {
+  min-height: var(--touch);
+}
+.gr__form {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: var(--lh-ja);
+}
+.gr__diff {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  letter-spacing: 0.04em;
+}
+.gr__given {
+  font-family: var(--font-ja);
+  color: var(--fg-muted);
+  text-decoration: line-through;
+}
+
+/* ── cloze blank / particle slots inside a sentence ──────────────────── */
+.gr__blank {
+  display: inline-block;
+  min-width: 2em;
+  padding: 0 0.2em;
+  text-align: center;
+  color: var(--fg-muted);
+  border-bottom: 3px dashed var(--ai);
+}
+.gr__blank[data-filled='true'] {
+  color: var(--fg);
+  border-bottom-style: solid;
+}
+.gr__blank[data-state='correct'] {
+  border-bottom-color: var(--matcha);
+  border-bottom-style: double;
+}
+.gr__blank[data-state='wrong'] {
+  border-bottom-color: var(--shu);
+}
+.gr__blank[data-state='wrong'] .gr__given {
+  margin-right: 0.2em;
+}
+.gr-slot {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.2em;
+  min-height: 1.8em;
+  margin: 0 0.1em;
+  padding: 0 0.3em;
+  font: inherit;
+  font-family: var(--font-ja);
+  line-height: 1.4;
+  color: var(--fg-muted);
+  background: var(--raised);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-sm);
+  vertical-align: baseline;
+  cursor: pointer;
+}
+.gr-slot[data-filled='true'] {
+  color: var(--fg);
+  border-style: solid;
+  border-color: var(--ai);
+}
+.gr-slot[data-active='true'] {
+  border-color: var(--kin);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--kin) 40%, transparent);
+}
+.gr-slot[data-state='correct'] {
+  border-style: double;
+  border-width: 3px;
+  border-color: var(--matcha);
+}
+.gr-slot[data-state='wrong'] {
+  border-color: var(--shu);
+}
+.gr-slot[data-state='wrong'] .gr__given {
+  margin-right: 0.2em;
+}
+.gr-slot:disabled {
+  cursor: default;
+}
+
+/* ── particle keyboard ───────────────────────────────────────────────── */
+.gr-keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-2);
+}
+.gr-key {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-1);
+  font: inherit;
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: 1.2;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
+}
+.gr-key:hover:not(:disabled),
+.gr-key:focus-visible {
+  border-color: var(--ai);
+}
+.gr-key:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.gr-key:disabled {
+  cursor: default;
+  color: var(--fg-muted);
+}
+.gr-key__num {
+  position: absolute;
+  top: 2px;
+  left: var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+@media (min-width: 480px) {
+  .gr-keys {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--sp-3);
+  }
+}
+
+/* ── form chain ──────────────────────────────────────────────────────── */
+.gr-chain__log {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gr-chain__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-2);
+  border-left: 3px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+}
+.gr-chain__row[data-state='right'] {
+  border-left-color: var(--matcha);
+}
+.gr-chain__row[data-state='close'] {
+  border-left-color: var(--kin);
+}
+.gr-chain__row[data-state='miss'] {
+  border-left-color: var(--shu);
+}
+.gr-chain__row[data-state='pending'] {
+  color: var(--fg-muted);
+  border-left-style: dashed;
+}
+.gr-chain__mark {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+}
+.gr-chain__row [lang='ja'] {
+  font-family: var(--font-ja);
+}
+.gr-chain__progress {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gr-key {
+    transition: none;
+  }
+  .gr-key:active:not(:disabled) {
+    transform: none;
+  }
+}
+.reduced-motion .gr-key {
+  transition: none;
+}
+.reduced-motion .gr-key:active:not(:disabled) {
+  transform: none;
+}

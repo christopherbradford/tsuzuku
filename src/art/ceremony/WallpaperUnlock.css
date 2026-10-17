@@ -1,0 +1,125 @@
+/* TSUZUKU — WallpaperUnlock: the kakejiku unrolls (group G). */
+.kakejiku-unlock {
+  --jiku: #3a2a1e;
+  --silk: #e9dcc3;
+  --silk-edge: #b89a62;
+  --scroll-h: min(52dvh, 460px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.kakejiku-unlock__eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.kakejiku-unlock__quadrant {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* the scroll: top roller, silk mount with the art, bottom roller */
+.kakejiku {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 260px);
+  margin: var(--sp-2) 0;
+}
+.kakejiku__jiku {
+  width: 112%;
+  height: 14px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--jiku) 70%, white) 0%, var(--jiku) 55%, color-mix(in srgb, var(--jiku) 70%, black) 100%);
+  border-radius: 7px;
+  box-shadow: 0 1px 2px color-mix(in srgb, #0b0b10 40%, transparent);
+}
+.kakejiku__jiku--top {
+  height: 8px;
+  border-radius: 4px;
+}
+.kakejiku__silk {
+  width: 100%;
+  height: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: var(--silk);
+  border-inline: 2px solid var(--silk-edge);
+  overflow: hidden;
+}
+.kakejiku__art {
+  width: 100%;
+  height: 100%;
+  background: #0b0b10;
+}
+.kakejiku__art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kakejiku-unlock--unrolling .kakejiku__silk,
+.kakejiku-unlock--open .kakejiku__silk {
+  height: var(--scroll-h);
+  padding-block: 14px;
+  transition:
+    height 1400ms var(--ease),
+    padding 1400ms var(--ease);
+}
+
+.kakejiku-unlock__name,
+.kakejiku-unlock__name-en,
+.kakejiku-unlock__pending,
+.kakejiku-unlock__actions {
+  opacity: 0;
+  transition: opacity 260ms var(--ease);
+}
+.kakejiku-unlock--open .kakejiku-unlock__name,
+.kakejiku-unlock--open .kakejiku-unlock__name-en,
+.kakejiku-unlock--open .kakejiku-unlock__pending,
+.kakejiku-unlock--open .kakejiku-unlock__actions {
+  opacity: 1;
+}
+
+.kakejiku-unlock__name {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--fs-6);
+  line-height: 1.1;
+}
+.kakejiku-unlock__name-en {
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.kakejiku-unlock__pending {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+.kakejiku-unlock__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kakejiku__silk {
+    height: var(--scroll-h);
+    padding-block: 14px;
+  }
+}
+.reduced-motion .kakejiku__silk {
+  height: var(--scroll-h);
+  padding-block: 14px;
+}

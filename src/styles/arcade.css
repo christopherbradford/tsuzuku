@@ -1,0 +1,237 @@
+/*
+ * TSUZUKU — arcade feel layer (group A, design 01 §4.1 / §6, [P2]).
+ *
+ * Everything here is gated by the Arcade preset (`:root[data-feel="arcade"]`
+ * set by src/app/theme.ts, or `body.feel-arcade`) and most of it also by the
+ * CRT toggle (`body.crt`). Dojo and Zen never see any of it.
+ *
+ * Classes: .crt .glow-edge .speed-lines .halftone .ippon-flash .combo-pop
+ *          .ki-glow .arcade-head .hiscore
+ *
+ * 3 Hz rule (01 §4.5): no animation here is shorter than 334 ms and nothing
+ * alternates faster than that. Every animation is removed under
+ * prefers-reduced-motion and body.reduced-motion; opacity fades remain.
+ * Tokens only: no color literals.
+ */
+
+/* ── CRT: scanlines + 1 px chromatic offset, opt-in on arcade screens ── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .crt {
+  position: relative;
+  isolation: isolate;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    color-mix(in srgb, var(--bg) 22%, transparent) 2px 3px
+  );
+  mix-blend-mode: multiply;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 60%, color-mix(in srgb, var(--bg) 55%, transparent) 100%);
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) body.crt .crt > *,
+:is(:root[data-feel="arcade"], body.feel-arcade).crt .crt > * {
+  text-shadow:
+    1px 0 0 color-mix(in srgb, var(--neon-c) 45%, transparent),
+    -1px 0 0 color-mix(in srgb, var(--neon-m) 45%, transparent);
+}
+
+/* ── Kiai edge glow: slow breathing, 1.6 s period (≈ 0.6 Hz) ─────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .glow-edge {
+  position: relative;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .glow-edge::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 48px color-mix(in srgb, var(--neon-c) 55%, transparent),
+    inset 0 0 120px color-mix(in srgb, var(--neon-m) 30%, transparent);
+  animation: glow-breathe 1600ms var(--ease) infinite alternate;
+}
+@keyframes glow-breathe {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Speed lines: radial streaks behind a versus / Ippon moment ──────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .speed-lines {
+  position: relative;
+  overflow: hidden;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .speed-lines::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    color-mix(in srgb, var(--fg) 10%, transparent) 0deg 2deg,
+    transparent 2deg 9deg
+  );
+  mask-image: radial-gradient(circle at center, transparent 22%, var(--fg) 70%);
+  animation: speed-spin 2400ms linear infinite;
+}
+@keyframes speed-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(9deg);
+  }
+}
+
+/* ── Halftone: screen-print dots over panels ─────────────────────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .halftone {
+  position: relative;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .halftone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in srgb, var(--fg) 14%, transparent) 1px, transparent 1.5px);
+  background-size: 6px 6px;
+  mix-blend-mode: multiply;
+}
+
+/* ── Ippon flash: one brush strike, 420 ms, never repeats ────────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .ippon-flash,
+:is(:root[data-feel="arcade"], body.feel-arcade) .ippon {
+  animation: ippon-strike 420ms var(--ease) both;
+  text-shadow: 0 0 12px color-mix(in srgb, var(--shu) 60%, transparent);
+}
+@keyframes ippon-strike {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-6deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.96) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Combo pop: one bounce per tier change, 360 ms ───────────────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .combo-pop,
+:is(:root[data-feel="arcade"], body.feel-arcade) .combo[data-tier="2"],
+:is(:root[data-feel="arcade"], body.feel-arcade) .combo[data-tier="3"] {
+  animation: combo-pop 360ms var(--ease) both;
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .combo[data-tier="3"] {
+  text-shadow: 0 0 8px var(--neon-m);
+}
+@keyframes combo-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.45);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+/* ── Ki bar glow when full ───────────────────────────────────────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .ki-glow,
+:is(:root[data-feel="arcade"], body.feel-arcade) .ki-bar[data-full="true"] {
+  box-shadow: 0 0 12px var(--neon-c), inset 0 0 6px color-mix(in srgb, var(--neon-c) 40%, transparent);
+  animation: ki-pulse 1400ms var(--ease) infinite alternate;
+}
+@keyframes ki-pulse {
+  from {
+    box-shadow: 0 0 6px var(--neon-c);
+  }
+  to {
+    box-shadow: 0 0 18px var(--neon-c), 0 0 32px color-mix(in srgb, var(--neon-m) 40%, transparent);
+  }
+}
+
+/* ── Pixel headers and hi-score tables ───────────────────────────────── */
+:is(:root[data-feel="arcade"], body.feel-arcade) .arcade-head,
+:is(:root[data-feel="arcade"], body.feel-arcade) .status-window > h2,
+:is(:root[data-feel="arcade"], body.feel-arcade) .status-window > h3 {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-c);
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .hiscore {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  letter-spacing: 0.06em;
+  color: var(--kin);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  border: 2px solid var(--neon-c);
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .hiscore th,
+:is(:root[data-feel="arcade"], body.feel-arcade) .hiscore td {
+  border-bottom: 1px dashed color-mix(in srgb, var(--neon-c) 40%, transparent);
+}
+:is(:root[data-feel="arcade"], body.feel-arcade) .hanko {
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--bg) 35%, transparent),
+    0 0 14px color-mix(in srgb, var(--shu) 45%, transparent);
+}
+
+/* ── reduced motion: drop every arcade animation, keep the paint ─────── */
+@media (prefers-reduced-motion: reduce) {
+  :is(:root[data-feel="arcade"], body.feel-arcade) .glow-edge::after,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .speed-lines::before,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .ippon-flash,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .ippon,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .combo-pop,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .combo[data-tier="2"],
+  :is(:root[data-feel="arcade"], body.feel-arcade) .combo[data-tier="3"],
+  :is(:root[data-feel="arcade"], body.feel-arcade) .ki-glow,
+  :is(:root[data-feel="arcade"], body.feel-arcade) .ki-bar[data-full="true"] {
+    animation: none;
+  }
+  :is(:root[data-feel="arcade"], body.feel-arcade) .glow-edge::after {
+    opacity: 0.8;
+  }
+  :is(:root[data-feel="arcade"], body.feel-arcade) .speed-lines::before {
+    transform: none;
+  }
+}
+body.reduced-motion .glow-edge::after,
+body.reduced-motion .speed-lines::before,
+body.reduced-motion .ippon-flash,
+body.reduced-motion .ippon,
+body.reduced-motion .combo-pop,
+body.reduced-motion .combo[data-tier="2"],
+body.reduced-motion .combo[data-tier="3"],
+body.reduced-motion .ki-glow,
+body.reduced-motion .ki-bar[data-full="true"] {
+  animation: none;
+}
+body.reduced-motion .glow-edge::after {
+  opacity: 0.8;
+}
+body.reduced-motion .speed-lines::before {
+  transform: none;
+}

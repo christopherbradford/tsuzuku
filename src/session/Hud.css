@@ -1,0 +1,106 @@
+/* TSUZUKU — <Hud> (group E). Tokens from src/styles/tokens.css; .progress / .forge-bar / .notice base styles from components.css. */
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-2) var(--gutter) 0;
+  color: var(--fg);
+}
+
+.hud__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.hud__bar {
+  flex: 1 1 auto;
+}
+
+.hud__count {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.hud__blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hud__block {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--sp-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  background: var(--surface);
+}
+
+.hud__block::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hai);
+}
+
+.hud__block[data-state='done'] {
+  color: var(--fg-muted);
+  text-decoration: line-through;
+}
+.hud__block[data-state='done']::before {
+  background: var(--matcha);
+}
+
+.hud__block[data-state='current'] {
+  color: var(--fg);
+  border-color: var(--shu);
+}
+.hud__block[data-state='current']::before {
+  background: var(--shu);
+}
+
+.hud__current {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.hud__backlog {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+
+.hud__forge {
+  width: 100%;
+}
+
+.hud[data-feel='zen'] .hud__count {
+  color: var(--hai);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud .progress__fill,
+  .hud .forge-bar__fill {
+    transition: none;
+  }
+}
+.reduced-motion .hud .progress__fill,
+.reduced-motion .hud .forge-bar__fill {
+  transition: none;
+}

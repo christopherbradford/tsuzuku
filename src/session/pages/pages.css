@@ -1,0 +1,338 @@
+/* TSUZUKU — group E pages: Road, Station, Dan, Scroll/Gate/Shinsa wrappers. Tokens from tokens.css; .hanko / .btn / .belt / .chip / .list / .notice / .progress from components.css. */
+
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-3) var(--gutter) var(--sp-6);
+  color: var(--fg);
+}
+
+.page__head {
+  margin-bottom: var(--sp-4);
+}
+
+.page__title {
+  margin: 0;
+  font-size: var(--fs-5);
+  line-height: 1.2;
+}
+
+.page__title [lang="ja"] {
+  font-family: var(--font-brush);
+}
+
+.page__sub {
+  margin: var(--sp-1) 0 0;
+  color: var(--fg-muted);
+}
+
+.page__section {
+  margin: var(--sp-4) 0;
+}
+
+.page__label {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.page__muted {
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+
+.page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+.page__line {
+  margin: var(--sp-2) 0;
+}
+
+/* ── station ─────────────────────────────────────────────────────────── */
+
+.station-head {
+  position: relative;
+  padding-left: var(--sp-3);
+  border-left: 6px solid var(--belt-color, var(--line));
+}
+
+.station-head__number {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.station-head__romaji {
+  font-size: var(--fs-4);
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+
+.station-head__keeper {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0 0;
+}
+
+.station-head__gate-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  font-family: var(--font-brush);
+  color: var(--bg);
+  background: var(--shu);
+  border-radius: 4px;
+  transform: rotate(-4deg);
+}
+
+.station-quotas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.station-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.station-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.station-bar__label {
+  font-size: var(--fs-2);
+}
+
+.station-bar__track {
+  display: block;
+}
+
+.station-gate__line {
+  margin: 0 0 var(--sp-2);
+}
+
+.station-scroll,
+.station-story {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.station-scroll__text,
+.station-story__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.station-scroll[data-done="true"] .station-scroll__name {
+  color: var(--fg-muted);
+}
+
+.station-story__title {
+  font-size: var(--fs-4);
+}
+
+.station-story__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--sp-1);
+}
+
+.station-external {
+  margin-top: var(--sp-3);
+}
+
+.station-items {
+  margin: var(--sp-3) 0;
+}
+
+.station-items__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-2);
+  font-weight: 600;
+}
+
+.station-items__glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: var(--fs-1);
+  color: var(--bg);
+  background: var(--fg-muted);
+  border-radius: 4px;
+}
+
+.station-items[data-kind="kana"] .station-items__glyph {
+  background: var(--sakura);
+}
+.station-items[data-kind="vocab"] .station-items__glyph,
+.station-items[data-kind="chunk"] .station-items__glyph {
+  background: var(--neon-c);
+}
+.station-items[data-kind="kanji"] .station-items__glyph,
+.station-items[data-kind="component"] .station-items__glyph {
+  background: var(--kin);
+}
+.station-items[data-kind="grammar"] .station-items__glyph {
+  background: var(--matcha);
+}
+
+.station-items__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.station-item {
+  font-size: var(--fs-2);
+}
+
+/* ── road page ───────────────────────────────────────────────────────── */
+
+.road-page__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.road-page__arrival {
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.road-page__arrival p {
+  margin: 0 0 var(--sp-2);
+}
+
+.road-page__arrival p:last-child {
+  margin-bottom: 0;
+}
+
+.road-page__thesis {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ── dan page ────────────────────────────────────────────────────────── */
+
+.dan-rank {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+}
+
+.dan-rank__name {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+}
+
+.dan-module {
+  margin: var(--sp-3) 0;
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.dan-module[data-current="true"] {
+  border-color: var(--kin);
+}
+
+.dan-module[data-ready="true"] {
+  border-color: var(--matcha);
+}
+
+.dan-module__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-2);
+}
+
+.dan-module__name {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+
+.dan-module__name [lang="ja"] {
+  font-family: var(--font-brush);
+}
+
+.dan-criteria {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dan-criterion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.dan-criterion__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  font-size: var(--fs-2);
+}
+
+.dan-criterion__count {
+  font-family: var(--font-pixel);
+  white-space: nowrap;
+}
+
+.dan-criterion[data-ok="true"] .dan-criterion__count {
+  color: var(--matcha);
+}
+
+.dan-criterion .progress {
+  display: block;
+}

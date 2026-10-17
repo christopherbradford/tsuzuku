@@ -1,0 +1,218 @@
+/* TSUZUKU — <ShinsaView> (group E). Tokens from tokens.css; .status-window / .belt / .progress / .notice / .hanko / .btn / .chip from components.css. */
+
+.shinsa-view {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-3) var(--gutter) var(--sp-6);
+  color: var(--fg);
+}
+
+.shinsa-view__head {
+  margin-bottom: var(--sp-3);
+}
+
+.shinsa-view__title {
+  margin: 0;
+  font-size: var(--fs-5);
+  line-height: 1.2;
+}
+
+.shinsa-view__title [lang="ja"] {
+  font-family: var(--font-brush);
+}
+
+.shinsa-view__sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0 0;
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+
+.shinsa-view__label {
+  margin: var(--sp-4) 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.shinsa-view__line {
+  margin: var(--sp-2) 0;
+}
+
+.shinsa-view__status {
+  margin: var(--sp-3) 0;
+  font-weight: 600;
+}
+
+.shinsa-view__xp {
+  font-family: var(--font-pixel);
+  color: var(--kin);
+}
+
+.shinsa-view__result {
+  margin: var(--sp-3) 0;
+  font-size: var(--fs-4);
+}
+
+.shinsa-view__reasons {
+  margin: var(--sp-2) 0;
+  padding-left: var(--sp-5);
+}
+
+.shinsa-view__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0;
+  padding-left: var(--sp-5);
+}
+
+.shinsa-view__sections [lang="ja"] {
+  font-family: var(--font-brush);
+  margin-right: var(--sp-1);
+}
+
+.shinsa-view__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.shinsa-view__typed {
+  margin: var(--sp-3) 0;
+}
+
+/* ── coverage bars ───────────────────────────────────────────────────── */
+
+.shinsa-view__coverage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0;
+}
+
+.shinsa-cov {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-1) var(--sp-2);
+  align-items: center;
+}
+
+.shinsa-cov__label {
+  font-size: var(--fs-2);
+}
+
+.shinsa-cov__count {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.shinsa-cov__track {
+  grid-column: 1 / -1;
+  position: relative;
+  display: block;
+}
+
+.shinsa-cov__mark {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--fg-muted);
+}
+
+.shinsa-cov[data-met="true"] .shinsa-cov__count {
+  color: var(--matcha);
+}
+
+/* ── notes ───────────────────────────────────────────────────────────── */
+
+.shinsa-notes {
+  margin: var(--sp-3) 0;
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.shinsa-notes p {
+  margin: 0 0 var(--sp-2);
+}
+
+.shinsa-notes__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0 0 var(--sp-3);
+  padding: 0;
+  list-style: none;
+}
+
+/* ── section card ────────────────────────────────────────────────────── */
+
+.shinsa-section {
+  margin-top: var(--sp-3);
+}
+
+.shinsa-section__name {
+  margin: var(--sp-1) 0;
+  font-family: var(--font-brush);
+  font-size: var(--fs-6);
+  line-height: 1.1;
+}
+
+.shinsa-section__line {
+  margin: var(--sp-2) 0;
+}
+
+/* ── result table ────────────────────────────────────────────────────── */
+
+.shinsa-result__table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: var(--sp-3) 0;
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.shinsa-result__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+
+.shinsa-result__row dt {
+  font-weight: 600;
+}
+
+.shinsa-result__row dd {
+  margin: 0;
+  font-family: var(--font-pixel);
+}
+
+.shinsa-result__row[data-pass="true"] dd {
+  color: var(--matcha);
+}
+
+.shinsa-result__row[data-pass="false"] dd {
+  color: var(--shu);
+}
+
+.shinsa-result__row[data-pass="absent"] dd {
+  color: var(--fg-muted);
+}

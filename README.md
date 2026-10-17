@@ -70,14 +70,31 @@ Node 24+ (content pipeline scripts are TypeScript run directly by Node).
 
 | Path | What |
 |---|---|
+| `index.html`, `vite.config.ts`, `tsconfig.json` | Vite + Preact shell; relative `base: './'`, hash routing, `VITE_APP_VERSION` from `package.json` |
+| `public/` | static files copied as-is: `sw.js` (relative-scope service worker), `manifest.webmanifest`, `favicon.svg` |
+| `public/content/` | the corpus: `kana/`, `vocab/` (N5–N1), `kanji/` (N5–N2), `grammar/` (N5–N1), `michikusa/` (53 stations), `conjugation/`, `_meta/` (components, denylist). `stories/`, `stations/` and `manifest.json` are produced by the content pipeline |
+| `scripts/` | content pipeline run directly by Node: `validate-content.ts` (rules V01–V36), `assign-stations.ts`, `build-content-index.ts`, `check-components.mjs` |
+| `src/main.tsx` | composition root: `initStore` → Perapera snapshot → audio services → exercise registry → `<App>` → router → service worker |
+| `src/shared/` | contract tier: store/session/exercise types, event bus, routes, catalog (66 Mon, 28 wallpapers, 17 quests), kana IME, time; `shared/ui/` (`Ruby`, `KanaInput`, `ExerciseFrame`, `Feedback`, `JudgeCard`) |
+| `src/content/` | content schemas and the 53 stations (`types.ts`), the cached `./content/` loader, ruby parsing, in-memory test fixtures |
+| `src/store/` | persistence (slots, shards, quota ladder, migrations), XP/levels, quests, streak and day roll, ledger, weak points, badge and wallpaper definitions, backup import/export, `derived.ts` read-model (Perapera, projection), `testing.ts` (`MemoryStorage`, `makeTestStore`) |
+| `src/learn/` | the engine: FSRS-5 scheduler, queue and governors, item belts, Kiai combos, leech/nemesis, conjugation, grading and judge rubrics, distractors; `apply.ts` is the only writer |
+| `src/exercises/` | the 26 core drills by family: `kana/`, `vocab/`, `kanji/`, `grammar/`, `listening/`, `fluency/`, plus shared `ChoiceGrid`, `TextAnswer`, `PitchLine` |
+| `src/session/` | session planning and running: block builder, runner, Gatekeeper, Shinsa, Kage, Dan road, scrolls, Dojo feed, end card; `pages/` Train · Scroll · Station · Gate · Shinsa · Road · Dan |
+| `src/input/` | comprehensible input and output: `reader/` (fog, gloss, comprehension, speed read), `listening/`, `speaking/` (shadow, monologue, recorder), `taiwa/` (role play, aizuchi, register), `writing/`, `missions/`; `pages/` Story · Listen · Taiwa |
+| `src/audio/` | Web Speech TTS, voices, speech recognition, SFX, installed into the `shared/audio` slot |
+| `src/records/` | Records and Ledger pages, Perapera radar, weak-point map, charts |
+| `src/collections/` | Collections, Studio and Library pages: Mon grid, Goshuin book, Kakejiku gallery |
+| `src/art/` | procedural art: SVG/brush/pixel primitives, Mon crests, Goshuin stamps, `dojo/` home scene, `ceremony/` overlays, `wallpapers/` (28 generators + PNG export) |
+| `src/app/` | the shell: `App`, `Layout`, router, theme, `pages.ts` (route → lazy page table), SW registration, `.ics` export; `pages/` Dojo · Onboarding · Settings · Backup · About |
+| `src/styles/`, `src/i18n/` | CSS tokens, base, components and arcade skin; UI strings and the banned-phrase list |
 | `docs/design/01–07` | the design: identity, progression, sessions, exercises, SRS policy, rewards, architecture |
-| `docs/ARCHITECTURE.md` | binding shared contracts (store, event bus, loader, exercise registry, routes, CSS tokens) |
-| `docs/CONTENT_GUIDE.md` | writer handbook and validation rules V01–V36 |
+| `docs/ARCHITECTURE.md`, `docs/CHANGELOG.md`, `docs/CONTRACT_NOTES.md` | binding shared contracts, contract-tier change log, integration notes |
+| `docs/CONTENT_GUIDE.md`, `docs/station-allocation.md` | writer handbook with validation rules V01–V36; the per-station quota plan |
 | `docs/content-plan.json`, `docs/module-plan.json` | every content file and source module, by owner |
-| `src/content/types.ts` | all content schemas, belts, the 53 stations |
-| `public/content/` | kana, vocab (N5–N1), kanji (N5–N2), grammar (N5–N1), stories, michikusa, conjugation table |
-| `scripts/` | content validator, station assigner, manifest builder |
+| `docs/BUILD_STATUS.md` | current module/test counts, what each group delivered, known gaps, next steps |
 | `docs/design-panel/` | the four original design proposals and judge scores this spec was synthesized from |
+| `.github/workflows/deploy.yml` | GitHub Pages CI: validate content → build index → test → build → deploy |
 
 ## License
 

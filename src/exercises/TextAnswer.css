@@ -1,0 +1,174 @@
+/*
+ * TSUZUKU — <TextAnswer> (src/exercises, group D).
+ * Field + submit on one row (fits 360 px), reveal / confirm panels below.
+ * Diff spans reuse the shared .diff classes from src/shared/ui/ui.css.
+ * Tokens only.
+ */
+.text-answer {
+  display: grid;
+  gap: var(--sp-3);
+  width: 100%;
+  box-sizing: border-box;
+}
+.text-answer__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--sp-2);
+  align-items: start;
+}
+.text-answer__field {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-4);
+  line-height: 1.4;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-1) var(--ease);
+}
+.text-answer__field:focus {
+  border-color: var(--ai);
+}
+.text-answer__field:disabled {
+  opacity: 0.6;
+}
+
+/* the vermilion seal (design 01 §4.4 Hanko Button) */
+.text-answer__submit {
+  min-width: var(--touch);
+  min-height: var(--touch);
+  padding: 0 var(--sp-3);
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--shu);
+  border: 2px solid var(--shu);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 60ms var(--ease), opacity var(--dur-1) var(--ease);
+}
+.text-answer__submit:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.text-answer__submit:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.text-answer__nudge {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.text-answer__confirm,
+.text-answer__reveal {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.text-answer__reveal[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.text-answer__reveal[data-kind='near'],
+.text-answer__reveal[data-kind='kana-only'] {
+  border-left-color: var(--kin);
+}
+.text-answer__reveal[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.text-answer__confirm {
+  border-left-color: var(--ai);
+}
+
+.text-answer__expected,
+.text-answer__yours,
+.text-answer__also,
+.text-answer__question,
+.text-answer__why {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.text-answer__label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.text-answer__form {
+  font-size: var(--fs-4);
+}
+.text-answer__form[lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: var(--lh-ja);
+}
+.text-answer__given {
+  text-decoration: line-through;
+  color: var(--fg-muted);
+}
+.text-answer__diff {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  letter-spacing: 0.04em;
+}
+.text-answer__why {
+  color: var(--fg-muted);
+}
+.text-answer__question {
+  font-weight: 600;
+}
+
+.text-answer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.text-answer__decline,
+.text-answer__override {
+  flex: 1 1 140px;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.text-answer__decline:hover,
+.text-answer__decline:focus-visible,
+.text-answer__override:hover,
+.text-answer__override:focus-visible {
+  border-color: var(--ai);
+}
+.text-answer__override {
+  border-style: dashed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-answer__field,
+  .text-answer__submit {
+    transition: none;
+  }
+  .text-answer__submit:active:not(:disabled) {
+    transform: none;
+  }
+}
+.reduced-motion .text-answer__field,
+.reduced-motion .text-answer__submit {
+  transition: none;
+}
+.reduced-motion .text-answer__submit:active:not(:disabled) {
+  transform: none;
+}

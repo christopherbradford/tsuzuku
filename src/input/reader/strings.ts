@@ -1,0 +1,129 @@
+/**
+ * TSUZUKU — reader copy (Sensei voice, design 01 §3): Tabi Nikki episode
+ * reader, tap gloss, comprehension, Speed Read and the standalone story page.
+ * Linted by `src/i18n/banned.test.ts`. Plain strings only; templates use
+ * `{name}` placeholders filled with `fill()` (re-exported from `@/shared/ui/strings`).
+ * Japanese appears only where the learner can already read it (kana).
+ */
+import type { CpmBand } from './cpm';
+
+export { fill } from '@/shared/ui/strings';
+
+export const S = {
+  /* ── episode header ──────────────────────────────────────────────────── */
+  episodeLabel: 'Tabi Nikki episode',
+  dialogueLabel: 'Dialogue',
+  bridgeChip: 'Native Bridge',
+  bridgeHint: 'Authentic register: dropped particles, fillers, contractions. Expect a little fog.',
+  plusOneChip: '+1',
+  plusOneHint: 'One new word in this line. The rest you know.',
+  coverage: '{known} of {total} words known',
+  charsLabel: '{n} characters',
+  linesLabel: '{n} lines',
+  stationLink: 'Station {n}',
+  registerLabel: { casual: 'casual', polite: 'polite', keigo: 'keigo', neutral: 'neutral' } as Record<string, string>,
+
+  /* ── reading controls ────────────────────────────────────────────────── */
+  nextLine: 'Next line',
+  showRest: 'Show the rest',
+  finishReading: 'To the questions',
+  listenLine: 'Listen to this line',
+  showEnglish: 'English',
+  hideEnglish: 'Hide English',
+  englishLocked: 'English unlocks as you read.',
+  vertical: 'Vertical text',
+  horizontal: 'Horizontal text',
+  revealHint: 'Tap a hidden reading to reveal it. That counts as a hint.',
+  tapGlossHint: 'Tap any word for its meaning.',
+  readingProgress: 'Line {i} of {n}',
+  storyLoading: 'Fetching the episode.',
+  storyMissing: 'This episode is not on the road yet.',
+  storyMissingHint: 'The scroll was never written, or the link is old. The station page lists what is here.',
+  noTokens: 'This line has no word map yet; tap glossing is off here.',
+
+  /* ── gloss popover ───────────────────────────────────────────────────── */
+  glossTitle: 'Gloss',
+  glossClose: 'Close',
+  glossSpeak: 'Say it',
+  glossLoading: 'Looking it up.',
+  glossNoItem: 'Not in the corpus yet.',
+  glossNoItemHint: 'Keep it as a bookmark and the road will catch up.',
+  glossMeaning: 'Meaning',
+  glossDefinition: 'Definition',
+  glossShowEnglish: 'Show English',
+  glossHideEnglish: 'Hide English',
+  glossReading: 'Reading',
+  glossPitch: 'Pitch',
+  glossCollocations: 'Goes with',
+  glossNotes: 'Note',
+  glossPattern: 'Pattern',
+  glossFormation: 'Form',
+  glossFunction: 'Function word',
+  glossName: 'Name',
+  capture: 'Capture',
+  captureJa: 'つかまえる',
+  captured: 'Captured',
+  capturedHint: 'It joins your next Scroll ahead of the station list.',
+  bookmark: 'Bookmark',
+  bookmarked: 'Bookmarked',
+  inTraining: 'In training',
+  inTrainingHint: 'This word already has cards. A tap on a due word counts as Hard.',
+  pitchType: { heiban: 'flat', atamadaka: 'head-high', nakadaka: 'mid-high', odaka: 'tail-high' } as Record<string, string>,
+  pitchTypeJa: { heiban: 'へいばん', atamadaka: 'あたまだか', nakadaka: 'なかだか', odaka: 'おだか' } as Record<string, string>,
+
+  /* ── comprehension ───────────────────────────────────────────────────── */
+  questionsTitle: 'Comprehension',
+  questionOf: 'Question {i} of {n}',
+  questionChoices: 'Choices',
+  questionChoiceN: 'Choice {n}',
+  questionCorrect: 'Right.',
+  questionWrong: 'Not that one.',
+  questionAnswerWas: 'The answer',
+  questionNext: 'Next question',
+  questionFinish: 'See the result',
+  questionsScore: '{correct} of {total}',
+  questionsPassed: 'Two of three or better. Full credit.',
+  questionsMissed: 'Under two of three. The episode is still yours to read again.',
+
+  /* ── result ──────────────────────────────────────────────────────────── */
+  resultTitle: 'Episode read',
+  resultCpm: '{n} characters per minute',
+  resultCpmNone: 'Reading speed not measured.',
+  resultTaps: '{n} gloss taps',
+  resultTapsOne: '1 gloss tap',
+  resultTapsNone: 'No gloss taps',
+  resultHints: '{n} readings revealed',
+  resultDictionaryFree: 'Dictionary-free: a long episode, two taps or fewer, understood.',
+  resultKaiden: '{n} mastered words confirmed in context.',
+  resultMinutes: '{n} minutes to your ledger',
+  resultMinutesNone: 'Under a minute; nothing logged.',
+  resultContinue: 'Continue',
+  band: { below: 'Below the belt target. Speed comes with volume.', near: 'Near the belt target.', at: 'At the belt target.', above: 'Above the belt target.' } as Record<CpmBand, string>,
+  bandShort: { below: 'below target', near: 'near target', at: 'on target', above: 'above target' } as Record<CpmBand, string>,
+
+  /* ── speed read ──────────────────────────────────────────────────────── */
+  speedTitle: 'Speed Read',
+  speedIntro: 'A story you have read, one line at a time at a set pace. One question at the end.',
+  speedPace: '{n} characters per minute',
+  speedBest: 'Personal best: {n}',
+  speedBestNone: 'No personal best yet.',
+  speedStart: 'Start',
+  speedReading: 'Reading at {n} characters per minute',
+  speedLine: 'Line {i} of {n}',
+  speedQuestionIntro: 'One question.',
+  speedPassed: 'Speed Read cleared at {n} characters per minute.',
+  speedMissed: 'Question missed. The pace counts for nothing until the meaning comes with it.',
+  speedNewBest: 'New personal best.',
+  speedMissing: 'That episode is not loaded.',
+  speedNoQuestions: 'This episode carries no questions yet.',
+
+  /* ── story page ──────────────────────────────────────────────────────── */
+  pageTitle: 'Tabi Nikki',
+  previously: 'Previously',
+  recapLabel: 'Recap',
+  readAgain: 'Read again',
+  backToStation: 'Back to the station',
+  backToDojo: 'Dojo',
+  toLedger: 'Ledger',
+  standaloneNote: 'Reading outside a session. Minutes go to the ledger; glosses and captures count as always.',
+} as const;

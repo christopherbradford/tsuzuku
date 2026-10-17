@@ -1,0 +1,43 @@
+/*
+ * TSUZUKU — TaiwaPage (#/taiwa/:id, src/input/pages, group F).
+ * Tokens only. Mobile-first: one column at 360 px with the 16 px gutter;
+ * 44 px targets; the role-play fills the middle, the next-step row sits lowest.
+ */
+.taiwa-page {
+  display: grid;
+  gap: var(--sp-4);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-3) var(--gutter) var(--sp-6);
+}
+.taiwa-page__nav,
+.taiwa-page__after {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+.taiwa-page__after {
+  justify-content: flex-end;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+.taiwa-page__nav .btn,
+.taiwa-page__after .btn,
+.taiwa-page__after .hanko {
+  min-height: var(--touch);
+}
+.taiwa-page__mode,
+.taiwa-page__note,
+.taiwa-page__logged {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.taiwa-page__logged {
+  font-family: var(--font-pixel);
+  color: var(--kin);
+}

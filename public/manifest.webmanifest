@@ -1,0 +1,28 @@
+{
+  "name": "TSUZUKU — つづく",
+  "short_name": "TSUZUKU",
+  "description": "A gamified road from zero to fluent Japanese. To be continued. Every day.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F4EDE0",
+  "theme_color": "#0B0B10",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+import { signal } from '@preact/signals';
+import { render, type ComponentChildren, type JSX } from 'preact';
+import { act } from 'preact/test-utils';
+import { FIXTURE, V } from '@/content/fixtures';
+import type { ContentItem } from '@/content/types';
+import { installServices, nullAudio, resetServices, type AudioService, type SpeakOptions } from '@/shared/audio';
+import { bus } from '@/shared/events';
+import type { AttemptResult, Step } from '@/shared/session-types';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
+import { captureEvents, makeTestStore } from '@/store/testing';
+import { MAX_REPLAYS, SentenceListen, choiceAnswerIndex, diffTags, implicitGrades, meta, moraDiff, slipTag } from './SentenceListen';
+
+const SENTENCE = '{犬|いぬ}は{水|みず}を{飲|の}みます。'; // いぬはみずをのみます (10 morae)
+
+let root: HTMLDivElement;
+let calls: { text: string; o?: SpeakOptions }[];
+
+function fakeAudio(): AudioService {
+  return {
+    ...nullAudio,
+    hasJaVoice: signal(true),
+    speak: (text, o) => {
+      calls.push({ text, o });
+      return Promise.resolve();
+    },
+  };
+}
+
+beforeEach(async () => {
+  await makeTestStore();
+  bus.reset();
+  calls = [];
+  installServices({ audio: fakeAudio() });
+  root = document.createElement('div');
+  document.body.appendChild(root);
+});
+afterEach(() => {
+  render(null, root);
+  root.remove();
+  resetServices();
+});
+
+function step(over: Partial<Step> = {}): Step {
+  return {
+    id: 'sl-1',
+    block: 'input',
+    exercise: 'sentence-listen',
+    itemId: null,
+    cardKey: null,
+    params: { sentence: SENTENCE, rate: 0.9 },
+    timed: false,
+    isNew: false,
+    stepTag: null,
+    exposures: 0,
+    estMs: 12000,
+    ...over,
+  };
+}
+
+function frame(s: Step, children: ComponentChildren): JSX.Element {
+  return (
+    <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => 0} onGuard={() => undefined} onHint={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+      {children}
+    </ExerciseFrame>
+  );
+}
+
+async function mount(s: Step, framed = false) {
+  const onResult = vi.fn<(r: AttemptResult) => void>();
+  const onReplay = vi.fn();
+  const onHint = vi.fn();
+  const el = (
+    <SentenceListen step={s as Step & { params: { sentence: string; rate: number } }} item={null} feel="dojo" furigana="always" jj={false} speedTier={3} exposures={0} onResult={onResult} onHint={onHint} onReplay={onReplay} requestJudge={() => Promise.resolve(true)} />
+  );
+  await act(async () => {
+    render(framed ? frame(s, el) : el, root);
+    await Promise.resolve();
+  });
+  const input = root.querySelector('input') as HTMLInputElement | null;
+  return { onResult, onReplay, onHint, input };
+}
+
+function type(input: HTMLInputElement, text: string): void {
+  for (const ch of text) {
+    act(() => {
+      input.value = input.value + ch;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+  }
+}
+function enter(input: HTMLInputElement): void {
+  act(() => {
+    input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
+  });
+}
+async function clickAsync(b: HTMLButtonElement | null): Promise<void> {
+  await act(async () => {
+    b?.click();
+    await Promise.resolve();
+  });
+}
+function press(key: string): void {
+  act(() => {
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
+  });
+}
+const playBtn = (): HTMLButtonElement => root.querySelector('.listen__play') as HTMLButtonElement;
+const lookup = (id: string): ContentItem | undefined => FIXTURE.items[id];
+
+describe('dictation helpers', () => {
+  it('meta follows the D export convention', () => {
+    expect(meta).toMatchObject({ id: 'sentence-listen', facet: null, needsTts: true, keys: 'kana' });
+    expect(MAX_REPLAYS).toBe(2);
+  });
+
+  it('slipTag names the slip of a cluster', () => {
+    expect(slipTag('', 'あ')).toBe('vowel-length');
+    expect(slipTag('ー', '')).toBe('vowel-length');
+    expect(slipTag('', 'っ')).toBe('small-kana');
+    expect(slipTag('が', 'は')).toBe('particle');
+    expect(slipTag('か', 'が')).toBe('voicing');
+    expect(slipTag('きゃ', 'きや')).toBe('small-kana');
+    expect(slipTag('む', 'こ')).toBe('transcription');
+    expect(slipTag('', 'ね')).toBe('transcription');
+  });
+
+  it('moraDiff aligns morae and tags each cluster; equivalent spellings never show as slips', () => {
+    const d1 = moraDiff('おばさん', 'おばあさん');
+    expect(d1.map((o) => o.kind)).toEqual([0, 0, 2, 0, 0]);
+    expect(diffTags(d1)).toEqual(['vowel-length']);
+    expect(diffTags(moraDiff('いぬがみずをのみます', 'いぬはみずをのみます'))).toEqual(['particle']);
+    expect(diffTags(moraDiff('きて', 'きって'))).toEqual(['small-kana']);
+    expect(diffTags(moraDiff('かき', 'かぎ'))).toEqual(['voicing']);
+    const same = moraDiff('トーキョーにいきます', 'とうきょうにいきます');
+    expect(same.every((o) => o.kind === 0)).toBe(true);
+    expect(diffTags(same)).toEqual([]);
+    expect(moraDiff('みず', 'みず').map((o) => o.mora)).toEqual(['み', 'ず']);
+  });
+
+  it('implicitGrades: content word found → Good when transcribed, Again when not; unlocated words follow the clean-dictation rule', () => {
+    const pool = [`${V.水}#listen`, `${V.犬}#listen`, `${V.飲む}#listen`, 'not-a-key'] as `${string}#listen`[];
+    const expected = 'いぬはみずをのみます';
+    const miss = implicitGrades(pool, expected, 'いぬはみすをのみます', 0.9, lookup);
+    expect(miss).toEqual([
+      { cardKey: `${V.水}#listen`, rating: 1 },
+      { cardKey: `${V.犬}#listen`, rating: 3 },
+    ]);
+    const clean = implicitGrades(pool, expected, 'いぬはみずをのみます', 1, lookup);
+    expect(clean).toEqual([
+      { cardKey: `${V.水}#listen`, rating: 3 },
+      { cardKey: `${V.犬}#listen`, rating: 3 },
+      { cardKey: `${V.飲む}#listen`, rating: 3 },
+    ]);
+    // an unloaded item: Good only on a clean dictation
+    expect(implicitGrades(['v-n5-9999#listen'], expected, 'いぬは', 0.3, lookup)).toEqual([]);
+    expect(implicitGrades(['v-n5-9999#listen'], expected, expected, 1, lookup)).toEqual([{ cardKey: 'v-n5-9999#listen', rating: 3 }]);
+  });
+
+  it('choiceAnswerIndex: exact, then fuzzy English, else -1', () => {
+    expect(choiceAnswerIndex({ choices: ['The dog drinks water.', 'The cat sleeps.'], answer: 'The dog drinks water.' })).toBe(0);
+    expect(choiceAnswerIndex({ choices: ['The dog drinks water.', 'The cat sleeps.'], answer: 'cat sleeps' })).toBe(1);
+    expect(choiceAnswerIndex({ choices: ['a', 'b'] })).toBe(-1);
+  });
+});
+
+describe('<SentenceListen> dictation', () => {
+  it('plays the plain surface with its kana at params.rate on mount, and shows the speed', async () => {
+    await mount(step());
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toEqual({ text: '犬は水を飲みます。', o: { kana: 'いぬはみずをのみます。', rate: 0.9 } });
+    expect(root.querySelector('.listen__rate')?.textContent).toBe('Speed 0.9×');
+    expect(root.querySelector('.listen__replays')?.textContent).toBe('2 replays left');
+    expect(root.querySelector('.listen__novoice')).toBeNull();
+  });
+
+  it('score bands: clean → Good (score 1); one mora off in ten → Hard (0.9); several → Again', async () => {
+    const a = await mount(step());
+    type(a.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(a.input as HTMLInputElement);
+    expect(a.onResult).toHaveBeenCalledTimes(1);
+    const good = a.onResult.mock.calls[0]?.[0] as AttemptResult;
+    expect(good).toMatchObject({ correct: true, nearMiss: false, score: 1, errorTags: [], replays: 0 });
+    expect(root.querySelector('.listen__line')?.textContent).toBe('Clean. Good.');
+    expect(root.querySelector('.listen__score')?.textContent).toContain('100%');
+
+    const b = await mount(step({ id: 'sl-2' }));
+    type(b.input as HTMLInputElement, 'inuhamisuwonomimasu');
+    enter(b.input as HTMLInputElement);
+    const hard = b.onResult.mock.calls[0]?.[0] as AttemptResult;
+    expect(hard.correct).toBe(false);
+    expect(hard.nearMiss).toBe(true);
+    expect(hard.score).toBeCloseTo(0.9, 5);
+    expect(hard.errorTags).toEqual(['voicing']);
+    expect(root.querySelector('.listen__diff .diff--extra')?.textContent).toBe('す');
+    expect(root.querySelector('.listen__diff .diff--missing')?.getAttribute('data-tag')).toBe('voicing');
+
+    const c = await mount(step({ id: 'sl-3' }));
+    type(c.input as HTMLInputElement, 'inu');
+    enter(c.input as HTMLInputElement);
+    const again = c.onResult.mock.calls[0]?.[0] as AttemptResult;
+    expect(again.correct).toBe(false);
+    expect(again.nearMiss).toBe(false);
+    expect(root.querySelector('.listen__line')?.textContent).toBe('Not yet. Again.');
+  });
+
+  it('replays are counted (≤ 2), forwarded to onReplay, the second shows the Hard ceiling and the third is refused', async () => {
+    const { onResult, onReplay, input } = await mount(step());
+    await clickAsync(playBtn());
+    expect(root.querySelector('.listen__replays')?.textContent).toBe('1 replays left');
+    expect(root.querySelector('.listen__ceiling')).toBeNull();
+    await clickAsync(playBtn());
+    expect(root.querySelector('.listen__ceiling')?.textContent).toContain('Hard');
+    expect(playBtn().disabled).toBe(true);
+    await clickAsync(playBtn());
+    expect(calls).toHaveLength(3);
+    expect(onReplay).toHaveBeenCalledTimes(2);
+    type(input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(input as HTMLInputElement);
+    expect(onResult.mock.calls[0]?.[0]?.replays).toBe(2);
+  });
+
+  it('Space replays through the frame', async () => {
+    await mount(step(), true);
+    press(' ');
+    await act(() => Promise.resolve());
+    expect(calls).toHaveLength(2);
+  });
+
+  it('implicit Good for every pool card on a clean dictation (≥ 0.95); a dropped content word gets Again', async () => {
+    const pool = [`${V.水}#listen`, `${V.犬}#listen`] as `${string}#listen`[];
+    const a = await mount(step({ params: { sentence: SENTENCE, rate: 1, pool } }));
+    type(a.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(a.input as HTMLInputElement);
+    // content is not loaded in tests → the clean-dictation rule applies
+    expect(a.onResult.mock.calls[0]?.[0]?.implicit).toEqual([
+      { cardKey: `${V.水}#listen`, rating: 3 },
+      { cardKey: `${V.犬}#listen`, rating: 3 },
+    ]);
+    const b = await mount(step({ id: 'sl-5', params: { sentence: SENTENCE, rate: 1, pool } }));
+    type(b.input as HTMLInputElement, 'inu');
+    enter(b.input as HTMLInputElement);
+    expect(b.onResult.mock.calls[0]?.[0]?.implicit).toBeUndefined();
+  });
+
+  it('emits line:scored {kind:dictation} with the score, tier and replays', async () => {
+    const cap = captureEvents();
+    const { input } = await mount(step());
+    await clickAsync(playBtn());
+    type(input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(input as HTMLInputElement);
+    cap.stop();
+    const ev = cap.events.find(([n]) => n === 'line:scored');
+    expect(ev?.[1]).toEqual({ kind: 'dictation', score: 1, pass: true, tier: 3, replays: 1 });
+  });
+
+  it('hint reveals the English (promptEn) and marks hintUsed; empty submits are nudged', async () => {
+    const { onResult, onHint, input } = await mount(step({ params: { sentence: SENTENCE, rate: 1, promptEn: 'The dog drinks water.' } }));
+    enter(input as HTMLInputElement);
+    expect(onResult).not.toHaveBeenCalled();
+    expect(root.querySelector('.listen__nudge')?.textContent).toBe('Type something first.');
+    await clickAsync(root.querySelector('.listen__tools button'));
+    expect(onHint).toHaveBeenCalledTimes(1);
+    expect(root.querySelector('.listen__hint')?.textContent).toContain('The dog drinks water.');
+    type(input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(input as HTMLInputElement);
+    expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
+  });
+
+  it('without a Japanese voice the sentence is shown instead (honest degrade)', async () => {
+    installServices({ audio: nullAudio });
+    await mount(step());
+    expect(root.querySelector('.listen__novoice')?.textContent).toContain('No Japanese voice');
+    expect(root.querySelector('.listen__shown rt')?.textContent).toBe('いぬ');
+  });
+
+  it('uses the speed-tier preset when params.rate is absent', async () => {
+    await mount(step({ params: { sentence: SENTENCE } }));
+    expect(calls[0]?.o?.rate).toBe(1);
+    expect(root.querySelector('.listen__rate')?.textContent).toBe('Speed 1×');
+  });
+});
+
+describe('<SentenceListen> choice mode', () => {
+  it('renders the meaning choices, grades the pick with the listening tag on a miss, and no line:scored', async () => {
+    const cap = captureEvents();
+    const s = step({ params: { sentence: SENTENCE, rate: 1, choices: ['The dog drinks water.', 'The cat sleeps.', 'Ken eats bread.', 'Good morning.'], answer: 'The dog drinks water.' } });
+    const { onResult } = await mount(s, true);
+    expect(root.querySelectorAll('.choice').length).toBe(4);
+    press('2');
+    cap.stop();
+    expect(onResult).toHaveBeenCalledTimes(1);
+    expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: false, errorTags: ['listening'], answer: 'The dog drinks water.' });
+    expect(root.querySelectorAll('.choice')[0]?.getAttribute('data-state')).toBe('missed');
+    expect(cap.events.find(([n]) => n === 'line:scored')).toBeUndefined();
+    expect(root.querySelector('.listen__line')?.textContent).toBe("Again. That's the training.");
+  });
+
+  it('a correct pick is Good and fires once', async () => {
+    const s = step({ params: { sentence: SENTENCE, rate: 1, choices: ['The dog drinks water.', 'The cat sleeps.'], answer: 'The dog drinks water.' } });
+    const { onResult } = await mount(s);
+    const first = root.querySelectorAll<HTMLButtonElement>('.choice')[0] as HTMLButtonElement;
+    await clickAsync(first);
+    await clickAsync(root.querySelectorAll<HTMLButtonElement>('.choice')[1] as HTMLButtonElement);
+    expect(onResult).toHaveBeenCalledTimes(1);
+    expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, errorTags: [] });
+  });
+});

@@ -1,0 +1,351 @@
+/*
+ * TSUZUKU — kana drills (src/exercises/kana, group D) + the `.drill*` base
+ * every D drill in kana/ and vocab/ shares (loaded through KanaFlash.tsx).
+ * Tokens only. Mobile-first: one column at 360 px, 16 px gutters come from
+ * the frame. 44 px targets. Shape + text carry every state, never color alone.
+ */
+
+/* ── shared drill layout ─────────────────────────────────────────────── */
+.drill {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+.drill__prompt {
+  margin: 0;
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+}
+.drill__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+.drill__row--between {
+  justify-content: space-between;
+}
+.drill__glyph {
+  margin: 0;
+  font-family: var(--font-ja);
+  font-size: var(--fs-7);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--fg);
+}
+.drill__word {
+  margin: 0;
+  font-family: var(--font-ja);
+  font-size: var(--fs-6);
+  line-height: var(--lh-ja);
+  text-align: center;
+}
+.drill__word .ruby {
+  font-size: inherit;
+}
+.drill__ja {
+  font-family: var(--font-ja);
+  line-height: var(--lh-ja);
+}
+.drill__label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.drill__hint {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.drill__after {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.drill__after[data-correct='true'] {
+  border-left-color: var(--matcha);
+}
+.drill__after[data-correct='false'] {
+  border-left-color: var(--shu);
+}
+.drill__after[data-correct='near'] {
+  border-left-color: var(--kin);
+}
+.drill__after p {
+  margin: 0;
+}
+.drill__field {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-4);
+  line-height: 1.4;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-1) var(--ease);
+}
+.drill__field:focus {
+  border-color: var(--ai);
+}
+.drill__field:disabled {
+  opacity: 0.6;
+}
+.drill__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* missing content: honest notice, one way forward */
+.missing-item {
+  display: grid;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--hai);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.missing-item p {
+  margin: 0;
+}
+
+/* ── Kana Flash ──────────────────────────────────────────────────────── */
+.kana-flash__field {
+  font-family: var(--font-ui);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+.kana-flash__reaction[data-in-time='true'] {
+  color: var(--matcha);
+  border-color: var(--matcha);
+}
+.kana-flash__reaction[data-in-time='false'] {
+  color: var(--kin);
+  border-color: var(--kin);
+}
+
+/* ── Kana Ear ────────────────────────────────────────────────────────── */
+.kana-ear__speaker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: calc(var(--touch) * 1.4);
+  padding: var(--sp-3) var(--sp-5);
+  font: inherit;
+  font-size: var(--fs-4);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.kana-ear__speaker:hover,
+.kana-ear__speaker:focus-visible {
+  border-color: var(--ai);
+}
+.kana-ear__speaker:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.kana-ear__glyph {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+
+/* ── Gojūon Fighter ──────────────────────────────────────────────────── */
+.gojuon {
+  display: grid;
+  gap: var(--sp-3);
+  width: 100%;
+  box-sizing: border-box;
+}
+.gojuon__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-3);
+}
+.gojuon__opponent {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.gojuon__opponent [lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  color: var(--fg);
+}
+.gojuon__lantern {
+  --dim: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.gojuon__lantern::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 26px;
+  border-radius: 8px 8px 9px 9px;
+  background: var(--kin);
+  border: 2px solid var(--fg-muted);
+  opacity: calc(1 - var(--dim) * 0.085);
+  box-shadow: 0 0 calc(12px - var(--dim) * 1px) color-mix(in srgb, var(--kin) 55%, transparent);
+}
+.gojuon__stage {
+  position: relative;
+  box-sizing: border-box;
+  height: 5.5rem;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.gojuon__land {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3.5rem;
+  border-right: 2px dashed var(--line);
+}
+.gojuon__kana {
+  --remain: 1;
+  position: absolute;
+  top: 50%;
+  left: calc(var(--remain) * (100% - 3.5rem));
+  margin: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-ja);
+  font-size: var(--fs-6);
+  line-height: 1;
+  color: var(--fg);
+}
+.gojuon__kana[data-state='hit'] {
+  color: var(--matcha);
+}
+.gojuon__kana[data-state='miss'] {
+  color: var(--shu);
+}
+.gojuon__track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--line);
+}
+.gojuon__bar {
+  --remain: 1;
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(var(--remain));
+  background: var(--neon-c);
+}
+.gojuon__field {
+  font-family: var(--font-ui);
+  font-size: var(--fs-5);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+.gojuon__status {
+  margin: 0;
+  min-height: 1.5em;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.gojuon__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2) var(--sp-3);
+  margin: 0;
+}
+@media (min-width: 480px) {
+  .gojuon__stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.gojuon__stats dt {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.gojuon__stats dd {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-4);
+}
+.gojuon__reactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gojuon__reaction {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  padding: 2px var(--sp-2);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.gojuon__reaction [lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: var(--fs-3);
+  color: var(--fg);
+}
+.gojuon__reaction[data-hit='false'] {
+  border-style: dashed;
+  border-color: var(--shu);
+}
+.gojuon__reaction[data-graded='false'] {
+  opacity: 0.7;
+}
+
+/* reduced motion: the kana stays put, the bar does the counting */
+@media (prefers-reduced-motion: reduce) {
+  .gojuon__kana {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .drill__field,
+  .kana-ear__speaker {
+    transition: none;
+  }
+}
+.reduced-motion .gojuon__kana {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.reduced-motion .drill__field,
+.reduced-motion .kana-ear__speaker {
+  transition: none;
+}

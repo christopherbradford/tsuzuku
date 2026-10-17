@@ -1,0 +1,110 @@
+/*
+ * TSUZUKU — <MinimalPair> (src/exercises/listening, group D).
+ * Player window, two large kana choices (ChoiceGrid size lg), compare row
+ * after answering. Tokens only; 44 px targets.
+ */
+.pair {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pair__prompt,
+.pair__note,
+.pair__novoice,
+.pair__line,
+.pair__why,
+.pair__skill {
+  margin: 0;
+}
+.pair__prompt {
+  font-size: var(--fs-3);
+  line-height: var(--lh-latin);
+}
+
+.pair__player {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: start;
+}
+.pair__play {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: var(--sp-2) var(--sp-4);
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--ai);
+  border: 2px solid var(--ai);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity var(--dur-1) var(--ease), transform 60ms var(--ease);
+}
+.pair__play:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.pair__play:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.pair__play-icon {
+  font-family: var(--font-pixel);
+}
+.pair__novoice {
+  display: grid;
+  gap: var(--sp-1);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.pair__shown {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  color: var(--fg);
+}
+
+.pair__result {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.pair__result[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.pair__result[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.pair__why {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.pair__compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.pair__compare .btn {
+  font-family: var(--font-ja);
+}
+.pair__skill {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.pair__note {
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pair__play {
+    transition: none;
+  }
+}
+.reduced-motion .pair__play {
+  transition: none;
+}

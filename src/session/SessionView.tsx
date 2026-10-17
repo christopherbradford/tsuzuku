@@ -1,0 +1,374 @@
+/**
+ * TSUZUKU — `<SessionView>`: renders a `SessionRunner` (ARCHITECTURE §4–§5, design 03 §1, §12).
+ *
+ * The rep loop on screen: the runner's current step → `resolveExercise` →
+ * the drill inside D's `<ExerciseFrame>` (fed the runner's index / total / ki /
+ * combo / timer / feedback, `now: store.now`) → `onResult` → `runner.submit`
+ * → feedback → Continue → `runner.next()`. `<Hud>` above the frame shows the
+ * block progress and the Forge Bar; a Michikusa step renders `<MichikusaStep>`
+ * (never graded: Continue calls `runner.next()`); when the runner is done the
+ * つづく `<EndCard>` takes over with the 次回予告 read asynchronously.
+ *
+ * Judge protocol (design 05 §6): an exercise calls `requestJudge(shape)` before
+ * `onResult`. The view asks `runner.judgeNeeded()` whether this Good is in the
+ * deterministic sample; if not, the promise resolves `true` at once and no
+ * verdict is recorded. Otherwise a `<JudgeCard>` is shown inside the frame and
+ * the pick resolves the promise; the verdict rides on the next `submit()` as
+ * `{judge}`. Additive fields the host needs: `answer` for a rubric Judge (no
+ * answer → resolves `true`, nothing to verify) and `heard` for a perception
+ * Judge (absent → seeded here, and the heard word is spoken through `speak()`).
+ *
+ * Leaving mid-session keeps the snapshot (the runner saves after every submit
+ * and step), so the Dojo offers "Resume (n reps left)" next time.
+ */
+import type { JSX } from 'preact';
+import { useEffect, useRef, useState } from 'preact/hooks';
+import { content as appContent, type ContentLoader } from '../content/loader';
+import type { ContentItem } from '../content/types';
+import { speak } from '../shared/audio';
+import { resolveExercise, type AttemptResult, type JudgeRequest } from '../shared/exercise-types';
+import { rngFor } from '../shared/hash';
+import type { JikaiYokoku, SessionResult } from '../shared/session-types';
+import type { LogEntry } from '../shared/store-types';
+import { ExerciseFrame } from '../shared/ui/ExerciseFrame';
+import { JudgeCard, type JudgeShape } from '../shared/ui/JudgeCard';
+import { store } from '../store';
+import { EXPECTED_MAX_MINUTES } from '../learn';
+import { introducedToday } from './builder';
+import { endCardNotes, jikaiYokoku } from './end-card';
+import { S as ENGINE } from './engine-strings';
+import { EndCard } from './EndCard';
+import { Hud } from './Hud';
+import { MichikusaStep } from './MichikusaStep';
+import type { SessionRunner } from './runner';
+import { S } from './strings';
+import './SessionView.css';
+
+export interface SessionViewProps {
+  runner: SessionRunner;
+  /** Leave: the snapshot is kept (or already cleared by a finished run). */
+  onExit(): void;
+  /** Additive: "Another Kata?" on the end card (defaults to `onExit`). */
+  onAnother?(): void;
+  /** Additive: extra end-card lines from the page (Kage result, …). */
+  notes?: readonly string[];
+  /** Additive: content source (tests pass `createFakeLoader()`). */
+  loader?: ContentLoader;
+}
+
+/** Combo tier thresholds (design 01 §4.4; `learn/kiai.comboTier` is not in the `@/learn` barrel). */
+export function comboTierOf(combo: number): 0 | 1 | 2 | 3 {
+  if (combo >= 50) return 3;
+  if (combo >= 25) return 2;
+  if (combo >= 10) return 1;
+  return 0;
+}
+
+/** Judge request with the host-side fields the card needs. */
+export type JudgeAsk = JudgeRequest & { answer?: string; heard?: 0 | 1 };
+
+interface PendingJudge {
+  shape: JudgeShape;
+  resolve(pass: boolean): void;
+}
+
+export const SESSION_GAP_MS = 10 * 60_000;
+
+/**
+ * Error rate of the log session that ended before `before` (entries split on a
+ * gap ≥ 10 min). `null` when there is none. Only the Arcade nudge reads it.
+ */
+export function previousSessionErrorRate(log: readonly LogEntry[], before: number, gapMs = SESSION_GAP_MS): number | null {
+  const prior = log.filter((e) => e[0] < before);
+  if (prior.length === 0) return null;
+  let end = prior.length - 1;
+  let start = end;
+  while (start > 0 && (prior[start]?.[0] ?? 0) - (prior[start - 1]?.[0] ?? 0) < gapMs) start--;
+  const group = prior.slice(start, end + 1);
+  const misses = group.filter((e) => e[2] === 1).length;
+  return group.length > 0 ? misses / group.length : null;
+}
+
+/** The lines under the tally for a finished run (overtraining, cramming, backlog, Arcade nudge). */
+export function notesFor(result: SessionResult, plan: SessionRunner['plan']): string[] {
+  const today = store.today();
+  const settings = store.settings.value;
+  const minutesToday = store.daily.value[today]?.minutes ?? result.tally.minutes;
+  const preset = settings.intensity === 'custom' ? 'standard' : settings.intensity;
+  const intro = introducedToday(today);
+  const npd = settings.newPerDay;
+  const target = Math.round(npd.vocab + npd.kanji + npd.grammar);
+  const crammingCap = target > 0 && intro.vocab + intro.kanji + intro.grammar >= 2 * target;
+  const prev = settings.feel === 'arcade' ? previousSessionErrorRate(store.log.recent(2000), result.startedAt) : null;
+  const rates = prev === null ? [1 - result.tally.accuracy] : [prev, 1 - result.tally.accuracy];
+  return endCardNotes({
+    minutesToday,
+    recentErrorRates: result.tally.reps > 0 ? rates : [],
+    feel: settings.feel,
+    overtrainingAt: Math.round(EXPECTED_MAX_MINUTES[preset] * 1.5),
+    crammingCap,
+    ...(plan.meta.backlog ? { backlog: { shown: plan.meta.dueTaken, due: plan.meta.dueTotal } } : {}),
+  });
+}
+
+export function SessionView(p: SessionViewProps): JSX.Element {
+  const { runner } = p;
+  const loader = p.loader ?? appContent;
+  const step = runner.step.value;
+  const done = runner.done.value;
+  const abandoned = runner.abandoned.value;
+  const feedback = runner.feedback.value;
+  const kiai = runner.kiai.value;
+  const timer = runner.timer.value;
+  const index = runner.index.value;
+  const total = runner.total.value;
+  const settings = store.settings.value;
+  const feel = settings.feel;
+
+  const [judge, setJudge] = useState<PendingJudge | null>(null);
+  const judgeRef = useRef<PendingJudge | null>(null);
+  const verdict = useRef<'pass' | 'fail' | undefined>(undefined);
+  /** The verdict that rode on the current step's submit (for the feedback line). */
+  const submitted = useRef<'pass' | 'fail' | undefined>(undefined);
+  const [leaving, setLeaving] = useState(false);
+  const [yokoku, setYokoku] = useState<JikaiYokoku | null>(null);
+  const [notes, setNotes] = useState<string[] | null>(null);
+  const judgeReplay = useRef<(() => void) | null>(null);
+
+  const openJudge = (j: PendingJudge | null): void => {
+    judgeRef.current = j;
+    setJudge(j);
+  };
+
+  // A new step clears any pending Judge (settled as unverified, no verdict) and the verdict.
+  const stepId = step?.id ?? null;
+  useEffect(() => {
+    const stale = judgeRef.current;
+    if (stale) {
+      openJudge(null);
+      stale.resolve(true);
+    }
+    verdict.current = undefined;
+    submitted.current = undefined;
+    judgeReplay.current = null;
+  }, [stepId]);
+
+  // The runner stops: leave, or read the 次回予告 for the card.
+  useEffect(() => {
+    if (abandoned) p.onExit();
+  }, [abandoned]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!done) return;
+    let alive = true;
+    setNotes(notesFor(done, runner.plan));
+    jikaiYokoku({ station: runner.plan.station, today: store.today(), loader })
+      .then((y) => {
+        if (alive) setYokoku(y);
+      })
+      .catch(() => {
+        if (alive) setYokoku({ words: [], milestone: ENGINE.milestoneQuiet });
+      });
+    return () => {
+      alive = false;
+    };
+  }, [done]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (done) {
+    const extra = p.notes ?? [];
+    return (
+      <div class="session session--done" data-feel={feel}>
+        <EndCard result={done} yokoku={yokoku} notes={[...(notes ?? []), ...extra]} ceremonies={runner.ceremonies} onAnother={p.onAnother ?? p.onExit} onRest={p.onExit} />
+      </div>
+    );
+  }
+
+  if (!step || abandoned) {
+    return (
+      <div class="session" data-feel={feel} aria-label={S.sessionLabel}>
+        <p class="session__loading muted" role="status">
+          {S.settingUp}
+        </p>
+      </div>
+    );
+  }
+
+  // The live queue (re-queues included); `total` above is the runner's signal for it, so the Hud re-renders on a re-queue.
+  const livePlan = { ...runner.plan, steps: runner.steps().slice() };
+
+  const leaveBar = (
+    <div class="session__bar">
+      <button type="button" class="btn btn--ghost btn--sm session__leave" onClick={() => setLeaving(true)}>
+        {S.leave}
+      </button>
+    </div>
+  );
+
+  const leaveDialog = leaving ? (
+    <div class="session__dialog-backdrop">
+      <div class="session__dialog status-window" role="dialog" aria-modal="true" aria-labelledby="session-leave-title">
+        <h2 id="session-leave-title" class="session__dialog-title">
+          {S.leaveTitle}
+        </h2>
+        <p class="session__dialog-body">{S.leaveBody}</p>
+        <div class="session__dialog-actions">
+          <button
+            type="button"
+            class="btn session__leave-keep"
+            onClick={() => {
+              setLeaving(false);
+              p.onExit();
+            }}
+          >
+            {S.leaveKeep}
+          </button>
+          <button type="button" class="hanko session__leave-stay" onClick={() => setLeaving(false)} autoFocus>
+            {S.leaveStay}
+          </button>
+        </div>
+      </div>
+    </div>
+  ) : null;
+
+  const hud = <Hud plan={livePlan} index={index} feel={feel} backlog={runner.plan.meta.backlog} />;
+
+  if (step.block === 'michikusa') {
+    const id = step.params.michikusaId ?? step.itemId ?? '';
+    return (
+      <div class="session session--michikusa" data-feel={feel} aria-label={S.sessionLabel}>
+        {leaveBar}
+        {hud}
+        <MichikusaStep key={step.id} id={id} loader={loader} onDone={() => runner.next()} />
+        {leaveDialog}
+      </div>
+    );
+  }
+
+  const resolved = resolveExercise(step.exercise);
+  const item: ContentItem | null = step.itemId ? (loader.get(step.itemId) ?? null) : null;
+  const jj = settings.jj || runner.plan.station >= 34;
+
+  const onResult = (r: AttemptResult): void => {
+    const v = verdict.current;
+    verdict.current = undefined;
+    submitted.current = v;
+    runner.submit(r, v ? { judge: v } : {});
+  };
+
+  // The runner surfaces only a failed check; a passed one is worth its line too ("The inspector agrees").
+  const shownFeedback = feedback && submitted.current === 'pass' && !feedback.judge ? { ...feedback, judge: 'pass' as const } : feedback;
+
+  const requestJudge = (o: JudgeAsk): Promise<boolean> => {
+    const current = runner.step.value;
+    if (!current || current.id !== step.id || runner.feedback.value || runner.done.value) return Promise.resolve(true);
+    const sampled = runner.judgeNeeded({ correct: true, nearMiss: false, hintUsed: false, guard: false, timedOut: false, ms: runner.elapsedMs(), errorTags: [], selfRating: 3 });
+    if (!sampled) return Promise.resolve(true);
+    let shape: JudgeShape;
+    if ('rubric' in o) {
+      if (o.answer === undefined) return Promise.resolve(true);
+      shape = { rubric: o.rubric, regex: o.regex, answer: o.answer };
+    } else if ('minimalPair' in o) {
+      const heard = o.heard ?? (rngFor(store.seed(), runner.plan.id, step.id, 'heard')() < 0.5 ? 0 : 1);
+      shape = { minimalPair: o.minimalPair, heard };
+      const word = o.minimalPair[heard];
+      judgeReplay.current = () => {
+        void speak(word);
+      };
+      judgeReplay.current();
+    } else {
+      shape = { correct: o.correct, distractors: o.distractors };
+    }
+    return new Promise<boolean>((resolve) => {
+      openJudge({ shape, resolve });
+    });
+  };
+
+  /** The learner picked on the Judge Card: record the verdict for the next submit and settle the exercise's promise. */
+  const onJudgePick = (pass: boolean): void => {
+    const pending = judgeRef.current;
+    if (!pending) return;
+    verdict.current = pass ? 'pass' : 'fail';
+    judgeReplay.current = null;
+    openJudge(null);
+    pending.resolve(pass);
+  };
+
+  const frameProps = {
+    step,
+    index,
+    total,
+    ki: kiai.ki,
+    combo: kiai.combo,
+    comboTier: comboTierOf(kiai.combo),
+    timer,
+    feel,
+    feedback: shownFeedback,
+    now: () => store.now(),
+    onGuard: () => runner.guard(),
+    onHint: () => runner.hint(),
+    onPause: () => runner.pause(),
+    onResume: () => runner.resume(),
+    onContinue: () => runner.next(),
+    onTimeout: () => runner.timeout(),
+  };
+
+  if (!resolved) {
+    return (
+      <div class="session" data-feel={feel} aria-label={S.sessionLabel}>
+        {leaveBar}
+        {hud}
+        <ExerciseFrame {...frameProps}>
+          <div class="session__missing notice" role="status">
+            <p class="session__missing-title">{S.drillMissingTitle}</p>
+            <p class="session__missing-body">{S.drillMissingBody}</p>
+            <div class="session__missing-actions">
+              {!feedback ? (
+                <button type="button" class="btn session__missing-guard" onClick={() => runner.guard()}>
+                  {S.drillMissingGuard}
+                </button>
+              ) : null}
+              <button type="button" class="btn btn--ghost session__missing-leave" onClick={() => p.onExit()}>
+                {S.leaveKeep}
+              </button>
+            </div>
+          </div>
+        </ExerciseFrame>
+        {leaveDialog}
+      </div>
+    );
+  }
+
+  const { Component } = resolved;
+  const judgeRng = rngFor(store.seed(), runner.plan.id, step.id, 'judge');
+
+  return (
+    <div class="session" role="region" data-feel={feel} data-exercise={step.exercise} aria-label={S.sessionLabel}>
+      {leaveBar}
+      {hud}
+      <ExerciseFrame {...frameProps}>
+        <div class="session__exercise" aria-hidden={judge ? 'true' : undefined}>
+          <Component
+            key={step.id}
+            step={step}
+            item={item}
+            feel={feel}
+            furigana={settings.furigana}
+            jj={jj}
+            speedTier={settings.speedTier}
+            exposures={step.exposures}
+            onResult={onResult}
+            onHint={() => runner.hint()}
+            onReplay={() => undefined}
+            requestJudge={requestJudge}
+          />
+        </div>
+        {judge ? (
+          <div class="session__judge">
+            <JudgeCard {...judge.shape} rng={judgeRng} onPick={onJudgePick} onReplay={judgeReplay.current ? () => judgeReplay.current?.() : undefined} />
+          </div>
+        ) : null}
+      </ExerciseFrame>
+      {leaveDialog}
+    </div>
+  );
+}

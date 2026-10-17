@@ -1,0 +1,433 @@
+/*
+ * TSUZUKU — speaking drills (src/input/speaking, group F): Recorder,
+ * Shadow Strike, Say It Three Ways, Monologue Marathon.
+ * Tokens only (src/styles/tokens.css). Mobile-first: fits 360 px with the
+ * 16 px gutter; 44 px targets; every state is shape + text, never color
+ * alone. Motion is removed under prefers-reduced-motion and body.reduced-motion;
+ * Zen (data-feel="zen") drops the glow.
+ */
+
+/* ── shared shell ─────────────────────────────────────────────────────── */
+.speak {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+.speak__head {
+  display: grid;
+  gap: var(--sp-2);
+}
+.speak__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.speak__title-ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+.speak__prompt,
+.speak__note,
+.speak__meta {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.speak__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-2);
+  font-size: var(--fs-2);
+}
+.speak__line {
+  margin: 0;
+  font-size: var(--fs-5);
+  line-height: var(--lh-ja);
+  overflow-wrap: anywhere;
+}
+.speak__line--hidden {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--fg-muted);
+  font-size: var(--fs-3);
+}
+.speak__en {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.speak__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.speak__status {
+  margin: 0;
+  min-height: 1.5em;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.speak__result {
+  display: grid;
+  gap: var(--sp-2);
+}
+.speak__result[data-kind='correct'] {
+  border-left: 4px solid var(--matcha);
+  padding-left: var(--sp-3);
+}
+.speak__result[data-kind='near'] {
+  border-left: 4px dashed var(--kin);
+  padding-left: var(--sp-3);
+}
+.speak__result[data-kind='wrong'] {
+  border-left: 4px dotted var(--shu);
+  padding-left: var(--sp-3);
+}
+.speak__verdict {
+  margin: 0;
+  font-weight: 600;
+}
+.speak__label {
+  display: inline-block;
+  margin-inline-end: var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.speak__heard {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+.speak__judge {
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── pitch strip ──────────────────────────────────────────────────────── */
+.pitch-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pitch-strip__mora {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1.4em;
+  padding-top: 10px;
+  font-size: var(--fs-3);
+  line-height: 1.2;
+}
+.pitch-strip__mora::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--line);
+  top: 4px;
+}
+.pitch-strip__mora[data-pitch='high']::before {
+  top: 0;
+  background: var(--ai);
+}
+.pitch-strip__mora[data-pitch='low']::before {
+  top: 7px;
+  background: var(--hai);
+}
+.pitch-strip__mora[data-pitch='none']::before {
+  background: transparent;
+  border-top: 1px dotted var(--line);
+  height: 0;
+}
+
+/* ── recorder ─────────────────────────────────────────────────────────── */
+.recorder {
+  display: grid;
+  gap: var(--sp-3);
+}
+.recorder__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'rec meter'
+    'rec cap';
+  gap: var(--sp-2) var(--sp-3);
+  align-items: center;
+}
+.recorder__rec {
+  grid-area: rec;
+  min-width: 112px;
+}
+.recorder__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--shu);
+  box-shadow: inset 0 0 0 2px var(--surface);
+}
+.recorder__rec--live .recorder__dot {
+  animation: recorder-blink 1s steps(2, end) infinite;
+}
+@keyframes recorder-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+.recorder__meter {
+  grid-area: meter;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 28px;
+}
+.recorder__bar {
+  flex: 1 1 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  transform-origin: bottom;
+}
+.recorder__meter[data-live='true'] .recorder__bar {
+  background: var(--neon-c);
+  animation: recorder-level 900ms var(--ease) infinite alternate;
+  animation-delay: calc(var(--i) * -75ms);
+}
+@keyframes recorder-level {
+  from {
+    height: 4px;
+  }
+  to {
+    height: 26px;
+  }
+}
+.recorder__cap {
+  grid-area: cap;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.recorder__playback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.recorder__audio {
+  display: none;
+}
+.recorder__note {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.recorder__timer-note {
+  display: block;
+  font-size: var(--fs-2);
+}
+.recorder__checklist {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.recorder__checklist legend {
+  padding: 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.recorder__check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  cursor: pointer;
+}
+.recorder__check input {
+  width: 22px;
+  height: 22px;
+  margin: 11px 0 0;
+  accent-color: var(--ai);
+  flex: 0 0 auto;
+}
+.recorder__check span {
+  padding-top: 10px;
+}
+.recorder__actions {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+/* ── three ways ───────────────────────────────────────────────────────── */
+.three-ways__rows {
+  display: grid;
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.three-ways__row {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.three-ways__row[data-verdict='hit'] {
+  border-color: var(--matcha);
+  border-left-width: 4px;
+}
+.three-ways__row[data-verdict='miss'] {
+  border-style: dashed;
+  border-color: var(--shu);
+  border-left-width: 4px;
+}
+.three-ways__reg {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-weight: 600;
+}
+.three-ways__reg-ja {
+  font-family: var(--font-mincho);
+  color: var(--fg-muted);
+}
+.three-ways__markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.three-ways__answer {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+
+/* ── monologue ────────────────────────────────────────────────────────── */
+.monologue__clock {
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+}
+.monologue__seconds {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-7);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.monologue__track {
+  width: 100%;
+  height: 8px;
+  background: var(--raised);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.monologue__fill {
+  height: 100%;
+  background: var(--ai);
+  transition: width var(--dur-1) linear;
+}
+.monologue__transcript {
+  margin: 0;
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: var(--fs-4);
+  overflow-wrap: anywhere;
+}
+.monologue__passage {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: var(--sp-3);
+  border-left: 3px solid var(--line);
+}
+.monologue__passage p {
+  margin: 0;
+}
+.monologue__rubric {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.monologue__rubric legend {
+  font-weight: 600;
+}
+.monologue__rounds {
+  display: flex;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.monologue__round {
+  padding: var(--sp-1) var(--sp-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: var(--fs-2);
+}
+.monologue__round[aria-current='step'] {
+  border-color: var(--ai);
+  font-weight: 600;
+}
+.monologue__round[data-done='true'] {
+  text-decoration: line-through;
+  color: var(--fg-muted);
+}
+
+/* ── motion / feel ────────────────────────────────────────────────────── */
+[data-feel='zen'] .recorder__meter[data-live='true'] .recorder__bar {
+  background: var(--fg-muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .recorder__rec--live .recorder__dot,
+  .recorder__meter[data-live='true'] .recorder__bar {
+    animation: none;
+  }
+  .recorder__meter[data-live='true'] .recorder__bar {
+    height: 16px;
+  }
+  .monologue__fill {
+    transition: none;
+  }
+}
+.reduced-motion .recorder__rec--live .recorder__dot,
+.reduced-motion .recorder__meter[data-live='true'] .recorder__bar {
+  animation: none;
+}
+.reduced-motion .recorder__meter[data-live='true'] .recorder__bar {
+  height: 16px;
+}
+.reduced-motion .monologue__fill {
+  transition: none;
+}
+
+@media (min-width: 600px) {
+  .three-ways__rows {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -52,6 +52,14 @@ import {
   type Persist,
   type ShardId,
 } from './persist';
+import { startDayRoll } from './day';
+import { startLedger } from './ledger';
+import { startQuests } from './quests';
+import { startStats } from './stats';
+import { startStreak } from './streak';
+import { startUnlocks } from './unlocks';
+import { startWeakPoints } from './weak-points';
+import { startXp } from './xp';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Reducers                                                                   */
@@ -61,12 +69,23 @@ import {
 export type ReducerStarter = (s: Store) => () => void;
 
 /**
- * Reducers wired by `initStore()` (unless `reducers: false`). INTEGRATOR: add
- * `startXp, startStreak, startDayRoll, startQuests, startStats,
- * startWeakPoints, startUnlocks, startLedger` here as their modules land, or
- * register them from their own modules with `registerReducer`.
+ * Reducers wired by `initStore()` (unless `reducers: false`), in this order:
+ * XP first so `xp:gained` lands synchronously inside the emitting call, the
+ * day roll before quests/stats so a session on a new day sees today's slice.
+ * Arrow wrappers resolve the starters at init time, so the module cycle
+ * (`ledger.ts` imports `store`) is harmless whichever file loads first.
+ * `startUnlocks` (B-defs) runs last so badges see every counter of the event.
  */
-const REDUCERS: ReducerStarter[] = [];
+const REDUCERS: ReducerStarter[] = [
+  (s) => startXp(s),
+  (s) => startStreak(s),
+  (s) => startDayRoll(s),
+  (s) => startQuests(s),
+  (s) => startStats(s),
+  (s) => startWeakPoints(s),
+  (s) => startLedger(s),
+  (s) => startUnlocks(s),
+];
 
 export function registerReducer(start: ReducerStarter): () => void {
   REDUCERS.push(start);

@@ -1,0 +1,168 @@
+/*
+ * TSUZUKU — <ChoiceGrid> (src/exercises, group D).
+ * Tokens only (src/styles/tokens.css). States are shape + text + color:
+ * correct = double border + ○, wrong = struck text + ×, missed = dashed + ○.
+ * Mobile-first: two columns fill 360 px with 16 px gutters; 44 px targets.
+ */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2);
+  width: 100%;
+  box-sizing: border-box;
+}
+.choice-grid[data-columns='3'] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (min-width: 480px) {
+  .choice-grid {
+    gap: var(--sp-3);
+  }
+}
+
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  box-sizing: border-box;
+  min-height: var(--touch);
+  min-width: 0;
+  padding: var(--sp-3) var(--sp-3) var(--sp-3) calc(var(--sp-3) + 1.25em);
+  font: inherit;
+  font-size: var(--fs-3);
+  line-height: var(--lh-latin);
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-1) var(--ease),
+    background var(--dur-1) var(--ease),
+    transform var(--dur-1) var(--ease);
+}
+.choice:hover:not(:disabled),
+.choice:focus-visible {
+  border-color: var(--ai);
+  background: var(--raised);
+}
+.choice:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.choice:disabled {
+  cursor: default;
+}
+.choice-grid[data-locked='true'] .choice[data-state='idle'] {
+  color: var(--fg-muted);
+  opacity: 0.7;
+}
+
+.choice__key {
+  position: absolute;
+  top: var(--sp-1);
+  left: var(--sp-1);
+  min-width: 1.1em;
+  padding: 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.4;
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.choice__text {
+  min-width: 0;
+}
+.choice__text [lang='ja'] {
+  font-family: var(--font-ja);
+  line-height: var(--lh-ja);
+}
+.choice-grid[data-size='lg'] .choice {
+  min-height: calc(var(--touch) * 1.6);
+  font-size: var(--fs-5);
+}
+.choice-grid[data-size='lg'] .choice__text [lang='ja'] {
+  font-size: var(--fs-6);
+  line-height: 1.2;
+}
+
+.choice__mark {
+  position: absolute;
+  top: var(--sp-1);
+  right: var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-3);
+  line-height: 1;
+}
+
+/* states */
+.choice[data-state='correct'] {
+  color: var(--fg);
+  border-style: double;
+  border-width: 4px;
+  border-color: var(--matcha);
+  background: color-mix(in srgb, var(--matcha) 14%, var(--surface));
+}
+.choice[data-state='correct'] .choice__mark {
+  color: var(--matcha);
+}
+.choice[data-state='wrong'] {
+  color: var(--fg);
+  border-color: var(--shu);
+  background: color-mix(in srgb, var(--shu) 10%, var(--surface));
+}
+.choice[data-state='wrong'] .choice__text {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.choice[data-state='wrong'] .choice__mark {
+  color: var(--shu);
+}
+.choice[data-state='missed'] {
+  color: var(--fg);
+  border-style: dashed;
+  border-color: var(--matcha);
+}
+.choice[data-state='missed'] .choice__mark {
+  color: var(--matcha);
+}
+.choice[data-state='picked'] {
+  border-color: var(--ai);
+  background: color-mix(in srgb, var(--ai) 10%, var(--surface));
+}
+.choice[data-state='picked'] .choice__mark {
+  color: var(--ai);
+}
+
+/* screen-reader-only state text */
+.choice__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice {
+    transition: none;
+  }
+  .choice:active:not(:disabled) {
+    transform: none;
+  }
+}
+.reduced-motion .choice {
+  transition: none;
+}
+.reduced-motion .choice:active:not(:disabled) {
+  transform: none;
+}

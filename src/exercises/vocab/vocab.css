@@ -1,0 +1,229 @@
+/*
+ * TSUZUKU — vocabulary drills (src/exercises/vocab, group D).
+ * The `.drill*` base comes from ../kana/kana.css (loaded by KanaFlash.tsx,
+ * which every vocab drill imports for its shared helpers). Tokens only;
+ * mobile-first; 44 px targets; shape + text for every state.
+ */
+
+/* word head: ruby word, kana, pitch line */
+.vocab__head {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: center;
+  text-align: center;
+}
+.vocab__kana {
+  margin: 0;
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  color: var(--fg-muted);
+}
+.vocab__pos {
+  font-family: var(--font-pixel);
+}
+
+/* speaker button shared by the audio-first drills */
+.vocab__speaker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-4);
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.vocab__speaker:hover,
+.vocab__speaker:focus-visible {
+  border-color: var(--ai);
+}
+.vocab__speaker:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.vocab__speaker--big {
+  min-height: calc(var(--touch) * 2);
+  font-size: var(--fs-4);
+}
+.vocab__speaker [lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+
+/* after-answer panel: pitch, collocations, J-J definition */
+.vocab__after {
+  display: grid;
+  gap: var(--sp-2);
+}
+.vocab__collocations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vocab__collocation {
+  padding: 2px var(--sp-2);
+  font-family: var(--font-ja);
+  font-size: var(--fs-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.vocab__definition {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+.vocab__meaning-en {
+  margin: 0;
+}
+
+/* Meaning Judge */
+.judge-rate {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-2);
+}
+.judge-rate__btn {
+  position: relative;
+  min-height: calc(var(--touch) * 1.2);
+  padding: var(--sp-2) var(--sp-2) var(--sp-2) calc(var(--sp-2) + 1em);
+  font: inherit;
+  font-weight: 600;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.judge-rate__btn:hover:not(:disabled),
+.judge-rate__btn:focus-visible {
+  border-color: var(--ai);
+}
+.judge-rate__btn:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.judge-rate__btn[data-rating='1'] {
+  border-color: color-mix(in srgb, var(--shu) 60%, var(--line));
+}
+.judge-rate__btn[data-rating='2'] {
+  border-color: color-mix(in srgb, var(--kin) 60%, var(--line));
+}
+.judge-rate__btn[data-rating='3'] {
+  border-color: color-mix(in srgb, var(--matcha) 60%, var(--line));
+}
+.judge-rate__btn[aria-pressed='true'] {
+  border-style: double;
+  border-width: 4px;
+}
+.judge-rate__key {
+  position: absolute;
+  top: var(--sp-1);
+  left: var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+/* Production Forge context sentence */
+.forge__sentence {
+  margin: 0;
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.forge__blank {
+  display: inline-block;
+  min-width: 3em;
+  border-bottom: 2px solid var(--fg);
+  text-align: center;
+  color: var(--fg-muted);
+}
+.forge__blank[data-filled='true'] {
+  color: var(--fg);
+  border-bottom-color: var(--matcha);
+}
+
+/* Pitch Ear glyph grid */
+.pitch-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2);
+}
+.pitch-choice {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-1);
+  box-sizing: border-box;
+  min-height: calc(var(--touch) * 1.6);
+  padding: var(--sp-3) var(--sp-2) var(--sp-2);
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.pitch-choice:hover:not(:disabled),
+.pitch-choice:focus-visible {
+  border-color: var(--ai);
+}
+.pitch-choice:disabled {
+  cursor: default;
+}
+.pitch-choices[data-locked='true'] .pitch-choice[data-state='idle'] {
+  color: var(--fg-muted);
+  opacity: 0.7;
+}
+.pitch-choice__key {
+  position: absolute;
+  top: var(--sp-1);
+  left: var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.pitch-choice__mark {
+  position: absolute;
+  top: var(--sp-1);
+  right: var(--sp-2);
+  font-family: var(--font-pixel);
+}
+.pitch-choice[data-state='correct'] {
+  border-style: double;
+  border-width: 4px;
+  border-color: var(--matcha);
+}
+.pitch-choice[data-state='wrong'] {
+  border-color: var(--shu);
+  text-decoration: line-through;
+}
+.pitch-choice[data-state='missed'] {
+  border-style: dashed;
+  border-color: var(--matcha);
+}
+.pitch-contrast {
+  display: grid;
+  gap: var(--sp-2);
+}
+.pitch-contrast__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vocab__speaker,
+  .judge-rate__btn,
+  .pitch-choice {
+    transition: none;
+  }
+}

@@ -1,0 +1,151 @@
+/*
+ * TSUZUKU — #/story/:id standalone reader page (src/input/pages, group F).
+ * Tokens only (src/styles/tokens.css); mobile-first (360 px), 16 px gutter,
+ * 44 px targets; states are shape + text, never color alone.
+ */
+.story-page {
+  display: grid;
+  gap: var(--sp-5);
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+.story-page__eyebrow {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.story-page__head {
+  display: grid;
+  gap: var(--sp-2);
+}
+.story-page__title {
+  margin: 0;
+  font-family: var(--font-mincho);
+  font-size: var(--fs-6);
+  line-height: 1.25;
+}
+.story-page__title-en {
+  margin: 0;
+  font-size: var(--fs-4);
+  color: var(--fg-muted);
+}
+.story-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.story-page__chips a.chip {
+  color: var(--ai);
+  text-decoration: none;
+  min-height: var(--touch);
+  padding: 0 var(--sp-3);
+}
+.story-page__chips a.chip:hover,
+.story-page__chips a.chip:focus-visible {
+  border-color: var(--ai);
+}
+.story-page__note {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+/* ── previously / recap ──────────────────────────────────────────────── */
+.story-page__recap {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--raised);
+  border-left: 4px solid var(--hai);
+  border-radius: var(--radius-sm);
+}
+.story-page__recap h2 {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.story-page__recap p {
+  margin: 0;
+  font-size: var(--fs-3);
+}
+.story-page__recap-title {
+  font-style: italic;
+  color: var(--fg-muted);
+}
+
+/* ── result ──────────────────────────────────────────────────────────── */
+.story-page__result {
+  display: grid;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+}
+.story-page__result[data-passed='true'] {
+  border-color: var(--matcha);
+}
+.story-page__result h2 {
+  margin: 0;
+  font-family: var(--font-mincho);
+  font-size: var(--fs-4);
+}
+.story-page__score {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-6);
+  line-height: 1;
+}
+.story-page__facts {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.story-page__facts li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: baseline;
+  min-height: 1.8em;
+}
+.story-page__facts li[data-mark='true']::before {
+  content: '◎';
+  color: var(--kin);
+}
+.story-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.story-page__actions .btn {
+  flex: 1 1 10rem;
+}
+
+/* ── empty / loading ─────────────────────────────────────────────────── */
+.story-page__empty {
+  display: grid;
+  gap: var(--sp-3);
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+  color: var(--fg-muted);
+}
+.story-page__empty strong {
+  color: var(--fg);
+  font-size: var(--fs-4);
+}
+.story-page__empty .story-page__actions {
+  justify-content: center;
+}

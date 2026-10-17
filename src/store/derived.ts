@@ -4,30 +4,25 @@
  * UI groups (A, E, F, G) import this file directly. It is NOT re-exported by
  * `src/store/index.ts` because it imports the pure learning core `@/learn`
  * (retrievability, item belts, known set, review caps). Every function reads
- * the live `store`; the `*Now` / `projectedArrival` forms take explicit data
+ * the live `store`; `peraperaNow` / `projectedArrival` (re-exported from
+ * `./perapera` and `./projection`, which own the formulas) take explicit data
  * so Records can recompute on open and tests can run without the singleton.
  *
  * Module-plan API: dueCount, isBacklog, beltEligibility, stationProgress,
  * forecastCounts, knownVocabCount, projectedArrival, peraperaNow. Extras:
  * currentBelt, currentStation, knownCounts, itemBeltOf, peraperaIndex,
- * projection, xpToNextLevel, streakState.
+ * projection, projectRoad, snapshotMonth, startPerapera, xpToNextLevel,
+ * streakState.
  */
 import { BELT_ORDER, baseFacet, capFor, cardRetrievability, itemBelt, kindOfCards, knownSet } from '@/learn';
-import { BELTS, BELT_IDS, type Belt, type CardKey, type Facet, type StationBundle } from '../content/types';
-import { parseCardKey, tryKindOfId } from '../shared/ids';
-import { epochDay, weekdayOf } from '../shared/time';
-import type {
-  CardTuple,
-  CardsApi,
-  EpochDay,
-  ItemBelt,
-  ItemKind,
-  LogEntry,
-  SaveMeta,
-  Streak,
-} from '../shared/store-types';
+import { BELTS, type Belt, type Facet, type StationBundle } from '../content/types';
+import { tryKindOfId } from '../shared/ids';
+import type { CardTuple, CardsApi, EpochDay, ItemBelt, ItemKind, Streak } from '../shared/store-types';
 import { newPerDayFor, newPerDayTotal } from './defaults';
 import { store } from './store';
+import { peraperaNow, type PeraperaResult } from './perapera';
+import { ARRIVAL_STATION, SHINSA_STATIONS, beltOfStation, bundleItemIds, projectedArrival, type Projection } from './projection';
+import { flameState } from './streak';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Helpers                                                                    */
@@ -35,15 +30,6 @@ import { store } from './store';
 
 function clamp(x: number, lo: number, hi: number): number {
   return Math.min(hi, Math.max(lo, x));
-}
-
-/** EpochDay of `ms` in `tz`, falling back to the host zone on a bad zone id. */
-function dayIn(ms: number, tz: string): EpochDay {
-  try {
-    return epochDay(ms, tz);
-  } catch {
-    return epochDay(ms);
-  }
 }
 
 /** `kana`/`vocab`/`kanji`/`grammar`/`component` from an item id (chunks read as vocab). */
@@ -83,20 +69,8 @@ export function beltStations(belt: Belt): [number, number] {
   return def ? def.stations : [1, 3];
 }
 
-/** The belt a station belongs to. */
-export function beltOfStation(station: number): Belt {
-  for (const b of BELTS) if (station >= b.stations[0] && station <= b.stations[1]) return b.id;
-  return station <= 0 ? 'white' : 'black';
-}
-
-/** Items a bundle contributes to coverage: vocab/kanji/grammar (+ kana at White). */
-export function bundleItemIds(b: StationBundle): string[] {
-  const ids = [...b.vocabIds, ...b.kanjiIds, ...b.grammarIds];
-  return beltOfStation(b.number) === 'white' ? [...b.kanaIds, ...ids] : ids;
-}
-
-/** Stations whose Gatekeeper precedes a Shinsa (design 02 §1). */
-export const SHINSA_STATIONS: readonly number[] = BELTS.filter((b) => b.id !== 'white').map((b) => b.stations[1]);
+/** Road geometry shared with `./projection` (one definition each; design 02 §1). */
+export { beltOfStation, bundleItemIds, SHINSA_STATIONS };
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Selectors (live store)                                                     */
@@ -295,13 +269,7 @@ export type FlameState = 'lit' | 'gold' | 'ember' | 'frozen' | 'rest' | 'broken'
  * (`flameState`) owns the full state machine; this mirrors its visible states.
  */
 export function streakStateOf(s: Streak, today: EpochDay, restDay: number | null, fullDay = false): FlameState {
-  if (s.vacationUntil !== undefined && s.vacationUntil >= today) return 'frozen';
-  if (s.lastDay === today) return fullDay ? 'gold' : 'lit';
-  if (s.ember !== undefined && today - s.ember <= 1) return 'ember';
-  if (s.current <= 0) return 'broken';
-  if (restDay !== null && weekdayOf(today) === restDay && s.lastDay === today - 1) return 'rest';
-  if (s.lastDay === today - 1) return 'lit';
-  return 'broken';
+  return flameState(s, today, restDay, fullDay);
 }
 
 export function streakState(): FlameState {
@@ -312,82 +280,11 @@ export function streakState(): FlameState {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* Perapera Index (design 05 §11)                                             */
+/* Perapera Index (design 05 §11) — `./perapera` owns the formula             */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-export const PERAPERA_LABELS: readonly [string, string, string, string, string] = ['語彙', '耳', '読', '口', '場'];
-
-export interface PeraperaResult {
-  /** 0–100 each; `場` is 0 with label `—` before Station 21. */
-  axes: [number, number, number, number, number];
-  labels: string[];
-  composite: number;
-  /** `(synthetic)` on 耳 always; `(estimated)` on 口 without recognition. */
-  flags: string[];
-}
-
-function ratio(num: number, den: number, fallback = 0): number {
-  return den > 0 ? clamp(num / den, 0, 1) : fallback;
-}
-
-/** Hours of listen + watch ledger minutes (external listening for the 耳 cap). */
-export function externalListeningHours(m: SaveMeta): number {
-  let minutes = 0;
-  for (const e of m.ledger.entries) if (e[3] === 1 && (e[2] === 0 || e[2] === 2)) minutes += e[1];
-  return minutes / 60;
-}
-
-export function peraperaNow(m: SaveMeta, cards: CardsApi, now: number): PeraperaResult {
-  const today = dayIn(now, m.profile.tz);
-  const st = m.stats;
-
-  // 語彙
-  let sumRec = 0;
-  let sumProd = 0;
-  cards.forEach((k, t) => {
-    if (!k.startsWith('v-')) return;
-    const facet = k.slice(k.lastIndexOf('#') + 1) as Facet;
-    if (facet === 'rec') sumRec += cardRetrievability(t, today);
-    else if (facet === 'prod') sumProd += cardRetrievability(t, today);
-  });
-  const vocab = clamp((0.6 * sumRec) / 10_000 + (0.4 * sumProd) / 6_000, 0, 1) * 100;
-
-  // 耳 (synthetic)
-  // No dictation evidence yet → the 0.5 floor, not full credit.
-  const dictationAcc = ratio(st.dictation95at1x, st.dictationLines, 0);
-  let ear = 20 * m.settings.speedTier * clamp(dictationAcc / 0.9, 0.5, 1);
-  if (externalListeningHours(m) < 20) ear = Math.min(ear, 70);
-  ear = clamp(ear, 0, 100);
-
-  // 読 — best cpm stands in for the rolling median until stats carries a window.
-  const read = clamp((st.speedReadBestCpm / 500) * 100, 0, 100);
-
-  // 口
-  const recognition = m.settings.speaking === 'recognition' || m.settings.speaking === 'auto';
-  const shadowRate = ratio(st.shadowPass, st.shadowLines);
-  const mouth = recognition
-    ? 50 * shadowRate + 50 * Math.min(1, st.monologueBestWords / 100)
-    : 70 * shadowRate + 30 * Math.min(1, st.monologues / 30);
-
-  // 場
-  const registerAvailable = m.progress.station >= 21;
-  const register = registerAvailable ? 50 * ratio(st.rolePlaysAllBest, st.rolePlays) + 50 * ratio(st.threeWaysCorrect, st.threeWays) : 0;
-
-  const axes: [number, number, number, number, number] = [
-    Math.round(vocab),
-    Math.round(ear),
-    Math.round(read),
-    Math.round(clamp(mouth, 0, 100)),
-    Math.round(clamp(register, 0, 100)),
-  ];
-  const available = registerAvailable ? axes : axes.slice(0, 4);
-  const composite = Math.round(available.reduce((a, b) => a + b, 0) / available.length);
-  const labels = [...PERAPERA_LABELS];
-  if (!registerAvailable) labels[4] = '—';
-  const flags = ['(synthetic)'];
-  if (!recognition) flags.push('(estimated)');
-  return { axes, labels, composite, flags };
-}
+export { PERAPERA_LABELS, PERAPERA_LABELS_EN, externalListeningHours, peraperaHistory, peraperaNow, snapshotMonth, startPerapera } from './perapera';
+export type { PeraperaResult, PeraperaMonth } from './perapera';
 
 /** `peraperaNow` over the live store. */
 export function peraperaIndex(): PeraperaResult {
@@ -395,124 +292,23 @@ export function peraperaIndex(): PeraperaResult {
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* Projected Arrival (design 02 §6.2)                                         */
+/* Projected Arrival (design 02 §6.2) — `./projection` owns the formula       */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-export interface Projection {
-  /** At the learner's current pace. */
-  atPace: EpochDay;
-  /** At adherence 1.0 and the full new-item rate. */
-  daily: EpochDay;
-  /** ±20 % around `atPace`. */
-  band: [EpochDay, EpochDay];
-  adherence: number;
-  realizedRate: number;
-}
-
-/** Days in the last 28 with activity (`daily` rows with reps or minutes). */
-export function activeDaysIn(m: SaveMeta, today: EpochDay, window = 28): number {
-  let n = 0;
-  for (let d = today - window + 1; d <= today; d++) {
-    const row = m.daily[d];
-    if (row && (row.reps > 0 || row.minutes > 0)) n++;
-  }
-  return n;
-}
-
-/** Lifetime active days (for the 14-day gate): `streak.totalDays` or the daily rows, whichever is larger. */
-export function lifetimeActiveDays(m: SaveMeta): number {
-  let rows = 0;
-  for (const row of Object.values(m.daily)) if (row.reps > 0 || row.minutes > 0) rows++;
-  return Math.max(m.streak.totalDays, rows);
-}
-
-/**
- * Items first seen in the last `window` days: distinct items whose earliest
- * log entry in the ring is inside the window and whose base card has no more
- * reps than the ring shows (so items that predate the ring are not counted).
- */
-export function itemsIntroducedIn(log: LogEntry[], cards: CardsApi, today: EpochDay, tz: string, window = 28): number {
-  const first = new Map<string, EpochDay>();
-  const count = new Map<string, number>();
-  for (const e of log) {
-    const { itemId } = parseCardKey(e[1]);
-    const d = dayIn(e[0], tz);
-    const f = first.get(itemId);
-    if (f === undefined || d < f) first.set(itemId, d);
-    count.set(itemId, (count.get(itemId) ?? 0) + 1);
-  }
-  let n = 0;
-  const from = today - window + 1;
-  for (const [itemId, d] of first) {
-    if (d < from) continue;
-    const facets = cards.byItem(itemId);
-    const kind = kindFor(itemId, facets);
-    const base = kind ? facets[baseFacet(kind)] : undefined;
-    const reps = base ? base[3] : 0;
-    if (reps <= (count.get(itemId) ?? 0)) n++;
-  }
-  return n;
-}
-
-export function projectedArrival(
-  m: SaveMeta,
-  cards: CardsApi,
-  bundles: StationBundle[],
-  target: number,
-  today: EpochDay,
-  log: LogEntry[] = [],
-): Projection | null {
-  if (lifetimeActiveDays(m) < 14) return null;
-  const active = activeDaysIn(m, today);
-  const adherence = clamp(active / 28, 0.3, 1);
-  const realized = active > 0 ? itemsIntroducedIn(log, cards, today, m.profile.tz) / active : 0;
-  const cleared = new Set(m.progress.stationsCleared);
-  const byNumber = new Map(bundles.map((b) => [b.number, b]));
-
-  let paceDays = 0;
-  let dailyDays = 0;
-  for (let s = Math.max(1, m.progress.station); s <= target; s++) {
-    if (cleared.has(s)) continue;
-    const b = byNumber.get(s);
-    const belt = beltOfStation(s);
-    const setting = m.settings.intensity === 'custom' ? m.settings.newPerDay : newPerDayFor(belt, m.settings.intensity);
-    const full = Math.max(1, newPerDayTotal(setting));
-    const rate = clamp(realized, 1, full);
-    let remaining = 0;
-    let lastIntro: EpochDay | null = null;
-    if (b) {
-      for (const id of bundleItemIds(b)) {
-        const facets = cards.byItem(id);
-        const keys = Object.keys(facets) as Facet[];
-        if (keys.length === 0) {
-          remaining++;
-        } else {
-          for (const f of keys) {
-            const t = facets[f];
-            if (t && (lastIntro === null || t[6] > lastIntro)) lastIntro = t[6];
-          }
-        }
-      }
-    }
-    const gateWait = Math.max(1, 7 - (lastIntro === null ? 0 : Math.max(0, today - lastIntro)));
-    paceDays += remaining / rate + gateWait;
-    dailyDays += remaining / full + gateWait;
-    if (SHINSA_STATIONS.includes(s)) {
-      paceDays += 2;
-      dailyDays += 2;
-    }
-  }
-  const atPaceSpan = paceDays / adherence;
-  const atPace = today + Math.ceil(atPaceSpan);
-  const daily = today + Math.ceil(dailyDays);
-  const band: [EpochDay, EpochDay] = [today + Math.ceil(atPaceSpan * 0.8), today + Math.ceil(atPaceSpan * 1.2)];
-  return { atPace, daily, band, adherence, realizedRate: realized };
-}
+export {
+  MIN_ACTIVE_DAYS,
+  ARRIVAL_STATION,
+  ROAD_BELTS,
+  activeDaysIn,
+  lifetimeActiveDays,
+  itemsIntroducedIn,
+  projectedArrival,
+  projectRoad,
+  onboardingEstimate,
+} from './projection';
+export type { Projection, RoadProjection, BeltEta, OnboardingEstimate } from './projection';
 
 /** `projectedArrival` over the live store (target defaults to Sanjō Ōhashi = 53). */
-export function projection(bundles: StationBundle[], target = 53): Projection | null {
+export function projection(bundles: StationBundle[], target: number = ARRIVAL_STATION): Projection | null {
   return projectedArrival(store.meta(), store.cards, bundles, target, store.today(), store.log.recent(5000));
 }
-
-/** Belt ids in road order (re-exported for UI convenience). */
-export const ROAD_BELTS: readonly Belt[] = BELT_IDS;

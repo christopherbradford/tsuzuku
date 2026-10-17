@@ -1,0 +1,359 @@
+/*
+ * TSUZUKU — chart primitives (group B, records/charts.tsx). Tokens only.
+ * Thin marks, hairline solid grid, surface gaps/rings, text in text tokens.
+ * Series colors are never the only signal: glyphs, labels, titles, tables.
+ */
+
+.chart {
+  margin: 0;
+  color: var(--fg);
+}
+.chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.chart__caption {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+/* grid and text */
+.chart__grid {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.chart__label {
+  font-family: var(--font-ja);
+  font-size: 12px;
+  fill: var(--fg);
+}
+.chart__label--muted {
+  fill: var(--hai);
+}
+.chart__tick {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  fill: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* marks */
+.chart__dot {
+  fill: var(--shu);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+.chart__dot--hollow {
+  fill: var(--surface);
+  stroke: var(--hai);
+}
+.chart__radar-now {
+  fill: var(--shu);
+  fill-opacity: 0.12;
+  stroke: var(--shu);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.chart__radar-history {
+  fill: none;
+  stroke: var(--fg-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+  stroke-linejoin: round;
+}
+.chart__spark-line {
+  fill: none;
+  stroke: var(--fg-muted);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.chart__spark-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.chart__svg--spark {
+  flex: 0 0 auto;
+  width: 160px;
+  max-width: 55%;
+}
+.chart__spark-value {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.chart__spark-num {
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.chart__spark-label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+/* series fills (paired with glyphs in every legend) */
+.chart-series--accent {
+  fill: var(--shu);
+  background: var(--shu);
+}
+.chart-series--listen {
+  fill: var(--ai);
+  background: var(--ai);
+}
+.chart-series--read {
+  fill: var(--shu);
+  background: var(--shu);
+}
+.chart-series--watch {
+  fill: var(--kin);
+  background: var(--kin);
+}
+.chart-series--speak {
+  fill: var(--neon-c);
+  background: var(--neon-c);
+}
+.chart-series--muted {
+  fill: var(--hai);
+  background: var(--hai);
+}
+.chart-series--matcha {
+  fill: var(--matcha);
+  background: var(--matcha);
+}
+.chart-series--ai {
+  fill: var(--ai);
+  background: var(--ai);
+}
+.chart-series--kin {
+  fill: var(--kin);
+  background: var(--kin);
+}
+
+/* legend */
+.chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-4);
+  margin: var(--sp-2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.chart__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+.chart__swatch {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  border-radius: 2px;
+}
+.chart__swatch--now {
+  background: var(--shu);
+}
+.chart__swatch--history {
+  background: transparent;
+  border: 0;
+  border-top: 2px dashed var(--fg-muted);
+  height: 0;
+}
+
+/* table view */
+.chart__table {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.chart__table summary {
+  cursor: pointer;
+  min-height: var(--touch);
+  display: inline-flex;
+  align-items: center;
+}
+.chart__table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.chart__table caption {
+  text-align: left;
+  color: var(--fg-muted);
+  padding-bottom: var(--sp-1);
+}
+.chart__table th,
+.chart__table td {
+  padding: var(--sp-1) var(--sp-2);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.chart__table td {
+  text-align: right;
+}
+
+/* heat grid */
+.heat {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.heat__cell {
+  --heat: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--shu) calc(var(--heat) * 70%), var(--surface));
+}
+.heat__cell--active {
+  border-color: var(--shu);
+  border-width: 2px;
+}
+.heat__label {
+  font-size: var(--fs-2);
+  font-weight: 600;
+}
+.heat__value {
+  font-size: var(--fs-3);
+  font-variant-numeric: tabular-nums;
+}
+.heat__sub {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.heat__marker {
+  position: absolute;
+  top: var(--sp-2);
+  right: var(--sp-2);
+  padding: 0 var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* bar row */
+.bar {
+  display: grid;
+  grid-template-columns: minmax(84px, 1fr) 2fr auto;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  min-height: 28px;
+}
+.bar__label {
+  font-size: var(--fs-2);
+}
+.bar__track {
+  position: relative;
+  height: 12px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: visible;
+}
+.bar__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 0 3px 3px 0;
+  transition: width var(--dur-2) var(--ease);
+}
+.bar__marker {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--fg-muted);
+}
+.bar__value {
+  font-size: var(--fs-2);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+/* stacked bars */
+.chart__svg--stack {
+  max-width: 480px;
+}
+.chart__seg {
+  stroke: none;
+}
+
+/* calendar */
+.chart__svg--calendar {
+  max-width: 240px;
+}
+.chart__day {
+  fill: var(--line);
+}
+.chart__day--active {
+  fill: var(--shu);
+}
+
+/* ring */
+.chart--ring {
+  width: 88px;
+}
+.ring__track {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 8;
+}
+.ring__fill {
+  fill: none;
+  stroke: var(--ai);
+  stroke-width: 8;
+  stroke-linecap: butt;
+  transition: stroke-dasharray var(--dur-2) var(--ease);
+}
+.ring__fill--met {
+  stroke: var(--matcha);
+}
+.ring__center {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--fg);
+}
+
+/* texture as the backup channel: print and forced colors */
+@media print, (forced-colors: active) {
+  .chart__seg.chart-series--watch,
+  .chart__seg.chart-series--speak {
+    stroke: var(--fg);
+    stroke-width: 1;
+  }
+  .chart__radar-now {
+    fill-opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar__fill,
+  .ring__fill {
+    transition: none;
+  }
+}
+.reduced-motion .bar__fill,
+.reduced-motion .ring__fill {
+  transition: none;
+}

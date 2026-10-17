@@ -1,0 +1,163 @@
+/*
+ * TSUZUKU — <MonGrid> styles (src/collections/MonGrid.tsx, group G).
+ * Tokens only; mobile-first from 360 px (three 72 px crests per row).
+ */
+.mon-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.mon-grid__lede {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.mon-grid__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.mon-grid__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.mon-grid__h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+.mon-grid__count {
+  color: var(--fg-muted);
+}
+.mon-grid__empty {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+.mon-grid__cells {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: var(--sp-3) var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mon-grid__cell {
+  min-width: 0;
+}
+.mon-grid__button {
+  display: block;
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-1);
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-1) var(--ease),
+    background var(--dur-1) var(--ease),
+    transform 60ms var(--ease);
+}
+.mon-grid__button:hover {
+  border-color: var(--line);
+  background: var(--raised);
+}
+.mon-grid__button:active {
+  transform: scale(0.97);
+}
+.mon-grid__button .mon {
+  width: 100%;
+}
+.mon-grid__button .mon__caption {
+  max-width: 100%;
+}
+.mon-grid__cell[data-earned="false"] .mon__name {
+  color: var(--fg-muted);
+}
+
+/* ── detail sheet ───────────────────────────────────────────────────── */
+.mon-detail__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  text-align: center;
+}
+.mon-detail__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.2;
+}
+.mon-detail__ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  font-weight: 400;
+  color: var(--shu);
+}
+.mon-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.mon-detail__tier--bronze {
+  color: var(--bronze);
+  border-color: var(--bronze);
+}
+.mon-detail__tier--silver {
+  color: var(--fg-muted);
+  border-color: var(--silver);
+}
+.mon-detail__tier--gold {
+  color: var(--kin);
+  border-color: var(--kin);
+}
+.mon-detail__condition,
+.mon-detail__state {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg);
+}
+.mon-detail__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.mon-detail__state {
+  color: var(--fg-muted);
+}
+.mon-detail .modal__actions {
+  justify-content: center;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mon-grid__button,
+  .mon-grid__button:active {
+    transition: none;
+    transform: none;
+  }
+}
+.reduced-motion .mon-grid__button,
+.reduced-motion .mon-grid__button:active {
+  transition: none;
+  transform: none;
+}

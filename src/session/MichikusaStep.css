@@ -1,0 +1,158 @@
+/* TSUZUKU — <MichikusaStep> (group E). The roadside card: washi scroll, sumi type, one seal. */
+
+.michikusa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-4) var(--gutter) var(--sp-5);
+  color: var(--fg);
+  background: var(--surface);
+}
+
+.michikusa__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.michikusa__glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+  color: var(--bg);
+  background: var(--shu);
+}
+
+.michikusa__label {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.04em;
+}
+
+.michikusa__state {
+  margin-inline-start: auto;
+}
+
+.michikusa__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.michikusa__title {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.3;
+}
+
+.michikusa__quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  border-inline-start: 3px solid var(--kin);
+  background: var(--raised);
+  border-radius: var(--radius);
+}
+
+.michikusa__ja {
+  margin: 0;
+  font-family: var(--font-ja);
+  font-size: var(--fs-5);
+  line-height: 1.8;
+}
+
+.michikusa__kana {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.michikusa__listen {
+  align-self: flex-start;
+}
+
+.michikusa__text {
+  margin: 0;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+}
+
+.michikusa__source {
+  margin: 0;
+  font-size: var(--fs-1);
+}
+
+.michikusa__source-label {
+  font-weight: 600;
+}
+
+.michikusa__foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* A ten-second read line: decorative pacing, never a gate. */
+.michikusa__read {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.michikusa__read-fill {
+  width: 0;
+  height: 100%;
+  background: var(--kin);
+  animation: michikusa-read 10s linear forwards;
+}
+
+@keyframes michikusa-read {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.michikusa__continue {
+  align-self: flex-end;
+}
+
+.michikusa[data-again='true'] .michikusa__glyph {
+  background: var(--hai);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .michikusa__read-fill {
+    animation: none;
+    width: 100%;
+  }
+}
+.reduced-motion .michikusa__read-fill,
+.michikusa.reduced-motion .michikusa__read-fill {
+  animation: none;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .michikusa__foot {
+    flex-direction: row;
+    align-items: center;
+  }
+  .michikusa__read {
+    flex: 1 1 auto;
+  }
+}

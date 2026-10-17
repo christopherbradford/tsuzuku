@@ -1,0 +1,198 @@
+/*
+ * TSUZUKU — <GoshuinBook> styles (src/collections/GoshuinBook.tsx, group G).
+ * Two washi pages per spread from 360 px; the stamp fills its page column.
+ */
+.goshuin-book {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.goshuin-book__lede,
+.goshuin-book__hint {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.goshuin-book__hint {
+  font-size: var(--fs-1);
+  text-align: center;
+}
+.goshuin-book__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+.goshuin-book__spread-label {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ── spread ─────────────────────────────────────────────────────────── */
+.goshuin-book__spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+  padding: var(--sp-2);
+  background: color-mix(in srgb, var(--fg) 8%, var(--raised));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  touch-action: pan-y;
+}
+.goshuin-book__spread:focus-visible {
+  outline: var(--focus-ring) solid var(--focus);
+  outline-offset: var(--focus-offset);
+}
+.goshuin-book__page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 0;
+  padding: var(--sp-3) var(--sp-2);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.goshuin-book__page:first-child {
+  border-right-color: color-mix(in srgb, var(--fg) 20%, var(--line));
+}
+.goshuin-book__page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+.goshuin-book__ordinal {
+  font-family: var(--font-mincho);
+  font-size: var(--fs-1);
+  color: var(--shu);
+}
+.goshuin-book__name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.goshuin-book__name [lang="ja"] {
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+}
+.goshuin-book__romaji {
+  font-size: var(--fs-1);
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+.goshuin-book__page .goshuin__svg {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 220px;
+  aspect-ratio: 1;
+}
+.goshuin-book__page .goshuin__caption {
+  font-size: var(--fs-1);
+}
+.goshuin-book__blank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1;
+  color: var(--hai);
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+}
+.goshuin-book__blank-name {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  line-height: 1.1;
+  opacity: 0.6;
+}
+.goshuin-book__blank-note {
+  font-size: var(--fs-1);
+}
+.goshuin-book__gate {
+  margin: 0;
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.goshuin-book__page--belt .goshuin-book__ordinal {
+  font-family: var(--font-brush);
+  font-size: var(--fs-3);
+}
+.goshuin-book__crest {
+  margin-block: var(--sp-2);
+}
+
+/* ── page index ─────────────────────────────────────────────────────── */
+.goshuin-book__index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.goshuin-book__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 36px;
+  padding: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.goshuin-book__tab[data-state="cleared"] {
+  color: var(--bg);
+  background: var(--shu);
+  border-color: var(--shu);
+}
+.goshuin-book__tab[aria-current="page"] {
+  outline: 2px solid var(--kin);
+  outline-offset: 1px;
+}
+
+/* ── export ─────────────────────────────────────────────────────────── */
+.goshuin-book__export {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.goshuin-book__progress {
+  flex: 1 1 100%;
+}
+.goshuin-book__status {
+  flex: 1 1 100%;
+  min-height: 1.5em;
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+@media (min-width: 560px) {
+  .goshuin-book__spread {
+    gap: var(--sp-3);
+    padding: var(--sp-3);
+  }
+  .goshuin-book__page {
+    padding: var(--sp-4) var(--sp-3);
+  }
+}

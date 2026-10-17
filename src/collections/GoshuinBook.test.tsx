@@ -1,0 +1,214 @@
+import { render } from 'preact';
+import { act } from 'preact/test-utils';
+import type { ExportOptions } from '../art/png';
+import { STATIONS } from '../content/types';
+import { civilToDay, formatEraDate } from '../shared/time';
+import { resetStoreForTests } from '../store/store';
+import { makeTestStore } from '../store/testing';
+import { GoshuinBook, bookFilename, bookStamps, buildPages, initialSpread, spreadOfPage, spreadsOf } from './GoshuinBook';
+
+const DAY = civilToDay({ year: 2026, month: 10, day: 17 });
+
+let root: HTMLDivElement;
+beforeEach(() => {
+  root = document.createElement('div');
+  document.body.appendChild(root);
+});
+afterEach(() => {
+  render(null, root);
+  root.remove();
+  resetStoreForTests();
+});
+
+const STAMPS = {
+  1: { at: DAY - 30, perfect: false, assisted: false },
+  2: { at: DAY - 20, perfect: true, assisted: false },
+  4: { at: DAY - 2, perfect: false, assisted: true },
+};
+
+interface Recorder {
+  calls: ExportOptions[];
+  saved: string[];
+  exporter(o: ExportOptions): Promise<Blob | null>;
+  saver(blob: Blob, filename: string): 'download';
+}
+
+function recorder(result: 'blob' | 'null' = 'blob'): Recorder {
+  const r: Recorder = {
+    calls: [],
+    saved: [],
+    async exporter(o) {
+      r.calls.push(o);
+      o.onProgress?.(0.5);
+      o.onProgress?.(1);
+      return result === 'blob' ? new Blob(['png'], { type: 'image/png' }) : null;
+    },
+    saver(_blob, filename) {
+      r.saved.push(filename);
+      return 'download';
+    },
+  };
+  return r;
+}
+
+async function mount(rec: Recorder, save: Record<string, unknown> = {}): Promise<void> {
+  await makeTestStore({
+    save: {
+      collections: { stamps: STAMPS, badges: { 'belt-yellow': DAY - 1 } },
+      progress: { station: 5, shinsaPassed: ['yellow'] },
+      ...save,
+    },
+  });
+  await act(async () => {
+    render(<GoshuinBook exporter={rec.exporter} saver={rec.saver} />, root);
+  });
+}
+
+const spreadEl = (): HTMLElement => root.querySelector<HTMLElement>('.goshuin-book__spread')!;
+const stationsShown = (): number[] => Array.from(spreadEl().querySelectorAll<HTMLElement>('.goshuin-book__page[data-station]')).map((e) => Number(e.dataset.station));
+/** Click an export button and let the sequential pipeline drain. */
+async function clickExport(kind: 'desktop' | 'phone'): Promise<void> {
+  await act(async () => {
+    root.querySelector<HTMLButtonElement>(`[data-export="${kind}"]`)!.click();
+  });
+  for (let i = 0; i < 20 && root.querySelector('[data-export="desktop"]')?.hasAttribute('disabled'); i++) {
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+  }
+}
+const key = (k: string): void => {
+  act(() => {
+    spreadEl().dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true }));
+  });
+};
+
+describe('book helpers', () => {
+  it('builds 53 station pages plus a belt page after each Shinsa station', () => {
+    const pages = buildPages(STAMPS, ['yellow'], { 'belt-yellow': DAY });
+    expect(pages.filter((p) => p.kind === 'station')).toHaveLength(53);
+    const belts = pages.filter((p) => p.kind === 'belt');
+    expect(belts).toHaveLength(7);
+    // Yellow belt page follows station 9
+    const nine = pages.findIndex((p) => p.kind === 'station' && p.station.number === 9);
+    const after = pages[nine + 1]!;
+    expect(after).toMatchObject({ kind: 'belt', passed: true, at: DAY });
+    expect(after.kind === 'belt' ? after.belt.id : null).toBe('yellow');
+    // Black belt page is last
+    expect(pages[pages.length - 1]).toMatchObject({ kind: 'belt', passed: false });
+    expect(pages.every((p, i) => p.index === i)).toBe(true);
+    expect(spreadsOf(pages)).toHaveLength(30);
+    expect(spreadOfPage(3)).toBe(1);
+  });
+
+  it('opens on the latest cleared station, else the current station', () => {
+    const pages = buildPages(STAMPS, [], {});
+    expect(initialSpread(pages, STAMPS, 5)).toBe(spreadOfPage(3)); // station 4 is page index 3
+    expect(initialSpread(pages, {}, 12)).toBe(spreadOfPage(pages.findIndex((p) => p.kind === 'station' && p.station.number === 12)));
+    expect(initialSpread(pages, {}, 0)).toBe(0);
+  });
+
+  it('bookStamps keeps only real stations, sorted; filenames are ASCII and numbered for sets', () => {
+    const stamps = bookStamps({ ...STAMPS, 99: { at: DAY, perfect: false, assisted: false } });
+    expect(stamps.map((s) => s.station.number)).toEqual([1, 2, 4]);
+    expect(stamps[1]?.perfect).toBe(true);
+    expect(bookFilename('desktop', 0, 1, DAY)).toBe('tsuzuku-goshuin-cho-desktop-2026-10-17.png');
+    expect(bookFilename('phone', 2, 6, DAY)).toBe('tsuzuku-goshuin-cho-phone-2026-10-17-3of6.png');
+  });
+});
+
+describe('<GoshuinBook>', () => {
+  it('lists all 53 pages in the index and opens on the spread with the latest stamp', async () => {
+    await mount(recorder());
+    const tabs = root.querySelectorAll('.goshuin-book__tab');
+    expect(tabs).toHaveLength(53);
+    expect(Array.from(tabs).map((t) => t.getAttribute('data-station'))).toEqual(STATIONS.map((s) => String(s.number)));
+    expect(root.querySelector('.goshuin-book__lede')?.textContent).toContain('3 of 53');
+    expect(stationsShown()).toEqual([3, 4]);
+    expect(root.querySelectorAll('.goshuin-book__tab[aria-current="page"]')).toHaveLength(2);
+    // cleared page carries the learner's stamp; the uncleared one is grey stone with the Gatekeeper named
+    const four = spreadEl().querySelector('[data-station="4"]')!;
+    expect(four.getAttribute('data-state')).toBe('cleared');
+    expect(four.querySelector('figure.goshuin')).not.toBeNull();
+    expect(four.textContent).toContain('Assisted Gate');
+    expect(four.textContent).toContain('保土ヶ谷');
+    const three = spreadEl().querySelector('[data-station="3"]')!;
+    expect(three.getAttribute('data-state')).toBe('locked');
+    expect(three.querySelector('.goshuin-book__blank')).not.toBeNull();
+    expect(three.textContent).toContain('Not yet cleared');
+    expect(three.textContent).toContain('湊の関守');
+  });
+
+  it('arrow keys, Home/End and the page index turn the spreads; the belt page sits after its Shinsa station', async () => {
+    await mount(recorder());
+    key('ArrowRight');
+    expect(stationsShown()).toEqual([5, 6]);
+    key('ArrowLeft');
+    expect(stationsShown()).toEqual([3, 4]);
+    key('Home');
+    expect(stationsShown()).toEqual([1, 2]);
+    expect(spreadEl().querySelector('[data-station="2"]')?.textContent).toContain('Passed at 100 %');
+    key('End');
+    const lastSpread = spreadEl();
+    expect(lastSpread.querySelector('[data-belt="black"]')).not.toBeNull();
+    expect(lastSpread.querySelector('[data-belt="black"]')?.getAttribute('data-state')).toBe('locked');
+    expect(lastSpread.textContent).toContain('The Shinsa waits');
+
+    act(() => root.querySelector<HTMLButtonElement>('.goshuin-book__tab[data-station="9"]')!.click());
+    const belt = spreadEl().querySelector('[data-belt="yellow"]')!;
+    expect(belt).not.toBeNull();
+    expect(belt.getAttribute('data-state')).toBe('cleared');
+    expect(belt.querySelector('.mon--earned')).not.toBeNull();
+    expect(belt.textContent).toContain(`Passed ${formatEraDate(DAY - 1)}`);
+    expect(root.querySelector('.goshuin-book__spread-label')?.textContent).toBe('Spread 5 of 30');
+  });
+
+  it('swiping left turns to the next spread; a short drag does not', async () => {
+    await mount(recorder());
+    const swipe = (x0: number, x1: number): void => {
+      act(() => {
+        spreadEl().dispatchEvent(new TouchEvent('touchstart', { changedTouches: [{ clientX: x0 } as Touch], bubbles: true }));
+        spreadEl().dispatchEvent(new TouchEvent('touchend', { changedTouches: [{ clientX: x1 } as Touch], bubbles: true }));
+      });
+    };
+    swipe(200, 120);
+    expect(stationsShown()).toEqual([5, 6]);
+    swipe(200, 190);
+    expect(stationsShown()).toEqual([5, 6]);
+    swipe(100, 220);
+    expect(stationsShown()).toEqual([3, 4]);
+  });
+
+  it('exports the desktop strip as one 6480 × 720 image with text layers, and names the file', async () => {
+    const rec = recorder();
+    await mount(rec);
+    await clickExport('desktop');
+    expect(rec.calls).toHaveLength(1);
+    expect(rec.calls[0]).toMatchObject({ width: 6480, height: 720 });
+    expect(rec.calls[0]!.svg).toContain('goshuin-page--cleared');
+    expect(rec.calls[0]!.texts.length).toBeGreaterThan(53);
+    expect(rec.saved).toEqual(['tsuzuku-goshuin-cho-desktop-2026-01-15.png']);
+    expect(root.querySelector('.goshuin-book__status')?.textContent).toBe('Saved 1 image(s).');
+  });
+
+  it('exports the phone set as six 1080 × 2340 images', async () => {
+    const rec = recorder();
+    await mount(rec);
+    await clickExport('phone');
+    expect(rec.calls).toHaveLength(6);
+    for (const c of rec.calls) expect(c).toMatchObject({ width: 1080, height: 2340 });
+    expect(rec.saved).toHaveLength(6);
+    expect(new Set(rec.saved).size).toBe(6);
+    expect(rec.saved[5]).toBe('tsuzuku-goshuin-cho-phone-2026-01-15-6of6.png');
+    expect(root.querySelector('.goshuin-book__status')?.textContent).toBe('Saved 6 image(s).');
+  });
+
+  it('says so, without a stack trace, when the host cannot rasterise', async () => {
+    const rec = recorder('null');
+    await mount(rec);
+    await clickExport('desktop');
+    expect(rec.saved).toEqual([]);
+    expect(root.querySelector('.goshuin-book__status')?.textContent).toContain('cannot draw the image');
+    expect(root.querySelector<HTMLButtonElement>('[data-export="desktop"]')!.disabled).toBe(false);
+  });
+});

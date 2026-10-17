@@ -1,0 +1,183 @@
+/*
+ * TSUZUKU — <PitchLine> / <PitchGlyph> (src/exercises, group D).
+ * Shape carries the meaning: filled dots high, hollow dots low, a bar +
+ * arrowhead for the drop, a dotted ring for the particle. Tokens only.
+ */
+.pitch-line {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  max-width: 100%;
+}
+.pitch-svg {
+  display: block;
+  height: 3.2em;
+  width: auto;
+  max-width: 100%;
+  overflow: visible;
+  color: var(--fg);
+}
+.pitch-svg--compact {
+  height: 1.8em;
+}
+.pitch-svg__line {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.pitch-svg__particle-line {
+  stroke: var(--fg-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 3;
+  stroke-linecap: round;
+}
+.pitch-svg__dot {
+  fill: var(--surface);
+  stroke: var(--fg-muted);
+  stroke-width: 1.5;
+}
+.pitch-svg__dot--high {
+  fill: currentColor;
+  stroke: currentColor;
+}
+.pitch-svg__dot--low {
+  fill: var(--surface);
+  stroke: currentColor;
+}
+.pitch-svg__dot--particle {
+  fill: none;
+  stroke: var(--fg-muted);
+  stroke-dasharray: 1.5 1.5;
+}
+.pitch-svg__drop line {
+  stroke: var(--shu);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.pitch-svg__drop polygon {
+  fill: var(--shu);
+}
+.pitch-svg__label {
+  font-family: var(--font-ja);
+  font-size: 10px;
+  fill: var(--fg);
+}
+.pitch-svg__label--particle {
+  fill: var(--fg-muted);
+}
+.pitch-line__type {
+  display: inline-flex;
+  gap: var(--sp-1);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  letter-spacing: 0.04em;
+}
+.pitch-line__type [lang='ja'] {
+  font-family: var(--font-ja);
+}
+
+/* input mode */
+.pitch-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  width: 100%;
+}
+.pitch-picker__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-1);
+  box-sizing: border-box;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3) var(--sp-2) calc(var(--sp-3) + 0.9em);
+  font: inherit;
+  font-size: var(--fs-4);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease);
+}
+.pitch-picker__btn [lang='ja'] {
+  font-family: var(--font-ja);
+  line-height: 1.2;
+}
+.pitch-picker__btn:hover:not(:disabled),
+.pitch-picker__btn:focus-visible {
+  border-color: var(--ai);
+}
+.pitch-picker__btn:disabled {
+  cursor: default;
+}
+.pitch-picker[data-locked='true'] .pitch-picker__btn[data-state='idle'] {
+  color: var(--fg-muted);
+  opacity: 0.7;
+}
+.pitch-picker__key {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.3;
+  color: var(--fg-muted);
+}
+.pitch-picker__mark {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+}
+.pitch-picker__btn[data-state='correct'] {
+  border-style: double;
+  border-width: 4px;
+  border-color: var(--matcha);
+}
+.pitch-picker__btn[data-state='correct'] .pitch-picker__mark {
+  color: var(--matcha);
+}
+.pitch-picker__btn[data-state='wrong'] {
+  border-color: var(--shu);
+  text-decoration: line-through;
+}
+.pitch-picker__btn[data-state='wrong'] .pitch-picker__mark {
+  color: var(--shu);
+}
+.pitch-picker__btn[data-state='missed'] {
+  border-style: dashed;
+  border-color: var(--matcha);
+}
+.pitch-picker__btn[data-state='missed'] .pitch-picker__mark {
+  color: var(--matcha);
+}
+
+/* glyph */
+.pitch-glyph {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--fg);
+}
+.pitch-glyph__label {
+  display: inline-flex;
+  gap: var(--sp-1);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.pitch-glyph__label [lang='ja'] {
+  font-family: var(--font-ja);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pitch-picker__btn {
+    transition: none;
+  }
+}
+.reduced-motion .pitch-picker__btn {
+  transition: none;
+}

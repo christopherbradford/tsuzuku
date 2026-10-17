@@ -1,0 +1,385 @@
+/* TSUZUKU — <EndCard> (group E). Sumi card, brush つづく, tally, 次回予告, ledger prompt. */
+
+.end-card {
+  --card-bg: #0b0b10;
+  --card-fg: #f4ede0;
+  --card-muted: #a9a49a;
+  --card-line: #2c2c3a;
+  --card-raised: #1f1f2a;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-5) var(--gutter) var(--sp-6);
+  color: var(--card-fg);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06), transparent 60%),
+    var(--card-bg);
+  border-radius: var(--radius);
+}
+
+.end-card .status-window {
+  color: var(--card-fg);
+  background: var(--card-raised);
+  border-color: var(--card-line);
+}
+
+.end-card .muted {
+  color: var(--card-muted);
+}
+
+.end-card__brush {
+  text-align: center;
+  animation: end-card-rise 1.2s var(--ease) both;
+}
+
+.end-card__tsuzuku {
+  margin: 0;
+  font-family: var(--font-brush);
+  font-weight: 400;
+  font-size: var(--fs-7);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  color: var(--card-fg);
+}
+
+.end-card__sub {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--fs-2);
+  color: var(--card-muted);
+}
+
+.end-card__welcome {
+  margin: 0;
+  text-align: center;
+  color: var(--card-muted);
+}
+
+.end-card__h {
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+
+.end-card__h3 {
+  margin: var(--sp-3) 0 var(--sp-1);
+  font-size: var(--fs-2);
+  font-weight: 600;
+  color: var(--card-muted);
+}
+
+.end-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+  margin: 0;
+}
+
+.end-card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-2);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+}
+
+.end-card__stat dt {
+  font-size: var(--fs-1);
+  color: var(--card-muted);
+}
+
+.end-card__stat dd {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-4);
+}
+
+.end-card__stat--xp dd {
+  color: var(--kin);
+}
+
+.end-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.end-card__promotion {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.end-card__belt {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  padding: 2px var(--sp-1);
+  border-radius: 3px;
+  font-size: var(--fs-1);
+  color: var(--card-fg);
+  background: var(--card-line);
+  animation: belt-flip 600ms var(--ease) both;
+}
+.end-card__belt[data-belt='yellow'] {
+  background: var(--belt-yellow);
+  color: #1a1a1f;
+}
+.end-card__belt[data-belt='green'] {
+  background: var(--belt-green);
+}
+.end-card__belt[data-belt='brown'] {
+  background: var(--belt-brown);
+}
+.end-card__belt[data-belt='black'] {
+  background: var(--belt-black);
+  box-shadow: inset 0 0 0 1px var(--kin);
+}
+
+.end-card__item {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+}
+
+.end-card__to {
+  color: var(--card-muted);
+  font-size: var(--fs-2);
+}
+
+.end-card__tick {
+  color: var(--matcha);
+}
+
+.end-card__flame {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0;
+  color: var(--card-muted);
+}
+
+.end-card__flame-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-family: var(--font-brush);
+  color: var(--card-bg);
+  background: var(--shu);
+}
+.end-card__flame[data-state='gold'] .end-card__flame-glyph {
+  background: var(--kin);
+}
+.end-card__flame[data-state='ember'] .end-card__flame-glyph,
+.end-card__flame[data-state='broken'] .end-card__flame-glyph {
+  background: var(--hai);
+}
+.end-card__flame[data-state='frozen'] .end-card__flame-glyph,
+.end-card__flame[data-state='rest'] .end-card__flame-glyph {
+  background: var(--ai);
+  color: var(--card-fg);
+}
+
+.end-card__earned-row::before {
+  content: '紋 ';
+  font-family: var(--font-brush);
+  color: var(--kin);
+}
+.end-card__earned-row[data-kind='stamp:earned']::before {
+  content: '印 ';
+  color: var(--shu);
+}
+.end-card__earned-row[data-kind='belt:promoted']::before {
+  content: '帯 ';
+}
+.end-card__earned-row[data-kind='level:up']::before {
+  content: 'Lv ';
+  font-family: var(--font-pixel);
+}
+.end-card__earned-row[data-kind='wallpaper:unlocked']::before,
+.end-card__earned-row[data-kind='wallpaper:revealed']::before {
+  content: '軸 ';
+}
+
+.end-card__yokoku-lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.end-card__yokoku-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.end-card__yokoku-label {
+  font-size: var(--fs-1);
+  color: var(--card-muted);
+}
+
+.end-card__yokoku-ja {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: 1.8;
+}
+
+.end-card__yokoku-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+.end-card__word {
+  font-family: var(--font-ja);
+  font-size: var(--fs-3);
+  color: var(--card-fg);
+  border-color: var(--card-line);
+}
+
+.end-card__milestone {
+  color: var(--card-muted);
+}
+
+.end-card__loading {
+  margin: 0;
+}
+
+.end-card__omikuji {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: var(--sp-3);
+  border-inline-start: 3px solid var(--kin);
+  background: var(--card-raised);
+  border-radius: var(--radius);
+}
+
+.end-card__omikuji-label {
+  font-size: var(--fs-1);
+  color: var(--card-muted);
+}
+
+.end-card__omikuji-text {
+  font-family: var(--font-mincho);
+  font-size: var(--fs-3);
+  line-height: 1.8;
+}
+
+.end-card__notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--card-muted);
+}
+
+.end-card__ledger-prompt {
+  margin: 0 0 var(--sp-2);
+}
+
+.end-card__ledger-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.end-card__ledger-kind .select {
+  min-height: var(--touch);
+}
+
+.end-card__ledger-minutes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+.end-card__ledger-btn {
+  min-width: 64px;
+}
+
+.end-card__ledger-done {
+  margin: 0;
+}
+
+.end-card__foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  text-align: center;
+}
+
+.end-card__closing {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+
+.end-card__due {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+
+.end-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
+@keyframes end-card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes belt-flip {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .end-card__brush,
+  .end-card__belt {
+    animation: none;
+  }
+}
+.reduced-motion .end-card__brush,
+.reduced-motion .end-card__belt,
+.end-card.reduced-motion .end-card__brush,
+.end-card.reduced-motion .end-card__belt {
+  animation: none;
+}
+
+@media (max-width: 420px) {
+  .end-card__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .end-card__tsuzuku {
+    font-size: var(--fs-6);
+  }
+}

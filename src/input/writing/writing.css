@@ -1,0 +1,211 @@
+/*
+ * TSUZUKU — 作文 Writing Dojo (src/input/writing, group F).
+ * Tokens only (src/styles/tokens.css). Mobile-first: fits 360 px with the
+ * 16 px gutter; 44 px targets; every state is shape + text, never color alone.
+ */
+.dojo-write {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+.dojo-write__head {
+  display: grid;
+  gap: var(--sp-2);
+}
+.dojo-write__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.dojo-write__title-ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+.dojo-write__prompt {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+.dojo-write__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-2);
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.dojo-write__patterns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dojo-write__pattern {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-size: var(--fs-2);
+}
+.dojo-write__pattern[data-present='true'] {
+  border-style: solid;
+  border-color: var(--matcha);
+}
+.dojo-write__pattern-ja {
+  font-size: var(--fs-3);
+}
+.dojo-write__pattern-state {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.dojo-write__field {
+  display: grid;
+  gap: var(--sp-2);
+}
+.dojo-write__label {
+  font-weight: 600;
+}
+.dojo-write__text {
+  width: 100%;
+  min-height: 10em;
+  padding: var(--sp-3);
+  box-sizing: border-box;
+  font: inherit;
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+.dojo-write__text:focus-visible {
+  border-color: var(--focus);
+}
+.dojo-write__count {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.dojo-write__count[data-inrange='true'] {
+  color: var(--fg);
+}
+.dojo-write__checks {
+  display: grid;
+  gap: var(--sp-2);
+}
+.dojo-write__findings {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dojo-write__finding {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: baseline;
+  padding: var(--sp-1) 0;
+  border-left: 3px solid var(--line);
+  padding-left: var(--sp-2);
+}
+.dojo-write__finding[data-code='pattern-missing'] {
+  border-left-style: dashed;
+}
+.dojo-write__finding[data-code='register'],
+.dojo-write__finding[data-code='particle'],
+.dojo-write__finding[data-code='conjugation'] {
+  border-left-color: var(--kin);
+}
+.dojo-write__finding[data-code='kana-only-green'] {
+  border-left-color: var(--ai);
+}
+.dojo-write__rubric {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.dojo-write__rubric legend {
+  font-weight: 600;
+}
+.dojo-write__rubric-item {
+  display: grid;
+  gap: var(--sp-1);
+}
+.dojo-write__check {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  cursor: pointer;
+}
+.dojo-write__check input {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--ai);
+}
+.dojo-write__mismatch {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.dojo-write__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.dojo-write__status {
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--fg-muted);
+}
+.dojo-write__export {
+  width: 100%;
+  min-height: 6em;
+  box-sizing: border-box;
+  padding: var(--sp-2);
+  font: inherit;
+  font-family: var(--font-ja);
+  color: var(--fg);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.dojo-write__result {
+  display: grid;
+  gap: var(--sp-2);
+  padding-left: var(--sp-3);
+  border-left: 4px solid var(--matcha);
+}
+.dojo-write__result p {
+  margin: 0;
+}
+.dojo-write__verdict {
+  font-weight: 600;
+}
+.dojo-write__judge {
+  font-style: italic;
+}
+.dojo-write__sentences {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-4);
+}

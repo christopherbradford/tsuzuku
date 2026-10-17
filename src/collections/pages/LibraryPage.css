@@ -1,0 +1,378 @@
+/*
+ * TSUZUKU — Library page (group G). Shelves of introduced items and Michikusa
+ * fragments by station. Tokens only; mobile-first from 360 px.
+ */
+.library {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--sp-6);
+  box-sizing: border-box;
+}
+.library__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.library__h1 {
+  margin: 0;
+  font-size: var(--fs-5);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.library__h1 [lang="ja"] {
+  font-family: var(--font-brush);
+  color: var(--shu);
+}
+.library__h1-en {
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.library__lede,
+.library__muted {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+/* ── view switch ────────────────────────────────────────────────────── */
+.library__views {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+}
+.library__view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--touch);
+  padding: var(--sp-2);
+  color: var(--fg-muted);
+  font: inherit;
+  background: var(--raised);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.library__view[aria-selected="true"] {
+  color: var(--fg);
+  background: var(--surface);
+  border-color: var(--shu);
+}
+.library__view-ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+  line-height: 1.1;
+}
+.library__view[aria-selected="true"] .library__view-ja {
+  color: var(--shu);
+}
+.library__view-en {
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── filters ────────────────────────────────────────────────────────── */
+.library__filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-2);
+}
+.library__filters .field {
+  margin: 0;
+}
+@media (min-width: 600px) {
+  .library__filters {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+/* ── station shelves ────────────────────────────────────────────────── */
+.library__station {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.library__station-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  width: 100%;
+  min-height: var(--touch);
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.library__h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+.library__h3 [lang="ja"] {
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+}
+.library__romaji {
+  font-size: var(--fs-2);
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+.library__count {
+  color: var(--fg-muted);
+}
+.library__chevron {
+  display: inline-block;
+  color: var(--fg-muted);
+  transition: transform var(--dur-1) var(--ease);
+}
+[aria-expanded="true"] > .library__chevron {
+  transform: rotate(90deg);
+}
+
+/* ── item rows ──────────────────────────────────────────────────────── */
+.library__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.library__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    'glyph surface belt'
+    'glyph meaning belt';
+  column-gap: var(--sp-3);
+  align-items: center;
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-2);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.library__item:hover {
+  background: var(--raised);
+  border-color: var(--line);
+}
+.library__glyph {
+  grid-area: glyph;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-family: var(--font-ja);
+  font-size: var(--fs-2);
+  color: var(--bg);
+  border-radius: 6px;
+}
+.library__item[data-kind="kana"] .library__glyph {
+  background: var(--sakura);
+}
+.library__item[data-kind="vocab"] .library__glyph,
+.library__item[data-kind="chunk"] .library__glyph {
+  background: var(--neon-c);
+}
+.library__item[data-kind="kanji"] .library__glyph {
+  background: var(--kin);
+}
+.library__item[data-kind="grammar"] .library__glyph {
+  background: var(--matcha);
+}
+.library__item[data-kind="component"] .library__glyph {
+  background: var(--hai);
+}
+.library__surface {
+  grid-area: surface;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  min-width: 0;
+  font-size: var(--fs-4);
+  line-height: 1.3;
+}
+.library__reading {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.library__meaning {
+  grid-area: meaning;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.library__tags {
+  grid-area: belt;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+.library__belt {
+  gap: var(--sp-1);
+}
+.library__belt::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--belt-white);
+}
+.library__belt[data-belt="yellow"]::before {
+  background: var(--belt-yellow);
+}
+.library__belt[data-belt="green"]::before {
+  background: var(--belt-green);
+}
+.library__belt[data-belt="brown"]::before {
+  background: var(--belt-brown);
+}
+.library__belt[data-belt="black"]::before {
+  background: var(--belt-black);
+}
+.library__item[data-archived="true"] .library__surface {
+  color: var(--hai);
+  text-decoration: line-through;
+}
+
+/* ── michikusa ──────────────────────────────────────────────────────── */
+.library__fragments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.library__fragment {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  background: var(--raised);
+  border-radius: var(--radius-sm);
+}
+.library__fragment-title {
+  margin: 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+.library__fragment-ja {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+.library__fragment-body {
+  margin: 0;
+  font-size: var(--fs-2);
+}
+.library__more {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.library__shelf--empty {
+  align-items: center;
+  text-align: center;
+  color: var(--fg-muted);
+  border-style: dashed;
+}
+
+/* ── detail dialog ──────────────────────────────────────────────────── */
+.library-detail__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.library-detail__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-6);
+  font-weight: 500;
+  line-height: 1.2;
+}
+.library-detail__reading {
+  font-size: var(--fs-3);
+  color: var(--fg-muted);
+}
+.library-detail__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.library-detail__meanings,
+.library-detail__facets {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: var(--fs-2);
+}
+.library-detail__label {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.library-detail__example {
+  margin: 0;
+  font-size: var(--fs-3);
+}
+.library-detail__example-en {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.library-detail__status {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.library-detail .modal__actions {
+  justify-content: flex-start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .library__chevron {
+    transition: none;
+  }
+}
+.reduced-motion .library__chevron {
+  transition: none;
+}

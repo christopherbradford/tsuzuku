@@ -283,8 +283,8 @@ describe.skipIf(!derived)('derived read-model', () => {
       expect(p?.realizedRate).toBe(0);
       expect(p?.atPace).toBe(TODAY + 81);
       expect(p?.band).toEqual([TODAY + Math.ceil(81 * 0.8), TODAY + Math.ceil(81 * 1.2)]);
-      // White Standard = 4 items/day → 3 × (20 / 4 + 7) = 36.
-      expect(p?.daily).toBe(TODAY + 36);
+      // White full rate = 4 items/day + 20 kana/day (`projection.fullRateFor`) → 3 × (20 / 24 + 7) = 23.5 → 24.
+      expect(p?.daily).toBe(TODAY + 24);
       expect(d.projection(bundles, 3)).toEqual(p);
     });
 

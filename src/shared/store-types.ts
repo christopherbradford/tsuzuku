@@ -94,6 +94,10 @@ export interface Profile {
   goals: string[];
   /** Kana item ids marked 既知 by the onboarding Kana Flash (design 05 §3). */
   kanaKnown: string[];
+  /** ms when onboarding finished (absent = never; the shell's first-run check). */
+  onboardedAt?: number;
+  /** Latest sentence dictated perfectly (≥ 0.95 at 1×): the Waveform wallpaper's text (design 06 §wallpapers). */
+  dictatedSentence?: string;
 }
 
 export type Intensity = 'casual' | 'standard' | 'intense' | 'custom';
@@ -171,6 +175,8 @@ export interface Progress {
   /** Stations passed through the Assisted Gate (grey corner until Revenge). */
   assisted: number[];
   gateAttempts: Record<number, number>;
+  /** Station → EpochDay of the latest Gatekeeper attempt (one attempt per day). */
+  gateAttemptDay?: Record<number, EpochDay>;
   /** 遺恨帳 Grudge List. */
   grudge: CardKey[];
   shinsaPassed: Belt[];
@@ -179,6 +185,8 @@ export interface Progress {
   awayDays: number;
   /** A Welcome Back set is owed (30+ days away). */
   welcomeBackDue: boolean;
+  /** Story / Michikusa ids read to the end in the Reader (first read counts). */
+  storiesRead?: string[];
 }
 
 export interface Quests {
@@ -194,6 +202,10 @@ export interface WallpaperEntry {
   revealed: 0 | 1 | 2 | 3 | 4;
   /** Day of the last reforge (one per day per piece). */
   lastReforgeDay?: EpochDay;
+  /** Learner-picked sentence rendered on the piece (Studio). */
+  sentenceOfChoice?: string;
+  /** Learner-picked seal (hanko) kanji for the piece (Studio). */
+  sealKanji?: string;
 }
 
 export interface StampEntry {
@@ -240,7 +252,8 @@ export type LedgerKind = 0 | 1 | 2 | 3;
 export const LEDGER_SOURCES = ['app', 'external'] as const;
 export type LedgerSource = 0 | 1;
 
-export type LedgerEntry = [day: EpochDay, minutes: number, kind: LedgerKind, source: LedgerSource];
+/** `note` (5th column, optional) is the learner's free text for the row ("anime, episode 3"). */
+export type LedgerEntry = [day: EpochDay, minutes: number, kind: LedgerKind, source: LedgerSource, note?: string];
 
 export interface Ledger {
   entries: LedgerEntry[];

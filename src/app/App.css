@@ -1,0 +1,93 @@
+/*
+ * TSUZUKU — root states (group A): boot loading, error boundary, page host.
+ * Tokens only.
+ */
+.app-loading {
+  display: grid;
+  place-items: center;
+  gap: var(--sp-3);
+  min-height: 100dvh;
+  padding: var(--gutter);
+  text-align: center;
+  color: var(--fg-muted);
+  background: var(--bg);
+}
+.app-loading__mark {
+  font-size: var(--fs-7);
+  line-height: 1;
+  color: var(--shu);
+  animation: app-breathe 1600ms var(--ease) infinite alternate;
+}
+.app-loading__text {
+  font-size: var(--fs-2);
+}
+@keyframes app-breathe {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app-error,
+.page-error {
+  display: grid;
+  gap: var(--sp-3);
+  width: min(100%, 560px);
+  margin: var(--sp-6) auto;
+}
+.app-error__title {
+  font-family: var(--font-brush);
+  font-size: var(--fs-6);
+  line-height: 1.1;
+  color: var(--shu);
+}
+.app-error__body,
+.page-error__text {
+  color: var(--fg);
+}
+.app-error__details {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.app-error__details summary {
+  cursor: pointer;
+  min-height: var(--touch);
+  display: flex;
+  align-items: center;
+}
+.app-error__message {
+  max-height: 160px;
+  overflow: auto;
+  padding: var(--sp-2) var(--sp-3);
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.app-error__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.page-loading {
+  padding: var(--sp-6) 0;
+  text-align: center;
+}
+.page-stale {
+  opacity: 0.6;
+  transition: opacity var(--dur-2) var(--ease);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-loading__mark {
+    animation: none;
+  }
+}
+.reduced-motion .app-loading__mark {
+  animation: none;
+}

@@ -1,0 +1,457 @@
+/*
+ * TSUZUKU — <RolePlay> (src/input/taiwa, group F).
+ * Tokens only (src/styles/tokens.css). Mobile-first: fits 360 px with the
+ * 16 px gutter; 44 px targets; the learner's controls sit lowest so they land
+ * in the bottom third on phones. States are shape + text, never color alone.
+ * Motion removed under prefers-reduced-motion and body.reduced-motion.
+ */
+.taiwa {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── header ───────────────────────────────────────────────────────────── */
+.taiwa__head {
+  display: grid;
+  gap: var(--sp-2);
+}
+.taiwa__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.taiwa__title-ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+.taiwa__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-2);
+}
+.taiwa__story-title {
+  white-space: normal;
+}
+.taiwa__subtitle {
+  margin: 0;
+  font-size: var(--fs-3);
+  font-weight: 600;
+}
+.taiwa__progress {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.taiwa__hint,
+.taiwa__note,
+.taiwa__cue {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.taiwa__cue {
+  color: var(--fg);
+  font-size: var(--fs-3);
+}
+.taiwa__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.taiwa__notice {
+  margin: 0;
+}
+
+/* ── intro card ───────────────────────────────────────────────────────── */
+.taiwa__card {
+  display: grid;
+  gap: var(--sp-2);
+}
+.taiwa__role {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.taiwa__role strong {
+  font-size: var(--fs-4);
+}
+.taiwa__role--partner {
+  color: var(--fg-muted);
+}
+
+/* ── partner line ─────────────────────────────────────────────────────── */
+.taiwa__npc {
+  display: grid;
+  gap: var(--sp-2);
+  border-left: 4px solid var(--sakura);
+  transition: background var(--dur-2) var(--ease);
+}
+.taiwa__npc[data-speaking='true'] {
+  background: color-mix(in srgb, var(--sakura) 14%, var(--raised));
+}
+.taiwa__npc-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.taiwa__npc-head .btn {
+  margin-left: auto;
+}
+.taiwa__npc-head .btn + .btn {
+  margin-left: 0;
+}
+.taiwa__speaker,
+.taiwa__you {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.taiwa__npc-ja {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+  overflow-wrap: anywhere;
+}
+.taiwa__npc-en {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.taiwa__slot-note {
+  margin: 0;
+  padding: var(--sp-1) var(--sp-3);
+  border-left: 3px solid var(--kin);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--kin) 10%, var(--surface));
+}
+
+/* ── aizuchi slot ─────────────────────────────────────────────────────── */
+.taiwa__slot {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border: 2px dashed var(--kin);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--kin) 8%, var(--surface));
+}
+.taiwa__prompt {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-weight: 600;
+}
+.taiwa__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.taiwa__chip,
+.taiwa__tile,
+.taiwa__option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  box-sizing: border-box;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-family: var(--font-ja);
+  font-size: var(--fs-3);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease);
+}
+.taiwa__chip:hover,
+.taiwa__chip:focus-visible,
+.taiwa__tile:hover:not(:disabled),
+.taiwa__tile:focus-visible,
+.taiwa__option:hover,
+.taiwa__option:focus-visible {
+  border-color: var(--ai);
+  background: var(--raised);
+}
+.taiwa__chip kbd,
+.taiwa__tile kbd,
+.taiwa__option kbd {
+  min-width: 1.4em;
+  padding: 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* ── learner turn ─────────────────────────────────────────────────────── */
+.taiwa__turn {
+  display: grid;
+  gap: var(--sp-3);
+}
+.taiwa__options {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.taiwa__option {
+  width: 100%;
+  text-align: left;
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.taiwa__built {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  align-items: center;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--raised);
+}
+.taiwa__built-empty {
+  color: var(--fg-muted);
+}
+.taiwa__tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.taiwa__tile:disabled {
+  color: var(--hai);
+  border-style: dashed;
+  cursor: default;
+}
+.taiwa__tile--placed {
+  background: color-mix(in srgb, var(--ai) 12%, var(--surface));
+  border-color: var(--ai);
+}
+.taiwa__speak,
+.taiwa__type {
+  display: grid;
+  gap: var(--sp-2);
+}
+.taiwa__hint-box {
+  display: grid;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 4px solid var(--kin);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--kin) 10%, var(--surface));
+}
+.taiwa__hint-box small {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.taiwa__hint-btn {
+  justify-self: start;
+}
+
+/* ── controls ─────────────────────────────────────────────────────────── */
+.taiwa__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2) var(--sp-3);
+}
+.taiwa__controls--start {
+  justify-content: flex-start;
+}
+.taiwa__controls .btn,
+.taiwa__controls .hanko {
+  min-height: var(--touch);
+}
+
+/* ── feedback ─────────────────────────────────────────────────────────── */
+.taiwa__feedback {
+  display: grid;
+  gap: var(--sp-2);
+  border-left: 4px solid var(--line);
+  animation: taiwa-in var(--dur-2) var(--ease) both;
+}
+.taiwa__feedback[data-kind='best'] {
+  border-left-color: var(--matcha);
+}
+.taiwa__feedback[data-kind='ok'],
+.taiwa__feedback[data-kind='near'] {
+  border-left-color: var(--kin);
+}
+.taiwa__feedback[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.taiwa__feedback-line {
+  margin: 0;
+  font-weight: 600;
+}
+.taiwa__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.taiwa__given {
+  font-size: var(--fs-3);
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+.taiwa__feedback[data-kind='wrong'] .taiwa__given {
+  text-decoration: line-through;
+}
+.taiwa__model {
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.taiwa__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: 0;
+}
+
+/* ── debrief ──────────────────────────────────────────────────────────── */
+.taiwa__result-line {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-3);
+}
+.taiwa__meter {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-1) var(--sp-2);
+  align-items: center;
+}
+.taiwa__meter-label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+}
+.taiwa__meter-track {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  background: var(--line);
+  border-radius: 4px;
+}
+.taiwa__meter-fill {
+  display: block;
+  height: 100%;
+  background: var(--matcha);
+  transition: width var(--dur-2) var(--ease);
+}
+.taiwa__meter-text {
+  grid-column: 1 / -1;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.taiwa__corrections {
+  display: grid;
+  gap: var(--sp-2);
+}
+.taiwa__list {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.taiwa__correction {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-1) var(--sp-3);
+  align-items: baseline;
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 3px solid var(--kin);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.taiwa__correction[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.taiwa__correction .taiwa__tags {
+  grid-column: 1 / -1;
+}
+.taiwa__slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.taiwa__slots .chip[data-hit='true'] {
+  border-color: var(--matcha);
+  color: var(--fg);
+}
+.taiwa__slots .chip[data-hit='false'] {
+  border-style: dashed;
+}
+.taiwa__closing {
+  font-family: var(--font-mincho);
+}
+
+/* ── states ───────────────────────────────────────────────────────────── */
+.taiwa__state {
+  margin: 0;
+  padding: var(--sp-3) var(--sp-4);
+  color: var(--fg-muted);
+  border-left: 4px solid var(--hai);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+
+/* ── motion ───────────────────────────────────────────────────────────── */
+@keyframes taiwa-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .taiwa__feedback {
+    animation: none;
+  }
+  .taiwa__npc,
+  .taiwa__chip,
+  .taiwa__tile,
+  .taiwa__option,
+  .taiwa__meter-fill {
+    transition: none;
+  }
+}
+.reduced-motion .taiwa__feedback {
+  animation: none;
+}
+.reduced-motion .taiwa__npc,
+.reduced-motion .taiwa__chip,
+.reduced-motion .taiwa__tile,
+.reduced-motion .taiwa__option,
+.reduced-motion .taiwa__meter-fill {
+  transition: none;
+}

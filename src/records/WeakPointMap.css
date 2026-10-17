@@ -1,0 +1,53 @@
+/* TSUZUKU — Weak Point map block (group B). Tokens only; mobile-first. */
+
+.weakmap {
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.weakmap__head {
+  margin-bottom: var(--sp-3);
+}
+.weakmap__title {
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.weakmap__title [lang="ja"] {
+  font-family: var(--font-brush);
+  color: var(--shu);
+}
+.weakmap__title-en {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.weakmap__lede,
+.weakmap__none,
+.weakmap__legend {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.weakmap__none {
+  margin-bottom: var(--sp-3);
+}
+.weakmap__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  margin: var(--sp-3) 0 0;
+}
+.weakmap__cta-tags {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.weakmap__legend {
+  margin-top: var(--sp-3);
+}
+.weakmap__legend .tag {
+  margin-right: var(--sp-1);
+}

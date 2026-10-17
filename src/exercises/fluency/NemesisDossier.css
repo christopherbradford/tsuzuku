@@ -1,0 +1,251 @@
+/*
+ * TSUZUKU — <NemesisDossier> (src/exercises/fluency, group D).
+ * A dossier: brush 宿敵 header, item card, context sentences, side-by-side
+ * table with the confusable, per-facet history, duel progress. The duel
+ * rep reuses the prompt window + TextAnswer. Tokens only; fits 360 px
+ * (the table scrolls horizontally rather than breaking the page).
+ */
+.nemesis {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nemesis__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+}
+.nemesis__kanji {
+  font-family: var(--font-brush);
+  font-size: var(--fs-6);
+  line-height: 1;
+  color: var(--shu);
+}
+.nemesis__title {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.2;
+}
+
+.nemesis__intro,
+.nemesis__instruction,
+.nemesis__ja,
+.nemesis__en,
+.nemesis__surface,
+.nemesis__missing,
+.nemesis__none,
+.nemesis__line,
+.nemesis__hint {
+  margin: 0;
+}
+.nemesis__intro {
+  line-height: var(--lh-latin);
+  color: var(--fg-muted);
+}
+.nemesis__instruction {
+  font-size: var(--fs-3);
+}
+
+.nemesis__card,
+.nemesis__prompt {
+  display: grid;
+  gap: var(--sp-3);
+}
+.nemesis__surface {
+  font-family: var(--font-ja);
+  font-size: var(--fs-6);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.nemesis__facts {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.nemesis__facts > div {
+  display: grid;
+  gap: var(--sp-1);
+}
+.nemesis__facts dt,
+.nemesis__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.nemesis__facts dd {
+  margin: 0;
+  line-height: var(--lh-latin);
+}
+.nemesis__facts dd[lang='ja'] {
+  font-family: var(--font-ja);
+  line-height: var(--lh-ja);
+}
+.nemesis__label {
+  margin: 0 0 var(--sp-2);
+  font-weight: 400;
+}
+
+.nemesis__section {
+  display: grid;
+  gap: var(--sp-1);
+}
+.nemesis__sentences,
+.nemesis__history {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nemesis__sentences li {
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-4);
+}
+.nemesis__sentences small {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.nemesis__compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-2);
+  overflow-x: auto;
+  display: block;
+}
+.nemesis__compare thead,
+.nemesis__compare tbody,
+.nemesis__compare tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.nemesis__compare th,
+.nemesis__compare td {
+  padding: var(--sp-2);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.nemesis__compare th {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  font-weight: 400;
+}
+.nemesis__compare th:first-child,
+.nemesis__compare td:first-child {
+  color: var(--shu);
+  border-right: 2px solid var(--line);
+}
+.nemesis__compare td[lang='ja'] {
+  font-family: var(--font-ja);
+}
+.nemesis__none {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+.nemesis__history li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.nemesis__history li[data-nemesis='true'] .nemesis__facet {
+  color: var(--shu);
+}
+.nemesis__facet {
+  font-family: var(--font-pixel);
+  color: var(--fg);
+}
+
+.nemesis__continue {
+  justify-self: start;
+}
+
+/* duel */
+.nemesis__player {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.nemesis__play {
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: var(--sp-2) var(--sp-4);
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--ai);
+  border: 2px solid var(--ai);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.nemesis__play:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.nemesis__novoice {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.nemesis__novoice [lang='ja'] {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  color: var(--fg);
+}
+.nemesis__ja {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.nemesis__en {
+  color: var(--fg-muted);
+}
+.nemesis__tools {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: start;
+}
+.nemesis__hint {
+  display: grid;
+  gap: var(--sp-1);
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 4px solid var(--kin);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--kin) 10%, var(--surface));
+}
+.nemesis__hint small {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.nemesis__line {
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.nemesis__line[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.nemesis__line[data-kind='near'] {
+  border-left-color: var(--kin);
+}
+.nemesis__line[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+
+@media (min-width: 600px) {
+  .nemesis__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

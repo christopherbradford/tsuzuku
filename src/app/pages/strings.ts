@@ -1,0 +1,182 @@
+/**
+ * TSUZUKU — copy for the five shell pages (group A, Sensei voice, design 01 §3).
+ *
+ * The shell strings (`@/i18n/strings`) already carry the dojo / onboarding /
+ * settings / backup / about copy that the page briefs name; this file spreads
+ * them and adds the lines only these pages need, so every string a page shows
+ * resolves from one `S`. Keys are typed exactly: a missing key fails `tsc`.
+ * Linted by `src/i18n/banned.test.ts` (as text and as exported values).
+ */
+import { S as SHELL, fmt, BELT_NAME, WEEKDAYS } from '@/i18n/strings';
+
+export { fmt, BELT_NAME, WEEKDAYS };
+
+const PAGE = {
+  /* ── shared ───────────────────────────────────────────────────────── */
+  levelLine: 'Level = effort. Belt = skill.',
+  stepOf: 'Step {i} of {n}',
+  percent: '{n}%',
+  kb: '{n} KB',
+  mb: '{n} MB',
+  reloadHint: 'Reload so every room reads the new save.',
+
+  /* ── dojo (home) ──────────────────────────────────────────────────── */
+  dojoSceneLabel: 'Your dojo',
+  dojoFeedLoading: 'Reading the day.',
+  dojoFeedFailed: 'The forecast is unavailable right now. The sessions still work.',
+  dojoFirstRunTitle: 'The road starts at Nihonbashi.',
+  dojoFirstRunBody: 'Two minutes: your name, a kana check, your pace. Then the first station.',
+  dojoFirstRunCta: 'Begin',
+  dojoSessions: 'Sessions',
+  dojoStartSession: 'Start {name}, about {n} minutes',
+  dojoDue: '{n} due',
+  dojoDueOne: '1 due',
+  dojoScrolls: '{n} scrolls',
+  dojoScrollOne: '1 scroll',
+  dojoEpisodeOne: '1 episode',
+  dojoNoDue: 'Nothing due. Any session still counts.',
+  dojoResumeTitle: 'A session is waiting.',
+  dojoResumeHint: 'Resume where you stopped, or clear it and start fresh.',
+  dojoQuestOf: '{n} of {target}',
+  dojoQuestDone: 'Done',
+  dojoTeaserTitle: 'Next time',
+  dojoTeaserTitleJa: '次回予告',
+  dojoTeaserSentence: 'From your next episode',
+  dojoTeaserWords: 'Three words you will meet tomorrow',
+  dojoKageTitle: 'Kage',
+  dojoKageTitleJa: '影',
+  dojoKageBest: 'Best of the last four weeks: {n}',
+  dojoKageLast: 'Last run: {n}',
+  dojoKageNoRun: 'No run yet. The first one sets the pace.',
+  dojoKageRun: 'Run the ghost set',
+  dojoNemesisTitle: 'Nemesis',
+  dojoNemesisTitleJa: '宿敵',
+  dojoNemesisHint: 'The duel comes inside your next Kumite or larger.',
+  dojoGateTitle: 'Gatekeeper',
+  dojoGateTitleJa: '関守',
+  dojoGateReady: '{gate} waits at the end of {station}.',
+  dojoGateCta: 'Face the Gatekeeper',
+  dojoGateProgress: '{green} of {total} items Green',
+  dojoShinsaTitle: 'Shinsa',
+  dojoShinsaTitleJa: '審査',
+  dojoShinsaReady: 'The {belt} belt examination is open.',
+  dojoShinsaCta: 'Take the Shinsa',
+  dojoShinsaNotYet: 'The {belt} belt examination is not open yet.',
+  dojoProverb: 'Today’s proverb',
+  dojoRoad: 'The Road',
+  dojoRoadJa: '東海道',
+  dojoStationLink: 'Station {n}, {name}',
+  dojoBeltStatus: '{belt} belt · Station {n}',
+  dojoArcadeHint: 'Free play. Arcade reps never change your schedule.',
+
+  /* ── onboarding (日本橋) ───────────────────────────────────────────── */
+  onbNamePlaceholder: 'むめい',
+  onbNameSummary: 'You train as {name}.',
+  onbKanaFull: 'Check all forty-six',
+  onbKanaPrompt: 'Type the reading',
+  onbKanaPromptHint: 'Romaji turns into kana as you type. Enter checks it.',
+  onbKanaCheck: 'Check',
+  onbKanaProgress: '{i} of {n}',
+  onbKanaCorrect: 'Read.',
+  onbKanaMissed: 'Not yet. It goes to training.',
+  onbKanaResult: '{known} of {n} kana read.',
+  onbKanaResultHint: 'The ones you read start as known. The rest are taught at Shinagawa, the first station.',
+  onbKanaSentBack: 'Back to training: {list}',
+  onbKanaAllKnown: 'All forty-six kana marked as known.',
+  onbKanaNoneKnown: 'Every kana is taught from the first station.',
+  onbKanaTiles: 'Twelve tiles',
+  onbKanaRedo: 'Check again',
+  onbPaceHint: 'Change it any time in Settings.',
+  onbPaceReviews: 'About {n} reviews a day at steady state.',
+  onbHoursLabel: 'In this app',
+  onbHoursValue: 'About {hours} hours',
+  onbMonthsLabel: 'Kyoto',
+  onbMonthsValue: 'About {full} months every day · about {partial} months at seven days in ten',
+  onbVoiceHeard: 'If you heard it, the voice works.',
+  onbVoiceSpeaking: 'Speaking.',
+  onbVoiceGuideOpen: 'How to install one',
+  onbSummaryTitle: 'Ready',
+  onbSummaryPace: 'Pace: {pace}',
+  onbSummaryKana: 'Kana known: {n} of 46',
+  onbSummaryTheme: 'Theme: {theme}',
+  onbSummarySpeech: 'Speaking: {mode}',
+  onbSaving: 'Writing your save.',
+
+  /* ── settings ─────────────────────────────────────────────────────── */
+  setStudy: 'Study',
+  setDisplay: 'Display',
+  setAudio: 'Audio',
+  setReminders: 'Reminders and rest',
+  setPrivacy: 'Privacy and data',
+  setDanger: 'Danger zone',
+  setPaceCasual: 'Casual',
+  setPaceStandard: 'Standard',
+  setPaceIntense: 'Intense',
+  setCustomHint: 'Your own numbers. The review cap still scales with your belt.',
+  setRetentionHint: 'Higher retention means more reviews per day.',
+  setSpeedTierHint: '{rate}× playback for listening exercises.',
+  setSoundHint: 'Master volume. Zen plays only the voice.',
+  setCrtHint: 'Only in the Arcade feel.',
+  setVoiceDefault: 'System default',
+  setVoiceHint: 'Voices marked network may send text to your browser vendor.',
+  setRestDayHint: 'One fixed rest day a week never breaks the streak.',
+  setReminderDownloaded: 'Calendar file saved.',
+  setReminderFailed: 'Download is not available here. Copy the text below into a calendar.',
+  setStorageLevelOk: 'Plenty of room.',
+  setStorageLevelWarn: 'Getting large. Export a backup soon.',
+  setStorageLevelCeiling: 'Near the limit. Export a backup now; old rows are being compacted.',
+  setStorageOf: '{kb} KB of {mb} MB',
+  setSlotCurrent: 'Slot {n}',
+  setSlotNote: 'The dojo opens slot 0. Other slots arrive with a later update.',
+  setResetTitle: 'Start over',
+  setResetBody: 'This browser’s save is replaced by a fresh one: cards, settings, collections, streak. Export a backup first if you might want it back.',
+  setResetType: 'Type つづく to confirm',
+  setResetButton: 'Reset this save',
+  setResetDone: 'A fresh save. The road starts again at Nihonbashi.',
+  setResetMismatch: 'Not quite. Type つづく.',
+  setSpeedGradingHint: 'Only mature items are timed.',
+  setJjHint: 'Japanese definitions first on glossary cards (from Station 34).',
+  setWritingHint: 'Writing Dojo pieces and kanji writing drills.',
+  setVerticalHint: 'Tategaki columns for stories (from Blue).',
+  setClassicHint: 'Four buttons after each answer instead of the automatic map.',
+
+  /* ── backup ───────────────────────────────────────────────────────── */
+  bakIntro: 'Your study data lives in this browser. A backup is one file you keep.',
+  bakStorageTitle: 'Storage',
+  bakAdvice: 'Export after a milestone, and whenever the meter turns amber. A backup opens in any browser running TSUZUKU.',
+  bakChooseFile: 'Choose a backup file',
+  bakReading: 'Reading the file.',
+  bakExporting: 'Writing the file.',
+  bakDownloadFailed: 'The download could not start. Nothing was changed.',
+  bakWarnings: 'Notes',
+  bakCardsGained: '{n} cards gained',
+  bakCardsLost: '{n} cards not in the file',
+  bakExportedAt: 'Exported {date}',
+  bakPreviewDays: 'Days trained',
+  bakApplying: 'Applying.',
+  bakFileLine: '{name} · {kb} KB',
+
+  /* ── about ────────────────────────────────────────────────────────── */
+  aboutWhatTitle: 'What this is',
+  aboutWhat: 'TSUZUKU is a daily Japanese dojo: a spaced-repetition scheduler wearing a fighting-game costume. Fifty-three stations from Nihonbashi to Kyoto, three session sizes, one flame that forgives.',
+  aboutHowTitle: 'How it teaches',
+  aboutHow: 'Every rep retrieves or produces something; nothing pays for re-reading. Recognition and production are separate muscles with separate schedules. Speed is trained apart from accuracy. Input is the engine, and the ledger counts the hours outside the app.',
+  aboutPrivacyTitle: 'Privacy',
+  aboutCreditsTitle: 'Credits',
+  aboutCredits: 'Built by one learner for other learners. Fonts by their designers under the Open Font License; kana conversion by wanakana.',
+  aboutLicenseCode: 'The code is released under the MIT License.',
+  aboutLicenseContent: 'Content and art are released under Creative Commons Attribution-ShareAlike 4.0.',
+  aboutLoadErrorsTitle: 'Rooms that did not open',
+  aboutNoLoadErrors: 'Every room opened.',
+  aboutNoEvents: 'Nothing yet.',
+  aboutRuleLabel: 'Rule {n}',
+} as const satisfies Record<string, string>;
+
+export const S = { ...SHELL, ...PAGE } as const;
+
+export type PageStringKey = keyof typeof S;
+
+/** `{n}` → `1,234` with a thin grouping, for counts shown to a learner. */
+export function num(n: number): string {
+  return Math.round(n).toLocaleString('en-US');
+}

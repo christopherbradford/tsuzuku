@@ -32,13 +32,36 @@ export {
   shardIdFor,
 } from './persist';
 export type { ShardId, ShardSpec } from './persist';
-export { STAT_KEYS } from '../shared/store-types';
 export type * from '../shared/store-types';
 
-// INTEGRATOR — add as the modules land (module-plan src/store/index.ts):
-// export { exportSave, previewImport, applyImport } from './backup';
-// export { XP_TABLE, levelFor, xpToNext } from './xp';
-// export { QUESTS, questProgress } from './quests';
-// export { BADGE_DEFS } from './badge-defs';
-// export { WALLPAPER_DEFS } from './wallpaper-defs';
-// export { addLedgerEntry, logMission, ledgerHours, weeklyTargetHours } from './ledger';
+export { exportSave, previewImport, previewImportBlob, applyImport, mergeSaves, buildBackup, BACKUP_SCHEMA } from './backup';
+export type { ImportPreview, ImportSummary, ImportData, BackupDocument } from './backup';
+export { XP_TABLE, COMBO_XP, MAX_LEVEL, levelFor, xpToNext, xpAtLevel, xpFor, repXp, comboXp } from './xp';
+export { QUESTS, QUEST_COUNT, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests } from './quests';
+export type { QuestRule, QuestProgress, PickOptions } from './quests';
+export { STAT_KEYS, updateMedian, honesty, HONESTY_WINDOW } from './stats';
+export {
+  addLedgerEntry,
+  logMission,
+  ledgerHours,
+  ledgerHoursBy,
+  ledgerByWeek,
+  weekProgress,
+  weeklyTargetHours,
+  externalListeningHours,
+  LEDGER_GOAL_HOURS,
+  WEEKLY_TARGET_HOURS,
+  KIND_INDEX,
+} from './ledger';
+export type { LedgerInput, LedgerHours, WeekRow } from './ledger';
+export { flameState, onDayRolled, onTrainingDay, startVacation, endVacation, FREEZE_MAX, REPAIR_NEEDED } from './streak';
+export type { FlameState, RepairWindow } from './streak';
+export { rollIfNeeded, awayStatus, AWAY_SPREAD_MIN, WELCOME_BACK_AWAY } from './day';
+export type { AwayStatus } from './day';
+export { TAG_EXERCISES, updateWeakPoints, activeTags, topWeakPoints, conqueredTags, tagsForExercise, WEAK_ACTIVATE, WEAK_CLEAR, WEAK_MIN_N } from './weak-points';
+export type { WeakPointRow } from './weak-points';
+export { S as STORE_STRINGS, LEDGER_KIND_LABEL } from './strings';
+export { BADGE_DEFS, BADGE_CATEGORIES } from './badge-defs';
+export type { BadgeDef, BadgeCategory, BadgeField, CardReader } from './badge-defs';
+export { WALLPAPER_DEFS, WALLPAPER_BY_ID, isUnlocked, revealQuadrant, darumaCopy } from './wallpaper-defs';
+export type { WallpaperDef, Quadrant } from './wallpaper-defs';

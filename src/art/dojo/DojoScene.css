@@ -1,0 +1,129 @@
+/*
+ * TSUZUKU — <DojoScene/> styles. Tokens only (src/styles/tokens.css); the
+ * picture itself paints with the same custom properties, so light and dark
+ * themes need no JS. Hotspots are real links laid over the stage in percent
+ * of the stage, so they scale with the picture (≥ 44 px touch targets).
+ */
+
+.dojo-scene {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.dojo-scene__stage {
+  position: relative;
+  aspect-ratio: 960 / 540;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.dojo-scene--compact .dojo-scene__stage {
+  aspect-ratio: 960 / 400;
+}
+
+.dojo-scene__art {
+  position: absolute;
+  inset: 0;
+}
+.dojo-scene__art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── hotspots ───────────────────────────────────────────────────────── */
+.dojo-scene__hotspots {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+.dojo-scene__hotspot {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  padding: var(--sp-1);
+  border-radius: var(--radius-sm);
+  color: var(--fg);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: background var(--dur-1) var(--ease);
+}
+.dojo-scene__hotspot:hover,
+.dojo-scene__hotspot:focus-visible {
+  background: color-mix(in srgb, var(--focus) 14%, transparent);
+}
+.dojo-scene__hotspot:focus-visible {
+  outline: var(--focus-ring) solid var(--focus);
+  outline-offset: var(--focus-offset);
+}
+.dojo-scene__tip {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 1px 6px;
+  color: var(--fg);
+  background: color-mix(in srgb, var(--raised) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--dur-2) var(--ease),
+    transform var(--dur-2) var(--ease);
+}
+.dojo-scene__hotspot:hover .dojo-scene__tip,
+.dojo-scene__hotspot:focus-visible .dojo-scene__tip {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── caption ────────────────────────────────────────────────────────── */
+.dojo-scene__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0 0;
+  padding: 0 var(--sp-1);
+  color: var(--fg-muted);
+  font-size: var(--fs-2);
+}
+.dojo-scene__caption [lang='ja'] {
+  color: var(--fg);
+  font-family: var(--font-brush);
+  font-size: var(--fs-3);
+  line-height: 1.2;
+}
+.dojo-scene__muted {
+  opacity: 0.8;
+}
+
+/* ── motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .dojo-scene__hotspot,
+  .dojo-scene__tip {
+    transition: none;
+  }
+}
+.reduced-motion .dojo-scene__hotspot,
+.reduced-motion .dojo-scene__tip {
+  transition: none;
+}
+
+@media (max-width: 480px) {
+  .dojo-scene__tip {
+    display: none;
+  }
+}

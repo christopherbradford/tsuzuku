@@ -1,0 +1,184 @@
+/*
+ * TSUZUKU — <Scramble> (src/exercises/grammar, group D).
+ * Answer row above, tile bank below, controls lowest (bottom third on
+ * phones). Tap-to-place; 44 px targets; tokens only.
+ */
+.scramble {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.scramble__prompt,
+.scramble__en {
+  margin: 0;
+  line-height: var(--lh-latin);
+}
+.scramble__prompt {
+  font-size: var(--fs-3);
+}
+.scramble__en {
+  font-size: var(--fs-4);
+  color: var(--fg);
+}
+
+.scramble__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+  min-height: calc(var(--touch) + var(--sp-4));
+}
+.scramble__row[data-complete='true'] {
+  border-color: var(--ai);
+}
+.scramble__placeholder {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.scramble__placed,
+.scramble__tile {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: 1.3;
+  color: var(--fg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    transform var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease),
+    opacity var(--dur-1) var(--ease);
+}
+.scramble__placed {
+  background: color-mix(in srgb, var(--ai) 12%, var(--surface));
+  border: 2px solid var(--ai);
+}
+.scramble__placed:disabled {
+  cursor: default;
+}
+.scramble__tail {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  color: var(--fg-muted);
+}
+
+.scramble__bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.scramble__tile {
+  position: relative;
+  padding-left: calc(var(--sp-3) + 1.1em);
+  background: var(--surface);
+  border: 2px solid var(--line);
+}
+.scramble__tile:hover:not(:disabled),
+.scramble__tile:focus-visible {
+  border-color: var(--ai);
+  background: var(--raised);
+}
+.scramble__tile:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.scramble__tile[data-used='true'] {
+  opacity: 0.35;
+  cursor: default;
+}
+.scramble__key {
+  position: absolute;
+  top: var(--sp-1);
+  left: var(--sp-1);
+  min-width: 1.1em;
+  padding: 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.4;
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.scramble__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.scramble__check {
+  margin-left: auto;
+}
+.scramble__fixes {
+  flex-basis: 100%;
+  min-height: 1.2em;
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+
+.scramble__result {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-left: 4px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--raised);
+}
+.scramble__result[data-kind='correct'] {
+  border-left-color: var(--matcha);
+}
+.scramble__result[data-kind='near'] {
+  border-left-color: var(--kin);
+}
+.scramble__result[data-kind='wrong'] {
+  border-left-color: var(--shu);
+}
+.scramble__line,
+.scramble__correct,
+.scramble__why {
+  margin: 0;
+}
+.scramble__correct {
+  display: grid;
+  gap: var(--sp-1);
+}
+.scramble__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.scramble__sentence {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: var(--lh-ja);
+}
+.scramble__why {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.scramble__empty {
+  margin: 0;
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scramble__placed,
+  .scramble__tile {
+    transition: none;
+  }
+  .scramble__tile:active:not(:disabled) {
+    transform: none;
+  }
+}
+.reduced-motion .scramble__placed,
+.reduced-motion .scramble__tile {
+  transition: none;
+}

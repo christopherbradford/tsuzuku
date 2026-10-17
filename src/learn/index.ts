@@ -17,9 +17,9 @@ export * from './governors';
 export * from './intro-policy';
 export * from './queue';
 
-export { toRating, isMature, isSlow, SCORE_BANDS } from './grading';
-export { judgeRate, shouldJudge, judgeOptions, rubricJudge, perceptionJudge } from './judge';
-export { KIAI_RULES, kiaiInit, kiaiStep } from './kiai';
-export { isNemesis, nemesisPhase, duelProgress, defeat } from './leech';
-export { meaningChoices, kanaGrid, kanjiLookalikes, clozeTiles, scrambleTiles } from './distractors';
-export { conjugate, applicableForms, isConjugable } from './conjugate';
+export { toRating, isMature, isSlow, SCORE_BANDS, SHADOW_BANDS, MATURE_S } from './grading';
+export { judgeRate, shouldJudge, judgeOptions, rubricJudge, perceptionJudge, rubricPasses, honestyRate } from './judge';
+export { KIAI_RULES, kiaiInit, kiaiStep, comboTier, dueRecoveries } from './kiai';
+export { isNemesis, nemesisPhase, duelProgress, defeat, nextDuelKey, wonToday } from './leech';
+export { meaningChoices, kanaGrid, kanjiLookalikes, clozeTiles, scrambleTiles, PARTICLES, particleOptions, minimalPairPartner } from './distractors';
+export { conjugate, applicableForms, isConjugable, acceptedSurfaces, applicableFormsFor, conjugateAll, type Conjugation } from './conjugate';

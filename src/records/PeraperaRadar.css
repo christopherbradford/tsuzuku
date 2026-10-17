@@ -1,0 +1,135 @@
+/* TSUZUKU — Perapera radar block (group B). Tokens only; mobile-first. */
+
+.perapera {
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.perapera__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+.perapera__title {
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.perapera__title [lang="ja"] {
+  font-family: var(--font-neon);
+  color: var(--neon-c);
+}
+.perapera__title-en {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.perapera__composite {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.perapera__composite-num {
+  font-size: var(--fs-6);
+  font-weight: 600;
+  line-height: 1;
+}
+.perapera__composite-label {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.perapera__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+@media (min-width: 640px) {
+  .perapera__body {
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    align-items: start;
+  }
+}
+.perapera__axes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
+}
+.perapera__axis dt {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-weight: 600;
+}
+.perapera__axis dt [lang="ja"] {
+  font-size: var(--fs-4);
+}
+.perapera__axis-en {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.perapera__axis-value {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-4);
+}
+.perapera__axis dd {
+  margin: 2px 0 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.perapera__axis--off dt,
+.perapera__axis--off .perapera__axis-value {
+  color: var(--hai);
+}
+.perapera__flags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.perapera__flags .tag {
+  margin-right: var(--sp-1);
+}
+.perapera__note {
+  margin: var(--sp-3) 0 0;
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+.perapera__history {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-2);
+}
+.perapera__history summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  cursor: pointer;
+}
+.perapera__history table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.perapera__history th,
+.perapera__history td {
+  padding: var(--sp-1) var(--sp-2);
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+}
+.perapera__history th[scope="row"],
+.perapera__history thead th:first-child {
+  text-align: left;
+}

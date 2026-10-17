@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`station-sign > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"28831:626859e"`;
+
+exports[`station-sign > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 129.6,
+    "text": "ハナ",
+    "weight": 700,
+    "x": 1029.1200000000001,
+    "y": 481.67999999999995,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#5E5A52",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "letterSpacing": 6.48,
+    "size": 29.16,
+    "text": "平塚駅",
+    "x": 1029.1200000000001,
+    "y": 540,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": "-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif",
+    "lang": "en",
+    "size": 44.226000000000006,
+    "text": "7",
+    "weight": 700,
+    "x": 522.24,
+    "y": 464.4432,
+  },
+  {
+    "anchor": "start",
+    "fill": "#F4EDE0",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 35.64,
+    "text": "藤沢",
+    "weight": 600,
+    "x": 460.68,
+    "y": 643.68,
+  },
+  {
+    "anchor": "end",
+    "fill": "#F4EDE0",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 35.64,
+    "text": "大磯",
+    "weight": 600,
+    "x": 1459.3200000000002,
+    "y": 643.68,
+  },
+]
+`;
+
+exports[`station-sign > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"22053:bf6e831b"`;
+
+exports[`station-sign > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 187.2,
+    "text": "ハナ",
+    "weight": 700,
+    "x": 598.32,
+    "y": 1038.96,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#5E5A52",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "letterSpacing": 9.36,
+    "size": 42.12,
+    "text": "平塚駅",
+    "x": 598.32,
+    "y": 1123.2,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#1A1A1F",
+    "font": "-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif",
+    "lang": "en",
+    "size": 63.882000000000005,
+    "text": "7",
+    "weight": 700,
+    "x": 170.64,
+    "y": 1014.0624,
+  },
+  {
+    "anchor": "start",
+    "fill": "#F4EDE0",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 51.48,
+    "text": "藤沢",
+    "weight": 600,
+    "x": 144,
+    "y": 1272.9600000000003,
+  },
+  {
+    "anchor": "end",
+    "fill": "#F4EDE0",
+    "font": ""Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif",
+    "lang": "ja",
+    "size": 51.48,
+    "text": "大磯",
+    "weight": 600,
+    "x": 935.9999999999999,
+    "y": 1272.9600000000003,
+  },
+]
+`;

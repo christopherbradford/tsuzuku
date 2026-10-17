@@ -1,0 +1,125 @@
+/* TSUZUKU — <SessionView> (group E). Layout around the shared ExerciseFrame; the frame styles itself. */
+
+.session {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-height: 100%;
+  color: var(--fg);
+}
+
+.session__bar {
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-2) var(--gutter) 0;
+}
+
+.session__leave {
+  min-height: var(--touch);
+}
+
+.session__loading {
+  margin: var(--sp-5) auto;
+  text-align: center;
+}
+
+.session__exercise {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.session__exercise[aria-hidden='true'] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.session__judge {
+  animation: session-judge-in 220ms var(--ease) both;
+}
+
+.session__missing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.session__missing-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.session__missing-body {
+  margin: 0;
+  color: var(--fg-muted);
+}
+
+.session__missing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.session__dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: var(--gutter);
+  background: rgba(11, 11, 16, 0.6);
+}
+
+.session__dialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  width: min(100%, 420px);
+  padding: var(--sp-4);
+}
+
+.session__dialog-title {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+
+.session__dialog-body {
+  margin: 0;
+  color: var(--fg-muted);
+}
+
+.session__dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+}
+
+.session--done {
+  padding-bottom: var(--sp-5);
+}
+
+@keyframes session-judge-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .session__judge {
+    animation: none;
+  }
+}
+.reduced-motion .session__judge {
+  animation: none;
+}

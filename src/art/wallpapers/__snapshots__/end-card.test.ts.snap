@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`end-card > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"10364:8f1a148f"`;
+
+exports[`end-card > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 298.33,
+    "text": "つづく",
+    "x": 960,
+    "y": 638.4489,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#C9302C",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": 2.1202082284726202,
+    "size": 53.6994,
+    "text": "続",
+    "x": 1438.8196499999997,
+    "y": 798.3537800000001,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#A9A49A",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 4.62,
+    "size": 33,
+    "text": "連続96日",
+    "x": 960,
+    "y": 886.1135000000002,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#6E6A61",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 2.64,
+    "size": 26,
+    "text": "令和8年5月20日",
+    "x": 960,
+    "y": 942.2135000000002,
+  },
+]
+`;
+
+exports[`end-card > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"10473:fcfe2567"`;
+
+exports[`end-card > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "anchor": "middle",
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 259.66,
+    "text": "つづく",
+    "x": 540,
+    "y": 1181.0278,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#C9302C",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "rotate": 2.1202082284726202,
+    "size": 46.738800000000005,
+    "text": "続",
+    "x": 956.7543,
+    "y": 1320.20556,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#A9A49A",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 4.0600000000000005,
+    "size": 29,
+    "text": "連続96日",
+    "x": 540,
+    "y": 1397.117,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#6E6A61",
+    "font": ""Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "letterSpacing": 2.32,
+    "size": 23,
+    "text": "令和8年5月20日",
+    "x": 540,
+    "y": 1446.417,
+  },
+]
+`;

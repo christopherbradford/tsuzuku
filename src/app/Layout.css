@@ -1,0 +1,181 @@
+/*
+ * TSUZUKU — shell layout (group A). Header, main, bottom nav, notices.
+ * Mobile-first (works at 320 px), safe-area aware, tokens only.
+ */
+.layout {
+  --nav-height: 60px;
+  --header-height: 56px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ── header ─────────────────────────────────────────────────────────── */
+.layout__header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  min-height: var(--header-height);
+  padding: calc(var(--sp-2) + var(--safe-top)) max(var(--gutter), var(--safe-right)) var(--sp-2) max(var(--gutter), var(--safe-left));
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.layout__brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  color: var(--fg);
+  text-decoration: none;
+}
+.layout__brand-ja {
+  font-size: var(--fs-4);
+  color: var(--shu);
+}
+.layout__brand-en {
+  font-size: var(--fs-2);
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+}
+.layout__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  margin-left: auto;
+  font-size: var(--fs-2);
+}
+.layout__days {
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.layout__dan {
+  font-size: var(--fs-1);
+  color: var(--kin);
+}
+.layout__level {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-2);
+  white-space: nowrap;
+}
+.layout__xp {
+  width: 56px;
+  height: 6px;
+}
+.layout .flame {
+  min-width: var(--touch);
+  min-height: var(--touch);
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .layout__brand-en {
+    display: none;
+  }
+  .layout__status {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+}
+
+/* ── notices ────────────────────────────────────────────────────────── */
+.layout__notice {
+  margin: var(--sp-3) max(var(--gutter), var(--safe-right)) 0 max(var(--gutter), var(--safe-left));
+}
+.layout__notice-text {
+  flex: 1 1 200px;
+}
+
+/* ── main ───────────────────────────────────────────────────────────── */
+.layout__main {
+  flex: 1 1 auto;
+  width: 100%;
+  padding-top: var(--sp-4);
+  padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + var(--sp-5));
+  outline: none;
+}
+.layout[data-route="train"] .layout__main,
+.layout[data-route="gate"] .layout__main,
+.layout[data-route="shinsa"] .layout__main {
+  padding-top: var(--sp-2);
+}
+
+/* ── bottom nav ─────────────────────────────────────────────────────── */
+.layout__nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  min-height: calc(var(--nav-height) + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+.layout[data-route="train"] .layout__nav,
+.layout[data-route="gate"] .layout__nav,
+.layout[data-route="shinsa"] .layout__nav,
+.layout[data-route="onboarding"] .layout__nav {
+  display: none;
+}
+.layout[data-route="train"] .layout__main,
+.layout[data-route="gate"] .layout__main,
+.layout[data-route="shinsa"] .layout__main,
+.layout[data-route="onboarding"] .layout__main {
+  padding-bottom: calc(var(--safe-bottom) + var(--sp-5));
+}
+.nav__label {
+  font-size: var(--fs-1);
+}
+@media (max-width: 360px) {
+  .nav__label {
+    font-size: 0.65rem;
+  }
+}
+
+/* wide screens: nav becomes a top strip under the header, content centered */
+@media (min-width: 900px) {
+  .layout__nav {
+    position: sticky;
+    top: var(--header-height);
+    bottom: auto;
+    justify-content: center;
+    gap: var(--sp-4);
+    min-height: var(--touch);
+    padding-bottom: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .layout__nav .nav__item {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: var(--sp-2);
+    padding: var(--sp-2) var(--sp-3);
+    font-size: var(--fs-2);
+    border-top: 0;
+    border-bottom: 2px solid transparent;
+  }
+  .layout__nav .nav__item[aria-current="page"] {
+    border-bottom-color: var(--shu);
+  }
+  .layout__main {
+    padding-bottom: var(--sp-6);
+  }
+  .layout__toast {
+    bottom: var(--sp-5);
+  }
+}
+
+/* ── skip link ──────────────────────────────────────────────────────── */
+.skip-link {
+  cursor: pointer;
+}

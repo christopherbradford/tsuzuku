@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`festival > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"77777:e4f94dd1"`;
+
+exports[`festival > desktop: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 99.53,
+    "text": "人",
+    "vertical": true,
+    "x": 170.52580196621417,
+    "y": 436.5045596251002,
+  },
+  {
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 98.66,
+    "text": "大きい",
+    "vertical": true,
+    "x": 390.1773309475422,
+    "y": 384.37270100081446,
+  },
+  {
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 99.53,
+    "text": "友達",
+    "vertical": true,
+    "x": 1530.5511777675392,
+    "y": 392.06136736315557,
+  },
+  {
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 99.53,
+    "text": "来る",
+    "vertical": true,
+    "x": 1777.4128082043171,
+    "y": 437.49169554309805,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#C9302C",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 61.824,
+    "text": "祭",
+    "weight": 700,
+    "x": 956.2085712432861,
+    "y": 537.1584,
+  },
+]
+`;
+
+exports[`festival > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 1`] = `"52154:897315cc"`;
+
+exports[`festival > phone: seed 1 + fixture data is deterministic, well-formed and self-contained (snapshot) 2`] = `
+[
+  {
+    "fill": "#0B0B10",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 116.64,
+    "text": "人",
+    "vertical": true,
+    "x": 155.58456769946963,
+    "y": 1094.9877798398807,
+  },
+  {
+    "fill": "#F4EDE0",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 116.64,
+    "text": "大きい",
+    "vertical": true,
+    "x": 931.6966832582652,
+    "y": 958.3146151546954,
+  },
+  {
+    "anchor": "middle",
+    "fill": "#C9302C",
+    "font": ""Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif",
+    "lang": "ja",
+    "size": 76.5072,
+    "text": "祭",
+    "weight": 700,
+    "x": 567.4506550289691,
+    "y": 1303.55352,
+  },
+]
+`;

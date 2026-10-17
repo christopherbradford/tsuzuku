@@ -1,0 +1,142 @@
+/*
+ * TSUZUKU — 他流試合 Field Mission (src/input/missions, group F).
+ * Tokens only (src/styles/tokens.css). Mobile-first: fits 360 px with the
+ * 16 px gutter; 44 px targets; every state is shape + text, never color alone.
+ */
+.mission {
+  display: grid;
+  gap: var(--sp-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+.mission__head {
+  display: grid;
+  gap: var(--sp-2);
+}
+.mission__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.mission__title-ja {
+  font-family: var(--font-brush);
+  font-size: var(--fs-5);
+  line-height: 1;
+}
+.mission__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-2);
+  margin: 0;
+}
+.mission__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  margin: 0;
+  font-size: var(--fs-4);
+  font-weight: 600;
+}
+.mission__name [lang='ja'] {
+  font-family: var(--font-mincho);
+  font-size: var(--fs-5);
+}
+.mission__prompt {
+  margin: 0;
+  font-size: var(--fs-4);
+  line-height: 1.5;
+}
+.mission__note {
+  margin: 0;
+  color: var(--fg-muted);
+}
+.mission__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.mission__report {
+  display: grid;
+  gap: var(--sp-3);
+}
+.mission__field {
+  display: grid;
+  gap: var(--sp-1);
+}
+.mission__label {
+  font-weight: 600;
+  font-size: var(--fs-2);
+}
+.mission__minutes {
+  max-width: 10em;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.mission__gaps {
+  display: grid;
+  gap: var(--sp-3);
+  margin: 0;
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.mission__gaps legend {
+  font-weight: 600;
+}
+.mission__gap {
+  display: grid;
+  gap: var(--sp-2);
+}
+.mission__gap input,
+.mission__gap select {
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mission__result {
+  display: grid;
+  gap: var(--sp-2);
+  padding-left: var(--sp-3);
+  border-left: 4px solid var(--matcha);
+}
+.mission__result[data-reported='false'] {
+  border-left-style: dashed;
+  border-left-color: var(--line);
+}
+.mission__verdict {
+  margin: 0;
+  font-weight: 600;
+}
+.mission__outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mission__outcomes .chip {
+  white-space: normal;
+}
+.mission__outcomes [data-outcome='captured'] {
+  border-color: var(--matcha);
+}
+.mission__outcomes [data-outcome='bookmarked'] {
+  border-style: dashed;
+}
+
+@media (min-width: 600px) {
+  .mission__gap {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: end;
+  }
+}

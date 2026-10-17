@@ -1,0 +1,786 @@
+/*
+ * TSUZUKU — the global component class contract (group A, ARCHITECTURE §7,
+ * design 01 §4.4). Nobody imports A components; everyone uses these names.
+ * src/shared/ui/ui.css layers scoped rules on top of the base looks here.
+ *
+ * CLASSES: .status-window .scroll-card .hanko .hanko--lg .btn .btn--ghost
+ *          .btn--danger .chip .card .panel .forge-bar .forge-bar__fill .combo
+ *          .judge-card .tategaki .road-nav .road-nav__station .seal .progress
+ *          .progress__fill .belt .belt--white .belt--yellow .belt--orange
+ *          .belt--green .belt--blue .belt--purple .belt--brown .belt--black
+ *          .modal .modal__card .toast .nav .nav__item .kbd .tag .flame
+ *          .empty .notice .notice--warn .list .list__item .field .field__label
+ *          .input .select .switch
+ *
+ * Motion 120–220 ms on --ease; every transform/animation is removed under
+ * prefers-reduced-motion and body.reduced-motion. Sumi + neon: paper surfaces
+ * (--surface / --raised), hanko red (--shu) for the one primary action, gold
+ * (--kin) for XP. No color literals: tokens only.
+ */
+
+/* ── Status Window: JRPG frame, 2 px double border, notched corners ──── */
+.status-window {
+  position: relative;
+  padding: var(--sp-3) var(--sp-4);
+  color: var(--fg);
+  background: color-mix(in srgb, var(--raised) 92%, transparent);
+  border: 2px double var(--fg-muted);
+  border-radius: 2px;
+  clip-path: polygon(
+    6px 0, calc(100% - 6px) 0, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) 100%,
+    6px 100%, 0 calc(100% - 6px), 0 6px
+  );
+}
+.status-window__label,
+.status-window > h2,
+.status-window > h3 {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ── Scroll Card: makimono with rolled end caps, unroll 240 ms ───────── */
+.scroll-card {
+  position: relative;
+  padding: var(--sp-4) var(--sp-4);
+  margin-inline: 6px;
+  color: var(--fg);
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  transform-origin: top center;
+  animation: scroll-unroll 240ms var(--ease) both;
+}
+.scroll-card::before,
+.scroll-card::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 10px;
+  background: linear-gradient(to right, var(--raised), var(--line), var(--raised));
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.scroll-card::before {
+  left: -6px;
+}
+.scroll-card::after {
+  right: -6px;
+}
+.scroll-card__title {
+  font-family: var(--font-brush);
+  font-size: var(--fs-4);
+}
+@keyframes scroll-unroll {
+  from {
+    transform: scaleY(0.04);
+    opacity: 0.4;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ── Hanko Button: the one vermilion seal CTA ────────────────────────── */
+.hanko {
+  --hanko-size: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-width: var(--hanko-size);
+  min-height: var(--hanko-size);
+  padding: var(--sp-3) var(--sp-5);
+  font-weight: 700;
+  font-size: var(--fs-3);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--bg);
+  background: var(--shu);
+  border: 2px solid var(--shu);
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--bg) 35%, transparent),
+    0 1px 0 color-mix(in srgb, var(--fg) 25%, transparent);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 60ms var(--ease),
+    box-shadow 220ms var(--ease),
+    background 120ms var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.hanko [lang="ja"] {
+  font-family: var(--font-brush);
+  font-size: 1.15em;
+  line-height: 1;
+}
+.hanko:hover {
+  background: color-mix(in srgb, var(--shu) 88%, var(--fg));
+}
+.hanko:active {
+  transform: scale(0.96);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--bg) 35%, transparent),
+    0 0 0 6px color-mix(in srgb, var(--shu) 30%, transparent);
+}
+.hanko:disabled,
+.hanko[aria-disabled="true"] {
+  color: var(--surface);
+  background: var(--hai);
+  border-color: var(--hai);
+  box-shadow: none;
+  cursor: default;
+}
+.hanko--lg {
+  --hanko-size: 88px;
+  flex-direction: column;
+  padding: var(--sp-4) var(--sp-5);
+  font-size: var(--fs-4);
+}
+.hanko--lg small {
+  font-weight: 400;
+  font-size: var(--fs-1);
+  opacity: 0.85;
+}
+.hanko--pressed,
+.hanko.is-pressed {
+  animation: ink-bleed 220ms var(--ease);
+}
+@keyframes ink-bleed {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--shu) 45%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 14px color-mix(in srgb, var(--shu) 0%, transparent);
+  }
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: var(--sp-2) var(--sp-4);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--fg);
+  background: var(--raised);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-1) var(--ease),
+    background var(--dur-1) var(--ease),
+    transform 60ms var(--ease);
+}
+.btn:hover {
+  border-color: var(--fg-muted);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  color: var(--hai);
+  cursor: default;
+  transform: none;
+}
+.btn--ghost {
+  background: transparent;
+}
+.btn--danger {
+  color: var(--shu);
+  border-color: color-mix(in srgb, var(--shu) 50%, var(--line));
+}
+.btn--sm {
+  min-height: 36px;
+  padding: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-2);
+}
+.btn[aria-pressed="true"] {
+  border-color: var(--ai);
+  background: color-mix(in srgb, var(--ai) 12%, var(--raised));
+}
+
+/* ── Chip, tag, kbd ──────────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 2px var(--sp-2);
+  font-size: var(--fs-1);
+  line-height: 1.4;
+  color: var(--fg-muted);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.chip--kiai {
+  color: var(--bg);
+  background: var(--kin);
+  border-color: var(--kin);
+}
+.chip--tag {
+  color: var(--shu);
+  border-color: color-mix(in srgb, var(--shu) 40%, var(--line));
+}
+.chip--accent {
+  color: var(--ai);
+  border-color: color-mix(in srgb, var(--ai) 40%, var(--line));
+}
+.tag {
+  display: inline-block;
+  padding: 0 var(--sp-2);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.6;
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.kbd,
+kbd.kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0 var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-1);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--fg-muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Card / panel / notice / empty ───────────────────────────────────── */
+.card {
+  padding: var(--sp-4);
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.card--link {
+  display: block;
+  text-decoration: none;
+  transition: border-color var(--dur-1) var(--ease);
+}
+.card--link:hover {
+  border-color: var(--fg-muted);
+}
+.panel {
+  padding: var(--sp-4);
+  background: var(--raised);
+  border-radius: var(--radius);
+}
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  padding: var(--sp-2) var(--sp-4);
+  color: var(--fg);
+  background: var(--raised);
+  border-left: 4px solid var(--ai);
+  border-radius: var(--radius-sm);
+}
+.notice--warn {
+  border-left-color: var(--kin);
+}
+.notice--shu {
+  border-left-color: var(--shu);
+}
+.empty {
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+  color: var(--fg-muted);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: var(--touch);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+.list__item:last-child {
+  border-bottom: 0;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.field__label {
+  font-size: var(--fs-2);
+  font-weight: 600;
+}
+.field__hint {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.input,
+.select,
+input.input,
+select.select,
+textarea.input {
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--sp-2) var(--sp-3);
+  color: var(--fg);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-1) var(--ease);
+}
+.input:focus,
+.select:focus {
+  border-color: var(--ai);
+}
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch);
+  cursor: pointer;
+}
+
+/* ── Forge Bar: due reviews as a depleting HP bar labelled 百錬 ──────── */
+.forge-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 28px;
+}
+.forge-bar__label {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  white-space: nowrap;
+}
+.forge-bar__track {
+  position: relative;
+  flex: 1 1 auto;
+  height: 10px;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--fg-muted);
+  border-radius: 3px;
+}
+.forge-bar__fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--shu), var(--kin));
+  transition: width 220ms var(--ease);
+}
+.forge-bar__count {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-2);
+  color: var(--fg-muted);
+}
+
+/* ── Progress (generic) ──────────────────────────────────────────────── */
+.progress {
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  background: var(--line);
+  border-radius: 4px;
+}
+.progress__fill {
+  height: 100%;
+  background: var(--kin);
+  border-radius: inherit;
+  transition: width 220ms var(--ease);
+}
+.progress--ai .progress__fill {
+  background: var(--ai);
+}
+.progress--matcha .progress__fill {
+  background: var(--matcha);
+}
+
+/* ── Combo Counter: arcade, pixel, scales by tier (hidden in Zen) ────── */
+.combo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  font-family: var(--font-pixel);
+  font-size: var(--fs-4);
+  line-height: 1;
+  color: var(--fg);
+  transform-origin: right center;
+  transition: transform 220ms var(--ease), color 220ms var(--ease);
+}
+.combo small {
+  font-size: var(--fs-1);
+  color: var(--fg-muted);
+}
+.combo[data-tier="1"] {
+  transform: scale(1.1);
+}
+.combo[data-tier="2"] {
+  transform: scale(1.2);
+  color: var(--kin);
+}
+.combo[data-tier="3"] {
+  transform: scale(1.3);
+  color: var(--shu);
+}
+.feel-zen .combo,
+.feel-zen .forge-bar__fill {
+  display: none;
+}
+
+/* ── Judge Card: 目付 inspector (slide-in lives in ui.css) ───────────── */
+.judge-card {
+  position: relative;
+  border-left: 4px solid var(--ai);
+}
+
+/* ── Tategaki: vertical column ───────────────────────────────────────── */
+.tategaki {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-ja);
+  font-feature-settings: "palt", "vert";
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  max-height: 100%;
+}
+.tategaki--mincho {
+  font-family: var(--font-mincho);
+}
+
+/* ── Road Nav + seal ─────────────────────────────────────────────────── */
+.road-nav {
+  display: flex;
+  gap: var(--sp-3);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding: var(--sp-3) var(--gutter);
+  margin-inline: calc(-1 * var(--gutter));
+  background:
+    linear-gradient(to bottom, transparent calc(50% - 2px), var(--line) calc(50% - 2px), var(--line) calc(50% + 2px), transparent calc(50% + 2px));
+}
+.road-nav__station {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  min-width: 72px;
+  min-height: var(--touch);
+  scroll-snap-align: center;
+  text-decoration: none;
+  color: var(--fg);
+}
+.road-nav__station[data-state="locked"] {
+  color: var(--hai);
+}
+.road-nav__station[data-state="next"] .seal {
+  background: var(--kin);
+  border-color: var(--kin);
+  color: var(--bg);
+}
+.road-nav__name {
+  font-size: var(--fs-1);
+  text-align: center;
+}
+.seal {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-brush);
+  font-size: var(--fs-2);
+  line-height: 1;
+  color: var(--bg);
+  background: var(--shu);
+  border: 2px solid var(--shu);
+  border-radius: 4px;
+  transform: rotate(-4deg);
+}
+.seal--round {
+  border-radius: 50%;
+}
+.seal--locked {
+  color: var(--hai);
+  background: transparent;
+  border-color: var(--hai);
+  border-style: dashed;
+  transform: none;
+}
+.seal--perfect {
+  box-shadow: 0 0 0 2px var(--kin);
+}
+
+/* ── Belt swatches / chips ───────────────────────────────────────────── */
+.belt {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 2px var(--sp-2) 2px 2px;
+  font-size: var(--fs-1);
+  color: var(--fg);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.belt::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--belt-color, var(--belt-white));
+  border: 1px solid var(--line);
+}
+.belt--white,
+[data-belt="white"] {
+  --belt-color: var(--belt-white);
+}
+.belt--yellow,
+[data-belt="yellow"] {
+  --belt-color: var(--belt-yellow);
+}
+.belt--orange,
+[data-belt="orange"] {
+  --belt-color: var(--belt-orange);
+}
+.belt--green,
+[data-belt="green"] {
+  --belt-color: var(--belt-green);
+}
+.belt--blue,
+[data-belt="blue"] {
+  --belt-color: var(--belt-blue);
+}
+.belt--purple,
+[data-belt="purple"] {
+  --belt-color: var(--belt-purple);
+}
+.belt--brown,
+[data-belt="brown"] {
+  --belt-color: var(--belt-brown);
+}
+.belt--black,
+[data-belt="black"] {
+  --belt-color: var(--belt-black);
+}
+.belt--black::before,
+[data-belt="black"].belt::before {
+  background-image: repeating-linear-gradient(to right, transparent 0 6px, var(--kin) 6px 8px);
+}
+
+/* ── Flame (streak) ──────────────────────────────────────────────────── */
+.flame {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--fg-muted);
+}
+.flame__glyph {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: var(--fs-4);
+  line-height: 1;
+}
+.flame[data-state="lit"] {
+  color: var(--shu);
+}
+.flame[data-state="gold"] {
+  color: var(--kin);
+}
+.flame[data-state="ember"] {
+  color: color-mix(in srgb, var(--shu) 55%, var(--hai));
+}
+.flame[data-state="frozen"] {
+  color: var(--ai);
+}
+.flame[data-state="rest"] {
+  color: var(--matcha);
+}
+.flame[data-state="broken"] {
+  color: var(--hai);
+}
+
+/* ── Modal ───────────────────────────────────────────────────────────── */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--gutter);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  animation: fade-in var(--dur-2) var(--ease) both;
+}
+.modal__card {
+  width: min(100%, 480px);
+  max-height: calc(100dvh - 2 * var(--gutter));
+  overflow: auto;
+  padding: var(--sp-5);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  animation: rise-in var(--dur-2) var(--ease) both;
+}
+.modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+/* ── Toast ───────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-height, 64px) + var(--safe-bottom) + var(--sp-3));
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  width: min(calc(100% - 2 * var(--gutter)), 480px);
+  padding: var(--sp-3) var(--sp-4);
+  color: var(--fg);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--fg) 18%, transparent);
+  transform: translateX(-50%);
+  animation: rise-in var(--dur-2) var(--ease) both;
+}
+.toast__text {
+  flex: 1 1 200px;
+}
+
+/* ── Bottom nav (base; Layout.css positions it) ──────────────────────── */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+.nav__item {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: var(--touch);
+  padding: var(--sp-1) var(--sp-1);
+  font-size: var(--fs-1);
+  line-height: 1.2;
+  color: var(--fg-muted);
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  transition: color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
+}
+.nav__item[aria-current="page"] {
+  color: var(--shu);
+  border-top-color: var(--shu);
+}
+.nav__glyph {
+  font-family: var(--font-ja);
+  font-size: var(--fs-4);
+  line-height: 1;
+}
+
+/* ── keyframes ───────────────────────────────────────────────────────── */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.toast {
+  animation-name: toast-in;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ── reduced motion: keep opacity fades, drop transforms ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-card,
+  .modal__card,
+  .toast {
+    animation: fade-in var(--dur-2) linear both;
+  }
+  .hanko--pressed,
+  .hanko.is-pressed {
+    animation: none;
+  }
+  .hanko:active,
+  .btn:active,
+  .combo[data-tier] {
+    transform: none;
+  }
+  .toast {
+    transform: translateX(-50%);
+  }
+}
+.reduced-motion .scroll-card,
+.reduced-motion .modal__card,
+.reduced-motion .toast {
+  animation: fade-in var(--dur-2) linear both;
+}
+.reduced-motion .hanko--pressed,
+.reduced-motion .hanko.is-pressed {
+  animation: none;
+}
+.reduced-motion .hanko:active,
+.reduced-motion .btn:active,
+.reduced-motion .combo[data-tier] {
+  transform: none;
+}
+.reduced-motion .toast {
+  transform: translateX(-50%);
+}
