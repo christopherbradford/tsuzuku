@@ -1,0 +1,19 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "kana",
+  "writer": "fixture",
+  "items": [
+    { "id": "k-h-a", "kana": "あ", "romaji": "a", "script": "hiragana", "type": "basic", "row": "a", "mnemonic": "An antenna on a round roof: AH, a signal.", "exampleWord": { "word": "あさ", "kana": "あさ", "en": "morning" } },
+    { "id": "k-h-i", "kana": "い", "romaji": "i", "script": "hiragana", "type": "basic", "row": "a", "mnemonic": "Two eels swimming side by side: EEL.", "exampleWord": { "word": "いぬ", "kana": "いぬ", "en": "dog" } },
+    { "id": "k-h-u", "kana": "う", "romaji": "u", "script": "hiragana", "type": "basic", "row": "a", "mnemonic": "A boxer taking a punch in the gut: OOH.", "exampleWord": { "word": "うみ", "kana": "うみ", "en": "sea" } },
+    { "id": "k-h-ka", "kana": "か", "romaji": "ka", "script": "hiragana", "type": "basic", "row": "k", "mnemonic": "A katana swinging down, a chip flying off the blade: KA.", "exampleWord": { "word": "かさ", "kana": "かさ", "en": "umbrella" } },
+    { "id": "k-h-ki", "kana": "き", "romaji": "ki", "script": "hiragana", "type": "basic", "row": "k", "mnemonic": "A key with two teeth: KEY.", "exampleWord": { "word": "きた", "kana": "きた", "en": "north" } },
+    { "id": "k-h-ne", "kana": "ね", "romaji": "ne", "script": "hiragana", "type": "basic", "row": "n", "mnemonic": "A cat with a curled tail saying NEH.", "exampleWord": { "word": "ねこ", "kana": "ねこ", "en": "cat" }, "lookalikes": ["k-h-re", "k-h-wa"] },
+    { "id": "k-h-re", "kana": "れ", "romaji": "re", "script": "hiragana", "type": "basic", "row": "r", "mnemonic": "A cat whose tail flicks out straight: REH.", "exampleWord": { "word": "れい", "kana": "れい", "en": "zero" }, "lookalikes": ["k-h-ne", "k-h-wa"] },
+    { "id": "k-h-wa", "kana": "わ", "romaji": "wa", "script": "hiragana", "type": "basic", "row": "w", "mnemonic": "A cat with a round belly: WAH.", "exampleWord": { "word": "わたし", "kana": "わたし", "en": "I" }, "lookalikes": ["k-h-ne", "k-h-re"] },
+    { "id": "k-h-n", "kana": "ん", "romaji": "n", "script": "hiragana", "type": "basic", "row": "nn", "mnemonic": "A lowercase n with a long tail: N.", "exampleWord": { "word": "ほん", "kana": "ほん", "en": "book" } },
+    { "id": "k-h-ga", "kana": "が", "romaji": "ga", "script": "hiragana", "type": "dakuten", "row": "g", "mnemonic": "The katana with two sparks: GA.", "exampleWord": { "word": "がくせい", "kana": "がくせい", "en": "student" } },
+    { "id": "k-h-pa", "kana": "ぱ", "romaji": "pa", "script": "hiragana", "type": "handakuten", "row": "p", "mnemonic": "A flag with a little balloon: PA.", "exampleWord": { "word": "ぱん", "kana": "ぱん", "en": "bread" } },
+    { "id": "k-h-kya", "kana": "きゃ", "romaji": "kya", "script": "hiragana", "type": "yoon", "row": "k", "mnemonic": "The key opens a small ya-gate: KYA.", "exampleWord": { "word": "きゃく", "kana": "きゃく", "en": "guest" } }
+  ]
+}

@@ -650,6 +650,13 @@ export interface MichikusaItem {
   sourceNote?: string;
 }
 
+/**
+ * Any item the loader can hand back by id (ARCHITECTURE §3). Stations and
+ * conjugation rows are not items: `StationBundle` is a file, the golden table
+ * is read only by `learn/conjugate.test.ts`.
+ */
+export type ContentItem = KanaItem | VocabItem | KanjiItem | GrammarItem | StoryItem | MichikusaItem | ComponentDef;
+
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Curriculum: belts and stations                                             */
 /* ────────────────────────────────────────────────────────────────────────── */

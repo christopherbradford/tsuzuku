@@ -1,0 +1,168 @@
+/*
+ * TSUZUKU — design tokens (ARCHITECTURE §7, design 01 §4).
+ * Themes: Dojo Morning (light, :root) and Arcade Night (dark).
+ * Dark applies under prefers-color-scheme unless [data-theme="light"], and
+ * always under [data-theme="dark"]. Belt and crest colors are theme-invariant.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* pigments — Dojo Morning */
+  --bg: #F4EDE0;
+  --surface: #FFFBF3;
+  --raised: #EADFCB;
+  --fg: #1A1A1F;
+  --fg-muted: #5E5A52;
+  --line: #D9CDB6;
+  --shu: #C9302C;
+  --kin: #B8860B;
+  --ai: #1F2A6B;
+  --sakura: #C9718A;
+  --matcha: #4E8A3C;
+  --neon-c: #0E8F86;
+  --neon-m: #B8257A;
+  --kon: #1F3A93;
+  --hai: #8A8578;
+  --focus: #1F2A6B;
+
+  /* belts (same in both themes) */
+  --belt-white: #F4EDE0;
+  --belt-yellow: #F2D54A;
+  --belt-orange: #F08A24;
+  --belt-green: #3E9B4F;
+  --belt-blue: #2F6FD6;
+  --belt-purple: #7A3FB5;
+  --belt-brown: #6B3F23;
+  --belt-black: #0B0B10;
+
+  /* crest rings (gold ring uses --kin) */
+  --bronze: #B87333;
+  --silver: #C9CED6;
+
+  /* fonts — system stacks; webfont names lead so a later @font-face just works */
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, Meiryo, "Noto Sans CJK JP", "Noto Sans JP", "BIZ UDPGothic", sans-serif;
+  --font-pixel: "DotGothic16", "Hiragino Sans", "Yu Gothic UI", "Noto Sans CJK JP", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-brush: "Yuji Syuku", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif;
+  --font-mincho: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "MS PMincho", serif;
+  --font-neon: "Dela Gothic One", "Hiragino Sans", "Yu Gothic UI", "Arial Black", Impact, "Noto Sans CJK JP", sans-serif;
+
+  /* type scale (rem): 0.75 / 0.875 / 1 / 1.25 / 1.75 / 2.5 / 4 / 7.5 */
+  --fs-1: 0.75rem;
+  --fs-2: 0.875rem;
+  --fs-3: 1rem;
+  --fs-4: 1.25rem;
+  --fs-5: 1.75rem;
+  --fs-6: 2.5rem;
+  --fs-7: 4rem;
+  --fs-8: 7.5rem;
+
+  --lh-ja: 1.8;
+  --lh-latin: 1.5;
+
+  /* motion */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+
+  /* layout */
+  --gutter: 16px;
+  --touch: 44px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  --focus-ring: 3px;
+  --focus-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg: #0B0B10;
+    --surface: #15151D;
+    --raised: #1F1F2A;
+    --fg: #F4EDE0;
+    --fg-muted: #A9A49A;
+    --line: #2C2C3A;
+    --shu: #E63B2E;
+    --kin: #E0B341;
+    --ai: #6C7BD9;
+    --sakura: #F7B2C4;
+    --matcha: #7BB661;
+    --neon-c: #2EE6D6;
+    --neon-m: #FF3DA6;
+    --kon: #4F6FD6;
+    --hai: #6E6A61;
+    --focus: #2EE6D6;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0B0B10;
+  --surface: #15151D;
+  --raised: #1F1F2A;
+  --fg: #F4EDE0;
+  --fg-muted: #A9A49A;
+  --line: #2C2C3A;
+  --shu: #E63B2E;
+  --kin: #E0B341;
+  --ai: #6C7BD9;
+  --sakura: #F7B2C4;
+  --matcha: #7BB661;
+  --neon-c: #2EE6D6;
+  --neon-m: #FF3DA6;
+  --kon: #4F6FD6;
+  --hai: #6E6A61;
+  --focus: #2EE6D6;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: var(--fs-3);
+  line-height: var(--lh-latin);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+:lang(ja),
+[lang="ja"] {
+  font-family: var(--font-ja);
+  font-feature-settings: "palt";
+  line-height: var(--lh-ja);
+}
+
+:focus-visible {
+  outline: var(--focus-ring) solid var(--focus);
+  outline-offset: var(--focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+  }
+}
+
+.reduced-motion {
+  --dur-1: 0ms;
+  --dur-2: 0ms;
+}

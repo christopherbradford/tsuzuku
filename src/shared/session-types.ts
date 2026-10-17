@@ -1,0 +1,215 @@
+/**
+ * TSUZUKU — session contracts (ARCHITECTURE §5, verbatim).
+ *
+ * `AttemptResult` is declared here and re-exported by `exercise-types.ts`.
+ * Depends only on `content/types` and `store-types` (type-only; no cycles).
+ */
+import type { CardKey, ConjForm, DrillId, ErrorTag, RegisterTag } from '../content/types';
+import type { EpochDay, ItemBelt, Rating } from './store-types';
+
+export const SESSION_MODES = [
+  'kata',
+  'kumite',
+  'shugyo',
+  'kage',
+  'weak',
+  'rapid',
+  'gojuon',
+  'gate',
+  'shinsa',
+  'scroll',
+  'welcome',
+  'dan',
+] as const;
+export type SessionMode = (typeof SESSION_MODES)[number];
+
+export const BLOCK_KINDS = [
+  'warmup',
+  'reviews',
+  'scroll',
+  'sparring',
+  'input',
+  'output',
+  'weak',
+  'michikusa',
+  'cooldown',
+  'phase',
+] as const;
+export type BlockKind = (typeof BLOCK_KINDS)[number];
+
+export type StepParams = Partial<{
+  choices: string[];
+  answer: string;
+  accept: string[];
+  /** Per-form answers (form-chain). */
+  answers: string[];
+  /** Kanji candidates Space cycles (production-forge). */
+  candidates: string[];
+  targetForm: ConjForm;
+  forms: ConjForm[];
+  sentence: string;
+  blank: [number, number];
+  /** 1–3 particle slots (particle-duel). */
+  blanks: [number, number][];
+  tiles: string[];
+  /** Component-assembly frame. */
+  layout: 'lr' | 'tb' | 'enc';
+  storyId: string;
+  lineIndex: number;
+  rate: number;
+  distractorIds: string[];
+  promptEn: string;
+  seconds: number;
+  tag: ErrorTag;
+  pool: CardKey[];
+  phase: 1 | 2 | 3 | 4;
+  michikusaId: string;
+  scrollId: string;
+  registerTarget: RegisterTag;
+  mode: 'choose' | 'build' | 'type' | 'speak' | 'reduce-expand';
+  kanaOnlyPolicy: 'good' | 'hard';
+  /** Required grammar (writing-dojo). */
+  patternIds: string[];
+  missionId: string;
+  /** Untimed re-test of an arcade miss. */
+  recheck: boolean;
+}>;
+
+export type StepTag = 'intro' | '+3' | '+10' | 'recovery' | 'relearn';
+
+export interface Step {
+  id: string;
+  block: BlockKind;
+  exercise: DrillId;
+  itemId: string | null;
+  cardKey: CardKey | null;
+  params: StepParams;
+  timed: boolean;
+  timerMs?: number;
+  isNew: boolean;
+  stepTag: StepTag | null;
+  exposures: number;
+  estMs: number;
+}
+
+export interface SessionBlock {
+  kind: BlockKind;
+  label: string;
+  estMinutes: number;
+  stepIds: string[];
+}
+
+export interface SessionPlan {
+  id: string;
+  mode: SessionMode;
+  day: EpochDay;
+  createdAt: number;
+  station: number;
+  steps: Step[];
+  blocks: SessionBlock[];
+  meta: {
+    dueTotal: number;
+    dueTaken: number;
+    backlog: boolean;
+    newCount: number;
+    scrollIds: string[];
+    storyId?: string;
+    michikusaId?: string;
+  };
+}
+
+/** What every exercise emits (design 04 §0). */
+export interface AttemptResult {
+  correct: boolean;
+  nearMiss: boolean;
+  hintUsed: boolean;
+  /** Shift+Enter "don't know". */
+  guard: boolean;
+  timedOut: boolean;
+  ms: number;
+  errorTags: ErrorTag[];
+  answer?: string;
+  /** Self-graded exercises: Again / Hard / Good. */
+  selfRating?: 1 | 2 | 3;
+  /** 0..1 (dictation, shadow). */
+  score?: number;
+  replays?: number;
+  /** Implicit evidence on other cards (dictation/shadow content words). */
+  implicit?: { cardKey: CardKey; rating: Rating }[];
+}
+
+export interface StepResult extends AttemptResult {
+  stepId: string;
+  cardKey: CardKey | null;
+  rating: Rating | null;
+  ki: number;
+  combo: number;
+  ippon: boolean;
+  kiai: boolean;
+  xpDelta: number;
+  promotion?: ItemBelt;
+}
+
+export interface Tally {
+  reps: number;
+  correct: number;
+  accuracy: number;
+  bestCombo: number;
+  ippon: number;
+  xp: number;
+  minutes: number;
+  promotions: { itemId: string; to: ItemBelt }[];
+  questsDone: string[];
+  backlogWaiting: number;
+}
+
+export interface SessionResult {
+  planId: string;
+  mode: SessionMode;
+  startedAt: number;
+  endedAt: number;
+  steps: StepResult[];
+  tally: Tally;
+  zen: boolean;
+  resumed: boolean;
+}
+
+export interface KiaiState {
+  ki: number;
+  combo: number;
+  bestCombo: number;
+  /** Reps left in Kiai state (XP × 1.5). */
+  kiaiLeft: number;
+  ippon: number;
+  recoveryQueue: { cardKey: CardKey; at: number }[];
+}
+
+export const SESSION_SCHEMA = 'tsuzuku.session/1' as const;
+
+export interface SessionSnapshot {
+  schema: typeof SESSION_SCHEMA;
+  plan: SessionPlan;
+  cursor: number;
+  results: StepResult[];
+  kiai: KiaiState;
+}
+
+/** 次回予告 — three informational lines on the つづく card (design 03 §10). */
+export interface JikaiYokoku {
+  /** One sentence from the next episode with one token masked as ???. */
+  sentence?: { storyId: string; ja: string; kana: string; maskedToken: number };
+  /** Three words you will meet tomorrow, kana only. */
+  words: { itemId: string; kana: string }[];
+  /** "The Gatekeeper of Totsuka awaits in about 4 days." */
+  milestone: string;
+}
+
+/** What the Dojo home shows (design 03 §3). */
+export interface DojoFeed {
+  forecastLine: string;
+  minutes: { kata: number; kumite: number; shugyo: number };
+  sentenceOfDay?: { ja: string; kana: string };
+  nextMilestone: string;
+  welcome: 'none' | 'mountain' | 'comeback';
+  resume?: { stepsLeft: number };
+}

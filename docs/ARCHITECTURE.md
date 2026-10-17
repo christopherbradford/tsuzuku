@@ -15,7 +15,7 @@ type EpochDay = n;      // 04:00 boundary (shared/time.ts)
 type Rating = 1|2|3|4;  // Again..Easy
 type ItemKind = 'kana'|'vocab'|'kanji'|'grammar'|'component'|'chunk';   // chunk = set-phrase|aizuchi VocabItem
 type ItemBelt = 'white'|'yellow'|'green'|'brown'|'black';
-type CardTuple = [due:EpochDay,s:n,d:n,reps:n,lapses:n,state:0|1|2|3,last:EpochDay,flags:n]; // flags 1 archived 2 nemesis 4 kaiden 8 step-pending
+type CardTuple = [due:EpochDay,s:n,d:n,reps:n,lapses:n,state:0|1|2|3,last:EpochDay,flags:n]; // flags 1 archived 2 nemesis 4 kaiden 8 step-pending 16 recheck (arcade miss)
 type LogEntry = [t:n,cardKey:CardKey,rating:Rating,ms:n,exerciseIdx:n,tagsMask:n];   // ring 5000
 export const store: {
   ready:Signal<b>; /* Signal<SaveMeta[K]> each: */ profile; settings; streak; progress; quests; collections; kage; weakPoints; ledger; stats; medianMs; captured; bookmarks; perapera; daily;
@@ -92,7 +92,7 @@ interface SessionResult { planId:s; mode:SessionMode; startedAt:n; endedAt:n; st
 interface KiaiState { ki:n; combo:n; bestCombo:n; kiaiLeft:n; ippon:n; recoveryQueue:{cardKey:CardKey;at:n}[] }
 interface SessionSnapshot { schema:'tsuzuku.session/1'; plan:SessionPlan; cursor:n; results:StepResult[]; kiai:KiaiState }
 ```
-Rep loop (E): `resolveExercise` -> render -> `onResult` -> `recordAttempt()` (`@/learn/apply`: rating, FSRS, facet unlock, promotion, store writes, `attempt:graded`) -> `kiaiStep()` -> feedback -> next.
+Rep loop (E): `resolveExercise` -> render -> `onResult` -> `recordAttempt()` (`@/learn/apply`: rating, FSRS, facet unlock, promotion, store writes, `attempt:graded`) -> feedback -> next. `recordAttempt` takes the module-plan input `{sessionId, step, result, boss?}` (or `(step, result, ctx)`) plus optional `kiai: KiaiState` / `repIndex` / `rng` / `judge` / `pretest` / `keys` / `item`; **when `kiai` is passed it runs `kiaiStep()` itself** so `attempt:graded` carries real `ippon/kiai/combo/recovery` and the result holds `kiaiState` (E keeps that state; without `kiai` those fields are `0/false`). It returns a `StepResult` (`xpDelta` = the `xp:gained` B emitted synchronously during the emits; `promotion` = the new `ItemBelt`) extended with `card prev kind facet promoted{from,to} firstProd mature grade stepOffsets unlocked nemesis archived logged recheckSet implicitApplied kiaiState? kiaiResult?`. Also exported: `recordImplicit(g, {emit?})` (side grade: card + log + `item:promoted`, never `attempt:graded`; `dueWithin` filter, 3 d for `result.implicit`), `introduceItem(itemId, kind, station)` (creates `initialFacets`, emits `item:introduced`, idempotent), `markKnown(itemId, kind)` (既知 Easy start; kana ids appended to `profile.kanaKnown`), `retireItem(itemId, retired?)` (退, archive flag), `defeatNemesis(itemId)` (`leech.defeat`, emits `nemesis:defeated`).
 
 ## 6. Routes (`src/shared/routes.ts`, A)
 `dojo #/` `onboarding` `train/:mode` `scroll/:id` (`<station>-<n>`) `road` `station/:n` `gate/:n` `shinsa/:belt` `story/:id` `listen/:id` `taiwa/:id` `dan` `library` `collections/:tab` `studio/:wallpaperId` `records` `ledger` `settings` `backup` `about`. API: `type Route` (discriminated union), `href(r)`, `parseHash(h)`, `navigate(r,{replace?})`, `route:Signal<Route>`; never hand-write `#/...`.

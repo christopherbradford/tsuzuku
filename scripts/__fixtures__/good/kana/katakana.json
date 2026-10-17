@@ -1,0 +1,16 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "kana",
+  "writer": "fixture",
+  "items": [
+    { "id": "k-k-a", "kana": "ア", "romaji": "a", "script": "katakana", "type": "basic", "row": "a", "mnemonic": "A sharp antenna leaning left: AH.", "exampleWord": { "word": "アイス", "kana": "アイス", "en": "ice cream" } },
+    { "id": "k-k-ka", "kana": "カ", "romaji": "ka", "script": "katakana", "type": "basic", "row": "k", "mnemonic": "The hiragana katana without its chip, from the kanji 加: KA.", "exampleWord": { "word": "カメラ", "kana": "カメラ", "en": "camera" } },
+    { "id": "k-k-shi", "kana": "シ", "romaji": "shi", "script": "katakana", "type": "basic", "row": "s", "mnemonic": "Two drops and a smile curving up: SHE smiles.", "exampleWord": { "word": "シャツ", "kana": "シャツ", "en": "shirt" }, "lookalikes": ["k-k-tsu"] },
+    { "id": "k-k-tsu", "kana": "ツ", "romaji": "tsu", "script": "katakana", "type": "basic", "row": "t", "mnemonic": "Two drops and a stroke falling down: TSUnami wave.", "exampleWord": { "word": "ツアー", "kana": "ツアー", "en": "tour" }, "lookalikes": ["k-k-shi"] },
+    { "id": "k-k-so", "kana": "ソ", "romaji": "so", "script": "katakana", "type": "basic", "row": "s", "mnemonic": "One drop and a stroke falling: SOw a seed.", "exampleWord": { "word": "ソース", "kana": "ソース", "en": "sauce" }, "lookalikes": ["k-k-n"] },
+    { "id": "k-k-n", "kana": "ン", "romaji": "n", "script": "katakana", "type": "basic", "row": "nn", "mnemonic": "One drop and a stroke curving up: a nod, N.", "exampleWord": { "word": "パン", "kana": "パン", "en": "bread" }, "lookalikes": ["k-k-so"] },
+    { "id": "k-k-ga", "kana": "ガ", "romaji": "ga", "script": "katakana", "type": "dakuten", "row": "g", "mnemonic": "KA with two sparks: GA.", "exampleWord": { "word": "ガム", "kana": "ガム", "en": "gum" } },
+    { "id": "k-k-kya", "kana": "キャ", "romaji": "kya", "script": "katakana", "type": "yoon", "row": "k", "mnemonic": "KI plus a small ya: KYA.", "exampleWord": { "word": "キャンプ", "kana": "キャンプ", "en": "camping" } },
+    { "id": "k-k-fa", "kana": "ファ", "romaji": "fa", "script": "katakana", "type": "extended", "row": "ext", "mnemonic": "FU plus a small a: FA.", "exampleWord": { "word": "ファン", "kana": "ファン", "en": "fan" } }
+  ]
+}

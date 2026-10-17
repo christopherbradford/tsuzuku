@@ -1,0 +1,25 @@
+/**
+ * TSUZUKU — the PURE learning core barrel (ARCHITECTURE §0, module plan).
+ *
+ * No store import, so B may use it without a cycle. The impure writer lives
+ * in `./apply` and is imported directly as `@/learn/apply`, never from here.
+ *
+ * The scheduling half (fsrs, scheduler, item-belt, known, governors,
+ * intro-policy, queue) is re-exported wholesale; the grading half is
+ * re-exported by the names in the module plan.
+ */
+export * from './fsrs';
+export * from './fsrs-golden';
+export * from './scheduler';
+export * from './item-belt';
+export * from './known';
+export * from './governors';
+export * from './intro-policy';
+export * from './queue';
+
+export { toRating, isMature, isSlow, SCORE_BANDS } from './grading';
+export { judgeRate, shouldJudge, judgeOptions, rubricJudge, perceptionJudge } from './judge';
+export { KIAI_RULES, kiaiInit, kiaiStep } from './kiai';
+export { isNemesis, nemesisPhase, duelProgress, defeat } from './leech';
+export { meaningChoices, kanaGrid, kanjiLookalikes, clozeTiles, scrambleTiles } from './distractors';
+export { conjugate, applicableForms, isConjugable } from './conjugate';

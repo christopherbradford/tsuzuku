@@ -1,0 +1,485 @@
+/**
+ * TSUZUKU — content loader (ARCHITECTURE §3, design 07 §6).
+ *
+ * Fetches `manifest.json`, station bundles and item files from `base`
+ * (default `./content/`, relative to the page so GitHub Pages `/<repo>/`
+ * works), keeps everything in memory and, where the Cache API exists,
+ * mirrors item files into `tsuzuku-content-<contentVersion>`.
+ *
+ * Station entry stays lazy: `station(n)` fetches only the bundle; a story
+ * opens with its own file plus the learner's cards (`StoryLine.tokenIds`);
+ * a Gloss tap calls `getAsync(id)`, which loads the ONE file that holds
+ * the id. The conjugation golden table is never exposed here.
+ *
+ * ID → FILE LOOKUP STRATEGY (`getAsync` / `load`)
+ * ─────────────────────────────────────────────────────────────────────────
+ * The manifest lists files with `type`, `level`, `count` and `stations`, but
+ * not their ids, so an id's file is inferred from the id grammar and
+ * refined as files arrive:
+ *  0. `resolveId` follows `manifest.redirects` (old id → new id).
+ *  1. Exact: every loaded file records `id → path`; a hit needs no fetch.
+ *  2. Kind from the prefix (`shared/ids.kindOfId`):
+ *     - component → `manifest.componentsPath` (one file);
+ *     - kana → the kana file whose path names the script (`k-h-` hiragana,
+ *       `k-k-` katakana); no such file, no candidate;
+ *     - story / michikusa → the station segment of the id (`s-07-1` → 7)
+ *       selects the file whose `stations` contain it (fallback: the path
+ *       ending `s07.json`); no such file, no candidate;
+ *     - vocab / grammar → only files of the id's level (`v-n5-…` → `n5`),
+ *       ordered by a sequence estimate: files inside a level are numbered
+ *       consecutively with ≤ 150 items each, so the cumulative `count`
+ *       column predicts which file holds sequence 0123; because dedupe
+ *       leaves gaps the real ids drift upward, so the order is the guessed
+ *       file, then its later neighbours, then the earlier ones;
+ *     - kanji → no level in the id; every kanji file in manifest order;
+ *     - conjugation / station → not items: resolves `undefined`, no fetch.
+ *  3. A station hint beats the estimate: every loaded bundle records
+ *     `id → station`, and the manifest's `ManifestFile.stations` says which
+ *     files hold that station's items, so hinted files are tried first.
+ *  4. Files already loaded are skipped (the id would be in the index), so a
+ *     scan over a level always terminates; files are fetched sequentially
+ *     until the id appears — one fetch in the common case.
+ */
+import { signal, type Signal } from '@preact/signals';
+import { contentKindOf, kindOfId, levelOfId, stationOfId, tryKindOfId, type IdKind } from '../shared/ids';
+import type { ComponentDef, ContentFile, ContentItem, ContentKind, ContentManifest, ManifestFile, StationBundle, VocabItem } from './types';
+
+/** ARCHITECTURE §3 declares the union here; it lives in `./types` and is re-exported for `@/content/loader` importers. */
+export type { ContentItem } from './types';
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Public types                                                               */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+export type CumulativeKey = 'kanaIds' | 'vocabIds' | 'kanjiIds' | 'grammarIds';
+/** Ids of all stations `<= n` (ARCHITECTURE §3 `cumulative`). */
+export type CumulativeSets = Record<CumulativeKey, Set<string>>;
+
+export interface ContentLoader {
+  manifest(): Promise<ContentManifest>;
+  station(n: number): Promise<StationBundle>;
+  /** Union of every bundle with `number <= n`; stations absent from the manifest contribute nothing. */
+  cumulative(n: number): Promise<CumulativeSets>;
+  /** Ensures every id is in memory; unknown ids are ignored, network errors propagate. */
+  load(ids: string[]): Promise<void>;
+  /** Bundle + every item file it lists (components included). */
+  preloadStation(n: number): Promise<void>;
+  /** Fire-and-forget `preloadStation` on idle; never throws, never blocks. */
+  prefetchStation(n: number): void;
+  /** SYNC, memory cache only. */
+  get<T extends ContentItem = ContentItem>(id: string): T | undefined;
+  /** Loads the one file that holds `id` on demand (Gloss tap, capture). */
+  getAsync<T extends ContentItem = ContentItem>(id: string): Promise<T | undefined>;
+  components(): Promise<Map<string, ComponentDef>>;
+  /** Follows `manifest.redirects` when the manifest is in memory; identity otherwise. */
+  resolveId(id: string): string;
+  /** Station of a story/michikusa/station id from the id itself; of any other id once its item or bundle is loaded. */
+  stationOf(id: string): number | undefined;
+  /** Same union as `ids.kindOfId`; returns `'chunk'` for a loaded set-phrase/aizuchi VocabItem. */
+  kindOf(id: string): IdKind;
+  /** `contentVersion` once the manifest has loaded. */
+  version: Signal<string | null>;
+}
+
+export type ContentErrorCode = 'http' | 'parse' | 'schema' | 'missing-station';
+
+/** Thrown by every loader method that touches the network; the memory cache is left intact. */
+export class ContentError extends Error {
+  readonly code: ContentErrorCode;
+  readonly path: string;
+  readonly status: number | undefined;
+  constructor(code: ContentErrorCode, path: string, message?: string, status?: number) {
+    super(message ?? `content ${code}: ${path}${status !== undefined ? ` (${status})` : ''}`);
+    this.name = 'ContentError';
+    this.code = code;
+    this.path = path;
+    this.status = status;
+  }
+}
+
+/** Set-phrase / aizuchi vocab is an `ItemKind` `'chunk'` (ARCHITECTURE §1). */
+export function isChunk(item: ContentItem): item is VocabItem {
+  if (!('tags' in item) || !('jlpt' in item) || !('word' in item)) return false;
+  const tags: readonly string[] = item.tags;
+  return tags.includes('set-phrase') || tags.includes('aizuchi');
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Shape guards (the validator owns the real rules; these catch wrong files) */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+function isRecord(x: unknown): x is Record<string, unknown> {
+  return typeof x === 'object' && x !== null && !Array.isArray(x);
+}
+
+function asManifest(x: unknown, path: string): ContentManifest {
+  if (!isRecord(x) || x.schema !== 'tsuzuku.manifest/1' || !Array.isArray(x.files) || !Array.isArray(x.stations)) {
+    throw new ContentError('schema', path, `content schema: ${path} is not a tsuzuku.manifest/1 file`);
+  }
+  return x as unknown as ContentManifest;
+}
+
+function asBundle(x: unknown, path: string): StationBundle {
+  if (!isRecord(x) || x.schema !== 'tsuzuku.station/1' || typeof x.number !== 'number' || !Array.isArray(x.files)) {
+    throw new ContentError('schema', path, `content schema: ${path} is not a tsuzuku.station/1 file`);
+  }
+  return x as unknown as StationBundle;
+}
+
+function asContentFile(x: unknown, path: string): ContentFile<ContentItem> {
+  if (!isRecord(x) || x.schema !== 'tsuzuku.content/1' || !Array.isArray(x.items)) {
+    throw new ContentError('schema', path, `content schema: ${path} is not a tsuzuku.content/1 file`);
+  }
+  return x as unknown as ContentFile<ContentItem>;
+}
+
+const pad2 = (n: number): string => String(n).padStart(2, '0');
+
+/** Trailing decimal sequence of a vocab/grammar id (`v-n5-0123` → 123). */
+function seqOf(id: string): number | undefined {
+  const m = /-(\d+)$/.exec(id);
+  return m ? Number(m[1]) : undefined;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Loader                                                                     */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+export function createLoader(fetchImpl?: typeof fetch, base = './content/'): ContentLoader {
+  const root = base.endsWith('/') ? base : `${base}/`;
+  const doFetch: typeof fetch = fetchImpl ?? ((input, init) => globalThis.fetch(input, init));
+
+  const version = signal<string | null>(null);
+
+  // ── memory cache ──────────────────────────────────────────────────────
+  let manifestCache: ContentManifest | null = null;
+  let manifestPromise: Promise<ContentManifest> | null = null;
+  const bundles = new Map<number, StationBundle>();
+  const items = new Map<string, ContentItem>();
+  /** id → path of the file that holds it (exact, from loaded files). */
+  const itemPath = new Map<string, string>();
+  /** path → ids it holds. */
+  const pathIds = new Map<string, string[]>();
+  const loadedFiles = new Set<string>();
+  /** id → station, from loaded bundles. */
+  const stationHint = new Map<string, number>();
+  /** One request per path at a time. */
+  const inflight = new Map<string, Promise<unknown>>();
+
+  // ── Cache API (best effort; absent in tests and old browsers) ─────────
+  const cacheName = (): string | null => (version.value ? `tsuzuku-content-${version.value}` : null);
+
+  async function openCache(): Promise<Cache | null> {
+    const name = cacheName();
+    if (!name || typeof caches === 'undefined') return null;
+    try {
+      return await caches.open(name);
+    } catch {
+      return null;
+    }
+  }
+
+  function pruneOldCaches(current: string): void {
+    if (typeof caches === 'undefined') return;
+    const keep = `tsuzuku-content-${current}`;
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('tsuzuku-content-') && k !== keep).map((k) => caches.delete(k))))
+      .catch(() => undefined);
+  }
+
+  async function fetchJson(path: string, useCache: boolean): Promise<unknown> {
+    const url = `${root}${path}`;
+    const cache = useCache ? await openCache() : null;
+    let res: Response | undefined;
+    if (cache) {
+      try {
+        res = await cache.match(url);
+      } catch {
+        res = undefined;
+      }
+    }
+    let fromCache = res !== undefined;
+    if (!res) {
+      res = await doFetch(url);
+      fromCache = false;
+    }
+    if (!res.ok) throw new ContentError('http', path, `content http ${res.status}: ${url}`, res.status);
+    if (cache && !fromCache) {
+      try {
+        await cache.put(url, res.clone());
+      } catch {
+        /* quota or opaque response: ignore */
+      }
+    }
+    try {
+      return (await res.json()) as unknown;
+    } catch {
+      throw new ContentError('parse', path, `content parse: ${url} is not valid JSON`);
+    }
+  }
+
+  /** Runs `make` once per path while it is pending; a failure clears the slot so a retry can fetch again. */
+  function once<T>(path: string, make: () => Promise<T>): Promise<T> {
+    const pending = inflight.get(path) as Promise<T> | undefined;
+    if (pending) return pending;
+    const p = make().finally(() => {
+      inflight.delete(path);
+    });
+    inflight.set(path, p);
+    return p;
+  }
+
+  // ── manifest ──────────────────────────────────────────────────────────
+  function manifest(): Promise<ContentManifest> {
+    if (manifestCache) return Promise.resolve(manifestCache);
+    if (!manifestPromise) {
+      manifestPromise = fetchJson('manifest.json', false)
+        .then((raw) => {
+          const m = asManifest(raw, 'manifest.json');
+          manifestCache = m;
+          version.value = m.contentVersion;
+          pruneOldCaches(m.contentVersion);
+          return m;
+        })
+        .catch((e: unknown) => {
+          manifestPromise = null;
+          throw e;
+        });
+    }
+    return manifestPromise;
+  }
+
+  function resolveId(id: string): string {
+    const redirects = manifestCache?.redirects;
+    if (!redirects) return id;
+    let cur = id;
+    for (let hops = 0; hops < 16; hops++) {
+      const next = redirects[cur];
+      if (next === undefined || next === cur) break;
+      cur = next;
+    }
+    return cur;
+  }
+
+  // ── item files ────────────────────────────────────────────────────────
+  function indexFile(path: string, file: ContentFile<ContentItem>): void {
+    loadedFiles.add(path);
+    if (file.type === 'conjugation' || file.type === 'station') return; // not items
+    const ids: string[] = [];
+    for (const item of file.items) {
+      if (!isRecord(item) || typeof item.id !== 'string') continue;
+      items.set(item.id, item);
+      itemPath.set(item.id, path);
+      ids.push(item.id);
+    }
+    pathIds.set(path, ids);
+  }
+
+  function loadFile(path: string): Promise<void> {
+    if (loadedFiles.has(path)) return Promise.resolve();
+    return once(path, async () => {
+      const raw = await fetchJson(path, true);
+      indexFile(path, asContentFile(raw, path));
+    });
+  }
+
+  // ── bundles ───────────────────────────────────────────────────────────
+  const BUNDLE_LISTS: readonly (keyof StationBundle)[] = ['kanaIds', 'vocabIds', 'kanjiIds', 'grammarIds', 'componentIds', 'storyIds', 'michikusaIds'];
+
+  function indexBundle(b: StationBundle): void {
+    bundles.set(b.number, b);
+    for (const key of BUNDLE_LISTS) {
+      const list = b[key];
+      if (!Array.isArray(list)) continue;
+      for (const id of list) if (typeof id === 'string') stationHint.set(id, b.number);
+    }
+  }
+
+  async function station(n: number): Promise<StationBundle> {
+    const have = bundles.get(n);
+    if (have) return have;
+    const m = await manifest();
+    const entry = m.stations.find((s) => s.number === n);
+    const path = entry?.path ?? `stations/${pad2(n)}.json`;
+    if (!entry) throw new ContentError('missing-station', path, `content: station ${n} is not in the manifest`);
+    await once(path, async () => {
+      const raw = await fetchJson(path, true);
+      const b = asBundle(raw, path);
+      indexBundle(b);
+    });
+    return bundles.get(n) as StationBundle;
+  }
+
+  async function cumulative(n: number): Promise<CumulativeSets> {
+    const m = await manifest();
+    const numbers = m.stations.filter((s) => s.number <= n).map((s) => s.number);
+    const list = await Promise.all(numbers.map(station));
+    const out: CumulativeSets = { kanaIds: new Set(), vocabIds: new Set(), kanjiIds: new Set(), grammarIds: new Set() };
+    for (const b of list) {
+      for (const id of b.kanaIds) out.kanaIds.add(id);
+      for (const id of b.vocabIds) out.vocabIds.add(id);
+      for (const id of b.kanjiIds) out.kanjiIds.add(id);
+      for (const id of b.grammarIds) out.grammarIds.add(id);
+    }
+    return out;
+  }
+
+  // ── id → candidate files ──────────────────────────────────────────────
+  function filesOfType(m: ContentManifest, kind: ContentKind): ManifestFile[] {
+    return m.files.filter((f) => f.type === kind);
+  }
+
+  /** Files of one level ordered by the cumulative-count estimate for `seq` (guess, later, earlier …). */
+  function orderBySequence(files: ManifestFile[], seq: number | undefined): ManifestFile[] {
+    if (seq === undefined || files.length < 2) return files;
+    let guess = files.length - 1;
+    let cum = 0;
+    for (let i = 0; i < files.length; i++) {
+      cum += files[i]?.count ?? 0;
+      if (seq <= cum) {
+        guess = i;
+        break;
+      }
+    }
+    const out: ManifestFile[] = [];
+    const first = files[guess];
+    if (first) out.push(first);
+    for (let d = 1; d <= files.length && out.length < files.length; d++) {
+      const later = files[guess + d];
+      if (later) out.push(later);
+      const earlier = files[guess - d];
+      if (earlier) out.push(earlier);
+    }
+    return out;
+  }
+
+  function candidatePaths(m: ContentManifest, id: string): string[] {
+    const exact = itemPath.get(id);
+    if (exact) return [exact];
+    const kind = tryKindOfId(id);
+    if (!kind) return [];
+    const ck = contentKindOf(kind);
+    if (ck === 'component') return loadedFiles.has(m.componentsPath) ? [] : [m.componentsPath];
+    if (ck === 'conjugation' || ck === 'station') return [];
+
+    let files = filesOfType(m, ck);
+    if (ck === 'kana') {
+      // V08 fixes the file names, so an id's script selects its file outright.
+      const script = id.startsWith('k-k-') ? 'katakana' : 'hiragana';
+      files = files.filter((f) => f.path.includes(script));
+    } else if (ck === 'story' || ck === 'michikusa') {
+      const st = stationOfId(id);
+      if (st === undefined) return [];
+      const byStation = files.filter((f) => f.stations.includes(st));
+      files = byStation.length ? byStation : files.filter((f) => f.path.endsWith(`s${pad2(st)}.json`));
+    } else if (ck === 'vocab' || ck === 'grammar') {
+      // V05: the id's level segment equals the file level, so other levels are never candidates.
+      const level = levelOfId(id);
+      if (!level) return [];
+      files = orderBySequence(
+        files.filter((f) => f.level === level),
+        seqOf(id),
+      );
+    }
+    // kanji: every kanji file in manifest order (no level in the id)
+
+    const hint = stationHint.get(id);
+    if (hint !== undefined) {
+      const hinted = files.filter((f) => f.stations.includes(hint));
+      if (hinted.length) files = [...hinted, ...files.filter((f) => !f.stations.includes(hint))];
+    }
+    return files.map((f) => f.path).filter((p) => !loadedFiles.has(p));
+  }
+
+  // ── public item API ───────────────────────────────────────────────────
+  function get<T extends ContentItem = ContentItem>(id: string): T | undefined {
+    return items.get(resolveId(id)) as T | undefined;
+  }
+
+  async function getAsync<T extends ContentItem = ContentItem>(id: string): Promise<T | undefined> {
+    const m = await manifest();
+    const rid = resolveId(id);
+    const hit = items.get(rid);
+    if (hit) return hit as T;
+    for (const path of candidatePaths(m, rid)) {
+      await loadFile(path);
+      const got = items.get(rid);
+      if (got) return got as T;
+    }
+    return undefined;
+  }
+
+  async function load(ids: string[]): Promise<void> {
+    const m = await manifest();
+    const missing = [...new Set(ids.map(resolveId))].filter((id) => !items.has(id));
+    if (!missing.length) return;
+    // First pass: every id's best guess, fetched concurrently (deduped by path).
+    const first = new Set<string>();
+    for (const id of missing) {
+      const p = candidatePaths(m, id)[0];
+      if (p) first.add(p);
+    }
+    await Promise.all([...first].map(loadFile));
+    // Second pass: anything the guess missed scans sequentially.
+    for (const id of missing) {
+      if (!items.has(id)) await getAsync(id);
+    }
+  }
+
+  function itemFilePaths(m: ContentManifest, b: StationBundle): string[] {
+    const skip = new Set(m.files.filter((f) => f.type === 'conjugation' || f.type === 'station').map((f) => f.path));
+    const paths = b.files.filter((p) => !skip.has(p));
+    if (b.componentIds.length && !paths.includes(m.componentsPath)) paths.push(m.componentsPath);
+    return paths;
+  }
+
+  async function preloadStation(n: number): Promise<void> {
+    const m = await manifest();
+    const b = await station(n);
+    await Promise.all(itemFilePaths(m, b).map(loadFile));
+  }
+
+  function prefetchStation(n: number): void {
+    const run = (): void => {
+      preloadStation(n).catch(() => undefined);
+    };
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(() => run(), { timeout: 4000 });
+    else setTimeout(run, 0);
+  }
+
+  async function components(): Promise<Map<string, ComponentDef>> {
+    const m = await manifest();
+    await loadFile(m.componentsPath);
+    const out = new Map<string, ComponentDef>();
+    for (const id of pathIds.get(m.componentsPath) ?? []) {
+      const item = items.get(id);
+      if (item && 'char' in item && 'name' in item) out.set(id, item);
+    }
+    return out;
+  }
+
+  function stationOf(id: string): number | undefined {
+    const rid = resolveId(id);
+    const fromId = stationOfId(rid);
+    if (fromId !== undefined) return fromId;
+    const item = items.get(rid);
+    if (item && 'station' in item && typeof item.station === 'number') return item.station;
+    return stationHint.get(rid);
+  }
+
+  function kindOf(id: string): IdKind {
+    const rid = resolveId(id);
+    const kind = kindOfId(rid);
+    if (kind === 'vocab') {
+      const item = items.get(rid);
+      if (item && isChunk(item)) return 'chunk';
+    }
+    return kind;
+  }
+
+  return { manifest, station, cumulative, load, preloadStation, prefetchStation, get, getAsync, components, resolveId, stationOf, kindOf, version };
+}
+
+/** The app's loader (`./content/` relative to the page). */
+export const content: ContentLoader = createLoader();

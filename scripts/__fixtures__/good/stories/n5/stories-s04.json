@@ -1,0 +1,75 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "story",
+  "level": "n5",
+  "writer": "fixture-stories-s04",
+  "items": [
+    {
+      "id": "s-04-1",
+      "stationId": "st-04",
+      "titleJa": "{本|ほん}と{水|みず}",
+      "titleEn": "The Book and the Water",
+      "kind": "dialogue",
+      "register": "polite",
+      "learnerSpeaker": "ハナ",
+      "lines": [
+        { "speaker": "ケン", "ja": "ハナさん、これは{本|ほん}ですか。", "kana": "ハナさん、これはほんですか。", "en": "Hana, is this a book?", "tokens": ["ハナ", "さん", "、", "これ", "は", "本", "です", "か", "。"], "aizuchiSlot": true },
+        { "speaker": "ハナ", "ja": "はい、{本|ほん}です。", "kana": "はい、ほんです。", "en": "Yes, it is a book.", "tokens": ["はい", "、", "本", "です", "。"],
+          "options": [
+            { "text": "はい、本です。", "kind": "best" },
+            { "text": "はい、これは本です。", "kind": "ok", "recast": "はい、本です。" },
+            { "text": "はい、本だ。", "kind": "register-wrong", "recast": "はい、本です。" }
+          ],
+          "mustInclude": ["本"], "accept": ["はい、これは本です。"] },
+        { "speaker": "ケン", "ja": "{日本|にほん}の{本|ほん}ですね。", "kana": "にほんのほんですね。", "en": "It is a Japanese book, isn't it?", "tokens": ["日本", "の", "本", "です", "ね", "。"] },
+        { "speaker": "ハナ", "ja": "{私|わたし}の{友達|ともだち}の{本|ほん}です。", "kana": "わたしのともだちのほんです。", "en": "It is my friend's book.", "tokens": ["私", "の", "友達", "の", "本", "です", "。"],
+          "options": [
+            { "text": "私の友達の本です。", "kind": "best" },
+            { "text": "友達の本です。", "kind": "ok", "recast": "私の友達の本です。" },
+            { "text": "私は友達は本です。", "kind": "grammar-wrong", "recast": "私の友達の本です。" }
+          ],
+          "mustInclude": ["友達", "本"], "accept": ["友達の本です。"] },
+        { "speaker": "ケン", "ja": "{友達|ともだち}は{学生|がくせい}ですか。", "kana": "ともだちはがくせいですか。", "en": "Is your friend a student?", "tokens": ["友達", "は", "学生", "です", "か", "。"] },
+        { "speaker": "ハナ", "ja": "はい、{学生|がくせい}です。{先生|せんせい}ではありません。", "kana": "はい、がくせいです。せんせいではありません。", "en": "Yes, a student. Not a teacher.", "tokens": ["はい", "、", "学生", "です", "。", "先生", "ではありません", "。"],
+          "options": [
+            { "text": "はい、学生です。先生ではありません。", "kind": "best" },
+            { "text": "はい、学生です。", "kind": "ok", "recast": "はい、学生です。先生ではありません。" },
+            { "text": "うん、学生だよ。", "kind": "register-wrong", "recast": "はい、学生です。" }
+          ],
+          "mustInclude": ["学生"], "accept": ["はい、学生です。"] },
+        { "speaker": "ケン", "ja": "{水|みず}を{飲|の}みますか。", "kana": "みずをのみますか。", "en": "Will you drink some water?", "tokens": ["水", "を", "飲みます", "か", "。"] },
+        { "speaker": "ハナ", "ja": "はい、{水|みず}をください。", "kana": "はい、みずをください。", "en": "Yes, water please.", "tokens": ["はい", "、", "水", "を", "ください", "。"],
+          "options": [
+            { "text": "はい、水をください。", "kind": "best" },
+            { "text": "水をください。", "kind": "ok", "recast": "はい、水をください。" },
+            { "text": "水、ちょうだい。", "kind": "register-wrong", "recast": "水をください。" }
+          ],
+          "mustInclude": ["水"], "accept": ["水をください。"] },
+        { "speaker": "ケン", "ja": "パンを{食|た}べますか。", "kana": "パンをたべますか。", "en": "Will you eat some bread?", "tokens": ["パン", "を", "食べます", "か", "。"] },
+        { "speaker": "ハナ", "ja": "はい、{食|た}べます。", "kana": "はい、たべます。", "en": "Yes, I will.", "tokens": ["はい", "、", "食べます", "。"],
+          "options": [
+            { "text": "はい、食べます。", "kind": "best" },
+            { "text": "はい、パンを食べます。", "kind": "ok", "recast": "はい、食べます。" },
+            { "text": "はい、食べるます。", "kind": "grammar-wrong", "recast": "はい、食べます。" }
+          ],
+          "mustInclude": ["食べます"], "accept": ["はい、パンを食べます。"] },
+        { "speaker": "ケン", "ja": "{学校|がっこう}は{大|おお}きいですね。", "kana": "がっこうはおおきいですね。", "en": "The school is big, isn't it?", "tokens": ["学校", "は", "大きい", "です", "ね", "。"] },
+        { "speaker": "ハナ", "ja": "はい、{大|おお}きいです。{私|わたし}は{学校|がっこう}へ{行|い}きます。", "kana": "はい、おおきいです。わたしはがっこうへいきます。", "en": "Yes, it is big. I am going to school.", "tokens": ["はい", "、", "大きい", "です", "。", "私", "は", "学校", "へ", "行きます", "。"],
+          "options": [
+            { "text": "はい、大きいです。私は学校へ行きます。", "kind": "best" },
+            { "text": "はい、大きいです。学校へ行きます。", "kind": "ok", "recast": "はい、大きいです。私は学校へ行きます。" },
+            { "text": "うん、大きい。学校へ行く。", "kind": "register-wrong", "recast": "はい、大きいです。私は学校へ行きます。" }
+          ],
+          "mustInclude": ["学校", "行きます"], "accept": ["はい、大きいです。学校へ行きます。"] }
+      ],
+      "vocabIds": ["v-n5-0001", "v-n5-0002", "v-n5-0003", "v-n5-0004", "v-n5-0005", "v-n5-0006", "v-n5-0007", "v-n5-0008", "v-n5-0009", "v-n5-0010", "v-n5-0011", "v-n5-0012", "v-n5-0013", "v-n5-0014", "v-n5-0015", "v-n5-0016"],
+      "grammarIds": ["g-n5-001", "g-n5-002", "g-n5-003"],
+      "comprehension": [
+        { "q": "What does Ken ask about first?", "choices": ["A book", "A pen", "Water", "Bread"], "answer": 0 },
+        { "q": "Whose book is it?", "choices": ["Ken's", "The teacher's", "Hana's friend's", "The school's"], "answer": 2 },
+        { "q": "What does Hana ask for?", "choices": ["Bread", "Water", "A book", "Nothing"], "answer": 1 }
+      ],
+      "recapEn": "Ken asks Hana about a book; it belongs to her friend, a student. Hana asks for water, agrees to eat some bread, and heads off to the big school."
+    }
+  ]
+}

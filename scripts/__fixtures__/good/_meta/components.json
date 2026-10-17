@@ -1,0 +1,18 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "component",
+  "writer": "architect",
+  "items": [
+    { "id": "c-sun", "char": "日", "name": "sun", "hint": "A window with one bar: the sun." },
+    { "id": "c-one", "char": "一", "name": "one", "hint": "A single horizontal stroke." },
+    { "id": "c-tree", "char": "木", "name": "tree", "hint": "Trunk, branches and roots." },
+    { "id": "c-earth", "char": "土", "name": "earth", "hint": "A sprout on the ground." },
+    { "id": "c-inch", "char": "寸", "name": "inch", "hint": "A hand with a pulse dot." },
+    { "id": "c-temple", "char": "寺", "name": "temple", "hint": "Earth over an inch: a temple on measured ground." },
+    { "id": "c-person", "char": "人", "name": "person", "variants": ["亻"], "hint": "Two legs walking." },
+    { "id": "c-eat", "char": "食", "name": "eat", "variants": ["飠"], "hint": "A lid over a bowl of rice." },
+    { "id": "c-yawn", "char": "欠", "name": "yawn", "hint": "A person with an open mouth." },
+    { "id": "c-mouth", "char": "口", "name": "mouth", "hint": "A square open mouth." },
+    { "id": "c-rice-field", "char": "田", "name": "rice field", "hint": "Four paddies seen from above." }
+  ]
+}

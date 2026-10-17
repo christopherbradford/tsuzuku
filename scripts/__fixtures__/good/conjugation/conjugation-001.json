@@ -1,0 +1,10 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "conjugation",
+  "writer": "fixture",
+  "items": [
+    { "id": "cj-0001", "word": "飲む", "kana": "のむ", "pos": "v5", "form": "masu", "answer": "飲みます", "answerKana": "のみます" },
+    { "id": "cj-0002", "word": "飲む", "kana": "のむ", "pos": "v5", "form": "te", "answer": "飲んで", "answerKana": "のんで" },
+    { "id": "cj-0003", "word": "大きい", "kana": "おおきい", "pos": "adj-i", "form": "adj-neg", "answer": "大きくない", "answerKana": "おおきくない", "alt": ["大きくありません"] }
+  ]
+}

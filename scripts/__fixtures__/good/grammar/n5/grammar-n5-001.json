@@ -1,0 +1,41 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n5",
+  "writer": "fixture-grammar-n5-001",
+  "items": [
+    { "id": "g-n5-001", "pattern": "NはNです", "meaning": "N is N", "formation": ["N1 は N2 です"],
+      "explanation": "Put the topic first with は, then what you want to say about it, then です. You use it to name, identify or describe something politely. It is not a strong equals sign: は only marks what the sentence is about.",
+      "jlpt": 5, "register": "polite",
+      "examples": [
+        { "ja": "{私|わたし}は{学生|がくせい}です。", "kana": "わたしはがくせいです。", "en": "I am a student." },
+        { "ja": "ハナは{先生|せんせい}です。", "kana": "ハナはせんせいです。", "en": "Hana is a teacher." },
+        { "ja": "これは{本|ほん}です。", "kana": "これはほんです。", "en": "This is a book." }
+      ],
+      "clozeHints": ["です"],
+      "mistakes": ["× 私は学生だです → ○ 私は学生です (です already carries the politeness)"],
+      "related": ["g-n5-002"], "tags": [] },
+    { "id": "g-n5-002", "pattern": "〜か", "meaning": "… ?", "formation": ["Sentence + か"],
+      "explanation": "Add か to the end of a polite sentence to turn it into a yes-no question. You do not change the word order and you do not need a question mark, though one is fine in writing.",
+      "jlpt": 5, "register": "polite",
+      "examples": [
+        { "ja": "ハナは{学生|がくせい}ですか。", "kana": "ハナはがくせいですか。", "en": "Is Hana a student?" },
+        { "ja": "これは{水|みず}ですか。", "kana": "これはみずですか。", "en": "Is this water?" },
+        { "ja": "ケンは{先生|せんせい}ですか。", "kana": "ケンはせんせいですか。", "en": "Is Ken a teacher?" }
+      ],
+      "clozeHints": ["か"],
+      "mistakes": [],
+      "related": ["g-n5-001"], "tags": ["communication"] },
+    { "id": "g-n5-003", "pattern": "Nを V", "meaning": "do … (object)", "formation": ["N を V-ます"],
+      "explanation": "Mark the thing an action is done to with を, then put the verb at the end. You use it with verbs like eat, drink, read and buy. It does not mark where something happens; that is で.",
+      "jlpt": 5, "register": "polite",
+      "examples": [
+        { "ja": "{水|みず}を{飲|の}みます。", "kana": "みずをのみます。", "en": "I drink water." },
+        { "ja": "パンを{食|た}べます。", "kana": "パンをたべます。", "en": "I eat bread." },
+        { "ja": "{本|ほん}をください。", "kana": "ほんをください。", "en": "Please give me the book." }
+      ],
+      "clozeHints": ["を"],
+      "mistakes": ["× 水が飲みます → ○ 水を飲みます (the object takes を)"],
+      "related": [], "tags": ["actions"], "unlocksForms": ["masu"] }
+  ]
+}

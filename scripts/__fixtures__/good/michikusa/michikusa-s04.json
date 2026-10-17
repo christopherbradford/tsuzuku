@@ -1,0 +1,15 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "fixture",
+  "items": [
+    { "id": "m-04-1", "stationId": "st-04", "kind": "culture", "titleEn": "Hodogaya's hill",
+      "bodyEn": "Hodogaya was the fourth post town on the old road. Travellers leaving Edo met their first real climb here, so the station is remembered for its slope and its tea houses." },
+    { "id": "m-04-2", "stationId": "st-04", "kind": "proverb", "titleEn": "Time is money",
+      "bodyEn": "A four-word saying borrowed into Japanese: time is money. It is written with the classical copula nari, which you will meet again in old signs.",
+      "ja": "{時|とき}は{金|かね}なり。", "kana": "ときはかねなり。" },
+    { "id": "m-04-3", "stationId": "st-04", "kind": "road-history", "titleEn": "Fifty-three stations",
+      "bodyEn": "The Tōkaidō linked Edo and Kyoto with fifty-three official post towns where travellers changed horses and slept. The route is the spine of this course.",
+      "sourceNote": "Hiroshige, The Fifty-three Stations of the Tōkaidō (1833–34)" }
+  ]
+}

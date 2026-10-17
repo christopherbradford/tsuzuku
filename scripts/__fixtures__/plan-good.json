@@ -1,0 +1,11 @@
+[
+  { "path": "public/content/_meta/components.json", "type": "component", "pass": 0, "belt": null, "jlpt": null, "count": 11, "idPrefix": "c-", "idStart": 0 },
+  { "path": "public/content/kana/hiragana.json", "type": "kana", "pass": 1, "belt": "white", "jlpt": null, "count": 12, "idPrefix": "k-h-", "idStart": 0 },
+  { "path": "public/content/kana/katakana.json", "type": "kana", "pass": 1, "belt": "white", "jlpt": null, "count": 9, "idPrefix": "k-k-", "idStart": 0 },
+  { "path": "public/content/vocab/n5/vocab-n5-001.json", "type": "vocab", "pass": 1, "belt": "white/yellow", "jlpt": 5, "count": 16, "idPrefix": "v-n5-", "idStart": 1 },
+  { "path": "public/content/kanji/n5/kanji-n5-001.json", "type": "kanji", "pass": 1, "belt": "yellow/orange", "jlpt": 5, "count": 9, "idPrefix": "j-", "idStart": 0 },
+  { "path": "public/content/grammar/n5/grammar-n5-001.json", "type": "grammar", "pass": 1, "belt": "yellow", "jlpt": 5, "count": 3, "idPrefix": "g-n5-", "idStart": 1 },
+  { "path": "public/content/conjugation/conjugation-001.json", "type": "conjugation", "pass": 1, "belt": null, "jlpt": null, "count": 3, "idPrefix": "cj-", "idStart": 1 },
+  { "path": "public/content/michikusa/michikusa-s04.json", "type": "michikusa", "pass": 1, "belt": "yellow", "jlpt": 5, "count": 3, "idPrefix": "m-04-", "idStart": 1 },
+  { "path": "public/content/stories/n5/stories-s04.json", "type": "story", "pass": 2, "belt": "yellow", "jlpt": 5, "count": 1, "idPrefix": "s-04-", "idStart": 1 }
+]

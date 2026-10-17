@@ -11,8 +11,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "content:validate": "node scripts/validate-content.mjs",
-    "content:index": "node scripts/build-content-index.mjs"
+    "content:validate": "node scripts/validate-content.ts",
+    "content:assign": "node scripts/assign-stations.ts",
+    "content:index": "node scripts/build-content-index.ts",
+    "content:all": "npm run content:validate && npm run content:assign && npm run content:index && npm run content:validate -- --strict"
   },
   "dependencies": {
     "@preact/signals": "2.11.3",
