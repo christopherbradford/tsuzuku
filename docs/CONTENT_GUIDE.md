@@ -1,0 +1,376 @@
+# TSUZUKU — Content Writer's Guide
+
+This handbook is pasted into every content-writer prompt. The TypeScript shapes it describes live in `src/content/types.ts`; the validator (`scripts/validate-content.ts`, run with `node --experimental-strip-types` so it imports `types.ts` directly) enforces the rules V01–V36 in §18 and returns `{file, id, rule, message}` for every failure. You fix only the listed items and resend the same file. The passes and the schedule are in §20.
+
+**Five rules that override everything else**
+
+1. Output exactly one JSON file per assignment, nothing else — no prose, no code fences. ≤ 150 items.
+2. Every `ja` string wraps every kanji in ruby `{漢字|かんじ}`; every `kana` string is kana only.
+3. Natural, modern, standard-Tokyo Japanese. No textbook stiffness after Station 5.
+4. Nothing from any franchise, brand or living person. Culture through motifs and public-domain history only.
+5. One entry per word + reading in the whole corpus. Check the known-set snapshot in your packet before adding a word.
+
+---
+
+## 1. File envelope and naming
+
+Every file is a `ContentFile<T>`:
+
+```json
+{ "schema": "tsuzuku.content/1", "type": "vocab", "level": "n5", "writer": "vocab-n5-003", "generatedAt": "2026-10-17T00:00:00Z", "items": [ … ] }
+```
+
+| Kind | Path (relative to `public/content/`) | Items / file |
+|---|---|---|
+| kana | `kana/hiragana.json`, `kana/katakana.json` | 104, 134 |
+| vocab | `vocab/<level>/vocab-<level>-<NNN>.json` | ≤ 150 |
+| kanji | `kanji/<level>/kanji-<level>-<NNN>.json` | ≤ 150 |
+| grammar | `grammar/<level>/grammar-<level>-<NNN>.json` | ≤ 150 |
+| story | `stories/<level>/stories-s<NN>.json` (one file per station) | 3 (Stations 1–31), 2 (32–53) |
+| conjugation | `conjugation/conjugation-<NNN>.json` (no `level` field) | ≤ 150 |
+| michikusa | `michikusa/michikusa-s<NN>.json` | 4 |
+| component | `_meta/components.json` (architect-owned, Pass 0; exempt from the 150 cap) | ~250 |
+| denylist | `_meta/denylist.json` (architect-owned, Pass 0; not a `ContentFile`, read by V30) | — |
+| station / manifest | `stations/<NN>.json`, `manifest.json` — **generated, never hand-written** | — |
+
+`<level>` ∈ `kana n5 n4 n3 n2 n1`; `<NNN>` runs 001, 002 … without gaps inside a level; `<NN>` is the two-digit station number 01–53. Your packet names your file.
+
+Directory → `type` (V01): `kana/` → `kana` · `vocab/` → `vocab` · `kanji/` → `kanji` · `grammar/` → `grammar` · `stories/` → `story` · `conjugation/` → `conjugation` · `michikusa/` → `michikusa` · `_meta/components.json` → `component`. `level` is present iff the path has a level segment (`stories/kana/…` → `"kana"`; conjugation and `_meta` files have none).
+
+Rules: no `null` anywhere (omit optional fields); no empty strings; UTF-8, NFKC-normalized, no leading/trailing spaces; keys exactly as in the type (unknown keys fail).
+
+## 2. Ids
+
+| Type | Grammar | Examples |
+|---|---|---|
+| kana | `k-<h\|k>-<ime-romaji>` | `k-h-a`, `k-k-shi`, `k-h-kya`, `k-k-thi` (ティ) |
+| vocab | `v-n<5..1>-<4 digits>` | `v-n5-0001` … the level segment must equal `jlpt` |
+| kanji | `j-<char>` | `j-食` |
+| grammar | `g-n<5..1>-<3 digits>` | `g-n5-001` |
+| story | `s-<station 01..53>-<1..9>` | `s-07-1`, `s-07-2`, `s-25-1` |
+| conjugation | `cj-<4 digits>` | `cj-0001` |
+| michikusa | `m-<station>-<1..4>` | `m-07-3` |
+| station | `st-<00..53>` | `st-07` (used in `stationId`) |
+
+Your packet gives you an id range (e.g. `v-n5-0301` … `v-n5-0450`). Number items consecutively from the start of the range. Ids are immutable once shipped and never reused; gaps are fine. Writers never set `station` — `scripts/assign-stations.ts` does.
+
+## 3. Kana items (`KanaItem`)
+
+- `kana` is the glyph (`か`, `きゃ`, `ファ`); `romaji` is display Hepburn (`ka`, `kya`, `fa`, `ti`); `type` ∈ `basic dakuten handakuten yoon extended`; `row` is the consonant row (`a k g s z t d n h b p m y r w`), `nn` for ん/ン, `ext` for extended katakana.
+- Inventory: hiragana 46 basic + 20 dakuten + 5 handakuten + 33 yōon = 104; katakana the same 104 + 30 extended = 134.
+- **Id romaji segment** is IME-safe so no two kana collide: basic Hepburn (`shi chi tsu fu ji zu`) except ぢ `di`, づ `du`, を `wo`, ん `n`; yōon rows `kya sha cha nya hya mya rya gya ja bya pya` (11 rows × 3 = 33; the ぢゃ row is **not** in the inventory); extended katakana: ファ `fa` フィ `fi` フェ `fe` フォ `fo` フュ `fyu` ヴァ `va` ヴィ `vi` ヴ `vu` ヴェ `ve` ヴォ `vo` ヴュ `vyu` シェ `she` ジェ `je` チェ `che` ツァ `tsa` ツィ `tsi` ツェ `tse` ツォ `tso` ティ `thi` ディ `dhi` テュ `thu` デュ `dhu` トゥ `twu` ドゥ `dwu` ウィ `whi` ウェ `whe` ウォ `who` イェ `ye` クァ `kwa` クォ `kwo`.
+- `mnemonic` ≤ 160 chars: one concrete picture of the **shape** plus a sound hook ("か: a KAtana swinging down, a chip flying off the blade"). Katakana may point to the hiragana twin or the source kanji (カ from 加). No franchise.
+- `exampleWord`: hiragana items → a common N5 word that contains the kana, written in kana; katakana items → a common loanword containing it.
+- `lookalikes`: ids of confusable kana (ね/れ/わ, シ/ツ, ソ/ン, め/ぬ).
+
+## 4. Furigana (ruby) markup — the one syntax rule
+
+Inside any `ja` string: `{base|reading}`, base = kanji run, reading = its kana. Okurigana stay **outside** the braces.
+
+```
+{私|わたし}は{毎朝|まいあさ}コーヒーを{飲|の}みます。
+```
+
+- Every kanji (and 々) in `ja` must be inside a base. Katakana, hiragana and punctuation stay outside.
+- One ruby per word, not per character (`{毎朝|まいあさ}`, not `{毎|まい}{朝|あさ}`), except where two readings are clearly separable in a compound you want glossed separately.
+- Reading is kana only; base has no `{`, `}` or `|`.
+- The validator reconstructs: bases + plain text → the plain sentence; readings + plain text → must equal the sibling `kana` field **exactly**.
+- Plain fields never carry ruby: `word`, `tokens`, `clozeHints`, `collocations`, `altForms`, `answer`, `exampleWord.word`.
+- Numbers: write them in kanji with ruby (`{三時|さんじ}`) or in kana. No ASCII digits in `ja`/`kana`.
+- Latin acronyms only as uppercase ≤ 4 letters inside a ruby: `{ATM|エーティーエム}`.
+
+## 5. `kana` fields
+
+Allowed characters: hiragana, katakana, `ー`, `・`; in sentences also `、。！？「」『』〜…` and spaces. No kanji, no Latin, no digits. Katakana words stay katakana (`コーヒー`), never folded to hiragana. Kanji `on` are katakana only; `kun` are hiragana with one dot before okurigana (`た.べる`).
+
+## 6. English gloss house style
+
+| Field | Style | Examples |
+|---|---|---|
+| `meanings` (vocab) | lowercase, no trailing period, ≤ 40 chars, 1–4 entries, most frequent first; US spelling | `"to drink"`, `"dog"`, `"quiet"`, `"quickly"` |
+| verbs | `to …` | `"to eat"`, `"to put on (lower body)"` |
+| nouns | bare, no article | `"station"`, not `"a station"` |
+| な-adjectives | bare adjective | `"convenient"`, not `"to be convenient"` |
+| particles / aux | functional gloss in parentheses first | `"(topic marker)"`, `"(object marker)"` |
+| counters | `"(counter for flat things)"` | |
+| greetings / expr | natural equivalent | `"good morning"`, `"excuse me; thank you (for the trouble)"` → split into two glosses, no semicolons |
+| `meanings` (kanji) | bare keyword, no `to`, 1–3 | `"eat"`, `"big"`, `"person"` |
+| `meaning` (grammar) | short equivalent with `…` | `"please do …"`, `"have done … before"` |
+| `en` (sentences) | natural full sentence, sentence case, final `.`/`?`/`!`; default subject "I" when Japanese omits it; no literal word order, no bracketed explanations | `"I drink coffee every morning."` |
+| `notes` | ≤ 200 chars, nuance / false friend / collocation; this is where parentheticals go | |
+
+Never: slashes inside a gloss, piled synonyms, dictionary codes, romaji in any Japanese field.
+
+## 7. Tags
+
+**Domain tags** (1–3 per vocab item; grammar may use them or leave `tags: []`):
+
+`people` (roles, pronouns) · `family` · `body` · `health` (illness, medicine) · `food` · `drink` · `cooking` · `clothing` · `home` (rooms, furniture, chores) · `objects` (everyday things) · `school` · `study` (learning, exams) · `work` · `business` · `money` · `shopping` · `travel` · `transport` · `places` (buildings, facilities) · `city` (streets, addresses) · `nature` (land, sea, sky) · `weather` · `animals` · `plants` · `time` (clock, duration) · `calendar` (days, months, seasons) · `numbers` · `quantity` (amounts, degree) · `position` (direction, location words) · `colors` · `shapes` · `emotions` · `personality` · `communication` (speaking, asking, phones, mail) · `language` (words about words) · `media` (news, TV, books) · `technology` · `arts` · `music` · `sports` · `hobbies` · `culture` (customs, holidays, religion) · `society` · `politics` · `law` · `science` · `abstract` (ideas, relations) · `actions` (general verbs with no better home) · `states` (general adjectives/conditions) · `greetings`
+
+**Register tags** (add only when not neutral): `polite` · `casual` · `formal` · `written` · `honorific` (尊敬語) · `humble` (謙譲語) · `slang` · `dialect` · `literary`. `neutral` exists as a value for `GrammarItem.register` / `StoryItem.register` and is never written as a vocab tag.
+
+**Misc tags:** `homograph` · `usually-kana` · `loanword` · `onomatopoeia` · `set-phrase` · `aizuchi` · `counter` · `proper-noun`.
+
+**POS** (`pos`): `n` noun · `n-suru` noun + する · `n-adv` adverbial noun (今日, 毎朝) · `pron` · `num` · `counter` · `v1` ichidan · `v5` godan (ending read from the final kana) · `v-irr` する/来る · `adj-i` · `adj-na` · `adv` · `prt` · `conj` · `int` · `expr` · `pref` · `suf` · `aux`. Add `trans: "vt" | "vi"` for verbs where it is clear, `pairId` for transitive/intransitive partners.
+
+## 8. Example sentences (`examples[].{ja,kana,en}`)
+
+- **Natural and modern.** Everyday situations a 20–40-year-old meets: trains, convenience stores, work chat, weather, food, plans. `これはペンです` is acceptable only at Station 4.
+- **i + 1-ish.** An example for a level-N item uses only vocabulary and grammar at level N or easier (N5 item → N5 words, N5 grammar). The target word is never the only content word; the context should make the meaning guessable (the sentence is reused with the word blanked as a production prompt). Pass 1 writes one example; Pass 3 (`vocab-examples-2`, §20) adds a second with a different frame, subject and tense, and the app rotates prompts between examples and story lines so production never becomes recall of one fixed sentence.
+- **Length** (plain `ja`, incl. punctuation): N5 ≤ 25 chars and ≤ 14 words · N4 ≤ 35 · N3 ≤ 45 · N2 ≤ 60 · N1 ≤ 80. Story lines may run to `ceil(1.5 × cap)` = 38 / 53 / 68 / 90 / 120.
+- **Register:** files for Stations 4–10 (`vocab-n5-001` … `-004`) polite ます/です; files for Stations 11–15 (`vocab-n5-005`, `-006`) about 30 % casual plain-form sentences (plain forms are taught at Station 12); N4 about half casual / half polite; N3 half and half; N2 adds written/formal; N1 adds literary and formal spoken. A word tagged `casual`/`slang` gets a casual sentence; `honorific`/`humble` gets a service or workplace sentence. V22 checks the share per file, not per sentence.
+- **Pitch:** fill `pitch` (nucleus mora; 0 = heiban) for N5 and N4 words and **always** set `pitchConfidence: "low"` — never `"high"` (V18 warns on a writer-set `high`; a post-pass script upgrades to `high` only where a licensed pitch dataset agrees, and only those words get a graded pitch card). Omit both at N3+ unless the word is in your packet's pitch list.
+- **Names:** use the fixed cast (§14.1) or none. Place names only from the Tōkaidō list in `STATIONS` or generic ones (駅, 公園).
+- Sentences must not depend on a picture, a previous sentence, or a pun.
+
+## 9. JLPT assignment
+
+Targets: vocab N5 ≈ 800 · N4 ≈ 650 · N3 ≈ 1,700 · N2 ≈ 1,700 · N1 ≈ 1,500; kanji N5 100 · N4 200 · N3 350 · N2 350; grammar N5 90 · N4 90 · N3 110 · N2 90 · N1 70. Decision procedure for a word:
+
+1. If it appears on the widely circulated JLPT lists (旧4級→N5, 3級→N4, 2級 split → N3 for the more frequent half, N2 for the rest, 1級→N1), use that level. On several lists → the lowest (N5 first).
+2. Otherwise by frequency rank in a general modern corpus: ≤ 1,000 → N5/N4 by concreteness; 1,000–3,000 → N3; 3,000–6,000 → N2; 6,000–10,000 → N1.
+3. Katakana loanwords transparent to English speakers: one level easier than frequency suggests, but never above N4 unless truly rare.
+4. Keigo verbs (召し上がる, いただく, 申す) ≥ N4; full keigo sets N3+. Onomatopoeia N3+ except N5 basics (ゆっくり, ちょっと).
+5. A kanji's level is at most the level of its most common word; prefer jōyō grade order inside a level.
+6. Grammar follows the standard N-level 文型 lists; N5/N4 roughly the beginner-textbook sequence.
+
+When in doubt, go one level **easier**: the station assigner orders items by frequency within a level anyway.
+
+## 10. Dedupe rules
+
+- **Key = `word` + `kana`** (NFKC). One entry in the entire corpus. Pass 1 packets carry `docs/vocab-ownership.json` (word → owning file, generated from the briefs in `docs/content-plan.json` and linted before packets go out): do not add a word it assigns to another file. Pass 2 and Pass 3 packets carry the known-set snapshot of everything assigned to stations ≤ yours.
+- Same word, different kanji spellings (分かる / 解る / 判る) → one entry; put the others in `altForms`.
+- Words usually written in kana (こと, もの, ある, いる, ちょっと, ください) → `word` in kana, tag `usually-kana`, kanji spelling in `altForms`.
+- Polysemy (甘い sweet / naive) → one entry, several `meanings`. The `homograph` tag is only for the rare case of two entries sharing `word` and `kana` with **no** shared meaning; both must carry it.
+- Suru-nouns: one `n-suru` entry (勉強); never a separate 勉強する.
+- Transitive / intransitive pairs: two entries, `pairId` on both.
+- Counters: `pos: "counter"`, tag `counter`, `word` with 〜 (`〜枚`).
+- Different reading, same kanji (辛い からい / つらい) → two entries, no tag needed.
+- Collisions found at merge time keep the **lowest level**; at the same level the **lower file number** keeps the row; the other row is dropped and its id left as a gap (V34's ±10 % absorbs the loss). Nobody waits for another file: Pass 1 runs all files in parallel (§20).
+
+## 11. Vocab item — gold example
+
+```json
+{
+  "id": "v-n5-0042", "word": "飲む", "kana": "のむ", "meanings": ["to drink"], "pos": "v5", "jlpt": 5,
+  "tags": ["drink", "actions"], "pitch": 1, "pitchConfidence": "low", "trans": "vt",
+  "examples": [
+    { "ja": "{毎朝|まいあさ}コーヒーを{飲|の}みます。", "kana": "まいあさコーヒーをのみます。", "en": "I drink coffee every morning." }
+  ],
+  "kanjiIds": ["j-飲"], "collocations": ["お茶を飲む", "薬を飲む"]
+}
+```
+
+Required: `id word kana meanings pos jlpt tags examples`. Optional: `romaji pitch pitchConfidence notes kanjiIds altForms collocations trans pairId confusables frequencyRank definitionJa`. Pass 1 writes exactly one example per word and no `definitionJa`. **Pass 3** (same file, same ids, §20) adds a second example to every item and, for N3–N1 items, `definitionJa: { ja, kana }` — a Japanese definition ≤ 45 chars (plain), ruby rules apply, every content word in the cumulative allowlist up to the item's station, the target word itself absent (V36):
+
+```json
+"definitionJa": { "ja": "{水|みず}やお{茶|ちゃ}などを{口|くち}から{体|からだ}に{入|い}れること。", "kana": "みずやおちゃなどをくちからからだにいれること。" }
+```
+
+## 12. Kanji items (`KanjiItem`)
+
+### 12.1 Canonical component names
+
+Mnemonics must use these names verbatim (case-insensitive, whole word). The full list (~250) ships as `_meta/components.json` in your packet; this table is the core you will use most. Variants in parentheses count as the same component.
+
+| Glyph | Name | Glyph | Name | Glyph | Name |
+|---|---|---|---|---|---|
+| 人 (亻) | person | 口 | mouth | 日 | sun |
+| 月 | moon | 木 | tree | 水 (氵) | water |
+| 火 (灬) | fire | 土 | earth | 金 | gold |
+| 山 | mountain | 川 | river | 田 | rice field |
+| 女 | woman | 子 | child | 大 | big |
+| 小 (⺌) | small | 心 (忄) | heart | 手 (扌) | hand |
+| 足 | foot | 目 | eye | 耳 | ear |
+| 言 | say | 車 | car | 門 | gate |
+| 糸 | thread | 米 | rice | 竹 (⺮) | bamboo |
+| 艹 | grass | 雨 | rain | 石 | stone |
+| 刀 (刂) | sword | 力 | power | 弓 | bow |
+| 王 | king | 貝 | shell | 走 | run |
+| 辶 | road | 阝(left) | hill | 阝(right) | town |
+| 宀 | roof | 广 | lean-to | 厂 | cliff |
+| 尸 | corpse | 囗 | enclosure | 冂 | frame |
+| 彳 | step | 寸 | inch | 工 | craft |
+| 士 | samurai | 十 | ten | 一 | one |
+| 白 | white | 立 | stand | 牛 | cow |
+| 犬 (犭) | dog | 馬 | horse | 鳥 | bird |
+| 魚 | fish | 虫 | insect | 示 (礻) | altar |
+| 衣 (衤) | clothes | 食 (飠) | eat | 又 | right hand |
+| 攵 | strike | 欠 | yawn | 頁 | head |
+| 隹 | small bird | 羊 | sheep | 方 | direction |
+| 戈 | halberd | 止 | stop | 生 | life |
+| 見 | see | 寺 | temple | 云 | cloud |
+| 八 | eight | 儿 | legs | 冖 | cover |
+| 匕 | spoon | 厶 | private | 几 | table |
+| 皿 | dish | 戸 | door | 巾 | cloth |
+| 氏 | clan | 比 | compare | 毛 | fur |
+| 老 | old | 舟 | boat | 身 | body |
+| 酉 | sake jar | 里 | village | 音 | sound |
+| 青 | blue | 中 | middle | 夕 | evening |
+
+Only names from `components.json` are valid (V07); the file is authored by the architect in Pass 0 **before any kanji packet goes out**, together with a one-off check that every one of the 1,000 planned characters (station-allocation §3) decomposes into listed names from an offline IDS/KanjiVG-derived table. It therefore also holds the primitives the core table lacks (卜 divination, 罒 net, 尺 ruler, 丶 drop, 亠 lid, 禾 grain, 卩 seal, 殳 weapon, 爪 claw, 玉 jewel, 疒 sickness, 穴 hole, 聿 brush, 臣 retainer, 至 arrive, 臼 mortar, 血 blood, 行 go, 辛 spicy, 非 wrong, 革 leather, 風 wind, 鬼 demon, 鹿 deer, 麦 wheat, 黄 yellow, 黒 black, 歯 tooth, …) and a small **stroke-type escape hatch** (`drop`, `hook`, `lid`, `divination`, `cross`, `dot`) for leftover strokes. A kanji that is itself a primitive lists its own canonical name as its only component (日 → `["sun"]`). If a character still cannot be decomposed into listed names, stop and report it instead of inventing a name.
+
+### 12.2 Rules
+
+- `components`: 1–5 names, in the order a reader meets them (left→right, top→bottom, outside→inside).
+- `mnemonic` ≤ 280 chars: one concrete scene; mentions **every** component name; ends by landing on the keyword (first `meanings` entry). No franchise, no living people, no violence against people, no stereotypes.
+- `on` katakana, `kun` hiragana with a dot before okurigana. Either may be empty; not both.
+- `examples`: ≥ 2 real words containing `char`; the first uses the primary reading. Prefer words that are N5–N4 items.
+- `radical` only when it differs from the first component; `lookalikes` for 未/末, 微/徴, 日/目 pairs.
+
+### 12.3 Gold example
+
+```json
+{
+  "id": "j-飲", "char": "飲", "meanings": ["drink"], "on": ["イン"], "kun": ["の.む"], "strokes": 12, "jlpt": 5,
+  "components": ["eat", "yawn"],
+  "mnemonic": "After you EAT, you open wide in a YAWN — but it is really a long, grateful DRINK.",
+  "examples": [
+    { "word": "飲む", "kana": "のむ", "en": "to drink" },
+    { "word": "飲み物", "kana": "のみもの", "en": "drink" }
+  ],
+  "radical": "食", "lookalikes": ["j-飯"]
+}
+```
+
+## 13. Grammar items (`GrammarItem`)
+
+- `pattern`: display form with 〜 and slot letters (`〜てください`, `Vた + ことがある`, `Nのように`). Unique.
+- `meaning`: one short English equivalent. `formation`: 1–6 lines, groups spelled out.
+- `explanation` ≤ 120 words, plain English, pattern first, then when to use it, then what it is not. Address the learner as "you". No IPA, no Latin grammar jargon beyond noun / verb / adjective / particle / clause.
+- `examples` ≥ 3 (write 3–5), each containing one of `clozeHints` as a plain substring; vary subjects and tenses so the surface cannot be memorized.
+- `clozeHints`: the exact plain substrings the app blanks out (`["てください"]`). ≥ 1.
+- `mistakes`: 1–3 typical learner errors as `× wrong → ○ right` lines; may be `[]` for trivial points.
+- `related`: ids of contrast or prerequisite points you know exist (your packet lists the level's id→pattern table); never your own id.
+- `register`: `polite` for ます-based patterns, `casual` for plain-form-only, `formal`/`written`/`literary` as fitting, else `neutral`.
+- `unlocksForms`: conjugation forms this point introduces (`["te"]` for 〜てください). Forms: `masu masen mashita masen-deshita masho te nai ta nakatta potential volitional passive causative causative-passive imperative prohibitive ba tara tai te-iru adj-neg adj-past adj-past-neg adj-te adj-adv adj-ba`.
+
+```json
+{
+  "id": "g-n5-047", "pattern": "〜てください", "meaning": "please do …",
+  "formation": ["V-て + ください", "Group 1: 書く → 書いてください", "Group 2: 食べる → 食べてください", "Irregular: する → してください · 来る → 来てください"],
+  "explanation": "Attach ください to the て-form to ask someone to do something politely. It is a request, not an order, so it is fine with strangers, shop staff and teachers. For a softer request you will later meet 〜ていただけませんか; to ask someone not to do something, use 〜ないでください.",
+  "jlpt": 5, "register": "polite",
+  "examples": [
+    { "ja": "ここに{名前|なまえ}を{書|か}いてください。", "kana": "ここになまえをかいてください。", "en": "Please write your name here." },
+    { "ja": "もう{一度|いちど}{言|い}ってください。", "kana": "もういちどいってください。", "en": "Please say that once more." },
+    { "ja": "{少|すこ}し{待|ま}ってください。", "kana": "すこしまってください。", "en": "Please wait a moment." }
+  ],
+  "clozeHints": ["てください"],
+  "mistakes": ["× 書くください → ○ 書いてください (dictionary form cannot take ください)", "× 待ちてください → ○ 待ってください (Group 1 て-form sound change)"],
+  "related": ["g-n5-046", "g-n5-051"], "tags": ["communication"], "unlocksForms": ["te"]
+}
+```
+
+## 14. Stories and dialogues (Pass 2, `StoryItem`)
+
+### 14.1 Tabi Nikki (旅日記) bible
+
+Present day. **ハナ** (Hana, 24, from Yokohama) is the diarist — the "わたし" of every `story` — walking the old Tōkaidō from Nihonbashi to Kyoto across one year, spring to winter. Her cousin **ケン** (Ken, 31, a cook between restaurants) walks with her. Recurring: **田中さん** (a retired station master who keeps turning up on the road), **アオ** (a blue-grey stray cat that reappears), and a different innkeeper at every station. Tone: warm, dry, observant; food, weather, small kindnesses; every episode ends on a gentle hook or a warm beat. No romance plot, no violence, no illness drama, no real living people, no franchise references. Cast names are written in katakana (ハナ, ケン, アオ) so they are readable from White; 田中さん takes ruby. New named characters are allowed only as one-episode locals (innkeeper, shopkeeper, child) and must be listed in `names`.
+
+Each station gets one episode (`s-NN-1`). Stations 1–31 add two more texts (`s-NN-2` a dialogue, `s-NN-3` a short standalone piece: a notice, a postcard, a menu conversation, a forum post); Stations 32–53 add one (`s-NN-2` a dialogue) — 137 texts in V1. From Station 10 the dialogue is **casual** register (the learner must meet plain forms and contractions in input); from Station 27 one text per station may be `bridge: true`. Stations 1–3 are three kana-reading texts each over the shared White allowlist (§14.2). Your packet gives the previous episodes' `recapEn`.
+
+### 14.2 Rules
+
+- `kind`: `story` (diarist narration, no `speaker`) or `dialogue` (every line has `speaker`, ≥ 2 speakers; set `learnerSpeaker` to the role a learner would play, usually `ハナ`).
+- `lines`: 12–60. White stations (1–3): kana-only picture-book lines of 2–6 words (kanji numerals with ruby allowed) using the White set, greetings and function words; **every kana in a line must be assigned to a station ≤ the text's station** (V20 kana allowlist; `s-01-1` is read after the Station 1 Gatekeeper and may use every hiragana). Yellow–Green: 12–20 lines. Blue+: 20–40 lines; `bridge: true` passages (Station 27+) use authentic register (contractions, fillers, dropped particles, a notice or forum style).
+- **Allowlist.** Your packet contains the station's cumulative known set (all vocab and grammar assigned to stations ≤ yours, plus `names`). Stations 1–3 share one allowlist: the full 80-word White set plus the function tokens and cast names. Every content word must come from it. Up to **3** words per story (**6** for Stations 1–3) may be `plusOne` (vocab ids from later stations, ≤ 1 per line); each must appear in that line.
+- `tokens`: word-level surfaces whose concatenation equals plain `ja` exactly. One token per word including its inflection (`飲みました`), particles separate, て-form auxiliaries separate (`食べて`, `います`), compound nouns one token, each punctuation mark its own token. `tokenIds` is **generated** by the linker — never write it.
+- **Dialogue fields (V27).** On every learner line (`speaker === learnerSpeaker`): `options` — 3–4 entries, exactly one `kind: "best"` whose `text` equals the plain line, the others `ok` / `register-wrong` / `grammar-wrong`, each plausible and carrying a `recast` (the corrected natural line); `accept` — other natural plain surfaces a free answer may use; `mustInclude` — the plain content words a free answer must contain. On long NPC lines (≥ 12 chars) mark one `aizuchiSlot: true` where a listener would backchannel. From Station 21 an NPC line may carry `registerTarget` where the register of the scene changes.
+- `vocabIds`: every vocab item used (allowlist ∪ plusOne). `grammarIds`: every pattern used (must be in the station's grammar allowlist).
+- `comprehension` ≥ 3: `q` in English through Station 15, Japanese (with ruby) from 16 — and from 16 every `choices` entry obeys the ruby rules too (the app renders both through `<Ruby>`); 4 distinct choices; vary the correct index.
+- `recapEn` ≤ 60 words. `register` = the majority register of the lines.
+- Length caps per line: `ceil(1.5 × cap)` of the station level (38 / 53 / 68 / 90 / 120 chars, §8). Punctuation: `。、？！「」` only; dialogue quotes are not needed when `speaker` is set.
+
+```json
+{ "speaker": "ハナ", "ja": "{箱根|はこね}の{山|やま}は{高|たか}いですね。", "kana": "はこねのやまはたかいですね。", "en": "The mountains at Hakone are high, aren't they?", "tokens": ["箱根", "の", "山", "は", "高い", "です", "ね", "。"] }
+```
+
+Function tokens never count as unknown: particles (は が を に で と へ から まで より の も か ね よ な わ って), copula and ます-forms (です だ でした だった じゃない ではありません でしょう ます ません ました ましょう), て-form auxiliaries (いる ある おく みる しまう くれる もらう あげる いく くる), name suffixes (さん ちゃん くん 様 たち), kanji numerals, punctuation, and any `clozeHints` substring of an allowlisted grammar point.
+
+## 15. Conjugation golden table (`ConjugationGoldenEntry`)
+
+60 head words (40 verbs incl. 行く 来る する ある いる 言う 待つ 死ぬ 遊ぶ 読む 帰る 切る 知る 入る 走る 要る; 10 い-adjectives incl. いい/よい and ない; 10 な-adjectives) × every applicable form. One row per (word, form). `answer` plain, `answerKana` kana only, `alt` for accepted variants (ら抜き potential, 行ける/いける). Verb forms (20): `masu masen mashita masen-deshita masho te nai ta nakatta potential volitional passive causative causative-passive imperative prohibitive ba tara tai te-iru`. Adjective forms (6): `adj-neg adj-past adj-past-neg adj-te adj-adv adj-ba`. For な-adjectives `adj-neg` = 〜じゃない, `adj-te` = 〜で, `adj-adv` = 〜に, `adj-ba` = 〜なら.
+
+```json
+{ "id": "cj-0007", "word": "行く", "kana": "いく", "pos": "v5", "form": "te", "answer": "行って", "answerKana": "いって" }
+```
+
+## 16. Michikusa (`MichikusaItem`)
+
+4 per station, `kind` ∈ `etymology proverb culture pitch kanji-origin usage road-history`; `bodyEn` ≤ 60 words, factual, public-domain history and language facts only; optional `ja`/`kana` for a proverb or word (ruby rules apply). `sourceNote` (≤ 80 chars naming the public-domain source) is **required** for `road-history`, `etymology` and `kanji-origin`; those items go to a human spot-check list before release because no validator rule can catch a hallucinated fact.
+
+## 17. Denylist and safety
+
+Fails on sight: any franchise title, character, studio, game, mascot, brand, product name, real living person, real company signage, song lyric. Allowed motifs: torii, sakura, pine, Fuji, waves, lanterns, shōji, daruma, koi, taiko, arcade cabinet (generic), vending machine (generic), station sign (generic). Historical figures only if dead > 100 years and only in `michikusa`. No stereotypes about nationalities, genders or regions; dialect appears only as receptive examples tagged `dialect`.
+
+## 18. Validation rules
+
+Severity: **F** = fail (must fix), **W** = warning (human review). Report rows: `{file, id, rule, message}`.
+
+**Structural**
+
+- **V01** F · Envelope: valid JSON; top-level `{schema: "tsuzuku.content/1", type, items}`; `type` equals the directory kind per the §1 table (`stories/` → `story`, `_meta/components.json` → `component`); `level` present iff the path has a level segment and equal to it.
+- **V02** F · `1 ≤ items.length ≤ 150`; `_meta/*` files are exempt from the upper bound.
+- **V03** F · Shape: all required fields present with the right JS type; no unknown keys; no `null`; no empty strings; no empty arrays where ≥ 1 is required; integers where specified.
+- **V04** F · Id grammar per type (`ID_PATTERNS` in `types.ts`).
+- **V05** F · Id consistency: unique corpus-wide; kanji `id === "j-" + char`; vocab/grammar level segment equals `jlpt` and the path level; story/michikusa station segment equals `stationId`; story sequence ≤ the station's `quota.stories`.
+- **V06** F · References resolve: `kanjiIds pairId confusables lookalikes related vocabIds grammarIds plusOne stationId`; `stationId` ∈ `STATIONS`. W · `pairId` is symmetric.
+- **V07** F · Enum fields hold allowed values: `pos jlpt script type row register kind form pitchConfidence`; `tags` ⊆ domain ∪ register ∪ misc; kanji `components` names ∈ `_meta/components.json`.
+- **V08** F · File path grammar (§1); `NNN` sequential without gaps inside a level; kana files exactly `hiragana.json` / `katakana.json`.
+
+**Linguistic**
+
+- **V10** F · Kana-only fields: every `kana`, `answerKana`, `exampleWord.kana`, `on` (katakana only), `kun` (hiragana + ≤ 1 dot) match `KANA_WORD_RE` / `KANA_SENTENCE_RE`; no kanji, Latin or digits.
+- **V11** F · Ruby well-formed: braces balanced, exactly one `|` per ruby, base has ≥ 1 kanji/々 (or an uppercase Latin acronym ≤ 4 letters), reading kana-only, no nesting, no stray `{ } |` outside rubies.
+- **V12** F · No bare kanji in any `ja`/`q`/`titleJa`/michikusa `ja`; no ruby markup in plain fields (`word tokens clozeHints collocations altForms answer exampleWord.word`).
+- **V13** F · Reconstruction: `ja.replace(RUBY_RE, "$2") === kana` exactly; plain text = `ja.replace(RUBY_RE, "$1")`.
+- **V14** F · Counts: vocab `examples ≥ 1` (≥ 2 at release), `meanings 1–4`, `tags 1–6`; kanji `examples ≥ 2`, `meanings 1–3`, `components 1–5`; grammar `examples ≥ 3`, `clozeHints ≥ 1`, `formation 1–6`, `mistakes ≤ 3` each matching `^× .+ → ○ .+( \(.+\))?$`; story `lines 12–60`, `comprehension ≥ 3`; kana exactly one `exampleWord`.
+- **V15** F · Length caps: plain `ja` ≤ 25/35/45/60/80 chars for N5/N4/N3/N2/N1 (story lines `Math.ceil(cap × 1.5)` = 38/53/68/90/120); kana mnemonic ≤ 160 chars; kanji mnemonic ≤ 280; `notes` ≤ 200; gloss ≤ 40; `explanation` ≤ 120 words; `recapEn`, michikusa `bodyEn` ≤ 60 words; michikusa `sourceNote` ≤ 80 chars; `definitionJa.ja` plain ≤ 45 chars. W · N5 sentence > 14 words.
+- **V16** F · Target presence: vocab example plain `ja` contains `word`, an `altForms` entry, `kana`, or the inflection stem (word minus final kana for `v1 v5 adj-i n-suru`); each kanji `examples[].word` contains `char`; each grammar example contains a `clozeHints` substring; kana `exampleWord` contains the kana. W · no kanji example uses a listed `on`/`kun` reading.
+- **V17** F · Kanji `mnemonic` mentions every `components` name (case-insensitive, whole word/phrase).
+- **V18** F · Numeric sanity: `strokes` 1–30; `pitch` integer in `[0, moraCount(kana)]`; `pitchConfidence` present iff `pitch` present; `answer` 0–3; `frequencyRank` positive integer. W · a writer-set `pitchConfidence: "high"` (only the dataset post-pass may set it).
+- **V19** F · Token integrity: for every story line `tokens.join("") === plain ja`; no empty token; no ruby inside tokens. `tokenIds`, if present, is generated and parallel to `tokens` (the validator rewrites it from the V20 match; a writer-supplied value fails).
+- **V20** F · Coverage: `vocabIds ⊆ allowlist(station) ∪ plusOne` (Stations 1–3 share the White allowlist); `grammarIds ⊆ grammarAllowlist(station)`; `plusOne` ids are vocab items **not** in the allowlist, ≤ 1 per line, ≤ 3 per story (6 for Stations 1–3), each present in its line; known-token coverage (function tokens, `names`, kanji numerals, and allowlist ∪ plusOne matches by surface/`kana`/`altForms`/stem prefix) ≥ `coverageTargetFor(station, bridge)` — 0.97 for Stations 1–28, 0.95 for 29–38, 0.93 for 39–53, 0.93 for any `bridge: true` text; `bridge: true` only from Station 27. Stations 1–3: every kana character in a line is assigned to a station ≤ the text's station (`s-01-1` exempt). W · an allowlisted word detected in the text is missing from `vocabIds`.
+- **V21** F · Comprehension: 4 distinct non-empty `choices`; `answer` valid; `q` and `choices` English (no Japanese characters) for Stations ≤ 15; from 16 the ruby rules apply to `q` and to every `choices` entry. W · the correct index is the same for every question of a story.
+- **V22** W · Register heuristic: in a `polite` context sentences end in ます/ません/ました/ましょう/です/でした/でしょう/ください (+ か/ね/よ); `casual` sentences do not end in ます/です; per vocab file the casual share is ≈ 0 % for `vocab-n5-001…004`, 20–40 % for `vocab-n5-005…006`, 35–65 % for N4 and N3; the majority of story lines match `register`.
+- **V23** F · Grammar graph: `related` has no self-reference or duplicates and resolves; `unlocksForms ⊆ CONJ_FORMS`; `register ∈ REGISTER_TAGS`.
+- **V24** F · Kana consistency: glyph block matches `script`; `type` matches the glyph — `extended` ⇔ `row === "ext"` (any length, incl. single-char ヴ); otherwise `yoon` ⇔ 2 chars ending in small ゃゅょ, `dakuten` ⇔ a ゛ glyph, `handakuten` ⇔ a ゜ glyph, else `basic`; `romaji` lowercase ASCII; id segment follows the §3 table; `row` matches the consonant. W · corpus does not yet hold exactly 104 hiragana + 134 katakana (46 + 20 + 5 + 33, + 30 extended for katakana).
+- **V25** F · Story form: `dialogue` → every line has `speaker`, ≥ 2 distinct speakers, `learnerSpeaker` (if present) is one of them; `story` → no `speaker` anywhere; `titleJa` obeys ruby rules; every `names` entry appears in ≥ 1 line.
+- **V26** F · Conjugation: (`word`, `form`) unique; `pos` conjugable; `form` applicable to `pos` (verb forms ↔ verbs, `adj-*` ↔ adjectives); `answerKana` kana-only; `answer` has no ruby; `alt` entries differ from `answer`. W · a head word is missing one of its applicable forms.
+- **V27** F · Dialogue fields: in a `dialogue`, every line whose `speaker === learnerSpeaker` has `options` (3–4 entries, exactly one `kind: "best"` whose `text` equals the plain line, every non-best entry has a `recast`, all `text`s distinct and plain, no ruby) and `mustInclude` (each entry a plain substring of the line); `accept` entries are plain and differ from the line; `aizuchiSlot` only on NPC lines; `registerTarget` ∈ `REGISTER_TAGS` and only from Station 21. W · a learner line without `accept`.
+
+**Policy and corpus**
+
+- **V30** F · Denylist: no term from `_meta/denylist.json` (franchise, character, brand, living person; Latin and katakana forms) in any string field.
+- **V31** F · Script hygiene: no ASCII digits in `ja kana word tokens`; Latin letters in `ja` only as uppercase acronyms ≤ 4 letters inside a ruby; no romaji in `kana`; no full-width Latin; strings NFKC-normalized without leading/trailing whitespace.
+- **V32** F · Dedupe: (`word`, `kana`) unique corpus-wide unless both items carry `homograph` and share no meaning; kanji `char` unique; kana glyph unique per script. W · grammar `pattern` duplicated; same `kana` with overlapping meanings.
+- **V33** W · Gloss style (§6): lowercase start unless proper noun; no trailing period; verbs begin with `to `; no `/` inside a gloss; `en` sentences end with `.` `?` or `!`.
+- **V34** F at release, W during Pass 1 · Station quotas: after assignment each station's vocab/kanji/grammar counts are within ±10 % of `STATIONS[n].quota`; story count equals `quota.stories`; level totals within ±10 % of §9 targets.
+- **V35** F · Manifest: `manifest.json` and `stations/NN.json` regenerate byte-identically from the files (paths, counts, bytes, sha256, `componentIds`, `surfaces`); every file listed; no listed file missing; `redirects` targets exist.
+- **V36** F at release, W during Pass 1–2 · J-J definitions: every vocab item with `jlpt ≤ 3` has `definitionJa`; `definitionJa.ja` obeys the ruby rules, is ≤ 45 plain chars, reconstructs to `definitionJa.kana`, does not contain `word`/`kana`/any `altForms`, and every content token resolves in the cumulative allowlist up to the item's `station`.
+
+## 19. Writer self-check before returning a file
+
+1. One JSON document, `items` ≤ 150, ids consecutive inside my range, no `null`.
+2. Every kanji in every `ja` is inside `{…|…}`; readings + plain text equal `kana` exactly.
+3. Every example contains its target; counts meet V14; lengths meet V15.
+4. Glosses lowercase, no period, verbs `to …`.
+5. Tags from §7 only; `pos` from §7; `jlpt` matches the file level.
+6. Kanji mnemonics name every component from the canonical list.
+7. Stories: tokens concatenate to the plain line; every content word is in the allowlist or one of ≤ 3 `plusOne` (≤ 6 at Stations 1–3); no `tokenIds`.
+8. Dialogues: every learner line has `options` (one `best`), `mustInclude` and ideally `accept`; long NPC lines mark an `aizuchiSlot`.
+9. Nothing from a franchise, brand or living person anywhere.
+
+## 20. Passes, schedule and pipeline
+
+| Pass | Who | Inputs in the packet | Files |
+|---|---|---|---|
+| 0 | architect | — | `_meta/components.json` (+ the decomposition check), `_meta/denylist.json`; hard deadline before any kanji packet |
+| 1 | ~140 parallel writers, **one wave, no snapshots** | this guide, the brief, the id range, `docs/vocab-ownership.json`, `_meta/components.json` (kanji) | kana 2 · vocab 45 · kanji 11 · grammar 17 · conjugation 7 · michikusa 53 |
+| — | `scripts/validate-content.ts` fix loop (V01–V26, V30–V33 from day 1), merge rule (§10), then `scripts/assign-stations.ts` → `station` fields, `stations/NN.json`, cumulative allowlists | | |
+| 2 | 53 parallel writers | cumulative allowlist and known-set snapshot ≤ the station, previous `recapEn`s, the station's grammar table | `stories/*/stories-sNN.json` (137 texts) |
+| 3 | the Pass 1 vocab writers, same files | cumulative allowlist, known-set snapshot | `vocab-examples-2` on all 45 vocab files; `jj-definitions` on the 34 N3–N1 files |
+| — | pitch post-pass (licensed dataset → `pitchConfidence: "high"`), linker (`tokenIds`), `scripts/build-content-index.ts` (`manifest.json`, `stations/NN.json` with `surfaces`), human spot-check of michikusa `sourceNote` items | | |
+
+**Brief linter** (runs on `docs/content-plan.json` before packets are generated): fails on a word claimed plain by two briefs, a word listed both plain and `skip` in one brief, a `skip` whose word no brief owns, and a `Xする` entry whose stem has ≥ 2 kanji; emits `docs/vocab-ownership.json`. All four scripts live in `scripts/*.ts`, run with `node --experimental-strip-types`, import `src/content/types.ts` and `src/content/ruby.ts` directly, and are owned by group C (`docs/module-plan.json`).
