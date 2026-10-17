@@ -3,11 +3,21 @@
  *
  * POS × ConjForm → `{answer, answerKana, alt}`; works on kanji or kana
  * surfaces. Godan endings are read from the final kana; ichidan from the
- * stem; irregulars する / 来る (and their compounds), 行く (te/ta), ある
- * (defective: ない / なかった), 要る (defective), う-onbin 問う / 請う / 乞う
- * (te/ta 〜うて / 〜うた), honorific godan
+ * stem; irregulars する / 来る (and their compounds), 行く (te/ta), う-onbin
+ * 問う / 請う / 乞う (te/ta 〜うて / 〜うた), honorific godan
  * (くださる → ください・くださいます), いい/よい (stem よ), ない. ら抜き
  * potentials and short causatives come back as `alt`. Pure, table-driven.
+ *
+ * Defective verbs (`DEFECTIVE`, resolved by `defectiveFormsFor`) return
+ * `null` for the forms they lack: ある (also ない / なかった), 要る (keyed by
+ * the written head word, so the regular v5 炒る/いる is untouched), and the
+ * statives 分かる / 見える / 聞こえる / できる, which have no potential,
+ * passive, imperative or prohibitive (分かれる is "to split"). The validator's
+ * V26 table (scripts/validate-content.ts DEFECTIVE_VERB_FORMS) mirrors this.
+ *
+ * サ変 potentials: noun + する → 〜できる (alt 〜出来る); a one-kanji stem
+ * (愛する, 達する) → 〜せる (alt 〜し得る / 〜しうる); a 〜とする adverbial
+ * (呆然とする) has none.
  */
 import { CONJ_FORMS, type ConjForm, type ConjugablePos, type Pos } from '../content/types';
 
@@ -29,11 +39,35 @@ const VERB_FORM_SET: ReadonlySet<string> = new Set(VERB_FORMS);
 const ADJ_FORM_SET: ReadonlySet<string> = new Set(ADJ_FORMS);
 const CONJUGABLE: ReadonlySet<string> = new Set<ConjugablePos>(['v1', 'v5', 'v-irr', 'adj-i', 'adj-na']);
 
-/** Forms that do not exist for a defective head word (bare kana key). */
+/**
+ * Forms that do not exist for a defective head word, keyed on the kana reading
+ * (`いる_v5` = 要る, which shares its kana with ichidan いる). Look up through
+ * `defectiveFormsFor`, never directly: the key depends on the written word and POS.
+ */
 export const DEFECTIVE: Readonly<Record<string, readonly ConjForm[]>> = {
   ある: ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai', 'te-iru'],
-  いる_v5: ['volitional', 'imperative', 'prohibitive', 'tai', 'passive', 'causative', 'causative-passive', 'te-iru'],
+  いる_v5: ['potential', 'volitional', 'imperative', 'prohibitive', 'tai', 'passive', 'causative', 'causative-passive', 'te-iru'],
+  // 分かる: stative; 分かれる is "to split". 分からせる / 分かろう(とする) / 分かりたい are standard, so they stay.
+  わかる: ['potential', 'passive', 'imperative', 'prohibitive'],
+  // spontaneous perception verbs and できる (already a potential): no second potential, volition, command or 〜たい.
+  みえる: ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai'],
+  きこえる: ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai'],
+  できる: ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai'],
 };
+
+const NO_FORMS: readonly ConjForm[] = [];
+
+/**
+ * The forms `word` / `kana` lacks (empty for a regular verb or an adjective).
+ * Exact-kana match, so する-compounds and look-alikes are never caught; 要る is
+ * recognised by its written head word (要る, or kana-written いる as v5), so the
+ * regular godan 炒る/いる keeps all 20 forms.
+ */
+export function defectiveFormsFor(word: string, kana: string, pos: ConjugablePos): readonly ConjForm[] {
+  if (!isVerbPos(pos)) return NO_FORMS;
+  if (kana === 'いる') return pos === 'v5' && (word === '要る' || word === 'いる') ? DEFECTIVE.いる_v5! : NO_FORMS;
+  return DEFECTIVE[kana] ?? NO_FORMS;
+}
 
 export function isConjugable(pos: Pos): pos is ConjugablePos {
   return CONJUGABLE.has(pos);
@@ -48,11 +82,11 @@ export function applicableForms(pos: ConjugablePos): ConjForm[] {
   return (isVerbPos(pos) ? VERB_FORMS : ADJ_FORMS).slice();
 }
 
-/** `applicableForms` minus the forms a defective head word (ある, 要る) lacks. */
+/** `applicableForms` minus the forms a defective head word (ある, 要る, 分かる, 見える …) lacks. */
 export function applicableFormsFor(word: string, kana: string, pos: ConjugablePos): ConjForm[] {
   const forms = applicableForms(pos);
-  const defective = pos === 'v5' ? DEFECTIVE[kana === 'いる' ? 'いる_v5' : kana] : undefined;
-  if (!defective) return forms;
+  const defective = defectiveFormsFor(word, kana, pos);
+  if (defective.length === 0) return forms;
   return forms.filter((f) => !defective.includes(f));
 }
 
@@ -296,12 +330,33 @@ function ichidan(word: string, kana: string, form: ConjForm): Conjugation | null
   }
 }
 
+/** A single Han character (the stem of a one-kanji サ変 verb: 愛する, 達する, 罰する). */
+const SINGLE_HAN = /^\p{Script=Han}$/u;
+
 /** する and its compounds (勉強する). */
 function suru(word: string, kana: string, form: ConjForm): Conjugation | null {
   const forms = SURU[form];
   if (!forms) return null;
   const kPrefix = dropLast(kana, 2);
   const wPrefix = word.endsWith('する') ? dropLast(word, 2) : word.endsWith('為る') ? dropLast(word, 2) : kPrefix;
+  if (form === 'potential') {
+    // 呆然とする and other 〜とする adverbials have no potential at all.
+    if (kPrefix.endsWith('と')) return null;
+    // One-kanji サ変 verbs take 〜せる (愛せる, 達せる), never 〜できる; 〜し得る is the formal alternate.
+    if (SINGLE_HAN.test(wPrefix)) {
+      return buildPairs([
+        [wPrefix + 'せる', kPrefix + 'せる'],
+        [wPrefix + 'し得る', kPrefix + 'しえる'],
+        [wPrefix + 'しうる', kPrefix + 'しうる'],
+      ]);
+    }
+    // 出来る is a standard spelling of できる (CONTENT_GUIDE §15 golden row cj-0050); kanji prefix only, so
+    // no べんきょう出来る hybrid is emitted.
+    const c = build(wPrefix, kPrefix, forms);
+    const kanjiSpelling = wPrefix + '出来る';
+    if (!c.alt.includes(kanjiSpelling)) c.alt.push(kanjiSpelling);
+    return c;
+  }
   return build(wPrefix, kPrefix, forms);
 }
 
@@ -329,15 +384,12 @@ function irregular(word: string, kana: string, form: ConjForm): Conjugation | nu
 
 function verb(word: string, kana: string, pos: ConjugablePos, form: ConjForm): Conjugation | null {
   if (!VERB_FORM_SET.has(form)) return null;
+  if (defectiveFormsFor(word, kana, pos).includes(form)) return null;
   if (pos === 'v-irr') return irregular(word, kana, form);
   if (pos === 'v5') {
-    if (kana === 'ある' || kana === 'いる') {
-      const defective = DEFECTIVE[kana === 'いる' ? 'いる_v5' : 'ある'] ?? [];
-      if (defective.includes(form)) return null;
-      if (kana === 'ある') {
-        if (form === 'nai') return { answer: 'ない', answerKana: 'ない', alt: [] };
-        if (form === 'nakatta') return { answer: 'なかった', answerKana: 'なかった', alt: [] };
-      }
+    if (kana === 'ある') {
+      if (form === 'nai') return { answer: 'ない', answerKana: 'ない', alt: [] };
+      if (form === 'nakatta') return { answer: 'なかった', answerKana: 'なかった', alt: [] };
     }
     return godan(word, kana, form);
   }
@@ -414,7 +466,7 @@ function adjNa(word: string, kana: string, form: ConjForm): Conjugation | null {
 /**
  * Conjugates `word` (plain) / `kana` for `form`. Returns `null` for a form
  * that does not apply to the POS, an unknown form, or a defective form
- * (ある → potential …).
+ * (ある → potential, 分かる → potential, 呆然とする → potential …).
  */
 export function conjugate(word: string, kana: string, pos: ConjugablePos, form: ConjForm): Conjugation | null {
   if (!word || !kana) return null;

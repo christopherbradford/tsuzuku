@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 import { STATIONS } from '../src/content/types.ts';
 import type { ComponentDef, GrammarItem, KanjiItem, StationBundle, VocabItem } from '../src/content/types.ts';
-import { assign, bundlesFromCorpus, buildMatchPool, matchToken, placeComponents, topoSortKanji, vocabSurfaceList } from './assign-stations.ts';
+import { assign, bundlesFromCorpus, buildMatchPool, matchToken, orderRankedVocab, placeComponents, stemApplies, topoSortKanji, vocabSurfaceList } from './assign-stations.ts';
 import type { PlanEntry } from './assign-stations.ts';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -345,6 +345,65 @@ describe('assign-stations — synthetic N5 corpus', () => {
     expect(r.report).toMatch(/dry run/);
   });
 
+  it('ranked level: files ordered by median rank, items by rank within a file, so a station spans ≤ 3 files', () => {
+    const { root, plan } = synthCorpus({ ranked: true });
+    const r = assign(root, plan, { allowlistsDir: tmp('allow-') });
+    const fileOf = new Map<string, string>();
+    for (const f of readdirSync(join(root, 'vocab/n5')).sort()) for (const v of readItems<VocabItem>(root, `vocab/n5/${f}`)) fileOf.set(v.id, f);
+    for (const b of r.bundles.slice(0, 15)) {
+      const files = new Set(b.vocabIds.map((id) => fileOf.get(id)));
+      expect(files.size).toBeLessThanOrEqual(3);
+    }
+    // ranks run 800 → 1 across the corpus, so file 6 (ranks 1–130) comes first and fills Station 1 alone
+    expect(r.bundles[0]!.vocabIds.length).toBeGreaterThan(0);
+    expect(r.bundles[0]!.vocabIds.every((id) => fileOf.get(id) === 'vocab-n5-006.json')).toBe(true);
+    const a = allVocab(root);
+    const station = (id: string) => a.find((v) => v.id === id)!.station!;
+    expect(station('v-n5-0800')).toBe(1);
+    expect(station('v-n5-0671')).toBeLessThanOrEqual(station('v-n5-0670')); // file 6 (least ranks) before file 5
+    expect(station('v-n5-0671')).toBeLessThan(station('v-n5-0536')); // … and before the rest of file 5
+    expect(station('v-n5-0001')).toBe(15);
+  });
+
+  it('orderRankedVocab: median-ordered files, rank within a file, unranked last; an unranked level keeps plan order', () => {
+    const mk = (rel: string, ranks: (number | undefined)[]) => ranks.map((r, i) => ({ item: { ...vocabItem(5, i + 1), ...(r === undefined ? {} : { frequencyRank: r }) }, file: { rel } }));
+    const a = mk('a', [50, 10, 30]); // median 30
+    const b = mk('b', [5, 200, 7]); // median 7 → first
+    const out = orderRankedVocab([...a, ...b]);
+    expect(out.map((p) => `${p.file.rel}${p.item.frequencyRank}`)).toEqual(['b5', 'b7', 'b200', 'a10', 'a30', 'a50']);
+    expect(orderRankedVocab(mk('a', [undefined, 3, undefined])).map((p) => p.item.frequencyRank)).toEqual([3, undefined, undefined]);
+    const plain = [...mk('a', [undefined, undefined]), ...mk('b', [undefined])];
+    expect(orderRankedVocab(plain)).toEqual(plain);
+    // a file without ranks sorts after every ranked file
+    expect(orderRankedVocab([...mk('z', [undefined]), ...mk('y', [9])]).map((p) => p.file.rel)).toEqual(['y', 'z']);
+  });
+
+  it('a single-kanji stem links only before okurigana: 有名 is not ある while 食べ始めた is still 食べる', () => {
+    const aru = vocabItem(5, 9001, { word: 'ある', kana: 'ある', pos: 'v5', altForms: ['有る', '在る'] });
+    const taberu = vocabItem(5, 9002, { word: '食べる', kana: 'たべる', pos: 'v1' });
+    const maku = vocabItem(5, 9003, { word: '巻く', kana: 'まく', pos: 'v5' });
+    const amai = vocabItem(5, 9004, { word: '甘い', kana: 'あまい', pos: 'adj-i' });
+    const miru = vocabItem(5, 9005, { word: '見る', kana: 'みる', pos: 'v1' });
+    const tateru = vocabItem(5, 9006, { word: '建てる', kana: 'たてる', pos: 'v1' });
+    const pool = buildMatchPool([aru, taberu, maku, amai, miru, tateru], []);
+    expect(matchToken(pool, '有名')).toEqual({ id: null, known: false, punct: false });
+    expect(matchToken(pool, '有った').id).toBe(aru.id);
+    expect(matchToken(pool, '在りました').id).toBe(aru.id);
+    expect(matchToken(pool, 'あった').known).toBe(true); // function token
+    expect(matchToken(pool, '食べ始めた').id).toBe(taberu.id);
+    expect(matchToken(pool, '食べ方').id).toBe(taberu.id);
+    expect(matchToken(pool, '建て直した').id).toBe(tateru.id);
+    expect(matchToken(pool, '巻物').id).toBeNull();
+    expect(matchToken(pool, '巻いて').id).toBe(maku.id);
+    expect(matchToken(pool, '甘酒').id).toBeNull();
+    expect(matchToken(pool, '甘くて').id).toBe(amai.id);
+    expect(matchToken(pool, '見').id).toBe(miru.id); // bare ren'yōkei (見に行く)
+    expect(matchToken(pool, '見物').id).toBeNull();
+    expect(stemApplies('有', '有名')).toBe(false);
+    expect(stemApplies('有', '有る')).toBe(true);
+    expect(stemApplies('食べ', '食べ始めた')).toBe(true);
+  });
+
   it('links story tokenIds against the cumulative allowlist (matchToken semantics)', () => {
     const { root, plan } = synthCorpus();
     const r = assign(root, plan, { allowlistsDir: tmp('allow-') });
@@ -358,5 +417,41 @@ describe('assign-stations — synthetic N5 corpus', () => {
     expect(matchToken(pool, '三').known).toBe(true);
     expect(matchToken(pool, '。').punct).toBe(true);
     expect(matchToken(pool, 'りんご').known).toBe(false);
+  });
+
+  it('POS floors pull core verbs to Station 6 and い/な-adjectives to Station 7 without moving later boundaries', () => {
+    const { root, plan } = synthCorpus();
+    // vocab-n5-003 (v-n5-0271…0405) is where the N5 briefs put every verb and adjective.
+    const rel = 'vocab/n5/vocab-n5-003.json';
+    const items = readItems<VocabItem>(root, rel);
+    items.forEach((v, i) => {
+      if (i < 20) v.pos = 'v5'; // v-n5-0271…0290
+      else if (i < 28) v.pos = 'adj-i'; // v-n5-0291…0298
+      else if (i < 34) v.pos = 'adj-na'; // v-n5-0299…0304
+    });
+    writeJson(join(root, rel), { schema: 'tsuzuku.content/1', type: 'vocab', level: 'n5', items });
+    const plain = assign(root, plan, { allowlistsDir: tmp('allow-'), write: false, posFloors: [] });
+    const r = assign(root, plan, { allowlistsDir: tmp('allow-') });
+    const posOf = new Map(allVocab(root).map((v) => [v.id, v.pos]));
+    const count = (b: StationBundle, pos: string) => b.vocabIds.filter((id) => posOf.get(id) === pos).length;
+    // plan order alone leaves Station 6 verbless (the Vます station)
+    expect(count(plain.bundles[5]!, 'v5')).toBe(0);
+    expect(count(plain.bundles[6]!, 'adj-na')).toBe(6);
+    // floors: the first 12 verbs land at Station 6, the remaining 8 at 7; 8 い- and 6 な-adjectives at Station 7
+    expect(count(r.bundles[5]!, 'v5')).toBe(12);
+    expect(r.bundles[5]!.vocabIds).toContain('v-n5-0271');
+    expect(r.bundles[5]!.vocabIds).toContain('v-n5-0282');
+    expect(count(r.bundles[6]!, 'v5')).toBe(8);
+    expect(count(r.bundles[6]!, 'adj-i')).toBe(8);
+    expect(count(r.bundles[6]!, 'adj-na')).toBe(6);
+    // the displaced tail of Station 6 moved to 7; quotas and every later boundary are unchanged
+    expect(r.bundles[6]!.vocabIds).toContain('v-n5-0249');
+    for (const b of r.bundles) expect(b.vocabIds.length).toBe(plain.bundles[b.number - 1]!.vocabIds.length);
+    const upTo = (bs: StationBundle[], n: number) => bs.filter((b) => b.number <= n).flatMap((b) => b.vocabIds).sort();
+    expect(upTo(r.bundles, 6)).not.toEqual(upTo(plain.bundles, 6));
+    expect(upTo(r.bundles, 7)).toEqual(upTo(plain.bundles, 7));
+    for (const b of r.bundles.slice(7)) expect([...b.vocabIds].sort()).toEqual([...plain.bundles[b.number - 1]!.vocabIds].sort());
+    expect(allVocab(root).find((v) => v.id === 'v-n5-0271')!.station).toBe(6);
+    expect(allVocab(root).find((v) => v.id === 'v-n5-0253')!.station).toBe(7);
   });
 });

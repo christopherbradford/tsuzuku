@@ -14,6 +14,7 @@ import {
   grammarWrong,
   includesAll,
   okVariant,
+  registerAcceptable,
   stemsOf,
   swapRegister,
   type DialogueOption,
@@ -235,6 +236,21 @@ describe('grading', () => {
     const both = gradeTyped('コーヒー飲む。', l, { register: 'polite' });
     expect(both.tags).toEqual(['word-choice', 'register']);
     expect(both.recast).toBe('私も水を飲みます。');
+  });
+
+  // Review round 2, #1: the model line's own register is never a slip.
+  it('registerAcceptable: the target, the gold line\'s own register, or no register marker at all', () => {
+    const gold = 'はい。でも、今日の山は今日だけです。'; // s-13-2#18, polite under a casual target
+    expect(registerAcceptable('はい。今日の山は今日だけですよ。', gold, 'casual')).toBe(true);
+    expect(registerAcceptable('今日の山は今日だけだよ。', gold, 'casual')).toBe(true);
+    expect(registerAcceptable('うん、今日の山は今日だけです。', gold, 'casual')).toBe(false); // mixed: neither
+    expect(registerAcceptable('今日だけ。', gold, 'casual')).toBe(true); // bare fragment of its own
+    expect(registerAcceptable('冬に、たぶん。', '冬に着きます。', 'polite')).toBe(true); // no marker = no slip
+    expect(registerAcceptable('重くなったね。', '重くなったね。', 'polite')).toBe(true); // s-46-2#35: casual aside under an explicit polite target
+    expect(registerAcceptable('重くなりましたね。', '重くなったね。', 'polite')).toBe(true);
+    expect(registerAcceptable('私も水を飲む。', '私も水を飲みます。', 'polite')).toBe(false);
+    const g = gradeTyped('はい。今日の山は今日だけですよ。', line('はい。でも、{今日|きょう}の{山|やま}は{今日|きょう}だけです。', ['はい', '。', 'でも', '、', '今日', 'の', '山', 'は', '今日', 'だけ', 'です', '。'], undefined, { mustInclude: ['今日', '山'] }), { register: 'casual' });
+    expect(g).toMatchObject({ correct: true, best: false, tags: [], registerOk: true });
   });
 
   it('gradeTyped: empty answer is wrong with everything missing', () => {

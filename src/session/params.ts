@@ -24,7 +24,21 @@
  *
  * `pickStories` serves unread episodes first (`progress.storiesRead`), then the
  * best coverage, so the builder never re-serves the same episode while an
- * unread one meets the target.
+ * unread one meets the target. `storyCoverage` follows the V20 contract
+ * (CONTENT_GUIDE §14.2): a token listed in its line's `plusOne` is the designed
+ * +1 and counts as covered, and at Stations 1–3 the shared White allowlist
+ * (`ctx.allowlist`) does too, so the texts the validator passed are the texts
+ * the live gate serves.
+ *
+ * Kanji Read matches the example word by surface AND reading, and blanks the
+ * first occurrence whose ruby aligns with the word and reads as the example
+ * does (never inside a compound, never a contradicting reading); when no
+ * sentence has one, the bare word is the prompt. Form Forge / Form Chain draw
+ * the head word from the items that realise at least one declared form
+ * (adjectives for adj-* points, verbs for verb points), so an adjective-only
+ * point is drillable. `splitBunsetsu` cuts after も as well and before a
+ * bunsetsu-initial hiragana word (どこ, よく, いつ…); `movableTiles` tells the
+ * builder when a Scramble would be a no-op.
  */
 import {
   DRILL_IDS,
@@ -44,18 +58,21 @@ import {
   type VocabItem,
 } from '../content/types';
 import { isChunk } from '../content/loader';
-import { hasKanji, toPlain } from '../content/ruby';
+import { hasKanji, parseRuby, toPlain } from '../content/ruby';
 import { SPEED_TIER_RATES } from '../shared/audio';
 import { MISSIONS } from '../shared/catalog';
 import { hashSeed, sample, shuffle } from '../shared/hash';
 import { cardKey as makeKey, tryKindOfId } from '../shared/ids';
-import { isHiragana, moraCount } from '../shared/jp';
+import { equivalentJa, isHiragana, moraCount } from '../shared/jp';
 import type { StepParams } from '../shared/session-types';
 import type { ItemKind } from '../shared/store-types';
 import { store } from '../store';
 import { applicableForms, clozeTiles, conjugate, gojuonPool, isConjugable, kanaGrid, kanjiLookalikes, meaningChoices, perceptionJudge, prodPrompt, rapidFirePool, scrambleTiles, type QueueCard } from '../learn';
+import { BUNSETSU_STARTERS, COMPOUND_PARTICLES, CUT_PARTICLES, PARTICLES, PARTICLE_ATOMS, PARTICLE_DUEL_FROM, hasParticleHint, movableTiles, particleHints, splitBunsetsu } from './bunsetsu';
 import { S, fill } from './engine-strings';
-import type { PlanContext } from './builder';
+
+export { BUNSETSU_STARTERS, COMPOUND_PARTICLES, CUT_PARTICLES, PARTICLES, PARTICLE_ATOMS, PARTICLE_DUEL_FROM, hasParticleHint, movableTiles, particleHints, splitBunsetsu };
+import type { PlanContext } from './context';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Item guards and tables                                                     */
@@ -88,28 +105,6 @@ export function itemKindOf(itemId: string, item?: ContentItem): ItemKind | null 
   if (k === 'kana' || k === 'kanji' || k === 'grammar' || k === 'component') return k;
   return null;
 }
-
-/** Particle Duel keys (design 04 §4; `learn/distractors.PARTICLES` is not in the barrel). */
-export const PARTICLES: readonly string[] = ['は', 'が', 'を', 'に', 'で', 'と', 'へ', 'から', 'まで', 'より', 'の'];
-/** Particle Duel is scheduled from this station (design 04 §4 introduction table). */
-export const PARTICLE_DUEL_FROM = 5;
-
-/** The particle cloze hints of a grammar point (what Particle Duel blanks); empty for a non-particle point. */
-export function particleHints(item: GrammarItem): string[] {
-  return item.clozeHints.filter((h) => PARTICLES.includes(h));
-}
-export function hasParticleHint(item: ContentItem | null | undefined): boolean {
-  return isGrammar(item) && particleHints(item).length > 0;
-}
-
-/**
- * Character runs a particle may not split: copula / auxiliary continuations
- * (です・でした・でしょう・ので・のに・こと・もの・とても・という…). `splitBunsetsu`
- * treats a match here as word-internal, so 「元気です」 never yields a lone 「す」.
- */
-export const PARTICLE_ATOMS: readonly string[] = ['です', 'でした', 'でしょう', 'でき', 'ではな', 'ではあ', 'ので', 'のに', 'のだ', 'のです', 'こと', 'もの', 'とても', 'という', 'として', 'とう', 'とか', 'について', 'ところ'];
-/** Compound particles that stay on one tile with their word (私には・それでは・食べるのが). */
-export const COMPOUND_PARTICLES: readonly string[] = ['では', 'には', 'とは', 'へは', 'のは', 'のが', 'のを', 'からは', 'までは'];
 
 const ROMAJI_46 = ['a', 'i', 'u', 'e', 'o', 'ka', 'ki', 'ku', 'ke', 'ko', 'sa', 'shi', 'su', 'se', 'so', 'ta', 'chi', 'tsu', 'te', 'to', 'na', 'ni', 'nu', 'ne', 'no', 'ha', 'hi', 'fu', 'he', 'ho', 'ma', 'mi', 'mu', 'me', 'mo', 'ya', 'yu', 'yo', 'ra', 'ri', 'ru', 're', 'ro', 'wa', 'wo', 'n'];
 
@@ -191,15 +186,21 @@ export function linesWith(ctx: PlanContext, itemId: string): { story: StoryItem;
   return out;
 }
 
-/** Fraction of resolved tokens the learner knows (`tokenIds` non-null entries). */
-export function storyCoverage(story: StoryItem, known: ReadonlySet<string>): number {
+/**
+ * Fraction of resolved tokens (`tokenIds` non-null entries) the learner knows,
+ * the V20 way: a token in its line's `plusOne` is the designed +1 and counts as
+ * covered, as does any id in `allow` (the shared White allowlist at Stations
+ * 1–3). The validator passes stories on exactly this notion, so the live gate
+ * serves what was written for it.
+ */
+export function storyCoverage(story: StoryItem, known: ReadonlySet<string>, allow: ReadonlySet<string> = new Set()): number {
   let total = 0;
   let hit = 0;
   for (const line of story.lines) {
     for (const id of line.tokenIds ?? []) {
       if (id === null) continue;
       total++;
-      if (known.has(id)) hit++;
+      if (known.has(id) || allow.has(id) || line.plusOne?.includes(id)) hit++;
     }
   }
   return total === 0 ? 1 : hit / total;
@@ -211,7 +212,7 @@ export function pickStories(ctx: PlanContext, o: { kind?: StoryItem['kind']; sta
   const read = new Set(store.progress.value.storiesRead ?? []);
   return ctx.stories
     .filter((s) => (o.kind ? s.kind === o.kind : true))
-    .map((s) => ({ s, c: storyCoverage(s, ctx.known), unread: read.has(s.id) ? 0 : 1 }))
+    .map((s) => ({ s, c: storyCoverage(s, ctx.known, ctx.allowlist), unread: read.has(s.id) ? 0 : 1 }))
     .filter(({ s, c }) => c >= coverageTargetFor(st, s.bridge === true))
     .sort((a, b) => b.unread - a.unread || b.c - a.c || (a.s.id < b.s.id ? -1 : 1))
     .map(({ s }) => s);
@@ -238,52 +239,40 @@ export function knownSentences(ctx: PlanContext, n: number): { sentence: string;
 }
 
 /**
- * Bunsetsu-ish tiles for Scramble when no linked story line carries tokens:
- * a particle closes the tile it follows (particles attach to their word), a
- * punctuation mark is its own tile, and a `PARTICLE_ATOMS` run (です・ので・こと…)
- * is word-internal, never a boundary. A particle cuts only when what follows
- * is not hiragana (kanji, katakana, punctuation or the end): a hiragana
- * continuation means the match sits inside a word (ありが|とう, なが|ら, と|き,
- * べから|ず), and an under-split tile is still Japanese while a non-word tile
- * is not. Exported for tests.
+ * Reading of the plain span `[start, end)` of ruby'd `ja`: ruby groups by
+ * their reading, plain text as is. `null` when a ruby group straddles a span
+ * boundary (the span would cut a compound such as {二時間|にじかん}).
  */
-export function splitBunsetsu(plain: string): string[] {
-  const particles = [...PARTICLES, ...COMPOUND_PARTICLES].sort((a, b) => b.length - a.length);
-  const atoms = PARTICLE_ATOMS.slice().sort((a, b) => b.length - a.length);
-  const tiles: string[] = [];
-  let cur = '';
-  let i = 0;
-  const continues = (at: number): boolean => {
-    const next = plain[at];
-    return next !== undefined && isHiragana(next);
-  };
-  while (i < plain.length) {
-    const ch = plain[i] as string;
-    if ('、。！？'.includes(ch)) {
-      if (cur) tiles.push(cur);
-      tiles.push(ch);
-      cur = '';
-      i++;
-      continue;
+export function rubySpanReading(ja: string, start: number, end: number): string | null {
+  let off = 0;
+  let reading = '';
+  for (const seg of parseRuby(ja)) {
+    const s0 = off;
+    const s1 = off + seg.base.length;
+    off = s1;
+    if (s1 <= start || s0 >= end) continue;
+    if (seg.reading !== null) {
+      if (s0 < start || s1 > end) return null;
+      reading += seg.reading;
+    } else {
+      reading += seg.base.slice(Math.max(start, s0) - s0, Math.min(end, s1) - s0);
     }
-    const atom = atoms.find((x) => plain.startsWith(x, i));
-    if (atom) {
-      cur += atom;
-      i += atom.length;
-      continue;
-    }
-    const p = particles.find((x) => plain.startsWith(x, i) && cur.length > 0 && !continues(i + x.length));
-    if (p) {
-      tiles.push(cur + p);
-      cur = '';
-      i += p.length;
-      continue;
-    }
-    cur += ch;
-    i++;
   }
-  if (cur) tiles.push(cur);
-  return tiles;
+  return reading;
+}
+
+/**
+ * First occurrence of `word` in the plain text of `ja` whose ruby aligns with
+ * it and (when `kana` is given) reads as `kana`; `-1` when none does.
+ */
+export function alignedOccurrence(ja: string, word: string, kana?: string): number {
+  const plain = toPlain(ja);
+  for (let i = plain.indexOf(word); i >= 0; i = plain.indexOf(word, i + 1)) {
+    const reading = rubySpanReading(ja, i, i + word.length);
+    if (reading === null) continue;
+    if (kana === undefined || equivalentJa(reading, kana)) return i;
+  }
+  return -1;
 }
 
 /** Form Chain length (design 04 §4: "one verb, 5 target forms in sequence"). */
@@ -418,24 +407,26 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
       if (!isKanji(item)) break;
       const ex = item.examples[((rep % item.examples.length) + item.examples.length) % item.examples.length] ?? item.examples[0];
       const word = ex?.word ?? item.char;
-      let sentence = word;
+      const kana = ex?.kana ?? '';
+      // The vocab behind the example is matched by surface AND reading (a homograph read differently never lends its sentence), and
+      // the sentence is the first linked story line or vocab example with an occurrence whose ruby aligns with the
+      // blank and reads as the example does; otherwise the bare word is the prompt (design 04 §3 "reading in context").
+      const vocab = ctx.vocabPool.find((v) => v.word === word && (kana === '' || equivalentJa(v.kana, kana)));
+      const target = exercise === 'kanji-read' ? word : item.char;
+      const candidates: { ja: string; en: string }[] = vocab ? [...linesWith(ctx, vocab.id).map((l) => l.story.lines[l.index] as StoryLine), ...vocab.examples] : [];
+      let ruby = word;
       let en = ex?.en ?? '';
-      let kana = ex?.kana ?? '';
-      const vocab = ctx.vocabPool.find((v) => v.word === word);
-      const line = vocab ? linesWith(ctx, vocab.id)[0] : undefined;
-      const sx = line ? line.story.lines[line.index] : vocab?.examples[0];
-      let ruby = sentence;
-      if (sx) {
-        const plain = toPlain(sx.ja);
-        if (plain.includes(word)) {
-          sentence = plain;
-          ruby = sx.ja;
-          en = sx.en;
-        }
+      let start = exercise === 'kanji-read' ? 0 : word.indexOf(item.char);
+      for (const sx of candidates) {
+        const at = alignedOccurrence(sx.ja, word, exercise === 'kanji-read' ? kana : undefined);
+        if (at < 0) continue;
+        ruby = sx.ja;
+        en = sx.en;
+        start = exercise === 'kanji-read' ? at : at + word.indexOf(item.char);
+        break;
       }
-      const start = sentence.indexOf(exercise === 'kanji-read' ? word : item.char);
       p.sentence = ruby;
-      p.blank = start >= 0 ? [start, start + (exercise === 'kanji-read' ? word.length : item.char.length)] : [0, 0];
+      p.blank = start >= 0 ? [start, start + target.length] : [0, 0];
       p.promptEn = en;
       if (exercise === 'kanji-read') {
         p.answer = kana;
@@ -489,8 +480,11 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
     case 'form-forge':
     case 'form-chain': {
       if (!isGrammar(item)) break;
-      const verbs = ctx.vocabPool.filter((v) => isConjugable(v.pos) && v.pos !== 'adj-na' && v.pos !== 'adj-i');
-      const pool = verbs.length > 0 ? verbs : ctx.vocabPool.filter((v) => isConjugable(v.pos));
+      // Only the forms the point declares are drillable (design 04 §4); the head word comes from the items that realise
+      // at least one of them — adjectives for adj-* points, verbs for verb points, either for a mixed point — so an
+      // adjective-only point (〜くないです) is drillable and the rotation never lands on a word that lacks the form (ある for たい).
+      const declared = item.unlocksForms ?? [];
+      const pool = ctx.vocabPool.filter((v) => isConjugable(v.pos) && declared.some((f) => conjugate(v.word, v.kana, v.pos as ConjugablePos, f) !== null));
       const verb = pool[((rep % Math.max(1, pool.length)) + pool.length) % Math.max(1, pool.length)];
       if (!verb || !isConjugable(verb.pos)) break;
       const pos: ConjugablePos = verb.pos;
@@ -499,8 +493,7 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
         const c = conjugate(verb.word, verb.kana, pos, f);
         return c ? dedupe([c.answer, c.answerKana, ...c.alt]) : null;
       };
-      // Only the forms the point declares are drillable (design 04 §4); `stepForCard` routes a point without them elsewhere.
-      const forms = (item.unlocksForms ?? []).filter((f) => surfaces(f) !== null);
+      const forms = declared.filter((f) => surfaces(f) !== null);
       if (forms.length === 0) break;
       p.sentence = verb.word;
       // The verb's reading and part of speech ride along (StepParams.kana / pos), and `accepts` carries the accepted

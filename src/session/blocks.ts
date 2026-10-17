@@ -11,14 +11,21 @@
  *
  * Time fitting: reviews never below 60 % of due; Input and Output shrink last.
  * Minute estimates: per-step `estMs`, else the drill's median latency, else a
- * fixed cost (stories, listening sets, role-play, writing…).
+ * fixed cost (stories, listening sets, role-play, writing…). `plannedReps` /
+ * `plannedMs` price what the runner will actually serve in a re-queueing mode
+ * (`REQUEUE_MODES`): each intro check owes its +3 / +10 copies
+ * (`STEP_OFFSETS.intro`) and each taught item its teach card; an Easy-rated
+ * intro owes nothing, so the figure is an upper bound (render it as "~").
+ * `SELF_GRADED` names the drills no builder may put a hard timer on.
  *
  * Pure: nothing here reads the store. The builder fills `stepIds`.
  */
 import type { Belt, DrillId, ErrorTag, Facet } from '../content/types';
 import type { SaveMeta } from '../shared/store-types';
 import type { BlockKind, SessionMode, Step, StepParams } from '../shared/session-types';
+import { STEP_OFFSETS } from '../learn';
 import { S, SHINSA_LABEL } from './engine-strings';
+import { isIntroCheck } from './scroll';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Types                                                                      */
@@ -101,6 +108,14 @@ export const DEFAULT_REP_MS = 8000;
 export const MC_REP_MS = 4000;
 export const TYPED_REP_MS = 10000;
 export const MICHIKUSA_MS = 10000;
+/** Reading one Scroll teach card (design 03 §2.2 "teach → check"). */
+export const TEACH_CARD_MS = 15000;
+
+/** Modes whose plans accept in-session re-queues (+3 / +10 steps, relearn, Recovery); boss, exam, Kage and arcade runs never re-queue. */
+export const REQUEUE_MODES: ReadonlySet<SessionMode> = new Set<SessionMode>(['kata', 'kumite', 'shugyo', 'weak', 'welcome', 'scroll']);
+
+/** Drills whose result is a self-rating the Judge may sample (design 05 §6); never behind a hard timer. */
+export const SELF_GRADED: ReadonlySet<DrillId> = new Set<DrillId>(['meaning-judge', 'kanji-write', 'shadow', 'writing-dojo']);
 /** Kata: the Michikusa sits between reps 8 and 9 (0-based insert index 8). */
 export const MICHIKUSA_AFTER_REP = 8;
 export const KATA_MAX_REVIEWS = 25;
@@ -425,6 +440,43 @@ export function estimateMs(steps: readonly Step[], medianMs: SaveMeta['medianMs'
     total += s.estMs > 0 ? s.estMs : estimateStepMs(s.exercise, s.params, medianMs);
   }
   return total;
+}
+
+/** Re-presentations an intro check owes in a re-queueing mode (+3 and +10); 0 elsewhere. */
+function owedCopies(step: Step, mode: SessionMode): number {
+  return REQUEUE_MODES.has(mode) && isIntroCheck(step) ? STEP_OFFSETS.intro.length : 0;
+}
+
+/**
+ * Graded reps the runner is expected to serve for `steps`: every non-Michikusa
+ * step plus, in a re-queueing mode, the +3 / +10 copies of each intro check.
+ * An upper bound (an Easy-rated intro owes no steps).
+ */
+export function plannedReps(steps: readonly Step[], mode: SessionMode): number {
+  let n = 0;
+  for (const s of steps) {
+    if (s.block === 'michikusa') continue;
+    n += 1 + owedCopies(s, mode);
+  }
+  return n;
+}
+
+/**
+ * Milliseconds the runner is expected to spend on `steps`: `estimateMs` plus,
+ * in a re-queueing mode, each intro check's owed copies at the step's own
+ * estimate and one teach card per taught item (design 03 §2.2).
+ */
+export function plannedMs(steps: readonly Step[], mode: SessionMode, medianMs: SaveMeta['medianMs']): number {
+  let total = estimateMs(steps, medianMs);
+  if (!REQUEUE_MODES.has(mode)) return total;
+  const taught = new Set<string>();
+  for (const s of steps) {
+    const copies = owedCopies(s, mode);
+    if (copies === 0) continue;
+    total += copies * (s.estMs > 0 ? s.estMs : estimateStepMs(s.exercise, s.params, medianMs));
+    if (s.itemId) taught.add(s.itemId);
+  }
+  return total + taught.size * TEACH_CARD_MS;
 }
 
 /** Minutes, one decimal. */

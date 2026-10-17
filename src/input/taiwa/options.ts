@@ -13,7 +13,11 @@
  *                   deterministic shuffle, never the gold order).
  *  gradeOption() / gradeTyped() / gradeBuild()
  *                   correctness + error tags (`register`, `particle`,
- *                   `conjugation`, `word-order`, `word-choice`).
+ *                   `conjugation`, `word-order`, `word-choice`). The register
+ *                   check (`registerAcceptable`) passes an answer in the
+ *                   target register OR in the gold line's own register: the
+ *                   model line can never be a register slip, even where the
+ *                   scene's target disagrees with it (review round 2, #1).
  *
  * Deterministic: every draw goes through the injected `rng`.
  */
@@ -22,7 +26,7 @@ import { toPlain } from '../../content/ruby';
 import { conjugate, isConjugable, scrambleTiles } from '../../learn';
 import { pick, shuffle, type Rng } from '../../shared/hash';
 import { equivalentJa, nearMissKind, normalizeAnswer, normalizeJa, type NearMissKind } from '../../shared/jp';
-import { detectRegister, registerFor, registerMatches, type MarkerRegister } from './register';
+import { detectRegister, markersDetailed, registerFor, registerMatches, type MarkerRegister } from './register';
 
 export type OptionKind = 'best' | 'ok' | 'register-wrong' | 'grammar-wrong';
 
@@ -37,7 +41,7 @@ export interface DialogueOption {
 }
 
 export interface OptionContext {
-  /** The register the learner's line is scored against (`registerTarget` or the story register). */
+  /** The register the learner's line is scored against (`registerTarget` in force, else the gold line's own register, else the story register). */
   register: RegisterTag;
   get: (id: string) => ContentItem | undefined;
   rng: Rng;
@@ -423,16 +427,33 @@ export interface TypedGrade extends OptionGrade {
 }
 
 /**
+ * Register check for a typed / spoken line: the answer meets `target`, or it
+ * is in the same register as the gold line itself (`detectRegister` of both
+ * agree), or it carries no register marker at all (a fragment: 冬に、たぶん。).
+ * A writer's model line is the register the scene really wants, so a learner
+ * who speaks like it is never tagged `register` — even where the story-level
+ * register or a `registerTarget` disagrees with that line (an aside to a
+ * friend inside a polite scene, a polite line to an elder in a casual
+ * dialogue).
+ */
+export function registerAcceptable(answer: string, gold: string, target: RegisterTag): boolean {
+  if (registerMatches(answer, target)) return true;
+  if (markersDetailed(answer).length === 0) return true;
+  return detectRegister(answer) === detectRegister(gold);
+}
+
+/**
  * Type / Speak mode: exact match against plain `ja` ∪ `accept[]` → best;
  * a Block against the gold line → near miss (Hard); otherwise correct when
- * every `mustInclude` word is present and the register matches the target
- * (`ok`), else wrong with `register` / `word-choice` tags.
+ * every `mustInclude` word is present and the register is acceptable
+ * (`registerAcceptable`: the target, or the gold line's own register) → `ok`,
+ * else wrong with `register` / `word-choice` tags.
  */
 export function gradeTyped(answer: string, line: StoryLine, ctx: Pick<OptionContext, 'register'>): TypedGrade {
   const gold = toPlain(line.ja);
   // The kanji surface, its kana reading, and every listed alternative are all exact answers (design 04 §0).
   const accepted = [gold, line.kana, ...(line.accept ?? [])].filter((a) => a.length > 0);
-  const registerOk = registerMatches(answer, ctx.register);
+  const registerOk = registerAcceptable(answer, gold, ctx.register);
   const base = { nearMiss: null as NearMissKind | null, missing: [] as string[], registerOk, recast: gold };
   if (key(answer).length === 0) return { ...base, correct: false, best: false, tags: ['word-choice'], missing: line.mustInclude ?? [] };
   if (accepted.some((a) => equivalentJa(answer, a))) return { ...base, correct: true, best: true, tags: [], registerOk: true };

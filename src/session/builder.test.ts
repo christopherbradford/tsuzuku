@@ -539,3 +539,4 @@ describe('first session after Nihonbashi (BUILD_STATUS first-run walk)', () => {
     expect(k.steps.every((s) => s.isNew && s.block === 'scroll')).toBe(true);
   });
 });
+

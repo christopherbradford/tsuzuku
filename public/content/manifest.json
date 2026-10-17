@@ -1,7 +1,7 @@
 {
   "schema": "tsuzuku.manifest/1",
-  "contentVersion": "0.0.0",
-  "generatedAt": "2026-10-17T19:50:26.247Z",
+  "contentVersion": "c-66f95ca37b",
+  "generatedAt": "2026-10-17T21:36:16.049Z",
   "files": [
     {
       "path": "_meta/components.json",
@@ -77,9 +77,9 @@
       "path": "conjugation/conjugation-003.json",
       "type": "conjugation",
       "level": null,
-      "count": 132,
-      "bytes": 27207,
-      "sha256": "b39529f41dd7e2f7ed2439721f7457c49ac1398049f13692415422846530c95d",
+      "count": 131,
+      "bytes": 23567,
+      "sha256": "90b57bbebef8d40fac25cd70fd017ab9fc9b736b9fb0bf7650d0c2c7dda9564b",
       "belts": [],
       "stations": []
     },
@@ -190,8 +190,8 @@
       "type": "grammar",
       "level": "n2",
       "count": 33,
-      "bytes": 99799,
-      "sha256": "122f0fb05a75af3324790fb2092f3a6cbeca6b1e45b333049491400f507939c4",
+      "bytes": 99928,
+      "sha256": "ef27227768de5999cee64e3dd3f0e436b50ed8b50a0a4bbe8a855a71d0b9510b",
       "belts": [
         "brown"
       ],
@@ -206,8 +206,8 @@
       "type": "grammar",
       "level": "n2",
       "count": 23,
-      "bytes": 73118,
-      "sha256": "fb6736e2feb7bf0f3df64f6e09e39ab4a0c310f1eaabef6147a1cb0ba55068a5",
+      "bytes": 73193,
+      "sha256": "bc8ff5faa9b8f557b6d8368c940a461add768181a30a5ce201d9d79c91bafc03",
       "belts": [
         "brown"
       ],
@@ -221,8 +221,8 @@
       "type": "grammar",
       "level": "n3",
       "count": 32,
-      "bytes": 97107,
-      "sha256": "46354dd0d50c8952f1ffbe927ee433d380929bb9d880353097191c6264e09157",
+      "bytes": 97298,
+      "sha256": "334224af97388149b242059f4062ee66c3549b40d257afef2b017532cd991695",
       "belts": [
         "blue"
       ],
@@ -238,8 +238,8 @@
       "type": "grammar",
       "level": "n3",
       "count": 24,
-      "bytes": 75000,
-      "sha256": "74f39967b71397fcdcb90db553c80826e42635ad6af097a5e29d51651c2de0ab",
+      "bytes": 75388,
+      "sha256": "10a7d80114505ef9c483cbdf155f9d2b6792fec323f150ee5659e2af1a0d3075",
       "belts": [
         "blue"
       ],
@@ -254,8 +254,8 @@
       "type": "grammar",
       "level": "n3",
       "count": 32,
-      "bytes": 95372,
-      "sha256": "e3f03a79e6a58f171aeded3a4ad6aabd76529f428cd4f833a088eda7aa7ba5ca",
+      "bytes": 95708,
+      "sha256": "36f4e49b7d7b7c2cef4e9567d848e1d93277f2654ed2740288beab74fe152596",
       "belts": [
         "purple"
       ],
@@ -271,8 +271,8 @@
       "type": "grammar",
       "level": "n3",
       "count": 22,
-      "bytes": 65353,
-      "sha256": "3e87463fd3d3f7568bf59116ed01df4ac5cb646be81cd374c482a56a9a045446",
+      "bytes": 65682,
+      "sha256": "a6a74f4d5b908b7a5e93b62c97ec58e1f9f91b9291e809c35e7eef1d9e9e4a92",
       "belts": [
         "purple"
       ],
@@ -287,8 +287,8 @@
       "type": "grammar",
       "level": "n4",
       "count": 30,
-      "bytes": 102291,
-      "sha256": "2e4d9e8714c9885ea378d6c8b2ef1bf3e16d487ca4b4dcf2e57d6c942a40a093",
+      "bytes": 102392,
+      "sha256": "6fc0e79425bedbd8bf9b751fb6d51c4ebc1c5e7f002a551b7b91aee397e1a9d7",
       "belts": [
         "green"
       ],
@@ -303,8 +303,8 @@
       "type": "grammar",
       "level": "n4",
       "count": 30,
-      "bytes": 92260,
-      "sha256": "ab4d6cfe40dddba3f6fb596b1cce26601bbf6a1dada28558ced3ff1ab1a28e2d",
+      "bytes": 92362,
+      "sha256": "a5b6d6999320acf2d30e0f34b52b35967e9001eb63fc6d03c4f0c57f106db708",
       "belts": [
         "green"
       ],
@@ -319,8 +319,8 @@
       "type": "grammar",
       "level": "n4",
       "count": 30,
-      "bytes": 82419,
-      "sha256": "d64ad31fb6145d953476807709c83d8f94a9100e8c4dddbb2fbe278198ab9184",
+      "bytes": 82421,
+      "sha256": "e2384ee0a9f2aa5c774199c5a36a6b879e3f7ab5c4e4560e5e4562aad7e68595",
       "belts": [
         "green"
       ],
@@ -335,8 +335,8 @@
       "type": "grammar",
       "level": "n5",
       "count": 23,
-      "bytes": 64233,
-      "sha256": "dc99d88ac830fa4aeceddd6e59e8b4fa248686cc427d380de2ee8b2362721d29",
+      "bytes": 64506,
+      "sha256": "20208b1d26513a98c86afbd24569c6cc234ea603958db555e59937e9deaaba51",
       "belts": [
         "yellow"
       ],
@@ -367,8 +367,8 @@
       "type": "grammar",
       "level": "n5",
       "count": 23,
-      "bytes": 66581,
-      "sha256": "916c0b51124a4236f28eb798510ec0eb6d14c3456fe676bb7c41668ca872f1ce",
+      "bytes": 66627,
+      "sha256": "76cbfd38873de6fb9404bc9a049ddec6f84f2ae0032e54af5109fb66f26c35f9",
       "belts": [
         "orange"
       ],
@@ -383,8 +383,8 @@
       "type": "grammar",
       "level": "n5",
       "count": 22,
-      "bytes": 61169,
-      "sha256": "17740a84d744a5ba60b95383a5051bc81752a82b4429aff4627ce67095bab270",
+      "bytes": 61219,
+      "sha256": "3c14e9bd51f6bbd3330917c22a2e8218e7e74c02b883c4f5730874a54050013b",
       "belts": [
         "orange"
       ],
@@ -496,8 +496,8 @@
       "type": "kanji",
       "level": "n3",
       "count": 88,
-      "bytes": 81307,
-      "sha256": "5ba930293c27a505a5ab76de637bf816b09068d95fda12c0417ce3fcba441a81",
+      "bytes": 81306,
+      "sha256": "d680e95e2dbba368c56c820959fdb523ecf61aa87203e8e7b7fb5046bffc5193",
       "belts": [
         "blue"
       ],
@@ -657,8 +657,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2672,
-      "sha256": "8ef4ea0dbf98e77beb8c52ef05fff34d0f8b66d55ee6c7fb0494f4f9f0c003b5",
+      "bytes": 2687,
+      "sha256": "acda1845dd7e2d1c4502108b89c553bc3958e2c07f9d5afdc05bc959373105d7",
       "belts": [
         "white"
       ],
@@ -769,8 +769,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2797,
-      "sha256": "4549782a2b16650ff6346eddff07cff26b20cb283f6ca52f4c1a0a7519839c23",
+      "bytes": 2558,
+      "sha256": "70107698b0b9b6a55720f2693357428352b8620998bf4411ade3926f00bd3a86",
       "belts": [
         "orange"
       ],
@@ -783,8 +783,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2525,
-      "sha256": "499c8f06bed04518d8cc00e202da9479b2d5d9b4675cf4e7a15449fa9da0317c",
+      "bytes": 2523,
+      "sha256": "e2d854eaadff2199fb8e0327150f073cd846c701fbc594315a494fc4515cb797",
       "belts": [
         "orange"
       ],
@@ -895,8 +895,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2697,
-      "sha256": "21b1ac1ee42817b4624e7273970b4cb9efe7cd94ced5c302d7b5faf84dc6c579",
+      "bytes": 2668,
+      "sha256": "e54dbc91816a4cfef4532ea2ba6f6c35c4369244de8f8ce1f9d1b67d9c1f762f",
       "belts": [
         "green"
       ],
@@ -909,8 +909,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2778,
-      "sha256": "344f31290ce50f86641e2a448c9267a21b7408b88e338f7bdaebef05867856df",
+      "bytes": 2741,
+      "sha256": "166e9684310467212056c9de5716ee29656c8fa4a173e305f893bde139a48a95",
       "belts": [
         "green"
       ],
@@ -1007,8 +1007,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2524,
-      "sha256": "b423bc8f375975ce1988f04042131c9ed7f465c8d198a2596b2b9f2f7ba5e28d",
+      "bytes": 2512,
+      "sha256": "4b7235700be937f2d8b346ad73b11bcafde21f9fe3eaaccdd54cd0722ec3321f",
       "belts": [
         "blue"
       ],
@@ -1021,8 +1021,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2790,
-      "sha256": "a2a746f0e27ffb2129c038394b797a6e55ed15a9c38dd5ac4f5f477cc1862f5b",
+      "bytes": 2823,
+      "sha256": "c4bd31512a1ca8bc2bc27844a2a178af194a67a3e363d20c7ec9a08dfabe5e8b",
       "belts": [
         "blue"
       ],
@@ -1035,8 +1035,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2635,
-      "sha256": "48c79b3860a83d1d1829b7fbe7e590e82e6943a5ef99e34503255bac39470818",
+      "bytes": 2689,
+      "sha256": "2f63cf5a6df1d4cfdb7042a2ca0823229bae447d003ef457a0611257b5706468",
       "belts": [
         "blue"
       ],
@@ -1063,8 +1063,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2749,
-      "sha256": "e37431197699bd33f408109ae5a33ad450c2afd2d706e4d0b575c3d11b109f1c",
+      "bytes": 2690,
+      "sha256": "ba8e99f758db7c1ddcda0681a41c03b749dd39dfbcdb539782400e77553105aa",
       "belts": [
         "blue"
       ],
@@ -1133,8 +1133,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2605,
-      "sha256": "d18ddd99775c97d2104639615ad5eeb67d702eebc002598ba0c0508cf86ad4b6",
+      "bytes": 2658,
+      "sha256": "2c00d9a50d0876dfe9a50d79a4f5af5912da586d60f791ba819e4e086e422f1a",
       "belts": [
         "purple"
       ],
@@ -1273,8 +1273,8 @@
       "type": "michikusa",
       "level": null,
       "count": 4,
-      "bytes": 2690,
-      "sha256": "945ad1e1aee137ca72d5ba6ab1bebbc610e444daedcaa89df8f9255cb719532c",
+      "bytes": 2594,
+      "sha256": "7aafd4d19bbba5f91146c6c574d238225149175864f41f33ea3e680aba93c1e7",
       "belts": [
         "brown"
       ],
@@ -1399,8 +1399,8 @@
       "type": "story",
       "level": "kana",
       "count": 3,
-      "bytes": 36890,
-      "sha256": "ffd399c3ae9b7ef5c185b818210468b6c83581b369da44c0de99fc7b70bfcb51",
+      "bytes": 37094,
+      "sha256": "7d3de50622e68d69aacc1524d6052308adb542c31263e27a7b48a05b71d843dc",
       "belts": [
         "white"
       ],
@@ -1427,8 +1427,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 120935,
-      "sha256": "c8b3fb2c5a4b723efa366edc789ec2625825d6ebb629c5b3a0f03c5757999348",
+      "bytes": 121028,
+      "sha256": "41c676a721239153f9dca5d8879bf6967d419e52f8a4790721a13ffc8d049295",
       "belts": [
         "black"
       ],
@@ -1441,8 +1441,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 104059,
-      "sha256": "dee10f02b3577ae966d036c72f24cc13738bddf4a066be59600ffa1855b9cda4",
+      "bytes": 104179,
+      "sha256": "4371e861bf18c1bfea428f84fccbf3fbc0fb19e323164e86bee3bed9d16b108c",
       "belts": [
         "black"
       ],
@@ -1455,8 +1455,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 72594,
-      "sha256": "7447f407fc3e0702a574d57c3e907265028ff95263ec27ea5f98d7a4a2a33982",
+      "bytes": 106524,
+      "sha256": "348b6e99314ac787d7255caca9cb69d8497292223e33dbec0de7b48188fc4df5",
       "belts": [
         "black"
       ],
@@ -1469,8 +1469,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 88933,
-      "sha256": "4ae3f787b9e4e8b7b4b9ac235b0afa154b60387acc8fb25e017fa86e7502d635",
+      "bytes": 109781,
+      "sha256": "c2529a56fb5ffe48009bed87e000deb66b16c785725010c9e86b6be9f8bbc15f",
       "belts": [
         "black"
       ],
@@ -1483,8 +1483,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 122968,
-      "sha256": "51e82175ab238d84f888a7765654137b79e94e0f192a38116dd07c060fc6c55c",
+      "bytes": 122848,
+      "sha256": "e43a04e49c1a30b4bdbf0594c992b38e2d34a821158ba56d1c847e5ce45ff7c3",
       "belts": [
         "black"
       ],
@@ -1497,8 +1497,8 @@
       "type": "story",
       "level": "n1",
       "count": 2,
-      "bytes": 135600,
-      "sha256": "f553641682bab06a17f5b4a86a50de7b3e0a8c92a8b90f9702bcff0ae10750d5",
+      "bytes": 135780,
+      "sha256": "6808bcbcbc7f798b0ef40620af6556fc13afb4efe4461e8ece66efae18c77962",
       "belts": [
         "black"
       ],
@@ -1526,7 +1526,7 @@
       "level": "n2",
       "count": 2,
       "bytes": 100882,
-      "sha256": "9becc3353076fb357218489c161f7e3d648cc8855e1720fbdacadc760840c53f",
+      "sha256": "ad9941c9ba49bf85beecc7c3a8cea061ac65f6b278e3d4c2557a5b61c14bfb1b",
       "belts": [
         "brown"
       ],
@@ -1539,8 +1539,8 @@
       "type": "story",
       "level": "n2",
       "count": 2,
-      "bytes": 115181,
-      "sha256": "35f94925a47c054455a8c03f63a5f7a4a0389d15b00ce4d97f12c76e72191ded",
+      "bytes": 115216,
+      "sha256": "613147210d3401996af22744a423a24d6953ae404ac773b3d957814c59d21ff4",
       "belts": [
         "brown"
       ],
@@ -1554,7 +1554,7 @@
       "level": "n2",
       "count": 2,
       "bytes": 102562,
-      "sha256": "127e986cba9f0980e4826f2dea578dcb78f65e2c4616ab01b43f2cde853631a8",
+      "sha256": "4ce36f3c23e18cc51bdebd4c892255d70fa7c38d79c82d73137070c9010c1a0c",
       "belts": [
         "brown"
       ],
@@ -1568,7 +1568,7 @@
       "level": "n2",
       "count": 2,
       "bytes": 118494,
-      "sha256": "350f0b0f8ac5c1dbcc92debadf30f100c09f4bc4dd69ef3150fc29929778441d",
+      "sha256": "c97d66c91368fc8943271903562df484f7f12b6b8e96da2f33cb6fd6595c2bc8",
       "belts": [
         "brown"
       ],
@@ -1582,7 +1582,7 @@
       "level": "n2",
       "count": 2,
       "bytes": 115102,
-      "sha256": "a8f547fa7515a150f9df2ab59fa5944df57d4ccd5c2ef11d6639acce52bc6a6b",
+      "sha256": "65d1a20543b651615e213b1fee7f83dc05fc0ec9a9a0a9cf9ee65724de39d71f",
       "belts": [
         "brown"
       ],
@@ -1623,8 +1623,8 @@
       "type": "story",
       "level": "n2",
       "count": 2,
-      "bytes": 115640,
-      "sha256": "14f75d5091806aad57dd9810ae740c96ae6cb7f661ab083f49dfe2d3782a2207",
+      "bytes": 115626,
+      "sha256": "850c82f0a40f97aec3611b6d20ebf7f61e418a11a66bded9120f9c58ff1c5646",
       "belts": [
         "brown"
       ],
@@ -1637,8 +1637,8 @@
       "type": "story",
       "level": "n3",
       "count": 3,
-      "bytes": 132320,
-      "sha256": "4903fe4aee3f50dd2af16697cf1a063c4e16eefdb41963536c76cf0ae39cd1b0",
+      "bytes": 132308,
+      "sha256": "ca95f7cb25eada3f32580f271aaabc640d75ad69ca4d4b99c8cbe12c22b61c19",
       "belts": [
         "blue"
       ],
@@ -1665,8 +1665,8 @@
       "type": "story",
       "level": "n3",
       "count": 3,
-      "bytes": 153227,
-      "sha256": "cbb9a941c13b394b17519a9b2e372ad0b1bae959963211831958046067d39510",
+      "bytes": 153176,
+      "sha256": "4933a59f4669a15fb82320db625bdf266a222e36a5807c7272e104a2329434d4",
       "belts": [
         "blue"
       ],
@@ -1694,7 +1694,7 @@
       "level": "n3",
       "count": 3,
       "bytes": 113823,
-      "sha256": "72c0769d306d1b0dd0819a398b8542edec4f0c03c0ce5c9588661bb9f5a359d5",
+      "sha256": "679e80f7d49ec2287a14fd720da3d94e8d8fa8130e36501afefb20c2c6d2febf",
       "belts": [
         "blue"
       ],
@@ -1707,8 +1707,8 @@
       "type": "story",
       "level": "n3",
       "count": 3,
-      "bytes": 123910,
-      "sha256": "43217eae069557ae23efd1fd4d7d4d2d1d44c9effae8f7642448ee69bccef1f7",
+      "bytes": 123909,
+      "sha256": "55b89684970e03dd3c22f0e74d557813913dbaf81c307703301ad956c83e3cc1",
       "belts": [
         "blue"
       ],
@@ -1722,7 +1722,7 @@
       "level": "n3",
       "count": 3,
       "bytes": 150429,
-      "sha256": "f32de66f819b103aaec0e0237f51bfc406f3920ec4792704cea36d07d9878208",
+      "sha256": "e4b57dcc3a0f575f3f65d4fca7e1b9bc55f39bf19752f0d184282626acbb0cb3",
       "belts": [
         "blue"
       ],
@@ -1735,8 +1735,8 @@
       "type": "story",
       "level": "n3",
       "count": 2,
-      "bytes": 110322,
-      "sha256": "a33dab3b0eb57a1ed042802c300b3a7fc71d7942d201d5144ad6d3e390d4bde5",
+      "bytes": 110357,
+      "sha256": "ba2ee56dff742713dcb889068ca67e4732b932453d00091d99f9ccf5e0784734",
       "belts": [
         "purple"
       ],
@@ -1750,7 +1750,7 @@
       "level": "n3",
       "count": 2,
       "bytes": 89116,
-      "sha256": "2eb796e6b1e02442eecff097b56f714fc07abe39a478d5018e97676c999e3d1f",
+      "sha256": "b64c123695398f05929f7a8462343b9c1dbf5b8ecd4bf77a0799b47de38b1f2b",
       "belts": [
         "purple"
       ],
@@ -1763,8 +1763,8 @@
       "type": "story",
       "level": "n3",
       "count": 2,
-      "bytes": 101079,
-      "sha256": "d05990f707e31bceba6bdc92aa22172d3151db66188559ce7bbaea45202eb5fe",
+      "bytes": 102205,
+      "sha256": "5f0eb6576746a90b8e22e5e99b2d4a2f286c7d06e8b22b6b2c39484558642c2c",
       "belts": [
         "purple"
       ],
@@ -1778,7 +1778,7 @@
       "level": "n3",
       "count": 2,
       "bytes": 124388,
-      "sha256": "7253aaac6e133a910f7d5423e81f4838aa7465ba3db9f27b975e70360d3dcff2",
+      "sha256": "bce906e1d5c8128d3df041a8af2e850ff5956a82ec9a4310c520597c845ff1a5",
       "belts": [
         "purple"
       ],
@@ -1792,7 +1792,7 @@
       "level": "n3",
       "count": 2,
       "bytes": 78140,
-      "sha256": "a784241f79748fcf91e6c359c14cac6797d5fb1bd02bbe45e7dba045f29ed92f",
+      "sha256": "e0e5d95be33532d56e330534c110400787137c98b209a32cfb3bd664ebde5a64",
       "belts": [
         "purple"
       ],
@@ -1806,7 +1806,7 @@
       "level": "n3",
       "count": 2,
       "bytes": 114125,
-      "sha256": "a9d4d434d7b8b46d908d2ac1e0032d8b338c7f41068a2374c50cd4a12c02a271",
+      "sha256": "78e693339c019b03e58f71a6238809c47c9d9ffcc30d655ee2df8b1374bc9557",
       "belts": [
         "purple"
       ],
@@ -1848,7 +1848,7 @@
       "level": "n4",
       "count": 3,
       "bytes": 73764,
-      "sha256": "b5adcdae1d220638a7d0ca5fb520c21c5e163409901ccf7a4282cbf82b7b186f",
+      "sha256": "d7f7b600971101710cd3ddd41c06da4d06e26cbb40a179af9e17d6b4a3bf1b3c",
       "belts": [
         "green"
       ],
@@ -1889,8 +1889,8 @@
       "type": "story",
       "level": "n4",
       "count": 3,
-      "bytes": 69589,
-      "sha256": "ac2ef6200cc03a8a2fd3a52d9dce76f6ec1ce78d764030f27db8a9e216c302b5",
+      "bytes": 69346,
+      "sha256": "3ae1e6c32bb64ea372e7ef441e42a917fa663c8d5d4677f5e8b9ab76ed72167a",
       "belts": [
         "green"
       ],
@@ -1945,8 +1945,8 @@
       "type": "story",
       "level": "n4",
       "count": 3,
-      "bytes": 90238,
-      "sha256": "208c3822cd2a3a54f51a441fc45c6dac6949898b48cbb0b39c1c6e9171df5fde",
+      "bytes": 90214,
+      "sha256": "f7231a20560eff835bd0178ccf2145dc696edf39c32c7d4a6dbfb8d29e05356e",
       "belts": [
         "green"
       ],
@@ -1987,8 +1987,8 @@
       "type": "story",
       "level": "n5",
       "count": 3,
-      "bytes": 52538,
-      "sha256": "1100d2e3596c9dc46358e17300735cb023306c5e88614d286aab8dee0807962f",
+      "bytes": 52815,
+      "sha256": "90ae3d0a59a816adbbee1b08600fd12d1f0f406a62da31213b876ab5d3394ab0",
       "belts": [
         "yellow"
       ],
@@ -2001,8 +2001,8 @@
       "type": "story",
       "level": "n5",
       "count": 3,
-      "bytes": 61669,
-      "sha256": "f169947e457b9652fc9ee24ba0383c693b28bcb3099ec46114c4199ad4f8824e",
+      "bytes": 61836,
+      "sha256": "fbe8bde7de69720022063cc30e67adcd9718c9305b8e8adf72f07f3ce8921fb7",
       "belts": [
         "yellow"
       ],
@@ -2015,8 +2015,8 @@
       "type": "story",
       "level": "n5",
       "count": 3,
-      "bytes": 59626,
-      "sha256": "8da3313e835127ae2a97402629c1536bed5fe273ac45a66f28219fd11f365c4b",
+      "bytes": 59661,
+      "sha256": "47f034353e202465cb9cc5711db2f412a2c3366687b23563a9abb86482c6b630",
       "belts": [
         "yellow"
       ],
@@ -2029,8 +2029,8 @@
       "type": "story",
       "level": "n5",
       "count": 3,
-      "bytes": 68838,
-      "sha256": "7d6b398cbb140048d5b2d5553692874bd58886597b8bc411482d35f7266de0ff",
+      "bytes": 68844,
+      "sha256": "5310cae65843618e8ad96f660b5ffecdec90bbef533975fdbfffb19c7807c7e4",
       "belts": [
         "yellow"
       ],
@@ -2071,8 +2071,8 @@
       "type": "story",
       "level": "n5",
       "count": 3,
-      "bytes": 65302,
-      "sha256": "080a8844024452294866f84809b2fe6632bc20167f91f7821d874a2edcc00e85",
+      "bytes": 65332,
+      "sha256": "339d049a77a966314ed234bdde01e0800ae62b64d4d655b420d414e95ff748b4",
       "belts": [
         "orange"
       ],
@@ -2128,15 +2128,12 @@
       "level": "n1",
       "count": 150,
       "bytes": 253574,
-      "sha256": "05f02b374d244f7e8aaa77c2a40b44ef8a3be84951ef5384899e585df2bb0050",
+      "sha256": "b7032210782d1b041fd9281065ee8375715ae9f8b3b597e6757f4d31ff67280c",
       "belts": [
         "black"
       ],
       "stations": [
-        47,
-        48,
-        49,
-        50
+        47
       ]
     },
     {
@@ -2145,15 +2142,13 @@
       "level": "n1",
       "count": 150,
       "bytes": 258099,
-      "sha256": "48b152b454d914970e6148024823d520d64921648fa691d9bb001e4545c8f964",
+      "sha256": "85486baa38393283549276e1726c3937e929665e4c07c2b9e5e27340727f6692",
       "belts": [
         "black"
       ],
       "stations": [
         47,
-        48,
-        49,
-        50
+        48
       ]
     },
     {
@@ -2161,17 +2156,13 @@
       "type": "vocab",
       "level": "n1",
       "count": 150,
-      "bytes": 261768,
-      "sha256": "912c3762600b63c30679cd4f956e44ff84de91fdaf8ca4b0bed3472549117cab",
+      "bytes": 261763,
+      "sha256": "bba40e3ce02dfc2520e5005c294990f7c9c6e865cf5559fba9fdf5e33c1496a1",
       "belts": [
         "black"
       ],
       "stations": [
-        47,
-        48,
-        49,
-        50,
-        51
+        49
       ]
     },
     {
@@ -2180,16 +2171,13 @@
       "level": "n1",
       "count": 150,
       "bytes": 242591,
-      "sha256": "0e9350256d6fe035d612aa19f550c4c7140ef2568d61cb3e6f1453eabd4da190",
+      "sha256": "7bcf72a0031dc5c666d7b1d607ba96c656cedb88897f0b6be5080ac1287cb327",
       "belts": [
         "black"
       ],
       "stations": [
-        47,
         48,
-        49,
-        50,
-        51
+        49
       ]
     },
     {
@@ -2197,17 +2185,13 @@
       "type": "vocab",
       "level": "n1",
       "count": 150,
-      "bytes": 271027,
-      "sha256": "0bd90d7664438ba546498c533e982b42241843d618d663a7ee02b7c931671e98",
+      "bytes": 271024,
+      "sha256": "34f37c6407774ce3826c3c12d0a6281a08031c07b7956b385e6a54ce3f8c3c59",
       "belts": [
         "black"
       ],
       "stations": [
-        48,
-        49,
-        50,
-        51,
-        52
+        51
       ]
     },
     {
@@ -2215,17 +2199,14 @@
       "type": "vocab",
       "level": "n1",
       "count": 150,
-      "bytes": 263223,
-      "sha256": "d308e2fa2e325d335b430dd4735605f3e708d2f368e1c10f212f6a87576994cb",
+      "bytes": 263226,
+      "sha256": "3c8bdc0593ee3f792e8854f4e8527b4d3e20e335f9029afdbc575b2d14a039ae",
       "belts": [
         "black"
       ],
       "stations": [
-        48,
         49,
-        50,
-        51,
-        52
+        50
       ]
     },
     {
@@ -2234,16 +2215,13 @@
       "level": "n1",
       "count": 150,
       "bytes": 275955,
-      "sha256": "7778cc8216c62f2586c2078b2d0e9dfcd88935e5819296827dade508d192c6f8",
+      "sha256": "2e0df80a44008d115f722c068749f785ac3d95ec7fe19915633293014328b054",
       "belts": [
         "black"
       ],
       "stations": [
-        48,
-        49,
         50,
-        51,
-        52
+        51
       ]
     },
     {
@@ -2252,16 +2230,13 @@
       "level": "n1",
       "count": 150,
       "bytes": 243873,
-      "sha256": "b6169bd80763a7cc446535d2be389f0fab69f765c6019caeadf400cd0d8d961e",
+      "sha256": "12f338faf9cb247ebfa88f9224dbd56d0df73ae06f66a4212a1e82e01c9b755e",
       "belts": [
         "black"
       ],
       "stations": [
-        49,
-        50,
         51,
-        52,
-        53
+        52
       ]
     },
     {
@@ -2269,14 +2244,12 @@
       "type": "vocab",
       "level": "n1",
       "count": 150,
-      "bytes": 242548,
-      "sha256": "99b8376c9f1ec0f4a66bae435e8cef8af975a725eb683092e8bca01ef842cfa1",
+      "bytes": 242518,
+      "sha256": "4bfef291271440d26b23a570214290e5cf051b8c60faf5fc23d2b8fd361d834c",
       "belts": [
         "black"
       ],
       "stations": [
-        50,
-        51,
         52,
         53
       ]
@@ -2287,17 +2260,11 @@
       "level": "n1",
       "count": 150,
       "bytes": 259223,
-      "sha256": "6546740e423a66b57b7845fc65971a2a3c9c105a37f9f551cfe08b5312596ceb",
+      "sha256": "27278bc16dfd16913278d90afe8314756ff950d71e8f7c436f3cda9e0b06123a",
       "belts": [
         "black"
       ],
       "stations": [
-        47,
-        48,
-        49,
-        50,
-        51,
-        52,
         53
       ]
     },
@@ -2351,7 +2318,7 @@
       "level": "n2",
       "count": 141,
       "bytes": 221853,
-      "sha256": "3a772c53007f8f5885c86a3b983bd31e72bffd7cfcd0701286fd6b417bb39e7c",
+      "sha256": "795948f9c5f8d275fd4e1af2f19b36f60f3b5f8dbf495313bbce504c6c68e0a4",
       "belts": [
         "brown"
       ],
@@ -2394,8 +2361,8 @@
       "type": "vocab",
       "level": "n2",
       "count": 141,
-      "bytes": 208402,
-      "sha256": "6641d81eecb4dc344d6eb2300bb5d264080b2385d80a65bad7412e666a51d775",
+      "bytes": 208435,
+      "sha256": "41c8ba0a1e7388aa312b6add1ac199d5252b973a1d20b7cf89ed30ab2e03b383",
       "belts": [
         "brown"
       ],
@@ -2481,8 +2448,8 @@
       "type": "vocab",
       "level": "n3",
       "count": 142,
-      "bytes": 177641,
-      "sha256": "4ba00e28af2cf98e2f75f7e87aae31a519df0dbf030ea258d6026ddbbd78229b",
+      "bytes": 177670,
+      "sha256": "2b577a482c56e89470663d56dd35112048b8cac689f4d13712e953da9f21b2d6",
       "belts": [
         "blue"
       ],
@@ -2526,8 +2493,8 @@
       "type": "vocab",
       "level": "n3",
       "count": 141,
-      "bytes": 174278,
-      "sha256": "9c419a391bf403e82a9052be7a33a3144de67b54c065173b2d6045df9ec32a1f",
+      "bytes": 174336,
+      "sha256": "9c2c5e5627a7bb66a3ad8f645962f77d863d9acd72a6c09c719df01b44dd95a0",
       "belts": [
         "blue"
       ],
@@ -2572,9 +2539,9 @@
       "path": "vocab/n3/vocab-n3-007.json",
       "type": "vocab",
       "level": "n3",
-      "count": 142,
-      "bytes": 199560,
-      "sha256": "14af380403ce45609b9f78d71b7156594fe3261b1e06fd33055f4c886479b41c",
+      "count": 143,
+      "bytes": 201282,
+      "sha256": "0630dda43ecf2eb7a0a3360b8549856d39cee1256f6569627fd388a6e5ec12f2",
       "belts": [
         "purple"
       ],
@@ -2589,7 +2556,7 @@
       "level": "n3",
       "count": 142,
       "bytes": 198323,
-      "sha256": "141d12d2613c6935aca166263d1a9b1b0ca5fd8874cf33fd2ac578e726d7ba86",
+      "sha256": "8ee0003bb8a73edea0ac93a18c26f2997bb74c1538bcadbef8231a7a3d0849f3",
       "belts": [
         "purple"
       ],
@@ -2604,7 +2571,7 @@
       "level": "n3",
       "count": 142,
       "bytes": 191931,
-      "sha256": "dd4497c6aeba7be9b9523a08148eac484c78d15a1995a88cc2e479edb3626f2b",
+      "sha256": "8163e34008267596d0fc849cdaff2621a5ff88f533053a181e319d336cb20227",
       "belts": [
         "purple"
       ],
@@ -2619,7 +2586,7 @@
       "level": "n3",
       "count": 141,
       "bytes": 188280,
-      "sha256": "caa1b50f7f1ccc5da0111da1a56ed529ae52c5cafc19cc3afaadcb8440f545ea",
+      "sha256": "c224a7315e5d791c7b23f95bd5c10f2abbb5b78327d225c974402bc21c754709",
       "belts": [
         "purple"
       ],
@@ -2633,8 +2600,8 @@
       "type": "vocab",
       "level": "n3",
       "count": 142,
-      "bytes": 197413,
-      "sha256": "8d36a41065e03a345e4591207101340e903b13522753727937f257719c8f6dac",
+      "bytes": 197440,
+      "sha256": "65f79e364324c952c882c48b0aa3cb0fd250e87daf59172b25d76915e268ceb3",
       "belts": [
         "purple"
       ],
@@ -2649,7 +2616,7 @@
       "level": "n3",
       "count": 141,
       "bytes": 187617,
-      "sha256": "ff6ebc796f5f994bf8f0fa4ae4866d1b25b3bef2d26fb29f94e9521c8af77625",
+      "sha256": "597ba025e493536ef58413408847b8a4cb33fab38cf45baf839d7d41622d8d18",
       "belts": [
         "purple"
       ],
@@ -2663,8 +2630,8 @@
       "type": "vocab",
       "level": "n4",
       "count": 130,
-      "bytes": 144454,
-      "sha256": "27a4165198d809f429dc4c269c5ff20eb8a069338f0e7a80b585a4fb614ef61a",
+      "bytes": 144572,
+      "sha256": "d5d35d58226179bb5b0113c54b36da030025d80514b35305f2470cc1d1fd4d1e",
       "belts": [
         "green"
       ],
@@ -2678,8 +2645,8 @@
       "type": "vocab",
       "level": "n4",
       "count": 130,
-      "bytes": 128188,
-      "sha256": "65b26dbca6b619891e3ea8b575e1be1372051f736c91b7c707e6c86b64abfe3f",
+      "bytes": 128339,
+      "sha256": "ea3840b6c374667dc0eeb1ff5be70b5d11e046e69465c306fc0e26d3dec61486",
       "belts": [
         "green"
       ],
@@ -2694,8 +2661,8 @@
       "type": "vocab",
       "level": "n4",
       "count": 130,
-      "bytes": 130042,
-      "sha256": "ebed68cb4a062631e4ce966d1e61e28e73105429bcd4dbf3b4804070840b08b8",
+      "bytes": 130159,
+      "sha256": "e319770e5ff334beaa8bec64f56c68d610b2f9ddba64042ac72755b7a038549b",
       "belts": [
         "green"
       ],
@@ -2710,8 +2677,8 @@
       "type": "vocab",
       "level": "n4",
       "count": 130,
-      "bytes": 124385,
-      "sha256": "9f29488815c7f437ac8ad29eece880d8f52c1e20937510360e28ae36f9b72762",
+      "bytes": 124510,
+      "sha256": "86ac9e75b4c00d38c105c4a089a9f729cb1224d6cf5df1f5f2565573bcfc34f1",
       "belts": [
         "green"
       ],
@@ -2726,8 +2693,8 @@
       "type": "vocab",
       "level": "n4",
       "count": 130,
-      "bytes": 128827,
-      "sha256": "d7b87cf2fa7e633c6a6da98561811c57b0c6d4750598f1fd27844effc8701e18",
+      "bytes": 128948,
+      "sha256": "e6fbf9a870baff70a76a29adfc5804208042c988d2d2f995cede026f51e42f35",
       "belts": [
         "green"
       ],
@@ -2741,8 +2708,8 @@
       "type": "vocab",
       "level": "n5",
       "count": 135,
-      "bytes": 132100,
-      "sha256": "02e9dd927a3ee6ff45b74f06cd60225b5523485f36065bd62146e46a118bd833",
+      "bytes": 132190,
+      "sha256": "6db505cc4a8e9fbf216dc42aaf4d2b2a66f4db23c64cba02e905020b44a22513",
       "belts": [
         "white",
         "yellow"
@@ -2759,8 +2726,8 @@
       "type": "vocab",
       "level": "n5",
       "count": 135,
-      "bytes": 123712,
-      "sha256": "b1aa07487f0f838a234372e488d1d253cefc30bd78a0addabff0daf071458019",
+      "bytes": 123826,
+      "sha256": "682747b8c8f2d5f0dc065c983aa5fecca825b1c10093f4fbe02f9776da05dafb",
       "belts": [
         "yellow"
       ],
@@ -2776,12 +2743,13 @@
       "type": "vocab",
       "level": "n5",
       "count": 135,
-      "bytes": 129885,
-      "sha256": "8c6e0b0a014861ffca2eed1cfe813ff6fd5a5fcaf97eb5c5686445d44805cef0",
+      "bytes": 130013,
+      "sha256": "104c8b534f15c8670b03f8521f0cbd9fe9c7333a97faa2d6cfaef5f8837001d5",
       "belts": [
         "yellow"
       ],
       "stations": [
+        6,
         7,
         8,
         9
@@ -2792,8 +2760,8 @@
       "type": "vocab",
       "level": "n5",
       "count": 135,
-      "bytes": 119401,
-      "sha256": "6dc3b14724b90d4627c6a39b0e0edaf4f155b4019f732fb2d290c3f7d0c95575",
+      "bytes": 119520,
+      "sha256": "997a308b0331fb64d2e9424a824a0341b353f7ef3c22b3319da0ef07fdbd028a",
       "belts": [
         "yellow",
         "orange"
@@ -2809,8 +2777,8 @@
       "type": "vocab",
       "level": "n5",
       "count": 130,
-      "bytes": 131078,
-      "sha256": "21cc239bb973677983a380f36a3c1bb7a40cddc646f3b7782010b133b0f02cdb",
+      "bytes": 131184,
+      "sha256": "658ef8b5cb65a0cdfc3bb463fa98434ee94d790aaa9e312580d0349619d3b1b1",
       "belts": [
         "orange"
       ],
@@ -2825,8 +2793,8 @@
       "type": "vocab",
       "level": "n5",
       "count": 130,
-      "bytes": 119658,
-      "sha256": "04d2ca49f657c783ff9a168ca81839a19b5687d685abc6d0cb971c993253855e",
+      "bytes": 119764,
+      "sha256": "328476e8a2829691170489266448390e93e502193688a2d6d9e0f3943f9aff9a",
       "belts": [
         "orange"
       ],
@@ -3287,7 +3255,7 @@
       "path": "stations/38.json",
       "counts": {
         "kana": 0,
-        "vocab": 121,
+        "vocab": 122,
         "kanji": 25,
         "grammar": 8,
         "story": 2,
@@ -3477,11 +3445,11 @@
   ],
   "totals": {
     "kana": 238,
-    "vocab": 6350,
+    "vocab": 6351,
     "kanji": 1000,
     "grammar": 450,
     "story": 137,
-    "conjugation": 903,
+    "conjugation": 902,
     "component": 284,
     "michikusa": 212,
     "station": 53

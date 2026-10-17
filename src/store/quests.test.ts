@@ -2,7 +2,7 @@ import { QUEST_IDS, QUESTS as CATALOG, type QuestId } from '../shared/catalog';
 import { bus, type Events } from '../shared/events';
 import { registerExercise, resetRegistryForTests } from '../shared/exercise-types';
 import { epochDay } from '../shared/time';
-import { NEEDS_FACET, QUESTS, QUEST_COUNT, advanceQuest, eligibleQuests, isFullDay, pickDailyQuests, pickQuests, questCounts, questProgress, questsForDay, startQuests, storeHasFacet } from './quests';
+import { NEEDS_FACET, QUESTS, QUEST_COUNT, advanceQuest, eligibleQuests, isFullDay, pickDailyQuests, pickQuests, questClosed, questCounts, questProgress, questsForDay, resetQuestGatesForTests, revalidateQuests, setQuestGates, startQuests, storeHasFacet } from './quests';
 import { resetStoreForTests, store } from './store';
 import { DEFAULT_TEST_NOW, TEST_SEED, captureEvents, card, makeTestStore } from './testing';
 
@@ -16,6 +16,7 @@ function strandOf(id: QuestId): string {
 afterEach(() => {
   resetStoreForTests();
   resetRegistryForTests();
+  resetQuestGatesForTests();
   bus.reset();
 });
 
@@ -99,6 +100,31 @@ describe('pickQuests', () => {
     expect(pickDailyQuests(store)).toEqual(full);
   });
 
+  it('canDo drops a quest that cannot be completed today and keeps the rest of the draw in place', () => {
+    let day = -1;
+    for (let d = 0; d < 60 && day < 0; d++) if (pickQuests(TEST_SEED, TODAY + d, 'white', { station: 1, isRegistered: ALL }).includes('learn-scroll')) day = d;
+    expect(day).toBeGreaterThanOrEqual(0);
+    const full = pickQuests(TEST_SEED, TODAY + day, 'white', { station: 1, isRegistered: ALL });
+    const gated = pickQuests(TEST_SEED, TODAY + day, 'white', { station: 1, isRegistered: ALL, canDo: (id) => id !== 'learn-scroll' });
+    expect(gated).not.toContain('learn-scroll');
+    // The form strand is refilled by the next eligible form quest; the other strands stay put.
+    for (const id of full) if (strandOf(id) !== 'form') expect(gated).toContain(id);
+    expect(gated.filter((id) => strandOf(id) === 'form').length).toBe(1);
+    expect(eligibleQuests(53, ALL, ALL, (id) => id !== 'michikusa-one').map((q) => q.id)).not.toContain('michikusa-one');
+    expect(eligibleQuests(53, ALL, ALL).length).toBe(QUESTS.length);
+  });
+
+  it('at Stations 1–2 a closed michikusa-one still leaves two Kata: outside-twenty is drawable from Station 1', () => {
+    for (let d = 0; d < 60; d++) {
+      for (const station of [1, 2]) {
+        const ids = pickQuests(TEST_SEED, TODAY + d, 'white', { station, isRegistered: ALL, canDo: (id) => id !== 'michikusa-one' });
+        expect(ids).toHaveLength(2);
+        expect(ids).toContain('outside-twenty');
+        expect(ids.map(strandOf).sort()).toEqual(['form', 'input']);
+      }
+    }
+  });
+
   it('dropping an ineligible quest keeps the others in place (stable re-draw)', () => {
     let found = false;
     for (let d = 0; d < 60 && !found; d++) {
@@ -112,6 +138,81 @@ describe('pickQuests', () => {
       expect(again).not.toContain(dropped);
     }
     expect(found).toBe(true);
+  });
+});
+
+describe('day gates', () => {
+  it('questClosed honours only the set day; the live draw skips a closed quest unless it is already done today', async () => {
+    let day = -1;
+    for (let d = 0; d < 60 && day < 0; d++) if (pickQuests(TEST_SEED, TODAY + d, 'white', { station: 1 }).includes('michikusa-one')) day = d;
+    expect(day).toBeGreaterThanOrEqual(0);
+    const today = TODAY + day;
+    await makeTestStore({ now: DEFAULT_TEST_NOW + day * 86_400_000, save: { progress: { station: 1 }, quests: { day: today, ids: [], done: [] } } });
+    const full = pickDailyQuests(store);
+    expect(full).toContain('michikusa-one');
+
+    // Yesterday's exhaustion does not shape today's roll.
+    setQuestGates(today - 1, ['michikusa-one']);
+    expect(questClosed('michikusa-one', today - 1)).toBe(true);
+    expect(questClosed('michikusa-one', today)).toBe(false);
+    expect(pickDailyQuests(store)).toEqual(full);
+
+    // Today's gate drops it; the other quests stay where they were.
+    setQuestGates(today, ['michikusa-one']);
+    const gated = pickDailyQuests(store);
+    expect(gated).not.toContain('michikusa-one');
+    for (const id of full) if (id !== 'michikusa-one') expect(gated).toContain(id);
+
+    // A quest done today survives its gate closing (the last fresh fragment was just read).
+    store.patch('quests', () => ({ day: today, ids: full, done: ['michikusa-one'] }));
+    expect(pickDailyQuests(store)).toEqual(full);
+    // ...but the gate is a replacement, not a union.
+    setQuestGates(today, []);
+    expect(questClosed('michikusa-one', today)).toBe(false);
+  });
+
+  it('revalidateQuests re-draws today\'s slice after a gate closes, keeping progress on the quests that stay', async () => {
+    let day = -1;
+    for (let d = 0; d < 60 && day < 0; d++) if (pickQuests(TEST_SEED, TODAY + d, 'white', { station: 1 }).includes('learn-scroll')) day = d;
+    expect(day).toBeGreaterThanOrEqual(0);
+    const today = TODAY + day;
+    await makeTestStore({ now: DEFAULT_TEST_NOW + day * 86_400_000, save: { progress: { station: 1 }, quests: { day: today, ids: [], done: [] } } });
+    const stop = startQuests(store);
+    try {
+      revalidateQuests(store);
+      const first = store.quests.value.ids;
+      expect(first).toContain('learn-scroll');
+      const other = first.find((id) => id !== 'learn-scroll' && strandOf(id) !== 'form');
+      if (other !== undefined) {
+        bus.emit('michikusa:read', { id: 'm-01-1' });
+        bus.emit('ledger:entry', { minutes: 5, kind: 0, source: 1 });
+      }
+      const before = questCounts(store.quests.value);
+
+      // No Scroll left today (the session layer knows): the quest goes, the rest keep their counts.
+      setQuestGates(today, ['learn-scroll']);
+      revalidateQuests(store);
+      const q = store.quests.value;
+      expect(q.day).toBe(today);
+      expect(q.ids).not.toContain('learn-scroll');
+      for (const id of first) if (id !== 'learn-scroll' && strandOf(id) !== 'form') expect(q.ids).toContain(id);
+      for (const id of q.ids) if (before[id] !== undefined) expect(questCounts(q)[id]).toBe(before[id]);
+
+      // Nothing to do when the draw is unchanged; `session:started` runs the same revalidation.
+      const same = store.quests.value;
+      revalidateQuests(store);
+      expect(store.quests.value).toBe(same);
+      setQuestGates(today, []);
+      bus.emit('session:started', { sessionId: 's', mode: 'kata', zen: false });
+      expect(store.quests.value.ids).toEqual(first);
+
+      // Before the roll (slice from another day) revalidation is a no-op.
+      store.patch('quests', () => ({ day: today - 1, ids: ['clear-due'], done: [] }));
+      revalidateQuests(store);
+      expect(store.quests.value.ids).toEqual(['clear-due']);
+    } finally {
+      stop();
+    }
   });
 });
 

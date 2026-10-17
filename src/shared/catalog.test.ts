@@ -75,6 +75,15 @@ describe('quests and missions', () => {
       expect(q.phase).toBe(2);
     }
   });
+  it('Stations 1–2 can always draw two Kata: form and input each hold ≥ 2 quests from Station 1 with no `requires`', () => {
+    const fromOne = (strand: string) => QUESTS.filter((q) => q.strand === strand && q.fromStation <= 1 && q.requires === undefined).map((q) => q.id);
+    expect(fromOne('form').length).toBeGreaterThanOrEqual(2);
+    // michikusa-one closes once every fragment of stations ≤ current + 1 is collected (setQuestGates);
+    // outside-twenty is the second input Kata because the ledger exists from the first save.
+    expect(fromOne('input')).toEqual(expect.arrayContaining(['michikusa-one', 'outside-twenty']));
+    // The output strand has no drill before shadow (design 04 §13), so the third Kata starts at Station 3.
+    expect(Math.min(...QUESTS.filter((q) => q.strand === 'output').map((q) => q.fromStation))).toBe(3);
+  });
   it('MISSIONS escalate by tier with XP in 30–100 and exactly one conversation tier', () => {
     expect(MISSIONS.map((m) => m.tier)).toEqual([1, 2, 3, 4, 5]);
     for (const m of MISSIONS) {

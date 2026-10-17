@@ -2,7 +2,8 @@
  * TSUZUKU — 三変化 Say It Three Ways (design 04 §6, 05 §10, Station 27+).
  *
  * One idea (`params.promptEn`, with `params.sentence` as a model behind a
- * hint) → the learner types or speaks it three times: casual, polite, keigo.
+ * hint — the "Show one model" button or the frame's `?` / Hint button,
+ * contract #32) → the learner types or speaks it three times: casual, polite, keigo.
  * Each version is classified by `taiwa/register.detectRegister` (だ・です・
  * でございます; くれる・くださる・いただく; verb forms); a version "lands"
  * when its register is exactly the one asked for (a mixed line never lands).
@@ -177,7 +178,8 @@ function ThreeWaysBody(p: ExerciseProps): JSX.Element {
     p.onResult(r);
   };
 
-  useExerciseKeys({ onSubmit: check });
+  // `?` / the frame's Hint button reveal the model; nothing to offer once shown, done, or without a model.
+  useExerciseKeys({ onSubmit: check, onHint: model && !showModel && !done ? revealModel : undefined });
 
   const verdict = done ? (done.correct === 3 ? S.threeWaysAllThree : done.correct === 2 ? S.threeWaysTwo : S.threeWaysFew) : '';
   const kind = done ? (done.correct === 3 ? 'correct' : done.correct === 2 ? 'near' : 'wrong') : undefined;

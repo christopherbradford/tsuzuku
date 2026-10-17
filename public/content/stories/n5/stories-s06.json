@@ -40,7 +40,7 @@
             "v-n5-0118",
             "v-n5-0154",
             "v-n5-0032",
-            "g-n5-017",
+            "v-n5-0277",
             null
           ]
         },
@@ -164,12 +164,12 @@
           ]
         },
         {
-          "ja": "{白|しろ}い{帽子|ぼうし}を{見|み}ました。{三千円|さんぜんえん}。{買|か}いませんでした。",
-          "kana": "しろいぼうしをみました。さんぜんえん。かいませんでした。",
-          "en": "I looked at a white hat. Three thousand yen. I did not buy it.",
+          "ja": "{白|しろ}いハンカチを{見|み}ました。{三千円|さんぜんえん}。{買|か}いませんでした。",
+          "kana": "しろいハンカチをみました。さんぜんえん。かいませんでした。",
+          "en": "I looked at a white handkerchief. Three thousand yen. I did not buy it.",
           "tokens": [
             "白い",
-            "帽子",
+            "ハンカチ",
             "を",
             "見ました",
             "。",
@@ -180,9 +180,9 @@
           ],
           "tokenIds": [
             "v-n5-0167",
-            "v-n5-0253",
+            "v-n5-0243",
             "v-n5-0120",
-            "g-n5-017",
+            "v-n5-0276",
             null,
             "v-n5-0115",
             null,
@@ -312,7 +312,7 @@
             "v-n5-0127",
             null,
             "v-n5-0124",
-            "g-n5-017",
+            "v-n5-0279",
             null
           ]
         },
@@ -341,7 +341,7 @@
             "v-n5-0001",
             null,
             "v-n5-0124",
-            "g-n5-017",
+            "v-n5-0279",
             null,
             "v-n5-0046",
             null,
@@ -410,7 +410,7 @@
             "v-n5-0126",
             "v-n5-0412",
             "v-n5-0120",
-            "g-n5-017",
+            "v-n5-0277",
             null
           ]
         },
@@ -473,7 +473,7 @@
           "tokenIds": [
             "v-n5-0100",
             "v-n5-0032",
-            "g-n5-017",
+            "v-n5-0282",
             null,
             null,
             null,
@@ -567,7 +567,7 @@
             "v-n5-0166",
             "v-n5-0102",
             "v-n5-0122",
-            "g-n5-017",
+            "v-n5-0282",
             null,
             null,
             "v-n5-0225",
@@ -627,9 +627,13 @@
         "v-n5-0236",
         "v-n5-0242",
         "v-n5-0248",
-        "v-n5-0253",
         "v-n5-0412",
-        "v-n5-0549"
+        "v-n5-0549",
+        "v-n5-0243",
+        "v-n5-0276",
+        "v-n5-0277",
+        "v-n5-0279",
+        "v-n5-0282"
       ],
       "grammarIds": [
         "g-n5-001",
@@ -665,7 +669,7 @@
             "A camera",
             "A blue pen",
             "Socks",
-            "A white hat"
+            "A white handkerchief"
           ],
           "answer": 3
         },
@@ -974,7 +978,7 @@
           "tokenIds": [
             "v-n5-0056",
             "v-n5-0122",
-            "g-n5-017",
+            "v-n5-0277",
             "v-n5-0127",
             null
           ]
@@ -1226,7 +1230,7 @@
             "v-n5-0126",
             "v-n5-0154",
             "v-n5-0032",
-            "g-n5-017",
+            "v-n5-0275",
             "v-n5-0129",
             null
           ]
@@ -1298,7 +1302,7 @@
             null,
             "v-n5-0154",
             "v-n5-0032",
-            "g-n5-017",
+            "v-n5-0275",
             null
           ]
         },
@@ -1379,7 +1383,7 @@
             null,
             "v-n5-0041",
             "v-n5-0125",
-            "g-n5-017",
+            "v-n5-0275",
             null
           ]
         }
@@ -1425,7 +1429,9 @@
         "v-n5-0234",
         "v-n5-0236",
         "v-n5-0412",
-        "v-n5-0438"
+        "v-n5-0438",
+        "v-n5-0275",
+        "v-n5-0277"
       ],
       "grammarIds": [
         "g-n5-001",
@@ -1601,11 +1607,11 @@
           "tokenIds": [
             "v-n5-0549",
             "v-n5-0123",
-            "g-n5-017",
+            "v-n5-0274",
             null,
             null,
             "v-n5-0120",
-            "g-n5-017",
+            "v-n5-0276",
             null
           ]
         },
@@ -1652,7 +1658,7 @@
             "v-n5-0167",
             "v-n5-0412",
             "v-n5-0120",
-            "g-n5-017",
+            "v-n5-0277",
             null,
             null,
             "v-n5-0119",
@@ -1661,11 +1667,11 @@
           ]
         },
         {
-          "ja": "{帽子|ぼうし}は{買|か}いませんでした。{三千円|さんぜんえん}でした。",
-          "kana": "ぼうしはかいませんでした。さんぜんえんでした。",
-          "en": "I did not buy a hat. It was three thousand yen.",
+          "ja": "ハンカチは{買|か}いませんでした。{三千円|さんぜんえん}でした。",
+          "kana": "ハンカチはかいませんでした。さんぜんえんでした。",
+          "en": "I did not buy a handkerchief. It was three thousand yen.",
           "tokens": [
-            "帽子",
+            "ハンカチ",
             "は",
             "買いませんでした",
             "。",
@@ -1674,7 +1680,7 @@
             "。"
           ],
           "tokenIds": [
-            "v-n5-0253",
+            "v-n5-0243",
             "v-n5-0118",
             "g-n5-017",
             null,
@@ -1812,7 +1818,7 @@
             null,
             "v-n5-0100",
             "v-n5-0032",
-            "g-n5-017",
+            "v-n5-0282",
             null
           ]
         },
@@ -1831,7 +1837,7 @@
             "v-n5-0218",
             "v-n5-0032",
             "v-n5-0125",
-            "g-n5-017",
+            "v-n5-0282",
             null
           ]
         },
@@ -1884,9 +1890,13 @@
         "v-n5-0218",
         "v-n5-0224",
         "v-n5-0228",
-        "v-n5-0253",
         "v-n5-0412",
-        "v-n5-0549"
+        "v-n5-0549",
+        "v-n5-0243",
+        "v-n5-0274",
+        "v-n5-0276",
+        "v-n5-0277",
+        "v-n5-0282"
       ],
       "grammarIds": [
         "g-n5-001",
@@ -1920,7 +1930,7 @@
             "Walk",
             "Swim",
             "Eat fish",
-            "Buy a hat"
+            "Buy a handkerchief"
           ],
           "answer": 1
         },
@@ -1945,7 +1955,7 @@
           "answer": 3
         }
       ],
-      "recapEn": "Hana's postcard home from Fujisawa: today they walked through the pines to the sea and saw Enoshima; the children swam, they did not; they ate little white fish that Ken cooked; she did not buy a three-thousand-yen hat. From tomorrow Ken works near the sea with Yamamoto-san, and they stay in Fujisawa until July, getting up at five.",
+      "recapEn": "Hana's postcard home from Fujisawa: today they walked through the pines to the sea and saw Enoshima; the children swam, they did not; they ate little white fish that Ken cooked; she did not buy a three-thousand-yen handkerchief. From tomorrow Ken works near the sea with Yamamoto-san, and they stay in Fujisawa until July, getting up at five.",
       "names": [
         "山本",
         "山本さん",

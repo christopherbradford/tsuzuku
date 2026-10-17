@@ -5,7 +5,7 @@ import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { CardKey } from '../content/types';
-import { V } from '../content/fixtures';
+import { V, createFakeLoader } from '../content/fixtures';
 import { findBanned } from '../i18n/banned-phrases';
 import { installServices, nullAudio, resetServices } from '../shared/audio';
 import { bus } from '../shared/events';
@@ -101,6 +101,15 @@ describe('<EndCard>', () => {
     expect(root.querySelector('.end-card__omikuji-text')?.textContent).toMatch(/—/);
     expect(root.querySelector('.end-card__closing')?.textContent).toBe('Good training. Rest.');
     expect(root.querySelector('.end-card__flame')).not.toBeNull();
+  });
+
+  it('names promoted items by their surface, not their id', async () => {
+    await makeTestStore({ cards: dueCards(2) });
+    mount({ loader: createFakeLoader() });
+    const item = root.querySelector('.end-card__item');
+    expect(item?.textContent).toBe('水');
+    expect(item?.getAttribute('lang')).toBe('ja');
+    expect(root.textContent).not.toContain(V.水);
   });
 
   it('ledger tap adds an external entry of the chosen kind and emits ledger:entry', async () => {

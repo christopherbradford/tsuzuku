@@ -108,6 +108,9 @@ Two themes. `Dojo Morning` (light) and `Arcade Night` (dark); auto-follows `pref
 | `--kon` | `#1F3A93` | `#4F6FD6` | prussian: ukiyo-e water and sky |
 | `--hai` | `#8A8578` | `#6E6A61` | ash: disabled, hints, locked |
 | `--focus` | `#1F2A6B` | `#2EE6D6` | focus ring (3 px, offset 2 px) |
+| `--kin-text` | `#7A5A05` | `#E0B341` | gold as TEXT (≥ 4.5:1 on bg / surface / raised in both themes): XP deltas, kiai chips, dan stripe labels — `--kin` itself is a fill colour |
+| `--shu-text` | `#B0241F` | `#FF6A5E` | vermilion as TEXT (≥ 4.5:1): danger buttons, tag chips, current nav item |
+| `--ink` | `#1A1A1F` | `#1A1A1F` | invariant sumi for text drawn on a vermilion or gold fill (hanko, hi-score) |
 
 Category colors are always paired with an icon glyph (kana あ, vocab 語, kanji 字, grammar 型, listening 耳, speaking 口, reading 読, culture 道) so color is never the only signal.
 
@@ -122,7 +125,7 @@ Belt colors (same in both themes): white `#F4EDE0` · yellow `#F2D54A` · orange
 | **Hanko Button** | Seal | primary CTA is a square vermilion seal; press = scale 0.96 for 60 ms + ink-bleed pulse |
 | **Forge Bar** | HP bar | due reviews as a depleting bar labelled 百錬; chips off per correct answer; hidden in Backlog mode (count shown instead) |
 | **Combo Counter** | Arcade | top-right, DotGothic16, scale 1.0→1.3 by tier; hidden in Zen |
-| **Road Nav** | Tōkaidō map | horizontal scrolling road; cleared stations carry a vermilion goshuin; the next is a lantern; locked are grey milestones with their name visible |
+| **Road Nav** | Tōkaidō map | horizontal scrolling road; cleared stations carry a vermilion goshuin; the next is a lantern; locked are grey milestones with their name visible. The page does not scroll to the current station on mount (the title and Projected Arrival stay in view); a "Go to your station" button centres and focuses it on demand |
 | **Tategaki Column** | Vertical text | a Mastered sentence of the day on the Dojo's right edge |
 | **Judge Card** | 目付 inspector | small verification card (4-option meaning check, rubric check or minimal-pair check, `05 §6`), slides in from the right |
 | **CRT Toggle** | Cabinet | scanlines + 1 px chromatic offset on arcade screens only; off by default |

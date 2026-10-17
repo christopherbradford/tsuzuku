@@ -313,7 +313,7 @@ export function SessionView(p: SessionViewProps): JSX.Element {
     const extra = p.notes ?? [];
     return (
       <div class="session session--done" data-feel={feel}>
-        <EndCard result={done} yokoku={yokoku} notes={[...(notes ?? []), ...extra]} ceremonies={runner.ceremonies} onAnother={p.onAnother ?? p.onExit} onRest={p.onExit} />
+        <EndCard result={done} yokoku={yokoku} notes={[...(notes ?? []), ...extra]} ceremonies={runner.ceremonies} loader={loader} onAnother={p.onAnother ?? p.onExit} onRest={p.onExit} />
       </div>
     );
   }

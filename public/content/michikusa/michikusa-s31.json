@@ -1,46 +1,46 @@
 {
-  "schema": "tsuzuku.content/1",
-  "type": "michikusa",
-  "writer": "michikusa-s31",
-  "generatedAt": "2026-10-17T00:00:00Z",
-  "items": [
-    {
-      "id": "m-31-1",
-      "stationId": "st-31",
-      "kind": "road-history",
-      "titleEn": "Japan's Last Standing Barrier",
-      "bodyEn": "The ferry across the mouth of Lake Hamana landed travelers inside the Arai Checkpoint, founded by the shogunate in 1600 and famous for strictness over 'guns coming in, women going out'. After a storm surge and the 1707 earthquake it moved twice; the present house, rebuilt in 1855, is Japan's only surviving original barrier building, a Special Historic Site.",
-      "ja": "{入|い}り{鉄砲|てっぽう}に{出女|でおんな}",
-      "kana": "いりてっぽうにでおんな",
-      "sourceNote": "Arai Sekisho records (Special Historic Site, 1955); Hiroshige, Hōeidō 'Arai'"
-    },
-    {
-      "id": "m-31-2",
-      "stationId": "st-31",
-      "kind": "kanji-origin",
-      "titleEn": "Why Kantō Means East",
-      "bodyEn": "The old form of 関 is 關: a gate 門 with a bar run through it. The Shuowen dictionary defines it as 'holding a door shut with a crosswise piece of wood'. From bolt came barrier (関所), then 'where things connect' (関係). Kantō and Kansai are simply the lands east and west of the great barriers.",
-      "ja": "{関所|せきしょ}",
-      "kana": "せきしょ",
-      "sourceNote": "Shuowen Jiezi, entry 關 (以木橫持門戶也); standard kanji dictionaries"
-    },
-    {
-      "id": "m-31-3",
-      "stationId": "st-31",
-      "kind": "usage",
-      "titleEn": "The Ghost of Classical ず",
-      "bodyEn": "The written negative ず you meet here is older than ない and still haunts speech in set phrases: 思わず (without meaning to), 相変わらず (as ever), 知らず知らず (before you know it). In reports and essays 〜ず or 〜ずに links clauses where talk would use 〜なくて or 〜ないで. One trap: する becomes せず, never しず.",
-      "ja": "{思|おも}わず{笑|わら}ってしまった。",
-      "kana": "おもわずわらってしまった。"
-    },
-    {
-      "id": "m-31-4",
-      "stationId": "st-31",
-      "kind": "proverb",
-      "titleEn": "Wait for Fair Sailing Weather",
-      "bodyEn": "'If you wait, a fine day for the sea route will come.' The Imagiri ferry stopped in rough weather, so travelers sat out storms in Maisaka or Arai inns — patience was part of the journey. The proverb promises that good things reach those who wait. A variant reads 甘露 (sweet dew) in place of 海路 (sea route).",
-      "ja": "{待|ま}てば{海路|かいろ}の{日和|ひより}あり",
-      "kana": "まてばかいろのひよりあり"
-    }
-  ]
+ "schema": "tsuzuku.content/1",
+ "type": "michikusa",
+ "writer": "michikusa-s31",
+ "generatedAt": "2026-10-17T00:00:00Z",
+ "items": [
+  {
+   "id": "m-31-1",
+   "stationId": "st-31",
+   "kind": "road-history",
+   "titleEn": "Japan's Last Standing Barrier",
+   "bodyEn": "The ferry across the mouth of Lake Hamana landed travelers inside the Arai Checkpoint, founded by the shogunate in 1600 and famous for strictness over 'guns coming in, women going out'. After a storm surge and the 1707 earthquake it moved twice; the present house, rebuilt in 1855, is Japan's only surviving original barrier building, a Special Historic Site.",
+   "ja": "{入|い}り{鉄砲|てっぽう}に{出女|でおんな}",
+   "kana": "いりてっぽうにでおんな",
+   "sourceNote": "Arai Sekisho records (Special Historic Site, 1955); Hiroshige, Hōeidō 'Arai'"
+  },
+  {
+   "id": "m-31-2",
+   "stationId": "st-31",
+   "kind": "kanji-origin",
+   "titleEn": "The Stone-Thrower in Teppō",
+   "bodyEn": "The 砲 of 鉄砲 is 石, stone, beside 包, to wrap, which also lends the reading hō. In China it first named a siege engine that hurled stones; when gunpowder arrived, the same character shifted to cannon. Japan then called the matchlock that landed at Tanegashima in 1543 鉄砲, iron hō — the very weapon the Arai guards searched for.",
+   "ja": "{鉄砲|てっぽう}",
+   "kana": "てっぽう",
+   "sourceNote": "Kanjigen (Gakken) and 新字源, entry 砲; Teppōki (鉄炮記, 1606) on Tanegashima"
+  },
+  {
+   "id": "m-31-3",
+   "stationId": "st-31",
+   "kind": "usage",
+   "titleEn": "The Ghost of Classical ず",
+   "bodyEn": "The written negative ず you meet here is older than ない and still haunts speech in set phrases: 思わず (without meaning to), 相変わらず (as ever), 知らず知らず (before you know it). In reports and essays 〜ず or 〜ずに links clauses where talk would use 〜なくて or 〜ないで. One trap: する becomes せず, never しず.",
+   "ja": "{思|おも}わず{笑|わら}ってしまった。",
+   "kana": "おもわずわらってしまった。"
+  },
+  {
+   "id": "m-31-4",
+   "stationId": "st-31",
+   "kind": "proverb",
+   "titleEn": "Wait for Fair Sailing Weather",
+   "bodyEn": "'If you wait, a fine day for the sea route will come.' The Imagire ferry stopped in rough weather, so travelers sat out storms in Maisaka or Arai inns — patience was part of the journey. The proverb promises that good things reach those who wait. A variant reads 甘露 (sweet dew) in place of 海路 (sea route).",
+   "ja": "{待|ま}てば{海路|かいろ}の{日和|ひより}あり",
+   "kana": "まてばかいろのひよりあり"
+  }
+ ]
 }

@@ -100,6 +100,12 @@ const GRADING_NAMES = [
   'acceptedSurfaces',
   'applicableFormsFor',
   'conjugateAll',
+  // review round 2: the engine's defective table is the one source (validator V26 / planner form-forge pool)
+  'DEFECTIVE',
+  'defectiveFormsFor',
+  'VERB_FORMS',
+  'ADJ_FORMS',
+  'isVerbPos',
 ];
 
 describe('learn barrel', () => {

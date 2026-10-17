@@ -1,17 +1,16 @@
 # TSUZUKU — build status
 
-Snapshot taken 2026-10-17 after the integration pass and the round-1 review (census below). Numbers come from a clean run of
-`npm run typecheck`, `npm test` and `npm run build` at the repo root; re-run them to refresh.
+Snapshot taken 2026-10-17 after the integration pass, the corpus commit (2bf5497) and review rounds 1 and 2 (census below). Numbers come from a clean run of
+`npm run typecheck`, `npm test`, `npm run build` and `node scripts/validate-content.ts --strict` at the repo root; re-run them to refresh.
 
 ## Health
 
 | Check | Result |
 |---|---|
 | `tsc --noEmit -p tsconfig.json` | clean (0 errors) |
-| `vitest run` | 239 test files · 5707 tests passed · 0 skipped (console noise only from tests that exercise error paths: persist `setItem`, dojo feed, bus subscriber) |
-| `vite build` | succeeds (~5 s) · 21 JS chunks + 10 CSS files · `dist/sw.js` stamped per build (`CACHE_VERSION = '0.1.0-387d997d'`, differs from `public/sw.js`) |
-| `dist/` | 24024 KB in all (assets 1480 KB, copied `content/` 19404 KB, `fonts/`) · largest JS chunk 220 kB (`index-BnROeMt1`), well under the 1200 kB warning limit · SW, manifest and favicon copied |
-| `node scripts/validate-content.ts` | **2 failures, 84 warnings in 127 files** at the integration pass (report only; not re-run for the review census — the corpus is being written by another fleet) |
+| `vitest run` | 254 test files · 6708 tests passed · 0 failures · 0 skipped (console noise only from tests that exercise error paths: `[dojo] feed failed`, `[persist] setItem(k) failed`, `[bus] subscriber … threw`) |
+| `npm run build` (`tsc --noEmit && vite build`) | succeeds (built in 4.81 s) · largest chunk 213.61 kB (78.91 kB gzip), well under the 1200 kB warning limit · `dist/sw.js` stamped per build (`CACHE_VERSION` + `SHELL_ASSETS` placeholders replaced; `public/sw.js` keeps the placeholders) · 23 font slices, SW, manifest and favicon copied |
+| `node scripts/validate-content.ts --strict` | **0 failures, 1,459 warnings in 189 files**; bundles present; linked 3,268 lines. The warnings are overwhelmingly W V18 writer-set `pitchConfidence: "high"` on vocab (1,266 items; policy open, see Known gaps); V32 / V33 / V26 / V06 are clear |
 
 No test is skipped: `src/app/pages.test.ts` now asserts `expect(missing).toEqual([])` outright
 (the former `skipIf` case was removed in the review) and adds a dojo-waits-for-registry test.
@@ -35,7 +34,7 @@ No test is skipped: `src/app/pages.test.ts` now asserts `expect(missing).toEqual
 | `src/styles`, `src/i18n` | 2 | 6 | CSS (4 files, not counted as modules) + strings |
 | `src/main.tsx`, smoke | 1 | 2 | composition root |
 | `scripts/` | 3 (+1 mjs) | 3 | validator, station assigner, index builder |
-| **Total** | **262** | **239** | 5707 tests, 0 skipped (vitest census; per-area rows are from the integration pass) |
+| **Total** | **262** | **254** | 6708 tests, 0 skipped (round-2 vitest census; per-area rows are from the integration pass and have grown since — `scripts/` now 4 `.ts` + fonts, `src/session` gained `bunsetsu.ts`, `context.ts`, `snapshot.ts`, `item-head.ts`, `TeachCard.tsx`, `src/input` `listening/set.ts` and `taiwa/Debrief.tsx`, `src/exercises` `voice.ts` and `grammar/head-word.ts`, `src/art` `studio.ts`, `src/app` `first-run.ts`) |
 
 Registry: all 35 `DRILL_IDS` are registered at boot (D 26 from `src/exercises`, F 9 from `src/input`);
 all 20 routes resolve to a page module; all 28 `WALLPAPER_IDS` have a generator.
@@ -46,7 +45,7 @@ all 20 routes resolve to a page module; all 28 `WALLPAPER_IDS` have a generator.
 - **A-pages** — Dojo, Onboarding (Nihonbashi), Settings (incl. danger-zone reset), Backup (export/import/merge preview), About (version + load-error panel); `vite.config.ts` `VITE_APP_VERSION`.
 - **B-core** — store: slots/shards/quota ladder, migrations, day roll, streak + flame/vacation, XP tables, quests, ledger, weak points, stats/honesty, backup merge, `testing.ts` doubles (`MemoryStorage`, `makeTestStore`, `captureEvents`).
 - **B-defs** — 66 badge defs with machine-checked conditions, 28 wallpaper defs + quadrant reveal, `derived.ts` read-model: Perapera index + monthly snapshot (`startPerapera`), road projection / projected arrival, forecast counts.
-- **C (contract)** — content schemas and the 53 stations, cached `./content/` loader with Cache API + redirects, ruby parser, in-memory fixtures (`createFakeLoader`); pipeline scripts (validator V01–V36, station assigner, index builder).
+- **C (contract)** — content schemas and the 53 stations, cached `./content/` loader with Cache API + redirects, ruby parser, in-memory fixtures (`createFakeLoader`); pipeline scripts (validator V01–V39, station assigner with POS floors and the story linker, index builder with a derived `contentVersion`).
 - **learn (contract)** — FSRS-5 + golden table, scheduler/queue/governors, item belts, Kiai, leech → nemesis, conjugation engine, grading bands, judge rubrics, distractors, known-kana; `apply.ts` single writer with `recordAttempt`/`retireItem`/`defeatNemesis`.
 - **D-shared** — `ExerciseFrame`, `Feedback`, `JudgeCard`, `Ruby`, `KanaInput` (wanakana IME), `check.ts` answer normalisation, `exercises/index.ts` registry of 26 drills.
 - **D-kana-vocab** — KanaFlash, KanaEar, KanaForge, Gojūon Fighter; AudioFlash, MeaningGuard, MeaningJudge, MeaningRecall, PitchEar, ProductionForge.
@@ -67,30 +66,31 @@ all 20 routes resolve to a page module; all 28 `WALLPAPER_IDS` have a generator.
 ## Known gaps
 
 Content (owned by the content fleet; the app degrades, CI will not):
-- `validate-content` exits 1: V32 duplicate word+kana `速やか/すみやか` (`v-n2-1099`, `v-n2-1384`). 84 warnings: V33 capitalised glosses (proper nouns, days, months), V22 register mismatches in N3/N4 grammar examples, V26 missing conjugation forms for ある / 要る, V06 asymmetric `pairId`s. The deploy workflow runs `content:validate` first, so a push fails until V32 is resolved.
-- `public/content/manifest.json` does not exist yet (`stations/NN.json` for all 53 stations and a first `stories/` tranche have landed). Run `npm run content:all` once the corpus is complete; until then the loader's `manifest()` 404s and the Dojo falls back to `derived.forecastCounts()`.
-- Pitch post-pass not run: 0 `pitchConfidence: high` items in the corpus, so pitch cards / Pitch Ear / the pitch-five quest are inert; the quest is now gated on a `#pitch` card existing (`store/quests` `NEEDS_FACET`).
-- `public/fonts/` now holds the four OFL `.woff2` subset families (DotGothic16, Yuji Syuku, Shippori Mincho B1, Dela Gothic One) plus licences; the service worker keeps them in a stable `tsuzuku-fonts-v1` cache that `cleanOldCaches` never evicts.
+- `validate-content --strict` exits 0 (0 failures). The 1,459 warnings are human-review items: 1,266 writer-set `pitchConfidence: "high"` (V18), the rest V14 / V22-class notes; V32 (`速やか`), V33 (proper nouns — now allowlisted), V26 (ある / 要る — now exempted) and V06 are clear. The corpus (6,350 vocab · 1,000 kanji · 450 grammar · 137 stories · 212 michikusa), all 53 `stations/NN.json`, the linked `tokenIds` and `manifest.json` landed in 2bf5497 and were regenerated by round 2b (`contentVersion` is now derived from the content).
+- Pitch policy: the licensed post-pass has not run, yet 1,266 vocab items carry a writer-set `pitchConfidence: "high"` (CONTENT_GUIDE §8 says never); round 2 left them in place, so pitch cards, Pitch Ear and the pitch-five quest are live on unverified data. Decide: accept writer-set `high` (and retire the V18 warning) or run the post-pass and reset the rest to `low` (CONTENT_GUIDE §20).
+- `public/fonts/` holds 23 OFL `.woff2` slices (was 24): `scripts/fonts/build-fonts.py` carries a UI glyph inventory (538 CJK ideographs scanned from `src/**/*.{ts,tsx,css}`, `index.html`, the manifest; tests, fixtures and `kanji-stars.ts` excluded — comments count, so a doc-comment kanji costs a `base` glyph) into every family's `base` slice and out of the level / `rest` slices, so the header, Road and Library render from `base` alone; the Yuji Syuku `rest` face (815 KB) is dropped by policy (`NO_REST_FAMILIES`) and non-corpus kanji in `--font-brush` fall back to the system mincho; 1.98 MB total (was 2.68 MB). `fonts.test.ts` scans the real tree, so a new UI kanji needs a regeneration (fonttools + the OFL TTFs, not in the repo). The SW keeps the slices in a stable `tsuzuku-fonts-v1` cache that `cleanOldCaches` never evicts.
+- Quest gates: `store/quests.setQuestGates` / `revalidateQuests` exist but nothing in `src/session` calls `setQuestGates`, so `learn-scroll` (no Scroll left) and `michikusa-one` (fresh-fragment pool exhausted) can still be drawn when uncompletable; the Dojo feed should declare them closed. Stations 1–2 draw two Kata by construction (output strand starts at Station 3) — design 03 §6 records it; the Dojo quests header still reads "Three Kata" (`i18n` `dojoQuests`), an A copy follow-up.
+- `OnboardingPage` estimates the road from a fixed `ROAD_DAYS` table (white 15 …) instead of `derived.onboardingEstimate` (session #10 skeptic remedy; design 02 §6.1 notes it).
 
 Store / schema:
 - Rapid Fire "first run of the day" lives in the xp reducer closure; a reload the same day lets a second run earn XP (no save field).
 - Perapera monthly snapshot is performed by `startPerapera` on `day:rolled`, not inside `store/day.ts` (by design; wired in `main.tsx`).
-- `SaveMeta.writings` has not landed; Writing Dojo keeps sentences under `作文: ` bookmarks, and `WallpaperData.writingSentences` is always empty.
+- `SaveMeta.writings` has not landed; Writing Dojo keeps sentences under `作文: ` bookmarks (`shared/writing.ts` is the convention both tiers read) and `art/wallpapers/data.ts wallpaperData()` now gathers `writingSentences` from them and `dictatedSentence` from the profile (written by the Listening Arena's dictation path), so the Tanabata and Waveform pieces are live; the Writing Dojo closing line says "your wall scrolls can carry it" again.
 - `gojuonMs` is mined from the review log, but arcade reps are not logged, so it is `{}` until a per-kana latency store exists.
 - Perapera 読/耳/口/場 use lifetime ratios instead of the design's rolling windows (no persistent window data).
 - No last-export timestamp: the weekly backup reminder is "Monday, ≥7 days, ≥1 session", not "a week since the last export".
-- Save-slot switching is read-only until `boot()` persists a slot preference (Settings now says "One save slot for now"); the danger-zone reset leaves the review-log ring in place (rolls over naturally).
-- `<key>.bak` stashes (meta and card shards the store could not read) count toward the 4.5 MB budget and are never pruned or surfaced; a Backup-page line listing `.bak` keys / export prompt is a follow-up.
-- Stored difficulty `d >= ~8` on once-lapsed cards is inflated by the pre-review FSRS-4.5 damping; mean reversion is too weak to self-correct and no migration ships (pre-release). A one-off migration lowering `d` on cards with `lapses >= 1` is optional.
-- Kana `prod` cards are created at introduction but nothing serves a state-0 card, so kana cannot reach Brown (item-belt needs prod S >= 7); needs `scrollSteps` to emit a second immediate check for the prod facet and `store.cards.dueOn` to skip state-0 cards (or an unlock rule / warmStart).
+- Save-slot switching is read-only until `boot()` persists a slot preference (Settings now says "One save slot for now"). The danger-zone reset delegates to `store.resetSave()` (header, slices, cards, log ring and session in one batch).
+- `<key>.bak` stashes (meta, every card shard and, since round 2, the review log) count toward the 4.5 MB budget and are never pruned or surfaced — a 1.2 MB-char corrupt meta leaves the live save at `ceiling` permanently with the ladder re-running on every flush; a Backup-page line listing `.bak` keys / export prompt is a follow-up. A stash that itself hits the quota now frees the session key, retries once, then freezes the key (original left in place, level `ceiling`) instead of overwriting.
+- Stored difficulty `d >= ~8` on once-lapsed cards is inflated by the pre-review FSRS-4.5 damping; with the FSRS-5 damping a card stuck at D≈10 gets ΔD·(10−D)/9 = 0 and grows stability ~6× slower than a D=5 card, so it never self-corrects; no migration ships (pre-release). A one-off migration lowering `d` on cards with `lapses >= 1` is optional.
 
 Sessions / exercises:
-- Shugyō "Kage replaces Output on Mondays" is supported by the template but `buildPlan` leaves the block empty; the dedicated Kage mode is the scored path.
+- Shugyō "Kage replaces Output on Mondays": `blocks.templateFor` emits the `replacement: 'kage'` block when `kageDue`, but the builder has no fill path for it (no `replacement` handling in `builder.ts`); the dedicated Kage mode is the scored path.
 - Sentence-listen/shadow steps built from vocab examples carry no `storyId`; Transform params are "rewrite with the pattern" between two examples (no sentence-level transformation data in content); an empty accept list shows the missing-item message and relies on the frame's Guard.
 - LookalikeDuel without `params.choices`/declared lookalikes has no distractor pool and falls back to shown-not-tested; ParticleDuel's step-less fallback only blanks particles; PitchEar's minimal-pair contrast needs the homophone in the loader's sync cache; ComponentAssembly shows a loading line until `content.components()` resolves.
 - RapidFire's "Free play / First run today" note is inferred from a synchronous `xp:gained` and hidden when reducers are not started.
 - Kage mode with no recent/mature cards shows the honest empty state; the Dojo's Kage strip renders from `feed.kage`, the hi-score table lives on `#/train/kage`.
-- Speed Read is not yet restricted to previously read episodes (`progress.storiesRead` is now recorded by `stats.ts`; gating waits for the planner to schedule speed-read).
+- Speed Read is not yet restricted to previously read episodes: `progress.storiesRead` is recorded by `stats.ts` and consumed by the Reader (`isStoryRead` drives the gloss-tap Hard path) and by the builder's story picker (unread first), but the builder never schedules `speed-read` (it is launched from the reader side), so the read-only gate has no planner to live in.
+- `GoshuinBook.css` `.goshuin-book__tab` is a bare 36 px button (below the 44 px `--touch` that `.btn--sm` standardised); raising it and the grid's `minmax` is a one-line G follow-up.
 
 Art / verification:
 - `exportPng`'s real PNG encode cannot run under jsdom; the pipeline is covered with a recording `RasterEnv` and the SVG was checked in headless Chrome, but a real Blob export has not been exercised in a browser.
@@ -141,29 +141,29 @@ the remainder (learn, input/audio, session and contract fixes) are in the per-ar
 - store #6 — `initStore` drops pending writes: `if (persist) await persist.flush()` before `teardown()`; `runLadder` holds its own Persist reference so a re-init mid-ladder never touches the next slot.
 - store #7 (part B) — No story recorded as read: `stats.ts` `story:read` handler appends `storyId` to `progress.storiesRead` once, any mode/score.
 - store #8 (store part) — Three Kata never drawn at station 0: `pickDailyQuests` uses `Math.max(1, station)` like the builder, and `fillMeta` lifts a save that finished onboarding from station 0 to `max(1, max(stationsCleared)+1)` at boot/import; two tests encoding the old behaviour updated.
-- store #9 (store part) — `dueCount` counted never-reviewed cards: new `src/store/due.ts` `isDueReview` (state != 0, not archived/kaiden); `derived.dueCount()` uses it while `CardsApi.dueOn` stays the raw primitive.
+- store #9 (store part) — `dueCount` counted never-reviewed cards: new `src/store/due.ts` `isDueReview` (state != 0, not archived/kaiden); `derived.dueCount()` uses it. (Superseded in round 2a, store #27: `CardsApi.dueOn` now applies the same predicate; `DueOptions.includeNew` opts state-0 cards back in.)
 - learn — `fsrs.ts` `nextDifficulty` now applies the FSRS-5 linear damping `ΔD·(10−D)/9` before mean reversion (was the FSRS-4.5 form; D saturated at 10 after 1–2 Agains); `fsrs-golden.ts` regenerated (seed `mulberry32(0x5eed)`, 60 rows). Additive exports `learn/distractors.ts` `meaningKeys`/`sharesMeaning` and `learn/queue.ts` `findBlank`.
 - session — `RunnerOptions.persist`, `RunnerSnapshot.activeMs`, `SessionResult.startedAt = endedAt - active`, `Progress.gateAttemptDay` now written, Nemesis block in Kumite/Shugyō, Particle Duel scheduling from Station 5, builder split into `params.ts` / `pickers.ts` (re-exported), `TeachCard.tsx` split out of `ScrollView`.
 
 ### Skipped after verification (12)
 
-- store #1 — Layout/Settings "ceiling" copy + un-dismiss notice: UI copy lives in `src/app`; the notice already renders from `store.storage.value` now that the level is reported correctly (cross-area request).
-- store #9 — `forecastCounts` `newItems` gating / planned `estMs`; `dojoFeed` +5 gating: Skeptic said leave the `forecastCounts` fallback as-is (no plan context); `dojoFeed` is in `src/session` (cross-area request).
-- store #7 parts F (StoryReader `firstRead`) and E (builder unread-first): `src/input` and `src/session` are other areas (cross-area requests).
-- store #8 — OnboardingPage `finish()` station=1 and gatekeeper `n >= p.station`: `src/app/pages` and `src/session` are other areas; store-side clamp + boot lift shipped.
+- store #1 — Layout/Settings "ceiling" copy + un-dismiss notice: UI copy lives in `src/app`; the notice already renders from `store.storage.value` now that the level is reported correctly (cross-area request). → Closed in round 2a (app #24: `storageCeiling` copy, notice un-dismisses at `ceiling`).
+- store #9 — `forecastCounts` `newItems` gating / planned `estMs`; `dojoFeed` +5 gating: Skeptic said leave the `forecastCounts` fallback as-is (no plan context); `dojoFeed` is in `src/session` (cross-area request). → Closed in round 2a/2b (`dojo-feed.gateForecast` + `SCROLL_BLOCK_MINUTES`; DojoPage's fallback forecast takes the injected `gate`).
+- store #7 parts F (StoryReader `firstRead`) and E (builder unread-first): `src/input` and `src/session` are other areas (cross-area requests). → Both closed in round 2a (F: `StoryReader.isStoryRead`; E: `params.pickStories` unread first).
+- store #8 — OnboardingPage `finish()` station=1 and gatekeeper `n >= p.station`: `src/app/pages` and `src/session` are other areas; store-side clamp + boot lift shipped. → Both halves closed in round 2a (OnboardingPage writes `max(1, station)`; `finishGate` advances on `n >= p.station`).
 - store #2/#12 — "mark shard read-only" part of the suggested fix: per both skeptics it would silently drop every new review in that level; the `.bak` stash alone was done.
-- learn #5 — Kana `prod` cards created at intro but never scheduled: root cause and both fixes live outside `src/learn` (`session/scroll.ts` second immediate check for the prod facet; `store.cards.dueOn` skipping state-0 cards). The in-area alternatives contradict design 05 §2 and break `scheduler.test.ts` / `facetsFor`. Filed as cross-area requests; listed under Known gaps.
+- learn #5 — Kana `prod` cards created at intro but never scheduled: root cause and both fixes live outside `src/learn` (`session/scroll.ts` second immediate check for the prod facet; `store.cards.dueOn` skipping state-0 cards). The in-area alternatives contradict design 05 §2 and break `scheduler.test.ts` / `facetsFor`. → Closed in round 2a: `scroll.ts` emits the second immediate check (`scroll:<sid>:check:<itemId>#prod`) and `dueOn` skips state-0 cards; kana can reach Brown.
 - input #6 — Missing test: Enter during IME composition must not submit (`KanaInput.test.tsx` / `ExerciseFrame.test.tsx`): both files live in `src/shared/ui` (contract tier); raised as a contract request.
 - contract #11 — `nullAudio.canSpeak = signal(false)`: 43 test doubles spread `nullAudio` and 8 set `hasJaVoice: signal(true)` expecting to be audible; a false `canSpeak` would make `voiceAudible()` false for all of them. `canSpeak` stays optional and deliberately unset on `nullAudio`; documented in `audio.ts`, CHANGELOG and ARCHITECTURE §3.
 - contract #9 — `KanaInput` `candidateReading` prop: optional; `TextAnswer` already gates `candidates` itself; no `shared/ui` change needed.
-- contract #33 — shared `effectiveNewPerDay(settings, belt)` for `derived.ts`/`projection.ts`/RoadPage: cross-area (`store/derived.ts` cannot import `session/pickers`); the one-place rule should be hosted in `src/store/defaults.ts` next to `newPerDayFor` (cross-area request).
+- contract #33 — shared `effectiveNewPerDay(settings, belt)` for `derived.ts`/`projection.ts`/RoadPage: cross-area (`store/derived.ts` cannot import `session/pickers`); the one-place rule should be hosted in `src/store/defaults.ts` next to `newPerDayFor` (cross-area request). → Closed in round 2a (store hosts it; `pickers.ts` re-exports it; RoadPage reads it).
 - contract #34, #35 — requesters recorded no change needed.
 - contract #39 — `scroll.test.ts` tsc error: baseline and final `tsc --noEmit` are clean for the whole repo; nothing to do.
 
 ### Deferred to the content pipeline / contract owner
 
 The BUILD_STATUS items from this list (stale "1 skipped" wording; new Known-gaps lines for the pitch post-pass,
-`.bak` stashes, Speed Read gating, kana `prod`, inflated FSRS difficulty) are applied in this file. Still open:
+`.bak` stashes, Speed Read gating, kana `prod`, inflated FSRS difficulty) are applied in this file. Every doc edit below was applied by the round-2 scribe (design 01 §4.3, 07 §10, 06 §6, ARCHITECTURE §1, design 05 §1, the CHANGELOG lines); the optional migration and the cross-area requests are tracked in "Review round 2". As listed at the close of round 1:
 
 - `docs/design/01` §4.3 token table: add `--kin-text` (#7A5A05 / #E0B341), `--shu-text` (#B0241F / #FF6A5E) and `--ink` (#1A1A1F, invariant) rows (app #19).
 - `docs/design/07-architecture.md` §10: SW now serves `content/**` without caching (loader cache is the offline store); fonts in a stable cache; `CACHE_VERSION` stamped per build (app #2/#3/#16).
@@ -175,10 +175,161 @@ The BUILD_STATUS items from this list (stale "1 skipped" wording; new Known-gaps
 - Optional: a one-off migration lowering inflated stored difficulties on cards with `lapses >= 1` (acceptable to leave for a pre-release build).
 - Cross-area requests filed during the review (store → app/session/input; learn → session/store; input → shared/ui; contract → store `defaults.ts`) await their owners' next pass.
 
+## Review round 2 (2026-10-17)
+
+Two halves, same day, both census-clean at the end (`tsc --noEmit` 0 errors; `vitest run` 254 files / 6708 tests; `npm run build` 4.81 s; `validate-content --strict` 0 failures). Round 2a: the owners' pass on round-1 cross-area requests, six code lenses (deploy-shell, store, exercises, security-privacy, copy-i18n, mobile-a11y), per-area fixers, a contract pass, then a leftovers pass (owners closing 2a's cross-area requests, the `autoFocus` lint rule, the font slices regenerated with the UI glyph inventory). Round 2b: seven lenses over the shipped corpus and the session flow (pedagogy, session-flow, input, ja-vocab, ja-kanji-grammar, ja-stories, loader-vs-corpus), per-area fixers (scripts, learn, store, session, input, content), 18 content-polish agents and this scribe pass. No `_review2_` / `_skeptic2_` scratch remains in the tree; nothing was committed by the review itself (round 2a's work is in 10338df / e2d4682; round 2b is the working tree).
+
+### Requests honoured (round 2a — the round-1 cross-area requests)
+
+- session — `gateAttemptAt` written on a loss / cleared on a pass (`rematchAllowed` survives a reload); gate advance `n >= p.station ? n + 1 : p.station`; `RunnerSnapshot = SessionSnapshot`; form-forge / form-chain carry `kana`; Leave dialog on `useDialogFocus` with an early-capture Escape; `danShares` filled from `STRAND_SHARES.dan`; redundant `.session__leave` min-height dropped; EndCard regression test for state-0 / archived cards; `dojo-feed.gateForecast` + `SCROLL_BLOCK_MINUTES`; `pickStories` unread first; `scroll.ts` second immediate check per born facet (kana prod → kana-ear); nemesis duel blanks with `findBlank`.
+- app — drill routes drop the duplicated `--safe-bottom`; OnboardingPage `station = max(1, station)`; ceiling copy "progress may not be saving" + notice un-dismiss; `isFirstRun` in `src/app/first-run.ts` with a non-string guard.
+- store — `effectiveNewPerDay` hosted in `store/defaults.ts`; `cards.dueOn` skips state-0 cards (`DueOptions.includeNew`); `stats.ts` consumes `Math.round(tally.minutes)`.
+- exercises — ProductionForge re-locates a broken blank with `findBlank`; MeaningGuard `correctChoice` tiers; SentenceListen frame-Enter finalizes the IME; six D text fallbacks gate on `voiceAudible`.
+- input — StoryReader `isStoryRead` / `firstRead` from `progress.storiesRead`; `tts.test.ts` short-collocation assertions.
+- art — boot barrel split (`art/index.ts` vs `art/studio.ts`); `yojijukugoEmpty` no longer says "五段 content pack"; `fourKGated` describes `canRender4k`; Studio custom sentence capped at 48 glyphs.
+- contract — the IME-composition regression tests were already in place (round 1); `effectiveNewPerDay` and `findBlank` already on the barrels; no contract change needed.
+- Leftovers pass (owners) — app: OnboardingPage uses the shared `NAME_MAX_GLYPHS` / `clampGlyphs` and `KanaInput maxLength`, stamps `profile.onboardedAt`; SettingsPage reset delegates to `store.resetSave()`; BackupPage refuses files over `IMPORT_MAX_BYTES` by size; DojoPage's fallback forecast takes the injected `gateForecast`; `LICENSE` + `CONTENT_LICENSE.md` + `package.json` `license` added. session: `pickers.effectiveNewPerDay` is the store's rule; RoadPage reads it; `params` sends `pos` + `accepts`; `use-auto-focus.ts` re-exports the shared hook; `gatekeeper.grudgeKeys()` isCardKey guard; `session/snapshot.ts` validates a snapshot before resume. exercises: `grammar/head-word.ts` (pos from the step, unique-fit inference, accepts rows graded); `?` / Hint registered in 17 drills; RapidFire / NemesisDossier on `useAutoFocus`. art: `normalizeData` clamps names and sentences (`SENTENCE_MAX_GLYPHS = 96`), `wallpaperData` gathers `作文: ` bookmarks and `dictatedSentence`, `fitSize` floors removed on learner-name callers, onsen columns, waveform footer, `canvasViolations`, hostile-string escaping test. input: WritingDojo imports / re-exports `shared/writing.ts`, `writingKept` copy restored, textarea on `useAutoFocus`. fonts: `build-fonts.py` UI inventory + `NO_REST_FAMILIES`, 23 slices regenerated, `fonts.test.ts` scans the shell sources. lint: rule 5 (no `autoFocus` on intrinsic elements) in `src/i18n/lint.test.ts`.
+
+### Content polish (round 2b, 18 agents)
+
+Grammar N5 (90 points, 4 files) audited against `CONJ_FORMS`: 17 points already declared the right `unlocksForms`; added g-n5-047 〜てください → `["te"]`, g-n5-087 〜なら → `["adj-ba"]` (19 / 90 declare); points that only apply an introduced form and forms with no `CONJ_FORMS` id left undeclared; V22 register clean (0 warnings). Grammar N4 (90 points, 3 files): 7 points already right; added g-n4-002 〜ている → `["te-iru"]`, g-n4-022 adversity passive → `["passive"]`, g-n4-049 〜くする / 〜にする → `["adj-adv"]`, g-n4-053 honorific れる/られる → `["passive"]` (11 / 90); three polite points had one casual example each (g-n4-082 / 083 / 090) rewritten polite. Further agents touched `conjugation/conjugation-003.json`, grammar N2 (002, 003) and N3 (001–004), `kanji/n3/kanji-n3-001.json`, 11 michikusa files (s02, s10, s11, s19, s20, s27–s29, s31, s36, s46 — V39 duplicate cards), 33 story files (s02, s06–s09, s12, s17, s20, s24, s25, s27, s29–s37, s39–s43, s46–s52 — ruby / kana / token fixes such as s-12-2 {何|なん}の, s-12-1 「でも、気持ちは強い。」, a ruby group straddling a token in s09), and 37 vocab files (N1 001–010, N2 004 / 007, N3 001 / 004 / 007–012, N4 001–005, N5 001–006 — pos vs ending (V37), glosses, readings); `stations/06–09` and `32–53` plus `manifest.json` were regenerated by `content:all` (POS floors at Stations 6–9; Black stations now span two vocab files each). Files rewritten with `JSON.stringify(obj, null, 1)` show whitespace-only diffs (`git diff -w` shows the real edits). Pitch: the 1,266 writer-set `high` values were left in place (policy open).
+
+### Findings by lens
+
+Round 2a (confirmed / refuted): deploy-shell 4 / 2 · store 7 / 3 · exercises 11 / 2 · security-privacy 5 / 1 · copy-i18n 10 / 2 · mobile-a11y 11 / 0 — 48 confirmed, 10 refuted. Refuted and why: the deploy workflow's missing `content:assign` (an authoring step by design; the corpus was simply uncommitted), bare `#/collections` → Dojo (documented fallback), the per-origin storage meter (the quota is per origin), the gzip flush "needs a macrotask" (Node zlib artefact, browsers resolve within the microtask checkpoint — reproduced in Chrome over CDP), the pre-`speedGrading` Zen save (no such save exists), Pitch Ear's `data-correct-index` (local-first app, test hook), Kana Flash's target chip on untimed mature cards (design 04 §1), the CSP proposal (nothing to mitigate), the Welcome Back copy (two of three strings are dead), 形 vs 型 (both correct in context).
+Round 2b: 68 confirmed, 6 refuted across pedagogy, session-flow, input, ja-vocab, ja-kanji-grammar, ja-stories and loader-vs-corpus (the per-lens notes are in the round-2b scratch, not reproduced here).
+
+### Fixed (round 2a — 58 findings, one line each)
+
+- app #1 [major] — `sw.js` precaches the build's `assets/**` at install via a second stamped placeholder (`SHELL_ASSETS`); `cacheFirst()` answers 504 offline instead of rejecting.
+- app #2 [major] — Yuji Syuku `rest` face dropped from `fonts.css` (completed by the fonts pass: UI glyph inventory in `base`).
+- app #3 [minor] — `theme-color` seeds the light `--bg` (#F4EDE0) in `index.html` and the manifest; `theme.ts` flips it for dark users.
+- app #4 [minor] — danger-zone reset replaces the header (new seed / createdAt / contentVersion) and clears the log ring.
+- app #5 [minor] — `BackupPage.apply()` try/catch: a throw shows `bakInvalid` and returns the page to idle.
+- app #6 [minor] — learner name capped at 24 code points at entry.
+- app #7 [minor] — `dojoArcadeHint` reworded (nothing is marked Again; a miss comes back untimed).
+- app #8 [major] — desktop nav strip renders between the notices and `<main>`, under the header.
+- app #9 [major] — Settings Confirm dialog on `useDialogFocus` (Cancel first, Escape, Tab trap, opener refocused).
+- app #10 [minor] — Dojo session-card text without opacity (contrast ≥ 4.5:1).
+- app #11 [minor] — `.about__dl` stacks by default, two columns from 560 px.
+- app #12 [minor] — Layout level chip named by visually hidden text, no `aria-label` on a generic span.
+- store #1 [major] — merge into a fresh browser takes the backup's identity (`hasNoLearnerTrace`); `ImportSummary.name`.
+- store #2 [major] — `.bak` stash failure is loud and safe: free the session key, compress, retry once, then `persist.freeze(key)`.
+- store #3 [minor] — `fillMeta` validates enums, array elements and record values (`ELEMENT_GUARDS`, `RECORD_GUARDS`, `checkSettings`).
+- store #4 [minor] — `applyImport` runs in one signals batch (one effect run per import).
+- store #5 [minor] — replace-import clears the old in-progress session snapshot.
+- store #6 [minor] — an unreadable review log is stashed as `.bak` like meta and shards.
+- store #7 [major] — header caps: seed ≤ 64, chosenKanji one glyph, dictatedSentence ≤ 500, onboardedAt finite; `mergeLedger` never throws on garbage.
+- store #8 [minor] — `IMPORT_MAX_BYTES` (32 MB) refused before reading; gzip bombs stop at the limit (`InflateLimitError` → `importTooLarge`).
+- learn #1 [major] — `kanaGrid` never seats a homophone of the target (`soundsLike`: same romaji, ぢ≡じ / づ≡ず, を≡お / ヲ≡オ), pool and gojūon padding alike.
+- session #1 [major] — `splitBunsetsu` cuts after a particle only when the next character is not hiragana; `COMPOUND_PARTICLES` gains のは / のが / のを / からは / までは.
+- session #2 [major] — slow→Hard only with a visible ring (`ringShown`); SessionView draws the soft ring for untimed mature steps.
+- session #3 [major] — Form Chain is always 5 links (`formChain`: own forms, met points' forms, `applicableForms`).
+- session #4 [minor] — Minimal Pair draws the spoken side with the rng.
+- session #5 [minor] — session aria-labels are English only.
+- session #6 [minor] — Scroll heading shows the ordinal (`巻物 Scroll 2`) or "Captured words".
+- session #7 [minor] — `examFurigana`: furigana off from the Orange Shinsa; Yellow intro copy says it stays on.
+- session #8 [major] — Road page no longer scrolls on mount; "Go to your station" button.
+- session #9 [minor] — Judge card takes focus on open and returns it to the exercise after the pick.
+- session #10 [minor] — Begin / Resume / Continue focus through `useAutoFocus`.
+- exercises #1 [major] — Scramble: interior 、 never becomes a bank piece.
+- exercises #2 [major] — Kana Forge shows `wo` up front for を / ヲ at no hint cost.
+- exercises #3 [major] — Form Forge / Form Chain read `params.kana` on grammar prod cards.
+- exercises #4 [minor] — Form Chain without a head word infers the pos (`inferHeadWord`) and accepts the engine's alternates.
+- exercises #5 [minor] — Gojūon Fighter accepts the display romaji (`isDisplayRomaji`).
+- exercises #6 [blocker] — `voiceAudible` reached through `src/exercises/voice.ts`; the import lint is green.
+- input #1 [minor] — Writing Dojo closing line made truthful (later restored once the art tier wired `writingSentences`).
+- input #2 [minor] — Reader gloss sheet on `useDialogFocus` (Tab trap, focus back to the tapped token).
+- art #1 [minor] — `png.download()` one anchor click everywhere, object URL revoked after a delay.
+- art #2 [minor] — Library item detail shows facet labels, pitch glyph 高.
+- art #3 [minor] — ceremony copy glosses Mon / Kakejiku on first contact.
+- art #4 [minor] — Library item detail modal on `useDialogFocus`.
+- records #1 [minor] — Records next-step line narrates a Kata to take, with a singular form.
+- contract #1 — `KanaInput.maxLength` (IME path, no native attribute).
+- contract #2 — ExerciseFrame progress / combo spans: visually hidden "Step i of n", no `aria-label`.
+- contract #3 — `NAME_MAX_GLYPHS = 24` + `clampGlyphs`.
+- contract #4 — `store.resetSave()`.
+- contract #5 — ring on `timer` alone; `step.timed` only hardens expiry.
+- contract #6/#33 — `PauseOverlay` on `useDialogFocus`; frame `inert` + `aria-hidden` while paused.
+- contract #7 — shared `useAutoFocus`.
+- contract #8 — `JudgeCard` focuses itself on mount.
+- contract #9 — `voiceAudible` in `shared/audio.ts`.
+- contract #10 — `StepParams.pos` / `accepts`.
+- contract #11 — `shared/writing.ts`.
+- contract #13 — atomic `applyImport`; `migrateShard` refuses an unknown level.
+- contract #14 — `fillMeta` truncates name / nameKana to `NAME_MAX_GLYPHS`.
+- contract #32 — the frame's `?` / Hint button call the drill's registered `onHint` and are hidden otherwise.
+
+### Fixed (round 2b — 76 in the fixers' ledgers; the 43 code and pipeline fixes one line each, the content fixes summarised)
+
+- scripts (request) 1 — `build-content-index`: `contentVersion` derived from the content (`c-` + 10 hex of sha256 over sorted `(path, sha256(bytes))` of every `public/content/**/*.json` except `manifest.json`); `--version` / `CONTENT_VERSION` remain overrides; header, CLI usage, README and CHANGELOG document it; V35 flags a stale derived version.
+- scripts (request) 2 — V30 performance: Latin denylist terms compiled into 8 case-insensitive, letter-boundary-aware alternation regexes (longest first, 250 terms each), other terms into a first-code-unit bucket scan; identical results to the per-term matcher (equivalence test over every fixture string + 50 probes). V36: match pool cached per station, `unresolvedSpans` uses a first-char surface index. Full corpus: user 66.98 s → 2.40 s (strict 2.49 s), real 264.99 s → 7.11 s.
+- scripts (request) 3 — V37 pos-vs-ending (W): v1 whose kana lacks an ichidan ending or whose word ends in する/くる, v5 whose word is a known ichidan verb; the golden table is ground truth where the head word appears; message names the suggested pos. V38 (W): repeated kanji component, list kept as written. Both in CONTENT_GUIDE's rule table (V39 duplicated michikusa card added by the ja-stories fixer the same way).
+- scripts (request) 4a — V20 W when `vocabIds` covers < 60 % of the allowlisted vocab the linker detects (`VOCAB_IDS_MIN_COVERAGE`); fires in strict mode too, never fails.
+- scripts (request) 4b — V33 proper-noun allowlist (weekdays, months, nationality / language adjectives, festivals, religions and deities, places, titles, 2–4-letter acronyms): the 71 corpus warnings drop to 0.
+- scripts (request) 4c — V26 `DEFECTIVE_VERB_FORMS` exemptions (ある, 要る, できる / 出来る, 分かる / わかる, 見える, 聞こえる): both corpus warnings gone; real gaps on regular verbs still reported.
+- scripts (request) 5 — `MAX_FILE_BYTES` stays 300 KiB (307,200 bytes); header names the constant and exact bytes; test asserts both.
+- scripts (request) 6 — `npx vitest run scripts src/content`: 209 / 209; `tsc` clean; no new dependencies.
+- input (request) — hint key (contract #32, input half): Shadow registers `onHint: hidden ? reveal : undefined` ("Show the text").
+- input (request) — hint key: SayThreeWays registers `onHint: model && !showModel && !done ? revealModel : undefined` ("Show one model").
+- input (request) — hint key: StoryReader exercise-step wrapper passes `frameHint`; the view registers `onHint: canRevealEn ? showEnglish : undefined`; the FIRST English reveal in the step counts as one hint, later toggles are free; standalone readers unchanged.
+- input (request) — hint key: RolePlay (type / speak, learner phase, hint untaken) registers `onHint: useHint`; `useHint` also reports `ExerciseProps.onHint` (new optional `PlayProps.onHint`).
+- input (request) — dictated sentence: `ListeningArena.submitDictation` writes `profile.dictatedSentence = toPlain(line.ja)` on a Good-band line (rating 3) at rate ≥ `DICTATED_MIN_RATE` (1×); plain surface, newest wins.
+- store #1 (store part) — uncompletable Kata can be gated out of the draw: `PickOptions.canDo` / fourth `eligibleQuests` parameter; day-keyed gates `setQuestGates(day, closed)`, `questClosed(id, day)`, `resetQuestGatesForTests()`; `pickDailyQuests` skips a closed quest unless done today; `revalidateQuests(store)` exported and called on `session:started`; shuffle order fixed per (seed, day) so the other quests keep their place.
+- learn #1 [minor] — `conjugate.ts` defective table keyed by the written head word, so the regular godan 炒る (いる, v5) keeps all 20 forms.
+- learn #2 [major] — stative 分かる / 見える / 聞こえる / できる no longer get invented potential / imperative / passive forms (`null`).
+- learn #3 [major] — one-kanji サ変 verbs (愛する, 達する, 罰する …) take the potential 〜せる (alt 〜し得る), never 〜できる.
+- learn #4 [minor] — 出来る accepted for する potentials; `conjugate.test.ts` asserts golden-table alts ⊆ engine accepted surfaces.
+- session #1 — Input block / Kumite role-play / Dojo episode now materialise mid-station (readable episodes, shared White allowlist at Stations 1–3).
+- session #11 — early-station episodes pass the live coverage gate (`plusOne` tokens count as covered; `PlanContext.allowlist` = the White allowlist at Stations 1–3).
+- session #2 — same-day Gatekeeper rematch reachable: the day's Kata / Kumite / Shugyō opens with a Grudge List block (`grudgeBlockSteps`, ≤ 20 reps).
+- session #3 — pre-roll counts the +3 / +10 steps new cards owe (`plannedReps`).
+- session #9 — forecast and pre-roll minutes include re-queues and ~15 s per teach card (`plannedMs`, `TEACH_CARD_MS`).
+- session #4 — End card names promoted items (`itemHead(loader.get(id))`) instead of raw ids.
+- session #5 — Dojo forecast pairs the day's due count and the Shugyō's Scroll count with the Shugyō minutes (one basis).
+- session #6 — a card missed `MAX_SESSION_MISSES` (3) times in one run stops being re-queued; the feedback line says so.
+- session #7 — Strike never hard-times a chunk's self-graded shadow rep (`SELF_GRADED`).
+- session #8 — Ear phase dictates only story lines whose resolved tokens the learner knows, topped up with the station's own words (`stationSentences`).
+- session #12 / #15 — Form Forge / Form Chain draw the head word from items that realise a declared form (adjective-only points drillable; ある never lands on たい).
+- session #13 — Kanji Read matches the example vocab by surface and reading and blanks the first ruby-aligned occurrence (`alignedOccurrence`), never inside a compound.
+- session #14 — Scramble is skipped when a sentence has one movable tile (`movableTiles`; も, bunsetsu starters, re-route).
+- input #1 — Taiwa register target is the in-force `registerTarget`, not the dialogue's majority register (`registerAcceptable`; per-line `Turn.lineRegister` for chips / options).
+- input #2 — `detectRegister` no longer marks natural polite / casual lines `mixed` (fragments, vocatives, trailing connectives, soft set phrases, ellipsis folding).
+- input #3 — aizuchi chips and slot scoring follow the in-force `registerTarget`.
+- input #4 — RolePlay no-voice fallback (`voiceAudible` false): partner lines shown as text behind a Continue button (Enter), nothing advances on its own, the no-voice notice is shown and an aizuchi slot opens only after the learner continues past the marked line.
+- input #5 — choose-mode options and Build tiles render kanji with furigana (`withLineRuby` + `<Ruby mode={furigana}>`).
+- input #6 — comprehension choice `aria-label`s use `toPlain` (no raw ruby markup).
+- scripts #1 — N1 vocab files no longer interleave across every Black station: `orderRankedVocab` orders files by median `frequencyRank` and sorts by rank within a file (every Black station spans exactly 2 files); `build-content-index` warns when a station entry exceeds the 1 MiB budget.
+- scripts #2 — the linker's one-kanji stem rule (`stemApplies`) claims a token only before okurigana or at token end, so 有名 no longer links to ある; stems of 2+ chars keep matching compounds; V36 segmentation uses the same rule.
+- scripts #3 — V36 "definition contains the target" fires for 〜-marked affixes / counters (`definitionContainsTarget` compares bare surfaces; a one-character target counts only when its ruby reads as the target).
+- content stories-s12 #2 [major] — s-12-2 L1 {何|なに}の → {何|なん}の, kana なにのさかな → なんのさかな.
+- content stories-s12 #3 [minor] — s-12-1 L16 「気持ちは多い」 → 「でも、{気持|きも}ちは{強|つよ}い。」, tokens / tokenIds / vocabIds relinked (v-n5-0380 added).
+- content stories-s09 #1 [major] — ruby group straddling a token fixed.
+- content — the remaining polish fixes are summarised under "Content polish" above (grammar unlocksForms, register, V37 pos corrections, V39 michikusa duplicates, story ruby / kana / token repairs, vocab glosses and readings), with the regenerated bundles and manifest.
+
+### Skipped after verification (round 2a + 2b)
+
+- scripts — `.github/workflows/deploy.yml`: no change needed; CI runs `content:index` with no `--version`, so it derives the version; order validate → index → test → build is already correct.
+- input — hint key for Comprehension, SpeedRead, FieldMission, Monologue, WritingDojo, ListeningArena: nothing to reveal, so per the request they register nothing.
+- input — writing `dictatedSentence` on a `line:scored {kind:'dictation'}` emit: ListeningArena never emits `line:scored` (the only `kind:'dictation'` emitter is `exercises/listening/SentenceListen.tsx`); the write sits in the arena's actual dictation path instead.
+- store — White-belt count (only two Kata at Stations 1–2): needs a contract / doc change, not a store change (`outside-twenty.fromStation` lowered to 1 by the contract owner; design 03 §6 now records two Kata at Stations 1–2).
+- store — michikusa re-read counting (`michikusa:read` on an already-collected fragment): emitter is `session/MichikusaStep.tsx`, payload would need an `again` flag, and design 04 §10 says a re-shown fragment emits nothing; the store-side gate makes the quest disappear instead — wiring is the open session request.
+- session #10 — dead days between the last Scroll and gate readiness / `ROAD_DAYS.white = 15`: the remedy is in `src/app` (OnboardingPage should consume `onboardingEstimate`) and design 02 §6.1; `pickers.ts` and the gate deliberately unchanged (Known gaps).
+- session #2 — interim copy "The gate opens again tomorrow": not needed, the Grudge block makes the 20 reps reachable the same day.
+- input #4 — racing `speak()` against `estimateMs()`: not a real path; the instant-resolve cases are exactly what `voiceAudible()` gates.
+- input #1/#2 — a V22 / V27 warning when a learner gold line contradicts the in-force register: `scripts/` and the corpus are outside the input area; listed with the surviving line ids as a cross-area request.
+- scripts — `builder.ts` comment "≤ 400 KB" → "≤ 1 MB raw" (`src/session/builder.ts:247`): outside the scripts area and being edited concurrently; cross-area request.
+- 2a — GoshuinBook.css min-heights (verified not redundant, kept); form-chain per-form kana (no `StepParams` slot; drills conjugate each link themselves); store coordination for `dueOn` (not needed); pages setting a richer `document.title` (informational); `nullAudio.canSpeak = signal(false)` (would silence 43 doubles; contract owner's decision stands); ESLint `autoFocus` rule (no ESLint — became lint rule 5 in `lint.test.ts`); fonts pipeline from the contract fixer (done by the fonts pass); duplicate #33 entry.
+
+### Docs reconciled by the scribe
+
+`docs/CHANGELOG.md` (round-1 deferred contract lines verified and added: FSRS-5 damping + golden regeneration, `meaningKeys` / `sharesMeaning`, `findBlank`, `RunnerOptions.persist`, `RunnerSnapshot` alias, `SessionResult.startedAt`, `gateAttemptDay` / `At`, Nemesis block, Particle Duel from Station 5, builder split, `TeachCard`; round-2 session / exercises / input / store / learn / art / scripts lines; the claim that the validator imports `learn/conjugate.ts` corrected — it keeps its own `DEFECTIVE_VERB_FORMS`), `docs/ARCHITECTURE.md` (§0 no `prebuild`, art barrels, DojoPage `gate`; §1 `dueOn` semantics, `effectiveNewPerDay`, quest gates, re-init flush, `.bak` + freeze, import ceiling, merge identity, `onboardedAt`, `resetSave`; §3 `sttFailure`, `exercises/voice.ts`, derived `contentVersion`; §4 hint sites; §5 Scroll second check, snapshot validation, `pos` / `accepts`, `MAX_SESSION_MISSES`, Grudge block; §8 lint rules), `docs/CONTRACT_NOTES.md` (`applicableFormsFor` counts + `defectiveFormsFor`; round-2 section), `docs/CONTENT_GUIDE.md` (V26 rephrased to the validator's table + the engine rules, `unlocksForms` expectations, §20 `contentVersion` derivation and the pitch policy as shipped), `docs/design/01` §4.3 (`--kin-text` / `--shu-text` / `--ink`) + §4.4 (Road Nav), `02` §6.1 (onboarding estimate note), `03` §1 / §2 / §3 / §6, `04` §1 / §2 / §3 / §4 / §7 / §11 / §12, `05` §1 (FSRS-5 D' line, golden provenance), `06` §3 (4K gate, sentence caps) / §6 (五段 wording), `07` §3 / §4 / §5 / §6 / §8 / §10 / §11, `docs/module-plan.json` (V01–V39; `art/index.ts` boot-only + `art/studio.ts` entry), `README.md` (pipeline, repository map, fonts, licences). V01–V36 / V38 ranges everywhere → V01–V39.
+
 ## Next steps
 
-1. **Content pass 2** — resolve V32, land `stories/` (137 graded stories and dialogues against each station's allowlist), run `npm run content:all` to produce `stations/NN.json` + `manifest.json`, then re-run the validator with `--strict` so V34 quotas are checked.
-2. **Content pass 3** — clear the V22/V26/V33/V06 warnings, fill the N5–N1 vocab examples the exercises mine (sentence-level transformation data for Transform, homophones for PitchEar, declared lookalikes for LookalikeDuel).
-3. **Review workflow** — round 1 (code review) is closed above; next is a browser pass on a GitHub Pages preview: SW install/update toast, PNG export of one wallpaper per size, ceremony animations, speech recognition opt-in; then a first-run walk Nihonbashi → Shinagawa gate on a phone.
-4. **Store follow-ups** — `lastExportAt`, slot preference, Rapid Fire first-run day, per-kana latency, Perapera rolling windows; each is a `SLICE_KEYS` + migration + `backup.mergeSaves` change.
-5. **Review follow-ups** — the cross-area requests and doc edits listed under Review → Deferred, then the kana `prod` scheduling gap.
+1. **Pitch policy** — decide between accepting the 1,266 writer-set `pitchConfidence: "high"` (retire the V18 warning, document it in CONTENT_GUIDE §8) and running the licensed post-pass (reset the rest to `low`); the pitch drills are live either way.
+2. **Quest gates wiring (E)** — call `setQuestGates(today, closed)` from the Dojo feed / session start for `learn-scroll` (no Scroll left) and `michikusa-one` (fresh-fragment pool exhausted), then let `revalidateQuests` re-draw; A: the Dojo quests header should name the count (two Kata at Stations 1–2).
+3. **Browser pass on a GitHub Pages preview** — first push after `npm run content:all` output is committed: SW install → offline reload → update toast; PNG export of one wallpaper per size on a real device; ceremony animations; speech recognition opt-in; then a first-run walk Nihonbashi → Shinagawa gate on a phone (390 px).
+4. **Onboarding estimate** — `OnboardingPage.roadMonths` / `ROAD_DAYS` should consume `derived.onboardingEstimate` (one basis with the Records projection).
+5. **Store follow-ups** — `lastExportAt`, slot preference, Rapid Fire first-run day, per-kana latency, Perapera rolling windows, `.bak` listing on the Backup page, the optional difficulty migration; each a `SLICE_KEYS` + migration + `backup.mergeSaves` change.
+6. **Content pass 3 leftovers** — V14 "≥ 2 examples" and V22 register notes still reported in strict mode; sentence-level transformation data for Transform, homophones for Pitch Ear, declared lookalikes for Lookalike Duel; the Kage-on-Mondays block fill and Speed Read's read-only gate when the planner schedules it.

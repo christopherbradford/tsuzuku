@@ -191,7 +191,10 @@ export const QUESTS: readonly QuestDef[] = [
   { id: 'speed-read-one', strand: 'input', titleEn: 'One Speed Read', target: 1, fromStation: 6, requires: 'speed-read', phase: 1 },
   { id: 'taiwa-aizuchi', strand: 'output', titleEn: 'One role-play with every aizuchi slot hit', target: 1, fromStation: 7, requires: 'role-play', phase: 2 },
   { id: 'three-ways-one', strand: 'output', titleEn: 'One Say It Three Ways', target: 1, fromStation: 27, requires: 'say-three-ways', phase: 2 },
-  { id: 'outside-twenty', strand: 'input', titleEn: 'Log 20 minutes of outside input', target: 20, fromStation: 3, phase: 2 },
+  // From Station 1: the ledger slice, the end-card ledger prompt and the Ledger page exist from the first save, so the
+  // input strand has a second Kata once `michikusa-one` is gated closed (every fragment of stations ≤ current + 1
+  // collected). The output strand starts with `shadow-five` at Station 3 (design 04 §13), so Stations 1–2 draw two Kata.
+  { id: 'outside-twenty', strand: 'input', titleEn: 'Log 20 minutes of outside input', target: 20, fromStation: 1, phase: 2 },
   { id: 'weak-set-one', strand: 'form', titleEn: 'One Weak Point set', target: 1, fromStation: 4, phase: 1 },
   { id: 'writing-one', strand: 'output', titleEn: 'One Writing Dojo piece', target: 1, fromStation: 16, requires: 'writing-dojo', phase: 2 },
 ];

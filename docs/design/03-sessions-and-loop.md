@@ -17,6 +17,8 @@ The rep loop is the fighting-game training mode. The session is a roguelike run 
 
 **Day boundary: 04:00 local.** A 1 AM session credits the day you intended. Any completed session of any size counts as a training day.
 
+A card missed three times in one run stops returning (no further +3 / +10 / relearn re-queue; FSRS has it for tomorrow); the feedback line says so.
+
 ---
 
 ## 2. Three session sizes
@@ -27,13 +29,13 @@ All three open with easy items and close with easy items (peak-end rule). All th
 - 15–25 due reviews only, no new items. Ordered by **overdue-days × (1 − R)** descending regardless of maturity, so the fragile overdue learning-state cards come first; the speed ring appears only on cards the card-level rule allows (§2.4).
 - Opens with 3 easiest (highest retrievability), closes with 2 easiest.
 - Exactly one **Michikusa** (道草, a 10-second roadside fragment: etymology, proverb, culture, pitch fact) between reps 8 and 9.
-- Keeps the streak; counts as a training day (the Three Kata quests, §6, decide the Full Training Day). Quest copy never calls a session "a Kata": the session is 型, the quests are 三つの型.
+- Keeps the streak; counts as a training day (the Three Kata quests, §6, decide the Full Training Day). The pre-roll total reads "~N reps · ~M min": N includes the +3 / +10 steps new cards owe and M adds ~15 s per teach card, so the estimate matches what the run will actually serve. Quest copy never calls a session "a Kata": the session is 型, the quests are 三つの型.
 
 ### 2.2 Kumite (組手, sparring) — 10 minutes
 | Block | Minutes | Content |
 |---|---|---|
 | Warm-up | 3 | 15–20 due reviews, easiest 3 first |
-| Scroll (巻物) | 3–7 | **1–2 lessons** (2 when today's new-item budget is unmet); Scroll size scales by belt: White–Green **6–8 vocab** or **1 grammar point** or **3 kanji**, Blue+ **8–10 vocab** or 1 grammar or **4 kanji**; **Chikaradameshi** (力試し) pretest of 3 items *before* teaching ("miss these; that's the point"); each item tested within 30 s of introduction |
+| Scroll (巻物) | 3–7 | **1–2 lessons** (2 when today's new-item budget is unmet); Scroll size scales by belt: White–Green **6–8 vocab** or **1 grammar point** or **3 kanji**, Blue+ **8–10 vocab** or 1 grammar or **4 kanji**; **Chikaradameshi** (力試し) pretest of 3 items *before* teaching ("miss these; that's the point"); each item tested within 30 s of introduction — one immediate check on its base facet plus one for every other facet it is born with (kana production → Kana Ear), so recognition and production both start the day the kana is taught |
 | Sparring | 3 | 15 reps interleaving new (+3 / +10 in-session steps) and due; ≥ 2 listening reps where available |
 | Output | 1.5 | one shadow set (3 lines) **or** one role-play turn (from Station 7) — the Kumite's output micro-block |
 | Cooldown | 0.5 | 3 easy reps, tally, つづく, 次回予告 |
@@ -66,7 +68,7 @@ Optional replacements: a **Gatekeeper** (12–15 min) replaces Input + Output wh
 
 ## 3. Morning page and forecast
 
-Opening the app shows the Dojo with one line: *"42 reviews · 1 scroll · 1 episode · ~18 min."* Predictable workload reduces avoidance. The line is computed from due counts × per-type median latency + fixed block estimates.
+Opening the app shows the Dojo with one line: *"42 reviews · 1 scroll · 1 episode · ~18 min."* Predictable workload reduces avoidance. The line is computed from due counts × per-type median latency + fixed block estimates, on one basis: the day's due count and the Shugyō's Scroll count are paired with the Shugyō minutes (not the Kumite's); with no Scroll to teach today the Scroll-block minutes come off every estimate and the new-item count reads 0.
 
 ---
 
@@ -115,6 +117,8 @@ New-item mix at Standard N5: 7 vocab : 1 kanji : 0.75 grammar; kanji unlock only
 Three quests per day chosen deterministically from `hash(seed, day)` with a variety constraint (never two from the same strand). Pool of **17** (`QUEST_IDS`; availability by belt in `04`): clear all due (or 50) · learn a Scroll · read an episode · 5 shadow lines · reach a 20 combo · 5 dictation lines · 3 Form Chains · 5 Nemesis reps · 5 Pitch Ear items · one Rapid Fire run · one Michikusa read · one Speed Read · one role-play with all aizuchi slots hit · one Say It Three Ways · log 20 minutes of outside input · one Weak Point set · one Writing Dojo piece.
 
 All three done = **Full Training Day**: +50 XP, the flame turns gold. Quests never require more than ~12 minutes beyond reviews.
+
+Stations 1–2 offer **two** Kata, not three: only the form (`learn-scroll`) and input (`michikusa-one`, `outside-twenty` — the ledger exists from the first save) strands have a quest before Station 3, where the output strand's first quest `shadow-five` arrives with `shadow` (`04 §13`), and the variety rule forbids two from one strand. Full Training Day = both. A quest nothing can advance today (no Scroll left, fresh-fragment pool exhausted) is meant to be gated out of the draw (`setQuestGates`), keeping a quest already done today; the session-side wiring is still open.
 
 ---
 

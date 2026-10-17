@@ -19,7 +19,7 @@ import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { effect } from '@preact/signals';
 import { content as appContent, type ContentLoader } from '../content/loader';
-import { STATIONS, type ContentItem, type DrillId, type StationDef } from '../content/types';
+import { STATIONS, type DrillId, type StationDef } from '../content/types';
 import { hashSeed } from '../shared/hash';
 import { parseCardKey } from '../shared/ids';
 import type { SessionPlan, Step, StepResult } from '../shared/session-types';
@@ -27,6 +27,7 @@ import { store } from '../store';
 import { BELT_NAME, S as ES, fill } from './engine-strings';
 import { GATE_ASSISTED_PASS, GATE_PASS, GATE_PHASE_PASS, buildGate, finishGate, gateAvailable, gateOutcome, grudgeItems, rematchAllowed, scoreGate, stepHit, type GateScore } from './gatekeeper';
 import { dayStartMs } from '../shared/time';
+import { itemHead } from './item-head';
 import { SessionRunner } from './runner';
 import { SessionHost, type SessionViewComponent } from './ScrollView';
 import { S } from './pages/strings';
@@ -54,15 +55,8 @@ export interface FightMode {
   revenge: boolean;
 }
 
-/** Display surface of an item for the Grudge List. */
-export function itemHead(item: ContentItem | undefined, id: string): string {
-  if (!item) return id;
-  if ('word' in item && typeof item.word === 'string') return item.word;
-  if ('pattern' in item) return item.pattern;
-  if ('char' in item) return item.char;
-  if ('kana' in item && typeof item.kana === 'string') return item.kana;
-  return id;
-}
+// Display surface of an item (`./item-head`), re-exported for the callers that read it from here.
+export { itemHead };
 
 /** Block (phase) index of a step: by id, else by `params.phase`. */
 export function phaseIndexOf(plan: SessionPlan, step: Step | null | undefined): number {

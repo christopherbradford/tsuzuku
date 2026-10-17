@@ -480,6 +480,48 @@ describe('validate — one failing fixture per rule', () => {
     expectRule(validate(root2, { strict: true }), 'V35');
   });
 
+  it('V36 strips the 〜 marker and takes a single-kanji target only with its own reading', () => {
+    const root = copyFixture();
+    const setDef = (ja: string, kana: string) =>
+      mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+        const it = item(d, 7); // 水 みず → an affix-shaped 〜水 / 〜みず
+        it['word'] = '〜水';
+        it['kana'] = '〜みず';
+        it['definitionJa'] = { ja, kana };
+      });
+    const target = (r: ValidateResult) => r.failures.filter((f) => f.rule === 'V36' && /contains the target/.test(f.message)).map((f) => f.message);
+    setDef('{飲|の}む{水|みず}のこと。', 'のむみずのこと。');
+    pipeline(root);
+    expect(target(validate(root, { strict: true }))).toEqual(['definitionJa contains the target "〜水"']);
+    // the same kanji under another reading is a different word (泊 in 泊まる for 〜泊): not the target
+    setDef('{飲|の}む{水|すい}のこと。', 'のむすいのこと。');
+    expect(target(validate(root, { strict: true }))).toEqual([]);
+    // the reading alone (≥ 2 chars) still counts
+    setDef('のむみずのこと。', 'のむみずのこと。');
+    expect(target(validate(root, { strict: true }))).toEqual(['definitionJa contains the target "〜みず"']);
+  });
+
+  it('V36 allowlist check: a single-kanji stem before kanji is a W, not an F', () => {
+    const root = copyFixture();
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      // 飲 is the one-kanji stem of 飲む (v-n5-0007); 本 is allowlisted on its own. The old segmentation
+      // resolved 飲本 as 飲|本; now the compound surfaces as a warning while nothing fails.
+      item(d, 7)['definitionJa'] = { ja: '{飲本|のみほん}のこと。', kana: 'のみほんのこと。' };
+    });
+    pipeline(root);
+    const r = validate(root, { strict: true });
+    expect(r.failures.filter((f) => f.rule === 'V36' && f.id === 'v-n5-0008')).toEqual([]);
+    const w = r.warnings.filter((f) => f.rule === 'V36' && f.id === 'v-n5-0008').map((f) => f.message);
+    expect(w).toEqual(['definitionJa resolves "飲" only by letting a single-kanji verb/adjective stem swallow the next kanji (likely a compound outside the Station 1 allowlist)']);
+    // a span nothing resolves is still an F
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      item(d, 7)['definitionJa'] = { ja: '{飲龍|のみりゅう}のこと。', kana: 'のみりゅうのこと。' };
+    });
+    const r2 = validate(root, { strict: true });
+    expect(r2.failures.filter((f) => f.rule === 'V36' && f.id === 'v-n5-0008').map((f) => f.message)).toEqual(['definitionJa uses words outside the Station 1 allowlist: 龍']);
+    expect(r2.warnings.filter((f) => f.rule === 'V36' && f.id === 'v-n5-0008').map((f) => f.message)).toEqual(['definitionJa resolves "飲龍" only by letting a single-kanji verb/adjective stem swallow the next kanji (likely a compound outside the Station 1 allowlist)']);
+  });
+
   it('V36 J-J definitions', () => {
     const root = copyFixture();
     mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
@@ -535,5 +577,298 @@ describe('validate — linker and options', () => {
     expect(rules(r.failures)).toContain('V07');
     expect(rules(r.failures)).toContain('V30');
     expect(existsSync(join(root, '_meta/denylist.json'))).toBe(true);
+  });
+});
+
+/* ── round 2: V30 matcher equivalence, V37/V38, V20/V26/V33/V35 accuracy ─── */
+
+import { compileDenylist, findDenylisted, DEFECTIVE_VERB_FORMS, ICHIDAN_ENDING_RE, KNOWN_ICHIDAN } from './validate-content.ts';
+import type { Denylist } from './validate-content.ts';
+import { deriveContentVersion } from './build-content-index.ts';
+import { readdirSync, statSync } from 'node:fs';
+
+/** The matcher V30 used before round 2: one regex per Latin term, `includes` per other term, then patterns. */
+function legacyDenyMatch(d: Denylist, s: string): boolean {
+  for (const t of d.terms) {
+    if (!t) continue;
+    if (/^[\x20-\x7e]+$/.test(t)) {
+      if (new RegExp(`(^|[^A-Za-z])${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^A-Za-z]|$)`, 'i').test(s)) return true;
+    } else if (s.includes(t)) return true;
+  }
+  for (const p of d.patterns) if (new RegExp(p, 'iu').test(s)) return true;
+  return false;
+}
+
+/** Every string value in every JSON file under `dir` (except the denylist itself, which the validator never scans). */
+function allStrings(dir: string, out: string[] = []): string[] {
+  for (const name of readdirSync(dir).sort()) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) allStrings(p, out);
+    else if (name.endsWith('.json') && name !== 'denylist.json') {
+      const walk = (v: unknown): void => {
+        if (typeof v === 'string') out.push(v);
+        else if (Array.isArray(v)) v.forEach(walk);
+        else if (v && typeof v === 'object') Object.values(v as Record<string, unknown>).forEach(walk);
+      };
+      walk(JSON.parse(readFileSync(p, 'utf8')));
+    }
+  }
+  return out;
+}
+
+describe('V30 denylist matcher', () => {
+  const fixtureList = JSON.parse(readFileSync(join(GOOD, '_meta/denylist.json'), 'utf8')) as { terms: string[]; patterns: string[] };
+  const denylist: Denylist = {
+    // the fixture list plus terms with every awkward shape the real list has: regex metacharacters,
+    // digits, spaces, mixed case, non-ASCII Latin, a CJK term that is a prefix of another, an empty term
+    terms: [...fixtureList.terms, 'Dr. Stone', 'K-On', 'Jump+', 'PS5', 'Ranma 1/2', 'THE IDOLM@STER', 'Persona', 'Persona 3', 'Pokémon', 'HUNTER×HUNTER', 'ロケット団', 'ロケット', '999', ''],
+    patterns: [...fixtureList.patterns, '[A-Z]{2,4}48(?!\\d)'],
+  };
+  const probes = [
+    ...allStrings(GOOD),
+    'like Pikachu', 'PIKACHU!', 'pikachu', 'Pikachus', 'xPikachu', 'a Pokémon reference', 'Pokemon Go', 'pokémon', 'ピカチュウのように', 'ピカチュ',
+    'Dr. Stone is on', 'Dr Stone', 'dr. stone!', 'K-On', 'K-On!', 'K-Online', 'Jump+ app', 'Jump', 'PS5 game', 'PS50', 'ranma 1/2', 'THE IDOLM@STER',
+    'Persona 3 Reload', 'personable', 'persona', 'HUNTER×HUNTER', 'Hunter×Hunter', 'ロケット団の人', 'ロケット', 'ロケッ', 'Totoro', 'トトロ', 'トト',
+    'Nintendo Switch', 'nintendo', 'Switch', 'AKB48', 'akb48', 'AKB480', '999 bottles', 'room 9999', '', ' ', '日本の本です。',
+  ];
+
+  it('the alternation/bucket matcher flags exactly the strings the per-term matcher flagged', () => {
+    const compiled = compileDenylist(denylist);
+    expect(compiled.latin.length).toBeGreaterThan(0);
+    expect(compiled.other.size).toBeGreaterThan(0);
+    expect(compiled.latinNeedsLetter).toBe(false); // '999' has no letter, so the Latin fast path is off
+    const legacy = probes.filter((s) => legacyDenyMatch(denylist, s));
+    const fresh = probes.filter((s) => findDenylisted(compiled, s) !== null);
+    expect(fresh).toEqual(legacy);
+    expect(legacy).toContain('like Pikachu');
+    expect(legacy).toContain('Pokemon Go');
+    expect(legacy).toContain('ロケット団の人');
+    expect(legacy).not.toContain('Pikachus');
+    expect(legacy).not.toContain('K-Online');
+    expect(legacy).toContain('PS50'); // the boundary is letter-only (digits adjoin), as before
+    expect(legacy).not.toContain('日本の本です。');
+    // the fixture corpus itself is clean under both
+    expect(allStrings(GOOD).filter((s) => legacyDenyMatch(denylist, s))).toEqual([]);
+  });
+
+  it('reports the term as the denylist spells it, longest first, and keeps the Latin fast path when every term has a letter', () => {
+    const c = compileDenylist({ terms: ['Persona', 'Persona 3', 'ピカチュウ', 'Dr. Stone'], patterns: ['\\bPok[eé]mon\\b', '('] });
+    expect(c.latinNeedsLetter).toBe(true);
+    expect(c.invalidPatterns).toEqual(['(']);
+    expect(findDenylisted(c, 'persona 3 reload')).toEqual({ kind: 'term', value: 'Persona 3' });
+    expect(findDenylisted(c, 'PERSONA!')).toEqual({ kind: 'term', value: 'Persona' });
+    expect(findDenylisted(c, 'DR. STONE')).toEqual({ kind: 'term', value: 'Dr. Stone' });
+    expect(findDenylisted(c, 'Dr Stone')).toBeNull();
+    expect(findDenylisted(c, 'あのピカチュウ')).toEqual({ kind: 'term', value: 'ピカチュウ' });
+    expect(findDenylisted(c, 'a Pokémon')).toEqual({ kind: 'pattern', value: '\\bPok[eé]mon\\b' });
+    expect(findDenylisted(c, 'personable')).toBeNull();
+    expect(findDenylisted(c, '日本')).toBeNull();
+  });
+
+  it('an invalid pattern is a V30 warning on the denylist file, not a crash', () => {
+    const root = copyFixture();
+    const r = validate(root, { denylist: { terms: ['Pikachu'], patterns: ['('] } });
+    expect(r.warnings.some((w) => w.rule === 'V30' && w.file === '_meta/denylist.json' && /invalid pattern/.test(w.message))).toBe(true);
+  });
+});
+
+describe('V37 pos vs verb ending (W only)', () => {
+  it('the good fixture carries no V37/V38 warnings', () => {
+    const r = validate(copyFixture());
+    expect(rules(r.warnings)).not.toContain('V37');
+    expect(rules(r.warnings)).not.toContain('V38');
+  });
+
+  it('ICHIDAN_ENDING_RE accepts い/え-row + る in both scripts and rejects everything else', () => {
+    for (const k of ['たべる', 'みる', 'おきる', 'でる', 'ウケる', 'かりる', 'ねる']) expect(ICHIDAN_ENDING_RE.test(k)).toBe(true);
+    for (const k of ['のむ', 'いく', 'つくる', 'ある', 'する', 'たべ', 'かう', 'のる']) expect(ICHIDAN_ENDING_RE.test(k)).toBe(false);
+    expect(ICHIDAN_ENDING_RE.test('はしる')).toBe(true); // い-row + る looks ichidan; 走る is a godan exception, which is why v5 needs KNOWN_ICHIDAN
+    expect(KNOWN_ICHIDAN.has('食べる')).toBe(true);
+    expect(KNOWN_ICHIDAN.has('帰る')).toBe(false);
+  });
+
+  it('flags v1 with a godan ending, v1 ending in する/くる, and v5 that is a known ichidan verb; never fails', () => {
+    const root = copyFixture();
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      item(d, 11)['pos'] = 'v1'; // 行く いく
+      item(d, 9)['pos'] = 'v5'; // 食べる たべる (known ichidan, not in the fixture conjugation table)
+      item(d, 14)['word'] = '勉強する';
+      item(d, 14)['kana'] = 'べんきょうする';
+      item(d, 14)['pos'] = 'v1';
+      (item(d, 14)['examples'] as Json[])[0] = { ja: '{毎日|まいにち}{勉強|べんきょう}します。', kana: 'まいにちべんきょうします。', en: 'I study every day.' };
+      item(d, 14)['meanings'] = ['to study'];
+    });
+    const r = validate(root);
+    const w = r.warnings.filter((f) => f.rule === 'V37');
+    expect(r.failures.filter((f) => f.rule === 'V37')).toEqual([]);
+    expect(w.find((f) => f.id === 'v-n5-0012')?.message).toMatch(/suggested pos v5/);
+    expect(w.find((f) => f.id === 'v-n5-0010')?.message).toMatch(/known ichidan verb; suggested pos v1/);
+    expect(w.find((f) => f.id === 'v-n5-0015')?.message).toMatch(/ends in する\/くる; suggested pos v-irr/);
+    expect(w.length).toBe(3);
+  });
+
+  it('uses the conjugation table as ground truth where the head word appears', () => {
+    const root = copyFixture();
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      item(d, 6)['pos'] = 'v1'; // 飲む is v5 in conjugation-001
+    });
+    mutate(root, 'conjugation/conjugation-001.json', (d) => {
+      (d['items'] as Json[]).push({ id: 'cj-0004', word: '食べる', kana: 'たべる', pos: 'v1', form: 'masu', answer: '食べます', answerKana: 'たべます' });
+      (d['items'] as Json[]).push({ id: 'cj-0005', word: '帰る', kana: 'かえる', pos: 'v5', form: 'masu', answer: '帰ります', answerKana: 'かえります' });
+    });
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      // 帰る: え-mora + る but attested v5 → silent; 食べる attested v1 → silent even though the ending check would pass anyway
+      item(d, 12)['word'] = '帰る';
+      item(d, 12)['kana'] = 'かえる';
+      item(d, 12)['pos'] = 'v5';
+      item(d, 12)['meanings'] = ['to go home'];
+      (item(d, 12)['examples'] as Json[])[0] = { ja: '{家|いえ}に{帰|かえ}ります。', kana: 'いえにかえります。', en: 'I go home.' };
+    });
+    const r = validate(root);
+    const w = r.warnings.filter((f) => f.rule === 'V37');
+    expect(w.map((f) => f.id)).toEqual(['v-n5-0007']);
+    expect(w[0]!.message).toMatch(/conjugation table lists "飲む" as v5; suggested pos v5/);
+  });
+
+  it('a v5 whose ending looks ichidan but is not a known ichidan verb stays silent', () => {
+    const root = copyFixture();
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      item(d, 12)['word'] = '走る';
+      item(d, 12)['kana'] = 'はしる';
+      item(d, 12)['pos'] = 'v5';
+      item(d, 11)['word'] = '切る';
+      item(d, 11)['kana'] = 'きる';
+      item(d, 11)['pos'] = 'v5';
+    });
+    expect(validate(root).warnings.filter((f) => f.rule === 'V37')).toEqual([]);
+  });
+});
+
+describe('V38 repeated kanji component (W only)', () => {
+  it('warns once per kanji, names the repeated part and does not dedupe or fail', () => {
+    const root = copyFixture();
+    mutate(root, 'kanji/n5/kanji-n5-001.json', (d) => {
+      item(d, 3)['components'] = ['tree', 'one', 'tree'];
+    });
+    const r = validate(root);
+    expect(r.failures).toEqual([]);
+    const w = r.warnings.filter((f) => f.rule === 'V38');
+    expect(w.length).toBe(1);
+    expect(w[0]!.id).toBe('j-本');
+    expect(w[0]!.message).toMatch(/repeats "tree" \(tree, one, tree\)/);
+    const doc = JSON.parse(readFileSync(join(root, 'kanji/n5/kanji-n5-001.json'), 'utf8')) as Json;
+    expect(item(doc, 3)['components']).toEqual(['tree', 'one', 'tree']);
+  });
+});
+
+describe('V39 duplicated michikusa card (W only)', () => {
+  it('the good fixture carries no V39 warnings', () => {
+    expect(validate(copyFixture()).warnings.filter((f) => f.rule === 'V39')).toEqual([]);
+  });
+
+  it('warns both items when the same ja (different ruby split) or kana is collected at another station, never fails', () => {
+    const root = copyFixture();
+    writeFileSync(
+      join(root, 'michikusa/michikusa-s05.json'),
+      JSON.stringify(
+        {
+          schema: 'tsuzuku.content/1',
+          type: 'michikusa',
+          writer: 'fixture',
+          items: [
+            { id: 'm-05-1', stationId: 'st-05', kind: 'proverb', titleEn: 'Time is money, again', bodyEn: 'The same saying, collected a second time at Totsuka.', ja: '{時|とき}は{金|かね}なり。', kana: 'ときはかねなり。' },
+            { id: 'm-05-2', stationId: 'st-05', kind: 'culture', titleEn: 'Fifty-three again', bodyEn: 'A different card with a different Japanese word.', ja: '{宿場|しゅくば}', kana: 'しゅくば' },
+          ],
+        },
+        null,
+        2,
+      ) + '\n',
+    );
+    const r = validate(root);
+    expect(r.failures).toEqual([]);
+    const w = r.warnings.filter((f) => f.rule === 'V39');
+    expect(w.map((f) => f.id).sort()).toEqual(['m-04-2', 'm-05-1']);
+    expect(w.find((f) => f.id === 'm-04-2')!.message).toMatch(/also collected at m-05-1/);
+    expect(w.find((f) => f.id === 'm-05-1')!.file).toBe('michikusa/michikusa-s05.json');
+  });
+
+  it('does not warn for two cards at the same station', () => {
+    const root = copyFixture();
+    mutate(root, 'michikusa/michikusa-s04.json', (d) => {
+      item(d, 0)['ja'] = '{時|とき}は{金|かね}なり。';
+      item(d, 0)['kana'] = 'ときはかねなり。';
+    });
+    expect(validate(root).warnings.filter((f) => f.rule === 'V39')).toEqual([]);
+  });
+});
+
+describe('validator accuracy (round 2)', () => {
+  it('V20 warns when vocabIds covers < 60 % of the allowlisted words detected in the text, even in strict mode', () => {
+    const root = copyFixture();
+    mutate(root, 'stories/n5/stories-s04.json', (d) => {
+      item(d)['vocabIds'] = ['v-n5-0005'];
+    });
+    pipeline(root);
+    const r = validate(root, { strict: true });
+    const w = r.warnings.filter((f) => f.rule === 'V20' && /vocabIds covers/.test(f.message));
+    expect(w.length).toBe(1);
+    expect(w[0]!.id).toBe('s-04-1');
+    expect(w[0]!.message).toMatch(/covers 1 of \d+ allowlisted words .* % < 60 %/);
+    expect(r.failures.filter((f) => f.rule === 'V20' && /vocabIds covers/.test(f.message))).toEqual([]);
+    // the full list passes silently
+    const root2 = copyFixture();
+    pipeline(root2);
+    expect(validate(root2, { strict: true }).warnings.filter((f) => f.rule === 'V20' && /vocabIds covers/.test(f.message))).toEqual([]);
+  });
+
+  it('V33 exempts proper nouns (weekdays, months, nationalities, festivals, places, acronyms) but still warns on ordinary words', () => {
+    const root = copyFixture();
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      item(d, 1)['meanings'] = ['Monday', 'Japanese person', 'Western-style clothes', 'Obon', "New Year's Eve", 'Europe', 'TV', 'United Nations', 'Buddhist temple', 'Tanabata'];
+      item(d, 2)['meanings'] = ['Friend', 'Big book'];
+    });
+    const r = validate(root);
+    const upper = r.warnings.filter((f) => f.rule === 'V33' && /starts uppercase/.test(f.message));
+    expect(upper.map((f) => f.id)).toEqual(['v-n5-0003', 'v-n5-0003']);
+    expect(upper.map((f) => /"(.*)"$/.exec(f.message)?.[1])).toEqual(['Friend', 'Big book']);
+  });
+
+  it('V26 does not ask for forms a defective verb lacks (ある, 要る) but still reports its real gaps', () => {
+    const root = copyFixture();
+    mutate(root, 'conjugation/conjugation-001.json', (d) => {
+      (d['items'] as Json[]).push(
+        { id: 'cj-0004', word: 'ある', kana: 'ある', pos: 'v5', form: 'masu', answer: 'あります', answerKana: 'あります' },
+        { id: 'cj-0005', word: '要る', kana: 'いる', pos: 'v5', form: 'masu', answer: '要ります', answerKana: 'いります' },
+      );
+    });
+    const r = validate(root);
+    const aru = r.warnings.find((f) => f.rule === 'V26' && f.id === 'cj-0004')!;
+    expect(aru).toBeDefined();
+    for (const fm of DEFECTIVE_VERB_FORMS['ある']!) expect(aru.message).not.toMatch(new RegExp(`\\b${fm}\\b`));
+    expect(aru.message).toMatch(/\bte\b/);
+    expect(aru.message).toMatch(/\bnai\b/);
+    const iru = r.warnings.find((f) => f.rule === 'V26' && f.id === 'cj-0005')!;
+    expect(iru.message).not.toMatch(/imperative|volitional|passive|causative|prohibitive|tai|te-iru/);
+    // a regular verb keeps the full list
+    const nomu = r.warnings.find((f) => f.rule === 'V26' && f.id === 'cj-0001')!;
+    expect(nomu.message).toMatch(/potential/);
+    expect(nomu.message).toMatch(/imperative/);
+  });
+
+  it('V35 flags a derived contentVersion that no longer matches the content', () => {
+    const root = copyFixture();
+    assign(root, PLAN, { write: true, allowlistsDir: join(root, '..', `${root.split('/').pop()}-allowlists`) });
+    writeIndex(root, undefined, { generatedAt: '2026-10-17T00:00:00.000Z' });
+    const before = validate(root, { strict: true });
+    expect(before.failures.filter((f) => f.rule === 'V35')).toEqual([]);
+    const manifest = JSON.parse(readFileSync(join(root, 'manifest.json'), 'utf8')) as { contentVersion: string };
+    expect(manifest.contentVersion).toBe(deriveContentVersion(root));
+    const p = join(root, 'michikusa/michikusa-s04.json');
+    writeFileSync(p, readFileSync(p, 'utf8').replace('Hodogaya was', 'Hodogaya is'));
+    const after = validate(root, { strict: true });
+    expect(after.failures.some((f) => f.rule === 'V35' && /contentVersion .* is stale/.test(f.message))).toBe(true);
+    // an overridden version is never compared
+    writeIndex(root, '2026.10.1', { generatedAt: '2026-10-17T00:00:00.000Z' });
+    expect(validate(root, { strict: true }).failures.filter((f) => f.rule === 'V35')).toEqual([]);
   });
 });

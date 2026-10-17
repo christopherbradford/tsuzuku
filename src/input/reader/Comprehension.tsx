@@ -3,7 +3,8 @@
  *
  * ≥ 3 questions from `StoryItem.comprehension` (English through Station 15,
  * Japanese with ruby from 16; the text decides, this component renders both),
- * four choices each, one question at a time: pick → the right answer is shown
+ * four choices each (a choice's aria-label carries the plain surface, never
+ * the ruby markup), one question at a time: pick → the right answer is shown
  * → next. `onDone({correct, total})` fires once after the last question; the
  * host applies the ≥ 2/3 rule. Choices are shuffled with the host's seeded
  * `rng` so positions cannot be memorised (content order without one).
@@ -14,6 +15,7 @@
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { toPlain } from '@/content/ruby';
 import type { ComprehensionQuestion } from '@/content/types';
 import { shuffle, type Rng } from '@/shared/hash';
 import { containsJapanese } from '@/shared/jp';
@@ -171,7 +173,7 @@ export function Comprehension(p: ComprehensionProps): JSX.Element {
                 data-state={state}
                 disabled={picked !== null}
                 aria-pressed={picked === i ? 'true' : undefined}
-                aria-label={`${fill(S.questionChoiceN, { n: i + 1 })}: ${c.text}`}
+                aria-label={`${fill(S.questionChoiceN, { n: i + 1 })}: ${toPlain(c.text)}`}
                 aria-keyshortcuts={String(i + 1)}
                 onClick={() => pick(i)}
               >

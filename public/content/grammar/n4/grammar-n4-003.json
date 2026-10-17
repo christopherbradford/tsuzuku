@@ -1148,14 +1148,13 @@
           "en": "It's my first time in Japan — where would be good to go?"
         },
         {
-          "ja": "ちょっと{聞|き}きたいことがあるんだけど、{今|いま}いい？",
-          "kana": "ちょっとききたいことがあるんだけど、いまいい？",
-          "en": "There's something I want to ask — is now okay?"
+          "ja": "ちょっと{聞|き}きたいことがあるんですが、{今|いま}いいですか。",
+          "kana": "ちょっとききたいことがあるんですが、いまいいですか。",
+          "en": "There's something I'd like to ask — is now a good time?"
         }
       ],
       "clozeHints": [
-        "んですが",
-        "んだけど"
+        "んですが"
       ],
       "mistakes": [
         "× 行きたいですが、道を教えてください → ○ 行きたいんですが、道を教えてください (んですが signals a preface; plain ですが sounds like a flat contrast)",
@@ -1202,14 +1201,13 @@
           "en": "Why are you studying Japanese?"
         },
         {
-          "ja": "その{時計|とけい}、どこで{買|か}ったの？",
-          "kana": "そのとけい、どこでかったの？",
+          "ja": "その{時計|とけい}、どこで{買|か}ったんですか。",
+          "kana": "そのとけい、どこでかったんですか。",
           "en": "Where did you buy that watch?"
         }
       ],
       "clozeHints": [
-        "んですか",
-        "の？"
+        "んですか"
       ],
       "mistakes": [
         "× お名前は何なんですか → ○ お名前は何ですか (routine questions do not need んですか; it sounds like you demand an explanation)",
@@ -1579,15 +1577,14 @@
           "en": "So that means I can't board with this ticket, right?"
         },
         {
-          "ja": "つまり、{今日|きょう}は{店|みせ}が{休|やす}みってこと？",
-          "kana": "つまり、きょうはみせがやすみってこと？",
-          "en": "So you're saying the shop's closed today?"
+          "ja": "つまり、{今日|きょう}は{店|みせ}が{休|やす}みだということですか。",
+          "kana": "つまり、きょうはみせがやすみだということですか。",
+          "en": "So you mean the shop is closed today?"
         }
       ],
       "clozeHints": [
         "ということですか",
-        "ということですね",
-        "ってこと？"
+        "ということですね"
       ],
       "mistakes": [
         "× つまり、休みですということですか → ○ つまり、休みだということですか (the clause before という takes the plain form)",

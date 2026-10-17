@@ -8,7 +8,9 @@
  *           keys 1–4; wrong / ok options show their recast
  *   build   tiles from `tokens` (never the gold order), tap to assemble
  *   type    KanaInput, matched against plain ja ∪ accept ∪ mustInclude +
- *           the register markers (`gradeTyped`), recasts mid-flow
+ *           the register markers (`gradeTyped`), recasts mid-flow; the
+ *           mustInclude hint (Hint button, or the frame's `?` / Hint button,
+ *           contract #32) caps the line at ok and reports `onHint`
  *   speak   `services.stt` → best of ≤ 5 alternatives (`speaking/scoring`),
  *           graded like Type; falls back to Type when recognition is missing;
  *           a typed failure (mic blocked, network: `sttFailure`) is named
@@ -16,8 +18,19 @@
  * backchannel by chip within the belt's window; the NPC pauses visibly, then
  * continues. A miss is tagged `aizuchi` only from Green. Register switching:
  * a line's `registerTarget` re-targets every later learner line (tag
- * `register`). Debrief: best / aizuchi counts, a register meter and the
- * explicit corrections. Emits `roleplay:done`.
+ * `register`); the backchannel set follows the target in force at the slot.
+ * Without an explicit target a learner line is shown and scored against the
+ * gold line's own register (`Turn.lineRegister`), and an answer in the gold
+ * line's register is never a slip (`registerAcceptable`). Debrief: best /
+ * aizuchi counts, a register meter and the explicit corrections. Emits
+ * `roleplay:done`.
+ *
+ * No audible voice (`voiceAudible`, ARCHITECTURE §3): partner lines are shown
+ * as text with a Continue button (Enter) and nothing advances on its own; an
+ * aizuchi window opens only once the learner continues past the marked line.
+ * The earlier lines of a multi-line partner run stay listed under the current
+ * one either way. Choose options and Build tiles carry the line's furigana
+ * (`withLineRuby`) under the learner's furigana setting.
  *
  * Export convention (D): `meta` + the component. `RolePlay` accepts the
  * standalone props OR `ExerciseProps` (`params.storyId`, `params.mode`,
@@ -31,7 +44,7 @@ import { content, type ContentLoader } from '@/content/loader';
 import { toPlain } from '@/content/ruby';
 import type { Belt, CardKey, ErrorTag, RegisterTag, StoryItem } from '@/content/types';
 import { recordImplicit } from '@/learn/apply';
-import { sttFailure } from '@/audio';
+import { sttFailure, voiceAudible } from '@/audio';
 import { SPEED_TIER_RATES, services, sfx, speak } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
@@ -45,7 +58,8 @@ import { Ruby } from '@/shared/ui/Ruby';
 import { TAG_LABEL } from '@/shared/ui/strings';
 import { store } from '@/store';
 import { bandFor, implicitProdGrades, scoreRecognition } from '../speaking/scoring';
-import { aizuchiChips, aizuchiRegisterOf, scoreSlot, windowMs, type AizuchiRegister, type SlotScore } from './aizuchi';
+import { aizuchiChips, scoreSlot, windowMs, type AizuchiRegister, type SlotScore } from './aizuchi';
+import { Debrief } from './Debrief';
 import { buildTiles, chooseOptions, type DialogueOption } from './options';
 import { registerFor } from './register';
 import {
@@ -59,6 +73,7 @@ import {
   resolveLearnerSpeaker,
   summarize,
   turnPlan,
+  withLineRuby,
   type LineOutcome,
   type RolePlayResult,
   type SlotOutcome,
@@ -86,7 +101,9 @@ export {
   isStoryItem,
   resolveLearnerSpeaker,
   registerTargets,
+  goldRegisterTag,
   turnPlan,
+  withLineRuby,
   outcomeFromOption,
   outcomeFromTyped,
   outcomeFromBuild,
@@ -120,6 +137,8 @@ interface PlayProps extends RolePlayProps {
   /** Session path: the runner applies `implicit`; the component then never writes cards itself. */
   onResult?(r: AttemptResult): void;
   onReplay?(): void;
+  /** The mustInclude hint was taken (the host counts it). */
+  onHint?(): void;
 }
 
 type Phase = 'intro' | 'npc' | 'slot' | 'learner' | 'feedback' | 'debrief';
@@ -148,6 +167,7 @@ export function RolePlay(p: RolePlayProps | ExerciseProps): JSX.Element {
         onDone={() => undefined}
         onResult={p.onResult}
         onReplay={p.onReplay}
+        onHint={p.onHint}
       />
     );
   }
@@ -165,6 +185,7 @@ function Play(p: PlayProps): JSX.Element {
   const sessionId = p.sessionId ?? `taiwa:${p.storyId}`;
   const sttOk = services.stt.available;
   const mode: TaiwaMode = p.mode === 'speak' && !sttOk ? 'type' : p.mode;
+  const hasVoice = voiceAudible(services.audio);
 
   const [story, setStory] = useState<StoryItem | null | undefined>(() => {
     if (p.story) return p.story;
@@ -231,13 +252,16 @@ function Play(p: PlayProps): JSX.Element {
 
   const line = lines[cursor];
   const turn = plan[cursor];
+  /** The target in force (aizuchi set, register-shift chip). */
   const register: RegisterTag = turn?.register ?? initialRegister;
-  const aiRegister: AizuchiRegister = registerFor(register) === 'casual' ? 'casual' : story ? aizuchiRegisterOf(story) : 'polite';
+  /** What the current learner line is shown and scored against. */
+  const lineRegister: RegisterTag = turn?.lineRegister ?? register;
+  const aiRegister: AizuchiRegister = registerFor(register) === 'casual' ? 'casual' : 'polite';
   const chips = useMemo(() => aizuchiChips(aiRegister, 4), [aiRegister]);
   const lineRng = (i: number) => rngFor(store.seed(), store.today(), p.storyId, i);
   const options = useMemo<DialogueOption[]>(
-    () => (line && turn?.role === 'learner' && mode === 'choose' ? chooseOptions(line, { register, get: (id) => loader.get(id), rng: lineRng(cursor) }) : []),
-    [line, turn, mode, register, cursor, loader, p.storyId],
+    () => (line && turn?.role === 'learner' && mode === 'choose' ? chooseOptions(line, { register: lineRegister, get: (id) => loader.get(id), rng: lineRng(cursor) }) : []),
+    [line, turn, mode, lineRegister, cursor, loader, p.storyId],
   );
   const tiles = useMemo<string[]>(() => (line && turn?.role === 'learner' && mode === 'build' ? buildTiles(line, lineRng(cursor)) : []), [line, turn, mode, cursor, p.storyId]);
 
@@ -278,11 +302,23 @@ function Play(p: PlayProps): JSX.Element {
       return;
     }
     setPhase('npc');
+    // No audible voice: the line stays up until the learner continues (Enter / the button).
+    if (!hasVoice) return;
     void speakLine(i, 'b').then((ok) => {
       if (!ok) return;
-      if (t.slot) openSlot(i);
-      else stepInto(i + 1);
+      afterNpc(t);
     });
+  };
+
+  /** What follows a partner line once it has been heard (or read, without a voice). */
+  const afterNpc = (t: Turn): void => {
+    if (t.slot) openSlot(t.lineIndex);
+    else stepInto(t.lineIndex + 1);
+  };
+
+  const continueNpc = (): void => {
+    if (phase !== 'npc' || hasVoice || !turn || turn.role !== 'npc') return;
+    afterNpc(turn);
   };
 
   const openSlot = (i: number): void => {
@@ -362,7 +398,7 @@ function Play(p: PlayProps): JSX.Element {
       setNote(S.nothingTyped);
       return;
     }
-    settle(outcomeFromTyped(cursor, value, line, register, elapsed(), hint));
+    settle(outcomeFromTyped(cursor, value, line, lineRegister, elapsed(), hint));
   };
 
   const startSpeak = (): void => {
@@ -381,7 +417,7 @@ function Play(p: PlayProps): JSX.Element {
         }
         const rec = scoreRecognition(r.alternatives, { ja: line.ja, kana: line.kana });
         setHeard(rec.best);
-        const o = outcomeFromTyped(cursor, rec.best, line, register, elapsed(), hint);
+        const o = outcomeFromTyped(cursor, rec.best, line, lineRegister, elapsed(), hint);
         // A near-perfect recognition that gradeTyped did not accept verbatim still counts as a fine line.
         settle(o.kind === 'wrong' && bandFor(rec.score) === 3 ? { ...o, kind: 'ok', tags: [], registerOk: true } : o);
       })
@@ -395,6 +431,7 @@ function Play(p: PlayProps): JSX.Element {
   const useHint = (): void => {
     if (hint || phase !== 'learner') return;
     setHint(true);
+    p.onHint?.();
   };
 
   const finishPlay = (): void => {
@@ -455,10 +492,13 @@ function Play(p: PlayProps): JSX.Element {
     },
     onSubmit: () => {
       if (phase === 'feedback') stepInto(cursor + 1);
+      else if (phase === 'npc') continueNpc();
       else if (phase === 'learner' && mode === 'build') submitBuild();
       else if (phase === 'intro') stepInto(0);
     },
     onReplay: replayNpc,
+    // `?` / the frame's Hint button: the mustInclude hint, while a typed or spoken line is open and untaken.
+    onHint: phase === 'learner' && !hint && (typing || mode === 'speak') ? useHint : undefined,
   });
 
   /* ── states ─────────────────────────────────────────────────────────── */
@@ -501,8 +541,8 @@ function Play(p: PlayProps): JSX.Element {
       </h2>
       <div class="taiwa__meta">
         <span class="chip">{fill(S.modeLabel, { mode: MODE_LABEL[mode] })}</span>
-        <span class="chip" data-register={register}>
-          {fill(S.registerLabel, { register: REGISTER_LABEL[register] })}
+        <span class="chip" data-register={lineRegister}>
+          {fill(S.registerLabel, { register: REGISTER_LABEL[lineRegister] })}
         </span>
         <span class="chip taiwa__story-title">{story.titleEn}</span>
       </div>
@@ -530,6 +570,11 @@ function Play(p: PlayProps): JSX.Element {
               {S.speakUnavailable}
             </p>
           ) : null}
+          {!hasVoice ? (
+            <p class="notice notice--warn taiwa__notice taiwa__notice--voice" role="status">
+              {S.noVoice}
+            </p>
+          ) : null}
         </div>
         <div class="taiwa__controls">
           <button type="button" class="hanko" onClick={() => stepInto(0)} aria-keyshortcuts="Enter">
@@ -543,66 +588,10 @@ function Play(p: PlayProps): JSX.Element {
   /* ── debrief ────────────────────────────────────────────────────────── */
 
   if (phase === 'debrief') {
-    const r = result ?? summarize(outcomes, slots);
-    const slips = outcomes.filter((o) => !o.registerOk).length;
-    const corrections = outcomes.filter((o) => o.kind !== 'best');
-    const ratio = r.total > 0 ? (r.total - slips) / r.total : 1;
     return (
       <div class="taiwa taiwa--debrief" data-feel={feel} data-phase="debrief">
         {header}
-        <div class="taiwa__card status-window" role="status">
-          <h3 class="taiwa__subtitle">{S.debriefTitle}</h3>
-          <p class="taiwa__result-line">{fill(S.bestLine, { best: r.best, total: r.total })}</p>
-          <p class="taiwa__result-line">{r.aizuchiTotal > 0 ? fill(S.aizuchiLine, { hit: r.aizuchiHit, total: r.aizuchiTotal }) : S.noAizuchi}</p>
-          <div class="taiwa__meter" role="meter" aria-label={S.registerMeter} aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(ratio * 100)}>
-            <span class="taiwa__meter-label">{S.registerMeter}</span>
-            <span class="taiwa__meter-track">
-              <span class="taiwa__meter-fill" style={{ width: `${Math.round(ratio * 100)}%` }} />
-            </span>
-            <span class="taiwa__meter-text">{slips === 0 ? S.registerClean : slips === 1 ? S.registerSlipOne : fill(S.registerSlips, { n: slips })}</span>
-          </div>
-        </div>
-        <section class="taiwa__corrections" aria-label={S.corrections}>
-          <h3 class="taiwa__subtitle">{S.corrections}</h3>
-          {corrections.length === 0 ? (
-            <p class="taiwa__hint">{S.noCorrections}</p>
-          ) : (
-            <ul class="taiwa__list">
-              {corrections.map((o) => (
-                <li key={o.lineIndex} class="taiwa__correction" data-kind={o.kind}>
-                  <span class="taiwa__label">{S.yours}</span>
-                  <span lang="ja" class="taiwa__given">
-                    {o.given}
-                  </span>
-                  <span class="taiwa__label">{S.modelLine}</span>
-                  <span class="taiwa__model">
-                    <Ruby ja={lines[o.lineIndex]?.ja ?? o.recast} mode={furigana} />
-                  </span>
-                  {o.tags.length > 0 ? (
-                    <span class="taiwa__tags">
-                      {o.tags.map((t) => (
-                        <span key={t} class="chip chip--tag" data-tag={t}>
-                          {TAG_LABEL[t]}
-                        </span>
-                      ))}
-                    </span>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          )}
-          {slots.length > 0 ? (
-            <ul class="taiwa__slots" aria-label={S.aizuchiLabel}>
-              {slots.map((s) => (
-                <li key={s.lineIndex} class="chip" data-hit={s.score.hit ? 'true' : 'false'}>
-                  <span lang="ja">{s.text ?? '—'}</span>
-                  <span>{s.score.hit ? S.slotHit : s.score.late ? S.slotLate : S.slotMissed}</span>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-        </section>
-        <p class="taiwa__hint taiwa__closing">{S.closing}</p>
+        <Debrief result={result ?? summarize(outcomes, slots)} outcomes={outcomes} slots={slots} lines={lines} furigana={furigana} />
       </div>
     );
   }
@@ -616,6 +605,9 @@ function Play(p: PlayProps): JSX.Element {
   const registerShift = !!shiftTo && (npcIdx === 0 ? initialRegister !== shiftTo : plan[npcIdx - 1]?.register !== shiftTo);
   const last = outcomes[outcomes.length - 1];
   const feedbackLine = phase === 'feedback' && last ? lines[last.lineIndex] : undefined;
+  // The partner's earlier lines of the current run (consecutive NPC lines before the displayed one).
+  const npcRun: number[] = [];
+  for (let i = npcIdx - 1; i >= 0 && plan[i]?.role === 'npc'; i--) npcRun.unshift(i);
 
   return (
     <div class="taiwa taiwa--play" data-feel={feel} data-phase={phase} data-mode={mode}>
@@ -631,18 +623,39 @@ function Play(p: PlayProps): JSX.Element {
               {npcLine.speaker}
             </span>
             {registerShift && shiftTo ? <span class="chip chip--accent">{fill(S.registerShift, { register: REGISTER_LABEL[shiftTo] })}</span> : null}
-            <button type="button" class="btn btn--ghost btn--sm" onClick={replayNpc} disabled={speaking} aria-keyshortcuts="Space">
-              {S.replayLine}
-            </button>
+            {hasVoice ? (
+              <button type="button" class="btn btn--ghost btn--sm" onClick={replayNpc} disabled={speaking} aria-keyshortcuts="Space">
+                {S.replayLine}
+              </button>
+            ) : null}
             <button type="button" class="btn btn--ghost btn--sm" onClick={() => setShowEn((v) => !v)} aria-pressed={showEn}>
               {showEn ? S.hideEnglish : S.showEnglish}
             </button>
           </div>
+          {npcRun.length > 0 ? (
+            <ol class="taiwa__run" aria-label={S.npcRun}>
+              {npcRun.map((i) => (
+                <li key={i}>
+                  <span class="taiwa__run-speaker" lang="ja">
+                    {lines[i]?.speaker}
+                  </span>
+                  <Ruby ja={lines[i]?.ja ?? ''} mode={furigana} />
+                </li>
+              ))}
+            </ol>
+          ) : null}
           <p class="taiwa__npc-ja">
             <Ruby ja={npcLine.ja} mode={furigana} />
           </p>
           {showEn ? <p class="taiwa__npc-en">{npcLine.en}</p> : null}
           {phase === 'npc' && speaking ? <p class="taiwa__hint">{fill(S.npcSpeaking, { name: npcLine.speaker ?? npcName })}</p> : null}
+          {phase === 'npc' && !hasVoice ? (
+            <div class="taiwa__controls">
+              <button type="button" class="hanko" onClick={continueNpc} aria-keyshortcuts="Enter" data-action="npc-continue">
+                {S.continue}
+              </button>
+            </div>
+          ) : null}
           {slotNote ? (
             <p class="taiwa__slot-note" role="status">
               {slotNote}
@@ -682,9 +695,9 @@ function Play(p: PlayProps): JSX.Element {
               <ol class="taiwa__options" aria-label={S.yourLine}>
                 {options.map((o, i) => (
                   <li key={o.text}>
-                    <button type="button" class="taiwa__option" aria-label={fill(S.optionN, { n: i + 1 })} aria-keyshortcuts={String(i + 1)} onClick={() => pickOption(i)}>
+                    <button type="button" class="taiwa__option" aria-label={`${fill(S.optionN, { n: i + 1 })}: ${o.text}`} aria-keyshortcuts={String(i + 1)} onClick={() => pickOption(i)}>
                       <kbd aria-hidden="true">{i + 1}</kbd>
-                      <span lang="ja">{o.text}</span>
+                      <Ruby ja={withLineRuby(o.text, line)} mode={furigana} />
                     </button>
                   </li>
                 ))}
@@ -707,7 +720,7 @@ function Play(p: PlayProps): JSX.Element {
                 {tiles.map((t, i) => (
                   <button key={`${t}-${i}`} type="button" class="taiwa__tile" lang="ja" disabled={built.includes(i)} aria-label={`${fill(S.tileN, { n: i + 1 })}: ${t}`} aria-keyshortcuts={i < 9 ? String(i + 1) : undefined} onClick={() => tapTile(i)}>
                     {i < 9 ? <kbd aria-hidden="true">{i + 1}</kbd> : null}
-                    {t}
+                    <Ruby ja={withLineRuby(t, line)} mode={furigana} />
                   </button>
                 ))}
               </div>
@@ -808,9 +821,11 @@ function Play(p: PlayProps): JSX.Element {
             </p>
           ) : null}
           <div class="taiwa__controls">
-            <button type="button" class="btn btn--ghost" onClick={() => void speakLine(last.lineIndex, 'a')} disabled={speaking}>
-              {S.hearModel}
-            </button>
+            {hasVoice ? (
+              <button type="button" class="btn btn--ghost" onClick={() => void speakLine(last.lineIndex, 'a')} disabled={speaking}>
+                {S.hearModel}
+              </button>
+            ) : null}
             <button type="button" class="hanko" onClick={() => stepInto(cursor + 1)} aria-keyshortcuts="Enter">
               {S.continue}
             </button>

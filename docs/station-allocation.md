@@ -1,6 +1,6 @@
 # TSUZUKU — Station Allocation (V1)
 
-Per-station absorption of new items, consistent with `docs/design/02-progression.md` §1 and `STATIONS` in `src/content/types.ts`. `scripts/assign-stations.ts` walks each level's items **in corpus order** (file order × item order as listed in `docs/content-plan.json`; by `frequencyRank` when the items carry it) and fills stations in road order with the counts below. Kanji are additionally reordered so a character is never assigned before all of its components; **components** are placed one station ahead of the first kanji that uses them (the N5 set across Stations 2–3); grammar is already in syllabus order. The id ranges are therefore *nominal*: dedupe gaps and the component reorder shift them slightly, and V34 accepts ±10 %.
+Per-station absorption of new items, consistent with `docs/design/02-progression.md` §1 and `STATIONS` in `src/content/types.ts`. `scripts/assign-stations.ts` walks each level's items **in corpus order** (file order × item order as listed in `docs/content-plan.json`; by `frequencyRank` when the items carry it) and fills stations in road order with the counts below. Kanji are additionally reordered so a character is never assigned before all of its components; **components** are placed one station ahead of the first kanji that uses them (the N5 set across Stations 2–3); grammar is already in syllabus order. Vocab stations also satisfy **part-of-speech floors** (`DEFAULT_POS_FLOORS` in the assigner, §5 step 3): the N5 briefs put every verb and adjective in `vocab-n5-003`, so Station 6 (Vます / Nを V / Nで V / Nへ V) pulls the first 12 core verbs forward and Station 7 (い/な-adjective predicates) the first 8 い-adjectives and 6 な-adjectives; the displaced items move to the next station and the running totals are unchanged, so the shift ends at Station 9. The id ranges are therefore *nominal*: dedupe gaps, the component reorder and the floors shift them slightly, and V34 accepts ±10 %.
 
 Totals: kana 238 · vocab 6,350 · kanji 1,000 · grammar 450 · stories 137 (3 per station for 1–31, 2 for 32–53) · components ≈ 250 · Michikusa 212 (4 per station, `michikusa/michikusa-sNN.json`, not shown in the table).
 
@@ -13,10 +13,10 @@ Totals: kana 238 · vocab 6,350 · kanji 1,000 · grammar 450 · stories 137 (3 
 | 3 | 神奈川 Kanagawa | white | kana | katakana dakuten 20 + handakuten 5 + yōon 33 + extended 30 (88) | 40 | v-n5-0041…0080 | 0 | 0 | — | 3 (s-03-1 s-03-2 s-03-3) |
 | 4 | 保土ヶ谷 Hodogaya | yellow | N5 | — | 60 | v-n5-0081…0140 | 8 | 8 | g-n5-001…008 | 3 (s-04-1 s-04-2 s-04-3) |
 | 5 | 戸塚 Totsuka | yellow | N5 | — | 60 | v-n5-0141…0200 | 8 | 8 | g-n5-009…016 | 3 (s-05-1 s-05-2 s-05-3) |
-| 6 | 藤沢 Fujisawa | yellow | N5 | — | 60 | v-n5-0201…0260 | 8 | 7 | g-n5-017…023 | 3 (s-06-1 s-06-2 s-06-3) |
-| 7 | 平塚 Hiratsuka | yellow | N5 | — | 60 | v-n5-0261…0320 | 8 | 8 | g-n5-024…031 | 3 (s-07-1 s-07-2 s-07-3) |
-| 8 | 大磯 Ōiso | yellow | N5 | — | 60 | v-n5-0321…0380 | 8 | 7 | g-n5-032…038 | 3 (s-08-1 s-08-2 s-08-3) |
-| 9 | 小田原 Odawara | yellow | N5 | — | 60 | v-n5-0381…0440 | 8 | 7 | g-n5-039…045 | 3 (s-09-1 s-09-2 s-09-3) |
+| 6 | 藤沢 Fujisawa | yellow | N5 | — | 60 | v-n5-0201…0248 + 0271…0282 (verb floor) | 8 | 7 | g-n5-017…023 | 3 (s-06-1 s-06-2 s-06-3) |
+| 7 | 平塚 Hiratsuka | yellow | N5 | — | 60 | v-n5-0249…0270, 0283…0308 + 0350…0355, 0386…0391 (adjective floors) | 8 | 8 | g-n5-024…031 | 3 (s-07-1 s-07-2 s-07-3) |
+| 8 | 大磯 Ōiso | yellow | N5 | — | 60 | v-n5-0309…0349, 0356…0374 | 8 | 7 | g-n5-032…038 | 3 (s-08-1 s-08-2 s-08-3) |
+| 9 | 小田原 Odawara | yellow | N5 | — | 60 | v-n5-0375…0385, 0392…0440 | 8 | 7 | g-n5-039…045 | 3 (s-09-1 s-09-2 s-09-3) |
 | 10 | 箱根 Hakone | orange | N5 | — | 60 | v-n5-0441…0500 | 9 | 8 | g-n5-046…053 | 3 (s-10-1 s-10-2 s-10-3) |
 | 11 | 三島 Mishima | orange | N5 | — | 60 | v-n5-0501…0560 | 9 | 8 | g-n5-054…061 | 3 (s-11-1 s-11-2 s-11-3) |
 | 12 | 沼津 Numazu | orange | N5 | — | 60 | v-n5-0561…0620 | 9 | 7 | g-n5-062…068 | 3 (s-12-1 s-12-2 s-12-3) |
@@ -134,7 +134,7 @@ Corpus order before the component-dependency reorder. Level sets: N5 100 · N4 2
 |---|---|---|
 | `vocab/n5/vocab-n5-001.json` | 135 | 1–4 (white/yellow) |
 | `vocab/n5/vocab-n5-002.json` | 135 | 4–7 (yellow) |
-| `vocab/n5/vocab-n5-003.json` | 135 | 7–9 (yellow) |
+| `vocab/n5/vocab-n5-003.json` | 135 | 6–9 (yellow; 12 verbs at Station 6 and 12 adjectives at 7 by the POS floors) |
 | `vocab/n5/vocab-n5-004.json` | 135 | 9–11 (yellow/orange) |
 | `vocab/n5/vocab-n5-005.json` | 130 | 11–13 (orange) |
 | `vocab/n5/vocab-n5-006.json` | 130 | 13–15 (orange) |
@@ -215,5 +215,6 @@ Corpus order before the component-dependency reorder. Level sets: N5 100 · N4 2
 2. Kanji: stable topological sort so every item whose `components` map to another kanji in the same level comes after it (components that are not kanji items are ignored).
 2b. Components: for each `ComponentDef` in `_meta/components.json`, find the first station (after step 3) whose kanji use it and place the component at the **preceding** station (`componentIds`); components first used by N5 kanji are spread over Stations 2 and 3 in order of first use. A component is never placed at Station 1.
 3. Walk `STATIONS` in road order; for each station pop `quota.vocab` / `quota.kanji` / `quota.grammar` items from the matching level stream (N5 vocab stream also feeds Stations 1–3). If a stream runs short (dedupe), the last station of that level absorbs the deficit; V34 tolerates ±10 %.
+   **POS floors** (vocab only; `DEFAULT_POS_FLOORS`, `--no-pos-floors` disables): before filling from the head of the stream, a station first takes the first `min` still-unassigned items whose `pos` is in the floor's set, wherever they sit in the stream — N5 Stations 6–8 ≥ 12 verbs (`v1 v5 v-irr`), Station 7 ≥ 8 `adj-i` and ≥ 6 `adj-na`. Items pulled forward displace the same number of items from the station's natural tail into the next station; the count consumed after each station is unchanged, so the shift ends as soon as a station's natural range covers where the pulled items came from (Station 9 for the current corpus). Floors exist so no grammar point lands on an empty word class (CONTENT_GUIDE §8 i+1): the briefs put every N5 verb and adjective in `vocab-n5-003`, while Station 6 teaches Vます and Station 7 the adjective predicates.
 4. Kana: Station 1 ← hiragana basic/dakuten/handakuten (71); Station 2 ← hiragana yōon (33) + katakana basic (46); Station 3 ← remaining katakana (88).
 5. Write `station` onto each item; emit `stations/NN.json` bundles (`kanaIds vocabIds kanjiIds grammarIds componentIds storyIds michikusaIds files`, plus `surfaces` = surface/kana/altForm → id for the cumulative allowlist ≤ NN) and the cumulative allowlists consumed by Pass 2 story packets and Pass 3 (`definitionJa`). Michikusa ids are `m-NN-1…4` by construction. The linker step that follows Pass 2 writes `StoryLine.tokenIds` from the V20 match.

@@ -59,6 +59,8 @@ export const S = {
   tryAgain: 'Try again',
   typeInstead: 'Type instead',
   speakUnavailable: 'Speech recognition is not available here, so this role-play runs in Type mode. Same XP.',
+  noVoice: 'No Japanese voice can be heard here (none installed, or sound is off), so your partner\'s lines are shown as text. Read each one, then Continue.',
+  npcRun: 'Earlier in this turn',
 
   /* ── aizuchi ─────────────────────────────────────────────────────────── */
   aizuchiPrompt: 'Backchannel now.',

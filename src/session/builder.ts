@@ -17,17 +17,20 @@
  *
  * A Kumite or Shugyō also carries today's Nemesis steps (dossier / duel,
  * `nemesisBlockSteps`) as a small block ahead of the sparring, their cards held
- * out of the review draws. Grammar cloze on a particle point becomes Particle
- * Duel from Station 5; Form Forge / Form Chain run only on points that declare
- * `unlocksForms`.
+ * out of the review draws; on the day of a lost Gatekeeper fight every training
+ * mode opens with a Grudge List block (`grudgeBlockSteps`, ≤ 20 reps) so the
+ * same-day rematch is reachable. Grammar cloze on a particle point becomes
+ * Particle Duel from Station 5; Form Forge / Form Chain run only on points that
+ * declare `unlocksForms`, and `stepForCard` re-routes a form drill whose head
+ * word realises none of them (or a Scramble with one movable tile) to cloze /
+ * transform instead of emitting an untestable step. `makeStep` never puts a
+ * hard timer on a self-graded drill (`SELF_GRADED`).
  *
- * `loadPlanContext` keeps station entry light (design 07 §6/§9): the current
- * station is preloaded, the next prefetched on idle, and only the cards a plan
- * can draw (the due queue to `showDue` + a reserve, rechecks, Weak Point sets,
- * Nemesis items) have their files fetched; the Dojo (`mode: 'dojo'`) loads none
- * of them. The new-item budget follows the belt table unless the preset is
- * custom (`effectiveNewPerDay`), and `introducedToday` counts from the review
- * log so the cramming cap survives the +3 / +10 graduations.
+ * `loadPlanContext` lives in `./context` (re-exported): it keeps station entry
+ * light (design 07 §6/§9), loads the previous station's stories so the Input
+ * block has readable episodes mid-station, and carries the shared White
+ * allowlist for Stations 1–3. `finalizePlan` prices a Scroll block with the
+ * +3 / +10 steps its intro checks owe and the teach cards (`plannedMs`).
  *
  * `StepParams.sentence` carries ruby markup for every sentence drill that
  * renders through `<Ruby>` (pattern-cloze, particle-duel, kanji-read,
@@ -46,62 +49,34 @@
  * (`buildGate`, `buildShinsa`, `buildKage`, `buildGauntlet`); `buildPlan`
  * rejects them with a `RangeError` naming the right function.
  */
-import {
-  type Belt,
-  type CardKey,
-  type ComponentDef,
-  type DrillId,
-  type ErrorTag,
-  type GrammarItem,
-  type KanaItem,
-  type KanjiItem,
-  type StationBundle,
-  type StoryItem,
-  type VocabItem,
-} from '../content/types';
-import { content as appContent, type ContentLoader } from '../content/loader';
+import type { CardKey, DrillId, ErrorTag, StoryItem } from '../content/types';
 import { toPlain } from '../content/ruby';
-import { isRegistered } from '../shared/exercise-types';
-import { hashSeed, rngFor, type Rng } from '../shared/hash';
+import { hashSeed } from '../shared/hash';
 import { cardKey as makeKey, parseCardKey } from '../shared/ids';
 import type { BlockKind, SessionMode, SessionPlan, SessionSnapshot, Step, StepParams, StepTag } from '../shared/session-types';
-import { CardFlag, hasFlag, type CardTuple, type EpochDay, type ItemKind, type SaveMeta, type Settings } from '../shared/store-types';
+import type { CardTuple, EpochDay, ItemKind } from '../shared/store-types';
 import { store } from '../store';
-import { beltOfStation } from '../store/derived';
-import {
-  EXPECTED_MAX_MINUTES,
-  capFor,
-  cardRetrievability,
-  dueCards,
-  exerciseFor,
-  governor,
-  interleave,
-  kaidenQuota,
-  kindOfCards,
-  knownSet,
-  orderWave,
-  queueCardFor,
-  recheckCards,
-  weakPointSet,
-  type QueueCard,
-  type Scroll,
-} from '../learn';
-import { MICHIKUSA_AFTER_REP, MICHIKUSA_DRILL, MODE_MINUTES, estimateStepMs, fitToTime, strandDeficitFor, templateFor, type OutputKind, type PlannedBlock, type TemplateCtx } from './blocks';
+import { cardRetrievability, exerciseFor, interleave, kindOfCards, orderWave, queueCardFor, recheckCards, weakPointSet, type QueueCard, type Scroll } from '../learn';
+import { MICHIKUSA_AFTER_REP, MICHIKUSA_DRILL, MODE_MINUTES, SELF_GRADED, estimateStepMs, fitToTime, plannedMs, strandDeficitFor, templateFor, type OutputKind, type PlannedBlock, type TemplateCtx } from './blocks';
+import { loadPlanContext, type PlanContext, type PlanOptions } from './context';
 import { S } from './engine-strings';
 import { duelsReady, nemesisItems, nemesisSteps } from './nemesis';
-import { PARTICLE_DUEL_FROM, dedupe, hasParticleHint, isDrillId, isGrammar, isKana, isKanji, isStory, isVocab, knownSentences, pickStories, rateFor, resolveParams } from './params';
-import { DUE_LOAD_RESERVE, accuracy7, dueQueue, easiestCards, effectiveNewPerDay, introducedToday, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
+import { PARTICLE_DUEL_FROM, dedupe, hasParticleHint, isDrillId, isGrammar, knownSentences, movableTiles, pickStories, rateFor, resolveParams } from './params';
+import { dueQueue, easiestCards, grudgeKeys, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
 import { scrollSteps } from './scroll';
 
 // Re-exported from `./pickers` and `./params` (see the header).
-export { DUE_LOAD_RESERVE, accuracy7, dueQueue, easiestCards, effectiveNewPerDay, introducedToday, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
+export { DUE_LOAD_RESERVE, accuracy7, dueQueue, easiestCards, effectiveNewPerDay, grudgeKeys, introducedToday, michikusaFor, scrollsForToday, weekStrandMinutes, welcomeSet } from './pickers';
 export {
+  BUNSETSU_STARTERS,
+  CUT_PARTICLES,
   FORM_LABEL,
   PARTICLES,
   PARTICLE_ATOMS,
   PARTICLE_DUEL_FROM,
   PITCH_PATTERNS,
   SPEED_READ_CPM,
+  alignedOccurrence,
   isComponent,
   isDrillId,
   isGrammar,
@@ -112,217 +87,23 @@ export {
   itemKindOf,
   knownSentences,
   linesWith,
+  movableTiles,
   particleHints,
   pickStories,
   pitchPattern,
   rateFor,
   resolveParams,
+  rubySpanReading,
   splitBunsetsu,
   storyCoverage,
   type ResolveOpts,
 } from './params';
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* Context                                                                    */
+/* Context (./context)                                                        */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-export interface PlanContext {
-  loader: ContentLoader;
-  today: EpochDay;
-  now: number;
-  seed: string;
-  station: number;
-  /** Curriculum belt of `station`. */
-  belt: Belt;
-  settings: Settings;
-  medianMs: SaveMeta['medianMs'];
-  bundle: StationBundle | null;
-  /** Loaded bundles ≤ station (current included), ascending. */
-  bundles: StationBundle[];
-  /** Bundle of station + 1 when it exists (Michikusa pool). */
-  nextBundle: StationBundle | null;
-  components: Map<string, ComponentDef>;
-  stories: StoryItem[];
-  vocabPool: VocabItem[];
-  kanjiPool: KanjiItem[];
-  grammarPool: GrammarItem[];
-  kanaPool: KanaItem[];
-  known: Set<string>;
-  rng: Rng;
-  available: (id: DrillId) => boolean;
-  /** Governor outcome for today. */
-  cap: number;
-  dueTotal: number;
-  backlog: boolean;
-  showDue: number;
-  newTarget: number;
-  newAllowed: number;
-  crammingCap: boolean;
-  overtraining: boolean;
-  /** Step id counter. */
-  seq: number;
-  planKey: string;
-}
-
-export interface PlanOptions {
-  station?: number;
-  tag?: ErrorTag;
-  scrollId?: string;
-  seed?: number;
-  /** Additive: content source (tests pass `createFakeLoader()`). */
-  loader?: ContentLoader;
-  /** Additive: drill availability (default: the exercise registry). */
-  available?: (id: DrillId) => boolean;
-}
-
-
-
-async function tryStation(loader: ContentLoader, n: number): Promise<StationBundle | null> {
-  if (n < 1 || n > 53) return null;
-  try {
-    return await loader.station(n);
-  } catch {
-    return null;
-  }
-}
-
-/** Loads what a plan needs and evaluates the governor. */
-export async function loadPlanContext(o: PlanOptions & { mode?: string } = {}): Promise<PlanContext> {
-  const loader = o.loader ?? appContent;
-  const today = store.today();
-  const progress = store.progress.value;
-  const settings = store.settings.value;
-  const station = Math.max(1, Math.min(53, o.station ?? Math.max(1, progress.station)));
-  const belt = beltOfStation(station);
-
-  const bundle = await tryStation(loader, station);
-  if (bundle) {
-    try {
-      await loader.preloadStation(station);
-    } catch {
-      /* the bundle's files failed; whatever is in memory is used */
-    }
-    // The next station warms on idle (design 07 §6); the loader dedupes and swallows errors.
-    if (station < 53) loader.prefetchStation(station + 1);
-  }
-  const prev = station > 1 ? await tryStation(loader, station - 1) : null;
-  const nextBundle = await tryStation(loader, station + 1);
-  const bundles = [prev, bundle].filter((b): b is StationBundle => b !== null);
-  let components = new Map<string, ComponentDef>();
-  try {
-    components = await loader.components();
-  } catch {
-    /* no components file yet */
-  }
-
-  // Governor first: it needs only card tuples and the save, and its `showDue` bounds what has to be in memory.
-  const cap = capFor(settings.intensity, belt, settings.maxReviews);
-  let dueTotal = 0;
-  store.cards.forEach((k, t) => {
-    void k;
-    if (t[0] <= today && t[5] !== 0 && !hasFlag(t[7], CardFlag.archived)) dueTotal++;
-  });
-  const { acc7, n } = accuracy7(store.daily.value, today);
-  const intro = introducedToday(today);
-  const npd = effectiveNewPerDay(settings, belt);
-  const target = Math.round(npd.vocab + npd.kanji + npd.grammar);
-  const minutesToday = store.daily.value[today]?.minutes ?? 0;
-  const expected = settings.intensity === 'custom' ? EXPECTED_MAX_MINUTES.standard : EXPECTED_MAX_MINUTES[settings.intensity];
-  const gov = governor({
-    due: dueTotal,
-    cap,
-    acc7,
-    acc7n: n,
-    retention: settings.retention,
-    halved: false,
-    recoveredDays: 0,
-    newToday: intro.vocab + intro.kanji + intro.grammar,
-    target,
-    minutesToday,
-    expectedMaxMinutes: expected,
-    awayDays: progress.awayDays,
-    daysBack: 0,
-  });
-
-  // Only the cards a plan can draw need their items in memory (design 07 §6/§9: station entry ≤ 400 KB, not
-  // the whole corpus behind every due card): the due queue up to `showDue` plus a reserve, in the same order
-  // `dueQueue` uses, arcade rechecks, and the Weak Point set when a tag is in play. The Dojo needs counts only.
-  const dueItems: string[] = [];
-  if (o.mode !== 'dojo') {
-    const wanted = new Set<string>();
-    for (const c of dueCards({ cards: store.cards, today, limit: gov.showDue + DUE_LOAD_RESERVE, backlog: gov.backlog, kaidenQuota: kaidenQuota(cap) })) wanted.add(c.itemId);
-    for (const c of recheckCards(store.cards)) wanted.add(c.itemId);
-    for (const e of nemesisItems(today)) wanted.add(e.itemId);
-    const weak = store.weakPoints.value;
-    const tags = new Set<ErrorTag>((Object.keys(weak) as ErrorTag[]).filter((t) => weak[t].active));
-    if (o.tag) tags.add(o.tag);
-    if (tags.size > 0) {
-      const log = store.log.recent(5000);
-      for (const tag of tags) for (const c of weakPointSet(tag, store.cards, log, today).slice(0, 20)) wanted.add(c.itemId);
-    }
-    dueItems.push(...wanted);
-    try {
-      await loader.load(dueItems.filter((id) => loader.get(id) === undefined));
-    } catch {
-      /* offline: cards whose content is missing are skipped by stepForCard */
-    }
-  }
-
-  const vocabPool: VocabItem[] = [];
-  const kanjiPool: KanjiItem[] = [];
-  const grammarPool: GrammarItem[] = [];
-  const kanaPool: KanaItem[] = [];
-  const stories: StoryItem[] = [];
-  const seen = new Set<string>();
-  const addItem = (id: string): void => {
-    if (seen.has(id)) return;
-    seen.add(id);
-    const it = loader.get(id);
-    if (isVocab(it)) vocabPool.push(it);
-    else if (isKanji(it)) kanjiPool.push(it);
-    else if (isGrammar(it)) grammarPool.push(it);
-    else if (isKana(it)) kanaPool.push(it);
-    else if (isStory(it)) stories.push(it);
-  };
-  for (const b of bundles) for (const id of [...b.vocabIds, ...b.kanjiIds, ...b.grammarIds, ...b.kanaIds, ...b.storyIds]) addItem(id);
-  for (const id of dueItems) addItem(id);
-  // Every item the learner holds a card for and whose content is already in memory (older stations' words for pools and the sentence of the day).
-  store.cards.forEach((k) => addItem(parseCardKey(k).itemId));
-
-  const planKey = `${o.mode ?? 'plan'}-${today}-${hashSeed(store.seed(), today, o.mode ?? 'plan', o.seed ?? 0, station).toString(16)}`;
-  return {
-    loader,
-    today,
-    now: store.now(),
-    seed: store.seed(),
-    station,
-    belt,
-    settings,
-    medianMs: store.medianMs.value,
-    bundle,
-    bundles,
-    nextBundle,
-    components,
-    stories,
-    vocabPool,
-    kanjiPool,
-    grammarPool,
-    kanaPool,
-    known: knownSet(store.cards, today),
-    rng: rngFor(store.seed(), today, o.mode ?? 'plan', o.seed ?? 0, station),
-    available: o.available ?? ((id) => isRegistered(id)),
-    cap,
-    dueTotal,
-    backlog: gov.backlog,
-    showDue: gov.showDue,
-    newTarget: gov.newTarget,
-    newAllowed: gov.newAllowed,
-    crammingCap: gov.crammingCap,
-    overtraining: gov.overtraining,
-    seq: 0,
-    planKey,
-  };
-}
+export { SHARED_ALLOWLIST_TO, loadPlanContext, tryStation, type PlanContext, type PlanOptions } from './context';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Steps                                                                      */
@@ -345,6 +126,9 @@ export interface MakeStepInput {
 
 export function makeStep(ctx: PlanContext, o: MakeStepInput): Step {
   ctx.seq++;
+  // A self-graded drill (shadow, meaning-judge, kanji-write, writing-dojo) has no answer a clock can cut off: a hard
+  // timer there would score a listen-speak-rate rep as a timeout miss (design 04 §11 Strike / §12), so no builder gets one.
+  const timeable = !SELF_GRADED.has(o.exercise);
   const step: Step = {
     id: o.id ?? `${ctx.planKey}:${ctx.seq}`,
     block: o.block,
@@ -352,13 +136,13 @@ export function makeStep(ctx: PlanContext, o: MakeStepInput): Step {
     itemId: o.itemId,
     cardKey: o.cardKey,
     params: o.params,
-    timed: o.timed ?? false,
+    timed: timeable && (o.timed ?? false),
     isNew: o.isNew ?? false,
     stepTag: o.stepTag ?? null,
     exposures: o.exposures ?? 0,
     estMs: o.estMs ?? estimateStepMs(o.exercise, o.params, ctx.medianMs),
   };
-  if (o.timerMs !== undefined) step.timerMs = o.timerMs;
+  if (o.timerMs !== undefined && timeable) step.timerMs = o.timerMs;
   return step;
 }
 
@@ -417,9 +201,21 @@ export function stepForCard(
   if (wantedRaw === 'pattern-cloze' && o.exercise === undefined && qc.facet === 'cloze' && ctx.station >= PARTICLE_DUEL_FROM && qc.exposures >= 2 && hasParticleHint(item)) wantedRaw = 'particle-duel';
   if (wantedRaw === 'particle-duel' && !hasParticleHint(item)) wantedRaw = exerciseFor(qc, ctx.station, ctx.settings);
   if (!isDrillId(wantedRaw)) return null;
-  const exercise = pickDrill(ctx, wantedRaw);
+  let exercise = pickDrill(ctx, wantedRaw);
   if (!exercise) return null;
-  const params = { ...resolveParams(ctx, exercise, item, { qc, rep: o.rep ?? qc.exposures }), ...(o.params ?? {}) };
+  const rep = o.rep ?? qc.exposures;
+  let resolved = resolveParams(ctx, exercise, item, { qc, rep });
+  // A declared form no head word in the pool realises (ある for たい, a verb pool for adjective forms), or a
+  // sentence Scramble cannot shuffle (one movable tile): the step would render "could not be built" or grade a
+  // no-op. Re-route to the cloze / transform shape instead of emitting an untestable step.
+  const empty = ((exercise === 'form-forge' && resolved.targetForm === undefined) || (exercise === 'form-chain' && (resolved.forms?.length ?? 0) === 0)) || (exercise === 'scramble' && movableTiles(resolved.tiles ?? []) < 2);
+  if (empty) {
+    const alt = pickDrill(ctx, ctx.station >= 16 && exercise !== 'scramble' ? 'transform' : 'pattern-cloze');
+    if (!alt || alt === exercise) return null;
+    exercise = alt;
+    resolved = resolveParams(ctx, exercise, item, { qc, rep });
+  }
+  const params = { ...resolved, ...(o.params ?? {}) };
   const ring = qc.mature && !o.timed ? speedRingMs(ctx, exercise) : undefined;
   return makeStep(ctx, {
     block,
@@ -490,7 +286,7 @@ export function finalizePlan(ctx: PlanContext, mode: SessionMode, blocks: (Plann
     blocks: kept.map((b) => ({
       kind: b.kind,
       label: b.label,
-      estMinutes: o.templateMinutes ? b.minutes : Math.round((b.steps.reduce((a, s) => a + (s.estMs > 0 ? s.estMs : estimateStepMs(s.exercise, s.params, ctx.medianMs)), 0) / 60_000) * 10) / 10,
+      estMinutes: o.templateMinutes ? b.minutes : Math.round((plannedMs(b.steps, mode, ctx.medianMs) / 60_000) * 10) / 10,
       stepIds: b.steps.map((s) => s.id),
     })),
     meta,
@@ -653,6 +449,32 @@ export function nemesisBlockSteps(ctx: PlanContext): Step[] {
   return out;
 }
 
+/** Grudge reps a training session carries on the day of a lost Gatekeeper fight (design 04 §11: ≥ 20 open the rematch). */
+export const GRUDGE_BLOCK_REPS = 20;
+
+/**
+ * Grudge List steps (design 04 §11): on the day a Gatekeeper fight was lost
+ * (`progress.gateAttemptDay[station] === today`) a Kata, Kumite or Shugyō
+ * opens with up to 20 reps over the Grudge List cards, held out of the review
+ * draws, so the same-day rematch the result screen promises is reachable; the
+ * writer's +3 relearn copies ride in the runner as usual. Empty otherwise.
+ */
+export function grudgeBlockSteps(ctx: PlanContext, max = GRUDGE_BLOCK_REPS): Step[] {
+  const p = store.progress.value;
+  if (p.gateAttemptDay?.[ctx.station] !== ctx.today || p.stationsCleared.includes(ctx.station)) return [];
+  const cards: QueueCard[] = [];
+  for (const key of grudgeKeys()) {
+    const qc = queueCardOf(ctx, key);
+    if (qc) cards.push(qc);
+  }
+  const out: Step[] = [];
+  for (const c of composeReviews(cards.sort((a, b) => a.r - b.r || (a.cardKey < b.cardKey ? -1 : 1)).slice(0, max))) {
+    const s = stepForCard(ctx, c, 'weak');
+    if (s) out.push(s);
+  }
+  return out;
+}
+
 /** `buildPlan` for the training modes; see the module header for the boss / exam / Kage / Dan builders. */
 export async function buildPlan(mode: SessionMode, o: PlanOptions = {}): Promise<SessionPlan> {
   if (mode === 'gate' || mode === 'shinsa' || mode === 'kage' || mode === 'dan') {
@@ -669,6 +491,13 @@ export async function buildPlan(mode: SessionMode, o: PlanOptions = {}): Promise
   // Nemesis dossier / duel steps come first so their cards are held out of every review draw: the duel is the item's rep of the day.
   const nemesis = mode === 'kumite' || mode === 'shugyo' ? nemesisBlockSteps(ctx) : [];
   for (const s of nemesis) if (s.cardKey) used.add(s.cardKey);
+  // The Grudge List opens the session on the day of a lost fight (design 04 §11), its cards held out of the draws too.
+  const grudge = mode === 'kata' || mode === 'kumite' || mode === 'shugyo' ? grudgeBlockSteps(ctx) : [];
+  for (const s of grudge) if (s.cardKey) used.add(s.cardKey);
+  if (grudge.length > 0) {
+    const minutes = Math.round((grudge.reduce((a, s) => a + s.estMs, 0) / 60_000) * 10) / 10;
+    blocks.push({ kind: 'weak', label: S.blockGrudge, minutes, spec: { kind: 'weak', minutes, count: grudge.length }, stepIds: grudge.map((s) => s.id), steps: grudge });
+  }
 
   // Sparring wants ≥ 2 listen reps where available (design 03 §2.2): hold them back from the warm-up.
   const sparringSpec = template.find((t) => t.kind === 'sparring')?.spec;

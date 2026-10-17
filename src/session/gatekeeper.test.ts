@@ -11,7 +11,10 @@ import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { isMature } from '../learn';
-import { toKana } from '../content/ruby';
+import { knownIds } from '../store/derived';
+import { SELF_GRADED } from './blocks';
+import { toKana, toPlain } from '../content/ruby';
+import type { StoryItem } from '../content/types';
 import {
   ASSISTED_AFTER_ATTEMPTS,
   FLASH_MS,
@@ -153,7 +156,7 @@ describe('buildGate', () => {
     expect(flash.every((s) => ['meaning-guard', 'kanji-read', 'component-flash', 'component-assembly'].includes(s.exercise))).toBe(true);
     expect(flash.filter((s) => s.exercise === 'meaning-guard').every((s) => s.params.choices?.length === 4)).toBe(true);
     const strike = plan.steps.filter((s) => s.params.phase === 2);
-    expect(strike.every((s) => ['production-forge', 'pattern-cloze', 'form-forge', 'transform', 'kana-forge', 'shadow'].includes(s.exercise))).toBe(true);
+    expect(strike.every((s) => ['production-forge', 'pattern-cloze', 'form-forge', 'transform', 'kana-forge'].includes(s.exercise))).toBe(true);
     expect(strike.filter((s) => s.exercise === 'pattern-cloze').every((s) => s.params.tiles === undefined)).toBe(true);
     const stationShare = flash.filter((s) => STATION_4.vocabIds.includes(s.itemId!) || STATION_4.kanjiIds.includes(s.itemId!)).length / flash.length;
     expect(stationShare).toBeGreaterThanOrEqual(0.6);
@@ -412,5 +415,62 @@ describe('Ear phase params (design 04 §5, §11)', () => {
       expect(toKana(s.params.sentence!)).toBe(s.params.answer);
       expect(s.params.sentence).toMatch(/[ぁ-ゖァ-ヺ]/);
     }
+  });
+});
+
+describe('chunks in the boss phases (design 04 §11 Strike)', () => {
+  it('a mature prod-only chunk gets an untimed shadow rep; no timed step uses a self-graded drill', async () => {
+    const cards = stationCards({ matureProd: true, matureRec: true });
+    for (const id of [V.おはよう, V.はい]) {
+      delete cards[`${id}#rec`];
+      cards[`${id}#prod`] = live(20);
+    }
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 5, loader, available: all });
+    const chunks = plan.steps.filter((s) => (s.itemId === V.おはよう || s.itemId === V.はい) && (s.params.phase === 1 || s.params.phase === 2));
+    expect(chunks.length).toBeGreaterThan(0);
+    for (const s of chunks) {
+      expect(s.exercise).toBe('shadow');
+      expect(s.timed).toBe(false);
+      expect(s.timerMs).toBeUndefined();
+    }
+    expect(plan.steps.filter((s) => s.timed).every((s) => !SELF_GRADED.has(s.exercise))).toBe(true);
+    expect(plan.steps.some((s) => s.timed)).toBe(true);
+  });
+});
+
+describe('Ear phase sentences the learner can know (design 04 §11)', () => {
+  it('every dictated story line has all its resolved tokens known; the station words fill the rest, each on a card', async () => {
+    const cards = stationCards({ matureProd: true, matureRec: true });
+    for (const id of [V.パン, V.コーヒー]) {
+      delete cards[`${id}#rec`];
+      delete cards[`${id}#prod`];
+    }
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const known = knownIds(TODAY);
+    expect(known.has(V.パン)).toBe(false);
+    const plan = await buildGate(4, { assisted: false, revenge: false, seed: 6, loader, available: all });
+    const ear = plan.steps.filter((s) => s.params.phase === 3);
+    expect(ear).toHaveLength(12);
+    let lines = 0;
+    let words = 0;
+    for (const s of ear) {
+      if (s.params.storyId !== undefined) {
+        lines++;
+        const line = loader.get<StoryItem>(s.params.storyId)!.lines[s.params.lineIndex!]!;
+        for (const id of line.tokenIds ?? []) if (id !== null) expect(known.has(id), `${s.id}: ${toPlain(line.ja)} uses ${id}`).toBe(true);
+        expect(s.params.sentence).toBe(line.ja);
+      } else {
+        words++;
+        expect(STATION_4.vocabIds).toContain(s.itemId);
+        const v = loader.get(s.itemId!)! as { word: string; kana: string };
+        expect(toPlain(s.params.sentence!)).toBe(v.word);
+        expect(s.params.answer).toBe(v.kana);
+      }
+      if (s.itemId && store.cards.byItem(s.itemId).rec) expect(s.cardKey).not.toBeNull();
+    }
+    expect(lines).toBeGreaterThan(0);
+    expect(words).toBeGreaterThan(0);
+    expect(ear.some((s) => s.itemId === V.パン && s.params.storyId !== undefined)).toBe(false);
   });
 });

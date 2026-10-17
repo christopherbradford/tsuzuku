@@ -107,7 +107,7 @@ export interface SlotScore {
   tag: boolean;
   /** Backchannel given but after the window closed. */
   late: boolean;
-  /** The backchannel belonged to the dialogue's register (うん in a polite dialogue is a hit, but off-register). */
+  /** The backchannel belonged to the register in force at the slot (うん under a polite target is a hit, but off-register). */
   registerOk: boolean;
 }
 
@@ -126,7 +126,7 @@ export function scoreSlot(responseMs: number | null, text: string | null, regist
   return { hit, tag: !hit && tagsFrom(belt), late: answered && !inTime, registerOk: hit ? registerOk : false };
 }
 
-/** The chips to offer at a slot (the dialogue's register first, 4–5 chips). */
+/** The chips to offer at a slot (the register in force at the slot, 4–5 chips). */
 export function aizuchiChips(register: AizuchiRegister, n = 4): string[] {
   return AIZUCHI[register].slice(0, Math.max(1, n));
 }

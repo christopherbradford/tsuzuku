@@ -2,15 +2,15 @@
  * params.ts — resolved step params: bunsetsu tiles, Form Chain links, Minimal Pair sides (design 04 §4, §5).
  */
 import { afterEach, describe, expect, it } from 'vitest';
-import type { CardKey, GrammarItem } from '../content/types';
-import { FIXTURE_IDS, G, V, createFakeLoader } from '../content/fixtures';
+import type { CardKey, GrammarItem, KanjiItem, StoryItem, VocabItem } from '../content/types';
+import { FIXTURE_IDS, FIXTURE_STORY_ID, G, KANJI, V, createFakeLoader } from '../content/fixtures';
 import { bus } from '../shared/events';
 import { epochDay } from '../shared/time';
 import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests } from '../store';
 import { DEFAULT_TEST_NOW, card, makeTestStore } from '../store/testing';
 import { conjugate } from '../learn';
-import { loadPlanContext, resolveParams, splitBunsetsu } from './builder';
+import { loadPlanContext, pickStories, resolveParams, splitBunsetsu, storyCoverage } from './builder';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const loader = createFakeLoader();
@@ -109,5 +109,107 @@ describe('Form Chain links (design 04 §4 "one verb, 5 target forms")', () => {
     const c = conjugate(p.sentence!, p.kana!, p.pos!, 'masu')!;
     expect(p.answer).toBe(c.answer);
     expect(p.accepts![0]).toContain(c.answerKana);
+  });
+});
+
+describe('Form Forge / Form Chain head words by declared form (design 04 §4)', () => {
+  it('an adjective-only point draws an adjective; a mixed point draws both kinds over the rotation', async () => {
+    await makeTestStore({ save: { progress: { station: 10 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 10 });
+    const base = loader.get<GrammarItem>(G.ます)!;
+    for (const form of ['adj-neg', 'adj-te', 'adj-adv', 'adj-past', 'adj-ba'] as const) {
+      const p = resolveParams(ctx, 'form-forge', { ...base, unlocksForms: [form] }, { rep: 2 });
+      expect(p.targetForm, form).toBe(form);
+      expect(['adj-i', 'adj-na']).toContain(p.pos);
+      expect(p.answer, form).toBeTruthy();
+      expect(p.answer).toBe(conjugate(p.sentence!, p.kana!, p.pos!, form)!.answer);
+    }
+    const chain = resolveParams(ctx, 'form-chain', { ...base, unlocksForms: ['adj-te'] }, { rep: 0 });
+    expect(chain.pos).toBe('adj-i');
+    expect(chain.forms![0]).toBe('adj-te');
+    for (const f of chain.forms!) expect(conjugate(chain.sentence!, chain.kana!, chain.pos!, f), f).not.toBeNull();
+    const seen = new Set<string>();
+    for (let rep = 0; rep < 6; rep++) seen.add(resolveParams(ctx, 'form-forge', { ...base, unlocksForms: ['nai', 'adj-neg'] }, { rep }).pos as string);
+    expect(seen.has('adj-i')).toBe(true);
+    expect(seen.has('v1') || seen.has('v5')).toBe(true);
+  });
+
+  it('a head word that lacks the declared form is never drawn (ある for たい)', async () => {
+    await makeTestStore({ save: { progress: { station: 10 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 10 });
+    const aru: VocabItem = { ...loader.get<VocabItem>(V.飲む)!, id: 'v-n5-9999', word: 'ある', kana: 'ある', pos: 'v5', meanings: ['to exist'] };
+    const pool = { ...ctx, vocabPool: [aru, ...ctx.vocabPool] };
+    const tai = { ...loader.get<GrammarItem>(G.ます)!, unlocksForms: ['tai' as const] };
+    for (let rep = 0; rep < 8; rep++) {
+      const p = resolveParams(pool, 'form-forge', tai, { rep });
+      expect(p.sentence, `rep ${rep}`).not.toBe('ある');
+      expect(p.targetForm).toBe('tai');
+    }
+  });
+});
+
+describe('Kanji Read picks the sentence by word AND reading, blanking an aligned span (design 04 §3)', () => {
+  const kanji = (over: Partial<KanjiItem>): KanjiItem => ({ ...KANJI[0]!, ...over });
+
+  it('日/にち never borrows 日/ひ’s sentence; a compound ruby group is never cut', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    // The fixture's 日 is read ひ (いい{日|ひ}ですね。); a kanji example reading it にち must not take that sentence.
+    const hi = loader.get<VocabItem>(V.日)!;
+    const pool = { ...ctx, stories: [] as StoryItem[] };
+    const nichi = resolveParams(pool, 'kanji-read', kanji({ id: 'j-日', char: '日', examples: [{ word: '日', kana: 'にち', en: 'day (counter)' }] }), { rep: 0 });
+    expect(nichi.sentence).toBe('日');
+    expect(nichi.blank).toEqual([0, 1]);
+    expect(nichi.answer).toBe('にち');
+    const hiRead = resolveParams(pool, 'kanji-read', kanji({ id: 'j-日', char: '日', examples: [{ word: '日', kana: 'ひ', en: 'day' }] }), { rep: 0 });
+    expect(hiRead.sentence).toBe(hi.examples[0]!.ja);
+    expect(hiRead.blank).toEqual([2, 3]);
+
+    const jikan: VocabItem = { ...hi, id: 'v-n5-9002', word: '時間', kana: 'じかん', meanings: ['time'], examples: [{ ja: '{二時間|にじかん}ぐらいです。', kana: 'にじかんぐらいです。', en: 'About two hours.' }, { ja: '{時間|じかん}があります。', kana: 'じかんがあります。', en: 'There is time.' }] };
+    const toki = kanji({ id: 'j-時', char: '時', examples: [{ word: '時間', kana: 'じかん', en: 'time' }] });
+    const p = resolveParams({ ...pool, vocabPool: [...pool.vocabPool, jikan] }, 'kanji-read', toki, { rep: 0 });
+    expect(p.sentence).toBe('{時間|じかん}があります。');
+    expect(p.blank).toEqual([0, 2]);
+    const compoundOnly = resolveParams({ ...pool, vocabPool: [...pool.vocabPool, { ...jikan, examples: [jikan.examples[0]!] }] }, 'kanji-read', toki, { rep: 0 });
+    expect(compoundOnly.sentence).toBe('時間');
+  });
+
+  it('a story line with a contradicting reading is skipped for one that agrees (清見寺という古い寺)', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const tera: VocabItem = { ...loader.get<VocabItem>(V.水)!, id: 'v-n5-9003', word: '寺', kana: 'てら', meanings: ['temple'], examples: [] };
+    const story: StoryItem = { ...loader.get<StoryItem>(FIXTURE_STORY_ID)!, id: 's-04-9', lines: [{ ja: '{道|みち}の{上|うえ}に{清見寺|せいけんじ}という{古|ふる}い{寺|てら}があります。', kana: 'みちのうえにせいけんじというふるいてらがあります。', en: 'On the road stands an old temple called Seikenji.', tokens: ['道', 'の', '上', 'に', '清見寺', 'という', '古い', '寺', 'が', 'あります', '。'], tokenIds: [null, null, null, null, null, null, null, 'v-n5-9003', null, null, null] }] };
+    const p = resolveParams({ ...ctx, stories: [story], vocabPool: [...ctx.vocabPool, tera] }, 'kanji-read', kanji({ id: 'j-寺', char: '寺', examples: [{ word: '寺', kana: 'てら', en: 'temple' }] }), { rep: 0 });
+    expect(p.sentence).toBe(story.lines[0]!.ja);
+    // 道0 の1 上2 に3 清4 見5 寺6 と7 い8 う9 古10 い11 寺12 — the first 寺 (読み じ) is inside a ruby group and skipped
+    expect(p.blank).toEqual([12, 13]);
+    expect(p.answer).toBe('てら');
+  });
+});
+
+describe('story coverage follows V20 (plusOne, shared White allowlist)', () => {
+  it('a plusOne token counts as covered; the allowlist does too; anything else unknown does not', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const base = loader.get<StoryItem>(FIXTURE_STORY_ID)!;
+    const story: StoryItem = { ...base, lines: [{ ...base.lines[3]!, tokenIds: [V.私, G.は, V.コーヒー, null, V.飲む, null], plusOne: [V.コーヒー] }] };
+    expect(storyCoverage(story, new Set([V.私, G.は, V.飲む]))).toBe(1);
+    expect(storyCoverage(story, new Set([V.私, G.は]))).toBe(0.75);
+    expect(storyCoverage(story, new Set([V.私, G.は]), new Set([V.飲む]))).toBe(1);
+    expect(storyCoverage({ ...story, lines: [{ ...story.lines[0]!, plusOne: [] }] }, new Set([V.私, G.は, V.飲む]))).toBe(0.75);
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    expect(pickStories({ ...ctx, stories: [story], known: new Set([V.私, G.は]), allowlist: new Set([V.飲む]) }).map((s) => s.id)).toEqual([story.id]);
+    expect(pickStories({ ...ctx, stories: [story], known: new Set([V.私, G.は]), allowlist: new Set() })).toEqual([]);
+  });
+});
+
+describe('splitBunsetsu cuts after も and before a bunsetsu-initial hiragana word', () => {
+  it('yields two or more movable tiles where the old rule yielded one', () => {
+    expect(splitBunsetsu('ケンさんも学生です。')).toEqual(['ケンさんも', '学生です', '。']);
+    expect(splitBunsetsu('トイレはどこですか。')).toEqual(['トイレは', 'どこですか', '。']);
+    expect(splitBunsetsu('どんな音楽をよく聞きますか。')).toEqual(['どんな音楽を', 'よく聞きますか', '。']);
+    expect(splitBunsetsu('いつも水を飲みます。')).toEqual(['いつも', '水を', '飲みます', '。']);
+    // word-internal matches still hold
+    expect(splitBunsetsu('ありがとうございます。')).toEqual(['ありがとうございます', '。']);
+    expect(splitBunsetsu('ケンでもいいです。')).toEqual(['ケンでもいいです', '。']);
   });
 });

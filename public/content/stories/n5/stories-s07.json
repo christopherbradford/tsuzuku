@@ -72,7 +72,7 @@
             null,
             "v-n5-0118",
             "g-n5-028",
-            "v-n5-0272",
+            "v-n5-0391",
             "v-n5-0132",
             null
           ]
@@ -99,7 +99,7 @@
             "v-n5-0276",
             null,
             "g-n5-028",
-            "g-n5-024",
+            "v-n5-0350",
             "v-n5-0241",
             "v-n5-0119",
             null,
@@ -244,9 +244,9 @@
           ]
         },
         {
-          "ja": "{男|おとこ}の{子|こ}はユウタです。{八歳|はっさい}です。{黄色|きいろ}い{紙|かみ}を{一枚|いちまい}、{私|わたし}に{出|だ}しました。",
-          "kana": "おとこのこはユウタです。はっさいです。きいろいかみをいちまい、わたしにだしました。",
-          "en": "The boy is Yūta. He is eight. He held out one yellow strip of paper to me.",
+          "ja": "{男|おとこ}の{子|こ}はユウタです。{八歳|はっさい}です。{黄色|きいろ}い{紙|かみ}を{私|わたし}の{前|まえ}に{置|お}きました。",
+          "kana": "おとこのこはユウタです。はっさいです。きいろいかみをわたしのまえにおきました。",
+          "en": "The boy is Yūta. He is eight. He put a yellow strip of paper in front of me.",
           "tokens": [
             "男の子",
             "は",
@@ -259,11 +259,11 @@
             "黄色い",
             "紙",
             "を",
-            "一枚",
-            "、",
             "私",
+            "の",
+            "前",
             "に",
-            "出しました",
+            "置きました",
             "。"
           ],
           "tokenIds": [
@@ -278,11 +278,11 @@
             "v-n5-0262",
             "v-n5-0241",
             "v-n5-0120",
-            "v-n5-0113",
-            null,
             "v-n5-0041",
+            "v-n5-0126",
+            "v-n5-0152",
             "v-n5-0032",
-            "v-n5-0293",
+            "v-n5-0298",
             null
           ]
         },
@@ -545,7 +545,7 @@
             "g-n5-012",
             null,
             "g-n5-028",
-            "g-n5-025",
+            "v-n5-0386",
             "v-n5-0132",
             null
           ]
@@ -673,7 +673,6 @@
         "v-n5-0090",
         "v-n5-0092",
         "v-n5-0093",
-        "v-n5-0113",
         "v-n5-0116",
         "v-n5-0118",
         "v-n5-0119",
@@ -718,10 +717,14 @@
         "v-n5-0293",
         "v-n5-0301",
         "v-n5-0305",
-        "v-n5-0311",
         "v-n5-0356",
         "v-n5-0397",
-        "v-n5-0550"
+        "v-n5-0550",
+        "v-n5-0152",
+        "v-n5-0298",
+        "v-n5-0350",
+        "v-n5-0386",
+        "v-n5-0391"
       ],
       "grammarIds": [
         "g-n5-001",
@@ -775,7 +778,7 @@
           "answer": 2
         },
         {
-          "q": "What color was the strip Yūta handed to Hana?",
+          "q": "What color was the strip Yūta set in front of Hana?",
           "choices": [
             "Red",
             "Blue",
@@ -785,7 +788,7 @@
           "answer": 3
         }
       ],
-      "recapEn": "On July 4 the walk resumed at Hiratsuka's Tanabata festival under huge red, blue and yellow streamers. A boy, Yūta, handed Hana a yellow strip; she wrote 'I will reach Kyoto'. She chatted with his grandmother Ishii-san. Tanaka-san appeared at six and predicted rain; the night was clear and quiet, and he asked what time they leave tomorrow.",
+      "recapEn": "On July 4 the walk resumed at Hiratsuka's Tanabata festival under huge red, blue and yellow streamers. A boy, Yūta, offered Hana a yellow strip; she wrote 'I will reach Kyoto'. She chatted with his grandmother Ishii-san. Tanaka-san appeared at six and predicted rain; the night was clear and quiet, and he asked what time they leave tomorrow.",
       "names": [
         "ケン",
         "ユウタ",
@@ -959,7 +962,7 @@
           ],
           "tokenIds": [
             "g-n5-028",
-            "g-n5-024",
+            "v-n5-0350",
             "v-n5-0132",
             null,
             "g-n5-028",
@@ -1640,7 +1643,8 @@
         "v-n5-0305",
         "v-n5-0356",
         "v-n5-0373",
-        "v-n5-0397"
+        "v-n5-0397",
+        "v-n5-0350"
       ],
       "grammarIds": [
         "g-n5-001",
@@ -1807,7 +1811,7 @@
             null,
             "v-n5-0118",
             "v-n5-0140",
-            "g-n5-025",
+            "v-n5-0388",
             "v-n5-0132",
             null,
             null
@@ -1917,6 +1921,9 @@
             "v-n5-0320",
             null,
             null
+          ],
+          "plusOne": [
+            "v-n5-0320"
           ]
         },
         {
@@ -2182,7 +2189,8 @@
         "v-n5-0292",
         "v-n5-0305",
         "v-n5-0320",
-        "v-n5-0397"
+        "v-n5-0397",
+        "v-n5-0388"
       ],
       "grammarIds": [
         "g-n5-001",

@@ -20,7 +20,7 @@
         "communication"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "ホテルはもう{予約|よやく}した？",
@@ -53,7 +53,7 @@
         "communication"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "ここに{名前|なまえ}と{住所|じゅうしょ}を{書|か}いてください。",
@@ -82,7 +82,7 @@
         "city"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{事故|じこ}で{電車|でんしゃ}が{止|と}まってるみたい。",
@@ -116,7 +116,7 @@
         "city"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{町|まち}は{交通|こうつう}が{便利|べんり}です。",
@@ -149,7 +149,7 @@
         "transport"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{道路|どうろ}が{混|こ}んでて、{遅|おく}れそう。",
@@ -178,7 +178,7 @@
         "travel"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{週末|しゅうまつ}は{京都|きょうと}を{観光|かんこう}する{予定|よてい}です。",
@@ -211,7 +211,7 @@
         "travel"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{新幹線|しんかんせん}なら{二時間|にじかん}で{着|つ}くよ。",
@@ -240,7 +240,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{温泉|おんせん}のある{旅館|りょかん}に{泊|と}まりました。",
@@ -269,7 +269,7 @@
         "city"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{通|とお}りをまっすぐ{行|い}くと{駅|えき}がある。",
@@ -299,7 +299,7 @@
         "places"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{船|ふね}で{小|ちい}さな{島|しま}へ{行|い}きました。",
@@ -329,7 +329,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{港|みなと}から{船|ふね}が{出|で}るのが{見|み}えた。",
@@ -359,7 +359,7 @@
         "places"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{坂|さか}を{上|のぼ}ると、{海|うみ}が{見|み}える。",
@@ -392,7 +392,7 @@
         "travel"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{湖|みずうみ}の{周|まわ}りを{自転車|じてんしゃ}で{走|はし}りました。",
@@ -421,7 +421,7 @@
         "places"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{岸|きし}に{座|すわ}って、ずっと{海|うみ}を{見|み}ていた。",
@@ -455,7 +455,7 @@
         "travel"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{夏休|なつやす}みは{田舎|いなか}の{祖母|そぼ}の{家|いえ}に{行|い}きます。",
@@ -488,7 +488,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{都会|とかい}の{生活|せいかつ}は{便利|べんり}だけど、{疲|つか}れる。",
@@ -521,7 +521,7 @@
         "places"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{郊外|こうがい}に{新|あたら}しい{家|いえ}を{建|た}てました。",
@@ -550,7 +550,7 @@
         "culture"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{古|ふる}いお{寺|てら}の{庭|にわ}がとてもきれいだった。",
@@ -583,7 +583,7 @@
         "culture"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "お{正月|しょうがつ}に{家族|かぞく}で{神社|じんじゃ}へ{行|い}きます。",
@@ -615,7 +615,7 @@
         "arts"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{日曜日|にちようび}、{美術館|びじゅつかん}に{行|い}かない？",
@@ -644,7 +644,7 @@
         "animals"
       ],
       "pitch": 4,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{子|こ}どもと{動物園|どうぶつえん}でパンダを{見|み}ました。",
@@ -673,7 +673,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{駐車場|ちゅうしゃじょう}がいっぱいで{止|と}められない。",
@@ -702,7 +702,7 @@
         "city"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{駅前|えきまえ}で{工事|こうじ}をしています。",
@@ -733,7 +733,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{急行|きゅうこう}はこの{駅|えき}に{止|と}まらないよ。",
@@ -764,7 +764,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{特急|とっきゅう}に{乗|の}れば、{三十分|さんじゅっぷん}{早|はや}く{着|つ}きます。",
@@ -796,7 +796,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{次|つぎ}の{駅|えき}で{乗|の}り{換|か}えだよ。",
@@ -890,7 +890,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "バスは{九時|くじ}に{出発|しゅっぱつ}します。",
@@ -922,7 +922,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{飛行機|ひこうき}の{到着|とうちゃく}が{一時間|いちじかん}{遅|おく}れるって。",
@@ -954,7 +954,7 @@
         "travel"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{来年|らいねん}、{初|はじ}めて{海外|かいがい}へ{行|い}きます。",
@@ -987,7 +987,7 @@
         "places"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{山|やま}の{上|うえ}からの{景色|けしき}がすごくきれいだった。",
@@ -1016,7 +1016,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{寒|さむ}い{日|ひ}は{温泉|おんせん}に{入|はい}りたくなります。",
@@ -1048,7 +1048,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{近所|きんじょ}に{新|あたら}しいパン{屋|や}ができた。",
@@ -1080,7 +1080,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{財布|さいふ}を{交番|こうばん}に{届|とど}けました。",
@@ -1109,7 +1109,7 @@
         "culture"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{駅|えき}の{近|ちか}くに{古|ふる}い{教会|きょうかい}がある。",
@@ -1138,7 +1138,7 @@
         "transport"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{父|ちち}は{自動車|じどうしゃ}の{会社|かいしゃ}で{働|はたら}いています。",
@@ -1168,7 +1168,7 @@
         "places"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{電車|でんしゃ}が{混|こ}んでいて、{席|せき}に{座|すわ}れなかった。",
@@ -1201,7 +1201,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{片道|かたみち}の{切符|きっぷ}を{二枚|にまい}ください。",
@@ -1233,7 +1233,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{往復|おうふく}で{買|か}ったほうが{安|やす}いよ。",
@@ -1294,7 +1294,7 @@
         "transport"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{子|こ}どものとき、{乗|の}り{物|もの}が{大好|だいす}きだった。",
@@ -1323,7 +1323,7 @@
         "society"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{市|し}の{図書館|としょかん}は{九時|くじ}まで{開|あ}いています。",
@@ -1353,7 +1353,7 @@
         "society"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{隣|となり}の{県|けん}まで{車|くるま}で{一時間|いちじかん}かかる。",
@@ -1382,7 +1382,7 @@
         "travel"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{今年|ことし}の{旅行|りょこう}は{国内|こくない}にします。",
@@ -1415,7 +1415,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "エレベーターが{止|と}まってるから、{階段|かいだん}で{行|い}こう。",
@@ -1443,7 +1443,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{壁|かべ}に{家族|かぞく}の{写真|しゃしん}を{掛|か}けました。",
@@ -1472,7 +1472,7 @@
         "home"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "ゴミは{水曜日|すいようび}の{朝|あさ}に{出|だ}してね。",
@@ -1507,7 +1507,7 @@
         "home"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{冷蔵庫|れいぞうこ}にケーキが{入|はい}っています。",
@@ -1535,7 +1535,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{本|ほん}は{棚|たな}の{上|うえ}に{置|お}いといて。",
@@ -1567,7 +1567,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{天気|てんき}がいいので、{布団|ふとん}を{干|ほ}しました。",
@@ -1599,7 +1599,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{床|ゆか}にコップを{落|お}として{割|わ}っちゃった。",
@@ -1628,7 +1628,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{部屋|へや}は{天井|てんじょう}が{高|たか}いですね。",
@@ -1658,7 +1658,7 @@
         "school"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{廊下|ろうか}を{走|はし}っちゃだめだよ。",
@@ -1687,7 +1687,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "デパートの{屋上|おくじょう}で{昼|ひる}ご{飯|はん}を{食|た}べました。",
@@ -1744,7 +1744,7 @@
         "home"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{毎週|まいしゅう}{土曜日|どようび}に{掃除機|そうじき}をかけます。",
@@ -1776,7 +1776,7 @@
         "culture"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{畳|たたみ}の{部屋|へや}で{寝|ね}るのが{好|す}きなんだ。",
@@ -1804,7 +1804,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{布団|ふとん}は{押入|おしい}れにしまってください。",
@@ -1835,7 +1835,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "はさみは{机|つくえ}の{引|ひ}き{出|だ}しに{入|はい}ってるよ。",
@@ -1867,7 +1867,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{新|あたら}しい{家|いえ}の{家具|かぐ}を{選|えら}んでいます。",
@@ -1896,7 +1896,7 @@
         "home"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{水道|すいどう}の{水|みず}、そのまま{飲|の}める？",
@@ -1929,7 +1929,7 @@
         "loanword"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{出|で}かける{前|まえ}にガスを{止|と}めてください。",
@@ -1963,7 +1963,7 @@
         "objects"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{部屋|へや}の{電灯|でんとう}が{切|き}れちゃった。",
@@ -1994,7 +1994,7 @@
         "actions"
       ],
       "pitch": 4,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -2028,7 +2028,7 @@
         "arts"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -2061,7 +2061,7 @@
         "plants"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -2091,7 +2091,7 @@
         "objects"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{鏡|かがみ}を{見|み}たら、{髪|かみ}がすごいことになってた。",
@@ -2120,7 +2120,7 @@
         "objects"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{石鹸|せっけん}でよく{手|て}を{洗|あら}いましょう。",
@@ -2153,7 +2153,7 @@
         "loanword"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{新|あたら}しいタオル、どこにある？",
@@ -2181,7 +2181,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{寒|さむ}かったら、{毛布|もうふ}をもう{一枚|いちまい}{使|つか}ってください。",
@@ -2209,7 +2209,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{枕|まくら}が{変|か}わると、よく{眠|ねむ}れない。",
@@ -2239,7 +2239,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{鍋|なべ}に{水|みず}を{入|い}れて、{火|ひ}にかけます。",
@@ -2270,7 +2270,7 @@
         "cooking"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{食器|しょっき}を{洗|あら}うのは{僕|ぼく}の{仕事|しごと}。",
@@ -2334,7 +2334,7 @@
         "loanword"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{暑|あつ}いから、エアコンつけてもいい？",
@@ -2367,7 +2367,7 @@
         "loanword"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{朝|あさ}になったら、カーテンを{開|あ}けてください。",
@@ -2395,7 +2395,7 @@
         "home"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{雪|ゆき}で{屋根|やね}が{真|ま}っ{白|しろ}になった。",
@@ -2424,7 +2424,7 @@
         "places"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{学校|がっこう}の{門|もん}の{前|まえ}で{待|ま}っています。",
@@ -2454,7 +2454,7 @@
         "actions"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -2490,7 +2490,7 @@
         "loanword"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "カードで{払|はら}ってもいいですか。",
@@ -2523,7 +2523,7 @@
         "business"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{商品|しょうひん}、{今|いま}すごく{売|う}れてるんだって。",
@@ -2555,7 +2555,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{駐車場|ちゅうしゃじょう}は{二時間|にじかん}まで{無料|むりょう}です。",
@@ -2587,7 +2587,7 @@
         "money"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{店|みせ}、{現金|げんきん}しか{使|つか}えないみたい。",
@@ -2620,7 +2620,7 @@
         "money"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "バスの{料金|りょうきん}は{二百円|にひゃくえん}です。",
@@ -2654,7 +2654,7 @@
         "places"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{靴|くつ}{売|う}り{場|ば}は{三階|さんがい}だって。",
@@ -2686,7 +2686,7 @@
         "money"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{学生|がくせい}なら{割引|わりびき}がありますよ。",
@@ -2719,7 +2719,7 @@
         "loanword"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{今|いま}セール{中|ちゅう}だから、{安|やす}く{買|か}えるよ。",
@@ -2751,7 +2751,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "お{支払|しはら}いは{現金|げんきん}とカード、どちらにしますか。",
@@ -2784,7 +2784,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "ネットで{注文|ちゅうもん}した{本|ほん}がまだ{届|とど}かない。",
@@ -2817,7 +2817,7 @@
         "money"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{旅行|りょこう}のために{毎月|まいつき}{貯金|ちょきん}しています。",
@@ -2847,7 +2847,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{京都|きょうと}のお{土産|みやげ}、{何|なに}がいいかな。",
@@ -2880,7 +2880,7 @@
         "society"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{給料|きゅうりょう}から{税金|ぜいきん}が{引|ひ}かれます。",
@@ -2913,7 +2913,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "ここのトイレ、{有料|ゆうりょう}なんだ。",
@@ -2945,7 +2945,7 @@
         "numbers"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{全部|ぜんぶ}でいくらか、{計算|けいさん}してみましょう。",
@@ -2975,7 +2975,7 @@
         "objects"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{袋|ふくろ}はいらないから、そのままでいいよ。",
@@ -3009,7 +3009,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{店|みせ}は{品物|しなもの}が{多|おお}くて{選|えら}ぶのが{大変|たいへん}です。",
@@ -3042,7 +3042,7 @@
         "loanword"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "レシート、{捨|す}てないで{取|と}っておいて。",
@@ -3073,7 +3073,7 @@
         "money"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "すみません、お{会計|かいけい}をお{願|ねが}いします。",
@@ -3106,7 +3106,7 @@
         "money"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{小銭|こぜに}がないから、{千円札|せんえんさつ}で{払|はら}うね。",
@@ -3138,7 +3138,7 @@
         "money"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{機械|きかい}はお{札|さつ}が{使|つか}えません。",
@@ -3175,7 +3175,7 @@
         "travel"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{空港|くうこう}で{両替|りょうがえ}したほうがいいよ。",
@@ -3205,7 +3205,7 @@
         "shopping"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "スーパーで{卵|たまご}の{安売|やすう}りをしていました。",
@@ -3237,7 +3237,7 @@
         "actions"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -3269,7 +3269,7 @@
         "numbers"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{町|まち}は{若|わか}い{人|ひと}の{割合|わりあい}が{高|たか}いです。",
@@ -3299,7 +3299,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "このスープ、{味|あじ}が{薄|うす}いね。",
@@ -3332,7 +3332,7 @@
         "food"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{日本|にほん}の{米|こめ}はおいしいですね。",
@@ -3366,7 +3366,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "フライパンに{油|あぶら}を{少|すこ}し{入|い}れて。",
@@ -3396,7 +3396,7 @@
         "cooking"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{刺身|さしみ}に{醤油|しょうゆ}を{少|すこ}しつけて{食|た}べます。",
@@ -3430,7 +3430,7 @@
         "cooking"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{毎朝|まいあさ}{味噌汁|みそしる}を{作|つく}ってる。",
@@ -3466,7 +3466,7 @@
         "states"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{台所|だいどころ}からカレーのいい{匂|にお}いがします。",
@@ -3501,7 +3501,7 @@
         "plants"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{豆|まめ}、{甘|あま}くておいしい。",
@@ -3529,7 +3529,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{今日|きょう}は{牛肉|ぎゅうにく}が{安|やす}かったので、{買|か}いました。",
@@ -3561,7 +3561,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{豚肉|ぶたにく}と{野菜|やさい}を{炒|いた}めて{晩|ばん}ご{飯|はん}にした。",
@@ -3593,7 +3593,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{鶏肉|とりにく}は{安|やす}くて、{料理|りょうり}しやすいです。",
@@ -3629,7 +3629,7 @@
         "food"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{生|なま}の{魚|さかな}が{苦手|にがて}で、{刺身|さしみ}は{食|た}べられない。",
@@ -3661,7 +3661,7 @@
         "food"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{祖母|そぼ}が{作|つく}った{漬物|つけもの}はとてもおいしいです。",
@@ -3694,7 +3694,7 @@
         "cooking"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -3728,7 +3728,7 @@
         "cooking"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -3757,7 +3757,7 @@
         "cooking"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {
@@ -3793,7 +3793,7 @@
         "food"
       ],
       "pitch": 3,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{味噌汁|みそしる}に{豆腐|とうふ}を{入|い}れました。",
@@ -3821,7 +3821,7 @@
         "clothing"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{寒|さむ}いから、{手袋|てぶくろ}をしたほうがいいよ。",
@@ -3854,7 +3854,7 @@
         "objects"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{彼|かれ}から{指輪|ゆびわ}をもらいました。",
@@ -3886,7 +3886,7 @@
         "clothing"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{旅行|りょこう}の{下着|したぎ}、{何枚|なんまい}{持|も}っていく？",
@@ -3916,7 +3916,7 @@
         "objects"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{糸|いと}が{切|き}れて、ボタンが{取|と}れました。",
@@ -3946,7 +3946,7 @@
         "objects"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "この{布|ぬの}でカーテンを{作|つく}ろうと{思|おも}ってる。",
@@ -3974,7 +3974,7 @@
         "clothing"
       ],
       "pitch": 0,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "このシャツは{木綿|もめん}なので、{洗|あら}いやすいです。",
@@ -4006,7 +4006,7 @@
         "clothing"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{母|はは}の{着物|きもの}は{絹|きぬ}でできている。",
@@ -4039,7 +4039,7 @@
         "plants"
       ],
       "pitch": 1,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "examples": [
         {
           "ja": "{夏|なつ}は{麦茶|むぎちゃ}をたくさん{飲|の}みます。",
@@ -4074,7 +4074,7 @@
         "actions"
       ],
       "pitch": 2,
-      "pitchConfidence": "low",
+      "pitchConfidence": "high",
       "trans": "vt",
       "examples": [
         {

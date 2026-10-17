@@ -8,11 +8,20 @@
  * one strand). Because the order is fixed per (seed, day), dropping an
  * ineligible quest never reshuffles the others, so a re-draw once the
  * exercise registry has filled keeps the quests the learner already saw.
- * Two gates beyond `fromStation`: `requires` (the drill is registered) and
+ * Three gates beyond `fromStation`: `requires` (the drill is registered),
  * `NEEDS_FACET` (a card of that facet exists — `pitch-five` needs a `pitch`
- * card, which only a `pitchConfidence: high` item creates), both injected
- * through `PickOptions` so the draw stays pure. The live draw clamps the
- * station to ≥ 1 like the session builder (station 0 is onboarding only).
+ * card, which only a `pitchConfidence: high` item creates) and `canDo` (the
+ * quest can still be completed today), all injected through `PickOptions` so
+ * the draw stays pure. `canDo` is fed by the day's **gates**: the session
+ * layer, which owns `scrollsForToday` and the Michikusa pool, calls
+ * `setQuestGates(day, closed)` with the quests nothing can advance today
+ * (`learn-scroll` with no Scroll left or in backlog mode, `michikusa-one`
+ * once every fragment of stations ≤ current + 1 is collected — a re-read
+ * emits nothing, design 04 §10) and then `revalidateQuests(store)`. A quest
+ * already done today is never dropped by a gate, and a gate set for another
+ * day is ignored, so yesterday's exhaustion never shapes today's roll. The
+ * live draw clamps the station to ≥ 1 like the session builder (station 0 is
+ * onboarding only).
  *
  * Per-quest counts persist on the quests slice as an extra JSON-safe prop
  * (`QuestsMemory.n`, like kiai's `lostCombo`); `done` is the contract field.
@@ -84,6 +93,8 @@ export interface PickOptions {
   isRegistered?: (id: DrillId) => boolean;
   /** Whether the learner holds any card of a facet (default: yes); gates the quests in `NEEDS_FACET`. */
   hasFacet?: (facet: Facet) => boolean;
+  /** Whether the quest can still be completed today (default: yes); the live draw derives it from `setQuestGates`. */
+  canDo?: (id: QuestId) => boolean;
 }
 
 /** Quests that can only advance once a card of this facet exists in the save. */
@@ -95,21 +106,51 @@ export function defaultRegistered(id: DrillId): boolean {
 }
 
 const ANY_FACET = (): boolean => true;
+const ANY_QUEST = (): boolean => true;
 
-export function eligibleQuests(station: number, reg: (id: DrillId) => boolean = defaultRegistered, hasFacet: (facet: Facet) => boolean = ANY_FACET): QuestRule[] {
+export function eligibleQuests(
+  station: number,
+  reg: (id: DrillId) => boolean = defaultRegistered,
+  hasFacet: (facet: Facet) => boolean = ANY_FACET,
+  canDo: (id: QuestId) => boolean = ANY_QUEST,
+): QuestRule[] {
   return QUESTS.filter((q) => {
     if (q.fromStation > station) return false;
     if (q.requires !== undefined && !reg(q.requires)) return false;
     const facet = NEEDS_FACET[q.id];
-    return facet === undefined || hasFacet(facet);
+    if (facet !== undefined && !hasFacet(facet)) return false;
+    return canDo(q.id);
   });
+}
+
+/* Day gates — set by the session layer, consulted by the live draw. */
+let gates: { day: EpochDay; closed: ReadonlySet<QuestId> } | null = null;
+
+/**
+ * Declare the quests nothing can advance on `day` (replaces the previous
+ * set). The session layer calls it from the Dojo feed / plan with
+ * `learn-scroll` when `scrollsForToday` is empty or backlog mode is on and
+ * `michikusa-one` when `michikusaFor(ctx).isNew` is false, then
+ * `revalidateQuests(store)`.
+ */
+export function setQuestGates(day: EpochDay, closed: Iterable<QuestId>): void {
+  gates = { day, closed: new Set(closed) };
+}
+
+/** `true` when `id` was declared uncompletable for `day`; gates set for another day do not count. */
+export function questClosed(id: QuestId, day: EpochDay): boolean {
+  return gates !== null && gates.day === day && gates.closed.has(id);
+}
+
+export function resetQuestGatesForTests(): void {
+  gates = null;
 }
 
 /** Deterministic Three Kata for (seed, day): one quest per strand, in catalog-shuffled order. */
 export function pickQuests(seed: string, day: EpochDay, belt: Belt, o: PickOptions = {}): QuestId[] {
   const station = o.station ?? firstStationOf(belt);
   const reg = o.isRegistered ?? defaultRegistered;
-  const eligible = new Set(eligibleQuests(station, reg, o.hasFacet ?? ANY_FACET).map((q) => q.id));
+  const eligible = new Set(eligibleQuests(station, reg, o.hasFacet ?? ANY_FACET, o.canDo ?? ANY_QUEST).map((q) => q.id));
   const order = shuffle(rngFor(seed, 'three-kata', day), QUESTS);
   const used = new Set<Strand>();
   const out: QuestId[] = [];
@@ -132,11 +173,17 @@ export function storeHasFacet(store: Store, facet: Facet): boolean {
   return found;
 }
 
-/** `pickQuests` over the live store (belt + station from the save; station 0 draws as station 1, like the builder). */
+/**
+ * `pickQuests` over the live store (belt + station from the save; station 0
+ * draws as station 1, like the builder). A quest gated closed for `day` is
+ * skipped unless the slice already has it done today.
+ */
 export function pickDailyQuests(store: Store, day: EpochDay = store.today()): QuestId[] {
+  const q = store.quests.value;
   return pickQuests(store.seed(), day, store.profile.value.belt, {
     station: Math.max(1, store.progress.value.station),
     hasFacet: (f) => storeHasFacet(store, f),
+    canDo: (id) => !questClosed(id, day) || (q.day === day && q.done.includes(id)),
   });
 }
 
@@ -219,6 +266,23 @@ function dueReviewCount(store: Store, day: EpochDay): number {
   return n;
 }
 
+/**
+ * Re-draw for today when the registry, the station or the day gates changed
+ * since the roll (boot runs before `ensureExercises()`; onboarding moves the
+ * learner from station 0, where nothing is drawable; the session layer
+ * closes gates once it knows what today can offer). The draw order is
+ * stable, so quests that are still eligible stay, with their progress.
+ * No-op until the roll has run for today.
+ */
+export function revalidateQuests(store: Store): void {
+  const q = store.quests.value;
+  const today = store.today();
+  if (q.day !== today) return;
+  const ids = pickDailyQuests(store, today);
+  if (ids.length === q.ids.length && ids.every((id, i) => id === q.ids[i])) return;
+  store.patch('quests', (prev) => questsForDay(prev, today, ids));
+}
+
 export function startQuests(store: Store): () => void {
   function advance(id: QuestId, value: number | ((prev: number) => number)): void {
     const q = store.quests.value;
@@ -229,23 +293,8 @@ export function startQuests(store: Store): () => void {
     if (r.completed) bus.emit('quest:completed', { id, allDone: isFullDay(r.quests) });
   }
 
-  /**
-   * Re-draw for today when the registry or the station changed since the
-   * roll (boot runs before `ensureExercises()`; onboarding moves the learner
-   * from station 0, where nothing is drawable). The draw order is stable, so
-   * quests that are still eligible stay, with their progress.
-   */
-  function revalidate(): void {
-    const q = store.quests.value;
-    const today = store.today();
-    if (q.day !== today) return;
-    const ids = pickDailyQuests(store, today);
-    if (ids.length === q.ids.length && ids.every((id, i) => id === q.ids[i])) return;
-    store.patch('quests', (prev) => questsForDay(prev, today, ids));
-  }
-
   const offs = [
-    bus.on('session:started', revalidate),
+    bus.on('session:started', () => revalidateQuests(store)),
     bus.on('attempt:graded', (p) => {
       if (ARCADE.has(p.exercise)) return;
       if (p.rating !== null) advance('clear-due', (n) => n + 1);

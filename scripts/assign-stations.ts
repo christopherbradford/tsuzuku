@@ -1,15 +1,23 @@
 /**
  * TSUZUKU — station assigner (docs/station-allocation.md §5).
  *
- *   node scripts/assign-stations.ts [--root <content dir>] [--plan <content-plan.json>] [--allowlists <dir>] [--dry-run]
+ *   node scripts/assign-stations.ts [--root <content dir>] [--plan <content-plan.json>] [--allowlists <dir>] [--dry-run] [--no-pos-floors]
  *
  * 1. Walks `docs/content-plan.json` Pass-1 vocab/kanji/grammar files per level
- *    in plan order (vocab sorted by `frequencyRank` within a level when present).
+ *    in plan order. A ranked vocab level (items carry `frequencyRank`) orders its
+ *    files by their median rank and its items by rank within each file
+ *    (`orderRankedVocab`): frequency-first, yet a station's words stay in ≤ 2–3
+ *    consecutive files, which is what keeps the loader's station entry under the
+ *    design 07 §9 1 MB raw budget (a level-wide sort interleaves every file into
+ *    every station).
  * 2. Kanji: stable topological sort so a character never precedes a kanji that
  *    is one of its components (same level only).
  * 3. Walks STATIONS in road order popping each station's quota from the level
  *    stream (N5 vocab also feeds Stations 1–3); the level's last station absorbs
- *    surplus / deficit.
+ *    surplus / deficit. Vocab stations first satisfy their part-of-speech floors
+ *    (`DEFAULT_POS_FLOORS`: core verbs from Station 6, い/な-adjectives at
+ *    Station 7) by pulling the first such items forward; `--no-pos-floors`
+ *    disables them.
  * 4. Kana by station: 1 ← hiragana basic/dakuten/handakuten, 2 ← hiragana yōon +
  *    katakana basic, 3 ← remaining katakana.
  * 5. Components (`_meta/components.json`) land one station ahead of the first
@@ -74,7 +82,47 @@ export interface AssignOptions {
   write?: boolean;
   /** Directory for `station-NN.json` allowlists (default `<root>/../../docs/allowlists`). */
   allowlistsDir?: string;
+  /** Per-station part-of-speech floors for the vocab stream (default `DEFAULT_POS_FLOORS`; `[]` disables). */
+  posFloors?: readonly PosFloor[];
 }
+
+/**
+ * A minimum number of vocab items of some parts of speech that a station must
+ * introduce (station-allocation §5 step 3). The station first pulls the first
+ * `min` such items still unassigned from its level's stream — wherever they sit
+ * in corpus order — and then fills the rest of its quota from the head of the
+ * stream as usual. Items pulled forward displace the same number of items from
+ * the station's natural tail into the next station; the running total consumed
+ * after each station is unchanged, so the shift stops as soon as the next
+ * station's natural range covers where the pulled items came from.
+ */
+export interface PosFloor {
+  level: Level;
+  /** First and last station (inclusive) the floor applies to. */
+  from: number;
+  to: number;
+  /** `VocabItem.pos` values that satisfy the floor. */
+  pos: readonly string[];
+  min: number;
+}
+
+export const VERB_POS: readonly string[] = ['v1', 'v5', 'v-irr'];
+
+/**
+ * Default floors (design 02 §1, CONTENT_GUIDE §8 i+1). The N5 briefs put every
+ * verb and adjective in `vocab-n5-003`, which plan order would place at
+ * Stations 7–9, while Station 6 teaches Vます / Nを V / Nで V / Nへ V
+ * (`g-n5-017…023`) and Station 7 the い- and な-adjective predicates
+ * (`g-n5-024…027`). The floors pull the first core verbs forward to Station 6
+ * and the first い/な-adjectives to Station 7 so no grammar point lands on an
+ * empty word class. Verbs at Stations 7–8 and adjectives at 8–9 satisfy their
+ * floors naturally; Stations 9–13 introduce no new verbs by brief design.
+ */
+export const DEFAULT_POS_FLOORS: readonly PosFloor[] = [
+  { level: 'n5', from: 6, to: 8, pos: VERB_POS, min: 12 },
+  { level: 'n5', from: 7, to: 7, pos: ['adj-i'], min: 8 },
+  { level: 'n5', from: 7, to: 7, pos: ['adj-na'], min: 6 },
+];
 
 export interface AssignResult {
   bundles: StationBundle[];
@@ -231,6 +279,51 @@ export function topoSortKanji(items: KanjiItem[], components: ComponentDef[]): K
   return out;
 }
 
+/** `frequencyRank` of a vocab item, or +∞ when absent (unranked items sort after ranked ones). */
+function rankOf(v: VocabItem): number {
+  return typeof v.frequencyRank === 'number' ? v.frequencyRank : Number.POSITIVE_INFINITY;
+}
+
+/**
+ * Frequency ordering for one vocab level (design 07 §6/§9, station-allocation §5).
+ * When no item carries `frequencyRank` the plan order is returned unchanged.
+ * Otherwise every file keeps its own items, sorted by rank (unranked last,
+ * stable), and the files are ordered by the median rank of their ranked items
+ * (ties keep plan order). The stream still reads frequency-first, but each
+ * station's quota is cut from ≤ 2–3 consecutive files: a level-wide sort
+ * interleaves every file into every station, and the loader's
+ * `preloadStation` then fetches 8–13 files (1.4–2.7 MB) for one Black station.
+ */
+export function orderRankedVocab<T extends { item: VocabItem; file: { rel: string } }>(arr: readonly T[]): T[] {
+  if (!arr.some((p) => typeof p.item.frequencyRank === 'number')) return [...arr];
+  const files: { rel: string; items: T[]; order: number }[] = [];
+  const byRel = new Map<string, (typeof files)[number]>();
+  for (const p of arr) {
+    let f = byRel.get(p.file.rel);
+    if (!f) {
+      f = { rel: p.file.rel, items: [], order: files.length };
+      byRel.set(p.file.rel, f);
+      files.push(f);
+    }
+    f.items.push(p);
+  }
+  const median = (f: (typeof files)[number]): number => {
+    const ranks = f.items.map((p) => rankOf(p.item)).filter((r) => Number.isFinite(r)).sort((a, b) => a - b);
+    if (ranks.length === 0) return Number.POSITIVE_INFINITY;
+    const mid = ranks.length >> 1;
+    return ranks.length % 2 === 1 ? ranks[mid]! : (ranks[mid - 1]! + ranks[mid]!) / 2;
+  };
+  const keyed = files.map((f) => ({ f, m: median(f) }));
+  keyed.sort((a, b) => a.m - b.m || a.f.order - b.f.order);
+  const out: T[] = [];
+  for (const { f } of keyed) {
+    const ranked = f.items.map((p, i) => ({ p, i, r: rankOf(p.item) }));
+    ranked.sort((a, b) => a.r - b.r || a.i - b.i);
+    for (const x of ranked) out.push(x.p);
+  }
+  return out;
+}
+
 function kanaStation(k: KanaItem): number | null {
   if (k.script === 'hiragana') return k.type === 'yoon' ? 2 : 1;
   if (k.script === 'katakana') return k.type === 'basic' ? 2 : 3;
@@ -273,13 +366,10 @@ export function assign(root: string, plan: PlanEntry[], opts: AssignOptions = {}
     for (const item of env.items) arr.push({ item, file });
     streams.set(key, arr);
   }
-  // Vocab: frequencyRank within level when present (stable; unranked after ranked).
+  // Vocab: frequency order within each file, files by median rank (ranked levels only).
   for (const [key, arr] of streams) {
     if (!key.startsWith('vocab/')) continue;
-    if (!arr.some((p) => typeof (p.item as VocabItem).frequencyRank === 'number')) continue;
-    const ranked = arr.map((p, i) => ({ p, i, r: typeof (p.item as VocabItem).frequencyRank === 'number' ? ((p.item as VocabItem).frequencyRank as number) : Number.POSITIVE_INFINITY }));
-    ranked.sort((a, b) => a.r - b.r || a.i - b.i);
-    streams.set(key, ranked.map((x) => x.p));
+    streams.set(key, orderRankedVocab(arr as Placed<VocabItem>[]) as Placed<VocabItem | KanjiItem | GrammarItem>[]);
   }
   // 2. Kanji topological sort per level.
   for (const [key, arr] of streams) {
@@ -296,7 +386,10 @@ export function assign(root: string, plan: PlanEntry[], opts: AssignOptions = {}
     ['kanji', new Map()],
     ['grammar', new Map()],
   ]);
-  const cursors = new Map<string, number>();
+  const posFloors = opts.posFloors ?? DEFAULT_POS_FLOORS;
+  // Per stream: which indices are already assigned, and the first index that may still be free.
+  const taken = new Map<string, boolean[]>();
+  const heads = new Map<string, number>();
   const lastStationOfLevel = new Map<string, number>(); // `${kind}/${level}` → last station with quota > 0
   for (const st of STATIONS) {
     const lvl = stationLevel(st);
@@ -309,24 +402,53 @@ export function assign(root: string, plan: PlanEntry[], opts: AssignOptions = {}
     for (const kind of ['vocab', 'kanji', 'grammar'] as const) {
       const key = `${kind}/${lvl}`;
       const stream = streams.get(key) ?? [];
-      let cur = cursors.get(key) ?? 0;
+      const done = taken.get(key) ?? new Array<boolean>(stream.length).fill(false);
+      let head = heads.get(key) ?? 0;
       const take = st.quota[kind];
-      const slice = stream.slice(cur, cur + take);
-      cur += slice.length;
-      if (lastStationOfLevel.get(key) === st.number && cur < stream.length) {
-        // surplus → last station of the level
-        slice.push(...stream.slice(cur));
-        cur = stream.length;
+      const slice: Placed<VocabItem | KanjiItem | GrammarItem>[] = [];
+      // POS floors (vocab only): pull the first `min` matching unassigned items forward.
+      if (kind === 'vocab' && take > 0) {
+        for (const fl of posFloors) {
+          if (fl.level !== lvl || st.number < fl.from || st.number > fl.to) continue;
+          const want = new Set(fl.pos);
+          let need = Math.min(fl.min, take - slice.length);
+          for (let i = head; i < stream.length && need > 0; i++) {
+            if (done[i] || !want.has((stream[i]!.item as VocabItem).pos)) continue;
+            done[i] = true;
+            slice.push(stream[i]!);
+            need--;
+          }
+        }
       }
-      cursors.set(key, cur);
+      // Fill the rest of the quota from the head of the stream.
+      while (slice.length < take) {
+        while (head < stream.length && done[head]) head++;
+        if (head >= stream.length) break;
+        done[head] = true;
+        slice.push(stream[head]!);
+        head++;
+      }
+      if (lastStationOfLevel.get(key) === st.number) {
+        // surplus → last station of the level
+        for (let i = head; i < stream.length; i++) {
+          if (done[i]) continue;
+          done[i] = true;
+          slice.push(stream[i]!);
+        }
+        head = stream.length;
+      }
+      while (head < stream.length && done[head]) head++;
+      taken.set(key, done);
+      heads.set(key, head);
       if (slice.length > 0) assignment.get(kind)!.set(st.number, slice);
     }
   }
   // Streams whose level has no station quota at all (e.g. kanji/n1 hook): stay unassigned.
   const unassigned: string[] = [];
   for (const [key, stream] of streams) {
-    const cur = cursors.get(key) ?? 0;
-    if (cur < stream.length) unassigned.push(`${key}: ${stream.length - cur} items left without a station`);
+    const done = taken.get(key);
+    const left = done ? done.filter((d) => !d).length : stream.length;
+    if (left > 0) unassigned.push(`${key}: ${left} items left without a station`);
   }
 
   // Apply station fields.
@@ -809,6 +931,23 @@ export function buildMatchPool(vocab: Iterable<VocabItem>, grammar: Iterable<Gra
   return pool;
 }
 
+const OKURIGANA_START_RE = /^[ぁ-ゟ]/;
+
+/**
+ * Whether an inflection-stem prefix may claim `token`. A stem of two or more
+ * characters always may: that is how compound forms link to their head word
+ * (食べ始めた → 食べる, 建て直した → 建てる, 考え方 → 考える). A single-kanji stem
+ * (有 ← 有る, 巻 ← 巻く, 甘 ← 甘い, 見 ← 見る) only may when what follows is
+ * okurigana — or nothing, the bare ren'yōkei (見に行く) — because a kanji after
+ * it starts a different word: 有名, 巻物, 甘酒, 包丁 are not forms of ある, 巻く,
+ * 甘い, 包む.
+ */
+export function stemApplies(stem: string, token: string): boolean {
+  if (stem.length > 1) return true;
+  const rest = token.slice(stem.length);
+  return rest.length === 0 || OKURIGANA_START_RE.test(rest);
+}
+
 export function matchToken(pool: MatchPool, token: string, names: ReadonlySet<string> = new Set()): TokenMatch {
   if (PUNCT_TOKEN_RE.test(token)) return { id: null, known: true, punct: true };
   const exact = pool.exact.get(token);
@@ -816,7 +955,7 @@ export function matchToken(pool: MatchPool, token: string, names: ReadonlySet<st
   if (FUNCTION_TOKENS.has(token)) return { id: null, known: true, punct: false };
   if (names.has(token) || CAST_NAMES.has(token)) return { id: null, known: true, punct: false };
   if (KANJI_NUMERAL_RE.test(token)) return { id: null, known: true, punct: false };
-  for (const p of pool.prefixes) if (token.startsWith(p.s)) return { id: p.id, known: true, punct: false };
+  for (const p of pool.prefixes) if (token.startsWith(p.s) && stemApplies(p.s, token)) return { id: p.id, known: true, punct: false };
   for (const c of pool.counters) {
     if (token.endsWith(c.s) && token.length > c.s.length && KANJI_NUMERAL_RE.test(token.slice(0, -c.s.length))) return { id: c.id, known: true, punct: false };
   }
@@ -900,19 +1039,21 @@ function main(): void {
   let planPath = join(here, '..', 'docs', 'content-plan.json');
   let allowlistsDir = join(here, '..', 'docs', 'allowlists');
   let dry = false;
+  let posFloors: readonly PosFloor[] = DEFAULT_POS_FLOORS;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]!;
     if (a === '--root') root = argv[++i] ?? root;
     else if (a === '--plan') planPath = argv[++i] ?? planPath;
     else if (a === '--allowlists') allowlistsDir = argv[++i] ?? allowlistsDir;
     else if (a === '--dry-run') dry = true;
+    else if (a === '--no-pos-floors') posFloors = [];
     else if (a === '--help' || a === '-h') {
-      process.stdout.write('usage: node scripts/assign-stations.ts [--root <content dir>] [--plan <content-plan.json>] [--allowlists <dir>] [--dry-run]\n');
+      process.stdout.write('usage: node scripts/assign-stations.ts [--root <content dir>] [--plan <content-plan.json>] [--allowlists <dir>] [--dry-run] [--no-pos-floors]\n');
       process.exit(0);
     }
   }
   const plan = readJson<PlanEntry[]>(resolve(planPath));
-  const result = assign(resolve(root), plan, { write: !dry, allowlistsDir: resolve(allowlistsDir) });
+  const result = assign(resolve(root), plan, { write: !dry, allowlistsDir: resolve(allowlistsDir), posFloors });
   process.stdout.write(result.report + '\n');
 }
 

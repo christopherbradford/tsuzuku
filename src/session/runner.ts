@@ -10,7 +10,8 @@
  *    of the step inserted that many reps ahead; the Kiai Recovery queue
  *    (3–8 reps after a clean miss on a non-dummy card) becomes a `recovery`
  *    step. Boss / exam / Kage / arcade plans never re-queue (the fight runs to
- *    completion).
+ *    completion). A card missed `MAX_SESSION_MISSES` times in one run stops
+ *    returning (the feedback line says so), so a run is always finishable.
  *  - Scroll steps: a Chikaradameshi pretest is graded with `pretest: true`
  *    (a miss writes nothing); a correct pretest and every `intro` check call
  *    `introduceItem` first. `scroll:completed` fires when the last intro check
@@ -38,17 +39,18 @@
  *    learner did not see (re-queued copies drop their timer, for instance).
  */
 import { signal, type Signal } from '@preact/signals';
-import type { CardKey, DrillId, ErrorTag } from '../content/types';
+import type { CardKey, ErrorTag } from '../content/types';
 import type { Settings } from '../shared/store-types';
 import { content as appContent, type ContentLoader } from '../content/loader';
 import { bus } from '../shared/events';
 import { resolveExercise, type FeedbackState } from '../shared/exercise-types';
 import { rngFor } from '../shared/hash';
 import { diffChars } from '../shared/jp';
-import { SESSION_SCHEMA, type AttemptResult, type KiaiState, type SessionMode, type SessionPlan, type SessionResult, type SessionSnapshot, type Step, type StepResult, type StepTag } from '../shared/session-types';
+import { SESSION_SCHEMA, type AttemptResult, type KiaiState, type SessionPlan, type SessionResult, type SessionSnapshot, type Step, type StepResult, type StepTag } from '../shared/session-types';
 import { store } from '../store';
 import { introduceItem, recordAttempt, type RecordAttemptOutcome } from '../learn/apply';
 import { judgeRate, kiaiInit, shouldJudge } from '../learn';
+import { REQUEUE_MODES, SELF_GRADED } from './blocks';
 import { itemKindOf } from './builder';
 import { tally, trackCeremonies, type CeremonyEvent } from './end-card';
 import { afterDuel } from './nemesis';
@@ -57,11 +59,18 @@ import { loadSnapshot } from './snapshot';
 import { NOTES_PLAN_PREFIX, completeNotesSession } from './shinsa';
 import { S } from './engine-strings';
 
-/** Modes whose plans accept in-session re-queues (steps, relearn, Recovery). */
-export const REQUEUE_MODES: ReadonlySet<SessionMode> = new Set<SessionMode>(['kata', 'kumite', 'shugyo', 'weak', 'welcome', 'scroll']);
 
-/** Drills whose result is a self-rating the Judge may sample (design 05 §6). */
-export const SELF_GRADED: ReadonlySet<DrillId> = new Set<DrillId>(['meaning-judge', 'kanji-write', 'shadow', 'writing-dojo']);
+// `REQUEUE_MODES` (modes whose plans accept in-session re-queues) and `SELF_GRADED` (drills the Judge may sample) live
+// in `./blocks` so the builders and estimates share them; re-exported here for the callers that always read them from the runner.
+export { REQUEUE_MODES, SELF_GRADED };
+
+/**
+ * In-session misses after which a card is no longer re-queued (design 03 §1 "a
+ * run is always finishable"): the writer has FSRS-scheduled it on every miss,
+ * so the dropped copy loses nothing but the loop. Recovery reps (bounded by the
+ * Kiai queue) are unaffected.
+ */
+export const MAX_SESSION_MISSES = 3;
 
 export interface RunnerOptions {
   resumed?: SessionSnapshot;
@@ -232,6 +241,11 @@ export class SessionRunner {
     return this.plan.id;
   }
 
+  /** The content source this run reads items from (the end card resolves promoted ids through it). */
+  get contentLoader(): ContentLoader {
+    return this.loader;
+  }
+
   /** The current queue (plan steps plus re-queues). */
   steps(): readonly Step[] {
     return this.queue;
@@ -355,6 +369,7 @@ export class SessionRunner {
       xpThisStep += p.amount;
     });
     let out: RecordAttemptOutcome;
+    let capped = false;
     try {
       if (step.itemId && kind && (intro || (pretest && result.correct))) introduceItem(step.itemId, kind, this.plan.station);
 
@@ -380,10 +395,15 @@ export class SessionRunner {
       if (REQUEUE_MODES.has(this.plan.mode) && !pretest) {
         // A lapse that broke the combo returns as the Recovery rep (3–8 later); the +5 relearn is the same return, not a second one.
         const recovery = step.cardKey && out.kiaiResult?.comboBroken ? this.kiai.value.recoveryQueue.find((q) => q.cardKey === step.cardKey) : undefined;
-        for (const offset of out.stepOffsets) {
-          const tag: StepTag = offset === 3 ? '+3' : offset === 10 ? '+10' : 'relearn';
-          if (tag === 'relearn' && recovery) continue;
-          this.requeue(step, idx + offset, tag);
+        // A card missed MAX_SESSION_MISSES times this run stops returning (+3 / +10 / relearn): FSRS has it for
+        // tomorrow, and the run stays finishable. Counted from `results`, so a resumed run keeps the count.
+        capped = step.cardKey !== null && out.rating === 1 && this.missesOf(step.cardKey) >= MAX_SESSION_MISSES;
+        if (!capped) {
+          for (const offset of out.stepOffsets) {
+            const tag: StepTag = offset === 3 ? '+3' : offset === 10 ? '+10' : 'relearn';
+            if (tag === 'relearn' && recovery) continue;
+            this.requeue(step, idx + offset, tag);
+          }
         }
         if (recovery) this.requeue(step, Math.max(idx + 1, recovery.at), 'recovery');
       }
@@ -396,9 +416,18 @@ export class SessionRunner {
 
     const last = this.results[this.results.length - 1];
     if (last && last.stepId === step.id) last.xpDelta = xpThisStep;
-    this.feedback.value = feedbackFor(step, result, { ...out, xpDelta: xpThisStep }, pretest);
+    const fb = feedbackFor(step, result, { ...out, xpDelta: xpThisStep }, pretest);
+    if (capped) fb.line = S.movingOn;
+    this.feedback.value = fb;
 
     this.save(idx + 1);
+  }
+
+  /** Again-rated results on `key` so far this run (the current rep included once it is in `results`). */
+  private missesOf(key: CardKey): number {
+    let n = 0;
+    for (const r of this.results) if (r.cardKey === key && r.rating === 1) n++;
+    return n;
   }
 
   /** Inserts a copy of `step` at `at` (clamped to the queue end) unless an identical pending re-queue exists. */

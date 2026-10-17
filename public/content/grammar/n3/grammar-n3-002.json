@@ -222,6 +222,10 @@
       "tags": [
         "communication"
       ],
+      "unlocksForms": [
+        "nai",
+        "adj-neg"
+      ],
       "station": 29
     },
     {
@@ -332,6 +336,9 @@
       "tags": [
         "abstract"
       ],
+      "unlocksForms": [
+        "masu"
+      ],
       "station": 29
     },
     {
@@ -413,8 +420,8 @@
           "en": "No way am I losing here."
         },
         {
-          "ja": "あの{人|ひと}の{話|はなし}なんか、{信|しん}じるものですか。",
-          "kana": "あのひとのはなしなんか、しんじるものですか。",
+          "ja": "あの{人|ひと}の{話|はなし}なんか、{信|しん}じるものか。",
+          "kana": "あのひとのはなしなんか、しんじるものか。",
           "en": "As if I'd believe a word that person says."
         },
         {
@@ -549,6 +556,9 @@
         "states",
         "health"
       ],
+      "unlocksForms": [
+        "masu"
+      ],
       "station": 30
     },
     {
@@ -656,6 +666,9 @@
         "health",
         "states"
       ],
+      "unlocksForms": [
+        "masu"
+      ],
       "station": 30
     },
     {
@@ -688,8 +701,8 @@
           "en": "I finished the whole book I borrowed in one night."
         },
         {
-          "ja": "{資料|しりょう}はもう{送|おく}っちゃいましたか。",
-          "kana": "しりょうはもうおくっちゃいましたか。",
+          "ja": "{資料|しりょう}はもう{送|おく}っちゃった？",
+          "kana": "しりょうはもうおくっちゃった？",
           "en": "Did you already send the documents?"
         }
       ],
@@ -713,6 +726,9 @@
         "communication"
       ],
       "notes": "Receptive point: the learner needs to decode ちゃう/じゃう in input; production stays optional until the casual-register stations.",
+      "unlocksForms": [
+        "te"
+      ],
       "station": 30
     },
     {
@@ -735,9 +751,9 @@
           "en": "I'll get the drinks ahead of time."
         },
         {
-          "ja": "{会議|かいぎ}の{前|まえ}に、この{資料|しりょう}を{読|よ}んどいてください。",
-          "kana": "かいぎのまえに、このしりょうをよんどいてください。",
-          "en": "Please read these materials before the meeting."
+          "ja": "{会議|かいぎ}の{前|まえ}に、この{資料|しりょう}、{読|よ}んどいてね。",
+          "kana": "かいぎのまえに、このしりょう、よんどいてね。",
+          "en": "Read these materials before the meeting, okay?"
         },
         {
           "ja": "{窓|まど}は{開|あ}けといて。{暑|あつ}いから。",
@@ -745,9 +761,9 @@
           "en": "Leave the window open. It's hot."
         },
         {
-          "ja": "{店|みせ}、{予約|よやく}しときましたよ。",
-          "kana": "みせ、よやくしときましたよ。",
-          "en": "I went ahead and booked the restaurant."
+          "ja": "{店|みせ}、{予約|よやく}しとくよ。",
+          "kana": "みせ、よやくしとくよ。",
+          "en": "I will go ahead and book the restaurant."
         }
       ],
       "clozeHints": [
@@ -770,6 +786,9 @@
         "communication"
       ],
       "notes": "Receptive point: decode とく/どく/といて in input first; the full ておく remains the production target.",
+      "unlocksForms": [
+        "te"
+      ],
       "station": 30
     },
     {
@@ -862,8 +881,8 @@
           "en": "I have to hand in the report by tomorrow."
         },
         {
-          "ja": "その{話|はなし}、{知|し}ってます。",
-          "kana": "そのはなし、しってます。",
+          "ja": "その{話|はなし}、{知|し}ってる。",
+          "kana": "そのはなし、しってる。",
           "en": "I know about that."
         }
       ],
@@ -889,6 +908,10 @@
         "communication"
       ],
       "notes": "Chunk list taught as one pattern. All four contractions are receptive-first; polite てます/てません are safe to produce with coworkers.",
+      "unlocksForms": [
+        "te-iru",
+        "nai"
+      ],
       "station": 30
     },
     {
@@ -999,6 +1022,9 @@
       "tags": [
         "language"
       ],
+      "unlocksForms": [
+        "te"
+      ],
       "station": 31
     },
     {
@@ -1053,6 +1079,9 @@
       ],
       "tags": [
         "language"
+      ],
+      "unlocksForms": [
+        "nai"
       ],
       "station": 31
     },

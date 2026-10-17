@@ -13,6 +13,7 @@ import { cardKey } from '@/shared/ids';
 import type { AttemptResult, Step } from '@/shared/session-types';
 import { store } from '@/store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '@/store/testing';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { windowMs } from './aizuchi';
 import { chooseOptions } from './options';
 import { AIZUCHI_PAUSE_MS, RolePlay, meta, type RolePlayResult } from './RolePlay';
@@ -90,6 +91,12 @@ function buttonByText(text: string): HTMLButtonElement {
 function clickText(text: string): void {
   const b = buttonByText(text);
   act(() => b.click());
+}
+/** A frame key pressed outside any input (the frame listens on window, capture phase). */
+function press(key: string): void {
+  act(() => {
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
+  });
 }
 function phase(): string | null {
   return root.querySelector('.taiwa')?.getAttribute('data-phase') ?? null;
@@ -333,7 +340,7 @@ describe('<RolePlay>', () => {
     expect(root.textContent).toContain('Register: casual');
     type(input(), 'hainomimasu');
     enter(input());
-    // the gold line itself is still best (verbatim wins); a polite non-verbatim line slips register
+    // the gold line itself is still best (verbatim wins)
     expect(root.querySelector('.taiwa__feedback-line')?.textContent).toBe(S.best);
     clickText(S.continue);
     await tick();
@@ -341,9 +348,167 @@ describe('<RolePlay>', () => {
     // a casual target offers the casual backchannel set
     expect(Array.from(root.querySelectorAll('.taiwa__chip')).map((c) => c.textContent?.replace(/^\d/, ''))).toEqual(['うん', 'へー', 'へえ', 'そっか']);
     clickText('うん');
+    // a polite non-verbatim line is the gold line's own register, never a slip (round 2, #1); a mixed line still slips
     type(input(), 'hai,panwotabemasu');
     enter(input());
-    expect(Array.from(root.querySelectorAll('.taiwa__tags .chip')).map((c) => c.getAttribute('data-tag'))).toEqual(['register']);
+    expect(root.querySelector('.taiwa__feedback-line')?.textContent).toBe(S.ok);
+    expect(root.querySelectorAll('.taiwa__tags .chip')).toHaveLength(0);
+  });
+
+  it('round 2 #1: without an explicit target the register chip follows the gold line, not the dialogue', async () => {
+    const casual: StoryItem = { ...DIALOGUE, register: 'casual' };
+    const custom = createFakeLoader({ ...FIXTURE, items: { ...FIXTURE.items, [FIXTURE_DIALOGUE_ID]: casual } });
+    installServices({ audio: fakeAudio().audio });
+    mount('type', { loader: custom });
+    clickText(S.begin);
+    await tick();
+    // line 1 (おはよう、ケン。) is casual like the dialogue; line 3 (はい、飲みます。) is polite, and the chip says so
+    expect(root.querySelector('.taiwa__meta [data-register]')?.getAttribute('data-register')).toBe('casual');
+    const input = () => root.querySelector('input') as HTMLInputElement;
+    type(input(), 'ohayouken');
+    enter(input());
+    clickText(S.continue);
+    await tick();
+    expect(root.textContent).toContain('Register: polite');
+    expect(root.querySelector('.taiwa__meta [data-register]')?.getAttribute('data-register')).toBe('polite');
+    // the backchannel set still follows the dialogue's register (casual): no target is in force
+    type(input(), 'hainomimasu');
+    enter(input());
+    clickText(S.continue);
+    await tick();
+    expect(phase()).toBe('slot');
+    expect(Array.from(root.querySelectorAll('.taiwa__chip')).map((c) => c.textContent?.replace(/^\d/, ''))).toEqual(['うん', 'へー', 'へえ', 'そっか']);
+  });
+
+  it('round 2 #3: the aizuchi set follows the register in force at the slot, not the dialogue register', async () => {
+    // casual dialogue; the NPC slot line carries registerTarget 'polite' (田中さん in s-47-2)
+    const casual: StoryItem = { ...DIALOGUE, register: 'casual', lines: DIALOGUE.lines.map((l, i) => (i === 4 ? { ...l, registerTarget: 'polite' } : l)) };
+    const custom = createFakeLoader({ ...FIXTURE, items: { ...FIXTURE.items, [FIXTURE_DIALOGUE_ID]: casual } });
+    installServices({ audio: fakeAudio().audio });
+    mount('choose', { loader: custom });
+    clickText(S.begin);
+    await tick();
+    clickText(optionOfKind(1, 'best'));
+    clickText(S.continue);
+    await tick();
+    clickText(optionOfKind(3, 'best'));
+    clickText(S.continue);
+    await tick();
+    expect(phase()).toBe('slot');
+    expect(root.textContent).toContain('Register shift: polite');
+    expect(Array.from(root.querySelectorAll('.taiwa__chip')).map((c) => c.textContent?.replace(/^\d/, ''))).toEqual(['はい', 'ええ', 'そうですね', 'へえ']);
+    await tick(300);
+    clickText('はい');
+    expect(root.querySelector('.taiwa__slot-note')?.textContent).toBe(S.aizuchiHit);
+    render(null, root);
+
+    // the mirror: a casual slot under a polite dialogue offers うん, and はい is off-register there
+    const mirror: StoryItem = { ...DIALOGUE, lines: DIALOGUE.lines.map((l, i) => (i === 4 ? { ...l, registerTarget: 'casual' } : l)) };
+    const custom2 = createFakeLoader({ ...FIXTURE, items: { ...FIXTURE.items, [FIXTURE_DIALOGUE_ID]: mirror } });
+    mount('choose', { loader: custom2 });
+    clickText(S.begin);
+    await tick();
+    clickText(optionOfKind(1, 'best'));
+    clickText(S.continue);
+    await tick();
+    clickText(optionOfKind(3, 'best'));
+    clickText(S.continue);
+    await tick();
+    expect(phase()).toBe('slot');
+    expect(Array.from(root.querySelectorAll('.taiwa__chip')).map((c) => c.textContent?.replace(/^\d/, ''))).toEqual(['うん', 'へー', 'へえ', 'そっか']);
+    await tick(300);
+    clickText('うん');
+    expect(root.querySelector('.taiwa__slot-note')?.textContent).toBe(S.aizuchiHit);
+  });
+
+  it('round 2 #4: without an audible voice, partner lines wait for Continue, a run stays readable and the slot opens only after it', async () => {
+    // lines 0–2 become one three-line partner run (ハナ keeps her later lines)
+    const run: StoryItem = { ...DIALOGUE, lines: DIALOGUE.lines.map((l, i) => (i === 1 ? { ...l, speaker: 'ケン' } : l)) };
+    const custom = createFakeLoader({ ...FIXTURE, items: { ...FIXTURE.items, [FIXTURE_DIALOGUE_ID]: run } });
+    const audio = { ...nullAudio, hasJaVoice: signal(false), speak: vi.fn(() => Promise.resolve()) };
+    installServices({ audio });
+    mount('choose', { loader: custom });
+    expect(root.querySelector('.taiwa__notice--voice')?.textContent).toBe(S.noVoice);
+    clickText(S.begin);
+    await tick();
+    await tick(5000);
+    // nothing advanced on its own; the first line is up with a Continue button and no replay control
+    expect(phase()).toBe('npc');
+    expect(root.querySelector('.taiwa__progress')?.textContent).toContain('1 / 12');
+    expect(root.querySelector('.taiwa__npc-ja')?.textContent).toBe(toPlain(L(0).ja));
+    expect(root.querySelector('[data-action="npc-continue"]')).not.toBeNull();
+    expect(Array.from(root.querySelectorAll('button')).some((b) => b.textContent === S.replayLine)).toBe(false);
+    expect(audio.speak).not.toHaveBeenCalled();
+    clickText(S.continue);
+    await tick();
+    expect(phase()).toBe('npc');
+    expect(root.querySelector('.taiwa__progress')?.textContent).toContain('2 / 12');
+    clickText(S.continue);
+    await tick();
+    expect(root.querySelector('.taiwa__progress')?.textContent).toContain('3 / 12');
+    // the two earlier lines of the run are listed under the current one
+    expect(Array.from(root.querySelectorAll('.taiwa__run li')).map((li) => li.textContent)).toEqual([`ケン${toPlain(L(0).ja)}`, `ケン${toPlain(L(1).ja)}`]);
+    clickText(S.continue);
+    await tick();
+    expect(phase()).toBe('learner');
+    // the run stays readable while the learner answers
+    expect(root.querySelectorAll('.taiwa__run li')).toHaveLength(2);
+    clickText(optionOfKind(3, 'best'));
+    clickText(S.continue);
+    await tick();
+    // line 4 carries a slot: it is shown as text first; the window opens only on Continue
+    expect(phase()).toBe('npc');
+    await tick(windowMs(store.profile.value.belt) + AIZUCHI_PAUSE_MS + 1);
+    expect(phase()).toBe('npc');
+    expect(root.querySelector('.taiwa__slot-note')).toBeNull();
+    clickText(S.continue);
+    expect(phase()).toBe('slot');
+    await tick(200);
+    clickText('はい');
+    expect(root.querySelector('.taiwa__slot-note')?.textContent).toBe(S.aizuchiHit);
+    expect(phase()).toBe('learner');
+  });
+
+  it('round 2 #5: Choose options and Build tiles carry the line\'s furigana under the furigana setting', async () => {
+    await setup({ save: { settings: { furigana: 'always' } } });
+    installServices({ audio: fakeAudio().audio });
+    mount('choose');
+    clickText(S.begin);
+    await tick();
+    clickText(optionOfKind(1, 'best'));
+    clickText(S.continue);
+    await tick();
+    // line 3: はい、{飲|の}みます。 — every option that carries 飲 reads の
+    const rts = Array.from(root.querySelectorAll('.taiwa__option ruby rt')).map((rt) => rt.textContent);
+    expect(rts.length).toBeGreaterThan(0);
+    expect(rts.every((t) => t === 'の')).toBe(true);
+    const withKanji = Array.from(root.querySelectorAll('.taiwa__option')).filter((b) => /飲/.test(b.textContent ?? ''));
+    expect(withKanji.every((b) => b.querySelector('ruby rt') !== null)).toBe(true);
+    // the option is still announced by its plain text
+    expect(withKanji[0]?.getAttribute('aria-label')).toMatch(/^Option \d: .*飲/);
+    expect(withKanji[0]?.getAttribute('aria-label')).not.toMatch(/[{|}]/);
+    render(null, root);
+
+    mount('build');
+    clickText(S.begin);
+    await tick();
+    clickText('おはよう');
+    clickText('ケン');
+    clickText(S.submit);
+    clickText(S.continue);
+    await tick();
+    expect(Array.from(root.querySelectorAll('.taiwa__tiles .taiwa__tile ruby rt')).map((rt) => rt.textContent)).toEqual(['の']);
+    render(null, root);
+
+    // furigana off: plain text, no ruby
+    await setup({ save: { settings: { furigana: 'off' } } });
+    mount('choose');
+    clickText(S.begin);
+    await tick();
+    clickText(optionOfKind(1, 'best'));
+    clickText(S.continue);
+    await tick();
+    expect(root.querySelector('.taiwa__option ruby')).toBeNull();
   });
 
   it('as an exercise it reads params, tags a missed slot from Green, reports once through onResult and never writes cards itself', async () => {
@@ -413,5 +578,52 @@ describe('<RolePlay>', () => {
     expect(cap.events[cap.events.length - 1]?.[1]).toMatchObject({ best: 6, total: 6, aizuchiHit: 1, aizuchiTotal: 2, registerOk: true });
     expect(cap.events.some(([n]) => n === 'attempt:graded')).toBe(false);
     expect(store.cards.count()).toBe(0);
+  });
+});
+
+describe('<RolePlay> inside the frame (contract #32: the hint key)', () => {
+  it("type mode: the frame's ? key opens the mustInclude hint once, reports onHint and caps the line at ok", async () => {
+    installServices({ audio: fakeAudio().audio });
+    const onHint = vi.fn();
+    const onResult = vi.fn<(r: AttemptResult) => void>();
+    const s: Step = {
+      id: 'rp-2',
+      block: 'output',
+      exercise: 'role-play',
+      itemId: FIXTURE_DIALOGUE_ID,
+      cardKey: null,
+      params: { storyId: FIXTURE_DIALOGUE_ID, mode: 'type', rate: 1 },
+      timed: false,
+      isNew: false,
+      stepTag: null,
+      exposures: 0,
+      estMs: 180000,
+    };
+    act(() =>
+      render(
+        <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => clock} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <RolePlay step={s} item={DIALOGUE} feel="dojo" furigana="off" jj={false} speedTier={3} exposures={0} onResult={onResult} onHint={onHint} onReplay={() => undefined} requestJudge={() => Promise.resolve(true)} loader={loader} />
+        </ExerciseFrame>,
+        root,
+      ),
+    );
+    // intro: nothing to reveal yet
+    expect(root.querySelector('.exercise-frame__hint')).toBeNull();
+    clickText(S.begin);
+    await tick();
+    expect(phase()).toBe('learner');
+    expect(root.querySelector('.exercise-frame__hint')).not.toBeNull();
+    expect(root.querySelector('.taiwa__hint-box')).toBeNull();
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    expect(root.querySelector('.taiwa__hint-box')).not.toBeNull();
+    expect(root.querySelector('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    // the gold line after a hint is ok, not best
+    const input = root.querySelector('input') as HTMLInputElement;
+    type(input, 'ohayoukenn');
+    enter(input);
+    expect(root.querySelector('.taiwa__feedback-line')?.textContent).toBe(S.ok);
   });
 });

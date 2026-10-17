@@ -59,6 +59,15 @@ describe('Comprehension helpers', () => {
     expect(moved).toBe(true);
   });
 
+  it('a ruby choice is announced by its plain surface, never the markup (Station 16+ choices)', () => {
+    const qs: ComprehensionQuestion[] = [{ q: '{何|なに}を{買|か}いましたか。', choices: ['{桜|さくら}えび', '{地図|ちず}', 'パン', 'お{茶|ちゃ}'], answer: 0 }];
+    mount(qs);
+    const labels = Array.from(root.querySelectorAll('.comp__choice')).map((b) => b.getAttribute('aria-label') ?? '');
+    expect(labels[0]).toBe(`${S.questionChoiceN.replace('{n}', '1')}: 桜えび`);
+    expect(labels.some((l) => /[{|}]/.test(l))).toBe(false);
+    expect(root.querySelectorAll('.comp__choice ruby').length).toBeGreaterThan(0);
+  });
+
   it('passes: two of three or better', () => {
     expect(passes(2, 3)).toBe(true);
     expect(passes(3, 3)).toBe(true);

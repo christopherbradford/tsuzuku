@@ -8,6 +8,7 @@ import { installServices, nullStt, resetServices, type SttService } from '@/shar
 import { bus } from '@/shared/events';
 import type { AttemptResult, Step } from '@/shared/session-types';
 import { epochDay } from '@/shared/time';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore, type TestStoreOptions } from '@/store/testing';
 import { S } from '../strings';
 import { SayThreeWays, gradeThreeWays, implicitGrammarGrade, meta } from './SayThreeWays';
@@ -67,6 +68,12 @@ function type(input: HTMLInputElement, text: string): void {
   act(() => {
     input.value = text;
     input.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+}
+/** A frame key pressed outside any input (the frame listens on window, capture phase). */
+function press(key: string): void {
+  act(() => {
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
   });
 }
 async function clickAsync(sel: string): Promise<void> {
@@ -207,5 +214,56 @@ describe('<SayThreeWays>', () => {
     expect(root.querySelector('.three-ways')?.getAttribute('data-mode')).toBe('type');
     expect(root.querySelector('[data-action="speak-casual"]')).toBeNull();
     expect(root.querySelector('.speak__prompt')?.textContent).toBe(S.threeWaysPrompt);
+  });
+});
+
+describe('<SayThreeWays> inside the frame (contract #32: the hint key)', () => {
+  async function mountInFrame(s: Step) {
+    const onHint = vi.fn();
+    const onResult = vi.fn<(r: AttemptResult) => void>();
+    await act(async () => {
+      render(
+        <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => clock} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <SayThreeWays step={s} item={MASU} feel="dojo" furigana="always" jj={false} speedTier={3} exposures={0} onResult={onResult} onHint={onHint} onReplay={() => undefined} requestJudge={() => Promise.resolve(true)} />
+        </ExerciseFrame>,
+        root,
+      );
+      await Promise.resolve();
+    });
+    return { onHint, onResult };
+  }
+
+  it("the frame's ? key reveals the model once; the Hint button disappears after it", async () => {
+    await setup();
+    const { onHint, onResult } = await mountInFrame(step());
+    expect(root.querySelector('.exercise-frame__hint')).not.toBeNull();
+    expect(root.textContent).not.toContain(S.threeWaysModel);
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    expect(root.textContent).toContain(S.threeWaysModel);
+    expect(root.textContent).toContain('パンを食べます。');
+    expect(root.querySelector('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    const [c, po, k] = inputs() as [HTMLInputElement, HTMLInputElement, HTMLInputElement];
+    type(c, 'パンを食べる');
+    type(po, 'パンを食べます');
+    type(k, 'パンをいただきます');
+    await clickAsync('[data-action="check"]');
+    expect(onResult.mock.calls[0]![0].hintUsed).toBe(true);
+  });
+
+  it("the frame's Hint button is the same reveal; with no model sentence nothing is offered", async () => {
+    await setup();
+    const { onHint } = await mountInFrame(step());
+    await clickAsync('.exercise-frame__hint');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    expect(root.textContent).toContain(S.threeWaysModel);
+
+    render(null, root);
+    await setup();
+    await mountInFrame(step({ params: { promptEn: 'I eat bread.', mode: 'type' } }));
+    expect(root.querySelector('[data-action="model"]')).toBeNull();
+    expect(root.querySelector('.exercise-frame__hint')).toBeNull();
   });
 });

@@ -22,4 +22,4 @@ export { judgeRate, shouldJudge, judgeOptions, rubricJudge, perceptionJudge, rub
 export { KIAI_RULES, kiaiInit, kiaiStep, comboTier, dueRecoveries } from './kiai';
 export { isNemesis, nemesisPhase, duelProgress, defeat, nextDuelKey, wonToday } from './leech';
 export { meaningChoices, kanaGrid, kanjiLookalikes, clozeTiles, scrambleTiles, PARTICLES, particleOptions, minimalPairPartner } from './distractors';
-export { conjugate, applicableForms, isConjugable, acceptedSurfaces, applicableFormsFor, conjugateAll, type Conjugation } from './conjugate';
+export { conjugate, applicableForms, isConjugable, acceptedSurfaces, applicableFormsFor, conjugateAll, DEFECTIVE, defectiveFormsFor, VERB_FORMS, ADJ_FORMS, isVerbPos, type Conjugation } from './conjugate';

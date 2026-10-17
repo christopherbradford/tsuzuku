@@ -10,10 +10,13 @@
  * notes from Sensei (overtraining, cramming, backlog), the one-tap ledger
  * prompt (10 / 20 / 30 / 60 → `addLedgerEntry`), "Good training. Rest." and
  * the Hanko: "Another Kata?" only while reviews remain due, else "Rest."
- * Day one of a Welcome Back shows the preview only (design 03 §10).
+ * Day one of a Welcome Back shows the preview only (design 03 §10). Promoted
+ * items are named by their surface (`itemHead` through the `loader`, which
+ * holds every item the run just drilled), never by raw id.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { content as appContent, type ContentLoader } from '../content/loader';
 import type { BadgeId, WallpaperId } from '../shared/catalog';
 import { QUESTS } from '../shared/catalog';
 import { sfx } from '../shared/audio';
@@ -26,6 +29,7 @@ import { BADGE_DEFS, WALLPAPER_DEFS, addLedgerEntry, store } from '../store';
 import { dueCount, streakState, type FlameState } from '../store/derived';
 import { BELT_NAME } from './engine-strings';
 import { ledgerPromptDue, omikuji, type CeremonyEvent } from './end-card';
+import { itemHead } from './item-head';
 import { S, fill } from './strings';
 import './EndCard.css';
 
@@ -39,6 +43,8 @@ export interface EndCardProps {
   onRest(): void;
   /** Additive: the runner's `ceremonies` (B's reward events during this session). */
   ceremonies?: readonly CeremonyEvent[];
+  /** Additive: content source the promoted items are named through (`runner.contentLoader`; default: the app loader). */
+  loader?: ContentLoader;
 }
 
 export const LEDGER_MINUTES: readonly number[] = [10, 20, 30, 60];
@@ -101,6 +107,7 @@ export function ceremonyLines(events: readonly CeremonyEvent[]): { key: string; 
 }
 
 export function EndCard(p: EndCardProps): JSX.Element {
+  const loader = p.loader ?? appContent;
   const r = p.result;
   const t = r.tally;
   const zen = r.zen;
@@ -188,7 +195,9 @@ export function EndCard(p: EndCardProps): JSX.Element {
                     <span class="belt-flip end-card__belt" data-belt={pr.to} aria-hidden="true">
                       <span lang="ja">{BELT_LABEL[pr.to].ja}</span>
                     </span>
-                    <span class="end-card__item">{pr.itemId}</span>
+                    <span class="end-card__item" lang="ja">
+                      {itemHead(loader.get(pr.itemId), pr.itemId)}
+                    </span>
                     <span class="end-card__to">{fill(S.promotedTo, { belt: BELT_LABEL[pr.to].en })}</span>
                   </li>
                 ))}

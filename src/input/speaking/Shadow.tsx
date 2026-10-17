@@ -4,7 +4,9 @@
  * A sentence (a story line, an item's example or a set phrase) with its
  * pitch contour; TTS plays the PLAIN surface; the learner says it back.
  *  · Text hides after the first play once every content word of the line
- *    is item-belt Green ("these words are yours"); "Show the text" is a hint.
+ *    is item-belt Green ("these words are yours"); "Show the text" is a hint,
+ *    also offered as the frame's `?` / Hint button while the text is hidden
+ *    (`useExerciseKeys.onHint`, contract #32).
  *  · Recognition path (`services.stt`, when the learner opted in through
  *    `settings.speaking` and the browser has a recognizer): best of ≤ 5
  *    alternatives through `scoring.scoreRecognition` (plain / kana / ruby
@@ -366,11 +368,14 @@ function ShadowBody(p: ExerciseProps & ShadowExtraProps): JSX.Element {
       });
   };
 
+  const hidden = hideWhenGreen && plays > 0 && !revealed && !done && hasVoice;
   useExerciseKeys({
     onReplay: replay,
     onSubmit: () => {
       if (!live.current.selfPath) void speakNow();
     },
+    // The frame's `?` / Hint button is the same "Show the text" hint; gone once shown.
+    onHint: hidden ? reveal : undefined,
   });
 
   if (!line) {
@@ -383,7 +388,6 @@ function ShadowBody(p: ExerciseProps & ShadowExtraProps): JSX.Element {
     );
   }
 
-  const hidden = hideWhenGreen && plays > 0 && !revealed && !done && hasVoice;
   const kind = done ? (done.rating === 3 ? 'correct' : done.rating === 2 ? 'near' : 'wrong') : undefined;
   const verdict = done ? (done.path === 'recognition' ? (done.rating === 3 ? S.shadowGood : done.rating === 2 ? S.shadowHard : S.shadowAgain) : done.rating === 3 ? S.shadowSelfGood : done.rating === 2 ? S.shadowSelfHard : S.shadowSelfAgain) : '';
   const meaning = line.en ?? p.step.params.promptEn;

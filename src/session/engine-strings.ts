@@ -26,6 +26,7 @@ export const S = {
   blockWelcome: 'Welcome Back',
   blockNotes: "Sensei's Notes",
   blockNemesis: 'Nemesis',
+  blockGrudge: '遺恨帳 Grudge List',
   blockGauntlet: 'Dōjō Yaburi',
   blockRapid: 'Rapid Fire',
   blockGojuon: 'Gojūon Fighter',
@@ -129,6 +130,7 @@ export const S = {
 
   // Scroll flow (design 05 §3)
   pretestLine: 'Miss these; that’s the point.',
+  movingOn: 'Moving on. This one returns tomorrow.',
   kanjiUnlocksIn: 'Components first. This kanji unlocks in {n} days.',
   kanjiNeedsComponents: 'Components first. This kanji waits for its parts.',
   noticingLine: 'Now see them in the road.',

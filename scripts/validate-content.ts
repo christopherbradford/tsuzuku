@@ -1,5 +1,5 @@
 /**
- * TSUZUKU — content validator (CONTENT_GUIDE §18, rules V01–V36).
+ * TSUZUKU — content validator (CONTENT_GUIDE §18, rules V01–V39).
  *
  *   node scripts/validate-content.ts [--strict] [--json] [--only <glob-or-path>] [--fix-tokenids] [--root <dir>]
  *
@@ -12,9 +12,19 @@
  *  - V20 (coverage), V34 (quotas), V35 (manifest), V36 (J-J definitions):
  *    WARN unless `--strict` AND `stations/NN.json` bundles exist; then they
  *    are computed against the bundles and FAIL, and the linker writes
- *    `StoryLine.tokenIds` (also with `--fix-tokenids`).
+ *    `StoryLine.tokenIds` (also with `--fix-tokenids`). V20 also carries two
+ *    always-WARN notes: an allowlisted word detected but not in `vocabIds`,
+ *    and `vocabIds` covering < 60 % of the allowlisted words detected.
+ *  - V37 (pos vs verb ending), V38 (repeated kanji component) and V39 (the same
+ *    michikusa ja/kana collected at two stations): WARN only, informational;
+ *    the content is kept as written.
  *  - `_meta/components.json` is a ContentFile<ComponentDef> exempt from the
  *    150 cap; `_meta/denylist.json` is not a ContentFile (read by V30 only).
+ *
+ * Performance notes: V30 compiles the denylist once — Latin terms into a few
+ * case-insensitive, word-boundary-aware alternation regexes (longest first),
+ * other terms into a first-character bucket scan — instead of one regex per
+ * term per string; V36 caches the match pool per station.
  */
 import { readdirSync, readFileSync, statSync, existsSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve, dirname, sep } from 'node:path';
@@ -55,9 +65,10 @@ import type {
   VocabItem,
   ContentManifest,
 } from '../src/content/types.ts';
-import { KANJI_RE, hasKanji, toKana, toPlain } from '../src/content/ruby.ts';
-import { buildIndex, listContentFiles } from './build-content-index.ts';
-import { allowlistStationFor, buildMatchPool, bundlesFromCorpus, cumulativeIds, FUNCTION_TOKENS, matchToken, stringifyJson } from './assign-stations.ts';
+import { KANJI_RE, hasKanji, parseRuby, toKana, toPlain } from '../src/content/ruby.ts';
+import type { RubySegment } from '../src/content/ruby.ts';
+import { buildIndex, deriveContentVersion, isDerivedVersion, listContentFiles } from './build-content-index.ts';
+import { allowlistStationFor, buildMatchPool, bundlesFromCorpus, cumulativeIds, FUNCTION_TOKENS, matchToken, stemApplies, stringifyJson } from './assign-stations.ts';
 import type { MatchPool } from './assign-stations.ts';
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -469,6 +480,8 @@ interface Ctx {
   kana: Map<string, KanaItem>;
   stories: Map<string, StoryItem>;
   storyNames: Set<string>;
+  /** `word\u0000kana` of every conjugation head word → the pos values the golden table gives it (V37 ground truth). */
+  conjPos: Map<string, Set<string>>;
   linked: number;
   writeTokenIds: boolean;
 }
@@ -505,6 +518,7 @@ export function validate(root: string, o: ValidateOptions = {}): ValidateResult 
     kana: new Map(),
     stories: new Map(),
     storyNames: new Set(),
+    conjPos: new Map(),
     linked: 0,
     writeTokenIds: (!!o.strict || !!o.fixTokenIds) && bundles.size > 0,
   };
@@ -705,6 +719,16 @@ function indexFile(ctx: Ctx, f: LoadedFile): void {
         if (Array.isArray(s.names)) for (const n of s.names) if (typeof n === 'string') ctx.storyNames.add(n);
         break;
       }
+      case 'conjugation': {
+        const c = it as unknown as ConjugationGoldenEntry;
+        if (typeof c.word === 'string' && typeof c.kana === 'string' && typeof c.pos === 'string') {
+          const key = `${c.word}\u0000${c.kana}`;
+          const set = ctx.conjPos.get(key) ?? new Set<string>();
+          set.add(c.pos);
+          ctx.conjPos.set(key, set);
+        }
+        break;
+      }
       default:
         break;
     }
@@ -801,30 +825,110 @@ function checkStrings(ctx: Ctx, file: string, id: string | undefined, v: Json, p
   }
 }
 
-const denyCache = new WeakMap<Denylist, { latin: RegExp[]; other: string[]; patterns: RegExp[] }>();
+/** A denylist compiled for V30 (see `compileDenylist`). */
+export interface CompiledDenylist {
+  /** Printable-ASCII terms, in chunks: `(?:^|[^A-Za-z])(t1|t2|…)(?=[^A-Za-z]|$)`, case-insensitive, longest first. */
+  latin: RegExp[];
+  /** lower-cased Latin term → the term as the denylist spells it. */
+  latinTerms: Map<string, string>;
+  /** Every other term, bucketed by first UTF-16 code unit, longest first; matched as a case-sensitive substring. */
+  other: Map<string, string[]>;
+  patterns: RegExp[];
+  /** Patterns that failed to compile. */
+  invalidPatterns: string[];
+  /** True when every Latin term contains a letter, so a string without Latin letters can skip the Latin regexes. */
+  latinNeedsLetter: boolean;
+}
+
+/** What V30 found in a string: the offending term as the denylist spells it, or the pattern source. */
+export interface DenyHit {
+  kind: 'term' | 'pattern';
+  value: string;
+}
+
+const LATIN_TERM_RE = /^[\x20-\x7e]+$/;
+/** Terms per alternation regex; ≈ 8 regexes for the 1,900 Latin terms of the real denylist. */
+const LATIN_CHUNK = 250;
+
+function escapeRe(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Compiles a denylist once. Semantics are those of the original one-regex-per-term
+ * matcher: a printable-ASCII term matches case-insensitively when not adjoined by a
+ * Latin letter on either side (`(^|[^A-Za-z])term([^A-Za-z]|$)`); any other term matches
+ * as a case-sensitive substring; patterns are `iu` regexes.
+ */
+export function compileDenylist(d: Denylist): CompiledDenylist {
+  const c: CompiledDenylist = { latin: [], latinTerms: new Map(), other: new Map(), patterns: [], invalidPatterns: [], latinNeedsLetter: true };
+  const latin: string[] = [];
+  for (const t of d.terms) {
+    if (!t) continue;
+    if (LATIN_TERM_RE.test(t)) {
+      const key = t.toLowerCase();
+      if (c.latinTerms.has(key)) continue;
+      c.latinTerms.set(key, t);
+      latin.push(t);
+      if (!LATIN_RE.test(t)) c.latinNeedsLetter = false;
+    } else {
+      const bucket = c.other.get(t.charAt(0)) ?? [];
+      if (!bucket.includes(t)) bucket.push(t);
+      c.other.set(t.charAt(0), bucket);
+    }
+  }
+  latin.sort((a, b) => b.length - a.length || (a < b ? -1 : a > b ? 1 : 0));
+  for (let i = 0; i < latin.length; i += LATIN_CHUNK) {
+    const alt = latin
+      .slice(i, i + LATIN_CHUNK)
+      .map(escapeRe)
+      .join('|');
+    c.latin.push(new RegExp(`(?:^|[^A-Za-z])(${alt})(?=[^A-Za-z]|$)`, 'i'));
+  }
+  for (const bucket of c.other.values()) bucket.sort((a, b) => b.length - a.length);
+  for (const p of d.patterns) {
+    try {
+      c.patterns.push(new RegExp(p, 'iu'));
+    } catch {
+      c.invalidPatterns.push(p);
+    }
+  }
+  return c;
+}
+
+/** First denylist hit in `s` (Latin terms, then other terms, then patterns), or null. */
+export function findDenylisted(c: CompiledDenylist, s: string): DenyHit | null {
+  if (c.latin.length > 0 && (!c.latinNeedsLetter || LATIN_RE.test(s))) {
+    for (const re of c.latin) {
+      const m = re.exec(s);
+      if (m) return { kind: 'term', value: c.latinTerms.get((m[1] as string).toLowerCase()) ?? (m[1] as string) };
+    }
+  }
+  if (c.other.size > 0) {
+    for (let i = 0; i < s.length; i++) {
+      const bucket = c.other.get(s.charAt(i));
+      if (!bucket) continue;
+      for (const t of bucket) if (s.startsWith(t, i)) return { kind: 'term', value: t };
+    }
+  }
+  for (const re of c.patterns) if (re.test(s)) return { kind: 'pattern', value: re.source };
+  return null;
+}
+
+const denyCache = new WeakMap<Denylist, CompiledDenylist>();
 function checkDenylist(ctx: Ctx, file: string, id: string | undefined, s: string, path: string): void {
   const d = ctx.denylist;
   if (!d) return;
   let c = denyCache.get(d);
   if (!c) {
-    c = { latin: [], other: [], patterns: [] };
-    for (const t of d.terms) {
-      if (!t) continue;
-      if (/^[\x20-\x7e]+$/.test(t)) c.latin.push(new RegExp(`(^|[^A-Za-z])${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^A-Za-z]|$)`, 'i'));
-      else c.other.push(t);
-    }
-    for (const p of d.patterns) {
-      try {
-        c.patterns.push(new RegExp(p, 'iu'));
-      } catch {
-        warn(ctx, '_meta/denylist.json', 'V30', `invalid pattern ${JSON.stringify(p)}`);
-      }
-    }
+    c = compileDenylist(d);
+    for (const p of c.invalidPatterns) warn(ctx, '_meta/denylist.json', 'V30', `invalid pattern ${JSON.stringify(p)}`);
     denyCache.set(d, c);
   }
-  for (const re of c.latin) if (re.test(s)) return fail(ctx, file, 'V30', `${path} contains denylisted term (${re.source.slice(12, -12)})`, id);
-  for (const t of c.other) if (s.includes(t)) return fail(ctx, file, 'V30', `${path} contains denylisted term "${t}"`, id);
-  for (const re of c.patterns) if (re.test(s)) return fail(ctx, file, 'V30', `${path} matches denylist pattern /${re.source}/`, id);
+  const hit = findDenylisted(c, s);
+  if (!hit) return;
+  if (hit.kind === 'term') fail(ctx, file, 'V30', `${path} contains denylisted term "${hit.value}"`, id);
+  else fail(ctx, file, 'V30', `${path} matches denylist pattern /${hit.value}/`, id);
 }
 
 /* ── ruby-field checks (V11 / V12 / V13 / V31) ───────────────────────────── */
@@ -915,6 +1019,10 @@ function str(v: unknown): string | undefined {
 function strs(v: unknown): string[] {
   return Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 }
+/** A surface without its affix/counter marker: `〜泊` → `泊`, `不〜` → `不` (what V16, V20 and V36 compare against). */
+function bare(s: string): string {
+  return s.replace(/^〜/, '').replace(/〜$/, '');
+}
 
 function checkSentenceExamples(ctx: Ctx, file: string, id: string, examples: unknown, level: Exclude<Level, 'kana' | 'dan'> | null, path: string): string[] {
   const plains: string[] = [];
@@ -940,11 +1048,45 @@ function checkSentenceExamples(ctx: Ctx, file: string, id: string, examples: unk
   return plains;
 }
 
+/**
+ * V33 proper-noun allowlist: a gloss may start uppercase when its first word is one of
+ * these (weekday and month names, nationality/language adjectives, festival and
+ * religion names, place names, titles) or an all-caps acronym of 2–4 letters (TV, UN).
+ * Matched on the first word, so "Japanese-style room", "New Year's Eve" and
+ * "Buddhist temple" all pass; everything else still warns.
+ */
+const PROPER_NOUN_STARTS: readonly string[] = [
+  // weekdays and months
+  'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
+  'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
+  // nationality / language / culture adjectives and nouns
+  'Japanese', 'English', 'Western', 'Eastern', 'Chinese', 'Korean', 'American', 'European', 'Asian', 'African', 'British', 'French', 'German',
+  'Italian', 'Spanish', 'Portuguese', 'Dutch', 'Russian', 'Indian', 'Thai', 'Vietnamese', 'Arabic', 'Latin', 'Greek', 'Roman', 'Indo', 'Sino', 'United',
+  // festivals, holidays and observances
+  'Obon', 'Bon', 'Tanabata', 'Setsubun', 'Hinamatsuri', 'Shichi', 'Tango', 'Hanami', 'Golden', 'New', 'Christmas', 'Halloween', 'Valentine',
+  'Girls', 'Boys', 'Doll', 'Star', 'Coming',
+  // religion, philosophy and deities
+  'Buddhist', 'Buddhism', 'Buddha', 'Shinto', 'Zen', 'Taoism', 'Taoist', 'Confucianism', 'Confucian', 'Christian', 'Christianity', 'Islam', 'Islamic',
+  'Hindu', 'Hinduism', 'Jizo', 'Kannon', 'Amida', 'Nio', 'Fudo', 'Inari', 'Amaterasu', 'Daruma', 'Ebisu', 'Daikoku', 'Benten', 'Bishamon',
+  // places and eras
+  'Europe', 'China', 'America', 'Japan', 'Asia', 'Africa', 'Korea', 'India', 'Russia', 'Britain', 'England', 'France', 'Germany', 'Italy', 'Spain',
+  'Australia', 'Canada', 'Brazil', 'Mexico', 'Tokyo', 'Kyoto', 'Osaka', 'Edo', 'Nara', 'Hokkaido', 'Okinawa', 'Kanto', 'Kansai', 'Kyushu', 'Shikoku',
+  'Honshu', 'Fuji', 'Mt.', 'Mount', 'Pacific', 'Atlantic', 'Tokaido', 'Tōkaidō', 'Nakasendo', 'Meiji', 'Heian', 'Showa', 'Shōwa', 'Taisho', 'Taishō',
+  'Heisei', 'Reiwa', 'Renaissance', 'Middle', 'Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn', 'Mercury', 'Diet', 'Olympics', 'Olympic', 'Nobel',
+  // titles
+  'Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Prof.',
+];
+const PROPER_NOUN_START_RE = new RegExp(`^(?:${PROPER_NOUN_STARTS.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')}|[A-Z]{2,4})(?=$|[\\s,;:(/'’-])`);
+
+function startsWithProperNoun(g: string): boolean {
+  return PROPER_NOUN_START_RE.test(g);
+}
+
 function checkGloss(ctx: Ctx, file: string, id: string, g: string, path: string, opts: { verb?: boolean; properNoun?: boolean; kanji?: boolean; anyCase?: boolean }): void {
   if (chars(g) > 40) fail(ctx, file, 'V15', `${path} gloss is ${chars(g)} chars > 40`, id);
   if (/\.$/.test(g)) warn(ctx, file, 'V33', `${path} gloss ends with a period`, id);
   if (g.includes('/')) warn(ctx, file, 'V33', `${path} gloss contains "/" (split into separate glosses)`, id);
-  if (!opts.properNoun && !opts.anyCase && /^[A-Z]/.test(g) && g !== 'I' && !/^I['’ ]/.test(g)) warn(ctx, file, 'V33', `${path} gloss starts uppercase: "${g}"`, id);
+  if (!opts.properNoun && !opts.anyCase && /^[A-Z]/.test(g) && g !== 'I' && !/^I['’ ]/.test(g) && !startsWithProperNoun(g)) warn(ctx, file, 'V33', `${path} gloss starts uppercase: "${g}"`, id);
   if (opts.verb && !/^to /.test(g) && !/^\(/.test(g)) warn(ctx, file, 'V33', `${path} verb gloss should begin with "to ": "${g}"`, id);
   if (opts.kanji && /^to /.test(g)) warn(ctx, file, 'V33', `${path} kanji keyword should not begin with "to ": "${g}"`, id);
 }
@@ -1047,6 +1189,8 @@ function checkVocab(ctx: Ctx, f: LoadedFile, v: VocabItem): void {
       });
     }
   }
+  // V37 pos vs verb ending (W, informational)
+  if (word !== undefined && kana !== undefined && (v.pos === 'v1' || v.pos === 'v5')) checkVerbPos(ctx, file, id, v.pos, word, kana);
   // V18 numeric sanity
   if (v.pitch !== undefined) {
     if (kana !== undefined && (!Number.isInteger(v.pitch) || v.pitch < 0 || v.pitch > moraCount(kana))) fail(ctx, file, 'V18', `pitch ${String(v.pitch)} outside [0, ${moraCount(kana)}] for "${kana}"`, id);
@@ -1075,14 +1219,86 @@ function checkVocab(ctx: Ctx, f: LoadedFile, v: VocabItem): void {
       const plain = toPlain(d.ja);
       if (chars(plain) > 45) fail(ctx, file, 'V15', `definitionJa.ja is ${chars(plain)} plain chars > 45`, id);
       if (word !== undefined && kana !== undefined) {
-        for (const t of [word, kana, ...strs(v.altForms)]) {
-          if (t.length >= 1 && (plain.includes(t) || toKana(d.ja).includes(t))) {
-            soft(ctx, file, 'V36', `definitionJa contains the target "${t}"`, id);
-            break;
-          }
-        }
+        const hit = definitionContainsTarget(d.ja, plain, [word, kana, ...strs(v.altForms)], kana);
+        if (hit !== null) soft(ctx, file, 'V36', `definitionJa contains the target "${hit}"`, id);
       }
     }
+  }
+}
+
+/**
+ * V36: the first target surface (word / kana / altForm, `〜` markers stripped)
+ * that the definition contains, or null. A surface of two or more characters
+ * counts when it appears in the plain text or in the reading text. A
+ * single-character surface (〜泊, 〜的, 例, 差 …) would false-positive on every
+ * other word that reuses the kanji (泊 in 泊まる, 的 in 目的), so it counts only
+ * when a ruby `{X|yomi}` writes that kanji with the target's own reading.
+ */
+export function definitionContainsTarget(ja: string, plain: string, surfaces: readonly string[], kana: string): string | null {
+  const reading = bare(kana);
+  let rubyBases: RubySegment[] | null = null;
+  for (const raw of surfaces) {
+    const t = bare(raw);
+    if (t.length === 0) continue;
+    if (t.length >= 2) {
+      if (plain.includes(t) || toKana(ja).includes(t)) return raw;
+      continue;
+    }
+    rubyBases ??= parseRuby(ja).filter((s) => s.reading !== null);
+    if (rubyBases.some((s) => s.base === t && s.reading === reading)) return raw;
+  }
+  return null;
+}
+
+/* ── V37 pos vs verb ending ──────────────────────────────────────────────── */
+
+/**
+ * Ichidan (v1) dictionary forms end in an い-row or え-row mora followed by る:
+ * いる きる ぎる しる じる ちる ぢる にる ひる びる ぴる みる りる ·
+ * える ける げる せる ぜる てる でる ねる へる べる ぺる める れる (and their katakana forms, ウケる).
+ */
+export const ICHIDAN_ENDING_RE = /(?:[いきぎしじちぢにひびぴみりえけげせぜてでねへべぺめれ]|[イキギシジチヂニヒビピミリエケゲセゼテデネヘベペメレ])る$/;
+
+/**
+ * Common ichidan verbs whose dictionary form looks like a godan one (え/い-mora + る),
+ * keyed by the written word so きる (着る v1 / 切る v5) and かえる (変える v1 / 帰る v5)
+ * stay apart. Consulted by V37 only when the conjugation golden table has no entry.
+ */
+export const KNOWN_ICHIDAN: ReadonlySet<string> = new Set([
+  '食べる', '見る', '寝る', '起きる', '出る', '開ける', '閉める', '教える', '借りる', '着る', '浴びる', '降りる', '覚える', '考える', '答える',
+  '入れる', '生まれる', '忘れる', '疲れる', '止める', '始める', '調べる', '捨てる', '伝える', '集める', '決める', '届ける', '続ける', '比べる', '逃げる',
+  '投げる', '迎える', '見せる', '見える', '聞こえる', '足りる', '信じる', '感じる', '似る', '煮る', '出来る', 'できる', '遅れる', '慣れる', '別れる',
+  '晴れる', '倒れる', '流れる', '離れる', '触れる', '訪れる', '現れる', '壊れる', '折れる', '売れる', '取れる', '切れる', '割れる', '増える', '植える',
+  '変える', '替える', '消える', '冷える', '燃える', '覚める', '温める', '褒める', '詰める', '眺める', '勤める', '務める', '認める', '求める', '辞める',
+  '定める', '占める', '締める', '上げる', '下げる', '受ける', '掛ける', 'かける', '避ける', '助ける', '付ける', '着ける', '漬ける', '分ける', '見つける',
+  '片付ける', '出かける', '生きる', '過ぎる', '落ちる', '用いる', '率いる', '強いる', '老いる', '報いる', '延びる', '伸びる', '滅びる', '詫びる', '試みる',
+  '顧みる', '省みる', '鑑みる', '得る', '経る', '寄せる', '任せる', '乗せる', '載せる', '知らせる', '合わせる', '済ませる', '混ぜる', '撫でる', '茹でる',
+  '建てる', '立てる', '育てる', '当てる', '隔てる', '慌てる', '果てる', '企てる', '跳ねる', '尋ねる', '訪ねる', '重ねる', '兼ねる', '真似る', '連れる',
+  '恐れる', '暮れる', '濡れる', '枯れる', '揺れる', '腫れる', '溢れる', '紛れる', '乱れる', '優れる', '隠れる', '抱える', '耐える', '堪える', '支える',
+  '控える', '構える', '整える', '唱える', '称える', '甘える', '栄える', '肥える', '越える', '超える', '凍える', '震える', '揃える', '数える', '蓄える',
+  '据える', '飢える', '見分ける', '明ける', '設ける', '儲ける', '砕ける', '欠ける', '焼ける', '溶ける', '解ける', '老ける', '更ける', '怠ける', '化ける',
+  '負ける', '預ける', '痩せる', '見つめる', '勧める', '進める', '攻める', '責める', '泊める', '埋める', '染める', '諦める', '確かめる', '苦しめる', '含める',
+  '緩める', '丸める', 'まとめる', 'あきらめる', '与える', '加える', '終える', '捉える', '押さえる', '抑える', '備える', '供える', '訴える', '例える', '応える',
+  '違える', '間違える', '着替える', '乗り換える', '生える', '映える', '冴える', '叶える', '仕える', '沈める', '努める', '込める', '慰める',
+]);
+
+function checkVerbPos(ctx: Ctx, file: string, id: string, pos: 'v1' | 'v5', word: string, kana: string): void {
+  const w = bare(word);
+  const k = bare(kana);
+  const attested = ctx.conjPos.get(`${w}\u0000${k}`);
+  if (attested && attested.size > 0) {
+    // the conjugation golden table is ground truth where the head word appears
+    if (!attested.has(pos)) {
+      const truth = [...attested].filter((p) => p === 'v1' || p === 'v5' || p === 'v-irr');
+      if (truth.length > 0) warn(ctx, file, 'V37', `pos "${pos}" but the conjugation table lists "${w}" as ${truth.join('/')}; suggested pos ${truth[0]}`, id);
+    }
+    return;
+  }
+  if (pos === 'v1') {
+    if (/(?:する|くる|来る)$/.test(w)) warn(ctx, file, 'V37', `pos "v1" but "${w}" ends in する/くる; suggested pos v-irr (or n-suru for noun + する)`, id);
+    else if (!ICHIDAN_ENDING_RE.test(k)) warn(ctx, file, 'V37', `pos "v1" but kana "${k}" does not end in an ichidan ending (い/え-row mora + る); suggested pos v5`, id);
+  } else if (ICHIDAN_ENDING_RE.test(k) && KNOWN_ICHIDAN.has(w)) {
+    warn(ctx, file, 'V37', `pos "v5" but "${w}" is a known ichidan verb; suggested pos v1`, id);
   }
 }
 
@@ -1091,7 +1307,6 @@ function vocabSurfaces(v: VocabItem): string[] {
   const out = new Set<string>();
   const word = str(v.word) ?? '';
   const kana = str(v.kana) ?? '';
-  const bare = (s: string) => s.replace(/^〜/, '').replace(/〜$/, '');
   if (word) out.add(bare(word));
   if (kana) out.add(bare(kana));
   for (const a of strs(v.altForms)) out.add(bare(a));
@@ -1120,6 +1335,18 @@ function checkKanji(ctx: Ctx, f: LoadedFile, k: KanjiItem): void {
   if (meanings.length < 1 || meanings.length > 3) fail(ctx, file, 'V14', `meanings must have 1–3 entries (${meanings.length})`, id);
   const comps = strs(k.components);
   if (comps.length < 1 || comps.length > 5) fail(ctx, file, 'V14', `components must have 1–5 entries (${comps.length})`, id);
+  // V38 repeated component (W, information only; the list is kept as written)
+  {
+    const seen = new Set<string>();
+    const repeated: string[] = [];
+    for (const c of comps) {
+      const key = c.toLowerCase();
+      if (seen.has(key)) {
+        if (!repeated.includes(c)) repeated.push(c);
+      } else seen.add(key);
+    }
+    if (repeated.length > 0) warn(ctx, file, 'V38', `components repeats ${repeated.map((c) => `"${c}"`).join(', ')} (${comps.join(', ')})`, id);
+  }
   const examples = Array.isArray(k.examples) ? k.examples : [];
   if (examples.length < 2) fail(ctx, file, 'V14', `examples must have ≥ 2 entries (${examples.length})`, id);
   const on = strs(k.on);
@@ -1542,6 +1769,62 @@ function checkDedupe(ctx: Ctx): void {
     if (prev) warn(ctx, ctx.ids.get(g.id) ?? '', 'V32', `grammar pattern "${g.pattern}" duplicated (${prev})`, g.id);
     else patterns.set(g.pattern, g.id);
   }
+  checkMichikusaDuplicates(ctx);
+}
+
+/* ── V39 duplicated michikusa card ───────────────────────────────────────── */
+
+/** Plain-text key for V39: NFKC, no spaces or Japanese punctuation, so `{箱根|はこね}{八里|はちり}` and `{箱根八里|はこねはちり}` collide. */
+function michikusaTextKey(s: string): string {
+  return s.normalize('NFKC').replace(/[\s、。，．・「」『』（）()〜～!?！？…]/g, '');
+}
+
+/**
+ * V39 (W, information only): the same michikusa `ja` (by plain text) or `kana`
+ * collected at two different stations is the same card dealt twice (a proverb at
+ * both Hakone and Shimada). One warning per item naming its twins; the content is
+ * kept as written and the pair goes to the human spot-check list.
+ */
+function checkMichikusaDuplicates(ctx: Ctx): void {
+  interface Card { id: string; file: string; station: number | null; ja: string }
+  const byKey = new Map<string, Card[]>();
+  for (const f of ctx.files) {
+    if (f.pathKind !== 'michikusa' || f.parseError) continue;
+    for (const it of f.items) {
+      const id = str(it['id']);
+      const ja = str(it['ja']);
+      if (id === undefined || ja === undefined) continue;
+      const card: Card = { id, file: f.rel, station: stationNumberOf(id) ?? f.seq, ja: toPlain(ja) };
+      const keys = new Set<string>();
+      const plain = michikusaTextKey(card.ja);
+      if (plain.length > 0) keys.add(`ja\u0000${plain}`);
+      const kana = michikusaTextKey(str(it['kana']) ?? toKana(ja));
+      if (kana.length > 0) keys.add(`kana\u0000${kana}`);
+      for (const key of keys) {
+        const arr = byKey.get(key) ?? [];
+        arr.push(card);
+        byKey.set(key, arr);
+      }
+    }
+  }
+  const twins = new Map<string, Set<string>>(); // id -> other ids
+  const cards = new Map<string, Card>();
+  for (const arr of byKey.values()) {
+    if (arr.length < 2) continue;
+    for (const a of arr) {
+      for (const b of arr) {
+        if (a.id === b.id || a.station === b.station) continue;
+        cards.set(a.id, a);
+        const set = twins.get(a.id) ?? new Set<string>();
+        set.add(b.id);
+        twins.set(a.id, set);
+      }
+    }
+  }
+  for (const [id, others] of twins) {
+    const card = cards.get(id)!;
+    warn(ctx, card.file, 'V39', `michikusa card "${card.ja}" is also collected at ${[...others].sort().join(', ')} (same ja/kana at another station; vary or move one)`, id);
+  }
 }
 
 function checkKanaInventory(ctx: Ctx): void {
@@ -1574,13 +1857,36 @@ function checkConjugationCoverage(ctx: Ctx): void {
     }
   }
   for (const [hk, h] of heads) {
-    const word = hk.split('\u0000')[0];
+    const word = hk.split('\u0000')[0] ?? '';
     const applicable = h.pos === 'adj-i' || h.pos === 'adj-na' ? ADJ_FORMS : CONJ_POS.has(h.pos) ? VERB_FORMS : null;
     if (!applicable) continue;
-    const missing = [...applicable].filter((fm) => !h.forms.has(fm));
+    const exempt = DEFECTIVE_VERB_FORMS[word] ?? EMPTY_FORMS;
+    const missing = [...applicable].filter((fm) => !h.forms.has(fm) && !exempt.has(fm));
     if (missing.length > 0) warn(ctx, h.file, 'V26', `head word "${word}" is missing forms: ${missing.join(', ')}`, h.id);
   }
 }
+
+const EMPTY_FORMS: ReadonlySet<string> = new Set();
+/**
+ * V26 defective-verb exemptions: forms these verbs lack in standard usage (or that
+ * are too marginal to teach), so the coverage warning does not ask writers to invent
+ * them. Keyed by the written head word (`ConjugationGoldenEntry.word`).
+ */
+export const DEFECTIVE_VERB_FORMS: Readonly<Record<string, ReadonlySet<string>>> = {
+  // ある: no potential/volitional/passive/causative, no imperative/prohibitive, no 〜たい, no 〜ている (stative)
+  'ある': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai', 'te-iru']),
+  // 要る: stative "to need"; the same gaps (要れる is marginal)
+  '要る': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai', 'te-iru']),
+  // できる: already a potential; no second potential, no volition/command, no 〜たい
+  'できる': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai']),
+  '出来る': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai']),
+  // 分かる: stative; 分かれる would be "to split"
+  '分かる': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive']),
+  'わかる': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive']),
+  // spontaneous perception verbs: no potential/volition/passive/command, no 〜たい
+  '見える': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai']),
+  '聞こえる': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai']),
+};
 
 /* ── V20 + linker ────────────────────────────────────────────────────────── */
 
@@ -1600,6 +1906,9 @@ function buildPool(ctx: Ctx, vocabIds: Iterable<string>, grammarIds: Iterable<st
 function cum(ctx: Ctx, upTo: number, key: 'kanaIds' | 'vocabIds' | 'grammarIds'): Set<string> {
   return cumulativeIds([...ctx.bundles.values()], upTo, key);
 }
+
+/** V20 W: a story's `vocabIds` should name at least this share of the allowlisted words the linker detects in its text. */
+export const VOCAB_IDS_MIN_COVERAGE = 0.6;
 
 function checkStories(ctx: Ctx): void {
   const haveBundles = ctx.bundles.size > 0;
@@ -1677,7 +1986,13 @@ function checkStories(ctx: Ctx): void {
       const target = coverageTargetFor(station, s.bridge === true);
       if (coverage < target) soft(ctx, f.rel, 'V20', `known-token coverage ${(coverage * 100).toFixed(1)} % < ${(target * 100).toFixed(0)} % (${total - known} unknown of ${total})`, s.id);
       const listed = new Set(strs(s.vocabIds));
-      for (const d of detected) if (!listed.has(d) && ctx.vocab.has(d)) warn(ctx, f.rel, 'V20', `allowlisted word ${d} ("${str(ctx.vocab.get(d)?.word) ?? ''}") detected in the text but missing from vocabIds`, s.id);
+      const detectedVocab = [...detected].filter((d) => ctx.vocab.has(d));
+      for (const d of detectedVocab) if (!listed.has(d)) warn(ctx, f.rel, 'V20', `allowlisted word ${d} ("${str(ctx.vocab.get(d)?.word) ?? ''}") detected in the text but missing from vocabIds`, s.id);
+      if (detectedVocab.length > 0) {
+        const covered = detectedVocab.filter((d) => listed.has(d)).length;
+        const share = covered / detectedVocab.length;
+        if (share < VOCAB_IDS_MIN_COVERAGE) warn(ctx, f.rel, 'V20', `vocabIds covers ${covered} of ${detectedVocab.length} allowlisted words detected in the text (${Math.round(share * 100)} % < ${Math.round(VOCAB_IDS_MIN_COVERAGE * 100)} %)`, s.id);
+      }
     }
     if (changed) {
       writeFileSync(f.abs, stringifyJson(f.json as unknown));
@@ -1811,6 +2126,11 @@ function checkManifest(ctx: Ctx): void {
   } catch (e) {
     soft(ctx, 'manifest.json', 'V35', `manifest cannot be rebuilt: ${(e as Error).message}`);
   }
+  // A derived contentVersion must match the content on disk (the loader's Cache API mirror is keyed by it).
+  if (isDerivedVersion(existing.contentVersion)) {
+    const derived = deriveContentVersion(ctx.root);
+    if (derived !== existing.contentVersion) soft(ctx, 'manifest.json', 'V35', `contentVersion ${existing.contentVersion} is stale: the content now hashes to ${derived} (run content:index)`);
+  }
   const listed = new Set((existing.files ?? []).map((f) => f.path));
   for (const f of listContentFiles(ctx.root)) if (!listed.has(f)) soft(ctx, 'manifest.json', 'V35', `file ${f} is not listed in the manifest`);
   for (const p of listed) if (!existsSync(join(ctx.root, p))) soft(ctx, 'manifest.json', 'V35', `listed file ${p} is missing`);
@@ -1823,6 +2143,16 @@ function checkManifest(ctx: Ctx): void {
 
 function checkDefinitions(ctx: Ctx): void {
   const haveBundles = ctx.bundles.size > 0;
+  // The cumulative pool depends only on the station, so build it once per station.
+  const pools = new Map<number, MatchPool>();
+  const poolFor = (station: number): MatchPool => {
+    let p = pools.get(station);
+    if (!p) {
+      p = buildPool(ctx, cum(ctx, station, 'vocabIds'), cum(ctx, station, 'grammarIds'), []);
+      pools.set(station, p);
+    }
+    return p;
+  };
   for (const f of ctx.files) {
     if (f.pathKind !== 'vocab') continue;
     for (const it of f.items) {
@@ -1835,43 +2165,82 @@ function checkDefinitions(ctx: Ctx): void {
       if (!isObject(v.definitionJa as unknown as Json) || typeof v.definitionJa?.ja !== 'string') continue;
       if (!haveBundles || typeof v.station !== 'number') continue;
       const plain = toPlain(v.definitionJa.ja);
-      const pool = buildPool(ctx, cum(ctx, v.station, 'vocabIds'), cum(ctx, v.station, 'grammarIds'), []);
-      const unknown = unresolvedSpans(pool, plain);
+      const pool = poolFor(v.station);
+      const strictSpans = unresolvedSpans(pool, plain);
+      if (strictSpans.length === 0) continue;
+      // F only where the pre-round-2 segmentation also failed; spans that resolve solely by letting a
+      // single-kanji stem swallow the next kanji (薄暗い ← 薄い, 意外 ← 意, 見抜く ← 見る) are a W: the
+      // definition most likely uses a compound outside the allowlist, but that is a content call, not a gate.
+      const unknown = unresolvedSpans(pool, plain, true);
       if (unknown.length > 0) soft(ctx, f.rel, 'V36', `definitionJa uses words outside the Station ${v.station} allowlist: ${unknown.join(' ')}`, v.id);
+      const viaStem = strictSpans.filter((s) => !unknown.includes(s));
+      if (viaStem.length > 0) warn(ctx, f.rel, 'V36', `definitionJa resolves ${viaStem.map((s) => `"${s}"`).join(' ')} only by letting a single-kanji verb/adjective stem swallow the next kanji (likely a compound outside the Station ${v.station} allowlist)`, v.id);
     }
   }
 }
 
-/** Greedy longest-match segmentation of plain text; returns spans with kanji/katakana that resolve to nothing. */
-function unresolvedSpans(pool: MatchPool, plain: string): string[] {
+/** Every surface the pool can match (exact, stems, hints, function tokens), bucketed by first code unit, longest first. */
+const surfaceIndexCache = new WeakMap<MatchPool, Map<string, string[]>>();
+const oneCharStemCache = new WeakMap<MatchPool, Set<string>>();
+function surfaceIndex(pool: MatchPool): Map<string, string[]> {
+  let idx = surfaceIndexCache.get(pool);
+  if (idx) return idx;
+  idx = new Map();
+  const all = new Set<string>([...pool.exact.keys(), ...pool.prefixes.map((p) => p.s), ...pool.hints.map((h) => h.h), ...FUNCTION_TOKENS]);
+  // Single-kanji stems (有 ← 有る) are kept apart: they resolve only before okurigana (`stemApplies`).
+  const stems = new Set<string>();
+  for (const p of pool.prefixes) if (p.s.length === 1 && !pool.exact.has(p.s)) stems.add(p.s);
+  oneCharStemCache.set(pool, stems);
+  for (const s of all) {
+    if (!s) continue;
+    const bucket = idx.get(s.charAt(0)) ?? [];
+    bucket.push(s);
+    idx.set(s.charAt(0), bucket);
+  }
+  for (const bucket of idx.values()) bucket.sort((a, b) => b.length - a.length);
+  surfaceIndexCache.set(pool, idx);
+  return idx;
+}
+
+const UNRESOLVED_SPAN_RE = /[㐀-䶿一-鿿々〆ァ-ヺ]/;
+const HIRAGANA_OR_BAR_RE = /[ぁ-ゖー]/;
+
+/**
+ * Greedy longest-match segmentation of plain text; returns spans with kanji/katakana that resolve to nothing.
+ * A single-kanji stem (有 ← 有る) resolves only before okurigana (`stemApplies`); `lenient` lets it absorb any
+ * following kanji — the pre-round-2 behaviour, kept so that V36 can report the difference as a warning.
+ */
+function unresolvedSpans(pool: MatchPool, plain: string, lenient = false): string[] {
+  const idx = surfaceIndex(pool);
+  const stems = lenient ? new Set<string>() : (oneCharStemCache.get(pool) ?? new Set<string>());
   const out: string[] = [];
-  const cs = [...plain];
-  let i = 0;
   let pending = '';
   const flush = () => {
-    if (pending && /[㐀-䶿一-鿿々〆ァ-ヺ]/.test(pending)) out.push(pending);
+    if (pending && UNRESOLVED_SPAN_RE.test(pending)) out.push(pending);
     pending = '';
   };
-  const surfaces = [...pool.exact.keys(), ...pool.prefixes.map((p) => p.s), ...pool.hints.map((h) => h.h), ...FUNCTION_TOKENS].sort((a, b) => b.length - a.length);
-  while (i < cs.length) {
-    const rest = cs.slice(i).join('');
+  let off = 0;
+  while (off < plain.length) {
+    const bucket = idx.get(plain.charAt(off));
     let hit: string | null = null;
-    for (const s of surfaces) {
-      if (rest.startsWith(s)) {
-        hit = s;
-        break;
+    if (bucket) {
+      for (const s of bucket) {
+        if (plain.startsWith(s, off) && (!stems.has(s) || stemApplies(s, plain.slice(off)))) {
+          hit = s;
+          break;
+        }
       }
     }
     if (hit) {
       flush();
-      i += [...hit].length;
+      off += hit.length;
       continue;
     }
-    const c = cs[i]!;
-    if (PUNCT_TOKEN_RE.test(c) || /[ぁ-ゖー]/.test(c)) {
+    const c = String.fromCodePoint(plain.codePointAt(off) as number);
+    if (PUNCT_TOKEN_RE.test(c) || HIRAGANA_OR_BAR_RE.test(c)) {
       flush();
     } else pending += c;
-    i++;
+    off += c.length;
   }
   flush();
   return out;

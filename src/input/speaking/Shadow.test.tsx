@@ -8,6 +8,7 @@ import { bus } from '@/shared/events';
 import type { JudgeRequest } from '@/shared/exercise-types';
 import type { AttemptResult, Step } from '@/shared/session-types';
 import { epochDay } from '@/shared/time';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore, type TestStoreOptions } from '@/store/testing';
 import { S } from '../strings';
@@ -111,6 +112,18 @@ async function clickAsync(sel: string): Promise<void> {
     el!.click();
     await Promise.resolve();
     await Promise.resolve();
+  });
+}
+/** Lets the first play (an awaited `speak()` behind the frame's deferred effects) finish. */
+async function settle(): Promise<void> {
+  await act(async () => {
+    await new Promise((r) => setTimeout(r, 0));
+  });
+}
+/** A frame key pressed outside any input (the frame listens on window, capture phase). */
+function press(key: string): void {
+  act(() => {
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
   });
 }
 function tick(sel: string): void {
@@ -367,5 +380,62 @@ describe('<Shadow> self path (no recognizer)', () => {
     expect(q('.speak__note')?.textContent).toBe(S.shadowNoVoice);
     expect(onResult).not.toHaveBeenCalled();
     expect(store.ready.value).toBe(true);
+  });
+});
+
+describe('<Shadow> inside the frame (contract #32: the hint key)', () => {
+  it("the frame's ? key / Hint button is the same Show-the-text hint while the text is hidden, and goes away once shown", async () => {
+    const green = card({ due: TODAY + 20, s: 12, reps: 6, state: 2 });
+    await setup({
+      stt: fakeStt(['私はコーヒーを飲みます']),
+      store: {
+        save: { settings: { speaking: 'recognition' } },
+        cards: { [`${V.私}#rec`]: green, [`${V.コーヒー}#rec`]: green, [`${V.飲む}#rec`]: green, [`${G.は}#cloze`]: green },
+      },
+    });
+    const onHint = vi.fn();
+    const onResult = vi.fn<(r: AttemptResult) => void>();
+    const s = step();
+    await act(async () => {
+      render(
+        <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => clock} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <Shadow step={s} item={null} feel="dojo" furigana="always" jj={false} speedTier={3} exposures={0} onResult={onResult} onHint={onHint} onReplay={() => undefined} requestJudge={() => Promise.resolve(true)} loader={loader} />
+        </ExerciseFrame>,
+        root,
+      );
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+    await settle();
+    expect(q('.shadow')?.getAttribute('data-hidden')).toBe('true');
+    expect(q('.exercise-frame__hint')).not.toBeNull();
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    expect(q('[data-line="true"]')).not.toBeNull();
+    expect(q('.shadow')?.getAttribute('data-hidden')).toBeNull();
+    // used: nothing left to reveal, so the frame hides its Hint button and ? is inert
+    expect(q('.exercise-frame__hint')).toBeNull();
+    press('?');
+    expect(onHint).toHaveBeenCalledTimes(1);
+    await clickAsync('[data-action="speak"]');
+    expect(onResult.mock.calls[0]![0].hintUsed).toBe(true);
+  });
+
+  it('with the text on screen (not all Green) the frame offers no hint', async () => {
+    await setup({ stt: fakeStt(['私はコーヒーを飲みます']), store: { save: { settings: { speaking: 'recognition' } } } });
+    const s = step();
+    await act(async () => {
+      render(
+        <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => clock} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          <Shadow step={s} item={null} feel="dojo" furigana="always" jj={false} speedTier={3} exposures={0} onResult={() => undefined} onHint={() => undefined} onReplay={() => undefined} requestJudge={() => Promise.resolve(true)} loader={loader} />
+        </ExerciseFrame>,
+        root,
+      );
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+    await settle();
+    expect(q('[data-line="true"]')).not.toBeNull();
+    expect(q('.exercise-frame__hint')).toBeNull();
   });
 });

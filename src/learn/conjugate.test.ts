@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CONJ_FORMS, type ConjForm, type ConjugablePos, type ConjugationGoldenEntry, type ContentFile } from '../content/types';
-import { ADJ_FORMS, VERB_FORMS, acceptedSurfaces, applicableForms, applicableFormsFor, conjugate, conjugateAll, isConjugable } from './conjugate';
+import { ADJ_FORMS, VERB_FORMS, acceptedSurfaces, applicableForms, applicableFormsFor, conjugate, conjugateAll, defectiveFormsFor, isConjugable } from './conjugate';
 
 type Row = [word: string, kana: string, pos: ConjugablePos, forms: Partial<Record<ConjForm, string>>];
 
@@ -64,9 +64,12 @@ const VERBS: Row[] = [
   ['乗る', 'のる', 'v5', { te: '乗って', nai: '乗らない', ta: '乗った', potential: '乗れる', masu: '乗ります' }],
   ['作る', 'つくる', 'v5', { te: '作って', nai: '作らない', ta: '作った', potential: '作れる', masu: '作ります' }],
   ['取る', 'とる', 'v5', { te: '取って', nai: '取らない', ta: '取った', potential: '取れる', masu: '取ります' }],
-  ['分かる', 'わかる', 'v5', { te: '分かって', nai: '分からない', ta: '分かった', potential: '分かれる', masu: '分かります' }],
+  // stative: no potential (分かれる = "to split"); causative / volitional / たい are regular
+  ['分かる', 'わかる', 'v5', { te: '分かって', nai: '分からない', ta: '分かった', masu: '分かります', causative: '分からせる', volitional: '分かろう', tai: '分かりたい', 'te-iru': '分かっている' }],
   ['座る', 'すわる', 'v5', { te: '座って', nai: '座らない', ta: '座った', potential: '座れる', masu: '座ります' }],
-  ['要る', 'いる', 'v5', { masu: '要ります', masen: '要りません', mashita: '要りました', 'masen-deshita': '要りませんでした', masho: '要りましょう', te: '要って', nai: '要らない', ta: '要った', nakatta: '要らなかった', potential: '要れる', ba: '要れば', tara: '要ったら' }],
+  // 炒る shares 要る's kana but is a regular godan verb (Station 43)
+  ['炒る', 'いる', 'v5', { masu: '炒ります', te: '炒って', nai: '炒らない', ta: '炒った', potential: '炒れる', volitional: '炒ろう', passive: '炒られる', causative: '炒らせる', 'causative-passive': '炒らせられる', imperative: '炒れ', prohibitive: '炒るな', tai: '炒りたい', 'te-iru': '炒っている' }],
+  ['要る', 'いる', 'v5', { masu: '要ります', masen: '要りません', mashita: '要りました', 'masen-deshita': '要りませんでした', masho: '要りましょう', te: '要って', nai: '要らない', ta: '要った', nakatta: '要らなかった', ba: '要れば', tara: '要ったら' }],
   ['ある', 'ある', 'v5', { masu: 'あります', masen: 'ありません', mashita: 'ありました', 'masen-deshita': 'ありませんでした', masho: 'ありましょう', te: 'あって', nai: 'ない', ta: 'あった', nakatta: 'なかった', ba: 'あれば', tara: 'あったら' }],
   ['くださる', 'くださる', 'v5', { masu: 'くださいます', imperative: 'ください', te: 'くださって', nai: 'くださらない', ta: 'くださった' }],
   // ichidan
@@ -84,11 +87,20 @@ const VERBS: Row[] = [
   ['忘れる', 'わすれる', 'v1', { te: '忘れて', nai: '忘れない', ta: '忘れた', potential: '忘れられる', masu: '忘れます' }],
   ['覚える', 'おぼえる', 'v1', { te: '覚えて', nai: '覚えない', ta: '覚えた', potential: '覚えられる', masu: '覚えます' }],
   ['考える', 'かんがえる', 'v1', { te: '考えて', nai: '考えない', ta: '考えた', potential: '考えられる', masu: '考えます' }],
-  ['できる', 'できる', 'v1', { te: 'できて', nai: 'できない', ta: 'できた', masu: 'できます' }],
+  ['できる', 'できる', 'v1', { te: 'できて', nai: 'できない', ta: 'できた', masu: 'できます', ba: 'できれば', tara: 'できたら', 'te-iru': 'できている' }],
+  // spontaneous perception: no potential / imperative / たい
+  ['見える', 'みえる', 'v1', { te: '見えて', nai: '見えない', ta: '見えた', masu: '見えます', ba: '見えれば', 'te-iru': '見えている' }],
+  ['聞こえる', 'きこえる', 'v1', { te: '聞こえて', nai: '聞こえない', ta: '聞こえた', masu: '聞こえます', tara: '聞こえたら' }],
   // irregular
   ['する', 'する', 'v-irr', { masu: 'します', masen: 'しません', mashita: 'しました', 'masen-deshita': 'しませんでした', masho: 'しましょう', te: 'して', nai: 'しない', ta: 'した', nakatta: 'しなかった', potential: 'できる', volitional: 'しよう', passive: 'される', causative: 'させる', 'causative-passive': 'させられる', imperative: 'しろ', prohibitive: 'するな', ba: 'すれば', tara: 'したら', tai: 'したい', 'te-iru': 'している' }],
   ['来る', 'くる', 'v-irr', { masu: '来ます', masen: '来ません', mashita: '来ました', 'masen-deshita': '来ませんでした', masho: '来ましょう', te: '来て', nai: '来ない', ta: '来た', nakatta: '来なかった', potential: '来られる', volitional: '来よう', passive: '来られる', causative: '来させる', 'causative-passive': '来させられる', imperative: '来い', prohibitive: '来るな', ba: '来れば', tara: '来たら', tai: '来たい', 'te-iru': '来ている' }],
   ['勉強する', 'べんきょうする', 'v-irr', { masu: '勉強します', te: '勉強して', nai: '勉強しない', ta: '勉強した', potential: '勉強できる', volitional: '勉強しよう', passive: '勉強される', imperative: '勉強しろ' }],
+  // one-kanji サ変: potential 〜せる, never 〜できる
+  ['愛する', 'あいする', 'v-irr', { masu: '愛します', te: '愛して', nai: '愛しない', ta: '愛した', potential: '愛せる', passive: '愛される', causative: '愛させる', imperative: '愛しろ', volitional: '愛しよう' }],
+  ['達する', 'たっする', 'v-irr', { masu: '達します', te: '達して', potential: '達せる' }],
+  ['罰する', 'ばっする', 'v-irr', { potential: '罰せる', passive: '罰される' }],
+  // 〜とする adverbial: everything but the potential
+  ['呆然とする', 'ぼうぜんとする', 'v-irr', { masu: '呆然とします', te: '呆然として', nai: '呆然としない', ta: '呆然とした', 'te-iru': '呆然としている' }],
   ['持ってくる', 'もってくる', 'v-irr', { masu: '持ってきます', te: '持ってきて', nai: '持ってこない', ta: '持ってきた', potential: '持ってこられる', imperative: '持ってこい' }],
   ['連れて来る', 'つれてくる', 'v-irr', { masu: '連れて来ます', te: '連れて来て', nai: '連れて来ない', ta: '連れて来た', ba: '連れて来れば' }],
 ];
@@ -172,6 +184,26 @@ describe('alternates', () => {
     expect(conjugate('いる', 'いる', 'v1', 'potential')!.alt).toContain('いれる');
     expect(conjugate('着る', 'きる', 'v1', 'potential')!.alt).toContain('着れる');
   });
+  it('サ変 potentials: 出来る for する and noun compounds, 〜し得る for one-kanji stems, none for 〜とする', () => {
+    const suru = conjugate('する', 'する', 'v-irr', 'potential')!;
+    expect(suru.answer).toBe('できる');
+    expect(suru.alt).toContain('出来る');
+    const benkyo = conjugate('勉強する', 'べんきょうする', 'v-irr', 'potential')!;
+    expect(benkyo.answer).toBe('勉強できる');
+    expect(benkyo.alt).toContain('勉強出来る');
+    expect(benkyo.alt).not.toContain('べんきょう出来る');
+    const ai = conjugate('愛する', 'あいする', 'v-irr', 'potential')!;
+    expect(ai.answer).toBe('愛せる');
+    expect(ai.answerKana).toBe('あいせる');
+    expect(ai.alt).toEqual(expect.arrayContaining(['愛し得る', 'あいしえる', '愛しうる', 'あいしうる']));
+    expect(acceptedSurfaces(ai)).not.toContain('愛できる');
+    expect(conjugate('欲する', 'ほっする', 'v-irr', 'potential')!.answer).toBe('欲せる');
+    expect(conjugate('呆然とする', 'ぼうぜんとする', 'v-irr', 'potential')).toBeNull();
+    expect(conjugate('呆然とする', 'ぼうぜんとする', 'v-irr', 'te')!.answer).toBe('呆然として');
+    expect(conjugate('来る', 'くる', 'v-irr', 'potential')!.answer).toBe('来られる');
+    // non-potential サ変 forms are untouched by the one-kanji rule
+    expect(conjugate('愛する', 'あいする', 'v-irr', 'causative')!.alt).toContain('愛さす');
+  });
   it('imperative alternates: 食べよ, せよ', () => {
     expect(conjugate('食べる', 'たべる', 'v1', 'imperative')!.alt).toContain('食べよ');
     expect(conjugate('する', 'する', 'v-irr', 'imperative')!.alt).toContain('せよ');
@@ -203,17 +235,53 @@ describe('applicability', () => {
     expect(applicableForms('adj-na')).toHaveLength(6);
     expect(VERB_FORMS.length + ADJ_FORMS.length).toBe(CONJ_FORMS.length);
   });
-  it('ある has 11 rows, 要る 12', () => {
+  it('ある and 要る have 11 rows', () => {
     expect(applicableFormsFor('ある', 'ある', 'v5')).toHaveLength(11);
-    expect(applicableFormsFor('要る', 'いる', 'v5')).toHaveLength(12);
+    expect(applicableFormsFor('有る', 'ある', 'v5')).toHaveLength(11);
+    expect(applicableFormsFor('要る', 'いる', 'v5')).toHaveLength(11);
+    expect(applicableFormsFor('いる', 'いる', 'v5')).toHaveLength(11);
     expect(applicableFormsFor('いる', 'いる', 'v1')).toHaveLength(20);
     expect(Object.keys(conjugateAll('ある', 'ある', 'v5'))).toHaveLength(11);
     expect(Object.keys(conjugateAll('書く', 'かく', 'v5'))).toHaveLength(20);
     expect(Object.keys(conjugateAll('高い', 'たかい', 'adj-i'))).toHaveLength(6);
   });
+  it('炒る (v5, kana いる) is regular: 20 forms, nothing inherited from 要る', () => {
+    expect(defectiveFormsFor('炒る', 'いる', 'v5')).toEqual([]);
+    expect(applicableFormsFor('炒る', 'いる', 'v5')).toHaveLength(20);
+    expect(Object.keys(conjugateAll('炒る', 'いる', 'v5'))).toHaveLength(20);
+    expect(conjugate('炒る', 'いる', 'v5', 'volitional')?.answer).toBe('炒ろう');
+    expect(conjugate('炒る', 'いる', 'v5', 'tai')?.answer).toBe('炒りたい');
+    expect(conjugate('炒る', 'いる', 'v5', 'te-iru')?.answerKana).toBe('いっている');
+    expect(defectiveFormsFor('要る', 'いる', 'v5')).toHaveLength(9);
+    expect(defectiveFormsFor('いる', 'いる', 'v1')).toEqual([]);
+  });
+  it('stative verbs lack potential / passive / imperative / prohibitive (分かる, 見える, 聞こえる, できる)', () => {
+    for (const f of ['potential', 'passive', 'imperative', 'prohibitive'] as ConjForm[]) {
+      expect(conjugate('分かる', 'わかる', 'v5', f), `分かる ${f}`).toBeNull();
+      expect(conjugate('わかる', 'わかる', 'v5', f), `わかる ${f}`).toBeNull();
+    }
+    expect(conjugate('分かる', 'わかる', 'v5', 'causative')?.answer).toBe('分からせる');
+    expect(conjugate('分かる', 'わかる', 'v5', 'tai')?.answer).toBe('分かりたい');
+    expect(applicableFormsFor('分かる', 'わかる', 'v5')).toHaveLength(16);
+    for (const f of ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai'] as ConjForm[]) {
+      expect(conjugate('見える', 'みえる', 'v1', f), `見える ${f}`).toBeNull();
+      expect(conjugate('聞こえる', 'きこえる', 'v1', f), `聞こえる ${f}`).toBeNull();
+      expect(conjugate('できる', 'できる', 'v1', f), `できる ${f}`).toBeNull();
+      expect(conjugate('出来る', 'できる', 'v1', f), `出来る ${f}`).toBeNull();
+    }
+    expect(applicableFormsFor('見える', 'みえる', 'v1')).toHaveLength(12);
+    expect(applicableFormsFor('聞こえる', 'きこえる', 'v1')).toHaveLength(12);
+    expect(applicableFormsFor('できる', 'できる', 'v1')).toHaveLength(12);
+    expect(Object.keys(conjugateAll('見える', 'みえる', 'v1'))).toHaveLength(12);
+    // exact-kana match only: look-alikes and compounds keep every form
+    expect(applicableFormsFor('見せる', 'みせる', 'v1')).toHaveLength(20);
+    expect(applicableFormsFor('勉強できる', 'べんきょうできる', 'v1')).toHaveLength(20);
+    expect(conjugate('高い', 'たかい', 'adj-i', 'adj-neg')).not.toBeNull();
+    expect(defectiveFormsFor('高い', 'たかい', 'adj-i')).toEqual([]);
+  });
   it('defective and inapplicable forms return null', () => {
     for (const f of ['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai', 'te-iru'] as ConjForm[]) expect(conjugate('ある', 'ある', 'v5', f)).toBeNull();
-    for (const f of ['volitional', 'imperative', 'prohibitive', 'tai', 'passive', 'causative', 'causative-passive', 'te-iru'] as ConjForm[]) expect(conjugate('要る', 'いる', 'v5', f)).toBeNull();
+    for (const f of ['potential', 'volitional', 'imperative', 'prohibitive', 'tai', 'passive', 'causative', 'causative-passive', 'te-iru'] as ConjForm[]) expect(conjugate('要る', 'いる', 'v5', f)).toBeNull();
     expect(conjugate('高い', 'たかい', 'adj-i', 'te')).toBeNull();
     expect(conjugate('書く', 'かく', 'v5', 'adj-neg')).toBeNull();
     expect(conjugate('書く', 'かく', 'v5', 'nonsense' as ConjForm)).toBeNull();
@@ -262,8 +330,10 @@ describe.skipIf(golden.length === 0)('disk golden table', () => {
     const engineAccepts = new Set(acceptedSurfaces(c!));
     // engine answer is one of the row's accepted surfaces …
     expect(rowAccepts.has(c!.answer) || rowAccepts.has(c!.answerKana), `${g.id}: engine ${c!.answer}/${c!.answerKana} not in ${[...rowAccepts].join('/')}`).toBe(true);
-    // … and the row's answer is one the engine accepts.
+    // … and the row's answer is one the engine accepts …
     expect(engineAccepts.has(g.answer), `${g.id}: row ${g.answer} not in ${[...engineAccepts].join('/')}`).toBe(true);
+    // … as is every alternate the table lists (the engine may accept more; CONTENT_GUIDE §15 is the floor).
+    for (const a of g.alt ?? []) expect(engineAccepts.has(a), `${g.id}: table alt ${a} not in ${[...engineAccepts].join('/')}`).toBe(true);
     expect(c!.answerKana).toMatch(KANA_ONLY);
   });
 });

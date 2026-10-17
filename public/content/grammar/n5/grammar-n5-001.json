@@ -635,7 +635,7 @@
         "学生です → 学生でした → 学生ではありませんでした",
         "Spoken: 学生じゃなかったです (same meaning, more casual)"
       ],
-      "explanation": "Nでした is the past of Nです, and Nではありませんでした (spoken じゃありませんでした) is the past of the negative. The noun never changes; only the ending moves through time. Build the negative past in two steps: first negate (学生じゃありません), then add でした. You use these for yesterday's weather (昨日は雨でした), past jobs (田中さんは駅員でした) and days (先週は休みでした). They work only for nouns; verbs take ました and い-adjectives take かったです, which you meet soon. The plain forms だった and じゃなかった come at Station 12.",
+      "explanation": "Nでした is the past of Nです, and Nではありませんでした (spoken じゃありませんでした) is the past of the negative. The noun never changes; only the ending moves through time. Build the negative past in two steps: first negate (学生じゃありません), then add でした. You use these for yesterday's weather (昨日は雨でした), past jobs (田中さんは駅員でした) and days (先週は休みでした). The same endings work for な-adjectives, which you meet at Station 7 (静かでした). Verbs take ました instead (Station 6), and い-adjectives take かったです, taught with the adjective endings at Station 7 — never 寒いでした. The plain forms だった and じゃなかった come at Station 12.",
       "jlpt": 5,
       "register": "polite",
       "examples": [
@@ -678,12 +678,14 @@
       "related": [
         "g-n5-001",
         "g-n5-002",
-        "g-n5-017"
+        "g-n5-017",
+        "g-n5-026",
+        "g-n5-027"
       ],
       "tags": [
         "time"
       ],
-      "notes": "Forward link to add at merge: g-n5-068 (plain だ / だった), which lives in a later grammar-n5 file.",
+      "notes": "Forward links: g-n5-026/027 (Station 7) must carry い-adj 〜かったです/〜くなかったです and な-adj・N 〜でした; g-n5-068 (plain だ / だった) lives in a later grammar-n5 file.",
       "station": 5
     },
     {

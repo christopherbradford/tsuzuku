@@ -5,9 +5,15 @@
  *  Four phases, sampled 70 % this station / 30 % cumulative, weighted toward
  *  low retrievability:
  *    1 閃 Flash   20 recognition reps, 4 s each   — timed ONLY when the tested
- *    2 打 Strike  20 production reps, 12 s each     facet is mature (S ≥ 14 d);
+ *    2 打 Strike  20 production reps, 12 s each     facet is mature (S ≥ 14 d)
+ *                                                   and the drill is not
+ *                                                   self-graded (a chunk's
+ *                                                   shadow rep is never timed);
  *                                                   younger cards are untimed
- *    3 耳 Ear     12 station sentences at belt speed, untimed, 2 replays
+ *    3 耳 Ear     12 station sentences at belt speed, untimed, 2 replays —
+ *                 only story lines whose resolved tokens the learner all
+ *                 knows; short of 12, the station's own words (bare word →
+ *                 kana) fill in, never an example with untaught words
  *    4 型 Final Form 3 prompts over station grammar, rubric Judge
  *  Timeouts count as a miss in the score and Hard in FSRS (`boss` grading);
  *  Guard counts as a miss, Again in FSRS, no combo penalty (writer). No lives.
@@ -19,7 +25,9 @@
  *  Gate (no timers, Final Form → 3 cloze, 80 %, provisional stamp); the
  *  Revenge Match is the full fight again. `rematchAllowed` is the one
  *  predicate every screen (intro, result, Station page) reads. Grudge List
- *  keys are read through `grudgeKeys()`: only `isCardKey` entries count, so a
+ *  keys are read through `grudgeKeys()` (`./pickers`, re-exported; the
+ *  builder's Grudge block draws the same keys into the day's Kata / Kumite /
+ *  Shugyō so the 20 reps are reachable): only `isCardKey` entries count, so a
  *  hand-edited or older save can neither crash the views (`parseCardKey`
  *  throws) nor lock the rematch behind reps nobody can train, and a lost fight
  *  rewrites the list from well-formed keys only.
@@ -30,7 +38,7 @@
  */
 import { ERROR_TAGS, type Belt, type CardKey, type DrillId, type ErrorTag, type GrammarItem, type StationBundle, type StoryItem } from '../content/types';
 import type { ContentLoader } from '../content/loader';
-import { toPlain } from '../content/ruby';
+import { hasKanji, toPlain } from '../content/ruby';
 import { bus, type Events } from '../shared/events';
 import { weighted, type Rng } from '../shared/hash';
 import { cardKey as makeKey, isCardKey, parseCardKey } from '../shared/ids';
@@ -40,9 +48,12 @@ import { CardFlag, hasFlag, type EpochDay, type Store } from '../shared/store-ty
 import { store } from '../store';
 import { bundleItemIds, kindFor } from '../store/derived';
 import { BELT_ORDER, isMature, itemBelt, type QueueCard } from '../learn';
-import { templateFor } from './blocks';
+import { SELF_GRADED, templateFor } from './blocks';
 import { S, fill } from './engine-strings';
-import { finalizePlan, isGrammar, loadPlanContext, makeStep, pickDrill, queueCardOf, resolveParams, stepForCard, type PlanContext } from './builder';
+import { finalizePlan, isGrammar, isVocab, loadPlanContext, makeStep, pickDrill, queueCardOf, resolveParams, stepForCard, type PlanContext } from './builder';
+import { grudgeKeys } from './pickers';
+
+export { grudgeKeys };
 
 export const GATE_PASS = 0.85;
 export const GATE_PHASE_PASS = 0.7;
@@ -193,22 +204,40 @@ export interface GateOptions {
   available?: (id: DrillId) => boolean;
 }
 
-/** Station sentences: the station's story lines, then vocab examples. */
-function stationSentences(ctx: PlanContext, bundle: StationBundle): { storyId?: string; lineIndex?: number; vocabId: string | null; sentence: string }[] {
-  const out: { storyId?: string; lineIndex?: number; vocabId: string | null; sentence: string }[] = [];
+interface StationSentence {
+  storyId?: string;
+  lineIndex?: number;
+  vocabId: string | null;
+  sentence: string;
+  /** The station word itself as the prompt (bare word → kana), used when too few story lines are fully known. */
+  word?: boolean;
+}
+
+/**
+ * Station sentences for the Ear phase: the station's story lines whose
+ * resolved tokens the learner all knows (mirrors `knownSentences`; a line that
+ * carries a word from a later station is not a test of this station), then,
+ * short of 12, the station's own words as bare prompts — known ones first.
+ * Vocab examples are not used: at Stations 1–3 they carry kanji words and
+ * names assigned to later stations.
+ */
+export function stationSentences(ctx: PlanContext, bundle: StationBundle): StationSentence[] {
+  const out: StationSentence[] = [];
   for (const sid of bundle.storyIds) {
     const story = ctx.loader.get<StoryItem>(sid);
     if (!story || !('lines' in story)) continue;
     story.lines.forEach((line, lineIndex) => {
-      const vocabId = line.tokenIds?.find((x): x is string => x !== null && x.startsWith('v-')) ?? null;
+      const ids = (line.tokenIds ?? []).filter((x): x is string => x !== null);
+      if (ids.length === 0 || !ids.every((id) => ctx.known.has(id))) return;
+      const vocabId = ids.find((x) => x.startsWith('v-')) ?? null;
       out.push({ storyId: story.id, lineIndex, vocabId, sentence: toPlain(line.ja) });
     });
   }
   if (out.length < PHASE_SIZES.ear) {
-    for (const v of ctx.vocabPool) {
-      if (!bundle.vocabIds.includes(v.id)) continue;
-      const ex = v.examples[0];
-      if (ex) out.push({ vocabId: v.id, sentence: toPlain(ex.ja) });
+    const words = bundle.vocabIds.map((id) => ctx.loader.get(id)).filter(isVocab);
+    for (const v of [...words.filter((v) => ctx.known.has(v.id)), ...words.filter((v) => !ctx.known.has(v.id))]) {
+      if (out.length >= PHASE_SIZES.ear) break;
+      out.push({ vocabId: v.id, sentence: v.word, word: true });
     }
   }
   return out;
@@ -238,8 +267,10 @@ export async function buildGate(n: number, o: GateOptions): Promise<SessionPlan>
   const flashSteps: Step[] = [];
   flash.forEach((qc, i) => {
     const mature = isMature(store.cards.get(qc.cardKey) ?? null);
-    const timed = mature && !o.assisted;
-    const s = stepForCard(ctx, typed(qc), 'phase', { exercise: flashDrill(ctx, qc), timed, ...(timed ? { timerMs: FLASH_MS } : {}), id: `gate:${n}:p1:${i}`, params: { phase: 1 } });
+    const drill = flashDrill(ctx, qc);
+    // Timed only when the facet is mature and the drill can be cut off by a clock: a chunk's shadow rep is self-graded.
+    const timed = mature && !o.assisted && !SELF_GRADED.has(drill);
+    const s = stepForCard(ctx, typed(qc), 'phase', { exercise: drill, timed, ...(timed ? { timerMs: FLASH_MS } : {}), id: `gate:${n}:p1:${i}`, params: { phase: 1 } });
     if (s) {
       if (!timed) delete s.timerMs;
       flashSteps.push(s);
@@ -250,9 +281,10 @@ export async function buildGate(n: number, o: GateOptions): Promise<SessionPlan>
   const strikeSteps: Step[] = [];
   strike.forEach((qc, i) => {
     const mature = isMature(store.cards.get(qc.cardKey) ?? null);
-    const timed = mature && !o.assisted;
     const g = ctx.loader.get(qc.itemId);
-    const s = stepForCard(ctx, typed(qc), 'phase', { exercise: strikeDrill(ctx, qc, isGrammar(g) ? g : undefined), timed, ...(timed ? { timerMs: STRIKE_MS } : {}), id: `gate:${n}:p2:${i}`, params: { phase: 2 } });
+    const drill = strikeDrill(ctx, qc, isGrammar(g) ? g : undefined);
+    const timed = mature && !o.assisted && !SELF_GRADED.has(drill);
+    const s = stepForCard(ctx, typed(qc), 'phase', { exercise: drill, timed, ...(timed ? { timerMs: STRIKE_MS } : {}), id: `gate:${n}:p2:${i}`, params: { phase: 2 } });
     if (s) {
       if (!timed) delete s.timerMs;
       strikeSteps.push(s);
@@ -271,11 +303,20 @@ export async function buildGate(n: number, o: GateOptions): Promise<SessionPlan>
     ).map((q) => sentences[Number(q.itemId)]!);
     picked.forEach((sx, i) => {
       const vocab = sx.vocabId ? ctx.loader.get(sx.vocabId) ?? null : null;
-      const listenKey = sx.vocabId ? makeKey(sx.vocabId, 'listen') : null;
       const params = resolveParams(ctx, listen, vocab, { storyId: sx.storyId, lineIndex: sx.lineIndex, rep: i });
+      if (sx.word && isVocab(vocab)) {
+        // The word itself, not its example sentence (whose other words may be untaught).
+        params.sentence = hasKanji(vocab.word) ? `{${vocab.word}|${vocab.kana}}` : vocab.word;
+        params.answer = vocab.kana;
+        params.accept = Array.from(new Set([vocab.word, vocab.kana]));
+        params.promptEn = vocab.meanings[0] ?? '';
+      }
       params.rate = BELT_RATE[ctx.belt];
       params.phase = 3;
-      earSteps.push(makeStep(ctx, { block: 'phase', exercise: listen, itemId: sx.vocabId, cardKey: listenKey && store.cards.get(listenKey) ? listenKey : null, params, exposures: 5, id: `gate:${n}:p3:${i}` }));
+      // The listen card when it exists, else the word's recognition card, so an Ear miss reaches the Grudge List.
+      const keys: CardKey[] = sx.vocabId ? [makeKey(sx.vocabId, 'listen'), makeKey(sx.vocabId, 'rec')] : [];
+      const cardKey = keys.find((k) => store.cards.get(k) !== undefined) ?? null;
+      earSteps.push(makeStep(ctx, { block: 'phase', exercise: listen, itemId: sx.vocabId, cardKey, params, exposures: 5, id: `gate:${n}:p3:${i}` }));
     });
   }
 
@@ -444,11 +485,6 @@ export function finishGate(n: number, score: GateScore, o: { assisted: boolean; 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Rematch                                                                    */
 /* ────────────────────────────────────────────────────────────────────────── */
-
-/** The Grudge List as card keys: a saved entry that is not well-formed (`isCardKey`) is ignored, never parsed or counted. */
-export function grudgeKeys(): CardKey[] {
-  return store.progress.value.grudge.filter(isCardKey);
-}
 
 /** Grudge reps answered today (log rows on Grudge List cards since 04:00, or since `after` when later). */
 export function grudgeRepsToday(after = 0): number {

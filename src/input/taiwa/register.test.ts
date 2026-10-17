@@ -19,6 +19,7 @@ const TABLE: [string, Register][] = [
   ['これは犬だ。', 'casual'],
   ['昨日は雨だった。', 'casual'],
   ['うん、食べる。', 'casual'],
+  ['はい、食べる。', 'casual'], // はい is used in both registers (review round 2, #2)
   ['今、何してる？', 'casual'],
   ['食べちゃった。', 'casual'],
   ['早く来いよ。', 'casual'],
@@ -88,7 +89,6 @@ const TABLE: [string, Register][] = [
   ['先生がいらっしゃった。', 'mixed'],
   ['おいしいですね。食べる？', 'mixed'],
   ['うん、行きます。', 'mixed'],
-  ['はい、食べる。', 'mixed'],
   ['ご覧になった？', 'mixed'],
 ];
 
@@ -147,6 +147,44 @@ describe('detectRegister — input shapes', () => {
     expect(detectRegister('はい、少々お待ちください。')).toBe('keigo');
     expect(detectRegister('田中と申します。よろしくお願いします。')).toBe('keigo');
   });
+
+  // Review round 2, #2: real Taiwa gold lines that used to read `mixed` against their own target.
+  it('a predicate-less fragment carries no register: echo questions, exclamations, case particles, vocatives, short fragments', () => {
+    expect(detectRegister('肩で？人が人を運んで川を渡ったということですか。')).toBe('polite'); // s-24-1#5
+    expect(detectRegister('三日も？それで、島田と金谷の町が大きくなったんですか。')).toBe('polite'); // s-24-1#9
+    expect(detectRegister('十一回！怖くないですか。')).toBe('polite'); // s-13-2#6
+    expect(detectRegister('田中さん！いつから後ろにいたんですか。')).toBe('polite'); // s-37-2#9
+    expect(detectRegister('本当に。昔の道が全部書いてありますね。')).toBe('polite'); // s-37-2#13
+    expect(detectRegister('アオですよ、ケン。')).toBe('polite'); // s-08-2#16: the vocative after the predicate is skipped
+    expect(detectRegister('さようなら、みやさん。')).toBe('polite'); // s-01-2#15 accept
+    expect(detectRegister('え、本気？')).toBe('casual'); // s-52-2#3 accept: no predicate at all is plain
+    expect(detectRegister('五十三。朝ごはんは七時。晴れ。歩いた。はい、これで全部。')).toBe('casual'); // s-53-2#16
+  });
+
+  it('a trailing subordinate clause takes the register of its polite remainder, else none', () => {
+    expect(detectRegister('時計のほうが正しいと思いますけど。')).toBe('polite'); // s-51-2#6 accept
+    expect(detectRegister('来年、また来ます。京都から戻ってきたら。')).toBe('polite'); // s-39-2#11
+    expect(detectRegister('はい、日本橋から。今日で四十一番目の町です。')).toBe('polite'); // s-41-2#23
+    expect(detectRegister('行くけど。')).toBe('casual'); // alone: no predicate = plain
+    expect(detectRegister('はい。松の道までは大丈夫だったんですが、急にざあざあ降ってきて。')).toBe('polite'); // s-35-1#1: て trailing off after んですが
+    expect(detectRegister('ちょっと待って。')).toBe('casual'); // a plain request stays plain
+    expect(detectRegister('知らないけど、たぶん来るだろう。')).toBe('casual');
+  });
+
+  it('soft set phrases (はい・ええ・いただきます・じゃあ・えっ) never clash with a real final', () => {
+    expect(detectRegister('じゃあ、きっと晴れますね。')).toBe('polite'); // s-47-2#13
+    expect(detectRegister('えっ、いいんですか。ありがとうございます。')).toBe('polite'); // s-37-2#23
+    expect(detectRegister('いただきます。おいしい！塩と風だけ？')).toBe('casual'); // s-12-2#12
+    expect(detectRegister('いただきます。あ、野菜が甘い。')).toBe('casual'); // s-29-2#25
+    expect(detectRegister('はい、はい。食べながら見る。')).toBe('casual'); // s-13-2#2
+    expect(detectRegister('ええ？でも山は優しいって。')).toBe('casual'); // s-13-2#10
+    expect(detectRegister('はい。')).toBe('polite');
+    expect(detectRegister('ええ、ええ。')).toBe('polite');
+    expect(detectRegister('いただきます。')).toBe('polite');
+    // genuinely polite set phrases still contrast with a casual final
+    expect(detectRegister('ありがとうございます。ケン、これ、日記に書いてもいい？')).toBe('mixed'); // s-34-2#23
+    expect(detectRegister('ありがとう。暑かったでしょう？水、飲んで。')).toBe('mixed'); // s-16-2#12: a でしょう final against 飲んで
+  });
 });
 
 describe('markers', () => {
@@ -182,6 +220,13 @@ describe('markers', () => {
 describe('helpers', () => {
   it('normalizeForRegister strips ruby, quotes, spaces and folds width', () => {
     expect(normalizeForRegister('{私|わたし}は 「はい」 と言った？')).toBe('私はと言った?');
+  });
+
+  it('an ellipsis survives width folding and still splits clauses (NFKC turns …… into dots)', () => {
+    expect(normalizeForRegister('あ、本当に。……じゃあ、冬に。')).toBe('あ、本当に。…じゃあ、冬に。');
+    expect(splitClauses(normalizeForRegister('ええと……冬に、たぶん。')).map((c) => c.text)).toEqual(['ええと', '冬に、たぶん']);
+    expect(markersDetailed('あ、本当に。……じゃあ、冬に、必ず。')).toEqual([]); // s-24-1#19: no predicate anywhere
+    expect(markersDetailed('ええと……冬に、たぶん。')).toEqual([]); // s-24-1#17
   });
 
   it('splitClauses keeps offsets and drops empty clauses', () => {

@@ -1,18 +1,33 @@
 /**
  * TSUZUKU — content index (`public/content/manifest.json`).
  *
- *   node scripts/build-content-index.ts [--root <content dir>] [--version <x.y.z>] [--no-check]
+ *   node scripts/build-content-index.ts [--root <content dir>] [--version <id>] [--no-check]
  *
  * Emits a `ContentManifest` with bytes/sha256 per hand-written content file,
  * the belts and stations each file serves, per-station counts read from the
  * `stations/NN.json` bundles (which `assign-stations.ts` generates), totals,
  * `componentsPath` and `redirects` (`_meta/redirects.json` when present).
  *
+ * `contentVersion` is derived from the content itself unless `--version`
+ * (or `CONTENT_VERSION`) overrides it: `c-` + the first 10 hex digits of
+ * sha256 over the sorted `(path, sha256(bytes))` list of every `**\/*.json`
+ * under the root except `manifest.json` (bundles, `_meta` and redirects
+ * included). The loader's Cache API mirror `tsuzuku-content-<contentVersion>`
+ * is the only offline store for `content/**`, so the version must change
+ * whenever any content file changes; the validator's V35 flags a stale
+ * derived version.
+ *
  * Fails (throws / exit 1) when a station bundle is missing or any content
- * file exceeds 300 KB (measured vocab is 1.3–1.85 KB per item, so a 150-item N1
- * file is ≈ 276 KB; stories are one file per station). Output is deterministic: files sorted by path, fixed
- * key order, redirects sorted; `generatedAt` is kept from the previous
- * manifest when nothing else changed, so a re-run is byte-identical.
+ * file exceeds MAX_FILE_BYTES = 300 KiB (307,200 bytes; measured vocab is
+ * 1.3–1.85 KB per item, so a 150-item N1 file is ≈ 276 KB; stories are one
+ * file per station). Warns (stderr, `writeIndex().warnings`) when a station
+ * entry — the bytes the loader's `preloadStation(n)` fetches: the bundle's
+ * item files plus `_meta/components.json` — exceeds STATION_ENTRY_BUDGET_BYTES
+ * = 1 MiB (design 07 §9 "station entry ≤ 1 MB raw"); the assigner keeps a
+ * station's vocab in ≤ 2–3 files (`orderRankedVocab`) so this holds.
+ * Output is deterministic: files sorted by path, fixed key order, redirects
+ * sorted; `generatedAt` is kept from the previous manifest when nothing else
+ * changed, so a re-run is byte-identical.
  */
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -24,6 +39,8 @@ import type { Belt, ContentKind, ContentManifest, Level, ManifestFile, ManifestS
 
 /** Hard cap for one hand-written content file (bytes). */
 export const MAX_FILE_BYTES = 300 * 1024;
+/** Design 07 §9: everything `preloadStation(n)` fetches for one station entry ≤ 1 MB raw (soft; warns). */
+export const STATION_ENTRY_BUDGET_BYTES = 1024 * 1024;
 export const COMPONENTS_PATH = '_meta/components.json';
 
 export interface BuildIndexOptions {
@@ -31,6 +48,53 @@ export interface BuildIndexOptions {
   generatedAt?: string;
   /** Throw on missing bundles / oversize files (default true). */
   check?: boolean;
+  /** Station entry budget for `writeIndex().warnings` (default STATION_ENTRY_BUDGET_BYTES). */
+  stationEntryBudget?: number;
+}
+
+export interface StationEntrySize {
+  number: number;
+  /** Manifest paths `preloadStation(n)` fetches (bundle `files` minus conjugation/station files, plus components). */
+  files: string[];
+  /** Sum of those files' manifest `bytes`. */
+  bytes: number;
+}
+
+/**
+ * Bytes the loader fetches on station entry, per station, from the written
+ * bundles and the manifest. Mirrors `itemFilePaths` in src/content/loader.ts:
+ * the bundle's `files` without conjugation and station files, plus
+ * `componentsPath` when the station places components. Stations whose bundle
+ * is missing or unreadable are skipped.
+ */
+export function stationEntrySizes(root: string, m: ContentManifest): StationEntrySize[] {
+  root = resolve(root);
+  const byPath = new Map(m.files.map((f) => [f.path, f]));
+  const skip = new Set(m.files.filter((f) => f.type === 'conjugation' || f.type === 'station').map((f) => f.path));
+  const out: StationEntrySize[] = [];
+  for (const st of m.stations) {
+    let b: StationBundle;
+    try {
+      b = JSON.parse(readFileSync(join(root, st.path), 'utf8')) as StationBundle;
+    } catch {
+      continue;
+    }
+    const files = (Array.isArray(b.files) ? b.files : []).filter((p) => typeof p === 'string' && !skip.has(p));
+    if (Array.isArray(b.componentIds) && b.componentIds.length > 0 && !files.includes(m.componentsPath)) files.push(m.componentsPath);
+    out.push({ number: st.number, files, bytes: files.reduce((n, p) => n + (byPath.get(p)?.bytes ?? 0), 0) });
+  }
+  return out;
+}
+
+/** One warning line per station whose entry exceeds `budget` bytes. */
+export function oversizeStations(sizes: readonly StationEntrySize[], budget = STATION_ENTRY_BUDGET_BYTES): string[] {
+  const out: string[] = [];
+  for (const s of sizes) {
+    if (s.bytes <= budget) continue;
+    const kb = (n: number) => `${Math.round(n / 1024)} KB`;
+    out.push(`stations/${pad2(s.number)}.json: station entry ${kb(s.bytes)} over ${s.files.length} files > ${kb(budget)} budget (design 07 §9; regroup the level's files so a station spans ≤ 2–3)`);
+  }
+  return out;
 }
 
 function walk(dir: string, out: string[] = []): string[] {
@@ -83,6 +147,35 @@ function pad2(n: number): string {
 
 function sha256(buf: Buffer): string {
   return createHash('sha256').update(buf).digest('hex');
+}
+
+/** Prefix of a derived (as opposed to `--version`-overridden) `contentVersion`. */
+export const DERIVED_VERSION_PREFIX = 'c-';
+const DERIVED_VERSION_RE = /^c-[0-9a-f]{10}$/;
+
+/** True when `v` has the shape `deriveContentVersion` produces (so V35 may compare it). */
+export function isDerivedVersion(v: unknown): v is string {
+  return typeof v === 'string' && DERIVED_VERSION_RE.test(v);
+}
+
+/**
+ * `c-` + the first 10 hex digits of sha256 over the sorted list of
+ * `(path, sha256(file bytes))` for every `**\/*.json` under `root` except
+ * `manifest.json`. Deterministic: the same bytes on disk give the same version,
+ * and any content change (item files, bundles, `_meta`) gives a new one.
+ */
+export function deriveContentVersion(root: string): string {
+  root = resolve(root);
+  const entries: string[] = [];
+  for (const abs of walk(root)) {
+    const rel = toRel(root, abs);
+    if (rel === 'manifest.json') continue;
+    entries.push(`${rel}\u0000${sha256(readFileSync(abs))}`);
+  }
+  entries.sort();
+  const h = createHash('sha256');
+  for (const e of entries) h.update(e + '\n');
+  return `${DERIVED_VERSION_PREFIX}${h.digest('hex').slice(0, 10)}`;
 }
 
 function stationNumberOfStationId(id: unknown): number | null {
@@ -211,9 +304,10 @@ export function stringifyManifest(m: ContentManifest): string {
 
 /**
  * Writes `manifest.json`, reusing the previous `generatedAt` when nothing else
- * changed so repeated runs are byte-identical. Returns the manifest written.
+ * changed so repeated runs are byte-identical. `version` overrides the derived
+ * `contentVersion` (`deriveContentVersion`). Returns the manifest written.
  */
-export function writeIndex(root: string, version?: string, opts: BuildIndexOptions = {}): { manifest: ContentManifest; changed: boolean; path: string } {
+export function writeIndex(root: string, version?: string, opts: BuildIndexOptions = {}): { manifest: ContentManifest; changed: boolean; path: string; warnings: string[] } {
   root = resolve(root);
   const p = join(root, 'manifest.json');
   let previous: ContentManifest | null = null;
@@ -226,7 +320,7 @@ export function writeIndex(root: string, version?: string, opts: BuildIndexOptio
       previous = null;
     }
   }
-  const v = version ?? previous?.contentVersion ?? '0.0.0';
+  const v = version ?? deriveContentVersion(root);
   const keep = buildIndex(root, v, { ...opts, generatedAt: opts.generatedAt ?? previous?.generatedAt ?? new Date().toISOString() });
   let manifest = keep;
   let text = stringifyManifest(keep);
@@ -239,7 +333,8 @@ export function writeIndex(root: string, version?: string, opts: BuildIndexOptio
     mkdirSync(dirname(p), { recursive: true });
     writeFileSync(p, text);
   }
-  return { manifest, changed, path: p };
+  const warnings = oversizeStations(stationEntrySizes(root, manifest), opts.stationEntryBudget ?? STATION_ENTRY_BUDGET_BYTES);
+  return { manifest, changed, path: p, warnings };
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -259,13 +354,14 @@ function main(): void {
     else if (a.startsWith('--version=')) version = a.slice(10);
     else if (a === '--no-check') check = false;
     else if (a === '--help' || a === '-h') {
-      process.stdout.write('usage: node scripts/build-content-index.ts [--root <content dir>] [--version <x.y.z>] [--no-check]\n');
+      process.stdout.write('usage: node scripts/build-content-index.ts [--root <content dir>] [--version <id>] [--no-check]\n  contentVersion defaults to c-<sha256 of the content>; --version or CONTENT_VERSION overrides it\n');
       process.exit(0);
     }
   }
   if (version === undefined && process.env['CONTENT_VERSION']) version = process.env['CONTENT_VERSION'];
   try {
-    const { manifest, changed, path } = writeIndex(resolve(root), version, { check });
+    const { manifest, changed, path, warnings } = writeIndex(resolve(root), version, { check });
+    for (const w of warnings) process.stderr.write(`content:index warning: ${w}\n`);
     const t = manifest.totals;
     process.stdout.write(
       `${changed ? 'wrote' : 'unchanged'} ${path}\n` +

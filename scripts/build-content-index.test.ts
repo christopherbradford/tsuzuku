@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { CONTENT_KINDS } from '../src/content/types.ts';
 import { assign } from './assign-stations.ts';
 import type { PlanEntry } from './assign-stations.ts';
-import { buildIndex, listContentFiles, stringifyManifest, writeIndex, MAX_FILE_BYTES } from './build-content-index.ts';
+import { buildIndex, deriveContentVersion, isDerivedVersion, listContentFiles, oversizeStations, stationEntrySizes, stringifyManifest, writeIndex, MAX_FILE_BYTES, STATION_ENTRY_BUDGET_BYTES } from './build-content-index.ts';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const GOOD = join(here, '__fixtures__', 'good');
@@ -96,10 +96,12 @@ describe('build-content-index', () => {
     expect(second.changed).toBe(false);
     expect(readFileSync(second.path, 'utf8')).toBe(text1);
     expect(second.manifest.generatedAt).toBe(first.manifest.generatedAt);
-    // version comes from the previous manifest when omitted
+    // without --version the content hash is used, so the overridden version is replaced
     const third = writeIndex(root);
-    expect(third.manifest.contentVersion).toBe('1.0.0');
-    expect(third.changed).toBe(false);
+    expect(third.manifest.contentVersion).toBe(deriveContentVersion(root));
+    expect(third.manifest.contentVersion).toMatch(/^c-[0-9a-f]{10}$/);
+    expect(third.changed).toBe(true);
+    expect(writeIndex(root).changed).toBe(false);
     const p = join(root, 'michikusa/michikusa-s04.json');
     writeFileSync(p, readFileSync(p, 'utf8').replace('Hodogaya was', 'Hodogaya is'));
     const fourth = writeIndex(root, '1.0.0');
@@ -116,13 +118,92 @@ describe('build-content-index', () => {
     expect(m.totals.station).toBe(52);
   });
 
-  it('fails when a content file exceeds 300 KB', () => {
+  it('fails when a content file exceeds MAX_FILE_BYTES = 300 KiB', () => {
+    expect(MAX_FILE_BYTES).toBe(300 * 1024);
     const root = corpus();
     const p = join(root, 'michikusa/michikusa-s04.json');
     const doc = JSON.parse(readFileSync(p, 'utf8')) as { items: { bodyEn: string }[] };
     doc.items[0]!.bodyEn = 'x'.repeat(MAX_FILE_BYTES + 1);
     writeFileSync(p, JSON.stringify(doc, null, 2) + '\n');
     expect(() => buildIndex(root, '1.0.0', { generatedAt: AT })).toThrow(/over 307200 bytes/);
+  });
+
+  it('measures the station entry (bundle item files + components) and warns over the 1 MiB budget', () => {
+    expect(STATION_ENTRY_BUDGET_BYTES).toBe(1024 * 1024);
+    const root = corpus();
+    const m = buildIndex(root, '1.0.0', { generatedAt: AT });
+    const sizes = stationEntrySizes(root, m);
+    expect(sizes.map((s) => s.number)).toEqual(Array.from({ length: 53 }, (_, i) => i + 1));
+    // the fixture's 16 vocab items all fit Station 1's quota; the story sits at Station 4
+    expect(sizes.find((s) => s.number === 1)!.files).toContain('vocab/n5/vocab-n5-001.json');
+    const s4 = sizes.find((s) => s.number === 4)!;
+    expect(s4.files).toContain('stories/n5/stories-s04.json');
+    expect(s4.bytes).toBeGreaterThan(0);
+    for (const s of sizes) {
+      expect(s.files.some((p) => p.startsWith('conjugation/') || p.startsWith('stations/'))).toBe(false);
+      expect(s.bytes).toBe(s.files.reduce((n, p) => n + m.files.find((f) => f.path === p)!.bytes, 0));
+    }
+    const s2 = sizes.find((s) => s.number === 2)!; // places N5 components → components.json is part of the entry
+    expect(s2.files).toContain('_meta/components.json');
+    expect(oversizeStations(sizes)).toEqual([]);
+    const tiny = oversizeStations(sizes, 1000);
+    expect(tiny.length).toBeGreaterThan(0);
+    expect(tiny[0]).toMatch(/^stations\/0\d\.json: station entry \d+ KB over \d+ files > 1 KB budget/);
+    expect(writeIndex(root, '1.0.0', { generatedAt: AT }).warnings).toEqual([]);
+    expect(writeIndex(root, '1.0.0', { generatedAt: AT, stationEntryBudget: 1000 }).warnings).toEqual(tiny);
+  });
+
+  describe('deriveContentVersion', () => {
+    it('is deterministic, has the shape c-<10 hex>, and ignores manifest.json', () => {
+      const root = corpus();
+      const a = deriveContentVersion(root);
+      expect(a).toMatch(/^c-[0-9a-f]{10}$/);
+      expect(isDerivedVersion(a)).toBe(true);
+      expect(isDerivedVersion('1.0.0')).toBe(false);
+      expect(isDerivedVersion('c-xyz')).toBe(false);
+      expect(deriveContentVersion(root)).toBe(a);
+      writeIndex(root, '1.0.0');
+      expect(deriveContentVersion(root)).toBe(a);
+      writeFileSync(join(root, 'manifest.json'), '{"anything": 1}');
+      expect(deriveContentVersion(root)).toBe(a);
+      // the same bytes in a second copy give the same version
+      expect(deriveContentVersion(corpus())).toBe(a);
+    });
+
+    it('changes when any content file changes: an item file, a station bundle, the denylist', () => {
+      const root = corpus();
+      const a = deriveContentVersion(root);
+      const p = join(root, 'michikusa/michikusa-s04.json');
+      writeFileSync(p, readFileSync(p, 'utf8').replace('Hodogaya was', 'Hodogaya is'));
+      const b = deriveContentVersion(root);
+      expect(b).not.toBe(a);
+      const bundle = join(root, 'stations/53.json');
+      writeFileSync(bundle, readFileSync(bundle, 'utf8') + '\n');
+      const c = deriveContentVersion(root);
+      expect(c).not.toBe(b);
+      const deny = join(root, '_meta/denylist.json');
+      writeFileSync(deny, readFileSync(deny, 'utf8').replace('Totoro', 'Catbus'));
+      const d = deriveContentVersion(root);
+      expect(d).not.toBe(c);
+      // a byte-identical restore returns the earlier version (the hash is over bytes, not mtimes)
+      writeFileSync(deny, readFileSync(deny, 'utf8').replace('Catbus', 'Totoro'));
+      expect(deriveContentVersion(root)).toBe(c);
+    });
+
+    it('writeIndex stamps the derived version unless --version overrides it, and a content change moves it', () => {
+      const root = corpus();
+      const first = writeIndex(root);
+      expect(first.manifest.contentVersion).toBe(deriveContentVersion(root));
+      expect(writeIndex(root).changed).toBe(false);
+      const p = join(root, 'michikusa/michikusa-s04.json');
+      writeFileSync(p, readFileSync(p, 'utf8').replace('Hodogaya was', 'Hodogaya is'));
+      const second = writeIndex(root);
+      expect(second.changed).toBe(true);
+      expect(second.manifest.contentVersion).not.toBe(first.manifest.contentVersion);
+      expect(second.manifest.contentVersion).toBe(deriveContentVersion(root));
+      const forced = writeIndex(root, '2026.10.1');
+      expect(forced.manifest.contentVersion).toBe('2026.10.1');
+    });
   });
 
   it('reads redirects from _meta/redirects.json sorted by key', () => {

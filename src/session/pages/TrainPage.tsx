@@ -4,7 +4,9 @@
  * Builds the plan for the mode (`buildPlan`; the Kage Ghost Set through
  * `buildKage`) or offers to resume the saved snapshot ("Resume (6 reps left)" /
  * "Start fresh"), shows a short pre-roll of what is coming (blocks, reps,
- * minutes; the versus table for Kage), then hands a `SessionRunner` to
+ * minutes — `plannedReps` / `plannedMs`, so the +3 / +10 steps new cards owe
+ * and their teach cards are in the total, shown as "~N reps" when they add
+ * to the planned count; the versus table for Kage), then hands a `SessionRunner` to
  * `<SessionView>`. Rapid Fire and Gojūon Fighter are ordinary plans with one
  * arcade step. `gate`, `shinsa` and `dan` have their own rooms and redirect; a
  * stale snapshot of such a fight (boss rooms never resume) is abandoned on the
@@ -25,6 +27,7 @@ import type { SessionMode, SessionPlan, SessionSnapshot } from '../../shared/ses
 import { weekOf } from '../../shared/time';
 import { store } from '../../store';
 import { beltOfStation } from '../../store/derived';
+import { plannedMs, plannedReps } from '../blocks';
 import { buildPlan } from '../builder';
 import { buildKage, finishKage, hiScoreTable, kageResultLine, kageStanding, scoreKage } from '../kage';
 import { SessionRunner } from '../runner';
@@ -241,8 +244,10 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
     }
     case 'preroll': {
       const plan = phase.plan;
-      const minutes = plan.blocks.reduce((a, b) => a + b.estMinutes, 0);
-      const reps = plan.steps.filter((s) => s.block !== 'michikusa').length;
+      // What the runner will serve, learning steps included (an upper bound: Easy-rated intros owe none), hence "~".
+      const minutes = plannedMs(plan.steps, plan.mode, store.medianMs.value) / 60_000;
+      const reps = plannedReps(plan.steps, plan.mode);
+      const approx = reps !== plan.steps.filter((s) => s.block !== 'michikusa').length;
       const kage = plan.mode === 'kage' ? kageStanding(store.kage.value, store.today()) : null;
       const table = kage ? hiScoreTable(store.kage.value) : [];
       return (
@@ -267,7 +272,7 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
                 ))}
             </ol>
             <p class="train__totals">
-              <span class="train__total">{fmtReps(reps)}</span>
+              <span class="train__total">{approx ? fill(S.repsAbout, { n: reps }) : fmtReps(reps)}</span>
               <span class="train__total">{fmtMinutes(minutes)}</span>
               {plan.meta.dueTotal > 0 ? <span class="train__total muted">{fill(S.dueTaken, { taken: plan.meta.dueTaken, due: plan.meta.dueTotal })}</span> : null}
               {plan.meta.newCount > 0 ? <span class="train__total muted">{plan.meta.newCount === 1 ? S.newItemOne : fill(S.newItems, { n: plan.meta.newCount })}</span> : null}

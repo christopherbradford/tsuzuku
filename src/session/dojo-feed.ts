@@ -3,7 +3,9 @@
  *
  *  `dojoFeed()` is what the home screen shows: the forecast line
  *  ("42 reviews · 1 scroll · 1 episode · ~18 min") from `derived.forecastCounts`
- *  plus today's Scroll / episode availability, minutes per session size, the
+ *  — the whole day's due count with the Shugyō's Scroll count and minutes, one
+ *  basis, never the day's reviews priced at a Kumite's length — plus today's
+ *  Scroll / episode availability, minutes per session size, the
  *  sentence of the day (`hash(seed, day)` over Brown items with examples), the
  *  next milestone, the welcome state, resume info (`loadSnapshot`: a snapshot
  *  with malformed card keys is never offered) — and, additively, the Three
@@ -143,7 +145,8 @@ export async function dojoFeed(o: DojoFeedOptions = {}): Promise<DojoFeedFull> {
   const shinsa = belt !== 'white' && SHINSA_STATIONS.includes(ctx.station) && !store.progress.value.shinsaPassed.includes(belt) ? { belt, eligibility: await shinsaEligibleAsync(belt, ctx.loader) } : null;
 
   const feed: DojoFeedFull = {
-    forecastLine: forecastLine(due, scrollsToday.length, episodes, fc.minutes.kumite),
+    // One coherent basis: the day's due count, the Shugyō's Scroll count and the Shugyō minutes (design 03 §3 "whole day").
+    forecastLine: forecastLine(due, scrollsToday.length, episodes, fc.minutes.shugyo),
     minutes: fc.minutes,
     nextMilestone: milestoneLine(ctx),
     welcome: welcomeState(),

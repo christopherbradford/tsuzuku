@@ -13,7 +13,8 @@ import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { KIAI_RULES } from '../learn';
-import { SessionRunner, correctFormOf, ringShown, type RunnerSnapshot } from './runner';
+import { MAX_SESSION_MISSES, SessionRunner, correctFormOf, ringShown, type RunnerSnapshot } from './runner';
+import { S as ES } from './engine-strings';
 import { toPlain } from '../content/ruby';
 import { checkStepId, pretestStepId, resetScrollCompletions } from './scroll';
 
@@ -495,5 +496,38 @@ describe('SessionRunner — regressions', () => {
     expect(done.tally.xp).toBeGreaterThan(0);
     expect(done.steps.reduce((a, s) => a + s.xpDelta, 0)).toBeLessThanOrEqual(done.tally.xp);
     expect(toPlain('{水|みず}')).toBe('水');
+  });
+});
+
+describe('a run is always finishable (design 03 §1)', () => {
+  it('a card missed every time is re-presented at most MAX_SESSION_MISSES times and the run ends; the feedback says so', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards(5) });
+    const steps = vocabSteps(6);
+    const victim = steps[0]!.cardKey!;
+    const r = new SessionRunner(plan(steps), { loader });
+    let movedOn = 0;
+    for (let guard = 0; guard < 200 && !r.done.value; guard++) {
+      const s = r.step.value!;
+      r.submit(s.cardKey === victim ? miss() : ok());
+      if (r.feedback.value?.line === ES.movingOn) movedOn++;
+      r.next();
+    }
+    expect(r.done.value).not.toBeNull();
+    const victimReps = r.results.filter((x) => x.cardKey === victim).length;
+    expect(victimReps).toBeGreaterThanOrEqual(MAX_SESSION_MISSES);
+    expect(victimReps).toBeLessThanOrEqual(MAX_SESSION_MISSES + 1);
+    expect(movedOn).toBeGreaterThanOrEqual(1);
+    expect(r.results.length).toBeLessThan(steps.length + 3 * MAX_SESSION_MISSES);
+  });
+
+  it('a card missed once still returns (the cap is not a one-strike rule)', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: vocabCards(5) });
+    const steps = vocabSteps(6);
+    const victim = steps[0]!.cardKey!;
+    const r = new SessionRunner(plan(steps), { loader });
+    r.submit(miss());
+    expect(r.feedback.value?.line).toBeUndefined();
+    r.next();
+    expect(r.steps().filter((s) => s.cardKey === victim).length).toBe(2);
   });
 });

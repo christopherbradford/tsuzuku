@@ -189,3 +189,24 @@ describe('dojoFeed', () => {
     expect(feed.gate).toBeNull();
   });
 });
+
+describe('the forecast line prices the reviews it names (design 03 §3)', () => {
+  it('a heavy due day: the minutes are the Shugyō’s, scaling with the count, not a Kumite’s', async () => {
+    const cards: Record<CardKey, CardTuple> = {};
+    for (const id of FIXTURE_IDS.vocab) for (const f of ['rec', 'prod', 'listen', 'pitch'] as const) cards[`${id}#${f}`] = live(5, TODAY);
+    for (const id of FIXTURE_IDS.kana) for (const f of ['rec', 'prod'] as const) cards[`${id}#${f}`] = live(5, TODAY);
+    for (const id of FIXTURE_IDS.kanji) for (const f of ['comp', 'read'] as const) cards[`${id}#${f}`] = live(5, TODAY);
+    for (const id of FIXTURE_IDS.grammar) for (const f of ['cloze', 'prod'] as const) cards[`${id}#${f}`] = live(5, TODAY);
+    for (const id of FIXTURE_IDS.component) cards[`${id}#rec`] = live(5, TODAY);
+    expect(Object.keys(cards).length).toBeGreaterThan(60);
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const feed = await dojoFeed({ loader, teaser: false });
+    expect(feed.due).toBeGreaterThanOrEqual(40);
+    const minutes = Number(/~(\d+) min$/.exec(feed.forecastLine)![1]);
+    expect(feed.forecastLine.startsWith(`${feed.due} reviews`)).toBe(true);
+    expect(minutes).toBe(Math.max(1, Math.round(feed.minutes.shugyo)));
+    expect(minutes).toBeGreaterThan(feed.minutes.kumite);
+    // at the design's 4 s floor per rep the named reviews alone take this long
+    expect(minutes).toBeGreaterThanOrEqual(Math.floor((feed.due * 4) / 60));
+  });
+});

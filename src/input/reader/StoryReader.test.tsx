@@ -23,6 +23,7 @@ import { bus } from '@/shared/events';
 import type { ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
 import { CardFlag } from '@/shared/store-types';
+import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { captureEvents, card, makeTestStore } from '@/store/testing';
 import { StoryReader, StoryReaderView, captureStateFor, isDictionaryFree, isStoryRead, kaidenEvidence, meta, speakerSlots, storyStation, toAttemptResult, type StoryReadResult } from './StoryReader';
@@ -74,6 +75,13 @@ function tokenEl(li: number, token: string): HTMLElement | undefined {
   const line = STORY.lines[li] as StoryItem['lines'][number];
   const ti = line.tokens.indexOf(token);
   return q(`li[data-line="${li}"] .ruby__token[data-token="${ti}"]`) ?? undefined;
+}
+
+/** A frame key pressed outside any input (the frame listens on window, capture phase). */
+function press(key: string): void {
+  act(() => {
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true }));
+  });
 }
 
 function revealAll(): void {
@@ -570,5 +578,66 @@ describe('<StoryReader> as the story-read exercise', () => {
     const pr = props({ step: step({ params: {} }) });
     act(() => render(<StoryReader {...pr} />, root));
     expect(q('.reader__title-en')?.textContent).toBe(STORY.titleEn);
+  });
+
+  describe('inside the frame (contract #32: the hint key)', () => {
+    function inFrame(pr: ExerciseProps, child: preact.ComponentChild) {
+      const s = pr.step;
+      return (
+        <ExerciseFrame step={s} index={0} total={5} ki={10} combo={0} comboTier={0} timer={null} feel="dojo" feedback={null} now={() => clock} onGuard={() => undefined} onPause={() => undefined} onContinue={() => undefined}>
+          {child}
+        </ExerciseFrame>
+      );
+    }
+
+    it("the frame's ? key turns English on once a line is behind you; the first reveal is a hint, later toggles are free", async () => {
+      await makeStore();
+      const pr = props();
+      act(() => render(inFrame(pr, <StoryReader {...pr} />), root));
+      // nothing behind you yet: no English to reveal, no Hint button
+      expect(q('.exercise-frame__hint')).toBeNull();
+      press('?');
+      expect(pr.onHint).not.toHaveBeenCalled();
+      click(q('[data-action="next"]'));
+      expect(q('.exercise-frame__hint')).not.toBeNull();
+      press('?');
+      expect(pr.onHint).toHaveBeenCalledTimes(1);
+      expect(q('[data-action="toggle-en"]')?.getAttribute('aria-pressed')).toBe('true');
+      expect(q('li[data-line="0"] [data-field="en"]')?.textContent).toBe(STORY.lines[0]!.en);
+      // used: the Hint button goes away and ? is inert
+      expect(q('.exercise-frame__hint')).toBeNull();
+      press('?');
+      expect(pr.onHint).toHaveBeenCalledTimes(1);
+      // off and on again through the toolbar is not a second hint
+      click(q('[data-action="toggle-en"]'));
+      expect(q('.exercise-frame__hint')).not.toBeNull();
+      click(q('[data-action="toggle-en"]'));
+      expect(pr.onHint).toHaveBeenCalledTimes(1);
+      // Enter still belongs to the reading keys (the hint-only set never shadows them)
+      press('Enter');
+      expect(q('[data-field="progress"]')?.textContent).toContain('3');
+      finishRead();
+      expect(pr.onResult).toHaveBeenCalledWith(expect.objectContaining({ hintUsed: true }));
+    });
+
+    it("the frame's Hint button is the same reveal; standalone, the English toggle stays free and offers no frame hint", async () => {
+      await makeStore();
+      const pr = props();
+      act(() => render(inFrame(pr, <StoryReader {...pr} />), root));
+      click(q('[data-action="next"]'));
+      click(q('.exercise-frame__hint'));
+      expect(pr.onHint).toHaveBeenCalledTimes(1);
+      expect(q('li[data-line="0"] [data-field="en"]')).not.toBeNull();
+
+      render(null, root);
+      const onHint = vi.fn();
+      const onDone = vi.fn<(r: StoryReadResult) => void>();
+      act(() => render(inFrame(pr, <StoryReaderView storyId={FIXTURE_STORY_ID} loader={loader} furigana="always" onDone={onDone} onHint={onHint} />), root));
+      click(q('[data-action="next"]'));
+      expect(q('.exercise-frame__hint')).toBeNull();
+      click(q('[data-action="toggle-en"]'));
+      expect(q('li[data-line="0"] [data-field="en"]')).not.toBeNull();
+      expect(onHint).not.toHaveBeenCalled();
+    });
   });
 });

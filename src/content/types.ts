@@ -760,7 +760,11 @@ export interface ManifestStation {
 /** `public/content/manifest.json` — generated, never hand-written (V35). */
 export interface ContentManifest {
   schema: 'tsuzuku.manifest/1';
-  /** e.g. `2026.10.1`. */
+  /**
+   * Keys the loader's Cache API mirror (`tsuzuku-content-<contentVersion>`). `build-content-index.ts`
+   * derives it from the content (`c-` + 10 hex of a sha256 over every content file) unless
+   * `--version` overrides it with a hand-picked id such as `2026.10.1`.
+   */
   contentVersion: string;
   generatedAt: string;
   files: ManifestFile[];

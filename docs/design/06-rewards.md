@@ -109,7 +109,7 @@ Each badge is a circular family-crest-style emblem rendered from a declarative s
 
 ## 3. Kakejiku (掛け軸) — wallpapers (28)
 
-**Rules.** Each piece is a seeded SVG scene (`seed = hash(profile.seed, wallpaperId, reforgeCount)`) with two compositions, desktop 16:9 and phone 9:19.5, rendered to PNG at 1920×1080 / 2560×1440 and 1170×2532 / 1290×2796 (3840×2160 only on desktop with ≥ 4 GB device memory). Phone layouts keep the top 12 % and bottom 10 % as safe zones. **Progressive reveal:** locked pieces show as a sumi silhouette; those tied to a counter reveal in quadrants at 25/50/75/100 % of the condition. **Reforge** re-rolls detail **once per day per piece** and is labelled as cosmetic ("same picture, new brush"); **living** pieces re-render from current state. Personalization tokens: `nameKana`, `chosenKanji`, belt seal, `streak.longest` (streak-based personalization is frozen at the longest streak so a break never shrinks a piece), total days, a Mastered sentence of the learner's choice, station, date (Japanese era format). Pipeline in `07 §8`. `WALLPAPER_IDS` lists exactly these 28 ids.
+**Rules.** Each piece is a seeded SVG scene (`seed = hash(profile.seed, wallpaperId, reforgeCount)`) with two compositions, desktop 16:9 and phone 9:19.5, rendered to PNG at 1920×1080 / 2560×1440 and 1170×2532 / 1290×2796; 3840×2160 only where `canRender4k()` holds — a desktop pointer at ≥ 1024 px, not iOS, and `navigator.deviceMemory` (when the browser reports it) ≥ 4 GB; everywhere else the picker stops at 2560×1440 and says so. Phone layouts keep the top 12 % and bottom 10 % as safe zones. **Progressive reveal:** locked pieces show as a sumi silhouette; those tied to a counter reveal in quadrants at 25/50/75/100 % of the condition. **Reforge** re-rolls detail **once per day per piece** and is labelled as cosmetic ("same picture, new brush"); **living** pieces re-render from current state. Personalization tokens: `nameKana`, `chosenKanji`, belt seal, `streak.longest` (streak-based personalization is frozen at the longest streak so a break never shrinks a piece), total days, a Mastered sentence of the learner's choice (a typed custom sentence is capped at 48 glyphs; every sentence the art lays out is cut to 96), station, date (Japanese era format). Pipeline in `07 §8`. `WALLPAPER_IDS` lists exactly these 28 ids.
 
 | Id | Name | Concept | Palette | Technique | Personalization | Unlock |
 |---|---|---|---|---|---|---|
@@ -172,7 +172,7 @@ An SVG scene that is the save file made visible; everything below is determinist
 
 ## 6. Michikusa (道草) library and later collections
 
-212 fragments (4 per station) collected one per session; the Library shows them by station with the un-collected count ("3 more at Totsuka"). Yojijukugo (100) arrive with the 五段 content pack as a hook; the Library reserves a shelf.
+212 fragments (4 per station) collected one per session; the Library shows them by station with the un-collected count ("3 more at Totsuka"). The Library also reserves a yojijukugo shelf: the 100 four-character idioms are a later content release (a `contentVersion` that adds files, `07 §6`), and the empty-shelf copy says only that they arrive later — no pack name, no rank.
 
 ---
 

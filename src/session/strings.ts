@@ -122,6 +122,8 @@ export const S = {
   estMinutesOne: '~1 min',
   repsCount: '{n} reps',
   repsCountOne: '1 rep',
+  repsAbout: '~{n} reps',
+  minutesAbout: '~{n} min',
   dueTaken: '{taken} of {due} due reviews',
   newItems: '{n} new items',
   newItemOne: '1 new item',

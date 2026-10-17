@@ -986,7 +986,7 @@
  },
  {
   "path": "scripts/validate-content.ts",
-  "responsibility": "[P1] REAL from day 1 (replaces the console.log stub; 82 Pass-1 files depend on its fix loop): implements CONTENT_GUIDE §18 V01–V36 — V01–V19, V23–V26, V30–V33 in the first commit, V20–V22, V27, V34–V36 within the week — over public/content/**; imports ID_PATTERNS, RUBY_RE, KANA_*_RE, STATIONS, COVERAGE_TARGETS/coverageTargetFor, SENTENCE_MAX_CHARS and the ruby helpers directly from src/content/types.ts and src/content/ruby.ts (run with node --experimental-strip-types); writes StoryLine.tokenIds from the V20 match (linker); exit code 1 on any F; JSON report {file,id,rule,message}[]; `npm run content:validate`.",
+  "responsibility": "[P1] REAL from day 1 (replaces the console.log stub; 82 Pass-1 files depend on its fix loop): implements CONTENT_GUIDE §18 V01–V39 — V01–V19, V23–V26, V30–V33 in the first commit, V20–V22, V27, V34–V36 within the week, V37–V39 (information-only warnings) in review round 2 — over public/content/**; imports ID_PATTERNS, RUBY_RE, KANA_*_RE, STATIONS, COVERAGE_TARGETS/coverageTargetFor, SENTENCE_MAX_CHARS and the ruby helpers directly from src/content/types.ts and src/content/ruby.ts (run with node --experimental-strip-types); writes StoryLine.tokenIds from the V20 match (linker); exit code 1 on any F; JSON report {file,id,rule,message}[]; `npm run content:validate`.",
   "api": "export function validate(root:string,o?:{components:ComponentDef[];denylist:string[];strict:boolean}):{failures:Finding[];warnings:Finding[];linked:number}; export interface Finding {file:string;id?:string;rule:string;message:string}; (CLI) node --experimental-strip-types scripts/validate-content.ts [--strict] [--json]",
   "depends_on": [
    "src/content/types.ts",
@@ -2514,17 +2514,27 @@
  {
   "path": "src/art/index.ts",
   "kind": "lib",
-  "responsibility": "[P1] Barrel for A: DojoScene, CeremonyHost, MonCrest, GoshuinStamp, renderWallpaper, exportPng.",
-  "api": "export { DojoScene } from './dojo/DojoScene'; export { CeremonyHost } from './ceremony/CeremonyHost'; export { MonCrest } from './MonCrest'; export { GoshuinStamp } from './GoshuinStamp'; export { renderWallpaper, WALLPAPERS } from './wallpapers/index'; export { exportPng } from './png'",
+  "responsibility": "[P1] Boot barrel for A: DojoScene, CeremonyHost, MonCrest, GoshuinStamp only (review round 2 #12: the wallpaper generators and png.ts moved to the studio-only barrel src/art/studio.ts so they are not pulled at boot).",
+  "api": "export { DojoScene } from './dojo/DojoScene'; export { CeremonyHost } from './ceremony/CeremonyHost'; export { MonCrest } from './MonCrest'; export { GoshuinStamp } from './GoshuinStamp'",
   "depends_on": [
    "src/art/dojo/DojoScene.tsx",
    "src/art/ceremony/CeremonyHost.tsx",
    "src/art/MonCrest.tsx",
-   "src/art/GoshuinStamp.tsx",
+   "src/art/GoshuinStamp.tsx"
+  ],
+  "tests": "n/a",
+  "owner_group": "G"
+ },
+ {
+  "path": "src/art/studio.ts",
+  "kind": "lib",
+  "responsibility": "[P1] Studio-only barrel (review round 2 #12): renderWallpaper, WALLPAPERS, exportPng, download, canRender4k, exportSizes, filenameFor + wallpaper/png types; imported by the Studio / Collections pages, never by the boot barrel.",
+  "api": "export { renderWallpaper, WALLPAPERS } from './wallpapers/index'; export { exportPng, download, canRender4k, exportSizes, filenameFor } from './png'",
+  "depends_on": [
    "src/art/wallpapers/index.ts",
    "src/art/png.ts"
   ],
-  "tests": "n/a",
+  "tests": "src/art/studio.test.ts",
   "owner_group": "G"
  },
  {

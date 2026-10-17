@@ -3,14 +3,23 @@
  *
  * Turn planning (who speaks, where the aizuchi slots are, which register each
  * line is scored against), the per-mode line outcomes built on
- * `options.ts` graders, a kana-aware retry of `gradeTyped`, and the debrief
- * summary. No DOM, no store, no clock: everything a test or E's builder can
- * call directly. `RolePlay.tsx` re-exports all of it.
+ * `options.ts` graders, a kana-aware retry of `gradeTyped`, the ruby helper
+ * for Choose / Build surfaces, and the debrief summary. No DOM, no store, no
+ * clock: everything a test or E's builder can call directly. `RolePlay.tsx`
+ * re-exports all of it.
+ *
+ * Two registers per turn (review round 2, #1): `register` is the target IN
+ * FORCE (the latest `registerTarget`, else the story register) — the aizuchi
+ * set and the "Register shift" chip follow it; `lineRegister` is what a
+ * learner line is shown and scored against — an explicit target when one is
+ * in force, else the gold line's own register (`goldRegisterTag`), so a
+ * polite model line inside a casual dialogue is not presented as casual.
  */
-import { KANJI_RE, segmentsToTokens, toKana, toPlain } from '@/content/ruby';
+import { KANJI_RE, parseRuby, segmentsToTokens, toKana, toPlain } from '@/content/ruby';
 import type { ContentItem, ErrorTag, RegisterTag, StoryItem, StoryLine } from '@/content/types';
 import { aizuchiSlots, type SlotScore } from './aizuchi';
 import { gradeBuild, gradeOption, gradeTyped, type DialogueOption } from './options';
+import { detectRegister, markersDetailed } from './register';
 
 export type TaiwaMode = 'choose' | 'build' | 'type' | 'speak';
 
@@ -42,24 +51,50 @@ export function registerTargets(lines: readonly StoryLine[], initial: RegisterTa
   });
 }
 
+/** The gold line's own register as a content tag; `null` when it carries no marker at all (ええと……冬に、たぶん。) or reads as mixed. */
+export function goldRegisterTag(line: Pick<StoryLine, 'ja'>): RegisterTag | null {
+  const plain = toPlain(line.ja);
+  if (markersDetailed(plain).length === 0) return null;
+  switch (detectRegister(plain)) {
+    case 'polite':
+      return 'polite';
+    case 'casual':
+      return 'casual';
+    case 'keigo':
+      return 'honorific';
+    default:
+      return null;
+  }
+}
+
 export interface Turn {
   lineIndex: number;
   role: 'npc' | 'learner';
   /** An aizuchi slot opens after this NPC line. */
   slot: boolean;
+  /** The target in force: the latest `registerTarget` at or before this line, else the story register. */
   register: RegisterTag;
+  /** What a learner line is shown and scored against: an explicit target in force, else the gold line's own register, else `register`. */
+  lineRegister: RegisterTag;
 }
 
 /** One turn per line, in order. */
 export function turnPlan(story: StoryItem, learner: string, initial: RegisterTag): Turn[] {
   const slots = new Set(aizuchiSlots(story.lines, learner).map((s) => s.lineIndex));
   const regs = registerTargets(story.lines, initial);
-  return story.lines.map((l, i) => ({
-    lineIndex: i,
-    role: l.speaker === learner ? 'learner' : 'npc',
-    slot: l.speaker !== learner && slots.has(i),
-    register: regs[i] as RegisterTag,
-  }));
+  let explicit: RegisterTag | null = null;
+  return story.lines.map((l, i) => {
+    if (l.registerTarget) explicit = l.registerTarget;
+    const register = regs[i] as RegisterTag;
+    const role = l.speaker === learner ? 'learner' : 'npc';
+    return {
+      lineIndex: i,
+      role,
+      slot: role === 'npc' && slots.has(i),
+      register,
+      lineRegister: role === 'learner' ? (explicit ?? goldRegisterTag(l) ?? register) : register,
+    };
+  });
 }
 
 export type LineKind = 'best' | 'ok' | 'near' | 'wrong';
@@ -121,6 +156,32 @@ export function kanaVariant(text: string, readings: Map<string, string>): string
   let out = text;
   for (const [tok, kana] of Array.from(readings.entries()).sort((a, b) => b[0].length - a[0].length)) out = out.split(tok).join(kana);
   return out;
+}
+
+/**
+ * `text` (an option or a tile built from the line's tokens) with the line's
+ * own furigana: every ruby base of `line.ja` found in `text` is wrapped as
+ * `{base|reading}`, longest bases first, never inside an earlier wrap. A
+ * distractor that conjugates a word differently still gets its kanji read
+ * (行く→い survives 行くませんか). Plain text comes back unchanged.
+ */
+export function withLineRuby(text: string, line: Pick<StoryLine, 'ja'>): string {
+  const readings = new Map<string, string>();
+  for (const seg of parseRuby(line.ja)) if (seg.reading !== null && seg.base.length > 0) readings.set(seg.base, seg.reading);
+  if (readings.size === 0) return text;
+  let parts: { text: string; ruby: boolean }[] = [{ text, ruby: false }];
+  for (const [base, reading] of Array.from(readings.entries()).sort((a, b) => b[0].length - a[0].length)) {
+    parts = parts.flatMap((part) => {
+      if (part.ruby || !part.text.includes(base)) return [part];
+      const out: { text: string; ruby: boolean }[] = [];
+      part.text.split(base).forEach((plain, i) => {
+        if (i > 0) out.push({ text: `{${base}|${reading}}`, ruby: true });
+        if (plain.length > 0) out.push({ text: plain, ruby: false });
+      });
+      return out;
+    });
+  }
+  return parts.map((p) => p.text).join('');
 }
 
 /**

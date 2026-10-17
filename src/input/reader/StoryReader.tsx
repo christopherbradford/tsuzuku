@@ -8,7 +8,9 @@
  * furigana fog from `fog.ts` (a reveal is a hint), tap-gloss on every token
  * (item via `tokenIds` → `loader.get` / `getAsync` → `<Gloss>`; its backdrop
  * covers the page, so closing always returns focus to the tapped token), the English
- * line once the line is behind you, i+1 words marked, vertical text from Blue.
+ * line once the line is behind you (in the exercise step the frame's `?` /
+ * Hint button also turns it on, and the first English reveal there counts as
+ * a hint — contract #32), i+1 words marked, vertical text from Blue.
  * A silent `createReadingTimer` measures cpm (paused while hidden). Then
  * `<Comprehension>`; ≥ 2/3 is full credit. On finish:
  *   - a gloss tap on an introduced word graded Hard through `capture.onGlossTap`
@@ -113,8 +115,14 @@ export interface StoryReaderProps {
   jj?: boolean;
   /** Learner station (band, vertical toggle); default `store.progress.station`. */
   station?: number;
-  /** A fog reveal (hint) happened. */
+  /** A fog reveal (hint) happened — and, with `frameHint`, the first English reveal. */
   onHint?(): void;
+  /**
+   * Exercise-step mode: register the English reveal as the frame's hint (`?` /
+   * Hint button) while reading with a line behind you and English off; the
+   * first reveal counts as a hint. Standalone readers leave it unset (free toggle).
+   */
+  frameHint?: boolean;
 }
 
 export function isStoryItem(i: ContentItem | null | undefined): i is StoryItem {
@@ -218,6 +226,7 @@ export function StoryReader(p: StoryReaderProps | ExerciseProps): JSX.Element {
         furigana={p.furigana}
         jj={p.jj}
         onHint={p.onHint}
+        frameHint
         onDone={(r) => p.onResult(toAttemptResult(r))}
       />
     );
@@ -351,6 +360,20 @@ export function StoryReaderView(p: StoryReaderProps): JSX.Element {
     setHints((h) => h + 1);
     latest.current.onHint?.();
   };
+
+  // English on: in the exercise step the first reveal is a hint (by `?`, the Hint button or the toolbar alike).
+  const enHinted = useRef(false);
+  const showEnglish = (): void => {
+    if (showEn) return;
+    setShowEn(true);
+    if (latest.current.frameHint && !enHinted.current) {
+      enHinted.current = true;
+      onReveal();
+    }
+  };
+  const canRevealEn = p.frameHint === true && phase === 'reading' && !showEn && current > 0;
+  // Hint-only set: transparent to `ReadingKeys` / `Comprehension` keys; `?` reads it while reading.
+  useExerciseKeys({ onHint: canRevealEn ? showEnglish : undefined });
 
   const onTokenTap =
     (lineIndex: number) =>
@@ -507,7 +530,7 @@ export function StoryReaderView(p: StoryReaderProps): JSX.Element {
       </header>
 
       <div class="reader__toolbar">
-        <button type="button" class="btn btn--ghost btn--sm" aria-pressed={showEn ? 'true' : 'false'} onClick={() => setShowEn((v) => !v)} data-action="toggle-en">
+        <button type="button" class="btn btn--ghost btn--sm" aria-pressed={showEn ? 'true' : 'false'} onClick={() => (showEn ? setShowEn(false) : showEnglish())} data-action="toggle-en">
           {showEn ? S.hideEnglish : S.showEnglish}
         </button>
         {learnerStation >= VERTICAL_FROM_STATION ? (

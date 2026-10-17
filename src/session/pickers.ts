@@ -6,20 +6,22 @@
  * survives the +3 / +10 graduations), today's new-item budget by belt
  * (`effectiveNewPerDay`, the store's one rule, re-exported here), the due
  * queue in Kata order, the easiest cards for
- * cooldowns and the Welcome Back set, today's Scrolls, the Michikusa draw and
- * the week's strand minutes. Split out of `builder.ts` (which re-exports
- * them); nothing here calls back into the builder at runtime.
+ * cooldowns and the Welcome Back set, today's Scrolls, the Michikusa draw, the
+ * Grudge List keys (`grudgeKeys`, shared by the builder's Grudge block and the
+ * Gatekeeper's rematch rule) and the week's strand minutes. Split out of
+ * `builder.ts` (which re-exports them); nothing here calls back into the
+ * builder at runtime.
  */
 import type { CardKey } from '../content/types';
 import { hashSeed } from '../shared/hash';
-import { parseCardKey, tryKindOfId } from '../shared/ids';
+import { isCardKey, parseCardKey, tryKindOfId } from '../shared/ids';
 import { CardFlag, hasFlag, type EpochDay, type SaveMeta } from '../shared/store-types';
 import { dayStartMs } from '../shared/time';
 import { effectiveNewPerDay, store } from '../store';
 import { beltOfStation } from '../store/derived';
 import { dueCards, kaidenQuota, nextScrolls, queueCardFor, type QueueCard, type Scroll } from '../learn';
 import type { Strand } from './blocks';
-import type { PlanContext } from './builder';
+import type { PlanContext } from './context';
 
 /** 7-day accuracy from the daily rows (`ok / reps`), with the rep count behind it. */
 export function accuracy7(daily: SaveMeta['daily'], today: EpochDay): { acc7: number; n: number } {
@@ -90,6 +92,11 @@ export function introducedToday(today: EpochDay): { vocab: number; kanji: number
  * importing it from here; no second copy of the rule lives in this group.
  */
 export { effectiveNewPerDay };
+
+/** The Grudge List as card keys: a saved entry that is not well-formed (`isCardKey`) is ignored, never parsed or counted. */
+export function grudgeKeys(): CardKey[] {
+  return store.progress.value.grudge.filter(isCardKey);
+}
 
 /** Load bound for due-card content: the cards the planners can draw plus the extra the sparring pool and `exclude` sets reach past `showDue`. */
 export const DUE_LOAD_RESERVE = 40;

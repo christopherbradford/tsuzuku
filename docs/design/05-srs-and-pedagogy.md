@@ -2,7 +2,7 @@
 
 ## 1. FSRS-5 parameters and scheduling policy
 
-Implemented in-house in `src/learn/fsrs.ts` (pure TS, ~250 lines, no runtime dependency); golden tests pin it to the published FSRS-5 reference vectors generated once with `ts-fsrs` as a dev-only tool.
+Implemented in-house in `src/learn/fsrs.ts` (pure TS, ~250 lines, no runtime dependency); golden tests pin it to `src/learn/fsrs-golden.ts`, a frozen table of 60 seeded review sequences generated once by the engine itself (`mulberry32(0x5eed)`; `ts-fsrs` is not installed) and regenerated only when a formula deliberately changes (last: the FSRS-5 difficulty damping, review round 1).
 
 | Setting | Value |
 |---|---|
@@ -22,7 +22,9 @@ R(t, S)        = (1 + FACTOR · t / S) ^ DECAY                       // retrieva
 I(r, S)        = (S / FACTOR) · (r ^ (1/DECAY) − 1)                 // next interval for desired retention r
 S0(g)          = w[g−1]                                              // initial stability by rating g ∈ 1..4
 D0(g)          = w4 − e^(w5·(g−1)) + 1,  clamped 1..10
-D'             = w7·D0(4) + (1 − w7)·(D − w6·(g − 3))                // mean-reverting difficulty update
+ΔD             = −w6 · (g − 3)
+D″             = D + ΔD · (10 − D) / 9                                 // FSRS-5 linear damping: a hard card moves less
+D'             = w7·D0(4) + (1 − w7)·D″,  clamped 1..10                 // mean-reverting difficulty update
 S'_success     = S · (e^w8 · (11 − D) · S^(−w9) · (e^(w10·(1−R)) − 1) · [g=2 ? w15 : 1] · [g=4 ? w16 : 1] + 1)
 S'_lapse       = min(S, w11 · D^(−w12) · ((S+1)^w13 − 1) · e^(w14·(1−R)))
 S'_same_day    = S · e^(w17 · (g − 3 + w18))                         // short-term step

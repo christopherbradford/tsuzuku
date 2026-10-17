@@ -5,6 +5,7 @@ import {
   AIZUCHI_PAUSE_MS,
   IMPLICIT_WINDOW_DAYS,
   SPEAK_MAX_MS,
+  goldRegisterTag,
   gradeTypedKanaAware,
   isStoryItem,
   kanaVariant,
@@ -16,6 +17,7 @@ import {
   summarize,
   tokenReadings,
   turnPlan,
+  withLineRuby,
 } from './role-play-logic';
 
 const DIALOGUE = FIXTURE.items[FIXTURE_DIALOGUE_ID] as StoryItem;
@@ -57,10 +59,48 @@ describe('role-play logic', () => {
     expect(plan.map((t) => t.role)).toEqual(['npc', 'learner', 'npc', 'learner', 'npc', 'learner', 'npc', 'learner', 'npc', 'learner', 'npc', 'learner']);
     expect(plan.filter((t) => t.slot).map((t) => t.lineIndex)).toEqual([4, 10]);
     expect(plan.every((t) => t.register === 'polite')).toBe(true);
+    // the model line おはよう、ケン。 is itself casual, so that line is shown as casual; every other line as polite
+    expect(plan.map((t) => t.lineRegister)).toEqual(plan.map((t, i) => (i === 1 ? 'casual' : 'polite')));
     // playing Ken instead: Hana's lines become NPC lines; her lines carry no content slots
     const asKen = turnPlan(DIALOGUE, 'ケン', 'polite');
     expect(asKen.filter((t) => t.role === 'learner').map((t) => t.lineIndex)).toEqual([0, 2, 4, 6, 8, 10]);
     expect(asKen.some((t) => t.slot)).toBe(false);
+  });
+
+  // Review round 2, #1: a learner line is shown and scored against its own register unless a registerTarget is in force.
+  it('goldRegisterTag reads the model line; null for a mixed or marker-less line', () => {
+    expect(goldRegisterTag(L(3))).toBe('polite');
+    expect(goldRegisterTag({ ja: 'うん、{食|た}べる。' })).toBe('casual');
+    expect(goldRegisterTag({ ja: '{少々|しょうしょう}お{待|ま}ちください。' })).toBe('honorific');
+    expect(goldRegisterTag({ ja: 'うん、行きます。' })).toBeNull();
+    expect(goldRegisterTag({ ja: 'ええと……{冬|ふゆ}に、たぶん。' })).toBeNull();
+  });
+
+  it('turnPlan: lineRegister is the explicit target in force, else the gold line\'s own register, else the story register', () => {
+    // a casual-register dialogue whose learner speaks politely (田中さん in s-13-2): the line reads polite, the aizuchi target stays casual
+    const casualStory: StoryItem = { ...DIALOGUE, register: 'casual' };
+    const plan = turnPlan(casualStory, 'ハナ', 'casual');
+    expect(plan.filter((t) => t.role === 'npc').every((t) => t.register === 'casual' && t.lineRegister === 'casual')).toBe(true);
+    expect(plan.filter((t) => t.role === 'learner').every((t) => t.register === 'casual')).toBe(true);
+    expect(plan.filter((t) => t.role === 'learner').map((t) => t.lineRegister)).toEqual(['casual', 'polite', 'polite', 'polite', 'polite', 'polite']);
+    // an explicit registerTarget overrides the gold line's register from its line on
+    const switched: StoryItem = { ...casualStory, lines: casualStory.lines.map((l, i) => (i === 4 ? { ...l, registerTarget: 'casual' } : l)) };
+    const sw = turnPlan(switched, 'ハナ', 'casual');
+    expect(sw.slice(0, 4).filter((t) => t.role === 'learner').map((t) => t.lineRegister)).toEqual(['casual', 'polite']);
+    expect(sw.slice(4).filter((t) => t.role === 'learner').every((t) => t.lineRegister === 'casual')).toBe(true);
+    // a marker-less gold line falls back to the register in force
+    const fragment: StoryItem = { ...DIALOGUE, lines: DIALOGUE.lines.map((l, i) => (i === 1 ? { ...l, ja: 'ええと……{冬|ふゆ}に、たぶん。' } : l)) };
+    expect(turnPlan(fragment, 'ハナ', 'polite')[1]?.lineRegister).toBe('polite');
+  });
+
+  it('withLineRuby gives an option or tile the line\'s own furigana, longest base first, surviving a distractor\'s conjugation', () => {
+    expect(withLineRuby('はい、飲みます。', L(3))).toBe('はい、{飲|の}みます。');
+    expect(withLineRuby('はい、飲むます。', L(3))).toBe('はい、{飲|の}むます。');
+    expect(withLineRuby('はい。', L(3))).toBe('はい。');
+    expect(withLineRuby('私も食べます。', L(5))).toBe('{私|わたし}も{食|た}べます。');
+    expect(withLineRuby('ケン', L(1))).toBe('ケン');
+    // a longer base wins over a shorter one it contains; a wrapped base is never re-wrapped
+    expect(withLineRuby('小田原城と小田原', { ja: '{小田原城|おだわらじょう}と{小田原|おだわら}の{田|た}んぼ' })).toBe('{小田原城|おだわらじょう}と{小田原|おだわら}');
   });
 
   it('outcomeFromOption maps option kinds to best / ok / wrong with the register verdict', () => {
@@ -87,7 +127,9 @@ describe('role-play logic', () => {
     expect(gradeTypedKanaAware('わたしもたべます', L(5), 'polite').best).toBe(true);
     expect(outcomeFromTyped(5, 'わたしもたべます', L(5), 'polite', 5)).toMatchObject({ kind: 'best' });
     expect(outcomeFromTyped(5, 'はい、ぱんをたべます', L(5), 'polite', 5)).toMatchObject({ kind: 'ok', tags: [] });
-    expect(outcomeFromTyped(5, 'はい、ぱんをたべます', L(5), 'casual', 5)).toMatchObject({ kind: 'wrong', tags: ['register'] });
+    // the gold line's own register (polite) is never a slip, even under a casual target; a mixed line still is
+    expect(outcomeFromTyped(5, 'はい、ぱんをたべます', L(5), 'casual', 5)).toMatchObject({ kind: 'ok', tags: [], registerOk: true });
+    expect(outcomeFromTyped(5, 'うん、ぱんをたべます', L(5), 'casual', 5)).toMatchObject({ kind: 'wrong', tags: ['register'], registerOk: false });
     // a line without kanji grades exactly like gradeTyped
     expect(gradeTypedKanaAware('おはようけん', L(1), 'polite').best).toBe(true);
   });

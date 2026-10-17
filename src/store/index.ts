@@ -40,7 +40,7 @@ export { NAME_MAX_GLYPHS } from '../shared/store-types';
 export { exportSave, previewImport, previewImportBlob, applyImport, mergeSaves, hasNoLearnerTrace, buildBackup, BACKUP_SCHEMA, IMPORT_MAX_BYTES } from './backup';
 export type { ImportPreview, ImportSummary, ImportData, BackupDocument } from './backup';
 export { XP_TABLE, COMBO_XP, MAX_LEVEL, levelFor, xpToNext, xpAtLevel, xpFor, repXp, comboXp } from './xp';
-export { QUESTS, QUEST_COUNT, NEEDS_FACET, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests, storeHasFacet } from './quests';
+export { QUESTS, QUEST_COUNT, NEEDS_FACET, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests, storeHasFacet, setQuestGates, questClosed, revalidateQuests } from './quests';
 export type { QuestRule, QuestProgress, PickOptions } from './quests';
 export { STAT_KEYS, updateMedian, honesty, HONESTY_WINDOW } from './stats';
 export {

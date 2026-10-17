@@ -462,3 +462,43 @@ describe('<ListeningArena>', () => {
     expect(graded.some((c) => c[3] >= 1)).toBe(true);
   });
 });
+
+describe('profile.dictatedSentence (the Waveform kakejiku text)', () => {
+  function dictationAt(items: ListenItem[]): { index: number; line: StoryLine } {
+    const index = items.findIndex((i) => i.kind === 'dictation');
+    expect(index).toBeGreaterThanOrEqual(0); // the seeded fixture set carries one
+    const item = items[index] as Extract<ListenItem, { kind: 'dictation' }>;
+    return { index, line: DIALOGUE.lines[item.lineIndex] as StoryLine };
+  }
+  async function runSet(rate: number, o: { wrongAt?: number } = {}): Promise<void> {
+    const { audio } = fakeAudio();
+    installServices({ audio });
+    mountStandalone(rate);
+    click('.hanko');
+    await flush();
+    act(() => buttonByText(S.toQuestions).click());
+    await answerAll(expectedItems(), o);
+  }
+
+  it('a perfect dictation at 1× writes the plain surface (no ruby markup); the newest replaces the previous one', async () => {
+    act(() => store.patch('profile', (p) => ({ ...p, dictatedSentence: '前の文。' })));
+    const { line } = dictationAt(expectedItems());
+    expect(line.ja).toMatch(/\{/); // the fixture line carries ruby, so plain ≠ ja
+    await runSet(1);
+    const s = store.profile.value.dictatedSentence;
+    expect(typeof s).toBe('string');
+    expect(s).toBe(toPlain(line.ja));
+    expect(s).not.toMatch(/[{}|]/);
+  });
+
+  it('a partial dictation leaves it untouched', async () => {
+    const { index } = dictationAt(expectedItems());
+    await runSet(1, { wrongAt: index });
+    expect(store.profile.value.dictatedSentence).toBeUndefined();
+  });
+
+  it('a perfect dictation at a slowed rate (< 1×) does not count', async () => {
+    await runSet(0.9);
+    expect(store.profile.value.dictatedSentence).toBeUndefined();
+  });
+});

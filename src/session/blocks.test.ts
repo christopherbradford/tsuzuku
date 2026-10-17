@@ -8,17 +8,22 @@ import {
   KATA_MAX_REVIEWS,
   MICHIKUSA_MS,
   MODE_MINUTES,
+  REQUEUE_MODES,
   SPARRING_LISTEN_MIN,
+  TEACH_CARD_MS,
   estimateMs,
   estimateStepMs,
   fitToTime,
   inputMinutesFor,
   outputKindsFor,
   outputMinutesFor,
+  plannedMs,
+  plannedReps,
   strandDeficitFor,
   templateFor,
   type TemplateCtx,
 } from './blocks';
+import { STEP_OFFSETS } from '../learn';
 
 const ctx = (o: Partial<TemplateCtx> = {}): TemplateCtx => ({
   belt: 'yellow',
@@ -234,5 +239,31 @@ describe('strandDeficitFor', () => {
     expect(strandDeficitFor({ form: 0, input: 0, output: 0 }, 'yellow')).toBeNull();
     expect(strandDeficitFor({ form: 80, input: 10, output: 10 }, 'brown')).toBe('input');
     expect(strandDeficitFor({ form: 70, input: 30, output: 0 }, 'black', 1)).toBe('output');
+  });
+});
+
+describe('plannedReps / plannedMs price the learning steps new cards owe (design 03 §2.4)', () => {
+  const step = (o: Partial<Step> & { id: string }): Step => ({ block: 'reviews', exercise: 'meaning-guard', itemId: 'v-n5-0001', cardKey: 'v-n5-0001#rec', params: { choices: ['a', 'b'] }, timed: false, isNew: false, stepTag: null, exposures: 0, estMs: 4000, ...o });
+  const steps: Step[] = [
+    step({ id: 'r1', estMs: 6000 }),
+    step({ id: 'pre', block: 'scroll', isNew: true, params: { scrollId: 'sc', choices: ['a'] }, itemId: 'v-n5-0002', cardKey: 'v-n5-0002#rec' }),
+    step({ id: 'c1', block: 'scroll', isNew: true, stepTag: 'intro', params: { scrollId: 'sc', choices: ['a'] }, itemId: 'v-n5-0002', cardKey: 'v-n5-0002#rec' }),
+    step({ id: 'c2', block: 'scroll', isNew: true, stepTag: 'intro', params: { scrollId: 'sc', choices: ['a'] }, itemId: 'v-n5-0002', cardKey: 'v-n5-0002#prod', estMs: 10_000 }),
+    step({ id: 'c3', block: 'scroll', isNew: true, stepTag: 'intro', params: { scrollId: 'sc', choices: ['a'] }, itemId: 'v-n5-0003', cardKey: 'v-n5-0003#rec' }),
+    step({ id: 'm', block: 'michikusa', exercise: 'story-read', cardKey: null, params: { michikusaId: 'm-04-1' } }),
+  ];
+
+  it('counts each intro check 1 + |STEP_OFFSETS.intro| times in a re-queueing mode, once elsewhere, and never the Michikusa', () => {
+    expect(STEP_OFFSETS.intro).toHaveLength(2);
+    expect(plannedReps(steps, 'kumite')).toBe(5 + 3 * 2);
+    expect(plannedReps(steps, 'gate')).toBe(5);
+    expect(REQUEUE_MODES.has('kumite')).toBe(true);
+    expect(REQUEUE_MODES.has('gate')).toBe(false);
+  });
+
+  it('adds the copies at the step’s own estimate and one teach card per taught item', () => {
+    const base = estimateMs(steps, {});
+    expect(plannedMs(steps, 'gate', {})).toBe(base);
+    expect(plannedMs(steps, 'kumite', {})).toBe(base + 2 * (4000 + 10_000 + 4000) + 2 * TEACH_CARD_MS);
   });
 });
