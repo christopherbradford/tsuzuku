@@ -1,0 +1,5340 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n1",
+  "writer": "vocab-n1-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n1-0151",
+      "word": "政権",
+      "kana": "せいけん",
+      "meanings": [
+        "administration",
+        "regime",
+        "political power"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{選挙|せんきょ}の{結果|けっか}、{十年|じゅうねん}ぶりに{政権|せいけん}が{交代|こうたい}することになった。",
+          "kana": "せんきょのけっか、じゅうねんぶりにせいけんがこうたいすることになった。",
+          "en": "As a result of the election, there will be a change of government for the first time in ten years."
+        },
+        {
+          "ja": "{新|あたら}しい{政権|せいけん}は{発足|ほっそく}{直後|ちょくご}から{高|たか}い{支持率|しじりつ}を{維持|いじ}しています。",
+          "kana": "あたらしいせいけんはほっそくちょくごからたかいしじりつをいじしています。",
+          "en": "The new administration has maintained a high approval rating ever since it took office."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{政治|せいじ}を{実際|じっさい}に{動|うご}かす{力|ちから}。また、それを{握|にぎ}っている{政府|せいふ}。",
+        "kana": "くにのせいじをじっさいにうごかすちから。また、それをにぎっているせいふ。"
+      },
+      "frequencyRank": 5000,
+      "collocations": [
+        "政権交代",
+        "政権を握る"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0152",
+      "word": "かつて",
+      "kana": "かつて",
+      "meanings": [
+        "once",
+        "formerly",
+        "(not) ever (with negative)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "この{辺|あた}りはかつて{海|うみ}だったそうで、{今|いま}でも{貝|かい}の{化石|かせき}が{見|み}つかる。",
+          "kana": "このあたりはかつてうみだったそうで、いまでもかいのかせきがみつかる。",
+          "en": "This area was apparently once the sea, and even now you can find fossil shells here."
+        },
+        {
+          "ja": "これほど{多|おお}くの{観光客|かんこうきゃく}が{訪|おとず}れたことは、かつてありませんでした。",
+          "kana": "これほどおおくのかんこうきゃくがおとずれたことは、かつてありませんでした。",
+          "en": "Never before have so many tourists visited."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ずっと{以前|いぜん}に。{否定|ひてい}と{一緒|いっしょ}に{使|つか}うと「{今|いま}まで{一度|いちど}も」の{意味|いみ}。",
+        "kana": "ずっといぜんに。ひていといっしょにつかうと「いままでいちども」のいみ。"
+      },
+      "frequencyRank": 5008,
+      "notes": "With a negative it means 'never before': かつてない規模 'on an unprecedented scale'.",
+      "altForms": [
+        "嘗て",
+        "曾て"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0153",
+      "word": "急進",
+      "kana": "きゅうしん",
+      "meanings": [
+        "radicalism",
+        "rapid progress"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{急進的|きゅうしんてき}な{改革|かいかく}を{求|もと}める{声|こえ}もあるが、{党内|とうない}の{多|おお}くは{穏健|おんけん}な{路線|ろせん}を{支持|しじ}している。",
+          "kana": "きゅうしんてきなかいかくをもとめるこえもあるが、とうないのおおくはおんけんなろせんをしじしている。",
+          "en": "Some call for radical reform, but most of the party supports a moderate line."
+        },
+        {
+          "ja": "{若|わか}い{頃|ころ}の{彼|かれ}は{急進的|きゅうしんてき}な{思想|しそう}に{傾|かたむ}き、よく{集会|しゅうかい}に{顔|かお}を{出|だ}していたそうだ。",
+          "kana": "わかいころのかれはきゅうしんてきなしそうにかたむき、よくしゅうかいにかおをだしていたそうだ。",
+          "en": "In his youth he apparently leaned toward radical ideas and often showed up at rallies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{目的|もくてき}を{急|いそ}いで{実現|じつげん}しようとして、{社会|しゃかい}の{仕組|しく}みを{大|おお}きく{変|か}えようとすること。",
+        "kana": "もくてきをいそいでじつげんしようとして、しゃかいのしくみをおおきくかえようとすること。"
+      },
+      "frequencyRank": 5016,
+      "collocations": [
+        "急進的",
+        "急進派"
+      ],
+      "confusables": [
+        "v-n1-0234"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0154",
+      "word": "憲法",
+      "kana": "けんぽう",
+      "meanings": [
+        "constitution"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{憲法|けんぽう}を{改正|かいせい}するには、{国会|こっかい}の{賛成|さんせい}だけでなく{国民投票|こくみんとうひょう}も{必要|ひつよう}だ。",
+          "kana": "けんぽうをかいせいするには、こっかいのさんせいだけでなくこくみんとうひょうもひつようだ。",
+          "en": "Amending the constitution requires not only the Diet's approval but also a national referendum."
+        },
+        {
+          "ja": "{表現|ひょうげん}の{自由|じゆう}は{憲法|けんぽう}で{保障|ほしょう}された{権利|けんり}です。",
+          "kana": "ひょうげんのじゆうはけんぽうでほしょうされたけんりです。",
+          "en": "Freedom of expression is a right guaranteed by the constitution."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{仕組|しく}みと{国民|こくみん}の{権利|けんり}を{定|さだ}めた、{最|もっと}も{基本|きほん}となる{法律|ほうりつ}。",
+        "kana": "くにのしくみとこくみんのけんりをさだめた、もっともきほんとなるほうりつ。"
+      },
+      "frequencyRank": 5024,
+      "collocations": [
+        "憲法改正",
+        "憲法違反"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0155",
+      "word": "あえて",
+      "kana": "あえて",
+      "meanings": [
+        "daringly",
+        "deliberately",
+        "(not) particularly (with negative)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{反対|はんたい}されるのは{分|わ}かっていたが、あえて{会議|かいぎ}で{問題点|もんだいてん}を{指摘|してき}した。",
+          "kana": "はんたいされるのはわかっていたが、あえてかいぎでもんだいてんをしてきした。",
+          "en": "I knew I would meet opposition, but I deliberately pointed out the problems at the meeting."
+        },
+        {
+          "ja": "{本人|ほんにん}が{話|はな}したがらないことを、あえて{聞|き}く{必要|ひつよう}はないでしょう。",
+          "kana": "ほんにんがはなしたがらないことを、あえてきくひつようはないでしょう。",
+          "en": "There is probably no need to go out of your way to ask about something the person doesn't want to talk about."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{難|むずか}しいと{分|わ}かっていながら、{思|おも}い{切|き}ってすること。わざわざ。",
+        "kana": "むずかしいとわかっていながら、おもいきってすること。わざわざ。"
+      },
+      "frequencyRank": 5032,
+      "altForms": [
+        "敢えて"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0156",
+      "word": "金利",
+      "kana": "きんり",
+      "meanings": [
+        "interest rate"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{金利|きんり}が{上|あ}がると、{住宅|じゅうたく}ローンの{返済額|へんさいがく}も{増|ふ}える。",
+          "kana": "きんりがあがると、じゅうたくローンのへんさいがくもふえる。",
+          "en": "When interest rates rise, mortgage repayments go up too."
+        },
+        {
+          "ja": "{銀行|ぎんこう}で{相談|そうだん}したところ、{今|いま}の{金利|きんり}なら{固定|こてい}にしたほうが{安心|あんしん}だと{言|い}われました。",
+          "kana": "ぎんこうでそうだんしたところ、いまのきんりならこていにしたほうがあんしんだといわれました。",
+          "en": "When I consulted the bank, they told me that at today's interest rates a fixed rate would be the safer choice."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{貸|か}したり{借|か}りたりする{場合|ばあい}に{付|つ}く{利子|りし}の{割合|わりあい}。",
+        "kana": "おかねをかしたりかりたりするばあいにつくりしのわりあい。"
+      },
+      "frequencyRank": 5040,
+      "collocations": [
+        "金利を引き上げる",
+        "低金利"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0157",
+      "word": "格差",
+      "kana": "かくさ",
+      "meanings": [
+        "disparity",
+        "gap"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{都市|とし}と{地方|ちほう}の{格差|かくさ}は、{年々|ねんねん}{広|ひろ}がっていると{言|い}われている。",
+          "kana": "としとちほうのかくさは、ねんねんひろがっているといわれている。",
+          "en": "The gap between the cities and the regions is said to be widening year by year."
+        },
+        {
+          "ja": "{教育|きょういく}の{格差|かくさ}をなくすために、{無料|むりょう}の{学習支援|がくしゅうしえん}を{始|はじ}めた{団体|だんたい}があります。",
+          "kana": "きょういくのかくさをなくすために、むりょうのがくしゅうしえんをはじめただんたいがあります。",
+          "en": "Some organizations have started offering free tutoring to close the gap in education."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{収入|しゅうにゅう}や{暮|く}らしの{水準|すいじゅん}などに{見|み}られる、{人|ひと}や{地域|ちいき}の{間|あいだ}の{大|おお}きな{差|さ}。",
+        "kana": "しゅうにゅうやくらしのすいじゅんなどにみられる、ひとやちいきのあいだのおおきなさ。"
+      },
+      "frequencyRank": 5048,
+      "collocations": [
+        "格差社会",
+        "所得格差"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0158",
+      "word": "当選",
+      "kana": "とうせん",
+      "meanings": [
+        "being elected",
+        "winning (a prize draw)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{三度目|さんどめ}の{挑戦|ちょうせん}でようやく{市議会|しぎかい}の{議員|ぎいん}に{当選|とうせん}した。",
+          "kana": "かのじょはさんどめのちょうせんでようやくしぎかいのぎいんにとうせんした。",
+          "en": "On her third attempt she was finally elected to the city council."
+        },
+        {
+          "ja": "{応募|おうぼ}したコンサートのチケットが{当選|とうせん}したという{知|し}らせが{届|とど}きました。",
+          "kana": "おうぼしたコンサートのチケットがとうせんしたというしらせがとどきました。",
+          "en": "I received word that I had won the concert tickets I applied for."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{選|えら}ばれること。また、くじなどに{当|あ}たること。",
+        "kana": "せんきょでえらばれること。また、くじなどにあたること。"
+      },
+      "frequencyRank": 5056,
+      "notes": "Opposite of 落選. Also used for winning a lottery or prize draw.",
+      "confusables": [
+        "v-n1-0208"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0159",
+      "word": "解散",
+      "kana": "かいさん",
+      "meanings": [
+        "dissolution (of parliament, a group)",
+        "breaking up"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{首相|しゅしょう}は{衆議院|しゅうぎいん}を{解散|かいさん}し、{来月|らいげつ}{総選挙|そうせんきょ}を{行|おこな}うと{発表|はっぴょう}した。",
+          "kana": "しゅしょうはしゅうぎいんをかいさんし、らいげつそうせんきょをおこなうとはっぴょうした。",
+          "en": "The prime minister announced that he would dissolve the House of Representatives and hold a general election next month."
+        },
+        {
+          "ja": "{学生時代|がくせいじだい}のサークルは、メンバーが{就職|しゅうしょく}すると{自然|しぜん}に{解散|かいさん}してしまった。",
+          "kana": "がくせいじだいのサークルは、メンバーがしゅうしょくするとしぜんにかいさんしてしまった。",
+          "en": "The club from my student days just dissolved naturally once its members got jobs."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{集|あつ}まっていた{人々|ひとびと}が{別|わか}れること。また、{議会|ぎかい}や{団体|だんたい}をなくすこと。",
+        "kana": "あつまっていたひとびとがわかれること。また、ぎかいやだんたいをなくすこと。"
+      },
+      "frequencyRank": 5064,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0160",
+      "word": "国連",
+      "kana": "こくれん",
+      "meanings": [
+        "United Nations"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{国連|こくれん}の{会議|かいぎ}では、{各国|かっこく}の{代表|だいひょう}が{気候変動|きこうへんどう}への{対策|たいさく}を{話|はな}し{合|あ}った。",
+          "kana": "こくれんのかいぎでは、かっこくのだいひょうがきこうへんどうへのたいさくをはなしあった。",
+          "en": "At the UN meeting, representatives of each country discussed measures against climate change."
+        },
+        {
+          "ja": "{兄|あに}は{大学院|だいがくいん}を{出|で}た{後|あと}、{国連|こくれん}の{機関|きかん}で{難民|なんみん}を{支援|しえん}する{仕事|しごと}に{就|つ}いた。",
+          "kana": "あにはだいがくいんをでたあと、こくれんのきかんでなんみんをしえんするしごとについた。",
+          "en": "After finishing graduate school, my brother took a job supporting refugees at a UN agency."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世界|せかい}の{平和|へいわ}と{安全|あんぜん}を{守|まも}るために、{多|おお}くの{国|くに}が{集|あつ}まって{作|つく}った{国際的|こくさいてき}な{組織|そしき}。",
+        "kana": "せかいのへいわとあんぜんをまもるために、おおくのくにがあつまってつくったこくさいてきなそしき。"
+      },
+      "frequencyRank": 5072,
+      "notes": "Abbreviation of 国際連合.",
+      "altForms": [
+        "国際連合"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0161",
+      "word": "訴訟",
+      "kana": "そしょう",
+      "meanings": [
+        "lawsuit",
+        "litigation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{製品|せいひん}の{欠陥|けっかん}で{被害|ひがい}を{受|う}けた{人々|ひとびと}が、メーカーを{相手|あいて}に{訴訟|そしょう}を{起|お}こした。",
+          "kana": "せいひんのけっかんでひがいをうけたひとびとが、メーカーをあいてにそしょうをおこした。",
+          "en": "People harmed by the product's defect filed a lawsuit against the manufacturer."
+        },
+        {
+          "ja": "{訴訟|そしょう}になると{時間|じかん}も{費用|ひよう}もかかりますので、まずは{話|はな}し{合|あ}いで{解決|かいけつ}しましょう。",
+          "kana": "そしょうになるとじかんもひようもかかりますので、まずははなしあいでかいけつしましょう。",
+          "en": "Litigation takes both time and money, so let's first try to settle this through discussion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{争|あらそ}いを{解決|かいけつ}するために、{裁判所|さいばんしょ}に{判断|はんだん}を{求|もと}めること。{裁判|さいばん}。",
+        "kana": "あらそいをかいけつするために、さいばんしょにはんだんをもとめること。さいばん。"
+      },
+      "frequencyRank": 5080,
+      "collocations": [
+        "訴訟を起こす",
+        "民事訴訟"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0162",
+      "word": "保守",
+      "kana": "ほしゅ",
+      "meanings": [
+        "conservatism",
+        "conservative (politics)",
+        "maintenance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{政治|せいじ}の{話|はなし}になると{保守的|ほしゅてき}な{意見|いけん}ばかり{言|い}うので、{議論|ぎろん}にならない。",
+          "kana": "ちちはせいじのはなしになるとほしゅてきないけんばかりいうので、ぎろんにならない。",
+          "en": "Whenever politics comes up, my father only voices conservative opinions, so there is no real discussion."
+        },
+        {
+          "ja": "システムの{保守|ほしゅ}のため、{今夜|こんや}{零時|れいじ}から{朝六時|あさろくじ}までサービスを{停止|ていし}いたします。",
+          "kana": "システムのほしゅのため、こんやれいじからあさろくじまでサービスをていしいたします。",
+          "en": "The service will be suspended from midnight tonight until six in the morning for system maintenance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{古|ふる}くからの{制度|せいど}や{考|かんが}え{方|かた}を{守|まも}ろうとする{立場|たちば}。また、{機械|きかい}などの{点検|てんけん}や{手入|てい}れ。",
+        "kana": "ふるくからのせいどやかんがえかたをまもろうとするたちば。また、きかいなどのてんけんやていれ。"
+      },
+      "frequencyRank": 5088,
+      "notes": "In IT and engineering, 保守 means maintenance (保守点検).",
+      "collocations": [
+        "保守的",
+        "保守点検"
+      ],
+      "confusables": [
+        "v-n1-0170"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0163",
+      "word": "施策",
+      "kana": "しさく",
+      "meanings": [
+        "policy measure",
+        "program (of government)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{子育|こそだ}て{世帯|せたい}を{支援|しえん}する{新|あたら}しい{施策|しさく}を{次々|つぎつぎ}と{打|う}ち{出|だ}した。",
+          "kana": "せいふはこそだてせたいをしえんするあたらしいしさくをつぎつぎとうちだした。",
+          "en": "The government rolled out one new measure after another to support households raising children."
+        },
+        {
+          "ja": "{観光客|かんこうきゃく}を{呼|よ}び{戻|もど}すための{施策|しさく}として、{市|し}は{宿泊費|しゅくはくひ}の{一部|いちぶ}を{補助|ほじょ}しています。",
+          "kana": "かんこうきゃくをよびもどすためのしさくとして、しはしゅくはくひのいちぶをほじょしています。",
+          "en": "As a measure to bring tourists back, the city is subsidizing part of the cost of accommodation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}や{自治体|じちたい}が、{問題|もんだい}を{解決|かいけつ}するために{実際|じっさい}に{行|おこな}う{計画|けいかく}や{対策|たいさく}。",
+        "kana": "せいふやじちたいが、もんだいをかいけつするためにじっさいにおこなうけいかくやたいさく。"
+      },
+      "frequencyRank": 5096,
+      "notes": "Also read せさく in administrative usage.",
+      "station": 47
+    },
+    {
+      "id": "v-n1-0164",
+      "word": "到底",
+      "kana": "とうてい",
+      "meanings": [
+        "(not) possibly",
+        "(not) by any means"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{一週間|いっしゅうかん}でこの{量|りょう}の{書類|しょるい}を{全部|ぜんぶ}{読|よ}むなんて、{到底|とうてい}{無理|むり}だ。",
+          "kana": "いっしゅうかんでこのりょうのしょるいをぜんぶよむなんて、とうていむりだ。",
+          "en": "There is no way I could possibly read this many documents in a week."
+        },
+        {
+          "ja": "あの{時|とき}の{皆|みな}さんの{親切|しんせつ}は、{到底|とうてい}{忘|わす}れることができません。",
+          "kana": "あのときのみなさんのしんせつは、とうていわすれることができません。",
+          "en": "I could never possibly forget the kindness you all showed me back then."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どう{考|かんが}えても、どうやっても。{後|あと}に{否定|ひてい}の{言葉|ことば}が{来|く}る。",
+        "kana": "どうかんがえても、どうやっても。あとにひていのことばがくる。"
+      },
+      "frequencyRank": 5104,
+      "notes": "Always followed by a negative or a word like 無理・不可能.",
+      "station": 47
+    },
+    {
+      "id": "v-n1-0165",
+      "word": "詐欺",
+      "kana": "さぎ",
+      "meanings": [
+        "fraud",
+        "scam"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}は{高齢者|こうれいしゃ}を{狙|ねら}った{電話|でんわ}の{詐欺|さぎ}が{増|ふ}えているので、{祖母|そぼ}にも{注意|ちゅうい}した。",
+          "kana": "さいきんはこうれいしゃをねらったでんわのさぎがふえているので、そぼにもちゅういした。",
+          "en": "Phone scams targeting the elderly have been on the rise lately, so I warned my grandmother too."
+        },
+        {
+          "ja": "「{必|かなら}ずもうかる」という{投資|とうし}の{話|はなし}は、{詐欺|さぎ}である{可能性|かのうせい}が{高|たか}いのでご{注意|ちゅうい}ください。",
+          "kana": "「かならずもうかる」というとうしのはなしは、さぎであるかのうせいがたかいのでごちゅういください。",
+          "en": "Investment pitches that \"guarantee a profit\" are very likely to be scams, so please be careful."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}をだまして、お{金|かね}や{品物|しなもの}を{取|と}ること。",
+        "kana": "ひとをだまして、おかねやしなものをとること。"
+      },
+      "frequencyRank": 5112,
+      "collocations": [
+        "詐欺に遭う",
+        "振り込め詐欺"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0166",
+      "word": "和解",
+      "kana": "わかい",
+      "meanings": [
+        "settlement",
+        "reconciliation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{裁判|さいばん}は{二年|にねん}{続|つづ}いたが、{最終的|さいしゅうてき}に{両者|りょうしゃ}は{和解|わかい}に{至|いた}った。",
+          "kana": "さいばんはにねんつづいたが、さいしゅうてきにりょうしゃはわかいにいたった。",
+          "en": "The trial went on for two years, but in the end the two sides reached a settlement."
+        },
+        {
+          "ja": "けんかしたまま{十年|じゅうねん}も{口|くち}をきかなかった{兄|あに}と、{父|ちち}の{葬式|そうしき}でようやく{和解|わかい}した。",
+          "kana": "けんかしたままじゅうねんもくちをきかなかったあにと、ちちのそうしきでようやくわかいした。",
+          "en": "I finally made up with my brother at our father's funeral, after ten years of not speaking since our fight."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{争|あらそ}っていた{人|ひと}たちが、{話|はな}し{合|あ}って{仲直|なかなお}りすること。",
+        "kana": "あらそっていたひとたちが、はなしあってなかなおりすること。"
+      },
+      "frequencyRank": 5120,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0167",
+      "word": "制裁",
+      "kana": "せいさい",
+      "meanings": [
+        "sanctions",
+        "punishment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{国際社会|こくさいしゃかい}は、{条約|じょうやく}に{違反|いはん}した{国|くに}に{対|たい}して{経済制裁|けいざいせいさい}を{科|か}した。",
+          "kana": "こくさいしゃかいは、じょうやくにいはんしたくににたいしてけいざいせいさいをかした。",
+          "en": "The international community imposed economic sanctions on the country that violated the treaty."
+        },
+        {
+          "ja": "ルールを{破|やぶ}った{選手|せんしゅ}には、{出場停止|しゅつじょうていし}という{厳|きび}しい{制裁|せいさい}が{待|ま}っている。",
+          "kana": "ルールをやぶったせんしゅには、しゅつじょうていしというきびしいせいさいがまっている。",
+          "en": "A harsh penalty, suspension from competition, awaits any athlete who breaks the rules."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}まりを{破|やぶ}った{人|ひと}や{国|くに}に{対|たい}して、{罰|ばつ}を{与|あた}えること。",
+        "kana": "きまりをやぶったひとやくににたいして、ばつをあたえること。"
+      },
+      "frequencyRank": 5128,
+      "collocations": [
+        "経済制裁",
+        "制裁を科す"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0168",
+      "word": "円高",
+      "kana": "えんだか",
+      "meanings": [
+        "strong yen",
+        "appreciation of the yen"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{円高|えんだか}が{進|すす}むと、{海外旅行|かいがいりょこう}は{安|やす}くなるが、{輸出企業|ゆしゅつきぎょう}には{厳|きび}しい。",
+          "kana": "えんだかがすすむと、かいがいりょこうはやすくなるが、ゆしゅつきぎょうにはきびしい。",
+          "en": "When the yen strengthens, trips abroad get cheaper, but it is hard on exporters."
+        },
+        {
+          "ja": "{学生|がくせい}の{頃|ころ}は{円高|えんだか}だったので、{留学中|りゅうがくちゅう}の{生活費|せいかつひ}はそれほど{負担|ふたん}になりませんでした。",
+          "kana": "がくせいのころはえんだかだったので、りゅうがくちゅうのせいかつひはそれほどふたんになりませんでした。",
+          "en": "The yen was strong when I was a student, so living expenses while studying abroad were not much of a burden."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}のお{金|かね}に{対|たい}して、{日本|にほん}のお{金|かね}の{価値|かち}が{高|たか}くなること。",
+        "kana": "がいこくのおかねにたいして、にほんのおかねのかちがたかくなること。"
+      },
+      "frequencyRank": 5136,
+      "confusables": [
+        "v-n1-0269"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0169",
+      "word": "公約",
+      "kana": "こうやく",
+      "meanings": [
+        "campaign pledge",
+        "public promise"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{選挙|せんきょ}の{時|とき}の{公約|こうやく}が{守|まも}られているかどうか、{有権者|ゆうけんしゃ}はしっかり{見|み}ている。",
+          "kana": "せんきょのときのこうやくがまもられているかどうか、ゆうけんしゃはしっかりみている。",
+          "en": "Voters are watching closely to see whether campaign pledges are being kept."
+        },
+        {
+          "ja": "{新|あたら}しい{市長|しちょう}は、{公約|こうやく}していた{給食|きゅうしょく}の{無料化|むりょうか}を{就任|しゅうにん}から{半年|はんとし}で{実現|じつげん}させた。",
+          "kana": "あたらしいしちょうは、こうやくしていたきゅうしょくのむりょうかをしゅうにんからはんとしでじつげんさせた。",
+          "en": "Within six months of taking office, the new mayor delivered on the free school lunches she had promised."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}の{候補者|こうほしゃ}や{政党|せいとう}が、{当選|とうせん}したら{実行|じっこう}すると{国民|こくみん}に{約束|やくそく}すること。",
+        "kana": "せんきょのこうほしゃやせいとうが、とうせんしたらじっこうするとこくみんにやくそくすること。"
+      },
+      "frequencyRank": 5144,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0170",
+      "word": "革新",
+      "kana": "かくしん",
+      "meanings": [
+        "innovation",
+        "reform",
+        "progressive (politics)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{技術革新|ぎじゅつかくしん}によって、{十年前|じゅうねんまえ}には{考|かんが}えられなかったサービスが{当|あ}たり{前|まえ}になった。",
+          "kana": "ぎじゅつかくしんによって、じゅうねんまえにはかんがえられなかったサービスがあたりまえになった。",
+          "en": "Thanks to technological innovation, services unimaginable ten years ago have become commonplace."
+        },
+        {
+          "ja": "{創業百年|そうぎょうひゃくねん}の{老舗|しにせ}ですが、{常|つね}に{革新|かくしん}を{恐|おそ}れない{姿勢|しせい}で{知|し}られています。",
+          "kana": "そうぎょうひゃくねんのしにせですが、つねにかくしんをおそれないしせいでしられています。",
+          "en": "It is a long-established shop founded a hundred years ago, but it is known for never shying away from innovation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{古|ふる}い{制度|せいど}や{方法|ほうほう}を{新|あたら}しく{変|か}えること。{政治|せいじ}では{保守|ほしゅ}の{反対|はんたい}。",
+        "kana": "ふるいせいどやほうほうをあたらしくかえること。せいじではほしゅのはんたい。"
+      },
+      "frequencyRank": 5152,
+      "notes": "In politics 革新 is the opposite of 保守 (conservative).",
+      "collocations": [
+        "技術革新"
+      ],
+      "confusables": [
+        "v-n1-0162"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0171",
+      "word": "殺人",
+      "kana": "さつじん",
+      "meanings": [
+        "murder",
+        "homicide"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{殺人事件|さつじんじけん}の{犯人|はんにん}は、{事件|じけん}から{三日後|みっかご}に{隣|となり}の{県|けん}で{逮捕|たいほ}された。",
+          "kana": "さつじんじけんのはんにんは、じけんからみっかごにとなりのけんでたいほされた。",
+          "en": "The perpetrator of the murder was arrested in the neighboring prefecture three days after the crime."
+        },
+        {
+          "ja": "この{小説|しょうせつ}は{殺人|さつじん}が{起|お}きないのに、{最後|さいご}まで{緊張感|きんちょうかん}が{途切|とぎ}れません。",
+          "kana": "このしょうせつはさつじんがおきないのに、さいごまできんちょうかんがとぎれません。",
+          "en": "Even though no murder takes place in this novel, the tension never lets up right to the end."
+        }
+      ],
+      "definitionJa": {
+        "ja": "わざと{人|ひと}を{死|し}なせること。{最|もっと}も{重|おも}い{犯罪|はんざい}の{一|ひと}つ。",
+        "kana": "わざとひとをしなせること。もっともおもいはんざいのひとつ。"
+      },
+      "frequencyRank": 5160,
+      "collocations": [
+        "殺人事件",
+        "殺人犯"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0172",
+      "word": "強盗",
+      "kana": "ごうとう",
+      "meanings": [
+        "robbery",
+        "robber"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{昨夜|さくや}、{駅前|えきまえ}のコンビニに{強盗|ごうとう}が{入|はい}り、{現金|げんきん}が{奪|うば}われたという。",
+          "kana": "さくや、えきまえのコンビニにごうとうがはいり、げんきんがうばわれたという。",
+          "en": "Last night a robber broke into the convenience store in front of the station and cash was stolen, I hear."
+        },
+        {
+          "ja": "{強盗|ごうとう}に{遭|あ}った{場合|ばあい}は、{抵抗|ていこう}せずに{命|いのち}を{守|まも}ることを{最優先|さいゆうせん}してください。",
+          "kana": "ごうとうにあったばあいは、ていこうせずにいのちをまもることをさいゆうせんしてください。",
+          "en": "If you are confronted by a robber, do not resist; make protecting your life the first priority."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{暴力|ぼうりょく}を{使|つか}ったり、おどしたりして、{他人|たにん}のお{金|かね}や{品物|しなもの}を{無理|むり}に{取|と}ること。また、その{人|ひと}。",
+        "kana": "ぼうりょくをつかったり、おどしたりして、たにんのおかねやしなものをむりにとること。また、そのひと。"
+      },
+      "frequencyRank": 5168,
+      "confusables": [
+        "v-n1-0185"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0173",
+      "word": "死刑",
+      "kana": "しけい",
+      "meanings": [
+        "death penalty",
+        "capital punishment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{死刑制度|しけいせいど}を{続|つづ}けるべきかどうかは、{国|くに}によって{意見|いけん}が{大|おお}きく{分|わ}かれる。",
+          "kana": "しけいせいどをつづけるべきかどうかは、くにによっていけんがおおきくわかれる。",
+          "en": "Opinions on whether to keep the death penalty vary greatly from country to country."
+        },
+        {
+          "ja": "その{国|くに}では{百年以上前|ひゃくねんいじょうまえ}に{死刑|しけい}が{廃止|はいし}されています。",
+          "kana": "そのくにではひゃくねんいじょうまえにしけいがはいしされています。",
+          "en": "In that country the death penalty was abolished more than a hundred years ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{重|おも}い{罪|つみ}を{犯|おか}した{人|ひと}を{死|し}なせる、{最|もっと}も{重|おも}い{刑罰|けいばつ}。",
+        "kana": "おもいつみをおかしたひとをしなせる、もっともおもいけいばつ。"
+      },
+      "frequencyRank": 5176,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0174",
+      "word": "配当",
+      "kana": "はいとう",
+      "meanings": [
+        "dividend",
+        "allotment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}の{株|かぶ}は{値上|ねあ}がりは{期待|きたい}できないが、{毎年|まいとし}{安定|あんてい}した{配当|はいとう}がある。",
+          "kana": "このかいしゃのかぶはねあがりはきたいできないが、まいとしあんていしたはいとうがある。",
+          "en": "You cannot expect this company's shares to rise, but they pay a stable dividend every year."
+        },
+        {
+          "ja": "{今期|こんき}は{業績|ぎょうせき}が{悪化|あっか}したため、{株主|かぶぬし}への{配当|はいとう}を{見送|みおく}ることになりました。",
+          "kana": "こんきはぎょうせきがあっかしたため、かぶぬしへのはいとうをみおくることになりました。",
+          "en": "Because results deteriorated this term, the company has decided to skip the dividend to shareholders."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}が{利益|りえき}の{一部|いちぶ}を{株主|かぶぬし}に{配|くば}ること。また、そのお{金|かね}。",
+        "kana": "かいしゃがりえきのいちぶをかぶぬしにくばること。また、そのおかね。"
+      },
+      "frequencyRank": 5184,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0175",
+      "word": "債務",
+      "kana": "さいむ",
+      "meanings": [
+        "debt",
+        "liabilities"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "その{国|くに}は{債務|さいむ}が{膨|ふく}らみすぎて、{利子|りし}を{払|はら}うことさえ{難|むずか}しくなっている。",
+          "kana": "そのくにはさいむがふくらみすぎて、りしをはらうことさえむずかしくなっている。",
+          "en": "That country's debt has swollen so much that it is struggling even to pay the interest."
+        },
+        {
+          "ja": "{会社|かいしゃ}を{引|ひ}き{継|つ}ぐ{際|さい}には、{資産|しさん}だけでなく{債務|さいむ}も{全|すべ}て{引|ひ}き{受|う}けることになります。",
+          "kana": "かいしゃをひきつぐさいには、しさんだけでなくさいむもすべてひきうけることになります。",
+          "en": "When you take over a company, you assume not only its assets but all of its liabilities as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{借金|しゃっきん}など、{返|かえ}さなければならないお{金|かね}。また、その{義務|ぎむ}。",
+        "kana": "しゃっきんなど、かえさなければならないおかね。また、そのぎむ。"
+      },
+      "frequencyRank": 5192,
+      "confusables": [
+        "v-n1-0255"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0176",
+      "word": "閣僚",
+      "kana": "かくりょう",
+      "meanings": [
+        "cabinet minister"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{閣僚|かくりょう}の{顔|かお}ぶれを{見|み}ると、{女性|じょせい}が{三人|さんにん}しかいないのが{気|き}になった。",
+          "kana": "あたらしいかくりょうのかおぶれをみると、じょせいがさんにんしかいないのがきになった。",
+          "en": "Looking at the lineup of new cabinet ministers, it struck me that there were only three women."
+        },
+        {
+          "ja": "{失言|しつげん}を{繰|く}り{返|かえ}した{閣僚|かくりょう}が、ついに{辞任|じにん}に{追|お}い{込|こ}まれました。",
+          "kana": "しつげんをくりかえしたかくりょうが、ついにじにんにおいこまれました。",
+          "en": "The cabinet minister who kept making gaffes was finally forced to resign."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{内閣|ないかく}を{作|つく}っている{大臣|だいじん}たち。{首相|しゅしょう}が{選|えら}ぶ。",
+        "kana": "ないかくをつくっているだいじんたち。しゅしょうがえらぶ。"
+      },
+      "frequencyRank": 5200,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0177",
+      "word": "総選挙",
+      "kana": "そうせんきょ",
+      "meanings": [
+        "general election"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{今回|こんかい}の{総選挙|そうせんきょ}では、{若|わか}い{世代|せだい}の{投票率|とうひょうりつ}がどこまで{上|あ}がるかが{注目|ちゅうもく}されている。",
+          "kana": "こんかいのそうせんきょでは、わかいせだいのとうひょうりつがどこまであがるかがちゅうもくされている。",
+          "en": "In this general election, attention is focused on how far turnout among the young will rise."
+        },
+        {
+          "ja": "{前回|ぜんかい}の{総選挙|そうせんきょ}で{初|はじ}めて{投票|とうひょう}してから、{政治|せいじ}のニュースを{見|み}るようになった。",
+          "kana": "ぜんかいのそうせんきょではじめてとうひょうしてから、せいじのニュースをみるようになった。",
+          "en": "Ever since I voted for the first time in the last general election, I have started following political news."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国会|こっかい}の{議員全員|ぎいんぜんいん}を{一度|いちど}に{選|えら}ぶ{大|おお}きな{選挙|せんきょ}。",
+        "kana": "こっかいのぎいんぜんいんをいちどにえらぶおおきなせんきょ。"
+      },
+      "frequencyRank": 5208,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0178",
+      "word": "派閥",
+      "kana": "はばつ",
+      "meanings": [
+        "faction",
+        "clique"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{党内|とうない}の{派閥争|はばつあらそ}いばかりが{報道|ほうどう}され、{政策|せいさく}の{中身|なかみ}はほとんど{伝|つた}わってこない。",
+          "kana": "とうないのはばつあらそいばかりがほうどうされ、せいさくのなかみはほとんどつたわってこない。",
+          "en": "All the media report is the infighting between party factions, and almost nothing about the substance of policy comes through."
+        },
+        {
+          "ja": "うちの{会社|かいしゃ}にも{派閥|はばつ}みたいなものがあって、どっちにも{入|はい}らないのは{結構|けっこう}{大変|たいへん}なんだ。",
+          "kana": "うちのかいしゃにもはばつみたいなものがあって、どっちにもはいらないのはけっこうたいへんなんだ。",
+          "en": "My company has its factions too, and staying out of both of them is actually pretty hard."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政党|せいとう}や{組織|そしき}の{中|なか}で、{利害|りがい}や{考|かんが}えが{近|ちか}い{人|ひと}たちが{作|つく}る{小|ちい}さな{集|あつ}まり。",
+        "kana": "せいとうやそしきのなかで、りがいやかんがえがちかいひとたちがつくるちいさなあつまり。"
+      },
+      "frequencyRank": 5216,
+      "collocations": [
+        "派閥争い"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0179",
+      "word": "連立",
+      "kana": "れんりつ",
+      "meanings": [
+        "coalition"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "どの{党|とう}も{過半数|かはんすう}を{取|と}れなかったため、{二|ふた}つの{党|とう}が{連立政権|れんりつせいけん}を{組|く}むことになった。",
+          "kana": "どのとうもかはんすうをとれなかったため、ふたつのとうがれんりつせいけんをくむことになった。",
+          "en": "Since no party won a majority, two parties ended up forming a coalition government."
+        },
+        {
+          "ja": "{連立|れんりつ}を{組|く}んでいる{二|ふた}つの{党|とう}は、{増税|ぞうぜい}をめぐって{意見|いけん}が{対立|たいりつ}しています。",
+          "kana": "れんりつをくんでいるふたつのとうは、ぞうぜいをめぐっていけんがたいりつしています。",
+          "en": "The two parties in the coalition are at odds over the tax increase."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{複数|ふくすう}の{政党|せいとう}が{協力|きょうりょく}して、{一緒|いっしょ}に{政権|せいけん}を{作|つく}ること。",
+        "kana": "ふくすうのせいとうがきょうりょくして、いっしょにせいけんをつくること。"
+      },
+      "frequencyRank": 5224,
+      "collocations": [
+        "連立政権",
+        "連立を組む"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0180",
+      "word": "汚職",
+      "kana": "おしょく",
+      "meanings": [
+        "corruption (in office)",
+        "graft"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{市長|しちょう}の{汚職|おしょく}が{明|あき}らかになり、{市民|しみん}の{間|あいだ}に{強|つよ}い{不信感|ふしんかん}が{広|ひろ}がった。",
+          "kana": "しちょうのおしょくがあきらかになり、しみんのあいだにつよいふしんかんがひろがった。",
+          "en": "The mayor's corruption came to light, and a deep sense of distrust spread among the citizens."
+        },
+        {
+          "ja": "{汚職|おしょく}を{防|ふせ}ぐため、{公務員|こうむいん}が{業者|ぎょうしゃ}から{贈|おく}り{物|もの}を{受|う}け{取|と}ることは{法律|ほうりつ}で{禁|きん}じられています。",
+          "kana": "おしょくをふせぐため、こうむいんがぎょうしゃからおくりものをうけとることはほうりつできんじられています。",
+          "en": "To prevent corruption, public servants are prohibited by law from accepting gifts from contractors."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治家|せいじか}や{公務員|こうむいん}が、{立場|たちば}を{利用|りよう}してお{金|かね}や{利益|りえき}をこっそり{受|う}け{取|と}ること。",
+        "kana": "せいじかやこうむいんが、たちばをりようしておかねやりえきをこっそりうけとること。"
+      },
+      "frequencyRank": 5232,
+      "collocations": [
+        "汚職事件"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0181",
+      "word": "隠蔽",
+      "kana": "いんぺい",
+      "meanings": [
+        "concealment",
+        "cover-up"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}そのものより、{会社|かいしゃ}がそれを{隠蔽|いんぺい}しようとしたことのほうが{強|つよ}く{批判|ひはん}された。",
+          "kana": "じこそのものより、かいしゃがそれをいんぺいしようとしたことのほうがつよくひはんされた。",
+          "en": "The company was criticized more for trying to cover up the accident than for the accident itself."
+        },
+        {
+          "ja": "{検査|けんさ}データの{隠蔽|いんぺい}が{明|あき}らかになり、{社長|しゃちょう}が{記者会見|きしゃかいけん}で{謝罪|しゃざい}しました。",
+          "kana": "けんさデータのいんぺいがあきらかになり、しゃちょうがきしゃかいけんでしゃざいしました。",
+          "en": "The cover-up of inspection data came to light, and the company president apologized at a press conference."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{都合|つごう}の{悪|わる}い{事実|じじつ}を、{人|ひと}に{知|し}られないようにわざと{隠|かく}すこと。",
+        "kana": "つごうのわるいじじつを、ひとにしられないようにわざとかくすこと。"
+      },
+      "frequencyRank": 5240,
+      "altForms": [
+        "隠ぺい"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0182",
+      "word": "偽装",
+      "kana": "ぎそう",
+      "meanings": [
+        "disguise",
+        "camouflage",
+        "falsification"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{産地|さんち}を{偽装|ぎそう}した{食品|しょくひん}が{見|み}つかり、その{店|みせ}は{営業停止|えいぎょうていし}になった。",
+          "kana": "さんちをぎそうしたしょくひんがみつかり、そのみせはえいぎょうていしになった。",
+          "en": "Food with falsified place-of-origin labels was found, and the store was ordered to suspend business."
+        },
+        {
+          "ja": "{保険金目当|ほけんきんめあ}ての{偽装事故|ぎそうじこ}ではないかと、{警察|けいさつ}は{疑|うたが}っている。",
+          "kana": "ほけんきんめあてのぎそうじこではないかと、けいさつはうたがっている。",
+          "en": "The police suspect it may be a staged accident aimed at collecting insurance money."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}をだますために、{事実|じじつ}と{違|ちが}うように{見|み}せること。",
+        "kana": "ひとをだますために、じじつとちがうようにみせること。"
+      },
+      "frequencyRank": 5248,
+      "collocations": [
+        "産地偽装",
+        "偽装結婚"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0183",
+      "word": "捏造",
+      "kana": "ねつぞう",
+      "meanings": [
+        "fabrication",
+        "forgery (of data, facts)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "その{研究者|けんきゅうしゃ}は{実験|じっけん}データを{捏造|ねつぞう}していたことが{分|わ}かり、{論文|ろんぶん}は{取|と}り{消|け}された。",
+          "kana": "そのけんきゅうしゃはじっけんデータをねつぞうしていたことがわかり、ろんぶんはとりけされた。",
+          "en": "It emerged that the researcher had fabricated experimental data, and the paper was retracted."
+        },
+        {
+          "ja": "{存在|そんざい}しない{人物|じんぶつ}の{証言|しょうげん}を{捏造|ねつぞう}した{記者|きしゃ}が、{新聞社|しんぶんしゃ}を{解雇|かいこ}されました。",
+          "kana": "そんざいしないじんぶつのしょうげんをねつぞうしたきしゃが、しんぶんしゃをかいこされました。",
+          "en": "A reporter who fabricated testimony from a person who did not exist was fired by the newspaper."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事実|じじつ}でないことを、{実際|じっさい}にあったことのように{作|つく}ること。",
+        "kana": "じじつでないことを、じっさいにあったことのようにつくること。"
+      },
+      "frequencyRank": 5256,
+      "altForms": [
+        "ねつ造"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0184",
+      "word": "いかにも",
+      "kana": "いかにも",
+      "meanings": [
+        "truly",
+        "just as one would expect",
+        "indeed"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}はいかにも{忙|いそが}しそうな{顔|かお}で{歩|ある}いていたが、{実|じつ}は{昼|ひる}ご{飯|はん}を{食|た}べに{行|い}くところだった。",
+          "kana": "かれはいかにもいそがしそうなかおであるいていたが、じつはひるごはんをたべにいくところだった。",
+          "en": "He was walking along looking every bit the busy man, but actually he was just off to lunch."
+        },
+        {
+          "ja": "{玄関|げんかん}に{飾|かざ}られた{松|まつ}と{鶴|つる}の{絵|え}が、いかにも{正月|しょうがつ}らしい{雰囲気|ふんいき}を{出|だ}しています。",
+          "kana": "げんかんにかざられたまつとつるのえが、いかにもしょうがつらしいふんいきをだしています。",
+          "en": "The painting of pine and cranes hanging in the entrance gives the place a thoroughly New Year's feel."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見|み}るからにその{言葉|ことば}のとおりだと{感|かん}じられる{様子|ようす}。{確|たし}かに。",
+        "kana": "みるからにそのことばのとおりだとかんじられるようす。たしかに。"
+      },
+      "frequencyRank": 5264,
+      "notes": "As a reply, いかにも means 'exactly'. Often marks a stereotypical look: いかにも〜らしい.",
+      "altForms": [
+        "如何にも"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0185",
+      "word": "窃盗",
+      "kana": "せっとう",
+      "meanings": [
+        "theft",
+        "larceny"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{自転車|じてんしゃ}を{勝手|かって}に{乗|の}っていっただけでも、{法律上|ほうりつじょう}は{窃盗|せっとう}にあたる。",
+          "kana": "じてんしゃをかってにのっていっただけでも、ほうりつじょうはせっとうにあたる。",
+          "en": "Even just riding off on someone's bicycle without permission legally counts as theft."
+        },
+        {
+          "ja": "{近所|きんじょ}で{窃盗|せっとう}の{被害|ひがい}が{続|つづ}いているので、{出|で}かける{時|とき}は{窓|まど}の{鍵|かぎ}も{必|かなら}ず{閉|し}めています。",
+          "kana": "きんじょでせっとうのひがいがつづいているので、でかけるときはまどのかぎもかならずしめています。",
+          "en": "There has been a string of thefts in the neighborhood, so I always lock the windows too when I go out."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{他人|たにん}のお{金|かね}や{品物|しなもの}をこっそり{盗|ぬす}む{犯罪|はんざい}。",
+        "kana": "たにんのおかねやしなものをこっそりぬすむはんざい。"
+      },
+      "frequencyRank": 5272,
+      "confusables": [
+        "v-n1-0172"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0186",
+      "word": "懲役",
+      "kana": "ちょうえき",
+      "meanings": [
+        "imprisonment with labor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{被告|ひこく}には{懲役|ちょうえき}{五年|ごねん}の{判決|はんけつ}が{言|い}い{渡|わた}された。",
+          "kana": "ひこくにはちょうえきごねんのはんけつがいいわたされた。",
+          "en": "The defendant was sentenced to five years' imprisonment."
+        },
+        {
+          "ja": "この{罪|つみ}を{犯|おか}すと、{十年以下|じゅうねんいか}の{懲役|ちょうえき}または{百万円以下|ひゃくまんえんいか}の{罰金|ばっきん}が{科|か}されます。",
+          "kana": "このつみをおかすと、じゅうねんいかのちょうえきまたはひゃくまんえんいかのばっきんがかされます。",
+          "en": "This offense is punishable by up to ten years' imprisonment or a fine of up to one million yen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{罪|つみ}を{犯|おか}した{人|ひと}を{刑務所|けいむしょ}に{入|い}れて、{決|き}められた{仕事|しごと}をさせる{刑罰|けいばつ}。",
+        "kana": "つみをおかしたひとをけいむしょにいれて、きめられたしごとをさせるけいばつ。"
+      },
+      "frequencyRank": 5280,
+      "notes": "Contrasts with 禁固 (no prison labor); the two are being unified as 拘禁刑 under the 2022 Penal Code reform.",
+      "confusables": [
+        "v-n1-0249"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0187",
+      "word": "罰金",
+      "kana": "ばっきん",
+      "meanings": [
+        "fine (penalty)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{駐車違反|ちゅうしゃいはん}で{罰金|ばっきん}を{払|はら}うくらいなら、{少|すこ}し{遠|とお}くてもちゃんと{駐車場|ちゅうしゃじょう}に{止|と}めたほうがいい。",
+          "kana": "ちゅうしゃいはんでばっきんをはらうくらいなら、すこしとおくてもちゃんとちゅうしゃじょうにとめたほうがいい。",
+          "en": "Rather than paying a fine for illegal parking, it's better to park properly in a lot, even if it's a bit farther away."
+        },
+        {
+          "ja": "ゴミの{分別|ぶんべつ}を{守|まも}らないと{罰金|ばっきん}を{取|と}られる{町|まち}もあるらしい。",
+          "kana": "ゴミのぶんべつをまもらないとばっきんをとられるまちもあるらしい。",
+          "en": "Apparently there are towns where you get fined if you don't sort your garbage properly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{罪|つみ}や{違反|いはん}に{対|たい}する{罰|ばつ}として、{国|くに}などに{払|はら}わせるお{金|かね}。",
+        "kana": "つみやいはんにたいするばつとして、くになどにはらわせるおかね。"
+      },
+      "frequencyRank": 5288,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0188",
+      "word": "控訴",
+      "kana": "こうそ",
+      "meanings": [
+        "appeal (to a higher court)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{一審|いっしん}の{判決|はんけつ}に{納得|なっとく}できなかった{被告側|ひこくがわ}は、すぐに{控訴|こうそ}した。",
+          "kana": "いっしんのはんけつになっとくできなかったひこくがわは、すぐにこうそした。",
+          "en": "The defense, unable to accept the ruling at first instance, appealed immediately."
+        },
+        {
+          "ja": "{検察側|けんさつがわ}は{控訴|こうそ}しない{方針|ほうしん}で、{判決|はんけつ}はこのまま{確定|かくてい}する{見通|みとお}しです。",
+          "kana": "けんさつがわはこうそしないほうしんで、はんけつはこのままかくていするみとおしです。",
+          "en": "The prosecution does not intend to appeal, so the ruling is expected to stand as it is."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{最初|さいしょ}の{裁判|さいばん}の{判決|はんけつ}に{納得|なっとく}できず、{上|うえ}の{裁判所|さいばんしょ}にもう{一度|いちど}{判断|はんだん}を{求|もと}めること。",
+        "kana": "さいしょのさいばんのはんけつになっとくできず、うえのさいばんしょにもういちどはんだんをもとめること。"
+      },
+      "frequencyRank": 5296,
+      "notes": "控訴 is the first appeal (district court to high court); 上告 is the further appeal to the Supreme Court.",
+      "confusables": [
+        "v-n1-0220"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0189",
+      "word": "占領",
+      "kana": "せんりょう",
+      "meanings": [
+        "occupation (military)",
+        "taking over"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{戦争|せんそう}が{終|お}わった{後|あと}も、その{地域|ちいき}は{数年間|すうねんかん}{外国|がいこく}の{軍隊|ぐんたい}に{占領|せんりょう}されていた。",
+          "kana": "せんそうがおわったあとも、そのちいきはすうねんかんがいこくのぐんたいにせんりょうされていた。",
+          "en": "Even after the war ended, the region remained occupied by foreign troops for several years."
+        },
+        {
+          "ja": "{弟|おとうと}がリビングのソファを{一日中|いちにちじゅう}{占領|せんりょう}しているので、{私|わたし}は{自分|じぶん}の{部屋|へや}でテレビを{見|み}るしかない。",
+          "kana": "おとうとがリビングのソファをいちにちじゅうせんりょうしているので、わたしはじぶんのへやでテレビをみるしかない。",
+          "en": "My little brother hogs the living-room sofa all day, so I have no choice but to watch TV in my own room."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{戦争|せんそう}などで、ほかの{国|くに}の{地域|ちいき}を{力|ちから}で{支配|しはい}すること。また、{席|せき}などをひとりじめすること。",
+        "kana": "せんそうなどで、ほかのくにのちいきをちからでしはいすること。また、せきなどをひとりじめすること。"
+      },
+      "frequencyRank": 5304,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0190",
+      "word": "侵攻",
+      "kana": "しんこう",
+      "meanings": [
+        "invasion",
+        "military advance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{隣国|りんごく}への{侵攻|しんこう}が{始|はじ}まると、{多|おお}くの{市民|しみん}が{国境|こっきょう}を{越|こ}えて{逃|に}げた。",
+          "kana": "りんごくへのしんこうがはじまると、おおくのしみんがこっきょうをこえてにげた。",
+          "en": "When the invasion of the neighboring country began, many civilians fled across the border."
+        },
+        {
+          "ja": "{歴史|れきし}の{授業|じゅぎょう}で、この{城|しろ}が{何度|なんど}も{侵攻|しんこう}を{受|う}けながら{守|まも}り{抜|ぬ}かれたことを{学|まな}びました。",
+          "kana": "れきしのじゅぎょうで、このしろがなんどもしんこうをうけながらまもりぬかれたことをまなびました。",
+          "en": "In history class we learned that this castle was invaded many times yet was always successfully defended."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{武器|ぶき}を{持|も}った{大勢|おおぜい}の{人|ひと}が、ほかの{国|くに}の{中|なか}へ{入|はい}っていくこと。",
+        "kana": "ぶきをもったおおぜいのひとが、ほかのくにのなかへはいっていくこと。"
+      },
+      "frequencyRank": 5312,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0191",
+      "word": "停戦",
+      "kana": "ていせん",
+      "meanings": [
+        "ceasefire"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{両国|りょうこく}は{停戦|ていせん}に{合意|ごうい}したものの、{国境付近|こっきょうふきん}では{今|いま}も{緊張|きんちょう}が{続|つづ}いている。",
+          "kana": "りょうこくはていせんにごういしたものの、こっきょうふきんではいまもきんちょうがつづいている。",
+          "en": "The two countries agreed to a ceasefire, but tension continues along the border."
+        },
+        {
+          "ja": "{停戦|ていせん}が{発効|はっこう}した{翌朝|よくあさ}、{街|まち}には{久|ひさ}しぶりに{子|こ}どもたちの{声|こえ}が{戻|もど}った。",
+          "kana": "ていせんがはっこうしたよくあさ、まちにはひさしぶりにこどもたちのこえがもどった。",
+          "en": "The morning after the ceasefire took effect, children's voices returned to the streets for the first time in a long while."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{戦争|せんそう}をしている{国|くに}が、{話|はな}し{合|あ}いによってしばらくの{間|あいだ}{戦争|せんそう}をやめること。",
+        "kana": "せんそうをしているくにが、はなしあいによってしばらくのあいだせんそうをやめること。"
+      },
+      "frequencyRank": 5320,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0192",
+      "word": "独裁",
+      "kana": "どくさい",
+      "meanings": [
+        "dictatorship",
+        "autocracy"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{続|つづ}いた{独裁政権|どくさいせいけん}が{倒|たお}れ、{国民|こくみん}は{初|はじ}めて{自由|じゆう}な{選挙|せんきょ}を{経験|けいけん}した。",
+          "kana": "ながねんつづいたどくさいせいけんがたおれ、こくみんははじめてじゆうなせんきょをけいけんした。",
+          "en": "The dictatorship that had lasted for many years fell, and the people experienced free elections for the first time."
+        },
+        {
+          "ja": "{社長|しゃちょう}の{独裁|どくさい}で{何|なん}でも{決|き}まる{会社|かいしゃ}だから、{会議|かいぎ}なんて{形|かたち}だけなんだよ。",
+          "kana": "しゃちょうのどくさいでなんでもきまるかいしゃだから、かいぎなんてかたちだけなんだよ。",
+          "en": "It's a company where the president's one-man rule decides everything, so meetings are just for show."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一人|ひとり}の{人|ひと}や{一|ひと}つの{集団|しゅうだん}が、{全|すべ}ての{権力|けんりょく}を{握|にぎ}って{政治|せいじ}を{行|おこな}うこと。",
+        "kana": "ひとりのひとやひとつのしゅうだんが、すべてのけんりょくをにぎってせいじをおこなうこと。"
+      },
+      "frequencyRank": 5328,
+      "collocations": [
+        "独裁政権",
+        "独裁者"
+      ],
+      "confusables": [
+        "v-n1-0231"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0193",
+      "word": "核兵器",
+      "kana": "かくへいき",
+      "meanings": [
+        "nuclear weapon"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{核兵器|かくへいき}のない{世界|せかい}を{目指|めざ}す{署名活動|しょめいかつどう}が、{駅前|えきまえ}で{行|おこな}われていた。",
+          "kana": "かくへいきのないせかいをめざすしょめいかつどうが、えきまえでおこなわれていた。",
+          "en": "A petition drive for a world without nuclear weapons was being held in front of the station."
+        },
+        {
+          "ja": "{核兵器|かくへいき}を{持|も}つ{国|くに}が{増|ふ}えることを、{国際社会|こくさいしゃかい}は{強|つよ}く{警戒|けいかい}しています。",
+          "kana": "かくへいきをもつくにがふえることを、こくさいしゃかいはつよくけいかいしています。",
+          "en": "The international community is deeply wary of more countries acquiring nuclear weapons."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{原子|げんし}が{持|も}つとても{大|おお}きなエネルギーを{使|つか}った、{極|きわ}めて{危険|きけん}な{武器|ぶき}。",
+        "kana": "げんしがもつとてもおおきなエネルギーをつかった、きわめてきけんなぶき。"
+      },
+      "frequencyRank": 5336,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0194",
+      "word": "概ね",
+      "kana": "おおむね",
+      "meanings": [
+        "generally",
+        "for the most part",
+        "roughly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{工事|こうじ}は{概|おおむ}ね{予定通|よていどお}りに{進|すす}んでおり、{来月|らいげつ}には{完成|かんせい}する{見込|みこ}みです。",
+          "kana": "こうじはおおむねよていどおりにすすんでおり、らいげつにはかんせいするみこみです。",
+          "en": "The construction is proceeding more or less on schedule and is expected to be completed next month."
+        },
+        {
+          "ja": "アンケートの{結果|けっか}を{見|み}ると、{新|あたら}しい{制度|せいど}は{概|おおむ}ね{好意的|こういてき}に{受|う}け{止|と}められているようだ。",
+          "kana": "アンケートのけっかをみると、あたらしいせいどはおおむねこういてきにうけとめられているようだ。",
+          "en": "Judging from the survey results, the new system seems to have been received favorably on the whole."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{細|こま}かい{点|てん}を{除|のぞ}けば、{全体|ぜんたい}として。{大体|だいたい}。",
+        "kana": "こまかいてんをのぞけば、ぜんたいとして。だいたい。"
+      },
+      "frequencyRank": 5344,
+      "confusables": [
+        "v-n1-0292"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0195",
+      "word": "ひたすら",
+      "kana": "ひたすら",
+      "meanings": [
+        "single-mindedly",
+        "intently",
+        "nothing but"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{締|し}め{切|き}りが{近|ちか}いので、{週末|しゅうまつ}は{家|いえ}にこもってひたすら{原稿|げんこう}を{書|か}いていた。",
+          "kana": "しめきりがちかいので、しゅうまつはいえにこもってひたすらげんこうをかいていた。",
+          "en": "With the deadline close, I shut myself in at home all weekend and did nothing but write."
+        },
+        {
+          "ja": "{迷子|まいご}になった{時|とき}は、{動|うご}き{回|まわ}らずにその{場|ば}でひたすら{待|ま}つのが{一番|いちばん}です。",
+          "kana": "まいごになったときは、うごきまわらずにそのばでひたすらまつのがいちばんです。",
+          "en": "When you get lost, the best thing is not to wander around but simply to wait where you are."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかのことは{考|かんが}えず、{一|ひと}つのことだけを{続|つづ}ける{様子|ようす}。",
+        "kana": "ほかのことはかんがえず、ひとつのことだけをつづけるようす。"
+      },
+      "frequencyRank": 5352,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0196",
+      "word": "なにしろ",
+      "kana": "なにしろ",
+      "meanings": [
+        "after all",
+        "anyway",
+        "you see"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "なにしろ{初|はじ}めての{海外出張|かいがいしゅっちょう}だったから、{空港|くうこう}に{着|つ}いただけで{疲|つか}れてしまった。",
+          "kana": "なにしろはじめてのかいがいしゅっちょうだったから、くうこうについただけでつかれてしまった。",
+          "en": "After all, it was my first business trip abroad, so I was worn out just from getting to the airport."
+        },
+        {
+          "ja": "なにしろ{人気|にんき}の{店|みせ}ですから、{予約|よやく}なしでは{入|はい}れないと{思|おも}いますよ。",
+          "kana": "なにしろにんきのみせですから、よやくなしでははいれないとおもいますよ。",
+          "en": "It's a very popular restaurant, you see, so I doubt you can get in without a reservation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{理由|りゆう}を{強調|きょうちょう}して{言|い}う{言葉|ことば}。とにかく。{何|なん}と{言|い}っても。",
+        "kana": "りゆうをきょうちょうしていうことば。とにかく。なんといっても。"
+      },
+      "frequencyRank": 5360,
+      "notes": "Gives the reason behind a situation with a slightly emphatic, conversational tone.",
+      "altForms": [
+        "何しろ"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0197",
+      "word": "殊に",
+      "kana": "ことに",
+      "meanings": [
+        "especially",
+        "particularly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{夏|なつ}は{殊|こと}に{暑|あつ}く、{日中|にっちゅう}は{外|そと}に{出|で}る{気|き}にもなれなかった。",
+          "kana": "ことしのなつはことにあつく、にっちゅうはそとにでるきにもなれなかった。",
+          "en": "This summer was particularly hot, and during the day I could not even bring myself to go outside."
+        },
+        {
+          "ja": "{本日|ほんじつ}の{講演|こうえん}は、{殊|こと}に{若|わか}い{研究者|けんきゅうしゃ}の{皆|みな}さんに{聞|き}いていただきたい{内容|ないよう}です。",
+          "kana": "ほんじつのこうえんは、ことにわかいけんきゅうしゃのみなさんにきいていただきたいないようです。",
+          "en": "Today's lecture is something I particularly want young researchers to hear."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかと{比|くら}べて{特|とく}に。とりわけ。{主|おも}に{書|か}き{言葉|ことば}で{使|つか}う。",
+        "kana": "ほかとくらべてとくに。とりわけ。おもにかきことばでつかう。"
+      },
+      "frequencyRank": 5368,
+      "notes": "Formal or written equivalent of 特に.",
+      "station": 47
+    },
+    {
+      "id": "v-n1-0198",
+      "word": "幾分",
+      "kana": "いくぶん",
+      "meanings": [
+        "somewhat",
+        "to some extent",
+        "a portion"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{薬|くすり}を{飲|の}んだら{熱|ねつ}は{幾分|いくぶん}{下|さ}がったが、まだ{頭|あたま}が{重|おも}い。",
+          "kana": "くすりをのんだらねつはいくぶんさがったが、まだあたまがおもい。",
+          "en": "After taking the medicine my fever went down somewhat, but my head still feels heavy."
+        },
+        {
+          "ja": "{値段|ねだん}は{幾分|いくぶん}{高|たか}めですが、{長|なが}く{使|つか}えることを{考|かんが}えればお{得|とく}だと{思|おも}います。",
+          "kana": "ねだんはいくぶんたかめですが、ながくつかえることをかんがえればおとくだとおもいます。",
+          "en": "The price is somewhat on the high side, but considering how long it will last, I think it is a good deal."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全部|ぜんぶ}ではなく、{少|すこ}しの{程度|ていど}。{多少|たしょう}。",
+        "kana": "ぜんぶではなく、すこしのていど。たしょう。"
+      },
+      "frequencyRank": 5376,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0199",
+      "word": "甚だ",
+      "kana": "はなはだ",
+      "meanings": [
+        "extremely",
+        "greatly",
+        "very (formal)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{約束|やくそく}の{時間|じかん}に{大幅|おおはば}に{遅|おく}れておいて{謝|あやま}りもしないとは、{甚|はなは}だ{失礼|しつれい}な{話|はなし}だ。",
+          "kana": "やくそくのじかんにおおはばにおくれておいてあやまりもしないとは、はなはだしつれいなはなしだ。",
+          "en": "Turning up very late for an appointment and not even apologizing is extremely rude."
+        },
+        {
+          "ja": "このような{結果|けっか}になったことは{甚|はなは}だ{遺憾|いかん}であり、{深|ふか}くお{詫|わ}び{申|もう}し{上|あ}げます。",
+          "kana": "このようなけっかになったことははなはだいかんであり、ふかくおわびもうしあげます。",
+          "en": "That things turned out this way is deeply regrettable, and we offer our sincere apologies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{程度|ていど}が{普通|ふつう}よりずっと{大|おお}きい{様子|ようす}。とても。かたい{言|い}い{方|かた}。",
+        "kana": "ていどがふつうよりずっとおおきいようす。とても。かたいいいかた。"
+      },
+      "frequencyRank": 5384,
+      "collocations": [
+        "甚だ遺憾"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0200",
+      "word": "いささか",
+      "kana": "いささか",
+      "meanings": [
+        "a little",
+        "somewhat",
+        "(not) in the least"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "formal",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}の{説明|せつめい}はいささか{長|なが}すぎて、{途中|とちゅう}で{何|なに}の{話|はなし}か{分|わ}からなくなった。",
+          "kana": "ぶちょうのせつめいはいささかながすぎて、とちゅうでなにのはなしかわからなくなった。",
+          "en": "The manager's explanation was a little too long, and halfway through I lost track of what it was about."
+        },
+        {
+          "ja": "{彼|かれ}の{判断|はんだん}が{正|ただ}しかったことは、{今|いま}となってはいささかも{疑|うたが}いようがない。",
+          "kana": "かれのはんだんがただしかったことは、いまとなってはいささかもうたがいようがない。",
+          "en": "That his judgment was right is now beyond the slightest doubt."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほんの{少|すこ}し。{多少|たしょう}。{否定|ひてい}の{形|かたち}で「{少|すこ}しも」。かたい{言|い}い{方|かた}。",
+        "kana": "ほんのすこし。たしょう。ひていのかたちで「すこしも」。かたいいいかた。"
+      },
+      "frequencyRank": 5392,
+      "altForms": [
+        "些か"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0201",
+      "word": "閣議",
+      "kana": "かくぎ",
+      "meanings": [
+        "cabinet meeting"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{予算案|よさんあん}は{今朝|けさ}の{閣議|かくぎ}で{決定|けってい}され、{国会|こっかい}に{提出|ていしゅつ}された。",
+          "kana": "あたらしいよさんあんはけさのかくぎでけっていされ、こっかいにていしゅつされた。",
+          "en": "The new budget bill was approved at this morning's cabinet meeting and submitted to the Diet."
+        },
+        {
+          "ja": "{閣議|かくぎ}は{毎週火曜日|まいしゅうかようび}と{金曜日|きんようび}の{朝|あさ}に{開|ひら}かれるのが{通例|つうれい}だ。",
+          "kana": "かくぎはまいしゅうかようびときんようびのあさにひらかれるのがつうれいだ。",
+          "en": "Cabinet meetings are customarily held on Tuesday and Friday mornings every week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{首相|しゅしょう}と{大臣|だいじん}たちが{集|あつ}まって、{国|くに}の{政治|せいじ}の{方針|ほうしん}を{決|き}める{会議|かいぎ}。",
+        "kana": "しゅしょうとだいじんたちがあつまって、くにのせいじのほうしんをきめるかいぎ。"
+      },
+      "frequencyRank": 5400,
+      "collocations": [
+        "閣議決定"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0202",
+      "word": "官邸",
+      "kana": "かんてい",
+      "meanings": [
+        "prime minister's official residence"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{首相|しゅしょう}は{官邸|かんてい}で{記者団|きしゃだん}の{質問|しつもん}に{答|こた}え、{増税|ぞうぜい}の{予定|よてい}はないと{述|の}べた。",
+          "kana": "しゅしょうはかんていできしゃだんのしつもんにこたえ、ぞうぜいのよていはないとのべた。",
+          "en": "Answering reporters' questions at his official residence, the prime minister said there were no plans for a tax hike."
+        },
+        {
+          "ja": "{大地震|おおじしん}の{発生|はっせい}を{受|う}け、{官邸|かんてい}には{深夜|しんや}にもかかわらず{関係者|かんけいしゃ}が{次々|つぎつぎ}と{集|あつ}まった。",
+          "kana": "おおじしんのはっせいをうけ、かんていにはしんやにもかかわらずかんけいしゃがつぎつぎとあつまった。",
+          "en": "Following the major earthquake, officials gathered one after another at the prime minister's residence despite the late hour."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{首相|しゅしょう}などが{住|す}んだり{仕事|しごと}をしたりするための、{国|くに}が{用意|ようい}した{建物|たてもの}。",
+        "kana": "しゅしょうなどがすんだりしごとをしたりするための、くにがよういしたたてもの。"
+      },
+      "frequencyRank": 5408,
+      "collocations": [
+        "首相官邸"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0203",
+      "word": "省庁",
+      "kana": "しょうちょう",
+      "meanings": [
+        "ministries and agencies"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{省庁|しょうちょう}ごとに{手続|てつづ}きの{方法|ほうほう}が{違|ちが}うのは、{市民|しみん}にとって{分|わ}かりにくい。",
+          "kana": "しょうちょうごとにてつづきのほうほうがちがうのは、しみんにとってわかりにくい。",
+          "en": "The fact that procedures differ from one ministry or agency to another is confusing for citizens."
+        },
+        {
+          "ja": "{就職活動|しゅうしょくかつどう}では{民間企業|みんかんきぎょう}だけでなく、{省庁|しょうちょう}も{含|ふく}めて{幅広|はばひろ}く{受|う}けるつもりです。",
+          "kana": "しゅうしょくかつどうではみんかんきぎょうだけでなく、しょうちょうもふくめてはばひろくうけるつもりです。",
+          "en": "In my job hunt I plan to apply widely, not only to private companies but to government ministries as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{政治|せいじ}の{仕事|しごと}を{分担|ぶんたん}して{行|おこな}う、{政府|せいふ}の{役所|やくしょ}をまとめて{言|い}う{言葉|ことば}。",
+        "kana": "くにのせいじのしごとをぶんたんしておこなう、せいふのやくしょをまとめていうことば。"
+      },
+      "frequencyRank": 5416,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0204",
+      "word": "法令",
+      "kana": "ほうれい",
+      "meanings": [
+        "laws and ordinances"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}は{関係|かんけい}する{法令|ほうれい}を{守|まも}るだけでなく、{社会|しゃかい}の{信頼|しんらい}に{応|こた}える{責任|せきにん}もある。",
+          "kana": "かいしゃはかんけいするほうれいをまもるだけでなく、しゃかいのしんらいにこたえるせきにんもある。",
+          "en": "A company has a responsibility not only to comply with the relevant laws and regulations but also to live up to society's trust."
+        },
+        {
+          "ja": "この{建物|たてもの}は{古|ふる}い{法令|ほうれい}に{基|もと}づいて{建|た}てられたため、{現在|げんざい}の{基準|きじゅん}には{合|あ}っていない。",
+          "kana": "このたてものはふるいほうれいにもとづいてたてられたため、げんざいのきじゅんにはあっていない。",
+          "en": "This building was constructed under old regulations, so it does not meet current standards."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国会|こっかい}が{作|つく}る{法律|ほうりつ}と、{政府|せいふ}や{役所|やくしょ}が{出|だ}す{命令|めいれい}や{規則|きそく}をまとめて{言|い}う{言葉|ことば}。",
+        "kana": "こっかいがつくるほうりつと、せいふややくしょがだすめいれいやきそくをまとめていうことば。"
+      },
+      "frequencyRank": 5424,
+      "collocations": [
+        "法令遵守"
+      ],
+      "confusables": [
+        "v-n1-0240"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0205",
+      "word": "条項",
+      "kana": "じょうこう",
+      "meanings": [
+        "clause",
+        "provision",
+        "article (of a contract)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{契約書|けいやくしょ}にサインする{前|まえ}に、{解約|かいやく}に{関|かん}する{条項|じょうこう}を{必|かなら}ず{確認|かくにん}してください。",
+          "kana": "けいやくしょにサインするまえに、かいやくにかんするじょうこうをかならずかくにんしてください。",
+          "en": "Before signing the contract, be sure to check the clauses concerning cancellation."
+        },
+        {
+          "ja": "{相手|あいて}の{弁護士|べんごし}から、{支払|しはら}いに{関|かん}する{条項|じょうこう}を{一部|いちぶ}{修正|しゅうせい}したいという{申|もう}し{出|で}があった。",
+          "kana": "あいてのべんごしから、しはらいにかんするじょうこうをいちぶしゅうせいしたいというもうしでがあった。",
+          "en": "The other side's lawyer proposed partially revising the clauses concerning payment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{契約書|けいやくしょ}の{中|なか}で、{内容|ないよう}ごとに{番号|ばんごう}を{付|つ}けて{書|か}かれた{一|ひと}つ{一|ひと}つの{決|き}まり。",
+        "kana": "ほうりつやけいやくしょのなかで、ないようごとにばんごうをつけてかかれたひとつひとつのきまり。"
+      },
+      "frequencyRank": 5432,
+      "confusables": [
+        "v-n1-0206"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0206",
+      "word": "条文",
+      "kana": "じょうぶん",
+      "meanings": [
+        "text of an article (of law)",
+        "provisions"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{法律|ほうりつ}の{条文|じょうぶん}は{難|むずか}しい{言葉|ことば}で{書|か}かれているので、{一般|いっぱん}の{人|ひと}には{読|よ}みにくい。",
+          "kana": "ほうりつのじょうぶんはむずかしいことばでかかれているので、いっぱんのひとにはよみにくい。",
+          "en": "The text of the law is written in difficult language, so it is hard for ordinary people to read."
+        },
+        {
+          "ja": "{試験|しけん}では{条文|じょうぶん}を{暗記|あんき}するだけでなく、その{趣旨|しゅし}を{理解|りかい}しているかが{問|と}われます。",
+          "kana": "しけんではじょうぶんをあんきするだけでなく、そのしゅしをりかいしているかがとわれます。",
+          "en": "The exam tests not just whether you have memorized the provisions but whether you understand their purpose."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{規則|きそく}の{内容|ないよう}を、{番号|ばんごう}を{付|つ}けて{一|ひと}つ{一|ひと}つ{書|か}き{表|あらわ}したもの。",
+        "kana": "ほうりつやきそくのないようを、ばんごうをつけてひとつひとつかきあらわしたもの。"
+      },
+      "frequencyRank": 5440,
+      "confusables": [
+        "v-n1-0205"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0207",
+      "word": "投票率",
+      "kana": "とうひょうりつ",
+      "meanings": [
+        "voter turnout"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}の{日曜日|にちようび}だったせいか、{今回|こんかい}の{選挙|せんきょ}の{投票率|とうひょうりつ}は{過去最低|かこさいてい}だった。",
+          "kana": "あめのにちようびだったせいか、こんかいのせんきょのとうひょうりつはかこさいていだった。",
+          "en": "Perhaps because it was a rainy Sunday, turnout in this election was the lowest ever."
+        },
+        {
+          "ja": "{若者|わかもの}の{投票率|とうひょうりつ}を{上|あ}げるため、{大学|だいがく}の{中|なか}に{投票所|とうひょうじょ}を{設|もう}ける{試|こころ}みが{広|ひろ}がっています。",
+          "kana": "わかもののとうひょうりつをあげるため、だいがくのなかにとうひょうじょをもうけるこころみがひろがっています。",
+          "en": "To raise voter turnout among young people, the practice of setting up polling stations on university campuses is spreading."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で、{投票|とうひょう}する{権利|けんり}を{持|も}つ{人|ひと}のうち、{実際|じっさい}に{投票|とうひょう}した{人|ひと}の{割合|わりあい}。",
+        "kana": "せんきょで、とうひょうするけんりをもつひとのうち、じっさいにとうひょうしたひとのわりあい。"
+      },
+      "frequencyRank": 5448,
+      "station": 47
+    },
+    {
+      "id": "v-n1-0208",
+      "word": "落選",
+      "kana": "らくせん",
+      "meanings": [
+        "electoral defeat",
+        "not being selected"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{前回|ぜんかい}{落選|らくせん}した{候補者|こうほしゃ}が、{今回|こんかい}は{大差|たいさ}で{当選|とうせん}を{果|は}たした。",
+          "kana": "ぜんかいらくせんしたこうほしゃが、こんかいはたいさでとうせんをはたした。",
+          "en": "The candidate who lost last time won by a wide margin this time."
+        },
+        {
+          "ja": "{写真|しゃしん}コンテストに{応募|おうぼ}したけど、また{落選|らくせん}しちゃった。",
+          "kana": "しゃしんコンテストにおうぼしたけど、またらくせんしちゃった。",
+          "en": "I entered the photo contest, but I didn't make the cut again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{選|えら}ばれないこと。また、{作品|さくひん}などが{審査|しんさ}で{選|えら}ばれないこと。",
+        "kana": "せんきょでえらばれないこと。また、さくひんなどがしんさでえらばれないこと。"
+      },
+      "frequencyRank": 5456,
+      "confusables": [
+        "v-n1-0158"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0209",
+      "word": "得票",
+      "kana": "とくひょう",
+      "meanings": [
+        "votes obtained"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}の{候補者|こうほしゃ}の{得票数|とくひょうすう}はほぼ{同|おな}じで、{最後|さいご}の{一票|いっぴょう}まで{結果|けっか}が{分|わ}からなかった。",
+          "kana": "ふたりのこうほしゃのとくひょうすうはほぼおなじで、さいごのいっぴょうまでけっかがわからなかった。",
+          "en": "The two candidates' vote counts were almost identical, and the result was unclear until the very last ballot."
+        },
+        {
+          "ja": "{当選|とうせん}したものの、{得票|とくひょう}は{前回|ぜんかい}より{二万票|にまんひょう}も{減|へ}っていました。",
+          "kana": "とうせんしたものの、とくひょうはぜんかいよりにまんひょうもへっていました。",
+          "en": "He was elected, but his vote count was down by twenty thousand from the previous election."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で、{候補者|こうほしゃ}が{自分|じぶん}への{投票|とうひょう}を{集|あつ}めること。また、その{合計|ごうけい}。",
+        "kana": "せんきょで、こうほしゃがじぶんへのとうひょうをあつめること。また、そのごうけい。"
+      },
+      "frequencyRank": 5464,
+      "collocations": [
+        "得票数",
+        "得票率"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0210",
+      "word": "党首",
+      "kana": "とうしゅ",
+      "meanings": [
+        "party leader"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{選挙|せんきょ}を{前|まえ}に、{各党|かくとう}の{党首|とうしゅ}がテレビで{討論|とうろん}を{行|おこな}った。",
+          "kana": "せんきょをまえに、かくとうのとうしゅがテレビでとうろんをおこなった。",
+          "en": "Ahead of the election, the leaders of the parties held a televised debate."
+        },
+        {
+          "ja": "{選挙|せんきょ}で{大敗|たいはい}した{責任|せきにん}を{取|と}り、{彼女|かのじょ}は{党首|とうしゅ}を{辞任|じにん}すると{表明|ひょうめい}した。",
+          "kana": "せんきょでたいはいしたせきにんをとり、かのじょはとうしゅをじにんするとひょうめいした。",
+          "en": "Taking responsibility for the crushing election defeat, she announced she would step down as party leader."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政党|せいとう}の{一番|いちばん}{上|うえ}に{立|た}って、{政党|せいとう}{全体|ぜんたい}を{率|ひき}いる{人|ひと}。{代表|だいひょう}。",
+        "kana": "せいとうのいちばんうえにたって、せいとうぜんたいをひきいるひと。だいひょう。"
+      },
+      "frequencyRank": 5472,
+      "collocations": [
+        "党首討論"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0211",
+      "word": "政局",
+      "kana": "せいきょく",
+      "meanings": [
+        "political situation",
+        "political maneuvering"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{首相|しゅしょう}の{辞任|じにん}で{政局|せいきょく}は{一気|いっき}に{不安定|ふあんてい}になり、{株価|かぶか}も{大|おお}きく{下|さ}がった。",
+          "kana": "しゅしょうのじにんでせいきょくはいっきにふあんていになり、かぶかもおおきくさがった。",
+          "en": "The prime minister's resignation threw the political situation into turmoil, and share prices fell sharply too."
+        },
+        {
+          "ja": "{政局|せいきょく}がどう{動|うご}くかによって、{来年度|らいねんど}の{予算|よさん}の{成立時期|せいりつじき}も{変|か}わってきます。",
+          "kana": "せいきょくがどううごくかによって、らいねんどのよさんのせいりつじきもかわってきます。",
+          "en": "Depending on how the political situation develops, the timing of next year's budget approval will change too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}の{世界|せかい}で{起|お}きている{動|うご}きや{情勢|じょうせい}。{特|とく}に、{政権|せいけん}をめぐる{争|あらそ}い。",
+        "kana": "せいじのせかいでおきているうごきやじょうせい。とくに、せいけんをめぐるあらそい。"
+      },
+      "frequencyRank": 5480,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0212",
+      "word": "誘拐",
+      "kana": "ゆうかい",
+      "meanings": [
+        "kidnapping",
+        "abduction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{誘拐|ゆうかい}を{防|ふせ}ぐため、{学校|がっこう}は{保護者|ほごしゃ}に{集団登校|しゅうだんとうこう}を{呼|よ}びかけた。",
+          "kana": "こどものゆうかいをふせぐため、がっこうはほごしゃにしゅうだんとうこうをよびかけた。",
+          "en": "To prevent child abductions, the school urged parents to have the children walk to school in groups."
+        },
+        {
+          "ja": "{外国|がいこく}で{誘拐|ゆうかい}された{記者|きしゃ}が、{三|さん}か{月|げつ}ぶりに{無事|ぶじ}{解放|かいほう}されたというニュースが{流|なが}れた。",
+          "kana": "がいこくでゆうかいされたきしゃが、さんかげつぶりにぶじかいほうされたというニュースがながれた。",
+          "en": "The news came through that a reporter kidnapped abroad had been safely released after three months."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{子|こ}どもなどをだまして、または{無理|むり}につれていって、{帰|かえ}れないようにする{犯罪|はんざい}。",
+        "kana": "こどもなどをだまして、またはむりにつれていって、かえれないようにするはんざい。"
+      },
+      "frequencyRank": 5488,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0213",
+      "word": "脅迫",
+      "kana": "きょうはく",
+      "meanings": [
+        "threat",
+        "intimidation",
+        "blackmail"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{金|かね}を{払|はら}わなければ{写真|しゃしん}を{公開|こうかい}すると{脅迫|きょうはく}され、{彼|かれ}は{警察|けいさつ}に{相談|そうだん}した。",
+          "kana": "かねをはらわなければしゃしんをこうかいするときょうはくされ、かれはけいさつにそうだんした。",
+          "en": "Threatened that the photos would be made public unless he paid, he went to the police."
+        },
+        {
+          "ja": "{脅迫|きょうはく}と{受|う}け{取|と}られかねない{言|い}い{方|かた}は、たとえ{冗談|じょうだん}でも{避|さ}けるべきです。",
+          "kana": "きょうはくとうけとられかねないいいかたは、たとえじょうだんでもさけるべきです。",
+          "en": "You should avoid phrasing that could be taken as a threat, even as a joke."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}を{怖|こわ}がらせて、{無理|むり}に{何|なに}かをさせようとすること。",
+        "kana": "あいてをこわがらせて、むりになにかをさせようとすること。"
+      },
+      "frequencyRank": 5496,
+      "confusables": [
+        "v-n1-0247"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0214",
+      "word": "放火",
+      "kana": "ほうか",
+      "meanings": [
+        "arson"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{空|あ}き{家|や}が{燃|も}えた{原因|げんいん}は{放火|ほうか}の{疑|うたが}いが{強|つよ}いとして、{警察|けいさつ}が{調|しら}べている。",
+          "kana": "あきやがもえたげんいんはほうかのうたがいがつよいとして、けいさつがしらべている。",
+          "en": "Police are investigating, as arson is strongly suspected as the cause of the fire at the vacant house."
+        },
+        {
+          "ja": "{乾燥|かんそう}する{季節|きせつ}は{放火|ほうか}にも{注意|ちゅうい}が{必要|ひつよう}ですので、{家|いえ}の{周|まわ}りに{燃|も}えやすい{物|もの}を{置|お}かないでください。",
+          "kana": "かんそうするきせつはほうかにもちゅういがひつようですので、いえのまわりにもえやすいものをおかないでください。",
+          "en": "In the dry season you also need to watch out for arson, so please don't leave flammable items around your house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "わざと{建物|たてもの}などに{火|ひ}をつけて{燃|も}やすこと。{重|おも}い{犯罪|はんざい}。",
+        "kana": "わざとたてものなどにひをつけてもやすこと。おもいはんざい。"
+      },
+      "frequencyRank": 5504,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0215",
+      "word": "横領",
+      "kana": "おうりょう",
+      "meanings": [
+        "embezzlement"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{経理担当|けいりたんとう}の{社員|しゃいん}が{長年|ながねん}にわたって{会社|かいしゃ}の{金|かね}を{横領|おうりょう}していたことが{発覚|はっかく}した。",
+          "kana": "けいりたんとうのしゃいんがながねんにわたってかいしゃのかねをおうりょうしていたことがはっかくした。",
+          "en": "It came to light that an employee in accounting had been embezzling company money for years."
+        },
+        {
+          "ja": "{寄付金|きふきん}を{横領|おうりょう}した{疑|うたが}いで、{団体|だんたい}の{元代表|もとだいひょう}が{逮捕|たいほ}されました。",
+          "kana": "きふきんをおうりょうしたうたがいで、だんたいのもとだいひょうがたいほされました。",
+          "en": "The former head of the organization was arrested on suspicion of embezzling donations."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などのお{金|かね}を、{管理|かんり}を{頼|たの}まれた{人|ひと}が{勝手|かって}に{自分|じぶん}のものにする{犯罪|はんざい}。",
+        "kana": "かいしゃなどのおかねを、かんりをたのまれたひとがかってにじぶんのものにするはんざい。"
+      },
+      "frequencyRank": 5512,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0216",
+      "word": "脱税",
+      "kana": "だつぜい",
+      "meanings": [
+        "tax evasion"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{有名|ゆうめい}な{経営者|けいえいしゃ}が{脱税|だつぜい}で{起訴|きそ}されたというニュースが、{朝|あさ}から{大|おお}きく{報|ほう}じられている。",
+          "kana": "ゆうめいなけいえいしゃがだつぜいできそされたというニュースが、あさからおおきくほうじられている。",
+          "en": "The news that a famous executive has been indicted for tax evasion has been headline news since this morning."
+        },
+        {
+          "ja": "{売|う}り{上|あ}げを{少|すく}なく{申告|しんこく}するのは、{立派|りっぱ}な{脱税|だつぜい}だよ。",
+          "kana": "うりあげをすくなくしんこくするのは、りっぱなだつぜいだよ。",
+          "en": "Underreporting your sales is flat-out tax evasion, you know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{払|はら}わなければならない{税金|ぜいきん}を、{収入|しゅうにゅう}をごまかすなどして{払|はら}わないこと。",
+        "kana": "はらわなければならないぜいきんを、しゅうにゅうをごまかすなどしてはらわないこと。"
+      },
+      "frequencyRank": 5520,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0217",
+      "word": "密輸",
+      "kana": "みつゆ",
+      "meanings": [
+        "smuggling"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{空港|くうこう}の{税関|ぜいかん}で、スーツケースの{底|そこ}に{隠|かく}された{密輸品|みつゆひん}が{見|み}つかった。",
+          "kana": "くうこうのぜいかんで、スーツケースのそこにかくされたみつゆひんがみつかった。",
+          "en": "At airport customs, smuggled goods hidden in the bottom of a suitcase were discovered."
+        },
+        {
+          "ja": "{海岸線|かいがんせん}が{長|なが}いこの{地域|ちいき}は、{昔|むかし}から{密輸|みつゆ}の{取|と}り{締|し}まりが{難|むずか}しいと{言|い}われてきた。",
+          "kana": "かいがんせんがながいこのちいきは、むかしからみつゆのとりしまりがむずかしいといわれてきた。",
+          "en": "With its long coastline, this region has long been said to be hard to police against smuggling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}で{禁止|きんし}された{品物|しなもの}を、こっそり{外国|がいこく}から{持|も}ち{込|こ}んだり{外国|がいこく}へ{運|はこ}んだりすること。",
+        "kana": "ほうりつできんしされたしなものを、こっそりがいこくからもちこんだりがいこくへはこんだりすること。"
+      },
+      "frequencyRank": 5528,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0218",
+      "word": "傷害",
+      "kana": "しょうがい",
+      "meanings": [
+        "bodily injury (as a crime)",
+        "assault"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{酔|よ}って{他人|たにん}を{殴|なぐ}った{男|おとこ}が、{傷害|しょうがい}の{疑|うたが}いで{逮捕|たいほ}された。",
+          "kana": "よってたにんをなぐったおとこが、しょうがいのうたがいでたいほされた。",
+          "en": "A man who punched a stranger while drunk was arrested on suspicion of assault."
+        },
+        {
+          "ja": "{相手|あいて}にけがをさせれば、たとえ{口論|こうろん}の{末|すえ}でも{傷害事件|しょうがいじけん}として{扱|あつか}われます。",
+          "kana": "あいてにけがをさせれば、たとえこうろんのすえでもしょうがいじけんとしてあつかわれます。",
+          "en": "If you injure someone, it will be treated as an assault case even if it came at the end of an argument."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}の{体|からだ}を{傷|きず}つけること。{法律|ほうりつ}では、{人|ひと}にけがをさせる{犯罪|はんざい}。",
+        "kana": "ひとのからだをきずつけること。ほうりつでは、ひとにけがをさせるはんざい。"
+      },
+      "frequencyRank": 5536,
+      "notes": "Homophone of 障害 (disability, obstacle); 傷害 is the criminal offense of injuring someone.",
+      "collocations": [
+        "傷害事件",
+        "傷害罪"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0219",
+      "word": "執行猶予",
+      "kana": "しっこうゆうよ",
+      "meanings": [
+        "suspended sentence"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{初犯|しょはん}で{反省|はんせい}もしていることから、{懲役|ちょうえき}{二年|にねん}、{執行猶予|しっこうゆうよ}{三年|さんねん}の{判決|はんけつ}となった。",
+          "kana": "しょはんではんせいもしていることから、ちょうえきにねん、しっこうゆうよさんねんのはんけつとなった。",
+          "en": "As it was a first offense and the defendant showed remorse, the sentence was two years' imprisonment, suspended for three years."
+        },
+        {
+          "ja": "{執行猶予|しっこうゆうよ}の{期間中|きかんちゅう}に{再|ふたた}び{罪|つみ}を{犯|おか}せば、{前|まえ}の{刑|けい}も{合|あ}わせて{服役|ふくえき}することになります。",
+          "kana": "しっこうゆうよのきかんちゅうにふたたびつみをおかせば、まえのけいもあわせてふくえきすることになります。",
+          "en": "If you commit another offense during the suspension period, you will serve the earlier sentence as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{有罪|ゆうざい}の{判決|はんけつ}を{受|う}けても、{一定|いってい}の{期間|きかん}{罪|つみ}を{犯|おか}さなければ、{刑務所|けいむしょ}に{入|はい}らなくてよい{制度|せいど}。",
+        "kana": "ゆうざいのはんけつをうけても、いっていのきかんつみをおかさなければ、けいむしょにはいらなくてよいせいど。"
+      },
+      "frequencyRank": 5544,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0220",
+      "word": "上告",
+      "kana": "じょうこく",
+      "meanings": [
+        "final appeal (to the Supreme Court)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{高等裁判所|こうとうさいばんしょ}の{判決|はんけつ}を{不服|ふふく}として、{弁護側|べんごがわ}は{最高裁|さいこうさい}に{上告|じょうこく}した。",
+          "kana": "こうとうさいばんしょのはんけつをふふくとして、べんごがわはさいこうさいにじょうこくした。",
+          "en": "Dissatisfied with the High Court's ruling, the defense appealed to the Supreme Court."
+        },
+        {
+          "ja": "{被告|ひこく}は{上告|じょうこく}を{取|と}り{下|さ}げ、{判決|はんけつ}を{受|う}け{入|い}れる{意向|いこう}を{示|しめ}しました。",
+          "kana": "ひこくはじょうこくをとりさげ、はんけつをうけいれるいこうをしめしました。",
+          "en": "The defendant withdrew the final appeal and indicated a willingness to accept the ruling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{控訴|こうそ}した{後|あと}の{判決|はんけつ}にも{納得|なっとく}できない{場合|ばあい}、{一番|いちばん}{上|うえ}の{裁判所|さいばんしょ}に{最後|さいご}の{判断|はんだん}を{求|もと}めること。",
+        "kana": "こうそしたあとのはんけつにもなっとくできないばあい、いちばんうえのさいばんしょにさいごのはんだんをもとめること。"
+      },
+      "frequencyRank": 5552,
+      "confusables": [
+        "v-n1-0188"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0221",
+      "word": "冤罪",
+      "kana": "えんざい",
+      "meanings": [
+        "false accusation",
+        "wrongful conviction"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{二十年後|にじゅうねんご}に{新|あたら}しい{証拠|しょうこ}が{見|み}つかり、その{事件|じけん}は{冤罪|えんざい}だったと{認|みと}められた。",
+          "kana": "にじゅうねんごにあたらしいしょうこがみつかり、そのじけんはえんざいだったとみとめられた。",
+          "en": "New evidence turned up twenty years later, and the case was recognized as a wrongful conviction."
+        },
+        {
+          "ja": "{冤罪|えんざい}を{防|ふせ}ぐためには、{取|と}り{調|しら}べの{様子|ようす}を{全|すべ}て{録画|ろくが}することが{必要|ひつよう}だと{弁護士|べんごし}は{訴|うった}えています。",
+          "kana": "えんざいをふせぐためには、とりしらべのようすをすべてろくがすることがひつようだとべんごしはうったえています。",
+          "en": "Lawyers argue that recording all interrogations in full is necessary to prevent wrongful convictions."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{罪|つみ}を{犯|おか}していないのに、{犯人|はんにん}だと{疑|うたが}われたり{有罪|ゆうざい}とされたりすること。",
+        "kana": "つみをおかしていないのに、はんにんだとうたがわれたりゆうざいとされたりすること。"
+      },
+      "frequencyRank": 5560,
+      "altForms": [
+        "えん罪"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0222",
+      "word": "示談",
+      "kana": "じだん",
+      "meanings": [
+        "out-of-court settlement"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{交通事故|こうつうじこ}の{相手|あいて}とは{示談|じだん}が{成立|せいりつ}し、{裁判|さいばん}にはならずに{済|す}んだ。",
+          "kana": "こうつうじこのあいてとはじだんがせいりつし、さいばんにはならずにすんだ。",
+          "en": "We reached an out-of-court settlement with the other party in the traffic accident, so it never went to trial."
+        },
+        {
+          "ja": "{示談金|じだんきん}を{払|はら}うから{警察|けいさつ}には{言|い}わないでくれって{頼|たの}まれたけど、{断|ことわ}ったよ。",
+          "kana": "じだんきんをはらうからけいさつにはいわないでくれってたのまれたけど、ことわったよ。",
+          "en": "He asked me not to go to the police, saying he'd pay me a settlement, but I refused."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事件|じけん}や{事故|じこ}の{争|あらそ}いを、{裁判|さいばん}をせずに{本人|ほんにん}たちの{話|はな}し{合|あ}いで{解決|かいけつ}すること。",
+        "kana": "じけんやじこのあらそいを、さいばんをせずにほんにんたちのはなしあいでかいけつすること。"
+      },
+      "frequencyRank": 5568,
+      "collocations": [
+        "示談金",
+        "示談が成立する"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0223",
+      "word": "調停",
+      "kana": "ちょうてい",
+      "meanings": [
+        "mediation",
+        "conciliation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{夫婦|ふうふ}の{話|はな}し{合|あ}いがまとまらず、{家庭裁判所|かていさいばんしょ}に{調停|ちょうてい}を{申|もう}し{立|た}てた。",
+          "kana": "ふうふのはなしあいがまとまらず、かていさいばんしょにちょうていをもうしたてた。",
+          "en": "The couple could not reach an agreement between themselves and applied to the family court for mediation."
+        },
+        {
+          "ja": "{隣人|りんじん}との{騒音|そうおん}トラブルは、{裁判所|さいばんしょ}の{調停|ちょうてい}によって{三|さん}か{月|げつ}で{解決|かいけつ}しました。",
+          "kana": "りんじんとのそうおんトラブルは、さいばんしょのちょうていによってさんかげつでかいけつしました。",
+          "en": "The noise dispute with my neighbor was resolved in three months through court mediation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{争|あらそ}っている{両方|りょうほう}の{間|あいだ}に{裁判所|さいばんしょ}などが{入|はい}って、{話|はな}し{合|あ}いで{解決|かいけつ}させること。",
+        "kana": "あらそっているりょうほうのあいだにさいばんしょなどがはいって、はなしあいでかいけつさせること。"
+      },
+      "frequencyRank": 5576,
+      "confusables": [
+        "v-n1-0224"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0224",
+      "word": "仲裁",
+      "kana": "ちゅうさい",
+      "meanings": [
+        "arbitration",
+        "intervening to settle a dispute"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}の{言|い}い{争|あらそ}いがひどくなったので、{見|み}かねた{先輩|せんぱい}が{仲裁|ちゅうさい}に{入|はい}った。",
+          "kana": "ふたりのいいあらそいがひどくなったので、みかねたせんぱいがちゅうさいにはいった。",
+          "en": "The argument between the two got so bad that a senior colleague couldn't stand by and stepped in to mediate."
+        },
+        {
+          "ja": "{契約書|けいやくしょ}には、{争|あらそ}いが{起|お}きた{場合|ばあい}は{第三者機関|だいさんしゃきかん}の{仲裁|ちゅうさい}に{委|ゆだ}ねると{書|か}かれています。",
+          "kana": "けいやくしょには、あらそいがおきたばあいはだいさんしゃきかんのちゅうさいにゆだねるとかかれています。",
+          "en": "The contract states that any dispute will be referred to arbitration by a third-party body."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{争|あらそ}っている{人|ひと}たちの{間|あいだ}に{入|はい}って、{争|あらそ}いをやめさせること。",
+        "kana": "あらそっているひとたちのあいだにはいって、あらそいをやめさせること。"
+      },
+      "frequencyRank": 5584,
+      "collocations": [
+        "仲裁に入る"
+      ],
+      "confusables": [
+        "v-n1-0223"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0225",
+      "word": "国交",
+      "kana": "こっこう",
+      "meanings": [
+        "diplomatic relations"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{両国|りょうこく}は{長|なが}い{対立|たいりつ}の{末|すえ}、ようやく{国交|こっこう}を{回復|かいふく}することで{合意|ごうい}した。",
+          "kana": "りょうこくはながいたいりつのすえ、ようやくこっこうをかいふくすることでごういした。",
+          "en": "After a long standoff, the two countries finally agreed to restore diplomatic relations."
+        },
+        {
+          "ja": "{国交|こっこう}がない{国|くに}へ{渡航|とこう}する{際|さい}は、トラブルが{起|お}きても{十分|じゅうぶん}な{支援|しえん}が{受|う}けられないおそれがあります。",
+          "kana": "こっこうがないくにへとこうするさいは、トラブルがおきてもじゅうぶんなしえんがうけられないおそれがあります。",
+          "en": "When traveling to a country with which Japan has no diplomatic relations, you may not be able to get adequate help if trouble arises."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}と{国|くに}が{互|たが}いを{認|みと}め、{政府|せいふ}の{間|あいだ}で{続|つづ}けていく{付|つ}き{合|あ}い。",
+        "kana": "くにとくにがたがいをみとめ、せいふのあいだでつづけていくつきあい。"
+      },
+      "frequencyRank": 5592,
+      "collocations": [
+        "国交正常化",
+        "国交を断絶する"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0226",
+      "word": "軍縮",
+      "kana": "ぐんしゅく",
+      "meanings": [
+        "disarmament",
+        "arms reduction"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{軍縮|ぐんしゅく}をめぐる{会議|かいぎ}は{三日間|みっかかん}{続|つづ}いたが、{具体的|ぐたいてき}な{合意|ごうい}には{至|いた}らなかった。",
+          "kana": "ぐんしゅくをめぐるかいぎはみっかかんつづいたが、ぐたいてきなごういにはいたらなかった。",
+          "en": "The disarmament talks went on for three days but did not lead to any concrete agreement."
+        },
+        {
+          "ja": "{冷戦|れいせん}の{終|お}わりとともに、{多|おお}くの{国|くに}が{軍縮|ぐんしゅく}へと{舵|かじ}を{切|き}った。",
+          "kana": "れいせんのおわりとともに、おおくのくにがぐんしゅくへとかじをきった。",
+          "en": "With the end of the Cold War, many countries changed course toward disarmament."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}が{持|も}っている{武器|ぶき}や{軍事|ぐんじ}の{力|ちから}を{減|へ}らすこと。",
+        "kana": "くにがもっているぶきやぐんじのちからをへらすこと。"
+      },
+      "frequencyRank": 5600,
+      "notes": "Abbreviation of 軍備縮小.",
+      "station": 48
+    },
+    {
+      "id": "v-n1-0227",
+      "word": "内戦",
+      "kana": "ないせん",
+      "meanings": [
+        "civil war"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{内戦|ないせん}が{十年以上|じゅうねんいじょう}{続|つづ}いたその{国|くに}では、{人口|じんこう}の{三分|さんぶん}の{一|いち}が{家|いえ}を{失|うしな}ったという。",
+          "kana": "ないせんがじゅうねんいじょうつづいたそのくにでは、じんこうのさんぶんのいちがいえをうしなったという。",
+          "en": "In that country, where civil war went on for more than ten years, a third of the population reportedly lost their homes."
+        },
+        {
+          "ja": "{内戦|ないせん}を{逃|のが}れてきた{人々|ひとびと}を{受|う}け{入|い}れるかどうかで、{議会|ぎかい}の{意見|いけん}は{割|わ}れています。",
+          "kana": "ないせんをのがれてきたひとびとをうけいれるかどうかで、ぎかいのいけんはわれています。",
+          "en": "Parliament is divided over whether to take in people who have fled the civil war."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|ひと}つの{国|くに}の{中|なか}で、{国民|こくみん}が{二|ふた}つ{以上|いじょう}の{集団|しゅうだん}に{分|わ}かれて{戦|たたか}う{戦争|せんそう}。",
+        "kana": "ひとつのくにのなかで、こくみんがふたついじょうのしゅうだんにわかれてたたかうせんそう。"
+      },
+      "frequencyRank": 5608,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0228",
+      "word": "亡命",
+      "kana": "ぼうめい",
+      "meanings": [
+        "defection",
+        "seeking asylum",
+        "exile"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}を{批判|ひはん}した{作家|さっか}は{身|み}の{危険|きけん}を{感|かん}じ、{隣国|りんごく}に{亡命|ぼうめい}した。",
+          "kana": "せいふをひはんしたさっかはみのきけんをかんじ、りんごくにぼうめいした。",
+          "en": "The writer who had criticized the government feared for his safety and fled into exile in the neighboring country."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{亡命先|ぼうめいさき}の{国|くに}で{市民権|しみんけん}を{得|え}て、{今|いま}は{大学|だいがく}で{母国|ぼこく}の{歴史|れきし}を{教|おし}えています。",
+          "kana": "かのじょはぼうめいさきのくにでしみんけんをえて、いまはだいがくでぼこくのれきしをおしえています。",
+          "en": "She obtained citizenship in the country where she sought asylum, and now teaches the history of her homeland at a university."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}の{考|かんが}えなどが{理由|りゆう}で{自分|じぶん}の{国|くに}にいられなくなり、{外国|がいこく}へ{逃|に}げること。",
+        "kana": "せいじのかんがえなどがりゆうでじぶんのくににいられなくなり、がいこくへにげること。"
+      },
+      "frequencyRank": 5616,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0229",
+      "word": "徴兵",
+      "kana": "ちょうへい",
+      "meanings": [
+        "conscription",
+        "the draft"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "その{国|くに}では{十八歳|じゅうはっさい}になると{徴兵|ちょうへい}され、{男性|だんせい}は{二年間|にねんかん}{軍隊|ぐんたい}で{過|す}ごす。",
+          "kana": "そのくにではじゅうはっさいになるとちょうへいされ、だんせいはにねんかんぐんたいですごす。",
+          "en": "In that country, men are conscripted at eighteen and spend two years in the military."
+        },
+        {
+          "ja": "{祖父|そふ}は{戦争中|せんそうちゅう}に{徴兵|ちょうへい}され、{終戦|しゅうせん}の{年|とし}にようやく{故郷|こきょう}へ{戻|もど}ったそうです。",
+          "kana": "そふはせんそうちゅうにちょうへいされ、しゅうせんのとしにようやくこきょうへもどったそうです。",
+          "en": "My grandfather was drafted during the war and finally returned to his hometown the year it ended."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}が{国民|こくみん}に、{一定|いってい}の{期間|きかん}{戦争|せんそう}のための{訓練|くんれん}や{仕事|しごと}をするよう{命令|めいれい}すること。",
+        "kana": "くにがこくみんに、いっていのきかんせんそうのためのくんれんやしごとをするようめいれいすること。"
+      },
+      "frequencyRank": 5624,
+      "collocations": [
+        "徴兵制"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0230",
+      "word": "君主",
+      "kana": "くんしゅ",
+      "meanings": [
+        "monarch",
+        "sovereign"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{現在|げんざい}も{君主|くんしゅ}がいる{国|くに}は{多|おお}いが、そのほとんどで{政治|せいじ}の{実権|じっけん}は{議会|ぎかい}にある。",
+          "kana": "げんざいもくんしゅがいるくにはおおいが、そのほとんどでせいじのじっけんはぎかいにある。",
+          "en": "Many countries still have a monarch, but in most of them real political power lies with parliament."
+        },
+        {
+          "ja": "{歴史|れきし}の{授業|じゅぎょう}で、{権力|けんりょく}を{一人|ひとり}に{集|あつ}めた{君主|くんしゅ}と、{議会|ぎかい}に{支|ささ}えられた{君主|くんしゅ}の{違|ちが}いを{学|まな}んだ。",
+          "kana": "れきしのじゅぎょうで、けんりょくをひとりにあつめたくんしゅと、ぎかいにささえられたくんしゅのちがいをまなんだ。",
+          "en": "In history class we learned the difference between monarchs who concentrated power in themselves and monarchs supported by a parliament."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{生|う}まれによって{決|き}まり、{国|くに}の{一番|いちばん}{上|うえ}に{立|た}って{国|くに}を{代表|だいひょう}する{人|ひと}。",
+        "kana": "うまれによってきまり、くにのいちばんうえにたってくにをだいひょうするひと。"
+      },
+      "frequencyRank": 5632,
+      "collocations": [
+        "立憲君主制"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0231",
+      "word": "専制",
+      "kana": "せんせい",
+      "meanings": [
+        "autocracy",
+        "despotism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}の{王|おう}がすべてを{決|き}める{専制政治|せんせいせいじ}は、{革命|かくめい}によって{終|お}わりを{迎|むか}えた。",
+          "kana": "ひとりのおうがすべてをきめるせんせいせいじは、かくめいによっておわりをむかえた。",
+          "en": "The autocratic rule under which a single king decided everything came to an end through revolution."
+        },
+        {
+          "ja": "{社長|しゃちょう}の{専制|せんせい}が{続|つづ}く{限|かぎ}り、{社員|しゃいん}の{意見|いけん}が{経営|けいえい}に{反映|はんえい}されることはないでしょう。",
+          "kana": "しゃちょうのせんせいがつづくかぎり、しゃいんのいけんがけいえいにはんえいされることはないでしょう。",
+          "en": "As long as the president's autocratic rule continues, employees' opinions will never be reflected in management."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一人|ひとり}の{人|ひと}が、{国民|こくみん}の{意見|いけん}を{聞|き}かずに{自分|じぶん}の{好|す}きなように{政治|せいじ}を{行|おこな}うこと。",
+        "kana": "ひとりのひとが、こくみんのいけんをきかずにじぶんのすきなようにせいじをおこなうこと。"
+      },
+      "frequencyRank": 5640,
+      "collocations": [
+        "専制政治",
+        "専制君主"
+      ],
+      "confusables": [
+        "v-n1-0192"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0232",
+      "word": "右翼",
+      "kana": "うよく",
+      "meanings": [
+        "right wing",
+        "rightist"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "その{政党|せいとう}は{右翼|うよく}と{呼|よ}ばれることを{嫌|きら}い、{自分|じぶん}たちは{穏健|おんけん}な{保守|ほしゅ}だと{主張|しゅちょう}している。",
+          "kana": "そのせいとうはうよくとよばれることをきらい、じぶんたちはおんけんなほしゅだとしゅちょうしている。",
+          "en": "That party dislikes being called right-wing and insists it is moderately conservative."
+        },
+        {
+          "ja": "{高校時代|こうこうじだい}は{右翼|うよく}を{守|まも}っていたので、{今|いま}でも{外野|がいや}からの{送球|そうきゅう}には{自信|じしん}がある。",
+          "kana": "こうこうじだいはうよくをまもっていたので、いまでもがいやからのそうきゅうにはじしんがある。",
+          "en": "I played right field in high school, so even now I am confident in my throws from the outfield."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}で、{伝統|でんとう}や{国|くに}のまとまりを{大切|たいせつ}にする{保守|ほしゅ}の{立場|たちば}。また、その{人々|ひとびと}。",
+        "kana": "せいじで、でんとうやくにのまとまりをたいせつにするほしゅのたちば。また、そのひとびと。"
+      },
+      "frequencyRank": 5648,
+      "notes": "Also the right field in baseball.",
+      "confusables": [
+        "v-n1-0233"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0233",
+      "word": "左翼",
+      "kana": "さよく",
+      "meanings": [
+        "left wing",
+        "leftist"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{若|わか}い{頃|ころ}{左翼|さよく}の{学生運動|がくせいうんどう}に{参加|さんか}していたと、{時々|ときどき}{懐|なつ}かしそうに{話|はな}す。",
+          "kana": "そふはわかいころさよくのがくせいうんどうにさんかしていたと、ときどきなつかしそうにはなす。",
+          "en": "My grandfather sometimes talks fondly about taking part in the left-wing student movement when he was young."
+        },
+        {
+          "ja": "この{新聞|しんぶん}は{左翼寄|さよくよ}りだと{言|い}われますが、{記事|きじ}そのものは{事実|じじつ}に{基|もと}づいて{丁寧|ていねい}に{書|か}かれています。",
+          "kana": "このしんぶんはさよくよりだといわれますが、きじそのものはじじつにもとづいてていねいにかかれています。",
+          "en": "This newspaper is said to lean left, but the articles themselves are carefully written and grounded in fact."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}で、{平等|びょうどう}や{社会|しゃかい}の{改革|かいかく}を{強|つよ}く{求|もと}める{革新|かくしん}の{立場|たちば}。また、その{人々|ひとびと}。",
+        "kana": "せいじで、びょうどうやしゃかいのかいかくをつよくもとめるかくしんのたちば。また、そのひとびと。"
+      },
+      "frequencyRank": 5656,
+      "confusables": [
+        "v-n1-0232"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0234",
+      "word": "穏健",
+      "kana": "おんけん",
+      "meanings": [
+        "moderate",
+        "temperate"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{穏健|おんけん}な{考|かんが}え{方|かた}の{持|も}ち{主|ぬし}で、{極端|きょくたん}な{意見|いけん}には{必|かなら}ず{距離|きょり}を{置|お}く。",
+          "kana": "かれはおんけんなかんがえかたのもちぬしで、きょくたんないけんにはかならずきょりをおく。",
+          "en": "He is a man of moderate views and always keeps his distance from extreme opinions."
+        },
+        {
+          "ja": "{党内|とうない}では{穏健派|おんけんは}の{議員|ぎいん}たちが、{対話|たいわ}による{解決|かいけつ}を{粘|ねば}り{強|づよ}く{訴|うった}えています。",
+          "kana": "とうないではおんけんはのぎいんたちが、たいわによるかいけつをねばりづよくうったえています。",
+          "en": "Within the party, the moderate lawmakers are persistently calling for a solution through dialogue."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}え{方|かた}ややり{方|かた}が{一方|いっぽう}にかたよらず、{穏|おだ}やかで{落|お}ち{着|つ}いている{様子|ようす}。",
+        "kana": "かんがえかたややりかたがいっぽうにかたよらず、おだやかでおちついているようす。"
+      },
+      "frequencyRank": 5664,
+      "collocations": [
+        "穏健派"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0235",
+      "word": "中道",
+      "kana": "ちゅうどう",
+      "meanings": [
+        "middle of the road",
+        "centrism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{右|みぎ}でも{左|ひだり}でもない{中道|ちゅうどう}の{政党|せいとう}が、{今回|こんかい}の{選挙|せんきょ}で{大|おお}きく{議席|ぎせき}を{伸|の}ばした。",
+          "kana": "みぎでもひだりでもないちゅうどうのせいとうが、こんかいのせんきょでおおきくぎせきをのばした。",
+          "en": "A centrist party, neither right nor left, greatly increased its seats in this election."
+        },
+        {
+          "ja": "{彼|かれ}は{中道|ちゅうどう}の{立場|たちば}から、{両派|りょうは}の{主張|しゅちょう}をまとめる{役割|やくわり}を{果|は}たしてきました。",
+          "kana": "かれはちゅうどうのたちばから、りょうはのしゅちょうをまとめるやくわりをはたしてきました。",
+          "en": "From a centrist position, he has played the role of bringing the two camps' positions together."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}で、{右|みぎ}にも{左|ひだり}にもかたよらない、{真|ま}ん{中|なか}の{立場|たちば}。",
+        "kana": "せいじで、みぎにもひだりにもかたよらない、まんなかのたちば。"
+      },
+      "frequencyRank": 5672,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0236",
+      "word": "審議会",
+      "kana": "しんぎかい",
+      "meanings": [
+        "advisory council",
+        "deliberative council"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{制度|せいど}の{内容|ないよう}は、{専門家|せんもんか}からなる{審議会|しんぎかい}で{半年|はんとし}かけて{検討|けんとう}された。",
+          "kana": "あたらしいせいどのないようは、せんもんかからなるしんぎかいではんとしかけてけんとうされた。",
+          "en": "The details of the new system were examined over six months by an advisory council made up of experts."
+        },
+        {
+          "ja": "{審議会|しんぎかい}の{委員|いいん}には、{学者|がくしゃ}だけでなく{一般|いっぱん}の{市民|しみん}も{加|くわ}わっています。",
+          "kana": "しんぎかいのいいんには、がくしゃだけでなくいっぱんのしみんもくわわっています。",
+          "en": "The council's members include not only scholars but ordinary citizens as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}などの{求|もと}めに{応|おう}じて、{専門|せんもん}の{人|ひと}たちが{集|あつ}まって{問題|もんだい}を{検討|けんとう}し、{意見|いけん}を{述|の}べる{会|かい}。",
+        "kana": "せいふなどのもとめにおうじて、せんもんのひとたちがあつまってもんだいをけんとうし、いけんをのべるかい。"
+      },
+      "frequencyRank": 5680,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0237",
+      "word": "諮問",
+      "kana": "しもん",
+      "meanings": [
+        "consultation",
+        "referring a question to a council"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{大臣|だいじん}は{年金制度|ねんきんせいど}の{見直|みなお}しについて、{有識者会議|ゆうしきしゃかいぎ}に{諮問|しもん}した。",
+          "kana": "だいじんはねんきんせいどのみなおしについて、ゆうしきしゃかいぎにしもんした。",
+          "en": "The minister referred the question of reforming the pension system to a panel of experts."
+        },
+        {
+          "ja": "この{委員会|いいんかい}は{市長|しちょう}の{諮問|しもん}を{受|う}けて{設置|せっち}された{機関|きかん}で、{決定権|けっていけん}は{持|も}っていません。",
+          "kana": "このいいんかいはしちょうのしもんをうけてせっちされたきかんで、けっていけんはもっていません。",
+          "en": "This committee is a body set up at the mayor's request for advice, and it has no decision-making power."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}や{大臣|だいじん}などが、{専門|せんもん}の{人|ひと}たちの{会|かい}に{意見|いけん}を{求|もと}めること。",
+        "kana": "せいふやだいじんなどが、せんもんのひとたちのかいにいけんをもとめること。"
+      },
+      "frequencyRank": 5688,
+      "collocations": [
+        "諮問機関"
+      ],
+      "confusables": [
+        "v-n1-0238"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0238",
+      "word": "答申",
+      "kana": "とうしん",
+      "meanings": [
+        "report in reply to a consultation",
+        "recommendation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{審議会|しんぎかい}は{一年|いちねん}の{議論|ぎろん}を{経|へ}て、{入試改革|にゅうしかいかく}に{関|かん}する{答申|とうしん}を{大臣|だいじん}に{提出|ていしゅつ}した。",
+          "kana": "しんぎかいはいちねんのぎろんをへて、にゅうしかいかくにかんするとうしんをだいじんにていしゅつした。",
+          "en": "After a year of deliberation, the council submitted its recommendations on entrance-exam reform to the minister."
+        },
+        {
+          "ja": "{答申|とうしん}の{内容|ないよう}がそのまま{政策|せいさく}になるとは{限|かぎ}らず、{最終的|さいしゅうてき}な{判断|はんだん}は{政府|せいふ}に{委|ゆだ}ねられている。",
+          "kana": "とうしんのないようがそのまませいさくになるとはかぎらず、さいしゅうてきなはんだんはせいふにゆだねられている。",
+          "en": "The council's recommendations do not automatically become policy; the final decision is left to the government."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{諮問|しもん}を{受|う}けた{会|かい}が、{検討|けんとう}した{結果|けっか}を{意見|いけん}としてまとめて{答|こた}えること。また、その{答|こた}え。",
+        "kana": "しもんをうけたかいが、けんとうしたけっかをいけんとしてまとめてこたえること。また、そのこたえ。"
+      },
+      "frequencyRank": 5696,
+      "confusables": [
+        "v-n1-0237"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0239",
+      "word": "公布",
+      "kana": "こうふ",
+      "meanings": [
+        "promulgation",
+        "official proclamation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{改正|かいせい}された{法律|ほうりつ}は{先月|せんげつ}{公布|こうふ}され、{来年四月|らいねんしがつ}から{実際|じっさい}に{適用|てきよう}される。",
+          "kana": "かいせいされたほうりつはせんげつこうふされ、らいねんしがつからじっさいにてきようされる。",
+          "en": "The amended law was promulgated last month and will actually take effect next April."
+        },
+        {
+          "ja": "{憲法|けんぽう}が{公布|こうふ}された{日|ひ}は、{今|いま}も{祝日|しゅくじつ}として{受|う}け{継|つ}がれています。",
+          "kana": "けんぽうがこうふされたひは、いまもしゅくじつとしてうけつがれています。",
+          "en": "The day the constitution was promulgated is still observed as a national holiday today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しく{決|き}まった{法律|ほうりつ}や{命令|めいれい}を、{国民|こくみん}に{広|ひろ}く{知|し}らせること。",
+        "kana": "あたらしくきまったほうりつやめいれいを、こくみんにひろくしらせること。"
+      },
+      "frequencyRank": 5704,
+      "notes": "公布 (officially announcing a law) precedes 施行 (bringing it into force).",
+      "station": 48
+    },
+    {
+      "id": "v-n1-0240",
+      "word": "法規",
+      "kana": "ほうき",
+      "meanings": [
+        "laws and regulations"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{交通法規|こうつうほうき}を{守|まも}るのは{当然|とうぜん}のことだが、{自転車|じてんしゃ}に{乗|の}る{人|ひと}の{中|なか}には{知|し}らない{人|ひと}も{多|おお}い。",
+          "kana": "こうつうほうきをまもるのはとうぜんのことだが、じてんしゃにのるひとのなかにはしらないひともおおい。",
+          "en": "Obeying traffic regulations goes without saying, but many cyclists do not even know them."
+        },
+        {
+          "ja": "{新|あたら}しい{事業|じぎょう}を{始|はじ}める{前|まえ}に、{関係|かんけい}する{法規|ほうき}をひととおり{調|しら}べておきましょう。",
+          "kana": "あたらしいじぎょうをはじめるまえに、かんけいするほうきをひととおりしらべておきましょう。",
+          "en": "Before starting a new business, let's go through all the relevant regulations."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{規則|きそく}をまとめて{言|い}う{言葉|ことば}。{守|まも}らなければならない{決|き}まり。",
+        "kana": "ほうりつやきそくをまとめていうことば。まもらなければならないきまり。"
+      },
+      "frequencyRank": 5712,
+      "collocations": [
+        "交通法規"
+      ],
+      "confusables": [
+        "v-n1-0204"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0241",
+      "word": "世襲",
+      "kana": "せしゅう",
+      "meanings": [
+        "hereditary succession"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society",
+        "family"
+      ],
+      "examples": [
+        {
+          "ja": "{親|おや}の{選挙区|せんきょく}をそのまま{引|ひ}き{継|つ}ぐ{世襲議員|せしゅうぎいん}の{多|おお}さが、{問題|もんだい}として{指摘|してき}されている。",
+          "kana": "おやのせんきょくをそのままひきつぐせしゅうぎいんのおおさが、もんだいとしてしてきされている。",
+          "en": "The large number of hereditary politicians who simply take over their parents' constituencies has been pointed out as a problem."
+        },
+        {
+          "ja": "{伝統芸能|でんとうげいのう}の{世界|せかい}では、{芸|げい}の{名前|なまえ}を{世襲|せしゅう}する{家|いえ}が{今|いま}も{少|すく}なくありません。",
+          "kana": "でんとうげいのうのせかいでは、げいのなまえをせしゅうするいえがいまもすくなくありません。",
+          "en": "In the world of traditional performing arts, there are still many families where stage names are passed down by inheritance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{親|おや}の{仕事|しごと}や{立場|たちば}、{名前|なまえ}などを、{子|こ}どもが{親|おや}から{受|う}け{継|つ}いでいくこと。",
+        "kana": "おやのしごとやたちば、なまえなどを、こどもがおやからうけついでいくこと。"
+      },
+      "frequencyRank": 5720,
+      "collocations": [
+        "世襲議員"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0242",
+      "word": "遊説",
+      "kana": "ゆうぜい",
+      "meanings": [
+        "campaign tour",
+        "stumping"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{候補者|こうほしゃ}は{選挙期間中|せんきょきかんちゅう}、{毎日|まいにち}{県内|けんない}を{遊説|ゆうぜい}して{回|まわ}った。",
+          "kana": "こうほしゃはせんきょきかんちゅう、まいにちけんないをゆうぜいしてまわった。",
+          "en": "During the campaign period, the candidate stumped around the prefecture every day."
+        },
+        {
+          "ja": "{党首|とうしゅ}が{遊説|ゆうぜい}に{訪|おとず}れるということで、{駅前|えきまえ}には{朝|あさ}から{大勢|おおぜい}の{人|ひと}が{集|あつ}まっています。",
+          "kana": "とうしゅがゆうぜいにおとずれるということで、えきまえにはあさからおおぜいのひとがあつまっています。",
+          "en": "With the party leader coming to give a campaign speech, a big crowd has been gathering in front of the station since morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治家|せいじか}がいろいろな{町|まち}を{回|まわ}って、{自分|じぶん}の{意見|いけん}や{政策|せいさく}を{演説|えんぜつ}して{歩|ある}くこと。",
+        "kana": "せいじかがいろいろなまちをまわって、じぶんのいけんやせいさくをえんぜつしてあるくこと。"
+      },
+      "frequencyRank": 5728,
+      "station": 48
+    },
+    {
+      "id": "v-n1-0243",
+      "word": "補欠選挙",
+      "kana": "ほけつせんきょ",
+      "meanings": [
+        "by-election"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{議員|ぎいん}の{辞職|じしょく}に{伴|ともな}う{補欠選挙|ほけつせんきょ}が、{来月|らいげつ}{行|おこな}われることになった。",
+          "kana": "ぎいんのじしょくにともなうほけつせんきょが、らいげつおこなわれることになった。",
+          "en": "A by-election following the lawmaker's resignation will be held next month."
+        },
+        {
+          "ja": "{補欠選挙|ほけつせんきょ}とはいえ、{政権|せいけん}への{評価|ひょうか}を{測|はか}る{試金石|しきんせき}として{全国|ぜんこく}の{注目|ちゅうもく}を{集|あつ}めている。",
+          "kana": "ほけつせんきょとはいえ、せいけんへのひょうかをはかるしきんせきとしてぜんこくのちゅうもくをあつめている。",
+          "en": "Though only a by-election, it is drawing nationwide attention as a test of how the administration is rated."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{議員|ぎいん}がいなくなってできた{空席|くうせき}を{埋|う}めるために{行|おこな}う{選挙|せんきょ}。",
+        "kana": "ぎいんがいなくなってできたくうせきをうめるためにおこなうせんきょ。"
+      },
+      "frequencyRank": 5736,
+      "altForms": [
+        "補選"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0244",
+      "word": "贈賄",
+      "kana": "ぞうわい",
+      "meanings": [
+        "bribery (giving a bribe)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{建設会社|けんせつがいしゃ}の{社長|しゃちょう}が、{工事|こうじ}を{受注|じゅちゅう}するために{市|し}の{職員|しょくいん}に{金|かね}を{渡|わた}したとして{贈賄|ぞうわい}の{罪|つみ}に{問|と}われた。",
+          "kana": "けんせつがいしゃのしゃちょうが、こうじをじゅちゅうするためにしのしょくいんにかねをわたしたとしてぞうわいのつみにとわれた。",
+          "en": "The president of a construction company was charged with bribery for giving money to a city official to win a contract."
+        },
+        {
+          "ja": "{海外|かいがい}では、{取引先|とりひきさき}の{役人|やくにん}への{贈|おく}り{物|もの}が{贈賄|ぞうわい}とみなされる{場合|ばあい}もあるので{注意|ちゅうい}が{必要|ひつよう}です。",
+          "kana": "かいがいでは、とりひきさきのやくにんへのおくりものがぞうわいとみなされるばあいもあるのでちゅういがひつようです。",
+          "en": "Overseas, a gift to an official at a business partner can sometimes be regarded as bribery, so caution is needed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}に{有利|ゆうり}な{扱|あつか}いをしてもらうために、{役人|やくにん}などにお{金|かね}や{品物|しなもの}を{渡|わた}すこと。",
+        "kana": "じぶんにゆうりなあつかいをしてもらうために、やくにんなどにおかねやしなものをわたすこと。"
+      },
+      "frequencyRank": 5744,
+      "confusables": [
+        "v-n1-0245"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0245",
+      "word": "収賄",
+      "kana": "しゅうわい",
+      "meanings": [
+        "bribery (taking a bribe)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{収賄|しゅうわい}の{疑|うたが}いで{逮捕|たいほ}された{元議員|もとぎいん}は、{金|かね}は{借|か}りただけだと{主張|しゅちょう}している。",
+          "kana": "しゅうわいのうたがいでたいほされたもとぎいんは、かねはかりただけだとしゅちょうしている。",
+          "en": "The former lawmaker arrested on suspicion of taking bribes claims he only borrowed the money."
+        },
+        {
+          "ja": "{収賄|しゅうわい}で{有罪|ゆうざい}となれば、{議員|ぎいん}は{職|しょく}を{失|うしな}うだけでなく、{長年築|ながねんきず}いた{信頼|しんらい}も{一瞬|いっしゅん}で{崩|くず}れます。",
+          "kana": "しゅうわいでゆうざいとなれば、ぎいんはしょくをうしなうだけでなく、ながねんきずいたしんらいもいっしゅんでくずれます。",
+          "en": "If convicted of taking bribes, a lawmaker not only loses his seat but sees the trust built over many years collapse in an instant."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役人|やくにん}などが、{相手|あいて}に{有利|ゆうり}な{扱|あつか}いをする{代|か}わりに、お{金|かね}や{品物|しなもの}を{受|う}け{取|と}ること。",
+        "kana": "やくにんなどが、あいてにゆうりなあつかいをするかわりに、おかねやしなものをうけとること。"
+      },
+      "frequencyRank": 5752,
+      "confusables": [
+        "v-n1-0244"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0246",
+      "word": "癒着",
+      "kana": "ゆちゃく",
+      "meanings": [
+        "collusion",
+        "cozy ties",
+        "adhesion (medical)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{業界|ぎょうかい}と{役所|やくしょ}の{癒着|ゆちゃく}が{疑|うたが}われ、{第三者|だいさんしゃ}による{調査|ちょうさ}が{始|はじ}まった。",
+          "kana": "ぎょうかいとやくしょのゆちゃくがうたがわれ、だいさんしゃによるちょうさがはじまった。",
+          "en": "Collusion between the industry and the authorities was suspected, and an independent investigation began."
+        },
+        {
+          "ja": "{手術|しゅじゅつ}の{後|あと}、{腸|ちょう}が{癒着|ゆちゃく}して{痛|いた}みが{続|つづ}いたため、{再|ふたた}び{入院|にゅういん}することになった。",
+          "kana": "しゅじゅつのあと、ちょうがゆちゃくしていたみがつづいたため、ふたたびにゅういんすることになった。",
+          "en": "After the operation my intestines developed adhesions and the pain persisted, so I ended up being hospitalized again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本来|ほんらい}は{離|はな}れているべき{会社|かいしゃ}と{役所|やくしょ}などが、{利益|りえき}のために{深|ふか}くつながること。",
+        "kana": "ほんらいははなれているべきかいしゃとやくしょなどが、りえきのためにふかくつながること。"
+      },
+      "frequencyRank": 5760,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0247",
+      "word": "恐喝",
+      "kana": "きょうかつ",
+      "meanings": [
+        "extortion",
+        "blackmail"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{秘密|ひみつ}をばらすと{言|い}って{同級生|どうきゅうせい}から{金|かね}を{取|と}っていた{生徒|せいと}が、{恐喝|きょうかつ}の{疑|うたが}いで{捕|つか}まった。",
+          "kana": "ひみつをばらすといってどうきゅうせいからかねをとっていたせいとが、きょうかつのうたがいでつかまった。",
+          "en": "A student who had been taking money from classmates by threatening to reveal their secrets was caught on suspicion of extortion."
+        },
+        {
+          "ja": "「{会社|かいしゃ}に{知|し}らせるぞ」と{言|い}って{金銭|きんせん}を{要求|ようきゅう}すれば、それは{恐喝|きょうかつ}にあたります。",
+          "kana": "「かいしゃにしらせるぞ」といってきんせんをようきゅうすれば、それはきょうかつにあたります。",
+          "en": "If you demand money by saying \"I'll tell your company,\" that constitutes extortion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}をおどして、お{金|かね}や{品物|しなもの}を{無理|むり}に{出|だ}させること。",
+        "kana": "あいてをおどして、おかねやしなものをむりにださせること。"
+      },
+      "frequencyRank": 5768,
+      "notes": "恐喝 is extracting money or goods by threats; 脅迫 is the threat itself.",
+      "confusables": [
+        "v-n1-0213"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0248",
+      "word": "監禁",
+      "kana": "かんきん",
+      "meanings": [
+        "confinement",
+        "unlawful imprisonment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{男|おとこ}は{女性|じょせい}を{車|くるま}の{中|なか}に{数時間|すうじかん}{監禁|かんきん}した{疑|うたが}いで、その{日|ひ}のうちに{逮捕|たいほ}された。",
+          "kana": "おとこはじょせいをくるまのなかにすうじかんかんきんしたうたがいで、そのひのうちにたいほされた。",
+          "en": "The man was arrested that same day on suspicion of confining a woman in his car for several hours."
+        },
+        {
+          "ja": "{監禁|かんきん}されていた{部屋|へや}には{窓|まど}がなく、{昼|ひる}か{夜|よる}かも{分|わ}からなかったと{彼|かれ}は{語|かた}った。",
+          "kana": "かんきんされていたへやにはまどがなく、ひるかよるかもわからなかったとかれはかたった。",
+          "en": "The room where he was held had no windows, and he said he could not tell whether it was day or night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}を{無理|むり}に{部屋|へや}などに{入|い}れて、{外|そと}に{出|で}られないようにすること。",
+        "kana": "ひとをむりにへやなどにいれて、そとにでられないようにすること。"
+      },
+      "frequencyRank": 5776,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0249",
+      "word": "禁固",
+      "kana": "きんこ",
+      "meanings": [
+        "imprisonment without labor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}を{起|お}こした{運転手|うんてんしゅ}には、{禁固|きんこ}{一年|いちねん}の{判決|はんけつ}が{下|くだ}された。",
+          "kana": "じこをおこしたうんてんしゅには、きんこいちねんのはんけつがくだされた。",
+          "en": "The driver who caused the accident was sentenced to one year's imprisonment without labor."
+        },
+        {
+          "ja": "{禁固|きんこ}の{場合|ばあい}、{刑務所|けいむしょ}の{中|なか}で{働|はたら}く{義務|ぎむ}はありませんが、{希望|きぼう}すれば{作業|さぎょう}に{参加|さんか}できます。",
+          "kana": "きんこのばあい、けいむしょのなかではたらくぎむはありませんが、きぼうすればさぎょうにさんかできます。",
+          "en": "With imprisonment without labor there is no obligation to work in prison, but you can take part in work if you wish."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{罪|つみ}を{犯|おか}した{人|ひと}を{刑務所|けいむしょ}に{入|い}れる{刑罰|けいばつ}。{懲役|ちょうえき}と{違|ちが}い、{仕事|しごと}はさせない。",
+        "kana": "つみをおかしたひとをけいむしょにいれるけいばつ。ちょうえきとちがい、しごとはさせない。"
+      },
+      "frequencyRank": 5784,
+      "altForms": [
+        "禁錮"
+      ],
+      "confusables": [
+        "v-n1-0186"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0250",
+      "word": "恩赦",
+      "kana": "おんしゃ",
+      "meanings": [
+        "amnesty",
+        "pardon"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{国王|こくおう}の{即位|そくい}を{記念|きねん}して{恩赦|おんしゃ}が{行|おこな}われ、{多|おお}くの{受刑者|じゅけいしゃ}が{釈放|しゃくほう}された。",
+          "kana": "あたらしいこくおうのそくいをきねんしておんしゃがおこなわれ、おおくのじゅけいしゃがしゃくほうされた。",
+          "en": "An amnesty was granted to mark the new king's accession, and many prisoners were released."
+        },
+        {
+          "ja": "{恩赦|おんしゃ}の{対象|たいしょう}になるのは{軽|かる}い{罪|つみ}に{限|かぎ}られ、{重大|じゅうだい}な{犯罪|はんざい}は{含|ふく}まれません。",
+          "kana": "おんしゃのたいしょうになるのはかるいつみにかぎられ、じゅうだいなはんざいはふくまれません。",
+          "en": "Only minor offenses are eligible for amnesty; serious crimes are not included."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}が{特別|とくべつ}な{場合|ばあい}に、{罪|つみ}を{許|ゆる}したり{刑罰|けいばつ}を{軽|かる}くしたりすること。",
+        "kana": "くにがとくべつなばあいに、つみをゆるしたりけいばつをかるくしたりすること。"
+      },
+      "frequencyRank": 5792,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0251",
+      "word": "仮釈放",
+      "kana": "かりしゃくほう",
+      "meanings": [
+        "parole"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{刑期|けいき}の{大半|たいはん}を{終|お}え、{態度|たいど}も{良好|りょうこう}だったことから、{彼|かれ}は{仮釈放|かりしゃくほう}を{認|みと}められた。",
+          "kana": "けいきのたいはんをおえ、たいどもりょうこうだったことから、かれはかりしゃくほうをみとめられた。",
+          "en": "Having served most of his sentence with good behavior, he was granted parole."
+        },
+        {
+          "ja": "{仮釈放|かりしゃくほう}の{期間中|きかんちゅう}は{決|き}められた{場所|ばしょ}に{住|す}み、{定期的|ていきてき}に{保護司|ほごし}と{面会|めんかい}する{義務|ぎむ}があります。",
+          "kana": "かりしゃくほうのきかんちゅうはきめられたばしょにすみ、ていきてきにほごしとめんかいするぎむがあります。",
+          "en": "While on parole, you are required to live at a designated address and meet regularly with a probation officer."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{刑務所|けいむしょ}にいる{人|ひと}を、{刑罰|けいばつ}の{期間|きかん}が{終|お}わる{前|まえ}に、{条件|じょうけん}をつけて{外|そと}に{出|だ}すこと。",
+        "kana": "けいむしょにいるひとを、けいばつのきかんがおわるまえに、じょうけんをつけてそとにだすこと。"
+      },
+      "frequencyRank": 5800,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0252",
+      "word": "財閥",
+      "kana": "ざいばつ",
+      "meanings": [
+        "zaibatsu",
+        "financial conglomerate"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{戦前|せんぜん}の{日本経済|にほんけいざい}は、いくつかの{財閥|ざいばつ}が{銀行|ぎんこう}から{工場|こうじょう}まで{支配|しはい}していた。",
+          "kana": "せんぜんのにほんけいざいは、いくつかのざいばつがぎんこうからこうじょうまでしはいしていた。",
+          "en": "Prewar Japan's economy was dominated by a handful of zaibatsu that controlled everything from banks to factories."
+        },
+        {
+          "ja": "この{美術館|びじゅつかん}は、かつて{財閥|ざいばつ}を{率|ひき}いた{一族|いちぞく}が{集|あつ}めた{美術品|びじゅつひん}をもとに{作|つく}られました。",
+          "kana": "このびじゅつかんは、かつてざいばつをひきいたいちぞくがあつめたびじゅつひんをもとにつくられました。",
+          "en": "This art museum was built around the collection of a family that once headed a zaibatsu."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|ひと}つの{家族|かぞく}が{中心|ちゅうしん}となって、{銀行|ぎんこう}や{多|おお}くの{会社|かいしゃ}を{支配|しはい}する{大|おお}きな{企業|きぎょう}の{集|あつ}まり。",
+        "kana": "ひとつのかぞくがちゅうしんとなって、ぎんこうやおおくのかいしゃをしはいするおおきなきぎょうのあつまり。"
+      },
+      "frequencyRank": 5808,
+      "notes": "Family-controlled conglomerates of prewar Japan, broken up after 1945; today also used of similar groups abroad.",
+      "station": 49
+    },
+    {
+      "id": "v-n1-0253",
+      "word": "談合",
+      "kana": "だんごう",
+      "meanings": [
+        "bid-rigging",
+        "collusive consultation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{公共工事|こうきょうこうじ}の{入札|にゅうさつ}で{談合|だんごう}があったことが{分|わ}かり、{数社|すうしゃ}が{処分|しょぶん}を{受|う}けた。",
+          "kana": "こうきょうこうじのにゅうさつでだんごうがあったことがわかり、すうしゃがしょぶんをうけた。",
+          "en": "It was discovered that bids for public works had been rigged, and several companies were penalized."
+        },
+        {
+          "ja": "{談合|だんごう}なんて{昔|むかし}の{話|はなし}かと{思|おも}ってたけど、{今|いま}でもニュースになるんだね。",
+          "kana": "だんごうなんてむかしのはなしかとおもってたけど、いまでもニュースになるんだね。",
+          "en": "I thought bid-rigging was a thing of the past, but it still makes the news, doesn't it?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{公共|こうきょう}の{工事|こうじ}などを{取|と}るとき、{会社|かいしゃ}がこっそり{相談|そうだん}して{値段|ねだん}などを{前|まえ}もって{決|き}めること。",
+        "kana": "こうきょうのこうじなどをとるとき、かいしゃがこっそりそうだんしてねだんなどをまえもってきめること。"
+      },
+      "frequencyRank": 5816,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0254",
+      "word": "粉飾",
+      "kana": "ふんしょく",
+      "meanings": [
+        "window dressing (of accounts)",
+        "embellishment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{赤字|あかじ}を{隠|かく}すために{粉飾決算|ふんしょくけっさん}を{続|つづ}けていた{会社|かいしゃ}が、ついに{倒産|とうさん}した。",
+          "kana": "あかじをかくすためにふんしょくけっさんをつづけていたかいしゃが、ついにとうさんした。",
+          "en": "The company that had kept cooking its books to hide its losses finally went bankrupt."
+        },
+        {
+          "ja": "{経歴|けいれき}を{粉飾|ふんしょく}して{入社|にゅうしゃ}した{社員|しゃいん}が、{資格|しかく}を{持|も}っていなかったことが{後|あと}になって{分|わ}かりました。",
+          "kana": "けいれきをふんしょくしてにゅうしゃしたしゃいんが、しかくをもっていなかったことがあとになってわかりました。",
+          "en": "It later came out that an employee who had embellished his résumé to get hired did not actually hold the qualification."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}が{業績|ぎょうせき}を{事実|じじつ}より{大|おお}きく{見|み}せるために、{計算|けいさん}や{書類|しょるい}をごまかすこと。",
+        "kana": "かいしゃがぎょうせきをじじつよりおおきくみせるために、けいさんやしょるいをごまかすこと。"
+      },
+      "frequencyRank": 5824,
+      "collocations": [
+        "粉飾決算"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0255",
+      "word": "債権",
+      "kana": "さいけん",
+      "meanings": [
+        "claim",
+        "receivable",
+        "credit (right to payment)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}は{回収|かいしゅう}できなくなった{債権|さいけん}を{抱|かか}え、{経営|けいえい}が{急速|きゅうそく}に{悪化|あっか}した。",
+          "kana": "ぎんこうはかいしゅうできなくなったさいけんをかかえ、けいえいがきゅうそくにあっかした。",
+          "en": "Saddled with loans it could no longer collect, the bank's finances deteriorated rapidly."
+        },
+        {
+          "ja": "{債権|さいけん}には{時効|じこう}がありますので、{支払|しはら}いを{求|もと}める{手続|てつづ}きは{早|はや}めに{行|おこな}ってください。",
+          "kana": "さいけんにはじこうがありますので、しはらいをもとめるてつづきははやめにおこなってください。",
+          "en": "Claims are subject to a statute of limitations, so please begin the procedure to demand payment early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{貸|か}した{人|ひと}などが、{相手|あいて}にそのお{金|かね}を{返|かえ}すよう{求|もと}めることができる{権利|けんり}。",
+        "kana": "おかねをかしたひとなどが、あいてにそのおかねをかえすようもとめることができるけんり。"
+      },
+      "frequencyRank": 5832,
+      "notes": "Homophone of 債券 (bond). 債権 is the right to be paid; 債務 is the obligation to pay.",
+      "collocations": [
+        "不良債権"
+      ],
+      "confusables": [
+        "v-n1-0175"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0256",
+      "word": "国債",
+      "kana": "こくさい",
+      "meanings": [
+        "government bond"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{不足|ふそく}する{予算|よさん}を{補|おぎな}うため、{毎年|まいとし}{大量|たいりょう}の{国債|こくさい}を{発行|はっこう}している。",
+          "kana": "せいふはふそくするよさんをおぎなうため、まいとしたいりょうのこくさいをはっこうしている。",
+          "en": "To make up the budget shortfall, the government issues huge amounts of government bonds every year."
+        },
+        {
+          "ja": "{退職金|たいしょくきん}の{一部|いちぶ}で{国債|こくさい}を{買|か}いましたが、{利回|りまわ}りは{正直|しょうじき}あまり{期待|きたい}していません。",
+          "kana": "たいしょくきんのいちぶでこくさいをかいましたが、りまわりはしょうじきあまりきたいしていません。",
+          "en": "I bought government bonds with part of my retirement money, but honestly I'm not expecting much of a yield."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}がお{金|かね}を{借|か}りるために{出|だ}す、{借金|しゃっきん}の{証明|しょうめい}となるもの。",
+        "kana": "せいふがおかねをかりるためにだす、しゃっきんのしょうめいとなるもの。"
+      },
+      "frequencyRank": 5840,
+      "notes": "Homophone of 国際 (international).",
+      "collocations": [
+        "国債を発行する"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0257",
+      "word": "利回り",
+      "kana": "りまわり",
+      "meanings": [
+        "yield (on an investment)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{債券|さいけん}は{安全|あんぜん}だが{利回|りまわ}りが{低|ひく}く、{物価|ぶっか}の{上昇|じょうしょう}に{追|お}いつかない。",
+          "kana": "このさいけんはあんぜんだがりまわりがひくく、ぶっかのじょうしょうにおいつかない。",
+          "en": "This bond is safe, but its yield is low and does not keep up with rising prices."
+        },
+        {
+          "ja": "{利回|りまわ}りが{高|たか}いって{勧|すす}められたけど、その{分|ぶん}リスクも{大|おお}きいんじゃない？",
+          "kana": "りまわりがたかいってすすめられたけど、そのぶんリスクもおおきいんじゃない？",
+          "en": "They recommended it because the yield is high, but doesn't that mean the risk is bigger too?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{投資|とうし}したお{金|かね}に{対|たい}して、{一年|いちねん}に{得|え}られる{利益|りえき}の{割合|わりあい}。",
+        "kana": "とうししたおかねにたいして、いちねんにえられるりえきのわりあい。"
+      },
+      "frequencyRank": 5848,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0258",
+      "word": "増資",
+      "kana": "ぞうし",
+      "meanings": [
+        "capital increase"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{工場|こうじょう}を{建|た}てる{資金|しきん}を{集|あつ}めるため、{会社|かいしゃ}は{増資|ぞうし}に{踏|ふ}み{切|き}った。",
+          "kana": "あたらしいこうじょうをたてるしきんをあつめるため、かいしゃはぞうしにふみきった。",
+          "en": "To raise the funds to build a new factory, the company decided to increase its capital."
+        },
+        {
+          "ja": "{増資|ぞうし}によって{株式|かぶしき}の{数|かず}が{増|ふ}えると、{一株|ひとかぶ}あたりの{価値|かち}は{下|さ}がることがあります。",
+          "kana": "ぞうしによってかぶしきのかずがふえると、ひとかぶあたりのかちはさがることがあります。",
+          "en": "When a capital increase raises the number of shares, the value per share can fall."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}が{新|あたら}しく{株|かぶ}を{出|だ}すなどして、{資本|しほん}を{増|ふ}やすこと。",
+        "kana": "かいしゃがあたらしくかぶをだすなどして、しほんをふやすこと。"
+      },
+      "frequencyRank": 5856,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0259",
+      "word": "貿易赤字",
+      "kana": "ぼうえきあかじ",
+      "meanings": [
+        "trade deficit"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{原油価格|げんゆかかく}の{上昇|じょうしょう}で{輸入額|ゆにゅうがく}が{増|ふ}え、{貿易赤字|ぼうえきあかじ}が{過去最大|かこさいだい}になった。",
+          "kana": "げんゆかかくのじょうしょうでゆにゅうがくがふえ、ぼうえきあかじがかこさいだいになった。",
+          "en": "Rising crude-oil prices pushed up imports, and the trade deficit hit a record high."
+        },
+        {
+          "ja": "{貿易赤字|ぼうえきあかじ}が{続|つづ}いているからといって、それだけで{経済|けいざい}が{悪|わる}いとは{言|い}えません。",
+          "kana": "ぼうえきあかじがつづいているからといって、それだけでけいざいがわるいとはいえません。",
+          "en": "Just because the trade deficit persists does not in itself mean the economy is in bad shape."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}との{取引|とりひき}で、{輸入|ゆにゅう}の{金額|きんがく}が{輸出|ゆしゅつ}の{金額|きんがく}より{多|おお}い{状態|じょうたい}。",
+        "kana": "がいこくとのとりひきで、ゆにゅうのきんがくがゆしゅつのきんがくよりおおいじょうたい。"
+      },
+      "frequencyRank": 5864,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0260",
+      "word": "景気後退",
+      "kana": "けいきこうたい",
+      "meanings": [
+        "recession",
+        "economic downturn"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{景気後退|けいきこうたい}の{影響|えいきょう}で、{多|おお}くの{企業|きぎょう}が{新卒|しんそつ}の{採用|さいよう}を{減|へ}らしている。",
+          "kana": "けいきこうたいのえいきょうで、おおくのきぎょうがしんそつのさいようをへらしている。",
+          "en": "Because of the recession, many companies are cutting back on hiring new graduates."
+        },
+        {
+          "ja": "{専門家|せんもんか}の{多|おお}くは、{来年前半|らいねんぜんはん}には{景気後退|けいきこうたい}から{抜|ぬ}け{出|だ}せるだろうと{予測|よそく}している。",
+          "kana": "せんもんかのおおくは、らいねんぜんはんにはけいきこうたいからぬけだせるだろうとよそくしている。",
+          "en": "Most experts predict that the economy will pull out of the recession in the first half of next year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景気|けいき}が{悪|わる}くなり、{経済|けいざい}の{活動|かつどう}{全体|ぜんたい}が{縮|ちぢ}んでいく{時期|じき}。",
+        "kana": "けいきがわるくなり、けいざいのかつどうぜんたいがちぢんでいくじき。"
+      },
+      "frequencyRank": 5872,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0261",
+      "word": "恐慌",
+      "kana": "きょうこう",
+      "meanings": [
+        "(economic) panic",
+        "depression",
+        "crash"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{世界恐慌|せかいきょうこう}の{時代|じだい}には、{銀行|ぎんこう}が{次々|つぎつぎ}と{倒|たお}れ、{失業者|しつぎょうしゃ}が{街|まち}にあふれたという。",
+          "kana": "せかいきょうこうのじだいには、ぎんこうがつぎつぎとたおれ、しつぎょうしゃがまちにあふれたという。",
+          "en": "In the era of the Great Depression, banks collapsed one after another and the streets filled with the unemployed."
+        },
+        {
+          "ja": "{一|ひと}つの{銀行|ぎんこう}の{破綻|はたん}が{金融恐慌|きんゆうきょうこう}に{発展|はってん}しないよう、{政府|せいふ}は{素早|すばや}く{対応|たいおう}しました。",
+          "kana": "ひとつのぎんこうのはたんがきんゆうきょうこうにはってんしないよう、せいふはすばやくたいおうしました。",
+          "en": "The government responded swiftly so that the failure of one bank would not develop into a financial panic."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景気|けいき}が{急|きゅう}にひどく{悪|わる}くなり、{会社|かいしゃ}や{銀行|ぎんこう}がつぎつぎと{倒|たお}れて{社会|しゃかい}が{混乱|こんらん}すること。",
+        "kana": "けいきがきゅうにひどくわるくなり、かいしゃやぎんこうがつぎつぎとたおれてしゃかいがこんらんすること。"
+      },
+      "frequencyRank": 5880,
+      "collocations": [
+        "世界恐慌",
+        "金融恐慌"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0262",
+      "word": "高度成長",
+      "kana": "こうどせいちょう",
+      "meanings": [
+        "rapid economic growth"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{高度成長|こうどせいちょう}の{時代|じだい}に、{祖父|そふ}は{田舎|いなか}から{都会|とかい}に{出|で}てきて{工場|こうじょう}で{働|はたら}き{始|はじ}めた。",
+          "kana": "こうどせいちょうのじだいに、そふはいなかからとかいにでてきてこうじょうではたらきはじめた。",
+          "en": "During the period of rapid economic growth, my grandfather left the countryside for the city and started working in a factory."
+        },
+        {
+          "ja": "この{団地|だんち}は{高度成長|こうどせいちょう}の{頃|ころ}に{建|た}てられたもので、{今|いま}は{住民|じゅうみん}の{高齢化|こうれいか}が{進|すす}んでいます。",
+          "kana": "このだんちはこうどせいちょうのころにたてられたもので、いまはじゅうみんのこうれいかがすすんでいます。",
+          "en": "This housing complex was built during the period of rapid growth, and now its residents are aging."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{経済|けいざい}が{何年|なんねん}もの{間|あいだ}、とても{速|はや}く{成長|せいちょう}し{続|つづ}けること。",
+        "kana": "けいざいがなんねんものあいだ、とてもはやくせいちょうしつづけること。"
+      },
+      "frequencyRank": 5888,
+      "altForms": [
+        "高度経済成長"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0263",
+      "word": "非正規",
+      "kana": "ひせいき",
+      "meanings": [
+        "non-regular (employment)",
+        "irregular"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{非正規|ひせいき}で{働|はたら}く{人|ひと}の{割合|わりあい}は、{今|いま}や{働|はたら}く{人全体|ひとぜんたい}の{四割近|よんわりちか}くに{達|たっ}している。",
+          "kana": "ひせいきではたらくひとのわりあいは、いまやはたらくひとぜんたいのよんわりちかくにたっしている。",
+          "en": "The share of people in non-regular employment has now reached nearly forty percent of the workforce."
+        },
+        {
+          "ja": "{非正規|ひせいき}だと、{同|おな}じ{仕事|しごと}をしていても{給料|きゅうりょう}やボーナスに{差|さ}があるのが{現実|げんじつ}なんだよね。",
+          "kana": "ひせいきだと、おなじしごとをしていてもきゅうりょうやボーナスにさがあるのがげんじつなんだよね。",
+          "en": "The reality is that if you're a non-regular worker, there's a gap in pay and bonuses even when you do the same job."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{正社員|せいしゃいん}ではなく、{期間|きかん}が{決|き}まった{契約|けいやく}や{派遣|はけん}などの{形|かたち}で{働|はたら}くこと。また、その{人|ひと}。",
+        "kana": "せいしゃいんではなく、きかんがきまったけいやくやはけんなどのかたちではたらくこと。また、そのひと。"
+      },
+      "frequencyRank": 5896,
+      "collocations": [
+        "非正規雇用",
+        "非正規社員"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0264",
+      "word": "終身雇用",
+      "kana": "しゅうしんこよう",
+      "meanings": [
+        "lifetime employment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{終身雇用|しゅうしんこよう}が{当|あ}たり{前|まえ}だった{親|おや}の{世代|せだい}と{違|ちが}い、{今|いま}は{転職|てんしょく}を{何度|なんど}も{経験|けいけん}する{人|ひと}が{多|おお}い。",
+          "kana": "しゅうしんこようがあたりまえだったおやのせだいとちがい、いまはてんしょくをなんどもけいけんするひとがおおい。",
+          "en": "Unlike our parents' generation, for whom lifetime employment was the norm, many people now change jobs several times."
+        },
+        {
+          "ja": "{終身雇用|しゅうしんこよう}を{前提|ぜんてい}にした{年金|ねんきん}や{住宅|じゅうたく}ローンの{仕組|しく}みも、{見直|みなお}しが{必要|ひつよう}になっています。",
+          "kana": "しゅうしんこようをぜんていにしたねんきんやじゅうたくローンのしくみも、みなおしがひつようになっています。",
+          "en": "Pension and mortgage systems premised on lifetime employment also need to be reconsidered."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一度|いちど}{入|はい}った{会社|かいしゃ}で{定年|ていねん}まで{働|はたら}き{続|つづ}ける{雇用|こよう}の{制度|せいど}。",
+        "kana": "いちどはいったかいしゃでていねんまではたらきつづけるこようのせいど。"
+      },
+      "frequencyRank": 5904,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0265",
+      "word": "年功序列",
+      "kana": "ねんこうじょれつ",
+      "meanings": [
+        "seniority system"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{年功序列|ねんこうじょれつ}の{会社|かいしゃ}では、どんなに{成果|せいか}を{上|あ}げても{若|わか}いうちは{給料|きゅうりょう}が{上|あ}がりにくい。",
+          "kana": "ねんこうじょれつのかいしゃでは、どんなにせいかをあげてもわかいうちはきゅうりょうがあがりにくい。",
+          "en": "In a seniority-based company, however much you achieve, your salary rises slowly while you are young."
+        },
+        {
+          "ja": "{年功序列|ねんこうじょれつ}を{見直|みなお}し、{成果|せいか}に{応|おう}じて{給料|きゅうりょう}を{決|き}める{会社|かいしゃ}が{増|ふ}えています。",
+          "kana": "ねんこうじょれつをみなおし、せいかにおうじてきゅうりょうをきめるかいしゃがふえています。",
+          "en": "More and more companies are moving away from seniority and setting pay according to results."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{年齢|ねんれい}や{勤|つと}めた{長|なが}さに{応|おう}じて、{立場|たちば}や{給料|きゅうりょう}が{上|あ}がっていく{仕組|しく}み。",
+        "kana": "ねんれいやつとめたながさにおうじて、たちばやきゅうりょうがあがっていくしくみ。"
+      },
+      "frequencyRank": 5912,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0266",
+      "word": "政変",
+      "kana": "せいへん",
+      "meanings": [
+        "political upheaval",
+        "coup",
+        "change of government"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{政変|せいへん}の{知|し}らせを{受|う}けて、{現地|げんち}に{住|す}む{日本人|にほんじん}に{帰国|きこく}を{勧|すす}める{通知|つうち}が{出|だ}された。",
+          "kana": "せいへんのしらせをうけて、げんちにすむにほんじんにきこくをすすめるつうちがだされた。",
+          "en": "Following news of the coup, a notice was issued advising Japanese nationals living there to return home."
+        },
+        {
+          "ja": "{百年前|ひゃくねんまえ}の{政変|せいへん}をきっかけに、この{国|くに}の{王制|おうせい}は{終|お}わりを{迎|むか}えた。",
+          "kana": "ひゃくねんまえのせいへんをきっかけに、このくにのおうせいはおわりをむかえた。",
+          "en": "The political upheaval a hundred years ago brought an end to this country's monarchy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}の{世界|せかい}で{突然|とつぜん}{起|お}きる{大|おお}きな{変化|へんか}。{政権|せいけん}が{倒|たお}れることなど。",
+        "kana": "せいじのせかいでとつぜんおきるおおきなへんか。せいけんがたおれることなど。"
+      },
+      "frequencyRank": 5920,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0267",
+      "word": "全体主義",
+      "kana": "ぜんたいしゅぎ",
+      "meanings": [
+        "totalitarianism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{個人|こじん}の{自由|じゆう}より{国家|こっか}を{優先|ゆうせん}する{全体主義|ぜんたいしゅぎ}は、{前|まえ}の{世紀|せいき}に{多|おお}くの{悲劇|ひげき}を{生|う}んだ。",
+          "kana": "こじんのじゆうよりこっかをゆうせんするぜんたいしゅぎは、まえのせいきにおおくのひげきをうんだ。",
+          "en": "Totalitarianism, which puts the state before individual freedom, produced many tragedies in the last century."
+        },
+        {
+          "ja": "この{小説|しょうせつ}は、{全体主義|ぜんたいしゅぎ}の{社会|しゃかい}で{生|い}きる{一人|ひとり}の{役人|やくにん}の{目|め}を{通|とお}して、{自由|じゆう}の{意味|いみ}を{問|と}いかけています。",
+          "kana": "このしょうせつは、ぜんたいしゅぎのしゃかいでいきるひとりのやくにんのめをとおして、じゆうのいみをといかけています。",
+          "en": "Through the eyes of a single official living in a totalitarian society, this novel asks what freedom means."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{個人|こじん}の{自由|じゆう}より{国家|こっか}{全体|ぜんたい}を{大切|たいせつ}にし、{国|くに}が{国民|こくみん}の{全|すべ}てを{支配|しはい}しようとする{考|かんが}え{方|かた}。",
+        "kana": "こじんのじゆうよりこっかぜんたいをたいせつにし、くにがこくみんのすべてをしはいしようとするかんがえかた。"
+      },
+      "frequencyRank": 5928,
+      "confusables": [
+        "v-n1-0268"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0268",
+      "word": "自由主義",
+      "kana": "じゆうしゅぎ",
+      "meanings": [
+        "liberalism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{自由主義|じゆうしゅぎ}の{考|かんが}え{方|かた}では、{国|くに}はできるだけ{個人|こじん}や{企業|きぎょう}の{活動|かつどう}に{口|くち}を{出|だ}さないほうがよいとされる。",
+          "kana": "じゆうしゅぎのかんがえかたでは、くにはできるだけこじんやきぎょうのかつどうにくちをださないほうがよいとされる。",
+          "en": "In liberal thinking, the state should interfere as little as possible in the activities of individuals and companies."
+        },
+        {
+          "ja": "{十九世紀|じゅうきゅうせいき}の{自由主義|じゆうしゅぎ}は、{貿易|ぼうえき}の{自由|じゆう}と{個人|こじん}の{権利|けんり}を{強|つよ}く{主張|しゅちょう}した。",
+          "kana": "じゅうきゅうせいきのじゆうしゅぎは、ぼうえきのじゆうとこじんのけんりをつよくしゅちょうした。",
+          "en": "Nineteenth-century liberalism strongly advocated free trade and individual rights."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{個人|こじん}の{自由|じゆう}を{一番|いちばん}{大切|たいせつ}にし、{国|くに}の{支配|しはい}をできるだけ{少|すく}なくしようとする{考|かんが}え{方|かた}。",
+        "kana": "こじんのじゆうをいちばんたいせつにし、くにのしはいをできるだけすくなくしようとするかんがえかた。"
+      },
+      "frequencyRank": 5936,
+      "confusables": [
+        "v-n1-0267"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0269",
+      "word": "円安",
+      "kana": "えんやす",
+      "meanings": [
+        "weak yen",
+        "depreciation of the yen"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{円安|えんやす}のおかげで{海外|かいがい}からの{観光客|かんこうきゃく}は{増|ふ}えたが、{輸入品|ゆにゅうひん}の{値段|ねだん}は{上|あ}がる{一方|いっぽう}だ。",
+          "kana": "えんやすのおかげでかいがいからのかんこうきゃくはふえたが、ゆにゅうひんのねだんはあがるいっぽうだ。",
+          "en": "Thanks to the weak yen, tourists from abroad have increased, but prices of imported goods keep rising."
+        },
+        {
+          "ja": "{円安|えんやす}が{続|つづ}いているので、{今年|ことし}の{海外旅行|かいがいりょこう}は{見送|みおく}ることにしました。",
+          "kana": "えんやすがつづいているので、ことしのかいがいりょこうはみおくることにしました。",
+          "en": "With the yen staying weak, I've decided to skip traveling abroad this year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}のお{金|かね}に{対|たい}して、{日本|にほん}のお{金|かね}の{価値|かち}が{低|ひく}くなること。",
+        "kana": "がいこくのおかねにたいして、にほんのおかねのかちがひくくなること。"
+      },
+      "frequencyRank": 5944,
+      "confusables": [
+        "v-n1-0168"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0270",
+      "word": "すこぶる",
+      "kana": "すこぶる",
+      "meanings": [
+        "extremely",
+        "exceedingly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{久|ひさ}しぶりに{会|あ}った{祖父|そふ}は{八十|はちじゅう}を{過|す}ぎてもすこぶる{元気|げんき}で、{毎朝|まいあさ}{畑|はたけ}に{出|で}ているそうだ。",
+          "kana": "ひさしぶりにあったそふははちじゅうをすぎてもすこぶるげんきで、まいあさはたけにでているそうだ。",
+          "en": "My grandfather, whom I saw for the first time in ages, is extremely well despite being past eighty, and apparently goes out to his fields every morning."
+        },
+        {
+          "ja": "{新|あたら}しい{部署|ぶしょ}の{雰囲気|ふんいき}はすこぶる{良|よ}く、{毎日|まいにち}{楽|たの}しく{仕事|しごと}ができています。",
+          "kana": "あたらしいぶしょのふんいきはすこぶるよく、まいにちたのしくしごとができています。",
+          "en": "The atmosphere in my new department is excellent, and I'm enjoying work every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{程度|ていど}が{普通|ふつう}よりずっと{大|おお}きい{様子|ようす}。とても。たいへん。",
+        "kana": "ていどがふつうよりずっとおおきいようす。とても。たいへん。"
+      },
+      "frequencyRank": 5952,
+      "altForms": [
+        "頗る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0271",
+      "word": "多分に",
+      "kana": "たぶんに",
+      "meanings": [
+        "to a large degree",
+        "considerably"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{今回|こんかい}の{失敗|しっぱい}は、{準備不足|じゅんびぶそく}によるところが{多分|たぶん}にある。",
+          "kana": "こんかいのしっぱいは、じゅんびぶそくによるところがたぶんにある。",
+          "en": "This failure is in large part due to a lack of preparation."
+        },
+        {
+          "ja": "{彼|かれ}の{発言|はつげん}には、{相手|あいて}を{試|ため}そうとする{意図|いと}が{多分|たぶん}に{含|ふく}まれていたように{思|おも}います。",
+          "kana": "かれのはつげんには、あいてをためそうとするいとがたぶんにふくまれていたようにおもいます。",
+          "en": "I think his remarks were, to a considerable degree, intended to test the other person."
+        }
+      ],
+      "definitionJa": {
+        "ja": "かなりの{程度|ていど}。{相当|そうとう}に。ある{部分|ぶぶん}が{大|おお}きく{含|ふく}まれている{様子|ようす}。",
+        "kana": "かなりのていど。そうとうに。あるぶぶんがおおきくふくまれているようす。"
+      },
+      "frequencyRank": 5960,
+      "notes": "Not 多分 'probably': 多分に means 'to a considerable extent' (多分にある・多分に含む).",
+      "station": 49
+    },
+    {
+      "id": "v-n1-0272",
+      "word": "あながち",
+      "kana": "あながち",
+      "meanings": [
+        "(not) necessarily",
+        "(not) altogether"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{言|い}うことだからといって、あながち{間違|まちが}いとは{言|い}えない。",
+          "kana": "こどものいうことだからといって、あながちまちがいとはいえない。",
+          "en": "Just because a child said it doesn't mean it is necessarily wrong."
+        },
+        {
+          "ja": "「{若|わか}い{人|ひと}は{本|ほん}を{読|よ}まない」という{意見|いけん}は、あながち{事実|じじつ}ではないと{思|おも}います。",
+          "kana": "「わかいひとはほんをよまない」といういけんは、あながちじじつではないとおもいます。",
+          "en": "I don't think the view that \"young people don't read books\" is necessarily true."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{必|かなら}ずしも。{否定|ひてい}と{一緒|いっしょ}に{使|つか}い、「{必|かなら}ずしも〜ではない」の{意味|いみ}を{表|あらわ}す。",
+        "kana": "かならずしも。ひていといっしょにつかい、「かならずしも〜ではない」のいみをあらわす。"
+      },
+      "frequencyRank": 5968,
+      "notes": "Always with a negative: あながち〜ない.",
+      "altForms": [
+        "強ち"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0273",
+      "word": "殊更",
+      "kana": "ことさら",
+      "meanings": [
+        "deliberately",
+        "especially",
+        "all the more"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{自分|じぶん}の{失敗|しっぱい}を{殊更|ことさら}に{隠|かく}そうとはせず、{淡々|たんたん}と{事実|じじつ}を{報告|ほうこく}した。",
+          "kana": "かのじょはじぶんのしっぱいをことさらにかくそうとはせず、たんたんとじじつをほうこくした。",
+          "en": "She made no particular effort to hide her mistake and calmly reported the facts."
+        },
+        {
+          "ja": "{小|ちい}さな{欠点|けってん}を{殊更|ことさら}に{取|と}り{上|あ}げて{批判|ひはん}するのは、{建設的|けんせつてき}な{議論|ぎろん}とは{言|い}えない。",
+          "kana": "ちいさなけってんをことさらにとりあげてひはんするのは、けんせつてきなぎろんとはいえない。",
+          "en": "Deliberately singling out minor flaws for criticism is hardly constructive debate."
+        }
+      ],
+      "definitionJa": {
+        "ja": "わざと。{特|とく}に。はっきりした{意図|いと}を{持|も}って{何|なに}かをする{様子|ようす}。",
+        "kana": "わざと。とくに。はっきりしたいとをもってなにかをするようす。"
+      },
+      "frequencyRank": 5976,
+      "station": 49
+    },
+    {
+      "id": "v-n1-0274",
+      "word": "皆目",
+      "kana": "かいもく",
+      "meanings": [
+        "(not) at all",
+        "entirely (with negative)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{財布|さいふ}をどこで{落|お}としたのか、{皆目|かいもく}{見当|けんとう}がつかない。",
+          "kana": "さいふをどこでおとしたのか、かいもくけんとうがつかない。",
+          "en": "I have absolutely no idea where I dropped my wallet."
+        },
+        {
+          "ja": "{専門用語|せんもんようご}ばかりの{説明|せつめい}で、{何|なに}を{言|い}っているのか{皆目|かいもく}{分|わ}かりませんでした。",
+          "kana": "せんもんようごばかりのせつめいで、なにをいっているのかかいもくわかりませんでした。",
+          "en": "The explanation was nothing but jargon, and I had absolutely no idea what they were saying."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全|まった}く。{全然|ぜんぜん}。{否定|ひてい}と{一緒|いっしょ}に{使|つか}い、「{少|すこ}しも〜ない」の{意味|いみ}を{表|あらわ}す。",
+        "kana": "まったく。ぜんぜん。ひていといっしょにつかい、「すこしも〜ない」のいみをあらわす。"
+      },
+      "frequencyRank": 5984,
+      "collocations": [
+        "皆目見当がつかない",
+        "皆目分からない"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0275",
+      "word": "断じて",
+      "kana": "だんじて",
+      "meanings": [
+        "absolutely (not)",
+        "by no means",
+        "definitely"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもへの{暴力|ぼうりょく}は、どんな{理由|りゆう}があろうと{断|だん}じて{許|ゆる}されるものではない。",
+          "kana": "こどもへのぼうりょくは、どんなりゆうがあろうとだんじてゆるされるものではない。",
+          "en": "Violence against children is absolutely unacceptable, whatever the reason."
+        },
+        {
+          "ja": "{私|わたし}は{断|だん}じてそのようなことを{言|い}った{覚|おぼ}えはありません。",
+          "kana": "わたしはだんじてそのようなことをいったおぼえはありません。",
+          "en": "I most certainly have no recollection of saying anything of the kind."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{強|つよ}い{気持|きも}ちで、{決|けっ}して。{絶対|ぜったい}に。{否定|ひてい}と{一緒|いっしょ}に{使|つか}うことが{多|おお}い。",
+        "kana": "つよいきもちで、けっして。ぜったいに。ひていといっしょにつかうことがおおい。"
+      },
+      "frequencyRank": 5992,
+      "station": 50
+    },
+    {
+      "id": "v-n1-0276",
+      "word": "無闇に",
+      "kana": "むやみに",
+      "meanings": [
+        "recklessly",
+        "thoughtlessly",
+        "excessively"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{知|し}らない{番号|ばんごう}からの{電話|でんわ}に{無闇|むやみ}に{出|で}ると、{詐欺|さぎ}に{巻|ま}き{込|こ}まれることがある。",
+          "kana": "しらないばんごうからのでんわにむやみにでると、さぎにまきこまれることがある。",
+          "en": "If you carelessly answer calls from unknown numbers, you can get drawn into a scam."
+        },
+        {
+          "ja": "{体|からだ}にいいからといって、サプリメントを{無闇|むやみ}に{飲|の}むのはやめたほうがいいですよ。",
+          "kana": "からだにいいからといって、サプリメントをむやみにのむのはやめたほうがいいですよ。",
+          "en": "Even if they're good for you, you'd better stop taking supplements indiscriminately."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{深|ふか}く{考|かんが}えずに。{必要|ひつよう}{以上|いじょう}に。やたらに。",
+        "kana": "ふかくかんがえずに。ひつよういじょうに。やたらに。"
+      },
+      "frequencyRank": 6000,
+      "station": 50
+    },
+    {
+      "id": "v-n1-0277",
+      "word": "いたずらに",
+      "kana": "いたずらに",
+      "meanings": [
+        "in vain",
+        "needlessly",
+        "idly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{結論|けつろん}の{出|で}ない{会議|かいぎ}を{繰|く}り{返|かえ}して、いたずらに{時間|じかん}ばかりが{過|す}ぎていった。",
+          "kana": "けつろんのでないかいぎをくりかえして、いたずらにじかんばかりがすぎていった。",
+          "en": "Meeting after meeting ended without a conclusion, and time just slipped by uselessly."
+        },
+        {
+          "ja": "{不確|ふたし}かな{情報|じょうほう}を{広|ひろ}めて、いたずらに{不安|ふあん}をあおるようなことは{避|さ}けてください。",
+          "kana": "ふたしかなじょうほうをひろめて、いたずらにふあんをあおるようなことはさけてください。",
+          "en": "Please refrain from spreading unverified information and needlessly stirring up anxiety."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なん}にもならず、{無駄|むだ}に。{目的|もくてき}もなく。",
+        "kana": "なんにもならず、むだに。もくてきもなく。"
+      },
+      "frequencyRank": 6008,
+      "notes": "Unrelated in meaning to いたずら 'prank'; 徒に = fruitlessly, to no purpose.",
+      "altForms": [
+        "徒に"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0278",
+      "word": "空しく",
+      "kana": "むなしく",
+      "meanings": [
+        "in vain",
+        "fruitlessly",
+        "emptily"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{必死|ひっし}の{捜索|そうさく}も{空|むな}しく、{行方不明|ゆくえふめい}になった{登山者|とざんしゃ}は{見|み}つからなかった。",
+          "kana": "ひっしのそうさくもむなしく、ゆくえふめいになったとざんしゃはみつからなかった。",
+          "en": "Despite a desperate search, the missing climber was never found."
+        },
+        {
+          "ja": "{長年|ながねん}の{努力|どりょく}も{空|むな}しく、{店|みせ}は{閉|し}めることになりました。",
+          "kana": "ながねんのどりょくもむなしく、みせはしめることになりました。",
+          "en": "Despite years of effort, we ended up having to close the shop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{努力|どりょく}などが{結果|けっか}につながらず、{無駄|むだ}に。{悲|かな}しく。",
+        "kana": "どりょくなどがけっかにつながらず、むだに。かなしく。"
+      },
+      "frequencyRank": 6016,
+      "notes": "Adverbial form of 空しい. Often as 〜も空しく 'despite …, in vain'.",
+      "altForms": [
+        "虚しく"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0279",
+      "word": "ことごとく",
+      "kana": "ことごとく",
+      "meanings": [
+        "entirely",
+        "every single one",
+        "without exception"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{企画|きかく}を{何度|なんど}{出|だ}しても、{部長|ぶちょう}にことごとく{却下|きゃっか}されてしまう。",
+          "kana": "あたらしいきかくをなんどだしても、ぶちょうにことごとくきゃっかされてしまう。",
+          "en": "No matter how many new proposals I put forward, the manager rejects every single one."
+        },
+        {
+          "ja": "{台風|たいふう}で{畑|はたけ}の{作物|さくもつ}はことごとく{倒|たお}れ、{今年|ことし}の{収穫|しゅうかく}はほとんど{望|のぞ}めない。",
+          "kana": "たいふうではたけのさくもつはことごとくたおれ、ことしのしゅうかくはほとんどのぞめない。",
+          "en": "The typhoon flattened every last crop in the fields, and this year's harvest is all but hopeless."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|ひと}つ{残|のこ}らず{全部|ぜんぶ}。{全|すべ}て。{例外|れいがい}なく。",
+        "kana": "ひとつのこらずぜんぶ。すべて。れいがいなく。"
+      },
+      "frequencyRank": 6024,
+      "altForms": [
+        "悉く"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0280",
+      "word": "こぞって",
+      "kana": "こぞって",
+      "meanings": [
+        "all together",
+        "unanimously",
+        "en masse"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "society",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいカフェがオープンすると、{町|まち}の{人|ひと}たちはこぞって{見|み}に{出|で}かけた。",
+          "kana": "あたらしいカフェがオープンすると、まちのひとたちはこぞってみにでかけた。",
+          "en": "When the new café opened, the whole town turned out to see it."
+        },
+        {
+          "ja": "{各社|かくしゃ}がこぞって{同|おな}じような{製品|せいひん}を{出|だ}したため、{価格競争|かかくきょうそう}が{激|はげ}しくなっています。",
+          "kana": "かくしゃがこぞっておなじようなせいひんをだしたため、かかくきょうそうがはげしくなっています。",
+          "en": "Because every company rushed out similar products, price competition has become fierce."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全員|ぜんいん}が{一緒|いっしょ}に。みんなそろって。",
+        "kana": "ぜんいんがいっしょに。みんなそろって。"
+      },
+      "frequencyRank": 6032,
+      "altForms": [
+        "挙って"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0281",
+      "word": "余す所なく",
+      "kana": "あますところなく",
+      "meanings": [
+        "thoroughly",
+        "leaving nothing out",
+        "in full"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "この{展示|てんじ}では、{画家|がか}の{若|わか}い{頃|ころ}から{晩年|ばんねん}までの{作品|さくひん}が{余|あま}す{所|ところ}なく{紹介|しょうかい}されている。",
+          "kana": "このてんじでは、がかのわかいころからばんねんまでのさくひんがあますところなくしょうかいされている。",
+          "en": "This exhibition presents the painter's works in full, from his youth to his final years."
+        },
+        {
+          "ja": "{練習|れんしゅう}してきたことを{本番|ほんばん}で{余|あま}す{所|ところ}なく{発揮|はっき}できて、{本当|ほんとう}に{良|よ}かったです。",
+          "kana": "れんしゅうしてきたことをほんばんであますところなくはっきできて、ほんとうによかったです。",
+          "en": "I'm really glad I was able to show everything I had practiced when it counted."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{残|のこ}すところがなく、{全部|ぜんぶ}。{細|こま}かいところまで{全|すべ}て。",
+        "kana": "のこすところがなく、ぜんぶ。こまかいところまですべて。"
+      },
+      "frequencyRank": 6040,
+      "altForms": [
+        "余すところなく"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0282",
+      "word": "かねて",
+      "kana": "かねて",
+      "meanings": [
+        "previously",
+        "for some time",
+        "already"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "formal",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "かねてから{噂|うわさ}のあった{二人|ふたり}が、ついに{結婚|けっこん}を{発表|はっぴょう}した。",
+          "kana": "かねてからうわさのあったふたりが、ついにけっこんをはっぴょうした。",
+          "en": "The two, who had long been rumored to be a couple, finally announced their marriage."
+        },
+        {
+          "ja": "かねてご{案内|あんない}しておりました{講演会|こうえんかい}は、{予定|よてい}どおり{来週土曜日|らいしゅうどようび}に{開催|かいさい}いたします。",
+          "kana": "かねてごあんないしておりましたこうえんかいは、よていどおりらいしゅうどようびにかいさいいたします。",
+          "en": "The lecture we announced earlier will be held as scheduled next Saturday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}から。{以前|いぜん}から。{前|まえ}もって。",
+        "kana": "まえから。いぜんから。まえもって。"
+      },
+      "frequencyRank": 6048,
+      "altForms": [
+        "兼ねて",
+        "予て"
+      ],
+      "collocations": [
+        "かねてから",
+        "かねての"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0283",
+      "word": "今なお",
+      "kana": "いまなお",
+      "meanings": [
+        "still",
+        "even now"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{地震|じしん}から{五年|ごねん}たった{今|いま}なお、{仮設住宅|かせつじゅうたく}で{暮|く}らす{人|ひと}たちがいる。",
+          "kana": "じしんからごねんたったいまなお、かせつじゅうたくでくらすひとたちがいる。",
+          "en": "Even now, five years after the earthquake, there are people living in temporary housing."
+        },
+        {
+          "ja": "{百年以上前|ひゃくねんいじょうまえ}に{書|か}かれたこの{小説|しょうせつ}は、{今|いま}なお{多|おお}くの{読者|どくしゃ}に{愛|あい}されています。",
+          "kana": "ひゃくねんいじょうまえにかかれたこのしょうせつは、いまなおおおくのどくしゃにあいされています。",
+          "en": "Written more than a hundred years ago, this novel is still loved by many readers today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}でもまだ。{昔|むかし}と{変|か}わらず{現在|げんざい}も。",
+        "kana": "いまでもまだ。むかしとかわらずげんざいも。"
+      },
+      "frequencyRank": 6056,
+      "altForms": [
+        "今尚"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0284",
+      "word": "偏に",
+      "kana": "ひとえに",
+      "meanings": [
+        "entirely (due to)",
+        "solely",
+        "earnestly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}こうして{無事|ぶじ}に{式|しき}を{迎|むか}えられたのは、{偏|ひとえ}に{皆様|みなさま}のご{支援|しえん}のおかげです。",
+          "kana": "ほんじつこうしてぶじにしきをむかえられたのは、ひとえにみなさまのごしえんのおかげです。",
+          "en": "That we have been able to hold this ceremony safely today is entirely thanks to your support."
+        },
+        {
+          "ja": "{彼|かれ}が{合格|ごうかく}できたのは、{偏|ひとえ}に{本人|ほんにん}の{努力|どりょく}の{結果|けっか}だと{思|おも}う。",
+          "kana": "かれがごうかくできたのは、ひとえにほんにんのどりょくのけっかだとおもう。",
+          "en": "His passing the exam is entirely the result of his own efforts, I think."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全|まった}くそのことだけが{理由|りゆう}で。ひたすら。{心|こころ}から。",
+        "kana": "まったくそのことだけがりゆうで。ひたすら。こころから。"
+      },
+      "frequencyRank": 6064,
+      "collocations": [
+        "偏に〜のおかげ"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0285",
+      "word": "悠々",
+      "kana": "ゆうゆう",
+      "meanings": [
+        "leisurely",
+        "calmly",
+        "with plenty of room"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{周|まわ}りが{慌|あわ}てる{中|なか}、{彼|かれ}だけは{悠々|ゆうゆう}とコーヒーを{飲|の}みながら{資料|しりょう}に{目|め}を{通|とお}していた。",
+          "kana": "まわりがあわてるなか、かれだけはゆうゆうとコーヒーをのみながらしりょうにめをとおしていた。",
+          "en": "While everyone around him panicked, he alone sipped his coffee and leisurely looked over the documents."
+        },
+        {
+          "ja": "{定年後|ていねんご}は{田舎|いなか}に{戻|もど}って、{畑|はたけ}でも{作|つく}りながら{悠々|ゆうゆう}と{暮|く}らしたいと{思|おも}っています。",
+          "kana": "ていねんごはいなかにもどって、はたけでもつくりながらゆうゆうとくらしたいとおもっています。",
+          "en": "After I retire I'd like to move back to the countryside and live at a leisurely pace, maybe growing some vegetables."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{急|いそ}がず、ゆったりと{落|お}ち{着|つ}いている{様子|ようす}。{余裕|よゆう}がある{様子|ようす}。",
+        "kana": "いそがず、ゆったりとおちついているようす。よゆうがあるようす。"
+      },
+      "frequencyRank": 6072,
+      "altForms": [
+        "悠悠"
+      ],
+      "collocations": [
+        "悠々自適",
+        "悠々と間に合う"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0286",
+      "word": "悠然",
+      "kana": "ゆうぜん",
+      "meanings": [
+        "composed",
+        "unhurried",
+        "serene"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "personality",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{山頂|さんちょう}の{岩|いわ}の{上|うえ}で、{一羽|いちわ}の{鷹|たか}が{悠然|ゆうぜん}と{風|かぜ}を{受|う}けて{立|た}っていた。",
+          "kana": "さんちょうのいわのうえで、いちわのたかがゆうぜんとかぜをうけてたっていた。",
+          "en": "On a rock at the summit, a hawk stood serenely facing the wind."
+        },
+        {
+          "ja": "どんなに{厳|きび}しい{質問|しつもん}を{受|う}けても、{社長|しゃちょう}は{悠然|ゆうぜん}と{構|かま}えて{一|ひと}つ{一|ひと}つ{丁寧|ていねい}に{答|こた}えました。",
+          "kana": "どんなにきびしいしつもんをうけても、しゃちょうはゆうぜんとかまえてひとつひとつていねいにこたえました。",
+          "en": "However tough the questions, the president stayed composed and answered each one carefully."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{慌|あわ}てず、{落|お}ち{着|つ}いてゆったりしている{様子|ようす}。",
+        "kana": "あわてず、おちついてゆったりしているようす。"
+      },
+      "frequencyRank": 6080,
+      "notes": "Used as 悠然と (adverb) or 悠然たる (before a noun).",
+      "collocations": [
+        "悠然と構える"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0287",
+      "word": "淡々",
+      "kana": "たんたん",
+      "meanings": [
+        "matter-of-factly",
+        "calmly",
+        "indifferently"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "emotions",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{記者|きしゃ}の{質問|しつもん}に{対|たい}して、{監督|かんとく}は{感情|かんじょう}を{見|み}せずに{淡々|たんたん}と{答|こた}えた。",
+          "kana": "きしゃのしつもんにたいして、かんとくはかんじょうをみせずにたんたんとこたえた。",
+          "en": "The coach answered the reporters' questions matter-of-factly, without showing emotion."
+        },
+        {
+          "ja": "{彼|かれ}は{毎日|まいにち}{淡々|たんたん}と{同|おな}じ{作業|さぎょう}を{続|つづ}けていますが、その{積|つ}み{重|かさ}ねが{今|いま}の{技術|ぎじゅつ}を{支|ささ}えています。",
+          "kana": "かれはまいにちたんたんとおなじさぎょうをつづけていますが、そのつみかさねがいまのぎじゅつをささえています。",
+          "en": "He quietly goes on doing the same work every day, and that accumulation is what underpins his skill today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{感情|かんじょう}をあまり{見|み}せずに、{静|しず}かに{何|なに}かを{進|すす}める{様子|ようす}。",
+        "kana": "かんじょうをあまりみせずに、しずかになにかをすすめるようす。"
+      },
+      "frequencyRank": 6088,
+      "altForms": [
+        "淡淡"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0288",
+      "word": "粛々",
+      "kana": "しゅくしゅく",
+      "meanings": [
+        "solemnly",
+        "quietly and steadily"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{批判|ひはん}の{声|こえ}もあるが、{決|き}まったことは{粛々|しゅくしゅく}と{進|すす}めていくしかない。",
+          "kana": "ひはんのこえもあるが、きまったことはしゅくしゅくとすすめていくしかない。",
+          "en": "There are voices of criticism, but we have no choice but to steadily carry out what has been decided."
+        },
+        {
+          "ja": "{式|しき}は{雨|あめ}の{中|なか}、{予定|よてい}どおり{粛々|しゅくしゅく}と{執|と}り{行|おこな}われました。",
+          "kana": "しきはあめのなか、よていどおりしゅくしゅくととりおこなわれました。",
+          "en": "The ceremony was carried out solemnly in the rain, as scheduled."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{静|しず}かに、まじめに、{決|き}められたとおりに{何|なに}かを{進|すす}める{様子|ようす}。",
+        "kana": "しずかに、まじめに、きめられたとおりになにかをすすめるようす。"
+      },
+      "frequencyRank": 6096,
+      "notes": "Favored in political and bureaucratic speech; can sound evasive.",
+      "station": 50
+    },
+    {
+      "id": "v-n1-0289",
+      "word": "漸次",
+      "kana": "ぜんじ",
+      "meanings": [
+        "gradually",
+        "step by step"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "quantity",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいシステムは{全社|ぜんしゃ}で{一斉|いっせい}に{導入|どうにゅう}するのではなく、{部署|ぶしょ}ごとに{漸次|ぜんじ}{切|き}り{替|か}えていく{方針|ほうしん}だ。",
+          "kana": "あたらしいシステムはぜんしゃでいっせいにどうにゅうするのではなく、ぶしょごとにぜんじきりかえていくほうしんだ。",
+          "en": "The plan is not to roll out the new system company-wide at once, but to switch over department by department in stages."
+        },
+        {
+          "ja": "{古|ふる}い{車両|しゃりょう}は{漸次|ぜんじ}{新型|しんがた}に{置|お}き{換|か}えられ、{来年度中|らいねんどちゅう}には{全|すべ}て{入|い}れ{替|か}わる{予定|よてい}です。",
+          "kana": "ふるいしゃりょうはぜんじしんがたにおきかえられ、らいねんどちゅうにはすべていれかわるよていです。",
+          "en": "The old rolling stock is being replaced with new models in stages, and all of it is due to be swapped out within the next fiscal year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{少|すこ}しずつ。だんだんと。かたい{言|い}い{方|かた}。",
+        "kana": "すこしずつ。だんだんと。かたいいいかた。"
+      },
+      "frequencyRank": 6104,
+      "confusables": [
+        "v-n1-0290"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0290",
+      "word": "逐次",
+      "kana": "ちくじ",
+      "meanings": [
+        "successively",
+        "one by one",
+        "as it comes in"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{現地|げんち}の{状況|じょうきょう}は、{分|わ}かり{次第|しだい}{逐次|ちくじ}お{知|し}らせします。",
+          "kana": "げんちのじょうきょうは、わかりしだいちくじおしらせします。",
+          "en": "We will keep you informed of the situation on the ground as information comes in."
+        },
+        {
+          "ja": "{届|とど}いた{注文|ちゅうもん}は{逐次|ちくじ}{処理|しょり}され、{通常|つうじょう}は{二日以内|ふつかいない}に{発送|はっそう}される。",
+          "kana": "とどいたちゅうもんはちくじしょりされ、つうじょうはふつかいないにはっそうされる。",
+          "en": "Incoming orders are processed one by one and are normally shipped within two days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|ひと}つずつ。あとからあとへと、{間|あいだ}を{置|お}かずに{続|つづ}けて。",
+        "kana": "ひとつずつ。あとからあとへと、あいだをおかずにつづけて。"
+      },
+      "frequencyRank": 6112,
+      "confusables": [
+        "v-n1-0289"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0291",
+      "word": "党派",
+      "kana": "とうは",
+      "meanings": [
+        "faction",
+        "party (political grouping)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{災害|さいがい}への{対応|たいおう}は{党派|とうは}を{超|こ}えて{協力|きょうりょく}すべきだと、{多|おお}くの{議員|ぎいん}が{訴|うった}えた。",
+          "kana": "さいがいへのたいおうはとうはをこえてきょうりょくすべきだと、おおくのぎいんがうったえた。",
+          "en": "Many lawmakers argued that the response to the disaster should be a matter of cooperation across party lines."
+        },
+        {
+          "ja": "{党派|とうは}の{違|ちが}いにかかわらず、この{法案|ほうあん}には{幅広|はばひろ}い{支持|しじ}が{集|あつ}まっています。",
+          "kana": "とうはのちがいにかかわらず、このほうあんにははばひろいしじがあつまっています。",
+          "en": "Regardless of party lines, this bill is drawing broad support."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}え{方|かた}や{利害|りがい}が{近|ちか}い{人|ひと}たちが{作|つく}る、{政治|せいじ}の{上|うえ}での{集|あつ}まり。{政党|せいとう}や{派閥|はばつ}。",
+        "kana": "かんがえかたやりがいがちかいひとたちがつくる、せいじのうえでのあつまり。せいとうやはばつ。"
+      },
+      "frequencyRank": 6120,
+      "collocations": [
+        "党派を超えて",
+        "超党派"
+      ],
+      "confusables": [
+        "v-n1-0178"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0292",
+      "word": "概して",
+      "kana": "がいして",
+      "meanings": [
+        "generally",
+        "on the whole"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "この{地域|ちいき}の{人|ひと}は{概|がい}して{人当|ひとあ}たりがよく、{初対面|しょたいめん}でもよく{話|はな}しかけてくれる。",
+          "kana": "このちいきのひとはがいしてひとあたりがよく、しょたいめんでもよくはなしかけてくれる。",
+          "en": "People in this area are generally friendly and readily strike up a conversation even with strangers."
+        },
+        {
+          "ja": "{今年|ことし}の{新入社員|しんにゅうしゃいん}は、{概|がい}して{真面目|まじめ}で{物覚|ものおぼ}えが{早|はや}いという{印象|いんしょう}です。",
+          "kana": "ことしのしんにゅうしゃいんは、がいしてまじめでものおぼえがはやいといういんしょうです。",
+          "en": "This year's new employees strike me as generally earnest and quick to learn."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}として{見|み}ると。{一般|いっぱん}に。{大体|だいたい}。",
+        "kana": "ぜんたいとしてみると。いっぱんに。だいたい。"
+      },
+      "frequencyRank": 6128,
+      "confusables": [
+        "v-n1-0293",
+        "v-n1-0194"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0293",
+      "word": "総じて",
+      "kana": "そうじて",
+      "meanings": [
+        "on the whole",
+        "all in all",
+        "in general"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{細|こま}かい{不満|ふまん}はあるものの、{総|そう}じて{今回|こんかい}の{旅行|りょこう}には{満足|まんぞく}している。",
+          "kana": "こまかいふまんはあるものの、そうじてこんかいのりょこうにはまんぞくしている。",
+          "en": "There are a few small complaints, but on the whole I am satisfied with this trip."
+        },
+        {
+          "ja": "{学生|がくせい}たちの{発表|はっぴょう}は、{総|そう}じて{準備|じゅんび}がよくできていたと{思|おも}います。",
+          "kana": "がくせいたちのはっぴょうは、そうじてじゅんびがよくできていたとおもいます。",
+          "en": "On the whole, I thought the students' presentations were well prepared."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}をまとめて{見|み}ると。{全体|ぜんたい}として。{大体|だいたい}。",
+        "kana": "ぜんたいをまとめてみると。ぜんたいとして。だいたい。"
+      },
+      "frequencyRank": 6136,
+      "confusables": [
+        "v-n1-0292"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0294",
+      "word": "押し並べて",
+      "kana": "おしなべて",
+      "meanings": [
+        "generally",
+        "across the board",
+        "uniformly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "quantity",
+        "written",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}は{天候|てんこう}に{恵|めぐ}まれ、{野菜|やさい}の{出来|でき}は{押|お}し{並|な}べて{良好|りょうこう}だという。",
+          "kana": "ことしはてんこうにめぐまれ、やさいのできはおしなべてりょうこうだという。",
+          "en": "This year the weather was favorable, and vegetable harvests are said to be good across the board."
+        },
+        {
+          "ja": "この{作家|さっか}の{初期|しょき}の{作品|さくひん}は、{押|お}し{並|な}べて{暗|くら}い{色調|しきちょう}に{包|つつ}まれている。",
+          "kana": "このさっかのしょきのさくひんは、おしなべてくらいしきちょうにつつまれている。",
+          "en": "This author's early works are, without exception, wrapped in dark tones."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どれも{変|か}わりなく。{全体|ぜんたい}に。{全|すべ}て。",
+        "kana": "どれもかわりなく。ぜんたいに。すべて。"
+      },
+      "frequencyRank": 6144,
+      "altForms": [
+        "おしなべて"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0295",
+      "word": "往々にして",
+      "kana": "おうおうにして",
+      "meanings": [
+        "often",
+        "frequently",
+        "as often happens"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{自信|じしん}のある{人|ひと}ほど、{往々|おうおう}にして{他人|たにん}の{意見|いけん}を{聞|き}かなくなるものだ。",
+          "kana": "じしんのあるひとほど、おうおうにしてたにんのいけんをきかなくなるものだ。",
+          "en": "As often happens, the more confident people are, the less they listen to others."
+        },
+        {
+          "ja": "{急|いそ}いで{書|か}いたメールは、{往々|おうおう}にして{誤解|ごかい}を{招|まね}く{原因|げんいん}になります。",
+          "kana": "いそいでかいたメールは、おうおうにしてごかいをまねくげんいんになります。",
+          "en": "Emails written in a hurry often end up causing misunderstandings."
+        }
+      ],
+      "definitionJa": {
+        "ja": "よくあることとして。しばしば。{悪|わる}いことについて{使|つか}うことが{多|おお}い。",
+        "kana": "よくあることとして。しばしば。わるいことについてつかうことがおおい。"
+      },
+      "frequencyRank": 6152,
+      "notes": "Usually describes a tendency toward something undesirable.",
+      "confusables": [
+        "v-n1-0296"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0296",
+      "word": "得てして",
+      "kana": "えてして",
+      "meanings": [
+        "apt to",
+        "liable to",
+        "tend to"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{急|いそ}いでいる{時|とき}に{限|かぎ}って、{得|え}てして{忘|わす}れ{物|もの}をしてしまうものだ。",
+          "kana": "いそいでいるときにかぎって、えてしてわすれものをしてしまうものだ。",
+          "en": "It is precisely when you are in a hurry that you tend to forget things."
+        },
+        {
+          "ja": "{専門家|せんもんか}というのは、{得|え}てして{素人|しろうと}の{素朴|そぼく}な{疑問|ぎもん}を{軽|かる}く{見|み}がちである。",
+          "kana": "せんもんかというのは、えてしてしろうとのそぼくなぎもんをかるくみがちである。",
+          "en": "Experts, as it happens, tend to make light of the simple questions laypeople ask."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そうなりがちである{様子|ようす}。とかく。よくあることとして。",
+        "kana": "そうなりがちであるようす。とかく。よくあることとして。"
+      },
+      "frequencyRank": 6160,
+      "confusables": [
+        "v-n1-0295"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0297",
+      "word": "とかく",
+      "kana": "とかく",
+      "meanings": [
+        "apt to",
+        "one way or another",
+        "in any case"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{冬|ふゆ}は{寒|さむ}くてとかく{運動不足|うんどうぶそく}になりがちなので、{毎日|まいにち}{少|すこ}しでも{歩|ある}くようにしている。",
+          "kana": "ふゆはさむくてとかくうんどうぶそくになりがちなので、まいにちすこしでもあるくようにしている。",
+          "en": "In winter it's cold and you tend to get too little exercise, so I try to walk at least a little every day."
+        },
+        {
+          "ja": "{都会|とかい}の{暮|く}らしはとかく{忙|いそが}しく、{季節|きせつ}の{変化|へんか}に{気|き}づかないまま{一年|いちねん}が{過|す}ぎてしまいます。",
+          "kana": "とかいのくらしはとかくいそがしく、きせつのへんかにきづかないままいちねんがすぎてしまいます。",
+          "en": "City life tends to be hectic, and a year goes by without your noticing the changing seasons."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ともすれば。{何|なに}かにつけて。あれこれと。",
+        "kana": "ともすれば。なにかにつけて。あれこれと。"
+      },
+      "frequencyRank": 6168,
+      "altForms": [
+        "兎角"
+      ],
+      "collocations": [
+        "とかく〜がちだ"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0298",
+      "word": "何分",
+      "kana": "なにぶん",
+      "meanings": [
+        "anyhow",
+        "as you know (asking indulgence)",
+        "please understand"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{何分|なにぶん}{初|はじ}めてのことですので、{至|いた}らない{点|てん}があればご{指摘|してき}ください。",
+          "kana": "なにぶんはじめてのことですので、いたらないてんがあればごしてきください。",
+          "en": "As this is my first time, please point out anything I have overlooked."
+        },
+        {
+          "ja": "{何分|なにぶん}にも{古|ふる}い{建物|たてもの}ですから、{多少|たしょう}の{不便|ふべん}はご{容赦|ようしゃ}ください。",
+          "kana": "なにぶんにもふるいたてものですから、たしょうのふべんはごようしゃください。",
+          "en": "As you can appreciate, it is an old building, so please forgive a little inconvenience."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事情|じじょう}を{分|わ}かってもらうように{頼|たの}むときに{使|つか}う{言葉|ことば}。「どうか」の{意味|いみ}。",
+        "kana": "じじょうをわかってもらうようにたのむときにつかうことば。「どうか」のいみ。"
+      },
+      "frequencyRank": 6176,
+      "notes": "Also 何分にも. Softens a request for understanding. The time word 何分 'how many minutes' is read なんぷん.",
+      "collocations": [
+        "何分にも"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0299",
+      "word": "然るべく",
+      "kana": "しかるべく",
+      "meanings": [
+        "appropriately",
+        "as is proper",
+        "accordingly"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{事情|じじょう}は{全|すべ}て{伝|つた}えましたので、{後|あと}は{然|しか}るべく{対応|たいおう}していただければと{思|おも}います。",
+          "kana": "じじょうはすべてつたえましたので、あとはしかるべくたいおうしていただければとおもいます。",
+          "en": "I have conveyed all the circumstances, so I would ask you to deal with the matter as you see fit."
+        },
+        {
+          "ja": "{問題|もんだい}が{見|み}つかった{以上|いじょう}、{担当者|たんとうしゃ}には{然|しか}るべく{処分|しょぶん}が{下|くだ}されるだろう。",
+          "kana": "もんだいがみつかったいじょう、たんとうしゃにはしかるべくしょぶんがくだされるだろう。",
+          "en": "Now that the problem has come to light, the person in charge will presumably be disciplined accordingly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{適切|てきせつ}に。{状況|じょうきょう}に{合|あ}ったやり{方|かた}で。かたい{言|い}い{方|かた}。",
+        "kana": "てきせつに。じょうきょうにあったやりかたで。かたいいいかた。"
+      },
+      "frequencyRank": 6184,
+      "collocations": [
+        "然るべき"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-0300",
+      "word": "いかんせん",
+      "kana": "いかんせん",
+      "meanings": [
+        "unfortunately",
+        "regrettably (nothing can be done)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{企画|きかく}そのものは{面白|おもしろ}いのだが、いかんせん{予算|よさん}が{足|た}りない。",
+          "kana": "きかくそのものはおもしろいのだが、いかんせんよさんがたりない。",
+          "en": "The project itself is interesting, but unfortunately the budget just isn't there."
+        },
+        {
+          "ja": "{景色|けしき}は{素晴|すば}らしいのですが、いかんせん{駅|えき}から{遠|とお}くて、{気軽|きがる}には{行|い}けません。",
+          "kana": "けしきはすばらしいのですが、いかんせんえきからとおくて、きがるにはいけません。",
+          "en": "The scenery is wonderful, but unfortunately it's far from the station, so you can't just pop over."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どうしようもないことに。くやしいが。どうにもできない{事情|じじょう}があるときに{使|つか}う。",
+        "kana": "どうしようもないことに。くやしいが。どうにもできないじじょうがあるときにつかう。"
+      },
+      "frequencyRank": 6192,
+      "altForms": [
+        "如何せん"
+      ],
+      "station": 50
+    }
+  ]
+}

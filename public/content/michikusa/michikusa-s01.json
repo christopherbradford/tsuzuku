@@ -1,0 +1,45 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s01",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-01-1",
+      "stationId": "st-01",
+      "kind": "road-history",
+      "titleEn": "First Stop on the Bay",
+      "bodyEn": "Shinagawa was the first of the fifty-three post towns, about two ri (eight kilometers) from Nihonbashi, with Edo Bay lapping at the road. Hiroshige's Hōeidō print shows a daimyō procession filing out along the shore at sunrise, boats riding offshore. In these shallows nori seaweed was farmed on stakes and sold in the city as Asakusa nori.",
+      "sourceNote": "Hiroshige, Hōeidō Tōkaidō 1833–34: Shinagawa Sunrise; Edo meisho zue 1834–36"
+    },
+    {
+      "id": "m-01-2",
+      "stationId": "st-01",
+      "kind": "kanji-origin",
+      "titleEn": "Three Boxes Make Goods",
+      "bodyEn": "The kanji 品 is three 口 boxes stacked up. The Shuowen Jiezi, China's first character dictionary (c. 100 CE), glosses it as 'a multitude'. From 'many things' came 'goods', then 'kind' and 'quality': 品物 (しなもの) is merchandise, 上品 (じょうひん) is refined. Shinagawa uses the native reading しな, 'article, quality'.",
+      "ja": "{品川|しながわ}",
+      "kana": "しながわ",
+      "sourceNote": "Shuowen Jiezi (c. 100 CE), entry 品: '衆庶也, 从三口'"
+    },
+    {
+      "id": "m-01-3",
+      "stationId": "st-01",
+      "kind": "etymology",
+      "titleEn": "Plain Borrowed Names",
+      "bodyEn": "仮名 means 'borrowed names': kanji were 真名, 'true names', and kana were kanji borrowed for their sound alone. 平 means 'plain, ordinary'. Hiragana took shape in the Heian period from man'yōgana written fast in cursive, and was long called 女手, 'women's hand', after the court women who wrote diaries and tales in it.",
+      "ja": "{平仮名|ひらがな}",
+      "kana": "ひらがな",
+      "sourceNote": "Kōjien; Nihon Kokugo Daijiten, entries 仮名, 平仮名, 女手"
+    },
+    {
+      "id": "m-01-4",
+      "stationId": "st-01",
+      "kind": "usage",
+      "titleEn": "Muddy Marks and Clear Sounds",
+      "bodyEn": "The two dots are 濁点 (dakuten), the 'muddy mark'; the circle is 半濁点 (handakuten), 'half-muddy'. Voiced rows like が・ざ・だ・ば are 濁音, 'muddy sounds', and the plain rows are 清音, 'clear sounds'. The circle appears on one row only, ぱぴぷぺぽ. Say ば with a buzz in the throat, ぱ with a puff of air.",
+      "ja": "{濁点|だくてん}",
+      "kana": "だくてん"
+    }
+  ]
+}

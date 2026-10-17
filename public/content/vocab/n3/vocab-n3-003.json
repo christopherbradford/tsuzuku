@@ -1,0 +1,4948 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n3",
+  "writer": "vocab-n3-003",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n3-0285",
+      "word": "職場",
+      "kana": "しょくば",
+      "meanings": [
+        "workplace"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{職場|しょくば}の{近|ちか}くに{安|やす}くておいしい{店|みせ}があります。",
+          "kana": "しょくばのちかくにやすくておいしいみせがあります。",
+          "en": "There is a cheap, tasty restaurant near my workplace."
+        },
+        {
+          "ja": "{新|あたら}しい{職場|しょくば}には、もう{慣|な}れた？",
+          "kana": "あたらしいしょくばには、もうなれた？",
+          "en": "Have you gotten used to the new workplace yet?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}をする{所|ところ}。{会社|かいしゃ}や{店|みせ}など。",
+        "kana": "しごとをするところ。かいしゃやみせなど。"
+      },
+      "collocations": [
+        "職場の人",
+        "職場に戻る"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0286",
+      "word": "職業",
+      "kana": "しょくぎょう",
+      "meanings": [
+        "occupation",
+        "profession"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}の{職業|しょくぎょう}は{何|なん}だと{思|おも}う？",
+          "kana": "かれのしょくぎょうはなんだとおもう？",
+          "en": "What do you think his job is?"
+        },
+        {
+          "ja": "{将来|しょうらい}の{職業|しょくぎょう}について、{先生|せんせい}と{相談|そうだん}しました。",
+          "kana": "しょうらいのしょくぎょうについて、せんせいとそうだんしました。",
+          "en": "I talked with my teacher about my future career."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{得|え}るために{続|つづ}けている{仕事|しごと}。",
+        "kana": "おかねをえるためにつづけているしごと。"
+      },
+      "notes": "More formal than 仕事; it is the word on forms (職業欄). 仕事 is the everyday word for work.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0287",
+      "word": "社員",
+      "kana": "しゃいん",
+      "meanings": [
+        "company employee"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}の{社員|しゃいん}は{全部|ぜんぶ}で{百人|ひゃくにん}ぐらいです。",
+          "kana": "このかいしゃのしゃいんはぜんぶでひゃくにんぐらいです。",
+          "en": "This company has about a hundred employees in total."
+        },
+        {
+          "ja": "あの{店|みせ}、{社員|しゃいん}よりアルバイトの{方|ほう}が{多|おお}いらしいよ。",
+          "kana": "あのみせ、しゃいんよりアルバイトのほうがおおいらしいよ。",
+          "en": "Apparently that store has more part-timers than regular employees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}に{雇|やと}われて{働|はたら}いている{人|ひと}。",
+        "kana": "かいしゃにやとわれてはたらいているひと。"
+      },
+      "collocations": [
+        "正社員",
+        "新入社員"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0288",
+      "word": "企業",
+      "kana": "きぎょう",
+      "meanings": [
+        "company",
+        "enterprise"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{大|おお}きい{企業|きぎょう}で{働|はたら}きたいとは{思|おも}わない。",
+          "kana": "おおきいきぎょうではたらきたいとはおもわない。",
+          "en": "I don't want to work for a big company."
+        },
+        {
+          "ja": "{日本|にほん}の{企業|きぎょう}で{働|はたら}くのが{私|わたし}の{夢|ゆめ}です。",
+          "kana": "にほんのきぎょうではたらくのがわたしのゆめです。",
+          "en": "Working at a Japanese company is my dream."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{利益|りえき}を{得|え}るために{商売|しょうばい}をしている{会社|かいしゃ}や{団体|だんたい}。",
+        "kana": "りえきをえるためにしょうばいをしているかいしゃやだんたい。"
+      },
+      "notes": "Formal, economic term for a company as an organization; 会社 is the everyday word.",
+      "collocations": [
+        "大企業",
+        "中小企業"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0289",
+      "word": "経営",
+      "kana": "けいえい",
+      "meanings": [
+        "management",
+        "running (a business)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{小|ちい}さなレストランを{経営|けいえい}しています。",
+          "kana": "ちちはちいさなレストランをけいえいしています。",
+          "en": "My father runs a small restaurant."
+        },
+        {
+          "ja": "{店|みせ}の{経営|けいえい}がうまくいかなくて、{兄|あに}は{悩|なや}んでる。",
+          "kana": "みせのけいえいがうまくいかなくて、あにはなやんでる。",
+          "en": "My brother is worried because running his shop isn't going well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{店|みせ}を{自分|じぶん}で{動|うご}かし、{続|つづ}けていくこと。",
+        "kana": "かいしゃやみせをじぶんでうごかし、つづけていくこと。"
+      },
+      "collocations": [
+        "会社を経営する",
+        "経営者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0290",
+      "word": "製品",
+      "kana": "せいひん",
+      "meanings": [
+        "product",
+        "manufactured goods"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}の{製品|せいひん}は{高|たか}いけど、{長|なが}く{使|つか}える。",
+          "kana": "このかいしゃのせいひんはたかいけど、ながくつかえる。",
+          "en": "This company's products are expensive, but they last a long time."
+        },
+        {
+          "ja": "この{工場|こうじょう}の{製品|せいひん}は{世界中|せかいじゅう}に{送|おく}られています。",
+          "kana": "このこうじょうのせいひんはせかいじゅうにおくられています。",
+          "en": "The products from this factory are shipped all over the world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{工場|こうじょう}などで{作|つく}られて、{売|う}られている{品物|しなもの}。",
+        "kana": "こうじょうなどでつくられて、うられているしなもの。"
+      },
+      "notes": "製品 is something manufactured; 商品 is anything sold as merchandise.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0291",
+      "word": "収入",
+      "kana": "しゅうにゅう",
+      "meanings": [
+        "income"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{去年|きょねん}より{収入|しゅうにゅう}が{少|すこ}し{増|ふ}えました。",
+          "kana": "きょねんよりしゅうにゅうがすこしふえました。",
+          "en": "My income went up a little compared with last year."
+        },
+        {
+          "ja": "{収入|しゅうにゅう}が{少|すく}ないから、{今|いま}は{車|くるま}を{買|か}えないな。",
+          "kana": "しゅうにゅうがすくないから、いまはくるまをかえないな。",
+          "en": "My income is low, so I can't buy a car right now."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いたり{品物|しなもの}を{売|う}ったりして{入|はい}ってくるお{金|かね}。",
+        "kana": "はたらいたりしなものをうったりしてはいってくるおかね。"
+      },
+      "collocations": [
+        "収入が増える",
+        "収入が減る"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0292",
+      "word": "費用",
+      "kana": "ひよう",
+      "meanings": [
+        "expense",
+        "cost"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{費用|ひよう}、{全部|ぜんぶ}でいくらだった？",
+          "kana": "ひっこしのひよう、ぜんぶでいくらだった？",
+          "en": "How much did the move cost in total?"
+        },
+        {
+          "ja": "{留学|りゅうがく}の{費用|ひよう}は、アルバイトをして{貯|た}めました。",
+          "kana": "りゅうがくのひようは、アルバイトをしてためました。",
+          "en": "I saved up the money for studying abroad by working part-time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることをするためにかかるお{金|かね}。",
+        "kana": "あることをするためにかかるおかね。"
+      },
+      "collocations": [
+        "費用がかかる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0293",
+      "word": "価格",
+      "kana": "かかく",
+      "meanings": [
+        "price"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{商品|しょうひん}の{価格|かかく}は{来月|らいげつ}から{変|か}わります。",
+          "kana": "このしょうひんのかかくはらいげつからかわります。",
+          "en": "The price of this product will change from next month."
+        },
+        {
+          "ja": "{同|おな}じ{物|もの}でも、{店|みせ}によって{価格|かかく}が{全然|ぜんぜん}{違|ちが}うんだね。",
+          "kana": "おなじものでも、みせによってかかくがぜんぜんちがうんだね。",
+          "en": "Even for the same item, the price is totally different depending on the store."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{売|う}ったり{買|か}ったりする{品物|しなもの}につけられた{値段|ねだん}。",
+        "kana": "うったりかったりするしなものにつけられたねだん。"
+      },
+      "notes": "Formal word used in business and news; 値段 is the everyday word for the price of a thing.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0294",
+      "word": "予算",
+      "kana": "よさん",
+      "meanings": [
+        "budget"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{予算|よさん}は{一人|ひとり}{五万円|ごまんえん}ぐらいかな。",
+          "kana": "りょこうのよさんはひとりごまんえんぐらいかな。",
+          "en": "The budget for the trip is around fifty thousand yen per person, I guess."
+        },
+        {
+          "ja": "{今年|ことし}のパーティーの{予算|よさん}は{十万円|じゅうまんえん}までです。",
+          "kana": "ことしのパーティーのよさんはじゅうまんえんまでです。",
+          "en": "This year's party budget is up to a hundred thousand yen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}もって{決|き}めておく、{使|つか}えるお{金|かね}の{金額|きんがく}。",
+        "kana": "まえもってきめておく、つかえるおかねのきんがく。"
+      },
+      "collocations": [
+        "予算を立てる",
+        "予算オーバー"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0295",
+      "word": "契約",
+      "kana": "けいやく",
+      "meanings": [
+        "contract"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}、{新|あたら}しいアパートの{契約|けいやく}をします。",
+          "kana": "らいしゅう、あたらしいアパートのけいやくをします。",
+          "en": "Next week I'm signing the contract for my new apartment."
+        },
+        {
+          "ja": "{契約|けいやく}の{内容|ないよう}、ちゃんと{読|よ}んだ？",
+          "kana": "けいやくのないよう、ちゃんとよんだ？",
+          "en": "Did you actually read the terms of the contract?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{互|たが}いが{守|まも}るべきことを{決|き}めて、{約束|やくそく}すること。",
+        "kana": "おたがいがまもるべきことをきめて、やくそくすること。"
+      },
+      "collocations": [
+        "契約を結ぶ",
+        "契約書"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0296",
+      "word": "販売",
+      "kana": "はんばい",
+      "meanings": [
+        "sales",
+        "selling"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "チケットは{明日|あした}の{朝|あさ}{十時|じゅうじ}から{販売|はんばい}だって。",
+          "kana": "チケットはあしたのあさじゅうじからはんばいだって。",
+          "en": "They say the tickets go on sale at ten tomorrow morning."
+        },
+        {
+          "ja": "この{商品|しょうひん}は{店|みせ}では{販売|はんばい}していません。",
+          "kana": "このしょうひんはみせでははんばいしていません。",
+          "en": "This product isn't sold in stores."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}などで、{品物|しなもの}をお{客|きゃく}さんに{売|う}ること。",
+        "kana": "みせなどで、しなものをおきゃくさんにうること。"
+      },
+      "collocations": [
+        "販売する",
+        "販売店"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0297",
+      "word": "生産",
+      "kana": "せいさん",
+      "meanings": [
+        "production"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "この{工場|こうじょう}では{一日|いちにち}に{車|くるま}を{千台|せんだい}{生産|せいさん}しています。",
+          "kana": "このこうじょうではいちにちにくるまをせんだいせいさんしています。",
+          "en": "This factory produces a thousand cars a day."
+        },
+        {
+          "ja": "この{辺|あた}りは{昔|むかし}から{米|こめ}の{生産|せいさん}が{盛|さか}んなんだ。",
+          "kana": "このあたりはむかしからこめのせいさんがさかんなんだ。",
+          "en": "This area has been big on rice production since way back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{売|う}るための{品物|しなもの}や{食|た}べ{物|もの}を{作|つく}り{出|だ}すこと。",
+        "kana": "うるためのしなものやたべものをつくりだすこと。"
+      },
+      "collocations": [
+        "大量生産",
+        "生産者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0298",
+      "word": "消費",
+      "kana": "しょうひ",
+      "meanings": [
+        "consumption"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{電気|でんき}の{消費|しょうひ}が{多|おお}すぎる{気|き}がする。",
+          "kana": "さいきん、でんきのしょうひがおおすぎるきがする。",
+          "en": "Lately I feel like we're using way too much electricity."
+        },
+        {
+          "ja": "{若|わか}い{人|ひと}の{消費|しょうひ}が{減|へ}っていると{新聞|しんぶん}に{書|か}いてありました。",
+          "kana": "わかいひとのしょうひがへっているとしんぶんにかいてありました。",
+          "en": "The newspaper said that spending by young people is falling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{品物|しなもの}、{電気|でんき}などを{使|つか}ってなくすこと。",
+        "kana": "おかねやしなもの、でんきなどをつかってなくすこと。"
+      },
+      "collocations": [
+        "消費税",
+        "消費者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0299",
+      "word": "利益",
+      "kana": "りえき",
+      "meanings": [
+        "profit",
+        "benefit"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}は{店|みせ}の{利益|りえき}が{去年|きょねん}の{二倍|にばい}になりました。",
+          "kana": "ことしはみせのりえきがきょねんのにばいになりました。",
+          "en": "This year the shop's profit doubled compared with last year."
+        },
+        {
+          "ja": "{安|やす}く{売|う}りすぎて、{利益|りえき}がほとんど{出|で}なかったんだ。",
+          "kana": "やすくうりすぎて、りえきがほとんどでなかったんだ。",
+          "en": "We sold it too cheap and barely made any profit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商売|しょうばい}で{得|え}たお{金|かね}から、{費用|ひよう}を{引|ひ}いて{残|のこ}ったお{金|かね}。",
+        "kana": "しょうばいでえたおかねから、ひようをひいてのこったおかね。"
+      },
+      "collocations": [
+        "利益が出る",
+        "利益を上げる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0300",
+      "word": "取引",
+      "kana": "とりひき",
+      "meanings": [
+        "transaction",
+        "business deal"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "あの{会社|かいしゃ}とは{十年|じゅうねん}{以上|いじょう}{取引|とりひき}があるんだ。",
+          "kana": "あのかいしゃとはじゅうねんいじょうとりひきがあるんだ。",
+          "en": "We've been doing business with that company for over ten years."
+        },
+        {
+          "ja": "{初|はじ}めての{取引|とりひき}なので、{契約書|けいやくしょ}をよく{確認|かくにん}しました。",
+          "kana": "はじめてのとりひきなので、けいやくしょをよくかくにんしました。",
+          "en": "Since it was our first deal, I checked the contract carefully."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{人|ひと}の{間|あいだ}で、{品物|しなもの}やお{金|かね}をやり{取|と}りすること。",
+        "kana": "かいしゃやひとのあいだで、しなものやおかねをやりとりすること。"
+      },
+      "altForms": [
+        "取り引き"
+      ],
+      "collocations": [
+        "取引先",
+        "取引をする"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0301",
+      "word": "商売",
+      "kana": "しょうばい",
+      "meanings": [
+        "business",
+        "trade"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{昔|むかし}、{魚|さかな}の{商売|しょうばい}をしていました。",
+          "kana": "そふはむかし、さかなのしょうばいをしていました。",
+          "en": "My grandfather used to be in the fish business."
+        },
+        {
+          "ja": "{駅前|えきまえ}で{商売|しょうばい}を{始|はじ}めるなら、{家賃|やちん}が{問題|もんだい}だね。",
+          "kana": "えきまえでしょうばいをはじめるなら、やちんがもんだいだね。",
+          "en": "If you're going to open a business in front of the station, the rent is the problem."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}を{売|う}ったり{買|か}ったりして、お{金|かね}をもうけること。",
+        "kana": "しなものをうったりかったりして、おかねをもうけること。"
+      },
+      "notes": "Everyday word for running a shop or trade, often small-scale; 事業 and ビジネス sound larger and more formal.",
+      "collocations": [
+        "商売をする",
+        "商売がうまい"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0302",
+      "word": "広告",
+      "kana": "こうこく",
+      "meanings": [
+        "advertisement"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}で{見|み}た{広告|こうこく}の{店|みせ}、{今度|こんど}{行|い}ってみない？",
+          "kana": "えきでみたこうこくのみせ、こんどいってみない？",
+          "en": "Want to try that place from the ad I saw at the station sometime?"
+        },
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}で{新|あたら}しい{映画|えいが}の{広告|こうこく}を{見|み}ました。",
+          "kana": "でんしゃのなかであたらしいえいがのこうこくをみました。",
+          "en": "I saw an ad for a new movie on the train."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}や{店|みせ}のことを、{多|おお}くの{人|ひと}に{知|し}らせるための{絵|え}や{言葉|ことば}。",
+        "kana": "しなものやみせのことを、おおくのひとにしらせるためのえやことば。"
+      },
+      "collocations": [
+        "広告を出す",
+        "新聞広告"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0303",
+      "word": "宣伝",
+      "kana": "せんでん",
+      "meanings": [
+        "publicity",
+        "promotion"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいお{菓子|かし}をテレビで{宣伝|せんでん}しています。",
+          "kana": "あたらしいおかしをテレビでせんでんしています。",
+          "en": "They're promoting the new snack on TV."
+        },
+        {
+          "ja": "あの{店|みせ}、{宣伝|せんでん}はすごいけど、{味|あじ}は{普通|ふつう}だったよ。",
+          "kana": "あのみせ、せんでんはすごいけど、あじはふつうだったよ。",
+          "en": "That place does a lot of promotion, but the food was just average."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}のよさなどを、{多|おお}くの{人|ひと}に{知|し}らせて{広|ひろ}げること。",
+        "kana": "しょうひんのよさなどを、おおくのひとにしらせてひろげること。"
+      },
+      "notes": "宣伝 is the act of promoting something (including by word of mouth); 広告 is the advertisement itself.",
+      "confusables": [
+        "v-n3-0302"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0304",
+      "word": "顧客",
+      "kana": "こきゃく",
+      "meanings": [
+        "customer",
+        "client"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{顧客|こきゃく}の{情報|じょうほう}は{絶対|ぜったい}に{外|そと}に{出|だ}しちゃだめだよ。",
+          "kana": "こきゃくのじょうほうはぜったいにそとにだしちゃだめだよ。",
+          "en": "You must never let customer information get outside."
+        },
+        {
+          "ja": "{顧客|こきゃく}からの{質問|しつもん}には、{一日|いちにち}{以内|いない}に{答|こた}えています。",
+          "kana": "こきゃくからのしつもんには、いちにちいないにこたえています。",
+          "en": "We answer customer questions within one day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}や{会社|かいしゃ}から{品物|しなもの}を{買|か}ってくれる{人|ひと}。{特|とく}に、よく{来|く}るお{客|きゃく}さんのこと。",
+        "kana": "みせやかいしゃからしなものをかってくれるひと。とくに、よくくるおきゃくさんのこと。"
+      },
+      "notes": "Business term for a (regular) customer or client; お客さん is the everyday word.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0305",
+      "word": "就職",
+      "kana": "しゅうしょく",
+      "meanings": [
+        "finding employment",
+        "getting a job"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{兄|あに}は{大学|だいがく}を{出|で}てすぐ{銀行|ぎんこう}に{就職|しゅうしょく}しました。",
+          "kana": "あにはだいがくをでてすぐぎんこうにしゅうしょくしました。",
+          "en": "My brother got a job at a bank right after university."
+        },
+        {
+          "ja": "{地元|じもと}で{就職|しゅうしょく}するか、{都会|とかい}に{出|で}るか{迷|まよ}ってる。",
+          "kana": "じもとでしゅうしょくするか、とかいにでるかまよってる。",
+          "en": "I can't decide whether to get a job back home or move to the city."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}を{出|で}た{人|ひと}などが、{会社|かいしゃ}に{入|はい}って{働|はたら}き{始|はじ}めること。",
+        "kana": "がっこうをでたひとなどが、かいしゃにはいってはたらきはじめること。"
+      },
+      "collocations": [
+        "就職活動",
+        "就職が決まる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0306",
+      "word": "退職",
+      "kana": "たいしょく",
+      "meanings": [
+        "retirement",
+        "resignation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{田中|たなか}さん、{来月|らいげつ}で{退職|たいしょく}するらしいよ。",
+          "kana": "たなかさん、らいげつでたいしょくするらしいよ。",
+          "en": "Apparently Tanaka-san is leaving the company at the end of next month."
+        },
+        {
+          "ja": "{父|ちち}は{六十歳|ろくじゅっさい}で{退職|たいしょく}して、{今|いま}は{畑|はたけ}をやっています。",
+          "kana": "ちちはろくじゅっさいでたいしょくして、いまははたけをやっています。",
+          "en": "My father retired at sixty and now works a vegetable field."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いていた{会社|かいしゃ}や{仕事|しごと}を{辞|や}めること。",
+        "kana": "はたらいていたかいしゃやしごとをやめること。"
+      },
+      "collocations": [
+        "退職する",
+        "定年退職"
+      ],
+      "confusables": [
+        "v-n3-0305"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0307",
+      "word": "採用",
+      "kana": "さいよう",
+      "meanings": [
+        "hiring",
+        "adoption (of a plan)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}は{新|あたら}しい{社員|しゃいん}を{五人|ごにん}{採用|さいよう}する{予定|よてい}です。",
+          "kana": "ことしはあたらしいしゃいんをごにんさいようするよていです。",
+          "en": "We plan to hire five new employees this year."
+        },
+        {
+          "ja": "{面接|めんせつ}を{受|う}けた{会社|かいしゃ}から、{採用|さいよう}の{連絡|れんらく}が{来|き}た！",
+          "kana": "めんせつをうけたかいしゃから、さいようのれんらくがきた！",
+          "en": "I got word from the company I interviewed with that they're hiring me!"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}を{選|えら}んで、{社員|しゃいん}として{雇|やと}うこと。{意見|いけん}や{計画|けいかく}を{取|と}り{入|い}れること。",
+        "kana": "ひとをえらんで、しゃいんとしてやとうこと。いけんやけいかくをとりいれること。"
+      },
+      "collocations": [
+        "採用試験",
+        "採用が決まる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0308",
+      "word": "面接",
+      "kana": "めんせつ",
+      "meanings": [
+        "interview"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}{面接|めんせつ}だから、{今日|きょう}は{早|はや}く{寝|ね}る。",
+          "kana": "あしためんせつだから、きょうははやくねる。",
+          "en": "I have an interview tomorrow, so I'm going to bed early tonight."
+        },
+        {
+          "ja": "{面接|めんせつ}では、{自分|じぶん}の{長所|ちょうしょ}を{聞|き}かれました。",
+          "kana": "めんせつでは、じぶんのちょうしょをきかれました。",
+          "en": "In the interview, I was asked about my strengths."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などに{入|はい}りたい{人|ひと}と{会|あ}って、{質問|しつもん}をして{話|はなし}を{聞|き}くこと。",
+        "kana": "かいしゃなどにはいりたいひととあって、しつもんをしてはなしをきくこと。"
+      },
+      "collocations": [
+        "面接を受ける",
+        "面接官"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0309",
+      "word": "給与",
+      "kana": "きゅうよ",
+      "meanings": [
+        "salary",
+        "pay"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{給与|きゅうよ}は{毎月|まいつき}{二十五日|にじゅうごにち}に{払|はら}われます。",
+          "kana": "きゅうよはまいつきにじゅうごにちにはらわれます。",
+          "en": "Salaries are paid on the 25th of every month."
+        },
+        {
+          "ja": "{給与|きゅうよ}はいいんだけど、{残業|ざんぎょう}が{多|おお}すぎるんだよね。",
+          "kana": "きゅうよはいいんだけど、ざんぎょうがおおすぎるんだよね。",
+          "en": "The pay is good, but there's just way too much overtime."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いた{人|ひと}に{会社|かいしゃ}が{払|はら}うお{金|かね}。{給料|きゅうりょう}。",
+        "kana": "はたらいたひとにかいしゃがはらうおかね。きゅうりょう。"
+      },
+      "notes": "Formal term used in contracts and HR documents; 給料 is the everyday word.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0310",
+      "word": "賃金",
+      "kana": "ちんぎん",
+      "meanings": [
+        "wages"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{賃金|ちんぎん}が{安|やす}すぎて、{人|ひと}が{集|あつ}まらないらしい。",
+          "kana": "ちんぎんがやすすぎて、ひとがあつまらないらしい。",
+          "en": "Apparently the wages are so low that they can't find anyone."
+        },
+        {
+          "ja": "この{国|くに}では{最近|さいきん}、{賃金|ちんぎん}が{少|すこ}しずつ{上|あ}がっています。",
+          "kana": "このくにではさいきん、ちんぎんがすこしずつあがっています。",
+          "en": "In this country, wages have been rising little by little lately."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いた{時間|じかん}や{仕事|しごと}に{対|たい}して{払|はら}われるお{金|かね}。",
+        "kana": "はたらいたじかんやしごとにたいしてはらわれるおかね。"
+      },
+      "notes": "Economic and legal term for pay for labor (最低賃金 minimum wage); 給料 is the everyday word.",
+      "collocations": [
+        "最低賃金",
+        "賃金が上がる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0311",
+      "word": "支出",
+      "kana": "ししゅつ",
+      "meanings": [
+        "expenditure",
+        "spending"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{今月|こんげつ}は{支出|ししゅつ}が{収入|しゅうにゅう}より{多|おお}くなってしまいました。",
+          "kana": "こんげつはししゅつがしゅうにゅうよりおおくなってしまいました。",
+          "en": "This month my spending ended up exceeding my income."
+        },
+        {
+          "ja": "{毎月|まいつき}の{支出|ししゅつ}を{書|か}き{出|だ}してみたら、びっくりしたよ。",
+          "kana": "まいつきのししゅつをかきだしてみたら、びっくりしたよ。",
+          "en": "When I wrote out my monthly expenses, I was shocked."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かのために、お{金|かね}を{払|はら}って{出|だ}すこと。また、そのお{金|かね}。",
+        "kana": "なにかのために、おかねをはらってだすこと。また、そのおかね。"
+      },
+      "confusables": [
+        "v-n3-0291"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0312",
+      "word": "値上がり",
+      "kana": "ねあがり",
+      "meanings": [
+        "price rise"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{野菜|やさい}の{値上|ねあ}がりがひどいね。",
+          "kana": "さいきん、やさいのねあがりがひどいね。",
+          "en": "Vegetable prices have really been going up lately, haven't they?"
+        },
+        {
+          "ja": "{来月|らいげつ}から{電車|でんしゃ}の{料金|りょうきん}が{値上|ねあ}がりするそうです。",
+          "kana": "らいげつからでんしゃのりょうきんがねあがりするそうです。",
+          "en": "I hear train fares are going up starting next month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}の{値段|ねだん}が{前|まえ}より{高|たか}くなること。",
+        "kana": "しなもののねだんがまえよりたかくなること。"
+      },
+      "notes": "値上がり is prices rising by themselves (market); 値上げ is a seller raising a price.",
+      "collocations": [
+        "値上がりする"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0313",
+      "word": "値下がり",
+      "kana": "ねさがり",
+      "meanings": [
+        "price fall"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいモデルが{出|で}て、{古|ふる}い{方|ほう}が{値下|ねさ}がりしました。",
+          "kana": "あたらしいモデルがでて、ふるいほうがねさがりしました。",
+          "en": "A new model came out, so the old one dropped in price."
+        },
+        {
+          "ja": "{野菜|やさい}、{先週|せんしゅう}より{値下|ねさ}がりしてる。{今|いま}のうちに{買|か}っとこう。",
+          "kana": "やさい、せんしゅうよりねさがりしてる。いまのうちにかっとこう。",
+          "en": "Vegetables are cheaper than last week. Let's stock up while we can."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}の{値段|ねだん}が{前|まえ}より{安|やす}くなること。",
+        "kana": "しなもののねだんがまえよりやすくなること。"
+      },
+      "confusables": [
+        "v-n3-0312"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0314",
+      "word": "損",
+      "kana": "そん",
+      "meanings": [
+        "loss",
+        "disadvantage"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{安|やす}いからって{買|か}いすぎると、かえって{損|そん}するよ。",
+          "kana": "やすいからってかいすぎると、かえってそんするよ。",
+          "en": "If you buy too much just because it's cheap, you'll end up losing out."
+        },
+        {
+          "ja": "{安|やす}い{時|とき}に{買|か}っておかなかったので、{少|すこ}し{損|そん}をしました。",
+          "kana": "やすいときにかっておかなかったので、すこしそんをしました。",
+          "en": "I didn't buy it when it was cheap, so I lost out a little."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{時間|じかん}を{使|つか}ったのに、{利益|りえき}がないこと。{得|とく}ではないこと。",
+        "kana": "おかねやじかんをつかったのに、りえきがないこと。とくではないこと。"
+      },
+      "notes": "Also a な-adjective (損な役). 損をする or 損する = to lose out; the opposite is 得.",
+      "collocations": [
+        "損をする",
+        "損得"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0315",
+      "word": "得",
+      "kana": "とく",
+      "meanings": [
+        "advantageous",
+        "profitable"
+      ],
+      "pos": "adj-na",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "まとめて{買|か}った{方|ほう}が{得|とく}ですよ。",
+          "kana": "まとめてかったほうがとくですよ。",
+          "en": "It's a better deal if you buy them together."
+        },
+        {
+          "ja": "この{店|みせ}、カードで{払|はら}った{方|ほう}が{得|とく}なんだって。",
+          "kana": "このみせ、カードではらったほうがとくなんだって。",
+          "en": "At this place, apparently you're better off paying by card."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{時間|じかん}を{無駄|むだ}にせず、{利益|りえき}があること。{損|そん}ではないこと。",
+        "kana": "おかねやじかんをむだにせず、りえきがあること。そんではないこと。"
+      },
+      "notes": "Also a noun: 得をする to gain, お得 good value. The opposite is 損.",
+      "confusables": [
+        "v-n3-0314"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0316",
+      "word": "景気",
+      "kana": "けいき",
+      "meanings": [
+        "economy",
+        "business conditions"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{景気|けいき}が{悪|わる}いから、ボーナスは{期待|きたい}できないな。",
+          "kana": "けいきがわるいから、ボーナスはきたいできないな。",
+          "en": "With the economy this bad, I can't expect a bonus."
+        },
+        {
+          "ja": "{景気|けいき}がよくなれば、{給料|きゅうりょう}も{上|あ}がるでしょう。",
+          "kana": "けいきがよくなれば、きゅうりょうもあがるでしょう。",
+          "en": "If the economy improves, salaries will go up too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{社会|しゃかい}で、{商売|しょうばい}やお{金|かね}の{動|うご}きがいいか{悪|わる}いかという{様子|ようす}。",
+        "kana": "くにやしゃかいで、しょうばいやおかねのうごきがいいかわるいかというようす。"
+      },
+      "collocations": [
+        "景気がいい",
+        "景気が悪い"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0317",
+      "word": "不景気",
+      "kana": "ふけいき",
+      "meanings": [
+        "recession",
+        "hard times"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{不景気|ふけいき}で、{駅前|えきまえ}の{店|みせ}が{次々|つぎつぎ}に{閉|し}まっています。",
+          "kana": "ふけいきで、えきまえのみせがつぎつぎにしまっています。",
+          "en": "Because of the recession, the shops in front of the station are closing one after another."
+        },
+        {
+          "ja": "{不景気|ふけいき}でボーナスが{出|で}なかったって、{友達|ともだち}が{言|い}ってた。",
+          "kana": "ふけいきでボーナスがでなかったって、ともだちがいってた。",
+          "en": "My friend said they didn't get a bonus because of the recession."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商売|しょうばい}がうまくいかず、{世|よ}の{中|なか}にお{金|かね}が{回|まわ}らない{状態|じょうたい}。",
+        "kana": "しょうばいがうまくいかず、よのなかにおかねがまわらないじょうたい。"
+      },
+      "confusables": [
+        "v-n3-0316"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0318",
+      "word": "勤務",
+      "kana": "きんむ",
+      "meanings": [
+        "work",
+        "duty (at a job)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}から{勤務|きんむ}{時間|じかん}が{変|か}わるんだって。",
+          "kana": "らいげつからきんむじかんがかわるんだって。",
+          "en": "I hear our working hours are changing from next month."
+        },
+        {
+          "ja": "{私|わたし}は{週|しゅう}に{三日|みっか}、{病院|びょういん}で{勤務|きんむ}しています。",
+          "kana": "わたしはしゅうにみっか、びょういんできんむしています。",
+          "en": "I work at a hospital three days a week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}められた{時間|じかん}に、{会社|かいしゃ}などで{仕事|しごと}をすること。",
+        "kana": "きめられたじかんに、かいしゃなどでしごとをすること。"
+      },
+      "collocations": [
+        "勤務時間",
+        "勤務先"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0319",
+      "word": "出勤",
+      "kana": "しゅっきん",
+      "meanings": [
+        "going to work",
+        "reporting for work"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{土曜日|どようび}も{午前中|ごぜんちゅう}だけ{出勤|しゅっきん}します。",
+          "kana": "どようびもごぜんちゅうだけしゅっきんします。",
+          "en": "I also go in to work on Saturday mornings only."
+        },
+        {
+          "ja": "{明日|あした}は{出勤|しゅっきん}が{早|はや}いから、{今夜|こんや}は{飲|の}みに{行|い}けない。",
+          "kana": "あしたはしゅっきんがはやいから、こんやはのみにいけない。",
+          "en": "I have to be at work early tomorrow, so I can't go out drinking tonight."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}をするために、{家|いえ}から{会社|かいしゃ}などへ{行|い}くこと。",
+        "kana": "しごとをするために、いえからかいしゃなどへいくこと。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0320",
+      "word": "通勤",
+      "kana": "つうきん",
+      "meanings": [
+        "commuting (to work)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{通勤|つうきん}に{片道|かたみち}{一時間|いちじかん}もかかるんだ。",
+          "kana": "つうきんにかたみちいちじかんもかかるんだ。",
+          "en": "My commute takes a whole hour each way."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{自転車|じてんしゃ}で{通勤|つうきん}しています。",
+          "kana": "まいあさ、じてんしゃでつうきんしています。",
+          "en": "I commute to work by bicycle every morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{家|いえ}と{会社|かいしゃ}などの{間|あいだ}を、{毎日|まいにち}{行|い}ったり{来|き}たりすること。",
+        "kana": "いえとかいしゃなどのあいだを、まいにちいったりきたりすること。"
+      },
+      "notes": "通勤 is the trip to and from work; 通学 is to school; 出勤 is showing up at work.",
+      "confusables": [
+        "v-n3-0319"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0321",
+      "word": "事務",
+      "kana": "じむ",
+      "meanings": [
+        "office work",
+        "clerical work"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{私|わたし}は{小|ちい}さな{会社|かいしゃ}で{事務|じむ}の{仕事|しごと}をしています。",
+          "kana": "わたしはちいさなかいしゃでじむのしごとをしています。",
+          "en": "I do office work at a small company."
+        },
+        {
+          "ja": "{事務|じむ}の{仕事|しごと}って、{思|おも}ったより{大変|たいへん}なんだね。",
+          "kana": "じむのしごとって、おもったよりたいへんなんだね。",
+          "en": "Office work is harder than I thought."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{書類|しょるい}を{作|つく}ったり{計算|けいさん}したりする{仕事|しごと}。",
+        "kana": "かいしゃなどで、しょるいをつくったりけいさんしたりするしごと。"
+      },
+      "collocations": [
+        "事務所",
+        "事務の仕事"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0322",
+      "word": "職員",
+      "kana": "しょくいん",
+      "meanings": [
+        "staff member",
+        "personnel"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{市役所|しやくしょ}の{職員|しょくいん}が{親切|しんせつ}に{教|おし}えてくれた。",
+          "kana": "しやくしょのしょくいんがしんせつにおしえてくれた。",
+          "en": "The city office staff kindly explained it to me."
+        },
+        {
+          "ja": "{図書館|としょかん}の{職員|しょくいん}に、{本|ほん}の{探|さが}し{方|かた}を{教|おし}えてもらいました。",
+          "kana": "としょかんのしょくいんに、ほんのさがしかたをおしえてもらいました。",
+          "en": "A library staff member showed me how to find the book."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}や{図書館|としょかん}、{病院|びょういん}などで{働|はたら}いている{人|ひと}。",
+        "kana": "がっこうやとしょかん、びょういんなどではたらいているひと。"
+      },
+      "notes": "Staff of a public body, school or organization (市の職員, 教職員); 社員 is used for companies.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0323",
+      "word": "担当",
+      "kana": "たんとう",
+      "meanings": [
+        "being in charge",
+        "person in charge"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{仕事|しごと}は{私|わたし}が{担当|たんとう}しています。",
+          "kana": "このしごとはわたしがたんとうしています。",
+          "en": "I'm in charge of this job."
+        },
+        {
+          "ja": "{新|あたら}しいお{客|きゃく}さんの{担当|たんとう}、{君|きみ}にお{願|ねが}いしてもいい？",
+          "kana": "あたらしいおきゃくさんのたんとう、きみにおねがいしてもいい？",
+          "en": "Could I put you in charge of the new client?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{仕事|しごと}を{自分|じぶん}の{仕事|しごと}として{引|ひ}き{受|う}けること。また、その{人|ひと}。",
+        "kana": "あるしごとをじぶんのしごととしてひきうけること。また、そのひと。"
+      },
+      "collocations": [
+        "担当者",
+        "〜を担当する"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0324",
+      "word": "作業",
+      "kana": "さぎょう",
+      "meanings": [
+        "work",
+        "operation",
+        "task"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "この{作業|さぎょう}、{一人|ひとり}でやると{三時間|さんじかん}はかかるよ。",
+          "kana": "このさぎょう、ひとりでやるとさんじかんはかかるよ。",
+          "en": "If you do this task alone, it'll take at least three hours."
+        },
+        {
+          "ja": "{倉庫|そうこ}での{作業|さぎょう}は、{朝|あさ}{九時|くじ}から{始|はじ}まります。",
+          "kana": "そうこでのさぎょうは、あさくじからはじまります。",
+          "en": "Work in the warehouse starts at nine in the morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}められた{仕事|しごと}を、{体|からだ}や{手|て}を{動|うご}かして{進|すす}めること。",
+        "kana": "きめられたしごとを、からだやてをうごかしてすすめること。"
+      },
+      "notes": "Hands-on, concrete work such as packing, repairs or data entry; 仕事 is work in general.",
+      "collocations": [
+        "作業する",
+        "作業服"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0325",
+      "word": "労働",
+      "kana": "ろうどう",
+      "meanings": [
+        "labor",
+        "work"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{時間|じかん}の{労働|ろうどう}は{体|からだ}によくありません。",
+          "kana": "ながいじかんのろうどうはからだによくありません。",
+          "en": "Long hours of labor are not good for your health."
+        },
+        {
+          "ja": "{一日|いちにち}{八時間|はちじかん}の{労働|ろうどう}って、{長|なが}いようで{短|みじか}いよね。",
+          "kana": "いちにちはちじかんのろうどうって、ながいようでみじかいよね。",
+          "en": "An eight-hour workday feels long but goes by fast, doesn't it?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}をもらうために、{体|からだ}や{頭|あたま}を{使|つか}って{働|はたら}くこと。",
+        "kana": "おかねをもらうために、からだやあたまをつかってはたらくこと。"
+      },
+      "collocations": [
+        "労働時間",
+        "労働者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0326",
+      "word": "交通費",
+      "kana": "こうつうひ",
+      "meanings": [
+        "transportation expenses",
+        "travel costs"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{交通費|こうつうひ}、{会社|かいしゃ}が{全部|ぜんぶ}{出|だ}してくれるんだ。",
+          "kana": "こうつうひ、かいしゃがぜんぶだしてくれるんだ。",
+          "en": "The company covers all my transportation costs."
+        },
+        {
+          "ja": "{面接|めんせつ}の{交通費|こうつうひ}は{自分|じぶん}で{払|はら}いました。",
+          "kana": "めんせつのこうつうひはじぶんではらいました。",
+          "en": "I paid my own travel expenses for the interview."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどに{乗|の}るためにかかるお{金|かね}。",
+        "kana": "でんしゃやバスなどにのるためにかかるおかね。"
+      },
+      "collocations": [
+        "交通費がかかる",
+        "交通費を出す"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0327",
+      "word": "事業",
+      "kana": "じぎょう",
+      "meanings": [
+        "business",
+        "enterprise",
+        "project"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{市|し}は{来年|らいねん}から{新|あたら}しい{事業|じぎょう}を{始|はじ}めます。",
+          "kana": "しはらいねんからあたらしいじぎょうをはじめます。",
+          "en": "The city will start a new project next year."
+        },
+        {
+          "ja": "{友達|ともだち}と{二人|ふたり}で、{小|ちい}さな{事業|じぎょう}を{始|はじ}めたんだ。",
+          "kana": "ともだちとふたりで、ちいさなじぎょうをはじめたんだ。",
+          "en": "A friend and I started a small business together."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{国|くに}などが、{目的|もくてき}を{持|も}って{続|つづ}けて{行|おこな}う{大|おお}きな{仕事|しごと}。",
+        "kana": "かいしゃやくになどが、もくてきをもってつづけておこなうおおきなしごと。"
+      },
+      "collocations": [
+        "事業を始める",
+        "事業を行う"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0328",
+      "word": "金額",
+      "kana": "きんがく",
+      "meanings": [
+        "amount of money",
+        "sum"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{思|おも}ったより{大|おお}きい{金額|きんがく}になっちゃった。",
+          "kana": "おもったよりおおきいきんがくになっちゃった。",
+          "en": "It turned out to be a bigger sum than I expected."
+        },
+        {
+          "ja": "{領収書|りょうしゅうしょ}の{金額|きんがく}が{間違|まちが}っていたので、{店|みせ}に{連絡|れんらく}しました。",
+          "kana": "りょうしゅうしょのきんがくがまちがっていたので、みせにれんらくしました。",
+          "en": "The amount on the receipt was wrong, so I contacted the store."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}がいくらあるかという{量|りょう}。",
+        "kana": "おかねがいくらあるかというりょう。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0329",
+      "word": "代金",
+      "kana": "だいきん",
+      "meanings": [
+        "price",
+        "payment (for goods)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{代金|だいきん}は{商品|しょうひん}が{届|とど}いてから{払|はら}ってください。",
+          "kana": "だいきんはしょうひんがとどいてからはらってください。",
+          "en": "Please pay for the goods after they arrive."
+        },
+        {
+          "ja": "{代金|だいきん}はもう{払|はら}ったから、あとは{届|とど}くのを{待|ま}つだけ。",
+          "kana": "だいきんはもうはらったから、あとはとどくのをまつだけ。",
+          "en": "I've already paid, so now I just have to wait for it to arrive."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{買|か}った{品物|しなもの}のために、{店|みせ}などに{払|はら}うお{金|かね}。",
+        "kana": "かったしなもののために、みせなどにはらうおかね。"
+      },
+      "notes": "Money paid in exchange for goods or a service (代金引換 cash on delivery).",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0330",
+      "word": "家賃",
+      "kana": "やちん",
+      "meanings": [
+        "rent (for housing)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}に{近|ちか}いと、やっぱり{家賃|やちん}が{高|たか}いね。",
+          "kana": "えきにちかいと、やっぱりやちんがたかいね。",
+          "en": "If it's close to the station, the rent is high, as you'd expect."
+        },
+        {
+          "ja": "{家賃|やちん}は{毎月|まいつき}{二十五日|にじゅうごにち}までに{払|はら}うことになっています。",
+          "kana": "やちんはまいつきにじゅうごにちまでにはらうことになっています。",
+          "en": "The rent is due by the twenty-fifth of each month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{部屋|へや}や{家|いえ}を{借|か}りている{人|ひと}が、{月|つき}ごとに{払|はら}うお{金|かね}。",
+        "kana": "へややいえをかりているひとが、つきごとにはらうおかね。"
+      },
+      "collocations": [
+        "家賃を払う",
+        "家賃が高い"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0331",
+      "word": "口座",
+      "kana": "こうざ",
+      "meanings": [
+        "(bank) account"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}で{新|あたら}しい{口座|こうざ}を{作|つく}りました。",
+          "kana": "ぎんこうであたらしいこうざをつくりました。",
+          "en": "I opened a new account at the bank."
+        },
+        {
+          "ja": "{給料|きゅうりょう}、どこの{銀行|ぎんこう}の{口座|こうざ}に{入|はい}ってる？",
+          "kana": "きゅうりょう、どこのぎんこうのこうざにはいってる？",
+          "en": "Which bank account does your salary go into?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}でお{金|かね}を{預|あず}けたり{引|ひ}き{出|だ}したりするために{作|つく}るもの。",
+        "kana": "ぎんこうでおかねをあずけたりひきだしたりするためにつくるもの。"
+      },
+      "collocations": [
+        "口座を開く",
+        "口座番号"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0332",
+      "word": "預金",
+      "kana": "よきん",
+      "meanings": [
+        "deposit",
+        "bank savings"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{預金|よきん}が{少|すこ}しずつ{減|へ}っていくのが{怖|こわ}い。",
+          "kana": "よきんがすこしずつへっていくのがこわい。",
+          "en": "It's scary watching my savings slowly shrink."
+        },
+        {
+          "ja": "{毎月|まいつき}{少|すこ}しずつ{預金|よきん}を{増|ふ}やしています。",
+          "kana": "まいつきすこしずつよきんをふやしています。",
+          "en": "I'm growing my savings little by little each month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}にお{金|かね}を{預|あず}けること。また、そのお{金|かね}。",
+        "kana": "ぎんこうにおかねをあずけること。また、そのおかね。"
+      },
+      "notes": "Money kept in a bank account; 貯金 is saving money in general, including a piggy bank.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0333",
+      "word": "節約",
+      "kana": "せつやく",
+      "meanings": [
+        "saving",
+        "economizing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{電気代|でんきだい}を{節約|せつやく}するために、エアコンを{消|け}しました。",
+          "kana": "でんきだいをせつやくするために、エアコンをけしました。",
+          "en": "I turned off the air conditioner to save on the electricity bill."
+        },
+        {
+          "ja": "{外食|がいしょく}を{減|へ}らして{節約|せつやく}してるのに、お{金|かね}が{全然|ぜんぜん}{貯|た}まらない。",
+          "kana": "がいしょくをへらしてせつやくしてるのに、おかねがぜんぜんたまらない。",
+          "en": "I'm eating out less to save money, but I still can't save anything."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{電気|でんき}などを、{無駄|むだ}に{使|つか}わないようにすること。",
+        "kana": "おかねやでんきなどを、むだにつかわないようにすること。"
+      },
+      "collocations": [
+        "節約する",
+        "時間の節約"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0334",
+      "word": "貯める",
+      "kana": "ためる",
+      "meanings": [
+        "to save up (money)",
+        "to accumulate"
+      ],
+      "pos": "v1",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}のために、{毎月|まいつき}{一万円|いちまんえん}ずつ{貯|た}めてる。",
+          "kana": "りょこうのために、まいつきいちまんえんずつためてる。",
+          "en": "I'm putting away ten thousand yen a month for a trip."
+        },
+        {
+          "ja": "{新|あたら}しいパソコンを{買|か}うために、お{金|かね}を{貯|た}めています。",
+          "kana": "あたらしいパソコンをかうために、おかねをためています。",
+          "en": "I'm saving up money to buy a new computer."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}などを{少|すこ}しずつ{集|あつ}めて、{多|おお}くしていくこと。",
+        "kana": "おかねなどをすこしずつあつめて、おおくしていくこと。"
+      },
+      "notes": "貯める for money; the spelling 溜める is used for water, stress or points piling up.",
+      "altForms": [
+        "溜める"
+      ],
+      "collocations": [
+        "お金を貯める"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0335",
+      "word": "稼ぐ",
+      "kana": "かせぐ",
+      "meanings": [
+        "to earn (money)"
+      ],
+      "pos": "v5",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{学生|がくせい}の{時|とき}はアルバイトで{学費|がくひ}を{稼|かせ}ぎました。",
+          "kana": "がくせいのときはアルバイトでがくひをかせぎました。",
+          "en": "When I was a student I earned my tuition by working part-time."
+        },
+        {
+          "ja": "{夏休|なつやす}みはバイトで{十万円|じゅうまんえん}{稼|かせ}ぐつもり。",
+          "kana": "なつやすみはバイトでじゅうまんえんかせぐつもり。",
+          "en": "I'm planning to earn a hundred thousand yen at my part-time job over summer break."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いてお{金|かね}を{手|て}に{入|い}れること。",
+        "kana": "はたらいておかねをてにいれること。"
+      },
+      "collocations": [
+        "お金を稼ぐ",
+        "生活費を稼ぐ"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0336",
+      "word": "雇う",
+      "kana": "やとう",
+      "meanings": [
+        "to hire",
+        "to employ"
+      ],
+      "pos": "v5",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{店|みせ}が{忙|いそが}しくなったから、{人|ひと}を{一人|ひとり}{雇|やと}うことにした。",
+          "kana": "みせがいそがしくなったから、ひとをひとりやとうことにした。",
+          "en": "The shop got busy, so I decided to hire someone."
+        },
+        {
+          "ja": "{忙|いそが}しい{時期|じき}だけ、アルバイトを{二人|ふたり}{雇|やと}いました。",
+          "kana": "いそがしいじきだけ、アルバイトをふたりやといました。",
+          "en": "We hired two part-timers just for the busy season."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{払|はら}って、{人|ひと}に{自分|じぶん}や{会社|かいしゃ}のために{働|はたら}いてもらうこと。",
+        "kana": "おかねをはらって、ひとにじぶんやかいしゃのためにはたらいてもらうこと。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0337",
+      "word": "失業",
+      "kana": "しつぎょう",
+      "meanings": [
+        "unemployment",
+        "losing one's job"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}がなくなって、{多|おお}くの{人|ひと}が{失業|しつぎょう}しました。",
+          "kana": "かいしゃがなくなって、おおくのひとがしつぎょうしました。",
+          "en": "The company closed down and many people lost their jobs."
+        },
+        {
+          "ja": "{失業|しつぎょう}してから、もう{三|さん}か{月|げつ}も{仕事|しごと}が{見|み}つからないんだ。",
+          "kana": "しつぎょうしてから、もうさんかげつもしごとがみつからないんだ。",
+          "en": "It's been three months since I lost my job and I still can't find work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}を{失|うしな}うこと。{働|はたら}きたいのに{仕事|しごと}がない{状態|じょうたい}。",
+        "kana": "しごとをうしなうこと。はたらきたいのにしごとがないじょうたい。"
+      },
+      "collocations": [
+        "失業する",
+        "失業者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0338",
+      "word": "求人",
+      "kana": "きゅうじん",
+      "meanings": [
+        "job offer",
+        "help wanted"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "コンビニの{前|まえ}に{求人|きゅうじん}の{紙|かみ}が{貼|は}ってあったよ。",
+          "kana": "コンビニのまえにきゅうじんのかみがはってあったよ。",
+          "en": "There was a help-wanted notice posted in front of the convenience store."
+        },
+        {
+          "ja": "{求人|きゅうじん}の{情報|じょうほう}は、{毎日|まいにち}インターネットで{調|しら}べています。",
+          "kana": "きゅうじんのじょうほうは、まいにちインターネットでしらべています。",
+          "en": "I check job listings online every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{店|みせ}が、{働|はたら}いてくれる{人|ひと}を{探|さが}すこと。また、その{知|し}らせ。",
+        "kana": "かいしゃやみせが、はたらいてくれるひとをさがすこと。また、そのしらせ。"
+      },
+      "collocations": [
+        "求人広告",
+        "求人を出す"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0339",
+      "word": "応募",
+      "kana": "おうぼ",
+      "meanings": [
+        "application",
+        "applying"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{求人|きゅうじん}を{見|み}て、すぐに{応募|おうぼ}しました。",
+          "kana": "きゅうじんをみて、すぐにおうぼしました。",
+          "en": "I saw the job listing and applied right away."
+        },
+        {
+          "ja": "{写真|しゃしん}のコンテストに{応募|おうぼ}してみたら、{二位|にい}になった！",
+          "kana": "しゃしんのコンテストにおうぼしてみたら、にいになった！",
+          "en": "I entered a photo contest and came in second!"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などの{募集|ぼしゅう}に{対|たい}して、{自分|じぶん}がやりたいと{申|もう}し{込|こ}むこと。",
+        "kana": "かいしゃなどのぼしゅうにたいして、じぶんがやりたいともうしこむこと。"
+      },
+      "collocations": [
+        "応募する",
+        "応募者"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0340",
+      "word": "募集",
+      "kana": "ぼしゅう",
+      "meanings": [
+        "recruitment",
+        "call for applicants"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "あの{店|みせ}、アルバイトを{募集|ぼしゅう}してるみたいだよ。",
+          "kana": "あのみせ、アルバイトをぼしゅうしてるみたいだよ。",
+          "en": "It looks like that shop is hiring part-timers."
+        },
+        {
+          "ja": "{市|し}のボランティアを{募集|ぼしゅう}していたので、{申|もう}し{込|こ}みました。",
+          "kana": "しのボランティアをぼしゅうしていたので、もうしこみました。",
+          "en": "The city was recruiting volunteers, so I signed up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{活動|かつどう}のために、{人|ひと}を{広|ひろ}く{探|さが}して{集|あつ}めること。",
+        "kana": "しごとやかつどうのために、ひとをひろくさがしてあつめること。"
+      },
+      "confusables": [
+        "v-n3-0339"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0341",
+      "word": "入社",
+      "kana": "にゅうしゃ",
+      "meanings": [
+        "joining a company"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{四月|しがつ}に{入社|にゅうしゃ}して、もう{半年|はんとし}になります。",
+          "kana": "しがつににゅうしゃして、もうはんとしになります。",
+          "en": "I joined the company in April, and it's already been half a year."
+        },
+        {
+          "ja": "{入社|にゅうしゃ}したばかりの{頃|ころ}は、{毎日|まいにち}{緊張|きんちょう}してたな。",
+          "kana": "にゅうしゃしたばかりのころは、まいにちきんちょうしてたな。",
+          "en": "When I'd just joined the company, I was nervous every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社員|しゃいん}として{会社|かいしゃ}に{入|はい}ること。",
+        "kana": "しゃいんとしてかいしゃにはいること。"
+      },
+      "confusables": [
+        "v-n3-0306"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0342",
+      "word": "資格",
+      "kana": "しかく",
+      "meanings": [
+        "qualification",
+        "license"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}に{役立|やくだ}つ{資格|しかく}を{何|なに}か{取|と}りたいな。",
+          "kana": "しごとにやくだつしかくをなにかとりたいな。",
+          "en": "I'd like to get some qualification that's useful for work."
+        },
+        {
+          "ja": "この{仕事|しごと}には{特別|とくべつ}な{資格|しかく}は{要|い}りません。",
+          "kana": "このしごとにはとくべつなしかくはいりません。",
+          "en": "This job doesn't require any special qualifications."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{試験|しけん}などを{受|う}けて、ある{仕事|しごと}をしてもいいと{認|みと}められること。",
+        "kana": "しけんなどをうけて、あるしごとをしてもいいとみとめられること。"
+      },
+      "collocations": [
+        "資格を取る",
+        "資格試験"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0343",
+      "word": "生活費",
+      "kana": "せいかつひ",
+      "meanings": [
+        "living expenses",
+        "cost of living"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}{暮|ぐ}らしの{生活費|せいかつひ}は{月|つき}{十万円|じゅうまんえん}ぐらいです。",
+          "kana": "ひとりぐらしのせいかつひはつきじゅうまんえんぐらいです。",
+          "en": "Living expenses for living alone are about a hundred thousand yen a month."
+        },
+        {
+          "ja": "{生活費|せいかつひ}が{足|た}りなくて、{親|おや}に{少|すこ}し{借|か}りちゃった。",
+          "kana": "せいかつひがたりなくて、おやにすこしかりちゃった。",
+          "en": "I didn't have enough for living expenses, so I ended up borrowing a bit from my parents."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{食|た}べ{物|もの}や{家賃|やちん}など、{毎日|まいにち}の{暮|く}らしにかかるお{金|かね}。",
+        "kana": "たべものややちんなど、まいにちのくらしにかかるおかね。"
+      },
+      "collocations": [
+        "生活費を稼ぐ",
+        "生活費がかかる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0344",
+      "word": "従業員",
+      "kana": "じゅうぎょういん",
+      "meanings": [
+        "employee",
+        "staff member"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "あの{店|みせ}、{従業員|じゅうぎょういん}がみんな{親切|しんせつ}なんだよね。",
+          "kana": "あのみせ、じゅうぎょういんがみんなしんせつなんだよね。",
+          "en": "The staff at that place are all so friendly."
+        },
+        {
+          "ja": "この{工場|こうじょう}には{従業員|じゅうぎょういん}が{三百人|さんびゃくにん}ほどいます。",
+          "kana": "このこうじょうにはじゅうぎょういんがさんびゃくにんほどいます。",
+          "en": "This factory has about three hundred employees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}や{工場|こうじょう}などで{雇|やと}われて{働|はたら}いている{人|ひと}たち。",
+        "kana": "みせやこうじょうなどでやとわれてはたらいているひとたち。"
+      },
+      "notes": "Anyone employed by a business, seen from the employer's or customer's side; 社員 is a regular company employee.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0345",
+      "word": "消費税",
+      "kana": "しょうひぜい",
+      "meanings": [
+        "consumption tax",
+        "sales tax"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{値段|ねだん}には{消費税|しょうひぜい}が{入|はい}っていますか。",
+          "kana": "このねだんにはしょうひぜいがはいっていますか。",
+          "en": "Does this price include the consumption tax?"
+        },
+        {
+          "ja": "{消費税|しょうひぜい}が{上|あ}がる{前|まえ}に、{冷蔵庫|れいぞうこ}{買|か}っちゃおうかな。",
+          "kana": "しょうひぜいがあがるまえに、れいぞうこかっちゃおうかな。",
+          "en": "Maybe I should go ahead and buy a fridge before the sales tax goes up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}を{買|か}うたびに、{値段|ねだん}に{加|くわ}えて{払|はら}う{税金|ぜいきん}。",
+        "kana": "しなものをかうたびに、ねだんにくわえてはらうぜいきん。"
+      },
+      "confusables": [
+        "v-n3-0298"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0346",
+      "word": "支店",
+      "kana": "してん",
+      "meanings": [
+        "branch (office or store)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "その{銀行|ぎんこう}なら、{駅|えき}の{中|なか}に{支店|してん}があるよ。",
+          "kana": "そのぎんこうなら、えきのなかにしてんがあるよ。",
+          "en": "If it's that bank, there's a branch inside the station."
+        },
+        {
+          "ja": "{来年|らいねん}の{春|はる}、{京都|きょうと}の{支店|してん}に{移|うつ}ることになりました。",
+          "kana": "らいねんのはる、きょうとのしてんにうつることになりました。",
+          "en": "Next spring I'll be transferring to the Kyoto branch."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{会社|かいしゃ}や{銀行|ぎんこう}が、いろいろな{町|まち}に{作|つく}っている{店|みせ}。",
+        "kana": "おおきなかいしゃやぎんこうが、いろいろなまちにつくっているみせ。"
+      },
+      "notes": "The opposite is 本店 (head office or main store).",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0347",
+      "word": "現場",
+      "kana": "げんば",
+      "meanings": [
+        "site",
+        "scene (of work or an event)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{社長|しゃちょう}は{毎朝|まいあさ}{工事|こうじ}の{現場|げんば}を{見|み}に{行|い}きます。",
+          "kana": "しゃちょうはまいあさこうじのげんばをみにいきます。",
+          "en": "The president goes to see the construction site every morning."
+        },
+        {
+          "ja": "{事故|じこ}の{現場|げんば}には、まだ{警察|けいさつ}の{人|ひと}がたくさんいたよ。",
+          "kana": "じこのげんばには、まだけいさつのひとがたくさんいたよ。",
+          "en": "There were still a lot of police at the scene of the accident."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{工事|こうじ}などの{仕事|しごと}が{行|おこな}われている{所|ところ}。また、{事故|じこ}などが{起|お}きた{所|ところ}。",
+        "kana": "こうじなどのしごとがおこなわれているところ。また、じこなどがおきたところ。"
+      },
+      "collocations": [
+        "工事現場",
+        "事故の現場"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0348",
+      "word": "商店",
+      "kana": "しょうてん",
+      "meanings": [
+        "shop",
+        "store"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "shopping",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}の{小|ちい}さな{商店|しょうてん}で{野菜|やさい}を{買|か}ってる。",
+          "kana": "えきまえのちいさなしょうてんでやさいをかってる。",
+          "en": "I buy my vegetables at a small shop in front of the station."
+        },
+        {
+          "ja": "{子供|こども}の{頃|ころ}、この{通|とお}りには{商店|しょうてん}がたくさん{並|なら}んでいました。",
+          "kana": "こどものころ、このとおりにはしょうてんがたくさんならんでいました。",
+          "en": "When I was a kid, this street was lined with shops."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}を{売|う}って{商売|しょうばい}をしている{店|みせ}。",
+        "kana": "しなものをうってしょうばいをしているみせ。"
+      },
+      "notes": "Somewhat formal or written word for a shop (商店街); 店 is the everyday word.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0349",
+      "word": "会費",
+      "kana": "かいひ",
+      "meanings": [
+        "membership fee",
+        "fee (for a party)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{飲|の}み{会|かい}の{会費|かいひ}は{一人|ひとり}{四千円|よんせんえん}です。",
+          "kana": "のみかいのかいひはひとりよんせんえんです。",
+          "en": "The fee for the drinking party is four thousand yen per person."
+        },
+        {
+          "ja": "テニスクラブの{会費|かいひ}、{月|つき}にいくら{払|はら}ってるの？",
+          "kana": "テニスクラブのかいひ、つきにいくらはらってるの？",
+          "en": "How much do you pay a month in fees for the tennis club?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{団体|だんたい}に{入|はい}っている{人|ひと}や、パーティーに{出|で}る{人|ひと}が{払|はら}うお{金|かね}。",
+        "kana": "だんたいにはいっているひとや、パーティーにでるひとがはらうおかね。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0350",
+      "word": "手数料",
+      "kana": "てすうりょう",
+      "meanings": [
+        "handling fee",
+        "commission"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{夜|よる}にお{金|かね}を{下|お}ろすと{手数料|てすうりょう}がかかるよ。",
+          "kana": "よるにおかねをおろすとてすうりょうがかかるよ。",
+          "en": "If you withdraw money at night, there's a fee."
+        },
+        {
+          "ja": "チケットの{予約|よやく}には{手数料|てすうりょう}が{三百円|さんびゃくえん}かかります。",
+          "kana": "チケットのよやくにはてすうりょうがさんびゃくえんかかります。",
+          "en": "There's a three-hundred-yen handling fee for reserving tickets."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などに{何|なに}かをしてもらうために、{別|べつ}に{払|はら}うお{金|かね}。",
+        "kana": "ぎんこうなどになにかをしてもらうために、べつにはらうおかね。"
+      },
+      "collocations": [
+        "手数料がかかる",
+        "振込手数料"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0351",
+      "word": "売り上げ",
+      "kana": "うりあげ",
+      "meanings": [
+        "sales",
+        "proceeds"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{今月|こんげつ}の{売|う}り{上|あ}げは{先月|せんげつ}より{少|すこ}し{下|さ}がりました。",
+          "kana": "こんげつのうりあげはせんげつよりすこしさがりました。",
+          "en": "This month's sales fell a little from last month."
+        },
+        {
+          "ja": "{雨|あめ}の{日|ひ}は、やっぱり{売|う}り{上|あ}げが{落|お}ちるね。",
+          "kana": "あめのひは、やっぱりうりあげがおちるね。",
+          "en": "Sales really do drop on rainy days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}などが{品物|しなもの}を{売|う}って{得|え}たお{金|かね}{全部|ぜんぶ}。",
+        "kana": "みせなどがしなものをうってえたおかねぜんぶ。"
+      },
+      "altForms": [
+        "売上",
+        "売上げ"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0352",
+      "word": "農業",
+      "kana": "のうぎょう",
+      "meanings": [
+        "agriculture",
+        "farming"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{田舎|いなか}に{帰|かえ}って{農業|のうぎょう}をやるのも{悪|わる}くないな。",
+          "kana": "いなかにかえってのうぎょうをやるのもわるくないな。",
+          "en": "Going back to the countryside and farming wouldn't be bad either."
+        },
+        {
+          "ja": "この{村|むら}では{若|わか}い{人|ひと}も{農業|のうぎょう}を{始|はじ}めています。",
+          "kana": "このむらではわかいひとものうぎょうをはじめています。",
+          "en": "In this village, young people are taking up farming too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{米|こめ}や{野菜|やさい}、{果物|くだもの}などを{育|そだ}てる{仕事|しごと}。",
+        "kana": "こめややさい、くだものなどをそだてるしごと。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0353",
+      "word": "労働者",
+      "kana": "ろうどうしゃ",
+      "meanings": [
+        "worker",
+        "laborer"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{労働者|ろうどうしゃ}の{権利|けんり}は{法律|ほうりつ}で{守|まも}られています。",
+          "kana": "ろうどうしゃのけんりはほうりつでまもられています。",
+          "en": "Workers' rights are protected by law."
+        },
+        {
+          "ja": "{昔|むかし}はこの{町|まち}の{工場|こうじょう}で、{多|おお}くの{労働者|ろうどうしゃ}が{働|はたら}いてたんだ。",
+          "kana": "むかしはこのまちのこうじょうで、おおくのろうどうしゃがはたらいてたんだ。",
+          "en": "A lot of workers used to work at the factories in this town."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{工場|こうじょう}などで{働|はたら}いて、{給料|きゅうりょう}をもらっている{人|ひと}。",
+        "kana": "かいしゃやこうじょうなどではたらいて、きゅうりょうをもらっているひと。"
+      },
+      "confusables": [
+        "v-n3-0325"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0354",
+      "word": "申し込み",
+      "kana": "もうしこみ",
+      "meanings": [
+        "application",
+        "sign-up"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "communication",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{申|もう}し{込|こ}みは{明日|あした}までだから、{忘|わす}れないでね。",
+          "kana": "もうしこみはあしたまでだから、わすれないでね。",
+          "en": "Sign-ups close tomorrow, so don't forget."
+        },
+        {
+          "ja": "{日本語|にほんご}コースの{申|もう}し{込|こ}みは、インターネットでできます。",
+          "kana": "にほんごコースのもうしこみは、インターネットでできます。",
+          "en": "You can apply for the Japanese course online."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入|はい}りたい、{買|か}いたいなどの{希望|きぼう}を、{相手|あいて}に{伝|つた}えて{頼|たの}むこと。",
+        "kana": "はいりたい、かいたいなどのきぼうを、あいてにつたえてたのむこと。"
+      },
+      "altForms": [
+        "申込み",
+        "申込"
+      ],
+      "collocations": [
+        "申し込みをする",
+        "申し込み用紙"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0355",
+      "word": "知識",
+      "kana": "ちしき",
+      "meanings": [
+        "knowledge"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{歴史|れきし}の{知識|ちしき}があると、{旅行|りょこう}がもっと{楽|たの}しくなります。",
+          "kana": "れきしのちしきがあると、りょこうがもっとたのしくなります。",
+          "en": "If you know some history, traveling becomes even more fun."
+        },
+        {
+          "ja": "{彼|かれ}、お{酒|さけ}の{知識|ちしき}がすごくて、{何|なん}でも{知|し}ってるんだよ。",
+          "kana": "かれ、おさけのちしきがすごくて、なんでもしってるんだよ。",
+          "en": "He knows a ton about sake; he knows everything about it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{勉強|べんきょう}したり{経験|けいけん}したりして{知|し}っていること。{頭|あたま}の{中|なか}にあること。",
+        "kana": "べんきょうしたりけいけんしたりしてしっていること。あたまのなかにあること。"
+      },
+      "collocations": [
+        "知識がある",
+        "知識を身につける"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0356",
+      "word": "能力",
+      "kana": "のうりょく",
+      "meanings": [
+        "ability",
+        "capability"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{人|ひと}の{話|はなし}を{聞|き}く{能力|のうりょく}がすごく{高|たか}い。",
+          "kana": "かのじょはひとのはなしをきくのうりょくがすごくたかい。",
+          "en": "She has a really strong ability to listen to people."
+        },
+        {
+          "ja": "この{仕事|しごと}には、{人|ひと}と{話|はな}す{能力|のうりょく}が{必要|ひつよう}です。",
+          "kana": "このしごとには、ひととはなすのうりょくがひつようです。",
+          "en": "This job requires the ability to talk with people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かをうまくすることができる{力|ちから}。",
+        "kana": "なにかをうまくすることができるちから。"
+      },
+      "collocations": [
+        "能力が高い",
+        "能力試験"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0357",
+      "word": "理解",
+      "kana": "りかい",
+      "meanings": [
+        "understanding",
+        "comprehension"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{先生|せんせい}の{説明|せつめい}で、やっと{理解|りかい}できました。",
+          "kana": "せんせいのせつめいで、やっとりかいできました。",
+          "en": "Thanks to the teacher's explanation, I finally understood."
+        },
+        {
+          "ja": "{説明書|せつめいしょ}を{三回|さんかい}{読|よ}んだけど、まだ{理解|りかい}できない。",
+          "kana": "せつめいしょをさんかいよんだけど、まだりかいできない。",
+          "en": "I've read the manual three times, but I still don't get it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{話|はなし}の{意味|いみ}や{内容|ないよう}が{正|ただ}しく{分|わ}かること。",
+        "kana": "はなしのいみやないようがただしくわかること。"
+      },
+      "collocations": [
+        "理解する",
+        "理解が深まる"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0358",
+      "word": "学習",
+      "kana": "がくしゅう",
+      "meanings": [
+        "learning",
+        "study"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{十分|じゅっぷん}でも{学習|がくしゅう}を{続|つづ}けるのが{大事|だいじ}だよ。",
+          "kana": "まいにちじゅっぷんでもがくしゅうをつづけるのがだいじだよ。",
+          "en": "Even ten minutes a day, keeping up your studies is what matters."
+        },
+        {
+          "ja": "この{学校|がっこう}では、{子供|こども}の{学習|がくしゅう}の{様子|ようす}を{毎月|まいつき}{親|おや}に{知|し}らせています。",
+          "kana": "このがっこうでは、こどものがくしゅうのようすをまいつきおやにしらせています。",
+          "en": "This school updates parents every month on how their children's learning is going."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{勉強|べんきょう}や{練習|れんしゅう}をして、{新|あたら}しい{知識|ちしき}や{技術|ぎじゅつ}を{覚|おぼ}えること。",
+        "kana": "べんきょうやれんしゅうをして、あたらしいちしきやぎじゅつをおぼえること。"
+      },
+      "notes": "Slightly formal or educational in tone (学習者 learner, 言語学習); 勉強 is the everyday word.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0359",
+      "word": "実験",
+      "kana": "じっけん",
+      "meanings": [
+        "experiment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "science",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}の{理科|りか}の{授業|じゅぎょう}で{実験|じっけん}をします。",
+          "kana": "あしたのりかのじゅぎょうでじっけんをします。",
+          "en": "We're doing an experiment in tomorrow's science class."
+        },
+        {
+          "ja": "{新|あたら}しい{薬|くすり}の{実験|じっけん}、うまくいったらしいよ。",
+          "kana": "あたらしいくすりのじっけん、うまくいったらしいよ。",
+          "en": "I hear the experiments on the new medicine went well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}えが{正|ただ}しいかどうかを{知|し}るために、やってみて{調|しら}べること。",
+        "kana": "かんがえがただしいかどうかをしるために、やってみてしらべること。"
+      },
+      "collocations": [
+        "実験をする",
+        "実験室"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0360",
+      "word": "調査",
+      "kana": "ちょうさ",
+      "meanings": [
+        "investigation",
+        "survey"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{調査|ちょうさ}によると、{若|わか}い{人|ひと}の{半分|はんぶん}は{新聞|しんぶん}を{読|よ}まないらしい。",
+          "kana": "ちょうさによると、わかいひとのはんぶんはしんぶんをよまないらしい。",
+          "en": "According to a survey, half of young people don't read newspapers."
+        },
+        {
+          "ja": "{会社|かいしゃ}は{新|あたら}しい{商品|しょうひん}について、お{客|きゃく}さんに{調査|ちょうさ}を{行|おこな}いました。",
+          "kana": "かいしゃはあたらしいしょうひんについて、おきゃくさんにちょうさをおこないました。",
+          "en": "The company surveyed customers about the new product."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることをよく{知|し}るために、{人|ひと}に{聞|き}いたり{見|み}たりして{調|しら}べること。",
+        "kana": "あることをよくしるために、ひとにきいたりみたりしてしらべること。"
+      },
+      "collocations": [
+        "調査する",
+        "調査によると"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0361",
+      "word": "進路",
+      "kana": "しんろ",
+      "meanings": [
+        "course (after graduation)",
+        "career path"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{高校|こうこう}{三年生|さんねんせい}は{進路|しんろ}について{先生|せんせい}と{相談|そうだん}します。",
+          "kana": "こうこうさんねんせいはしんろについてせんせいとそうだんします。",
+          "en": "Third-year high school students talk with their teachers about what to do next."
+        },
+        {
+          "ja": "{進路|しんろ}のことで、{昨日|きのう}{親|おや}とけんかしちゃった。",
+          "kana": "しんろのことで、きのうおやとけんかしちゃった。",
+          "en": "I ended up fighting with my parents yesterday about what to do after graduation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}を{卒業|そつぎょう}してから、どの{学校|がっこう}や{仕事|しごと}に{進|すす}むかという{道|みち}。",
+        "kana": "がっこうをそつぎょうしてから、どのがっこうやしごとにすすむかというみち。"
+      },
+      "notes": "Which school or job you go to next; also the path of a typhoon. 進路相談 = career counseling.",
+      "station": 27
+    },
+    {
+      "id": "v-n3-0362",
+      "word": "学問",
+      "kana": "がくもん",
+      "meanings": [
+        "learning",
+        "scholarship",
+        "academic study"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{学問|がくもん}に{終|お}わりはないって、{先生|せんせい}がよく{言|い}ってた。",
+          "kana": "がくもんにおわりはないって、せんせいがよくいってた。",
+          "en": "My teacher often said there's no end to learning."
+        },
+        {
+          "ja": "{大学|だいがく}は{学問|がくもん}をする{所|ところ}だと、{教授|きょうじゅ}が{言|い}っていました。",
+          "kana": "だいがくはがくもんをするところだと、きょうじゅがいっていました。",
+          "en": "The professor said a university is a place for scholarship."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世|よ}の{中|なか}のことを{深|ふか}く{研究|けんきゅう}して、{知識|ちしき}を{集|あつ}め、まとめたもの。",
+        "kana": "よのなかのことをふかくけんきゅうして、ちしきをあつめ、まとめたもの。"
+      },
+      "station": 27
+    },
+    {
+      "id": "v-n3-0363",
+      "word": "学部",
+      "kana": "がくぶ",
+      "meanings": [
+        "faculty",
+        "department (of a university)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "どの{学部|がくぶ}に{入|はい}るか、まだ{決|き}めていません。",
+          "kana": "どのがくぶにはいるか、まだきめていません。",
+          "en": "I haven't decided yet which faculty to enter."
+        },
+        {
+          "ja": "{同|おな}じ{大学|だいがく}でも、{学部|がくぶ}が{違|ちが}うとほとんど{会|あ}わないんだよね。",
+          "kana": "おなじだいがくでも、がくぶがちがうとほとんどあわないんだよね。",
+          "en": "Even at the same university, you hardly ever see people from other departments."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}の{中|なか}にある、{勉強|べんきょう}する{内容|ないよう}ごとの{大|おお}きなまとまり。",
+        "kana": "だいがくのなかにある、べんきょうするないようごとのおおきなまとまり。"
+      },
+      "collocations": [
+        "文学部",
+        "法学部"
+      ],
+      "station": 27
+    },
+    {
+      "id": "v-n3-0364",
+      "word": "学科",
+      "kana": "がっか",
+      "meanings": [
+        "department",
+        "course of study"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{学科|がっか}の{友達|ともだち}と{一緒|いっしょ}にレポートを{書|か}いた。",
+          "kana": "おなじがっかのともだちといっしょにレポートをかいた。",
+          "en": "I wrote the report together with a friend from my department."
+        },
+        {
+          "ja": "{日本語|にほんご}{学科|がっか}の{学生|がくせい}は{全部|ぜんぶ}で{八十人|はちじゅうにん}います。",
+          "kana": "にほんごがっかのがくせいはぜんぶではちじゅうにんいます。",
+          "en": "There are eighty students in the Japanese department in all."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}の{学部|がくぶ}の{中|なか}にある、さらに{専門|せんもん}ごとの{小|ちい}さなまとまり。",
+        "kana": "だいがくのがくぶのなかにある、さらにせんもんごとのちいさなまとまり。"
+      },
+      "notes": "A department within a 学部 (faculty), e.g. 工学部の機械学科.",
+      "confusables": [
+        "v-n3-0363"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0365",
+      "word": "単位",
+      "kana": "たんい",
+      "meanings": [
+        "credit (academic)",
+        "unit (of measurement)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "この{授業|じゅぎょう}を{休|やす}みすぎると{単位|たんい}がもらえません。",
+          "kana": "このじゅぎょうをやすみすぎるとたんいがもらえません。",
+          "en": "If you miss this class too often, you won't get the credit."
+        },
+        {
+          "ja": "あと{二|ふた}つ{単位|たんい}を{取|と}らないと、{卒業|そつぎょう}できないんだ。",
+          "kana": "あとふたつたんいをとらないと、そつぎょうできないんだ。",
+          "en": "If I don't get two more credits, I can't graduate."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}で{決|き}められた{勉強|べんきょう}を{終|お}わるともらえる{点|てん}。{長|なが}さなどを{測|はか}るもとになるもの。",
+        "kana": "だいがくできめられたべんきょうをおわるともらえるてん。ながさなどをはかるもとになるもの。"
+      },
+      "collocations": [
+        "単位を取る",
+        "単位を落とす"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0366",
+      "word": "論文",
+      "kana": "ろんぶん",
+      "meanings": [
+        "thesis",
+        "academic paper"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "{卒業|そつぎょう}{論文|ろんぶん}、まだ{半分|はんぶん}も{書|か}けてないんだ。",
+          "kana": "そつぎょうろんぶん、まだはんぶんもかけてないんだ。",
+          "en": "I haven't even written half of my graduation thesis yet."
+        },
+        {
+          "ja": "{教授|きょうじゅ}の{論文|ろんぶん}は{難|むずか}しくて、{一度|いちど}では{理解|りかい}できませんでした。",
+          "kana": "きょうじゅのろんぶんはむずかしくて、いちどではりかいできませんでした。",
+          "en": "The professor's paper was so difficult I couldn't understand it on the first read."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{研究|けんきゅう}の{結果|けっか}や{自分|じぶん}の{考|かんが}えを、はっきりまとめて{書|か}いたもの。",
+        "kana": "けんきゅうのけっかやじぶんのかんがえを、はっきりまとめてかいたもの。"
+      },
+      "collocations": [
+        "論文を書く",
+        "卒業論文"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0367",
+      "word": "講演",
+      "kana": "こうえん",
+      "meanings": [
+        "lecture",
+        "talk"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "communication",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{有名|ゆうめい}な{作家|さっか}の{講演|こうえん}を{聞|き}きに{行|い}きました。",
+          "kana": "ゆうめいなさっかのこうえんをききにいきました。",
+          "en": "I went to hear a talk by a famous author."
+        },
+        {
+          "ja": "{明日|あした}の{講演|こうえん}、{一緒|いっしょ}に{聞|き}きに{行|い}かない？",
+          "kana": "あしたのこうえん、いっしょにききにいかない？",
+          "en": "Want to go hear tomorrow's lecture together?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{多|おお}くの{人|ひと}の{前|まえ}で、あることについて{話|はなし}をすること。",
+        "kana": "おおくのひとのまえで、あることについてはなしをすること。"
+      },
+      "notes": "A talk given to an audience; 講義 is a university lecture; 公演 (same reading) is a performance.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0368",
+      "word": "教授",
+      "kana": "きょうじゅ",
+      "meanings": [
+        "professor"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{教授|きょうじゅ}の{話|はなし}が{長|なが}すぎて、{半分|はんぶん}{寝|ね}ちゃった。",
+          "kana": "きょうじゅのはなしがながすぎて、はんぶんねちゃった。",
+          "en": "The professor talked for so long I half fell asleep."
+        },
+        {
+          "ja": "{卒業|そつぎょう}してからも、{時々|ときどき}{教授|きょうじゅ}に{会|あ}いに{行|い}っています。",
+          "kana": "そつぎょうしてからも、ときどききょうじゅにあいにいっています。",
+          "en": "Even after graduating, I still go to see my professor now and then."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}で{学生|がくせい}に{教|おし}え、{研究|けんきゅう}をしている{先生|せんせい}。{大学|だいがく}の{先生|せんせい}の{中|なか}で{一番|いちばん}{上|うえ}。",
+        "kana": "だいがくでがくせいにおしえ、けんきゅうをしているせんせい。だいがくのせんせいのなかでいちばんうえ。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0369",
+      "word": "教師",
+      "kana": "きょうし",
+      "meanings": [
+        "teacher"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}は{三十年|さんじゅうねん}{小学校|しょうがっこう}の{教師|きょうし}をしていました。",
+          "kana": "はははさんじゅうねんしょうがっこうのきょうしをしていました。",
+          "en": "My mother was an elementary school teacher for thirty years."
+        },
+        {
+          "ja": "{教師|きょうし}になりたくて、{今|いま}{大学|だいがく}で{勉強|べんきょう}してるんだ。",
+          "kana": "きょうしになりたくて、いまだいがくでべんきょうしてるんだ。",
+          "en": "I want to become a teacher, so I'm studying for it at university now."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}などで、{生徒|せいと}や{学生|がくせい}に{勉強|べんきょう}を{教|おし}える{人|ひと}。{先生|せんせい}。",
+        "kana": "がっこうなどで、せいとやがくせいにべんきょうをおしえるひと。せんせい。"
+      },
+      "notes": "The occupation word, used on forms and about yourself; 先生 is the title you call a teacher.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0370",
+      "word": "講師",
+      "kana": "こうし",
+      "meanings": [
+        "lecturer",
+        "instructor"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{英会話|えいかいわ}の{講師|こうし}、{来月|らいげつ}から{変|か}わるらしいよ。",
+          "kana": "えいかいわのこうし、らいげつからかわるらしいよ。",
+          "en": "Apparently the English conversation instructor is changing from next month."
+        },
+        {
+          "ja": "{週|しゅう}に{二回|にかい}、{料理|りょうり}{教室|きょうしつ}で{講師|こうし}をしています。",
+          "kana": "しゅうににかい、りょうりきょうしつでこうしをしています。",
+          "en": "Twice a week I teach at a cooking school."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}や{教室|きょうしつ}などで{教|おし}えたり、{講演|こうえん}をしたりする{人|ひと}。",
+        "kana": "だいがくやきょうしつなどでおしえたり、こうえんをしたりするひと。"
+      },
+      "confusables": [
+        "v-n3-0368",
+        "v-n3-0369"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0371",
+      "word": "理科",
+      "kana": "りか",
+      "meanings": [
+        "science (school subject)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "science"
+      ],
+      "examples": [
+        {
+          "ja": "{子供|こども}の{頃|ころ}、{理科|りか}の{実験|じっけん}が{大好|だいす}きでした。",
+          "kana": "こどものころ、りかのじっけんがだいすきでした。",
+          "en": "When I was a kid, I loved science experiments."
+        },
+        {
+          "ja": "{理科|りか}の{宿題|しゅくだい}、{星|ほし}の{観察|かんさつ}だって。{今夜|こんや}{晴|は}れるかな。",
+          "kana": "りかのしゅくだい、ほしのかんさつだって。こんやはれるかな。",
+          "en": "Our science homework is to observe the stars. I wonder if it'll be clear tonight."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}の{科目|かもく}の{一|ひと}つ。{自然|しぜん}や{動物|どうぶつ}、{体|からだ}の{動|うご}きなどについて{学|まな}ぶ。",
+        "kana": "がっこうのかもくのひとつ。しぜんやどうぶつ、からだのうごきなどについてまなぶ。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0372",
+      "word": "社会科学",
+      "kana": "しゃかいかがく",
+      "meanings": [
+        "social science"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{兄|あに}は{大学|だいがく}で{社会科学|しゃかいかがく}を{勉強|べんきょう}してる。",
+          "kana": "あにはだいがくでしゃかいかがくをべんきょうしてる。",
+          "en": "My brother is studying social science at university."
+        },
+        {
+          "ja": "{社会科学|しゃかいかがく}の{授業|じゅぎょう}で、{選挙|せんきょ}の{仕組|しく}みについて{学|まな}びました。",
+          "kana": "しゃかいかがくのじゅぎょうで、せんきょのしくみについてまなびました。",
+          "en": "In social science class we learned how elections work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}や{経済|けいざい}、{法律|ほうりつ}など、{人間|にんげん}の{社会|しゃかい}について{研究|けんきゅう}する{学問|がくもん}。",
+        "kana": "せいじやけいざい、ほうりつなど、にんげんのしゃかいについてけんきゅうするがくもん。"
+      },
+      "notes": "Umbrella term for economics, sociology, politics and so on; contrasts with 自然科学 and 人文科学.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0373",
+      "word": "科目",
+      "kana": "かもく",
+      "meanings": [
+        "subject (of study)",
+        "course"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{一番|いちばん}{得意|とくい}な{科目|かもく}は{何|なん}ですか。",
+          "kana": "いちばんとくいなかもくはなんですか。",
+          "en": "What's the subject you're best at?"
+        },
+        {
+          "ja": "{好|す}きな{科目|かもく}は{音楽|おんがく}で、{嫌|きら}いなのは{数学|すうがく}だった。",
+          "kana": "すきなかもくはおんがくで、きらいなのはすうがくだった。",
+          "en": "My favorite subject was music, and the one I hated was math."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}で{勉強|べんきょう}する{内容|ないよう}の{一|ひと}つ{一|ひと}つ。{国語|こくご}、{数学|すうがく}、{英語|えいご}など。",
+        "kana": "がっこうでべんきょうするないようのひとつひとつ。こくご、すうがく、えいごなど。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0374",
+      "word": "点数",
+      "kana": "てんすう",
+      "meanings": [
+        "score",
+        "points"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "テストの{点数|てんすう}、{前|まえ}より{二十点|にじゅってん}も{上|あ}がった！",
+          "kana": "テストのてんすう、まえよりにじゅってんもあがった！",
+          "en": "My test score went up a whole twenty points from last time!"
+        },
+        {
+          "ja": "{点数|てんすう}が{悪|わる}くても、{次|つぎ}に{頑張|がんば}ればいいんですよ。",
+          "kana": "てんすうがわるくても、つぎにがんばればいいんですよ。",
+          "en": "Even if your score is bad, you just have to do better next time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テストや{試合|しあい}の{結果|けっか}を{点|てん}で{表|あらわ}したもの。",
+        "kana": "テストやしあいのけっかをてんであらわしたもの。"
+      },
+      "collocations": [
+        "点数が上がる",
+        "点数をつける"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0375",
+      "word": "満点",
+      "kana": "まんてん",
+      "meanings": [
+        "perfect score",
+        "full marks"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{漢字|かんじ}のテストで{初|はじ}めて{満点|まんてん}を{取|と}りました。",
+          "kana": "かんじのテストではじめてまんてんをとりました。",
+          "en": "I got a perfect score on a kanji test for the first time."
+        },
+        {
+          "ja": "{満点|まんてん}を{取|と}ったら、{母|はは}がケーキを{買|か}ってくれたんだ。",
+          "kana": "まんてんをとったら、ははがケーキをかってくれたんだ。",
+          "en": "When I got a perfect score, my mom bought me a cake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テストなどで{取|と}れる{一番|いちばん}{高|たか}い{点|てん}。{全部|ぜんぶ}{正解|せいかい}した{点数|てんすう}。",
+        "kana": "テストなどでとれるいちばんたかいてん。ぜんぶせいかいしたてんすう。"
+      },
+      "collocations": [
+        "満点を取る",
+        "百点満点"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0376",
+      "word": "学年",
+      "kana": "がくねん",
+      "meanings": [
+        "school year",
+        "grade"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{妹|いもうと}は{私|わたし}より{二|ふた}つ{下|した}の{学年|がくねん}なんだ。",
+          "kana": "いもうとはわたしよりふたつしたのがくねんなんだ。",
+          "en": "My sister is two grades below me."
+        },
+        {
+          "ja": "{新|あたら}しい{学年|がくねん}になって、クラスの{友達|ともだち}も{変|か}わりました。",
+          "kana": "あたらしいがくねんになって、クラスのともだちもかわりました。",
+          "en": "A new school year started, and my classmates changed too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}で、{入|はい}った{年|とし}ごとに{集|あつ}めた{生徒|せいと}のまとまり。また、{学校|がっこう}の{一年|いちねん}。",
+        "kana": "がっこうで、はいったとしごとにあつめたせいとのまとまり。また、がっこうのいちねん。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0377",
+      "word": "入試",
+      "kana": "にゅうし",
+      "meanings": [
+        "entrance exam"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{息子|むすこ}は{今|いま}、{高校|こうこう}の{入試|にゅうし}のために{勉強|べんきょう}しています。",
+          "kana": "むすこはいま、こうこうのにゅうしのためにべんきょうしています。",
+          "en": "My son is studying for his high school entrance exams right now."
+        },
+        {
+          "ja": "{入試|にゅうし}まであと{一|いっ}か{月|げつ}しかないのに、{全然|ぜんぜん}{勉強|べんきょう}が{進|すす}まない。",
+          "kana": "にゅうしまであといっかげつしかないのに、ぜんぜんべんきょうがすすまない。",
+          "en": "The entrance exam is only a month away and my studying isn't going anywhere."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}に{入|はい}りたい{人|ひと}を{選|えら}ぶために{行|おこな}う{試験|しけん}。",
+        "kana": "がっこうにはいりたいひとをえらぶためにおこなうしけん。"
+      },
+      "notes": "Short for 入学試験.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0378",
+      "word": "進学",
+      "kana": "しんがく",
+      "meanings": [
+        "going on to higher education"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{高校|こうこう}を{出|で}たら{進学|しんがく}する？それとも{働|はたら}く？",
+          "kana": "こうこうをでたらしんがくする？それともはたらく？",
+          "en": "After high school, are you going on to college? Or going to work?"
+        },
+        {
+          "ja": "{娘|むすめ}は{来年|らいねん}、{大学|だいがく}に{進学|しんがく}する{予定|よてい}です。",
+          "kana": "むすめはらいねん、だいがくにしんがくするよていです。",
+          "en": "My daughter plans to go on to university next year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}を{卒業|そつぎょう}して、さらに{上|うえ}の{学校|がっこう}に{入|はい}ること。",
+        "kana": "がっこうをそつぎょうして、さらにうえのがっこうにはいること。"
+      },
+      "collocations": [
+        "大学に進学する",
+        "進学率"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0379",
+      "word": "学費",
+      "kana": "がくひ",
+      "meanings": [
+        "tuition",
+        "school expenses"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "money",
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "{大学|だいがく}の{学費|がくひ}は{親|おや}に{出|だ}してもらいました。",
+          "kana": "だいがくのがくひはおやにだしてもらいました。",
+          "en": "My parents paid my university tuition for me."
+        },
+        {
+          "ja": "{学費|がくひ}を{稼|かせ}ぐために、{週|しゅう}{四日|よっか}バイトしてる。",
+          "kana": "がくひをかせぐために、しゅうよっかバイトしてる。",
+          "en": "I work four days a week to earn my tuition."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}で{勉強|べんきょう}するために{払|はら}うお{金|かね}。",
+        "kana": "がっこうでべんきょうするためにはらうおかね。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0380",
+      "word": "学力",
+      "kana": "がくりょく",
+      "meanings": [
+        "academic ability",
+        "scholastic achievement"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{少|すこ}しずつ{読|よ}めば、{学力|がくりょく}は{上|あ}がると{思|おも}う。",
+          "kana": "まいにちすこしずつよめば、がくりょくはあがるとおもう。",
+          "en": "If you read a little every day, I think your academic ability will go up."
+        },
+        {
+          "ja": "この{学校|がっこう}は{学力|がくりょく}の{高|たか}い{生徒|せいと}が{多|おお}いことで{知|し}られています。",
+          "kana": "このがっこうはがくりょくのたかいせいとがおおいことでしられています。",
+          "en": "This school is known for having many academically strong students."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{勉強|べんきょう}によって{得|え}た{知識|ちしき}や、{問題|もんだい}に{答|こた}える{力|ちから}。",
+        "kana": "べんきょうによってえたちしきや、もんだいにこたえるちから。"
+      },
+      "collocations": [
+        "学力が上がる",
+        "学力テスト"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0381",
+      "word": "才能",
+      "kana": "さいのう",
+      "meanings": [
+        "talent",
+        "gift"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}には{絵|え}の{才能|さいのう}があると{思|おも}います。",
+          "kana": "かれにはえのさいのうがあるとおもいます。",
+          "en": "I think he has a talent for drawing."
+        },
+        {
+          "ja": "{努力|どりょく}も{大事|だいじ}だけど、やっぱり{才能|さいのう}がある{人|ひと}は{違|ちが}うな。",
+          "kana": "どりょくもだいじだけど、やっぱりさいのうがあるひとはちがうな。",
+          "en": "Effort matters, but people with real talent are just different."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{生|う}まれつき{持|も}っている、{何|なに}かをうまくする{力|ちから}。",
+        "kana": "うまれつきもっている、なにかをうまくするちから。"
+      },
+      "collocations": [
+        "才能がある",
+        "才能を伸ばす"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0382",
+      "word": "工夫",
+      "kana": "くふう",
+      "meanings": [
+        "ingenuity",
+        "devising a way"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "{狭|せま}い{部屋|へや}でも、{工夫|くふう}すれば{広|ひろ}く{使|つか}えるよ。",
+          "kana": "せまいへやでも、くふうすればひろくつかえるよ。",
+          "en": "Even a small room can feel spacious if you get creative."
+        },
+        {
+          "ja": "{野菜|やさい}が{苦手|にがて}な{子供|こども}にも{食|た}べてもらえるように、{料理|りょうり}を{工夫|くふう}しました。",
+          "kana": "やさいがにがてなこどもにもたべてもらえるように、りょうりをくふうしました。",
+          "en": "I got creative with the cooking so kids who don't like vegetables would eat it too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いい{方法|ほうほう}がないか、いろいろ{考|かんが}えて{試|ため}すこと。また、その{方法|ほうほう}。",
+        "kana": "いいほうほうがないか、いろいろかんがえてためすこと。また、そのほうほう。"
+      },
+      "notes": "Finding a clever way to do something within limits; there is no single English equivalent.",
+      "collocations": [
+        "工夫する",
+        "工夫をこらす"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0383",
+      "word": "暗記",
+      "kana": "あんき",
+      "meanings": [
+        "memorization",
+        "learning by heart"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{単語|たんご}を{暗記|あんき}するのは{苦手|にがて}です。",
+          "kana": "たんごをあんきするのはにがてです。",
+          "en": "I'm bad at memorizing vocabulary."
+        },
+        {
+          "ja": "{明日|あした}までに{漢字|かんじ}を{五十|ごじゅう}も{暗記|あんき}しなきゃいけないんだ。",
+          "kana": "あしたまでにかんじをごじゅうもあんきしなきゃいけないんだ。",
+          "en": "I have to memorize fifty kanji by tomorrow."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本|ほん}などを{見|み}ないで{言|い}えるように、{全部|ぜんぶ}{覚|おぼ}えること。",
+        "kana": "ほんなどをみないでいえるように、ぜんぶおぼえること。"
+      },
+      "collocations": [
+        "暗記する",
+        "丸暗記"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0384",
+      "word": "道徳",
+      "kana": "どうとく",
+      "meanings": [
+        "morals",
+        "ethics (school subject)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{小学校|しょうがっこう}の{道徳|どうとく}の{授業|じゅぎょう}、{今|いま}でも{覚|おぼ}えてる。",
+          "kana": "しょうがっこうのどうとくのじゅぎょう、いまでもおぼえてる。",
+          "en": "I still remember the ethics classes from elementary school."
+        },
+        {
+          "ja": "{人|ひと}に{親切|しんせつ}にすることは、{道徳|どうとく}の{基本|きほん}だと{思|おも}います。",
+          "kana": "ひとにしんせつにすることは、どうとくのきほんだとおもいます。",
+          "en": "I think being kind to others is the foundation of morality."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}として{守|まも}るべき{正|ただ}しい{行|おこな}い。また、それを{学|まな}ぶ{学校|がっこう}の{科目|かもく}。",
+        "kana": "ひととしてまもるべきただしいおこない。また、それをまなぶがっこうのかもく。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0385",
+      "word": "知恵",
+      "kana": "ちえ",
+      "meanings": [
+        "wisdom",
+        "good idea"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "おばあちゃんの{知恵|ちえ}には、いつも{助|たす}けられています。",
+          "kana": "おばあちゃんのちえには、いつもたすけられています。",
+          "en": "My grandmother's wisdom is always a help to me."
+        },
+        {
+          "ja": "{困|こま}った{時|とき}は、みんなで{知恵|ちえ}を{出|だ}し{合|あ}えばいいんだよ。",
+          "kana": "こまったときは、みんなでちえをだしあえばいいんだよ。",
+          "en": "When you're stuck, everyone should just pool their ideas."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{困|こま}った{場合|ばあい}などに、どうすればいいかを{正|ただ}しく{考|かんが}える{力|ちから}。",
+        "kana": "こまったばあいなどに、どうすればいいかをただしくかんがえるちから。"
+      },
+      "notes": "Practical wisdom; 知識 is factual knowledge. 知恵を貸す = to help someone think something through.",
+      "confusables": [
+        "v-n3-0355"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0386",
+      "word": "実力",
+      "kana": "じつりょく",
+      "meanings": [
+        "real ability",
+        "actual skill"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{若|わか}いけど、{実力|じつりょく}はチームで{一番|いちばん}だ。",
+          "kana": "かれはわかいけど、じつりょくはチームでいちばんだ。",
+          "en": "He's young, but in terms of real ability he's the best on the team."
+        },
+        {
+          "ja": "{試験|しけん}の{結果|けっか}より、{実力|じつりょく}がついたことの{方|ほう}が{大切|たいせつ}です。",
+          "kana": "しけんのけっかより、じつりょくがついたことのほうがたいせつです。",
+          "en": "More than the exam result, what matters is that you've gained real ability."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{人|ひと}が{自分|じぶん}の{中|なか}に{確|たし}かに{持|も}っている{力|ちから}。",
+        "kana": "そのひとがじぶんのなかにたしかにもっているちから。"
+      },
+      "collocations": [
+        "実力がある",
+        "実力を発揮する"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0387",
+      "word": "体験",
+      "kana": "たいけん",
+      "meanings": [
+        "(personal) experience"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "hobbies"
+      ],
+      "examples": [
+        {
+          "ja": "{京都|きょうと}で{着物|きもの}を{着|き}る{体験|たいけん}をしました。",
+          "kana": "きょうとできものをきるたいけんをしました。",
+          "en": "In Kyoto I tried on a kimono as an experience."
+        },
+        {
+          "ja": "{地震|じしん}を{体験|たいけん}したことがないから、{怖|こわ}さが{分|わ}からないんだ。",
+          "kana": "じしんをたいけんしたことがないから、こわさがわからないんだ。",
+          "en": "I've never experienced an earthquake, so I don't really know how scary it is."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{体|からだ}で、あることをやったり{感|かん}じたりすること。また、そのこと。",
+        "kana": "じぶんのからだで、あることをやったりかんじたりすること。また、そのこと。"
+      },
+      "notes": "Something you personally go through, often one-off (体験教室); 経験 is accumulated experience.",
+      "collocations": [
+        "体験する",
+        "体験談"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0388",
+      "word": "訓練",
+      "kana": "くんれん",
+      "meanings": [
+        "training",
+        "drill"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "study",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}、{会社|かいしゃ}で{火事|かじ}の{訓練|くんれん}があるんだって。",
+          "kana": "らいしゅう、かいしゃでかじのくんれんがあるんだって。",
+          "en": "I hear there's a fire drill at the office next week."
+        },
+        {
+          "ja": "この{犬|いぬ}は{目|め}の{見|み}えない{人|ひと}を{助|たす}けるための{訓練|くんれん}を{受|う}けています。",
+          "kana": "このいぬはめのみえないひとをたすけるためのくんれんをうけています。",
+          "en": "This dog is being trained to help people who can't see."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることができるようになるために、{繰|く}り{返|かえ}し{練習|れんしゅう}すること。",
+        "kana": "あることができるようになるために、くりかえしれんしゅうすること。"
+      },
+      "collocations": [
+        "訓練を受ける",
+        "避難訓練"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0389",
+      "word": "物理",
+      "kana": "ぶつり",
+      "meanings": [
+        "physics"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "science",
+        "school"
+      ],
+      "examples": [
+        {
+          "ja": "{高校|こうこう}の{時|とき}、{物理|ぶつり}が{一番|いちばん}{苦手|にがて}でした。",
+          "kana": "こうこうのとき、ぶつりがいちばんにがてでした。",
+          "en": "In high school, physics was my worst subject."
+        },
+        {
+          "ja": "{物理|ぶつり}の{先生|せんせい}の{説明|せつめい}、{分|わ}かりやすくて{好|す}きだったな。",
+          "kana": "ぶつりのせんせいのせつめい、わかりやすくてすきだったな。",
+          "en": "I liked my physics teacher; the explanations were easy to follow."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{光|ひかり}や{熱|ねつ}、{電気|でんき}、{力|ちから}などの{自然|しぜん}の{動|うご}きについて{研究|けんきゅう}する{学問|がくもん}。",
+        "kana": "ひかりやねつ、でんき、ちからなどのしぜんのうごきについてけんきゅうするがくもん。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0390",
+      "word": "優秀",
+      "kana": "ゆうしゅう",
+      "meanings": [
+        "excellent",
+        "outstanding"
+      ],
+      "pos": "adj-na",
+      "jlpt": 3,
+      "tags": [
+        "states",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しく{入|はい}った{人|ひと}、すごく{優秀|ゆうしゅう}らしいよ。",
+          "kana": "あたらしくはいったひと、すごくゆうしゅうらしいよ。",
+          "en": "I hear the new person who joined is really outstanding."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{大学|だいがく}で{一番|いちばん}{優秀|ゆうしゅう}な{学生|がくせい}でした。",
+          "kana": "かのじょはだいがくでいちばんゆうしゅうながくせいでした。",
+          "en": "She was the most outstanding student at the university."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかの{人|ひと}と{比|くら}べて、{頭|あたま}や{力|ちから}が{特|とく}にすぐれていること。",
+        "kana": "ほかのひととくらべて、あたまやちからがとくにすぐれていること。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0391",
+      "word": "事件",
+      "kana": "じけん",
+      "meanings": [
+        "incident",
+        "case",
+        "affair"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{昨日|きのう}、{近所|きんじょ}で{事件|じけん}があったそうです。",
+          "kana": "きのう、きんじょでじけんがあったそうです。",
+          "en": "I hear there was an incident in the neighborhood yesterday."
+        },
+        {
+          "ja": "あの{事件|じけん}の{犯人|はんにん}、やっと{捕|つか}まったんだって。",
+          "kana": "あのじけんのはんにん、やっとつかまったんだって。",
+          "en": "I hear they finally caught the culprit in that case."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{泥棒|どろぼう}や{犯罪|はんざい}など、{世|よ}の{中|なか}で{起|お}きる{悪|わる}いこと。",
+        "kana": "どろぼうやはんざいなど、よのなかでおきるわるいこと。"
+      },
+      "notes": "A deliberate, often criminal incident; 事故 is an accident.",
+      "collocations": [
+        "事件が起きる",
+        "事件を解決する"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0392",
+      "word": "権利",
+      "kana": "けんり",
+      "meanings": [
+        "right (entitlement)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{休|やす}みを{取|と}るのは{働|はたら}く{人|ひと}の{権利|けんり}だよ。",
+          "kana": "やすみをとるのははたらくひとのけんりだよ。",
+          "en": "Taking time off is a worker's right."
+        },
+        {
+          "ja": "{十八歳|じゅうはっさい}になると、{選挙|せんきょ}で{投票|とうひょう}する{権利|けんり}がもらえます。",
+          "kana": "じゅうはっさいになると、せんきょでとうひょうするけんりがもらえます。",
+          "en": "When you turn eighteen, you get the right to vote in elections."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることを{自由|じゆう}にしてもいいと、{法律|ほうりつ}などで{認|みと}められていること。",
+        "kana": "あることをじゆうにしてもいいと、ほうりつなどでみとめられていること。"
+      },
+      "collocations": [
+        "権利がある",
+        "権利を守る"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0393",
+      "word": "義務",
+      "kana": "ぎむ",
+      "meanings": [
+        "duty",
+        "obligation"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{税金|ぜいきん}を{払|はら}うのは{国民|こくみん}の{義務|ぎむ}です。",
+          "kana": "ぜいきんをはらうのはこくみんのぎむです。",
+          "en": "Paying taxes is a citizen's duty."
+        },
+        {
+          "ja": "{子供|こども}を{学校|がっこう}に{行|い}かせるのは、{親|おや}の{義務|ぎむ}なんだよ。",
+          "kana": "こどもをがっこうにいかせるのは、おやのぎむなんだよ。",
+          "en": "Sending your kids to school is a parent's duty, you know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{約束|やくそく}によって、{必|かなら}ずしなければならないこと。",
+        "kana": "ほうりつややくそくによって、かならずしなければならないこと。"
+      },
+      "collocations": [
+        "義務教育",
+        "義務がある"
+      ],
+      "confusables": [
+        "v-n3-0392"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0394",
+      "word": "制度",
+      "kana": "せいど",
+      "meanings": [
+        "system",
+        "institution"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}に{家|いえ}で{働|はたら}ける{制度|せいど}ができたんだ。",
+          "kana": "かいしゃにいえではたらけるせいどができたんだ。",
+          "en": "My company introduced a system that lets us work from home."
+        },
+        {
+          "ja": "{日本|にほん}の{年金|ねんきん}{制度|せいど}について、{授業|じゅぎょう}で{調|しら}べました。",
+          "kana": "にほんのねんきんせいどについて、じゅぎょうでしらべました。",
+          "en": "We researched Japan's pension system in class."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{会社|かいしゃ}などが{法律|ほうりつ}や{規則|きそく}で{決|き}めた、{社会|しゃかい}のやり{方|かた}。",
+        "kana": "くにやかいしゃなどがほうりつやきそくできめた、しゃかいのやりかた。"
+      },
+      "collocations": [
+        "制度を作る",
+        "教育制度"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0395",
+      "word": "禁止",
+      "kana": "きんし",
+      "meanings": [
+        "prohibition",
+        "ban"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{公園|こうえん}では{花火|はなび}が{禁止|きんし}されています。",
+          "kana": "このこうえんでははなびがきんしされています。",
+          "en": "Fireworks are prohibited in this park."
+        },
+        {
+          "ja": "ここ、{撮影|さつえい}{禁止|きんし}だって。カメラしまった{方|ほう}がいいよ。",
+          "kana": "ここ、さつえいきんしだって。カメラしまったほうがいいよ。",
+          "en": "Photography isn't allowed here. You'd better put your camera away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることをしてはいけないと{決|き}めて、{止|と}めること。",
+        "kana": "あることをしてはいけないときめて、とめること。"
+      },
+      "collocations": [
+        "禁止する",
+        "駐車禁止"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0396",
+      "word": "許可",
+      "kana": "きょか",
+      "meanings": [
+        "permission",
+        "authorization"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}の{中|なか}で{写真|しゃしん}{撮|と}るなら、{許可|きょか}をもらった{方|ほう}がいいよ。",
+          "kana": "みせのなかでしゃしんとるなら、きょかをもらったほうがいいよ。",
+          "en": "If you're going to take photos inside the shop, you'd better get permission."
+        },
+        {
+          "ja": "{先生|せんせい}の{許可|きょか}をもらって、{早|はや}く{帰|かえ}りました。",
+          "kana": "せんせいのきょかをもらって、はやくかえりました。",
+          "en": "I got the teacher's permission and went home early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることをしてもいいと{認|みと}めること。",
+        "kana": "あることをしてもいいとみとめること。"
+      },
+      "collocations": [
+        "許可を取る",
+        "許可が出る"
+      ],
+      "confusables": [
+        "v-n3-0395"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0397",
+      "word": "選挙",
+      "kana": "せんきょ",
+      "meanings": [
+        "election"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}の{選挙|せんきょ}には{必|かなら}ず{行|い}くつもりです。",
+          "kana": "らいげつのせんきょにはかならずいくつもりです。",
+          "en": "I definitely intend to go vote in next month's election."
+        },
+        {
+          "ja": "{今度|こんど}の{選挙|せんきょ}、{誰|だれ}に{入|い}れるかもう{決|き}めた？",
+          "kana": "こんどのせんきょ、だれにいれるかもうきめた？",
+          "en": "Have you decided who to vote for in the upcoming election?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{町|まち}の{代表|だいひょう}を、みんなの{投票|とうひょう}で{選|えら}ぶこと。",
+        "kana": "くにやまちのだいひょうを、みんなのとうひょうでえらぶこと。"
+      },
+      "collocations": [
+        "選挙に出る",
+        "選挙に行く"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0398",
+      "word": "投票",
+      "kana": "とうひょう",
+      "meanings": [
+        "voting",
+        "vote"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{投票|とうひょう}、{朝|あさ}{早|はや}く{行|い}ったら{全然|ぜんぜん}{並|なら}ばなかった。",
+          "kana": "とうひょう、あさはやくいったらぜんぜんならばなかった。",
+          "en": "I went to vote early in the morning and didn't have to line up at all."
+        },
+        {
+          "ja": "{投票|とうひょう}は{午後|ごご}{八時|はちじ}まで{受|う}け{付|つ}けています。",
+          "kana": "とうひょうはごごはちじまでうけつけています。",
+          "en": "Voting is accepted until eight in the evening."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}などで、{選|えら}びたい{人|ひと}の{名前|なまえ}を{紙|かみ}に{書|か}いて{出|だ}すこと。",
+        "kana": "せんきょなどで、えらびたいひとのなまえをかみにかいてだすこと。"
+      },
+      "collocations": [
+        "投票する",
+        "投票所"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0399",
+      "word": "政党",
+      "kana": "せいとう",
+      "meanings": [
+        "political party"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "どの{政党|せいとう}を{支持|しじ}するか、まだ{決|き}めていません。",
+          "kana": "どのせいとうをしじするか、まだきめていません。",
+          "en": "I haven't decided yet which party to support."
+        },
+        {
+          "ja": "{政党|せいとう}の{名前|なまえ}は{知|し}ってても、{考|かんが}え{方|かた}の{違|ちが}いはよく{分|わ}からない。",
+          "kana": "せいとうのなまえはしってても、かんがえかたのちがいはよくわからない。",
+          "en": "I know the parties' names, but I don't really get how their views differ."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}についての{考|かんが}え{方|かた}が{近|ちか}い{人|ひと}たちが{集|あつ}まって{作|つく}った{団体|だんたい}。",
+        "kana": "せいじについてのかんがえかたがちかいひとたちがあつまってつくっただんたい。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0400",
+      "word": "政治家",
+      "kana": "せいじか",
+      "meanings": [
+        "politician"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "あの{政治家|せいじか}、{言|い}ってることが{毎回|まいかい}{違|ちが}うよね。",
+          "kana": "あのせいじか、いってることがまいかいちがうよね。",
+          "en": "That politician says something different every time, doesn't he?"
+        },
+        {
+          "ja": "{若|わか}い{政治家|せいじか}が{増|ふ}えれば、{国|くに}も{変|か}わるかもしれません。",
+          "kana": "わかいせいじかがふえれば、くにもかわるかもしれません。",
+          "en": "If there were more young politicians, the country might change."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国会|こっかい}や{市|し}などで{政治|せいじ}を{行|おこな}うことを{仕事|しごと}にしている{人|ひと}。",
+        "kana": "こっかいやしなどでせいじをおこなうことをしごとにしているひと。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0401",
+      "word": "大臣",
+      "kana": "だいじん",
+      "meanings": [
+        "(cabinet) minister"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{大臣|だいじん}が{今日|きょう}{決|き}まりました。",
+          "kana": "あたらしいだいじんがきょうきまりました。",
+          "en": "The new minister was decided today."
+        },
+        {
+          "ja": "{大臣|だいじん}って、どうやって{決|き}まるのか{知|し}ってる？",
+          "kana": "だいじんって、どうやってきまるのかしってる？",
+          "en": "Do you know how cabinet ministers get chosen?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{政治|せいじ}で、{教育|きょういく}や{経済|けいざい}などの{仕事|しごと}を{担当|たんとう}する{一番|いちばん}{上|うえ}の{人|ひと}。",
+        "kana": "くにのせいじで、きょういくやけいざいなどのしごとをたんとうするいちばんうえのひと。"
+      },
+      "collocations": [
+        "総理大臣",
+        "外務大臣"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0402",
+      "word": "大統領",
+      "kana": "だいとうりょう",
+      "meanings": [
+        "president (of a country)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "その{国|くに}の{大統領|だいとうりょう}、{来週|らいしゅう}{日本|にほん}に{来|く}るんだって。",
+          "kana": "そのくにのだいとうりょう、らいしゅうにほんにくるんだって。",
+          "en": "I hear that country's president is coming to Japan next week."
+        },
+        {
+          "ja": "{大統領|だいとうりょう}のスピーチを、テレビで{最後|さいご}まで{見|み}ました。",
+          "kana": "だいとうりょうのスピーチを、テレビでさいごまでみました。",
+          "en": "I watched the president's speech on TV all the way to the end."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}に{選|えら}ばれて、{国|くに}の{代表|だいひょう}として{政治|せいじ}を{行|おこな}う、{一番|いちばん}{上|うえ}の{人|ひと}。",
+        "kana": "こくみんにえらばれて、くにのだいひょうとしてせいじをおこなう、いちばんうえのひと。"
+      },
+      "notes": "Head of state in a presidential system; Japan's head of government is the 首相 (総理大臣).",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0403",
+      "word": "国会",
+      "kana": "こっかい",
+      "meanings": [
+        "the Diet",
+        "parliament"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{国会|こっかい}で{新|あたら}しい{法律|ほうりつ}について{話|はな}し{合|あ}われています。",
+          "kana": "こっかいであたらしいほうりつについてはなしあわれています。",
+          "en": "A new law is being discussed in the Diet."
+        },
+        {
+          "ja": "{国会|こっかい}の{建物|たてもの}、{中|なか}に{入|はい}って{見学|けんがく}できるんだって。",
+          "kana": "こっかいのたてもの、なかにはいってけんがくできるんだって。",
+          "en": "Apparently you can go inside the Diet building and take a tour."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}に{選|えら}ばれた{人|ひと}たちが{集|あつ}まって、{法律|ほうりつ}などを{決|き}める{所|ところ}。",
+        "kana": "こくみんにえらばれたひとたちがあつまって、ほうりつなどをきめるところ。"
+      },
+      "collocations": [
+        "国会議員",
+        "国会議事堂"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0404",
+      "word": "国家",
+      "kana": "こっか",
+      "meanings": [
+        "nation",
+        "state"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{国家|こっか}の{予算|よさん}って、どうやって{決|き}まるんだろう。",
+          "kana": "こっかのよさんって、どうやってきまるんだろう。",
+          "en": "I wonder how a nation's budget gets decided."
+        },
+        {
+          "ja": "{国家|こっか}の{安全|あんぜん}を{守|まも}るのは、{政府|せいふ}の{大切|たいせつ}な{仕事|しごと}です。",
+          "kana": "こっかのあんぜんをまもるのは、せいふのたいせつなしごとです。",
+          "en": "Protecting the nation's security is an important job of the government."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}と{政府|せいふ}があり、{法律|ほうりつ}によって{一|ひと}つにまとまっている{国|くに}。",
+        "kana": "こくみんとせいふがあり、ほうりつによってひとつにまとまっているくに。"
+      },
+      "notes": "The state as a political unit (国家予算, 国家試験); 国 is the everyday word for a country.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0405",
+      "word": "役人",
+      "kana": "やくにん",
+      "meanings": [
+        "government official",
+        "public official"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}はこの{建物|たてもの}に{役人|やくにん}が{住|す}んでいたそうです。",
+          "kana": "むかしはこのたてものにやくにんがすんでいたそうです。",
+          "en": "I hear officials used to live in this building long ago."
+        },
+        {
+          "ja": "{父|ちち}は{市|し}の{役人|やくにん}で、{毎日|まいにち}{忙|いそが}しそうにしてる。",
+          "kana": "ちちはしのやくにんで、まいにちいそがしそうにしてる。",
+          "en": "My dad is a city official and always seems busy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{市|し}などの{仕事|しごと}をしている{人|ひと}。{公務員|こうむいん}。",
+        "kana": "くにやしなどのしごとをしているひと。こうむいん。"
+      },
+      "notes": "Often slightly cold or critical in tone (お役人); 公務員 is the neutral word.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0406",
+      "word": "犯罪",
+      "kana": "はんざい",
+      "meanings": [
+        "crime"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{辺|へん}は{犯罪|はんざい}が{少|すく}なくて、{夜|よる}も{安心|あんしん}だよ。",
+          "kana": "このへんははんざいがすくなくて、よるもあんしんだよ。",
+          "en": "There's little crime around here, so it's safe even at night."
+        },
+        {
+          "ja": "インターネットを{使|つか}った{犯罪|はんざい}が{増|ふ}えているそうです。",
+          "kana": "インターネットをつかったはんざいがふえているそうです。",
+          "en": "I hear crimes using the internet are on the rise."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}を{破|やぶ}る{悪|わる}い{行|おこな}い。{人|ひと}のお{金|かね}を{盗|ぬす}むことなど。",
+        "kana": "ほうりつをやぶるわるいおこない。ひとのおかねをぬすむことなど。"
+      },
+      "collocations": [
+        "犯罪を防ぐ",
+        "犯罪者"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0407",
+      "word": "犯人",
+      "kana": "はんにん",
+      "meanings": [
+        "culprit",
+        "offender"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{犯人|はんにん}はまだ{見|み}つかっていないそうです。",
+          "kana": "はんにんはまだみつかっていないそうです。",
+          "en": "I hear the culprit still hasn't been found."
+        },
+        {
+          "ja": "ドラマの{犯人|はんにん}、{最後|さいご}まで{全然|ぜんぜん}{分|わ}からなかった。",
+          "kana": "ドラマのはんにん、さいごまでぜんぜんわからなかった。",
+          "en": "I had no idea who the culprit in the drama was until the very end."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{犯罪|はんざい}をした{人|ひと}。{悪|わる}いことをした{人|ひと}。",
+        "kana": "はんざいをしたひと。わるいことをしたひと。"
+      },
+      "collocations": [
+        "犯人を捕まえる"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0408",
+      "word": "罪",
+      "kana": "つみ",
+      "meanings": [
+        "crime",
+        "sin",
+        "guilt"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{知|し}らなかったからって、{罪|つみ}がなくなるわけじゃない。",
+          "kana": "しらなかったからって、つみがなくなるわけじゃない。",
+          "en": "Not knowing doesn't make it any less of a crime."
+        },
+        {
+          "ja": "{彼|かれ}は{自分|じぶん}の{罪|つみ}を{認|みと}めて、{謝|あやま}りました。",
+          "kana": "かれはじぶんのつみをみとめて、あやまりました。",
+          "en": "He admitted his guilt and apologized."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{道徳|どうとく}を{破|やぶ}る{悪|わる}い{行|おこな}い。また、それをした{責任|せきにん}。",
+        "kana": "ほうりつやどうとくをやぶるわるいおこない。また、それをしたせきにん。"
+      },
+      "collocations": [
+        "罪を犯す",
+        "罪を認める"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0409",
+      "word": "罰",
+      "kana": "ばつ",
+      "meanings": [
+        "punishment",
+        "penalty"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "ルールを{破|やぶ}った{人|ひと}には{罰|ばつ}があります。",
+          "kana": "ルールをやぶったひとにはばつがあります。",
+          "en": "There is a penalty for anyone who breaks the rules."
+        },
+        {
+          "ja": "{約束|やくそく}を{破|やぶ}った{罰|ばつ}として、{今日|きょう}は{僕|ぼく}が{全部|ぜんぶ}おごるよ。",
+          "kana": "やくそくをやぶったばつとして、きょうはぼくがぜんぶおごるよ。",
+          "en": "As my punishment for breaking the promise, I'll pay for everything today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悪|わる}いことや{規則|きそく}を{破|やぶ}ったことに{対|たい}して{与|あた}える、{苦|くる}しいこと。",
+        "kana": "わるいことやきそくをやぶったことにたいしてあたえる、くるしいこと。"
+      },
+      "collocations": [
+        "罰を受ける",
+        "罰金"
+      ],
+      "confusables": [
+        "v-n3-0408"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0410",
+      "word": "裁判",
+      "kana": "さいばん",
+      "meanings": [
+        "trial",
+        "court case"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "その{事件|じけん}の{裁判|さいばん}、{来月|らいげつ}{始|はじ}まるらしいよ。",
+          "kana": "そのじけんのさいばん、らいげつはじまるらしいよ。",
+          "en": "Apparently the trial for that case starts next month."
+        },
+        {
+          "ja": "{裁判|さいばん}は{一年|いちねん}{以上|いじょう}{続|つづ}き、{先週|せんしゅう}やっと{終|お}わりました。",
+          "kana": "さいばんはいちねんいじょうつづき、せんしゅうやっとおわりました。",
+          "en": "The trial lasted over a year and finally ended last week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}によって、{罪|つみ}があるかどうかなどを{決|き}めること。",
+        "kana": "ほうりつによって、つみがあるかどうかなどをきめること。"
+      },
+      "collocations": [
+        "裁判を受ける",
+        "裁判に勝つ"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0411",
+      "word": "裁判所",
+      "kana": "さいばんしょ",
+      "meanings": [
+        "courthouse",
+        "court"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{北側|きたがわ}に{大|おお}きな{裁判所|さいばんしょ}があります。",
+          "kana": "えきのきたがわにおおきなさいばんしょがあります。",
+          "en": "There is a large courthouse on the north side of the station."
+        },
+        {
+          "ja": "{裁判所|さいばんしょ}って、{普通|ふつう}の{人|ひと}でも{見|み}に{行|い}けるんだよ。",
+          "kana": "さいばんしょって、ふつうのひとでもみにいけるんだよ。",
+          "en": "You know, ordinary people can go watch at the courthouse too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}によって{裁判|さいばん}を{行|おこな}う、{国|くに}の{建物|たてもの}。",
+        "kana": "ほうりつによってさいばんをおこなう、くにのたてもの。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0412",
+      "word": "警察署",
+      "kana": "けいさつしょ",
+      "meanings": [
+        "police station"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{財布|さいふ}{落|お}としたなら、{警察署|けいさつしょ}に{聞|き}いてみたら？",
+          "kana": "さいふおとしたなら、けいさつしょにきいてみたら？",
+          "en": "If you lost your wallet, why not ask at the police station?"
+        },
+        {
+          "ja": "{落|お}とし{物|もの}を{届|とど}けに、{駅前|えきまえ}の{警察署|けいさつしょ}へ{行|い}きました。",
+          "kana": "おとしものをとどけに、えきまえのけいさつしょへいきました。",
+          "en": "I went to the police station in front of the station to turn in something I'd found."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{警察|けいさつ}の{仕事|しごと}をする{建物|たてもの}。{交番|こうばん}より{大|おお}きい。",
+        "kana": "けいさつのしごとをするたてもの。こうばんよりおおきい。"
+      },
+      "notes": "The main station of a district; a 交番 is the small neighborhood police box.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0413",
+      "word": "警官",
+      "kana": "けいかん",
+      "meanings": [
+        "police officer"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{道|みち}に{迷|まよ}ったので、{警官|けいかん}に{道|みち}を{聞|き}きました。",
+          "kana": "みちにまよったので、けいかんにみちをききました。",
+          "en": "I got lost, so I asked a police officer for directions."
+        },
+        {
+          "ja": "{夜中|よなか}に{自転車|じてんしゃ}で{走|はし}ってたら、{警官|けいかん}に{止|と}められたよ。",
+          "kana": "よなかにじてんしゃではしってたら、けいかんにとめられたよ。",
+          "en": "I was riding my bike in the middle of the night and a police officer stopped me."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{警察|けいさつ}で{働|はたら}き、{町|まち}の{安全|あんぜん}を{守|まも}る{人|ひと}。お{巡|まわ}りさん。",
+        "kana": "けいさつではたらき、まちのあんぜんをまもるひと。おまわりさん。"
+      },
+      "notes": "Short for 警察官; お巡りさん is the friendly everyday term.",
+      "station": 28
+    },
+    {
+      "id": "v-n3-0414",
+      "word": "証拠",
+      "kana": "しょうこ",
+      "meanings": [
+        "evidence",
+        "proof"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{証拠|しょうこ}もないのに、{人|ひと}を{疑|うたが}うのはよくないよ。",
+          "kana": "しょうこもないのに、ひとをうたがうのはよくないよ。",
+          "en": "It's not right to suspect someone without any evidence."
+        },
+        {
+          "ja": "{彼|かれ}が{嘘|うそ}をついている{証拠|しょうこ}は、どこにもありません。",
+          "kana": "かれがうそをついているしょうこは、どこにもありません。",
+          "en": "There's no evidence anywhere that he's lying."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることが{正|ただ}しいとはっきり{示|しめ}すためのもの。",
+        "kana": "あることがただしいとはっきりしめすためのもの。"
+      },
+      "collocations": [
+        "証拠がある",
+        "証拠を集める"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0415",
+      "word": "証明",
+      "kana": "しょうめい",
+      "meanings": [
+        "proof",
+        "certification"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{学生|がくせい}であることを{証明|しょうめい}するものを{見|み}せてください。",
+          "kana": "がくせいであることをしょうめいするものをみせてください。",
+          "en": "Please show something that proves you are a student."
+        },
+        {
+          "ja": "{年齢|ねんれい}を{証明|しょうめい}できるもの、{何|なに}か{持|も}ってる？",
+          "kana": "ねんれいをしょうめいできるもの、なにかもってる？",
+          "en": "Do you have anything on you that proves your age?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることが{正|ただ}しいということを、{証拠|しょうこ}を{見|み}せてはっきり{示|しめ}すこと。",
+        "kana": "あることがただしいということを、しょうこをみせてはっきりしめすこと。"
+      },
+      "collocations": [
+        "証明する",
+        "証明書"
+      ],
+      "confusables": [
+        "v-n3-0414"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0416",
+      "word": "盗む",
+      "kana": "ぬすむ",
+      "meanings": [
+        "to steal"
+      ],
+      "pos": "v5",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}で{財布|さいふ}を{盗|ぬす}まれたことがある。",
+          "kana": "でんしゃのなかでさいふをぬすまれたことがある。",
+          "en": "I've had my wallet stolen on the train before."
+        },
+        {
+          "ja": "{人|ひと}の{物|もの}を{盗|ぬす}んではいけないと、{子供|こども}に{教|おし}えました。",
+          "kana": "ひとのものをぬすんではいけないと、こどもにおしえました。",
+          "en": "I taught my child that you must not steal other people's things."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}のお{金|かね}や{品物|しなもの}を、こっそり{取|と}って{自分|じぶん}のものにすること。",
+        "kana": "ひとのおかねやしなものを、こっそりとってじぶんのものにすること。"
+      },
+      "station": 28
+    },
+    {
+      "id": "v-n3-0417",
+      "word": "平等",
+      "kana": "びょうどう",
+      "meanings": [
+        "equal",
+        "equality"
+      ],
+      "pos": "adj-na",
+      "jlpt": 3,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{誰|だれ}でも{平等|びょうどう}に{教育|きょういく}を{受|う}ける{権利|けんり}があります。",
+          "kana": "だれでもびょうどうにきょういくをうけるけんりがあります。",
+          "en": "Everyone has the right to receive education equally."
+        },
+        {
+          "ja": "{仕事|しごと}は{平等|びょうどう}に{分|わ}けたはずなのに、{僕|ぼく}の{方|ほう}が{多|おお}くない？",
+          "kana": "しごとはびょうどうにわけたはずなのに、ぼくのほうがおおくない？",
+          "en": "We were supposed to split the work equally, but don't I have more?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{誰|だれ}に{対|たい}しても{差|さ}をつけず、{全員|ぜんいん}を{公平|こうへい}に{扱|あつか}うこと。",
+        "kana": "だれにたいしてもさをつけず、ぜんいんをこうへいにあつかうこと。"
+      },
+      "notes": "Both な-adjective (平等な社会) and noun (男女平等).",
+      "collocations": [
+        "男女平等",
+        "平等に扱う"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0418",
+      "word": "公平",
+      "kana": "こうへい",
+      "meanings": [
+        "fair",
+        "impartial"
+      ],
+      "pos": "adj-na",
+      "jlpt": 3,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{先生|せんせい}は{誰|だれ}にでも{公平|こうへい}だから、みんなに{好|す}かれてる。",
+          "kana": "せんせいはだれにでもこうへいだから、みんなにすかれてる。",
+          "en": "The teacher is fair to everyone, so everybody likes her."
+        },
+        {
+          "ja": "{仕事|しごと}を{分|わ}ける{時|とき}は、{公平|こうへい}になるように{気|き}をつけています。",
+          "kana": "しごとをわけるときは、こうへいになるようにきをつけています。",
+          "en": "When I divide up the work, I try to make sure it's fair."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{好|す}き{嫌|きら}いで{決|き}めないで、{誰|だれ}に{対|たい}しても{正|ただ}しく{扱|あつか}うこと。",
+        "kana": "じぶんのすききらいできめないで、だれにたいしてもただしくあつかうこと。"
+      },
+      "notes": "公平 = treating people without favoritism; 平等 = everyone getting the same.",
+      "confusables": [
+        "v-n3-0417"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0419",
+      "word": "正義",
+      "kana": "せいぎ",
+      "meanings": [
+        "justice"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{自分|じぶん}の{正義|せいぎ}だけが{正|ただ}しいとは{限|かぎ}りません。",
+          "kana": "じぶんのせいぎだけがただしいとはかぎりません。",
+          "en": "Your own sense of justice isn't necessarily the only right one."
+        },
+        {
+          "ja": "{子供|こども}の{頃|ころ}は、{正義|せいぎ}の{味方|みかた}になりたいって{本気|ほんき}で{思|おも}ってた。",
+          "kana": "こどものころは、せいぎのみかたになりたいってほんきでおもってた。",
+          "en": "When I was a kid, I seriously wanted to be a champion of justice."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}として{正|ただ}しいこと。{誰|だれ}から{見|み}ても{正|ただ}しい{考|かんが}え{方|かた}や{行|おこな}い。",
+        "kana": "ひととしてただしいこと。だれからみてもただしいかんがえかたやおこない。"
+      },
+      "collocations": [
+        "正義感",
+        "正義の味方"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0420",
+      "word": "主義",
+      "kana": "しゅぎ",
+      "meanings": [
+        "principle",
+        "-ism",
+        "doctrine"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{無理|むり}をしない{主義|しゅぎ}なんだって。",
+          "kana": "かれはむりをしないしゅぎなんだって。",
+          "en": "He says his policy is never to push himself too hard."
+        },
+        {
+          "ja": "{祖母|そぼ}は{物|もの}を{捨|す}てない{主義|しゅぎ}で、{家|いえ}には{古|ふる}い{物|もの}がたくさんあります。",
+          "kana": "そぼはものをすてないしゅぎで、いえにはふるいものがたくさんあります。",
+          "en": "My grandmother's policy is never to throw things away, so her house is full of old stuff."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{人|ひと}や{団体|だんたい}がいつも{守|まも}っている、{大事|だいじ}な{考|かんが}え{方|かた}。",
+        "kana": "そのひとやだんたいがいつもまもっている、だいじなかんがえかた。"
+      },
+      "notes": "As a suffix it forms -isms (資本主義, 民主主義); alone it means a personal principle or policy.",
+      "collocations": [
+        "民主主義",
+        "〜主義者"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0421",
+      "word": "候補",
+      "kana": "こうほ",
+      "meanings": [
+        "candidate",
+        "candidacy"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{行|い}き{先|さき}の{候補|こうほ}が{三|みっ}つあります。",
+          "kana": "りょこうのいきさきのこうほがみっつあります。",
+          "en": "There are three candidate destinations for the trip."
+        },
+        {
+          "ja": "{新|あたら}しい{部長|ぶちょう}の{候補|こうほ}に、{田中|たなか}さんの{名前|なまえ}が{上|あ}がってるらしい。",
+          "kana": "あたらしいぶちょうのこうほに、たなかさんのなまえがあがってるらしい。",
+          "en": "Apparently Tanaka's name has come up as a candidate for the new department head."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}などで{選|えら}ばれるかもしれない{人|ひと}。また、{選|えら}ばれるかもしれないもの。",
+        "kana": "せんきょなどでえらばれるかもしれないひと。また、えらばれるかもしれないもの。"
+      },
+      "collocations": [
+        "候補者",
+        "候補に上がる"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0422",
+      "word": "支持",
+      "kana": "しじ",
+      "meanings": [
+        "support",
+        "backing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{若|わか}い{人|ひと}の{支持|しじ}を{集|あつ}めてる{政党|せいとう}ってどこ？",
+          "kana": "わかいひとのしじをあつめてるせいとうってどこ？",
+          "en": "Which party is gathering support among young people?"
+        },
+        {
+          "ja": "この{計画|けいかく}は、{多|おお}くの{住民|じゅうみん}の{支持|しじ}を{得|え}ています。",
+          "kana": "このけいかくは、おおくのじゅうみんのしじをえています。",
+          "en": "This plan has the support of many residents."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{人|ひと}や{考|かんが}えをいいと{認|みと}めて、{力|ちから}を{貸|か}すこと。",
+        "kana": "あるひとやかんがえをいいとみとめて、ちからをかすこと。"
+      },
+      "notes": "Backing a person, party or opinion; 支援 is material or financial support. Same reading as 指示 (instruction).",
+      "collocations": [
+        "支持する",
+        "支持率"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0423",
+      "word": "申請",
+      "kana": "しんせい",
+      "meanings": [
+        "application (to an authority)",
+        "request"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "パスポートの{申請|しんせい}には{写真|しゃしん}が{必要|ひつよう}です。",
+          "kana": "パスポートのしんせいにはしゃしんがひつようです。",
+          "en": "You need a photo to apply for a passport."
+        },
+        {
+          "ja": "ビザの{申請|しんせい}、{思|おも}ったより{時間|じかん}がかかるんだね。",
+          "kana": "ビザのしんせい、おもったよりじかんがかかるんだね。",
+          "en": "Applying for a visa takes longer than I expected."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{市|し}などに、{許可|きょか}やお{金|かね}をもらいたいと{書類|しょるい}を{出|だ}して{頼|たの}むこと。",
+        "kana": "くにやしなどに、きょかやおかねをもらいたいとしょるいをだしてたのむこと。"
+      },
+      "notes": "Formally asking an office to grant something (ビザ申請); 申し込み is signing up for a service or event.",
+      "confusables": [
+        "v-n3-0354"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0424",
+      "word": "手続き",
+      "kana": "てつづき",
+      "meanings": [
+        "procedure",
+        "formalities",
+        "paperwork"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "law",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{手続|てつづ}き、{市役所|しやくしょ}で{全部|ぜんぶ}できたよ。",
+          "kana": "ひっこしのてつづき、しやくしょでぜんぶできたよ。",
+          "en": "I was able to do all the paperwork for the move at the city office."
+        },
+        {
+          "ja": "{留学|りゅうがく}の{手続|てつづ}きは、{全部|ぜんぶ}{一人|ひとり}でやりました。",
+          "kana": "りゅうがくのてつづきは、ぜんぶひとりでやりました。",
+          "en": "I did all the paperwork for studying abroad by myself."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることをするために、{決|き}められたとおりに{書類|しょるい}を{出|だ}したりすること。",
+        "kana": "あることをするために、きめられたとおりにしょるいをだしたりすること。"
+      },
+      "altForms": [
+        "手続"
+      ],
+      "collocations": [
+        "手続きをする",
+        "入国手続き"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0425",
+      "word": "登録",
+      "kana": "とうろく",
+      "meanings": [
+        "registration"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "business",
+        "technology"
+      ],
+      "examples": [
+        {
+          "ja": "{会員|かいいん}{登録|とうろく}はこちらの{画面|がめん}からできます。",
+          "kana": "かいいんとうろくはこちらのがめんからできます。",
+          "en": "You can register as a member from this screen."
+        },
+        {
+          "ja": "このアプリ、{登録|とうろく}しなくても{使|つか}えるの？",
+          "kana": "このアプリ、とうろくしなくてもつかえるの？",
+          "en": "Can you use this app without registering?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{名前|なまえ}や{住所|じゅうしょ}などを{書|か}いて{出|だ}し、{会社|かいしゃ}や{国|くに}などに{載|の}せてもらうこと。",
+        "kana": "なまえやじゅうしょなどをかいてだし、かいしゃやくになどにのせてもらうこと。"
+      },
+      "collocations": [
+        "登録する",
+        "住所を登録する"
+      ],
+      "station": 28
+    },
+    {
+      "id": "v-n3-0426",
+      "word": "国境",
+      "kana": "こっきょう",
+      "meanings": [
+        "national border"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "politics",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{国境|こっきょう}を{越|こ}えると、{言葉|ことば}も{料理|りょうり}も{変|か}わるよね。",
+          "kana": "こっきょうをこえると、ことばもりょうりもかわるよね。",
+          "en": "Once you cross the border, both the language and the food change, don't they?"
+        },
+        {
+          "ja": "{昔|むかし}はこの{川|かわ}が{二|ふた}つの{国|くに}の{国境|こっきょう}でした。",
+          "kana": "むかしはこのかわがふたつのくにのこっきょうでした。",
+          "en": "Long ago, this river was the border between the two countries."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}と{国|くに}の{間|あいだ}にあって、ここから{隣|となり}の{国|くに}になるという{所|ところ}。",
+        "kana": "くにとくにのあいだにあって、ここからとなりのくにになるというところ。"
+      },
+      "station": 28
+    }
+  ]
+}

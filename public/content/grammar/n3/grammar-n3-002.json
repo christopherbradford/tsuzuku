@@ -1,0 +1,1340 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n3",
+  "writer": "grammar-n3-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n3-033",
+      "pattern": "〜ものだ (general truth, nostalgia)",
+      "meaning": "that is how … is; used to …",
+      "formation": [
+        "V-dictionary form + ものだ (general truth: 人は誰でも失敗するものだ)",
+        "V-た + ものだ (nostalgia: 昔はよく川で泳いだものだ)",
+        "い-adjective + ものだ (時間がたつのは早いものだ)",
+        "な-adjective + な + ものだ (親とは心配なものだ)",
+        "Spoken: ものだ → もんだ; polite: ものです"
+      ],
+      "explanation": "〜ものだ states something as the natural way of the world: 人は誰でも失敗するものだ. You use it for general truths and for gentle reminders about how things are, often with a sigh of acceptance. After the た-form it looks back with nostalgia on something you used to do: 子どもの頃はよく川で遊んだものだ. It is the speaker's reflection, not a report of one event, so do not use it for a single happening (× 昨日雨が降ったものだ). In speech it shrinks to もんだ. Its negative ものではない scolds, and ものか denies, so keep the three apart.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{人|ひと}は{誰|だれ}でも{失敗|しっぱい}するものだ。",
+          "kana": "ひとはだれでもしっぱいするものだ。",
+          "en": "Everyone makes mistakes; that is just how people are."
+        },
+        {
+          "ja": "{時間|じかん}がたつのは{本当|ほんとう}に{早|はや}いものですね。",
+          "kana": "じかんがたつのはほんとうにはやいものですね。",
+          "en": "Time really does fly, doesn't it?"
+        },
+        {
+          "ja": "{子|こ}どもの{頃|ころ}は、よくこの{川|かわ}で{遊|あそ}んだものだ。",
+          "kana": "こどものころは、よくこのかわであそんだものだ。",
+          "en": "When I was a kid, I used to play in this river all the time."
+        },
+        {
+          "ja": "{学生|がくせい}の{時|とき}は{毎晩|まいばん}{遅|おそ}くまで{友達|ともだち}と{話|はな}したものです。",
+          "kana": "がくせいのときはまいばんおそくまでともだちとはなしたものです。",
+          "en": "When I was a student, I used to talk with friends until late every night."
+        }
+      ],
+      "clozeHints": [
+        "ものだ",
+        "ものです"
+      ],
+      "mistakes": [
+        "× 昨日は雨が降ったものだ → ○ 昨日は雨が降った (ものだ is for general truths or past habits, not one event)",
+        "× 人は失敗するのものだ → ○ 人は失敗するものだ (ものだ attaches directly to the plain form, no の)",
+        "× 子どもの頃はよく遊ぶものだ → ○ 子どもの頃はよく遊んだものだ (nostalgia needs the た-form)"
+      ],
+      "related": [
+        "g-n3-034",
+        "g-n3-040",
+        "g-n5-073"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-034",
+      "pattern": "〜ものではない",
+      "meaning": "one should not …; it is not something to …",
+      "formation": [
+        "V-dictionary form + ものではない (人の悪口を言うものではない)",
+        "Spoken: 〜もんじゃない; polite: 〜ものではありません",
+        "Said as a general rule of conduct, usually by an elder or a teacher"
+      ],
+      "explanation": "〜ものではない tells someone that an action goes against common sense or good manners: 人の悪口を言うものではない. It is the negative of ものだ as a general rule, so it sounds like a parent, teacher or elder reminding you how people ought to behave, not like a personal request. Use it with the dictionary form of a verb. Because it carries that moral weight, you do not aim it at a superior; for a neutral ban use 〜てはいけない, and for mild advice use 〜ない方がいい. In conversation it is often もんじゃない.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{人|ひと}の{悪口|わるぐち}を{言|い}うものではない。",
+          "kana": "ひとのわるぐちをいうものではない。",
+          "en": "You shouldn't speak ill of others."
+        },
+        {
+          "ja": "{食|た}べ{物|もの}で{遊|あそ}ぶものではありません。",
+          "kana": "たべものであそぶものではありません。",
+          "en": "You should not play with your food."
+        },
+        {
+          "ja": "{夜|よる}{遅|おそ}くに{一人|ひとり}で{歩|ある}くもんじゃないよ。",
+          "kana": "よるおそくにひとりであるくもんじゃないよ。",
+          "en": "You shouldn't walk alone late at night."
+        },
+        {
+          "ja": "お{金|かね}は{簡単|かんたん}に{人|ひと}に{貸|か}すものではない。",
+          "kana": "おかねはかんたんにひとにかすものではない。",
+          "en": "Money isn't something you should lend to people lightly."
+        }
+      ],
+      "clozeHints": [
+        "ものではない",
+        "ものではありません",
+        "もんじゃない"
+      ],
+      "mistakes": [
+        "× 悪口を言ったものではない → ○ 悪口を言うものではない (the rule uses the dictionary form, not the past)",
+        "× 先生、そんなことを言うものではありません → ○ 先生、そう言わない方がいいと思います (ものではない lectures; do not use it toward a superior)"
+      ],
+      "related": [
+        "g-n3-033",
+        "g-n5-055",
+        "g-n5-089"
+      ],
+      "tags": [
+        "society"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-035",
+      "pattern": "〜べきだ / 〜べきではない",
+      "meaning": "should …; should not …",
+      "formation": [
+        "V-dictionary form + べきだ / べきではない (約束は守るべきだ)",
+        "する → するべきだ or すべきだ (both correct)",
+        "Past: 〜べきだった (should have …); polite: 〜べきです / 〜べきではありません",
+        "Prenominal: 〜べき + N (守るべきルール)"
+      ],
+      "explanation": "〜べきだ says that an action is the right thing to do by duty, logic or principle: 約束は守るべきだ. It is stronger and more objective than 〜た方がいい, which gives friendly advice, so it suits opinions, rules and essays rather than small talk. Attach it to the dictionary form; する may become すべき. The negative is 〜べきではない (should not), and 〜べきだった looks back at what should have been done. Do not use べき for a fixed rule or law; that is 〜なければならない. Avoid aiming it at people above you; it sounds like a verdict.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{約束|やくそく}は{守|まも}るべきだ。",
+          "kana": "やくそくはまもるべきだ。",
+          "en": "Promises should be kept."
+        },
+        {
+          "ja": "{体|からだ}の{調子|ちょうし}が{悪|わる}い{時|とき}は、{無理|むり}をするべきではありません。",
+          "kana": "からだのちょうしがわるいときは、むりをするべきではありません。",
+          "en": "When you're not feeling well, you shouldn't push yourself."
+        },
+        {
+          "ja": "もっと{早|はや}く{病院|びょういん}に{行|い}くべきだった。",
+          "kana": "もっとはやくびょういんにいくべきだった。",
+          "en": "I should have gone to the hospital sooner."
+        },
+        {
+          "ja": "{学生|がくせい}はもっと{本|ほん}を{読|よ}むべきだと{思|おも}います。",
+          "kana": "がくせいはもっとほんをよむべきだとおもいます。",
+          "en": "I think students should read more books."
+        }
+      ],
+      "clozeHints": [
+        "べきだ",
+        "べきではありません",
+        "べきだった"
+      ],
+      "mistakes": [
+        "× 約束は守ったべきだ → ○ 約束は守るべきだ (べき follows the dictionary form; put the past on だ: 守るべきだった)",
+        "× 日本では車は左側を走るべきだ → ○ 日本では車は左側を走らなければならない (a fixed rule or law is なければならない; べき gives your own judgment)",
+        "× 先生はもっと説明するべきです → ○ もう少し説明していただけませんか (べき aimed at a superior sounds like a verdict; make a request instead)"
+      ],
+      "related": [
+        "g-n5-088",
+        "g-n5-089",
+        "g-n3-006",
+        "g-n3-034"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-036",
+      "pattern": "〜ないことはない / 〜ないこともない",
+      "meaning": "it's not that … can't …; could, but …",
+      "formation": [
+        "V-ない + ことはない / こともない (食べられないことはない)",
+        "い-adjective: 〜くない + ことはない (高くないことはない)",
+        "な-adjective / N: 〜じゃない + ことはない (便利じゃないことはない)",
+        "Polite: 〜ないことはありません / 〜ないこともありません",
+        "Usually followed by けど / が and a reservation"
+      ],
+      "explanation": "〜ないことはない is a double negative that admits something is possible or true, but only just: 行けないことはないけど、遠い. You use it to give a hedged yes, to avoid flatly refusing, or to concede a point before adding a but. 〜ないこともない is slightly softer and more reluctant. Attach it to the ない-form of a verb or adjective. It is weaker than a plain positive, so do not use it when you simply mean yes; 食べられないことはない means you can eat it but would rather not. Expect a けど or が to follow.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{辛|から}いものは{食|た}べられないことはないけど、あまり{好|す}きじゃない。",
+          "kana": "からいものはたべられないことはないけど、あまりすきじゃない。",
+          "en": "It's not that I can't eat spicy food, but I don't really like it."
+        },
+        {
+          "ja": "{明日|あした}までに{終|お}わらせられないこともないですが、{大変|たいへん}です。",
+          "kana": "あしたまでにおわらせられないこともないですが、たいへんです。",
+          "en": "It's not impossible to finish it by tomorrow, but it will be tough."
+        },
+        {
+          "ja": "この{店|みせ}、{高|たか}くないことはないけど、{味|あじ}はいいよ。",
+          "kana": "このみせ、たかくないことはないけど、あじはいいよ。",
+          "en": "This place is a bit pricey, I'll admit, but the food is good."
+        },
+        {
+          "ja": "{歩|ある}いて{行|い}けないことはありませんが、{三十分|さんじゅっぷん}はかかります。",
+          "kana": "あるいていけないことはありませんが、さんじゅっぷんはかかります。",
+          "en": "You can walk there, but it takes a good thirty minutes."
+        }
+      ],
+      "clozeHints": [
+        "ないことはない",
+        "ないこともない",
+        "ないことはありません"
+      ],
+      "mistakes": [
+        "× 行くことはない → ○ 行けないことはない (the pattern needs the ない-form before ことはない; 行くことはない means there is no need to go)",
+        "× おいしい！食べられないことはない → ○ おいしい！食べられるよ (the double negative hedges; when you really mean yes, use the plain positive)"
+      ],
+      "related": [
+        "g-n5-077",
+        "g-n3-002",
+        "g-n4-088"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-037",
+      "pattern": "〜に決まっている",
+      "meaning": "is bound to …; must certainly be …",
+      "formation": [
+        "V plain form + に決まっている (勝つに決まっている)",
+        "い-adjective + に決まっている (おいしいに決まっている)",
+        "な-adjective / N + に決まっている, no だ (無理に決まっている / 嘘に決まっている)",
+        "Polite: 〜に決まっています; spoken: 〜に決まってる"
+      ],
+      "explanation": "〜に決まっている states something as obvious, as if it were already settled: そんなの嘘に決まっている. You use it when your reasoning or feeling leaves no room for doubt, so it is strong and emotional, closer to 'obviously' than to a calm 'probably'. It attaches to the plain form of verbs, adjectives and nouns with no だ in between. Compared with 〜はずだ (logical expectation) and 〜に違いない (confident inference), 決まっている is the most subjective and the most casual. Soften with でしょう, or use はずです in formal contexts.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "そんなうまい{話|はなし}、{嘘|うそ}に{決|き}まっているよ。",
+          "kana": "そんなうまいはなし、うそにきまっているよ。",
+          "en": "A deal that good has to be a scam."
+        },
+        {
+          "ja": "{毎日|まいにち}{練習|れんしゅう}しているんだから、{勝|か}つに{決|き}まっています。",
+          "kana": "まいにちれんしゅうしているんだから、かつにきまっています。",
+          "en": "They practice every day, so of course they'll win."
+        },
+        {
+          "ja": "こんなに{寒|さむ}いんだから、{山|やま}の{上|うえ}は{雪|ゆき}に{決|き}まってる。",
+          "kana": "こんなにさむいんだから、やまのうえはゆきにきまってる。",
+          "en": "It's this cold, so there's bound to be snow up on the mountain."
+        },
+        {
+          "ja": "{一日|いちにち}で{全部|ぜんぶ}{読|よ}むなんて、{無理|むり}に{決|き}まっている。",
+          "kana": "いちにちでぜんぶよむなんて、むりにきまっている。",
+          "en": "Reading all of it in one day? That's obviously impossible."
+        }
+      ],
+      "clozeHints": [
+        "に決まっている",
+        "に決まっています",
+        "に決まってる"
+      ],
+      "mistakes": [
+        "× 嘘だに決まっている → ○ 嘘に決まっている (nouns and な-adjectives attach directly; drop だ)",
+        "× ニュースで「明日は雨に決まっています」 → ○ ニュースで「明日は雨でしょう」 (決まっている is personal conviction, too strong for a neutral forecast)"
+      ],
+      "related": [
+        "g-n4-063",
+        "g-n3-003",
+        "g-n3-073",
+        "g-n5-076"
+      ],
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-038",
+      "pattern": "〜ようがない",
+      "meaning": "there is no way to …",
+      "formation": [
+        "V-ます stem + ようがない (直しようがない, 説明しようがない)",
+        "する → しようがない; 来る → 来ようがない",
+        "Polite: 〜ようがありません; also 〜ようもない",
+        "Spoken set phrase: しょうがない (it can't be helped)"
+      ],
+      "explanation": "〜ようがない says that no means exists to do something, however much you might want to: 連絡先が分からないので、知らせようがない. Attach it to the ます-stem; よう here is the noun meaning 'way, method'. Use it when the obstacle is practical and total, not when something is merely hard (that is 〜にくい) or forbidden (〜てはいけない). It often follows a reason with ので or から. The everyday phrase しょうがない (from しようがない) comes from the same pattern and means 'it can't be helped'; しかたがない is its near twin.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{電話番号|でんわばんごう}が{分|わ}からないので、{連絡|れんらく}しようがない。",
+          "kana": "でんわばんごうがわからないので、れんらくしようがない。",
+          "en": "I don't know the phone number, so there's no way to contact them."
+        },
+        {
+          "ja": "ここまで{壊|こわ}れていると、もう{直|なお}しようがありません。",
+          "kana": "ここまでこわれていると、もうなおしようがありません。",
+          "en": "Broken this badly, there's no way to fix it anymore."
+        },
+        {
+          "ja": "{名前|なまえ}も{顔|かお}も{知|し}らない{人|ひと}は、{探|さが}しようがないよ。",
+          "kana": "なまえもかおもしらないひとは、さがしようがないよ。",
+          "en": "There's no way to look for someone whose name and face I don't even know."
+        },
+        {
+          "ja": "{雨|あめ}で{電車|でんしゃ}が{止|と}まったんだから、{遅|おく}れてもしょうがない。",
+          "kana": "あめででんしゃがとまったんだから、おくれてもしょうがない。",
+          "en": "The trains stopped because of the rain, so being late can't be helped."
+        }
+      ],
+      "clozeHints": [
+        "ようがない",
+        "ようがありません",
+        "しょうがない"
+      ],
+      "mistakes": [
+        "× 直すようがない → ○ 直しようがない (use the ます-stem, not the dictionary form)",
+        "× この漢字は読みようがない (meaning hard to read) → ○ この漢字は読みにくい (ようがない means no method exists at all; mere difficulty is にくい)"
+      ],
+      "related": [
+        "g-n4-020",
+        "g-n5-077",
+        "g-n3-060"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-039",
+      "pattern": "〜っけ",
+      "meaning": "… was it?; … again?",
+      "formation": [
+        "Plain past + っけ: 〜たっけ / 〜だったっけ (何時だったっけ)",
+        "N / な-adjective + だっけ (明日は休みだっけ)",
+        "Polite past + っけ: 〜ましたっけ / 〜でしたっけ (casual-polite, fine with coworkers)",
+        "Speech only; usually with a question word or a yes-no check"
+      ],
+      "explanation": "〜っけ is a sentence-final tag you use when you are trying to recall something you once knew or were told: 会議は何時だっけ？ It can be a question to yourself or a casual check with someone close. Attach it to a plain past form or to だ/だった; the past often marks 'as I remember', not real past time. In speech it also follows ましたっけ or でしたっけ, which keeps it polite enough for a coworker. Do not use it with people you must treat formally, and never for new information: it only works for things you should already know.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{明日|あした}の{会議|かいぎ}、{何時|なんじ}からだっけ？",
+          "kana": "あしたのかいぎ、なんじからだっけ？",
+          "en": "What time does tomorrow's meeting start again?"
+        },
+        {
+          "ja": "あれ、{鍵|かぎ}はどこに{置|お}いたっけ。",
+          "kana": "あれ、かぎはどこにおいたっけ。",
+          "en": "Huh, where did I put my keys?"
+        },
+        {
+          "ja": "{田中|たなか}さんの{誕生日|たんじょうび}って、{来週|らいしゅう}でしたっけ？",
+          "kana": "たなかさんのたんじょうびって、らいしゅうでしたっけ？",
+          "en": "Tanaka's birthday was next week, wasn't it?"
+        },
+        {
+          "ja": "この{店|みせ}、{前|まえ}にも{来|き}たことあったっけ？",
+          "kana": "このみせ、まえにもきたことあったっけ？",
+          "en": "Have we been to this place before?"
+        }
+      ],
+      "clozeHints": [
+        "っけ"
+      ],
+      "mistakes": [
+        "× 明日は休みっけ → ○ 明日は休みだっけ (a noun needs だ or だった before っけ)",
+        "× 社長、ご予定は何時でしたっけ → ○ 社長、ご予定は何時でしたでしょうか (っけ is casual; do not use it toward a superior)",
+        "× 初めて聞くけど、駅はどこだっけ → ○ 駅はどこですか (っけ only recalls something you once knew; a new question uses か)"
+      ],
+      "related": [
+        "g-n4-085",
+        "g-n5-064",
+        "g-n5-068"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-040",
+      "pattern": "〜ものか / 〜もんか",
+      "meaning": "as if …!; there's no way …",
+      "formation": [
+        "V plain non-past + ものか / もんか (負けるものか)",
+        "い-adjective + ものか (おいしいものか)",
+        "な-adjective + な + ものか; N + な + ものか (大丈夫なものか)",
+        "Polite: 〜ものですか / 〜もんですか",
+        "Falling intonation; it is a denial, not a question"
+      ],
+      "explanation": "〜ものか looks like a question but is a strong denial: あんな店、二度と行くものか means I will never go there again. You use it to reject an idea with feeling, or to declare you will not give up (負けるものか). Attach it to the plain non-past; な-adjectives and nouns take な. Spoken forms are もんか and the polite もんですか; ものですか is common in women's speech. It is emotional and blunt, so keep it for yourself, close friends or fiction. For a calm, reasoned denial use 〜わけがない or 〜はずがない.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "あんな{店|みせ}、{二度|にど}と{行|い}くものか。",
+          "kana": "あんなみせ、にどといくものか。",
+          "en": "I'll never set foot in that place again."
+        },
+        {
+          "ja": "こんなところで{負|ま}けるもんか。",
+          "kana": "こんなところでまけるもんか。",
+          "en": "No way am I losing here."
+        },
+        {
+          "ja": "あの{人|ひと}の{話|はなし}なんか、{信|しん}じるものですか。",
+          "kana": "あのひとのはなしなんか、しんじるものですか。",
+          "en": "As if I'd believe a word that person says."
+        },
+        {
+          "ja": "{一人|ひとり}で{大丈夫|だいじょうぶ}なものか。{手伝|てつだ}うよ。",
+          "kana": "ひとりでだいじょうぶなものか。てつだうよ。",
+          "en": "Like you'd be fine on your own. I'll help."
+        }
+      ],
+      "clozeHints": [
+        "ものか",
+        "もんか",
+        "ものですか"
+      ],
+      "mistakes": [
+        "× 負けたものか → ○ 負けるものか (the denial takes the non-past form)",
+        "× 大丈夫ものか → ○ 大丈夫なものか (な-adjectives and nouns need な before ものか)",
+        "× 行くものか？ (rising, as a real question) → ○ 行くものか。 (falling intonation; it is a denial, not a question)"
+      ],
+      "related": [
+        "g-n3-003",
+        "g-n4-064",
+        "g-n3-033"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 29
+    },
+    {
+      "id": "g-n3-041",
+      "pattern": "〜っぽい",
+      "meaning": "-ish; tends to …; looks like …",
+      "formation": [
+        "N + っぽい (子どもっぽい, 水っぽい, 黒っぽい)",
+        "V-ます stem + っぽい (忘れっぽい, 怒りっぽい)",
+        "い-adjective stem + っぽい (安っぽい)",
+        "Conjugates as an い-adjective: っぽくない / っぽかった / っぽくて"
+      ],
+      "explanation": "〜っぽい makes an い-adjective meaning 'has a strong flavor of' or 'tends to': 子どもっぽい is childish, 忘れっぽい is forgetful, 黒っぽい is blackish. You attach it to nouns, to the ます-stem of verbs and to a few adjective stems, and then treat the result like any い-adjective. It is casual and often slightly critical: 子どもっぽい sounds negative while 子どもらしい ('properly childlike') is positive. For a neutral guess from appearance use 〜ようだ or 〜みたいだ; for a reported impression use 〜らしい.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "このスープ、ちょっと{水|みず}っぽいね。",
+          "kana": "このスープ、ちょっとみずっぽいね。",
+          "en": "This soup is a bit watery."
+        },
+        {
+          "ja": "{最近|さいきん}{忘|わす}れっぽくて、{約束|やくそく}を{二|ふた}つも{忘|わす}れてしまった。",
+          "kana": "さいきんわすれっぽくて、やくそくをふたつもわすれてしまった。",
+          "en": "I've been forgetful lately and ended up forgetting two appointments."
+        },
+        {
+          "ja": "{彼|かれ}は{三十歳|さんじゅっさい}なのに、まだ{子|こ}どもっぽいところがある。",
+          "kana": "かれはさんじゅっさいなのに、まだこどもっぽいところがある。",
+          "en": "He's thirty, but there's still something childish about him."
+        },
+        {
+          "ja": "{黒|くろ}っぽい{服|ふく}を{着|き}た{人|ひと}が、{駅|えき}の{前|まえ}に{立|た}っていた。",
+          "kana": "くろっぽいふくをきたひとが、えきのまえにたっていた。",
+          "en": "Someone dressed in darkish clothes was standing in front of the station."
+        }
+      ],
+      "clozeHints": [
+        "っぽい",
+        "っぽくて"
+      ],
+      "mistakes": [
+        "× 忘れるっぽい → ○ 忘れっぽい (verbs attach with the ます-stem)",
+        "× 子どもっぽいですね (as praise) → ○ 子どもらしいですね (っぽい is critical; らしい means properly childlike)",
+        "× 水っぽいじゃない → ○ 水っぽくない (っぽい conjugates like an い-adjective)"
+      ],
+      "related": [
+        "g-n4-035",
+        "g-n4-034",
+        "g-n3-042",
+        "g-n4-020"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 30
+    },
+    {
+      "id": "g-n3-042",
+      "pattern": "〜がちだ",
+      "meaning": "tends to …; prone to … (undesirable)",
+      "formation": [
+        "V-ます stem + がちだ (忘れがちだ, 遅れがちだ)",
+        "N + がちだ (病気がちだ, 留守がちだ)",
+        "Prenominal: 〜がちな + N (曇りがちな天気)",
+        "Adverbial: 〜がちに; polite: 〜がちです; 〜がちになる"
+      ],
+      "explanation": "〜がちだ says that something happens more often than it should: 最近、朝ご飯を抜きがちだ. You use it for undesirable tendencies in people, weather and habits, usually things that occur easily and repeatedly. Attach it to a ます-stem or a noun; it then behaves like a な-adjective (がちな人, がちになる). It describes frequency, not a quality, so it is not the same as 〜っぽい (character or appearance) or 〜気味 (a slight current state). Because it is negative, 成功しがちだ sounds odd; there you would say よく成功する.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{冬|ふゆ}は{風邪|かぜ}をひきがちなので、{気|き}をつけてください。",
+          "kana": "ふゆはかぜをひきがちなので、きをつけてください。",
+          "en": "People tend to catch colds in winter, so please take care."
+        },
+        {
+          "ja": "{忙|いそが}しいと、{食事|しょくじ}を{抜|ぬ}きがちになる。",
+          "kana": "いそがしいと、しょくじをぬきがちになる。",
+          "en": "When I'm busy, I tend to skip meals."
+        },
+        {
+          "ja": "{子|こ}どもの{頃|ころ}は{病気|びょうき}がちで、よく{学校|がっこう}を{休|やす}みました。",
+          "kana": "こどものころはびょうきがちで、よくがっこうをやすみました。",
+          "en": "As a child I was often sick and missed a lot of school."
+        },
+        {
+          "ja": "{一人|ひとり}で{暮|く}らしていると、{野菜|やさい}が{不足|ふそく}しがちです。",
+          "kana": "ひとりでくらしていると、やさいがふそくしがちです。",
+          "en": "When you live alone, you tend not to get enough vegetables."
+        }
+      ],
+      "clozeHints": [
+        "がち"
+      ],
+      "mistakes": [
+        "× 忘れるがちだ → ○ 忘れがちだ (attach がち to the ます-stem)",
+        "× 彼は成功しがちだ → ○ 彼はよく成功する (がち is for undesirable tendencies only)"
+      ],
+      "related": [
+        "g-n3-041",
+        "g-n3-044",
+        "g-n4-020"
+      ],
+      "tags": [
+        "states",
+        "health"
+      ],
+      "station": 30
+    },
+    {
+      "id": "g-n3-043",
+      "pattern": "〜げ",
+      "meaning": "looking …; with an air of …",
+      "formation": [
+        "い-adjective stem + げ (悲しげ, 楽しげ, 寂しげ)",
+        "な-adjective stem + げ (不安げ, 得意げ, 満足げ)",
+        "A few verbs: 〜たげ (言いたげ, 物欲しげ)",
+        "Behaves like a な-adjective: 〜げな + N / 〜げに + V"
+      ],
+      "explanation": "〜げ turns a feeling word into a description of how someone looks from outside: 悲しげな顔 is a sad-looking face, 不安げに尋ねる is to ask anxiously. You attach it to the stem of an adjective describing emotion or attitude, and the result is a な-adjective, so use げな before a noun and げに before a verb. It is slightly literary and common in narration, less so in casual chat, where 〜そう does the same job (悲しそう). Unlike そう, げ is limited to feelings and manner; you cannot say 雨が降りげ or おいしげ.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{悲|かな}しげな{顔|かお}で{窓|まど}の{外|そと}を{見|み}ていた。",
+          "kana": "かのじょはかなしげなかおでまどのそとをみていた。",
+          "en": "She was gazing out the window with a sad look on her face."
+        },
+        {
+          "ja": "{子|こ}どもたちは{楽|たの}しげに{雪|ゆき}の{上|うえ}を{走|はし}り{回|まわ}った。",
+          "kana": "こどもたちはたのしげにゆきのうえをはしりまわった。",
+          "en": "The children ran around happily on the snow."
+        },
+        {
+          "ja": "{田中|たなか}さんは{何|なに}か{言|い}いたげに、こちらを{見|み}ました。",
+          "kana": "たなかさんはなにかいいたげに、こちらをみました。",
+          "en": "Tanaka looked over at me as if he wanted to say something."
+        },
+        {
+          "ja": "{店員|てんいん}は{不安|ふあん}げに{時計|とけい}を{見|み}ている。",
+          "kana": "てんいんはふあんげにとけいをみている。",
+          "en": "The clerk is glancing at the clock anxiously."
+        }
+      ],
+      "clozeHints": [
+        "げな",
+        "げに"
+      ],
+      "mistakes": [
+        "× 悲しいげ → ○ 悲しげ (drop the い before げ)",
+        "× おいしげなケーキ → ○ おいしそうなケーキ (げ is only for feelings and manner; appearance in general is そう)",
+        "× 不安げの顔 → ○ 不安げな顔 (げ makes a な-adjective)"
+      ],
+      "related": [
+        "g-n4-032",
+        "g-n3-041"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "notes": "Common in narration and written description; in casual speech 〜そう covers the same ground. Taught for recognition in Native Bridge passages as much as for production.",
+      "station": 30
+    },
+    {
+      "id": "g-n3-044",
+      "pattern": "〜気味",
+      "meaning": "a touch of …; slightly … (current state)",
+      "formation": [
+        "V-ます stem + 気味 (疲れ気味, 太り気味, 遅れ気味)",
+        "N + 気味 (風邪気味, 緊張気味)",
+        "Read ぎみ in this use; behaves like a な-adjective: 〜気味の / 〜気味な + N, 〜気味だ / 〜気味です"
+      ],
+      "explanation": "〜気味 (ぎみ) marks a slight, usually unwelcome tendency you can feel right now: 風邪気味だ is 'I feel a cold coming on', 太り気味 is 'a bit on the heavy side'. Attach it to a ます-stem or a noun. It describes a present condition that has drifted a little in one direction, while 〜がち is about things that happen too often and 〜っぽい is about character or appearance. Note the voicing: 気味 reads ぎみ here. Polite: 〜気味です; before a noun both 気味の and 気味な are heard.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今日|きょう}はちょっと{風邪|かぜ}{気味|ぎみ}なので、{早|はや}く{帰|かえ}ります。",
+          "kana": "きょうはちょっとかぜぎみなので、はやくかえります。",
+          "en": "I feel a cold coming on today, so I'm going home early."
+        },
+        {
+          "ja": "{最近|さいきん}{太|ふと}り{気味|ぎみ}だから、{甘|あま}いものはやめている。",
+          "kana": "さいきんふとりぎみだから、あまいものはやめている。",
+          "en": "I've been putting on a bit of weight lately, so I'm laying off sweets."
+        },
+        {
+          "ja": "{電車|でんしゃ}が{遅|おく}れ{気味|ぎみ}で、{会議|かいぎ}に{間|ま}に{合|あ}うか{心配|しんぱい}です。",
+          "kana": "でんしゃがおくれぎみで、かいぎにまにあうかしんぱいです。",
+          "en": "The train is running a little behind, and I'm worried I won't make the meeting."
+        },
+        {
+          "ja": "{疲|つか}れ{気味|ぎみ}の{時|とき}は、{無理|むり}をしないで{休|やす}んでください。",
+          "kana": "つかれぎみのときは、むりをしないでやすんでください。",
+          "en": "When you're feeling a bit worn out, don't push yourself; get some rest."
+        }
+      ],
+      "clozeHints": [
+        "気味"
+      ],
+      "mistakes": [
+        "× 風邪きみ → ○ 風邪ぎみ (気味 is voiced to ぎみ after a stem)",
+        "× 疲れる気味 → ○ 疲れ気味 (attach it to the ます-stem)",
+        "× 子どもの頃は病気気味だった → ○ 子どもの頃は病気がちだった (a repeated tendency over time is がち; 気味 is a slight current state)"
+      ],
+      "related": [
+        "g-n3-042",
+        "g-n3-041",
+        "g-n4-019"
+      ],
+      "tags": [
+        "health",
+        "states"
+      ],
+      "station": 30
+    },
+    {
+      "id": "g-n3-045",
+      "pattern": "〜ちゃう / 〜じゃう (receptive)",
+      "meaning": "end up …; finish … (spoken てしまう)",
+      "formation": [
+        "〜てしまう → 〜ちゃう (食べてしまう → 食べちゃう)",
+        "〜でしまう → 〜じゃう (読んでしまう → 読んじゃう, 死んでしまう → 死んじゃう)",
+        "Past: 〜ちゃった / 〜じゃった; polite: 〜ちゃいます / 〜ちゃいました",
+        "Other forms follow しまう: 〜ちゃって, 〜ちゃおう, 〜ちゃわない"
+      ],
+      "explanation": "〜ちゃう is what 〜てしまう becomes in everyday speech, and 〜じゃう is its partner after the で-group (読んじゃう, 飲んじゃう). You will hear it constantly for regret or accidents (財布を忘れちゃった), for finishing something off (全部食べちゃった) and for cheerful decisions (買っちゃおう). Learn to hear it first: when a verb ends in ちゃう or じゃう, mentally restore てしまう and the meaning is clear. It takes the same polite endings (ちゃいました), which are fine with coworkers but not in writing or formal speech. Use the full てしまう when in doubt.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "ごめん、{君|きみ}のケーキ、{食|た}べちゃった。",
+          "kana": "ごめん、きみのケーキ、たべちゃった。",
+          "en": "Sorry, I ate your cake."
+        },
+        {
+          "ja": "{財布|さいふ}を{家|いえ}に{忘|わす}れちゃって、{昼|ひる}ご{飯|はん}が{買|か}えなかった。",
+          "kana": "さいふをいえにわすれちゃって、ひるごはんがかえなかった。",
+          "en": "I left my wallet at home and couldn't buy lunch."
+        },
+        {
+          "ja": "{借|か}りた{本|ほん}、{一晩|ひとばん}で{全部|ぜんぶ}{読|よ}んじゃったよ。",
+          "kana": "かりたほん、ひとばんでぜんぶよんじゃったよ。",
+          "en": "I finished the whole book I borrowed in one night."
+        },
+        {
+          "ja": "{資料|しりょう}はもう{送|おく}っちゃいましたか。",
+          "kana": "しりょうはもうおくっちゃいましたか。",
+          "en": "Did you already send the documents?"
+        }
+      ],
+      "clozeHints": [
+        "ちゃった",
+        "ちゃって",
+        "じゃった",
+        "ちゃいました"
+      ],
+      "mistakes": [
+        "× 読んちゃった → ○ 読んじゃった (after a で-form, しまう contracts to じゃう)",
+        "× 本日の会議は中止になっちゃいました (formal notice) → ○ 本日の会議は中止になってしまいました (ちゃう is spoken; use てしまう in writing and formal speech)",
+        "× 食べてちゃった → ○ 食べちゃった (ちゃう replaces the whole てしまう; do not keep て)"
+      ],
+      "related": [
+        "g-n4-004",
+        "g-n3-046",
+        "g-n3-048"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "notes": "Receptive point: the learner needs to decode ちゃう/じゃう in input; production stays optional until the casual-register stations.",
+      "station": 30
+    },
+    {
+      "id": "g-n3-046",
+      "pattern": "〜とく / 〜どく (receptive)",
+      "meaning": "do … in advance; leave … as is (spoken ておく)",
+      "formation": [
+        "〜ておく → 〜とく (買っておく → 買っとく)",
+        "〜でおく → 〜どく (読んでおく → 読んどく, 呼んでおく → 呼んどく)",
+        "Past: 〜といた / 〜どいた; polite: 〜ときます / 〜ときました",
+        "Request: 〜といて / 〜どいて (= 〜ておいて)"
+      ],
+      "explanation": "〜とく is the spoken contraction of 〜ておく, and 〜どく follows the で-group (読んどく). The meaning is the same: do something ahead of time (予約しとくね), or leave a situation as it is (そのままにしといて). You will hear it in requests from friends and coworkers (これ、コピーしといて) and in quick plans. To understand it, restore ておく in your head. The polite ときます is common in casual workplaces; in writing and careful speech say ておきます. You do not need to produce it yet, but recognizing といて as 'please do it beforehand' will save you many misunderstandings.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{飲|の}み{物|もの}は{私|わたし}が{買|か}っとくね。",
+          "kana": "のみものはわたしがかっとくね。",
+          "en": "I'll get the drinks ahead of time."
+        },
+        {
+          "ja": "{会議|かいぎ}の{前|まえ}に、この{資料|しりょう}を{読|よ}んどいてください。",
+          "kana": "かいぎのまえに、このしりょうをよんどいてください。",
+          "en": "Please read these materials before the meeting."
+        },
+        {
+          "ja": "{窓|まど}は{開|あ}けといて。{暑|あつ}いから。",
+          "kana": "まどはあけといて。あついから。",
+          "en": "Leave the window open. It's hot."
+        },
+        {
+          "ja": "{店|みせ}、{予約|よやく}しときましたよ。",
+          "kana": "みせ、よやくしときましたよ。",
+          "en": "I went ahead and booked the restaurant."
+        }
+      ],
+      "clozeHints": [
+        "とく",
+        "どいて",
+        "といて",
+        "ときました"
+      ],
+      "mistakes": [
+        "× 読んといて → ○ 読んどいて (after a で-form, おく contracts to どく)",
+        "× 買ってとく → ○ 買っとく (とく replaces the whole ておく; do not keep て)",
+        "× お客様、こちらに置いときます → ○ お客様、こちらに置いておきます (とく is casual; use ておく with customers)"
+      ],
+      "related": [
+        "g-n4-005",
+        "g-n3-045",
+        "g-n3-048"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "notes": "Receptive point: decode とく/どく/といて in input first; the full ておく remains the production target.",
+      "station": 30
+    },
+    {
+      "id": "g-n3-047",
+      "pattern": "〜じゃん / 〜じゃない (casual agreement seeking)",
+      "meaning": "right?; isn't it? (casual tag)",
+      "formation": [
+        "Plain sentence + じゃん (いいじゃん, できたじゃん, 雨じゃん)",
+        "Plain sentence + じゃない (いいじゃない, 言ったじゃない), rising or sharp falling tone",
+        "N / な-adjective: attach directly, no だ (無理じゃん, 静かじゃない)",
+        "Speech only; じゃん is especially Kantō casual, じゃないですか is the polite tag"
+      ],
+      "explanation": "〜じゃん and 〜じゃない at the end of a sentence are not negatives; they ask the listener to agree or point out something obvious: いいじゃん 'that's good, right?', 言ったじゃない 'I told you, didn't I?'. じゃん is the most casual, typical of Tokyo and Yokohama speech among friends; じゃない works in both casual and, as じゃないですか, polite talk. The trap is the real negative: 高くない with low, flat intonation means 'not expensive', while 高いじゃない with a rise means 'it IS expensive, isn't it'. Listen for what comes before: an い-adjective keeps its い when じゃない is the tag.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "この{店|みせ}、{安|やす}くておいしいじゃん。",
+          "kana": "このみせ、やすくておいしいじゃん。",
+          "en": "This place is cheap and good, right?"
+        },
+        {
+          "ja": "ほら、{言|い}ったじゃない。{傘|かさ}を{持|も}っていけって。",
+          "kana": "ほら、いったじゃない。かさをもっていけって。",
+          "en": "See, I told you. I said to take an umbrella."
+        },
+        {
+          "ja": "{一人|ひとり}でできたじゃん。すごいね。",
+          "kana": "ひとりでできたじゃん。すごいね。",
+          "en": "You did it on your own! Impressive."
+        },
+        {
+          "ja": "{明日|あした}は{休|やす}みじゃない。ゆっくり{寝|ね}ようよ。",
+          "kana": "あしたはやすみじゃない。ゆっくりねようよ。",
+          "en": "Tomorrow's a day off, isn't it? Let's sleep in."
+        }
+      ],
+      "clozeHints": [
+        "じゃん",
+        "じゃない"
+      ],
+      "mistakes": [
+        "× おいしくないじゃん (meaning it's tasty, right?) → ○ おいしいじゃん (as a tag, じゃん follows the plain positive form)",
+        "× 部長、それはいいじゃん → ○ 部長、それはいいじゃないですか (じゃん is for friends; use じゃないですか with superiors)",
+        "× 休みだじゃない → ○ 休みじゃない (nouns attach directly; no だ)"
+      ],
+      "related": [
+        "g-n4-084",
+        "g-n5-008",
+        "g-n4-086"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 30
+    },
+    {
+      "id": "g-n3-048",
+      "pattern": "〜てる / 〜てない / 〜なきゃ / 〜なくちゃ (contractions)",
+      "meaning": "spoken contractions: is …ing; isn't …; have to …",
+      "formation": [
+        "〜ている → 〜てる / 〜でいる → 〜でる (食べてる, 読んでる); past 〜てた",
+        "〜ていない → 〜てない / 〜でいない → 〜でない (まだ来てない)",
+        "〜なければ → 〜なきゃ; 〜なくては → 〜なくちゃ (行かなきゃ, 行かなくちゃ)",
+        "なきゃ / なくちゃ often stand alone: もう帰らなきゃ = 帰らなければならない",
+        "Polite contractions: 〜てます / 〜てません / 〜てました"
+      ],
+      "explanation": "Spoken Japanese drops the い of ている and ていない: 食べてる, 読んでる, 来てない. It also squeezes なければ into なきゃ and なくては into なくちゃ, and usually leaves off ならない or いけない: もう行かなきゃ means 'I have to go now'. Learn to hear these as whole units. 〜てる and 〜てない keep every ている meaning (progressive, result, habit) and take polite endings (知ってます), which are fine with coworkers. なきゃ and なくちゃ are casual; in a report or to a customer say なければなりません. For now the goal is comprehension: when a verb sounds short, add the missing い.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{今|いま}{何|なに}してる？",
+          "kana": "いまなにしてる？",
+          "en": "What are you doing right now?"
+        },
+        {
+          "ja": "ケンはまだ{来|き}てないよ。{電車|でんしゃ}が{遅|おく}れてるみたい。",
+          "kana": "ケンはまだきてないよ。でんしゃがおくれてるみたい。",
+          "en": "Ken's not here yet. Looks like the train is running late."
+        },
+        {
+          "ja": "もう{九時|くじ}だ。{帰|かえ}らなきゃ。",
+          "kana": "もうくじだ。かえらなきゃ。",
+          "en": "It's already nine. I have to go home."
+        },
+        {
+          "ja": "{明日|あした}までにレポートを{出|だ}さなくちゃ。",
+          "kana": "あしたまでにレポートをださなくちゃ。",
+          "en": "I have to hand in the report by tomorrow."
+        },
+        {
+          "ja": "その{話|はなし}、{知|し}ってます。",
+          "kana": "そのはなし、しってます。",
+          "en": "I know about that."
+        }
+      ],
+      "clozeHints": [
+        "てる",
+        "てない",
+        "なきゃ",
+        "なくちゃ",
+        "てます"
+      ],
+      "mistakes": [
+        "× 読んてる → ○ 読んでる (after a で-form the contraction keeps で)",
+        "× 行かなきゃならないです (to a customer) → ○ 行かなければなりません (なきゃ is casual; restore なければ in formal speech)",
+        "× 知ってるます → ○ 知ってます (the polite contraction is てます, not てるます)"
+      ],
+      "related": [
+        "g-n5-048",
+        "g-n5-088",
+        "g-n3-045",
+        "g-n3-046"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "notes": "Chunk list taught as one pattern. All four contractions are receptive-first; polite てます/てません are safe to produce with coworkers.",
+      "station": 30
+    },
+    {
+      "id": "g-n3-049",
+      "pattern": "〜である / 〜ではない (written copula)",
+      "meaning": "is …; is not … (written style)",
+      "formation": [
+        "N / な-adjective + である (日本は島国である, 重要である)",
+        "Negative: 〜ではない; past: 〜であった / 〜ではなかった",
+        "Prenominal: 〜である + N (学生である私)",
+        "Spoken equivalents: だ / じゃない; polite speech-style: であります"
+      ],
+      "explanation": "〜である is the copula of written Japanese: essays, reports, newspapers and signs use 日本は島国である where speech uses だ or です. Its negative is 〜ではない and its past 〜であった. You use it when a text wants to sound objective and consistent, and you keep the whole text in that style rather than mixing in です・ます. である also works before a noun (学生である私には), where だ cannot. Do not say it in conversation; it sounds like reading aloud. Verbs and い-adjectives do not change in written style; only the copula does.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{日本|にほん}は{海|うみ}に{囲|かこ}まれた{島国|しまぐに}である。",
+          "kana": "にほんはうみにかこまれたしまぐにである。",
+          "en": "Japan is an island nation surrounded by the sea."
+        },
+        {
+          "ja": "この{問題|もんだい}は{簡単|かんたん}ではない。",
+          "kana": "このもんだいはかんたんではない。",
+          "en": "This problem is not simple."
+        },
+        {
+          "ja": "{江戸時代|えどじだい}、ここは{重要|じゅうよう}な{港町|みなとまち}であった。",
+          "kana": "えどじだい、ここはじゅうようなみなとまちであった。",
+          "en": "In the Edo period, this was an important port town."
+        },
+        {
+          "ja": "{学生|がくせい}である{間|あいだ}に、{多|おお}くの{本|ほん}を{読|よ}んでおきたい。",
+          "kana": "がくせいであるあいだに、おおくのほんをよんでおきたい。",
+          "en": "While I am a student, I want to read many books."
+        }
+      ],
+      "clozeHints": [
+        "である",
+        "ではない",
+        "であった"
+      ],
+      "mistakes": [
+        "× 私は学生であるです → ○ 私は学生である (である is already the predicate; do not add です)",
+        "× ねえ、今日は休みであるよ → ○ ねえ、今日は休みだよ (である is written style; use だ in conversation)",
+        "× 問題は簡単である。しかし、解決は難しいです。 → ○ 問題は簡単である。しかし、解決は難しい。 (keep one style; do not mix である with です・ます)"
+      ],
+      "related": [
+        "g-n5-068",
+        "g-n5-001",
+        "g-n5-002",
+        "g-n3-050"
+      ],
+      "tags": [
+        "language"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-050",
+      "pattern": "〜ており / 〜であり (written て-linking)",
+      "meaning": "… and … (written clause linking)",
+      "formation": [
+        "V-て + おり (〜ていて → 〜ており: 東京に住んでおり)",
+        "N / な-adjective + であり (〜で → 〜であり: 彼女は医者であり)",
+        "Related written linking: ます-stem + 、 (食べ、飲み for 食べて、飲んで)",
+        "Humble spoken form: 〜ております / 〜ておりまして"
+      ],
+      "explanation": "Written Japanese links clauses with 〜ており in place of 〜ていて, and with 〜であり in place of the copula's で: 彼は東京に住んでおり、週末は… . You use these in reports, articles and formal e-mails to keep a sentence flowing without the conversational feel of て. The meaning is unchanged: a state or fact in the first clause, then another. ており is the おる form of いる, so it also appears in humble speech (田中は席を外しております). You do not need to write this way yet, but recognizing ており and であり as 'and' makes written passages much easier to read.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "この{町|まち}は{古|ふる}い{建物|たてもの}が{多|おお}く{残|のこ}っており、{観光客|かんこうきゃく}に{人気|にんき}がある。",
+          "kana": "このまちはふるいたてものがおおくのこっており、かんこうきゃくににんきがある。",
+          "en": "Many old buildings remain in this town, and it is popular with tourists."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{医者|いしゃ}であり、{二人|ふたり}の{子|こ}どもの{母親|ははおや}でもある。",
+          "kana": "かのじょはいしゃであり、ふたりのこどものははおやでもある。",
+          "en": "She is a doctor and also the mother of two children."
+        },
+        {
+          "ja": "{現在|げんざい}、{道路|どうろ}の{工事|こうじ}を{行|おこな}っており、{通|とお}ることができません。",
+          "kana": "げんざい、どうろのこうじをおこなっており、とおることができません。",
+          "en": "Road work is currently under way, and the road cannot be used."
+        },
+        {
+          "ja": "{田中|たなか}はただいま{席|せき}を{外|はず}しております。",
+          "kana": "たなかはただいませきをはずしております。",
+          "en": "Tanaka is away from his desk at the moment."
+        }
+      ],
+      "clozeHints": [
+        "ており",
+        "であり"
+      ],
+      "mistakes": [
+        "× 住んでいており → ○ 住んでおり (おり replaces いて; do not stack them)",
+        "× 医者でありで → ○ 医者であり (であり is already the linking form)",
+        "× (chatting with a friend) 京都に住んでおり、週末は海に行く → ○ 京都に住んでいて、週末は海に行く (ており is written or humble; with friends use ていて)"
+      ],
+      "related": [
+        "g-n3-049",
+        "g-n5-050",
+        "g-n4-055"
+      ],
+      "tags": [
+        "language"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-051",
+      "pattern": "〜ず / 〜ずに (written negative)",
+      "meaning": "without …ing; not … (written)",
+      "formation": [
+        "V-ない stem + ず / ずに (食べず, 食べずに, 行かずに)",
+        "する → せず / せずに (never しず)",
+        "〜ず、〜 links clauses (何も言わず、出て行った); 〜ずに modifies the following verb",
+        "Spoken counterparts: 〜ないで / 〜なくて; set phrases: 相変わらず, 思わず"
+      ],
+      "explanation": "〜ず is the written negative of a verb: 食べず is 'not eating', and 〜ずに means 'without doing' before another verb (朝ご飯を食べずに出かけた). Attach it to the ない-stem; the one irregular is する → せず. Use 〜ず、 to link clauses in reports and narration, where speech would say ないで or なくて. You met ずに at N4 as an alternative to ないで; here the point is that ず can end a clause on its own and belongs to written style, including set phrases like 相変わらず and 思わず. Do not attach it to い-adjectives or nouns.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{何|なに}も{言|い}わず、{部屋|へや}を{出|で}て{行|い}った。",
+          "kana": "かれはなにもいわず、へやをでていった。",
+          "en": "He left the room without saying a word."
+        },
+        {
+          "ja": "{朝|あさ}ご{飯|はん}を{食|た}べずに{会社|かいしゃ}へ{行|い}く{人|ひと}が{増|ふ}えている。",
+          "kana": "あさごはんをたべずにかいしゃへいくひとがふえている。",
+          "en": "More and more people go to work without eating breakfast."
+        },
+        {
+          "ja": "{雨|あめ}が{降|ふ}っても{試合|しあい}は{中止|ちゅうし}にならず、{予定|よてい}どおり{行|おこな}われた。",
+          "kana": "あめがふってもしあいはちゅうしにならず、よていどおりおこなわれた。",
+          "en": "Even in the rain the match was not called off and went ahead as planned."
+        },
+        {
+          "ja": "{調|しら}べもせずに{答|こた}えるのはよくない。",
+          "kana": "しらべもせずにこたえるのはよくない。",
+          "en": "It's not good to answer without even looking into it."
+        }
+      ],
+      "clozeHints": [
+        "ず、",
+        "ずに"
+      ],
+      "mistakes": [
+        "× 勉強しずに → ○ 勉強せずに (する becomes せず)",
+        "× 高くず → ○ 高くなく (ず is for verbs only; adjectives use なく)",
+        "× 何も言わずで出て行った → ○ 何も言わずに出て行った (ず takes に, not で, before the next verb)"
+      ],
+      "related": [
+        "g-n4-008",
+        "g-n4-007",
+        "g-n4-009",
+        "g-n3-049"
+      ],
+      "tags": [
+        "language"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-052",
+      "pattern": "〜において / 〜における",
+      "meaning": "in; at; in the field of … (formal)",
+      "formation": [
+        "N + において (会議において, 日本において, 現代社会において)",
+        "N + における + N (日本における教育, 江戸時代における旅)",
+        "〜においては / 〜においても (topic; even in)",
+        "Spoken equivalents: で / での"
+      ],
+      "explanation": "〜において marks the place, time or field where something happens, in formal written or spoken Japanese: 会議において決定された is the formal cousin of 会議で決まった. Before a noun it becomes 〜における (日本における教育). You use it in reports, speeches, academic text and official notices; in conversation it sounds stiff, so say で and での. It never marks a tool or means (× ペンにおいて書く) and never a destination; it is for the setting of an event or the scope of a statement. Pair it with other written forms such as である and ており to keep the register consistent.",
+      "jlpt": 3,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{次|つぎ}の{大会|たいかい}は{京都|きょうと}において{行|おこな}われる{予定|よてい}である。",
+          "kana": "つぎのたいかいはきょうとにおいておこなわれるよていである。",
+          "en": "The next tournament is scheduled to be held in Kyoto."
+        },
+        {
+          "ja": "{現代|げんだい}の{日本|にほん}における{働|はたら}き{方|かた}は{大|おお}きく{変|か}わってきた。",
+          "kana": "げんだいのにほんにおけるはたらきかたはおおきくかわってきた。",
+          "en": "Ways of working in present-day Japan have changed greatly."
+        },
+        {
+          "ja": "この{会議|かいぎ}においては、{全員|ぜんいん}が{意見|いけん}を{言|い}うことができます。",
+          "kana": "このかいぎにおいては、ぜんいんがいけんをいうことができます。",
+          "en": "In this meeting, everyone may voice an opinion."
+        },
+        {
+          "ja": "{江戸時代|えどじだい}における{旅|たび}は、{歩|ある}くのが{基本|きほん}だった。",
+          "kana": "えどじだいにおけるたびは、あるくのがきほんだった。",
+          "en": "Travel in the Edo period was mostly done on foot."
+        }
+      ],
+      "clozeHints": [
+        "において",
+        "における"
+      ],
+      "mistakes": [
+        "× ペンにおいて書く → ○ ペンで書く (において marks a setting or field, never a tool)",
+        "× 日本においての教育 → ○ 日本における教育 (before a noun use における)",
+        "× ねえ、駅において会おう → ○ ねえ、駅で会おう (において is formal; use で in conversation)"
+      ],
+      "related": [
+        "g-n5-019",
+        "g-n3-017",
+        "g-n3-021",
+        "g-n3-049"
+      ],
+      "tags": [
+        "places",
+        "society"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-053",
+      "pattern": "〜に関する / 〜に対する (prenominal)",
+      "meaning": "concerning …; toward … (before a noun)",
+      "formation": [
+        "N + に関する + N (環境に関する本, 旅行に関する質問)",
+        "N + に対する + N (親に対する感謝, 客に対する態度)",
+        "Clause forms: 〜に関して / 〜に対して (not before a noun)",
+        "Casual equivalent of に関する: N についての N"
+      ],
+      "explanation": "You already use 〜に関して and 〜に対して inside a clause; before a noun they take the する form: 環境に関する本 'a book on the environment', 客に対する態度 'one's attitude toward customers'. に関する means 'about, concerning' and is the formal partner of についての. に対する means 'directed at' and names the target of a feeling, attitude or action. Both are common in titles, reports and notices. Choose by meaning, not by formality: 子どもに関する本 is about children, while 子どもに対する本 would mean a book aimed at them. In casual speech についての is enough.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{環境|かんきょう}に{関|かん}する{本|ほん}を{三冊|さんさつ}{借|か}りた。",
+          "kana": "かんきょうにかんするほんをさんさつかりた。",
+          "en": "I borrowed three books on the environment."
+        },
+        {
+          "ja": "{旅行|りょこう}に{関|かん}するご{質問|しつもん}は、{受付|うけつけ}までお{願|ねが}いします。",
+          "kana": "りょこうにかんするごしつもんは、うけつけまでおねがいします。",
+          "en": "For questions about the trip, please ask at the reception desk."
+        },
+        {
+          "ja": "{客|きゃく}に{対|たい}する{店員|てんいん}の{態度|たいど}がとてもよかった。",
+          "kana": "きゃくにたいするてんいんのたいどがとてもよかった。",
+          "en": "The staff's attitude toward customers was very good."
+        },
+        {
+          "ja": "{外国人|がいこくじん}に{対|たい}するサポートを{増|ふ}やすべきだという{意見|いけん}が{多|おお}い。",
+          "kana": "がいこくじんにたいするサポートをふやすべきだといういけんがおおい。",
+          "en": "Many people feel that support for foreign residents should be increased."
+        }
+      ],
+      "clozeHints": [
+        "に関する",
+        "に対する"
+      ],
+      "mistakes": [
+        "× 環境に関して本 → ○ 環境に関する本 (before a noun use the する form)",
+        "× 子どもに対する本 (meaning a book about children) → ○ 子どもに関する本 (に対する names a target; about is に関する)",
+        "× 友達に「環境に関する本、読んだ？」 → ○ 友達に「環境についての本、読んだ？」 (に関する is formal; use についての with friends)"
+      ],
+      "related": [
+        "g-n3-021",
+        "g-n3-017",
+        "g-n3-018"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-054",
+      "pattern": "〜のではないだろうか / 〜のではないか",
+      "meaning": "isn't it the case that …?; I would think that …",
+      "formation": [
+        "V / い-adjective plain + のではないだろうか (問題があるのではないだろうか)",
+        "N / な-adjective + な + のではないだろうか (必要なのではないか)",
+        "Polite: 〜のではないでしょうか; shorter written: 〜のではないか",
+        "Spoken: 〜んじゃないかな / 〜んじゃない？"
+      ],
+      "explanation": "〜のではないだろうか puts forward your opinion as a careful question: この計画には問題があるのではないだろうか 'might there not be a problem with this plan?'. You use it in essays, reports and meetings to assert something while leaving room for disagreement; it is softer than だと思う and much softer than に決まっている. Attach it to the plain form, with な after nouns and な-adjectives. The polite version is のではないでしょうか, a very useful way to disagree politely at work. In casual speech the same idea is んじゃないかな. It is not a real question, so do not expect a yes or no.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "この{計画|けいかく}には{問題|もんだい}があるのではないだろうか。",
+          "kana": "このけいかくにはもんだいがあるのではないだろうか。",
+          "en": "Might there not be a problem with this plan?"
+        },
+        {
+          "ja": "{値段|ねだん}をもう{少|すこ}し{下|さ}げた{方|ほう}がいいのではないでしょうか。",
+          "kana": "ねだんをもうすこしさげたほうがいいのではないでしょうか。",
+          "en": "Wouldn't it be better to lower the price a little?"
+        },
+        {
+          "ja": "{若|わか}い{人|ひと}にとって、{今|いま}の{制度|せいど}は{厳|きび}しいのではないか。",
+          "kana": "わかいひとにとって、いまのせいどはきびしいのではないか。",
+          "en": "Isn't the current system hard on young people?"
+        },
+        {
+          "ja": "{彼|かれ}はもう{帰|かえ}ったんじゃないかな。",
+          "kana": "かれはもうかえったんじゃないかな。",
+          "en": "I'd guess he's already gone home."
+        }
+      ],
+      "clozeHints": [
+        "のではないだろうか",
+        "のではないでしょうか",
+        "のではないか",
+        "んじゃないかな"
+      ],
+      "mistakes": [
+        "× 問題だのではないか → ○ 問題なのではないか (nouns and な-adjectives take な before の)",
+        "× 部長の案は間違っています → ○ 部長の案には問題があるのではないでしょうか (soften a disagreement at work with のではないでしょうか)"
+      ],
+      "related": [
+        "g-n4-081",
+        "g-n4-085",
+        "g-n5-076",
+        "g-n3-037"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-055",
+      "pattern": "〜と言える / 〜と考えられる",
+      "meaning": "it can be said that …; it is thought that …",
+      "formation": [
+        "Plain clause + と言える (成功したと言える)",
+        "Plain clause + と考えられる; keep だ after a noun (原因は雨だと考えられる)",
+        "Variants: 〜と言えるだろう / 〜と言えよう / 〜と考えられている",
+        "Polite: 〜と言えます / 〜と考えられます"
+      ],
+      "explanation": "〜と言える and 〜と考えられる let you state a conclusion without saying 'I think': 今回の試みは成功したと言える 'it can be said the attempt succeeded'; 原因は雨だと考えられる 'the cause is thought to be rain'. Both take the plain form before と, with だ kept after nouns. と言える is a judgment the evidence supports; と考えられる is a reasoned inference, common in reports and science, and と考えられている reports what people generally believe. These are written and formal spoken forms; in conversation you say と思う. They sound objective, so do not use them for personal taste.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{今回|こんかい}のイベントは{成功|せいこう}したと{言|い}える。",
+          "kana": "こんかいのイベントはせいこうしたといえる。",
+          "en": "It can be said that this event was a success."
+        },
+        {
+          "ja": "{事故|じこ}の{原因|げんいん}は{強|つよ}い{風|かぜ}だと{考|かんが}えられる。",
+          "kana": "じこのげんいんはつよいかぜだとかんがえられる。",
+          "en": "The cause of the accident is thought to be strong wind."
+        },
+        {
+          "ja": "この{祭|まつ}りは{約|やく}{三百年前|さんびゃくねんまえ}に{始|はじ}まったと{考|かんが}えられています。",
+          "kana": "このまつりはやくさんびゃくねんまえにはじまったとかんがえられています。",
+          "en": "This festival is believed to have started about three hundred years ago."
+        },
+        {
+          "ja": "{日本|にほん}は{世界|せかい}でも{安全|あんぜん}な{国|くに}だと{言|い}えるでしょう。",
+          "kana": "にほんはせかいでもあんぜんなくにだといえるでしょう。",
+          "en": "Japan can be called one of the safer countries in the world."
+        }
+      ],
+      "clozeHints": [
+        "と言える",
+        "と考えられ"
+      ],
+      "mistakes": [
+        "× 原因は雨と考えられる → ○ 原因は雨だと考えられる (keep だ after a noun before と)",
+        "× このケーキはおいしいと考えられる → ○ このケーキはおいしいと思う (personal taste is と思う; 考えられる is reasoned inference)",
+        "× 成功したと言われる (meaning I conclude) → ○ 成功したと言える (言われる reports others' words; 言える is your supported judgment)"
+      ],
+      "related": [
+        "g-n5-066",
+        "g-n4-031",
+        "g-n3-054",
+        "g-n3-049"
+      ],
+      "tags": [
+        "communication",
+        "abstract"
+      ],
+      "station": 31
+    },
+    {
+      "id": "g-n3-056",
+      "pattern": "〜ように (as, like: ご存知のように)",
+      "meaning": "as …; like …; in the way that …",
+      "formation": [
+        "V plain + ように (先生が言ったように, 思ったように)",
+        "N + の + ように (ご存知のように, 子どものように)",
+        "Set openers: ご存知のように / ご覧のように / 次のように / 以下のように",
+        "Prenominal: 〜ような + N (次のような問題); before a verb: 〜ように + V"
+      ],
+      "explanation": "〜ように here means 'as' or 'in the way that': 先生が言ったように 'as the teacher said', ご存知のように 'as you know'. You use it to point to a shared reference, to a model to copy (私がするように書いてください) or to a comparison (鳥のように). It is a different use from the purpose ように you learned (遅れないように) and from the appearance ようだ, though the grammar is the same: plain verb, or N + の, before ように. Formal openers like ご存知のように and 次のように are everyday tools in presentations and e-mails. Before a noun the form is ような.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "ご{存知|ぞんじ}のように、{来月|らいげつ}から{料金|りょうきん}が{変|か}わります。",
+          "kana": "ごぞんじのように、らいげつからりょうきんがかわります。",
+          "en": "As you know, the fees change starting next month."
+        },
+        {
+          "ja": "{先生|せんせい}が{言|い}ったように、{毎日|まいにち}{少|すこ}しずつ{練習|れんしゅう}しています。",
+          "kana": "せんせいがいったように、まいにちすこしずつれんしゅうしています。",
+          "en": "Just as my teacher said, I'm practicing a little every day."
+        },
+        {
+          "ja": "{私|わたし}がするように、{手|て}を{動|うご}かしてみてください。",
+          "kana": "わたしがするように、てをうごかしてみてください。",
+          "en": "Try moving your hands the way I do."
+        },
+        {
+          "ja": "{結果|けっか}は{次|つぎ}のようになりました。",
+          "kana": "けっかはつぎのようになりました。",
+          "en": "The results were as follows."
+        },
+        {
+          "ja": "{思|おも}ったように{話|はな}せなくて、{悔|くや}しかった。",
+          "kana": "おもったようにはなせなくて、くやしかった。",
+          "en": "I couldn't speak the way I wanted to, and it was frustrating."
+        }
+      ],
+      "clozeHints": [
+        "ように",
+        "のように"
+      ],
+      "mistakes": [
+        "× ご存知ように → ○ ご存知のように (a noun needs の before ように)",
+        "× 先生が言うようなに → ○ 先生が言うように (before a verb use ように; ような only before a noun)"
+      ],
+      "related": [
+        "g-n4-041",
+        "g-n4-033",
+        "g-n4-034"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 31
+    }
+  ]
+}

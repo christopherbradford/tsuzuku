@@ -1,0 +1,47 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s22",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-22-1",
+      "stationId": "st-22",
+      "kind": "road-history",
+      "titleEn": "Fresh Horses at Fujieda",
+      "bodyEn": "Hiroshige drew Fujieda not as scenery but as work: porters unloading one team and loading the next while a clerk keeps the ledger. Every Tōkaidō post town had to keep a hundred men and a hundred horses ready for official traffic. This relay, 継立, is what the keeper of this station is named for.",
+      "ja": "{人馬継立|じんばつぎたて}",
+      "kana": "じんばつぎたて",
+      "sourceNote": "Hiroshige, Hōeidō Tōkaidō 'Fujieda: Jinba tsugitate'; Edo tenma post-horse rules"
+    },
+    {
+      "id": "m-22-2",
+      "stationId": "st-22",
+      "kind": "etymology",
+      "titleEn": "The Arrow Notch Behind はず",
+      "bodyEn": "はず was first 筈, the notch at the end of an arrow that grips the bowstring. Because notch and string fit exactly, はず came to mean the thing that fits the case: what logically ought to be so. 来るはずだ is an arrow seated firmly on its string; 来るはずがない is one that will not seat at all.",
+      "ja": "{筈|はず}",
+      "kana": "はず",
+      "sourceNote": "Daijisen / Daijirin, entry はず【筈】 (arrow nock)"
+    },
+    {
+      "id": "m-22-3",
+      "stationId": "st-22",
+      "kind": "kanji-origin",
+      "titleEn": "Joining the Severed Thread",
+      "bodyEn": "継 in 継立 has 糸 'thread' on the left. Its right half is an old graph for threads cut through; thread beside it means tying the broken ends together, hence 'continue, succeed to'. At the post town a load passed from one team's shoulders to the next, and the journey continued unbroken.",
+      "ja": "{継|つ}ぐ",
+      "kana": "つぐ",
+      "sourceNote": "Shinjigen kanji dictionary, entry 継 (糸 + 㡭, 'severed threads')"
+    },
+    {
+      "id": "m-22-4",
+      "stationId": "st-22",
+      "kind": "usage",
+      "titleEn": "Just Now, or Just Recently?",
+      "bodyEn": "〜たところだ and 〜たばかりだ both translate as 'just did', but they measure time differently. ところ is a snapshot of the very moment: 今着いたところです, bags still in hand. ばかり is the speaker's feeling that little time has passed, and it stretches: 日本に来たばかり can mean last month. Nobody says 先月来たところ.",
+      "ja": "{今|いま}{着|つ}いたところです。",
+      "kana": "いまついたところです。"
+    }
+  ]
+}

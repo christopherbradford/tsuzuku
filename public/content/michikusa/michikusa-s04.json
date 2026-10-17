@@ -1,0 +1,47 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s04",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-04-1",
+      "stationId": "st-04",
+      "kind": "road-history",
+      "titleEn": "The First Real Hill",
+      "bodyEn": "Hiroshige's Hodogaya print shows Shinmachi Bridge over the Katabira River. Past the town the road met Gontazaka, the first hard climb since Nihonbashi. At the top stood Sakaigi, the 'boundary tree' where Musashi province ended and Sagami began; teahouses there sold grilled rice cakes to travelers catching their breath, and the next slope was named Yakimochizaka after them.",
+      "ja": "{権太坂|ごんたざか}",
+      "kana": "ごんたざか",
+      "sourceNote": "Hiroshige, Hōeidō Tōkaidō 1833–34: Hodogaya Shinmachi Bridge; Tōkaidō meisho zue"
+    },
+    {
+      "id": "m-04-2",
+      "stationId": "st-04",
+      "kind": "proverb",
+      "titleEn": "A Thousand Ri, One Step",
+      "bodyEn": "'Even a road of a thousand ri begins with a single step.' The line comes from the Chinese classic Laozi (chapter 64) and became an everyday Japanese proverb. A ri is about 3.9 kilometers; Nihonbashi to Kyoto ran roughly 126 ri, and Hodogaya is only your fourth station. Notice も: 'even' a thousand-ri road.",
+      "ja": "{千里|せんり}の{道|みち}も{一歩|いっぽ}から",
+      "kana": "せんりのみちもいっぽから",
+      "sourceNote": "Laozi, chapter 64: 千里之行, 始於足下"
+    },
+    {
+      "id": "m-04-3",
+      "stationId": "st-04",
+      "kind": "usage",
+      "titleEn": "Here, There, Over There",
+      "bodyEn": "これ・それ・あれ divide space by person: こ- is near the speaker, そ- near the listener, あ- away from both, and ど- asks (どれ, which one). The same four heads run through ここ・そこ・あそこ・どこ and この・その・あの・どの, so Japanese grammars call the whole set こそあど. The one irregular form is あそこ, not あこ.",
+      "ja": "これ・それ・あれ・どれ",
+      "kana": "これ・それ・あれ・どれ"
+    },
+    {
+      "id": "m-04-4",
+      "stationId": "st-04",
+      "kind": "etymology",
+      "titleEn": "Why は Sounds like わ",
+      "bodyEn": "The particle は is read わ because of a Heian-period sound change: an h-sound inside a word slid to w, so かは became かわ, 'river', and the particle, never word-initial, went with it. The 1946 spelling reform rewrote words by their sound but kept は, へ and を for the three particles. The spelling is a thousand-year-old fossil.",
+      "ja": "これは{本|ほん}です。",
+      "kana": "これはほんです。",
+      "sourceNote": "Nihon Kokugo Daijiten, ハ行転呼; Cabinet Notification 'Gendai kanazukai' (1946/1986)"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s21",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-21-1",
+      "stationId": "st-21",
+      "kind": "road-history",
+      "titleEn": "The Dark Path Over Utsunoya",
+      "bodyEn": "West of Mariko the Tōkaidō climbed Utsunoya Pass. The Tales of Ise, a thousand years old, already describes this road as dark and narrow, overgrown with ivy and maple, where the traveler meets a wandering ascetic and sends a poem home. Hiroshige's Okabe print keeps the mood: a gorge, a rushing stream, two steep slopes.",
+      "ja": "{蔦|つた}の{細道|ほそみち}",
+      "kana": "つたのほそみち",
+      "sourceNote": "Ise monogatari §9 (Azuma-kudari); Hiroshige, Hōeidō Tōkaidō 'Okabe'"
+    },
+    {
+      "id": "m-21-2",
+      "stationId": "st-21",
+      "kind": "etymology",
+      "titleEn": "Where いらっしゃる Comes From",
+      "bodyEn": "いらっしゃる began as 入らせらる, a doubly honorific form of 入る 'to enter', said of a noble coming in. Centuries of fast speech wore it down to いらっしゃる, and its meaning spread from arriving to going, coming and simply being there. That is why one honorific verb now stands in for 行く, 来る and いる at once.",
+      "ja": "{入|い}らせらる",
+      "kana": "いらせらる",
+      "sourceNote": "Nihon Kokugo Daijiten, entry いらっしゃる (from 入らせらる)"
+    },
+    {
+      "id": "m-21-3",
+      "stationId": "st-21",
+      "kind": "usage",
+      "titleEn": "Receiving or Giving a Favor",
+      "bodyEn": "〜ていただけませんか and 〜てくださいませんか both ask politely, from opposite sides. いただく is humble 'receive': you lower yourself as the one who would receive the favor. くださる is honorific 'give': you raise the listener as the giver. Both are safe with strangers; the いただけませんか version, asking whether receiving is even possible, sounds a shade softer.",
+      "ja": "{手伝|てつだ}っていただけませんか。",
+      "kana": "てつだっていただけませんか。"
+    },
+    {
+      "id": "m-21-4",
+      "stationId": "st-21",
+      "kind": "kanji-origin",
+      "titleEn": "Summoned to the Table",
+      "bodyEn": "召 pairs 口 'mouth' with 刀, which only lends its sound, and means 'to summon by calling'. In classical Japanese 召す became an all-purpose honorific: a lord 'summoned' his meal, his robes, even a cold. Add 上がる 'to go up' and you get 召し上がる, this station's respectful word for eating and drinking.",
+      "ja": "{召|め}し{上|あ}がる",
+      "kana": "めしあがる",
+      "sourceNote": "Shinjigen / Kanjigen kanji dictionaries, entry 召 (口 + phonetic 刀)"
+    }
+  ]
+}

@@ -1,0 +1,1283 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n5",
+  "writer": "grammar-n5-004",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n5-069",
+      "pattern": "〜前に",
+      "meaning": "before …",
+      "formation": [
+        "V-dictionary form + 前に: 寝る → 寝る前に",
+        "N + の + 前に: ご飯 → ご飯の前に",
+        "Length of time + 前に (no の): 一時間前に = an hour ago",
+        "Irregular: する → する前に · 来る → 来る前に"
+      ],
+      "explanation": "Put 前に after a dictionary-form verb, or after a noun plus の, to say 'before doing …' or 'before …'. The verb in front of 前に is always dictionary form, even when the whole sentence is past: 寝る前に本を読みました. After a length of time (一時間前に) there is no の and it means 'ago' or 'earlier'. Notice that 前に names the later action first, the opposite order from 〜てから. Never put a past-tense verb before 前に.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{寝|ね}る{前|まえ}に{本|ほん}を{読|よ}みます。",
+          "kana": "ねるまえにほんをよみます。",
+          "en": "I read a book before going to bed."
+        },
+        {
+          "ja": "ご{飯|はん}の{前|まえ}に{手|て}を{洗|あら}います。",
+          "kana": "ごはんのまえにてをあらいます。",
+          "en": "I wash my hands before meals."
+        },
+        {
+          "ja": "{日本|にほん}へ{来|く}る{前|まえ}に{日本語|にほんご}を{勉強|べんきょう}しました。",
+          "kana": "にほんへくるまえににほんごをべんきょうしました。",
+          "en": "I studied Japanese before coming to Japan."
+        },
+        {
+          "ja": "{一時間|いちじかん}{前|まえ}に{駅|えき}に{着|つ}きました。",
+          "kana": "いちじかんまえにえきにつきました。",
+          "en": "I arrived at the station an hour ago."
+        }
+      ],
+      "clozeHints": [
+        "前に"
+      ],
+      "mistakes": [
+        "× 日本に来た前に → ○ 日本に来る前に (even in a past sentence, 前に takes the dictionary form)",
+        "× 一時間の前に → ○ 一時間前に (a length of time takes no の)"
+      ],
+      "related": [
+        "g-n5-070",
+        "g-n5-071",
+        "g-n5-062"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-070",
+      "pattern": "〜た後で",
+      "meaning": "after …",
+      "formation": [
+        "V-た + 後で",
+        "N + の + 後で: 仕事 → 仕事の後で",
+        "Group 1: 飲む → 飲んだ後で",
+        "Group 2: 食べる → 食べた後で",
+        "Irregular: する → した後で · 来る → 来た後で"
+      ],
+      "explanation": "Put 後で after the た-form of a verb, or after a noun plus の, to say 'after doing …' or 'after …'. The verb before 後で is always た-form, whatever the tense of the main clause: 食べた後で寝ます, 食べた後で寝ました. On its own 後で means 'later' (後で電話します). Compared with 〜てから, 〜た後で simply states the order of two events; 〜てから stresses that the first one is finished before the second starts.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{仕事|しごと}の{後|あと}で{映画|えいが}を{見|み}ます。",
+          "kana": "しごとのあとでえいがをみます。",
+          "en": "I'll watch a movie after work."
+        },
+        {
+          "ja": "ご{飯|はん}を{食|た}べた{後|あと}で{薬|くすり}を{飲|の}みます。",
+          "kana": "ごはんをたべたあとでくすりをのみます。",
+          "en": "I take the medicine after eating."
+        },
+        {
+          "ja": "{買|か}い{物|もの}をした{後|あと}で{喫茶店|きっさてん}に{行|い}きました。",
+          "kana": "かいものをしたあとできっさてんにいきました。",
+          "en": "After shopping, I went to a coffee shop."
+        },
+        {
+          "ja": "{学校|がっこう}が{終|お}わった{後|あと}で{友|とも}だちと{話|はな}しました。",
+          "kana": "がっこうがおわったあとでともだちとはなしました。",
+          "en": "After school finished, I talked with my friends."
+        }
+      ],
+      "clozeHints": [
+        "後で"
+      ],
+      "mistakes": [
+        "× 食べる後で → ○ 食べた後で (後で follows the た-form, never the dictionary form)",
+        "× 食べます後で → ○ 食べた後で (polite ます cannot connect to 後で)"
+      ],
+      "related": [
+        "g-n5-069",
+        "g-n5-071",
+        "g-n5-064"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-071",
+      "pattern": "〜てから",
+      "meaning": "after doing …, and then …",
+      "formation": [
+        "V-て + から",
+        "Group 1: 洗う → 洗ってから · 飲む → 飲んでから",
+        "Group 2: 見る → 見てから",
+        "Irregular: する → してから · 来る → 来てから"
+      ],
+      "explanation": "Add から to the て-form to say 'after doing A, B'. It stresses that A is completed first and B follows, so it suits routines and instructions: 手を洗ってから食べます. Only the final verb changes tense. Use it for two actions in sequence by the same person or in the same situation; for a longer chain of events, plain 〜て、〜 is enough. Do not confuse it with から after a finished verb (食べましたから), which gives a reason, not a sequence.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{手|て}を{洗|あら}ってから{食|た}べましょう。",
+          "kana": "てをあらってからたべましょう。",
+          "en": "Let's eat after washing our hands."
+        },
+        {
+          "ja": "{切符|きっぷ}を{買|か}ってから{電車|でんしゃ}に{乗|の}ります。",
+          "kana": "きっぷをかってからでんしゃにのります。",
+          "en": "I buy a ticket and then get on the train."
+        },
+        {
+          "ja": "{家|いえ}に{帰|かえ}ってから{晩|ばん}ご{飯|はん}を{作|つく}りました。",
+          "kana": "いえにかえってからばんごはんをつくりました。",
+          "en": "After I got home, I made dinner."
+        },
+        {
+          "ja": "シャワーを{浴|あ}びてから{寝|ね}ます。",
+          "kana": "シャワーをあびてからねます。",
+          "en": "I take a shower and then go to bed."
+        }
+      ],
+      "clozeHints": [
+        "てから",
+        "でから"
+      ],
+      "mistakes": [
+        "× 洗うてから → ○ 洗ってから (Group 1 う-verbs take って)",
+        "× 食べましたから寝ます → ○ 食べてから寝ます (〜ましたから gives a reason, not a sequence)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-050",
+        "g-n5-070",
+        "g-n5-057"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-072",
+      "pattern": "〜ながら",
+      "meaning": "while doing …",
+      "formation": [
+        "V-ます stem + ながら",
+        "Group 1: 聞く → 聞きながら · 飲む → 飲みながら",
+        "Group 2: 食べる → 食べながら",
+        "Irregular: する → しながら · 来る → 来ながら"
+      ],
+      "explanation": "Attach ながら to the ます-stem (ます removed) to say one person does two things at the same time: 音楽を聞きながら勉強します. The action before ながら is the background; the main action comes last and carries the tense. Both actions must have the same doer, so you cannot use ながら for 'while he cooked, I read'. For events with different subjects, or a longer stretch of time, use 〜時.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{音楽|おんがく}を{聞|き}きながら{勉強|べんきょう}します。",
+          "kana": "おんがくをききながらべんきょうします。",
+          "en": "I study while listening to music."
+        },
+        {
+          "ja": "テレビを{見|み}ながらご{飯|はん}を{食|た}べました。",
+          "kana": "テレビをみながらごはんをたべました。",
+          "en": "I ate while watching TV."
+        },
+        {
+          "ja": "コーヒーを{飲|の}みながら{話|はな}しましょう。",
+          "kana": "コーヒーをのみながらはなしましょう。",
+          "en": "Let's talk over a cup of coffee."
+        },
+        {
+          "ja": "ケンは{歌|うた}いながら{料理|りょうり}をします。",
+          "kana": "ケンはうたいながらりょうりをします。",
+          "en": "Ken cooks while singing."
+        }
+      ],
+      "clozeHints": [
+        "ながら"
+      ],
+      "mistakes": [
+        "× 聞くながら → ○ 聞きながら (ながら attaches to the ます-stem)",
+        "× 食べてながら → ○ 食べながら (not the て-form)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-075",
+        "g-n5-048"
+      ],
+      "tags": [
+        "time",
+        "actions"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-073",
+      "pattern": "〜たことがあります",
+      "meaning": "have done … before",
+      "formation": [
+        "V-た + ことがあります",
+        "Negative: V-た + ことがありません",
+        "Group 1: 行く → 行ったことがあります",
+        "Group 2: 食べる → 食べたことがあります",
+        "Irregular: する → したことがあります · 来る → 来たことがあります"
+      ],
+      "explanation": "Put ことがあります after the た-form to talk about experience: 'I have done … (at least once)'. It asks whether something has ever happened in your life, not when. Answer with はい、あります or いいえ、ありません. For a specific past event use plain 〜ました: 去年、京都へ行きました. Do not use it for very recent or everyday events (× 今朝ご飯を食べたことがあります).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{富士山|ふじさん}を{見|み}たことがありますか。",
+          "kana": "ふじさんをみたことがありますか。",
+          "en": "Have you ever seen Mt. Fuji?"
+        },
+        {
+          "ja": "{京都|きょうと}へ{行|い}ったことがあります。",
+          "kana": "きょうとへいったことがあります。",
+          "en": "I have been to Kyoto."
+        },
+        {
+          "ja": "{飛行機|ひこうき}に{乗|の}ったことがありません。",
+          "kana": "ひこうきにのったことがありません。",
+          "en": "I have never been on an airplane."
+        },
+        {
+          "ja": "{田中|たなか}さんは{外国|がいこく}に{住|す}んだことがあります。",
+          "kana": "たなかさんはがいこくにすんだことがあります。",
+          "en": "Mr. Tanaka has lived abroad."
+        }
+      ],
+      "clozeHints": [
+        "ことがあります",
+        "ことがありません"
+      ],
+      "mistakes": [
+        "× 行くことがあります → ○ 行ったことがあります (experience needs the た-form; 行くことがある means 'sometimes go')",
+        "× 昨日映画を見たことがあります → ○ 昨日映画を見ました (a specific past event uses 〜ました)"
+      ],
+      "related": [
+        "g-n5-064",
+        "g-n5-017",
+        "g-n5-032"
+      ],
+      "tags": [
+        "travel",
+        "abstract"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-074",
+      "pattern": "〜たり〜たりします",
+      "meaning": "do things like … and …",
+      "formation": [
+        "V-た + り、V-た + り + します",
+        "い-adjective: 安い → 安かったり",
+        "な-adjective / N: 静か → 静かだったり · 雨 → 雨だったり",
+        "Group 1: 読む → 読んだり · 行く → 行ったり",
+        "Group 2: 見る → 見たり",
+        "Irregular: する → したり · 来る → 来たり"
+      ],
+      "explanation": "Put each verb in the た-form, add り, and finish with します to list a few representative actions: 'I do things like reading and watching movies'. The list is not complete and the order does not matter — that is the difference from 〜て、〜, which gives actions in sequence. The final します carries the tense (しました, したいです). Two 〜たり is the normal pattern; one is possible when the activity is just an example.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{週末|しゅうまつ}は{本|ほん}を{読|よ}んだり、{映画|えいが}を{見|み}たりします。",
+          "kana": "しゅうまつはほんをよんだり、えいがをみたりします。",
+          "en": "On weekends I do things like reading books and watching movies."
+        },
+        {
+          "ja": "{昨日|きのう}は{掃除|そうじ}をしたり、{洗濯|せんたく}をしたりしました。",
+          "kana": "きのうはそうじをしたり、せんたくをしたりしました。",
+          "en": "Yesterday I did things like cleaning and laundry."
+        },
+        {
+          "ja": "{休|やす}みの{日|ひ}は{音楽|おんがく}を{聞|き}いたり、{寝|ね}たりします。",
+          "kana": "やすみのひはおんがくをきいたり、ねたりします。",
+          "en": "On my days off I listen to music, sleep, and so on."
+        },
+        {
+          "ja": "{公園|こうえん}で{歩|ある}いたり、{写真|しゃしん}を{撮|と}ったりしたいです。",
+          "kana": "こうえんであるいたり、しゃしんをとったりしたいです。",
+          "en": "I want to walk around and take photos in the park."
+        }
+      ],
+      "clozeHints": [
+        "たり",
+        "だり"
+      ],
+      "mistakes": [
+        "× 本を読みたり → ○ 本を読んだり (たり attaches to the た-form)",
+        "× 読んだり、見たり。 → ○ 読んだり、見たりします。 (the final する is needed to finish the sentence)",
+        "× 起きたり、朝ご飯を食べたり、学校に行ったりします → ○ 起きて、朝ご飯を食べて、学校に行きます (a fixed sequence uses 〜て、〜, not 〜たり)"
+      ],
+      "related": [
+        "g-n5-064",
+        "g-n5-050",
+        "g-n5-016"
+      ],
+      "tags": [
+        "hobbies",
+        "actions"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-075",
+      "pattern": "〜時",
+      "meaning": "when …, at the time of …",
+      "formation": [
+        "V-dictionary form + 時 (before or during the main action): 行く時",
+        "V-た + 時 (after it): 行った時",
+        "い-adjective + 時: 暑い時",
+        "な-adjective + な + 時: 暇な時",
+        "N + の + 時: 子どもの時"
+      ],
+      "explanation": "Put 時 after a plain-form verb, an adjective, or a noun plus の to say 'when …'. The form before 時 shows timing relative to the main action: 日本へ行く時、カメラを買いました (bought it before going) versus 日本へ行った時、カメラを買いました (bought it after arriving). い-adjectives attach directly (暑い時), な-adjectives take な (暇な時), nouns take の (子どもの時). The main verb carries the overall tense. For two actions by one person at the same moment, 〜ながら is more natural.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{暇|ひま}な{時|とき}、{何|なに}をしますか。",
+          "kana": "ひまなとき、なにをしますか。",
+          "en": "What do you do when you have free time?"
+        },
+        {
+          "ja": "{子|こ}どもの{時|とき}、{東京|とうきょう}に{住|す}んでいました。",
+          "kana": "こどものとき、とうきょうにすんでいました。",
+          "en": "When I was a child, I lived in Tokyo."
+        },
+        {
+          "ja": "{家|いえ}を{出|で}る{時|とき}、{雨|あめ}が{降|ふ}っていました。",
+          "kana": "いえをでるとき、あめがふっていました。",
+          "en": "When I left the house, it was raining."
+        },
+        {
+          "ja": "{日本|にほん}へ{来|き}た{時|とき}、{日本語|にほんご}が{分|わ}かりませんでした。",
+          "kana": "にほんへきたとき、にほんごがわかりませんでした。",
+          "en": "When I came to Japan, I didn't understand Japanese."
+        },
+        {
+          "ja": "{寒|さむ}い{時|とき}は{温|あたた}かいお{茶|ちゃ}を{飲|の}みます。",
+          "kana": "さむいときはあたたかいおちゃをのみます。",
+          "en": "When it's cold, I drink hot tea."
+        }
+      ],
+      "clozeHints": [
+        "時"
+      ],
+      "mistakes": [
+        "× 暇時 → ○ 暇な時 (a な-adjective needs な before 時)",
+        "× 子ども時 → ○ 子どもの時 (a noun needs の before 時)",
+        "× 行きます時 → ○ 行く時 (the clause before 時 is plain form)"
+      ],
+      "related": [
+        "g-n5-062",
+        "g-n5-064",
+        "g-n5-072",
+        "g-n5-068"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 13
+    },
+    {
+      "id": "g-n5-076",
+      "pattern": "〜でしょう / 〜だろう",
+      "meaning": "probably …, … right?",
+      "formation": [
+        "V-plain form + でしょう / だろう: 降る → 降るでしょう · 降った → 降っただろう",
+        "い-adjective + でしょう / だろう: 寒い → 寒いでしょう",
+        "な-adjective / N (no だ) + でしょう / だろう: 雨 → 雨でしょう · 元気 → 元気だろう",
+        "Often with たぶん: たぶん雨が降るでしょう",
+        "Rising intonation 〜でしょう？ = '…, right?'"
+      ],
+      "explanation": "でしょう (polite) and だろう (casual) replace です or だ to present a guess rather than a fact: 明日は雨でしょう 'it will probably rain tomorrow'. Attach them to plain forms; with nouns and な-adjectives drop だ (元気でしょう, not 元気だでしょう). Weather forecasts use でしょう constantly. With rising intonation, 〜でしょう？ asks the listener to agree: 'right?'. だろう sounds blunt and is mostly male or written; in polite conversation stick to でしょう. For an opinion you hold yourself, use 〜と思います.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{明日|あした}はたぶん{雨|あめ}でしょう。",
+          "kana": "あしたはたぶんあめでしょう。",
+          "en": "It will probably rain tomorrow."
+        },
+        {
+          "ja": "{田中|たなか}さんはもう{帰|かえ}っただろう。",
+          "kana": "たなかさんはもうかえっただろう。",
+          "en": "Mr. Tanaka has probably gone home already."
+        },
+        {
+          "ja": "この{問題|もんだい}は{難|むずか}しいでしょう？",
+          "kana": "このもんだいはむずかしいでしょう？",
+          "en": "This problem is hard, isn't it?"
+        },
+        {
+          "ja": "{来週|らいしゅう}は{忙|いそが}しいでしょう。",
+          "kana": "らいしゅうはいそがしいでしょう。",
+          "en": "Next week will probably be busy."
+        },
+        {
+          "ja": "ケンはたぶん{来|こ}ないだろう。",
+          "kana": "ケンはたぶんこないだろう。",
+          "en": "Ken probably won't come."
+        }
+      ],
+      "clozeHints": [
+        "でしょう",
+        "だろう"
+      ],
+      "mistakes": [
+        "× 雨だでしょう → ○ 雨でしょう (drop だ before でしょう)",
+        "× 静かだだろう → ○ 静かだろう (な-adjectives attach without だ)",
+        "× 行きますでしょう → ○ 行くでしょう (use the plain form before でしょう)"
+      ],
+      "related": [
+        "g-n5-066",
+        "g-n5-068",
+        "g-n5-062"
+      ],
+      "tags": [
+        "weather",
+        "abstract"
+      ],
+      "notes": "だろう is receptive at this level: recognize it in casual male speech and writing, but produce でしょう. 〜でしょう？ with rising tone is a soft confirmation, not a guess.",
+      "station": 13
+    },
+    {
+      "id": "g-n5-077",
+      "pattern": "potential form",
+      "meaning": "can do …, be able to …",
+      "formation": [
+        "Group 1: final う-row → え-row + る: 書く → 書ける · 飲む → 飲める · 話す → 話せる · 泳ぐ → 泳げる",
+        "Group 2: る → られる: 食べる → 食べられる · 起きる → 起きられる",
+        "Irregular: する → できる · 来る → 来られる",
+        "The object usually takes が: 日本語が話せます",
+        "Conjugates as a Group 2 verb: 書けます · 書けません · 書けました"
+      ],
+      "explanation": "The potential form says you can do something. Group 1 verbs change the last sound to the え-row and add る (書く → 書ける); Group 2 verbs replace る with られる (食べる → 食べられる); する becomes できる and 来る becomes 来られる. Every potential verb then behaves like a Group 2 verb: 書けます, 書けません, 書けました. The thing you can do usually takes が instead of を: 漢字が読めます. 分かる already means 'can understand', so it has no potential form. In speech you will hear 食べれる (ら抜き); understand it, but write 食べられる.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{少|すこ}し{日本語|にほんご}が{話|はな}せます。",
+          "kana": "わたしはすこしにほんごがはなせます。",
+          "en": "I can speak a little Japanese."
+        },
+        {
+          "ja": "ハナは{漢字|かんじ}が{読|よ}めます。",
+          "kana": "ハナはかんじがよめます。",
+          "en": "Hana can read kanji."
+        },
+        {
+          "ja": "{朝|あさ}{早|はや}く{起|お}きられますか。",
+          "kana": "あさはやくおきられますか。",
+          "en": "Can you get up early in the morning?"
+        },
+        {
+          "ja": "{明日|あした}は{来|こ}られません。",
+          "kana": "あしたはこられません。",
+          "en": "I can't come tomorrow."
+        },
+        {
+          "ja": "ケンは{泳|およ}げません。",
+          "kana": "ケンはおよげません。",
+          "en": "Ken can't swim."
+        }
+      ],
+      "clozeHints": [
+        "話せます",
+        "読めます",
+        "起きられます",
+        "来られません",
+        "泳げません"
+      ],
+      "mistakes": [
+        "× 日本語を話せます → ○ 日本語が話せます (the potential verb usually takes が)",
+        "× 食べれます → ○ 食べられます (Group 2 verbs take られる in standard Japanese)",
+        "× 見るれます → ○ 見られます (Group 2: drop る, add られる)"
+      ],
+      "related": [
+        "g-n5-078",
+        "g-n5-062",
+        "g-n5-017"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "unlocksForms": [
+        "potential"
+      ],
+      "notes": "Display label kept as the brief's 'potential form'. Cloze hints are the full potential surfaces so the drill tests the stem change, not the ます ending.",
+      "station": 14
+    },
+    {
+      "id": "g-n5-078",
+      "pattern": "〜ことができます",
+      "meaning": "can …, be able to …",
+      "formation": [
+        "V-dictionary form + ことができます",
+        "Negative: V-dictionary form + ことができません",
+        "N + ができます: 日本語ができます",
+        "Group 1: 泳ぐ → 泳ぐことができます",
+        "Group 2: 食べる → 食べることができます",
+        "Irregular: する → することができます · 来る → 来ることができます"
+      ],
+      "explanation": "Put ことができます after the dictionary form to say someone can do something. It means the same as the potential form but is longer and a little more formal, so it is common in notices, announcements and careful speech: ここで切符を買うことができます. The verb before こと never changes; できます carries the tense and polarity. With a noun that names a skill, drop こと: ピアノができます. In everyday conversation the short potential form (買えます) is more usual.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここで{切符|きっぷ}を{買|か}うことができます。",
+          "kana": "ここできっぷをかうことができます。",
+          "en": "You can buy tickets here."
+        },
+        {
+          "ja": "{私|わたし}は{泳|およ}ぐことができません。",
+          "kana": "わたしはおよぐことができません。",
+          "en": "I can't swim."
+        },
+        {
+          "ja": "{田中|たなか}さんは{英語|えいご}を{話|はな}すことができます。",
+          "kana": "たなかさんはえいごをはなすことができます。",
+          "en": "Mr. Tanaka can speak English."
+        },
+        {
+          "ja": "この{図書館|としょかん}では{本|ほん}を{借|か}りることができます。",
+          "kana": "このとしょかんではほんをかりることができます。",
+          "en": "You can borrow books at this library."
+        }
+      ],
+      "clozeHints": [
+        "ことができます",
+        "ことができません"
+      ],
+      "mistakes": [
+        "× 買えることができます → ○ 買うことができます (use the dictionary form, not the potential form, before こと)",
+        "× 買いますことができます → ○ 買うことができます (plain dictionary form before こと)",
+        "× 日本語をできます → ○ 日本語ができます (できる takes が)"
+      ],
+      "related": [
+        "g-n5-077",
+        "g-n5-062"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-079",
+      "pattern": "あげます",
+      "meaning": "to give (to someone else)",
+      "formation": [
+        "Giver は / が + receiver に + thing を + あげます",
+        "私は友だちに本をあげました",
+        "To a plant or animal: 花に水をあげます",
+        "Never used when the receiver is 私 (use くれます)"
+      ],
+      "explanation": "あげます means 'give' when the giver is you or someone close to you and the receiver is someone else: 私は田中さんに花をあげました. Mark the giver with は or が, the receiver with に and the thing with を. The direction is 'away from me', so you cannot use あげます when the receiver is yourself — that is くれます. Use もらいます to describe the same event from the receiver's side. Giving to pets or plants also uses あげます: 花に水をあげます.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{母|はは}に{花|はな}をあげました。",
+          "kana": "わたしはははにはなをあげました。",
+          "en": "I gave my mother flowers."
+        },
+        {
+          "ja": "ハナはケンにお{土産|みやげ}をあげます。",
+          "kana": "ハナはケンにおみやげをあげます。",
+          "en": "Hana will give Ken a souvenir."
+        },
+        {
+          "ja": "{誕生日|たんじょうび}に{友|とも}だちに{何|なに}をあげますか。",
+          "kana": "たんじょうびにともだちになにをあげますか。",
+          "en": "What will you give your friend for their birthday?"
+        },
+        {
+          "ja": "{毎朝|まいあさ}{花|はな}に{水|みず}をあげます。",
+          "kana": "まいあさはなにみずをあげます。",
+          "en": "I water the flowers every morning."
+        }
+      ],
+      "clozeHints": [
+        "あげます",
+        "あげました"
+      ],
+      "mistakes": [
+        "× 田中さんは私に本をあげました → ○ 田中さんは私に本をくれました (when the receiver is 私, use くれます)",
+        "× 私は友だちを本にあげました → ○ 私は友だちに本をあげました (receiver に, thing を)"
+      ],
+      "related": [
+        "g-n5-080",
+        "g-n5-081",
+        "g-n5-018"
+      ],
+      "tags": [
+        "people"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-080",
+      "pattern": "もらいます",
+      "meaning": "to receive",
+      "formation": [
+        "Receiver は / が + giver に / から + thing を + もらいます",
+        "私は友だちに本をもらいました",
+        "From a place or group: 会社から手紙をもらいました (から, not に)"
+      ],
+      "explanation": "もらいます means 'receive' and is told from the receiver's side: 私は田中さんにプレゼントをもらいました. The receiver is the subject (は or が), the giver takes に or から, and the thing takes を. Use から when the giver is a place or group (会社から). The receiver is usually you or someone close to you; from your own side as the giver you say あげました. Think of もらいます as the mirror image of あげます and くれます.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{友|とも}だちに{本|ほん}をもらいました。",
+          "kana": "わたしはともだちにほんをもらいました。",
+          "en": "I got a book from my friend."
+        },
+        {
+          "ja": "{誕生日|たんじょうび}に{何|なに}をもらいましたか。",
+          "kana": "たんじょうびになにをもらいましたか。",
+          "en": "What did you get for your birthday?"
+        },
+        {
+          "ja": "ケンは{会社|かいしゃ}から{手紙|てがみ}をもらいました。",
+          "kana": "ケンはかいしゃからてがみをもらいました。",
+          "en": "Ken received a letter from the company."
+        },
+        {
+          "ja": "{毎月|まいつき}{父|ちち}にお{金|かね}をもらいます。",
+          "kana": "まいつきちちにおかねをもらいます。",
+          "en": "I get money from my father every month."
+        }
+      ],
+      "clozeHints": [
+        "もらいます",
+        "もらいました"
+      ],
+      "mistakes": [
+        "× 田中さんは私に花をもらいました → ○ 私は田中さんに花をもらいました (the receiver is the subject of もらいます)",
+        "× 友だちをプレゼントにもらいました → ○ 友だちにプレゼントをもらいました (giver に, thing を)"
+      ],
+      "related": [
+        "g-n5-079",
+        "g-n5-081"
+      ],
+      "tags": [
+        "people"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-081",
+      "pattern": "くれます",
+      "meaning": "to give (to me or my group)",
+      "formation": [
+        "Giver は / が + (私に) + thing を + くれます",
+        "友だちは私に本をくれました",
+        "The receiver is 私, my family or my group; 私に is often left out"
+      ],
+      "explanation": "くれます means 'give' when the receiver is you or someone in your group (family, company, team): 田中さんは私に傘をくれました. The giver is the subject; the receiver takes に, but 私に is usually dropped because it is obvious. くれます is the only choice for giving toward you; あげます points away from you. The same event told from your side is 私は田中さんに傘をもらいました. Remember the three verbs as directions: あげる (out), くれる (in, toward me), もらう (I receive).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{友|とも}だちが{私|わたし}に{本|ほん}をくれました。",
+          "kana": "ともだちがわたしにほんをくれました。",
+          "en": "My friend gave me a book."
+        },
+        {
+          "ja": "{田中|たなか}さんは{妹|いもうと}にお{菓子|かし}をくれました。",
+          "kana": "たなかさんはいもうとにおかしをくれました。",
+          "en": "Mr. Tanaka gave my little sister some sweets."
+        },
+        {
+          "ja": "ケンは{毎年|まいとし}カレンダーをくれます。",
+          "kana": "ケンはまいとしカレンダーをくれます。",
+          "en": "Ken gives me a calendar every year."
+        },
+        {
+          "ja": "{兄|あに}が{新|あたら}しい{時計|とけい}をくれました。",
+          "kana": "あにがあたらしいとけいをくれました。",
+          "en": "My older brother gave me a new watch."
+        }
+      ],
+      "clozeHints": [
+        "くれます",
+        "くれました"
+      ],
+      "mistakes": [
+        "× 私は田中さんにプレゼントをくれました → ○ 私は田中さんにプレゼントをあげました (くれます is only for giving toward 私)",
+        "× 田中さんは私に本をあげました → ○ 田中さんは私に本をくれました (giving to 私 is always くれます)"
+      ],
+      "related": [
+        "g-n5-079",
+        "g-n5-080"
+      ],
+      "tags": [
+        "people",
+        "family"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-082",
+      "pattern": "〜のが好きです / 〜のは〜です",
+      "meaning": "like doing …, doing … is …",
+      "formation": [
+        "V-dictionary form + の + が好きです / 嫌いです / 上手です / 下手です",
+        "V-dictionary form + の + は + adjective + です",
+        "歌うのが好きです · 漢字を覚えるのは大変です"
+      ],
+      "explanation": "の turns a verb clause into a noun so it can take particles such as が or は. V-dictionary form + のが好きです means 'I like doing …'; V + のは〜です comments on the activity: 朝早く起きるのは大変です. The verb before の stays in the plain form, usually dictionary form. A bare verb can never stand before が or は (× 歌うが好きです). こと can replace の here (歌うことが好きです) and sounds a little more formal; の is the everyday choice.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{音楽|おんがく}を{聞|き}くのが{好|す}きです。",
+          "kana": "わたしはおんがくをきくのがすきです。",
+          "en": "I like listening to music."
+        },
+        {
+          "ja": "{朝|あさ}{早|はや}く{起|お}きるのは{大変|たいへん}です。",
+          "kana": "あさはやくおきるのはたいへんです。",
+          "en": "Getting up early in the morning is hard."
+        },
+        {
+          "ja": "ハナは{写真|しゃしん}を{撮|と}るのが{上手|じょうず}です。",
+          "kana": "ハナはしゃしんをとるのがじょうずです。",
+          "en": "Hana is good at taking photos."
+        },
+        {
+          "ja": "{漢字|かんじ}を{書|か}くのは{難|むずか}しいですか。",
+          "kana": "かんじをかくのはむずかしいですか。",
+          "en": "Is writing kanji difficult?"
+        },
+        {
+          "ja": "ケンは{野菜|やさい}を{食|た}べるのが{嫌|きら}いです。",
+          "kana": "ケンはやさいをたべるのがきらいです。",
+          "en": "Ken hates eating vegetables."
+        }
+      ],
+      "clozeHints": [
+        "のが",
+        "のは"
+      ],
+      "mistakes": [
+        "× 歌うが好きです → ○ 歌うのが好きです (a verb needs の before が)",
+        "× 泳ぎますのが好きです → ○ 泳ぐのが好きです (dictionary form before の)",
+        "× 音楽のが好きです → ○ 音楽が好きです (a noun does not take の here)"
+      ],
+      "related": [
+        "g-n5-044",
+        "g-n5-062",
+        "g-n5-014"
+      ],
+      "tags": [
+        "hobbies",
+        "abstract"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-083",
+      "pattern": "〜つもりです",
+      "meaning": "intend to …, plan to …",
+      "formation": [
+        "V-dictionary form + つもりです",
+        "Negative: V-ない + つもりです (not going to …)",
+        "Group 1: 帰る → 帰るつもりです",
+        "Group 2: 始める → 始めるつもりです",
+        "Irregular: する → するつもりです · 来る → 来るつもりです"
+      ],
+      "explanation": "Put つもりです after the dictionary form to state a plan you have already decided on: 来年、日本へ行くつもりです. The negative is usually V-ない + つもりです ('I don't intend to'). Use it for your own plans or to ask about the listener's; for a third person it sounds like mind-reading, so report what they said instead (〜と言っていました). It is firmer than 〜たいです, which only expresses a wish.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{日本|にほん}へ{行|い}くつもりです。",
+          "kana": "らいねん、にほんへいくつもりです。",
+          "en": "I plan to go to Japan next year."
+        },
+        {
+          "ja": "{週末|しゅうまつ}は{何|なに}をするつもりですか。",
+          "kana": "しゅうまつはなにをするつもりですか。",
+          "en": "What do you plan to do this weekend?"
+        },
+        {
+          "ja": "{今日|きょう}はお{酒|さけ}を{飲|の}まないつもりです。",
+          "kana": "きょうはおさけをのまないつもりです。",
+          "en": "I don't intend to drink today."
+        },
+        {
+          "ja": "{夏休|なつやす}みに{国|くに}へ{帰|かえ}るつもりです。",
+          "kana": "なつやすみにくにへかえるつもりです。",
+          "en": "I plan to go back to my country during summer vacation."
+        }
+      ],
+      "clozeHints": [
+        "つもりです"
+      ],
+      "mistakes": [
+        "× 行きますつもりです → ○ 行くつもりです (dictionary form before つもり)",
+        "× 行ったつもりです → ○ 行くつもりです (a plan uses the dictionary form; 〜たつもり does not express a plan)"
+      ],
+      "related": [
+        "g-n5-062",
+        "g-n5-063",
+        "g-n5-041",
+        "g-n5-066"
+      ],
+      "tags": [
+        "abstract",
+        "travel"
+      ],
+      "station": 14
+    },
+    {
+      "id": "g-n5-084",
+      "pattern": "〜たら",
+      "meaning": "if …, when … (then)",
+      "formation": [
+        "V-た + ら: 行く → 行ったら · 食べる → 食べたら · する → したら · 来る → 来たら",
+        "い-adjective: 安い → 安かったら",
+        "な-adjective / N: 暇 → 暇だったら · 雨 → 雨だったら",
+        "Negative: 行かない → 行かなかったら"
+      ],
+      "explanation": "Add ら to the た-form of a verb, adjective or noun to make the most general conditional: 'if' or 'when' A happens, B follows. 雨が降ったら、行きません. 〜たら allows a request, suggestion or command in the second clause (時間があったら、来てください), which 〜と does not. The first clause is always た-form, even when the whole sentence is about the future. 〜たら also means 'when I did A, I found B': 家に帰ったら、誰もいませんでした.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{雨|あめ}が{降|ふ}ったら、{行|い}きません。",
+          "kana": "あめがふったら、いきません。",
+          "en": "If it rains, I won't go."
+        },
+        {
+          "ja": "{時間|じかん}があったら、{来|き}てください。",
+          "kana": "じかんがあったら、きてください。",
+          "en": "If you have time, please come."
+        },
+        {
+          "ja": "{安|やす}かったら、{買|か}います。",
+          "kana": "やすかったら、かいます。",
+          "en": "If it's cheap, I'll buy it."
+        },
+        {
+          "ja": "{家|いえ}に{帰|かえ}ったら、{誰|だれ}もいませんでした。",
+          "kana": "いえにかえったら、だれもいませんでした。",
+          "en": "When I got home, nobody was there."
+        },
+        {
+          "ja": "{暇|ひま}だったら、{映画|えいが}を{見|み}ましょう。",
+          "kana": "ひまだったら、えいがをみましょう。",
+          "en": "If you're free, let's watch a movie."
+        }
+      ],
+      "clozeHints": [
+        "たら",
+        "だら"
+      ],
+      "mistakes": [
+        "× 雨が降るたら → ○ 雨が降ったら (たら attaches to the た-form)",
+        "× 安いたら → ○ 安かったら (い-adjectives: 〜かったら)",
+        "× 暇たら → ○ 暇だったら (な-adjectives and nouns: 〜だったら)"
+      ],
+      "related": [
+        "g-n5-064",
+        "g-n5-085",
+        "g-n5-086",
+        "g-n5-087"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "unlocksForms": [
+        "tara"
+      ],
+      "station": 15
+    },
+    {
+      "id": "g-n5-085",
+      "pattern": "〜と (conditional)",
+      "meaning": "whenever …, if … (then always)",
+      "formation": [
+        "V-dictionary form / V-ない + と: 押す → 押すと · 押さない → 押さないと",
+        "い-adjective + と: 高い → 高いと",
+        "な-adjective / N + だ + と: 静か → 静かだと · 雨 → 雨だと",
+        "このボタンを押すと、切符が出ます"
+      ],
+      "explanation": "Put と after a plain non-past clause to say that whenever A happens, B naturally follows: machines, directions, natural results and habits. このボタンを押すと、切符が出ます. Because B is automatic, the second clause cannot be a request, invitation, command or your own decision — use 〜たら for those (× 時間があると、来てください). The first clause is never past, but the whole sentence can describe a past discovery: ドアを開けると、猫がいました. Think of と as 'and then, every time'.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "このボタンを{押|お}すと、{切符|きっぷ}が{出|で}ます。",
+          "kana": "このボタンをおすと、きっぷがでます。",
+          "en": "When you press this button, a ticket comes out."
+        },
+        {
+          "ja": "まっすぐ{行|い}くと、{駅|えき}があります。",
+          "kana": "まっすぐいくと、えきがあります。",
+          "en": "If you go straight, you'll come to the station."
+        },
+        {
+          "ja": "{朝|あさ}{起|お}きると、いつも{水|みず}を{飲|の}みます。",
+          "kana": "あさおきると、いつもみずをのみます。",
+          "en": "When I get up in the morning, I always drink water."
+        },
+        {
+          "ja": "ドアを{開|あ}けると、{猫|ねこ}がいました。",
+          "kana": "ドアをあけると、ねこがいました。",
+          "en": "When I opened the door, there was a cat."
+        }
+      ],
+      "clozeHints": [
+        "と、"
+      ],
+      "mistakes": [
+        "× 押したと → ○ 押すと (the clause before と is non-past)",
+        "× 時間があると、来てください → ○ 時間があったら、来てください (〜と cannot be followed by a request)",
+        "× 暇と → ○ 暇だと (な-adjectives and nouns need だ before と)"
+      ],
+      "related": [
+        "g-n5-084",
+        "g-n5-086",
+        "g-n5-062",
+        "g-n5-016"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "notes": "Cloze hint is と followed by the comma so the blank targets the conditional と, not the 'and'/'with' と of NとN.",
+      "station": 15
+    },
+    {
+      "id": "g-n5-086",
+      "pattern": "〜ば",
+      "meaning": "if …",
+      "formation": [
+        "Group 1: final う-row → え-row + ば: 行く → 行けば · 飲む → 飲めば · 話す → 話せば",
+        "Group 2: る → れば: 食べる → 食べれば · 見る → 見れば",
+        "Irregular: する → すれば · 来る → 来れば",
+        "い-adjective: い → ければ: 安い → 安ければ · いい → よければ",
+        "Negative: 〜ない → 〜なければ: 行かない → 行かなければ",
+        "な-adjective / N: 暇 → 暇なら(ば) · 雨 → 雨なら(ば)"
+      ],
+      "explanation": "The ば-form is the 'if' that focuses on the condition itself: 'if A, then B'. Group 1 verbs change the last sound to the え-row and add ば (行く → 行けば); Group 2 verbs take れば; い-adjectives become 〜ければ; ない becomes なければ. It is natural in advice and general truths (毎日練習すれば、読めます) and in the set phrase どうすればいいですか 'what should I do?'. When the ば-clause is an action, the second clause cannot be a request or invitation — use 〜たら; after a state such as よければ or なければ it is fine. な-adjectives and nouns usually use なら instead.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{練習|れんしゅう}すれば、{漢字|かんじ}が{読|よ}めます。",
+          "kana": "まいにちれんしゅうすれば、かんじがよめます。",
+          "en": "If you practice every day, you'll be able to read kanji."
+        },
+        {
+          "ja": "{安|やす}ければ、{二|ふた}つ{買|か}います。",
+          "kana": "やすければ、ふたつかいます。",
+          "en": "If they're cheap, I'll buy two."
+        },
+        {
+          "ja": "どうすればいいですか。",
+          "kana": "どうすればいいですか。",
+          "en": "What should I do?"
+        },
+        {
+          "ja": "{時間|じかん}がなければ、{行|い}きません。",
+          "kana": "じかんがなければ、いきません。",
+          "en": "If I don't have time, I won't go."
+        },
+        {
+          "ja": "{天気|てんき}がよければ、{海|うみ}へ{行|い}きましょう。",
+          "kana": "てんきがよければ、うみへいきましょう。",
+          "en": "If the weather is good, let's go to the beach."
+        }
+      ],
+      "clozeHints": [
+        "れば",
+        "ければ",
+        "けば",
+        "げば",
+        "せば",
+        "てば",
+        "ねば",
+        "べば",
+        "めば",
+        "えば"
+      ],
+      "mistakes": [
+        "× 行くば → ○ 行けば (Group 1: change to the え-row and add ば)",
+        "× 安いば → ○ 安ければ (い-adjectives drop い and add ければ)",
+        "× 駅に着けば、電話してください → ○ 駅に着いたら、電話してください (after an action, 〜ば cannot take a request; use 〜たら)"
+      ],
+      "related": [
+        "g-n5-084",
+        "g-n5-085",
+        "g-n5-087",
+        "g-n5-063"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "unlocksForms": [
+        "ba",
+        "adj-ba"
+      ],
+      "station": 15
+    },
+    {
+      "id": "g-n5-087",
+      "pattern": "〜なら",
+      "meaning": "if that is the case …, as for …",
+      "formation": [
+        "N + なら: 日本語 → 日本語なら",
+        "な-adjective + なら: 暇 → 暇なら",
+        "V-plain form / い-adjective + (の)なら: 行く → 行く(の)なら · 暑い → 暑い(の)なら",
+        "日本語なら、少し分かります"
+      ],
+      "explanation": "なら picks up something the listener just said, or a topic already in the air, and says 'if that is the case' or 'if you mean …': 京都へ行くなら、電車が便利です. With nouns and な-adjectives it attaches directly; with verbs and い-adjectives you may add の first (行くのなら). Unlike 〜たら, the second clause does not have to happen after the first — the advice can concern preparing for it. It is the natural way to give advice on a topic someone has brought up.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{京都|きょうと}へ{行|い}くなら、{電車|でんしゃ}が{便利|べんり}です。",
+          "kana": "きょうとへいくなら、でんしゃがべんりです。",
+          "en": "If you're going to Kyoto, the train is convenient."
+        },
+        {
+          "ja": "{日本語|にほんご}なら、{少|すこ}し{分|わ}かります。",
+          "kana": "にほんごなら、すこしわかります。",
+          "en": "If it's Japanese, I understand a little."
+        },
+        {
+          "ja": "{暑|あつ}いなら、{窓|まど}を{開|あ}けてください。",
+          "kana": "あついなら、まどをあけてください。",
+          "en": "If you're hot, please open the window."
+        },
+        {
+          "ja": "{魚|さかな}なら、あの{店|みせ}が{安|やす}いですよ。",
+          "kana": "さかななら、あのみせがやすいですよ。",
+          "en": "For fish, that shop is cheap."
+        },
+        {
+          "ja": "{暇|ひま}なら、{手伝|てつだ}ってください。",
+          "kana": "ひまなら、てつだってください。",
+          "en": "If you're free, please help me."
+        }
+      ],
+      "clozeHints": [
+        "なら"
+      ],
+      "mistakes": [
+        "× 日本語だなら → ○ 日本語なら (nouns attach directly, no だ)",
+        "× 暇ななら → ○ 暇なら (な-adjectives attach directly)",
+        "× ボタンを押すなら、切符が出ます → ○ ボタンを押すと、切符が出ます (an automatic result uses 〜と, not 〜なら)"
+      ],
+      "related": [
+        "g-n5-084",
+        "g-n5-085",
+        "g-n5-086",
+        "g-n5-068"
+      ],
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "station": 15
+    },
+    {
+      "id": "g-n5-088",
+      "pattern": "〜なければなりません / 〜なければいけません",
+      "meaning": "must …, have to …",
+      "formation": [
+        "V-ない (drop い) + ければなりません / ければいけません",
+        "Group 1: 行く → 行かない → 行かなければなりません",
+        "Group 2: 食べる → 食べない → 食べなければなりません",
+        "Irregular: する → しなければなりません · 来る → 来なければなりません",
+        "Past: 〜なければなりませんでした",
+        "Casual short forms: 〜なきゃ · 〜なくちゃ"
+      ],
+      "explanation": "Take the ない-form, drop い and add ければなりません (or ければいけません) to say you have to do something: 明日は早く起きなければなりません. Both versions mean 'must'; なりません sounds a little more like a general rule, いけません a little more personal, but either is fine. The opposite, 'don't have to', is 〜なくてもいいです, not a negative of this pattern. In casual speech it shrinks to 〜なきゃ or 〜なくちゃ. The past is 〜なければなりませんでした.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{早|はや}く{起|お}きなければなりません。",
+          "kana": "あしたははやくおきなければなりません。",
+          "en": "I have to get up early tomorrow."
+        },
+        {
+          "ja": "{今日|きょう}は{薬|くすり}を{飲|の}まなければいけません。",
+          "kana": "きょうはくすりをのまなければいけません。",
+          "en": "I have to take my medicine today."
+        },
+        {
+          "ja": "{日曜日|にちようび}も{働|はたら}かなければなりませんか。",
+          "kana": "にちようびもはたらかなければなりませんか。",
+          "en": "Do you have to work on Sunday too?"
+        },
+        {
+          "ja": "{先週|せんしゅう}はレポートを{書|か}かなければなりませんでした。",
+          "kana": "せんしゅうはレポートをかかなければなりませんでした。",
+          "en": "Last week I had to write a report."
+        },
+        {
+          "ja": "{宿題|しゅくだい}をしなければいけません。",
+          "kana": "しゅくだいをしなければいけません。",
+          "en": "I have to do my homework."
+        }
+      ],
+      "clozeHints": [
+        "なければなりません",
+        "なければいけません"
+      ],
+      "mistakes": [
+        "× 行かないければなりません → ○ 行かなければなりません (drop い from ない before ければ)",
+        "× 行くなければなりません → ○ 行かなければなりません (start from the ない-form)",
+        "× 行かなければなりませんではありません → ○ 行かなくてもいいです ('don't have to' is 〜なくてもいいです, not a negative of this pattern)"
+      ],
+      "related": [
+        "g-n5-063",
+        "g-n5-056",
+        "g-n5-055",
+        "g-n5-086"
+      ],
+      "tags": [
+        "work",
+        "abstract"
+      ],
+      "station": 15
+    },
+    {
+      "id": "g-n5-089",
+      "pattern": "〜た方がいいです / 〜ない方がいいです",
+      "meaning": "you had better …, you had better not …",
+      "formation": [
+        "V-た + 方がいいです (do)",
+        "V-ない + 方がいいです (don't)",
+        "Group 1: 休む → 休んだ方がいいです · 休まない方がいいです",
+        "Group 2: 寝る → 寝た方がいいです · 寝ない方がいいです",
+        "Irregular: する → した方がいいです · 来る → 来ない方がいいです"
+      ],
+      "explanation": "〜た方がいいです gives advice: 'you had better …' or 'it is better to …'. The positive uses the た-form (早く寝た方がいいです) but the negative uses the ない-form (飲まない方がいいです) — the two halves are not symmetrical, so do not say 寝る方がいい for advice. It is fairly direct, so it suits friends, family and clear situations such as health. For a gentler suggestion to someone above you, 〜たらどうですか (N4) is softer.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{早|はや}く{寝|ね}た{方|ほう}がいいですよ。",
+          "kana": "はやくねたほうがいいですよ。",
+          "en": "You should go to bed early."
+        },
+        {
+          "ja": "{今日|きょう}はお{酒|さけ}を{飲|の}まない{方|ほう}がいいです。",
+          "kana": "きょうはおさけをのまないほうがいいです。",
+          "en": "You'd better not drink today."
+        },
+        {
+          "ja": "{病院|びょういん}へ{行|い}った{方|ほう}がいいですよ。",
+          "kana": "びょういんへいったほうがいいですよ。",
+          "en": "You should go to the hospital."
+        },
+        {
+          "ja": "{寒|さむ}いですから、コートを{着|き}た{方|ほう}がいいです。",
+          "kana": "さむいですから、コートをきたほうがいいです。",
+          "en": "It's cold, so you'd better wear a coat."
+        },
+        {
+          "ja": "{夜|よる}は{一人|ひとり}で{歩|ある}かない{方|ほう}がいいです。",
+          "kana": "よるはひとりであるかないほうがいいです。",
+          "en": "You'd better not walk alone at night."
+        }
+      ],
+      "clozeHints": [
+        "方がいいです"
+      ],
+      "mistakes": [
+        "× 寝る方がいいです → ○ 寝た方がいいです (advice uses the た-form)",
+        "× 飲まなかった方がいいです → ○ 飲まない方がいいです (the negative stays non-past: 〜ない方がいい)",
+        "× 寝た方がいいでした → ○ 寝た方がよかったです (the past of いい is よかった)"
+      ],
+      "related": [
+        "g-n5-064",
+        "g-n5-063",
+        "g-n5-054",
+        "g-n5-057"
+      ],
+      "tags": [
+        "health",
+        "communication"
+      ],
+      "station": 15
+    },
+    {
+      "id": "g-n5-090",
+      "pattern": "〜ので",
+      "meaning": "because …, so … (soft reason)",
+      "formation": [
+        "V-plain form + ので: ある → あるので · 降っていた → 降っていたので",
+        "い-adjective + ので: 痛い → 痛いので",
+        "な-adjective / N + な + ので: 静か → 静かなので · 日曜日 → 日曜日なので",
+        "Polite form + ので in careful speech: 行きますので"
+      ],
+      "explanation": "ので joins a reason to its result, like から, but presents the reason as an objective fact rather than your personal claim, so it sounds softer and more polite: 頭が痛いので、早く帰ります. Attach it to plain forms; な-adjectives and nouns take な (静かなので, 日曜日なので), not だ. Because it is soft, ので is preferred when asking a favor or excusing yourself, and it does not sit well before strong commands or opinions. In polite speech you will also hear 〜ますので.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{頭|あたま}が{痛|いた}いので、{早|はや}く{帰|かえ}ります。",
+          "kana": "あたまがいたいので、はやくかえります。",
+          "en": "I have a headache, so I'm going home early."
+        },
+        {
+          "ja": "{明日|あした}はテストがあるので、{今日|きょう}は{勉強|べんきょう}します。",
+          "kana": "あしたはテストがあるので、きょうはべんきょうします。",
+          "en": "I have a test tomorrow, so I'm studying today."
+        },
+        {
+          "ja": "{日曜日|にちようび}なので、{銀行|ぎんこう}は{休|やす}みです。",
+          "kana": "にちようびなので、ぎんこうはやすみです。",
+          "en": "It's Sunday, so the bank is closed."
+        },
+        {
+          "ja": "{雨|あめ}が{降|ふ}っていたので、タクシーで{帰|かえ}りました。",
+          "kana": "あめがふっていたので、タクシーでかえりました。",
+          "en": "It was raining, so I went home by taxi."
+        },
+        {
+          "ja": "この{町|まち}は{静|しず}かなので、{好|す}きです。",
+          "kana": "このまちはしずかなので、すきです。",
+          "en": "This town is quiet, so I like it."
+        }
+      ],
+      "clozeHints": [
+        "ので"
+      ],
+      "mistakes": [
+        "× 雨だので → ○ 雨なので (nouns take な before ので)",
+        "× 静かだので → ○ 静かなので (な-adjectives take な, not だ)",
+        "× 高いですので、買いません → ○ 高いので、買いません (plain form before ので in ordinary speech)"
+      ],
+      "related": [
+        "g-n5-057",
+        "g-n5-060",
+        "g-n5-068",
+        "g-n5-062"
+      ],
+      "tags": [
+        "communication",
+        "abstract"
+      ],
+      "station": 15
+    }
+  ]
+}

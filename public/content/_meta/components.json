@@ -1,0 +1,1892 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "component",
+  "writer": "components",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "c-one",
+      "char": "一",
+      "name": "one",
+      "hint": "A single horizontal bar: one plank laid flat on the ground."
+    },
+    {
+      "id": "c-stroke",
+      "char": "丨",
+      "name": "stroke",
+      "variants": [
+        "丿",
+        "乀",
+        "乁"
+      ],
+      "hint": "One bare brush stroke, upright or slanting, left over once the parts are named."
+    },
+    {
+      "id": "c-drop",
+      "char": "丶",
+      "name": "drop",
+      "hint": "A fat teardrop of ink falling from the brush tip."
+    },
+    {
+      "id": "c-dot",
+      "char": "㇔",
+      "name": "dot",
+      "hint": "A tiny flick of ink, the smallest mark a brush can make."
+    },
+    {
+      "id": "c-hook",
+      "char": "亅",
+      "name": "hook",
+      "variants": [
+        "丂",
+        "𠃌"
+      ],
+      "hint": "A vertical stroke that curls into a hook at the bottom, like a coat hook."
+    },
+    {
+      "id": "c-fishhook",
+      "char": "乙",
+      "name": "fishhook",
+      "variants": [
+        "乚"
+      ],
+      "hint": "A barbed fishhook with a thin line running up from it."
+    },
+    {
+      "id": "c-cross",
+      "char": "乂",
+      "name": "cross",
+      "variants": [
+        "㐅"
+      ],
+      "hint": "Two strokes crossing like an X scratched on a wall."
+    },
+    {
+      "id": "c-lid",
+      "char": "亠",
+      "name": "lid",
+      "hint": "A pot lid with a knob on top, seen from the side."
+    },
+    {
+      "id": "c-divination",
+      "char": "卜",
+      "name": "divination",
+      "hint": "A crack in a heated turtle shell, read by a fortune-teller."
+    },
+    {
+      "id": "c-horns",
+      "char": "丷",
+      "name": "horns",
+      "variants": [
+        "䒑"
+      ],
+      "hint": "Two little horns or droplets poking up from a head."
+    },
+    {
+      "id": "c-ice",
+      "char": "冫",
+      "name": "ice",
+      "hint": "Two sharp icicles hanging side by side."
+    },
+    {
+      "id": "c-cover",
+      "char": "冖",
+      "name": "cover",
+      "hint": "A flat cloth cover draped over a box, with the edges hanging down."
+    },
+    {
+      "id": "c-frame",
+      "char": "冂",
+      "name": "frame",
+      "hint": "An upside-down U: a doorframe or an empty picture frame."
+    },
+    {
+      "id": "c-container",
+      "char": "凵",
+      "name": "container",
+      "hint": "An open box or bucket seen from the side, waiting to be filled."
+    },
+    {
+      "id": "c-box",
+      "char": "匚",
+      "name": "box",
+      "variants": [
+        "匸"
+      ],
+      "hint": "A box lying on its side with the lid open to the right."
+    },
+    {
+      "id": "c-enclosure",
+      "char": "囗",
+      "name": "enclosure",
+      "hint": "A walled yard: a square fence with nothing outside it."
+    },
+    {
+      "id": "c-wrap",
+      "char": "勹",
+      "name": "wrap",
+      "hint": "A sheet of paper curling around something to wrap it."
+    },
+    {
+      "id": "c-bound-up",
+      "char": "⺈",
+      "name": "bound up",
+      "variants": [
+        "𠂊"
+      ],
+      "hint": "A bent-over figure with its arms tied: a bundle bound up with cord."
+    },
+    {
+      "id": "c-beak",
+      "char": "龴",
+      "name": "beak",
+      "variants": [
+        "マ"
+      ],
+      "hint": "A bird beak opened sideways, like the katakana マ."
+    },
+    {
+      "id": "c-sail",
+      "char": "凡",
+      "name": "sail",
+      "hint": "A single sail belled out by the wind, with one drop of spray."
+    },
+    {
+      "id": "c-table",
+      "char": "几",
+      "name": "table",
+      "hint": "A low side table with two legs, seen from the side."
+    },
+    {
+      "id": "c-stretch",
+      "char": "廴",
+      "name": "stretch",
+      "hint": "A long stride stretching out: a leg reaching far forward."
+    },
+    {
+      "id": "c-road",
+      "char": "辶",
+      "name": "road",
+      "variants": [
+        "⻌"
+      ],
+      "hint": "A winding road with a signpost at its start."
+    },
+    {
+      "id": "c-tent",
+      "char": "癶",
+      "name": "tent",
+      "hint": "Two tent flaps pulled back on either side of the entrance."
+    },
+    {
+      "id": "c-walking-legs",
+      "char": "夂",
+      "name": "walking legs",
+      "variants": [
+        "夊"
+      ],
+      "hint": "A pair of legs mid-stride, trailing behind the body."
+    },
+    {
+      "id": "c-step",
+      "char": "彳",
+      "name": "step",
+      "hint": "A single footstep: half of the go radical, the left foot only."
+    },
+    {
+      "id": "c-streaks",
+      "char": "彡",
+      "name": "streaks",
+      "hint": "Three slanting streaks: hair, light rays or brush strokes."
+    },
+    {
+      "id": "c-two-hands",
+      "char": "廾",
+      "name": "two hands",
+      "hint": "Two hands held up together to lift something."
+    },
+    {
+      "id": "c-twenty",
+      "char": "廿",
+      "name": "twenty",
+      "variants": [
+        "龷",
+        "丗"
+      ],
+      "hint": "Two tens welded into one wide U: twenty."
+    },
+    {
+      "id": "c-well",
+      "char": "井",
+      "name": "well",
+      "hint": "A well seen from above: four beams framing the square opening."
+    },
+    {
+      "id": "c-broom",
+      "char": "彐",
+      "name": "broom",
+      "variants": [
+        "⺕",
+        "彑"
+      ],
+      "hint": "A stiff hand broom with three bristles pointing left."
+    },
+    {
+      "id": "c-sprout",
+      "char": "龶",
+      "name": "sprout",
+      "variants": [
+        "丰"
+      ],
+      "hint": "A seedling: three bars on one stem, the top of blue and of 表."
+    },
+    {
+      "id": "c-upside-down",
+      "char": "屰",
+      "name": "upside down",
+      "hint": "A big person flipped onto his head: upside down, going against the flow."
+    },
+    {
+      "id": "c-two",
+      "char": "二",
+      "name": "two",
+      "hint": "Two bars stacked: a pair."
+    },
+    {
+      "id": "c-three",
+      "char": "三",
+      "name": "three",
+      "hint": "Three bars stacked evenly."
+    },
+    {
+      "id": "c-five",
+      "char": "五",
+      "name": "five",
+      "hint": "The number five: a crossed shape between two bars."
+    },
+    {
+      "id": "c-six",
+      "char": "六",
+      "name": "six",
+      "hint": "A lid over eight: the number six."
+    },
+    {
+      "id": "c-seven",
+      "char": "七",
+      "name": "seven",
+      "hint": "A cross with the base bent up like a hook: seven."
+    },
+    {
+      "id": "c-eight",
+      "char": "八",
+      "name": "eight",
+      "hint": "Two strokes leaning apart: the number eight, or splitting in two."
+    },
+    {
+      "id": "c-nine",
+      "char": "九",
+      "name": "nine",
+      "hint": "A bent arm with a hook: the number nine."
+    },
+    {
+      "id": "c-ten",
+      "char": "十",
+      "name": "ten",
+      "hint": "A plus sign: ten, or a cross of needles."
+    },
+    {
+      "id": "c-hundred",
+      "char": "百",
+      "name": "hundred",
+      "hint": "One above white: a hundred."
+    },
+    {
+      "id": "c-thousand",
+      "char": "千",
+      "name": "thousand",
+      "hint": "A slanting stroke over ten: a thousand."
+    },
+    {
+      "id": "c-ten-thousand",
+      "char": "万",
+      "name": "ten thousand",
+      "hint": "A sprawling figure with one arm swung out: ten thousand."
+    },
+    {
+      "id": "c-half",
+      "char": "半",
+      "name": "half",
+      "hint": "A thing cut neatly down the middle: half."
+    },
+    {
+      "id": "c-both",
+      "char": "両",
+      "name": "both",
+      "hint": "Two things side by side under one bar: both."
+    },
+    {
+      "id": "c-mutual",
+      "char": "互",
+      "name": "mutual",
+      "hint": "Two hooks locked into each other: mutual."
+    },
+    {
+      "id": "c-sun",
+      "char": "日",
+      "name": "sun",
+      "variants": [
+        "曰"
+      ],
+      "hint": "The sun as a square window with a bar across it."
+    },
+    {
+      "id": "c-moon",
+      "char": "月",
+      "name": "moon",
+      "variants": [
+        "⺼"
+      ],
+      "hint": "A crescent moon; as a left part it also means flesh or a body part."
+    },
+    {
+      "id": "c-evening",
+      "char": "夕",
+      "name": "evening",
+      "hint": "A thin crescent moon at dusk: evening."
+    },
+    {
+      "id": "c-fire",
+      "char": "火",
+      "name": "fire",
+      "variants": [
+        "灬"
+      ],
+      "hint": "Flames licking upward; as four dots underneath it is a cooking fire."
+    },
+    {
+      "id": "c-water",
+      "char": "水",
+      "name": "water",
+      "variants": [
+        "氵",
+        "氺"
+      ],
+      "hint": "Flowing water; as three drops on the left it means liquid."
+    },
+    {
+      "id": "c-rain",
+      "char": "雨",
+      "name": "rain",
+      "hint": "Raindrops falling behind a window."
+    },
+    {
+      "id": "c-cloud",
+      "char": "雲",
+      "name": "cloud",
+      "variants": [
+        "云"
+      ],
+      "hint": "Cloud: as 云 it is a puff of vapour rising in two bars and a curl."
+    },
+    {
+      "id": "c-steam",
+      "char": "気",
+      "name": "steam",
+      "variants": [
+        "气"
+      ],
+      "hint": "Steam curling up from a pot of rice."
+    },
+    {
+      "id": "c-wind",
+      "char": "風",
+      "name": "wind",
+      "hint": "A sail-shaped gust with an insect caught inside: wind."
+    },
+    {
+      "id": "c-earth",
+      "char": "土",
+      "name": "earth",
+      "hint": "A sprout pushing up out of the ground: earth, soil."
+    },
+    {
+      "id": "c-mountain",
+      "char": "山",
+      "name": "mountain",
+      "hint": "Three peaks: a mountain."
+    },
+    {
+      "id": "c-river",
+      "char": "川",
+      "name": "river",
+      "variants": [
+        "巛"
+      ],
+      "hint": "Three streams flowing side by side: a river."
+    },
+    {
+      "id": "c-stone",
+      "char": "石",
+      "name": "stone",
+      "hint": "A stone lying at the foot of a cliff."
+    },
+    {
+      "id": "c-gold",
+      "char": "金",
+      "name": "gold",
+      "variants": [
+        "釒"
+      ],
+      "hint": "Gold nuggets buried under a roof-shaped mound: gold, metal."
+    },
+    {
+      "id": "c-jewel",
+      "char": "玉",
+      "name": "jewel",
+      "hint": "A king with one extra drop: a jewel on a string."
+    },
+    {
+      "id": "c-rice-field",
+      "char": "田",
+      "name": "rice field",
+      "hint": "A rice field seen from above, divided into four plots."
+    },
+    {
+      "id": "c-valley",
+      "char": "谷",
+      "name": "valley",
+      "hint": "Two ridges opening onto a mouth: a valley."
+    },
+    {
+      "id": "c-hole",
+      "char": "穴",
+      "name": "hole",
+      "hint": "A roof over eight: a hole dug into a hillside."
+    },
+    {
+      "id": "c-hill",
+      "char": "阜",
+      "name": "hill",
+      "variants": [
+        "阝"
+      ],
+      "hint": "A stepped hill; as the LEFT 阝 it is a hillside or a pinnacle."
+    },
+    {
+      "id": "c-town",
+      "char": "邑",
+      "name": "town",
+      "variants": [
+        "阝"
+      ],
+      "hint": "A walled town; as the RIGHT 阝 it is a city or a district."
+    },
+    {
+      "id": "c-village",
+      "char": "里",
+      "name": "village",
+      "hint": "Rice fields over earth: a village and its land."
+    },
+    {
+      "id": "c-spring",
+      "char": "泉",
+      "name": "spring",
+      "hint": "White water bubbling up: a spring."
+    },
+    {
+      "id": "c-eternity",
+      "char": "永",
+      "name": "eternity",
+      "hint": "A long river with every tributary drawn: eternity."
+    },
+    {
+      "id": "c-ice-block",
+      "char": "氷",
+      "name": "ice block",
+      "hint": "Water with one frozen drop: a block of ice."
+    },
+    {
+      "id": "c-ray",
+      "char": "光",
+      "name": "ray",
+      "hint": "Small flames on legs: a ray of light."
+    },
+    {
+      "id": "c-star",
+      "char": "星",
+      "name": "star",
+      "hint": "Life under the sun: a star."
+    },
+    {
+      "id": "c-tree",
+      "char": "木",
+      "name": "tree",
+      "hint": "A tree with branches above and roots below."
+    },
+    {
+      "id": "c-bamboo",
+      "char": "竹",
+      "name": "bamboo",
+      "variants": [
+        "⺮"
+      ],
+      "hint": "Two bamboo stalks with their leaves."
+    },
+    {
+      "id": "c-grass",
+      "char": "艹",
+      "name": "grass",
+      "hint": "Two blades of grass poking up through the soil."
+    },
+    {
+      "id": "c-grain",
+      "char": "禾",
+      "name": "grain",
+      "hint": "A grain stalk bending under its ripe ear."
+    },
+    {
+      "id": "c-rice",
+      "char": "米",
+      "name": "rice",
+      "hint": "Grains of rice scattered around a cross."
+    },
+    {
+      "id": "c-wheat",
+      "char": "麦",
+      "name": "wheat",
+      "hint": "Wheat: a grain stalk with walking legs beneath it."
+    },
+    {
+      "id": "c-hemp",
+      "char": "麻",
+      "name": "hemp",
+      "hint": "Hemp plants drying under a lean-to."
+    },
+    {
+      "id": "c-life",
+      "char": "生",
+      "name": "life",
+      "hint": "A plant sprouting from the earth: life."
+    },
+    {
+      "id": "c-not-yet",
+      "char": "未",
+      "name": "not yet",
+      "hint": "A tree whose top branch is still short: not yet grown."
+    },
+    {
+      "id": "c-tip",
+      "char": "末",
+      "name": "tip",
+      "hint": "A tree with a long bar at its top: the very tip of the branch."
+    },
+    {
+      "id": "c-vermilion",
+      "char": "朱",
+      "name": "vermilion",
+      "hint": "A tree with a stroke cut into its trunk, bleeding vermilion sap."
+    },
+    {
+      "id": "c-fruit",
+      "char": "果",
+      "name": "fruit",
+      "hint": "A tree with a rice field of fruit at the top."
+    },
+    {
+      "id": "c-sheaf",
+      "char": "束",
+      "name": "sheaf",
+      "hint": "A sheaf: sticks tied together around the middle."
+    },
+    {
+      "id": "c-east",
+      "char": "東",
+      "name": "east",
+      "hint": "The sun rising behind a tree: east."
+    },
+    {
+      "id": "c-book",
+      "char": "本",
+      "name": "book",
+      "hint": "A tree with a bar at its root: the origin, a book."
+    },
+    {
+      "id": "c-stem",
+      "char": "由",
+      "name": "stem",
+      "hint": "A rice field with a stem poking up out of it."
+    },
+    {
+      "id": "c-armor",
+      "char": "甲",
+      "name": "armor",
+      "hint": "A rice field with a root hanging down: a shell of armor, a seed husk."
+    },
+    {
+      "id": "c-lightning",
+      "char": "申",
+      "name": "lightning",
+      "hint": "A bolt of lightning striking straight through a rice field."
+    },
+    {
+      "id": "c-curve",
+      "char": "曲",
+      "name": "curve",
+      "hint": "A bent piece of wood: a curve, a tune."
+    },
+    {
+      "id": "c-generation",
+      "char": "世",
+      "name": "generation",
+      "hint": "Three tens linked: thirty years, one generation."
+    },
+    {
+      "id": "c-basket",
+      "char": "其",
+      "name": "basket",
+      "hint": "A winnowing basket on a stand."
+    },
+    {
+      "id": "c-earthworm",
+      "char": "屯",
+      "name": "earthworm",
+      "hint": "An earthworm wriggling out of the soil."
+    },
+    {
+      "id": "c-zigzag",
+      "char": "之",
+      "name": "zigzag",
+      "hint": "A zigzag path: a drop, a bend and a long tail."
+    },
+    {
+      "id": "c-lasso",
+      "char": "乃",
+      "name": "lasso",
+      "hint": "A lasso looping out and snapping back."
+    },
+    {
+      "id": "c-reach-out",
+      "char": "及",
+      "name": "reach out",
+      "hint": "An arm reaching out to catch someone by the shoulder."
+    },
+    {
+      "id": "c-droop",
+      "char": "垂",
+      "name": "droop",
+      "hint": "Branches drooping under their load until they touch the ground."
+    },
+    {
+      "id": "c-lofty",
+      "char": "尭",
+      "name": "lofty",
+      "hint": "A lofty stack of bars balanced on a pair of legs."
+    },
+    {
+      "id": "c-cow",
+      "char": "牛",
+      "name": "cow",
+      "variants": [
+        "牜"
+      ],
+      "hint": "A cow seen head-on, one horn bent."
+    },
+    {
+      "id": "c-dog",
+      "char": "犬",
+      "name": "dog",
+      "variants": [
+        "犭"
+      ],
+      "hint": "A big dog with a dot for its ear; as 犭 it stands on its hind legs."
+    },
+    {
+      "id": "c-horse",
+      "char": "馬",
+      "name": "horse",
+      "hint": "A horse with a flowing mane and four legs as dots."
+    },
+    {
+      "id": "c-bird",
+      "char": "鳥",
+      "name": "bird",
+      "hint": "A long-tailed bird with a fat eye."
+    },
+    {
+      "id": "c-small-bird",
+      "char": "隹",
+      "name": "small bird",
+      "hint": "A plump little bird: a sparrow perched on a branch."
+    },
+    {
+      "id": "c-feathers",
+      "char": "羽",
+      "name": "feathers",
+      "hint": "Two feathers lying side by side."
+    },
+    {
+      "id": "c-fish",
+      "char": "魚",
+      "name": "fish",
+      "hint": "A fish: head, scaly body and tail fire."
+    },
+    {
+      "id": "c-insect",
+      "char": "虫",
+      "name": "insect",
+      "hint": "An insect with a long body and a drop of venom."
+    },
+    {
+      "id": "c-shell",
+      "char": "貝",
+      "name": "shell",
+      "hint": "A cowrie shell: eye-shaped, with two little legs. Old money."
+    },
+    {
+      "id": "c-sheep",
+      "char": "羊",
+      "name": "sheep",
+      "variants": [
+        "𦍌",
+        "⺷"
+      ],
+      "hint": "A sheep seen from the front: two horns, two ears, a long nose."
+    },
+    {
+      "id": "c-pig",
+      "char": "豕",
+      "name": "pig",
+      "hint": "A pig: bristly back and curly legs."
+    },
+    {
+      "id": "c-boar",
+      "char": "亥",
+      "name": "boar",
+      "hint": "The zodiac boar, lid on its head, charging."
+    },
+    {
+      "id": "c-deer",
+      "char": "鹿",
+      "name": "deer",
+      "hint": "A deer under a cliff-shaped head, antlers compared side by side."
+    },
+    {
+      "id": "c-tiger",
+      "char": "虍",
+      "name": "tiger",
+      "variants": [
+        "虎"
+      ],
+      "hint": "A tiger skin with stripes: the tiger crouching."
+    },
+    {
+      "id": "c-dragon",
+      "char": "竜",
+      "name": "dragon",
+      "hint": "A dragon standing upright on its tail."
+    },
+    {
+      "id": "c-monkey",
+      "char": "禺",
+      "name": "monkey",
+      "hint": "A long-tailed monkey with a big head, hanging by its tail."
+    },
+    {
+      "id": "c-omen",
+      "char": "兆",
+      "name": "omen",
+      "hint": "Cracks branching left and right on a turtle shell: an omen."
+    },
+    {
+      "id": "c-rabbit",
+      "char": "卯",
+      "name": "rabbit",
+      "hint": "Two long rabbit ears flopping outward."
+    },
+    {
+      "id": "c-scallop",
+      "char": "辰",
+      "name": "scallop",
+      "hint": "A scallop shell with its foot sticking out: the zodiac dragon sign."
+    },
+    {
+      "id": "c-scorpion",
+      "char": "也",
+      "name": "scorpion",
+      "hint": "A scorpion with its tail curled up over its back."
+    },
+    {
+      "id": "c-snake",
+      "char": "巳",
+      "name": "snake",
+      "variants": [
+        "己"
+      ],
+      "hint": "A coiled snake; as 己 it is the snake of oneself."
+    },
+    {
+      "id": "c-horn",
+      "char": "角",
+      "name": "horn",
+      "hint": "A curved horn with ridges inside."
+    },
+    {
+      "id": "c-fur",
+      "char": "毛",
+      "name": "fur",
+      "hint": "Tufts of fur curling up in the wind."
+    },
+    {
+      "id": "c-skin",
+      "char": "皮",
+      "name": "skin",
+      "hint": "A hide being peeled off with the right hand."
+    },
+    {
+      "id": "c-leather",
+      "char": "革",
+      "name": "leather",
+      "hint": "A stretched hide pegged out to dry: leather."
+    },
+    {
+      "id": "c-stockade",
+      "char": "韋",
+      "name": "stockade",
+      "hint": "Sentries pacing around a stockade: tanned hide, or guarding."
+    },
+    {
+      "id": "c-claw",
+      "char": "爪",
+      "name": "claw",
+      "variants": [
+        "爫",
+        "⺤"
+      ],
+      "hint": "A claw or a hand reaching down from above."
+    },
+    {
+      "id": "c-meat",
+      "char": "肉",
+      "name": "meat",
+      "hint": "A slab of meat with the ribs showing."
+    },
+    {
+      "id": "c-skeleton",
+      "char": "骨",
+      "name": "skeleton",
+      "hint": "A skull on top of flesh: a skeleton."
+    },
+    {
+      "id": "c-bone",
+      "char": "歹",
+      "name": "bone",
+      "hint": "A splintered bone, the bare remains."
+    },
+    {
+      "id": "c-blood",
+      "char": "血",
+      "name": "blood",
+      "hint": "A drop of blood in a dish."
+    },
+    {
+      "id": "c-tongue",
+      "char": "舌",
+      "name": "tongue",
+      "hint": "A tongue sticking out of a mouth under a thousand."
+    },
+    {
+      "id": "c-tooth",
+      "char": "歯",
+      "name": "tooth",
+      "hint": "Teeth in an open mouth under a stop sign: a tooth."
+    },
+    {
+      "id": "c-person",
+      "char": "人",
+      "name": "person",
+      "variants": [
+        "亻",
+        "𠆢",
+        "𠂉"
+      ],
+      "hint": "A person walking: two legs; as 亻 standing at the left, as 𠆢 a hat on top."
+    },
+    {
+      "id": "c-woman",
+      "char": "女",
+      "name": "woman",
+      "hint": "A woman kneeling with her arms crossed."
+    },
+    {
+      "id": "c-child",
+      "char": "子",
+      "name": "child",
+      "hint": "A child with arms spread and legs wrapped in a blanket."
+    },
+    {
+      "id": "c-mother",
+      "char": "母",
+      "name": "mother",
+      "variants": [
+        "毌"
+      ],
+      "hint": "A mother with two dots for the breasts that feed the child."
+    },
+    {
+      "id": "c-father",
+      "char": "父",
+      "name": "father",
+      "hint": "A father holding a stone axe in each hand."
+    },
+    {
+      "id": "c-husband",
+      "char": "夫",
+      "name": "husband",
+      "hint": "A big man with a topknot pin through his hair: a husband."
+    },
+    {
+      "id": "c-samurai",
+      "char": "士",
+      "name": "samurai",
+      "hint": "A samurai: broad shoulders over a narrow stance."
+    },
+    {
+      "id": "c-king",
+      "char": "王",
+      "name": "king",
+      "hint": "A king: three bars of heaven, earth and man joined by one axis."
+    },
+    {
+      "id": "c-retainer",
+      "char": "臣",
+      "name": "retainer",
+      "hint": "A retainer bowing so low that only one eye shows."
+    },
+    {
+      "id": "c-populace",
+      "char": "民",
+      "name": "populace",
+      "hint": "The populace: a clan branded under one lid."
+    },
+    {
+      "id": "c-marquis",
+      "char": "侯",
+      "name": "marquis",
+      "hint": "A marquis: a man with an arrow, lord of his fief."
+    },
+    {
+      "id": "c-old",
+      "char": "老",
+      "name": "old",
+      "variants": [
+        "耂"
+      ],
+      "hint": "An old man bent over a cane; as 耂 the cane becomes a slash."
+    },
+    {
+      "id": "c-compare",
+      "char": "比",
+      "name": "compare",
+      "hint": "Two people standing side by side to compare their height."
+    },
+    {
+      "id": "c-north",
+      "char": "北",
+      "name": "north",
+      "hint": "Two people sitting back to back, facing away from the cold north."
+    },
+    {
+      "id": "c-body",
+      "char": "身",
+      "name": "body",
+      "hint": "A pregnant body seen from the side: body, oneself."
+    },
+    {
+      "id": "c-nose",
+      "char": "自",
+      "name": "nose",
+      "hint": "A nose seen head-on: pointing at yourself."
+    },
+    {
+      "id": "c-neck",
+      "char": "首",
+      "name": "neck",
+      "hint": "A head with hair standing up: the neck and head."
+    },
+    {
+      "id": "c-head",
+      "char": "頁",
+      "name": "head",
+      "hint": "A head on a body with two little legs: a page, a head."
+    },
+    {
+      "id": "c-mask",
+      "char": "面",
+      "name": "mask",
+      "hint": "A mask covering the face, held by a frame."
+    },
+    {
+      "id": "c-eye",
+      "char": "目",
+      "name": "eye",
+      "hint": "An eye turned on its side: pupil in the middle."
+    },
+    {
+      "id": "c-net",
+      "char": "罒",
+      "name": "net",
+      "hint": "A net stretched flat across the top: an eye lying down."
+    },
+    {
+      "id": "c-ear",
+      "char": "耳",
+      "name": "ear",
+      "hint": "An ear with its lobe hanging down."
+    },
+    {
+      "id": "c-mouth",
+      "char": "口",
+      "name": "mouth",
+      "hint": "An open mouth: a square box."
+    },
+    {
+      "id": "c-heart",
+      "char": "心",
+      "name": "heart",
+      "variants": [
+        "忄",
+        "⺗"
+      ],
+      "hint": "A heart with three drops of blood; as 忄 a tall heart on the left."
+    },
+    {
+      "id": "c-hand",
+      "char": "手",
+      "name": "hand",
+      "variants": [
+        "扌"
+      ],
+      "hint": "A hand with five fingers; as 扌 a hand on the left."
+    },
+    {
+      "id": "c-right-hand",
+      "char": "又",
+      "name": "right hand",
+      "hint": "A right hand reaching out, fingers together."
+    },
+    {
+      "id": "c-arm",
+      "char": "𠂇",
+      "name": "arm",
+      "variants": [
+        "ナ"
+      ],
+      "hint": "An arm crooked at the elbow, the ナ shape in 右 左 友 有."
+    },
+    {
+      "id": "c-inch",
+      "char": "寸",
+      "name": "inch",
+      "hint": "A hand with a pulse point marked: the width of an inch."
+    },
+    {
+      "id": "c-foot",
+      "char": "足",
+      "name": "foot",
+      "variants": [
+        "⻊"
+      ],
+      "hint": "A foot and leg below a knee: a foot."
+    },
+    {
+      "id": "c-stop",
+      "char": "止",
+      "name": "stop",
+      "variants": [
+        "龰"
+      ],
+      "hint": "A footprint planted to stop."
+    },
+    {
+      "id": "c-run",
+      "char": "走",
+      "name": "run",
+      "hint": "Earth over a foot: running."
+    },
+    {
+      "id": "c-dancing-legs",
+      "char": "舛",
+      "name": "dancing legs",
+      "hint": "Two feet turned outward, stamping in a dance."
+    },
+    {
+      "id": "c-legs",
+      "char": "儿",
+      "name": "legs",
+      "hint": "A pair of human legs."
+    },
+    {
+      "id": "c-stand",
+      "char": "立",
+      "name": "stand",
+      "hint": "A person standing with feet planted on the ground."
+    },
+    {
+      "id": "c-big",
+      "char": "大",
+      "name": "big",
+      "hint": "A person with arms stretched wide: big."
+    },
+    {
+      "id": "c-heaven",
+      "char": "天",
+      "name": "heaven",
+      "hint": "One bar over big: the sky above a person."
+    },
+    {
+      "id": "c-youth",
+      "char": "夭",
+      "name": "youth",
+      "hint": "A youth running with the head tilted: young, bending."
+    },
+    {
+      "id": "c-yawn",
+      "char": "欠",
+      "name": "yawn",
+      "hint": "A person with a wide-open mouth, yawning."
+    },
+    {
+      "id": "c-see",
+      "char": "見",
+      "name": "see",
+      "hint": "A big eye on legs, walking around to see."
+    },
+    {
+      "id": "c-say",
+      "char": "言",
+      "name": "say",
+      "variants": [
+        "訁"
+      ],
+      "hint": "Words rising from a mouth in lines: to say."
+    },
+    {
+      "id": "c-sound",
+      "char": "音",
+      "name": "sound",
+      "hint": "Standing under the sun with a tongue out: sound."
+    },
+    {
+      "id": "c-eat",
+      "char": "食",
+      "name": "eat",
+      "variants": [
+        "飠",
+        "𩙿"
+      ],
+      "hint": "A roof over a bowl of rice: to eat."
+    },
+    {
+      "id": "c-corpse",
+      "char": "尸",
+      "name": "corpse",
+      "hint": "A body lying flat under a cloth: a corpse, or a flag."
+    },
+    {
+      "id": "c-deceased",
+      "char": "亡",
+      "name": "deceased",
+      "hint": "A lid over a fishhook: a person hidden away, deceased."
+    },
+    {
+      "id": "c-demon",
+      "char": "鬼",
+      "name": "demon",
+      "hint": "A demon with a horned head, legs and a tail."
+    },
+    {
+      "id": "c-ego",
+      "char": "我",
+      "name": "ego",
+      "hint": "A hand grasping a halberd: me, my ego."
+    },
+    {
+      "id": "c-porter",
+      "char": "壬",
+      "name": "porter",
+      "hint": "A porter balancing a load on a pole over his shoulder."
+    },
+    {
+      "id": "c-ride",
+      "char": "乗",
+      "name": "ride",
+      "hint": "A person riding on top of a tree."
+    },
+    {
+      "id": "c-long-time",
+      "char": "久",
+      "name": "long time",
+      "hint": "A person leaning on a stick for a long time."
+    },
+    {
+      "id": "c-whereby",
+      "char": "以",
+      "name": "whereby",
+      "hint": "A reel of thread beside a person: by means of, whereby."
+    },
+    {
+      "id": "c-wedge",
+      "char": "介",
+      "name": "wedge",
+      "hint": "A person wedged between two posts."
+    },
+    {
+      "id": "c-sword",
+      "char": "刀",
+      "name": "sword",
+      "variants": [
+        "刂"
+      ],
+      "hint": "A sword or knife; as 刂 a blade standing at the right."
+    },
+    {
+      "id": "c-blade",
+      "char": "刃",
+      "name": "blade",
+      "hint": "A sword with a drop marking the sharp blade edge."
+    },
+    {
+      "id": "c-axe",
+      "char": "斤",
+      "name": "axe",
+      "hint": "An axe head on a handle: an axe, a unit of weight."
+    },
+    {
+      "id": "c-halberd",
+      "char": "戈",
+      "name": "halberd",
+      "variants": [
+        "戊",
+        "戉"
+      ],
+      "hint": "A halberd: a spear with a hook and a tassel."
+    },
+    {
+      "id": "c-stake",
+      "char": "弋",
+      "name": "stake",
+      "hint": "A stake with a loop of rope: a stake, an arrow with a string."
+    },
+    {
+      "id": "c-spear",
+      "char": "矛",
+      "name": "spear",
+      "hint": "A spear with a tassel below the point."
+    },
+    {
+      "id": "c-weapon",
+      "char": "殳",
+      "name": "weapon",
+      "hint": "A pike held in the right hand: a weapon."
+    },
+    {
+      "id": "c-bow",
+      "char": "弓",
+      "name": "bow",
+      "hint": "A drawn bow seen from the side."
+    },
+    {
+      "id": "c-arrow",
+      "char": "矢",
+      "name": "arrow",
+      "hint": "An arrow with a big fletched tail."
+    },
+    {
+      "id": "c-power",
+      "char": "力",
+      "name": "power",
+      "hint": "A flexed arm bulging with power."
+    },
+    {
+      "id": "c-craft",
+      "char": "工",
+      "name": "craft",
+      "hint": "A carpenter square: craft, work."
+    },
+    {
+      "id": "c-giant",
+      "char": "巨",
+      "name": "giant",
+      "hint": "A giant carpenter square with a handle."
+    },
+    {
+      "id": "c-nail",
+      "char": "丁",
+      "name": "nail",
+      "hint": "A nail with a flat head, driven in from above."
+    },
+    {
+      "id": "c-ladle",
+      "char": "斗",
+      "name": "ladle",
+      "hint": "A ladle for measuring rice, with two drops in it."
+    },
+    {
+      "id": "c-dish",
+      "char": "皿",
+      "name": "dish",
+      "hint": "A shallow dish on a stand."
+    },
+    {
+      "id": "c-sake-jar",
+      "char": "酉",
+      "name": "sake jar",
+      "hint": "A sake jar with a stopper and the liquid line."
+    },
+    {
+      "id": "c-wine-jug",
+      "char": "畐",
+      "name": "wine jug",
+      "hint": "A full wine jug: lid, neck and a fat belly."
+    },
+    {
+      "id": "c-cloth",
+      "char": "巾",
+      "name": "cloth",
+      "hint": "A towel hanging from a hook."
+    },
+    {
+      "id": "c-clothes",
+      "char": "衣",
+      "name": "clothes",
+      "variants": [
+        "衤",
+        "𧘇"
+      ],
+      "hint": "A kimono: collar at the top, sleeves and hem below."
+    },
+    {
+      "id": "c-thread",
+      "char": "糸",
+      "name": "thread",
+      "variants": [
+        "糹"
+      ],
+      "hint": "A twisted skein of thread."
+    },
+    {
+      "id": "c-cocoon",
+      "char": "幺",
+      "name": "cocoon",
+      "hint": "A tiny silk cocoon: thread with no tail."
+    },
+    {
+      "id": "c-vine",
+      "char": "丩",
+      "name": "vine",
+      "hint": "Two vines twisting around each other."
+    },
+    {
+      "id": "c-brush",
+      "char": "聿",
+      "name": "brush",
+      "variants": [
+        "肀"
+      ],
+      "hint": "A hand holding a writing brush upright."
+    },
+    {
+      "id": "c-writing",
+      "char": "文",
+      "name": "writing",
+      "hint": "A tattooed chest: writing, a sentence."
+    },
+    {
+      "id": "c-bookshelf",
+      "char": "冊",
+      "name": "bookshelf",
+      "hint": "Bamboo slips bound in a row: a bookshelf, a tome."
+    },
+    {
+      "id": "c-scroll",
+      "char": "侖",
+      "name": "scroll",
+      "hint": "A rolled scroll under a hat: a scroll of records."
+    },
+    {
+      "id": "c-car",
+      "char": "車",
+      "name": "car",
+      "hint": "A cart seen from above: axle and two wheels."
+    },
+    {
+      "id": "c-boat",
+      "char": "舟",
+      "name": "boat",
+      "hint": "A dugout boat with two seats."
+    },
+    {
+      "id": "c-gate",
+      "char": "門",
+      "name": "gate",
+      "hint": "A double gate with two swinging doors."
+    },
+    {
+      "id": "c-door",
+      "char": "戸",
+      "name": "door",
+      "hint": "A single door on a hinge."
+    },
+    {
+      "id": "c-plow",
+      "char": "耒",
+      "name": "plow",
+      "hint": "A plow: a wooden handle with three prongs."
+    },
+    {
+      "id": "c-seedbed",
+      "char": "甫",
+      "name": "seedbed",
+      "hint": "A seedbed: a dotted field frame under a ten."
+    },
+    {
+      "id": "c-dollar-sign",
+      "char": "弗",
+      "name": "dollar sign",
+      "hint": "A bow with two bars through it: a dollar sign."
+    },
+    {
+      "id": "c-skewer",
+      "char": "串",
+      "name": "skewer",
+      "hint": "Two pieces of meat on one skewer."
+    },
+    {
+      "id": "c-lattice",
+      "char": "冓",
+      "name": "lattice",
+      "hint": "Two lattice frames stacked: a wooden lattice."
+    },
+    {
+      "id": "c-slab",
+      "char": "片",
+      "name": "slab",
+      "hint": "A slab split from a tree: one half, a piece."
+    },
+    {
+      "id": "c-bed",
+      "char": "爿",
+      "name": "bed",
+      "variants": [
+        "丬"
+      ],
+      "hint": "A bed standing on end, seen from the side."
+    },
+    {
+      "id": "c-altar",
+      "char": "示",
+      "name": "altar",
+      "variants": [
+        "礻"
+      ],
+      "hint": "An altar on legs with offerings; as 礻 a spirit at the left."
+    },
+    {
+      "id": "c-drum",
+      "char": "壴",
+      "name": "drum",
+      "hint": "A drum on a stand with a flag on top."
+    },
+    {
+      "id": "c-saw",
+      "char": "乍",
+      "name": "saw",
+      "hint": "A saw with jagged teeth: suddenly, a moment."
+    },
+    {
+      "id": "c-flag",
+      "char": "勿",
+      "name": "flag",
+      "hint": "A flag streaming from a pole, three pennants flying."
+    },
+    {
+      "id": "c-direction",
+      "char": "方",
+      "name": "direction",
+      "hint": "A compass needle on a stand: direction, a side."
+    },
+    {
+      "id": "c-seal",
+      "char": "卩",
+      "name": "seal",
+      "variants": [
+        "㔾"
+      ],
+      "hint": "A kneeling figure: a stamp or seal pressed down."
+    },
+    {
+      "id": "c-ruler",
+      "char": "尺",
+      "name": "ruler",
+      "hint": "A ruler: a corpse-shaped gauge with one extra stroke."
+    },
+    {
+      "id": "c-utilize",
+      "char": "用",
+      "name": "utilize",
+      "hint": "A fence of planks ready to be used: utilize."
+    },
+    {
+      "id": "c-vocation",
+      "char": "業",
+      "name": "vocation",
+      "hint": "A rack of hanging tools: a trade, a vocation."
+    },
+    {
+      "id": "c-talent",
+      "char": "才",
+      "name": "talent",
+      "hint": "A sprout cutting through the ground: raw talent."
+    },
+    {
+      "id": "c-become",
+      "char": "成",
+      "name": "become",
+      "hint": "A halberd with a nail: to become, to complete."
+    },
+    {
+      "id": "c-happiness",
+      "char": "幸",
+      "name": "happiness",
+      "hint": "Earth over a sheep-like bundle: happiness, good luck."
+    },
+    {
+      "id": "c-bestow",
+      "char": "与",
+      "name": "bestow",
+      "hint": "A hand passing something down: to give, to bestow."
+    },
+    {
+      "id": "c-finish",
+      "char": "了",
+      "name": "finish",
+      "hint": "A child with its arms wrapped: finished, complete."
+    },
+    {
+      "id": "c-quest",
+      "char": "求",
+      "name": "quest",
+      "hint": "A fur coat with drops of water: seeking, a quest."
+    },
+    {
+      "id": "c-wrong",
+      "char": "非",
+      "name": "wrong",
+      "hint": "Two wings beating against each other: wrong, not."
+    },
+    {
+      "id": "c-negative",
+      "char": "不",
+      "name": "negative",
+      "hint": "A bird flying up to a ceiling and not getting through: negative."
+    },
+    {
+      "id": "c-flat",
+      "char": "平",
+      "name": "flat",
+      "hint": "A pair of horns balanced on a bar: flat, level."
+    },
+    {
+      "id": "c-row",
+      "char": "並",
+      "name": "row",
+      "variants": [
+        "业"
+      ],
+      "hint": "Two people standing in a row."
+    },
+    {
+      "id": "c-nothingness",
+      "char": "無",
+      "name": "nothingness",
+      "hint": "A pile of firewood burning down to nothingness."
+    },
+    {
+      "id": "c-asia",
+      "char": "亜",
+      "name": "asia",
+      "hint": "A tiered pedestal seen from above: Asia."
+    },
+    {
+      "id": "c-sweet",
+      "char": "甘",
+      "name": "sweet",
+      "hint": "A mouth with something sweet held on the tongue."
+    },
+    {
+      "id": "c-spicy",
+      "char": "辛",
+      "name": "spicy",
+      "hint": "A standing needle for tattooing: spicy, bitter."
+    },
+    {
+      "id": "c-red",
+      "char": "赤",
+      "name": "red",
+      "hint": "Earth over fire: red."
+    },
+    {
+      "id": "c-blue",
+      "char": "青",
+      "name": "blue",
+      "hint": "A sprout over a moon: blue, green, fresh."
+    },
+    {
+      "id": "c-white",
+      "char": "白",
+      "name": "white",
+      "hint": "A drop of light on the sun: white."
+    },
+    {
+      "id": "c-black",
+      "char": "黒",
+      "name": "black",
+      "hint": "A village over fire: soot, black."
+    },
+    {
+      "id": "c-yellow",
+      "char": "黄",
+      "name": "yellow",
+      "hint": "A field of yellow light with sprouts above."
+    },
+    {
+      "id": "c-roof",
+      "char": "宀",
+      "name": "roof",
+      "hint": "A peaked roof with a chimney dot."
+    },
+    {
+      "id": "c-lean-to",
+      "char": "广",
+      "name": "lean-to",
+      "hint": "A lean-to: a roof with one wall, open on the other side."
+    },
+    {
+      "id": "c-cliff",
+      "char": "厂",
+      "name": "cliff",
+      "hint": "A cliff overhanging a hollow."
+    },
+    {
+      "id": "c-sickness",
+      "char": "疒",
+      "name": "sickness",
+      "hint": "A sick person lying on a bed under a roof: sickness."
+    },
+    {
+      "id": "c-temple",
+      "char": "寺",
+      "name": "temple",
+      "hint": "Earth over an inch: a temple, a court."
+    },
+    {
+      "id": "c-yen",
+      "char": "円",
+      "name": "yen",
+      "hint": "A coin seen in a frame: yen, round."
+    },
+    {
+      "id": "c-west",
+      "char": "西",
+      "name": "west",
+      "hint": "A bird settling into its nest as the sun sets in the west."
+    },
+    {
+      "id": "c-south",
+      "char": "南",
+      "name": "south",
+      "hint": "A tent with horns on top, facing south."
+    },
+    {
+      "id": "c-middle",
+      "char": "中",
+      "name": "middle",
+      "hint": "A pole piercing the center of a box: the middle."
+    },
+    {
+      "id": "c-above",
+      "char": "上",
+      "name": "above",
+      "hint": "A mark above a baseline: above, up."
+    },
+    {
+      "id": "c-below",
+      "char": "下",
+      "name": "below",
+      "hint": "A mark below a baseline: below, down."
+    },
+    {
+      "id": "c-noon",
+      "char": "午",
+      "name": "noon",
+      "hint": "A pestle standing upright at noon."
+    },
+    {
+      "id": "c-now",
+      "char": "今",
+      "name": "now",
+      "hint": "A hat over a hook: this moment, now."
+    },
+    {
+      "id": "c-year",
+      "char": "年",
+      "name": "year",
+      "hint": "A grain stalk bent over a stride: a year of harvest."
+    },
+    {
+      "id": "c-enter",
+      "char": "入",
+      "name": "enter",
+      "hint": "A doorway narrowing inward: to enter."
+    },
+    {
+      "id": "c-long",
+      "char": "長",
+      "name": "long",
+      "variants": [
+        "镸"
+      ],
+      "hint": "Long hair streaming from an old man."
+    },
+    {
+      "id": "c-arrive",
+      "char": "至",
+      "name": "arrive",
+      "hint": "An arrow that has flown down and hit the earth: to arrive."
+    },
+    {
+      "id": "c-go",
+      "char": "行",
+      "name": "go",
+      "hint": "A crossroads: to go."
+    },
+    {
+      "id": "c-fly",
+      "char": "飛",
+      "name": "fly",
+      "hint": "Two wings beating on a rising body: to fly."
+    },
+    {
+      "id": "c-jawbone",
+      "char": "咼",
+      "name": "jawbone",
+      "hint": "A jawbone with a mouth hanging under it."
+    },
+    {
+      "id": "c-stubborn",
+      "char": "艮",
+      "name": "stubborn",
+      "hint": "A stubborn man planting his feet and staring back."
+    },
+    {
+      "id": "c-coil",
+      "char": "巴",
+      "name": "coil",
+      "hint": "A snake coiled around itself with its head raised."
+    },
+    {
+      "id": "c-awl",
+      "char": "㑒",
+      "name": "awl",
+      "variants": [
+        "僉"
+      ],
+      "hint": "An awl: a hat, a bar, a mouth and two chips of wood."
+    },
+    {
+      "id": "c-heap",
+      "char": "㠯",
+      "name": "heap",
+      "variants": [
+        "𠂤"
+      ],
+      "hint": "A heap of earth: stacked boxes piled up."
+    },
+    {
+      "id": "c-mortar",
+      "char": "臼",
+      "name": "mortar",
+      "hint": "A stone mortar with grain inside."
+    },
+    {
+      "id": "c-unicorn",
+      "char": "廌",
+      "name": "unicorn",
+      "hint": "A one-horned beast under a lean-to, with four hooves below."
+    },
+    {
+      "id": "c-small",
+      "char": "小",
+      "name": "small",
+      "variants": [
+        "⺌",
+        "⺍"
+      ],
+      "hint": "Three small drops; as ⺌ or ⺍ a little crown of three dots on top."
+    },
+    {
+      "id": "c-strike",
+      "char": "攵",
+      "name": "strike",
+      "variants": [
+        "攴"
+      ],
+      "hint": "A hand raising a stick to strike."
+    },
+    {
+      "id": "c-spoon",
+      "char": "匕",
+      "name": "spoon",
+      "hint": "A spoon with a bent handle: also a sitting person, or a dagger."
+    },
+    {
+      "id": "c-private",
+      "char": "厶",
+      "name": "private",
+      "hint": "An elbow bent to hide something: private, me."
+    },
+    {
+      "id": "c-clan",
+      "char": "氏",
+      "name": "clan",
+      "hint": "A family crest on a pole: a clan, a surname."
+    },
+    {
+      "id": "c-bean",
+      "char": "豆",
+      "name": "bean",
+      "hint": "A tall stemmed dish with a lid: a bean, a beanpot."
+    },
+    {
+      "id": "c-shelf",
+      "char": "且",
+      "name": "shelf",
+      "hint": "A stack of shelves: an eye on a baseline, moreover."
+    },
+    {
+      "id": "c-clothesline",
+      "char": "干",
+      "name": "clothesline",
+      "variants": [
+        "㐄"
+      ],
+      "hint": "A clothesline on two posts: dry, to meddle."
+    },
+    {
+      "id": "c-round",
+      "char": "丸",
+      "name": "round",
+      "hint": "A nine with a drop in it: a round ball, a pill."
+    }
+  ]
+}

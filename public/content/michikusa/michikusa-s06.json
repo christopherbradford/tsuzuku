@@ -1,0 +1,45 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s06",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-06-1",
+      "stationId": "st-06",
+      "kind": "road-history",
+      "titleEn": "Fujisawa: Temple Town and Pilgrims",
+      "bodyEn": "Fujisawa grew up at the gate of Yugyō-ji, head temple of the Ji school of Pure Land Buddhism, founded in 1325. Here the Enoshima pilgrimage road left the Tōkaidō. Hiroshige's print shows the temple on its hill, the wooden Daigiri Bridge over the Sakai River, and a torii marking the way to Enoshima.",
+      "sourceNote": "Hiroshige, Hōeidō Tōkaidō series (c. 1833), print 'Fujisawa: Yugyō-ji'"
+    },
+    {
+      "id": "m-06-2",
+      "stationId": "st-06",
+      "kind": "etymology",
+      "titleEn": "Where ます Comes From",
+      "bodyEn": "The polite ending ます you meet at this station began life as a verb. Kōjien derives it from 参らす, to offer up to a superior, which wore down through まらする and まする to ます by the Edo period. Every polite sentence still carries a faint echo of handing something up to someone.",
+      "ja": "{参|まい}らす",
+      "kana": "まいらす",
+      "sourceNote": "Kōjien (Iwanami), entry ます: 参らす → まらする → まする → ます"
+    },
+    {
+      "id": "m-06-3",
+      "stationId": "st-06",
+      "kind": "kanji-origin",
+      "titleEn": "Moonlight Through the Gate",
+      "bodyEn": "The kanji 間, interval or space, is a gate 門 with the sun 日 between its doors. Its older form 閒 had the moon 月 there instead: moonlight showing through the gap between the two leaves of a gate. The gap became space, then an interval of time, as in 時間.",
+      "ja": "{間|あいだ}",
+      "kana": "あいだ",
+      "sourceNote": "Shuowen Jiezi (説文解字), entry 閒: 隙也, 从門从月; Kanjigen (Gakken)"
+    },
+    {
+      "id": "m-06-4",
+      "stationId": "st-06",
+      "kind": "usage",
+      "titleEn": "The Particle Spelled へ, Said え",
+      "bodyEn": "The direction particle へ is written with the kana へ but pronounced e, just as the particles は and を are said wa and o. These three spellings survive from historical kana usage: the 1946 modern-kana reform kept them for the particles only. So 駅へ行きます is read eki e ikimasu.",
+      "ja": "{駅|えき}へ{行|い}きます。",
+      "kana": "えきへいきます。"
+    }
+  ]
+}

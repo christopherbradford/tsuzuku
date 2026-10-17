@@ -1,0 +1,4403 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "kanji",
+  "level": "n4",
+  "writer": "kanji-n4-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "j-同",
+      "char": "同",
+      "meanings": [
+        "same",
+        "identical",
+        "together"
+      ],
+      "on": [
+        "ドウ"
+      ],
+      "kun": [
+        "おな.じ"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "frame",
+        "one",
+        "mouth"
+      ],
+      "mnemonic": "Look through the FRAME: ONE bar across the top, a MOUTH below. Every mask pressed through this FRAME comes out with the exact SAME face.",
+      "examples": [
+        {
+          "word": "同じ",
+          "kana": "おなじ",
+          "en": "same"
+        },
+        {
+          "word": "同時に",
+          "kana": "どうじに",
+          "en": "at the same time"
+        }
+      ],
+      "radical": "口",
+      "lookalikes": [
+        "j-向"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-事",
+      "char": "事",
+      "meanings": [
+        "matter",
+        "thing",
+        "affair"
+      ],
+      "on": [
+        "ジ"
+      ],
+      "kun": [
+        "こと"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "one",
+        "mouth",
+        "broom",
+        "hook"
+      ],
+      "mnemonic": "ONE MOUTH gives the order, a BROOM sweeps the floor, and a HOOK on the wall holds the to-do list: another small MATTER handled before lunch.",
+      "examples": [
+        {
+          "word": "食事",
+          "kana": "しょくじ",
+          "en": "meal"
+        },
+        {
+          "word": "仕事",
+          "kana": "しごと",
+          "en": "work"
+        },
+        {
+          "word": "大事",
+          "kana": "だいじ",
+          "en": "important"
+        }
+      ],
+      "radical": "亅",
+      "lookalikes": [
+        "j-争"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-自",
+      "char": "自",
+      "meanings": [
+        "self",
+        "oneself"
+      ],
+      "on": [
+        "ジ",
+        "シ"
+      ],
+      "kun": [
+        "みずか.ら"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "nose"
+      ],
+      "mnemonic": "Point at your own NOSE, the way people here do when they mean 'me': that gesture is SELF.",
+      "examples": [
+        {
+          "word": "自分",
+          "kana": "じぶん",
+          "en": "oneself"
+        },
+        {
+          "word": "自転車",
+          "kana": "じてんしゃ",
+          "en": "bicycle"
+        },
+        {
+          "word": "自由",
+          "kana": "じゆう",
+          "en": "freedom"
+        }
+      ],
+      "lookalikes": [
+        "j-目",
+        "j-白"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-発",
+      "char": "発",
+      "meanings": [
+        "depart",
+        "emit",
+        "start"
+      ],
+      "on": [
+        "ハツ",
+        "ホツ"
+      ],
+      "kun": [],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "tent",
+        "two",
+        "legs"
+      ],
+      "mnemonic": "Dawn at the TENT: TWO LEGS stretch out of the flap, the camper shoulders a pack, and off down the trail — this is how a journey will DEPART.",
+      "examples": [
+        {
+          "word": "発音",
+          "kana": "はつおん",
+          "en": "pronunciation"
+        },
+        {
+          "word": "出発",
+          "kana": "しゅっぱつ",
+          "en": "departure"
+        },
+        {
+          "word": "発表",
+          "kana": "はっぴょう",
+          "en": "presentation"
+        }
+      ],
+      "lookalikes": [
+        "j-登"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-者",
+      "char": "者",
+      "meanings": [
+        "someone",
+        "person"
+      ],
+      "on": [
+        "シャ"
+      ],
+      "kun": [
+        "もの"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "old",
+        "sun"
+      ],
+      "mnemonic": "An OLD man dozes in the SUN on the station bench. Ask who left the umbrella and every finger points at him: SOMEONE.",
+      "examples": [
+        {
+          "word": "医者",
+          "kana": "いしゃ",
+          "en": "doctor"
+        },
+        {
+          "word": "学者",
+          "kana": "がくしゃ",
+          "en": "scholar"
+        },
+        {
+          "word": "若者",
+          "kana": "わかもの",
+          "en": "young person"
+        }
+      ],
+      "lookalikes": [
+        "j-都",
+        "j-考"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-地",
+      "char": "地",
+      "meanings": [
+        "ground",
+        "earth",
+        "land"
+      ],
+      "on": [
+        "チ",
+        "ジ"
+      ],
+      "kun": [],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "earth",
+        "scorpion"
+      ],
+      "mnemonic": "Turn over a spade of EARTH and a SCORPION scuttles out — the oldest tenant of any patch of GROUND.",
+      "examples": [
+        {
+          "word": "地図",
+          "kana": "ちず",
+          "en": "map"
+        },
+        {
+          "word": "地下鉄",
+          "kana": "ちかてつ",
+          "en": "subway"
+        },
+        {
+          "word": "地震",
+          "kana": "じしん",
+          "en": "earthquake"
+        }
+      ],
+      "lookalikes": [
+        "j-池",
+        "j-他"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-業",
+      "char": "業",
+      "meanings": [
+        "business",
+        "vocation",
+        "deed"
+      ],
+      "on": [
+        "ギョウ",
+        "ゴウ"
+      ],
+      "kun": [
+        "わざ"
+      ],
+      "strokes": 13,
+      "jlpt": 4,
+      "components": [
+        "vocation"
+      ],
+      "mnemonic": "A VOCATION is the work you were cut out for; practice it every day at the same counter and it becomes your BUSINESS.",
+      "examples": [
+        {
+          "word": "授業",
+          "kana": "じゅぎょう",
+          "en": "class"
+        },
+        {
+          "word": "工業",
+          "kana": "こうぎょう",
+          "en": "industry"
+        },
+        {
+          "word": "卒業",
+          "kana": "そつぎょう",
+          "en": "graduation"
+        }
+      ],
+      "radical": "木",
+      "station": 16
+    },
+    {
+      "id": "j-方",
+      "char": "方",
+      "meanings": [
+        "direction",
+        "way",
+        "side"
+      ],
+      "on": [
+        "ホウ"
+      ],
+      "kun": [
+        "かた"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "direction"
+      ],
+      "mnemonic": "A weathered signpost with a single arm at the crossroads: it tells you nothing but a DIRECTION.",
+      "examples": [
+        {
+          "word": "方法",
+          "kana": "ほうほう",
+          "en": "method"
+        },
+        {
+          "word": "使い方",
+          "kana": "つかいかた",
+          "en": "how to use"
+        },
+        {
+          "word": "夕方",
+          "kana": "ゆうがた",
+          "en": "evening"
+        }
+      ],
+      "lookalikes": [
+        "j-万"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-場",
+      "char": "場",
+      "meanings": [
+        "place",
+        "location",
+        "scene"
+      ],
+      "on": [
+        "ジョウ"
+      ],
+      "kun": [
+        "ば"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "earth",
+        "sun",
+        "one",
+        "flag"
+      ],
+      "mnemonic": "On the packed EARTH the SUN rises over ONE FLAG planted for the festival; that is where the whole town gathers, so it is the PLACE.",
+      "examples": [
+        {
+          "word": "場所",
+          "kana": "ばしょ",
+          "en": "place"
+        },
+        {
+          "word": "工場",
+          "kana": "こうじょう",
+          "en": "factory"
+        },
+        {
+          "word": "場合",
+          "kana": "ばあい",
+          "en": "case"
+        }
+      ],
+      "lookalikes": [
+        "j-湯",
+        "j-陽"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-員",
+      "char": "員",
+      "meanings": [
+        "member",
+        "staff",
+        "employee"
+      ],
+      "on": [
+        "イン"
+      ],
+      "kun": [],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "mouth",
+        "shell"
+      ],
+      "mnemonic": "Every MOUTH in the office is fed from the same SHELL of money, the company purse; each of those mouths is a MEMBER.",
+      "examples": [
+        {
+          "word": "店員",
+          "kana": "てんいん",
+          "en": "shop clerk"
+        },
+        {
+          "word": "会社員",
+          "kana": "かいしゃいん",
+          "en": "company employee"
+        },
+        {
+          "word": "駅員",
+          "kana": "えきいん",
+          "en": "station staff"
+        }
+      ],
+      "lookalikes": [
+        "j-買"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-開",
+      "char": "開",
+      "meanings": [
+        "open",
+        "unfold"
+      ],
+      "on": [
+        "カイ"
+      ],
+      "kun": [
+        "ひら.く",
+        "あ.く",
+        "あ.ける"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "gate",
+        "one",
+        "two hands"
+      ],
+      "mnemonic": "At the GATE a bar of ONE heavy beam is lifted by TWO HANDS, and the doors swing wide: OPEN.",
+      "examples": [
+        {
+          "word": "開ける",
+          "kana": "あける",
+          "en": "to open"
+        },
+        {
+          "word": "開く",
+          "kana": "ひらく",
+          "en": "to open up"
+        },
+        {
+          "word": "開店",
+          "kana": "かいてん",
+          "en": "shop opening"
+        }
+      ],
+      "lookalikes": [
+        "j-聞",
+        "j-間",
+        "j-閉"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-力",
+      "char": "力",
+      "meanings": [
+        "power",
+        "strength",
+        "force"
+      ],
+      "on": [
+        "リョク",
+        "リキ"
+      ],
+      "kun": [
+        "ちから"
+      ],
+      "strokes": 2,
+      "jlpt": 4,
+      "components": [
+        "power"
+      ],
+      "mnemonic": "A flexed arm with the bicep bulging and the elbow hooked down: pure POWER.",
+      "examples": [
+        {
+          "word": "力",
+          "kana": "ちから",
+          "en": "strength"
+        },
+        {
+          "word": "体力",
+          "kana": "たいりょく",
+          "en": "physical strength"
+        },
+        {
+          "word": "力持ち",
+          "kana": "ちからもち",
+          "en": "strong person"
+        }
+      ],
+      "lookalikes": [
+        "j-九"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-問",
+      "char": "問",
+      "meanings": [
+        "question",
+        "ask",
+        "problem"
+      ],
+      "on": [
+        "モン"
+      ],
+      "kun": [
+        "と.う",
+        "と.い"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "gate",
+        "mouth"
+      ],
+      "mnemonic": "You stand at the GATE and a MOUTH calls through the gap, 'Who is it?' — the first QUESTION of every visit.",
+      "examples": [
+        {
+          "word": "質問",
+          "kana": "しつもん",
+          "en": "question"
+        },
+        {
+          "word": "問題",
+          "kana": "もんだい",
+          "en": "problem"
+        },
+        {
+          "word": "問う",
+          "kana": "とう",
+          "en": "to ask"
+        }
+      ],
+      "radical": "口",
+      "lookalikes": [
+        "j-間",
+        "j-聞",
+        "j-開"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-代",
+      "char": "代",
+      "meanings": [
+        "substitute",
+        "generation",
+        "fee"
+      ],
+      "on": [
+        "ダイ",
+        "タイ"
+      ],
+      "kun": [
+        "か.わる",
+        "か.える",
+        "よ",
+        "しろ"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "stake"
+      ],
+      "mnemonic": "A PERSON pulls up the STAKE that marks his plot and hands it to a newcomer who will farm it in his place: a SUBSTITUTE.",
+      "examples": [
+        {
+          "word": "時代",
+          "kana": "じだい",
+          "en": "era"
+        },
+        {
+          "word": "代わりに",
+          "kana": "かわりに",
+          "en": "instead"
+        },
+        {
+          "word": "電気代",
+          "kana": "でんきだい",
+          "en": "electricity bill"
+        }
+      ],
+      "lookalikes": [
+        "j-化"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-明",
+      "char": "明",
+      "meanings": [
+        "bright",
+        "clear",
+        "light"
+      ],
+      "on": [
+        "メイ",
+        "ミョウ"
+      ],
+      "kun": [
+        "あか.るい",
+        "あ.かり",
+        "あき.らか",
+        "あ.ける"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "sun",
+        "moon"
+      ],
+      "mnemonic": "SUN and MOON hang side by side in one sky — twice the light, so everything below is BRIGHT.",
+      "examples": [
+        {
+          "word": "明るい",
+          "kana": "あかるい",
+          "en": "bright"
+        },
+        {
+          "word": "説明",
+          "kana": "せつめい",
+          "en": "explanation"
+        },
+        {
+          "word": "明日",
+          "kana": "あした",
+          "en": "tomorrow"
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-動",
+      "char": "動",
+      "meanings": [
+        "move",
+        "motion"
+      ],
+      "on": [
+        "ドウ"
+      ],
+      "kun": [
+        "うご.く",
+        "うご.かす"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "thousand",
+        "village",
+        "power"
+      ],
+      "mnemonic": "A THOUSAND hands in the VILLAGE put their POWER behind the festival float, and the great heavy thing begins to MOVE.",
+      "examples": [
+        {
+          "word": "動く",
+          "kana": "うごく",
+          "en": "to move"
+        },
+        {
+          "word": "運動",
+          "kana": "うんどう",
+          "en": "exercise"
+        },
+        {
+          "word": "動物",
+          "kana": "どうぶつ",
+          "en": "animal"
+        }
+      ],
+      "radical": "力",
+      "lookalikes": [
+        "j-働",
+        "j-重"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-京",
+      "char": "京",
+      "meanings": [
+        "capital"
+      ],
+      "on": [
+        "キョウ",
+        "ケイ"
+      ],
+      "kun": [],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "lid",
+        "mouth",
+        "small"
+      ],
+      "mnemonic": "Under a tall LID of roof sits a MOUTH-shaped hall, and SMALL houses spread out at its feet: the CAPITAL.",
+      "examples": [
+        {
+          "word": "東京",
+          "kana": "とうきょう",
+          "en": "Tokyo"
+        },
+        {
+          "word": "京都",
+          "kana": "きょうと",
+          "en": "Kyoto"
+        }
+      ],
+      "lookalikes": [
+        "j-高"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-通",
+      "char": "通",
+      "meanings": [
+        "pass through",
+        "commute",
+        "traffic"
+      ],
+      "on": [
+        "ツウ",
+        "ツ"
+      ],
+      "kun": [
+        "とお.る",
+        "とお.す",
+        "かよ.う"
+      ],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "road",
+        "beak",
+        "utilize"
+      ],
+      "mnemonic": "On the ROAD a crow's BEAK pecks at the handcart we UTILIZE every morning; this is the lane the cart is allowed to PASS THROUGH.",
+      "examples": [
+        {
+          "word": "通る",
+          "kana": "とおる",
+          "en": "to pass through"
+        },
+        {
+          "word": "交通",
+          "kana": "こうつう",
+          "en": "traffic"
+        },
+        {
+          "word": "通う",
+          "kana": "かよう",
+          "en": "to commute"
+        }
+      ],
+      "lookalikes": [
+        "j-道",
+        "j-痛"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-理",
+      "char": "理",
+      "meanings": [
+        "reason",
+        "logic",
+        "principle"
+      ],
+      "on": [
+        "リ"
+      ],
+      "kun": [],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "king",
+        "village"
+      ],
+      "mnemonic": "The KING walks the VILLAGE lanes, hears each dispute, and settles every one by REASON.",
+      "examples": [
+        {
+          "word": "料理",
+          "kana": "りょうり",
+          "en": "cooking"
+        },
+        {
+          "word": "理由",
+          "kana": "りゆう",
+          "en": "reason"
+        },
+        {
+          "word": "無理",
+          "kana": "むり",
+          "en": "impossible"
+        }
+      ],
+      "radical": "玉",
+      "lookalikes": [
+        "j-現"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-体",
+      "char": "体",
+      "meanings": [
+        "body"
+      ],
+      "on": [
+        "タイ",
+        "テイ"
+      ],
+      "kun": [
+        "からだ"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "book"
+      ],
+      "mnemonic": "A PERSON hugs a BOOK to the chest — an anatomy text, every page about the BODY.",
+      "examples": [
+        {
+          "word": "体",
+          "kana": "からだ",
+          "en": "body"
+        },
+        {
+          "word": "体育",
+          "kana": "たいいく",
+          "en": "physical education"
+        },
+        {
+          "word": "大体",
+          "kana": "だいたい",
+          "en": "roughly"
+        }
+      ],
+      "lookalikes": [
+        "j-休",
+        "j-本"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-田",
+      "char": "田",
+      "meanings": [
+        "rice field",
+        "paddy"
+      ],
+      "on": [
+        "デン"
+      ],
+      "kun": [
+        "た"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "rice field"
+      ],
+      "mnemonic": "Four plots divided by low mud walls, seen from the hill path above: a RICE FIELD.",
+      "examples": [
+        {
+          "word": "田んぼ",
+          "kana": "たんぼ",
+          "en": "rice paddy"
+        },
+        {
+          "word": "田舎",
+          "kana": "いなか",
+          "en": "countryside"
+        }
+      ],
+      "lookalikes": [
+        "j-由",
+        "j-申"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-主",
+      "char": "主",
+      "meanings": [
+        "master",
+        "main",
+        "lord"
+      ],
+      "on": [
+        "シュ",
+        "ス"
+      ],
+      "kun": [
+        "ぬし",
+        "おも"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "drop",
+        "king"
+      ],
+      "mnemonic": "A DROP of flame burns in the lamp above the KING's chair; whoever keeps that flame lit is the MASTER.",
+      "examples": [
+        {
+          "word": "主人",
+          "kana": "しゅじん",
+          "en": "husband"
+        },
+        {
+          "word": "主に",
+          "kana": "おもに",
+          "en": "mainly"
+        },
+        {
+          "word": "持ち主",
+          "kana": "もちぬし",
+          "en": "owner"
+        }
+      ],
+      "lookalikes": [
+        "j-王",
+        "j-住"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-題",
+      "char": "題",
+      "meanings": [
+        "topic",
+        "title",
+        "subject"
+      ],
+      "on": [
+        "ダイ"
+      ],
+      "kun": [],
+      "strokes": 18,
+      "jlpt": 4,
+      "components": [
+        "sun",
+        "one",
+        "stop",
+        "head"
+      ],
+      "mnemonic": "At SUN-up ONE guard calls STOP and asks the traveler at the HEAD of the line what the day's TOPIC is before anyone passes.",
+      "examples": [
+        {
+          "word": "問題",
+          "kana": "もんだい",
+          "en": "problem"
+        },
+        {
+          "word": "宿題",
+          "kana": "しゅくだい",
+          "en": "homework"
+        },
+        {
+          "word": "話題",
+          "kana": "わだい",
+          "en": "topic"
+        }
+      ],
+      "radical": "頁",
+      "lookalikes": [
+        "j-頭"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-意",
+      "char": "意",
+      "meanings": [
+        "idea",
+        "mind",
+        "intention"
+      ],
+      "on": [
+        "イ"
+      ],
+      "kun": [],
+      "strokes": 13,
+      "jlpt": 4,
+      "components": [
+        "sound",
+        "heart"
+      ],
+      "mnemonic": "A SOUND rises straight from the HEART before any words are ready: an IDEA.",
+      "examples": [
+        {
+          "word": "意味",
+          "kana": "いみ",
+          "en": "meaning"
+        },
+        {
+          "word": "注意",
+          "kana": "ちゅうい",
+          "en": "caution"
+        },
+        {
+          "word": "意見",
+          "kana": "いけん",
+          "en": "opinion"
+        }
+      ],
+      "radical": "心",
+      "lookalikes": [
+        "j-音"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-不",
+      "char": "不",
+      "meanings": [
+        "not",
+        "negative"
+      ],
+      "on": [
+        "フ",
+        "ブ"
+      ],
+      "kun": [],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "negative"
+      ],
+      "mnemonic": "A bird beating its wings against a ceiling it cannot pass — the NEGATIVE sign, a flat NOT.",
+      "examples": [
+        {
+          "word": "不便",
+          "kana": "ふべん",
+          "en": "inconvenient"
+        },
+        {
+          "word": "不安",
+          "kana": "ふあん",
+          "en": "anxiety"
+        },
+        {
+          "word": "不思議",
+          "kana": "ふしぎ",
+          "en": "mysterious"
+        }
+      ],
+      "radical": "一",
+      "lookalikes": [
+        "j-否"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-作",
+      "char": "作",
+      "meanings": [
+        "make",
+        "produce",
+        "work"
+      ],
+      "on": [
+        "サク",
+        "サ"
+      ],
+      "kun": [
+        "つく.る"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "saw"
+      ],
+      "mnemonic": "A PERSON picks up a SAW, and from a single plank begins to MAKE a shelf.",
+      "examples": [
+        {
+          "word": "作る",
+          "kana": "つくる",
+          "en": "to make"
+        },
+        {
+          "word": "作文",
+          "kana": "さくぶん",
+          "en": "composition"
+        },
+        {
+          "word": "作品",
+          "kana": "さくひん",
+          "en": "piece of work"
+        }
+      ],
+      "lookalikes": [
+        "j-昨"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-用",
+      "char": "用",
+      "meanings": [
+        "use",
+        "errand",
+        "business"
+      ],
+      "on": [
+        "ヨウ"
+      ],
+      "kun": [
+        "もち.いる"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "utilize"
+      ],
+      "mnemonic": "A fence of rails you UTILIZE as a gate, a ladder, a bench — whatever the job, the thing is in USE.",
+      "examples": [
+        {
+          "word": "用事",
+          "kana": "ようじ",
+          "en": "errand"
+        },
+        {
+          "word": "使用",
+          "kana": "しよう",
+          "en": "use"
+        },
+        {
+          "word": "利用",
+          "kana": "りよう",
+          "en": "utilization"
+        }
+      ],
+      "lookalikes": [
+        "j-周",
+        "j-月"
+      ],
+      "station": 16
+    },
+    {
+      "id": "j-度",
+      "char": "度",
+      "meanings": [
+        "degree",
+        "times",
+        "occasion"
+      ],
+      "on": [
+        "ド",
+        "ト",
+        "タク"
+      ],
+      "kun": [
+        "たび"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "lean-to",
+        "twenty",
+        "right hand"
+      ],
+      "mnemonic": "Under the LEAN-TO, TWENTY notches are cut into a post, and a RIGHT HAND measures how far the shadow has crept: one more DEGREE.",
+      "examples": [
+        {
+          "word": "今度",
+          "kana": "こんど",
+          "en": "next time"
+        },
+        {
+          "word": "一度",
+          "kana": "いちど",
+          "en": "once"
+        },
+        {
+          "word": "温度",
+          "kana": "おんど",
+          "en": "temperature"
+        }
+      ],
+      "lookalikes": [
+        "j-席",
+        "j-庭"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-強",
+      "char": "強",
+      "meanings": [
+        "strong",
+        "force"
+      ],
+      "on": [
+        "キョウ",
+        "ゴウ"
+      ],
+      "kun": [
+        "つよ.い",
+        "つよ.まる",
+        "つよ.める",
+        "し.いる"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "bow",
+        "private",
+        "insect"
+      ],
+      "mnemonic": "A BOW kept PRIVATE in its case, and an INSECT, the beetle that lifts a hundred times its own weight: both are STRONG.",
+      "examples": [
+        {
+          "word": "強い",
+          "kana": "つよい",
+          "en": "strong"
+        },
+        {
+          "word": "勉強",
+          "kana": "べんきょう",
+          "en": "study"
+        },
+        {
+          "word": "強風",
+          "kana": "きょうふう",
+          "en": "strong wind"
+        }
+      ],
+      "lookalikes": [
+        "j-弱"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-公",
+      "char": "公",
+      "meanings": [
+        "public",
+        "official"
+      ],
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "おおやけ"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "eight",
+        "private"
+      ],
+      "mnemonic": "EIGHT openings cut in the fence, so nothing behind it stays PRIVATE: the garden is now PUBLIC.",
+      "examples": [
+        {
+          "word": "公園",
+          "kana": "こうえん",
+          "en": "park"
+        },
+        {
+          "word": "公務員",
+          "kana": "こうむいん",
+          "en": "civil servant"
+        },
+        {
+          "word": "公共",
+          "kana": "こうきょう",
+          "en": "public"
+        }
+      ],
+      "lookalikes": [
+        "j-分"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-持",
+      "char": "持",
+      "meanings": [
+        "hold",
+        "have",
+        "carry"
+      ],
+      "on": [
+        "ジ"
+      ],
+      "kun": [
+        "も.つ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "hand",
+        "temple"
+      ],
+      "mnemonic": "A HAND at the TEMPLE gate closes around the offering box and will not let go: HOLD.",
+      "examples": [
+        {
+          "word": "持つ",
+          "kana": "もつ",
+          "en": "to hold"
+        },
+        {
+          "word": "気持ち",
+          "kana": "きもち",
+          "en": "feeling"
+        },
+        {
+          "word": "金持ち",
+          "kana": "かねもち",
+          "en": "rich person"
+        }
+      ],
+      "lookalikes": [
+        "j-待",
+        "j-特",
+        "j-時"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-野",
+      "char": "野",
+      "meanings": [
+        "field",
+        "plain",
+        "wild"
+      ],
+      "on": [
+        "ヤ"
+      ],
+      "kun": [
+        "の"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "village",
+        "beak",
+        "finish"
+      ],
+      "mnemonic": "Past the last VILLAGE house a crow's BEAK pecks at the stubble where the paths FINISH: the open FIELD.",
+      "examples": [
+        {
+          "word": "野菜",
+          "kana": "やさい",
+          "en": "vegetable"
+        },
+        {
+          "word": "野球",
+          "kana": "やきゅう",
+          "en": "baseball"
+        },
+        {
+          "word": "野原",
+          "kana": "のはら",
+          "en": "field"
+        }
+      ],
+      "lookalikes": [
+        "j-予"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-以",
+      "char": "以",
+      "meanings": [
+        "by means of",
+        "since",
+        "whereby"
+      ],
+      "on": [
+        "イ"
+      ],
+      "kun": [],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "whereby"
+      ],
+      "mnemonic": "A cord tied to a plow and a person pulling it — the WHEREBY, the tool by which a thing gets done: BY MEANS OF.",
+      "examples": [
+        {
+          "word": "以上",
+          "kana": "いじょう",
+          "en": "or more"
+        },
+        {
+          "word": "以下",
+          "kana": "いか",
+          "en": "or less"
+        },
+        {
+          "word": "以外",
+          "kana": "いがい",
+          "en": "except for"
+        }
+      ],
+      "radical": "人",
+      "lookalikes": [
+        "j-似"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-思",
+      "char": "思",
+      "meanings": [
+        "think",
+        "thought"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "おも.う"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "rice field",
+        "heart"
+      ],
+      "mnemonic": "A RICE FIELD drawn above a HEART: the farmer's chest is full of next spring's planting, and that is how you THINK.",
+      "examples": [
+        {
+          "word": "思う",
+          "kana": "おもう",
+          "en": "to think"
+        },
+        {
+          "word": "思い出",
+          "kana": "おもいで",
+          "en": "memory"
+        },
+        {
+          "word": "不思議",
+          "kana": "ふしぎ",
+          "en": "mysterious"
+        }
+      ],
+      "radical": "心",
+      "lookalikes": [
+        "j-想"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-家",
+      "char": "家",
+      "meanings": [
+        "house",
+        "home",
+        "family"
+      ],
+      "on": [
+        "カ",
+        "ケ"
+      ],
+      "kun": [
+        "いえ",
+        "や"
+      ],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "roof",
+        "pig"
+      ],
+      "mnemonic": "A ROOF with a PIG snoring underneath it — the old farmyard picture of a HOUSE.",
+      "examples": [
+        {
+          "word": "家",
+          "kana": "いえ",
+          "en": "house"
+        },
+        {
+          "word": "家族",
+          "kana": "かぞく",
+          "en": "family"
+        },
+        {
+          "word": "家賃",
+          "kana": "やちん",
+          "en": "rent"
+        }
+      ],
+      "lookalikes": [
+        "j-宿",
+        "j-安"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-世",
+      "char": "世",
+      "meanings": [
+        "world",
+        "generation",
+        "society"
+      ],
+      "on": [
+        "セイ",
+        "セ"
+      ],
+      "kun": [
+        "よ"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "generation"
+      ],
+      "mnemonic": "Three tens bound together make thirty years, one GENERATION; live through three of them and you have watched the whole WORLD change.",
+      "examples": [
+        {
+          "word": "世界",
+          "kana": "せかい",
+          "en": "world"
+        },
+        {
+          "word": "世話",
+          "kana": "せわ",
+          "en": "care"
+        },
+        {
+          "word": "世の中",
+          "kana": "よのなか",
+          "en": "society"
+        }
+      ],
+      "radical": "一",
+      "station": 17
+    },
+    {
+      "id": "j-正",
+      "char": "正",
+      "meanings": [
+        "correct",
+        "right",
+        "proper"
+      ],
+      "on": [
+        "セイ",
+        "ショウ"
+      ],
+      "kun": [
+        "ただ.しい",
+        "ただ.す",
+        "まさ"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "one",
+        "stop"
+      ],
+      "mnemonic": "Draw ONE line and STOP exactly on it, not a hair further: that is CORRECT.",
+      "examples": [
+        {
+          "word": "正しい",
+          "kana": "ただしい",
+          "en": "correct"
+        },
+        {
+          "word": "お正月",
+          "kana": "おしょうがつ",
+          "en": "New Year"
+        },
+        {
+          "word": "正直",
+          "kana": "しょうじき",
+          "en": "honest"
+        }
+      ],
+      "radical": "止",
+      "lookalikes": [
+        "j-止",
+        "j-王"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-院",
+      "char": "院",
+      "meanings": [
+        "institution",
+        "institute",
+        "temple"
+      ],
+      "on": [
+        "イン"
+      ],
+      "kun": [],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "hill",
+        "roof",
+        "two",
+        "legs"
+      ],
+      "mnemonic": "On the HILL a wide ROOF shelters TWO pairs of LEGS pacing the corridor in white coats: an INSTITUTION.",
+      "examples": [
+        {
+          "word": "病院",
+          "kana": "びょういん",
+          "en": "hospital"
+        },
+        {
+          "word": "大学院",
+          "kana": "だいがくいん",
+          "en": "graduate school"
+        },
+        {
+          "word": "美容院",
+          "kana": "びよういん",
+          "en": "beauty salon"
+        }
+      ],
+      "lookalikes": [
+        "j-完"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-心",
+      "char": "心",
+      "meanings": [
+        "heart",
+        "mind",
+        "spirit"
+      ],
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "こころ"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "heart"
+      ],
+      "mnemonic": "Three drops of blood around a curved valve — the pump itself, the HEART.",
+      "examples": [
+        {
+          "word": "心",
+          "kana": "こころ",
+          "en": "heart"
+        },
+        {
+          "word": "安心",
+          "kana": "あんしん",
+          "en": "relief"
+        },
+        {
+          "word": "心配",
+          "kana": "しんぱい",
+          "en": "worry"
+        }
+      ],
+      "lookalikes": [
+        "j-必"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-界",
+      "char": "界",
+      "meanings": [
+        "boundary",
+        "world",
+        "realm"
+      ],
+      "on": [
+        "カイ"
+      ],
+      "kun": [],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "rice field",
+        "wedge"
+      ],
+      "mnemonic": "Drive a WEDGE down between two plots of RICE FIELD and you have drawn a BOUNDARY.",
+      "examples": [
+        {
+          "word": "世界",
+          "kana": "せかい",
+          "en": "world"
+        },
+        {
+          "word": "業界",
+          "kana": "ぎょうかい",
+          "en": "industry"
+        },
+        {
+          "word": "限界",
+          "kana": "げんかい",
+          "en": "limit"
+        }
+      ],
+      "lookalikes": [
+        "j-介"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-教",
+      "char": "教",
+      "meanings": [
+        "teach",
+        "religion"
+      ],
+      "on": [
+        "キョウ"
+      ],
+      "kun": [
+        "おし.える",
+        "おそ.わる"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "old",
+        "child",
+        "strike"
+      ],
+      "mnemonic": "An OLD teacher sits beside a CHILD while each STRIKE of the pointer taps the slate — this is how you TEACH.",
+      "examples": [
+        {
+          "word": "教える",
+          "kana": "おしえる",
+          "en": "to teach"
+        },
+        {
+          "word": "教室",
+          "kana": "きょうしつ",
+          "en": "classroom"
+        },
+        {
+          "word": "教会",
+          "kana": "きょうかい",
+          "en": "church"
+        }
+      ],
+      "radical": "攵",
+      "lookalikes": [
+        "j-数"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-文",
+      "char": "文",
+      "meanings": [
+        "writing",
+        "sentence",
+        "literature"
+      ],
+      "on": [
+        "ブン",
+        "モン"
+      ],
+      "kun": [
+        "ふみ"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "writing"
+      ],
+      "mnemonic": "Crossed lines inked on a collar, humanity's first deliberate pattern: WRITING.",
+      "examples": [
+        {
+          "word": "文化",
+          "kana": "ぶんか",
+          "en": "culture"
+        },
+        {
+          "word": "文字",
+          "kana": "もじ",
+          "en": "letter"
+        },
+        {
+          "word": "注文",
+          "kana": "ちゅうもん",
+          "en": "order"
+        }
+      ],
+      "lookalikes": [
+        "j-父"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-元",
+      "char": "元",
+      "meanings": [
+        "origin",
+        "source",
+        "former"
+      ],
+      "on": [
+        "ゲン",
+        "ガン"
+      ],
+      "kun": [
+        "もと"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "two",
+        "legs"
+      ],
+      "mnemonic": "TWO strokes for a head and LEGS underneath: a figure standing at the start line, the ORIGIN.",
+      "examples": [
+        {
+          "word": "元気",
+          "kana": "げんき",
+          "en": "healthy"
+        },
+        {
+          "word": "地元",
+          "kana": "じもと",
+          "en": "hometown"
+        },
+        {
+          "word": "元日",
+          "kana": "がんじつ",
+          "en": "New Year's Day"
+        }
+      ],
+      "radical": "儿",
+      "lookalikes": [
+        "j-先",
+        "j-光"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-重",
+      "char": "重",
+      "meanings": [
+        "heavy",
+        "pile up",
+        "important"
+      ],
+      "on": [
+        "ジュウ",
+        "チョウ"
+      ],
+      "kun": [
+        "おも.い",
+        "かさ.ねる",
+        "かさ.なる",
+        "え"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "thousand",
+        "village"
+      ],
+      "mnemonic": "A THOUSAND sacks of rice stacked in one VILLAGE storehouse until the floor groans: HEAVY.",
+      "examples": [
+        {
+          "word": "重い",
+          "kana": "おもい",
+          "en": "heavy"
+        },
+        {
+          "word": "体重",
+          "kana": "たいじゅう",
+          "en": "body weight"
+        },
+        {
+          "word": "重要",
+          "kana": "じゅうよう",
+          "en": "important"
+        }
+      ],
+      "radical": "里",
+      "lookalikes": [
+        "j-動",
+        "j-量"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-近",
+      "char": "近",
+      "meanings": [
+        "near",
+        "close",
+        "recent"
+      ],
+      "on": [
+        "キン"
+      ],
+      "kun": [
+        "ちか.い"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "road",
+        "axe"
+      ],
+      "mnemonic": "On the ROAD you hear an AXE chopping just beyond the bend — the woodcutter's hut must be NEAR.",
+      "examples": [
+        {
+          "word": "近い",
+          "kana": "ちかい",
+          "en": "near"
+        },
+        {
+          "word": "近所",
+          "kana": "きんじょ",
+          "en": "neighborhood"
+        },
+        {
+          "word": "最近",
+          "kana": "さいきん",
+          "en": "recently"
+        }
+      ],
+      "lookalikes": [
+        "j-返",
+        "j-迎"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-考",
+      "char": "考",
+      "meanings": [
+        "consider",
+        "think over"
+      ],
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "かんが.える"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "old",
+        "hook"
+      ],
+      "mnemonic": "An OLD scholar leans on a HOOK-shaped cane, chin on the handle, letting the question turn slowly: CONSIDER.",
+      "examples": [
+        {
+          "word": "考える",
+          "kana": "かんがえる",
+          "en": "to think"
+        },
+        {
+          "word": "考え",
+          "kana": "かんがえ",
+          "en": "thought"
+        },
+        {
+          "word": "参考",
+          "kana": "さんこう",
+          "en": "reference"
+        }
+      ],
+      "lookalikes": [
+        "j-老",
+        "j-者"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-画",
+      "char": "画",
+      "meanings": [
+        "picture",
+        "stroke",
+        "plan"
+      ],
+      "on": [
+        "ガ",
+        "カク"
+      ],
+      "kun": [],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "one",
+        "rice field",
+        "container"
+      ],
+      "mnemonic": "ONE line across the top, a RICE FIELD in the middle, the whole thing set in a CONTAINER like a frame on the wall: a PICTURE.",
+      "examples": [
+        {
+          "word": "映画",
+          "kana": "えいが",
+          "en": "movie"
+        },
+        {
+          "word": "計画",
+          "kana": "けいかく",
+          "en": "plan"
+        },
+        {
+          "word": "画家",
+          "kana": "がか",
+          "en": "painter"
+        }
+      ],
+      "radical": "田",
+      "lookalikes": [
+        "j-面"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-海",
+      "char": "海",
+      "meanings": [
+        "sea",
+        "ocean"
+      ],
+      "on": [
+        "カイ"
+      ],
+      "kun": [
+        "うみ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "water",
+        "person",
+        "mother"
+      ],
+      "mnemonic": "WATER wide enough to hold every PERSON alive, the MOTHER that every river runs home to: the SEA.",
+      "examples": [
+        {
+          "word": "海",
+          "kana": "うみ",
+          "en": "sea"
+        },
+        {
+          "word": "海外",
+          "kana": "かいがい",
+          "en": "overseas"
+        },
+        {
+          "word": "海岸",
+          "kana": "かいがん",
+          "en": "coast"
+        }
+      ],
+      "lookalikes": [
+        "j-毎"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-売",
+      "char": "売",
+      "meanings": [
+        "sell"
+      ],
+      "on": [
+        "バイ"
+      ],
+      "kun": [
+        "う.る",
+        "う.れる"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "samurai",
+        "cover",
+        "legs"
+      ],
+      "mnemonic": "A SAMURAI pulls the COVER off his cart and his LEGS carry him through the market calling out prices: SELL.",
+      "examples": [
+        {
+          "word": "売る",
+          "kana": "うる",
+          "en": "to sell"
+        },
+        {
+          "word": "売り場",
+          "kana": "うりば",
+          "en": "sales floor"
+        },
+        {
+          "word": "売店",
+          "kana": "ばいてん",
+          "en": "kiosk"
+        }
+      ],
+      "lookalikes": [
+        "j-読",
+        "j-声"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-知",
+      "char": "知",
+      "meanings": [
+        "know",
+        "knowledge"
+      ],
+      "on": [
+        "チ"
+      ],
+      "kun": [
+        "し.る"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "arrow",
+        "mouth"
+      ],
+      "mnemonic": "A question flies like an ARROW and the MOUTH answers before it lands: KNOW.",
+      "examples": [
+        {
+          "word": "知る",
+          "kana": "しる",
+          "en": "to know"
+        },
+        {
+          "word": "知り合い",
+          "kana": "しりあい",
+          "en": "acquaintance"
+        },
+        {
+          "word": "知識",
+          "kana": "ちしき",
+          "en": "knowledge"
+        }
+      ],
+      "lookalikes": [
+        "j-和",
+        "j-短"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-集",
+      "char": "集",
+      "meanings": [
+        "gather",
+        "collect"
+      ],
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "あつ.まる",
+        "あつ.める",
+        "つど.う"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "small bird",
+        "tree"
+      ],
+      "mnemonic": "One SMALL BIRD lands in the TREE at dusk, then a dozen more follow until the branches chatter — they GATHER.",
+      "examples": [
+        {
+          "word": "集まる",
+          "kana": "あつまる",
+          "en": "to gather"
+        },
+        {
+          "word": "集める",
+          "kana": "あつめる",
+          "en": "to collect"
+        },
+        {
+          "word": "集中",
+          "kana": "しゅうちゅう",
+          "en": "concentration"
+        }
+      ],
+      "lookalikes": [
+        "j-進"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-別",
+      "char": "別",
+      "meanings": [
+        "separate",
+        "different",
+        "another"
+      ],
+      "on": [
+        "ベツ"
+      ],
+      "kun": [
+        "わか.れる"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "mouth",
+        "power",
+        "sword"
+      ],
+      "mnemonic": "A MOUTH calls goodbye from the deck, POWER hauls on the ropes, and a SWORD cuts the last mooring line: the boats SEPARATE.",
+      "examples": [
+        {
+          "word": "別に",
+          "kana": "べつに",
+          "en": "not particularly"
+        },
+        {
+          "word": "特別",
+          "kana": "とくべつ",
+          "en": "special"
+        },
+        {
+          "word": "別れる",
+          "kana": "わかれる",
+          "en": "to part"
+        }
+      ],
+      "radical": "刀",
+      "lookalikes": [
+        "j-利"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-物",
+      "char": "物",
+      "meanings": [
+        "thing",
+        "object"
+      ],
+      "on": [
+        "ブツ",
+        "モツ"
+      ],
+      "kun": [
+        "もの"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "cow",
+        "flag"
+      ],
+      "mnemonic": "A COW at the market with a little FLAG pinned to its flank, tagged and priced like any other item for sale: a THING.",
+      "examples": [
+        {
+          "word": "物",
+          "kana": "もの",
+          "en": "thing"
+        },
+        {
+          "word": "買い物",
+          "kana": "かいもの",
+          "en": "shopping"
+        },
+        {
+          "word": "動物",
+          "kana": "どうぶつ",
+          "en": "animal"
+        }
+      ],
+      "lookalikes": [
+        "j-牛",
+        "j-特"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-使",
+      "char": "使",
+      "meanings": [
+        "use",
+        "employ",
+        "messenger"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "つか.う"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "one",
+        "middle",
+        "stroke"
+      ],
+      "mnemonic": "A PERSON holds ONE brush by the MIDDLE and makes a single STROKE across the order form: the tool you USE.",
+      "examples": [
+        {
+          "word": "使う",
+          "kana": "つかう",
+          "en": "to use"
+        },
+        {
+          "word": "使い方",
+          "kana": "つかいかた",
+          "en": "how to use"
+        },
+        {
+          "word": "大使館",
+          "kana": "たいしかん",
+          "en": "embassy"
+        }
+      ],
+      "lookalikes": [
+        "j-便"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-品",
+      "char": "品",
+      "meanings": [
+        "goods",
+        "article",
+        "quality"
+      ],
+      "on": [
+        "ヒン"
+      ],
+      "kun": [
+        "しな"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "mouth",
+        "mouth",
+        "mouth"
+      ],
+      "mnemonic": "MOUTH, MOUTH, MOUTH — three open boxes stacked on a shop shelf, each holding a different item: GOODS.",
+      "examples": [
+        {
+          "word": "品物",
+          "kana": "しなもの",
+          "en": "goods"
+        },
+        {
+          "word": "作品",
+          "kana": "さくひん",
+          "en": "piece of work"
+        },
+        {
+          "word": "食品",
+          "kana": "しょくひん",
+          "en": "food product"
+        }
+      ],
+      "lookalikes": [
+        "j-口"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-計",
+      "char": "計",
+      "meanings": [
+        "measure",
+        "plan",
+        "total"
+      ],
+      "on": [
+        "ケイ"
+      ],
+      "kun": [
+        "はか.る",
+        "はか.らう"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "say",
+        "ten"
+      ],
+      "mnemonic": "SAY the numbers aloud up to TEN on your fingers, then start again from one: that is how you MEASURE.",
+      "examples": [
+        {
+          "word": "時計",
+          "kana": "とけい",
+          "en": "clock"
+        },
+        {
+          "word": "計画",
+          "kana": "けいかく",
+          "en": "plan"
+        },
+        {
+          "word": "合計",
+          "kana": "ごうけい",
+          "en": "total"
+        }
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-死",
+      "char": "死",
+      "meanings": [
+        "death",
+        "die"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "し.ぬ"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "bone",
+        "spoon"
+      ],
+      "mnemonic": "A BONE lies beside a SPOON on the cleared table; the meal is over, and so is the long life it fed: DEATH.",
+      "examples": [
+        {
+          "word": "死ぬ",
+          "kana": "しぬ",
+          "en": "to die"
+        },
+        {
+          "word": "必死",
+          "kana": "ひっし",
+          "en": "desperate"
+        },
+        {
+          "word": "死亡",
+          "kana": "しぼう",
+          "en": "death"
+        }
+      ],
+      "lookalikes": [
+        "j-列",
+        "j-残"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-特",
+      "char": "特",
+      "meanings": [
+        "special",
+        "particular"
+      ],
+      "on": [
+        "トク"
+      ],
+      "kun": [],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "cow",
+        "temple"
+      ],
+      "mnemonic": "A COW kept at the TEMPLE, garlanded with flowers and never once put to the plow: SPECIAL.",
+      "examples": [
+        {
+          "word": "特に",
+          "kana": "とくに",
+          "en": "especially"
+        },
+        {
+          "word": "特別",
+          "kana": "とくべつ",
+          "en": "special"
+        },
+        {
+          "word": "特急",
+          "kana": "とっきゅう",
+          "en": "limited express"
+        }
+      ],
+      "lookalikes": [
+        "j-持",
+        "j-待"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-私",
+      "char": "私",
+      "meanings": [
+        "I",
+        "private",
+        "me"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "わたくし",
+        "わたし"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "grain",
+        "private"
+      ],
+      "mnemonic": "A farmer tucks his GRAIN into a PRIVATE jar, and on the lid he writes one word: I.",
+      "examples": [
+        {
+          "word": "私",
+          "kana": "わたし",
+          "en": "I"
+        },
+        {
+          "word": "私鉄",
+          "kana": "してつ",
+          "en": "private railway"
+        },
+        {
+          "word": "私立",
+          "kana": "しりつ",
+          "en": "privately run"
+        }
+      ],
+      "lookalikes": [
+        "j-秋",
+        "j-和"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-始",
+      "char": "始",
+      "meanings": [
+        "begin",
+        "start"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "はじ.める",
+        "はじ.まる"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "woman",
+        "private",
+        "mouth"
+      ],
+      "mnemonic": "A WOMAN whispers a PRIVATE word to herself, then opens her MOUTH to the whole room — this is how the story will BEGIN.",
+      "examples": [
+        {
+          "word": "始める",
+          "kana": "はじめる",
+          "en": "to begin"
+        },
+        {
+          "word": "始まる",
+          "kana": "はじまる",
+          "en": "to start"
+        },
+        {
+          "word": "開始",
+          "kana": "かいし",
+          "en": "start"
+        }
+      ],
+      "lookalikes": [
+        "j-治",
+        "j-台"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-朝",
+      "char": "朝",
+      "meanings": [
+        "morning",
+        "dynasty"
+      ],
+      "on": [
+        "チョウ"
+      ],
+      "kun": [
+        "あさ"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "ten",
+        "sun",
+        "ten",
+        "moon"
+      ],
+      "mnemonic": "TEN rays above the SUN, TEN below it in the grass, and the pale MOON still hanging at the edge of the sky: MORNING.",
+      "examples": [
+        {
+          "word": "朝",
+          "kana": "あさ",
+          "en": "morning"
+        },
+        {
+          "word": "今朝",
+          "kana": "けさ",
+          "en": "this morning"
+        },
+        {
+          "word": "朝ご飯",
+          "kana": "あさごはん",
+          "en": "breakfast"
+        }
+      ],
+      "radical": "月",
+      "lookalikes": [
+        "j-期"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-運",
+      "char": "運",
+      "meanings": [
+        "carry",
+        "luck",
+        "transport"
+      ],
+      "on": [
+        "ウン"
+      ],
+      "kun": [
+        "はこ.ぶ"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "road",
+        "cover",
+        "car"
+      ],
+      "mnemonic": "Down the ROAD rolls a CAR with a tarp COVER lashed over its load of crates: CARRY.",
+      "examples": [
+        {
+          "word": "運転",
+          "kana": "うんてん",
+          "en": "driving"
+        },
+        {
+          "word": "運動",
+          "kana": "うんどう",
+          "en": "exercise"
+        },
+        {
+          "word": "運ぶ",
+          "kana": "はこぶ",
+          "en": "to carry"
+        }
+      ],
+      "lookalikes": [
+        "j-連",
+        "j-送"
+      ],
+      "station": 18
+    },
+    {
+      "id": "j-終",
+      "char": "終",
+      "meanings": [
+        "end",
+        "finish"
+      ],
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "お.わる",
+        "お.える"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "thread",
+        "walking legs",
+        "ice"
+      ],
+      "mnemonic": "The THREAD runs off the spool, the WALKING LEGS slow on the ICE of the year's last month, and the road reaches its END.",
+      "examples": [
+        {
+          "word": "終わる",
+          "kana": "おわる",
+          "en": "to end"
+        },
+        {
+          "word": "終電",
+          "kana": "しゅうでん",
+          "en": "last train"
+        },
+        {
+          "word": "最終",
+          "kana": "さいしゅう",
+          "en": "final"
+        }
+      ],
+      "lookalikes": [
+        "j-冬"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-台",
+      "char": "台",
+      "meanings": [
+        "platform",
+        "stand",
+        "counter for machines"
+      ],
+      "on": [
+        "ダイ",
+        "タイ"
+      ],
+      "kun": [],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "private",
+        "mouth"
+      ],
+      "mnemonic": "A PRIVATE citizen climbs onto a crate, and the MOUTH above it addresses the whole square: the raised PLATFORM.",
+      "examples": [
+        {
+          "word": "台所",
+          "kana": "だいどころ",
+          "en": "kitchen"
+        },
+        {
+          "word": "台風",
+          "kana": "たいふう",
+          "en": "typhoon"
+        },
+        {
+          "word": "一台",
+          "kana": "いちだい",
+          "en": "one machine"
+        }
+      ],
+      "radical": "口",
+      "lookalikes": [
+        "j-始",
+        "j-治"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-広",
+      "char": "広",
+      "meanings": [
+        "wide",
+        "spacious",
+        "broad"
+      ],
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "ひろ.い",
+        "ひろ.まる",
+        "ひろ.める",
+        "ひろ.がる",
+        "ひろ.げる"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "lean-to",
+        "private"
+      ],
+      "mnemonic": "A LEAN-TO roof with only one PRIVATE little mark on the floor beneath it and nothing else at all: the space is WIDE.",
+      "examples": [
+        {
+          "word": "広い",
+          "kana": "ひろい",
+          "en": "wide"
+        },
+        {
+          "word": "広場",
+          "kana": "ひろば",
+          "en": "plaza"
+        },
+        {
+          "word": "広告",
+          "kana": "こうこく",
+          "en": "advertisement"
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-住",
+      "char": "住",
+      "meanings": [
+        "live",
+        "reside",
+        "dwell"
+      ],
+      "on": [
+        "ジュウ"
+      ],
+      "kun": [
+        "す.む",
+        "す.まう"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "drop",
+        "king"
+      ],
+      "mnemonic": "A PERSON keeps a DROP of oil burning in the KING's lamp at the same doorway every night: this is where they LIVE.",
+      "examples": [
+        {
+          "word": "住む",
+          "kana": "すむ",
+          "en": "to live"
+        },
+        {
+          "word": "住所",
+          "kana": "じゅうしょ",
+          "en": "address"
+        },
+        {
+          "word": "住民",
+          "kana": "じゅうみん",
+          "en": "resident"
+        }
+      ],
+      "lookalikes": [
+        "j-主",
+        "j-注"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-無",
+      "char": "無",
+      "meanings": [
+        "nothing",
+        "none",
+        "without"
+      ],
+      "on": [
+        "ム",
+        "ブ"
+      ],
+      "kun": [
+        "な.い"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "nothingness"
+      ],
+      "mnemonic": "A rack of forty candles burned down to NOTHINGNESS, not one flame left standing: NOTHING.",
+      "examples": [
+        {
+          "word": "無理",
+          "kana": "むり",
+          "en": "impossible"
+        },
+        {
+          "word": "無料",
+          "kana": "むりょう",
+          "en": "free of charge"
+        },
+        {
+          "word": "無くす",
+          "kana": "なくす",
+          "en": "to lose"
+        }
+      ],
+      "radical": "火",
+      "lookalikes": [
+        "j-舞"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-真",
+      "char": "真",
+      "meanings": [
+        "true",
+        "real",
+        "genuine"
+      ],
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "ま"
+      ],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "ten",
+        "eye",
+        "one",
+        "eight"
+      ],
+      "mnemonic": "TEN witnesses, each with an EYE on the object, ONE verdict, EIGHT signatures at the bottom: TRUE.",
+      "examples": [
+        {
+          "word": "写真",
+          "kana": "しゃしん",
+          "en": "photograph"
+        },
+        {
+          "word": "真ん中",
+          "kana": "まんなか",
+          "en": "middle"
+        },
+        {
+          "word": "真面目",
+          "kana": "まじめ",
+          "en": "serious"
+        }
+      ],
+      "radical": "目",
+      "lookalikes": [
+        "j-直",
+        "j-具"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-有",
+      "char": "有",
+      "meanings": [
+        "have",
+        "exist",
+        "possess"
+      ],
+      "on": [
+        "ユウ",
+        "ウ"
+      ],
+      "kun": [
+        "あ.る"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "arm",
+        "moon"
+      ],
+      "mnemonic": "An ARM reaches up and the fingers close around the MOON itself — now you HAVE it.",
+      "examples": [
+        {
+          "word": "有名",
+          "kana": "ゆうめい",
+          "en": "famous"
+        },
+        {
+          "word": "有料",
+          "kana": "ゆうりょう",
+          "en": "paid"
+        },
+        {
+          "word": "有る",
+          "kana": "ある",
+          "en": "to exist"
+        }
+      ],
+      "radical": "月",
+      "lookalikes": [
+        "j-右"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-町",
+      "char": "町",
+      "meanings": [
+        "town",
+        "block",
+        "street"
+      ],
+      "on": [
+        "チョウ"
+      ],
+      "kun": [
+        "まち"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "rice field",
+        "nail"
+      ],
+      "mnemonic": "A RICE FIELD with a NAIL driven in at its corner to mark where the first lane will run: the beginning of a TOWN.",
+      "examples": [
+        {
+          "word": "町",
+          "kana": "まち",
+          "en": "town"
+        },
+        {
+          "word": "下町",
+          "kana": "したまち",
+          "en": "old downtown"
+        },
+        {
+          "word": "町内",
+          "kana": "ちょうない",
+          "en": "neighborhood"
+        }
+      ],
+      "lookalikes": [
+        "j-村"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-料",
+      "char": "料",
+      "meanings": [
+        "fee",
+        "materials",
+        "charge"
+      ],
+      "on": [
+        "リョウ"
+      ],
+      "kun": [],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "rice",
+        "ladle"
+      ],
+      "mnemonic": "RICE measured out by the LADLE at the counter, scoop by scoop, and paid for by the scoop: the FEE.",
+      "examples": [
+        {
+          "word": "料理",
+          "kana": "りょうり",
+          "en": "cooking"
+        },
+        {
+          "word": "無料",
+          "kana": "むりょう",
+          "en": "free of charge"
+        },
+        {
+          "word": "料金",
+          "kana": "りょうきん",
+          "en": "fee"
+        }
+      ],
+      "radical": "斗",
+      "lookalikes": [
+        "j-科"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-工",
+      "char": "工",
+      "meanings": [
+        "craft",
+        "construction",
+        "work"
+      ],
+      "on": [
+        "コウ",
+        "ク"
+      ],
+      "kun": [],
+      "strokes": 3,
+      "jlpt": 4,
+      "components": [
+        "craft"
+      ],
+      "mnemonic": "A carpenter's square: two bars joined by one upright, the oldest mark of CRAFT.",
+      "examples": [
+        {
+          "word": "工場",
+          "kana": "こうじょう",
+          "en": "factory"
+        },
+        {
+          "word": "工事",
+          "kana": "こうじ",
+          "en": "construction work"
+        },
+        {
+          "word": "大工",
+          "kana": "だいく",
+          "en": "carpenter"
+        }
+      ],
+      "lookalikes": [
+        "j-土"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-建",
+      "char": "建",
+      "meanings": [
+        "build",
+        "erect"
+      ],
+      "on": [
+        "ケン",
+        "コン"
+      ],
+      "kun": [
+        "た.てる",
+        "た.つ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "brush",
+        "stretch"
+      ],
+      "mnemonic": "A BRUSH draws the plan while the long STRETCH of the stroke beneath it lays out the foundation line: BUILD.",
+      "examples": [
+        {
+          "word": "建てる",
+          "kana": "たてる",
+          "en": "to build"
+        },
+        {
+          "word": "建物",
+          "kana": "たてもの",
+          "en": "building"
+        },
+        {
+          "word": "建築",
+          "kana": "けんちく",
+          "en": "architecture"
+        }
+      ],
+      "radical": "廴",
+      "station": 19
+    },
+    {
+      "id": "j-空",
+      "char": "空",
+      "meanings": [
+        "sky",
+        "empty",
+        "air"
+      ],
+      "on": [
+        "クウ"
+      ],
+      "kun": [
+        "そら",
+        "あ.く",
+        "あ.ける",
+        "から"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "hole",
+        "craft"
+      ],
+      "mnemonic": "Through a HOLE in the roof, all the builder's CRAFT shows you is the blue SKY.",
+      "examples": [
+        {
+          "word": "空",
+          "kana": "そら",
+          "en": "sky"
+        },
+        {
+          "word": "空港",
+          "kana": "くうこう",
+          "en": "airport"
+        },
+        {
+          "word": "空気",
+          "kana": "くうき",
+          "en": "air"
+        }
+      ],
+      "lookalikes": [
+        "j-究"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-急",
+      "char": "急",
+      "meanings": [
+        "hurry",
+        "sudden",
+        "urgent"
+      ],
+      "on": [
+        "キュウ"
+      ],
+      "kun": [
+        "いそ.ぐ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "bound up",
+        "broom",
+        "heart"
+      ],
+      "mnemonic": "Hair BOUND UP, BROOM in hand, HEART racing — the guests arrive in five minutes, so HURRY.",
+      "examples": [
+        {
+          "word": "急ぐ",
+          "kana": "いそぐ",
+          "en": "to hurry"
+        },
+        {
+          "word": "急に",
+          "kana": "きゅうに",
+          "en": "suddenly"
+        },
+        {
+          "word": "急行",
+          "kana": "きゅうこう",
+          "en": "express train"
+        }
+      ],
+      "radical": "心",
+      "lookalikes": [
+        "j-色"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-止",
+      "char": "止",
+      "meanings": [
+        "stop",
+        "halt"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "と.まる",
+        "と.める"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "stop"
+      ],
+      "mnemonic": "A footprint with the toes pointing up, planted hard on the line: STOP.",
+      "examples": [
+        {
+          "word": "止まる",
+          "kana": "とまる",
+          "en": "to stop"
+        },
+        {
+          "word": "止める",
+          "kana": "とめる",
+          "en": "to bring to a stop"
+        },
+        {
+          "word": "中止",
+          "kana": "ちゅうし",
+          "en": "cancellation"
+        }
+      ],
+      "lookalikes": [
+        "j-正",
+        "j-上"
+      ],
+      "station": 17
+    },
+    {
+      "id": "j-送",
+      "char": "送",
+      "meanings": [
+        "send",
+        "see off"
+      ],
+      "on": [
+        "ソウ"
+      ],
+      "kun": [
+        "おく.る"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "road",
+        "horns",
+        "heaven"
+      ],
+      "mnemonic": "Down the ROAD goes a parcel with little HORNS of ribbon on top, lifted toward HEAVEN by the courier's raised hands: SEND.",
+      "examples": [
+        {
+          "word": "送る",
+          "kana": "おくる",
+          "en": "to send"
+        },
+        {
+          "word": "放送",
+          "kana": "ほうそう",
+          "en": "broadcast"
+        },
+        {
+          "word": "送料",
+          "kana": "そうりょう",
+          "en": "shipping fee"
+        }
+      ],
+      "lookalikes": [
+        "j-迷"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-切",
+      "char": "切",
+      "meanings": [
+        "cut",
+        "sharp"
+      ],
+      "on": [
+        "セツ",
+        "サイ"
+      ],
+      "kun": [
+        "き.る",
+        "き.れる"
+      ],
+      "strokes": 4,
+      "jlpt": 4,
+      "components": [
+        "seven",
+        "sword"
+      ],
+      "mnemonic": "SEVEN quick slices with one SWORD across the melon on the board: CUT.",
+      "examples": [
+        {
+          "word": "切る",
+          "kana": "きる",
+          "en": "to cut"
+        },
+        {
+          "word": "切手",
+          "kana": "きって",
+          "en": "postage stamp"
+        },
+        {
+          "word": "大切",
+          "kana": "たいせつ",
+          "en": "important"
+        }
+      ],
+      "radical": "刀",
+      "lookalikes": [
+        "j-初"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-転",
+      "char": "転",
+      "meanings": [
+        "roll",
+        "turn",
+        "tumble"
+      ],
+      "on": [
+        "テン"
+      ],
+      "kun": [
+        "ころ.がる",
+        "ころ.げる",
+        "ころ.がす",
+        "ころ.ぶ"
+      ],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "car",
+        "cloud"
+      ],
+      "mnemonic": "A CAR hits a patch of CLOUD-grey ice on the pass and its wheels begin to ROLL.",
+      "examples": [
+        {
+          "word": "運転",
+          "kana": "うんてん",
+          "en": "driving"
+        },
+        {
+          "word": "自転車",
+          "kana": "じてんしゃ",
+          "en": "bicycle"
+        },
+        {
+          "word": "転ぶ",
+          "kana": "ころぶ",
+          "en": "to fall down"
+        }
+      ],
+      "lookalikes": [
+        "j-軽",
+        "j-伝"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-研",
+      "char": "研",
+      "meanings": [
+        "polish",
+        "research",
+        "sharpen"
+      ],
+      "on": [
+        "ケン"
+      ],
+      "kun": [
+        "と.ぐ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "stone",
+        "one",
+        "two hands"
+      ],
+      "mnemonic": "A flat STONE, ONE blade, and TWO HANDS working it back and forth until the edge shines: POLISH.",
+      "examples": [
+        {
+          "word": "研究",
+          "kana": "けんきゅう",
+          "en": "research"
+        },
+        {
+          "word": "研修",
+          "kana": "けんしゅう",
+          "en": "training"
+        },
+        {
+          "word": "研ぐ",
+          "kana": "とぐ",
+          "en": "to sharpen"
+        }
+      ],
+      "lookalikes": [
+        "j-形"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-究",
+      "char": "究",
+      "meanings": [
+        "investigate",
+        "research",
+        "study thoroughly"
+      ],
+      "on": [
+        "キュウ"
+      ],
+      "kun": [
+        "きわ.める"
+      ],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "hole",
+        "nine"
+      ],
+      "mnemonic": "Drop into the HOLE and climb down NINE levels, deeper than anyone has gone before: INVESTIGATE.",
+      "examples": [
+        {
+          "word": "研究",
+          "kana": "けんきゅう",
+          "en": "research"
+        },
+        {
+          "word": "研究者",
+          "kana": "けんきゅうしゃ",
+          "en": "researcher"
+        },
+        {
+          "word": "究極",
+          "kana": "きゅうきょく",
+          "en": "ultimate"
+        }
+      ],
+      "lookalikes": [
+        "j-空"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-楽",
+      "char": "楽",
+      "meanings": [
+        "music",
+        "enjoyable",
+        "comfort"
+      ],
+      "on": [
+        "ガク",
+        "ラク"
+      ],
+      "kun": [
+        "たの.しい",
+        "たの.しむ"
+      ],
+      "strokes": 13,
+      "jlpt": 4,
+      "components": [
+        "white",
+        "horns",
+        "tree"
+      ],
+      "mnemonic": "A WHITE drum with HORNS of tassels hangs from a TREE stand in the shrine yard; strike it and out comes MUSIC.",
+      "examples": [
+        {
+          "word": "楽しい",
+          "kana": "たのしい",
+          "en": "fun"
+        },
+        {
+          "word": "音楽",
+          "kana": "おんがく",
+          "en": "music"
+        },
+        {
+          "word": "楽",
+          "kana": "らく",
+          "en": "easy"
+        }
+      ],
+      "radical": "木",
+      "lookalikes": [
+        "j-薬"
+      ],
+      "station": 19
+    },
+    {
+      "id": "j-起",
+      "char": "起",
+      "meanings": [
+        "wake up",
+        "rise",
+        "occur"
+      ],
+      "on": [
+        "キ"
+      ],
+      "kun": [
+        "お.きる",
+        "お.こる",
+        "お.こす"
+      ],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "run",
+        "snake"
+      ],
+      "mnemonic": "You RUN from the futon the instant a SNAKE slides across the tatami — nothing makes you WAKE UP faster.",
+      "examples": [
+        {
+          "word": "起きる",
+          "kana": "おきる",
+          "en": "to wake up"
+        },
+        {
+          "word": "起こす",
+          "kana": "おこす",
+          "en": "to wake someone"
+        },
+        {
+          "word": "早起き",
+          "kana": "はやおき",
+          "en": "early rising"
+        }
+      ],
+      "lookalikes": [
+        "j-走"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-着",
+      "char": "着",
+      "meanings": [
+        "wear",
+        "arrive",
+        "attach"
+      ],
+      "on": [
+        "チャク",
+        "ジャク"
+      ],
+      "kun": [
+        "き.る",
+        "き.せる",
+        "つ.く",
+        "つ.ける"
+      ],
+      "strokes": 12,
+      "jlpt": 4,
+      "components": [
+        "sheep",
+        "eye"
+      ],
+      "mnemonic": "A SHEEP's wool pulled down over your EYE like a hood against the wind: something you WEAR.",
+      "examples": [
+        {
+          "word": "着る",
+          "kana": "きる",
+          "en": "to wear"
+        },
+        {
+          "word": "着く",
+          "kana": "つく",
+          "en": "to arrive"
+        },
+        {
+          "word": "着物",
+          "kana": "きもの",
+          "en": "kimono"
+        }
+      ],
+      "radical": "目",
+      "lookalikes": [
+        "j-差",
+        "j-美"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-病",
+      "char": "病",
+      "meanings": [
+        "illness",
+        "sick",
+        "disease"
+      ],
+      "on": [
+        "ビョウ",
+        "ヘイ"
+      ],
+      "kun": [
+        "や.む",
+        "やまい"
+      ],
+      "strokes": 10,
+      "jlpt": 4,
+      "components": [
+        "sickness",
+        "one",
+        "frame",
+        "person"
+      ],
+      "mnemonic": "Under the SICKNESS roof, ONE bed inside a wooden FRAME holds a PERSON who cannot get up today: ILLNESS.",
+      "examples": [
+        {
+          "word": "病気",
+          "kana": "びょうき",
+          "en": "illness"
+        },
+        {
+          "word": "病院",
+          "kana": "びょういん",
+          "en": "hospital"
+        },
+        {
+          "word": "急病",
+          "kana": "きゅうびょう",
+          "en": "sudden illness"
+        }
+      ],
+      "lookalikes": [
+        "j-痛",
+        "j-疲"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-質",
+      "char": "質",
+      "meanings": [
+        "quality",
+        "substance",
+        "nature"
+      ],
+      "on": [
+        "シツ",
+        "シチ",
+        "チ"
+      ],
+      "kun": [],
+      "strokes": 15,
+      "jlpt": 4,
+      "components": [
+        "axe",
+        "axe",
+        "shell"
+      ],
+      "mnemonic": "AXE and AXE, two blades tapped against a SHELL coin on the block to hear whether it rings true: QUALITY.",
+      "examples": [
+        {
+          "word": "質問",
+          "kana": "しつもん",
+          "en": "question"
+        },
+        {
+          "word": "性質",
+          "kana": "せいしつ",
+          "en": "nature"
+        },
+        {
+          "word": "質",
+          "kana": "しつ",
+          "en": "quality"
+        }
+      ],
+      "radical": "貝",
+      "lookalikes": [
+        "j-資"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-待",
+      "char": "待",
+      "meanings": [
+        "wait",
+        "await"
+      ],
+      "on": [
+        "タイ"
+      ],
+      "kun": [
+        "ま.つ"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "step",
+        "temple"
+      ],
+      "mnemonic": "One STEP inside the TEMPLE gate you fold your hands, stand still, and WAIT.",
+      "examples": [
+        {
+          "word": "待つ",
+          "kana": "まつ",
+          "en": "to wait"
+        },
+        {
+          "word": "招待",
+          "kana": "しょうたい",
+          "en": "invitation"
+        },
+        {
+          "word": "待合室",
+          "kana": "まちあいしつ",
+          "en": "waiting room"
+        }
+      ],
+      "lookalikes": [
+        "j-持",
+        "j-特"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-試",
+      "char": "試",
+      "meanings": [
+        "test",
+        "try",
+        "experiment"
+      ],
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "こころ.みる",
+        "ため.す"
+      ],
+      "strokes": 13,
+      "jlpt": 4,
+      "components": [
+        "say",
+        "stake",
+        "craft"
+      ],
+      "mnemonic": "SAY what you will do, drive the STAKE into the ground, and show your CRAFT in front of the judges: this is the TEST.",
+      "examples": [
+        {
+          "word": "試験",
+          "kana": "しけん",
+          "en": "exam"
+        },
+        {
+          "word": "試合",
+          "kana": "しあい",
+          "en": "match"
+        },
+        {
+          "word": "試す",
+          "kana": "ためす",
+          "en": "to try out"
+        }
+      ],
+      "lookalikes": [
+        "j-式"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-族",
+      "char": "族",
+      "meanings": [
+        "tribe",
+        "family",
+        "clan"
+      ],
+      "on": [
+        "ゾク"
+      ],
+      "kun": [],
+      "strokes": 11,
+      "jlpt": 4,
+      "components": [
+        "direction",
+        "person",
+        "arrow"
+      ],
+      "mnemonic": "Under one banner pointing a single DIRECTION, a PERSON passes an ARROW to the next in line, and so on down the generations: a TRIBE.",
+      "examples": [
+        {
+          "word": "家族",
+          "kana": "かぞく",
+          "en": "family"
+        },
+        {
+          "word": "民族",
+          "kana": "みんぞく",
+          "en": "ethnic group"
+        },
+        {
+          "word": "水族館",
+          "kana": "すいぞくかん",
+          "en": "aquarium"
+        }
+      ],
+      "lookalikes": [
+        "j-旅",
+        "j-放"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-銀",
+      "char": "銀",
+      "meanings": [
+        "silver"
+      ],
+      "on": [
+        "ギン"
+      ],
+      "kun": [],
+      "strokes": 14,
+      "jlpt": 4,
+      "components": [
+        "gold",
+        "stubborn"
+      ],
+      "mnemonic": "GOLD that stays STUBBORN and pale, refusing to turn yellow no matter how long it sits in the fire: SILVER.",
+      "examples": [
+        {
+          "word": "銀行",
+          "kana": "ぎんこう",
+          "en": "bank"
+        },
+        {
+          "word": "銀",
+          "kana": "ぎん",
+          "en": "silver"
+        },
+        {
+          "word": "銀色",
+          "kana": "ぎんいろ",
+          "en": "silver color"
+        }
+      ],
+      "lookalikes": [
+        "j-根",
+        "j-限",
+        "j-金"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-早",
+      "char": "早",
+      "meanings": [
+        "early",
+        "fast"
+      ],
+      "on": [
+        "ソウ",
+        "サッ"
+      ],
+      "kun": [
+        "はや.い",
+        "はや.まる",
+        "はや.める"
+      ],
+      "strokes": 6,
+      "jlpt": 4,
+      "components": [
+        "sun",
+        "ten"
+      ],
+      "mnemonic": "The SUN is only TEN steps up the sky, balanced on a post: it is still EARLY.",
+      "examples": [
+        {
+          "word": "早い",
+          "kana": "はやい",
+          "en": "early"
+        },
+        {
+          "word": "早く",
+          "kana": "はやく",
+          "en": "quickly"
+        },
+        {
+          "word": "早速",
+          "kana": "さっそく",
+          "en": "right away"
+        }
+      ],
+      "lookalikes": [
+        "j-草"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-映",
+      "char": "映",
+      "meanings": [
+        "reflect",
+        "project",
+        "screen"
+      ],
+      "on": [
+        "エイ"
+      ],
+      "kun": [
+        "うつ.る",
+        "うつ.す",
+        "は.える"
+      ],
+      "strokes": 9,
+      "jlpt": 4,
+      "components": [
+        "sun",
+        "frame",
+        "big"
+      ],
+      "mnemonic": "The SUN throws a BIG image onto the white sheet stretched in a FRAME: REFLECT.",
+      "examples": [
+        {
+          "word": "映画",
+          "kana": "えいが",
+          "en": "movie"
+        },
+        {
+          "word": "映る",
+          "kana": "うつる",
+          "en": "to be reflected"
+        },
+        {
+          "word": "上映",
+          "kana": "じょうえい",
+          "en": "screening"
+        }
+      ],
+      "lookalikes": [
+        "j-英"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-親",
+      "char": "親",
+      "meanings": [
+        "parent",
+        "intimate",
+        "close"
+      ],
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "おや",
+        "した.しい",
+        "した.しむ"
+      ],
+      "strokes": 16,
+      "jlpt": 4,
+      "components": [
+        "stand",
+        "tree",
+        "see"
+      ],
+      "mnemonic": "To STAND in the TREE at the end of the lane and SEE the children all the way home: a PARENT.",
+      "examples": [
+        {
+          "word": "親",
+          "kana": "おや",
+          "en": "parent"
+        },
+        {
+          "word": "両親",
+          "kana": "りょうしん",
+          "en": "parents"
+        },
+        {
+          "word": "親切",
+          "kana": "しんせつ",
+          "en": "kind"
+        }
+      ],
+      "radical": "見",
+      "lookalikes": [
+        "j-新"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-験",
+      "char": "験",
+      "meanings": [
+        "verify",
+        "test",
+        "experience"
+      ],
+      "on": [
+        "ケン",
+        "ゲン"
+      ],
+      "kun": [],
+      "strokes": 18,
+      "jlpt": 4,
+      "components": [
+        "horse",
+        "awl"
+      ],
+      "mnemonic": "Before buying the HORSE you run an AWL along its hoof to check that the horn is sound: VERIFY.",
+      "examples": [
+        {
+          "word": "試験",
+          "kana": "しけん",
+          "en": "exam"
+        },
+        {
+          "word": "経験",
+          "kana": "けいけん",
+          "en": "experience"
+        },
+        {
+          "word": "実験",
+          "kana": "じっけん",
+          "en": "experiment"
+        }
+      ],
+      "lookalikes": [
+        "j-険",
+        "j-馬"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-英",
+      "char": "英",
+      "meanings": [
+        "English",
+        "brilliant",
+        "hero"
+      ],
+      "on": [
+        "エイ"
+      ],
+      "kun": [],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "grass",
+        "frame",
+        "big"
+      ],
+      "mnemonic": "In the GRASS stands a FRAME holding one BIG bloom brighter than all the rest; that brilliance was borrowed to spell the name of ENGLISH.",
+      "examples": [
+        {
+          "word": "英語",
+          "kana": "えいご",
+          "en": "English"
+        },
+        {
+          "word": "英会話",
+          "kana": "えいかいわ",
+          "en": "English conversation"
+        },
+        {
+          "word": "英国",
+          "kana": "えいこく",
+          "en": "Britain"
+        }
+      ],
+      "lookalikes": [
+        "j-映",
+        "j-草"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-医",
+      "char": "医",
+      "meanings": [
+        "medicine",
+        "doctor",
+        "healing"
+      ],
+      "on": [
+        "イ"
+      ],
+      "kun": [],
+      "strokes": 7,
+      "jlpt": 4,
+      "components": [
+        "box",
+        "arrow"
+      ],
+      "mnemonic": "A BOX with a single ARROW laid inside it — the healer's old field kit, the start of MEDICINE.",
+      "examples": [
+        {
+          "word": "医者",
+          "kana": "いしゃ",
+          "en": "doctor"
+        },
+        {
+          "word": "医学",
+          "kana": "いがく",
+          "en": "medical science"
+        },
+        {
+          "word": "歯医者",
+          "kana": "はいしゃ",
+          "en": "dentist"
+        }
+      ],
+      "lookalikes": [
+        "j-区"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-仕",
+      "char": "仕",
+      "meanings": [
+        "serve",
+        "do",
+        "attend"
+      ],
+      "on": [
+        "シ",
+        "ジ"
+      ],
+      "kun": [
+        "つか.える"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "person",
+        "samurai"
+      ],
+      "mnemonic": "A PERSON stands at the SAMURAI's elbow, ready to fetch, carry and SERVE.",
+      "examples": [
+        {
+          "word": "仕事",
+          "kana": "しごと",
+          "en": "work"
+        },
+        {
+          "word": "仕方",
+          "kana": "しかた",
+          "en": "way of doing"
+        },
+        {
+          "word": "仕える",
+          "kana": "つかえる",
+          "en": "to serve"
+        }
+      ],
+      "lookalikes": [
+        "j-任",
+        "j-住"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-去",
+      "char": "去",
+      "meanings": [
+        "leave",
+        "past",
+        "gone"
+      ],
+      "on": [
+        "キョ",
+        "コ"
+      ],
+      "kun": [
+        "さ.る"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "earth",
+        "private"
+      ],
+      "mnemonic": "Heap EARTH over your PRIVATE things in the yard, shoulder the pack, and walk off down the road: LEAVE.",
+      "examples": [
+        {
+          "word": "去年",
+          "kana": "きょねん",
+          "en": "last year"
+        },
+        {
+          "word": "去る",
+          "kana": "さる",
+          "en": "to leave"
+        },
+        {
+          "word": "過去",
+          "kana": "かこ",
+          "en": "past"
+        }
+      ],
+      "radical": "厶",
+      "station": 20
+    },
+    {
+      "id": "j-味",
+      "char": "味",
+      "meanings": [
+        "taste",
+        "flavor"
+      ],
+      "on": [
+        "ミ"
+      ],
+      "kun": [
+        "あじ",
+        "あじ.わう"
+      ],
+      "strokes": 8,
+      "jlpt": 4,
+      "components": [
+        "mouth",
+        "not yet"
+      ],
+      "mnemonic": "The MOUTH says 'NOT YET' — one more second on the tongue before it decides on the TASTE.",
+      "examples": [
+        {
+          "word": "味",
+          "kana": "あじ",
+          "en": "taste"
+        },
+        {
+          "word": "意味",
+          "kana": "いみ",
+          "en": "meaning"
+        },
+        {
+          "word": "趣味",
+          "kana": "しゅみ",
+          "en": "hobby"
+        }
+      ],
+      "lookalikes": [
+        "j-妹",
+        "j-末"
+      ],
+      "station": 20
+    },
+    {
+      "id": "j-写",
+      "char": "写",
+      "meanings": [
+        "copy",
+        "photograph",
+        "reproduce"
+      ],
+      "on": [
+        "シャ"
+      ],
+      "kun": [
+        "うつ.す",
+        "うつ.る"
+      ],
+      "strokes": 5,
+      "jlpt": 4,
+      "components": [
+        "cover",
+        "bestow"
+      ],
+      "mnemonic": "A COVER slides down over the page, and the inked stone beneath will BESTOW its image on the paper: a COPY.",
+      "examples": [
+        {
+          "word": "写真",
+          "kana": "しゃしん",
+          "en": "photograph"
+        },
+        {
+          "word": "写す",
+          "kana": "うつす",
+          "en": "to copy"
+        },
+        {
+          "word": "描写",
+          "kana": "びょうしゃ",
+          "en": "depiction"
+        }
+      ],
+      "lookalikes": [
+        "j-与",
+        "j-字"
+      ],
+      "station": 20
+    }
+  ]
+}

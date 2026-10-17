@@ -1,0 +1,1177 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n3",
+  "writer": "grammar-n3-004",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n3-089",
+      "pattern": "〜最中に",
+      "meaning": "right in the middle of …",
+      "formation": [
+        "V-ている + 最中に: 食べている → 食べている最中に",
+        "N + の + 最中に: 会議 → 会議の最中に",
+        "Sentence-final: 〜最中だ / 〜最中です: 今、準備の最中です"
+      ],
+      "explanation": "Use 最中に after V-ている or after a noun plus の to say that something happened right in the middle of an ongoing action: 食事の最中に電話が鳴った. What follows is usually an interruption or something unwelcome. The verb before 最中 is always 〜ている, never the dictionary or past form, and it must be an action, not a lasting state like 住んでいる. Compared with 〜間に, which covers any point inside a span, 最中に zooms in on the peak moment. At the end of a sentence use 〜最中だ or 〜最中です: 今、準備の最中です 'I'm right in the middle of preparing'.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{食事|しょくじ}の{最中|さいちゅう}に{電話|でんわ}が{鳴|な}った。",
+          "kana": "しょくじのさいちゅうにでんわがなった。",
+          "en": "The phone rang right in the middle of the meal."
+        },
+        {
+          "ja": "{会議|かいぎ}の{最中|さいちゅう}に{眠|ねむ}くなってしまいました。",
+          "kana": "かいぎのさいちゅうにねむくなってしまいました。",
+          "en": "I got sleepy right in the middle of the meeting."
+        },
+        {
+          "ja": "シャワーを{浴|あ}びている{最中|さいちゅう}に、お{湯|ゆ}が{止|と}まった。",
+          "kana": "シャワーをあびているさいちゅうに、おゆがとまった。",
+          "en": "The hot water stopped while I was right in the middle of my shower."
+        },
+        {
+          "ja": "{今|いま}、{引|ひ}っ{越|こ}しの{準備|じゅんび}をしている{最中|さいちゅう}です。",
+          "kana": "いま、ひっこしのじゅんびをしているさいちゅうです。",
+          "en": "I'm right in the middle of getting ready to move."
+        }
+      ],
+      "clozeHints": [
+        "最中に",
+        "最中です",
+        "最中だ"
+      ],
+      "mistakes": [
+        "× 食べる最中に → ○ 食べている最中に (the verb before 最中 must be in the ている form)",
+        "× 会議最中に → ○ 会議の最中に (a noun needs の before 最中)",
+        "× 住んでいる最中に → ○ 住んでいる間に (最中 is for ongoing actions, not lasting states)"
+      ],
+      "related": [
+        "g-n3-012",
+        "g-n3-010",
+        "g-n4-068"
+      ],
+      "tags": [
+        "time"
+      ],
+      "notes": "最中 is read さいちゅう in this pattern; the wafer sweet もなか is written with the same kanji but is unrelated.",
+      "station": 36
+    },
+    {
+      "id": "g-n3-090",
+      "pattern": "〜たとたん(に)",
+      "meaning": "the moment …, just as …",
+      "formation": [
+        "V-た + とたん(に)",
+        "Group 1: 開ける → 開けたとたん · 立つ → 立ったとたん",
+        "Group 2: 見る → 見たとたん · 出る → 出たとたん",
+        "Irregular: する → したとたん · 来る → 来たとたん"
+      ],
+      "explanation": "Put とたん(に) after the た-form to say that the second event happened the very instant the first one finished: ドアを開けたとたん、猫が飛び出した. The に is optional. Because it reports something you actually saw happen, the main clause is in the past tense and describes a sudden, often unexpected event — not your own plan, request or intention. For a planned sequence use 〜たらすぐ or 〜てから. 〜か〜ないかのうちに is similar but squeezes the two events even closer together, and 〜最中に describes an interruption during an action rather than right after it.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "ドアを{開|あ}けたとたん、{猫|ねこ}が{飛|と}び{出|だ}してきた。",
+          "kana": "ドアをあけたとたん、ねこがとびだしてきた。",
+          "en": "The moment I opened the door, a cat came darting out."
+        },
+        {
+          "ja": "{電車|でんしゃ}を{降|お}りたとたんに、{雨|あめ}が{降|ふ}り{出|だ}しました。",
+          "kana": "でんしゃをおりたとたんに、あめがふりだしました。",
+          "en": "The moment I got off the train, it started to rain."
+        },
+        {
+          "ja": "{彼|かれ}はその{話|はなし}を{聞|き}いたとたん、{笑|わら}い{出|だ}した。",
+          "kana": "かれはそのはなしをきいたとたん、わらいだした。",
+          "en": "The moment he heard that story, he burst out laughing."
+        },
+        {
+          "ja": "{布団|ふとん}に{入|はい}ったとたん、{眠|ねむ}ってしまいました。",
+          "kana": "ふとんにはいったとたん、ねむってしまいました。",
+          "en": "The moment I got into bed, I fell asleep."
+        }
+      ],
+      "clozeHints": [
+        "とたん"
+      ],
+      "mistakes": [
+        "× 開けるとたん → ○ 開けたとたん (とたん follows the た-form only)",
+        "× 家に着いたとたん、電話します → ○ 家に着いたらすぐ電話します (とたん reports a sudden past event, not a plan)"
+      ],
+      "related": [
+        "g-n3-091",
+        "g-n3-089",
+        "g-n5-071",
+        "g-n4-070"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 36
+    },
+    {
+      "id": "g-n3-091",
+      "pattern": "〜か〜ないかのうちに",
+      "meaning": "almost before … had finished, …",
+      "formation": [
+        "V-dictionary form + か + V-ない + かのうちに: 終わるか終わらないかのうちに",
+        "V-た + か + V-ない + かのうちに: 終わったか終わらないかのうちに",
+        "The same verb fills both slots; the second is always negative"
+      ],
+      "explanation": "Repeat a verb — first in the dictionary or た-form, then in the ない-form — and add かのうちに to say that the second event began almost before the first had finished: 授業が終わるか終わらないかのうちに、みんな教室を出た. The two events overlap so tightly that you cannot say which came first. Like 〜たとたん, it describes something observed, so the main clause is usually past tense and never a request or intention. It is more vivid and a little more written than とたん; in everyday speech you will hear 〜たとたん or 〜てすぐ more often.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{授業|じゅぎょう}が{終|お}わるか{終|お}わらないかのうちに、みんな{教室|きょうしつ}を{出|で}た。",
+          "kana": "じゅぎょうがおわるかおわらないかのうちに、みんなきょうしつをでた。",
+          "en": "Almost before the class had ended, everyone left the room."
+        },
+        {
+          "ja": "{横|よこ}になるかならないかのうちに、{眠|ねむ}ってしまいました。",
+          "kana": "よこになるかならないかのうちに、ねむってしまいました。",
+          "en": "I fell asleep almost before I had lain down."
+        },
+        {
+          "ja": "{店|みせ}が{開|あ}いたか{開|あ}かないかのうちに、{客|きゃく}が{入|はい}ってきた。",
+          "kana": "みせがあいたかあかないかのうちに、きゃくがはいってきた。",
+          "en": "Customers came in almost before the shop had opened."
+        },
+        {
+          "ja": "{朝|あさ}ご{飯|はん}を{食|た}べ{終|お}わるか{終|お}わらないかのうちに、{出|で}かけました。",
+          "kana": "あさごはんをたべおわるかおわらないかのうちに、でかけました。",
+          "en": "I left almost before I had finished breakfast."
+        }
+      ],
+      "clozeHints": [
+        "かのうちに"
+      ],
+      "mistakes": [
+        "× 終わるか終わるかのうちに → ○ 終わるか終わらないかのうちに (the second verb must be negative)",
+        "× 終わるかどうかのうちに → ○ 終わるか終わらないかのうちに (かどうか is a different pattern; repeat the verb)"
+      ],
+      "related": [
+        "g-n3-090",
+        "g-n3-010",
+        "g-n3-011"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 36
+    },
+    {
+      "id": "g-n3-092",
+      "pattern": "〜て以来",
+      "meaning": "ever since …",
+      "formation": [
+        "V-て + 以来: 卒業する → 卒業して以来",
+        "N + 以来: 去年 → 去年以来 · あの日 → あの日以来",
+        "Group 1: 会う → 会って以来 · Group 2: 別れる → 別れて以来",
+        "Irregular: する → して以来 · 来る → 来て以来"
+      ],
+      "explanation": "Attach 以来 to the て-form, or directly to a noun, to mean 'ever since …': 日本に来て以来、一度も帰っていない. It points at a state or habit that has continued unbroken from that moment until now, so the main clause is 〜ている, 〜ていない or a lasting fact — not a one-off past event. The starting point should be some time ago; for something that happened an hour ago, 〜てから is natural and 〜て以来 sounds odd. それ以来 'since then' works as a sentence opener. Compare 〜ぶりに, which measures the gap and then reports a return to the old action.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{日本|にほん}に{来|き}て{以来|いらい}、{一度|いちど}も{国|くに}に{帰|かえ}っていない。",
+          "kana": "にほんにきていらい、いちどもくににかえっていない。",
+          "en": "I haven't been back home once since coming to Japan."
+        },
+        {
+          "ja": "{大学|だいがく}を{卒業|そつぎょう}して{以来|いらい}、{彼|かれ}には{会|あ}っていません。",
+          "kana": "だいがくをそつぎょうしていらい、かれにはあっていません。",
+          "en": "I haven't seen him since graduating from university."
+        },
+        {
+          "ja": "{去年|きょねん}の{夏|なつ}{以来|いらい}、ずっとジョギングを{続|つづ}けています。",
+          "kana": "きょねんのなついらい、ずっとジョギングをつづけています。",
+          "en": "I've kept up jogging ever since last summer."
+        },
+        {
+          "ja": "あの{事故|じこ}{以来|いらい}、{父|ちち}は{車|くるま}に{乗|の}らなくなった。",
+          "kana": "あのじこいらい、ちちはくるまにのらなくなった。",
+          "en": "Since that accident, my father has stopped driving."
+        }
+      ],
+      "clozeHints": [
+        "以来"
+      ],
+      "mistakes": [
+        "× 一時間前に食べて以来、お腹がすいた → ○ 一時間前に食べてから、お腹がすいた (以来 needs a starting point well in the past and a continuing state)",
+        "× 来て以来、一度帰った → ○ 来て以来、一度も帰っていない (the main clause describes something that has continued, not a single event)",
+        "× 来た以来 → ○ 来て以来 (以来 follows the て-form, not the た-form)"
+      ],
+      "related": [
+        "g-n5-071",
+        "g-n3-088",
+        "g-n5-049"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 36
+    },
+    {
+      "id": "g-n3-093",
+      "pattern": "〜ところだった",
+      "meaning": "almost …, nearly … (but didn't)",
+      "formation": [
+        "V-dictionary form + ところだった: 忘れる → 忘れるところだった",
+        "Often set up by もう少しで / 危うく: もう少しで遅れるところだった",
+        "Polite: 〜ところでした"
+      ],
+      "explanation": "Put ところだった after a dictionary-form verb to say that something very nearly happened but in the end did not: 電車に乗り遅れるところだった — you caught the train. The event is usually unwelcome, so the sentence carries relief, and もう少しで or 危うく often sets it up. Because the outcome never happened, the verb stays in the dictionary form even though だった is past. Do not confuse it with 〜たところだ 'have just done' or 〜ところだ 'am about to', which describe things that really take place.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "もう{少|すこ}しで{電車|でんしゃ}に{乗|の}り{遅|おく}れるところだった。",
+          "kana": "もうすこしででんしゃにのりおくれるところだった。",
+          "en": "I very nearly missed the train."
+        },
+        {
+          "ja": "{危|あぶ}ない！{車|くるま}にひかれるところでしたよ。",
+          "kana": "あぶない！くるまにひかれるところでしたよ。",
+          "en": "Careful! You were almost hit by a car."
+        },
+        {
+          "ja": "{大事|だいじ}な{約束|やくそく}を{忘|わす}れるところだったけど、{思|おも}い{出|だ}した。",
+          "kana": "だいじなやくそくをわすれるところだったけど、おもいだした。",
+          "en": "I almost forgot an important appointment, but I remembered."
+        },
+        {
+          "ja": "{財布|さいふ}を{店|みせ}に{置|お}き{忘|わす}れるところでした。",
+          "kana": "さいふをみせにおきわすれるところでした。",
+          "en": "I nearly left my wallet behind at the shop."
+        }
+      ],
+      "clozeHints": [
+        "ところだった",
+        "ところでした"
+      ],
+      "mistakes": [
+        "× 乗り遅れたところだった → ○ 乗り遅れるところだった (the verb stays in the dictionary form because it never happened)",
+        "× 忘れるところだったので、怒られた → ○ 忘れたので、怒られた (ところだった means it did not happen, so no consequence can follow)"
+      ],
+      "related": [
+        "g-n4-067",
+        "g-n4-069",
+        "g-n4-068"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 36
+    },
+    {
+      "id": "g-n3-094",
+      "pattern": "gitaigo + V (のんびりする、ぐっすり眠る)",
+      "meaning": "mimetic adverb + verb (manner, state)",
+      "formation": [
+        "gitaigo + する: のんびりする · うっかりする · がっかりする · びっくりする · すっきりする",
+        "gitaigo + V: ぐっすり眠る · ゆっくり休む · しっかり持つ · はっきり言う · きちんと片づける · こっそり出る",
+        "gitaigo + と + V (と optional): ぼんやり(と)見る · ぐるぐる(と)回る",
+        "Before a noun: 〜した + N: のんびりした人 · がっかりした顔"
+      ],
+      "explanation": "Gitaigo are mimetic words for how something looks, feels or is done, not for a sound. Most act as adverbs, often ending in り: ぐっすり眠る 'sleep soundly', しっかり持つ 'hold firmly', ゆっくり休む 'rest well'. A large group pairs with する to describe a state of mind: のんびりする 'take it easy', がっかりする 'be disappointed', びっくりする 'be startled', うっかりする 'be careless'. Before a noun use 〜した: のんびりした町. Learn each word with its usual partner — ぐっすり goes only with sleeping, うっかり with slips and forgetting. Unlike sound words, the り-ending ones usually appear without と.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{久|ひさ}しぶりにぐっすり{眠|ねむ}れました。",
+          "kana": "きのうはひさしぶりにぐっすりねむれました。",
+          "en": "Yesterday I slept soundly for the first time in a while."
+        },
+        {
+          "ja": "{週末|しゅうまつ}は{家|いえ}でのんびりするつもりだ。",
+          "kana": "しゅうまつはいえでのんびりするつもりだ。",
+          "en": "I plan to take it easy at home this weekend."
+        },
+        {
+          "ja": "うっかりして、{傘|かさ}を{電車|でんしゃ}に{忘|わす}れてしまった。",
+          "kana": "うっかりして、かさをでんしゃにわすれてしまった。",
+          "en": "I carelessly left my umbrella on the train."
+        },
+        {
+          "ja": "{試合|しあい}に{負|ま}けて、みんながっかりしています。",
+          "kana": "しあいにまけて、みんながっかりしています。",
+          "en": "We lost the match and everyone is disappointed."
+        },
+        {
+          "ja": "{荷物|にもつ}をしっかり{持|も}ってください。",
+          "kana": "にもつをしっかりもってください。",
+          "en": "Please hold your luggage firmly."
+        }
+      ],
+      "clozeHints": [
+        "ぐっすり",
+        "のんびり",
+        "うっかり",
+        "がっかり",
+        "しっかり"
+      ],
+      "mistakes": [
+        "× ぐっすり休む → ○ ぐっすり眠る (ぐっすり pairs only with sleeping; use ゆっくり休む)",
+        "× のんびりな人 → ○ のんびりした人 (gitaigo modify a noun through した, not な)",
+        "× びっくりになった → ○ びっくりした (state gitaigo take する, not なる)"
+      ],
+      "related": [
+        "g-n3-086"
+      ],
+      "tags": [
+        "onomatopoeia",
+        "states"
+      ],
+      "notes": "Gitaigo describe manner or state; giongo (g-n3-086) imitate sounds. Many gitaigo also modify nouns through した: のんびりした、がっかりした.",
+      "station": 36
+    },
+    {
+      "id": "g-n3-095",
+      "pattern": "〜っぱなし",
+      "meaning": "left … as it is; kept on …-ing",
+      "formation": [
+        "V-ます stem + っぱなし: 開ける → 開けっぱなし · つける → つけっぱなし",
+        "Group 1: 出す → 出しっぱなし · 置く → 置きっぱなし · 立つ → 立ちっぱなし",
+        "Used as 〜っぱなしだ · 〜っぱなしで · 〜っぱなしの + N · 〜っぱなしにする"
+      ],
+      "explanation": "Attach っぱなし to the ます-stem to say that something was done and then left as it is, when it should have been dealt with: 電気をつけっぱなしで寝た 'fell asleep with the light left on'. It carries a note of complaint or carelessness. With verbs like 立つ, 座る and 働く it instead means continuing without a break: 一日中立ちっぱなしだった. The tone is spoken and informal; 〜たまま is the neutral way to say 'leaving something as it is' and carries no blame. Use 〜っぱなしで to join clauses, 〜っぱなしの before a noun, and 〜っぱなしにする for the act of leaving it.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{電気|でんき}をつけっぱなしで{寝|ね}てしまった。",
+          "kana": "でんきをつけっぱなしでねてしまった。",
+          "en": "I fell asleep with the light left on."
+        },
+        {
+          "ja": "{窓|まど}を{開|あ}けっぱなしにしないでください。",
+          "kana": "まどをあけっぱなしにしないでください。",
+          "en": "Please don't leave the window open."
+        },
+        {
+          "ja": "{今日|きょう}は{一日中|いちにちじゅう}{立|た}ちっぱなしで、{足|あし}が{痛|いた}いです。",
+          "kana": "きょうはいちにちじゅうたちっぱなしで、あしがいたいです。",
+          "en": "I was on my feet all day today and my legs hurt."
+        },
+        {
+          "ja": "{水|みず}が{出|だ}しっぱなしになっていますよ。",
+          "kana": "みずがだしっぱなしになっていますよ。",
+          "en": "The water has been left running, you know."
+        }
+      ],
+      "clozeHints": [
+        "っぱなし"
+      ],
+      "mistakes": [
+        "× 開けるっぱなし → ○ 開けっぱなし (っぱなし attaches to the ます-stem)",
+        "× 窓を開いたっぱなし → ○ 窓を開けっぱなし (use the transitive verb for something you left as it is)"
+      ],
+      "related": [
+        "g-n4-006",
+        "g-n4-003",
+        "g-n4-001"
+      ],
+      "tags": [
+        "home",
+        "actions"
+      ],
+      "station": 36
+    },
+    {
+      "id": "g-n3-096",
+      "pattern": "〜向け",
+      "meaning": "intended for …, aimed at …",
+      "formation": [
+        "N + 向け(だ): 子ども向け · 外国人向け · 海外向け",
+        "N + 向けの + N: 子ども向けの本",
+        "N + 向けに + V: 外国人向けに作る"
+      ],
+      "explanation": "Add 向け to a noun to say that something was made or designed with that group in mind: 子ども向けの番組 'a show made for children'. The maker's intention is the point. Use 向けの before a noun, 向けに before a verb and 向けだ to end a sentence. It usually attaches to kinds of people (外国人, 女性, 大人) or markets (海外, 国内). Contrast 〜向き, which says something happens to suit a group whether or not anyone designed it that way: a book can be 子ども向け, written for children, and still not be 子ども向き, truly suitable for them.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "これは{子|こ}ども{向|む}けの{番組|ばんぐみ}です。",
+          "kana": "これはこどもむけのばんぐみです。",
+          "en": "This is a TV show made for children."
+        },
+        {
+          "ja": "{外国人|がいこくじん}{向|む}けの{日本語|にほんご}の{本|ほん}を{買|か}った。",
+          "kana": "がいこくじんむけのにほんごのほんをかった。",
+          "en": "I bought a Japanese textbook written for foreigners."
+        },
+        {
+          "ja": "この{会社|かいしゃ}は{海外|かいがい}{向|む}けに{車|くるま}を{作|つく}っている。",
+          "kana": "このかいしゃはかいがいむけにくるまをつくっている。",
+          "en": "This company makes cars for overseas markets."
+        },
+        {
+          "ja": "{大人|おとな}{向|む}けの{映画|えいが}だから、{子|こ}どもは{見|み}られない。",
+          "kana": "おとなむけのえいがだから、こどもはみられない。",
+          "en": "It's a film for adults, so children can't watch it."
+        }
+      ],
+      "clozeHints": [
+        "向け"
+      ],
+      "mistakes": [
+        "× 子ども向けな本 → ○ 子ども向けの本 (向け takes の before a noun, not な)",
+        "× 広くて家族向けの部屋 → ○ 広くて家族向きの部屋 (a room that merely suits families is 向き; 向け means designed for them)"
+      ],
+      "related": [
+        "g-n3-097",
+        "g-n3-020",
+        "g-n3-017"
+      ],
+      "tags": [
+        "people",
+        "business"
+      ],
+      "station": 37
+    },
+    {
+      "id": "g-n3-097",
+      "pattern": "〜向き",
+      "meaning": "suitable for …; facing …",
+      "formation": [
+        "N + 向き(だ): 子ども向き · 夏向き · 旅行向き",
+        "N + 向きの + N: 若い人向きの仕事",
+        "N + 向きに + V: 前向きに考える",
+        "Direction: 南向きの部屋 · 前向き · 不向き (unsuited)"
+      ],
+      "explanation": "向き after a noun says that something turns out to suit that group or purpose: この仕事は若い人向きだ 'this job suits young people'. Nobody necessarily designed it that way — it simply fits. The same word gives direction: 南向きの部屋 'a south-facing room', 前向きに考える 'think positively'. Use 向きの before a noun, 向きに before a verb and 向きだ at the end. Choose 〜向け when the point is who it was made for, 〜向き when the point is who or what it fits. 不向き means 'unsuited': 私はこの仕事に不向きだ.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{仕事|しごと}は{若|わか}い{人|ひと}{向|む}きだと{思|おも}う。",
+          "kana": "このしごとはわかいひとむきだとおもう。",
+          "en": "I think this job suits young people."
+        },
+        {
+          "ja": "{南|みなみ}{向|む}きの{部屋|へや}は{明|あか}るくて{暖|あたた}かいです。",
+          "kana": "みなみむきのへやはあかるくてあたたかいです。",
+          "en": "A south-facing room is bright and warm."
+        },
+        {
+          "ja": "この{靴|くつ}は{軽|かる}くて、{旅行|りょこう}{向|む}きですね。",
+          "kana": "このくつはかるくて、りょこうむきですね。",
+          "en": "These shoes are light and good for traveling, aren't they?"
+        },
+        {
+          "ja": "{失敗|しっぱい}しても、{前|まえ}{向|む}きに{考|かんが}えましょう。",
+          "kana": "しっぱいしても、まえむきにかんがえましょう。",
+          "en": "Even if you fail, let's think positively."
+        }
+      ],
+      "clozeHints": [
+        "向き"
+      ],
+      "mistakes": [
+        "× この本は子ども向きに書かれた → ○ この本は子ども向けに書かれた (something written for children on purpose is 向け)",
+        "× 南向けの部屋 → ○ 南向きの部屋 (direction always takes 向き)"
+      ],
+      "related": [
+        "g-n3-096",
+        "g-n3-020",
+        "g-n4-020"
+      ],
+      "tags": [
+        "states",
+        "position"
+      ],
+      "station": 37
+    },
+    {
+      "id": "g-n3-098",
+      "pattern": "〜からには",
+      "meaning": "now that …, since … (then naturally)",
+      "formation": [
+        "V-plain + からには: 約束した → 約束したからには · やる → やるからには",
+        "N / な-adjective + である + からには: 学生であるからには",
+        "Main clause: 〜べきだ · 〜なければならない · 〜つもりだ · 〜てください"
+      ],
+      "explanation": "Put からには after a plain-form clause to say 'now that this is the case, naturally …'. The first clause is a decision or fact you accept; the second states the duty, resolve or advice that follows from it: 約束したからには、守らなければならない. The ending is therefore strong — べきだ, なければならない, つもりだ, 〜てください — never a simple report of what happened. It is firmer than 〜から and a little more formal; 〜以上(は) means almost the same and is more written. A noun takes である: 学生であるからには. In casual speech you may hear it clipped to 〜からは.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{約束|やくそく}したからには、{必|かなら}ず{守|まも}ります。",
+          "kana": "やくそくしたからには、かならずまもります。",
+          "en": "Now that I've promised, I will definitely keep my word."
+        },
+        {
+          "ja": "{日本|にほん}に{住|す}むからには、{日本語|にほんご}を{覚|おぼ}えるべきだ。",
+          "kana": "にほんにすむからには、にほんごをおぼえるべきだ。",
+          "en": "Since you're going to live in Japan, you should learn Japanese."
+        },
+        {
+          "ja": "{試合|しあい}に{出|で}るからには、{勝|か}ちたい。",
+          "kana": "しあいにでるからには、かちたい。",
+          "en": "If I'm going to play in the match, I want to win."
+        },
+        {
+          "ja": "{引|ひ}き{受|う}けたからには、{最後|さいご}まで{責任|せきにん}を{持|も}ってください。",
+          "kana": "ひきうけたからには、さいごまでせきにんをもってください。",
+          "en": "Now that you've taken it on, please see it through to the end."
+        }
+      ],
+      "clozeHints": [
+        "からには"
+      ],
+      "mistakes": [
+        "× 約束したからには、雨が降った → ○ 約束したからには、行かなければならない (the main clause states a duty or resolve, not a plain event)",
+        "× 約束しますからには → ○ 約束したからには (からには follows the plain form)"
+      ],
+      "related": [
+        "g-n3-099",
+        "g-n5-057",
+        "g-n3-035"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 37
+    },
+    {
+      "id": "g-n3-099",
+      "pattern": "〜以上(は)",
+      "meaning": "since …, as long as … (then naturally)",
+      "formation": [
+        "V-plain + 以上(は): 決めた → 決めた以上(は) · 参加する → 参加する以上",
+        "N / な-adjective + である + 以上(は): 学生である以上",
+        "Main clause: 〜べきだ · 〜なければならない · 〜わけにはいかない · 〜つもりだ"
+      ],
+      "explanation": "以上(は) after a plain clause means 'given that this is so, then …' and leads into the obligation or determination that follows: 一度決めた以上、最後までやる. It works like 〜からには but is more written and more formal, so it suits speeches, essays and firm statements at work. The は is optional, and a noun takes である: 学生である以上. The ending is a judgement — べきだ, なければならない, わけにはいかない — never a neutral report. Do not confuse this with 以上 after a quantity (三人以上 'three or more', これ以上 'any more'), which works quite differently.",
+      "jlpt": 3,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{一度|いちど}{決|き}めた{以上|いじょう}、{最後|さいご}までやります。",
+          "kana": "いちどきめたいじょう、さいごまでやります。",
+          "en": "Having decided, I'll see it through to the end."
+        },
+        {
+          "ja": "{学生|がくせい}である{以上|いじょう}は、{勉強|べんきょう}が{第一|だいいち}だ。",
+          "kana": "がくせいであるいじょうは、べんきょうがだいいちだ。",
+          "en": "As long as you're a student, studying comes first."
+        },
+        {
+          "ja": "{参加|さんか}する{以上|いじょう}、{遅刻|ちこく}するわけにはいかない。",
+          "kana": "さんかするいじょう、ちこくするわけにはいかない。",
+          "en": "Since I'm taking part, I can't very well be late."
+        },
+        {
+          "ja": "{給料|きゅうりょう}をもらっている{以上|いじょう}、しっかり{働|はたら}かなければなりません。",
+          "kana": "きゅうりょうをもらっているいじょう、しっかりはたらかなければなりません。",
+          "en": "As long as I'm being paid, I have to work properly."
+        }
+      ],
+      "clozeHints": [
+        "以上"
+      ],
+      "mistakes": [
+        "× 決めた以上、楽しかった → ○ 決めた以上、最後までやるべきだ (the main clause must express a duty, resolve or judgement)",
+        "× 学生の以上は → ○ 学生である以上は (a noun needs である before 以上)"
+      ],
+      "related": [
+        "g-n3-098",
+        "g-n3-004",
+        "g-n3-035"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "notes": "以上 after a number (三人以上) means 'or more', and 以上です closes a speech or an order. Only the clause use is taught here.",
+      "station": 37
+    },
+    {
+      "id": "g-n3-100",
+      "pattern": "〜からといって",
+      "meaning": "just because … doesn't mean …",
+      "formation": [
+        "V / い-adjective plain + からといって: 安い → 安いからといって",
+        "N / な-adjective + だ + からといって: 日本人だからといって",
+        "Main clause: 〜とは限らない · 〜わけではない · 〜てはいけない",
+        "Casual: 〜からって"
+      ],
+      "explanation": "〜からといって introduces a reason someone might offer and then rejects the conclusion they would draw from it: 安いからといって、買いすぎてはいけない 'just because it's cheap doesn't mean you should buy too much'. The main clause is nearly always negative — とは限らない, わけではない, てはいけない. Nouns and な-adjectives take だ first: 日本人だからといって. Use it to push back against lazy logic or to make a rule excuse-proof. In conversation it shrinks to 〜からって. Do not use it for a reason you accept; plain 〜から or 〜ので does that job. Compare 〜と言っても, which admits the point and then limits it.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{安|やす}いからといって、{買|か}いすぎてはいけませんよ。",
+          "kana": "やすいからといって、かいすぎてはいけませんよ。",
+          "en": "Just because it's cheap doesn't mean you should buy too much."
+        },
+        {
+          "ja": "{日本人|にほんじん}だからといって、{漢字|かんじ}が{全部|ぜんぶ}{読|よ}めるわけではない。",
+          "kana": "にほんじんだからといって、かんじがぜんぶよめるわけではない。",
+          "en": "Being Japanese doesn't mean you can read every kanji."
+        },
+        {
+          "ja": "{有名|ゆうめい}だからといって、おいしいとは{限|かぎ}らない。",
+          "kana": "ゆうめいだからといって、おいしいとはかぎらない。",
+          "en": "Just because it's famous doesn't mean it tastes good."
+        },
+        {
+          "ja": "{忙|いそが}しいからって、{食事|しょくじ}を{抜|ぬ}くのはよくないよ。",
+          "kana": "いそがしいからって、しょくじをぬくのはよくないよ。",
+          "en": "Just because you're busy, skipping meals isn't good."
+        }
+      ],
+      "clozeHints": [
+        "からといって",
+        "からって"
+      ],
+      "mistakes": [
+        "× 安いからといって、たくさん買った → ○ 安いので、たくさん買った (からといって rejects a conclusion; it cannot introduce an accepted reason)",
+        "× 日本人からといって → ○ 日本人だからといって (a noun needs だ)"
+      ],
+      "related": [
+        "g-n3-076",
+        "g-n3-002",
+        "g-n3-077",
+        "g-n4-071"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 37
+    },
+    {
+      "id": "g-n3-101",
+      "pattern": "〜をきっかけに / 〜を機に",
+      "meaning": "… was what started it; on the occasion of …",
+      "formation": [
+        "N + をきっかけに(して) / をきっかけとして: 旅行をきっかけに",
+        "V-た + の / こと + をきっかけに: 病気をしたのをきっかけに",
+        "N + を機に (more formal): 結婚を機に · 卒業を機に"
+      ],
+      "explanation": "〜をきっかけに names the event that set a change in motion: 旅行をきっかけに日本語を始めた 'a trip is what got me started on Japanese'. The trigger is a noun, or a clause turned into one with の or こと, and the main clause tells you what new habit, decision or relationship began. 〜を機に says the same more formally and goes with life events — 結婚, 卒業, 退職, 引っ越し — in speeches and written notices. Neither is a plain cause; use 〜ので or 〜ために for 'because'. きっかけ is also an ordinary noun: 始めたきっかけは何ですか 'what got you started?'.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}をきっかけに、{日本語|にほんご}の{勉強|べんきょう}を{始|はじ}めました。",
+          "kana": "りょこうをきっかけに、にほんごのべんきょうをはじめました。",
+          "en": "A trip is what got me started on studying Japanese."
+        },
+        {
+          "ja": "{病気|びょうき}をしたのをきっかけに、お{酒|さけ}をやめた。",
+          "kana": "びょうきをしたのをきっかけに、おさけをやめた。",
+          "en": "Getting sick is what made me quit drinking."
+        },
+        {
+          "ja": "{結婚|けっこん}を{機|き}に、{会社|かいしゃ}の{近|ちか}くに{引|ひ}っ{越|こ}しました。",
+          "kana": "けっこんをきに、かいしゃのちかくにひっこしました。",
+          "en": "When I got married, I took the opportunity to move closer to work."
+        },
+        {
+          "ja": "その{事件|じけん}をきっかけに、{二人|ふたり}は{友達|ともだち}になった。",
+          "kana": "そのじけんをきっかけに、ふたりはともだちになった。",
+          "en": "That incident is what made the two of them friends."
+        }
+      ],
+      "clozeHints": [
+        "をきっかけに",
+        "を機に"
+      ],
+      "mistakes": [
+        "× 雨をきっかけに試合が中止になった → ○ 雨のために試合が中止になった (きっかけ marks what started a new development, not a direct cause)",
+        "× 結婚をきっかけで → ○ 結婚をきっかけに (the set phrase takes に, or にして / として)"
+      ],
+      "related": [
+        "g-n3-013",
+        "g-n3-068",
+        "g-n4-043"
+      ],
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "station": 37
+    },
+    {
+      "id": "g-n3-102",
+      "pattern": "〜に沿って",
+      "meaning": "along …; in line with …",
+      "formation": [
+        "N + に沿って + V: 川に沿って歩く · 計画に沿って進める",
+        "N + に沿った + N: 希望に沿った商品",
+        "Written: N + に沿い"
+      ],
+      "explanation": "〜に沿って after a noun has two uses. Physically it means moving along something long, or things lined up along it: 川に沿って歩く 'walk along the river', 道に沿って木が並ぶ. Abstractly it means acting in line with a plan, rule, wish or policy: 計画に沿って進める 'proceed according to the plan'. Before a noun use に沿った. The abstract use belongs to work and official language; in everyday talk 〜の通りに or 〜に従って is more common. It does not mean 'next to' as a fixed location — for that use 〜のそばに or 〜の横に.",
+      "jlpt": 3,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{川|かわ}に{沿|そ}って{三十分|さんじゅっぷん}ほど{歩|ある}きました。",
+          "kana": "かわにそってさんじゅっぷんほどあるきました。",
+          "en": "I walked along the river for about thirty minutes."
+        },
+        {
+          "ja": "{計画|けいかく}に{沿|そ}って、{準備|じゅんび}を{進|すす}めています。",
+          "kana": "けいかくにそって、じゅんびをすすめています。",
+          "en": "We're going ahead with preparations in line with the plan."
+        },
+        {
+          "ja": "お{客|きゃく}さんの{希望|きぼう}に{沿|そ}った{商品|しょうひん}を{作|つく}りたい。",
+          "kana": "おきゃくさんのきぼうにそったしょうひんをつくりたい。",
+          "en": "I want to make products that fit what customers want."
+        },
+        {
+          "ja": "{道|みち}に{沿|そ}って{桜|さくら}の{木|き}が{並|なら}んでいる。",
+          "kana": "みちにそってさくらのきがならんでいる。",
+          "en": "Cherry trees are lined up along the road."
+        }
+      ],
+      "clozeHints": [
+        "に沿って",
+        "に沿った"
+      ],
+      "mistakes": [
+        "× 川に沿って家がある → ○ 川のそばに家がある (沿って needs movement or a line of things along the length; for one location use そば or 横)",
+        "× 計画に沿う進める → ○ 計画に沿って進める (connect to the verb with the て-form)"
+      ],
+      "related": [
+        "g-n3-056",
+        "g-n3-025"
+      ],
+      "tags": [
+        "position",
+        "business"
+      ],
+      "notes": "Notices often write 〜に沿い. For the physical sense in casual speech, 道なりに 'following the road' is the everyday phrase.",
+      "station": 37
+    },
+    {
+      "id": "g-n3-103",
+      "pattern": "〜ばよかった",
+      "meaning": "should have …, wish … had …",
+      "formation": [
+        "V-ば + よかった: 行く → 行けばよかった · 食べる → 食べればよかった",
+        "Negative: V-なければ + よかった: 言う → 言わなければよかった",
+        "Irregular: する → すればよかった · 来る → 来ればよかった",
+        "Polite: 〜ばよかったです · Casual: 〜ばよかった(なあ) · Reproach: 〜ばよかったのに"
+      ],
+      "explanation": "Put よかった after the ば-form to regret something you did not do: もっと早く出ればよかった 'I should have left earlier'. The negative 〜なければよかった regrets something you did do: あんなこと言わなければよかった. A regret looks back, so it is only about past choices that were open to you. Said to another person — 早く言ってくれればよかったのに — it becomes a mild reproach, and のに adds the sting. In casual speech なあ often follows. It is not advice for the future; for that use 〜た方がいい.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "もっと{早|はや}く{家|いえ}を{出|で}ればよかった。",
+          "kana": "もっとはやくいえをでればよかった。",
+          "en": "I should have left the house earlier."
+        },
+        {
+          "ja": "{昨日|きのう}、あんなに{食|た}べなければよかったです。",
+          "kana": "きのう、あんなにたべなければよかったです。",
+          "en": "I shouldn't have eaten so much yesterday."
+        },
+        {
+          "ja": "{雨|あめ}か。{傘|かさ}を{持|も}ってくればよかったなあ。",
+          "kana": "あめか。かさをもってくればよかったなあ。",
+          "en": "Rain? I wish I'd brought an umbrella."
+        },
+        {
+          "ja": "{困|こま}っていたなら、{早|はや}く{言|い}ってくれればよかったのに。",
+          "kana": "こまっていたなら、はやくいってくれればよかったのに。",
+          "en": "If you were in trouble, you should have told me sooner."
+        }
+      ],
+      "clozeHints": [
+        "ばよかった"
+      ],
+      "mistakes": [
+        "× 行くばよかった → ○ 行けばよかった (よかった follows the ば-form, 行けば)",
+        "× 明日は早く起きればよかった → ○ 明日は早く起きた方がいい (ばよかった regrets the past; for future advice use た方がいい)"
+      ],
+      "related": [
+        "g-n5-086",
+        "g-n5-089",
+        "g-n4-073",
+        "g-n4-004"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-104",
+      "pattern": "〜ことか",
+      "meaning": "how …!",
+      "formation": [
+        "Question word + V / い-adjective plain + ことか: どんなに嬉しかったことか",
+        "Question word + な-adjective + な + ことか: どんなに大変なことか",
+        "Common openers: どんなに · どれだけ · どれほど · 何度 · 何回",
+        "Softer: 〜ことだろう · Polite: 〜ことでしょう"
+      ],
+      "explanation": "〜ことか closes an exclamation that opens with a question word such as どんなに, どれだけ or 何度: どんなに心配したことか 'how worried I was!'. It is not a question — it says the degree was so great it cannot be measured. The feeling is strong and usually looks back on something endured or longed for, so it suits speeches, letters and heartfelt stories more than casual chat; 〜ことだろう and polite 〜ことでしょう are softer variants. な-adjectives keep な: どんなに大変なことか. Always keep the question word — without it the sentence collapses into an ordinary 〜か question.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{合格|ごうかく}を{知|し}って、どんなに{嬉|うれ}しかったことか。",
+          "kana": "ごうかくをしって、どんなにうれしかったことか。",
+          "en": "How happy I was when I learned I had passed!"
+        },
+        {
+          "ja": "この{日|ひ}をどれだけ{待|ま}っていたことか。",
+          "kana": "このひをどれだけまっていたことか。",
+          "en": "How long I have waited for this day!"
+        },
+        {
+          "ja": "{同|おな}じ{失敗|しっぱい}を{何度|なんど}{繰|く}り{返|かえ}したことか。",
+          "kana": "おなじしっぱいをなんどくりかえしたことか。",
+          "en": "How many times I have made the same mistake!"
+        },
+        {
+          "ja": "{一人|ひとり}で{子|こ}どもを{育|そだ}てるのが、どんなに{大変|たいへん}なことでしょう。",
+          "kana": "ひとりでこどもをそだてるのが、どんなにたいへんなことでしょう。",
+          "en": "How hard it must be to raise a child alone!"
+        }
+      ],
+      "clozeHints": [
+        "ことか",
+        "ことでしょう"
+      ],
+      "mistakes": [
+        "× 嬉しかったことか → ○ どんなに嬉しかったことか (the exclamation needs a question word such as どんなに or どれだけ)",
+        "× どんなに大変ことか → ○ どんなに大変なことか (a な-adjective keeps な before こと)"
+      ],
+      "related": [
+        "g-n4-086",
+        "g-n4-072",
+        "g-n3-040"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-105",
+      "pattern": "〜ことなく",
+      "meaning": "without ever …-ing",
+      "formation": [
+        "V-dictionary form + ことなく: 休む → 休むことなく · 諦める → 諦めることなく",
+        "Irregular: する → することなく · 来る → 来ることなく"
+      ],
+      "explanation": "〜ことなく after a dictionary-form verb means 'without ever doing …' in a written, slightly solemn tone: 彼は一度も休むことなく働き続けた. It is the formal counterpart of 〜ないで and 〜ずに, and it usually describes something that never happened across a long stretch — never giving up, never resting, never being noticed. Because of that weight it sounds odd with trivial everyday actions (×歯を磨くことなく寝た); use 〜ないで there. You will meet it in news, speeches and essays; in conversation 〜ずに or 〜ないで are the natural choices. It never follows the た-form.",
+      "jlpt": 3,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{一度|いちど}も{休|やす}むことなく{働|はたら}き{続|つづ}けた。",
+          "kana": "かれはいちどもやすむことなくはたらきつづけた。",
+          "en": "He kept working without taking a single break."
+        },
+        {
+          "ja": "{最後|さいご}まで{諦|あきら}めることなく、{走|はし}り{切|き}りました。",
+          "kana": "さいごまであきらめることなく、はしりきりました。",
+          "en": "I ran to the finish without ever giving up."
+        },
+        {
+          "ja": "その{町|まち}は{昔|むかし}の{姿|すがた}を{変|か}えることなく{残|のこ}っている。",
+          "kana": "そのまちはむかしのすがたをかえることなくのこっている。",
+          "en": "That town remains, its old appearance unchanged."
+        },
+        {
+          "ja": "{誰|だれ}にも{知|し}られることなく、{彼女|かのじょ}は{町|まち}を{出|で}た。",
+          "kana": "だれにもしられることなく、かのじょはまちをでた。",
+          "en": "Without anyone knowing, she left town."
+        }
+      ],
+      "clozeHints": [
+        "ことなく"
+      ],
+      "mistakes": [
+        "× 休んだことなく → ○ 休むことなく (ことなく follows the dictionary form)",
+        "× 歯を磨くことなく寝た → ○ 歯を磨かないで寝た (ことなく is too solemn for small everyday actions)"
+      ],
+      "related": [
+        "g-n4-007",
+        "g-n4-008",
+        "g-n3-051"
+      ],
+      "tags": [
+        "written"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-106",
+      "pattern": "〜はともかく",
+      "meaning": "setting … aside",
+      "formation": [
+        "N + はともかく(として): 値段はともかく · 味はともかく",
+        "Clause + かどうか + はともかく: 行けるかどうかはともかく",
+        "Question-word clause + か + はともかく: 誰が悪いかはともかく"
+      ],
+      "explanation": "〜はともかく sets one topic aside so you can get to what matters more: 値段はともかく、味は最高だ 'never mind the price, the taste is superb'. It does not deny the first point; it just declares it secondary or not worth discussing now. Add として for a slightly more formal feel. It often follows a clause ending in か or かどうか: 行けるかどうかはともかく、申し込もう. The second half then carries the real message, frequently with は for contrast. 〜は別として is a neutral 'apart from'; 〜はさておき is a more written equivalent you will meet later.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{値段|ねだん}はともかく、{味|あじ}は{最高|さいこう}だ。",
+          "kana": "ねだんはともかく、あじはさいこうだ。",
+          "en": "Price aside, the taste is superb."
+        },
+        {
+          "ja": "{結果|けっか}はともかく、よく{頑張|がんば}りましたね。",
+          "kana": "けっかはともかく、よくがんばりましたね。",
+          "en": "Whatever the result, you really did your best."
+        },
+        {
+          "ja": "{行|い}けるかどうかはともかく、まず{申|もう}し{込|こ}んでみよう。",
+          "kana": "いけるかどうかはともかく、まずもうしこんでみよう。",
+          "en": "Whether or not we can go, let's apply first."
+        },
+        {
+          "ja": "{見|み}た{目|め}はともかくとして、この{料理|りょうり}はとてもおいしいです。",
+          "kana": "みためはともかくとして、このりょうりはとてもおいしいです。",
+          "en": "Looks aside, this dish is very tasty."
+        }
+      ],
+      "clozeHints": [
+        "はともかく"
+      ],
+      "mistakes": [
+        "× 値段がともかく → ○ 値段はともかく (the set phrase takes は)",
+        "× 行けるはともかく → ○ 行けるかどうかはともかく (a clause needs か or かどうか before はともかく)"
+      ],
+      "related": [
+        "g-n3-078",
+        "g-n3-077",
+        "g-n4-061"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-107",
+      "pattern": "〜わりに",
+      "meaning": "considering …, for … (unexpectedly)",
+      "formation": [
+        "V-plain + わりに(は): 勉強した → 勉強したわりに · 働いている → 働いているわりに",
+        "い-adjective + わりに: 安い → 安いわりに",
+        "な-adjective + な + わりに: 大変 → 大変なわりに",
+        "N + の + わりに: 値段 → 値段のわりに · 年 → 年のわりに"
+      ],
+      "explanation": "〜わりに(は) says that the result does not match what the first part would lead you to expect: 値段のわりにおいしい 'tasty, considering the price'. The gap can run either way — better or worse than expected — and the first part is often a degree or quantity: age, price, effort, size. Nouns take の, な-adjectives keep な, verbs and い-adjectives attach directly. It is lighter than 〜のに, which carries complaint or surprise; わりに simply notes the mismatch, often with a shrug. Written 〜割に is common. 〜にしては, which you will meet at N2, compares against a fixed standard instead.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "このレストランは、{値段|ねだん}のわりにおいしいですね。",
+          "kana": "このレストランは、ねだんのわりにおいしいですね。",
+          "en": "This restaurant is tasty for the price, isn't it?"
+        },
+        {
+          "ja": "{彼|かれ}は{年|とし}のわりに{若|わか}く{見|み}える。",
+          "kana": "かれはとしのわりにわかくみえる。",
+          "en": "He looks young for his age."
+        },
+        {
+          "ja": "たくさん{勉強|べんきょう}したわりには、{点|てん}が{悪|わる}かった。",
+          "kana": "たくさんべんきょうしたわりには、てんがわるかった。",
+          "en": "For all the studying I did, my score was poor."
+        },
+        {
+          "ja": "この{仕事|しごと}は{大変|たいへん}なわりに、{給料|きゅうりょう}が{安|やす}いです。",
+          "kana": "このしごとはたいへんなわりに、きゅうりょうがやすいです。",
+          "en": "This job pays badly for how hard it is."
+        }
+      ],
+      "clozeHints": [
+        "わりに"
+      ],
+      "mistakes": [
+        "× 値段わりに → ○ 値段のわりに (a noun needs の)",
+        "× 大変わりに → ○ 大変なわりに (a な-adjective keeps な)"
+      ],
+      "related": [
+        "g-n4-073",
+        "g-n3-028",
+        "g-n3-108"
+      ],
+      "tags": [
+        "quantity",
+        "abstract"
+      ],
+      "notes": "Frequently written 割に / 割には. Unlike 〜のに, the mismatch can be pleasant (値段のわりにおいしい) or disappointing (勉強したわりに点が悪い).",
+      "station": 38
+    },
+    {
+      "id": "g-n3-108",
+      "pattern": "〜くせに",
+      "meaning": "even though …, and yet … (critical)",
+      "formation": [
+        "V / い-adjective plain + くせに: 知っている → 知っているくせに",
+        "な-adjective + な + くせに: 下手 → 下手なくせに",
+        "N + の + くせに: 子ども → 子どものくせに",
+        "Sentence-final: 〜くせに。 (the reproach left hanging)"
+      ],
+      "explanation": "〜くせに links two clauses like 〜のに but adds contempt or irritation: 知っているくせに、教えてくれない 'he knows, and yet he won't tell me'. Both halves share the same subject, and that person is being criticized — so never use it about yourself in earnest, about someone you must respect, or about weather and things. Nouns take の, な-adjectives keep な. It is casual and blunt; among friends it can be teasing, elsewhere it is rude. A sentence may end on くせに, leaving the complaint hanging. For a neutral contrast use 〜のに; for a mild mismatch use 〜わりに.",
+      "jlpt": 3,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{知|し}っているくせに、{教|おし}えてくれない。",
+          "kana": "しっているくせに、おしえてくれない。",
+          "en": "He knows, and yet he won't tell me."
+        },
+        {
+          "ja": "{自分|じぶん}は{何|なに}もしないくせに、{文句|もんく}ばかり{言|い}う。",
+          "kana": "じぶんはなにもしないくせに、もんくばかりいう。",
+          "en": "He does nothing himself, yet all he does is complain."
+        },
+        {
+          "ja": "{下手|へた}なくせに、{人|ひと}の{歌|うた}を{笑|わら}うなよ。",
+          "kana": "へたなくせに、ひとのうたをわらうなよ。",
+          "en": "You're bad yourself, so don't laugh at other people's singing."
+        },
+        {
+          "ja": "お{金|かね}がないくせに、また{新|あたら}しい{服|ふく}を{買|か}ったの？",
+          "kana": "おかねがないくせに、またあたらしいふくをかったの？",
+          "en": "You've got no money, and you bought new clothes again?"
+        }
+      ],
+      "clozeHints": [
+        "くせに"
+      ],
+      "mistakes": [
+        "× 雨が降っているくせに、暖かい → ○ 雨が降っているのに、暖かい (くせに criticizes a person; it cannot be used about weather or things)",
+        "× 先生は忙しいくせに手伝ってくださった → ○ 先生は忙しいのに手伝ってくださった (never use くせに about someone you respect)",
+        "× 子どもくせに → ○ 子どものくせに (a noun needs の)"
+      ],
+      "related": [
+        "g-n4-073",
+        "g-n3-107",
+        "g-n3-028"
+      ],
+      "tags": [
+        "casual",
+        "emotions"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-109",
+      "pattern": "〜どころか",
+      "meaning": "far from …, let alone …",
+      "formation": [
+        "V / い-adjective plain + どころか: 休む → 休むどころか · 暖かい → 暖かいどころか",
+        "な-adjective (+ な) + どころか: 静か → 静かどころか · 静かなどころか",
+        "N + どころか: 漢字 → 漢字どころか",
+        "Main clause: often 〜も〜ない (not even …)"
+      ],
+      "explanation": "〜どころか rejects the first idea and replaces it with something far stronger: 暖かいどころか、暑いくらいだ 'far from warm, it's practically hot'. Two directions are common. One escalates (暖かい → 暑い). The other flips the idea completely, usually with も〜ない: 漢字どころか、ひらがなも読めない 'never mind kanji, he can't even read hiragana'. The first part names what someone might expect or hope for; the second shows how far off that is. Nouns attach directly, な-adjectives with or without な. It is emphatic and a little dramatic, so use it to correct an impression, not for plain description.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{暖|あたた}かいどころか、{暑|あつ}いくらいだ。",
+          "kana": "きょうはあたたかいどころか、あついくらいだ。",
+          "en": "Far from being warm today, it's practically hot."
+        },
+        {
+          "ja": "{彼|かれ}は{漢字|かんじ}どころか、ひらがなも{読|よ}めません。",
+          "kana": "かれはかんじどころか、ひらがなもよめません。",
+          "en": "Never mind kanji, he can't even read hiragana."
+        },
+        {
+          "ja": "{休|やす}むどころか、{昼|ひる}ご{飯|はん}を{食|た}べる{時間|じかん}もなかった。",
+          "kana": "やすむどころか、ひるごはんをたべるじかんもなかった。",
+          "en": "Far from resting, I didn't even have time for lunch."
+        },
+        {
+          "ja": "{薬|くすり}を{飲|の}んだら、{治|なお}るどころか、もっと{悪|わる}くなった。",
+          "kana": "くすりをのんだら、なおるどころか、もっとわるくなった。",
+          "en": "When I took the medicine, far from getting better, I got worse."
+        }
+      ],
+      "clozeHints": [
+        "どころか"
+      ],
+      "mistakes": [
+        "× 漢字どころか、ひらがなが読める → ○ 漢字どころか、ひらがなも読めない (the second part must go further than the first, usually with も〜ない)",
+        "× 暖かいどころか、少し涼しい → ○ 暖かいどころか、寒いくらいだ (the second part must be much stronger, not a small step)"
+      ],
+      "related": [
+        "g-n3-078",
+        "g-n3-079",
+        "g-n3-081",
+        "g-n3-082"
+      ],
+      "tags": [
+        "quantity",
+        "abstract"
+      ],
+      "station": 38
+    },
+    {
+      "id": "g-n3-110",
+      "pattern": "〜てからでないと / 〜てからでなければ",
+      "meaning": "unless … is done first, cannot …",
+      "formation": [
+        "V-て + からでないと + negative: 確認する → 確認してからでないと決められない",
+        "V-て + からでなければ + negative: 払う → 払ってからでなければ入れない",
+        "Group 1: 読む → 読んでからでないと · Group 2: 調べる → 調べてからでないと",
+        "Irregular: する → してからでないと · 来る → 来てからでないと"
+      ],
+      "explanation": "〜てからでないと joins the て-form to からでないと and means 'unless A is done first, B is impossible or not allowed': 予約してからでないと入れません. The main clause is always negative or expresses impossibility — できない, 〜られない, 〜てはいけない, 分からない. It states a required order of steps, so it suits procedures, rules and careful decisions: 上司に聞いてからでないと返事できない. 〜てからでなければ is the same with a slightly firmer, more written feel. For a positive sequence, 'after A, B', plain 〜てから is enough. Later, at N2, 〜ないことには expresses the same idea without the step-by-step flavor.",
+      "jlpt": 3,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{予約|よやく}してからでないと、{入|はい}れません。",
+          "kana": "よやくしてからでないと、はいれません。",
+          "en": "You can't get in unless you've made a reservation first."
+        },
+        {
+          "ja": "{上司|じょうし}に{聞|き}いてからでないと、{返事|へんじ}ができない。",
+          "kana": "じょうしにきいてからでないと、へんじができない。",
+          "en": "I can't answer until I've checked with my boss."
+        },
+        {
+          "ja": "お{金|かね}を{払|はら}ってからでなければ、{中|なか}に{入|はい}ってはいけません。",
+          "kana": "おかねをはらってからでなければ、なかにはいってはいけません。",
+          "en": "You may not go inside unless you've paid first."
+        },
+        {
+          "ja": "{実際|じっさい}に{見|み}てからでないと、{買|か}うかどうか{決|き}められない。",
+          "kana": "じっさいにみてからでないと、かうかどうかきめられない。",
+          "en": "I can't decide whether to buy it until I've seen it in person."
+        }
+      ],
+      "clozeHints": [
+        "てからでないと",
+        "てからでなければ"
+      ],
+      "mistakes": [
+        "× 予約してからでないと、入れます → ○ 予約してからでないと、入れません (the main clause must be negative or express impossibility)",
+        "× 予約したからでないと → ○ 予約してからでないと (the pattern builds on the て-form)"
+      ],
+      "related": [
+        "g-n5-071",
+        "g-n5-085",
+        "g-n5-086"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 38
+    }
+  ]
+}

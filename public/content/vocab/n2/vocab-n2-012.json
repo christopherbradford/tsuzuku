@@ -1,0 +1,5025 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n2",
+  "writer": "vocab-n2-012",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n2-1560",
+      "word": "矛盾",
+      "kana": "むじゅん",
+      "meanings": [
+        "contradiction",
+        "inconsistency"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}の{説明|せつめい}は{前回|ぜんかい}と{矛盾|むじゅん}していて、どちらが{本当|ほんとう}か{分|わ}からない。",
+          "kana": "かれのせつめいはぜんかいとむじゅんしていて、どちらがほんとうかわからない。",
+          "en": "His explanation contradicts what he said last time, so I don't know which is true."
+        },
+        {
+          "ja": "{自分|じぶん}の{中|なか}にある{矛盾|むじゅん}に{気|き}づいて、{考|かんが}え{方|かた}を{一|いち}から{見直|みなお}した。",
+          "kana": "じぶんのなかにあるむじゅんにきづいて、かんがえかたをいちからみなおした。",
+          "en": "I noticed the contradiction within myself and rethought my way of thinking from scratch."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{二|ふた}つのことがうまくつながらず、どちらも{正|ただ}しいとは{言|い}えない{状態|じょうたい}。",
+        "kana": "ふたつのことがうまくつながらず、どちらもただしいとはいえないじょうたい。"
+      },
+      "collocations": [
+        "矛盾する",
+        "矛盾点"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1561",
+      "word": "妥協",
+      "kana": "だきょう",
+      "meanings": [
+        "compromise"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{品質|ひんしつ}については{一切|いっさい}{妥協|だきょう}しないというのが、この{店|みせ}の{方針|ほうしん}だ。",
+          "kana": "ひんしつについてはいっさいだきょうしないというのが、このみせのほうしんだ。",
+          "en": "Never compromising on quality is this shop's policy."
+        },
+        {
+          "ja": "{話|はな}し{合|あ}いの{末|すえ}、お{互|たが}いに{少|すこ}しずつ{妥協|だきょう}して{契約|けいやく}をまとめました。",
+          "kana": "はなしあいのすえ、おたがいにすこしずつだきょうしてけいやくをまとめました。",
+          "en": "After talks, both sides compromised a little and wrapped up the contract."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{意見|いけん}が{違|ちが}うとき、お{互|たが}いに{少|すこ}しずつ{譲|ゆず}って{話|はなし}をまとめること。",
+        "kana": "いけんがちがうとき、おたがいにすこしずつゆずってはなしをまとめること。"
+      },
+      "collocations": [
+        "妥協点",
+        "妥協を許さない"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1562",
+      "word": "犠牲",
+      "kana": "ぎせい",
+      "meanings": [
+        "sacrifice",
+        "victim"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{家族|かぞく}との{時間|じかん}を{犠牲|ぎせい}にしてまで、{働|はたら}きたくはない。",
+          "kana": "かぞくとのじかんをぎせいにしてまで、はたらきたくはない。",
+          "en": "I don't want to work at the cost of sacrificing time with my family."
+        },
+        {
+          "ja": "この{事故|じこ}では、{多|おお}くの{人|ひと}が{犠牲|ぎせい}になったと{報道|ほうどう}されています。",
+          "kana": "このじこでは、おおくのひとがぎせいになったとほうどうされています。",
+          "en": "It is being reported that many people lost their lives in this accident."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かのために、{大切|たいせつ}なものを{失|うしな}うこと。また、{事故|じこ}などで{死|し}んだ{人|ひと}。",
+        "kana": "なにかのために、たいせつなものをうしなうこと。また、じこなどでしんだひと。"
+      },
+      "collocations": [
+        "犠牲にする",
+        "犠牲者",
+        "犠牲を払う"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1563",
+      "word": "代償",
+      "kana": "だいしょう",
+      "meanings": [
+        "price (paid for something)",
+        "compensation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{成功|せいこう}の{代償|だいしょう}として、{彼|かれ}は{健康|けんこう}を{失|うしな}った。",
+          "kana": "せいこうのだいしょうとして、かれはけんこうをうしなった。",
+          "en": "He lost his health as the price of his success."
+        },
+        {
+          "ja": "{他人|たにん}の{物|もの}を{壊|こわ}したら、その{代償|だいしょう}はきちんと{払|はら}うべきです。",
+          "kana": "たにんのものをこわしたら、そのだいしょうはきちんとはらうべきです。",
+          "en": "If you break someone else's property, you should properly pay for the damage."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かを{手|て}に{入|い}れるために、{代|か}わりに{失|うしな}うもの。",
+        "kana": "なにかをてにいれるために、かわりにうしなうもの。"
+      },
+      "notes": "The cost one pays for gaining something; also compensation for damage caused. Not 代価.",
+      "collocations": [
+        "代償を払う",
+        "大きな代償"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1564",
+      "word": "報い",
+      "kana": "むくい",
+      "meanings": [
+        "retribution",
+        "reward (for one's deeds)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{人|ひと}をだまし{続|つづ}ければ、いつか{必|かなら}ず{報|むく}いを{受|う}けることになる。",
+          "kana": "ひとをだましつづければ、いつかかならずむくいをうけることになる。",
+          "en": "If you keep deceiving people, one day you will surely get what you deserve."
+        },
+        {
+          "ja": "{長年|ながねん}の{努力|どりょく}の{報|むく}いとして、{彼女|かのじょ}はついに{賞|しょう}を{手|て}にしました。",
+          "kana": "ながねんのどりょくのむくいとして、かのじょはついにしょうをてにしました。",
+          "en": "As a reward for years of effort, she finally won the prize."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}がした{行|おこな}いの{結果|けっか}として、{後|あと}から{受|う}けるもの。{多|おお}くは{悪|わる}い{結果|けっか}。",
+        "kana": "じぶんがしたおこないのけっかとして、あとからうけるもの。おおくはわるいけっか。"
+      },
+      "notes": "Usually the negative consequence of one's own actions. Verb: 報いる (to repay).",
+      "collocations": [
+        "報いを受ける"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1565",
+      "word": "恩",
+      "kana": "おん",
+      "meanings": [
+        "debt of gratitude",
+        "kindness received"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{困|こま}っていた{時|とき}に{助|たす}けてもらった{恩|おん}は、{一生|いっしょう}{忘|わす}れません。",
+          "kana": "こまっていたときにたすけてもらったおんは、いっしょうわすれません。",
+          "en": "I will never forget the kindness you showed me when I was in trouble."
+        },
+        {
+          "ja": "{若|わか}い{頃|ころ}に{受|う}けた{恩|おん}を、{今|いま}は{後輩|こうはい}を{育|そだ}てることで{返|かえ}している。",
+          "kana": "わかいころにうけたおんを、いまはこうはいをそだてることでかえしている。",
+          "en": "I'm repaying the kindness I received when I was young by nurturing my juniors."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}から{受|う}けた{親切|しんせつ}や{世話|せわ}で、いつか{返|かえ}すべきだと{感|かん}じるもの。",
+        "kana": "ひとからうけたしんせつやせわで、いつかかえすべきだとかんじるもの。"
+      },
+      "collocations": [
+        "恩を返す",
+        "恩に着る",
+        "恩を売る"
+      ],
+      "confusables": [
+        "v-n2-1572"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1566",
+      "word": "恩恵",
+      "kana": "おんけい",
+      "meanings": [
+        "benefit",
+        "blessing"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{私|わたし}たちは{毎日|まいにち}、{科学技術|かがくぎじゅつ}の{恩恵|おんけい}を{受|う}けて{生|い}きている。",
+          "kana": "わたしたちはまいにち、かがくぎじゅつのおんけいをうけていきている。",
+          "en": "We live every day enjoying the benefits of science and technology."
+        },
+        {
+          "ja": "この{地域|ちいき}は{温泉|おんせん}の{恩恵|おんけい}で、{昔|むかし}から{多|おお}くの{観光客|かんこうきゃく}を{集|あつ}めてきました。",
+          "kana": "このちいきはおんせんのおんけいで、むかしからおおくのかんこうきゃくをあつめてきました。",
+          "en": "Thanks to its hot springs, this region has drawn many tourists since long ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自然|しぜん}や{社会|しゃかい}、{他人|たにん}などから{受|う}ける{利益|りえき}や{幸|しあわ}せ。",
+        "kana": "しぜんやしゃかい、たにんなどからうけるりえきやしあわせ。"
+      },
+      "collocations": [
+        "恩恵を受ける",
+        "恩恵にあずかる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1567",
+      "word": "恵み",
+      "kana": "めぐみ",
+      "meanings": [
+        "blessing",
+        "bounty"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "{秋|あき}の{山|やま}は、きのこや{木|き}の{実|み}など{自然|しぜん}の{恵|めぐ}みでいっぱいだ。",
+          "kana": "あきのやまは、きのこやきのみなどしぜんのめぐみでいっぱいだ。",
+          "en": "In autumn the mountains are full of nature's bounty, like mushrooms and nuts."
+        },
+        {
+          "ja": "{長|なが}い{日照|ひで}りの{後|あと}に{降|ふ}った{恵|めぐ}みの{雨|あめ}で、{畑|はたけ}の{野菜|やさい}が{生|い}き{返|かえ}った。",
+          "kana": "ながいひでりのあとにふっためぐみのあめで、はたけのやさいがいきかえった。",
+          "en": "The welcome rain that fell after the long dry spell brought the vegetables in the field back to life."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自然|しぜん}や{神|かみ}などが{人|ひと}に{与|あた}えてくれる、ありがたいもの。",
+        "kana": "しぜんやかみなどがひとにあたえてくれる、ありがたいもの。"
+      },
+      "collocations": [
+        "自然の恵み",
+        "恵みの雨"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1568",
+      "word": "慈悲",
+      "kana": "じひ",
+      "meanings": [
+        "mercy",
+        "compassion"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{仏教|ぶっきょう}では、すべての{生|い}き{物|もの}に{慈悲|じひ}の{心|こころ}を{持|も}つことが{大切|たいせつ}だとされる。",
+          "kana": "ぶっきょうでは、すべてのいきものにじひのこころをもつことがたいせつだとされる。",
+          "en": "In Buddhism, having a heart of compassion for all living things is held to be important."
+        },
+        {
+          "ja": "{慈悲|じひ}{深|ぶか}いお{坊|ぼう}さんは、{迷|まよ}い{込|こ}んだ{旅人|たびびと}を{一晩|ひとばん}{泊|と}めてくれた。",
+          "kana": "じひぶかいおぼうさんは、まよいこんだたびびとをひとばんとめてくれた。",
+          "en": "The kind-hearted monk let the lost traveler stay the night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{苦|くる}しんでいる{人|ひと}や{動物|どうぶつ}を{哀|あわ}れみ、{優|やさ}しくしようとする{心|こころ}。",
+        "kana": "くるしんでいるひとやどうぶつをあわれみ、やさしくしようとするこころ。"
+      },
+      "collocations": [
+        "慈悲深い",
+        "慈悲の心"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1569",
+      "word": "情け",
+      "kana": "なさけ",
+      "meanings": [
+        "compassion",
+        "pity",
+        "mercy"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{相手|あいて}が{謝|あやま}っているのだから、{少|すこ}しは{情|なさ}けをかけてやってもいいだろう。",
+          "kana": "あいてがあやまっているのだから、すこしはなさけをかけてやってもいいだろう。",
+          "en": "He's apologizing, so you could show him a little mercy."
+        },
+        {
+          "ja": "{見知|みし}らぬ{人|ひと}の{情|なさ}けに{助|たす}けられて、{無事|ぶじ}に{家|いえ}まで{帰|かえ}ることができました。",
+          "kana": "みしらぬひとのなさけにたすけられて、ぶじにいえまでかえることができました。",
+          "en": "Thanks to the kindness of a stranger, I made it home safely."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{困|こま}っている{人|ひと}や{弱|よわ}い{人|ひと}を{哀|あわ}れんで、{優|やさ}しくする{気持|きも}ち。",
+        "kana": "こまっているひとやよわいひとをあわれんで、やさしくするきもち。"
+      },
+      "notes": "情けない (pathetic) and 情け深い (warm-hearted) are built on this word.",
+      "collocations": [
+        "情けをかける",
+        "情け深い"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1570",
+      "word": "義理",
+      "kana": "ぎり",
+      "meanings": [
+        "social obligation",
+        "duty",
+        "in-law relation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "culture",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{上司|じょうし}の{結婚式|けっこんしき}には、{義理|ぎり}でも{出席|しゅっせき}しなければならない。",
+          "kana": "じょうしのけっこんしきには、ぎりでもしゅっせきしなければならない。",
+          "en": "I have to attend my boss's wedding, even if only out of obligation."
+        },
+        {
+          "ja": "{姉|あね}は{義理|ぎり}の{両親|りょうしん}と{同|おな}じ{家|いえ}に{住|す}んでいて、{関係|かんけい}はとても{良|よ}いそうです。",
+          "kana": "あねはぎりのりょうしんとおなじいえにすんでいて、かんけいはとてもよいそうです。",
+          "en": "My older sister lives in the same house as her in-laws, and apparently they get along very well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}との{付|つ}き{合|あ}いの{中|なか}で、{立場上|たちばじょう}しなければならないと{感|かん}じる{務|つと}め。",
+        "kana": "ひととのつきあいのなかで、たちばじょうしなければならないとかんじるつとめ。"
+      },
+      "notes": "Duty owed by social position, as opposed to 人情 (natural feeling). 義理の母 = mother-in-law.",
+      "collocations": [
+        "義理を果たす",
+        "義理の母",
+        "義理チョコ"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1571",
+      "word": "人情",
+      "kana": "にんじょう",
+      "meanings": [
+        "human kindness",
+        "human feeling"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}には、{昔|むかし}ながらの{人情|にんじょう}がまだ{残|のこ}っている。",
+          "kana": "このまちには、むかしながらのにんじょうがまだのこっている。",
+          "en": "This town still has the old-fashioned warmth of its people."
+        },
+        {
+          "ja": "{落|お}とした{財布|さいふ}を{届|とど}けてくれた{人|ひと}に、{人情|にんじょう}の{温|あたた}かさを{感|かん}じました。",
+          "kana": "おとしたさいふをとどけてくれたひとに、にんじょうのあたたかさをかんじました。",
+          "en": "I felt the warmth of human kindness from the person who turned in my lost wallet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}が{自然|しぜん}に{持|も}っている、{他人|たにん}に{優|やさ}しくしようとする{温|あたた}かい{気持|きも}ち。",
+        "kana": "ひとがしぜんにもっている、たにんにやさしくしようとするあたたかいきもち。"
+      },
+      "collocations": [
+        "義理と人情",
+        "人情味"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1572",
+      "word": "恩義",
+      "kana": "おんぎ",
+      "meanings": [
+        "debt of gratitude",
+        "obligation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{若|わか}い{頃|ころ}に{世話|せわ}になった{社長|しゃちょう}には、{深|ふか}い{恩義|おんぎ}を{感|かん}じている。",
+          "kana": "わかいころにせわになったしゃちょうには、ふかいおんぎをかんじている。",
+          "en": "I feel deeply indebted to the company president who looked after me when I was young."
+        },
+        {
+          "ja": "{恩義|おんぎ}のある{先生|せんせい}の{頼|たの}みなら、{断|ことわ}るわけにはいきません。",
+          "kana": "おんぎのあるせんせいのたのみなら、ことわるわけにはいきません。",
+          "en": "If it's a request from the teacher I'm indebted to, I can't very well refuse."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世話|せわ}になった{相手|あいて}に{対|たい}して、いつか{返|かえ}さなければと{感|かん}じる{気持|きも}ち。",
+        "kana": "せわになったあいてにたいして、いつかかえさなければとかんじるきもち。"
+      },
+      "collocations": [
+        "恩義がある",
+        "恩義に報いる"
+      ],
+      "confusables": [
+        "v-n2-1565"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1573",
+      "word": "面目",
+      "kana": "めんぼく",
+      "meanings": [
+        "face",
+        "honor",
+        "reputation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{後輩|こうはい}の{前|まえ}で{失敗|しっぱい}して、すっかり{面目|めんぼく}を{失|うしな}ってしまった。",
+          "kana": "こうはいのまえでしっぱいして、すっかりめんぼくをうしなってしまった。",
+          "en": "I failed in front of my juniors and completely lost face."
+        },
+        {
+          "ja": "{今回|こんかい}の{優勝|ゆうしょう}で、{監督|かんとく}はなんとか{面目|めんぼく}を{保|たも}つことができました。",
+          "kana": "こんかいのゆうしょうで、かんとくはなんとかめんぼくをたもつことができました。",
+          "en": "With this championship win, the coach just about managed to save face."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世間|せけん}や{周|まわ}りの{人|ひと}に{対|たい}する、その{人|ひと}の{立場|たちば}や{評判|ひょうばん}。",
+        "kana": "せけんやまわりのひとにたいする、そのひとのたちばやひょうばん。"
+      },
+      "notes": "Also read めんもく. 面目ない = I am ashamed.",
+      "collocations": [
+        "面目を失う",
+        "面目を保つ",
+        "面目ない"
+      ],
+      "confusables": [
+        "v-n2-1574"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1574",
+      "word": "体裁",
+      "kana": "ていさい",
+      "meanings": [
+        "appearance",
+        "outward form"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{中身|なかみ}より{体裁|ていさい}ばかり{気|き}にする{報告書|ほうこくしょ}は、{読|よ}む{価値|かち}がない。",
+          "kana": "なかみよりていさいばかりきにするほうこくしょは、よむかちがない。",
+          "en": "A report that cares only about appearances rather than content isn't worth reading."
+        },
+        {
+          "ja": "{急|いそ}いで{作|つく}ったので、{資料|しりょう}の{体裁|ていさい}を{整|ととの}える{時間|じかん}がありませんでした。",
+          "kana": "いそいでつくったので、しりょうのていさいをととのえるじかんがありませんでした。",
+          "en": "I made it in a hurry, so I had no time to tidy up the document's presentation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外|そと}から{見|み}た{形|かたち}や{様子|ようす}。{他人|たにん}の{目|め}にどう{見|み}えるかということ。",
+        "kana": "そとからみたかたちやようす。たにんのめにどうみえるかということ。"
+      },
+      "collocations": [
+        "体裁を整える",
+        "体裁が悪い"
+      ],
+      "confusables": [
+        "v-n2-1573"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1575",
+      "word": "見栄",
+      "kana": "みえ",
+      "meanings": [
+        "vanity",
+        "show (for appearances)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{見栄|みえ}を{張|は}って{高|たか}い{車|くるま}を{買|か}ったが、{毎月|まいつき}の{支払|しはら}いが{苦|くる}しい。",
+          "kana": "みえをはってたかいくるまをかったが、まいつきのしはらいがくるしい。",
+          "en": "I bought an expensive car to show off, but the monthly payments are a struggle."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{見栄|みえ}を{張|は}らない{人|ひと}で、{安|やす}い{服|ふく}でも{堂々|どうどう}と{着|き}こなしています。",
+          "kana": "かのじょはみえをはらないひとで、やすいふくでもどうどうときこなしています。",
+          "en": "She isn't one for keeping up appearances; she wears cheap clothes with confidence."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}を{実際|じっさい}より{良|よ}く{見|み}せようとして、{外見|がいけん}を{飾|かざ}る{気持|きも}ち。",
+        "kana": "じぶんをじっさいよりよくみせようとして、がいけんをかざるきもち。"
+      },
+      "collocations": [
+        "見栄を張る",
+        "見栄っ張り"
+      ],
+      "confusables": [
+        "v-n2-1576"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1576",
+      "word": "虚栄",
+      "kana": "きょえい",
+      "meanings": [
+        "vanity",
+        "vainglory"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "personality",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{虚栄|きょえい}のためにお{金|かね}を{使|つか}っても、{心|こころ}は{満|み}たされない。",
+          "kana": "きょえいのためにおかねをつかっても、こころはみたされない。",
+          "en": "Spending money on vanity will not satisfy your heart."
+        },
+        {
+          "ja": "{彼|かれ}の{自慢話|じまんばなし}は、{虚栄心|きょえいしん}の{強|つよ}さを{隠|かく}せていなかった。",
+          "kana": "かれのじまんばなしは、きょえいしんのつよさをかくせていなかった。",
+          "en": "His boasting failed to hide how vain he was."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{実際|じっさい}の{自分|じぶん}より{立派|りっぱ}に{見|み}せたいという、{中身|なかみ}のない{誇|ほこ}り。",
+        "kana": "じっさいのじぶんよりりっぱにみせたいという、なかみのないほこり。"
+      },
+      "collocations": [
+        "虚栄心"
+      ],
+      "confusables": [
+        "v-n2-1575"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1577",
+      "word": "名誉",
+      "kana": "めいよ",
+      "meanings": [
+        "honor",
+        "prestige"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{優勝|ゆうしょう}は{選手|せんしゅ}にとって{大|おお}きな{名誉|めいよ}であり、{町|まち}の{誇|ほこ}りでもある。",
+          "kana": "ゆうしょうはせんしゅにとっておおきなめいよであり、まちのほこりでもある。",
+          "en": "Winning the championship is a great honor for the players and a source of pride for the town."
+        },
+        {
+          "ja": "{祖父|そふ}は{長年|ながねん}の{研究|けんきゅう}が{認|みと}められ、{大学|だいがく}から{名誉|めいよ}{教授|きょうじゅ}に{選|えら}ばれました。",
+          "kana": "そふはながねんのけんきゅうがみとめられ、だいがくからめいよきょうじゅにえらばれました。",
+          "en": "My grandfather's years of research were recognized, and the university made him a professor emeritus."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{立派|りっぱ}だと{認|みと}められて、{世間|せけん}から{受|う}ける{高|たか}い{評価|ひょうか}や{誇|ほこ}り。",
+        "kana": "りっぱだとみとめられて、せけんからうけるたかいひょうかやほこり。"
+      },
+      "collocations": [
+        "名誉を守る",
+        "名誉会長"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1578",
+      "word": "恥",
+      "kana": "はじ",
+      "meanings": [
+        "shame",
+        "disgrace"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{知|し}らないことを{聞|き}くのは{恥|はじ}ではない。",
+          "kana": "しらないことをきくのははじではない。",
+          "en": "Asking about what you do not know is nothing to be ashamed of."
+        },
+        {
+          "ja": "{人前|ひとまえ}で{大|おお}きな{恥|はじ}をかいたが、{今|いま}では{笑|わら}い{話|ばなし}になっている。",
+          "kana": "ひとまえでおおきなはじをかいたが、いまではわらいばなしになっている。",
+          "en": "I embarrassed myself badly in public, but now it's a funny story."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{失敗|しっぱい}や{欠点|けってん}を{人|ひと}に{知|し}られて、{顔|かお}が{熱|あつ}くなるような{嫌|いや}な{気持|きも}ち。",
+        "kana": "じぶんのしっぱいやけってんをひとにしられて、かおがあつくなるようないやなきもち。"
+      },
+      "collocations": [
+        "恥をかく",
+        "恥を知る"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1579",
+      "word": "尊厳",
+      "kana": "そんげん",
+      "meanings": [
+        "dignity"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "society",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{医療|いりょう}の{現場|げんば}では、{患者|かんじゃ}の{尊厳|そんげん}を{守|まも}ることが{何|なに}より{重視|じゅうし}される。",
+          "kana": "いりょうのげんばでは、かんじゃのそんげんをまもることがなによりじゅうしされる。",
+          "en": "In medical settings, protecting patients' dignity is valued above all."
+        },
+        {
+          "ja": "どんな{立場|たちば}の{人|ひと}にも{尊厳|そんげん}があり、それを{傷|きず}つける{言葉|ことば}は{許|ゆる}されない。",
+          "kana": "どんなたちばのひとにもそんげんがあり、それをきずつけることばはゆるされない。",
+          "en": "People of every station have dignity, and words that wound it are not acceptable."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人間|にんげん}が{人間|にんげん}として{持|も}っている、{誰|だれ}にも{傷|きず}つけられてはならない{重|おも}い{価値|かち}。",
+        "kana": "にんげんがにんげんとしてもっている、だれにもきずつけられてはならないおもいかち。"
+      },
+      "collocations": [
+        "人間の尊厳",
+        "尊厳を守る"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1580",
+      "word": "威厳",
+      "kana": "いげん",
+      "meanings": [
+        "dignity",
+        "authority (of bearing)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{静|しず}かだが{威厳|いげん}のある{人|ひと}で、{家族|かぞく}は{皆|みな}{彼|かれ}を{尊敬|そんけい}していた。",
+          "kana": "そふはしずかだがいげんのあるひとで、かぞくはみなかれをそんけいしていた。",
+          "en": "My grandfather was a quiet but dignified man, and the whole family respected him."
+        },
+        {
+          "ja": "{新|あたら}しい{校長|こうちょう}は{威厳|いげん}を{保|たも}ちながらも、{生徒|せいと}には{気軽|きがる}に{声|こえ}をかけてくれます。",
+          "kana": "あたらしいこうちょうはいげんをたもちながらも、せいとにはきがるにこえをかけてくれます。",
+          "en": "The new principal keeps a dignified air yet speaks to students in a friendly way."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{周|まわ}りの{人|ひと}が{自然|しぜん}に{敬|うやま}いたくなるような、{重|おも}みのある{落|お}ち{着|つ}いた{態度|たいど}。",
+        "kana": "まわりのひとがしぜんにうやまいたくなるような、おもみのあるおちついたたいど。"
+      },
+      "collocations": [
+        "威厳がある",
+        "威厳を保つ"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1581",
+      "word": "権威",
+      "kana": "けんい",
+      "meanings": [
+        "authority",
+        "authoritative figure"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}はこの{分野|ぶんや}の{権威|けんい}で、{海外|かいがい}でも{名|な}が{知|し}られている。",
+          "kana": "かのじょはこのぶんやのけんいで、かいがいでもながしられている。",
+          "en": "She is an authority in this field and is known overseas as well."
+        },
+        {
+          "ja": "{昔|むかし}は{親|おや}や{教師|きょうし}の{権威|けんい}が{今|いま}よりずっと{強|つよ}かったと{言|い}われます。",
+          "kana": "むかしはおややきょうしのけんいがいまよりずっとつよかったといわれます。",
+          "en": "It's said that parents and teachers had far more authority in the past than today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{他人|たにん}を{従|したが}わせる{力|ちから}。また、ある{分野|ぶんや}で{特|とく}に{詳|くわ}しいと{認|みと}められた{人|ひと}。",
+        "kana": "たにんをしたがわせるちから。また、あるぶんやでとくにくわしいとみとめられたひと。"
+      },
+      "collocations": [
+        "権威がある",
+        "権威者"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1582",
+      "word": "信頼",
+      "kana": "しんらい",
+      "meanings": [
+        "trust",
+        "confidence",
+        "reliance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{一度|いちど}{失|うしな}った{信頼|しんらい}を{取|と}り{戻|もど}すには、{長|なが}い{時間|じかん}がかかる。",
+          "kana": "いちどうしなったしんらいをとりもどすには、ながいじかんがかかる。",
+          "en": "It takes a long time to regain trust once it is lost."
+        },
+        {
+          "ja": "{十年|じゅうねん}{一緒|いっしょ}に{働|はたら}いてきた{仲間|なかま}だから、{心|こころ}から{信頼|しんらい}しています。",
+          "kana": "じゅうねんいっしょにはたらいてきたなかまだから、こころからしんらいしています。",
+          "en": "We've worked together for ten years, so I trust him completely."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{人柄|ひとがら}や{力|ちから}を{信|しん}じて、{安心|あんしん}して{頼|たよ}ること。",
+        "kana": "あいてのひとがらやちからをしんじて、あんしんしてたよること。"
+      },
+      "notes": "Trust in a person's character or ability. 信用 leans toward credit and a track record.",
+      "collocations": [
+        "信頼を得る",
+        "信頼関係",
+        "信頼できる"
+      ],
+      "confusables": [
+        "v-n2-1583"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1583",
+      "word": "信用",
+      "kana": "しんよう",
+      "meanings": [
+        "trust",
+        "credit",
+        "reputation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{約束|やくそく}の{時間|じかん}を{守|まも}らない{人|ひと}は、{仕事|しごと}でも{信用|しんよう}されない。",
+          "kana": "やくそくのじかんをまもらないひとは、しごとでもしんようされない。",
+          "en": "People who do not keep to agreed times are not trusted in business either."
+        },
+        {
+          "ja": "{長年|ながねん}{積|つ}み{重|かさ}ねてきた{店|みせ}の{信用|しんよう}を、たった{一度|いちど}のミスで{失|うしな}いたくない。",
+          "kana": "ながねんつみかさねてきたみせのしんようを、たったいちどのミスでうしないたくない。",
+          "en": "I don't want to lose the trust the shop has built over many years with a single mistake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "これまでの{行|おこな}いから、{確|たし}かだと{信|しん}じられること。また、そう{信|しん}じて{任|まか}せること。",
+        "kana": "これまでのおこないから、たしかだとしんじられること。また、そうしんじてまかせること。"
+      },
+      "collocations": [
+        "信用を失う",
+        "信用できる"
+      ],
+      "confusables": [
+        "v-n2-1582"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1584",
+      "word": "信念",
+      "kana": "しんねん",
+      "meanings": [
+        "belief",
+        "conviction"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{周|まわ}りに{反対|はんたい}されても、{彼|かれ}は{自分|じぶん}の{信念|しんねん}を{曲|ま}げなかった。",
+          "kana": "まわりにはんたいされても、かれはじぶんのしんねんをまげなかった。",
+          "en": "Even when those around him objected, he would not bend his convictions."
+        },
+        {
+          "ja": "{若|わか}い{頃|ころ}の{経験|けいけん}が、{人|ひと}は{変|か}われるという{私|わたし}の{信念|しんねん}を{作|つく}りました。",
+          "kana": "わかいころのけいけんが、ひとはかわれるというわたしのしんねんをつくりました。",
+          "en": "My experiences when I was young shaped my conviction that people can change."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{正|ただ}しいと{強|つよ}く{信|しん}じて、{簡単|かんたん}には{変|か}えない{考|かんが}え。",
+        "kana": "ただしいとつよくしんじて、かんたんにはかえないかんがえ。"
+      },
+      "collocations": [
+        "信念を貫く",
+        "信念を持つ"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1585",
+      "word": "信条",
+      "kana": "しんじょう",
+      "meanings": [
+        "creed",
+        "principle (one lives by)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "「{人|ひと}に{嘘|うそ}をつかない」というのが、{父|ちち}の{信条|しんじょう}だった。",
+          "kana": "「ひとにうそをつかない」というのが、ちちのしんじょうだった。",
+          "en": "'Never lie to people' was my father's creed."
+        },
+        {
+          "ja": "{会社|かいしゃ}は{社員|しゃいん}の{政治的|せいじてき}な{信条|しんじょう}を{理由|りゆう}に、{差別|さべつ}してはならない。",
+          "kana": "かいしゃはしゃいんのせいじてきなしんじょうをりゆうに、さべつしてはならない。",
+          "en": "A company must not discriminate against employees on the basis of their political beliefs."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{行動|こうどう}のもとになる、{固|かた}く{守|まも}り{続|つづ}けている{考|かんが}えや{決|き}まり。",
+        "kana": "じぶんのこうどうのもとになる、かたくまもりつづけているかんがえやきまり。"
+      },
+      "collocations": [
+        "信条とする",
+        "政治的信条"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1586",
+      "word": "良心",
+      "kana": "りょうしん",
+      "meanings": [
+        "conscience"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{誰|だれ}も{見|み}ていなくても、{良心|りょうしん}に{従|したが}って{行動|こうどう}したい。",
+          "kana": "だれもみていなくても、りょうしんにしたがってこうどうしたい。",
+          "en": "Even when no one is watching, I want to act according to my conscience."
+        },
+        {
+          "ja": "{嘘|うそ}をついた{後|あと}、{良心|りょうしん}が{痛|いた}んで{一晩中|ひとばんじゅう}{眠|ねむ}れませんでした。",
+          "kana": "うそをついたあと、りょうしんがいたんでひとばんじゅうねむれませんでした。",
+          "en": "After telling the lie, my conscience hurt so much that I couldn't sleep all night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}が{正|ただ}しくて{何|なに}が{悪|わる}いかを{判断|はんだん}し、{悪|わる}いことをすると{痛|いた}む{心|こころ}の{働|はたら}き。",
+        "kana": "なにがただしくてなにがわるいかをはんだんし、わるいことをするといたむこころのはたらき。"
+      },
+      "collocations": [
+        "良心が痛む",
+        "良心的"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1587",
+      "word": "本能",
+      "kana": "ほんのう",
+      "meanings": [
+        "instinct"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "science",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{動物|どうぶつ}は{本能|ほんのう}によって{危険|きけん}を{感|かん}じ{取|と}ることができる。",
+          "kana": "どうぶつはほんのうによってきけんをかんじとることができる。",
+          "en": "Animals can sense danger by instinct."
+        },
+        {
+          "ja": "{赤|あか}ちゃんが{母親|ははおや}の{声|こえ}を{聞|き}き{分|わ}けるのは、{本能的|ほんのうてき}なものだと{言|い}われている。",
+          "kana": "あかちゃんがははおやのこえをききわけるのは、ほんのうてきなものだといわれている。",
+          "en": "A baby's ability to pick out its mother's voice is said to be instinctive."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{動物|どうぶつ}や{人|ひと}が{生|う}まれつき{持|も}っていて、{習|なら}わなくてもできる{行動|こうどう}の{力|ちから}。",
+        "kana": "どうぶつやひとがうまれつきもっていて、ならわなくてもできるこうどうのちから。"
+      },
+      "collocations": [
+        "本能的",
+        "本能に従う"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1588",
+      "word": "直感",
+      "kana": "ちょっかん",
+      "meanings": [
+        "intuition",
+        "gut feeling"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{理由|りゆう}は{説明|せつめい}できないが、{直感|ちょっかん}でこの{人|ひと}は{信|しん}じられると{思|おも}った。",
+          "kana": "りゆうはせつめいできないが、ちょっかんでこのひとはしんじられるとおもった。",
+          "en": "I can't explain why, but my gut told me this person could be trusted."
+        },
+        {
+          "ja": "{最初|さいしょ}に{直感|ちょっかん}した{通|とお}り、その{店|みせ}は{当|あ}たりでした。",
+          "kana": "さいしょにちょっかんしたとおり、そのみせはあたりでした。",
+          "en": "Just as my gut told me at first, the restaurant turned out to be a hit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{理由|りゆう}を{考|かんが}えなくても、ぴんと{感|かん}じて{分|わ}かること。",
+        "kana": "りゆうをかんがえなくても、ぴんとかんじてわかること。"
+      },
+      "collocations": [
+        "直感が働く",
+        "直感的"
+      ],
+      "confusables": [
+        "v-n2-1589"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1589",
+      "word": "直観",
+      "kana": "ちょっかん",
+      "meanings": [
+        "intuition (direct insight)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "science",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{優|すぐ}れた{数学者|すうがくしゃ}は、{計算|けいさん}する{前|まえ}に{直観|ちょっかん}で{答|こた}えが{見|み}えることがあるという。",
+          "kana": "すぐれたすうがくしゃは、けいさんするまえにちょっかんでこたえがみえることがあるという。",
+          "en": "They say excellent mathematicians sometimes see the answer intuitively before calculating."
+        },
+        {
+          "ja": "この{学者|がくしゃ}は、{直観|ちょっかん}によって{物事|ものごと}の{本質|ほんしつ}をつかめると{考|かんが}えた。",
+          "kana": "このがくしゃは、ちょっかんによってものごとのほんしつをつかめるとかんがえた。",
+          "en": "This scholar held that the essence of things can be grasped through intuition."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}えを{重|かさ}ねずに、ものの{本質|ほんしつ}を{一度|いちど}にとらえる{心|こころ}の{働|はたら}き。",
+        "kana": "かんがえをかさねずに、もののほんしつをいちどにとらえるこころのはたらき。"
+      },
+      "notes": "Philosophical term: grasping the essence directly, without reasoning. Everyday \"hunch\" is 直感.",
+      "collocations": [
+        "直観的"
+      ],
+      "confusables": [
+        "v-n2-1588"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1590",
+      "word": "勘",
+      "kana": "かん",
+      "meanings": [
+        "intuition",
+        "hunch",
+        "sixth sense"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}の{勘|かん}で、この{魚|さかな}は{新鮮|しんせん}ではないとすぐに{分|わ}かった。",
+          "kana": "ながねんのかんで、このさかなはしんせんではないとすぐにわかった。",
+          "en": "With a hunch built on years of experience, I knew right away this fish wasn't fresh."
+        },
+        {
+          "ja": "{勘|かん}だけを{頼|たよ}りに{進|すす}んでいたら、{山|やま}の{中|なか}で{道|みち}に{迷|まよ}ってしまった。",
+          "kana": "かんだけをたよりにすすんでいたら、やまのなかでみちにまよってしまった。",
+          "en": "Relying on my gut alone, I ended up getting lost in the mountains."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{長年|ながねん}の{経験|けいけん}から、{理由|りゆう}を{言|い}えなくても{正|ただ}しい{答|こた}えをつかむ{力|ちから}。",
+        "kana": "ながねんのけいけんから、りゆうをいえなくてもただしいこたえをつかむちから。"
+      },
+      "collocations": [
+        "勘がいい",
+        "勘が働く",
+        "勘が鈍る"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1591",
+      "word": "幻想",
+      "kana": "げんそう",
+      "meanings": [
+        "illusion",
+        "fantasy"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{都会|とかい}に{行|い}けば{何|なん}でも{手|て}に{入|はい}るというのは、ただの{幻想|げんそう}だった。",
+          "kana": "とかいにいけばなんでもてにはいるというのは、ただのげんそうだった。",
+          "en": "The idea that you can get anything if you go to the city was just an illusion."
+        },
+        {
+          "ja": "{霧|きり}の{中|なか}に{浮|う}かぶ{古|ふる}い{城|しろ}は、まるで{幻想|げんそう}の{世界|せかい}のようでした。",
+          "kana": "きりのなかにうかぶふるいしろは、まるでげんそうのせかいのようでした。",
+          "en": "The old castle floating in the mist looked like something out of a dream world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{現実|げんじつ}にはないものを、あるかのように{感|かん}じたり{考|かんが}えたりすること。",
+        "kana": "げんじつにはないものを、あるかのようにかんじたりかんがえたりすること。"
+      },
+      "collocations": [
+        "幻想を抱く",
+        "幻想的"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1592",
+      "word": "妄想",
+      "kana": "もうそう",
+      "meanings": [
+        "delusion",
+        "wild fantasy"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{宝|たから}くじが{当|あ}たったらどうするか、{妄想|もうそう}ばかりしている。",
+          "kana": "たからくじがあたったらどうするか、もうそうばかりしている。",
+          "en": "I keep fantasizing about what I'd do if I won the lottery."
+        },
+        {
+          "ja": "{誰|だれ}かに{見|み}られているという{妄想|もうそう}に{苦|くる}しみ、{彼|かれ}は{病院|びょういん}に{通|かよ}い{始|はじ}めた。",
+          "kana": "だれかにみられているというもうそうにくるしみ、かれはびょういんにかよいはじめた。",
+          "en": "Tormented by the delusion that someone was watching him, he started going to a clinic."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事実|じじつ}ではないことを{本当|ほんとう}だと{信|しん}じてしまうこと。また、{勝手|かって}な{想像|そうぞう}。",
+        "kana": "じじつではないことをほんとうだとしんじてしまうこと。また、かってなそうぞう。"
+      },
+      "collocations": [
+        "妄想にふける",
+        "被害妄想"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1593",
+      "word": "空想",
+      "kana": "くうそう",
+      "meanings": [
+        "daydream",
+        "fantasy",
+        "imagination"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{頃|ころ}は、{空|そら}を{飛|と}ぶ{空想|くうそう}をしてよく{窓|まど}の{外|そと}を{見|み}ていた。",
+          "kana": "こどものころは、そらをとぶくうそうをしてよくまどのそとをみていた。",
+          "en": "As a child I often gazed out the window, daydreaming about flying."
+        },
+        {
+          "ja": "この{作家|さっか}の{小説|しょうせつ}は、{科学|かがく}と{空想|くうそう}が{見事|みごと}に{混|ま}ざり{合|あ}っています。",
+          "kana": "このさっかのしょうせつは、かがくとくうそうがみごとにまざりあっています。",
+          "en": "This author's novels blend science and fantasy beautifully."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{現実|げんじつ}にはないことを、{頭|あたま}の{中|なか}で{自由|じゆう}に{想像|そうぞう}して{楽|たの}しむこと。",
+        "kana": "げんじつにはないことを、あたまのなかでじゆうにそうぞうしてたのしむこと。"
+      },
+      "collocations": [
+        "空想にふける",
+        "空想の世界"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1594",
+      "word": "想定",
+      "kana": "そうてい",
+      "meanings": [
+        "assumption",
+        "scenario",
+        "hypothesis"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{最悪|さいあく}の{場合|ばあい}を{想定|そうてい}して、{避難|ひなん}の{計画|けいかく}を{立|た}てておく{必要|ひつよう}がある。",
+          "kana": "さいあくのばあいをそうていして、ひなんのけいかくをたてておくひつようがある。",
+          "en": "We need to assume the worst case and prepare an evacuation plan in advance."
+        },
+        {
+          "ja": "{今年|ことし}の{売|う}り{上|あ}げは、{当初|とうしょ}の{想定|そうてい}を{大|おお}きく{上回|うわまわ}りました。",
+          "kana": "ことしのうりあげは、とうしょのそうていをおおきくうわまわりました。",
+          "en": "This year's sales greatly exceeded our initial projections."
+        }
+      ],
+      "definitionJa": {
+        "ja": "こうなるだろうと{前|まえ}もって{考|かんが}えて、{条件|じょうけん}や{場面|ばめん}を{決|き}めておくこと。",
+        "kana": "こうなるだろうとまえもってかんがえて、じょうけんやばめんをきめておくこと。"
+      },
+      "collocations": [
+        "想定外",
+        "想定内",
+        "想定する"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1595",
+      "word": "推定",
+      "kana": "すいてい",
+      "meanings": [
+        "estimate",
+        "presumption"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "science",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{警察|けいさつ}は、{事故|じこ}の{原因|げんいん}をブレーキの{故障|こしょう}と{推定|すいてい}している。",
+          "kana": "けいさつは、じこのげんいんをブレーキのこしょうとすいていしている。",
+          "en": "Police presume the cause of the accident to be brake failure."
+        },
+        {
+          "ja": "この{骨|ほね}は{推定|すいてい}で{二千年|にせんねん}{前|まえ}のものだと、{博物館|はくぶつかん}の{説明|せつめい}に{書|か}いてあった。",
+          "kana": "このほねはすいていでにせんねんまえのものだと、はくぶつかんのせつめいにかいてあった。",
+          "en": "The museum label said the bone is estimated to be two thousand years old."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{分|わ}かっている{事実|じじつ}をもとに、おそらくこうだろうと{決|き}めること。",
+        "kana": "わかっているじじつをもとに、おそらくこうだろうときめること。"
+      },
+      "collocations": [
+        "推定年齢",
+        "推定無罪"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1596",
+      "word": "推測",
+      "kana": "すいそく",
+      "meanings": [
+        "guess",
+        "conjecture",
+        "inference"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}が{会社|かいしゃ}を{辞|や}めた{理由|りゆう}は、{推測|すいそく}するしかない。",
+          "kana": "かれがかいしゃをやめたりゆうは、すいそくするしかない。",
+          "en": "We can only guess at the reason he left the company."
+        },
+        {
+          "ja": "{足跡|あしあと}の{大|おお}きさから、{犯人|はんにん}は{背|せ}の{高|たか}い{男性|だんせい}だと{推測|すいそく}されます。",
+          "kana": "あしあとのおおきさから、はんにんはせのたかいだんせいだとすいそくされます。",
+          "en": "From the size of the footprints, the culprit is presumed to be a tall man."
+        }
+      ],
+      "definitionJa": {
+        "ja": "はっきり{分|わ}からないことを、{知|し}っていることから{考|かんが}えて{見当|けんとう}をつけること。",
+        "kana": "はっきりわからないことを、しっていることからかんがえてけんとうをつけること。"
+      },
+      "collocations": [
+        "推測が当たる",
+        "推測の域を出ない"
+      ],
+      "confusables": [
+        "v-n2-1597"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1597",
+      "word": "憶測",
+      "kana": "おくそく",
+      "meanings": [
+        "speculation",
+        "groundless guess"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{確|たし}かな{情報|じょうほう}がないまま、{憶測|おくそく}だけでものを{言|い}うべきではない。",
+          "kana": "たしかなじょうほうがないまま、おくそくだけでものをいうべきではない。",
+          "en": "You should not make statements based only on speculation without solid information."
+        },
+        {
+          "ja": "{社長|しゃちょう}が{突然|とつぜん}{辞|や}めたことで、{社内|しゃない}ではさまざまな{憶測|おくそく}が{飛|と}び{交|か}っている。",
+          "kana": "しゃちょうがとつぜんやめたことで、しゃないではさまざまなおくそくがとびかっている。",
+          "en": "With the president's sudden resignation, all sorts of speculation is flying around the company."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{確|たし}かな{理由|りゆう}もなく、こうではないかと{勝手|かって}に{考|かんが}えること。",
+        "kana": "たしかなりゆうもなく、こうではないかとかってにかんがえること。"
+      },
+      "notes": "More negative than 推測: a guess with no real grounds, often about others.",
+      "collocations": [
+        "憶測を呼ぶ",
+        "憶測が飛び交う"
+      ],
+      "confusables": [
+        "v-n2-1596"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1598",
+      "word": "見込み",
+      "kana": "みこみ",
+      "meanings": [
+        "prospect",
+        "expectation",
+        "promise (potential)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{天気|てんき}が{回復|かいふく}する{見込|みこ}みがないので、{明日|あした}の{試合|しあい}は{中止|ちゅうし}になった。",
+          "kana": "てんきがかいふくするみこみがないので、あしたのしあいはちゅうしになった。",
+          "en": "Since there's no prospect of the weather improving, tomorrow's game has been called off."
+        },
+        {
+          "ja": "{新人|しんじん}の{中|なか}では、{彼女|かのじょ}が{一番|いちばん}{見込|みこ}みがあると{監督|かんとく}は{話|はな}しています。",
+          "kana": "しんじんのなかでは、かのじょがいちばんみこみがあるとかんとくははなしています。",
+          "en": "Among the rookies, the coach says she shows the most promise."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{将来|しょうらい}こうなるだろうという{予想|よそう}。また、うまくいきそうな{可能性|かのうせい}。",
+        "kana": "しょうらいこうなるだろうというよそう。また、うまくいきそうなかのうせい。"
+      },
+      "collocations": [
+        "見込みがある",
+        "見込み違い"
+      ],
+      "confusables": [
+        "v-n2-1599"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1599",
+      "word": "見通し",
+      "kana": "みとおし",
+      "meanings": [
+        "outlook",
+        "forecast",
+        "visibility"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{景気|けいき}の{見通|みとお}しは{依然|いぜん}として{厳|きび}しいと、{専門家|せんもんか}は{語|かた}った。",
+          "kana": "けいきのみとおしはいぜんとしてきびしいと、せんもんかはかたった。",
+          "en": "The economic outlook remains harsh, the expert said."
+        },
+        {
+          "ja": "{工事|こうじ}は{来月|らいげつ}には{終|お}わる{見通|みとお}しだと、{担当者|たんとうしゃ}から{連絡|れんらく}がありました。",
+          "kana": "こうじはらいげつにはおわるみとおしだと、たんとうしゃかられんらくがありました。",
+          "en": "The person in charge let us know that the construction is expected to finish next month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "これからどうなるかについての{予想|よそう}。また、{遠|とお}くまでよく{見|み}えること。",
+        "kana": "これからどうなるかについてのよそう。また、とおくまでよくみえること。"
+      },
+      "collocations": [
+        "見通しが立つ",
+        "見通しが甘い"
+      ],
+      "confusables": [
+        "v-n2-1598"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1600",
+      "word": "目処",
+      "kana": "めど",
+      "meanings": [
+        "prospect",
+        "rough target (for completion)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{工事|こうじ}が{終|お}わる{目処|めど}がようやく{立|た}った。",
+          "kana": "こうじがおわるめどがようやくたった。",
+          "en": "We've finally got a sense of when the construction will finish."
+        },
+        {
+          "ja": "{借金|しゃっきん}を{返|かえ}し{終|お}える{目処|めど}がついたので、{少|すこ}しほっとしています。",
+          "kana": "しゃっきんをかえしおえるめどがついたので、すこしほっとしています。",
+          "en": "I can now see when I'll finish paying off my debt, so I'm feeling a bit relieved."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつごろ{終|お}わるか、どうなるかについての、だいたいの{見当|けんとう}。",
+        "kana": "いつごろおわるか、どうなるかについての、だいたいのけんとう。"
+      },
+      "notes": "Very often written in kana (めど) or as 目途.",
+      "altForms": [
+        "めど",
+        "目途"
+      ],
+      "collocations": [
+        "目処が立つ",
+        "目処をつける"
+      ],
+      "confusables": [
+        "v-n2-1601"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1601",
+      "word": "目安",
+      "kana": "めやす",
+      "meanings": [
+        "rough guide",
+        "yardstick",
+        "benchmark"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{一日|いちにち}に{歩|ある}く{量|りょう}は、{八千歩|はっせんぽ}を{目安|めやす}にするといいそうだ。",
+          "kana": "いちにちにあるくりょうは、はっせんぽをめやすにするといいそうだ。",
+          "en": "They say a good guideline for daily walking is about eight thousand steps."
+        },
+        {
+          "ja": "{料理|りょうり}の{本|ほん}に{書|か}いてある{時間|じかん}はあくまで{目安|めやす}なので、{様子|ようす}を{見|み}ながら{焼|や}いてください。",
+          "kana": "りょうりのほんにかいてあるじかんはあくまでめやすなので、ようすをみながらやいてください。",
+          "en": "The time given in the cookbook is only a guide, so keep an eye on it as it cooks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "だいたいこのくらいだと{判断|はんだん}するための、おおよその{基準|きじゅん}。",
+        "kana": "だいたいこのくらいだとはんだんするための、おおよそのきじゅん。"
+      },
+      "collocations": [
+        "目安にする",
+        "目安となる"
+      ],
+      "confusables": [
+        "v-n2-1600"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1602",
+      "word": "手掛かり",
+      "kana": "てがかり",
+      "meanings": [
+        "clue",
+        "lead",
+        "handhold"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{犯人|はんにん}につながる{手掛|てが}かりは、まだ{何|なに}も{見|み}つかっていない。",
+          "kana": "はんにんにつながるてがかりは、まだなにもみつかっていない。",
+          "en": "No clues leading to the culprit have been found yet."
+        },
+        {
+          "ja": "{古|ふる}い{写真|しゃしん}を{手掛|てが}かりに、{祖母|そぼ}が{生|う}まれた{村|むら}を{探|さが}し{当|あ}てました。",
+          "kana": "ふるいしゃしんをてがかりに、そぼがうまれたむらをさがしあてました。",
+          "en": "Using an old photograph as a clue, I tracked down the village where my grandmother was born."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{問題|もんだい}を{解|と}いたり、{探|さが}しているものを{見|み}つけたりするための、もとになるもの。",
+        "kana": "もんだいをといたり、さがしているものをみつけたりするための、もとになるもの。"
+      },
+      "altForms": [
+        "手がかり"
+      ],
+      "collocations": [
+        "手掛かりをつかむ",
+        "手掛かりを探す"
+      ],
+      "confusables": [
+        "v-n2-1603"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1603",
+      "word": "糸口",
+      "kana": "いとぐち",
+      "meanings": [
+        "clue",
+        "starting point",
+        "way in"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{問題|もんだい}{解決|かいけつ}の{糸口|いとぐち}が、{思|おも}わぬところから{見|み}つかった。",
+          "kana": "もんだいかいけつのいとぐちが、おもわぬところからみつかった。",
+          "en": "A way into solving the problem turned up from an unexpected place."
+        },
+        {
+          "ja": "{何気|なにげ}ない{一言|ひとこと}が{会話|かいわ}の{糸口|いとぐち}になって、{二人|ふたり}はすぐに{打|う}ち{解|と}けた。",
+          "kana": "なにげないひとことがかいわのいとぐちになって、ふたりはすぐにうちとけた。",
+          "en": "A casual remark opened the way to conversation, and the two quickly hit it off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かを{始|はじ}めたり{解決|かいけつ}したりするための、{最初|さいしょ}の{小|ちい}さなきっかけ。",
+        "kana": "なにかをはじめたりかいけつしたりするための、さいしょのちいさなきっかけ。"
+      },
+      "collocations": [
+        "解決の糸口",
+        "糸口をつかむ"
+      ],
+      "confusables": [
+        "v-n2-1602"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1604",
+      "word": "核心",
+      "kana": "かくしん",
+      "meanings": [
+        "core",
+        "heart (of a matter)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{記者|きしゃ}の{質問|しつもん}は、{問題|もんだい}の{核心|かくしん}を{突|つ}いていた。",
+          "kana": "きしゃのしつもんは、もんだいのかくしんをついていた。",
+          "en": "The reporter's question went to the heart of the problem."
+        },
+        {
+          "ja": "{話|はなし}が{長|なが}いので、そろそろ{核心|かくしん}に{入|はい}ってもらえませんか。",
+          "kana": "はなしがながいので、そろそろかくしんにはいってもらえませんか。",
+          "en": "You've been talking for a while; could you get to the heart of the matter?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{問題|もんだい}や{話|はなし}の{一番|いちばん}{大切|たいせつ}な、{中心|ちゅうしん}となる{部分|ぶぶん}。",
+        "kana": "もんだいやはなしのいちばんたいせつな、ちゅうしんとなるぶぶん。"
+      },
+      "notes": "Homophone of 確信 (conviction).",
+      "collocations": [
+        "核心を突く",
+        "核心に迫る"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1605",
+      "word": "要",
+      "kana": "かなめ",
+      "meanings": [
+        "key point",
+        "linchpin",
+        "pivot"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "チームの{要|かなめ}であるキャプテンが{休|やす}んで、{試合|しあい}は{厳|きび}しいものになった。",
+          "kana": "チームのかなめであるキャプテンがやすんで、しあいはきびしいものになった。",
+          "en": "With the captain, the linchpin of the team, out, the game was a tough one."
+        },
+        {
+          "ja": "この{計画|けいかく}の{要|かなめ}は、{地元|じもと}の{人|ひと}たちの{協力|きょうりょく}を{得|え}られるかどうかです。",
+          "kana": "このけいかくのかなめは、じもとのひとたちのきょうりょくをえられるかどうかです。",
+          "en": "The linchpin of this plan is whether we can win the cooperation of the local people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}を{支|ささ}えている、{最|もっと}も{大切|たいせつ}な{部分|ぶぶん}や{人|ひと}。",
+        "kana": "ぜんたいをささえている、もっともたいせつなぶぶんやひと。"
+      },
+      "notes": "Originally the rivet holding a folding fan together.",
+      "collocations": [
+        "要となる",
+        "肝心要"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1606",
+      "word": "骨子",
+      "kana": "こっし",
+      "meanings": [
+        "gist",
+        "framework",
+        "main points (of a plan)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "business",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{制度|せいど}の{骨子|こっし}が{発表|はっぴょう}され、{詳細|しょうさい}は{来月|らいげつ}{決|き}まる{予定|よてい}だ。",
+          "kana": "あたらしいせいどのこっしがはっぴょうされ、しょうさいはらいげつきまるよていだ。",
+          "en": "The framework of the new system was announced; details are to be decided next month."
+        },
+        {
+          "ja": "まず{提案|ていあん}の{骨子|こっし}を{一枚|いちまい}にまとめてから、{細|こま}かい{部分|ぶぶん}を{書|か}き{足|た}していきましょう。",
+          "kana": "まずていあんのこっしをいちまいにまとめてから、こまかいぶぶんをかきたしていきましょう。",
+          "en": "Let's first sum up the framework of the proposal on one page, then fill in the details."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{計画|けいかく}や{考|かんが}えの、{中心|ちゅうしん}となる{大切|たいせつ}な{点|てん}をまとめたもの。",
+        "kana": "けいかくやかんがえの、ちゅうしんとなるたいせつなてんをまとめたもの。"
+      },
+      "collocations": [
+        "骨子をまとめる",
+        "法案の骨子"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1607",
+      "word": "大筋",
+      "kana": "おおすじ",
+      "meanings": [
+        "outline",
+        "main points",
+        "gist"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{両社|りょうしゃ}は{契約|けいやく}の{内容|ないよう}について{大筋|おおすじ}で{合意|ごうい}した。",
+          "kana": "りょうしゃはけいやくのないようについておおすじでごういした。",
+          "en": "The two companies reached broad agreement on the terms of the contract."
+        },
+        {
+          "ja": "{映画|えいが}の{大筋|おおすじ}は{知|し}っていたけれど、{実際|じっさい}に{見|み}ると{何度|なんど}も{泣|な}いてしまった。",
+          "kana": "えいがのおおすじはしっていたけれど、じっさいにみるとなんどもないてしまった。",
+          "en": "I knew the gist of the film, but when I actually watched it I cried several times."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{細|こま}かい{部分|ぶぶん}を{省|はぶ}いた、{話|はなし}や{計画|けいかく}の{大体|だいたい}の{流|なが}れ。",
+        "kana": "こまかいぶぶんをはぶいた、はなしやけいかくのだいたいのながれ。"
+      },
+      "collocations": [
+        "大筋で合意する",
+        "話の大筋"
+      ],
+      "confusables": [
+        "v-n2-1608"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1608",
+      "word": "概略",
+      "kana": "がいりゃく",
+      "meanings": [
+        "outline",
+        "summary",
+        "rough sketch"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{時間|じかん}がないので、{計画|けいかく}の{概略|がいりゃく}だけ{説明|せつめい}させていただきます。",
+          "kana": "じかんがないので、けいかくのがいりゃくだけせつめいさせていただきます。",
+          "en": "As we're short on time, allow me to explain just an outline of the plan."
+        },
+        {
+          "ja": "{事故|じこ}の{概略|がいりゃく}は{分|わ}かったが、{詳|くわ}しい{原因|げんいん}はまだ{調査中|ちょうさちゅう}だという。",
+          "kana": "じこのがいりゃくはわかったが、くわしいげんいんはまだちょうさちゅうだという。",
+          "en": "The outline of the accident is clear, but the precise cause is reportedly still under investigation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{細|こま}かいことは{省|はぶ}いて、{全体|ぜんたい}をおおまかにまとめた{内容|ないよう}。",
+        "kana": "こまかいことははぶいて、ぜんたいをおおまかにまとめたないよう。"
+      },
+      "collocations": [
+        "概略を述べる",
+        "概略図"
+      ],
+      "confusables": [
+        "v-n2-1607"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1609",
+      "word": "細部",
+      "kana": "さいぶ",
+      "meanings": [
+        "details",
+        "fine points"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "この{職人|しょくにん}の{作品|さくひん}は、{細部|さいぶ}まで{丁寧|ていねい}に{仕上|しあ}げられている。",
+          "kana": "このしょくにんのさくひんは、さいぶまでていねいにしあげられている。",
+          "en": "This craftsman's pieces are carefully finished down to the smallest detail."
+        },
+        {
+          "ja": "{契約書|けいやくしょ}は{細部|さいぶ}まで{読|よ}んでから、サインするようにしてください。",
+          "kana": "けいやくしょはさいぶまでよんでから、サインするようにしてください。",
+          "en": "Please read the contract down to the fine print before you sign it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}の{中|なか}の、{細|こま}かい{一|ひと}つ{一|ひと}つの{部分|ぶぶん}。",
+        "kana": "ぜんたいのなかの、こまかいひとつひとつのぶぶん。"
+      },
+      "collocations": [
+        "細部にこだわる",
+        "細部にわたって"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1610",
+      "word": "局面",
+      "kana": "きょくめん",
+      "meanings": [
+        "phase",
+        "situation",
+        "stage (of events)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{交渉|こうしょう}は{新|あたら}しい{局面|きょくめん}を{迎|むか}え、{合意|ごうい}の{可能性|かのうせい}が{見|み}えてきた。",
+          "kana": "こうしょうはあたらしいきょくめんをむかえ、ごういのかのうせいがみえてきた。",
+          "en": "The negotiations have entered a new phase, and the possibility of agreement has come into view."
+        },
+        {
+          "ja": "{試合|しあい}は{最後|さいご}の{大事|だいじ}な{局面|きょくめん}に{入|はい}り、{会場|かいじょう}は{静|しず}まり{返|かえ}っていました。",
+          "kana": "しあいはさいごのだいじなきょくめんにはいり、かいじょうはしずまりかえっていました。",
+          "en": "The match had entered its crucial final phase, and the arena had fallen dead silent."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{変|か}わっていく{状況|じょうきょう}の{中|なか}の、その{時々|ときどき}の{場面|ばめん}。",
+        "kana": "かわっていくじょうきょうのなかの、そのときどきのばめん。"
+      },
+      "collocations": [
+        "局面を迎える",
+        "重大な局面"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1611",
+      "word": "転機",
+      "kana": "てんき",
+      "meanings": [
+        "turning point"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{留学|りゅうがく}は、{私|わたし}の{人生|じんせい}にとって{大|おお}きな{転機|てんき}となった。",
+          "kana": "りゅうがくは、わたしのじんせいにとっておおきなてんきとなった。",
+          "en": "Studying abroad became a major turning point in my life."
+        },
+        {
+          "ja": "{監督|かんとく}との{出会|であ}いが{転機|てんき}になって、{彼|かれ}は{選手|せんしゅ}として{大|おお}きく{成長|せいちょう}しました。",
+          "kana": "かんとくとのであいがてんきになって、かれはせんしゅとしておおきくせいちょうしました。",
+          "en": "Meeting the coach was a turning point, and he grew enormously as a player."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人生|じんせい}や{状況|じょうきょう}の{流|なが}れが、{大|おお}きく{変|か}わるきっかけになるとき。",
+        "kana": "じんせいやじょうきょうのながれが、おおきくかわるきっかけになるとき。"
+      },
+      "notes": "Homophone of 天気 (weather).",
+      "collocations": [
+        "転機を迎える",
+        "人生の転機"
+      ],
+      "confusables": [
+        "v-n2-1612"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1612",
+      "word": "契機",
+      "kana": "けいき",
+      "meanings": [
+        "opportunity (for change)",
+        "trigger",
+        "occasion"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{病気|びょうき}を{契機|けいき}に、{生活|せいかつ}{習慣|しゅうかん}を{見直|みなお}すことにした。",
+          "kana": "びょうきをけいきに、せいかつしゅうかんをみなおすことにした。",
+          "en": "Taking my illness as an opportunity, I decided to rethink my lifestyle."
+        },
+        {
+          "ja": "{今回|こんかい}の{事故|じこ}が{契機|けいき}となって、{道路|どうろ}の{安全|あんぜん}{対策|たいさく}が{進|すす}められています。",
+          "kana": "こんかいのじこがけいきとなって、どうろのあんぜんたいさくがすすめられています。",
+          "en": "This accident has become the trigger for road-safety measures to move forward."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{変|か}わったり{始|はじ}まったりする、きっかけや{原因|げんいん}。",
+        "kana": "なにかがかわったりはじまったりする、きっかけやげんいん。"
+      },
+      "notes": "Homophone of 景気 (economy). 〜を契機に = taking something as the occasion to.",
+      "collocations": [
+        "〜を契機に",
+        "契機となる"
+      ],
+      "confusables": [
+        "v-n2-1611"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1613",
+      "word": "動機",
+      "kana": "どうき",
+      "meanings": [
+        "motive",
+        "motivation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{面接|めんせつ}では、この{会社|かいしゃ}を{選|えら}んだ{動機|どうき}を{必|かなら}ず{聞|き}かれる。",
+          "kana": "めんせつでは、このかいしゃをえらんだどうきをかならずきかれる。",
+          "en": "In the interview you'll definitely be asked your motive for choosing this company."
+        },
+        {
+          "ja": "{警察|けいさつ}は、{男|おとこ}が{事件|じけん}を{起|お}こした{動機|どうき}について{調|しら}べています。",
+          "kana": "けいさつは、おとこがじけんをおこしたどうきについてしらべています。",
+          "en": "The police are investigating the man's motive for the crime."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}がある{行動|こうどう}を{起|お}こすもとになる、{理由|りゆう}や{心|こころ}の{動|うご}き。",
+        "kana": "ひとがあるこうどうをおこすもとになる、りゆうやこころのうごき。"
+      },
+      "collocations": [
+        "志望動機",
+        "動機付け"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1614",
+      "word": "誘因",
+      "kana": "ゆういん",
+      "meanings": [
+        "contributing cause",
+        "trigger factor"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "science",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{寝不足|ねぶそく}やストレスは、{頭痛|ずつう}の{誘因|ゆういん}になることが{多|おお}い。",
+          "kana": "ねぶそくやストレスは、ずつうのゆういんになることがおおい。",
+          "en": "Lack of sleep and stress are often triggers of headaches."
+        },
+        {
+          "ja": "{急|きゅう}な{気温|きおん}の{変化|へんか}が、{今回|こんかい}の{体調|たいちょう}{不良|ふりょう}の{誘因|ゆういん}だったと{医師|いし}は{説明|せつめい}した。",
+          "kana": "きゅうなきおんのへんかが、こんかいのたいちょうふりょうのゆういんだったといしはせつめいした。",
+          "en": "The doctor explained that the sudden change in temperature had triggered this bout of ill health."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{病気|びょうき}や{事故|じこ}などを{引|ひ}き{起|お}こすきっかけになる、{外|そと}からの{原因|げんいん}。",
+        "kana": "びょうきやじこなどをひきおこすきっかけになる、そとからのげんいん。"
+      },
+      "collocations": [
+        "誘因となる"
+      ],
+      "confusables": [
+        "v-n2-1615"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1615",
+      "word": "要因",
+      "kana": "よういん",
+      "meanings": [
+        "factor",
+        "main cause"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{売|う}り{上|あ}げが{伸|の}びた{要因|よういん}の{一|ひと}つは、{若|わか}い{客|きゃく}が{増|ふ}えたことだ。",
+          "kana": "うりあげがのびたよういんのひとつは、わかいきゃくがふえたことだ。",
+          "en": "One factor behind the rise in sales is the increase in young customers."
+        },
+        {
+          "ja": "{今回|こんかい}の{失敗|しっぱい}には、{準備|じゅんび}{不足|ぶそく}など{複数|ふくすう}の{要因|よういん}が{重|かさ}なっていたと{思|おも}います。",
+          "kana": "こんかいのしっぱいには、じゅんびぶそくなどふくすうのよういんがかさなっていたとおもいます。",
+          "en": "I think several factors, including insufficient preparation, combined to cause this failure."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{結果|けっか}を{生|う}み{出|だ}した、{主|おも}な{原因|げんいん}や{条件|じょうけん}。",
+        "kana": "あるけっかをうみだした、おもなげんいんやじょうけん。"
+      },
+      "collocations": [
+        "要因を分析する",
+        "主な要因"
+      ],
+      "confusables": [
+        "v-n2-1614"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1616",
+      "word": "背景",
+      "kana": "はいけい",
+      "meanings": [
+        "background",
+        "backdrop",
+        "context"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "この{事件|じけん}の{背景|はいけい}には、{地域|ちいき}の{長年|ながねん}の{対立|たいりつ}があるとみられる。",
+          "kana": "このじけんのはいけいには、ちいきのながねんのたいりつがあるとみられる。",
+          "en": "Behind this incident there appears to be years of conflict in the community."
+        },
+        {
+          "ja": "{富士山|ふじさん}を{背景|はいけい}に、{家族|かぞく}{全員|ぜんいん}で{記念|きねん}{写真|しゃしん}を{撮|と}りました。",
+          "kana": "ふじさんをはいけいに、かぞくぜんいんできねんしゃしんをとりました。",
+          "en": "We took a family photo with Mt. Fuji in the background."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{絵|え}や{写真|しゃしん}の{後|うし}ろの{景色|けしき}。また、{事件|じけん}や{変化|へんか}の{裏|うら}にある{事情|じじょう}。",
+        "kana": "えやしゃしんのうしろのけしき。また、じけんやへんかのうらにあるじじょう。"
+      },
+      "collocations": [
+        "背景にある",
+        "時代背景"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1617",
+      "word": "経緯",
+      "kana": "けいい",
+      "meanings": [
+        "sequence of events",
+        "how something came about"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{問題|もんだい}が{起|お}きた{経緯|けいい}を、{時間|じかん}の{順|じゅん}に{説明|せつめい}してください。",
+          "kana": "もんだいがおきたけいいを、じかんのじゅんにせつめいしてください。",
+          "en": "Please explain, in chronological order, how the problem came about."
+        },
+        {
+          "ja": "この{寺|てら}が{建|た}てられた{経緯|けいい}は、{古|ふる}い{記録|きろく}に{詳|くわ}しく{残|のこ}されています。",
+          "kana": "このてらがたてられたけいいは、ふるいきろくにくわしくのこされています。",
+          "en": "How this temple came to be built is recorded in detail in old documents."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{事件|じけん}や{問題|もんだい}が、どう{始|はじ}まってどう{進|すす}んできたかという{流|なが}れ。",
+        "kana": "あるじけんやもんだいが、どうはじまってどうすすんできたかというながれ。"
+      },
+      "notes": "Also read いきさつ in speech.",
+      "collocations": [
+        "経緯を説明する",
+        "事件の経緯"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1618",
+      "word": "由来",
+      "kana": "ゆらい",
+      "meanings": [
+        "origin",
+        "derivation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "language",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "この{地名|ちめい}は、{昔|むかし}ここに{大|おお}きな{橋|はし}があったことに{由来|ゆらい}する。",
+          "kana": "このちめいは、むかしここにおおきなはしがあったことにゆらいする。",
+          "en": "This place name derives from the fact that there was once a large bridge here."
+        },
+        {
+          "ja": "{祭|まつ}りの{由来|ゆらい}を{知|し}ると、{同|おな}じ{踊|おど}りでも{違|ちが}って{見|み}えてきますよ。",
+          "kana": "まつりのゆらいをしると、おなじおどりでもちがってみえてきますよ。",
+          "en": "Once you know the origins of the festival, the same dance starts to look different."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{言葉|ことば}や{習慣|しゅうかん}などが、どこから{来|き}てどう{伝|つた}わってきたかということ。",
+        "kana": "あることばやしゅうかんなどが、どこからきてどうつたわってきたかということ。"
+      },
+      "collocations": [
+        "名前の由来",
+        "〜に由来する"
+      ],
+      "confusables": [
+        "v-n2-1619"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1619",
+      "word": "起源",
+      "kana": "きげん",
+      "meanings": [
+        "origin",
+        "beginning"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "culture",
+        "science"
+      ],
+      "examples": [
+        {
+          "ja": "この{祭|まつ}りの{起源|きげん}は、{今|いま}から{五百年|ごひゃくねん}ほど{前|まえ}にさかのぼるそうだ。",
+          "kana": "このまつりのきげんは、いまからごひゃくねんほどまえにさかのぼるそうだ。",
+          "en": "The origins of this festival apparently go back some five hundred years."
+        },
+        {
+          "ja": "{言葉|ことば}の{起源|きげん}を{調|しら}べていくと、{意外|いがい}な{国|くに}とのつながりが{見|み}えてくる。",
+          "kana": "ことばのきげんをしらべていくと、いがいなくにとのつながりがみえてくる。",
+          "en": "When you trace the origins of words, connections with unexpected countries come to light."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるものが{初|はじ}めて{生|う}まれた、{一番|いちばん}もとのところ。",
+        "kana": "あるものがはじめてうまれた、いちばんもとのところ。"
+      },
+      "collocations": [
+        "起源をたどる",
+        "生命の起源"
+      ],
+      "confusables": [
+        "v-n2-1627",
+        "v-n2-1618"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1620",
+      "word": "発祥",
+      "kana": "はっしょう",
+      "meanings": [
+        "origin",
+        "birthplace (of a practice)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{柔道|じゅうどう}は{日本|にほん}{発祥|はっしょう}のスポーツで、{今|いま}では{世界中|せかいじゅう}で{親|した}しまれている。",
+          "kana": "じゅうどうはにほんはっしょうのスポーツで、いまではせかいじゅうでしたしまれている。",
+          "en": "Judo is a sport that originated in Japan and is now enjoyed around the world."
+        },
+        {
+          "ja": "この{町|まち}はラーメン{発祥|はっしょう}の{地|ち}として{知|し}られ、{週末|しゅうまつ}は{観光客|かんこうきゃく}でにぎわいます。",
+          "kana": "このまちはラーメンはっしょうのちとしてしられ、しゅうまつはかんこうきゃくでにぎわいます。",
+          "en": "This town is known as the birthplace of ramen, and it bustles with tourists on weekends."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるものや{文化|ぶんか}が、{初|はじ}めてそこで{生|う}まれて{始|はじ}まること。",
+        "kana": "あるものやぶんかが、はじめてそこでうまれてはじまること。"
+      },
+      "collocations": [
+        "発祥の地",
+        "日本発祥"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1621",
+      "word": "真相",
+      "kana": "しんそう",
+      "meanings": [
+        "truth (of a matter)",
+        "real facts"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{事件|じけん}の{真相|しんそう}は、{十年|じゅうねん}たった{今|いま}も{明|あき}らかになっていない。",
+          "kana": "じけんのしんそうは、じゅうねんたったいまもあきらかになっていない。",
+          "en": "The truth of the incident has still not come to light, even ten years on."
+        },
+        {
+          "ja": "{記者|きしゃ}たちは{真相|しんそう}を{知|し}ろうと、{何日|なんにち}も{会社|かいしゃ}の{前|まえ}で{待|ま}ち{続|つづ}けました。",
+          "kana": "きしゃたちはしんそうをしろうと、なんにちもかいしゃのまえでまちつづけました。",
+          "en": "The reporters waited outside the company for days, trying to learn the truth."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{表|おもて}に{出|で}ていない、ある{事件|じけん}の{本当|ほんとう}の{事情|じじょう}や{事実|じじつ}。",
+        "kana": "おもてにでていない、あるじけんのほんとうのじじょうやじじつ。"
+      },
+      "collocations": [
+        "真相を明らかにする",
+        "事件の真相"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1622",
+      "word": "見当",
+      "kana": "けんとう",
+      "meanings": [
+        "rough idea",
+        "estimate",
+        "guess"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}がなぜ{怒|おこ}っているのか、まったく{見当|けんとう}がつかない。",
+          "kana": "かれがなぜおこっているのか、まったくけんとうがつかない。",
+          "en": "I have absolutely no idea why he's angry."
+        },
+        {
+          "ja": "{費用|ひよう}は{十万円|じゅうまんえん}くらいだろうと{見当|けんとう}をつけて、{予算|よさん}を{組|く}みました。",
+          "kana": "ひようはじゅうまんえんくらいだろうとけんとうをつけて、よさんをくみました。",
+          "en": "I reckoned the cost would be around a hundred thousand yen and drew up the budget accordingly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "はっきり{分|わ}からないことについて、だいたいこうだろうと{考|かんが}えること。",
+        "kana": "はっきりわからないことについて、だいたいこうだろうとかんがえること。"
+      },
+      "collocations": [
+        "見当がつく",
+        "見当違い",
+        "見当をつける"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1623",
+      "word": "自覚",
+      "kana": "じかく",
+      "meanings": [
+        "self-awareness",
+        "awareness (of one's role)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{社会人|しゃかいじん}としての{自覚|じかく}を{持|も}って{行動|こうどう}してください。",
+          "kana": "しゃかいじんとしてのじかくをもってこうどうしてください。",
+          "en": "Please act with awareness of your position as a working adult."
+        },
+        {
+          "ja": "{自分|じぶん}でも{自覚|じかく}しているのですが、{人|ひと}の{話|はなし}を{最後|さいご}まで{聞|き}くのが{苦手|にがて}なんです。",
+          "kana": "じぶんでもじかくしているのですが、ひとのはなしをさいごまできくのがにがてなんです。",
+          "en": "I'm aware of it myself, but I'm bad at hearing people out to the end."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{立場|たちば}や{状態|じょうたい}、{力|ちから}などを、{自分|じぶん}ではっきり{分|わ}かっていること。",
+        "kana": "じぶんのたちばやじょうたい、ちからなどを、じぶんではっきりわかっていること。"
+      },
+      "collocations": [
+        "自覚がある",
+        "自覚症状"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1624",
+      "word": "使命",
+      "kana": "しめい",
+      "meanings": [
+        "mission",
+        "calling"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "work",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{正確|せいかく}な{情報|じょうほう}を{伝|つた}えることが、{報道|ほうどう}{機関|きかん}の{使命|しめい}である。",
+          "kana": "せいかくなじょうほうをつたえることが、ほうどうきかんのしめいである。",
+          "en": "Conveying accurate information is the mission of the news media."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{医師|いし}としての{使命|しめい}を{感|かん}じて、{災害|さいがい}の{現場|げんば}へ{向|む}かいました。",
+          "kana": "かのじょはいしとしてのしめいをかんじて、さいがいのげんばへむかいました。",
+          "en": "Feeling it was her duty as a doctor, she headed for the disaster site."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}に{与|あた}えられた、{果|は}たさなければならない{大切|たいせつ}な{務|つと}め。",
+        "kana": "じぶんにあたえられた、はたさなければならないたいせつなつとめ。"
+      },
+      "collocations": [
+        "使命感",
+        "使命を果たす"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1625",
+      "word": "発端",
+      "kana": "ほったん",
+      "meanings": [
+        "beginning",
+        "origin (of an incident)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}のけんかの{発端|ほったん}は、ほんの{小|ちい}さな{誤解|ごかい}だった。",
+          "kana": "ふたりのけんかのほったんは、ほんのちいさなごかいだった。",
+          "en": "What started their quarrel was just a tiny misunderstanding."
+        },
+        {
+          "ja": "{事件|じけん}の{発端|ほったん}となった{手紙|てがみ}が、{今|いま}も{図書館|としょかん}に{保存|ほぞん}されています。",
+          "kana": "じけんのほったんとなったてがみが、いまもとしょかんにほぞんされています。",
+          "en": "The letter that set off the incident is still preserved in the library."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{事件|じけん}や{争|あらそ}いなどが{始|はじ}まる、{最初|さいしょ}のきっかけ。",
+        "kana": "あるじけんやあらそいなどがはじまる、さいしょのきっかけ。"
+      },
+      "notes": "Irregular reading ほったん.",
+      "collocations": [
+        "事件の発端",
+        "発端となる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1626",
+      "word": "趣旨",
+      "kana": "しゅし",
+      "meanings": [
+        "purpose",
+        "gist",
+        "intent (of a proposal)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract",
+        "communication",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "この{会|かい}の{趣旨|しゅし}をご{理解|りかい}の{上|うえ}、ご{参加|さんか}いただければ{幸|さいわ}いです。",
+          "kana": "このかいのしゅしをごりかいのうえ、ごさんかいただければさいわいです。",
+          "en": "We would be grateful if you could take part with an understanding of this meeting's purpose."
+        },
+        {
+          "ja": "{質問|しつもん}の{趣旨|しゅし}がよく{分|わ}からなかったので、もう{一度|いちど}{説明|せつめい}してもらった。",
+          "kana": "しつもんのしゅしがよくわからなかったので、もういちどせつめいしてもらった。",
+          "en": "I didn't quite get the point of the question, so I asked them to explain it again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{活動|かつどう}や{話|はなし}などの、{中心|ちゅうしん}となる{目的|もくてき}や{考|かんが}え。",
+        "kana": "あるかつどうやはなしなどの、ちゅうしんとなるもくてきやかんがえ。"
+      },
+      "collocations": [
+        "趣旨に沿う",
+        "趣旨を説明する"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1627",
+      "word": "原点",
+      "kana": "げんてん",
+      "meanings": [
+        "starting point",
+        "origin (one returns to)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{迷|まよ}った{時|とき}は、なぜこの{仕事|しごと}を{始|はじ}めたのかという{原点|げんてん}に{戻|もど}るようにしている。",
+          "kana": "まよったときは、なぜこのしごとをはじめたのかというげんてんにもどるようにしている。",
+          "en": "When I'm unsure, I try to go back to my starting point: why I began this work."
+        },
+        {
+          "ja": "この{小|ちい}さな{店|みせ}が、{今|いま}では{世界中|せかいじゅう}に{広|ひろ}がったチェーンの{原点|げんてん}です。",
+          "kana": "このちいさなみせが、いまではせかいじゅうにひろがったチェーンのげんてんです。",
+          "en": "This little shop is where the chain that has now spread around the world began."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{始|はじ}まった、{一番|いちばん}もとになる{考|かんが}えや{立場|たちば}。",
+        "kana": "なにかがはじまった、いちばんもとになるかんがえやたちば。"
+      },
+      "collocations": [
+        "原点に戻る",
+        "原点に立ち返る"
+      ],
+      "confusables": [
+        "v-n2-1619"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1628",
+      "word": "気が済む",
+      "kana": "きがすむ",
+      "meanings": [
+        "to feel satisfied",
+        "to be content (with how it ended)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{泣|な}きたいなら、{気|き}が{済|す}むまで{泣|な}けばいい。",
+          "kana": "なきたいなら、きがすむまでなけばいい。",
+          "en": "If you want to cry, cry until you feel better."
+        },
+        {
+          "ja": "そんなに{文句|もんく}を{言|い}って、それで{君|きみ}の{気|き}が{済|す}むなら{好|す}きにすればいい。",
+          "kana": "そんなにもんくをいって、それできみのきがすむならすきにすればいい。",
+          "en": "If complaining that much makes you feel better, go ahead and do as you like."
+        }
+      ],
+      "definitionJa": {
+        "ja": "したいようにやって、{心|こころ}に{残|のこ}っていた{不満|ふまん}がなくなり、{満足|まんぞく}する。",
+        "kana": "したいようにやって、こころにのこっていたふまんがなくなり、まんぞくする。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1629",
+      "word": "気を遣う",
+      "kana": "きをつかう",
+      "meanings": [
+        "to be considerate",
+        "to worry about (others' feelings)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "personality",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{私|わたし}のことはいいから、そんなに{気|き}を{遣|つか}う{必要|ひつよう}はないよ。",
+          "kana": "わたしのことはいいから、そんなにきをつかうひつようはないよ。",
+          "en": "Don't worry about me, there's no need to be so considerate."
+        },
+        {
+          "ja": "{初対面|しょたいめん}の{人|ひと}と{食事|しょくじ}をするのは、{気|き}を{遣|つか}うので{正直|しょうじき}{疲|つか}れます。",
+          "kana": "しょたいめんのひととしょくじをするのは、きをつかうのでしょうじきつかれます。",
+          "en": "Having a meal with someone I've just met takes a lot of attentiveness, and honestly it tires me out."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{嫌|いや}な{気持|きも}ちにならないように、いろいろ{考|かんが}えて{細|こま}かく{注意|ちゅうい}する。",
+        "kana": "あいてがいやなきもちにならないように、いろいろかんがえてこまかくちゅういする。"
+      },
+      "altForms": [
+        "気を使う"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1630",
+      "word": "気が利く",
+      "kana": "きがきく",
+      "meanings": [
+        "to be attentive",
+        "to be thoughtful"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいアルバイトの{子|こ}は{気|き}が{利|き}くので、お{客|きゃく}さんにも{評判|ひょうばん}がいい。",
+          "kana": "あたらしいアルバイトのこはきがきくので、おきゃくさんにもひょうばんがいい。",
+          "en": "The new part-timer is attentive, so customers speak well of her."
+        },
+        {
+          "ja": "{寒|さむ}そうにしていたら{温|あたた}かいお{茶|ちゃ}を{出|だ}してくれるなんて、{気|き}が{利|き}くね。",
+          "kana": "さむそうにしていたらあたたかいおちゃをだしてくれるなんて、きがきくね。",
+          "en": "You brought me hot tea just because I looked cold; that's so thoughtful of you."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{何|なに}を{望|のぞ}んでいるかに{早|はや}く{気|き}づいて、うまく{行動|こうどう}できる。",
+        "kana": "あいてがなにをのぞんでいるかにはやくきづいて、うまくこうどうできる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1631",
+      "word": "気が重い",
+      "kana": "きがおもい",
+      "meanings": [
+        "to feel reluctant",
+        "to feel weighed down"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}、{上司|じょうし}に{失敗|しっぱい}を{報告|ほうこく}しなければならないと{思|おも}うと{気|き}が{重|おも}い。",
+          "kana": "あした、じょうしにしっぱいをほうこくしなければならないとおもうときがおもい。",
+          "en": "Just thinking that I have to report my mistake to my boss tomorrow weighs on me."
+        },
+        {
+          "ja": "{親|おや}に{借金|しゃっきん}のことを{話|はな}すのは{気|き}が{重|おも}いけれど、{黙|だま}っているわけにもいかない。",
+          "kana": "おやにしゃっきんのことをはなすのはきがおもいけれど、だまっているわけにもいかない。",
+          "en": "I dread telling my parents about the debt, but I can't just keep quiet either."
+        }
+      ],
+      "definitionJa": {
+        "ja": "しなければならないことが{嫌|いや}で、やる{気|き}が{出|で}ず、{心|こころ}が{沈|しず}んでいる。",
+        "kana": "しなければならないことがいやで、やるきがでず、こころがしずんでいる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1632",
+      "word": "気が進まない",
+      "kana": "きがすすまない",
+      "meanings": [
+        "to be unwilling",
+        "to not feel like (doing)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{正直|しょうじき}、{週末|しゅうまつ}の{飲|の}み{会|かい}にはあまり{気|き}が{進|すす}まない。",
+          "kana": "しょうじき、しゅうまつののみかいにはあまりきがすすまない。",
+          "en": "Honestly, I don't much feel like going to the weekend drinking party."
+        },
+        {
+          "ja": "{気|き}が{進|すす}まない{仕事|しごと}ほど、{早|はや}めに{片付|かたづ}けてしまった{方|ほう}が{楽|らく}ですよ。",
+          "kana": "きがすすまないしごとほど、はやめにかたづけてしまったほうがらくですよ。",
+          "en": "The less you feel like doing a task, the better it is to get it out of the way early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それをしたいという{気持|きも}ちになれず、やる{気|き}が{起|お}きない。",
+        "kana": "それをしたいというきもちになれず、やるきがおきない。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1633",
+      "word": "腹が立つ",
+      "kana": "はらがたつ",
+      "meanings": [
+        "to get angry",
+        "to be annoyed"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{平気|へいき}で{約束|やくそく}を{破|やぶ}る{人|ひと}には、{本当|ほんとう}に{腹|はら}が{立|た}つ。",
+          "kana": "へいきでやくそくをやぶるひとには、ほんとうにはらがたつ。",
+          "en": "People who break promises without a second thought really make me angry."
+        },
+        {
+          "ja": "{店員|てんいん}の{態度|たいど}に{腹|はら}が{立|た}つのは{分|わ}かりますが、ここは{落|お}ち{着|つ}きましょう。",
+          "kana": "てんいんのたいどにはらがたつのはわかりますが、ここはおちつきましょう。",
+          "en": "I understand the clerk's attitude makes you angry, but let's calm down here."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{嫌|いや}なことをされたり{言|い}われたりして、{怒|いか}りの{気持|きも}ちが{起|お}こる。",
+        "kana": "いやなことをされたりいわれたりして、いかりのきもちがおこる。"
+      },
+      "confusables": [
+        "v-n2-1659"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1634",
+      "word": "腹を割る",
+      "kana": "はらをわる",
+      "meanings": [
+        "to speak frankly",
+        "to open up"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{相手|あいて}が{腹|はら}を{割|わ}るまで、こちらも{本音|ほんね}は{言|い}わないつもりだ。",
+          "kana": "あいてがはらをわるまで、こちらもほんねはいわないつもりだ。",
+          "en": "Until the other side opens up, I don't intend to say what I really think either."
+        },
+        {
+          "ja": "{上司|じょうし}と{腹|はら}を{割|わ}るつもりで{話|はな}したら、{意外|いがい}に{分|わ}かり{合|あ}えました。",
+          "kana": "じょうしとはらをわるつもりではなしたら、いがいにわかりあえました。",
+          "en": "When I spoke with my boss intending to be completely frank, we understood each other surprisingly well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{隠|かく}していた{本当|ほんとう}の{気持|きも}ちを、{相手|あいて}に{全部|ぜんぶ}{話|はな}す。",
+        "kana": "かくしていたほんとうのきもちを、あいてにぜんぶはなす。"
+      },
+      "notes": "Most often 腹を割って話す (have a frank talk).",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1635",
+      "word": "腹を括る",
+      "kana": "はらをくくる",
+      "meanings": [
+        "to brace oneself",
+        "to make up one's mind"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "もう{逃|に}げられないと{分|わ}かり、{腹|はら}を{括|くく}ることにした。",
+          "kana": "もうにげられないとわかり、はらをくくることにした。",
+          "en": "Realizing I couldn't run from it anymore, I decided to brace myself."
+        },
+        {
+          "ja": "ここまで{来|き}たら{腹|はら}を{括|くく}るしかないと、{彼女|かのじょ}は{静|しず}かに{言|い}った。",
+          "kana": "ここまできたらはらをくくるしかないと、かのじょはしずかにいった。",
+          "en": "Having come this far, there's nothing for it but to steel ourselves, she said quietly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どんな{結果|けっか}になっても{受|う}け{入|い}れようと、{覚悟|かくご}を{決|き}める。",
+        "kana": "どんなけっかになってもうけいれようと、かくごをきめる。"
+      },
+      "altForms": [
+        "腹をくくる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1636",
+      "word": "手が離せない",
+      "kana": "てがはなせない",
+      "meanings": [
+        "to be tied up",
+        "to be unable to leave what one is doing"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{今|いま}は{手|て}が{離|はな}せないので、{十分|じゅっぷん}{後|ご}にこちらから{折|お}り{返|かえ}します。",
+          "kana": "いまはてがはなせないので、じゅっぷんごにこちらからおりかえします。",
+          "en": "I'm tied up right now, so I'll call you back in ten minutes."
+        },
+        {
+          "ja": "{母|はは}は{料理|りょうり}で{手|て}が{離|はな}せないから、{代|か}わりに{君|きみ}が{出|で}てくれる？",
+          "kana": "はははりょうりでてがはなせないから、かわりにきみがでてくれる？",
+          "en": "Mom's busy cooking and can't step away, so could you get the door instead?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}していることを{途中|とちゅう}でやめられないほど、{忙|いそが}しい。",
+        "kana": "いましていることをとちゅうでやめられないほど、いそがしい。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1637",
+      "word": "手を抜く",
+      "kana": "てをぬく",
+      "meanings": [
+        "to cut corners",
+        "to slack off (on a task)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "どんなに{小|ちい}さな{仕事|しごと}でも、{決|けっ}して{手|て}を{抜|ぬ}くな。",
+          "kana": "どんなにちいさなしごとでも、けっしててをぬくな。",
+          "en": "No matter how small the job, never cut corners."
+        },
+        {
+          "ja": "{最後|さいご}の{確認|かくにん}で{手|て}を{抜|ぬ}くと、{後|あと}で{大|おお}きな{問題|もんだい}になりますよ。",
+          "kana": "さいごのかくにんでてをぬくと、あとでおおきなもんだいになりますよ。",
+          "en": "If you cut corners on the final check, it will turn into a big problem later."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本来|ほんらい}かけるべき{努力|どりょく}や{注意|ちゅうい}を{省|はぶ}いて、{適当|てきとう}に{済|す}ませる。",
+        "kana": "ほんらいかけるべきどりょくやちゅういをはぶいて、てきとうにすませる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1638",
+      "word": "手に負えない",
+      "kana": "てにおえない",
+      "meanings": [
+        "to be unmanageable",
+        "to be beyond one's control"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "この{問題|もんだい}は{私|わたし}{一人|ひとり}では{手|て}に{負|お}えないので、{専門家|せんもんか}に{相談|そうだん}しよう。",
+          "kana": "このもんだいはわたしひとりではてにおえないので、せんもんかにそうだんしよう。",
+          "en": "This problem is more than I can handle alone, so let's consult an expert."
+        },
+        {
+          "ja": "{元気|げんき}すぎる{子犬|こいぬ}は、{時々|ときどき}{手|て}に{負|お}えないほど{暴|あば}れることがあります。",
+          "kana": "げんきすぎるこいぬは、ときどきてにおえないほどあばれることがあります。",
+          "en": "An overly energetic puppy sometimes romps around so much that it's impossible to control."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{力|ちから}では、どうにもできない。{扱|あつか}いが{難|むずか}しすぎる。",
+        "kana": "じぶんのちからでは、どうにもできない。あつかいがむずかしすぎる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1639",
+      "word": "手が回らない",
+      "kana": "てがまわらない",
+      "meanings": [
+        "to be unable to get around to",
+        "to be too busy to attend to"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{注文|ちゅうもん}が{多|おお}すぎて、{細|こま}かい{作業|さぎょう}まで{手|て}が{回|まわ}らない。",
+          "kana": "ちゅうもんがおおすぎて、こまかいさぎょうまでてがまわらない。",
+          "en": "There are so many orders that I can't get around to the finer work."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{準備|じゅんび}で、{庭|にわ}の{手入|てい}れまでは{手|て}が{回|まわ}らない{状態|じょうたい}です。",
+          "kana": "ひっこしのじゅんびで、にわのていれまではてがまわらないじょうたいです。",
+          "en": "With preparations for the move, I'm in no position to get around to the garden too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{忙|いそが}しすぎて、そこまで{注意|ちゅうい}や{力|ちから}を{向|む}ける{余裕|よゆう}がない。",
+        "kana": "いそがしすぎて、そこまでちゅういやちからをむけるよゆうがない。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1640",
+      "word": "足を運ぶ",
+      "kana": "あしをはこぶ",
+      "meanings": [
+        "to go (somewhere) in person",
+        "to make the trip to"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "actions",
+        "travel",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "わざわざ{遠|とお}くまで{足|あし}を{運|はこ}ぶ{価値|かち}のある{店|みせ}だ。",
+          "kana": "わざわざとおくまであしをはこぶかちのあるみせだ。",
+          "en": "It's a restaurant worth making the trip all the way out for."
+        },
+        {
+          "ja": "{何度|なんど}も{役所|やくしょ}に{足|あし}を{運|はこ}ぶのが{面倒|めんどう}で、ネットで{手続|てつづ}きを{済|す}ませました。",
+          "kana": "なんどもやくしょにあしをはこぶのがめんどうで、ネットでてつづきをすませました。",
+          "en": "It was a hassle to keep going to the city office in person, so I completed the paperwork online."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{所|ところ}へ、わざわざ{自分|じぶん}で{出|で}かけて{行|い}く。",
+        "kana": "あるところへ、わざわざじぶんででかけていく。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1641",
+      "word": "足が出る",
+      "kana": "あしがでる",
+      "meanings": [
+        "to go over budget",
+        "to run a deficit"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "このままだと、{旅行|りょこう}の{予算|よさん}から{少|すこ}し{足|あし}が{出|で}るかもしれない。",
+          "kana": "このままだと、りょこうのよさんからすこしあしがでるかもしれない。",
+          "en": "At this rate we might go a little over the travel budget."
+        },
+        {
+          "ja": "{材料費|ざいりょうひ}が{思|おも}ったより{高|たか}くて、{今月|こんげつ}は{二万円|にまんえん}ほど{足|あし}が{出|で}る{計算|けいさん}になった。",
+          "kana": "ざいりょうひがおもったよりたかくて、こんげつはにまんえんほどあしがでるけいさんになった。",
+          "en": "Materials cost more than expected, and by my count we'll be about twenty thousand yen over budget this month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{使|つか}った{金額|きんがく}が、{決|き}めていた{予算|よさん}より{多|おお}くなる。",
+        "kana": "つかったきんがくが、きめていたよさんよりおおくなる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1642",
+      "word": "足を引っ張る",
+      "kana": "あしをひっぱる",
+      "meanings": [
+        "to hold (someone) back",
+        "to drag down (a team)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "チームの{足|あし}を{引|ひ}っ{張|ぱ}るわけにはいかないので、{必死|ひっし}に{練習|れんしゅう}した。",
+          "kana": "チームのあしをひっぱるわけにはいかないので、ひっしにれんしゅうした。",
+          "en": "I couldn't afford to hold the team back, so I practiced desperately."
+        },
+        {
+          "ja": "{新人|しんじん}だった{頃|ころ}は、{先輩|せんぱい}たちの{足|あし}を{引|ひ}っ{張|ぱ}ることばかりで{申|もう}し{訳|わけ}なかった。",
+          "kana": "しんじんだったころは、せんぱいたちのあしをひっぱることばかりでもうしわけなかった。",
+          "en": "When I was new, I felt bad for constantly holding my seniors back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仲間|なかま}や{全体|ぜんたい}の{成功|せいこう}の{邪魔|じゃま}になって、{迷惑|めいわく}をかける。",
+        "kana": "なかまやぜんたいのせいこうのじゃまになって、めいわくをかける。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1643",
+      "word": "顔が広い",
+      "kana": "かおがひろい",
+      "meanings": [
+        "to be well-connected",
+        "to know many people"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "people",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんは{業界|ぎょうかい}で{顔|かお}が{広|ひろ}いので、{紹介|しょうかい}を{頼|たの}んでみよう。",
+          "kana": "たなかさんはぎょうかいでかおがひろいので、しょうかいをたのんでみよう。",
+          "en": "Mr. Tanaka is well-connected in the industry, so let's ask him for an introduction."
+        },
+        {
+          "ja": "{祖母|そぼ}はこの{町|まち}で{顔|かお}が{広|ひろ}いから、{一緒|いっしょ}に{歩|ある}くと{何度|なんど}も{呼|よ}び{止|と}められる。",
+          "kana": "そぼはこのまちでかおがひろいから、いっしょにあるくとなんどもよびとめられる。",
+          "en": "My grandmother knows everyone in this town, so when we walk together she gets stopped again and again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{知|し}り{合|あ}いが{多|おお}くて、いろいろな{人|ひと}とつながりがある。",
+        "kana": "しりあいがおおくて、いろいろなひととつながりがある。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1644",
+      "word": "顔を立てる",
+      "kana": "かおをたてる",
+      "meanings": [
+        "to save (someone's) face",
+        "to show respect to"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "ここは{先輩|せんぱい}の{顔|かお}を{立|た}てるべきだと{思|おも}って、{黙|だま}っておいた。",
+          "kana": "ここはせんぱいのかおをたてるべきだとおもって、だまっておいた。",
+          "en": "I thought I should save our senior's face here, so I kept quiet."
+        },
+        {
+          "ja": "{部長|ぶちょう}の{顔|かお}を{立|た}てるために、{会議|かいぎ}では{彼|かれ}の{案|あん}に{賛成|さんせい}しておきました。",
+          "kana": "ぶちょうのかおをたてるために、かいぎではかれのあんにさんせいしておきました。",
+          "en": "To save the department head's face, I went along with his proposal at the meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{立場|たちば}や{名誉|めいよ}が{傷|きず}つかないように、{尊重|そんちょう}した{態度|たいど}を{取|と}る。",
+        "kana": "あいてのたちばやめいよがきずつかないように、そんちょうしたたいどをとる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1645",
+      "word": "顔から火が出る",
+      "kana": "かおからひがでる",
+      "meanings": [
+        "to blush with shame",
+        "to be mortified"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{大勢|おおぜい}の{前|まえ}で{人|ひと}の{名前|なまえ}を{間違|まちが}えて、{顔|かお}から{火|ひ}が{出|で}る{思|おも}いだった。",
+          "kana": "おおぜいのまえでひとのなまえをまちがえて、かおからひがでるおもいだった。",
+          "en": "I got someone's name wrong in front of a crowd and wanted to sink into the floor."
+        },
+        {
+          "ja": "{昔|むかし}{書|か}いた{日記|にっき}を{読|よ}み{返|かえ}すと、{顔|かお}から{火|ひ}が{出|で}るほど{恥|は}ずかしい。",
+          "kana": "むかしかいたにっきをよみかえすと、かおからひがでるほどはずかしい。",
+          "en": "Rereading the diary I wrote long ago is so embarrassing my face burns."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{恥|は}ずかしくて、{顔|かお}が{真|ま}っ{赤|か}になる。",
+        "kana": "とてもはずかしくて、かおがまっかになる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1646",
+      "word": "目が高い",
+      "kana": "めがたかい",
+      "meanings": [
+        "to have a good eye",
+        "to have discerning taste"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "shopping",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "さすがお{目|め}が{高|たか}い。それは{当店|とうてん}で{一番|いちばん}{人気|にんき}の{品|しな}です。",
+          "kana": "さすがおめがたかい。それはとうてんでいちばんにんきのしなです。",
+          "en": "You have a good eye. That's the most popular item in our shop."
+        },
+        {
+          "ja": "{絵|え}を{見|み}る{目|め}が{高|たか}い{祖父|そふ}は、{若|わか}い{画家|がか}の{才能|さいのう}を{次々|つぎつぎ}と{見|み}つけ{出|だ}した。",
+          "kana": "えをみるめがたかいそふは、わかいがかのさいのうをつぎつぎとみつけだした。",
+          "en": "My grandfather, who had a fine eye for paintings, discovered one talented young painter after another."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本当|ほんとう}に{価値|かち}のあるものを、{正|ただ}しく{選|えら}び{出|だ}す{力|ちから}がある。",
+        "kana": "ほんとうにかちのあるものを、ただしくえらびだすちからがある。"
+      },
+      "notes": "To a customer, usually お目が高い.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1647",
+      "word": "目を通す",
+      "kana": "めをとおす",
+      "meanings": [
+        "to look over",
+        "to skim through"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{前|まえ}に、{必|かなら}ず{資料|しりょう}に{目|め}を{通|とお}すようにしている。",
+          "kana": "かいぎのまえに、かならずしりょうにめをとおすようにしている。",
+          "en": "I make a point of looking over the materials before a meeting."
+        },
+        {
+          "ja": "{届|とど}いたメールにざっと{目|め}を{通|とお}すだけでも、{朝|あさ}は{三十分|さんじゅっぷん}かかります。",
+          "kana": "とどいたメールにざっとめをとおすだけでも、あさはさんじゅっぷんかかります。",
+          "en": "Even just skimming the emails that have come in takes me thirty minutes in the morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{書類|しょるい}や{本|ほん}などを、{最初|さいしょ}から{最後|さいご}までざっと{読|よ}む。",
+        "kana": "しょるいやほんなどを、さいしょからさいごまでざっとよむ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1648",
+      "word": "目に余る",
+      "kana": "めにあまる",
+      "meanings": [
+        "to be intolerable",
+        "to be too much to overlook"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}の{彼|かれ}の{遅刻|ちこく}は{目|め}に{余|あま}るので、{一度|いちど}{注意|ちゅうい}した{方|ほう}がいい。",
+          "kana": "さいきんのかれのちこくはめにあまるので、いちどちゅういしたほうがいい。",
+          "en": "His recent lateness has become intolerable; someone should have a word with him."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}での{大声|おおごえ}の{電話|でんわ}は{目|め}に{余|あま}るものがあり、{周|まわ}りの{客|きゃく}も{迷惑|めいわく}そうだった。",
+          "kana": "でんしゃのなかでのおおごえのでんわはめにあまるものがあり、まわりのきゃくもめいわくそうだった。",
+          "en": "His loud phone call on the train was more than anyone could ignore, and the other passengers looked bothered too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あまりにひどくて、{黙|だま}って{見|み}ていられない。",
+        "kana": "あまりにひどくて、だまってみていられない。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1649",
+      "word": "目がない",
+      "kana": "めがない",
+      "meanings": [
+        "to have a weakness for",
+        "to be crazy about"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "food",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{甘|あま}いものには{目|め}がないので、ケーキを{見|み}ると{我慢|がまん}できない。",
+          "kana": "あまいものにはめがないので、ケーキをみるとがまんできない。",
+          "en": "I have a weakness for sweets, so when I see cake I can't resist."
+        },
+        {
+          "ja": "{古|ふる}いカメラに{目|め}がない{父|ちち}は、{給料|きゅうりょう}の{半分|はんぶん}を{使|つか}ってしまったこともある。",
+          "kana": "ふるいカメラにめがないちちは、きゅうりょうのはんぶんをつかってしまったこともある。",
+          "en": "My father, who's crazy about old cameras, has even blown half his salary on them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それが{大好|だいす}きで、{見|み}ると{我慢|がまん}できないほど{心|こころ}を{引|ひ}かれる。",
+        "kana": "それがだいすきで、みるとがまんできないほどこころをひかれる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1650",
+      "word": "耳が痛い",
+      "kana": "みみがいたい",
+      "meanings": [
+        "to be painful to hear (because true)",
+        "to hit a nerve"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{医者|いしゃ}に{運動|うんどう}{不足|ぶそく}を{指摘|してき}されるたびに、{耳|みみ}が{痛|いた}い。",
+          "kana": "いしゃにうんどうぶそくをしてきされるたびに、みみがいたい。",
+          "en": "Every time the doctor points out my lack of exercise, it hits a nerve."
+        },
+        {
+          "ja": "{無駄遣|むだづか}いが{多|おお}いという{妻|つま}の{言葉|ことば}は、{正直|しょうじき}{耳|みみ}が{痛|いた}いです。",
+          "kana": "むだづかいがおおいというつまのことばは、しょうじきみみがいたいです。",
+          "en": "My wife's words about my wasteful spending hit a nerve, to be honest."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{悪|わる}いところを{言|い}われて、{聞|き}くのがつらい。",
+        "kana": "じぶんのわるいところをいわれて、きくのがつらい。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1651",
+      "word": "耳を傾ける",
+      "kana": "みみをかたむける",
+      "meanings": [
+        "to listen attentively",
+        "to lend an ear to"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{反対|はんたい}{意見|いけん}にも{耳|みみ}を{傾|かたむ}けることが、よいリーダーの{条件|じょうけん}だ。",
+          "kana": "はんたいいけんにもみみをかたむけることが、よいリーダーのじょうけんだ。",
+          "en": "Listening to opposing opinions too is a requirement for a good leader."
+        },
+        {
+          "ja": "{子|こ}どもの{話|はなし}に{耳|みみ}を{傾|かたむ}ける{時間|じかん}を、{毎日|まいにち}{少|すこ}しでも{作|つく}るようにしています。",
+          "kana": "こどものはなしにみみをかたむけるじかんを、まいにちすこしでもつくるようにしています。",
+          "en": "I try to make time every day, even just a little, to really listen to my kids."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{話|はなし}を、{注意深|ちゅういぶか}く{熱心|ねっしん}に{聞|き}く。",
+        "kana": "あいてのはなしを、ちゅういぶかくねっしんにきく。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1652",
+      "word": "口が堅い",
+      "kana": "くちがかたい",
+      "meanings": [
+        "to be tight-lipped",
+        "to keep secrets well"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{口|くち}が{堅|かた}いから、{安心|あんしん}して{相談|そうだん}できる。",
+          "kana": "かれはくちがかたいから、あんしんしてそうだんできる。",
+          "en": "He's tight-lipped, so I can confide in him without worry."
+        },
+        {
+          "ja": "この{仕事|しごと}は{口|くち}が{堅|かた}い{人|ひと}にしか{任|まか}せられないと、{社長|しゃちょう}は{言|い}いました。",
+          "kana": "このしごとはくちがかたいひとにしかまかせられないと、しゃちょうはいいました。",
+          "en": "The president said this job can only be entrusted to someone who can keep a secret."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{秘密|ひみつ}を{守|まも}って、{言|い}ってはいけないことを{人|ひと}に{話|はな}さない。",
+        "kana": "ひみつをまもって、いってはいけないことをひとにはなさない。"
+      },
+      "altForms": [
+        "口が固い"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1653",
+      "word": "口を挟む",
+      "kana": "くちをはさむ",
+      "meanings": [
+        "to butt in",
+        "to interrupt (a conversation)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{人|ひと}の{話|はなし}の{途中|とちゅう}で{口|くち}を{挟|はさ}むのは{失礼|しつれい}だ。",
+          "kana": "ひとのはなしのとちゅうでくちをはさむのはしつれいだ。",
+          "en": "Butting in while someone is talking is rude."
+        },
+        {
+          "ja": "{夫婦|ふうふ}の{問題|もんだい}に{他人|たにん}が{口|くち}を{挟|はさ}むべきではないと{思|おも}い、{黙|だま}っていました。",
+          "kana": "ふうふのもんだいにたにんがくちをはさむべきではないとおもい、だまっていました。",
+          "en": "I kept quiet, feeling that an outsider shouldn't butt into a married couple's problems."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{他人|たにん}が{話|はな}している{途中|とちゅう}に、{横|よこ}から{自分|じぶん}の{意見|いけん}を{言|い}う。",
+        "kana": "たにんがはなしているとちゅうに、よこからじぶんのいけんをいう。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1654",
+      "word": "口が滑る",
+      "kana": "くちがすべる",
+      "meanings": [
+        "to let slip",
+        "to say something one shouldn't"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "お{酒|さけ}の{席|せき}では{口|くち}が{滑|すべ}ることがあるから、{気|き}をつけよう。",
+          "kana": "おさけのせきではくちがすべることがあるから、きをつけよう。",
+          "en": "You can let things slip when drinking, so let's be careful."
+        },
+        {
+          "ja": "つい{口|くち}が{滑|すべ}るのが{私|わたし}の{悪|わる}い{癖|くせ}で、サプライズを{何度|なんど}もだめにしてきた。",
+          "kana": "ついくちがすべるのがわたしのわるいくせで、サプライズをなんどもだめにしてきた。",
+          "en": "Letting things slip is a bad habit of mine; I've ruined many a surprise."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言|い}うつもりのなかったことを、うっかり{話|はな}してしまう。",
+        "kana": "いうつもりのなかったことを、うっかりはなしてしまう。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1655",
+      "word": "鼻が高い",
+      "kana": "はながたかい",
+      "meanings": [
+        "to be proud",
+        "to hold one's head high"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{娘|むすめ}が{大|おお}きな{賞|しょう}を{取|と}って、{親|おや}として{鼻|はな}が{高|たか}い。",
+          "kana": "むすめがおおきなしょうをとって、おやとしてはながたかい。",
+          "en": "My daughter won a major award, and as a parent I'm proud."
+        },
+        {
+          "ja": "{自分|じぶん}の{育|そだ}てた{選手|せんしゅ}が{代表|だいひょう}に{選|えら}ばれて、コーチは{鼻|はな}が{高|たか}いでしょうね。",
+          "kana": "じぶんのそだてたせんしゅがだいひょうにえらばれて、コーチははながたかいでしょうね。",
+          "en": "With a player he trained chosen for the national team, the coach must be bursting with pride."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自慢|じまん}したい{気持|きも}ちで、{得意|とくい}になっている。{誇|ほこ}らしい。",
+        "kana": "じまんしたいきもちで、とくいになっている。ほこらしい。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1656",
+      "word": "鼻にかける",
+      "kana": "はなにかける",
+      "meanings": [
+        "to be stuck-up about",
+        "to brag about"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{学歴|がくれき}を{鼻|はな}にかけるような{人|ひと}とは、{一緒|いっしょ}に{働|はたら}きたくない。",
+          "kana": "がくれきをはなにかけるようなひととは、いっしょにはたらきたくない。",
+          "en": "I don't want to work with someone who is stuck-up about their education."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{有名|ゆうめい}な{家|いえ}の{出身|しゅっしん}ですが、それを{鼻|はな}にかけることは{一度|いちど}もありませんでした。",
+          "kana": "かのじょはゆうめいないえのしゅっしんですが、それをはなにかけることはいちどもありませんでした。",
+          "en": "She comes from a famous family, but she never once lorded it over anyone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{良|よ}い{点|てん}や{力|ちから}を{自慢|じまん}して、{偉|えら}そうな{態度|たいど}を{取|と}る。",
+        "kana": "じぶんのよいてんやちからをじまんして、えらそうなたいどをとる。"
+      },
+      "altForms": [
+        "鼻に掛ける"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1657",
+      "word": "頭が上がらない",
+      "kana": "あたまがあがらない",
+      "meanings": [
+        "to be unable to stand up to",
+        "to feel indebted and deferential"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "people",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{学生|がくせい}{時代|じだい}に{世話|せわ}になった{先輩|せんぱい}には、{今|いま}でも{頭|あたま}が{上|あ}がらない。",
+          "kana": "がくせいじだいにせわになったせんぱいには、いまでもあたまがあがらない。",
+          "en": "I still can't hold my head up around the senior who looked after me in my student days."
+        },
+        {
+          "ja": "{毎日|まいにち}{弁当|べんとう}を{作|つく}ってくれる{妻|つま}には、{本当|ほんとう}に{頭|あたま}が{上|あ}がらないよ。",
+          "kana": "まいにちべんとうをつくってくれるつまには、ほんとうにあたまがあがらないよ。",
+          "en": "I really can't hold my head up around my wife, who makes my lunch every single day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世話|せわ}になった{相手|あいて}や{立場|たちば}が{上|うえ}の{人|ひと}に{対|たい}して、{強|つよ}く{出|で}られない。",
+        "kana": "せわになったあいてやたちばがうえのひとにたいして、つよくでられない。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1658",
+      "word": "頭を冷やす",
+      "kana": "あたまをひやす",
+      "meanings": [
+        "to cool one's head",
+        "to calm down"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{言|い}い{合|あ}いになりそうだったので、{外|そと}を{歩|ある}いて{頭|あたま}を{冷|ひ}やすことにした。",
+          "kana": "いいあいになりそうだったので、そとをあるいてあたまをひやすことにした。",
+          "en": "It was turning into an argument, so I decided to take a walk outside and cool off."
+        },
+        {
+          "ja": "{興奮|こうふん}している{時|とき}に{返事|へんじ}をするより、{一晩|ひとばん}{頭|あたま}を{冷|ひ}やすほうがいいですよ。",
+          "kana": "こうふんしているときにへんじをするより、ひとばんあたまをひやすほうがいいですよ。",
+          "en": "Rather than replying while you're worked up, it's better to sleep on it and cool off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{興奮|こうふん}した{気持|きも}ちを{落|お}ち{着|つ}かせて、{冷静|れいせい}になる。",
+        "kana": "こうふんしたきもちをおちつかせて、れいせいになる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1659",
+      "word": "頭にくる",
+      "kana": "あたまにくる",
+      "meanings": [
+        "to get mad",
+        "to be infuriated"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "{何度|なんど}{注意|ちゅうい}しても{直|なお}らないので、さすがに{頭|あたま}にくる。",
+          "kana": "なんどちゅういしてもなおらないので、さすがにあたまにくる。",
+          "en": "No matter how many times I point it out, it doesn't improve, and honestly it makes me mad."
+        },
+        {
+          "ja": "{約束|やくそく}を{忘|わす}れたうえに{謝|あやま}りもしないなんて、{頭|あたま}にくるよ。",
+          "kana": "やくそくをわすれたうえにあやまりもしないなんて、あたまにくるよ。",
+          "en": "He forgot our plans and didn't even apologize; that really makes me mad."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}のひどい{言葉|ことば}や{態度|たいど}に、かっとなって{怒|おこ}る。",
+        "kana": "あいてのひどいことばやたいどに、かっとなっておこる。"
+      },
+      "altForms": [
+        "頭に来る"
+      ],
+      "confusables": [
+        "v-n2-1633"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1660",
+      "word": "肩を持つ",
+      "kana": "かたをもつ",
+      "meanings": [
+        "to side with",
+        "to take (someone's) side"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "family",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}はけんかになると、いつも{弟|おとうと}の{肩|かた}を{持|も}つ。",
+          "kana": "はははけんかになると、いつもおとうとのかたをもつ。",
+          "en": "Whenever we fight, my mother always sides with my little brother."
+        },
+        {
+          "ja": "どちらの{肩|かた}を{持|も}つつもりもないので、{二人|ふたり}で{話|はな}し{合|あ}ってください。",
+          "kana": "どちらのかたをもつつもりもないので、ふたりではなしあってください。",
+          "en": "I don't intend to take either side, so please talk it out between the two of you."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{争|あらそ}っている{一方|いっぽう}の{味方|みかた}をして、その{人|ひと}を{支|ささ}える。",
+        "kana": "あらそっているいっぽうのみかたをして、そのひとをささえる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1661",
+      "word": "肩の荷が下りる",
+      "kana": "かたのにがおりる",
+      "meanings": [
+        "to feel a weight off one's shoulders"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{発表|はっぴょう}さえ{終|お}われば、やっと{肩|かた}の{荷|に}が{下|お}りる。",
+          "kana": "はっぴょうさえおわれば、やっとかたのにがおりる。",
+          "en": "Once the presentation is over, it'll finally be a weight off my shoulders."
+        },
+        {
+          "ja": "{娘|むすめ}の{就職|しゅうしょく}が{決|き}まって、{親|おや}として{肩|かた}の{荷|に}が{下|お}りる{思|おも}いがしました。",
+          "kana": "むすめのしゅうしょくがきまって、おやとしてかたのにがおりるおもいがしました。",
+          "en": "With my daughter's job settled, I felt a weight lift off my shoulders as a parent."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{責任|せきにん}や{心配|しんぱい}ごとがなくなって、ほっとする。",
+        "kana": "せきにんやしんぱいごとがなくなって、ほっとする。"
+      },
+      "altForms": [
+        "肩の荷が降りる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1662",
+      "word": "腰が低い",
+      "kana": "こしがひくい",
+      "meanings": [
+        "to be modest",
+        "to be humble (in manner)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{社長|しゃちょう}は{腰|こし}が{低|ひく}い{人|ひと}で、{新人|しんじん}にも{丁寧|ていねい}に{挨拶|あいさつ}する。",
+          "kana": "しゃちょうはこしがひくいひとで、しんじんにもていねいにあいさつする。",
+          "en": "The president is a modest man and greets even new hires politely."
+        },
+        {
+          "ja": "あれだけ{有名|ゆうめい}になっても{腰|こし}が{低|ひく}いところが、{彼女|かのじょ}が{愛|あい}される{理由|りゆう}でしょう。",
+          "kana": "あれだけゆうめいになってもこしがひくいところが、かのじょがあいされるりゆうでしょう。",
+          "en": "The fact that she stays so modest despite all her fame is probably why people love her."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{偉|えら}そうにせず、{誰|だれ}に{対|たい}しても{丁寧|ていねい}で{謙虚|けんきょ}な{態度|たいど}を{取|と}る。",
+        "kana": "えらそうにせず、だれにたいしてもていねいでけんきょなたいどをとる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1663",
+      "word": "腰を据える",
+      "kana": "こしをすえる",
+      "meanings": [
+        "to settle down (to a task)",
+        "to commit oneself to (a place or job)"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{転職|てんしょく}を{繰|く}り{返|かえ}すより、{一|ひと}つの{会社|かいしゃ}で{腰|こし}を{据|す}える{方|ほう}がいい{場合|ばあい}もある。",
+          "kana": "てんしょくをくりかえすより、ひとつのかいしゃでこしをすえるほうがいいばあいもある。",
+          "en": "Sometimes it's better to settle in at one company than to keep changing jobs."
+        },
+        {
+          "ja": "この{問題|もんだい}は{腰|こし}を{据|す}える{覚悟|かくご}で{取|と}り{組|く}まないと、{解決|かいけつ}できないでしょう。",
+          "kana": "このもんだいはこしをすえるかくごでとりくまないと、かいけつできないでしょう。",
+          "en": "Unless we're prepared to settle in and tackle this problem properly, we won't solve it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{落|お}ち{着|つ}いて、{一|ひと}つのことにじっくり{取|と}り{組|く}む。また、そこに{長|なが}くとどまる。",
+        "kana": "おちついて、ひとつのことにじっくりとりくむ。また、そこにながくとどまる。"
+      },
+      "notes": "Often 腰を据えて取り組む (tackle something in earnest).",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1664",
+      "word": "胸を張る",
+      "kana": "むねをはる",
+      "meanings": [
+        "to stand tall",
+        "to be openly proud"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{全力|ぜんりょく}を{尽|つ}くしたのだから、{結果|けっか}がどうであれ{胸|むね}を{張|は}るべきだ。",
+          "kana": "ぜんりょくをつくしたのだから、けっかがどうであれむねをはるべきだ。",
+          "en": "You gave it everything, so whatever the result, you should hold your head high."
+        },
+        {
+          "ja": "{小|ちい}さな{店|みせ}ですが、{味|あじ}だけは{誰|だれ}にでも{胸|むね}を{張|は}ることができます。",
+          "kana": "ちいさなみせですが、あじだけはだれにでもむねをはることができます。",
+          "en": "It's a small restaurant, but when it comes to the food, I can hold my head high in front of anyone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自信|じしん}や{誇|ほこ}りを{持|も}って、{恐|おそ}れずにしっかりした{態度|たいど}を{取|と}る。",
+        "kana": "じしんやほこりをもって、おそれずにしっかりしたたいどをとる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1665",
+      "word": "胸が一杯になる",
+      "kana": "むねがいっぱいになる",
+      "meanings": [
+        "to be overcome with emotion",
+        "to have one's heart full"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{息子|むすこ}の{成長|せいちょう}した{姿|すがた}を{見|み}るたびに、{胸|むね}が{一杯|いっぱい}になる。",
+          "kana": "むすこのせいちょうしたすがたをみるたびに、むねがいっぱいになる。",
+          "en": "Every time I see how much my son has grown, my heart fills up."
+        },
+        {
+          "ja": "{二十年|にじゅうねん}ぶりに{恩師|おんし}と{再会|さいかい}して、{胸|むね}が{一杯|いっぱい}になるのを{感|かん}じました。",
+          "kana": "にじゅうねんぶりにおんしとさいかいして、むねがいっぱいになるのをかんじました。",
+          "en": "Meeting my old teacher again after twenty years, I felt my heart swell with emotion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{感動|かんどう}や{喜|よろこ}び、{悲|かな}しみなどの{気持|きも}ちが{強|つよ}くて、{言葉|ことば}にならない。",
+        "kana": "かんどうやよろこび、かなしみなどのきもちがつよくて、ことばにならない。"
+      },
+      "altForms": [
+        "胸がいっぱいになる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1666",
+      "word": "骨が折れる",
+      "kana": "ほねがおれる",
+      "meanings": [
+        "to be laborious",
+        "to be hard work"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "states",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{資料|しりょう}を{一枚|いちまい}ずつ{確認|かくにん}するのは、なかなか{骨|ほね}が{折|お}れる。",
+          "kana": "ふるいしりょうをいちまいずつかくにんするのは、なかなかほねがおれる。",
+          "en": "Checking old documents one sheet at a time is quite laborious."
+        },
+        {
+          "ja": "{子|こ}どもに{野菜|やさい}を{食|た}べさせるのは{骨|ほね}が{折|お}れる{仕事|しごと}だと、{母|はは}はよく{言|い}っていました。",
+          "kana": "こどもにやさいをたべさせるのはほねがおれるしごとだと、はははよくいっていました。",
+          "en": "My mother often said that getting kids to eat vegetables is hard work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{手間|てま}や{力|ちから}がかかって、とても{大変|たいへん}である。",
+        "kana": "てまやちからがかかって、とてもたいへんである。"
+      },
+      "notes": "Literal sense (to break a bone) also exists; context decides.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1667",
+      "word": "頭が固い",
+      "kana": "あたまがかたい",
+      "meanings": [
+        "to be stubborn",
+        "to be inflexible"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "personality",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{頭|あたま}が{固|かた}いから、{新|あたら}しいやり{方|かた}をなかなか{認|みと}めようとしない。",
+          "kana": "ちちはあたまがかたいから、あたらしいやりかたをなかなかみとめようとしない。",
+          "en": "My father is inflexible, so he won't readily accept new ways of doing things."
+        },
+        {
+          "ja": "{自分|じぶん}では{柔軟|じゅうなん}なつもりでも、{若|わか}い{社員|しゃいん}から{見|み}れば{頭|あたま}が{固|かた}いのかもしれません。",
+          "kana": "じぶんではじゅうなんなつもりでも、わかいしゃいんからみればあたまがかたいのかもしれません。",
+          "en": "I think of myself as flexible, but to the young staff I may well seem set in my ways."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}え{方|かた}が{変|か}えられず、{新|あたら}しいものや{他人|たにん}の{意見|いけん}を{受|う}け{入|い}れない。",
+        "kana": "かんがえかたがかえられず、あたらしいものやたにんのいけんをうけいれない。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1668",
+      "word": "気が散る",
+      "kana": "きがちる",
+      "meanings": [
+        "to get distracted",
+        "to lose concentration"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "study",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "スマホが{近|ちか}くにあると{気|き}が{散|ち}るので、{勉強中|べんきょうちゅう}は{別|べつ}の{部屋|へや}に{置|お}いている。",
+          "kana": "スマホがちかくにあるときがちるので、べんきょうちゅうはべつのへやにおいている。",
+          "en": "Having my phone nearby distracts me, so I keep it in another room while studying."
+        },
+        {
+          "ja": "{外|そと}の{工事|こうじ}の{音|おと}で{気|き}が{散|ち}るから、{今日|きょう}は{図書館|としょかん}で{勉強|べんきょう}しようかな。",
+          "kana": "そとのこうじのおとできがちるから、きょうはとしょかんでべんきょうしようかな。",
+          "en": "The construction noise outside is distracting, so maybe I'll study at the library today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかのことが{気|き}になって、{一|ひと}つのことに{集中|しゅうちゅう}できなくなる。",
+        "kana": "ほかのことがきになって、ひとつのことにしゅうちゅうできなくなる。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1669",
+      "word": "目が回る",
+      "kana": "めがまわる",
+      "meanings": [
+        "to feel dizzy",
+        "to be hectically busy"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "body",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}は{注文|ちゅうもん}が{集中|しゅうちゅう}して、{目|め}が{回|まわ}るほど{忙|いそが}しい。",
+          "kana": "ねんまつはちゅうもんがしゅうちゅうして、めがまわるほどいそがしい。",
+          "en": "At year-end orders pile up, and it's dizzyingly busy."
+        },
+        {
+          "ja": "{久|ひさ}しぶりに{遊園地|ゆうえんち}のコーヒーカップに{乗|の}ったら、{目|め}が{回|まわ}るどころか{気分|きぶん}が{悪|わる}くなった。",
+          "kana": "ひさしぶりにゆうえんちのコーヒーカップにのったら、めがまわるどころかきぶんがわるくなった。",
+          "en": "I rode the spinning teacups at the amusement park for the first time in ages, and far from just getting dizzy, I felt sick."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{頭|あたま}がくらくらして、ふらつく。また、とても{忙|いそが}しい。",
+        "kana": "あたまがくらくらして、ふらつく。また、とてもいそがしい。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1670",
+      "word": "猿も木から落ちる",
+      "kana": "さるもきからおちる",
+      "meanings": [
+        "even experts make mistakes",
+        "even monkeys fall from trees"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{猿|さる}も{木|き}から{落|お}ちると{言|い}うように、ベテランでもミスをすることはある。",
+          "kana": "さるもきからおちるというように、ベテランでもミスをすることはある。",
+          "en": "As the saying goes, even monkeys fall from trees; even veterans make mistakes sometimes."
+        },
+        {
+          "ja": "あのプロが{簡単|かんたん}な{計算|けいさん}を{間違|まちが}えるなんて、まさに{猿|さる}も{木|き}から{落|お}ちるだね。",
+          "kana": "あのプロがかんたんなけいさんをまちがえるなんて、まさにさるもきからおちるだね。",
+          "en": "That pro getting a simple calculation wrong is a real case of even monkeys falling from trees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どんなに{上手|じょうず}な{人|ひと}でも、たまには{失敗|しっぱい}することがあるということ。",
+        "kana": "どんなにじょうずなひとでも、たまにはしっぱいすることがあるということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1671",
+      "word": "七転び八起き",
+      "kana": "ななころびやおき",
+      "meanings": [
+        "fall seven times, get up eight",
+        "never giving up despite setbacks"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{七転|ななころ}び{八起|やお}きの{精神|せいしん}で、{何度|なんど}{失敗|しっぱい}しても{挑戦|ちょうせん}し{続|つづ}けた。",
+          "kana": "ななころびやおきのせいしんで、なんどしっぱいしてもちょうせんしつづけた。",
+          "en": "In the spirit of 'fall seven times, get up eight,' I kept trying no matter how often I failed."
+        },
+        {
+          "ja": "{店|みせ}を{三回|さんかい}つぶしても{四回目|よんかいめ}で{成功|せいこう}した{祖父|そふ}は、まさに{七転|ななころ}び{八起|やお}きの{人|ひと}だった。",
+          "kana": "みせをさんかいつぶしてもよんかいめでせいこうしたそふは、まさにななころびやおきのひとだった。",
+          "en": "My grandfather, whose shop failed three times before succeeding on the fourth, was the very picture of falling seven times and getting up eight."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{失敗|しっぱい}を{繰|く}り{返|かえ}しても、そのたびに{立|た}ち{上|あ}がって{努力|どりょく}し{続|つづ}けること。",
+        "kana": "しっぱいをくりかえしても、そのたびにたちあがってどりょくしつづけること。"
+      },
+      "notes": "Also read しちてんはっき when written 七転八起.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1672",
+      "word": "石の上にも三年",
+      "kana": "いしのうえにもさんねん",
+      "meanings": [
+        "perseverance pays off",
+        "patience brings reward"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{石|いし}の{上|うえ}にも{三年|さんねん}と{言|い}うから、もう{少|すこ}しこの{仕事|しごと}を{続|つづ}けてみるつもりだ。",
+          "kana": "いしのうえにもさんねんというから、もうすこしこのしごとをつづけてみるつもりだ。",
+          "en": "They say perseverance pays off, so I intend to stick with this job a little longer."
+        },
+        {
+          "ja": "{最初|さいしょ}は{辛|つら}かった{練習|れんしゅう}も、{石|いし}の{上|うえ}にも{三年|さんねん}で、{今|いま}では{楽|たの}しみになりました。",
+          "kana": "さいしょはつらかったれんしゅうも、いしのうえにもさんねんで、いまではたのしみになりました。",
+          "en": "Practice was painful at first, but as they say, patience pays, and now I look forward to it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "つらくても{我慢|がまん}して{続|つづ}ければ、いつか{必|かなら}ず{良|よ}い{結果|けっか}が{出|で}るということ。",
+        "kana": "つらくてもがまんしてつづければ、いつかかならずよいけっかがでるということ。"
+      },
+      "notes": "Literally: sit on a stone for three years and it will warm up.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1673",
+      "word": "急がば回れ",
+      "kana": "いそがばまわれ",
+      "meanings": [
+        "more haste, less speed",
+        "slow and steady is faster"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{急|いそ}がば{回|まわ}れで、{慣|な}れた{道|みち}を{通|とお}った{方|ほう}が{結局|けっきょく}{早|はや}く{着|つ}いた。",
+          "kana": "いそがばまわれで、なれたみちをとおったほうがけっきょくはやくついた。",
+          "en": "More haste, less speed: taking the familiar road got me there faster in the end."
+        },
+        {
+          "ja": "{急|いそ}がば{回|まわ}れと{言|い}うし、{焦|あせ}らずに{基礎|きそ}から{勉強|べんきょう}し{直|なお}しましょう。",
+          "kana": "いそがばまわれというし、あせらずにきそからべんきょうしなおしましょう。",
+          "en": "As they say, more haste, less speed; let's not rush and start again from the basics."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{急|いそ}ぐときほど、{近道|ちかみち}より{安全|あんぜん}で{確実|かくじつ}な{道|みち}を{選|えら}ぶ{方|ほう}が{結局|けっきょく}{早|はや}いということ。",
+        "kana": "いそぐときほど、ちかみちよりあんぜんでかくじつなみちをえらぶほうがけっきょくはやいということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1674",
+      "word": "塵も積もれば山となる",
+      "kana": "ちりもつもればやまとなる",
+      "meanings": [
+        "small things add up",
+        "many a little makes a mickle"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{塵|ちり}も{積|つ}もれば{山|やま}となるで、{毎日|まいにち}の{百円|ひゃくえん}{貯金|ちょきん}が{十万円|じゅうまんえん}になった。",
+          "kana": "ちりもつもればやまとなるで、まいにちのひゃくえんちょきんがじゅうまんえんになった。",
+          "en": "Small things add up: saving a hundred yen a day turned into a hundred thousand yen."
+        },
+        {
+          "ja": "{一日|いちにち}{十分|じゅっぷん}の{単語|たんご}{練習|れんしゅう}でも、{塵|ちり}も{積|つ}もれば{山|やま}となると{信|しん}じて{続|つづ}けています。",
+          "kana": "いちにちじゅっぷんのたんごれんしゅうでも、ちりもつもればやまとなるとしんじてつづけています。",
+          "en": "Even ten minutes of vocabulary practice a day adds up, I believe, so I keep at it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{小|ちい}さなものでも、{積|つ}み{重|かさ}なれば{大|おお}きなものになるということ。",
+        "kana": "ちいさなものでも、つみかさなればおおきなものになるということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1675",
+      "word": "花より団子",
+      "kana": "はなよりだんご",
+      "meanings": [
+        "substance over style",
+        "dumplings over flowers"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase",
+        "food"
+      ],
+      "examples": [
+        {
+          "ja": "{花見|はなみ}に{来|き}たのに{食|た}べてばかりで、まさに{花|はな}より{団子|だんご}だね。",
+          "kana": "はなみにきたのにたべてばかりで、まさにはなよりだんごだね。",
+          "en": "We came for cherry-blossom viewing and all we do is eat; dumplings over flowers indeed."
+        },
+        {
+          "ja": "{美術館|びじゅつかん}より{食|た}べ{歩|ある}きを{選|えら}ぶ{弟|おとうと}は、{昔|むかし}から{花|はな}より{団子|だんご}でした。",
+          "kana": "びじゅつかんよりたべあるきをえらぶおとうとは、むかしからはなよりだんごでした。",
+          "en": "My brother, who picks food stalls over museums, has always been one for substance over style."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{美|うつく}しさや{形|かたち}より、{実際|じっさい}に{役|やく}に{立|た}つものや{得|とく}になるものを{選|えら}ぶこと。",
+        "kana": "うつくしさやかたちより、じっさいにやくにたつものやとくになるものをえらぶこと。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1676",
+      "word": "一石二鳥",
+      "kana": "いっせきにちょう",
+      "meanings": [
+        "killing two birds with one stone"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{自転車|じてんしゃ}{通勤|つうきん}は{運動|うんどう}にもなるし{交通費|こうつうひ}も{浮|う}くし、{一石二鳥|いっせきにちょう}だ。",
+          "kana": "じてんしゃつうきんはうんどうにもなるしこうつうひもうくし、いっせきにちょうだ。",
+          "en": "Commuting by bike is exercise and saves on fares, so it kills two birds with one stone."
+        },
+        {
+          "ja": "{一石二鳥|いっせきにちょう}をねらったのに、{結局|けっきょく}どちらも{中途半端|ちゅうとはんぱ}に{終|お}わってしまった。",
+          "kana": "いっせきにちょうをねらったのに、けっきょくどちらもちゅうとはんぱにおわってしまった。",
+          "en": "I was aiming to kill two birds with one stone, but in the end both came out half-baked."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|ひと}つのことをして、{一度|いちど}に{二|ふた}つの{利益|りえき}を{得|え}ること。",
+        "kana": "ひとつのことをして、いちどにふたつのりえきをえること。"
+      },
+      "notes": "A four-character idiom used as a noun: 一石二鳥だ, 一石二鳥の方法.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1677",
+      "word": "住めば都",
+      "kana": "すめばみやこ",
+      "meanings": [
+        "home is where you make it",
+        "wherever you live becomes home"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{最初|さいしょ}は{田舎|いなか}{暮|ぐ}らしが{不安|ふあん}だったが、{住|す}めば{都|みやこ}で{今|いま}はすっかり{慣|な}れた。",
+          "kana": "さいしょはいなかぐらしがふあんだったが、すめばみやこでいまはすっかりなれた。",
+          "en": "At first I was anxious about country life, but home is where you make it, and now I'm used to it."
+        },
+        {
+          "ja": "{狭|せま}くて{古|ふる}いアパートでも、{住|す}めば{都|みやこ}と{言|い}う{通|とお}り、{今|いま}では{離|はな}れがたい。",
+          "kana": "せまくてふるいアパートでも、すめばみやこというとおり、いまでははなれがたい。",
+          "en": "Even a cramped old apartment becomes home once you live there, as they say, and now I'd hate to leave it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どんなところでも、{長|なが}く{住|す}んで{慣|な}れれば{一番|いちばん}{良|よ}く{感|かん}じられてくるということ。",
+        "kana": "どんなところでも、ながくすんでなれればいちばんよくかんじられてくるということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1678",
+      "word": "善は急げ",
+      "kana": "ぜんはいそげ",
+      "meanings": [
+        "strike while the iron is hot",
+        "do good without delay"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{善|ぜん}は{急|いそ}げと{言|い}うし、{思|おも}い{立|た}ったら{今日|きょう}{中|じゅう}に{申|もう}し{込|こ}んでしまおう。",
+          "kana": "ぜんはいそげというし、おもいたったらきょうじゅうにもうしこんでしまおう。",
+          "en": "They say strike while the iron is hot, so now that I've got the idea, let's apply today."
+        },
+        {
+          "ja": "{善|ぜん}は{急|いそ}げで、{寄付|きふ}をしようと{決|き}めたその{日|ひ}のうちに{手続|てつづ}きを{済|す}ませました。",
+          "kana": "ぜんはいそげで、きふをしようときめたそのひのうちにてつづきをすませました。",
+          "en": "Striking while the iron was hot, I finished the paperwork for the donation the very day I decided to give."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{良|よ}いことをするなら、ためらわずにすぐ{行動|こうどう}せよということ。",
+        "kana": "よいことをするなら、ためらわずにすぐこうどうせよということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1679",
+      "word": "嘘も方便",
+      "kana": "うそもほうべん",
+      "meanings": [
+        "a white lie is sometimes justified",
+        "the end justifies the lie"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{嘘|うそ}も{方便|ほうべん}で、{子|こ}どもには{注射|ちゅうしゃ}は{痛|いた}くないと{言|い}っておいた。",
+          "kana": "うそもほうべんで、こどもにはちゅうしゃはいたくないといっておいた。",
+          "en": "A white lie has its place; I told the child the shot wouldn't hurt."
+        },
+        {
+          "ja": "{嘘|うそ}も{方便|ほうべん}とは{言|い}うが、{祖母|そぼ}にサプライズを{隠|かく}し{続|つづ}けるのは{大変|たいへん}だった。",
+          "kana": "うそもほうべんとはいうが、そぼにサプライズをかくしつづけるのはたいへんだった。",
+          "en": "They say a white lie is sometimes justified, but keeping the surprise from Grandma was hard work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{良|よ}い{目的|もくてき}のためなら、{嘘|うそ}をつくことも{必要|ひつよう}な{場合|ばあい}があるということ。",
+        "kana": "よいもくてきのためなら、うそをつくこともひつようなばあいがあるということ。"
+      },
+      "notes": "方便 is a Buddhist term for an expedient means to a good end.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1680",
+      "word": "餅は餅屋",
+      "kana": "もちはもちや",
+      "meanings": [
+        "leave it to the experts",
+        "every man to his trade"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{餅|もち}は{餅屋|もちや}で、パソコンの{修理|しゅうり}は{専門|せんもん}の{店|みせ}に{頼|たの}むのが{一番|いちばん}だ。",
+          "kana": "もちはもちやで、パソコンのしゅうりはせんもんのみせにたのむのがいちばんだ。",
+          "en": "Leave it to the experts; the best thing is to have a specialist shop fix your computer."
+        },
+        {
+          "ja": "{自分|じぶん}で{直|なお}そうとして{余計|よけい}に{壊|こわ}してしまい、{餅|もち}は{餅屋|もちや}だと{思|おも}い{知|し}りました。",
+          "kana": "じぶんでなおそうとしてよけいにこわしてしまい、もちはもちやだとおもいしりました。",
+          "en": "I tried to fix it myself and only made it worse, which taught me to leave things to the experts."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どんなことでも、その{道|みち}の{専門家|せんもんか}に{任|まか}せるのが{一番|いちばん}{良|よ}いということ。",
+        "kana": "どんなことでも、そのみちのせんもんかにまかせるのがいちばんよいということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1681",
+      "word": "井の中の蛙",
+      "kana": "いのなかのかわず",
+      "meanings": [
+        "person with a narrow worldview",
+        "frog in a well"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{海外|かいがい}で{働|はたら}いてみて、{自分|じぶん}は{井|い}の{中|なか}の{蛙|かわず}だったと{気|き}づかされた。",
+          "kana": "かいがいではたらいてみて、じぶんはいのなかのかわずだったときづかされた。",
+          "en": "Working abroad made me realize I'd been a frog in a well."
+        },
+        {
+          "ja": "{県|けん}の{大会|たいかい}で{優勝|ゆうしょう}して{満足|まんぞく}していたら、{全国|ぜんこく}では{井|い}の{中|なか}の{蛙|かわず}にすぎなかった。",
+          "kana": "けんのたいかいでゆうしょうしてまんぞくしていたら、ぜんこくではいのなかのかわずにすぎなかった。",
+          "en": "I was content after winning the prefectural tournament, but nationally I was just a frog in a well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{狭|せま}い{世界|せかい}しか{知|し}らず、{自分|じぶん}が{一番|いちばん}だと{信|しん}じている{人|ひと}のこと。",
+        "kana": "せまいせかいしかしらず、じぶんがいちばんだとしんじているひとのこと。"
+      },
+      "notes": "Short for 井の中の蛙大海を知らず (the frog in the well knows nothing of the sea).",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1682",
+      "word": "馬の耳に念仏",
+      "kana": "うまのみみにねんぶつ",
+      "meanings": [
+        "preaching to deaf ears",
+        "advice that goes unheeded"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{何度|なんど}{注意|ちゅうい}しても{全然|ぜんぜん}{聞|き}かないんだから、{馬|うま}の{耳|みみ}に{念仏|ねんぶつ}だよ。",
+          "kana": "なんどちゅういしてもぜんぜんきかないんだから、うまのみみにねんぶつだよ。",
+          "en": "No matter how many times I warn him he doesn't listen; it's like preaching to deaf ears."
+        },
+        {
+          "ja": "{節約|せつやく}しろと{言|い}っても{息子|むすこ}には{馬|うま}の{耳|みみ}に{念仏|ねんぶつ}で、また{新|あたら}しいゲームを{買|か}ってきた。",
+          "kana": "せつやくしろといってもむすこにはうまのみみにねんぶつで、またあたらしいゲームをかってきた。",
+          "en": "Telling my son to save money falls on deaf ears; he came home with yet another new game."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いくら{言|い}って{聞|き}かせても、{相手|あいて}には{全|まった}く{効果|こうか}がないこと。",
+        "kana": "いくらいってきかせても、あいてにはまったくこうかがないこと。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1683",
+      "word": "猫に小判",
+      "kana": "ねこにこばん",
+      "meanings": [
+        "pearls before swine",
+        "gold coins to a cat"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{味|あじ}の{分|わ}からない{私|わたし}に{高級|こうきゅう}ワインを{出|だ}しても、{猫|ねこ}に{小判|こばん}ですよ。",
+          "kana": "あじのわからないわたしにこうきゅうワインをだしても、ねこにこばんですよ。",
+          "en": "Serving fine wine to someone like me who can't tell the difference is pearls before swine."
+        },
+        {
+          "ja": "{子|こ}どもに{高|たか}い{楽器|がっき}を{買|か}い{与|あた}えても、{興味|きょうみ}がなければ{猫|ねこ}に{小判|こばん}になりかねない。",
+          "kana": "こどもにたかいがっきをかいあたえても、きょうみがなければねこにこばんになりかねない。",
+          "en": "Buying a child an expensive instrument could be pearls before swine if they have no interest in it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{価値|かち}の{分|わ}からない{人|ひと}に{高価|こうか}なものを{与|あた}えても、{無駄|むだ}になるということ。",
+        "kana": "かちのわからないひとにこうかなものをあたえても、むだになるということ。"
+      },
+      "notes": "小判 is the oval gold coin of the Edo period.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1684",
+      "word": "二兎を追う者は一兎をも得ず",
+      "kana": "にとをおうものはいっとをもえず",
+      "meanings": [
+        "grasp all, lose all",
+        "chase two hares and catch neither"
+      ],
+      "pos": "expr",
+      "jlpt": 2,
+      "tags": [
+        "culture",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{二兎|にと}を{追|お}う{者|もの}は{一兎|いっと}をも{得|え}ずと{言|い}うから、まずは{一|ひと}つの{目標|もくひょう}に{集中|しゅうちゅう}しよう。",
+          "kana": "にとをおうものはいっとをもえずというから、まずはひとつのもくひょうにしゅうちゅうしよう。",
+          "en": "Chase two hares and you catch neither, they say, so let's focus on one goal first."
+        },
+        {
+          "ja": "{仕事|しごと}も{趣味|しゅみ}も{完璧|かんぺき}にと{欲張|よくば}った{結果|けっか}、{二兎|にと}を{追|お}う{者|もの}は{一兎|いっと}をも{得|え}ずになってしまった。",
+          "kana": "しごともしゅみもかんぺきにとよくばったけっか、にとをおうものはいっとをもえずになってしまった。",
+          "en": "Greedily trying to be perfect at both work and hobbies, I ended up chasing two hares and catching neither."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一度|いちど}に{二|ふた}つのことを{手|て}に{入|い}れようとすると、どちらも{失|うしな}ってしまうということ。",
+        "kana": "いちどにふたつのことをてにいれようとすると、どちらもうしなってしまうということ。"
+      },
+      "station": 46
+    },
+    {
+      "id": "v-n2-1685",
+      "word": "やばい",
+      "kana": "やばい",
+      "meanings": [
+        "risky",
+        "awesome",
+        "awful"
+      ],
+      "pos": "adj-i",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "slang",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "このラーメン、やばいくらいおいしい。",
+          "kana": "このラーメン、やばいくらいおいしい。",
+          "en": "This ramen is insanely good."
+        },
+        {
+          "ja": "{財布|さいふ}を{家|いえ}に{忘|わす}れたことに{駅|えき}で{気|き}づいて、マジでやばいと{思|おも}った。",
+          "kana": "さいふをいえにわすれたことにえきできづいて、マジでやばいとおもった。",
+          "en": "I realized at the station that I'd left my wallet at home and thought, this is seriously bad."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{困|こま}った{状態|じょうたい}や、{反対|はんたい}にすごく{良|よ}いことを{表|あらわ}す、{若|わか}い{人|ひと}の{言葉|ことば}。",
+        "kana": "とてもこまったじょうたいや、はんたいにすごくよいことをあらわす、わかいひとのことば。"
+      },
+      "notes": "Originally \"dangerous, in trouble\"; young speakers use it for anything extreme, good or bad.",
+      "altForms": [
+        "ヤバい"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1686",
+      "word": "めっちゃ",
+      "kana": "めっちゃ",
+      "meanings": [
+        "super",
+        "really (very)"
+      ],
+      "pos": "adv",
+      "jlpt": 2,
+      "tags": [
+        "quantity",
+        "casual",
+        "slang"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}はめっちゃ{暑|あつ}いから、アイスでも{買|か}って{帰|かえ}ろう。",
+          "kana": "きょうはめっちゃあついから、アイスでもかってかえろう。",
+          "en": "It's super hot today, so let's grab some ice cream on the way home."
+        },
+        {
+          "ja": "{昨日|きのう}のライブ、めっちゃ{楽|たの}しかった！",
+          "kana": "きのうのライブ、めっちゃたのしかった！",
+          "en": "Yesterday's concert was so much fun!"
+        }
+      ],
+      "definitionJa": {
+        "ja": "「とても」「{非常|ひじょう}に」を{意味|いみ}する、くだけた{話|はな}し{言葉|ことば}。",
+        "kana": "「とても」「ひじょうに」をいみする、くだけたはなしことば。"
+      },
+      "notes": "Kansai in origin, now casual speech nationwide. Not for writing or polite settings.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1687",
+      "word": "ウザい",
+      "kana": "ウザい",
+      "meanings": [
+        "annoying",
+        "irritating"
+      ],
+      "pos": "adj-i",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "slang"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{広告|こうこく}が{何度|なんど}も{出|で}てきてウザい。",
+          "kana": "おなじこうこくがなんどもでてきてウザい。",
+          "en": "The same ad keeps popping up and it is so annoying."
+        },
+        {
+          "ja": "{返事|へんじ}をしてないのに{何回|なんかい}もメッセージを{送|おく}ってくるの、{正直|しょうじき}ウザいんだけど。",
+          "kana": "へんじをしてないのになんかいもメッセージをおくってくるの、しょうじきウザいんだけど。",
+          "en": "Sending me message after message when I haven't replied is honestly kind of annoying."
+        }
+      ],
+      "definitionJa": {
+        "ja": "しつこくて{嫌|いや}な{感|かん}じがして、うるさいと{感|かん}じる{気持|きも}ちを{表|あらわ}す{若者|わかもの}の{言葉|ことば}。",
+        "kana": "しつこくていやなかんじがして、うるさいとかんじるきもちをあらわすわかもののことば。"
+      },
+      "notes": "Shortened from うざったい. Harsh when said of a person.",
+      "altForms": [
+        "うざい",
+        "うざったい"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1688",
+      "word": "だるい",
+      "kana": "だるい",
+      "meanings": [
+        "sluggish",
+        "tiresome",
+        "can't be bothered"
+      ],
+      "pos": "adj-i",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "body",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "{熱|ねつ}は{下|さ}がったけど、まだ{体|からだ}がだるくて{動|うご}く{気|き}になれない。",
+          "kana": "ねつはさがったけど、まだからだがだるくてうごくきになれない。",
+          "en": "My fever's gone, but my body still feels sluggish and I can't bring myself to move."
+        },
+        {
+          "ja": "{月曜|げつよう}の{朝|あさ}の{会議|かいぎ}、{正直|しょうじき}だるいよね。",
+          "kana": "げつようのあさのかいぎ、しょうじきだるいよね。",
+          "en": "Monday morning meetings are honestly such a drag, right?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{体|からだ}が{重|おも}くて{力|ちから}が{出|で}ない。また、{面倒|めんどう}でやる{気|き}が{起|お}きない。",
+        "kana": "からだがおもくてちからがでない。また、めんどうでやるきがおきない。"
+      },
+      "notes": "Physical heaviness, or (slang) a task one cannot be bothered with.",
+      "altForms": [
+        "ダルい"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1689",
+      "word": "ムカつく",
+      "kana": "ムカつく",
+      "meanings": [
+        "to get ticked off",
+        "to be irritated"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "slang"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{並|なら}んでるのに{横|よこ}から{入|はい}ってくる{人|ひと}、マジでムカつく。",
+          "kana": "ならんでるのによこからはいってくるひと、マジでムカつく。",
+          "en": "People who cut in from the side when you are in line seriously tick me off."
+        },
+        {
+          "ja": "{上司|じょうし}に{自分|じぶん}のアイデアを{横取|よこど}りされて、{本当|ほんとう}にムカついた。",
+          "kana": "じょうしにじぶんのアイデアをよこどりされて、ほんとうにムカついた。",
+          "en": "My boss stole my idea and passed it off as his own, and it really ticked me off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{嫌|いや}なことをされて、{腹|はら}が{立|た}つ。くだけた{言|い}い{方|かた}。",
+        "kana": "いやなことをされて、はらがたつ。くだけたいいかた。"
+      },
+      "notes": "Literally \"to feel nauseous\"; now mostly \"to be angry\".",
+      "altForms": [
+        "むかつく"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1690",
+      "word": "ビビる",
+      "kana": "ビビる",
+      "meanings": [
+        "to get scared",
+        "to chicken out"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "slang"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{夜|よる}の{山道|やまみち}で{急|きゅう}に{音|おと}がして、マジでビビった。",
+          "kana": "よるのやまみちできゅうにおとがして、マジでビビった。",
+          "en": "There was a sudden noise on the mountain road at night and I totally freaked out."
+        },
+        {
+          "ja": "{初|はじ}めてのバンジージャンプ、{台|だい}の{上|うえ}でビビって{五分|ごふん}も{動|うご}けなかった。",
+          "kana": "はじめてのバンジージャンプ、だいのうえでビビってごふんもうごけなかった。",
+          "en": "My first bungee jump: I froze up on the platform and couldn't move for a good five minutes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{怖|こわ}くて、{体|からだ}がすくんだり{気持|きも}ちが{弱|よわ}くなったりする。くだけた{言|い}い{方|かた}。",
+        "kana": "こわくて、からだがすくんだりきもちがよわくなったりする。くだけたいいかた。"
+      },
+      "altForms": [
+        "びびる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1691",
+      "word": "ハマる",
+      "kana": "ハマる",
+      "meanings": [
+        "to get hooked on",
+        "to fit (into)"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "hobbies",
+        "slang",
+        "casual"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{海外|かいがい}ドラマにハマって{毎晩|まいばん}{夜更|よふ}かししている。",
+          "kana": "さいきん、かいがいドラマにハマってまいばんよふかししている。",
+          "en": "Lately I am hooked on foreign dramas and stay up late every night."
+        },
+        {
+          "ja": "{弟|おとうと}は{今|いま}、{釣|つ}りにハマりすぎて{週末|しゅうまつ}は{家|いえ}にいたことがない。",
+          "kana": "おとうとはいま、つりにハマりすぎてしゅうまつはいえにいたことがない。",
+          "en": "My brother is so into fishing these days that he's never home on weekends."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることが{面白|おもしろ}くてやめられなくなり、そればかりするようになる。",
+        "kana": "あることがおもしろくてやめられなくなり、そればかりするようになる。"
+      },
+      "notes": "〜にハマる = to be into something. Also literal: a lid that fits.",
+      "altForms": [
+        "はまる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1692",
+      "word": "サボる",
+      "kana": "サボる",
+      "meanings": [
+        "to skip (class or work)",
+        "to slack off"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "school",
+        "work",
+        "slang",
+        "casual"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{今日|きょう}はどうしても{行|い}く{気|き}になれなくて、{授業|じゅぎょう}をサボっちゃった。",
+          "kana": "きょうはどうしてもいくきになれなくて、じゅぎょうをサボっちゃった。",
+          "en": "I just couldn't bring myself to go today, so I skipped class."
+        },
+        {
+          "ja": "{彼|かれ}、{仕事|しごと}サボってカフェにいるところを{部長|ぶちょう}に{見|み}つかったらしいよ。",
+          "kana": "かれ、しごとサボってカフェにいるところをぶちょうにみつかったらしいよ。",
+          "en": "Apparently he got caught by the department head hanging out in a cafe when he should have been working."
+        }
+      ],
+      "definitionJa": {
+        "ja": "しなければならない{仕事|しごと}や{勉強|べんきょう}を、なまけて{休|やす}む。",
+        "kana": "しなければならないしごとやべんきょうを、なまけてやすむ。"
+      },
+      "notes": "From French \"sabotage\"; conjugates as a godan verb.",
+      "altForms": [
+        "さぼる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1693",
+      "word": "パクる",
+      "kana": "パクる",
+      "meanings": [
+        "to rip off",
+        "to steal (an idea)",
+        "to pinch"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "actions",
+        "slang"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "あの{会社|かいしゃ}、うちのデザインをそのままパクってるよね。",
+          "kana": "あのかいしゃ、うちのデザインをそのままパクってるよね。",
+          "en": "That company is just ripping off our design, isn't it?"
+        },
+        {
+          "ja": "{人|ひと}のネタをパクって{笑|わら}いを{取|と}るなんて、{芸人|げいにん}として{最低|さいてい}だと{思|おも}う。",
+          "kana": "ひとのネタをパクってわらいをとるなんて、げいにんとしてさいていだとおもう。",
+          "en": "Getting laughs by stealing someone else's material is the lowest thing a comedian can do, I think."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{他人|たにん}のものや{考|かんが}えを、{許可|きょか}なく{自分|じぶん}のものにする。くだけた{言|い}い{方|かた}。",
+        "kana": "たにんのものやかんがえを、きょかなくじぶんのものにする。くだけたいいかた。"
+      },
+      "altForms": [
+        "ぱくる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1694",
+      "word": "ダサい",
+      "kana": "ダサい",
+      "meanings": [
+        "uncool",
+        "tacky",
+        "lame"
+      ],
+      "pos": "adj-i",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "clothing",
+        "slang"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}のファッションはダサいけど、{本人|ほんにん}はかっこいいと{思|おも}っているらしい。",
+          "kana": "ちちのファッションはダサいけど、ほんにんはかっこいいとおもっているらしい。",
+          "en": "My dad's fashion sense is lame, but apparently he thinks he looks cool."
+        },
+        {
+          "ja": "{高校|こうこう}の{時|とき}の{写真|しゃしん}を{見|み}たら、{髪型|かみがた}がダサすぎて{笑|わら}った。",
+          "kana": "こうこうのときのしゃしんをみたら、かみがたがダサすぎてわらった。",
+          "en": "I looked at a photo from my high-school days and laughed at how lame my hairstyle was."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見|み}た{目|め}や{感|かん}じが{古|ふる}くさくて、おしゃれではない。くだけた{言|い}い{方|かた}。",
+        "kana": "みためやかんじがふるくさくて、おしゃれではない。くだけたいいかた。"
+      },
+      "altForms": [
+        "ださい"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1695",
+      "word": "イケてる",
+      "kana": "イケてる",
+      "meanings": [
+        "to be cool",
+        "to look good"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "slang",
+        "casual"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{服|ふく}、めっちゃイケてるじゃん。",
+          "kana": "きょうのふく、めっちゃイケてるじゃん。",
+          "en": "Your outfit today is super cool."
+        },
+        {
+          "ja": "{新|あたら}しくできたあのカフェ、{雰囲気|ふんいき}がイケてるって{友達|ともだち}が{言|い}ってた。",
+          "kana": "あたらしくできたあのカフェ、ふんいきがイケてるってともだちがいってた。",
+          "en": "My friend said the vibe at that new cafe is really cool."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見|み}た{目|め}や{様子|ようす}がかっこよくて、{魅力|みりょく}がある。くだけた{言|い}い{方|かた}。",
+        "kana": "みためやようすがかっこよくて、みりょくがある。くだけたいいかた。"
+      },
+      "notes": "Contracted from いけている; used like an adjective (イケてない = not cool).",
+      "altForms": [
+        "いけてる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1696",
+      "word": "ガチ",
+      "kana": "ガチ",
+      "meanings": [
+        "for real",
+        "serious (not joking)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "slang"
+      ],
+      "examples": [
+        {
+          "ja": "{冗談|じょうだん}じゃなくて、{彼|かれ}はガチでプロを{目指|めざ}してるんだよ。",
+          "kana": "じょうだんじゃなくて、かれはガチでプロをめざしてるんだよ。",
+          "en": "He's not joking; he's seriously aiming to go pro."
+        },
+        {
+          "ja": "{昨日|きのう}の{試合|しあい}はガチの{勝負|しょうぶ}だったから、{終|お}わった{後|あと}は{全員|ぜんいん}{動|うご}けなかった。",
+          "kana": "きのうのしあいはガチのしょうぶだったから、おわったあとはぜんいんうごけなかった。",
+          "en": "Yesterday's match was a real all-out fight, so afterward none of us could move."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{冗談|じょうだん}や{遊|あそ}びではなく、{本気|ほんき}であること。くだけた{言|い}い{方|かた}。",
+        "kana": "じょうだんやあそびではなく、ほんきであること。くだけたいいかた。"
+      },
+      "notes": "From ガチンコ, sumo slang for a real bout. Usually ガチで (adverbial) or ガチの.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1697",
+      "word": "マジ",
+      "kana": "マジ",
+      "meanings": [
+        "serious",
+        "for real"
+      ],
+      "pos": "adj-na",
+      "jlpt": 2,
+      "tags": [
+        "states",
+        "slang",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "え、{来月|らいげつ}{会社|かいしゃ}{辞|や}めるの？マジで？",
+          "kana": "え、らいげつかいしゃやめるの？マジで？",
+          "en": "What, you are quitting the company next month? Seriously?"
+        },
+        {
+          "ja": "{今|いま}の{話|はなし}、{冗談|じょうだん}じゃなくてマジな{話|はなし}だから、ちゃんと{聞|き}いて。",
+          "kana": "いまのはなし、じょうだんじゃなくてマジなはなしだから、ちゃんときいて。",
+          "en": "What I'm saying now isn't a joke, it's serious, so listen properly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{冗談|じょうだん}ではなく{本気|ほんき}である{様子|ようす}。{驚|おどろ}いて「{本当|ほんとう}？」と{聞|き}き{返|かえ}すときにも{使|つか}う。",
+        "kana": "じょうだんではなくほんきであるようす。おどろいて「ほんとう？」とききかえすときにもつかう。"
+      },
+      "notes": "From 真面目. マジで？ = Seriously?; マジな話 = a serious matter.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1698",
+      "word": "ノリ",
+      "kana": "ノリ",
+      "meanings": [
+        "vibe",
+        "mood (of a group)",
+        "going along with it"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "communication",
+        "slang",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "あのクラスは{明|あか}るくてノリがいいから、{授業|じゅぎょう}をするのが{楽|たの}しい。",
+          "kana": "あのクラスはあかるくてノリがいいから、じゅぎょうをするのがたのしい。",
+          "en": "That class is cheerful and has a great vibe, so teaching it is fun."
+        },
+        {
+          "ja": "その{場|ば}のノリで{買|か}った{服|ふく}、{家|いえ}で{着|き}てみたら{全然|ぜんぜん}{似合|にあ}わなかった。",
+          "kana": "そのばのノリでかったふく、いえできてみたらぜんぜんにあわなかった。",
+          "en": "The clothes I bought on the spur of the moment didn't suit me at all when I tried them on at home."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{周|まわ}りの{気分|きぶん}や{流|なが}れに{乗|の}って、{一緒|いっしょ}に{楽|たの}しむこと。くだけた{言|い}い{方|かた}。",
+        "kana": "まわりのきぶんやながれにのって、いっしょにたのしむこと。くだけたいいかた。"
+      },
+      "notes": "ノリがいい = quick to join in the fun; ノリで = on impulse, in the mood of the moment.",
+      "altForms": [
+        "乗り"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1699",
+      "word": "ドタキャン",
+      "kana": "ドタキャン",
+      "meanings": [
+        "last-minute cancellation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "slang",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "{昨日|きのう}の{飲|の}み{会|かい}、{三人|さんにん}もドタキャンされて{店|みせ}に{悪|わる}かった。",
+          "kana": "きのうののみかい、さんにんもドタキャンされてみせにわるかった。",
+          "en": "Three people canceled last night's drinks at the last minute, and I felt bad for the restaurant."
+        },
+        {
+          "ja": "{大事|だいじ}な{約束|やくそく}をドタキャンするなんて、{彼|かれ}らしくないと{思|おも}わない？",
+          "kana": "だいじなやくそくをドタキャンするなんて、かれらしくないとおもわない？",
+          "en": "Canceling an important date at the last minute, don't you think that's unlike him?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{約束|やくそく}や{予定|よてい}を、{直前|ちょくぜん}になって{急|きゅう}に{取|と}り{消|け}すこと。くだけた{言|い}い{方|かた}。",
+        "kana": "やくそくやよていを、ちょくぜんになってきゅうにとりけすこと。くだけたいいかた。"
+      },
+      "notes": "Blend of 土壇場 (the last moment) and キャンセル.",
+      "station": 46
+    },
+    {
+      "id": "v-n2-1700",
+      "word": "ウケる",
+      "kana": "ウケる",
+      "meanings": [
+        "to be hilarious",
+        "to go down well (with an audience)"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "emotions",
+        "communication",
+        "slang",
+        "casual"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "その{話|はなし}、{何回|なんかい}{聞|き}いてもウケる。",
+          "kana": "そのはなし、なんかいきいてもウケる。",
+          "en": "That story cracks me up no matter how many times I hear it."
+        },
+        {
+          "ja": "{部長|ぶちょう}の{寒|さむ}いギャグが{新人|しんじん}に{意外|いがい}とウケて、{会議室|かいぎしつ}が{笑|わら}いに{包|つつ}まれた。",
+          "kana": "ぶちょうのさむいギャグがしんじんにいがいとウケて、かいぎしつがわらいにつつまれた。",
+          "en": "The department head's corny joke unexpectedly landed with the new hires, and the meeting room filled with laughter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{面白|おもしろ}くて{笑|わら}える。また、{冗談|じょうだん}などが{人|ひと}に{喜|よろこ}ばれる。くだけた{言|い}い{方|かた}。",
+        "kana": "とてもおもしろくてわらえる。また、じょうだんなどがひとによろこばれる。くだけたいいかた。"
+      },
+      "notes": "From 受ける (to be well received). ウケる！ alone = That is hilarious!",
+      "altForms": [
+        "うける"
+      ],
+      "station": 46
+    }
+  ]
+}

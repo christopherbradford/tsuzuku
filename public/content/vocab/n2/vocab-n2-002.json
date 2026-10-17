@@ -1,0 +1,4975 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n2",
+  "writer": "vocab-n2-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n2-0143",
+      "word": "市場",
+      "kana": "しじょう",
+      "meanings": [
+        "market"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{商品|しょうひん}が{市場|しじょう}に{出|で}るのは{来月|らいげつ}の{予定|よてい}です。",
+          "kana": "あたらしいしょうひんがしじょうにでるのはらいげつのよていです。",
+          "en": "The new product is scheduled to hit the market next month."
+        },
+        {
+          "ja": "{去年|きょねん}は{円安|えんやす}の{影響|えいきょう}で、{海外|かいがい}{市場|しじょう}での{売|う}り{上|あ}げが{大|おお}きく{伸|の}びた。",
+          "kana": "きょねんはえんやすのえいきょうで、かいがいしじょうでのうりあげがおおきくのびた。",
+          "en": "Last year, thanks to the weak yen, sales in overseas markets grew sharply."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスが{売|う}り{買|か}いされるところや、その{取引|とりひき}の{全体|ぜんたい}。",
+        "kana": "しょうひんやサービスがうりかいされるところや、そのとりひきのぜんたい。"
+      },
+      "notes": "Read しじょう for the economic sense (株式市場, 市場に出る); the physical marketplace 市場 is read いちば.",
+      "collocations": [
+        "市場に出る",
+        "株式市場"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0144",
+      "word": "政策",
+      "kana": "せいさく",
+      "meanings": [
+        "policy"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{新|あたら}しい{経済|けいざい}{政策|せいさく}を{発表|はっぴょう}した。",
+          "kana": "せいふはあたらしいけいざいせいさくをはっぴょうした。",
+          "en": "The government announced a new economic policy."
+        },
+        {
+          "ja": "{若|わか}い{世代|せだい}のための{政策|せいさく}がもっと{必要|ひつよう}だと、{多|おお}くの{人|ひと}が{感|かん}じています。",
+          "kana": "わかいせだいのためのせいさくがもっとひつようだと、おおくのひとがかんじています。",
+          "en": "Many people feel that more policies for the younger generation are needed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}や{政党|せいとう}が、{政治|せいじ}の{目標|もくひょう}を{実現|じつげん}するために{決|き}めたやり{方|かた}。",
+        "kana": "せいふやせいとうが、せいじのもくひょうをじつげんするためにきめたやりかた。"
+      },
+      "collocations": [
+        "経済政策",
+        "政策を決める"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0145",
+      "word": "投資",
+      "kana": "とうし",
+      "meanings": [
+        "investment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{将来|しょうらい}のために、{少|すこ}しずつ{株|かぶ}に{投資|とうし}しています。",
+          "kana": "しょうらいのために、すこしずつかぶにとうししています。",
+          "en": "I'm investing in stocks little by little for the future."
+        },
+        {
+          "ja": "その{会社|かいしゃ}は{新|あたら}しい{工場|こうじょう}に{百億円|ひゃくおくえん}を{投資|とうし}すると{発表|はっぴょう}した。",
+          "kana": "そのかいしゃはあたらしいこうじょうにひゃくおくえんをとうしするとはっぴょうした。",
+          "en": "The company announced it would invest ten billion yen in a new factory."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{利益|りえき}を{得|え}るために、{事業|じぎょう}や{株|かぶ}などにお{金|かね}を{出|だ}すこと。",
+        "kana": "りえきをえるために、じぎょうやかぶなどにおかねをだすこと。"
+      },
+      "collocations": [
+        "投資家",
+        "海外に投資する"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0146",
+      "word": "株",
+      "kana": "かぶ",
+      "meanings": [
+        "stock",
+        "share"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{株|かぶ}を{持|も}っているが、{値段|ねだん}は{毎日|まいにち}{変|か}わるらしい。",
+          "kana": "ちちはかぶをもっているが、ねだんはまいにちかわるらしい。",
+          "en": "My dad owns stocks, but apparently the price changes every day."
+        },
+        {
+          "ja": "{最近|さいきん}、スマホで{株|かぶ}を{買|か}う{若者|わかもの}が{増|ふ}えているそうです。",
+          "kana": "さいきん、スマホでかぶをかうわかものがふえているそうです。",
+          "en": "I hear more and more young people are buying stocks on their smartphones these days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}がお{金|かね}を{集|あつ}めるために{出|だ}し、{市場|しじょう}で{売|う}り{買|か}いされるもの。",
+        "kana": "かいしゃがおかねをあつめるためにだし、しじょうでうりかいされるもの。"
+      },
+      "notes": "Everyday word for shares; the formal term is 株式. 株 is also a stump or a plant root.",
+      "collocations": [
+        "株を買う",
+        "株が上がる"
+      ],
+      "confusables": [
+        "v-n2-0198"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0147",
+      "word": "保険",
+      "kana": "ほけん",
+      "meanings": [
+        "insurance"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{海外|かいがい}{旅行|りょこう}の{前|まえ}に、{必|かなら}ず{保険|ほけん}に{入|はい}っておきましょう。",
+          "kana": "かいがいりょこうのまえに、かならずほけんにはいっておきましょう。",
+          "en": "Before traveling abroad, be sure to take out insurance."
+        },
+        {
+          "ja": "{事故|じこ}の{後|あと}、{保険|ほけん}のおかげで{修理代|しゅうりだい}はほとんどかからなかった。",
+          "kana": "じこのあと、ほけんのおかげでしゅうりだいはほとんどかからなかった。",
+          "en": "After the accident, thanks to the insurance, the repairs cost me almost nothing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{病気|びょうき}や{事故|じこ}などに{備|そな}えて、{多|おお}くの{人|ひと}がお{金|かね}を{出|だ}し、{困|こま}ったときに{受|う}け{取|と}る{仕組|しく}み。",
+        "kana": "びょうきやじこなどにそなえて、おおくのひとがおかねをだし、こまったときにうけとるしくみ。"
+      },
+      "collocations": [
+        "保険に入る",
+        "健康保険",
+        "自動車保険"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0148",
+      "word": "議員",
+      "kana": "ぎいん",
+      "meanings": [
+        "member of parliament",
+        "legislator",
+        "assembly member"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{議員|ぎいん}は{国民|こくみん}の{声|こえ}を{聞|き}く{義務|ぎむ}があると{思|おも}う。",
+          "kana": "ぎいんはこくみんのこえをきくぎむがあるとおもう。",
+          "en": "I think legislators have a duty to listen to the people's voices."
+        },
+        {
+          "ja": "{母|はは}の{友人|ゆうじん}が{市|し}の{議員|ぎいん}に{選|えら}ばれて、{家族|かぞく}みんなで{驚|おどろ}きました。",
+          "kana": "ははのゆうじんがしのぎいんにえらばれて、かぞくみんなでおどろきました。",
+          "en": "My mother's friend was elected to the city assembly, and the whole family was surprised."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{選|えら}ばれて、{国会|こっかい}や{議会|ぎかい}で{話|はな}し{合|あ}いや{決定|けってい}を{行|おこな}う{人|ひと}。",
+        "kana": "せんきょでえらばれて、こっかいやぎかいではなしあいやけっていをおこなうひと。"
+      },
+      "collocations": [
+        "国会議員",
+        "市議会議員"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0149",
+      "word": "首相",
+      "kana": "しゅしょう",
+      "meanings": [
+        "prime minister"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{首相|しゅしょう}が{選|えら}ばれ、{国民|こくみん}の{期待|きたい}が{高|たか}まっている。",
+          "kana": "あたらしいしゅしょうがえらばれ、こくみんのきたいがたかまっている。",
+          "en": "A new prime minister has been chosen, and the public's expectations are rising."
+        },
+        {
+          "ja": "{首相|しゅしょう}は{来週|らいしゅう}、{隣|となり}の{国|くに}を{訪問|ほうもん}する{予定|よてい}です。",
+          "kana": "しゅしょうはらいしゅう、となりのくにをほうもんするよていです。",
+          "en": "The prime minister is scheduled to visit the neighboring country next week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{内閣|ないかく}の{長|ちょう}として、{国|くに}の{政治|せいじ}の{中心|ちゅうしん}になる{人|ひと}。",
+        "kana": "ないかくのちょうとして、くにのせいじのちゅうしんになるひと。"
+      },
+      "notes": "Everyday and news word for the prime minister; the official title is 内閣総理大臣, shortened to 総理.",
+      "station": 39
+    },
+    {
+      "id": "v-n2-0150",
+      "word": "内閣",
+      "kana": "ないかく",
+      "meanings": [
+        "cabinet (government)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{内閣|ないかく}は{今週|こんしゅう}、{新|あたら}しい{法案|ほうあん}を{国会|こっかい}に{出|だ}す{予定|よてい}だ。",
+          "kana": "ないかくはこんしゅう、あたらしいほうあんをこっかいにだすよていだ。",
+          "en": "The cabinet plans to submit a new bill to the Diet this week."
+        },
+        {
+          "ja": "{選挙|せんきょ}の{結果|けっか}を{受|う}けて、{新|あたら}しい{内閣|ないかく}が{作|つく}られました。",
+          "kana": "せんきょのけっかをうけて、あたらしいないかくがつくられました。",
+          "en": "Following the election results, a new cabinet was formed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{首相|しゅしょう}と{大臣|だいじん}が{集|あつ}まって、{国|くに}の{行政|ぎょうせい}を{行|おこな}う{組織|そしき}。",
+        "kana": "しゅしょうとだいじんがあつまって、くにのぎょうせいをおこなうそしき。"
+      },
+      "collocations": [
+        "内閣総理大臣",
+        "内閣支持率"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0151",
+      "word": "輸出",
+      "kana": "ゆしゅつ",
+      "meanings": [
+        "export"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}で{作|つく}られた{車|くるま}は、{世界中|せかいじゅう}に{輸出|ゆしゅつ}されている。",
+          "kana": "このまちでつくられたくるまは、せかいじゅうにゆしゅつされている。",
+          "en": "Cars made in this town are exported all over the world."
+        },
+        {
+          "ja": "{祖父|そふ}は{昔|むかし}、お{茶|ちゃ}を{外国|がいこく}に{輸出|ゆしゅつ}する{仕事|しごと}をしていました。",
+          "kana": "そふはむかし、おちゃをがいこくにゆしゅつするしごとをしていました。",
+          "en": "My grandfather used to work exporting tea abroad."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{国|くに}の{商品|しょうひん}を、{外国|がいこく}に{売|う}って{送|おく}ること。",
+        "kana": "じぶんのくにのしょうひんを、がいこくにうっておくること。"
+      },
+      "confusables": [
+        "v-n2-0152"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0152",
+      "word": "輸入",
+      "kana": "ゆにゅう",
+      "meanings": [
+        "import"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{日本|にほん}は{食料|しょくりょう}の{多|おお}くを{外国|がいこく}から{輸入|ゆにゅう}している。",
+          "kana": "にほんはしょくりょうのおおくをがいこくからゆにゅうしている。",
+          "en": "Japan imports much of its food from abroad."
+        },
+        {
+          "ja": "この{店|みせ}では、ヨーロッパから{輸入|ゆにゅう}したチーズが{買|か}えます。",
+          "kana": "このみせでは、ヨーロッパからゆにゅうしたチーズがかえます。",
+          "en": "At this shop, you can buy cheese imported from Europe."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}の{商品|しょうひん}を{買|か}って、{自分|じぶん}の{国|くに}に{持|も}ってくること。",
+        "kana": "がいこくのしょうひんをかって、じぶんのくににもってくること。"
+      },
+      "confusables": [
+        "v-n2-0151"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0153",
+      "word": "物価",
+      "kana": "ぶっか",
+      "meanings": [
+        "prices (of goods)",
+        "cost of living"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}{物価|ぶっか}が{上|あ}がって、{生活|せいかつ}が{苦|くる}しくなった。",
+          "kana": "さいきんぶっかがあがって、せいかつがくるしくなった。",
+          "en": "Prices have gone up recently, and life has gotten harder."
+        },
+        {
+          "ja": "{東京|とうきょう}は{物価|ぶっか}が{高|たか}いので、{家賃|やちん}の{安|やす}い{郊外|こうがい}に{住|す}むことにした。",
+          "kana": "とうきょうはぶっかがたかいので、やちんのやすいこうがいにすむことにした。",
+          "en": "Prices in Tokyo are high, so I decided to live in the suburbs where rent is cheaper."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスの{値段|ねだん}を、{社会|しゃかい}{全体|ぜんたい}で{見|み}たもの。",
+        "kana": "しょうひんやサービスのねだんを、しゃかいぜんたいでみたもの。"
+      },
+      "collocations": [
+        "物価が上がる",
+        "物価が高い"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0154",
+      "word": "違反",
+      "kana": "いはん",
+      "meanings": [
+        "violation",
+        "offense"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "スピード{違反|いはん}で{警察|けいさつ}に{止|と}められてしまった。",
+          "kana": "スピードいはんでけいさつにとめられてしまった。",
+          "en": "I got pulled over by the police for speeding."
+        },
+        {
+          "ja": "{契約|けいやく}に{違反|いはん}した{場合|ばあい}は、{料金|りょうきん}を{全額|ぜんがく}お{支払|しはら}いいただきます。",
+          "kana": "けいやくにいはんしたばあいは、りょうきんをぜんがくおしはらいいただきます。",
+          "en": "In the event of a breach of contract, you will be asked to pay the full fee."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{規則|きそく}、{約束|やくそく}などを{守|まも}らないこと。",
+        "kana": "ほうりつやきそく、やくそくなどをまもらないこと。"
+      },
+      "collocations": [
+        "交通違反",
+        "ルールに違反する"
+      ],
+      "confusables": [
+        "v-n2-0240"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0155",
+      "word": "被害",
+      "kana": "ひがい",
+      "meanings": [
+        "damage",
+        "harm (suffered)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{台風|たいふう}による{被害|ひがい}は、{予想|よそう}よりずっと{大|おお}きかった。",
+          "kana": "たいふうによるひがいは、よそうよりずっとおおきかった。",
+          "en": "The damage from the typhoon was far greater than expected."
+        },
+        {
+          "ja": "{近所|きんじょ}で{泥棒|どろぼう}の{被害|ひがい}が{続|つづ}いているので、{必|かなら}ず{鍵|かぎ}をかけてください。",
+          "kana": "きんじょでどろぼうのひがいがつづいているので、かならずかぎをかけてください。",
+          "en": "There has been a string of burglaries in the neighborhood, so be sure to lock up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{台風|たいふう}や{事故|じこ}、{犯罪|はんざい}などによって{受|う}ける{損|そん}や{傷|きず}。",
+        "kana": "たいふうやじこ、はんざいなどによってうけるそんやきず。"
+      },
+      "collocations": [
+        "被害を受ける",
+        "被害者"
+      ],
+      "confusables": [
+        "v-n2-0245"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0156",
+      "word": "独立",
+      "kana": "どくりつ",
+      "meanings": [
+        "independence"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{会社|かいしゃ}を{辞|や}めて、{来年|らいねん}{独立|どくりつ}するつもりだ。",
+          "kana": "かれはかいしゃをやめて、らいねんどくりつするつもりだ。",
+          "en": "He's going to quit the company and go independent next year."
+        },
+        {
+          "ja": "この{国|くに}は{約|やく}{二百年|にひゃくねん}{前|まえ}に{独立|どくりつ}し、{今|いま}も{毎年|まいとし}その{日|ひ}を{祝|いわ}っています。",
+          "kana": "このくにはやくにひゃくねんまえにどくりつし、いまもまいとしそのひをいわっています。",
+          "en": "This country gained independence about two hundred years ago and still celebrates the day every year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかの{力|ちから}を{借|か}りずに、{自分|じぶん}だけの{力|ちから}で{立|た}つこと。",
+        "kana": "ほかのちからをかりずに、じぶんだけのちからでたつこと。"
+      },
+      "collocations": [
+        "独立する",
+        "独立国"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0157",
+      "word": "知事",
+      "kana": "ちじ",
+      "meanings": [
+        "governor (of a prefecture)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{知事|ちじ}は{県民|けんみん}に{向|む}けて、{節電|せつでん}への{協力|きょうりょく}を{呼|よ}びかけた。",
+          "kana": "ちじはけんみんにむけて、せつでんへのきょうりょくをよびかけた。",
+          "en": "The governor called on prefectural residents to cooperate in saving electricity."
+        },
+        {
+          "ja": "{来月|らいげつ}の{選挙|せんきょ}で、{初|はじ}めて{女性|じょせい}の{知事|ちじ}が{誕生|たんじょう}するかもしれない。",
+          "kana": "らいげつのせんきょで、はじめてじょせいのちじがたんじょうするかもしれない。",
+          "en": "Next month's election may produce the prefecture's first female governor."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{県|けん}などの{行政|ぎょうせい}の{責任者|せきにんしゃ}として、{住民|じゅうみん}の{選挙|せんきょ}で{選|えら}ばれる{人|ひと}。",
+        "kana": "けんなどのぎょうせいのせきにんしゃとして、じゅうみんのせんきょでえらばれるひと。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0158",
+      "word": "市長",
+      "kana": "しちょう",
+      "meanings": [
+        "mayor"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{市長|しちょう}は、まだ{四十歳|よんじゅっさい}の{若|わか}さだ。",
+          "kana": "あたらしいしちょうは、まだよんじゅっさいのわかさだ。",
+          "en": "The new mayor is only forty years old."
+        },
+        {
+          "ja": "{市長|しちょう}が{直接|ちょくせつ}{学校|がっこう}に{来|き}て、{子|こ}どもたちの{質問|しつもん}に{答|こた}えてくれました。",
+          "kana": "しちょうがちょくせつがっこうにきて、こどもたちのしつもんにこたえてくれました。",
+          "en": "The mayor came to the school in person and answered the children's questions."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{市|し}を{代表|だいひょう}して、{市|し}の{政治|せいじ}や{行政|ぎょうせい}を{進|すす}める{人|ひと}。",
+        "kana": "しをだいひょうして、しのせいじやぎょうせいをすすめるひと。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0159",
+      "word": "議会",
+      "kana": "ぎかい",
+      "meanings": [
+        "assembly",
+        "parliament",
+        "legislature"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{図書館|としょかん}の{建設|けんせつ}は、{市|し}の{議会|ぎかい}で{決|き}められる。",
+          "kana": "あたらしいとしょかんのけんせつは、しのぎかいできめられる。",
+          "en": "The construction of the new library will be decided by the city assembly."
+        },
+        {
+          "ja": "{昨日|きのう}の{議会|ぎかい}では、ごみの{料金|りょうきん}をめぐって{激|はげ}しい{議論|ぎろん}が{続|つづ}いた。",
+          "kana": "きのうのぎかいでは、ごみのりょうきんをめぐってはげしいぎろんがつづいた。",
+          "en": "At yesterday's assembly session, a heated debate over garbage fees went on and on."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{選|えら}ばれた{議員|ぎいん}が{集|あつ}まり、{法律|ほうりつ}や{予算|よさん}などを{話|はな}し{合|あ}って{決|き}める{組織|そしき}。",
+        "kana": "せんきょでえらばれたぎいんがあつまり、ほうりつやよさんなどをはなしあってきめるそしき。"
+      },
+      "collocations": [
+        "市議会",
+        "議会で決める"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0160",
+      "word": "与党",
+      "kana": "よとう",
+      "meanings": [
+        "ruling party"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{与党|よとう}は{選挙|せんきょ}で{勝|か}ち、{国会|こっかい}で{過半数|かはんすう}を{取|と}った。",
+          "kana": "よとうはせんきょでかち、こっかいでかはんすうをとった。",
+          "en": "The ruling party won the election and took a majority in the Diet."
+        },
+        {
+          "ja": "{与党|よとう}の{中|なか}でも、この{法案|ほうあん}には{反対|はんたい}する{議員|ぎいん}が{少|すく}なくないようです。",
+          "kana": "よとうのなかでも、このほうあんにははんたいするぎいんがすくなくないようです。",
+          "en": "Even within the ruling party, there seem to be quite a few legislators who oppose this bill."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{内閣|ないかく}を{作|つく}り、{国|くに}の{政治|せいじ}を{進|すす}めている{政党|せいとう}。",
+        "kana": "ないかくをつくり、くにのせいじをすすめているせいとう。"
+      },
+      "confusables": [
+        "v-n2-0161"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0161",
+      "word": "野党",
+      "kana": "やとう",
+      "meanings": [
+        "opposition party"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{野党|やとう}は{政府|せいふ}の{新|あたら}しい{法案|ほうあん}に{強|つよ}く{反対|はんたい}している。",
+          "kana": "やとうはせいふのあたらしいほうあんにつよくはんたいしている。",
+          "en": "The opposition parties are strongly against the government's new bill."
+        },
+        {
+          "ja": "{若|わか}いころ、{父|ちち}は{野党|やとう}を{応援|おうえん}して、よく{集会|しゅうかい}に{出|で}かけていた。",
+          "kana": "わかいころ、ちちはやとうをおうえんして、よくしゅうかいにでかけていた。",
+          "en": "When he was young, my father supported the opposition and often went to their rallies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{内閣|ないかく}に{入|はい}らず、{政府|せいふ}の{政治|せいじ}を{調|しら}べて{反対|はんたい}の{意見|いけん}を{言|い}う{政党|せいとう}。",
+        "kana": "ないかくにはいらず、せいふのせいじをしらべてはんたいのいけんをいうせいとう。"
+      },
+      "confusables": [
+        "v-n2-0160"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0162",
+      "word": "行政",
+      "kana": "ぎょうせい",
+      "meanings": [
+        "administration (government)",
+        "executive branch"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{市|し}の{行政|ぎょうせい}サービスの{多|おお}くは、インターネットでも{利用|りよう}できる。",
+          "kana": "しのぎょうせいサービスのおおくは、インターネットでもりようできる。",
+          "en": "Many of the city's administrative services can also be used online."
+        },
+        {
+          "ja": "{姉|あね}は{大学|だいがく}で{行政|ぎょうせい}について{学|まな}び、{今|いま}は{市役所|しやくしょ}で{働|はたら}いています。",
+          "kana": "あねはだいがくでぎょうせいについてまなび、いまはしやくしょではたらいています。",
+          "en": "My sister studied public administration at university and now works at city hall."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}に{基|もと}づいて、{国|くに}や{地方|ちほう}の{政治|せいじ}を{実際|じっさい}に{行|おこな}う{仕事|しごと}や{組織|そしき}。",
+        "kana": "ほうりつにもとづいて、くにやちほうのせいじをじっさいにおこなうしごとやそしき。"
+      },
+      "confusables": [
+        "v-n2-0233",
+        "v-n2-0234"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0163",
+      "word": "規制",
+      "kana": "きせい",
+      "meanings": [
+        "regulation",
+        "restriction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{祭|まつ}りの{日|ひ}は、{駅前|えきまえ}の{道路|どうろ}に{交通|こうつう}{規制|きせい}がかかります。",
+          "kana": "まつりのひは、えきまえのどうろにこうつうきせいがかかります。",
+          "en": "On the day of the festival, traffic restrictions are in place on the roads in front of the station."
+        },
+        {
+          "ja": "{子|こ}どもへの{広告|こうこく}を{規制|きせい}すべきだという{声|こえ}が、{年々|ねんねん}{強|つよ}まっている。",
+          "kana": "こどもへのこうこくをきせいすべきだというこえが、ねんねんつよまっている。",
+          "en": "Calls to regulate advertising aimed at children are growing stronger every year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{規則|きそく}を{作|つく}って、ある{行動|こうどう}や{活動|かつどう}を{制限|せいげん}すること。",
+        "kana": "きそくをつくって、あるこうどうやかつどうをせいげんすること。"
+      },
+      "collocations": [
+        "交通規制",
+        "規制緩和"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0164",
+      "word": "改正",
+      "kana": "かいせい",
+      "meanings": [
+        "revision (of a law or rule)",
+        "amendment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{法律|ほうりつ}の{改正|かいせい}により、{来年|らいねん}から{自転車|じてんしゃ}のルールが{厳|きび}しくなる。",
+          "kana": "ほうりつのかいせいにより、らいねんからじてんしゃのルールがきびしくなる。",
+          "en": "Under the revised law, bicycle rules will get stricter from next year."
+        },
+        {
+          "ja": "{会社|かいしゃ}の{規則|きそく}が{改正|かいせい}されて、{家|いえ}で{働|はたら}ける{日|ひ}が{増|ふ}えました。",
+          "kana": "かいしゃのきそくがかいせいされて、いえではたらけるひがふえました。",
+          "en": "The company rules were revised, and the number of days we can work from home increased."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{規則|きそく}の{内容|ないよう}を、より{良|よ}いものに{改|あらた}めること。",
+        "kana": "ほうりつやきそくのないようを、よりよいものにあらためること。"
+      },
+      "collocations": [
+        "法改正",
+        "規則を改正する"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0165",
+      "word": "資金",
+      "kana": "しきん",
+      "meanings": [
+        "funds",
+        "capital (for a purpose)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}を{開|ひら}くための{資金|しきん}が、まだ{半分|はんぶん}しか{集|あつ}まっていない。",
+          "kana": "みせをひらくためのしきんが、まだはんぶんしかあつまっていない。",
+          "en": "I've only raised half the funds I need to open the shop."
+        },
+        {
+          "ja": "{市|し}は{祭|まつ}りの{資金|しきん}を{集|あつ}めるために、インターネットで{寄付|きふ}を{呼|よ}びかけた。",
+          "kana": "しはまつりのしきんをあつめるために、インターネットできふをよびかけた。",
+          "en": "The city appealed for donations online to raise funds for the festival."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事業|じぎょう}や{活動|かつどう}など、ある{目的|もくてき}のために{使|つか}うお{金|かね}。",
+        "kana": "じぎょうやかつどうなど、あるもくてきのためにつかうおかね。"
+      },
+      "confusables": [
+        "v-n2-0166"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0166",
+      "word": "資本",
+      "kana": "しほん",
+      "meanings": [
+        "capital (money)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}は{外国|がいこく}の{資本|しほん}で{作|つく}られた。",
+          "kana": "このかいしゃはがいこくのしほんでつくられた。",
+          "en": "This company was founded with foreign capital."
+        },
+        {
+          "ja": "{小|ちい}さな{店|みせ}でも、{始|はじ}めるには{百万円|ひゃくまんえん}{以上|いじょう}の{資本|しほん}が{必要|ひつよう}だと{言|い}われています。",
+          "kana": "ちいさなみせでも、はじめるにはひゃくまんえんいじょうのしほんがひつようだといわれています。",
+          "en": "Even a small shop is said to need capital of over a million yen to get started."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事業|じぎょう}を{始|はじ}めたり{大|おお}きくしたりするのに{必要|ひつよう}とされるお{金|かね}。",
+        "kana": "じぎょうをはじめたりおおきくしたりするのにひつようとされるおかね。"
+      },
+      "collocations": [
+        "資本金",
+        "資本主義"
+      ],
+      "confusables": [
+        "v-n2-0165"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0167",
+      "word": "財政",
+      "kana": "ざいせい",
+      "meanings": [
+        "public finances",
+        "finances"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{市|し}の{財政|ざいせい}は{厳|きび}しく、{新|あたら}しい{図書館|としょかん}の{計画|けいかく}は{中止|ちゅうし}になった。",
+          "kana": "しのざいせいはきびしく、あたらしいとしょかんのけいかくはちゅうしになった。",
+          "en": "The city's finances are tight, and the plan for a new library was canceled."
+        },
+        {
+          "ja": "{国|くに}の{財政|ざいせい}を{立|た}て{直|なお}すには、{支出|ししゅつ}を{減|へ}らすしかないという{意見|いけん}もある。",
+          "kana": "くにのざいせいをたてなおすには、ししゅつをへらすしかないといういけんもある。",
+          "en": "Some argue that the only way to rebuild the national finances is to cut spending."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{市|し}などが、{税金|ぜいきん}を{集|あつ}めて{使|つか}うお{金|かね}のやりくり。",
+        "kana": "くにやしなどが、ぜいきんをあつめてつかうおかねのやりくり。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0168",
+      "word": "需要",
+      "kana": "じゅよう",
+      "meanings": [
+        "demand"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{夏|なつ}になると、エアコンの{需要|じゅよう}が{一気|いっき}に{増|ふ}える。",
+          "kana": "なつになると、エアコンのじゅようがいっきにふえる。",
+          "en": "When summer comes, demand for air conditioners shoots up."
+        },
+        {
+          "ja": "{人口|じんこう}が{減|へ}ったこの{町|まち}では、{新|あたら}しい{家|いえ}の{需要|じゅよう}がほとんどなくなってしまった。",
+          "kana": "じんこうがへったこのまちでは、あたらしいいえのじゅようがほとんどなくなってしまった。",
+          "en": "In this town, where the population has fallen, there is almost no demand for new houses anymore."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスを{買|か}いたい{人|ひと}がどれだけいるか、その{量|りょう}。",
+        "kana": "しょうひんやサービスをかいたいひとがどれだけいるか、そのりょう。"
+      },
+      "confusables": [
+        "v-n2-0169"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0169",
+      "word": "供給",
+      "kana": "きょうきゅう",
+      "meanings": [
+        "supply"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{地震|じしん}の{後|あと}、{水|みず}や{電気|でんき}の{供給|きょうきゅう}が{止|と}まってしまった。",
+          "kana": "じしんのあと、みずやでんきのきょうきゅうがとまってしまった。",
+          "en": "After the earthquake, the supply of water and electricity was cut off."
+        },
+        {
+          "ja": "{天気|てんき}が{悪|わる}い{日|ひ}が{続|つづ}き、{野菜|やさい}の{供給|きょうきゅう}が{間|ま}に{合|あ}わなくなっています。",
+          "kana": "てんきがわるいひがつづき、やさいのきょうきゅうがまにあわなくなっています。",
+          "en": "With the bad weather continuing, the supply of vegetables can't keep up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{必要|ひつよう}とされる{商品|しょうひん}やサービスを、{市場|しじょう}に{出|だ}して{届|とど}けること。",
+        "kana": "ひつようとされるしょうひんやサービスを、しじょうにだしてとどけること。"
+      },
+      "confusables": [
+        "v-n2-0168"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0170",
+      "word": "判決",
+      "kana": "はんけつ",
+      "meanings": [
+        "verdict",
+        "court ruling"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{裁判所|さいばんしょ}は{来週|らいしゅう}、この{事件|じけん}の{判決|はんけつ}を{出|だ}す。",
+          "kana": "さいばんしょはらいしゅう、このじけんのはんけつをだす。",
+          "en": "The court will hand down its verdict in this case next week."
+        },
+        {
+          "ja": "{判決|はんけつ}に{納得|なっとく}できなかった{彼女|かのじょ}は、もう{一度|いちど}{裁判|さいばん}を{起|お}こすことにした。",
+          "kana": "はんけつになっとくできなかったかのじょは、もういちどさいばんをおこすことにした。",
+          "en": "Unable to accept the ruling, she decided to take the case to court again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判|さいばん}の{終|お}わりに、{裁判所|さいばんしょ}が{罪|つみ}や{責任|せきにん}について{出|だ}す{決定|けってい}。",
+        "kana": "さいばんのおわりに、さいばんしょがつみやせきにんについてだすけってい。"
+      },
+      "collocations": [
+        "判決を下す",
+        "無罪判決"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0171",
+      "word": "逮捕",
+      "kana": "たいほ",
+      "meanings": [
+        "arrest"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{警察|けいさつ}は{昨夜|さくや}、{事件|じけん}の{犯人|はんにん}を{逮捕|たいほ}した。",
+          "kana": "けいさつはさくや、じけんのはんにんをたいほした。",
+          "en": "The police arrested the culprit in the case last night."
+        },
+        {
+          "ja": "{逮捕|たいほ}された{男|おとこ}は、まだ{何|なに}も{話|はな}していないということです。",
+          "kana": "たいほされたおとこは、まだなにもはなしていないということです。",
+          "en": "The arrested man reportedly has not said anything yet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{警察|けいさつ}などが、{罪|つみ}があると{疑|うたが}われる{人|ひと}を{捕|つか}まえること。",
+        "kana": "けいさつなどが、つみがあるとうたがわれるひとをつかまえること。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0172",
+      "word": "弁護士",
+      "kana": "べんごし",
+      "meanings": [
+        "lawyer",
+        "attorney"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{契約|けいやく}の{内容|ないよう}が{難|むずか}しいので、{弁護士|べんごし}に{相談|そうだん}することにした。",
+          "kana": "けいやくのないようがむずかしいので、べんごしにそうだんすることにした。",
+          "en": "The contract is hard to understand, so I decided to consult a lawyer."
+        },
+        {
+          "ja": "{弟|おとうと}は{弁護士|べんごし}になる{夢|ゆめ}をあきらめず、{五回目|ごかいめ}の{試験|しけん}でやっと{合格|ごうかく}した。",
+          "kana": "おとうとはべんごしになるゆめをあきらめず、ごかいめのしけんでやっとごうかくした。",
+          "en": "My younger brother never gave up his dream of becoming a lawyer and finally passed the exam on his fifth try."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}の{専門家|せんもんか}として、{裁判|さいばん}などで{人|ひと}の{権利|けんり}を{守|まも}る{仕事|しごと}をする{人|ひと}。",
+        "kana": "ほうりつのせんもんかとして、さいばんなどでひとのけんりをまもるしごとをするひと。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0173",
+      "word": "借金",
+      "kana": "しゃっきん",
+      "meanings": [
+        "debt",
+        "borrowed money"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{借金|しゃっきん}を{全部|ぜんぶ}{返|かえ}すために、{週末|しゅうまつ}もアルバイトをしている。",
+          "kana": "かれはしゃっきんをぜんぶかえすために、しゅうまつもアルバイトをしている。",
+          "en": "He works part-time even on weekends to pay off all his debts."
+        },
+        {
+          "ja": "{借金|しゃっきん}までして{車|くるま}を{買|か}う{必要|ひつよう}はないと、{妻|つま}に{反対|はんたい}されました。",
+          "kana": "しゃっきんまでしてくるまをかうひつようはないと、つまにはんたいされました。",
+          "en": "My wife objected, saying there was no need to go into debt to buy a car."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}や{銀行|ぎんこう}からお{金|かね}を{借|か}りること。また、その{借|か}りているお{金|かね}。",
+        "kana": "ひとやぎんこうからおかねをかりること。また、そのかりているおかね。"
+      },
+      "collocations": [
+        "借金を返す",
+        "借金をする"
+      ],
+      "confusables": [
+        "v-n2-0193"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0174",
+      "word": "財産",
+      "kana": "ざいさん",
+      "meanings": [
+        "property",
+        "assets",
+        "fortune"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{亡|な}くなる{前|まえ}に、{財産|ざいさん}を{三人|さんにん}の{子供|こども}に{分|わ}けた。",
+          "kana": "そふはなくなるまえに、ざいさんをさんにんのこどもにわけた。",
+          "en": "Before he died, my grandfather divided his property among his three children."
+        },
+        {
+          "ja": "{火事|かじ}で{家|いえ}も{財産|ざいさん}も{失|うしな}ったが、{家族|かぞく}が{無事|ぶじ}だったことが{何|なに}よりだった。",
+          "kana": "かじでいえもざいさんもうしなったが、かぞくがぶじだったことがなによりだった。",
+          "en": "We lost our house and everything we owned in the fire, but what mattered most was that the family was safe."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{個人|こじん}や{団体|だんたい}が{持|も}っている、お{金|かね}や{建物|たてもの}など{価値|かち}のあるもの。",
+        "kana": "こじんやだんたいがもっている、おかねやたてものなどかちのあるもの。"
+      },
+      "confusables": [
+        "v-n2-0192"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0175",
+      "word": "年金",
+      "kana": "ねんきん",
+      "meanings": [
+        "pension"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{両親|りょうしん}は{年金|ねんきん}だけで{生活|せいかつ}しているので、{贅沢|ぜいたく}はできない。",
+          "kana": "りょうしんはねんきんだけでせいかつしているので、ぜいたくはできない。",
+          "en": "My parents live on their pension alone, so they can't afford luxuries."
+        },
+        {
+          "ja": "{年金|ねんきん}をもらえる{年齢|ねんれい}が、{将来|しょうらい}さらに{上|あ}がるかもしれません。",
+          "kana": "ねんきんをもらえるねんれいが、しょうらいさらにあがるかもしれません。",
+          "en": "The age at which you can start receiving a pension may rise even further in the future."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{年|とし}を{取|と}ってから、{国|くに}などから{決|き}まって{受|う}け{取|と}るお{金|かね}。",
+        "kana": "としをとってから、くになどからきまってうけとるおかね。"
+      },
+      "collocations": [
+        "年金をもらう",
+        "国民年金"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0176",
+      "word": "福祉",
+      "kana": "ふくし",
+      "meanings": [
+        "welfare",
+        "social services"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "この{国|くに}は{福祉|ふくし}が{充実|じゅうじつ}している{代|か}わりに、{税金|ぜいきん}が{高|たか}い。",
+          "kana": "このくにはふくしがじゅうじつしているかわりに、ぜいきんがたかい。",
+          "en": "This country has excellent welfare services, but in exchange taxes are high."
+        },
+        {
+          "ja": "{娘|むすめ}は{大学|だいがく}で{福祉|ふくし}を{学|まな}んで、{高齢者|こうれいしゃ}の{施設|しせつ}で{働|はたら}きたいと{言|い}っている。",
+          "kana": "むすめはだいがくでふくしをまなんで、こうれいしゃのしせつではたらきたいといっている。",
+          "en": "My daughter says she wants to study social welfare at university and then work at a facility for the elderly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{社会|しゃかい}が、{人々|ひとびと}が{安心|あんしん}して{幸|しあわ}せに{生|い}きられるように{支|ささ}える{仕組|しく}み。",
+        "kana": "くにやしゃかいが、ひとびとがあんしんしてしあわせにいきられるようにささえるしくみ。"
+      },
+      "collocations": [
+        "社会福祉",
+        "福祉施設"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0177",
+      "word": "介護",
+      "kana": "かいご",
+      "meanings": [
+        "nursing care",
+        "caregiving"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "health",
+        "society",
+        "family"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}の{介護|かいご}のために、{仕事|しごと}を{週|しゅう}{三日|みっか}に{減|へ}らした。",
+          "kana": "ははのかいごのために、しごとをしゅうみっかにへらした。",
+          "en": "I cut my work down to three days a week to care for my mother."
+        },
+        {
+          "ja": "{介護|かいご}の{仕事|しごと}は{大変|たいへん}だが、「ありがとう」と{言|い}われると{疲|つか}れが{消|き}える。",
+          "kana": "かいごのしごとはたいへんだが、「ありがとう」といわれるとつかれがきえる。",
+          "en": "Caregiving is hard work, but when someone says thank you, the tiredness melts away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{高齢者|こうれいしゃ}や{病気|びょうき}の{人|ひと}など、{支|ささ}えが{必要|ひつよう}な{人|ひと}の{毎日|まいにち}の{世話|せわ}をすること。",
+        "kana": "こうれいしゃやびょうきのひとなど、ささえがひつようなひとのまいにちのせわをすること。"
+      },
+      "collocations": [
+        "介護施設",
+        "介護保険"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0178",
+      "word": "改革",
+      "kana": "かいかく",
+      "meanings": [
+        "reform"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{社長|しゃちょう}は、{会社|かいしゃ}の{働|はたら}き{方|かた}の{改革|かいかく}を{進|すす}めている。",
+          "kana": "あたらしいしゃちょうは、かいしゃのはたらきかたのかいかくをすすめている。",
+          "en": "The new president is pushing ahead with reforms to how the company works."
+        },
+        {
+          "ja": "{教育|きょういく}の{改革|かいかく}は、{結果|けっか}が{出|で}るまでに{何年|なんねん}もかかるものだ。",
+          "kana": "きょういくのかいかくは、けっかがでるまでになんねんもかかるものだ。",
+          "en": "Educational reform takes years before the results show."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{制度|せいど}や{組織|そしき}などを{大|おお}きく{変|か}えて、より{良|よ}いものにすること。",
+        "kana": "せいどやそしきなどをおおきくかえて、よりよいものにすること。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0179",
+      "word": "交渉",
+      "kana": "こうしょう",
+      "meanings": [
+        "negotiation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{家賃|やちん}を{下|さ}げてもらえないか、{大家|おおや}さんと{交渉|こうしょう}してみた。",
+          "kana": "やちんをさげてもらえないか、おおやさんとこうしょうしてみた。",
+          "en": "I tried negotiating with the landlord to see if the rent could be lowered."
+        },
+        {
+          "ja": "{両国|りょうこく}の{交渉|こうしょう}は{三日間|みっかかん}{続|つづ}いたが、{結論|けつろん}は{出|で}なかった。",
+          "kana": "りょうこくのこうしょうはみっかかんつづいたが、けつろんはでなかった。",
+          "en": "Negotiations between the two countries went on for three days, but no conclusion was reached."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}と{話|はな}し{合|あ}って、{条件|じょうけん}や{問題|もんだい}について{決|き}めようとすること。",
+        "kana": "あいてとはなしあって、じょうけんやもんだいについてきめようとすること。"
+      },
+      "collocations": [
+        "交渉する",
+        "価格交渉"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0180",
+      "word": "合意",
+      "kana": "ごうい",
+      "meanings": [
+        "agreement",
+        "consensus"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "politics",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{話|はな}し{合|あ}いの{末|すえ}、{両国|りょうこく}はようやく{合意|ごうい}に{達|たっ}した。",
+          "kana": "ながいはなしあいのすえ、りょうこくはようやくごういにたっした。",
+          "en": "After long talks, the two countries finally reached an agreement."
+        },
+        {
+          "ja": "{給料|きゅうりょう}の{件|けん}は、まだ{会社|かいしゃ}と{合意|ごうい}できていません。",
+          "kana": "きゅうりょうのけんは、まだかいしゃとごういできていません。",
+          "en": "We haven't reached an agreement with the company on salaries yet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{話|はな}し{合|あ}いの{結果|けっか}、{互|たが}いの{意見|いけん}や{考|かんが}えが{一|ひと}つにまとまること。",
+        "kana": "はなしあいのけっか、たがいのいけんやかんがえがひとつにまとまること。"
+      },
+      "collocations": [
+        "合意に達する",
+        "合意を得る"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0181",
+      "word": "ストライキ",
+      "kana": "ストライキ",
+      "meanings": [
+        "strike (labor)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "society",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}の{会社|かいしゃ}がストライキをしたので、{今日|きょう}は{歩|ある}いて{会社|かいしゃ}に{行|い}った。",
+          "kana": "でんしゃのかいしゃがストライキをしたので、きょうはあるいてかいしゃにいった。",
+          "en": "The train company went on strike, so I walked to work today."
+        },
+        {
+          "ja": "{工場|こうじょう}の{労働者|ろうどうしゃ}たちは、{賃金|ちんぎん}の{引|ひ}き{上|あ}げを{求|もと}めてストライキに{入|はい}りました。",
+          "kana": "こうじょうのろうどうしゃたちは、ちんぎんのひきあげをもとめてストライキにはいりました。",
+          "en": "The factory workers went on strike demanding a wage increase."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{労働者|ろうどうしゃ}が{要求|ようきゅう}を{通|とお}すために、みんなで{仕事|しごと}を{止|と}めること。",
+        "kana": "ろうどうしゃがようきゅうをとおすために、みんなでしごとをとめること。"
+      },
+      "notes": "Often shortened to スト (ストに入る).",
+      "collocations": [
+        "ストライキを行う",
+        "ストに入る"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0182",
+      "word": "消費者",
+      "kana": "しょうひしゃ",
+      "meanings": [
+        "consumer"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "people",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{消費者|しょうひしゃ}は{安|やす}さだけでなく、{安全|あんぜん}も{求|もと}めるようになった。",
+          "kana": "しょうひしゃはやすさだけでなく、あんぜんももとめるようになった。",
+          "en": "Consumers have come to demand not just low prices but safety too."
+        },
+        {
+          "ja": "{値段|ねだん}を{決|き}める{前|まえ}に、{消費者|しょうひしゃ}にアンケートを{取|と}ってみましょう。",
+          "kana": "ねだんをきめるまえに、しょうひしゃにアンケートをとってみましょう。",
+          "en": "Before we set the price, let's survey consumers."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスをお{金|かね}を{出|だ}して{買|か}い、それを{使|つか}う{人|ひと}。",
+        "kana": "しょうひんやサービスをおかねをだしてかい、それをつかうひと。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0183",
+      "word": "金融",
+      "kana": "きんゆう",
+      "meanings": [
+        "finance",
+        "banking"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{姉|あね}は{大学|だいがく}を{出|で}てから、ずっと{金融|きんゆう}の{仕事|しごと}をしている。",
+          "kana": "あねはだいがくをでてから、ずっときんゆうのしごとをしている。",
+          "en": "My sister has worked in finance ever since graduating from university."
+        },
+        {
+          "ja": "{世界的|せかいてき}な{金融|きんゆう}{危機|きき}の{影響|えいきょう}で、{多|おお}くの{会社|かいしゃ}が{社員|しゃいん}を{減|へ}らした。",
+          "kana": "せかいてきなきんゆうききのえいきょうで、おおくのかいしゃがしゃいんをへらした。",
+          "en": "Because of the global financial crisis, many companies cut staff."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などを{通|とお}して、お{金|かね}を{貸|か}したり{借|か}りたりすること。",
+        "kana": "ぎんこうなどをとおして、おかねをかしたりかりたりすること。"
+      },
+      "collocations": [
+        "金融機関",
+        "金融危機"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0184",
+      "word": "民間",
+      "kana": "みんかん",
+      "meanings": [
+        "private sector",
+        "civilian",
+        "nongovernmental"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{事業|じぎょう}は{国|くに}ではなく、{民間|みんかん}の{会社|かいしゃ}が{運営|うんえい}している。",
+          "kana": "このじぎょうはくにではなく、みんかんのかいしゃがうんえいしている。",
+          "en": "This project is run not by the government but by a private company."
+        },
+        {
+          "ja": "{彼|かれ}は{役所|やくしょ}を{辞|や}めて、{民間|みんかん}の{企業|きぎょう}に{転職|てんしょく}しました。",
+          "kana": "かれはやくしょをやめて、みんかんのきぎょうにてんしょくしました。",
+          "en": "He left his government job and moved to a private-sector company."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}や{役所|やくしょ}ではなく、{普通|ふつう}の{人々|ひとびと}や{会社|かいしゃ}のこと。",
+        "kana": "せいふややくしょではなく、ふつうのひとびとやかいしゃのこと。"
+      },
+      "collocations": [
+        "民間企業",
+        "民間人"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0185",
+      "word": "法人",
+      "kana": "ほうじん",
+      "meanings": [
+        "corporation",
+        "legal entity"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{個人|こじん}ではなく{法人|ほうじん}として{契約|けいやく}する{場合|ばあい}は、こちらの{書類|しょるい}が{必要|ひつよう}です。",
+          "kana": "こじんではなくほうじんとしてけいやくするばあいは、こちらのしょるいがひつようです。",
+          "en": "If you're signing the contract as a corporation rather than an individual, you'll need these documents."
+        },
+        {
+          "ja": "{去年|きょねん}、{友人|ゆうじん}と{二人|ふたり}で{法人|ほうじん}を{作|つく}り、{小|ちい}さな{会社|かいしゃ}を{始|はじ}めた。",
+          "kana": "きょねん、ゆうじんとふたりでほうじんをつくり、ちいさなかいしゃをはじめた。",
+          "en": "Last year a friend and I set up a corporation and started a small company."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{団体|だんたい}など、{法律|ほうりつ}の{上|うえ}で{一人|ひとり}の{人|ひと}のように{扱|あつか}われる{組織|そしき}。",
+        "kana": "かいしゃやだんたいなど、ほうりつのうえでひとりのひとのようにあつかわれるそしき。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0186",
+      "word": "流通",
+      "kana": "りゅうつう",
+      "meanings": [
+        "distribution (of goods)",
+        "circulation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{野菜|やさい}の{流通|りゅうつう}が{止|と}まり、スーパーの{棚|たな}が{空|から}になった。",
+          "kana": "やさいのりゅうつうがとまり、スーパーのたながからになった。",
+          "en": "The distribution of vegetables stopped, and the supermarket shelves were left empty."
+        },
+        {
+          "ja": "インターネットのおかげで、{商品|しょうひん}の{流通|りゅうつう}の{仕組|しく}みは{大|おお}きく{変|か}わりました。",
+          "kana": "インターネットのおかげで、しょうひんのりゅうつうのしくみはおおきくかわりました。",
+          "en": "Thanks to the internet, the way goods are distributed has changed dramatically."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{作|つく}られた{商品|しょうひん}が、{店|みせ}などを{通|とお}って{買|か}う{人|ひと}のところまで{届|とど}くこと。",
+        "kana": "つくられたしょうひんが、みせなどをとおってかうひとのところまでとどくこと。"
+      },
+      "collocations": [
+        "流通業",
+        "市場に流通する"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0187",
+      "word": "赤字",
+      "kana": "あかじ",
+      "meanings": [
+        "deficit",
+        "loss (in the red)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}は{三年|さんねん}{続|つづ}けて{赤字|あかじ}で、{閉|し}めるかどうか{悩|なや}んでいる。",
+          "kana": "みせはさんねんつづけてあかじで、しめるかどうかなやんでいる。",
+          "en": "The shop has been in the red for three years running, and I'm torn over whether to close it."
+        },
+        {
+          "ja": "{市|し}の{病院|びょういん}は{毎年|まいとし}{赤字|あかじ}が{続|つづ}いており、{税金|ぜいきん}で{支|ささ}えられている。",
+          "kana": "しのびょういんはまいとしあかじがつづいており、ぜいきんでささえられている。",
+          "en": "The city hospital has been running a deficit every year and is propped up by tax money."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入|はい}ってくるお{金|かね}より、{出|で}ていくお{金|かね}のほうが{多|おお}いこと。",
+        "kana": "はいってくるおかねより、でていくおかねのほうがおおいこと。"
+      },
+      "confusables": [
+        "v-n2-0188"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0188",
+      "word": "黒字",
+      "kana": "くろじ",
+      "meanings": [
+        "surplus",
+        "profit (in the black)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいメニューのおかげで、{今年|ことし}はやっと{黒字|くろじ}になった。",
+          "kana": "あたらしいメニューのおかげで、ことしはやっとくろじになった。",
+          "en": "Thanks to the new menu, we finally turned a profit this year."
+        },
+        {
+          "ja": "{黒字|くろじ}が{出|で}たら、{社員|しゃいん}のボーナスを{増|ふ}やすと{社長|しゃちょう}は{約束|やくそく}しました。",
+          "kana": "くろじがでたら、しゃいんのボーナスをふやすとしゃちょうはやくそくしました。",
+          "en": "The president promised to raise employees' bonuses if the company turns a profit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{出|で}ていくお{金|かね}より、{入|はい}ってくるお{金|かね}のほうが{多|おお}いこと。",
+        "kana": "でていくおかねより、はいってくるおかねのほうがおおいこと。"
+      },
+      "confusables": [
+        "v-n2-0187"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0189",
+      "word": "決算",
+      "kana": "けっさん",
+      "meanings": [
+        "settlement of accounts",
+        "financial results"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{三月|さんがつ}は{決算|けっさん}の{時期|じき}なので、{経理|けいり}の{部署|ぶしょ}は{毎晩|まいばん}{遅|おそ}くまで{忙|いそが}しい。",
+          "kana": "さんがつはけっさんのじきなので、けいりのぶしょはまいばんおそくまでいそがしい。",
+          "en": "March is closing season, so the accounting department is busy until late every night."
+        },
+        {
+          "ja": "{今年|ことし}の{決算|けっさん}では、{売|う}り{上|あ}げが{去年|きょねん}の{二倍|にばい}になったことが{分|わ}かった。",
+          "kana": "ことしのけっさんでは、うりあげがきょねんのにばいになったことがわかった。",
+          "en": "This year's financial results showed that sales had doubled from last year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などが、{一定|いってい}の{期間|きかん}の{収入|しゅうにゅう}と{支出|ししゅつ}を{計算|けいさん}してまとめること。",
+        "kana": "かいしゃなどが、いっていのきかんのしゅうにゅうとししゅつをけいさんしてまとめること。"
+      },
+      "collocations": [
+        "決算期",
+        "決算報告"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0190",
+      "word": "損失",
+      "kana": "そんしつ",
+      "meanings": [
+        "loss"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{火事|かじ}で{工場|こうじょう}が{止|と}まり、{会社|かいしゃ}は{大|おお}きな{損失|そんしつ}を{出|だ}した。",
+          "kana": "かじでこうじょうがとまり、かいしゃはおおきなそんしつをだした。",
+          "en": "The fire shut down the factory, and the company suffered a big loss."
+        },
+        {
+          "ja": "{株|かぶ}で{損失|そんしつ}が{出|で}ても、{誰|だれ}も{責任|せきにん}を{取|と}ってはくれません。",
+          "kana": "かぶでそんしつがでても、だれもせきにんをとってはくれません。",
+          "en": "If you lose money on stocks, nobody is going to take responsibility for you."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{財産|ざいさん}を{失|うしな}って、{損|そん}をすること。また、その{損|そん}。",
+        "kana": "おかねやざいさんをうしなって、そんをすること。また、そのそん。"
+      },
+      "collocations": [
+        "損失を出す",
+        "大きな損失"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0191",
+      "word": "収益",
+      "kana": "しゅうえき",
+      "meanings": [
+        "earnings",
+        "profit",
+        "proceeds"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "イベントの{収益|しゅうえき}は、すべて{地域|ちいき}の{子供|こども}たちのために{使|つか}われます。",
+          "kana": "イベントのしゅうえきは、すべてちいきのこどもたちのためにつかわれます。",
+          "en": "All proceeds from the event will be used for the children of the community."
+        },
+        {
+          "ja": "{新|あたら}しいサービスが{当|あ}たり、{会社|かいしゃ}の{収益|しゅうえき}は{三年|さんねん}で{倍|ばい}に{増|ふ}えた。",
+          "kana": "あたらしいサービスがあたり、かいしゃのしゅうえきはさんねんでばいにふえた。",
+          "en": "The new service was a hit, and the company's earnings doubled in three years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事業|じぎょう}や{商売|しょうばい}などを{行|おこな}って{得|え}られるお{金|かね}や{利益|りえき}。",
+        "kana": "じぎょうやしょうばいなどをおこなってえられるおかねやりえき。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0192",
+      "word": "資産",
+      "kana": "しさん",
+      "meanings": [
+        "assets"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{老後|ろうご}のために、{少|すこ}しずつ{資産|しさん}を{増|ふ}やしていきたい。",
+          "kana": "ろうごのために、すこしずつしさんをふやしていきたい。",
+          "en": "I want to gradually build up my assets for my old age."
+        },
+        {
+          "ja": "{会社|かいしゃ}の{資産|しさん}には、{現金|げんきん}だけでなく{土地|とち}や{建物|たてもの}も{含|ふく}まれます。",
+          "kana": "かいしゃのしさんには、げんきんだけでなくとちやたてものもふくまれます。",
+          "en": "A company's assets include not only cash but also land and buildings."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{個人|こじん}が{持|も}つお{金|かね}や{建物|たてもの}などを、{会計|かいけい}の{上|うえ}でまとめて{言|い}う{言葉|ことば}。",
+        "kana": "かいしゃやこじんがもつおかねやたてものなどを、かいけいのうえでまとめていうことば。"
+      },
+      "notes": "Finance and accounting term (assets, as against 負債 liabilities); 財産 is the everyday word for someone's property or fortune.",
+      "confusables": [
+        "v-n2-0174"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0193",
+      "word": "負債",
+      "kana": "ふさい",
+      "meanings": [
+        "liabilities",
+        "debt"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "その{会社|かいしゃ}は{大|おお}きな{負債|ふさい}を{抱|かか}えたまま、{倒産|とうさん}してしまった。",
+          "kana": "そのかいしゃはおおきなふさいをかかえたまま、とうさんしてしまった。",
+          "en": "That company went bankrupt while still carrying huge liabilities."
+        },
+        {
+          "ja": "{新|あたら}しい{工場|こうじょう}を{建|た}てるため、{会社|かいしゃ}の{負債|ふさい}は{一時的|いちじてき}に{増|ふ}える{見込|みこ}みです。",
+          "kana": "あたらしいこうじょうをたてるため、かいしゃのふさいはいちじてきにふえるみこみです。",
+          "en": "The company's liabilities are expected to rise temporarily in order to build the new factory."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{個人|こじん}が{借|か}りていて、{返|かえ}さなければならないお{金|かね}。",
+        "kana": "かいしゃやこじんがかりていて、かえさなければならないおかね。"
+      },
+      "notes": "Formal accounting word; 借金 is the everyday word for money you owe.",
+      "confusables": [
+        "v-n2-0173"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0194",
+      "word": "相場",
+      "kana": "そうば",
+      "meanings": [
+        "market price",
+        "going rate"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{辺|あた}りのアパートの{家賃|やちん}の{相場|そうば}は、{月|つき}{八万円|はちまんえん}くらいだ。",
+          "kana": "このあたりのアパートのやちんのそうばは、つきはちまんえんくらいだ。",
+          "en": "The going rate for apartment rent around here is about eighty thousand yen a month."
+        },
+        {
+          "ja": "{結婚式|けっこんしき}のお{祝|いわ}いは、{友人|ゆうじん}なら{三万円|さんまんえん}が{相場|そうば}だと{言|い}われています。",
+          "kana": "けっこんしきのおいわいは、ゆうじんならさんまんえんがそうばだといわれています。",
+          "en": "For a friend's wedding gift, thirty thousand yen is said to be the going rate."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{市場|しじょう}で{決|き}まるその{時々|ときどき}の{値段|ねだん}。また、{世|よ}の{中|なか}で{普通|ふつう}とされる{値段|ねだん}。",
+        "kana": "しじょうできまるそのときどきのねだん。また、よのなかでふつうとされるねだん。"
+      },
+      "collocations": [
+        "相場が上がる",
+        "株の相場"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0195",
+      "word": "為替",
+      "kana": "かわせ",
+      "meanings": [
+        "foreign exchange",
+        "exchange rate"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{為替|かわせ}の{動|うご}きによって、{海外|かいがい}{旅行|りょこう}の{費用|ひよう}は{大|おお}きく{変|か}わる。",
+          "kana": "かわせのうごきによって、かいがいりょこうのひようはおおきくかわる。",
+          "en": "The cost of traveling abroad changes a lot depending on exchange rate movements."
+        },
+        {
+          "ja": "{最近|さいきん}は{為替|かわせ}のニュースを{毎朝|まいあさ}チェックするのが{習慣|しゅうかん}になりました。",
+          "kana": "さいきんはかわせのニュースをまいあさチェックするのがしゅうかんになりました。",
+          "en": "Lately, checking the exchange-rate news every morning has become a habit of mine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{国|くに}のお{金|かね}を、ほかの{国|くに}のお{金|かね}と{交換|こうかん}すること。また、その{割合|わりあい}。",
+        "kana": "あるくにのおかねを、ほかのくにのおかねとこうかんすること。また、そのわりあい。"
+      },
+      "collocations": [
+        "為替レート",
+        "為替相場"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0196",
+      "word": "通貨",
+      "kana": "つうか",
+      "meanings": [
+        "currency"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{前|まえ}に、その{国|くに}の{通貨|つうか}を{少|すこ}しだけ{両替|りょうがえ}しておいた。",
+          "kana": "りょこうのまえに、そのくにのつうかをすこしだけりょうがえしておいた。",
+          "en": "Before the trip, I exchanged a little money into that country's currency."
+        },
+        {
+          "ja": "ヨーロッパの{多|おお}くの{国|くに}では、{共通|きょうつう}の{通貨|つうか}が{使|つか}われている。",
+          "kana": "ヨーロッパのおおくのくにでは、きょうつうのつうかがつかわれている。",
+          "en": "Many European countries use a common currency."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{国|くに}や{地域|ちいき}で、{売|う}り{買|か}いに{使|つか}われているお{金|かね}。",
+        "kana": "あるくにやちいきで、うりかいにつかわれているおかね。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0197",
+      "word": "関税",
+      "kana": "かんぜい",
+      "meanings": [
+        "customs duty",
+        "tariff"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{輸入|ゆにゅう}する{品物|しなもの}には、{関税|かんぜい}がかかることがある。",
+          "kana": "ゆにゅうするしなものには、かんぜいがかかることがある。",
+          "en": "Imported goods are sometimes subject to customs duty."
+        },
+        {
+          "ja": "{関税|かんぜい}が{引|ひ}き{下|さ}げられたおかげで、{外国|がいこく}のワインが{前|まえ}より{安|やす}く{買|か}えるようになった。",
+          "kana": "かんぜいがひきさげられたおかげで、がいこくのワインがまえよりやすくかえるようになった。",
+          "en": "Thanks to the tariff cut, foreign wine has become cheaper to buy than before."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}から{輸入|ゆにゅう}する{品物|しなもの}にかけられる{税金|ぜいきん}。",
+        "kana": "がいこくからゆにゅうするしなものにかけられるぜいきん。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0198",
+      "word": "株式",
+      "kana": "かぶしき",
+      "meanings": [
+        "stocks",
+        "shares"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "その{会社|かいしゃ}の{株式|かぶしき}は、{来月|らいげつ}から{誰|だれ}でも{買|か}えるようになる。",
+          "kana": "そのかいしゃのかぶしきは、らいげつからだれでもかえるようになる。",
+          "en": "Anyone will be able to buy shares in that company from next month."
+        },
+        {
+          "ja": "{父|ちち}は{退職金|たいしょくきん}の{一部|いちぶ}を{株式|かぶしき}に{回|まわ}したと{言|い}っていた。",
+          "kana": "ちちはたいしょくきんのいちぶをかぶしきにまわしたといっていた。",
+          "en": "My father said he put part of his retirement money into stocks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}が{資本|しほん}を{集|あつ}めるために{出|だ}す、{会社|かいしゃ}の{一部|いちぶ}を{持|も}つ{権利|けんり}。",
+        "kana": "かいしゃがしほんをあつめるためにだす、かいしゃのいちぶをもつけんり。"
+      },
+      "notes": "Formal term used in business and news; in everyday speech people say 株.",
+      "collocations": [
+        "株式会社",
+        "株式市場"
+      ],
+      "confusables": [
+        "v-n2-0146"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0199",
+      "word": "株主",
+      "kana": "かぶぬし",
+      "meanings": [
+        "shareholder"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{株主|かぶぬし}には{年|ねん}に{一度|いちど}、{会社|かいしゃ}から{報告書|ほうこくしょ}が{送|おく}られてくる。",
+          "kana": "かぶぬしにはねんにいちど、かいしゃからほうこくしょがおくられてくる。",
+          "en": "Once a year, the company sends shareholders a report."
+        },
+        {
+          "ja": "{社長|しゃちょう}は{株主|かぶぬし}の{前|まえ}で、{業績|ぎょうせき}が{悪|わる}かった{理由|りゆう}を{説明|せつめい}しなければならなかった。",
+          "kana": "しゃちょうはかぶぬしのまえで、ぎょうせきがわるかったりゆうをせつめいしなければならなかった。",
+          "en": "The president had to explain to the shareholders why results had been poor."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}の{株|かぶ}を{持|も}ち、{会社|かいしゃ}の{利益|りえき}を{受|う}け{取|と}る{権利|けんり}がある{人|ひと}。",
+        "kana": "かいしゃのかぶをもち、かいしゃのりえきをうけとるけんりがあるひと。"
+      },
+      "collocations": [
+        "株主総会",
+        "株主優待"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0200",
+      "word": "株価",
+      "kana": "かぶか",
+      "meanings": [
+        "stock price"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}の{問題|もんだい}がニュースになり、{株価|かぶか}が{一日|いちにち}で{大|おお}きく{下|さ}がった。",
+          "kana": "かいしゃのもんだいがニュースになり、かぶかがいちにちでおおきくさがった。",
+          "en": "The company's troubles made the news, and its stock price fell sharply in one day."
+        },
+        {
+          "ja": "{新製品|しんせいひん}の{発表|はっぴょう}を{受|う}けて、{株価|かぶか}は{今朝|けさ}から{上|あ}がり{続|つづ}けています。",
+          "kana": "しんせいひんのはっぴょうをうけて、かぶかはけさからあがりつづけています。",
+          "en": "Following the new product announcement, the stock price has kept rising since this morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{市場|しじょう}で{売|う}り{買|か}いされる{株|かぶ}の、その{時々|ときどき}の{値段|ねだん}。",
+        "kana": "しじょうでうりかいされるかぶの、そのときどきのねだん。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0201",
+      "word": "融資",
+      "kana": "ゆうし",
+      "meanings": [
+        "financing",
+        "loan (from a bank)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}から{融資|ゆうし}を{受|う}けて、{二店目|にてんめ}を{開|ひら}くことになった。",
+          "kana": "ぎんこうからゆうしをうけて、にてんめをひらくことになった。",
+          "en": "We got a loan from the bank and are going to open a second shop."
+        },
+        {
+          "ja": "{計画書|けいかくしょ}がしっかりしていなければ、{銀行|ぎんこう}は{融資|ゆうし}してくれないだろう。",
+          "kana": "けいかくしょがしっかりしていなければ、ぎんこうはゆうししてくれないだろう。",
+          "en": "Unless the business plan is solid, the bank probably won't lend us the money."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などが、{会社|かいしゃ}や{人|ひと}に{事業|じぎょう}のためのお{金|かね}を{貸|か}すこと。",
+        "kana": "ぎんこうなどが、かいしゃやひとにじぎょうのためのおかねをかすこと。"
+      },
+      "collocations": [
+        "融資を受ける",
+        "融資を断る"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0202",
+      "word": "利子",
+      "kana": "りし",
+      "meanings": [
+        "interest (on money)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}に{預|あず}けても、{利子|りし}はほとんどつかない。",
+          "kana": "ぎんこうにあずけても、りしはほとんどつかない。",
+          "en": "Even if you deposit money in the bank, it earns almost no interest."
+        },
+        {
+          "ja": "{友達|ともだち}から{借|か}りたお{金|かね}なので、{利子|りし}は{要|い}らないと{言|い}われました。",
+          "kana": "ともだちからかりたおかねなので、りしはいらないといわれました。",
+          "en": "Since I borrowed the money from a friend, I was told I didn't need to pay interest."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{借|か}りた{人|ひと}や{預|あず}けた{人|ひと}に、{決|き}まった{割合|わりあい}で{加|くわ}えられるお{金|かね}。",
+        "kana": "おかねをかりたひとやあずけたひとに、きまったわりあいでくわえられるおかね。"
+      },
+      "notes": "Interest earned or paid on money. 利息 is nearly identical; 利子 is a little more everyday, 利息 a little more formal.",
+      "collocations": [
+        "利子がつく",
+        "利子を払う"
+      ],
+      "confusables": [
+        "v-n2-0203"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0203",
+      "word": "利息",
+      "kana": "りそく",
+      "meanings": [
+        "interest (on money)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{借|か}りたお{金|かね}は、{利息|りそく}を{含|ふく}めて{来年|らいねん}までに{返|かえ}さなければならない。",
+          "kana": "かりたおかねは、りそくをふくめてらいねんまでにかえさなければならない。",
+          "en": "I have to repay the borrowed money, including interest, by next year."
+        },
+        {
+          "ja": "この{口座|こうざ}は{利息|りそく}が{高|たか}いので、ボーナスはここに{入|い}れておこう。",
+          "kana": "このこうざはりそくがたかいので、ボーナスはここにいれておこう。",
+          "en": "This account pays high interest, so I'll put my bonus in here."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{借|か}りたり{預|あず}けたりしたときに、{一定|いってい}の{割合|わりあい}で{付|つ}くお{金|かね}。",
+        "kana": "おかねをかりたりあずけたりしたときに、いっていのわりあいでつくおかね。"
+      },
+      "confusables": [
+        "v-n2-0202"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0204",
+      "word": "ローン",
+      "kana": "ローン",
+      "meanings": [
+        "loan"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{家|いえ}のローンは、あと{二十年|にじゅうねん}も{残|のこ}っている。",
+          "kana": "いえのローンは、あとにじゅうねんものこっている。",
+          "en": "There are still twenty more years left on our mortgage."
+        },
+        {
+          "ja": "{車|くるま}をローンで{買|か}うか、{現金|げんきん}で{買|か}うか、{妻|つま}と{相談|そうだん}しています。",
+          "kana": "くるまをローンでかうか、げんきんでかうか、つまとそうだんしています。",
+          "en": "My wife and I are discussing whether to buy the car on a loan or with cash."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などからお{金|かね}を{借|か}りて、{長|なが}い{期間|きかん}をかけて{少|すこ}しずつ{返|かえ}す{仕組|しく}み。",
+        "kana": "ぎんこうなどからおかねをかりて、ながいきかんをかけてすこしずつかえすしくみ。"
+      },
+      "collocations": [
+        "住宅ローン",
+        "ローンを組む"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0205",
+      "word": "返済",
+      "kana": "へんさい",
+      "meanings": [
+        "repayment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{毎月|まいつき}の{返済|へんさい}が{大変|たいへん}で、{新|あたら}しい{車|くるま}を{買|か}う{余裕|よゆう}はない。",
+          "kana": "まいつきのへんさいがたいへんで、あたらしいくるまをかうよゆうはない。",
+          "en": "The monthly repayments are tough, so I can't afford a new car."
+        },
+        {
+          "ja": "{奨学金|しょうがくきん}の{返済|へんさい}は、{大学|だいがく}を{出|で}た{翌年|よくねん}から{始|はじ}まります。",
+          "kana": "しょうがくきんのへんさいは、だいがくをでたよくねんからはじまります。",
+          "en": "Repayment of the scholarship loan begins the year after you graduate from university."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}や{人|ひと}から{借|か}りているお{金|かね}を{返|かえ}すこと。",
+        "kana": "ぎんこうやひとからかりているおかねをかえすこと。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0206",
+      "word": "振込",
+      "kana": "ふりこみ",
+      "meanings": [
+        "bank transfer"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{家賃|やちん}は{毎月|まいつき}{二十五日|にじゅうごにち}までに{振込|ふりこみ}でお{願|ねが}いします。",
+          "kana": "やちんはまいつきにじゅうごにちまでにふりこみでおねがいします。",
+          "en": "Please pay the rent by bank transfer by the twenty-fifth of each month."
+        },
+        {
+          "ja": "{振込|ふりこみ}の{手数料|てすうりょう}が{無料|むりょう}になる{銀行|ぎんこう}を{選|えら}んだ。",
+          "kana": "ふりこみのてすうりょうがむりょうになるぎんこうをえらんだ。",
+          "en": "I chose a bank where transfer fees are free."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などの{口座|こうざ}に、お{金|かね}を{送|おく}って{入|い}れること。",
+        "kana": "ぎんこうなどのこうざに、おかねをおくっていれること。"
+      },
+      "altForms": [
+        "振り込み"
+      ],
+      "collocations": [
+        "振込手数料",
+        "銀行振込"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0207",
+      "word": "残高",
+      "kana": "ざんだか",
+      "meanings": [
+        "balance (of an account)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{ATM|エーティーエム}で{残高|ざんだか}を{確認|かくにん}したら、{思|おも}ったより{少|すく}なくて{驚|おどろ}いた。",
+          "kana": "エーティーエムでざんだかをかくにんしたら、おもったよりすくなくておどろいた。",
+          "en": "When I checked my balance at the ATM, I was shocked at how little there was."
+        },
+        {
+          "ja": "{給料日|きゅうりょうび}の{前|まえ}は、いつも{口座|こうざ}の{残高|ざんだか}が{千円|せんえん}を{切|き}ってしまう。",
+          "kana": "きゅうりょうびのまえは、いつもこうざのざんだかがせんえんをきってしまう。",
+          "en": "Before payday, my account balance always drops below a thousand yen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}の{口座|こうざ}などに、{今|いま}{残|のこ}っているお{金|かね}の{合計|ごうけい}。",
+        "kana": "ぎんこうのこうざなどに、いまのこっているおかねのごうけい。"
+      },
+      "collocations": [
+        "残高照会",
+        "口座残高"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0208",
+      "word": "送金",
+      "kana": "そうきん",
+      "meanings": [
+        "remittance",
+        "sending money"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{海外|かいがい}で{働|はたら}く{兄|あに}は、{毎月|まいつき}{実家|じっか}に{送金|そうきん}している。",
+          "kana": "かいがいではたらくあには、まいつきじっかにそうきんしている。",
+          "en": "My brother, who works overseas, sends money home to our parents every month."
+        },
+        {
+          "ja": "スマホのアプリを{使|つか}えば、{外国|がいこく}への{送金|そうきん}も{数分|すうふん}で{終|お}わります。",
+          "kana": "スマホのアプリをつかえば、がいこくへのそうきんもすうふんでおわります。",
+          "en": "With a smartphone app, even sending money abroad takes only a few minutes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{銀行|ぎんこう}などを{通|とお}して、{離|はな}れたところにいる{人|ひと}にお{金|かね}を{送|おく}ること。",
+        "kana": "ぎんこうなどをとおして、はなれたところにいるひとにおかねをおくること。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0209",
+      "word": "不動産",
+      "kana": "ふどうさん",
+      "meanings": [
+        "real estate"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}し{先|さき}を{探|さが}しに、{駅前|えきまえ}の{不動産屋|ふどうさんや}に{行|い}ってきた。",
+          "kana": "ひっこしさきをさがしに、えきまえのふどうさんやにいってきた。",
+          "en": "I went to the real estate agency in front of the station to look for a new place."
+        },
+        {
+          "ja": "{祖母|そぼ}は{不動産|ふどうさん}をいくつか{持|も}っていて、その{家賃|やちん}で{暮|く}らしている。",
+          "kana": "そぼはふどうさんをいくつかもっていて、そのやちんでくらしている。",
+          "en": "My grandmother owns several properties and lives on the rent from them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}や{地面|じめん}など、{動|うご}かすことができない{財産|ざいさん}。",
+        "kana": "たてものやじめんなど、うごかすことができないざいさん。"
+      },
+      "collocations": [
+        "不動産屋",
+        "不動産会社"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0210",
+      "word": "増税",
+      "kana": "ぞうぜい",
+      "meanings": [
+        "tax increase"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{来年|らいねん}の{増税|ぞうぜい}の{前|まえ}に、{大|おお}きな{買|か}い{物|もの}を{済|す}ませておこうと{思|おも}う。",
+          "kana": "らいねんのぞうぜいのまえに、おおきなかいものをすませておこうとおもう。",
+          "en": "I'm thinking of getting my big purchases done before next year's tax increase."
+        },
+        {
+          "ja": "{政府|せいふ}は{増税|ぞうぜい}によって{集|あつ}めたお{金|かね}を、{子育|こそだ}て{支援|しえん}に{使|つか}うと{説明|せつめい}した。",
+          "kana": "せいふはぞうぜいによってあつめたおかねを、こそだてしえんにつかうとせつめいした。",
+          "en": "The government explained that the money raised by the tax increase would go to child-rearing support."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{市|し}などが、{税金|ぜいきん}の{割合|わりあい}を{今|いま}より{高|たか}くすること。",
+        "kana": "くにやしなどが、ぜいきんのわりあいをいまよりたかくすること。"
+      },
+      "station": 39
+    },
+    {
+      "id": "v-n2-0211",
+      "word": "値上げ",
+      "kana": "ねあげ",
+      "meanings": [
+        "price increase"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{材料|ざいりょう}が{高|たか}くなったため、{来月|らいげつ}からパンを{値上|ねあ}げします。",
+          "kana": "ざいりょうがたかくなったため、らいげつからパンをねあげします。",
+          "en": "Because ingredients have gotten more expensive, we're raising bread prices from next month."
+        },
+        {
+          "ja": "{電気代|でんきだい}の{値上|ねあ}げが{続|つづ}いて、{家計|かけい}はますます{苦|くる}しくなった。",
+          "kana": "でんきだいのねあげがつづいて、かけいはますますくるしくなった。",
+          "en": "With electricity rates going up again and again, the household budget has gotten even tighter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスの{値段|ねだん}を、{今|いま}までより{高|たか}くすること。",
+        "kana": "しょうひんやサービスのねだんを、いままでよりたかくすること。"
+      },
+      "confusables": [
+        "v-n2-0212"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0212",
+      "word": "値下げ",
+      "kana": "ねさげ",
+      "meanings": [
+        "price cut",
+        "markdown"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{売|う}れ{残|のこ}った{服|ふく}は、{季節|きせつ}の{終|お}わりに{大|おお}きく{値下|ねさ}げされる。",
+          "kana": "うれのこったふくは、きせつのおわりにおおきくねさげされる。",
+          "en": "Unsold clothes get big markdowns at the end of the season."
+        },
+        {
+          "ja": "{値下|ねさ}げしてもお{客|きゃく}さんが{増|ふ}えないなら、{別|べつ}の{方法|ほうほう}を{考|かんが}えなければならない。",
+          "kana": "ねさげしてもおきゃくさんがふえないなら、べつのほうほうをかんがえなければならない。",
+          "en": "If cutting prices doesn't bring in more customers, we'll have to think of another approach."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスの{値段|ねだん}を、{今|いま}までより{安|やす}くすること。",
+        "kana": "しょうひんやサービスのねだんを、いままでよりやすくすること。"
+      },
+      "confusables": [
+        "v-n2-0211"
+      ],
+      "station": 39
+    },
+    {
+      "id": "v-n2-0213",
+      "word": "寄付",
+      "kana": "きふ",
+      "meanings": [
+        "donation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{本|ほん}を{売|う}ったお{金|かね}を、{全部|ぜんぶ}{図書館|としょかん}に{寄付|きふ}した。",
+          "kana": "ふるいほんをうったおかねを、ぜんぶとしょかんにきふした。",
+          "en": "I donated all the money from selling my old books to the library."
+        },
+        {
+          "ja": "{台風|たいふう}の{被害|ひがい}を{受|う}けた{地域|ちいき}に、{全国|ぜんこく}から{多|おお}くの{寄付|きふ}が{寄|よ}せられています。",
+          "kana": "たいふうのひがいをうけたちいきに、ぜんこくからおおくのきふがよせられています。",
+          "en": "Donations are pouring in from all over the country for the areas hit by the typhoon."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{困|こま}っている{人|ひと}や{社会|しゃかい}のために、お{金|かね}や{品物|しなもの}をただで{渡|わた}すこと。",
+        "kana": "こまっているひとやしゃかいのために、おかねやしなものをただでわたすこと。"
+      },
+      "altForms": [
+        "寄附"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0214",
+      "word": "インフレ",
+      "kana": "インフレ",
+      "meanings": [
+        "inflation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "インフレが{続|つづ}くと、{同|おな}じお{金|かね}で{買|か}える{物|もの}が{減|へ}っていく。",
+          "kana": "インフレがつづくと、おなじおかねでかえるものがへっていく。",
+          "en": "If inflation continues, the same money buys fewer and fewer things."
+        },
+        {
+          "ja": "{政府|せいふ}はインフレを{抑|おさ}えるため、{新|あたら}しい{対策|たいさく}を{発表|はっぴょう}しました。",
+          "kana": "せいふはインフレをおさえるため、あたらしいたいさくをはっぴょうしました。",
+          "en": "The government announced new measures to curb inflation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{物価|ぶっか}が{上|あ}がり{続|つづ}けて、お{金|かね}の{価値|かち}が{下|さ}がっていくこと。",
+        "kana": "ぶっかがあがりつづけて、おかねのかちがさがっていくこと。"
+      },
+      "notes": "Clipped from インフレーション; the opposite is デフレ.",
+      "altForms": [
+        "インフレーション"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0215",
+      "word": "好況",
+      "kana": "こうきょう",
+      "meanings": [
+        "economic boom",
+        "prosperity"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{好況|こうきょう}が{続|つづ}き、どの{会社|かいしゃ}も{新|あたら}しい{社員|しゃいん}を{探|さが}している。",
+          "kana": "こうきょうがつづき、どのかいしゃもあたらしいしゃいんをさがしている。",
+          "en": "The boom continues, and every company is looking for new employees."
+        },
+        {
+          "ja": "{好況|こうきょう}の{時代|じだい}には、{給料|きゅうりょう}も{毎年|まいとし}のように{上|あ}がったという。",
+          "kana": "こうきょうのじだいには、きゅうりょうもまいとしのようにあがったという。",
+          "en": "In the boom years, they say salaries rose almost every year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景気|けいき}が{良|よ}くて{商品|しょうひん}がよく{売|う}れ、{経済|けいざい}{全体|ぜんたい}が{元気|げんき}な{状態|じょうたい}。",
+        "kana": "けいきがよくてしょうひんがよくうれ、けいざいぜんたいがげんきなじょうたい。"
+      },
+      "notes": "News and written word; in conversation 景気がいい.",
+      "confusables": [
+        "v-n2-0216"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0216",
+      "word": "不況",
+      "kana": "ふきょう",
+      "meanings": [
+        "recession",
+        "economic slump"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{不況|ふきょう}の{影響|えいきょう}で、{駅前|えきまえ}の{店|みせ}が{次々|つぎつぎ}と{閉|し}まっていった。",
+          "kana": "ふきょうのえいきょうで、えきまえのみせがつぎつぎとしまっていった。",
+          "en": "Because of the recession, the shops in front of the station closed one after another."
+        },
+        {
+          "ja": "{不況|ふきょう}でも{売|う}れ{続|つづ}ける{商品|しょうひん}には、{何|なに}か{理由|りゆう}があるはずだ。",
+          "kana": "ふきょうでもうれつづけるしょうひんには、なにかりゆうがあるはずだ。",
+          "en": "There must be a reason why some products keep selling even in a recession."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景気|けいき}が{悪|わる}くて{商品|しょうひん}が{売|う}れず、{経済|けいざい}{全体|ぜんたい}が{元気|げんき}のない{状態|じょうたい}。",
+        "kana": "けいきがわるくてしょうひんがうれず、けいざいぜんたいがげんきのないじょうたい。"
+      },
+      "collocations": [
+        "不況に強い",
+        "世界不況"
+      ],
+      "confusables": [
+        "v-n2-0215"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0217",
+      "word": "独占",
+      "kana": "どくせん",
+      "meanings": [
+        "monopoly",
+        "exclusive possession"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{一|ひと}つの{会社|かいしゃ}が{市場|しじょう}を{独占|どくせん}すると、{値段|ねだん}が{下|さ}がりにくくなる。",
+          "kana": "ひとつのかいしゃがしじょうをどくせんすると、ねだんがさがりにくくなる。",
+          "en": "When a single company monopolizes the market, prices become hard to lower."
+        },
+        {
+          "ja": "{弟|おとうと}はテレビを{独占|どくせん}して、{一日中|いちにちじゅう}ゲームをしていた。",
+          "kana": "おとうとはテレビをどくせんして、いちにちじゅうゲームをしていた。",
+          "en": "My little brother hogged the TV and played games all day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一人|ひとり}や{一|ひと}つの{会社|かいしゃ}が、ほかを{入|い}れずに{全部|ぜんぶ}を{自分|じぶん}のものにすること。",
+        "kana": "ひとりやひとつのかいしゃが、ほかをいれずにぜんぶをじぶんのものにすること。"
+      },
+      "collocations": [
+        "市場を独占する",
+        "独占インタビュー"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0218",
+      "word": "合併",
+      "kana": "がっぺい",
+      "meanings": [
+        "merger"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{二|ふた}つの{銀行|ぎんこう}が{合併|がっぺい}して、{国内|こくない}で{一番|いちばん}{大|おお}きな{銀行|ぎんこう}になった。",
+          "kana": "ふたつのぎんこうががっぺいして、こくないでいちばんおおきなぎんこうになった。",
+          "en": "The two banks merged and became the largest bank in the country."
+        },
+        {
+          "ja": "{人口|じんこう}が{減|へ}った{三|みっ}つの{村|むら}は、{来年|らいねん}{合併|がっぺい}して{一|ひと}つの{町|まち}になります。",
+          "kana": "じんこうがへったみっつのむらは、らいねんがっぺいしてひとつのまちになります。",
+          "en": "The three villages, whose populations have shrunk, will merge next year into a single town."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{二|ふた}つ{以上|いじょう}の{会社|かいしゃ}や{町|まち}などが、{一|ひと}つになること。",
+        "kana": "ふたついじょうのかいしゃやまちなどが、ひとつになること。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0219",
+      "word": "倒産",
+      "kana": "とうさん",
+      "meanings": [
+        "bankruptcy (of a company)",
+        "going under"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{通|かよ}っていた{本屋|ほんや}が、{先月|せんげつ}{倒産|とうさん}してしまった。",
+          "kana": "ながねんかよっていたほんやが、せんげつとうさんしてしまった。",
+          "en": "The bookstore I'd gone to for years went bankrupt last month."
+        },
+        {
+          "ja": "{倒産|とうさん}した{会社|かいしゃ}の{社員|しゃいん}たちは、{新|あたら}しい{仕事|しごと}を{探|さが}さなければなりません。",
+          "kana": "とうさんしたかいしゃのしゃいんたちは、あたらしいしごとをさがさなければなりません。",
+          "en": "The employees of the bankrupt company have to look for new jobs."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{店|みせ}が、お{金|かね}が{足|た}りなくなって{事業|じぎょう}を{続|つづ}けられなくなること。",
+        "kana": "かいしゃやみせが、おかねがたりなくなってじぎょうをつづけられなくなること。"
+      },
+      "notes": "Said of companies and shops going under; 破産 is the legal term and is used of individuals too.",
+      "confusables": [
+        "v-n2-0220"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0220",
+      "word": "破産",
+      "kana": "はさん",
+      "meanings": [
+        "bankruptcy",
+        "insolvency"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{借金|しゃっきん}が{返|かえ}せなくなり、{彼|かれ}はついに{破産|はさん}してしまった。",
+          "kana": "しゃっきんがかえせなくなり、かれはついにはさんしてしまった。",
+          "en": "Unable to repay his debts, he finally went bankrupt."
+        },
+        {
+          "ja": "ギャンブルが{原因|げんいん}で{破産|はさん}する{人|ひと}は、{今|いま}も{少|すく}なくないそうです。",
+          "kana": "ギャンブルがげんいんではさんするひとは、いまもすくなくないそうです。",
+          "en": "I hear there are still quite a few people who go bankrupt because of gambling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{借金|しゃっきん}が{返|かえ}せなくなり、{法律|ほうりつ}の{手続|てつづ}きによって{財産|ざいさん}を{全部|ぜんぶ}{失|うしな}うこと。",
+        "kana": "しゃっきんがかえせなくなり、ほうりつのてつづきによってざいさんをぜんぶうしなうこと。"
+      },
+      "collocations": [
+        "自己破産",
+        "破産する"
+      ],
+      "confusables": [
+        "v-n2-0219"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0221",
+      "word": "経費",
+      "kana": "けいひ",
+      "meanings": [
+        "expenses",
+        "costs"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{出張|しゅっちょう}の{交通費|こうつうひ}は、{経費|けいひ}として{会社|かいしゃ}に{請求|せいきゅう}できます。",
+          "kana": "しゅっちょうのこうつうひは、けいひとしてかいしゃにせいきゅうできます。",
+          "en": "Transportation costs for business trips can be claimed from the company as expenses."
+        },
+        {
+          "ja": "{経費|けいひ}を{減|へ}らすため、{会社|かいしゃ}は{紙|かみ}の{資料|しりょう}をやめて{全部|ぜんぶ}データにした。",
+          "kana": "けいひをへらすため、かいしゃはかみのしりょうをやめてぜんぶデータにした。",
+          "en": "To cut expenses, the company stopped using paper documents and went fully digital."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{事業|じぎょう}を{行|おこな}うために{必要|ひつよう}になる{費用|ひよう}。",
+        "kana": "しごとやじぎょうをおこなうためにひつようになるひよう。"
+      },
+      "collocations": [
+        "経費で落とす",
+        "経費削減"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0222",
+      "word": "原価",
+      "kana": "げんか",
+      "meanings": [
+        "cost price",
+        "production cost"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "このケーキは{原価|げんか}が{三百円|さんびゃくえん}で、{八百円|はっぴゃくえん}で{売|う}っている。",
+          "kana": "このケーキはげんかがさんびゃくえんで、はっぴゃくえんでうっている。",
+          "en": "This cake costs three hundred yen to make, and we sell it for eight hundred."
+        },
+        {
+          "ja": "{材料|ざいりょう}の{値段|ねだん}が{上|あ}がり、{原価|げんか}が{売|う}り{値|ね}を{超|こ}えそうになっている。",
+          "kana": "ざいりょうのねだんがあがり、げんかがうりねをこえそうになっている。",
+          "en": "Ingredient prices have risen, and the production cost is about to exceed the selling price."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}を{作|つく}ったり{買|か}ってきたりするのにかかった{費用|ひよう}。",
+        "kana": "しょうひんをつくったりかってきたりするのにかかったひよう。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0223",
+      "word": "見積もり",
+      "kana": "みつもり",
+      "meanings": [
+        "estimate",
+        "quotation"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{前|まえ}に、{三|みっ}つの{会社|かいしゃ}から{見積|みつ}もりを{取|と}った。",
+          "kana": "ひっこしのまえに、みっつのかいしゃからみつもりをとった。",
+          "en": "Before moving, I got estimates from three companies."
+        },
+        {
+          "ja": "{工事|こうじ}の{見積|みつ}もりが{予算|よさん}を{大|おお}きく{超|こ}えていたので、{計画|けいかく}を{見直|みなお}すことにした。",
+          "kana": "こうじのみつもりがよさんをおおきくこえていたので、けいかくをみなおすことにした。",
+          "en": "The estimate for the construction work was way over budget, so we decided to rethink the plan."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{工事|こうじ}にかかる{費用|ひよう}や{時間|じかん}を、{前|まえ}もって{計算|けいさん}して{示|しめ}すこと。",
+        "kana": "しごとやこうじにかかるひようやじかんを、まえもってけいさんしてしめすこと。"
+      },
+      "altForms": [
+        "見積り",
+        "見積"
+      ],
+      "collocations": [
+        "見積もりを取る",
+        "見積書"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0224",
+      "word": "請求",
+      "kana": "せいきゅう",
+      "meanings": [
+        "billing",
+        "claim (for payment)",
+        "demand"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{先月|せんげつ}の{電気代|でんきだい}の{請求|せいきゅう}が{来|き}たが、{去年|きょねん}より{千円|せんえん}も{高|たか}かった。",
+          "kana": "せんげつのでんきだいのせいきゅうがきたが、きょねんよりせんえんもたかかった。",
+          "en": "Last month's electricity bill came, and it was a thousand yen higher than last year."
+        },
+        {
+          "ja": "{壊|こわ}れた{商品|しょうひん}が{届|とど}いたので、{店|みせ}に{返金|へんきん}を{請求|せいきゅう}しました。",
+          "kana": "こわれたしょうひんがとどいたので、みせにへんきんをせいきゅうしました。",
+          "en": "The product arrived broken, so I demanded a refund from the shop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{代金|だいきん}などを{払|はら}うように、{相手|あいて}に{求|もと}めること。",
+        "kana": "だいきんなどをはらうように、あいてにもとめること。"
+      },
+      "collocations": [
+        "請求書",
+        "代金を請求する"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0225",
+      "word": "納品",
+      "kana": "のうひん",
+      "meanings": [
+        "delivery (of goods)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "ご{注文|ちゅうもん}の{商品|しょうひん}は、{来週|らいしゅう}の{金曜日|きんようび}に{納品|のうひん}いたします。",
+          "kana": "ごちゅうもんのしょうひんは、らいしゅうのきんようびにのうひんいたします。",
+          "en": "The products you ordered will be delivered next Friday."
+        },
+        {
+          "ja": "{納品|のうひん}が{一日|いちにち}{遅|おく}れただけで、{取引先|とりひきさき}から{厳|きび}しく{注意|ちゅうい}された。",
+          "kana": "のうひんがいちにちおくれただけで、とりひきさきからきびしくちゅういされた。",
+          "en": "The delivery was just one day late, and the client gave us a stern warning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{注文|ちゅうもん}を{受|う}けた{商品|しょうひん}を、{約束|やくそく}どおりに{相手|あいて}に{届|とど}けること。",
+        "kana": "ちゅうもんをうけたしょうひんを、やくそくどおりにあいてにとどけること。"
+      },
+      "collocations": [
+        "納品書",
+        "納品日"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0226",
+      "word": "納税",
+      "kana": "のうぜい",
+      "meanings": [
+        "paying taxes",
+        "tax payment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{納税|のうぜい}は{国民|こくみん}の{義務|ぎむ}の{一|ひと}つである。",
+          "kana": "のうぜいはこくみんのぎむのひとつである。",
+          "en": "Paying taxes is one of a citizen's duties."
+        },
+        {
+          "ja": "{店|みせ}を{始|はじ}めてから、{納税|のうぜい}の{手続|てつづ}きの{大変|たいへん}さを{初|はじ}めて{知|し}りました。",
+          "kana": "みせをはじめてから、のうぜいのてつづきのたいへんさをはじめてしりました。",
+          "en": "Only after opening my shop did I learn how much work paying taxes involves."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}で{決|き}められた{税金|ぜいきん}を、{国|くに}や{市|し}などに{払|はら}うこと。",
+        "kana": "ほうりつできめられたぜいきんを、くにやしなどにはらうこと。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0227",
+      "word": "所得",
+      "kana": "しょとく",
+      "meanings": [
+        "income"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{所得|しょとく}が{多|おお}い{人|ひと}ほど、{払|はら}う{税金|ぜいきん}の{割合|わりあい}も{高|たか}くなる。",
+          "kana": "しょとくがおおいひとほど、はらうぜいきんのわりあいもたかくなる。",
+          "en": "The higher a person's income, the higher the percentage of tax they pay."
+        },
+        {
+          "ja": "{去年|きょねん}の{所得|しょとく}を{書|か}いた{書類|しょるい}を、{三月|さんがつ}までに{役所|やくしょ}に{出|だ}さなければならない。",
+          "kana": "きょねんのしょとくをかいたしょるいを、さんがつまでにやくしょにださなければならない。",
+          "en": "I have to submit the paperwork showing last year's income to the authorities by March."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}いたり{事業|じぎょう}をしたりして、{一年間|いちねんかん}に{入|はい}ってくるお{金|かね}。",
+        "kana": "はたらいたりじぎょうをしたりして、いちねんかんにはいってくるおかね。"
+      },
+      "notes": "Formal and tax-office word; everyday speech uses 収入.",
+      "collocations": [
+        "所得税",
+        "年間所得"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0228",
+      "word": "手当",
+      "kana": "てあて",
+      "meanings": [
+        "allowance",
+        "benefit (pay)",
+        "first aid"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}では、{家族|かぞく}がいる{社員|しゃいん}に{毎月|まいつき}{手当|てあて}が{出|で}る。",
+          "kana": "このかいしゃでは、かぞくがいるしゃいんにまいつきてあてがでる。",
+          "en": "At this company, employees with families receive a monthly allowance."
+        },
+        {
+          "ja": "{子|こ}どもが{転|ころ}んでひざをけがしたので、すぐに{手当|てあ}てをした。",
+          "kana": "こどもがころんでひざをけがしたので、すぐにてあてをした。",
+          "en": "My child fell and scraped a knee, so I gave first aid right away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{基本|きほん}の{給料|きゅうりょう}に{加|くわ}えて、{決|き}まった{目的|もくてき}で{払|はら}われるお{金|かね}。",
+        "kana": "きほんのきゅうりょうにくわえて、きまったもくてきではらわれるおかね。"
+      },
+      "altForms": [
+        "手当て"
+      ],
+      "collocations": [
+        "住宅手当",
+        "通勤手当"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0229",
+      "word": "報酬",
+      "kana": "ほうしゅう",
+      "meanings": [
+        "remuneration",
+        "reward",
+        "fee (for work)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}の{報酬|ほうしゅう}は、{翌月|よくげつ}の{末|すえ}に{振|ふ}り{込|こ}まれる。",
+          "kana": "しごとのほうしゅうは、よくげつのすえにふりこまれる。",
+          "en": "Payment for the work is transferred at the end of the following month."
+        },
+        {
+          "ja": "{報酬|ほうしゅう}が{安|やす}くても、この{仕事|しごと}は{経験|けいけん}になるから{引|ひ}き{受|う}けようと{思|おも}う。",
+          "kana": "ほうしゅうがやすくても、このしごとはけいけんになるからひきうけようとおもう。",
+          "en": "Even if the pay is low, I think I'll take this job because it'll be good experience."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{働|はたら}きのお{礼|れい}として{受|う}け{取|と}るお{金|かね}など。",
+        "kana": "しごとやはたらきのおれいとしてうけとるおかねなど。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0230",
+      "word": "賞与",
+      "kana": "しょうよ",
+      "meanings": [
+        "bonus (pay)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "work",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}は{会社|かいしゃ}の{業績|ぎょうせき}が{良|よ}く、{賞与|しょうよ}が{去年|きょねん}より{増|ふ}えた。",
+          "kana": "ことしはかいしゃのぎょうせきがよく、しょうよがきょねんよりふえた。",
+          "en": "The company did well this year, so bonuses were bigger than last year."
+        },
+        {
+          "ja": "{賞与|しょうよ}は{年|ねん}に{二回|にかい}、{六月|ろくがつ}と{十二月|じゅうにがつ}に{支給|しきゅう}されます。",
+          "kana": "しょうよはねんににかい、ろくがつとじゅうにがつにしきゅうされます。",
+          "en": "Bonuses are paid twice a year, in June and December."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}が{普通|ふつう}の{給料|きゅうりょう}に{加|くわ}えて、{年|ねん}に{一回|いっかい}か{二回|にかい}{払|はら}うお{金|かね}。ボーナス。",
+        "kana": "かいしゃがふつうのきゅうりょうにくわえて、ねんにいっかいかにかいはらうおかね。ボーナス。"
+      },
+      "notes": "Formal term seen on pay slips and in contracts; in conversation ボーナス.",
+      "station": 40
+    },
+    {
+      "id": "v-n2-0231",
+      "word": "議長",
+      "kana": "ぎちょう",
+      "meanings": [
+        "chairperson",
+        "speaker (of an assembly)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{議長|ぎちょう}は{全員|ぜんいん}の{意見|いけん}を{聞|き}いた{上|うえ}で、{結論|けつろん}を{出|だ}した。",
+          "kana": "ぎちょうはぜんいんのいけんをきいたうえで、けつろんをだした。",
+          "en": "After hearing everyone's opinions, the chairperson reached a conclusion."
+        },
+        {
+          "ja": "{今日|きょう}の{会議|かいぎ}では、{私|わたし}が{議長|ぎちょう}を{務|つと}めることになっています。",
+          "kana": "きょうのかいぎでは、わたしがぎちょうをつとめることになっています。",
+          "en": "I'm set to chair today's meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会議|かいぎ}や{議会|ぎかい}を{進|すす}めて、{全体|ぜんたい}をまとめる{人|ひと}。",
+        "kana": "かいぎやぎかいをすすめて、ぜんたいをまとめるひと。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0232",
+      "word": "議題",
+      "kana": "ぎだい",
+      "meanings": [
+        "agenda item",
+        "topic for discussion"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "business",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{会議|かいぎ}の{議題|ぎだい}は、{来年|らいねん}の{予算|よさん}についてです。",
+          "kana": "きょうのかいぎのぎだいは、らいねんのよさんについてです。",
+          "en": "Today's meeting agenda is next year's budget."
+        },
+        {
+          "ja": "{時間|じかん}が{足|た}りなかったので、{残|のこ}りの{議題|ぎだい}は{次回|じかい}に{回|まわ}された。",
+          "kana": "じかんがたりなかったので、のこりのぎだいはじかいにまわされた。",
+          "en": "We ran out of time, so the remaining agenda items were pushed to the next meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会議|かいぎ}で{話|はな}し{合|あ}うために{出|だ}される{問題|もんだい}やテーマ。",
+        "kana": "かいぎではなしあうためにだされるもんだいやテーマ。"
+      },
+      "collocations": [
+        "議題に上がる",
+        "議題にする"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0233",
+      "word": "立法",
+      "kana": "りっぽう",
+      "meanings": [
+        "legislation",
+        "lawmaking"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{国会|こっかい}は{立法|りっぽう}を{行|おこな}う{唯一|ゆいいつ}の{機関|きかん}である。",
+          "kana": "こっかいはりっぽうをおこなうゆいいつのきかんである。",
+          "en": "The Diet is the sole body that makes laws."
+        },
+        {
+          "ja": "{新|あたら}しい{技術|ぎじゅつ}が{次々|つぎつぎ}と{生|う}まれ、{立法|りっぽう}が{追|お}いつかなくなっている。",
+          "kana": "あたらしいぎじゅつがつぎつぎとうまれ、りっぽうがおいつかなくなっている。",
+          "en": "New technologies keep emerging, and lawmaking can't keep up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国会|こっかい}などが、{国|くに}の{決|き}まりである{法律|ほうりつ}を{作|つく}ること。",
+        "kana": "こっかいなどが、くにのきまりであるほうりつをつくること。"
+      },
+      "confusables": [
+        "v-n2-0234",
+        "v-n2-0162"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0234",
+      "word": "司法",
+      "kana": "しほう",
+      "meanings": [
+        "judiciary",
+        "administration of justice"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{日本|にほん}では{立法|りっぽう}、{行政|ぎょうせい}、{司法|しほう}の{三|みっ}つの{権力|けんりょく}が{分|わ}けられている。",
+          "kana": "にほんではりっぽう、ぎょうせい、しほうのみっつのけんりょくがわけられている。",
+          "en": "In Japan, the three powers of legislation, administration and the judiciary are kept separate."
+        },
+        {
+          "ja": "{司法|しほう}の{独立|どくりつ}が{守|まも}られていなければ、{公平|こうへい}な{裁判|さいばん}は{期待|きたい}できない。",
+          "kana": "しほうのどくりつがまもられていなければ、こうへいなさいばんはきたいできない。",
+          "en": "Without judicial independence, fair trials cannot be expected."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}に{基|もと}づいて、{裁判所|さいばんしょ}が{争|あらそ}いや{罪|つみ}について{判断|はんだん}する{働|はたら}き。",
+        "kana": "ほうりつにもとづいて、さいばんしょがあらそいやつみについてはんだんするはたらき。"
+      },
+      "confusables": [
+        "v-n2-0233",
+        "v-n2-0162"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0235",
+      "word": "権力",
+      "kana": "けんりょく",
+      "meanings": [
+        "power",
+        "authority (political)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}の{人間|にんげん}に{権力|けんりょく}が{集|あつ}まりすぎるのは{危険|きけん}だ。",
+          "kana": "ひとりのにんげんにけんりょくがあつまりすぎるのはきけんだ。",
+          "en": "It's dangerous for too much power to be concentrated in one person."
+        },
+        {
+          "ja": "{王|おう}は{権力|けんりょく}を{使|つか}って、{反対|はんたい}する{人々|ひとびと}を{次々|つぎつぎ}に{捕|つか}まえさせた。",
+          "kana": "おうはけんりょくをつかって、はんたいするひとびとをつぎつぎにつかまえさせた。",
+          "en": "The king used his power to have those who opposed him arrested one after another."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{人々|ひとびと}を{支配|しはい}し、{従|したが}わせることができる{強|つよ}い{力|ちから}。",
+        "kana": "くにやひとびとをしはいし、したがわせることができるつよいちから。"
+      },
+      "collocations": [
+        "権力を握る",
+        "権力者"
+      ],
+      "confusables": [
+        "v-n2-0236"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0236",
+      "word": "権限",
+      "kana": "けんげん",
+      "meanings": [
+        "authority (to act)",
+        "competence"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "work",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{私|わたし}にはこの{契約|けいやく}を{決|き}める{権限|けんげん}がないので、{上|うえ}に{確認|かくにん}します。",
+          "kana": "わたしにはこのけいやくをきめるけんげんがないので、うえにかくにんします。",
+          "en": "I don't have the authority to decide on this contract, so I'll check with my superiors."
+        },
+        {
+          "ja": "{店長|てんちょう}には、{値段|ねだん}を{決|き}める{権限|けんげん}が{与|あた}えられています。",
+          "kana": "てんちょうには、ねだんをきめるけんげんがあたえられています。",
+          "en": "The store manager has been given the authority to set prices."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{人|ひと}や{組織|そしき}が、{決|き}めたり{行|おこな}ったりすることを{認|みと}められている{範囲|はんい}。",
+        "kana": "あるひとやそしきが、きめたりおこなったりすることをみとめられているはんい。"
+      },
+      "notes": "The scope of what one is entitled to decide or do (権限がある, 権限がない); 権力 is political or coercive power.",
+      "confusables": [
+        "v-n2-0235"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0237",
+      "word": "官僚",
+      "kana": "かんりょう",
+      "meanings": [
+        "bureaucrat",
+        "government official"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{官僚|かんりょう}が{書|か}いた{文章|ぶんしょう}は、{難|むずか}しくて{分|わ}かりにくいと{言|い}われる。",
+          "kana": "かんりょうがかいたぶんしょうは、むずかしくてわかりにくいといわれる。",
+          "en": "Documents written by bureaucrats are said to be hard to understand."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{官僚|かんりょう}として{二十年|にじゅうねん}{働|はたら}いた{後|あと}、{選挙|せんきょ}に{出|で}ることを{決|き}めた。",
+          "kana": "かのじょはかんりょうとしてにじゅうねんはたらいたあと、せんきょにでることをきめた。",
+          "en": "After working as a bureaucrat for twenty years, she decided to run for office."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{役所|やくしょ}で{働|はたら}いて、{行政|ぎょうせい}の{中心|ちゅうしん}となる{仕事|しごと}をする{公務員|こうむいん}。",
+        "kana": "くにのやくしょではたらいて、ぎょうせいのちゅうしんとなるしごとをするこうむいん。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0238",
+      "word": "条例",
+      "kana": "じょうれい",
+      "meanings": [
+        "local ordinance",
+        "bylaw"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "この{市|し}には、{路上|ろじょう}でタバコを{吸|す}ってはいけないという{条例|じょうれい}がある。",
+          "kana": "このしには、ろじょうでタバコをすってはいけないというじょうれいがある。",
+          "en": "This city has an ordinance banning smoking on the street."
+        },
+        {
+          "ja": "{県|けん}は{新|あたら}しい{条例|じょうれい}を{作|つく}って、{夜|よる}の{騒音|そうおん}を{厳|きび}しく{取|と}り{締|し}まることにした。",
+          "kana": "けんはあたらしいじょうれいをつくって、よるのそうおんをきびしくとりしまることにした。",
+          "en": "The prefecture created a new ordinance to crack down on nighttime noise."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{県|けん}や{市|し}などの{自治体|じちたい}が、その{地域|ちいき}のために{作|つく}る{決|き}まり。",
+        "kana": "けんやしなどのじちたいが、そのちいきのためにつくるきまり。"
+      },
+      "confusables": [
+        "v-n2-0254"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0239",
+      "word": "法案",
+      "kana": "ほうあん",
+      "meanings": [
+        "bill (proposed law)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "その{法案|ほうあん}は{長|なが}い{議論|ぎろん}の{末|すえ}、ようやく{国会|こっかい}を{通|とお}った。",
+          "kana": "そのほうあんはながいぎろんのすえ、ようやくこっかいをとおった。",
+          "en": "After a long debate, the bill finally passed the Diet."
+        },
+        {
+          "ja": "{政府|せいふ}は、{働|はたら}く{時間|じかん}を{短|みじか}くするための{法案|ほうあん}を{国会|こっかい}に{提出|ていしゅつ}しました。",
+          "kana": "せいふは、はたらくじかんをみじかくするためのほうあんをこっかいにていしゅつしました。",
+          "en": "The government submitted a bill to the Diet to shorten working hours."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}にするかどうかを{国会|こっかい}で{話|はな}し{合|あ}うために{出|だ}されるもの。",
+        "kana": "ほうりつにするかどうかをこっかいではなしあうためにだされるもの。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0240",
+      "word": "違法",
+      "kana": "いほう",
+      "meanings": [
+        "illegal",
+        "unlawful"
+      ],
+      "pos": "adj-na",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{許可|きょか}なく{他人|たにん}の{写真|しゃしん}を{使|つか}うのは{違法|いほう}です。",
+          "kana": "きょかなくたにんのしゃしんをつかうのはいほうです。",
+          "en": "Using someone else's photos without permission is illegal."
+        },
+        {
+          "ja": "{違法|いほう}な{駐車|ちゅうしゃ}が{多|おお}くて、{救急車|きゅうきゅうしゃ}が{通|とお}れないことがある。",
+          "kana": "いほうなちゅうしゃがおおくて、きゅうきゅうしゃがとおれないことがある。",
+          "en": "There's so much illegal parking that ambulances sometimes can't get through."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}で{禁止|きんし}されていて、してはいけないこと。",
+        "kana": "ほうりつできんしされていて、してはいけないこと。"
+      },
+      "confusables": [
+        "v-n2-0241",
+        "v-n2-0154"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0241",
+      "word": "合法",
+      "kana": "ごうほう",
+      "meanings": [
+        "legal",
+        "lawful"
+      ],
+      "pos": "adj-na",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "この{国|くに}では、{路上|ろじょう}で{物|もの}を{売|う}ることは{合法|ごうほう}だ。",
+          "kana": "このくにでは、ろじょうでものをうることはごうほうだ。",
+          "en": "In this country, selling things on the street is legal."
+        },
+        {
+          "ja": "その{薬|くすり}は{日本|にほん}では{合法|ごうほう}ですが、{国|くに}によっては{持|も}ち{込|こ}めません。",
+          "kana": "そのくすりはにほんではごうほうですが、くにによってはもちこめません。",
+          "en": "That medicine is legal in Japan, but in some countries you can't bring it in."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}で{認|みと}められていて、してもよいこと。",
+        "kana": "ほうりつでみとめられていて、してもよいこと。"
+      },
+      "confusables": [
+        "v-n2-0240"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0242",
+      "word": "取締り",
+      "kana": "とりしまり",
+      "meanings": [
+        "crackdown",
+        "enforcement",
+        "control"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}は{飲酒|いんしゅ}{運転|うんてん}の{取締|とりしま}りが{厳|きび}しくなる。",
+          "kana": "ねんまつはいんしゅうんてんのとりしまりがきびしくなる。",
+          "en": "At year's end, the crackdown on drunk driving gets tougher."
+        },
+        {
+          "ja": "{警察|けいさつ}が{取締|とりしま}りを{強|つよ}めた{結果|けっか}、{事故|じこ}の{数|かず}は{半分|はんぶん}に{減|へ}りました。",
+          "kana": "けいさつがとりしまりをつよめたけっか、じこのかずははんぶんにへりました。",
+          "en": "As a result of the police stepping up enforcement, the number of accidents fell by half."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{警察|けいさつ}などが、{法律|ほうりつ}を{守|まも}らない{人|ひと}や{行|おこな}いを{調|しら}べて、やめさせること。",
+        "kana": "けいさつなどが、ほうりつをまもらないひとやおこないをしらべて、やめさせること。"
+      },
+      "altForms": [
+        "取り締まり"
+      ],
+      "collocations": [
+        "取締りを強化する",
+        "交通取締り"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0243",
+      "word": "容疑",
+      "kana": "ようぎ",
+      "meanings": [
+        "suspicion (of a crime)",
+        "charge"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{男|おとこ}は{盗|ぬす}みの{容疑|ようぎ}で{警察|けいさつ}に{調|しら}べられている。",
+          "kana": "おとこはぬすみのようぎでけいさつにしらべられている。",
+          "en": "The man is being questioned by police on suspicion of theft."
+        },
+        {
+          "ja": "{警察|けいさつ}は{十分|じゅうぶん}な{証拠|しょうこ}がないとして、{男|おとこ}の{容疑|ようぎ}を{取|と}り{消|け}しました。",
+          "kana": "けいさつはじゅうぶんなしょうこがないとして、おとこのようぎをとりけしました。",
+          "en": "The police dropped the charge against the man, citing a lack of sufficient evidence."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{人|ひと}に{罪|つみ}があるのではないかという{疑|うたが}い。",
+        "kana": "あるひとにつみがあるのではないかといううたがい。"
+      },
+      "collocations": [
+        "容疑者",
+        "容疑を認める"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0244",
+      "word": "被害者",
+      "kana": "ひがいしゃ",
+      "meanings": [
+        "victim"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "people",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{警察|けいさつ}は{被害者|ひがいしゃ}から{詳|くわ}しく{話|はなし}を{聞|き}いた。",
+          "kana": "けいさつはひがいしゃからくわしくはなしをきいた。",
+          "en": "The police heard a detailed account from the victim."
+        },
+        {
+          "ja": "{事故|じこ}の{被害者|ひがいしゃ}を{支援|しえん}するための{団体|だんたい}が、{市内|しない}に{作|つく}られました。",
+          "kana": "じこのひがいしゃをしえんするためのだんたいが、しないにつくられました。",
+          "en": "An organization to support accident victims was set up in the city."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事故|じこ}や{犯罪|はんざい}などによって、{損|そん}や{傷|きず}を{受|う}けた{人|ひと}。",
+        "kana": "じこやはんざいなどによって、そんやきずをうけたひと。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0245",
+      "word": "加害",
+      "kana": "かがい",
+      "meanings": [
+        "inflicting harm",
+        "perpetration"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{加害者|かがいしゃ}は{被害者|ひがいしゃ}に{謝|あやま}り、{治療費|ちりょうひ}を{払|はら}った。",
+          "kana": "かがいしゃはひがいしゃにあやまり、ちりょうひをはらった。",
+          "en": "The perpetrator apologized to the victim and paid the medical costs."
+        },
+        {
+          "ja": "{加害者|かがいしゃ}{側|がわ}の{会社|かいしゃ}は、まだ{正式|せいしき}な{謝罪|しゃざい}をしていない。",
+          "kana": "かがいしゃがわのかいしゃは、まだせいしきなしゃざいをしていない。",
+          "en": "The company responsible for the accident has yet to issue a formal apology."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかの{人|ひと}に、{損|そん}や{傷|きず}を{与|あた}えること。",
+        "kana": "ほかのひとに、そんやきずをあたえること。"
+      },
+      "notes": "Rarely used alone; almost always in 加害者 (perpetrator) or 加害行為, as the opposite of 被害.",
+      "collocations": [
+        "加害者",
+        "加害行為"
+      ],
+      "confusables": [
+        "v-n2-0155"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0246",
+      "word": "被告",
+      "kana": "ひこく",
+      "meanings": [
+        "defendant",
+        "the accused"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{被告|ひこく}は{裁判|さいばん}で「{私|わたし}はやっていない」と{最後|さいご}まで{言|い}い{続|つづ}けた。",
+          "kana": "ひこくはさいばんで「わたしはやっていない」とさいごまでいいつづけた。",
+          "en": "The defendant kept insisting to the end of the trial, \"I didn't do it.\""
+        },
+        {
+          "ja": "{裁判所|さいばんしょ}は{被告|ひこく}に{対|たい}して、{三百万円|さんびゃくまんえん}を{払|はら}うよう{命|めい}じました。",
+          "kana": "さいばんしょはひこくにたいして、さんびゃくまんえんをはらうようめいじました。",
+          "en": "The court ordered the defendant to pay three million yen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判|さいばん}で{訴|うった}えられて、{裁判所|さいばんしょ}で{調|しら}べられるほうの{人|ひと}。",
+        "kana": "さいばんでうったえられて、さいばんしょでしらべられるほうのひと。"
+      },
+      "confusables": [
+        "v-n2-0247"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0247",
+      "word": "原告",
+      "kana": "げんこく",
+      "meanings": [
+        "plaintiff"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "この{裁判|さいばん}では、{原告|げんこく}は{三人|さんにん}の{住民|じゅうみん}である。",
+          "kana": "このさいばんでは、げんこくはさんにんのじゅうみんである。",
+          "en": "In this trial, the plaintiffs are three local residents."
+        },
+        {
+          "ja": "{原告|げんこく}の{女性|じょせい}は、{会社|かいしゃ}に{謝罪|しゃざい}と{賠償|ばいしょう}を{求|もと}めています。",
+          "kana": "げんこくのじょせいは、かいしゃにしゃざいとばいしょうをもとめています。",
+          "en": "The plaintiff, a woman, is seeking an apology and compensation from the company."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判所|さいばんしょ}に{訴|うった}えを{起|お}こして、{裁判|さいばん}を{求|もと}めたほうの{人|ひと}。",
+        "kana": "さいばんしょにうったえをおこして、さいばんをもとめたほうのひと。"
+      },
+      "confusables": [
+        "v-n2-0246"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0248",
+      "word": "検察",
+      "kana": "けんさつ",
+      "meanings": [
+        "prosecution",
+        "public prosecutors"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{検察|けんさつ}は{新|あたら}しい{証拠|しょうこ}をもとに、{男|おとこ}を{裁判|さいばん}にかけることを{決|き}めた。",
+          "kana": "けんさつはあたらしいしょうこをもとに、おとこをさいばんにかけることをきめた。",
+          "en": "Based on new evidence, the prosecutors decided to bring the man to trial."
+        },
+        {
+          "ja": "{検察|けんさつ}は{無罪|むざい}の{判決|はんけつ}に{納得|なっとく}せず、もう{一度|いちど}{争|あらそ}う{考|かんが}えを{示|しめ}した。",
+          "kana": "けんさつはむざいのはんけつになっとくせず、もういちどあらそうかんがえをしめした。",
+          "en": "Unhappy with the not-guilty verdict, the prosecution indicated it would fight the case again."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{罪|つみ}があると{考|かんが}えられる{人|ひと}を{調|しら}べて、{裁判|さいばん}にかける{国|くに}の{役所|やくしょ}。",
+        "kana": "つみがあるとかんがえられるひとをしらべて、さいばんにかけるくにのやくしょ。"
+      },
+      "collocations": [
+        "検察官",
+        "検察庁"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0249",
+      "word": "無罪",
+      "kana": "むざい",
+      "meanings": [
+        "innocence",
+        "not guilty"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{裁判|さいばん}の{末|すえ}、{彼|かれ}には{無罪|むざい}の{判決|はんけつ}が{出|で}た。",
+          "kana": "ながいさいばんのすえ、かれにはむざいのはんけつがでた。",
+          "en": "After a long trial, he was found not guilty."
+        },
+        {
+          "ja": "{無罪|むざい}を{証明|しょうめい}するために、{弁護士|べんごし}は{新|あたら}しい{証人|しょうにん}を{探|さが}しています。",
+          "kana": "むざいをしょうめいするために、べんごしはあたらしいしょうにんをさがしています。",
+          "en": "To prove his innocence, the lawyer is looking for new witnesses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判|さいばん}で、{罪|つみ}がないと{認|みと}められること。",
+        "kana": "さいばんで、つみがないとみとめられること。"
+      },
+      "confusables": [
+        "v-n2-0250"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0250",
+      "word": "有罪",
+      "kana": "ゆうざい",
+      "meanings": [
+        "guilt",
+        "guilty (verdict)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{証拠|しょうこ}が{十分|じゅうぶん}だったため、{男|おとこ}は{有罪|ゆうざい}になった。",
+          "kana": "しょうこがじゅうぶんだったため、おとこはゆうざいになった。",
+          "en": "Because the evidence was sufficient, the man was found guilty."
+        },
+        {
+          "ja": "もし{有罪|ゆうざい}になれば、{彼|かれ}は{十年|じゅうねん}{以上|いじょう}{刑務所|けいむしょ}に{入|はい}ることになる。",
+          "kana": "もしゆうざいになれば、かれはじゅうねんいじょうけいむしょにはいることになる。",
+          "en": "If he is found guilty, he will spend more than ten years in prison."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判|さいばん}で、{罪|つみ}があると{認|みと}められること。",
+        "kana": "さいばんで、つみがあるとみとめられること。"
+      },
+      "confusables": [
+        "v-n2-0249"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0251",
+      "word": "刑罰",
+      "kana": "けいばつ",
+      "meanings": [
+        "punishment (legal)",
+        "penalty"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{罪|つみ}でも、{国|くに}によって{刑罰|けいばつ}の{重|おも}さは{大|おお}きく{違|ちが}う。",
+          "kana": "おなじつみでも、くにによってけいばつのおもさはおおきくちがう。",
+          "en": "Even for the same crime, the severity of punishment varies greatly from country to country."
+        },
+        {
+          "ja": "{刑罰|けいばつ}を{重|おも}くすれば{犯罪|はんざい}が{減|へ}るのかどうかは、{昔|むかし}から{議論|ぎろん}されてきた。",
+          "kana": "けいばつをおもくすればはんざいがへるのかどうかは、むかしからぎろんされてきた。",
+          "en": "Whether harsher punishments reduce crime has been debated since long ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}を{破|やぶ}った{人|ひと}に{対|たい}して、{国|くに}が{与|あた}える{罰|ばつ}。",
+        "kana": "ほうりつをやぶったひとにたいして、くにがあたえるばつ。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0252",
+      "word": "賠償",
+      "kana": "ばいしょう",
+      "meanings": [
+        "compensation (for damages)",
+        "reparations"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}は{事故|じこ}の{被害者|ひがいしゃ}に{対|たい}して、{賠償|ばいしょう}を{行|おこな}うと{発表|はっぴょう}した。",
+          "kana": "かいしゃはじこのひがいしゃにたいして、ばいしょうをおこなうとはっぴょうした。",
+          "en": "The company announced it would pay compensation to the victims of the accident."
+        },
+        {
+          "ja": "{借|か}りていた{部屋|へや}の{壁|かべ}を{壊|こわ}してしまい、{大家|おおや}さんに{十万円|じゅうまんえん}{賠償|ばいしょう}した。",
+          "kana": "かりていたへやのかべをこわしてしまい、おおやさんにじゅうまんえんばいしょうした。",
+          "en": "I damaged the wall of the room I was renting and paid the landlord a hundred thousand yen in compensation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}に{与|あた}えた{損|そん}や{傷|きず}を、お{金|かね}などで{返|かえ}すこと。",
+        "kana": "あいてにあたえたそんやきずを、おかねなどでかえすこと。"
+      },
+      "collocations": [
+        "損害賠償",
+        "賠償金"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0253",
+      "word": "証人",
+      "kana": "しょうにん",
+      "meanings": [
+        "witness"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}を{見|み}ていた{女性|じょせい}が、{証人|しょうにん}として{裁判|さいばん}に{呼|よ}ばれた。",
+          "kana": "じこをみていたじょせいが、しょうにんとしてさいばんによばれた。",
+          "en": "A woman who saw the accident was called to the trial as a witness."
+        },
+        {
+          "ja": "{結婚|けっこん}の{届|とど}けには、{証人|しょうにん}として{二人|ふたり}のサインが{必要|ひつよう}です。",
+          "kana": "けっこんのとどけには、しょうにんとしてふたりのサインがひつようです。",
+          "en": "A marriage registration requires the signatures of two witnesses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{裁判|さいばん}などで、{自分|じぶん}が{見|み}たことや{知|し}っていることを{話|はな}す{人|ひと}。",
+        "kana": "さいばんなどで、じぶんがみたことやしっていることをはなすひと。"
+      },
+      "notes": "Someone who testifies in court. A bystander who saw something happen is a 目撃者.",
+      "station": 40
+    },
+    {
+      "id": "v-n2-0254",
+      "word": "条約",
+      "kana": "じょうやく",
+      "meanings": [
+        "treaty"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{戦争|せんそう}の{後|あと}、{両国|りょうこく}はようやく{平和|へいわ}{条約|じょうやく}を{結|むす}んだ。",
+          "kana": "ながいせんそうのあと、りょうこくはようやくへいわじょうやくをむすんだ。",
+          "en": "After the long war, the two countries finally signed a peace treaty."
+        },
+        {
+          "ja": "この{条約|じょうやく}によって、{海|うみ}を{汚|よご}す{物質|ぶっしつ}の{使用|しよう}が{世界中|せかいじゅう}で{禁止|きんし}された。",
+          "kana": "このじょうやくによって、うみをよごすぶっしつのしようがせかいじゅうできんしされた。",
+          "en": "Under this treaty, the use of substances that pollute the sea was banned worldwide."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}と{国|くに}とが{話|はな}し{合|あ}って{決|き}め、{互|たが}いに{守|まも}ると{約束|やくそく}したこと。",
+        "kana": "くにとくにとがはなしあってきめ、たがいにまもるとやくそくしたこと。"
+      },
+      "collocations": [
+        "条約を結ぶ",
+        "平和条約"
+      ],
+      "confusables": [
+        "v-n2-0238",
+        "v-n2-0260"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0255",
+      "word": "外交",
+      "kana": "がいこう",
+      "meanings": [
+        "diplomacy",
+        "foreign relations"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{外交|がいこう}では、{相手|あいて}の{国|くに}の{文化|ぶんか}を{理解|りかい}することが{何|なに}より{大切|たいせつ}だ。",
+          "kana": "がいこうでは、あいてのくにのぶんかをりかいすることがなによりたいせつだ。",
+          "en": "In diplomacy, understanding the other country's culture matters more than anything."
+        },
+        {
+          "ja": "{首相|しゅしょう}は{外交|がいこう}のために、{今年|ことし}だけで{十|じゅっ}か{国|こく}を{訪|おとず}れた。",
+          "kana": "しゅしょうはがいこうのために、ことしだけでじゅっかこくをおとずれた。",
+          "en": "For diplomatic purposes, the prime minister visited ten countries this year alone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}と{国|くに}との{付|つ}き{合|あ}いや、{話|はな}し{合|あ}いで{関係|かんけい}を{作|つく}っていくこと。",
+        "kana": "くにとくにとのつきあいや、はなしあいでかんけいをつくっていくこと。"
+      },
+      "collocations": [
+        "外交官",
+        "外交関係"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0256",
+      "word": "同盟",
+      "kana": "どうめい",
+      "meanings": [
+        "alliance"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{二|ふた}つの{国|くに}は{同盟|どうめい}を{結|むす}び、{互|たが}いに{助|たす}け{合|あ}うことを{約束|やくそく}した。",
+          "kana": "ふたつのくにはどうめいをむすび、たがいにたすけあうことをやくそくした。",
+          "en": "The two countries formed an alliance and promised to help each other."
+        },
+        {
+          "ja": "{同盟|どうめい}を{組|く}んだ{会社|かいしゃ}{同士|どうし}が、{新|あたら}しい{技術|ぎじゅつ}を{一緒|いっしょ}に{開発|かいはつ}している。",
+          "kana": "どうめいをくんだかいしゃどうしが、あたらしいぎじゅつをいっしょにかいはつしている。",
+          "en": "Companies that have formed an alliance are jointly developing new technology."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}などが、{互|たが}いに{助|たす}け{合|あ}うことを{約束|やくそく}して{結|むす}ぶ{関係|かんけい}。",
+        "kana": "くになどが、たがいにたすけあうことをやくそくしてむすぶかんけい。"
+      },
+      "collocations": [
+        "同盟を結ぶ",
+        "同盟国"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0257",
+      "word": "紛争",
+      "kana": "ふんそう",
+      "meanings": [
+        "conflict",
+        "dispute"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{紛争|ふんそう}が{続|つづ}く{地域|ちいき}では、{多|おお}くの{子供|こども}が{学校|がっこう}に{通|かよ}えずにいる。",
+          "kana": "ふんそうがつづくちいきでは、おおくのこどもががっこうにかよえずにいる。",
+          "en": "In regions where conflict continues, many children are unable to attend school."
+        },
+        {
+          "ja": "{土地|とち}をめぐる{二|ふた}つの{村|むら}の{紛争|ふんそう}は、{裁判|さいばん}でようやく{解決|かいけつ}した。",
+          "kana": "とちをめぐるふたつのむらのふんそうは、さいばんでようやくかいけつした。",
+          "en": "The dispute between the two villages over land was finally settled in court."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{集団|しゅうだん}の{間|あいだ}で{起|お}こる、{激|はげ}しい{争|あらそ}いやもめごと。",
+        "kana": "くにやしゅうだんのあいだでおこる、はげしいあらそいやもめごと。"
+      },
+      "collocations": [
+        "紛争地域",
+        "国際紛争"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0258",
+      "word": "難民",
+      "kana": "なんみん",
+      "meanings": [
+        "refugee"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{戦争|せんそう}から{逃|に}げてきた{難民|なんみん}を、{町|まち}の{人々|ひとびと}が{温|あたた}かく{迎|むか}えた。",
+          "kana": "せんそうからにげてきたなんみんを、まちのひとびとがあたたかくむかえた。",
+          "en": "The townspeople warmly welcomed the refugees who had fled the war."
+        },
+        {
+          "ja": "{難民|なんみん}として{日本|にほん}に{来|き}た{彼|かれ}は、{今|いま}では{日本語|にほんご}の{先生|せんせい}をしている。",
+          "kana": "なんみんとしてにほんにきたかれは、いまではにほんごのせんせいをしている。",
+          "en": "He came to Japan as a refugee and is now a Japanese teacher."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{戦争|せんそう}などのために、{自分|じぶん}の{国|くに}から{逃|に}げ{出|だ}した{人々|ひとびと}。",
+        "kana": "せんそうなどのために、じぶんのくにからにげだしたひとびと。"
+      },
+      "confusables": [
+        "v-n2-0259"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0259",
+      "word": "移民",
+      "kana": "いみん",
+      "meanings": [
+        "immigrant",
+        "emigrant",
+        "immigration"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "この{国|くに}は{多|おお}くの{移民|いみん}を{受|う}け{入|い}れ、{様々|さまざま}な{文化|ぶんか}が{混|ま}ざり{合|あ}っている。",
+          "kana": "このくにはおおくのいみんをうけいれ、さまざまなぶんかがまざりあっている。",
+          "en": "This country has taken in many immigrants, and a variety of cultures are blended together."
+        },
+        {
+          "ja": "{祖父母|そふぼ}は{移民|いみん}として{南米|なんべい}に{渡|わた}り、そこで{農業|のうぎょう}を{始|はじ}めたそうだ。",
+          "kana": "そふぼはいみんとしてなんべいにわたり、そこでのうぎょうをはじめたそうだ。",
+          "en": "My grandparents emigrated to South America and started farming there, I'm told."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{住|す}む{国|くに}を{変|か}えて、ほかの{国|くに}に{移|うつ}り{住|す}む{人|ひと}。",
+        "kana": "すむくにをかえて、ほかのくににうつりすむひと。"
+      },
+      "confusables": [
+        "v-n2-0258"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0260",
+      "word": "協定",
+      "kana": "きょうてい",
+      "meanings": [
+        "agreement",
+        "pact",
+        "accord"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "business",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{両国|りょうこく}は{貿易|ぼうえき}に{関|かん}する{新|あたら}しい{協定|きょうてい}を{結|むす}んだ。",
+          "kana": "りょうこくはぼうえきにかんするあたらしいきょうていをむすんだ。",
+          "en": "The two countries signed a new trade agreement."
+        },
+        {
+          "ja": "{二|ふた}つの{大学|だいがく}は{協定|きょうてい}を{結|むす}び、{学生|がくせい}が{互|たが}いの{授業|じゅぎょう}を{受|う}けられるようにした。",
+          "kana": "ふたつのだいがくはきょうていをむすび、がくせいがたがいのじゅぎょうをうけられるようにした。",
+          "en": "The two universities signed an agreement allowing students to take each other's classes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{団体|だんたい}などが、{話|はな}し{合|あ}って{決|き}めて{守|まも}ることにした{約束|やくそく}。",
+        "kana": "くにやだんたいなどが、はなしあってきめてまもることにしたやくそく。"
+      },
+      "collocations": [
+        "協定を結ぶ",
+        "貿易協定"
+      ],
+      "confusables": [
+        "v-n2-0254"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0261",
+      "word": "保険料",
+      "kana": "ほけんりょう",
+      "meanings": [
+        "insurance premium"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{車|くるま}の{保険料|ほけんりょう}は、{事故|じこ}を{起|お}こさなければ{毎年|まいとし}{少|すこ}しずつ{安|やす}くなる。",
+          "kana": "くるまのほけんりょうは、じこをおこさなければまいとしすこしずつやすくなる。",
+          "en": "If you don't cause any accidents, your car insurance premium gets a little cheaper every year."
+        },
+        {
+          "ja": "{給料|きゅうりょう}から{税金|ぜいきん}と{保険料|ほけんりょう}が{引|ひ}かれると、{手元|てもと}に{残|のこ}るのはこれだけです。",
+          "kana": "きゅうりょうからぜいきんとほけんりょうがひかれると、てもとにのこるのはこれだけです。",
+          "en": "After taxes and insurance premiums are deducted from my salary, this is all that's left."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{保険|ほけん}に{入|はい}っている{人|ひと}が、{決|き}まって{払|はら}うお{金|かね}。",
+        "kana": "ほけんにはいっているひとが、きまってはらうおかね。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0262",
+      "word": "少子化",
+      "kana": "しょうしか",
+      "meanings": [
+        "declining birthrate"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{少子化|しょうしか}が{進|すす}み、{村|むら}の{小学校|しょうがっこう}は{来年|らいねん}{閉|し}まることになった。",
+          "kana": "しょうしかがすすみ、むらのしょうがっこうはらいねんしまることになった。",
+          "en": "With the falling birthrate, the village elementary school will close next year."
+        },
+        {
+          "ja": "{少子化|しょうしか}の{対策|たいさく}として、{市|し}は{保育園|ほいくえん}の{料金|りょうきん}を{無料|むりょう}にしました。",
+          "kana": "しょうしかのたいさくとして、しはほいくえんのりょうきんをむりょうにしました。",
+          "en": "As a measure against the falling birthrate, the city made daycare free."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{生|う}まれる{子|こ}どもが{減|へ}って、{社会|しゃかい}の{中|なか}で{子|こ}どもの{割合|わりあい}が{小|ちい}さくなること。",
+        "kana": "うまれるこどもがへって、しゃかいのなかでこどものわりあいがちいさくなること。"
+      },
+      "collocations": [
+        "少子高齢化",
+        "少子化対策"
+      ],
+      "confusables": [
+        "v-n2-0263"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0263",
+      "word": "高齢化",
+      "kana": "こうれいか",
+      "meanings": [
+        "aging (of a population)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{高齢化|こうれいか}が{進|すす}む{町|まち}では、{病院|びょういん}までのバスが{大|おお}きな{問題|もんだい}になっている。",
+          "kana": "こうれいかがすすむまちでは、びょういんまでのバスがおおきなもんだいになっている。",
+          "en": "In towns with aging populations, the bus to the hospital has become a major issue."
+        },
+        {
+          "ja": "{社会|しゃかい}の{高齢化|こうれいか}とともに、{介護|かいご}の{仕事|しごと}をする{人|ひと}がもっと{必要|ひつよう}になる。",
+          "kana": "しゃかいのこうれいかとともに、かいごのしごとをするひとがもっとひつようになる。",
+          "en": "As society ages, more people will be needed to work in nursing care."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{中|なか}で、{高齢者|こうれいしゃ}の{割合|わりあい}が{高|たか}くなっていくこと。",
+        "kana": "しゃかいのなかで、こうれいしゃのわりあいがたかくなっていくこと。"
+      },
+      "confusables": [
+        "v-n2-0262"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0264",
+      "word": "貧困",
+      "kana": "ひんこん",
+      "meanings": [
+        "poverty"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{貧困|ひんこん}のために{学校|がっこう}に{行|い}けない{子供|こども}が、{世界|せかい}にはまだ{多|おお}くいる。",
+          "kana": "ひんこんのためにがっこうにいけないこどもが、せかいにはまだおおくいる。",
+          "en": "There are still many children in the world who can't go to school because of poverty."
+        },
+        {
+          "ja": "{日本|にほん}でも、{子|こ}どもの{貧困|ひんこん}は{見|み}えにくいだけで、{決|けっ}して{少|すく}なくない。",
+          "kana": "にほんでも、こどものひんこんはみえにくいだけで、けっしてすくなくない。",
+          "en": "Even in Japan, child poverty is far from rare; it is just hard to see."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}や{食|た}べ{物|もの}が{足|た}りず、{生|い}きていくのが{苦|くる}しい{状態|じょうたい}。",
+        "kana": "おかねやたべものがたりず、いきていくのがくるしいじょうたい。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0265",
+      "word": "偏見",
+      "kana": "へんけん",
+      "meanings": [
+        "prejudice",
+        "bias"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{外国人|がいこくじん}に{対|たい}する{偏見|へんけん}をなくすには、{実際|じっさい}に{話|はな}してみるのが{一番|いちばん}だ。",
+          "kana": "がいこくじんにたいするへんけんをなくすには、じっさいにはなしてみるのがいちばんだ。",
+          "en": "The best way to get rid of prejudice toward foreigners is to actually talk with them."
+        },
+        {
+          "ja": "{女性|じょせい}は{理系|りけい}に{向|む}いていないというのは、ただの{偏見|へんけん}です。",
+          "kana": "じょせいはりけいにむいていないというのは、ただのへんけんです。",
+          "en": "The idea that women aren't suited to science is nothing but prejudice."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{正|ただ}しい{理由|りゆう}もなく、ある{人々|ひとびと}を{悪|わる}く{決|き}めつける{考|かんが}え{方|かた}。",
+        "kana": "ただしいりゆうもなく、あるひとびとをわるくきめつけるかんがえかた。"
+      },
+      "collocations": [
+        "偏見を持つ",
+        "偏見をなくす"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0266",
+      "word": "人権",
+      "kana": "じんけん",
+      "meanings": [
+        "human rights"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "どんな{理由|りゆう}があっても、{人権|じんけん}を{無視|むし}することは{許|ゆる}されない。",
+          "kana": "どんなりゆうがあっても、じんけんをむしすることはゆるされない。",
+          "en": "Whatever the reason, ignoring human rights cannot be allowed."
+        },
+        {
+          "ja": "{学校|がっこう}では{年|ねん}に{一度|いちど}、{人権|じんけん}について{考|かんが}える{授業|じゅぎょう}が{行|おこな}われています。",
+          "kana": "がっこうではねんにいちど、じんけんについてかんがえるじゅぎょうがおこなわれています。",
+          "en": "Once a year, the school holds a class on thinking about human rights."
+        }
+      ],
+      "definitionJa": {
+        "ja": "すべての{人|ひと}が{生|う}まれながらに{持|も}っている、{自由|じゆう}や{平等|びょうどう}の{権利|けんり}。",
+        "kana": "すべてのひとがうまれながらにもっている、じゆうやびょうどうのけんり。"
+      },
+      "collocations": [
+        "人権侵害",
+        "基本的人権"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0267",
+      "word": "世論",
+      "kana": "よろん",
+      "meanings": [
+        "public opinion"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{税金|ぜいきん}については、{世論|よろん}の{反対|はんたい}が{強|つよ}い。",
+          "kana": "あたらしいぜいきんについては、よろんのはんたいがつよい。",
+          "en": "Public opinion is strongly against the new tax."
+        },
+        {
+          "ja": "{世論|よろん}{調査|ちょうさ}によると、{内閣|ないかく}を{支持|しじ}する{人|ひと}は{先月|せんげつ}より{五|ご}ポイント{減|へ}った。",
+          "kana": "よろんちょうさによると、ないかくをしじするひとはせんげつよりごポイントへった。",
+          "en": "According to an opinion poll, support for the cabinet fell five points from last month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{多|おお}くの{人々|ひとびと}が{持|も}っている{考|かんが}えや{意見|いけん}。",
+        "kana": "しゃかいのおおくのひとびとがもっているかんがえやいけん。"
+      },
+      "notes": "Also read せろん; よろん is the usual reading in news Japanese.",
+      "collocations": [
+        "世論調査",
+        "世論を動かす"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0268",
+      "word": "抗議",
+      "kana": "こうぎ",
+      "meanings": [
+        "protest",
+        "objection"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{住民|じゅうみん}たちは{工場|こうじょう}の{建設|けんせつ}に{抗議|こうぎ}して、{市役所|しやくしょ}の{前|まえ}に{集|あつ}まった。",
+          "kana": "じゅうみんたちはこうじょうのけんせつにこうぎして、しやくしょのまえにあつまった。",
+          "en": "Residents gathered in front of city hall to protest the construction of the factory."
+        },
+        {
+          "ja": "{審判|しんぱん}の{判定|はんてい}に{監督|かんとく}が{抗議|こうぎ}したが、{結果|けっか}は{変|か}わらなかった。",
+          "kana": "しんぱんのはんていにかんとくがこうぎしたが、けっかはかわらなかった。",
+          "en": "The coach protested the referee's call, but the decision stood."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{反対|はんたい}の{気持|きも}ちや{意見|いけん}を、{相手|あいて}に{強|つよ}く{伝|つた}えること。",
+        "kana": "はんたいのきもちやいけんを、あいてにつよくつたえること。"
+      },
+      "collocations": [
+        "抗議する",
+        "抗議デモ"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0269",
+      "word": "デモ",
+      "kana": "デモ",
+      "meanings": [
+        "demonstration (protest)",
+        "demo"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "politics",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}、{駅前|えきまえ}で{大|おお}きなデモが{行|おこな}われ、{道|みち}が{人|ひと}でいっぱいになった。",
+          "kana": "にちようび、えきまえでおおきなデモがおこなわれ、みちがひとでいっぱいになった。",
+          "en": "On Sunday a big demonstration was held in front of the station, and the street was packed with people."
+        },
+        {
+          "ja": "{学生|がくせい}たちは{学費|がくひ}の{値上|ねあ}げに{反対|はんたい}して、デモを{計画|けいかく}しています。",
+          "kana": "がくせいたちはがくひのねあげにはんたいして、デモをけいかくしています。",
+          "en": "The students are planning a demonstration against the tuition hike."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大勢|おおぜい}の{人|ひと}が{集|あつ}まって{街|まち}を{歩|ある}き、{意見|いけん}や{要求|ようきゅう}を{訴|うった}えること。",
+        "kana": "おおぜいのひとがあつまってまちをあるき、いけんやようきゅうをうったえること。"
+      },
+      "notes": "Clipped from デモンストレーション; usually a street protest. A product demo is also デモ.",
+      "collocations": [
+        "デモに参加する",
+        "抗議デモ"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0270",
+      "word": "暴力",
+      "kana": "ぼうりょく",
+      "meanings": [
+        "violence"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "どんなに{腹|はら}が{立|た}っても、{暴力|ぼうりょく}で{解決|かいけつ}しようとしてはいけない。",
+          "kana": "どんなにはらがたっても、ぼうりょくでかいけつしようとしてはいけない。",
+          "en": "No matter how angry you get, you must never try to solve things with violence."
+        },
+        {
+          "ja": "{暴力|ぼうりょく}の{場面|ばめん}が{多|おお}い{映画|えいが}は、{子|こ}どもには{見|み}せないようにしている。",
+          "kana": "ぼうりょくのばめんがおおいえいがは、こどもにはみせないようにしている。",
+          "en": "I try not to let my kids watch movies with a lot of violent scenes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}の{体|からだ}を{傷|きず}つけるような、{乱暴|らんぼう}な{力|ちから}。",
+        "kana": "ひとのからだをきずつけるような、らんぼうなちから。"
+      },
+      "collocations": [
+        "暴力を振るう",
+        "暴力的"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0271",
+      "word": "革命",
+      "kana": "かくめい",
+      "meanings": [
+        "revolution"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "スマートフォンの{登場|とうじょう}は、{私|わたし}たちの{生活|せいかつ}に{革命|かくめい}を{起|お}こした。",
+          "kana": "スマートフォンのとうじょうは、わたしたちのせいかつにかくめいをおこした。",
+          "en": "The arrival of the smartphone brought about a revolution in our lives."
+        },
+        {
+          "ja": "{二百年|にひゃくねん}{以上|いじょう}{前|まえ}、この{国|くに}では{革命|かくめい}が{起|お}こり、{王|おう}の{政治|せいじ}が{終|お}わった。",
+          "kana": "にひゃくねんいじょうまえ、このくにではかくめいがおこり、おうのせいじがおわった。",
+          "en": "More than two hundred years ago, a revolution broke out in this country and ended the king's rule."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{政治|せいじ}や{社会|しゃかい}の{仕組|しく}みを、{根本|こんぽん}から{一気|いっき}に{変|か}えること。",
+        "kana": "くにのせいじやしゃかいのしくみを、こんぽんからいっきにかえること。"
+      },
+      "collocations": [
+        "革命を起こす",
+        "産業革命"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0272",
+      "word": "民主主義",
+      "kana": "みんしゅしゅぎ",
+      "meanings": [
+        "democracy"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{民主主義|みんしゅしゅぎ}の{国|くに}では、{国民|こくみん}が{選挙|せんきょ}で{代表|だいひょう}を{選|えら}ぶ。",
+          "kana": "みんしゅしゅぎのくにでは、こくみんがせんきょでだいひょうをえらぶ。",
+          "en": "In a democracy, the people choose their representatives through elections."
+        },
+        {
+          "ja": "{選挙|せんきょ}に{行|い}かない{人|ひと}が{増|ふ}えることは、{民主主義|みんしゅしゅぎ}にとって{大|おお}きな{問題|もんだい}です。",
+          "kana": "せんきょにいかないひとがふえることは、みんしゅしゅぎにとっておおきなもんだいです。",
+          "en": "A growing number of people not voting is a serious problem for democracy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}が{選|えら}んだ{代表者|だいひょうしゃ}が、{国民|こくみん}のために{政治|せいじ}を{行|おこな}う{考|かんが}え{方|かた}や{仕組|しく}み。",
+        "kana": "こくみんがえらんだだいひょうしゃが、こくみんのためにせいじをおこなうかんがえかたやしくみ。"
+      },
+      "confusables": [
+        "v-n2-0273"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0273",
+      "word": "資本主義",
+      "kana": "しほんしゅぎ",
+      "meanings": [
+        "capitalism"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "money",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{資本主義|しほんしゅぎ}の{社会|しゃかい}では、{会社|かいしゃ}{同士|どうし}の{競争|きょうそう}が{経済|けいざい}を{動|うご}かしている。",
+          "kana": "しほんしゅぎのしゃかいでは、かいしゃどうしのきょうそうがけいざいをうごかしている。",
+          "en": "In a capitalist society, competition between companies drives the economy."
+        },
+        {
+          "ja": "{資本主義|しほんしゅぎ}には{良|よ}い{点|てん}も{悪|わる}い{点|てん}もあると、{先生|せんせい}は{授業|じゅぎょう}で{話|はな}した。",
+          "kana": "しほんしゅぎにはよいてんもわるいてんもあると、せんせいはじゅぎょうではなした。",
+          "en": "Capitalism has both good points and bad points, the teacher said in class."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{個人|こじん}や{会社|かいしゃ}が{自由|じゆう}に{利益|りえき}を{求|もと}めて{競争|きょうそう}する、{経済|けいざい}の{仕組|しく}み。",
+        "kana": "こじんやかいしゃがじゆうにりえきをもとめてきょうそうする、けいざいのしくみ。"
+      },
+      "confusables": [
+        "v-n2-0272"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0274",
+      "word": "自治体",
+      "kana": "じちたい",
+      "meanings": [
+        "local government",
+        "municipality"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "ごみの{出|だ}し{方|かた}のルールは、{自治体|じちたい}によってかなり{違|ちが}う。",
+          "kana": "ごみのだしかたのルールは、じちたいによってかなりちがう。",
+          "en": "The rules for putting out garbage vary quite a bit from municipality to municipality."
+        },
+        {
+          "ja": "{大雨|おおあめ}の{際|さい}は、{自治体|じちたい}からの{避難|ひなん}の{情報|じょうほう}に{注意|ちゅうい}してください。",
+          "kana": "おおあめのさいは、じちたいからのひなんのじょうほうにちゅういしてください。",
+          "en": "In heavy rain, pay attention to evacuation information from your local government."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{県|けん}や{市|し}、{町|まち}、{村|むら}など、その{地域|ちいき}の{行政|ぎょうせい}を{行|おこな}う{団体|だんたい}。",
+        "kana": "けんやし、まち、むらなど、そのちいきのぎょうせいをおこなうだんたい。"
+      },
+      "collocations": [
+        "地方自治体",
+        "自治体職員"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0275",
+      "word": "有権者",
+      "kana": "ゆうけんしゃ",
+      "meanings": [
+        "voter",
+        "eligible voter"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{今回|こんかい}の{選挙|せんきょ}では、{若|わか}い{有権者|ゆうけんしゃ}の{投票|とうひょう}が{増|ふ}えたそうだ。",
+          "kana": "こんかいのせんきょでは、わかいゆうけんしゃのとうひょうがふえたそうだ。",
+          "en": "I hear that turnout among young voters increased in this election."
+        },
+        {
+          "ja": "{候補者|こうほしゃ}は{駅前|えきまえ}に{立|た}ち、{有権者|ゆうけんしゃ}{一人一人|ひとりひとり}に{声|こえ}をかけていた。",
+          "kana": "こうほしゃはえきまえにたち、ゆうけんしゃひとりひとりにこえをかけていた。",
+          "en": "The candidate stood in front of the station, speaking to each and every voter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{投票|とうひょう}する{権利|けんり}を{持|も}っている{人|ひと}。",
+        "kana": "せんきょでとうひょうするけんりをもっているひと。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0276",
+      "word": "立候補",
+      "kana": "りっこうほ",
+      "meanings": [
+        "candidacy",
+        "running for office"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{町|まち}を{良|よ}くしたいと{考|かんが}え、{市長選挙|しちょうせんきょ}に{立候補|りっこうほ}した。",
+          "kana": "かのじょはまちをよくしたいとかんがえ、しちょうせんきょにりっこうほした。",
+          "en": "Wanting to make the town better, she ran for mayor."
+        },
+        {
+          "ja": "{今回|こんかい}の{選挙|せんきょ}には、{過去|かこ}で{一番|いちばん}{多|おお}い{十二人|じゅうににん}が{立候補|りっこうほ}しています。",
+          "kana": "こんかいのせんきょには、かこでいちばんおおいじゅうににんがりっこうほしています。",
+          "en": "A record twelve candidates are running in this election."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{選挙|せんきょ}で{選|えら}ばれるために、{候補者|こうほしゃ}として{出|で}ること。",
+        "kana": "せんきょでえらばれるために、こうほしゃとしてでること。"
+      },
+      "collocations": [
+        "選挙に立候補する",
+        "立候補者"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0277",
+      "word": "過半数",
+      "kana": "かはんすう",
+      "meanings": [
+        "majority (more than half)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{案|あん}には{過半数|かはんすう}が{賛成|さんせい}したので、{来月|らいげつ}から{実行|じっこう}される。",
+          "kana": "あたらしいあんにはかはんすうがさんせいしたので、らいげつからじっこうされる。",
+          "en": "A majority voted in favor of the new proposal, so it will be implemented from next month."
+        },
+        {
+          "ja": "{与党|よとう}は{選挙|せんきょ}で{過半数|かはんすう}を{失|うしな}い、ほかの{党|とう}と{協力|きょうりょく}せざるを{得|え}なくなった。",
+          "kana": "よとうはせんきょでかはんすうをうしない、ほかのとうときょうりょくせざるをえなくなった。",
+          "en": "The ruling party lost its majority in the election and was forced to cooperate with other parties."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}の{半分|はんぶん}より{多|おお}いこと。また、その{人数|にんずう}。",
+        "kana": "ぜんたいのはんぶんよりおおいこと。また、そのにんずう。"
+      },
+      "collocations": [
+        "過半数を取る",
+        "過半数の賛成"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0278",
+      "word": "治安",
+      "kana": "ちあん",
+      "meanings": [
+        "public safety",
+        "public order"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}は{治安|ちあん}がいいので、{夜|よる}{一人|ひとり}で{歩|ある}いても{心配|しんぱい}ない。",
+          "kana": "このまちはちあんがいいので、よるひとりであるいてもしんぱいない。",
+          "en": "This town is safe, so there's no need to worry even walking alone at night."
+        },
+        {
+          "ja": "{観光客|かんこうきゃく}が{増|ふ}えた{一方|いっぽう}で、{治安|ちあん}の{悪化|あっか}を{心配|しんぱい}する{住民|じゅうみん}もいる。",
+          "kana": "かんこうきゃくがふえたいっぽうで、ちあんのあっかをしんぱいするじゅうみんもいる。",
+          "en": "While the number of tourists has grown, some residents worry about public safety getting worse."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{安全|あんぜん}や{秩序|ちつじょ}が{守|まも}られている{状態|じょうたい}。",
+        "kana": "しゃかいのあんぜんやちつじょがまもられているじょうたい。"
+      },
+      "collocations": [
+        "治安がいい",
+        "治安が悪い"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0279",
+      "word": "武器",
+      "kana": "ぶき",
+      "meanings": [
+        "weapon"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "objects",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{国境|こっきょう}では、{武器|ぶき}を{持|も}ち{込|こ}んでいないか{厳|きび}しく{調|しら}べられる。",
+          "kana": "こっきょうでは、ぶきをもちこんでいないかきびしくしらべられる。",
+          "en": "At the border, they check strictly to see whether you're bringing in weapons."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{三|みっ}つの{言葉|ことば}が{話|はな}せることを{武器|ぶき}にして、{貿易|ぼうえき}の{仕事|しごと}を{手|て}に{入|い}れた。",
+          "kana": "かのじょはみっつのことばがはなせることをぶきにして、ぼうえきのしごとをてにいれた。",
+          "en": "Using her ability to speak three languages as her strong point, she landed a job in trade."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{戦|たたか}うときに、{相手|あいて}を{傷|きず}つけるために{使|つか}う{道具|どうぐ}。",
+        "kana": "たたかうときに、あいてをきずつけるためにつかうどうぐ。"
+      },
+      "notes": "Also figurative: 英語を武器にする means to use English as your strong point.",
+      "collocations": [
+        "武器を持つ",
+        "武器にする"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0280",
+      "word": "軍事",
+      "kana": "ぐんじ",
+      "meanings": [
+        "military affairs"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "その{国|くに}は{軍事|ぐんじ}に{使|つか}うお{金|かね}を{減|へ}らし、{教育|きょういく}に{回|まわ}すと{発表|はっぴょう}した。",
+          "kana": "そのくにはぐんじにつかうおかねをへらし、きょういくにまわすとはっぴょうした。",
+          "en": "That country announced it would cut military spending and redirect it to education."
+        },
+        {
+          "ja": "この{技術|ぎじゅつ}は{元々|もともと}{軍事|ぐんじ}{目的|もくてき}で{開発|かいはつ}されたが、{今|いま}は{医療|いりょう}にも{使|つか}われている。",
+          "kana": "このぎじゅつはもともとぐんじもくてきでかいはつされたが、いまはいりょうにもつかわれている。",
+          "en": "This technology was originally developed for military purposes, but it's now used in medicine too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{戦争|せんそう}や、{国|くに}を{守|まも}るために{戦|たたか}う{組織|そしき}についてのこと。",
+        "kana": "せんそうや、くにをまもるためにたたかうそしきについてのこと。"
+      },
+      "collocations": [
+        "軍事力",
+        "軍事基地"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0281",
+      "word": "監視",
+      "kana": "かんし",
+      "meanings": [
+        "surveillance",
+        "monitoring"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "society",
+        "law",
+        "technology"
+      ],
+      "examples": [
+        {
+          "ja": "{駐車場|ちゅうしゃじょう}には{監視|かんし}カメラがあるので、{車|くるま}を{傷|きず}つけた{人|ひと}はすぐに{分|わ}かった。",
+          "kana": "ちゅうしゃじょうにはかんしカメラがあるので、くるまをきずつけたひとはすぐにわかった。",
+          "en": "There's a surveillance camera in the parking lot, so they quickly found out who had scratched the car."
+        },
+        {
+          "ja": "{台風|たいふう}の{間|あいだ}、{市|し}の{職員|しょくいん}は{川|かわ}の{水|みず}の{高|たか}さを{一晩中|ひとばんじゅう}{監視|かんし}し{続|つづ}けた。",
+          "kana": "たいふうのあいだ、しのしょくいんはかわのみずのたかさをひとばんじゅうかんししつづけた。",
+          "en": "During the typhoon, city staff kept watch on the river level all night long."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悪|わる}いことが{起|お}きないように、{注意|ちゅうい}して{見|み}{続|つづ}けること。",
+        "kana": "わるいことがおきないように、ちゅういしてみつづけること。"
+      },
+      "collocations": [
+        "監視カメラ",
+        "監視する"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0282",
+      "word": "防犯",
+      "kana": "ぼうはん",
+      "meanings": [
+        "crime prevention"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "law",
+        "society",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{一人暮|ひとりぐ}らしを{始|はじ}めるとき、{防犯|ぼうはん}のために{窓|まど}に{鍵|かぎ}を{二|ふた}つ{付|つ}けた。",
+          "kana": "ひとりぐらしをはじめるとき、ぼうはんのためにまどにかぎをふたつつけた。",
+          "en": "When I started living alone, I put two locks on the window for security."
+        },
+        {
+          "ja": "{商店街|しょうてんがい}では{防犯|ぼうはん}カメラを{増|ふ}やした{結果|けっか}、{泥棒|どろぼう}の{被害|ひがい}が{減|へ}ったそうです。",
+          "kana": "しょうてんがいではぼうはんカメラをふやしたけっか、どろぼうのひがいがへったそうです。",
+          "en": "I hear that after the shopping street added more security cameras, burglaries went down."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{犯罪|はんざい}が{起|お}きないように、{前|まえ}もって{防|ふせ}ぐこと。",
+        "kana": "はんざいがおきないように、まえもってふせぐこと。"
+      },
+      "collocations": [
+        "防犯カメラ",
+        "防犯対策"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-0283",
+      "word": "民営化",
+      "kana": "みんえいか",
+      "meanings": [
+        "privatization"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "politics",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{国|くに}が{運営|うんえい}していた{鉄道|てつどう}は、{三十年|さんじゅうねん}{以上|いじょう}{前|まえ}に{民営化|みんえいか}された。",
+          "kana": "くにがうんえいしていたてつどうは、さんじゅうねんいじょうまえにみんえいかされた。",
+          "en": "The railways the state used to run were privatized more than thirty years ago."
+        },
+        {
+          "ja": "{郵便|ゆうびん}の{民営化|みんえいか}をめぐっては、{今|いま}でも{賛成|さんせい}と{反対|はんたい}の{意見|いけん}が{分|わ}かれている。",
+          "kana": "ゆうびんのみんえいかをめぐっては、いまでもさんせいとはんたいのいけんがわかれている。",
+          "en": "Opinion is still divided over the privatization of the postal service."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{自治体|じちたい}が{行|おこな}っていた{事業|じぎょう}を、{民間|みんかん}の{会社|かいしゃ}に{任|まか}せること。",
+        "kana": "くにやじちたいがおこなっていたじぎょうを、みんかんのかいしゃにまかせること。"
+      },
+      "station": 40
+    },
+    {
+      "id": "v-n2-0284",
+      "word": "組合",
+      "kana": "くみあい",
+      "meanings": [
+        "union",
+        "association",
+        "cooperative"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{労働組合|ろうどうくみあい}は、{給料|きゅうりょう}を{上|あ}げるよう{会社|かいしゃ}に{求|もと}めた。",
+          "kana": "ろうどうくみあいは、きゅうりょうをあげるようかいしゃにもとめた。",
+          "en": "The labor union demanded that the company raise wages."
+        },
+        {
+          "ja": "{農家|のうか}の{人|ひと}たちは{組合|くみあい}を{作|つく}って、{野菜|やさい}を{共同|きょうどう}で{売|う}ることにした。",
+          "kana": "のうかのひとたちはくみあいをつくって、やさいをきょうどうでうることにした。",
+          "en": "The farmers formed a cooperative and decided to sell their vegetables jointly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}く{人|ひと}などが、{共通|きょうつう}の{目的|もくてき}のために{集|あつ}まって{作|つく}る{団体|だんたい}。",
+        "kana": "はたらくひとなどが、きょうつうのもくてきのためにあつまってつくるだんたい。"
+      },
+      "collocations": [
+        "労働組合",
+        "組合員"
+      ],
+      "station": 40
+    }
+  ]
+}

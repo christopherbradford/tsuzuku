@@ -1,0 +1,4498 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n5",
+  "writer": "vocab-n5-005",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n5-0541",
+      "word": "名前",
+      "kana": "なまえ",
+      "meanings": [
+        "name"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{名前|なまえ}を{教|おし}えてください。",
+          "kana": "おなまえをおしえてください。",
+          "en": "Please tell me your name."
+        },
+        {
+          "ja": "この{花|はな}の{名前|なまえ}を{知|し}っていますか。",
+          "kana": "このはなのなまえをしっていますか。",
+          "en": "Do you know the name of this flower?"
+        }
+      ],
+      "collocations": [
+        "名前を書く",
+        "お名前"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0542",
+      "word": "仕事",
+      "kana": "しごと",
+      "meanings": [
+        "work",
+        "job"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{毎日|まいにち}{仕事|しごと}で{忙|いそが}しいです。",
+          "kana": "ちちはまいにちしごとでいそがしいです。",
+          "en": "My father is busy with work every day."
+        },
+        {
+          "ja": "{来週|らいしゅう}から{新|あたら}しい{仕事|しごと}が{始|はじ}まります。",
+          "kana": "らいしゅうからあたらしいしごとがはじまります。",
+          "en": "My new job starts next week."
+        }
+      ],
+      "collocations": [
+        "仕事をする",
+        "仕事に行く"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0543",
+      "word": "電話",
+      "kana": "でんわ",
+      "meanings": [
+        "telephone",
+        "phone call"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{後|あと}で{電話|でんわ}するね。",
+          "kana": "あとででんわするね。",
+          "en": "I'll call you later."
+        },
+        {
+          "ja": "{昨日|きのう}、{母|はは}から{電話|でんわ}がありました。",
+          "kana": "きのう、ははからでんわがありました。",
+          "en": "I got a phone call from my mother yesterday."
+        }
+      ],
+      "collocations": [
+        "電話をかける",
+        "電話に出る"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0544",
+      "word": "話",
+      "kana": "はなし",
+      "meanings": [
+        "talk",
+        "story",
+        "conversation"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}の{話|はなし}は{長|なが}かった。",
+          "kana": "せんせいのはなしはながかった。",
+          "en": "The teacher's talk was long."
+        },
+        {
+          "ja": "{昨日|きのう}、{友達|ともだち}と{長|なが}い{話|はなし}をしました。",
+          "kana": "きのう、ともだちとながいはなしをしました。",
+          "en": "I had a long talk with a friend yesterday."
+        }
+      ],
+      "collocations": [
+        "話をする",
+        "話を聞く"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0545",
+      "word": "手",
+      "kana": "て",
+      "meanings": [
+        "hand"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{食|た}べる{前|まえ}に{手|て}を{洗|あら}います。",
+          "kana": "たべるまえにてをあらいます。",
+          "en": "I wash my hands before eating."
+        },
+        {
+          "ja": "{寒|さむ}くて、{手|て}が{冷|つめ}たい。",
+          "kana": "さむくて、てがつめたい。",
+          "en": "It's cold, and my hands are freezing."
+        }
+      ],
+      "collocations": [
+        "手を洗う",
+        "手を上げる"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0546",
+      "word": "目",
+      "kana": "め",
+      "meanings": [
+        "eye"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{目|め}が{痛|いた}いから、{病院|びょういん}に{行|い}きます。",
+          "kana": "めがいたいから、びょういんにいきます。",
+          "en": "My eyes hurt, so I'm going to the hospital."
+        },
+        {
+          "ja": "{妹|いもうと}は{目|め}が{大|おお}きくてきれいです。",
+          "kana": "いもうとはめがおおきくてきれいです。",
+          "en": "My little sister has big, beautiful eyes."
+        }
+      ],
+      "collocations": [
+        "目が大きい",
+        "目が悪い"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0547",
+      "word": "天気",
+      "kana": "てんき",
+      "meanings": [
+        "weather"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}はいい{天気|てんき}ですね。",
+          "kana": "きょうはいいてんきですね。",
+          "en": "It's nice weather today, isn't it?"
+        },
+        {
+          "ja": "{先週|せんしゅう}は{天気|てんき}が{悪|わる}くて、{寒|さむ}かった。",
+          "kana": "せんしゅうはてんきがわるくて、さむかった。",
+          "en": "The weather was bad and cold last week."
+        }
+      ],
+      "collocations": [
+        "天気がいい",
+        "天気が悪い"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0548",
+      "word": "山",
+      "kana": "やま",
+      "meanings": [
+        "mountain"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夏|なつ}は{友達|ともだち}と{山|やま}に{行|い}きます。",
+          "kana": "なつはともだちとやまにいきます。",
+          "en": "In summer I go to the mountains with friends."
+        },
+        {
+          "ja": "あの{山|やま}は{高|たか}くて、{登|のぼ}るのが{大変|たいへん}だ。",
+          "kana": "あのやまはたかくて、のぼるのがたいへんだ。",
+          "en": "That mountain is high, and climbing it is tough."
+        }
+      ],
+      "collocations": [
+        "山に登る",
+        "高い山"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0549",
+      "word": "海",
+      "kana": "うみ",
+      "meanings": [
+        "sea",
+        "ocean"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{海|うみ}で{泳|およ}ぐのが{好|す}きだ。",
+          "kana": "うみでおよぐのがすきだ。",
+          "en": "I like swimming in the sea."
+        },
+        {
+          "ja": "{来月|らいげつ}、{家族|かぞく}と{海|うみ}へ{行|い}きます。",
+          "kana": "らいげつ、かぞくとうみへいきます。",
+          "en": "Next month I'm going to the sea with my family."
+        }
+      ],
+      "collocations": [
+        "海で泳ぐ",
+        "海が見える"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0550",
+      "word": "雨",
+      "kana": "あめ",
+      "meanings": [
+        "rain"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}から{雨|あめ}が{降|ふ}っています。",
+          "kana": "あさからあめがふっています。",
+          "en": "It has been raining since this morning."
+        },
+        {
+          "ja": "{雨|あめ}だから、{傘|かさ}を{忘|わす}れないでね。",
+          "kana": "あめだから、かさをわすれないでね。",
+          "en": "It's raining, so don't forget your umbrella."
+        }
+      ],
+      "collocations": [
+        "雨が降る",
+        "大雨"
+      ],
+      "notes": "Same kana as 飴 (candy); the pitch differs: 雨 is あ↓め, 飴 is heiban.",
+      "station": 11
+    },
+    {
+      "id": "v-n5-0551",
+      "word": "花",
+      "kana": "はな",
+      "meanings": [
+        "flower",
+        "blossom"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{公園|こうえん}にきれいな{花|はな}がたくさんあります。",
+          "kana": "こうえんにきれいなはながたくさんあります。",
+          "en": "There are lots of beautiful flowers in the park."
+        },
+        {
+          "ja": "{花屋|はなや}で{赤|あか}い{花|はな}を{買|か}った。",
+          "kana": "はなやであかいはなをかった。",
+          "en": "I bought red flowers at the flower shop."
+        }
+      ],
+      "collocations": [
+        "花が咲く",
+        "花を買う"
+      ],
+      "confusables": [
+        "v-n5-0592"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0552",
+      "word": "犬",
+      "kana": "いぬ",
+      "meanings": [
+        "dog"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "うちの{犬|いぬ}は{大|おお}きくて{元気|げんき}だ。",
+          "kana": "うちのいぬはおおきくてげんきだ。",
+          "en": "Our dog is big and full of energy."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{犬|いぬ}と{公園|こうえん}まで{歩|ある}きます。",
+          "kana": "まいあさ、いぬとこうえんまであるきます。",
+          "en": "Every morning I walk to the park with my dog."
+        }
+      ],
+      "collocations": [
+        "犬を飼う",
+        "犬の散歩"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0553",
+      "word": "猫",
+      "kana": "ねこ",
+      "meanings": [
+        "cat"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{猫|ねこ}が{窓|まど}の{前|まえ}で{寝|ね}ています。",
+          "kana": "ねこがまどのまえでねています。",
+          "en": "The cat is sleeping in front of the window."
+        },
+        {
+          "ja": "{友達|ともだち}の{家|いえ}に{黒|くろ}い{猫|ねこ}がいる。",
+          "kana": "ともだちのいえにくろいねこがいる。",
+          "en": "There's a black cat at my friend's house."
+        }
+      ],
+      "collocations": [
+        "猫を飼う",
+        "黒い猫"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0554",
+      "word": "映画",
+      "kana": "えいが",
+      "meanings": [
+        "movie",
+        "film"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "arts",
+        "media"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{映画|えいが}を{見|み}に{行|い}きませんか。",
+          "kana": "にちようびにえいがをみにいきませんか。",
+          "en": "Would you like to go see a movie on Sunday?"
+        },
+        {
+          "ja": "{昨日|きのう}{見|み}た{映画|えいが}は{面白|おもしろ}かった。",
+          "kana": "きのうみたえいがはおもしろかった。",
+          "en": "The movie I saw yesterday was interesting."
+        }
+      ],
+      "collocations": [
+        "映画を見る",
+        "映画館"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0555",
+      "word": "音楽",
+      "kana": "おんがく",
+      "meanings": [
+        "music"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "hobbies"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}でいつも{音楽|おんがく}を{聞|き}く。",
+          "kana": "でんしゃのなかでいつもおんがくをきく。",
+          "en": "I always listen to music on the train."
+        },
+        {
+          "ja": "{姉|あね}は{大学|だいがく}で{音楽|おんがく}を{教|おし}えています。",
+          "kana": "あねはだいがくでおんがくをおしえています。",
+          "en": "My older sister teaches music at a university."
+        }
+      ],
+      "collocations": [
+        "音楽を聞く",
+        "音楽が好き"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0556",
+      "word": "言葉",
+      "kana": "ことば",
+      "meanings": [
+        "word",
+        "language",
+        "expression"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "language",
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{言葉|ことば}の{意味|いみ}が{分|わ}かりません。",
+          "kana": "このことばのいみがわかりません。",
+          "en": "I don't know what this word means."
+        },
+        {
+          "ja": "{日本語|にほんご}の{新|あたら}しい{言葉|ことば}を{三|みっ}つ{覚|おぼ}えた。",
+          "kana": "にほんごのあたらしいことばをみっつおぼえた。",
+          "en": "I learned three new Japanese words."
+        }
+      ],
+      "collocations": [
+        "言葉の意味",
+        "優しい言葉"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0557",
+      "word": "英語",
+      "kana": "えいご",
+      "meanings": [
+        "English (language)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "language",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄|あに}は{英語|えいご}が{上手|じょうず}です。",
+          "kana": "あにはえいごがじょうずです。",
+          "en": "My older brother is good at English."
+        },
+        {
+          "ja": "{会社|かいしゃ}で{英語|えいご}を{話|はな}す{人|ひと}は{少|すく}ないです。",
+          "kana": "かいしゃでえいごをはなすひとはすくないです。",
+          "en": "Few people at my company speak English."
+        }
+      ],
+      "collocations": [
+        "英語を話す",
+        "英語の先生"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0558",
+      "word": "頭",
+      "kana": "あたま",
+      "meanings": [
+        "head",
+        "mind"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}から{頭|あたま}が{痛|いた}い。",
+          "kana": "きのうからあたまがいたい。",
+          "en": "I've had a headache since yesterday."
+        },
+        {
+          "ja": "{弟|おとうと}は{頭|あたま}がよくて、{何|なん}でも{知|し}っています。",
+          "kana": "おとうとはあたまがよくて、なんでもしっています。",
+          "en": "My little brother is smart and knows everything."
+        }
+      ],
+      "collocations": [
+        "頭が痛い",
+        "頭がいい"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0559",
+      "word": "体",
+      "kana": "からだ",
+      "meanings": [
+        "body",
+        "health"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body",
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{体|からだ}に{気|き}をつけてください。",
+          "kana": "からだにきをつけてください。",
+          "en": "Please take care of yourself."
+        },
+        {
+          "ja": "{今日|きょう}は{体|からだ}が{重|おも}くて、{何|なに}もしたくない。",
+          "kana": "きょうはからだがおもくて、なにもしたくない。",
+          "en": "My body feels heavy today, and I don't want to do anything."
+        }
+      ],
+      "collocations": [
+        "体にいい",
+        "体を洗う"
+      ],
+      "notes": "体に気をつける is the everyday way to say 'take care of your health'.",
+      "station": 11
+    },
+    {
+      "id": "v-n5-0560",
+      "word": "気持ち",
+      "kana": "きもち",
+      "meanings": [
+        "feeling",
+        "mood",
+        "sensation"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}の{気持|きも}ちがよく{分|わ}かります。",
+          "kana": "かれのきもちがよくわかります。",
+          "en": "I understand how he feels."
+        },
+        {
+          "ja": "{朝|あさ}の{海|うみ}は{気持|きも}ちがいいね。",
+          "kana": "あさのうみはきもちがいいね。",
+          "en": "The sea in the morning feels great, doesn't it?"
+        }
+      ],
+      "collocations": [
+        "気持ちがいい",
+        "気持ちが悪い"
+      ],
+      "notes": "気持ち is a feeling toward something or a physical sensation; 気分 is your overall mood or condition right now.",
+      "confusables": [
+        "v-n5-0635"
+      ],
+      "station": 11
+    },
+    {
+      "id": "v-n5-0561",
+      "word": "嬉しい",
+      "kana": "うれしい",
+      "meanings": [
+        "happy",
+        "glad",
+        "delighted"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "プレゼントをもらって、とても{嬉|うれ}しい。",
+          "kana": "プレゼントをもらって、とてもうれしい。",
+          "en": "I got a present, and I'm really happy."
+        },
+        {
+          "ja": "{友達|ともだち}からの{手紙|てがみ}が{嬉|うれ}しかったです。",
+          "kana": "ともだちからのてがみがうれしかったです。",
+          "en": "I was happy to get a letter from my friend."
+        }
+      ],
+      "collocations": [
+        "嬉しい話",
+        "とても嬉しい"
+      ],
+      "notes": "A momentary joy about something that happened; 幸せ is a lasting state of happiness.",
+      "confusables": [
+        "v-n5-0628"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0562",
+      "word": "痛い",
+      "kana": "いたい",
+      "meanings": [
+        "painful",
+        "sore",
+        "ouch"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "body",
+        "health",
+        "states"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{歯|は}が{痛|いた}いから、{薬|くすり}を{飲|の}みました。",
+          "kana": "はがいたいから、くすりをのみました。",
+          "en": "My tooth hurt, so I took some medicine."
+        },
+        {
+          "ja": "{昨日|きのう}は{頭|あたま}が{痛|いた}くて、{早|はや}く{寝|ね}た。",
+          "kana": "きのうはあたまがいたくて、はやくねた。",
+          "en": "I had a headache yesterday, so I went to bed early."
+        }
+      ],
+      "collocations": [
+        "頭が痛い",
+        "お腹が痛い"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0563",
+      "word": "涼しい",
+      "kana": "すずしい",
+      "meanings": [
+        "cool (weather)",
+        "refreshing"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "weather",
+        "states"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{風|かぜ}が{涼|すず}しくて{気持|きも}ちがいいですね。",
+          "kana": "きょうはかぜがすずしくてきもちがいいですね。",
+          "en": "The breeze is cool and pleasant today, isn't it?"
+        },
+        {
+          "ja": "{夏|なつ}でも、{山|やま}の{朝|あさ}は{涼|すず}しかったです。",
+          "kana": "なつでも、やまのあさはすずしかったです。",
+          "en": "Even in summer, the mornings in the mountains were cool."
+        }
+      ],
+      "collocations": [
+        "涼しい風",
+        "涼しくなる"
+      ],
+      "notes": "Pleasantly cool, said of weather and air; 寒い is cold, and 冷たい is for things you touch.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0564",
+      "word": "川",
+      "kana": "かわ",
+      "meanings": [
+        "river"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{川|かわ}の{水|みず}がとても{冷|つめ}たかった。",
+          "kana": "かわのみずがとてもつめたかった。",
+          "en": "The river water was really cold."
+        },
+        {
+          "ja": "{子供|こども}たちが{川|かわ}で{泳|およ}いでいます。",
+          "kana": "こどもたちがかわでおよいでいます。",
+          "en": "The children are swimming in the river."
+        }
+      ],
+      "collocations": [
+        "川を渡る",
+        "川で泳ぐ"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0565",
+      "word": "空",
+      "kana": "そら",
+      "meanings": [
+        "sky"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature",
+        "weather"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{空|そら}は{青|あお}くてきれいですね。",
+          "kana": "きょうのそらはあおくてきれいですね。",
+          "en": "The sky is blue and beautiful today, isn't it?"
+        },
+        {
+          "ja": "{鳥|とり}が{空|そら}を{飛|と}んでいきました。",
+          "kana": "とりがそらをとんでいきました。",
+          "en": "A bird flew off across the sky."
+        }
+      ],
+      "collocations": [
+        "青い空",
+        "空を見る"
+      ],
+      "notes": "Read そら for the sky; the same kanji is read から in 空っぽ (empty) and くう in 空気.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0566",
+      "word": "雪",
+      "kana": "ゆき",
+      "meanings": [
+        "snow"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今朝|けさ}、{雪|ゆき}がたくさん{降|ふ}りました。",
+          "kana": "けさ、ゆきがたくさんふりました。",
+          "en": "It snowed a lot this morning."
+        },
+        {
+          "ja": "{私|わたし}の{町|まち}は{冬|ふゆ}に{雪|ゆき}が{多|おお}いです。",
+          "kana": "わたしのまちはふゆにゆきがおおいです。",
+          "en": "My town gets a lot of snow in winter."
+        }
+      ],
+      "collocations": [
+        "雪が降る",
+        "大雪"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0567",
+      "word": "風",
+      "kana": "かぜ",
+      "meanings": [
+        "wind",
+        "breeze"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{風|かぜ}が{強|つよ}いね。",
+          "kana": "きょうはかぜがつよいね。",
+          "en": "The wind is strong today, isn't it?"
+        },
+        {
+          "ja": "{窓|まど}を{開|あ}けて、{涼|すず}しい{風|かぜ}を{入|い}れましょう。",
+          "kana": "まどをあけて、すずしいかぜをいれましょう。",
+          "en": "Let's open the window and let in a cool breeze."
+        }
+      ],
+      "collocations": [
+        "風が強い",
+        "風が吹く"
+      ],
+      "notes": "Homophone of 風邪 (a cold); the verb tells them apart: 風が吹く vs. 風邪をひく.",
+      "confusables": [
+        "v-n5-0576"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0568",
+      "word": "木",
+      "kana": "き",
+      "meanings": [
+        "tree",
+        "wood"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{公園|こうえん}に{大|おお}きい{木|き}があります。",
+          "kana": "こうえんにおおきいきがあります。",
+          "en": "There is a big tree in the park."
+        },
+        {
+          "ja": "この{机|つくえ}は{古|ふる}い{木|き}で{作|つく}りました。",
+          "kana": "このつくえはふるいきでつくりました。",
+          "en": "I made this desk from old wood."
+        }
+      ],
+      "collocations": [
+        "木の下",
+        "大きい木"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0569",
+      "word": "鳥",
+      "kana": "とり",
+      "meanings": [
+        "bird"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{鳥|とり}の{声|こえ}で{起|お}きました。",
+          "kana": "あさ、とりのこえでおきました。",
+          "en": "I woke up to the sound of birds this morning."
+        },
+        {
+          "ja": "{白|しろ}い{鳥|とり}が{池|いけ}の{上|うえ}を{飛|と}んでいます。",
+          "kana": "しろいとりがいけのうえをとんでいます。",
+          "en": "A white bird is flying over the pond."
+        }
+      ],
+      "collocations": [
+        "鳥が飛ぶ",
+        "小鳥"
+      ],
+      "notes": "On menus 鳥 (or 鶏) also means chicken meat, as in 焼き鳥.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0570",
+      "word": "耳",
+      "kana": "みみ",
+      "meanings": [
+        "ear"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{音楽|おんがく}が{大|おお}きくて、{耳|みみ}が{痛|いた}い。",
+          "kana": "おんがくがおおきくて、みみがいたい。",
+          "en": "The music is so loud that my ears hurt."
+        },
+        {
+          "ja": "うちの{犬|いぬ}は{耳|みみ}が{大|おお}きいです。",
+          "kana": "うちのいぬはみみがおおきいです。",
+          "en": "Our dog has big ears."
+        }
+      ],
+      "collocations": [
+        "耳が痛い",
+        "耳がいい"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0571",
+      "word": "口",
+      "kana": "くち",
+      "meanings": [
+        "mouth"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{口|くち}を{大|おお}きく{開|あ}けてください。",
+          "kana": "くちをおおきくあけてください。",
+          "en": "Please open your mouth wide."
+        },
+        {
+          "ja": "{辛|から}いカレーを{食|た}べて、{口|くち}が{痛|いた}い。",
+          "kana": "からいカレーをたべて、くちがいたい。",
+          "en": "I ate spicy curry, and now my mouth hurts."
+        }
+      ],
+      "collocations": [
+        "口を開ける",
+        "口が大きい"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0572",
+      "word": "足",
+      "kana": "あし",
+      "meanings": [
+        "foot",
+        "leg"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "たくさん{歩|ある}いたから、{足|あし}が{痛|いた}いです。",
+          "kana": "たくさんあるいたから、あしがいたいです。",
+          "en": "I walked a lot, so my feet hurt."
+        },
+        {
+          "ja": "{兄|あに}は{足|あし}が{長|なが}くて、{背|せ}も{高|たか}いです。",
+          "kana": "あにはあしがながくて、せもたかいです。",
+          "en": "My older brother has long legs and is tall, too."
+        }
+      ],
+      "collocations": [
+        "足が速い",
+        "足が長い"
+      ],
+      "notes": "Covers both foot and leg; Japanese rarely separates the two in everyday speech.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0573",
+      "word": "顔",
+      "kana": "かお",
+      "meanings": [
+        "face",
+        "look"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{冷|つめ}たい{水|みず}で{顔|かお}を{洗|あら}う。",
+          "kana": "あさ、つめたいみずでかおをあらう。",
+          "en": "In the morning I wash my face with cold water."
+        },
+        {
+          "ja": "{熱|ねつ}があって、{顔|かお}が{赤|あか}いですね。",
+          "kana": "ねつがあって、かおがあかいですね。",
+          "en": "You have a fever, and your face is red."
+        }
+      ],
+      "collocations": [
+        "顔を洗う",
+        "顔が赤い"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0574",
+      "word": "病気",
+      "kana": "びょうき",
+      "meanings": [
+        "illness",
+        "sickness",
+        "disease"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{病気|びょうき}で{会社|かいしゃ}を{休|やす}みました。",
+          "kana": "ちちはびょうきでかいしゃをやすみました。",
+          "en": "My father stayed home from work because he was sick."
+        },
+        {
+          "ja": "おばあさんは{病気|びょうき}で{病院|びょういん}にいる。",
+          "kana": "おばあさんはびょうきでびょういんにいる。",
+          "en": "My grandmother is sick and in the hospital."
+        }
+      ],
+      "collocations": [
+        "病気になる",
+        "重い病気"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0575",
+      "word": "薬",
+      "kana": "くすり",
+      "meanings": [
+        "medicine",
+        "drug"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{薬|くすり}はご{飯|はん}の{後|あと}で{飲|の}んでください。",
+          "kana": "このくすりはごはんのあとでのんでください。",
+          "en": "Please take this medicine after meals."
+        },
+        {
+          "ja": "{薬局|やっきょく}で{風邪|かぜ}の{薬|くすり}を{買|か}いました。",
+          "kana": "やっきょくでかぜのくすりをかいました。",
+          "en": "I bought cold medicine at the pharmacy."
+        }
+      ],
+      "collocations": [
+        "薬を飲む",
+        "薬屋"
+      ],
+      "notes": "Medicine is 'drunk' in Japanese: 薬を飲む, even for tablets and capsules.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0576",
+      "word": "風邪",
+      "kana": "かぜ",
+      "meanings": [
+        "cold (illness)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{風邪|かぜ}をひいて、{声|こえ}が{出|で}ない。",
+          "kana": "かぜをひいて、こえがでない。",
+          "en": "I caught a cold and lost my voice."
+        },
+        {
+          "ja": "{妹|いもうと}は{風邪|かぜ}で{学校|がっこう}を{休|やす}んでいます。",
+          "kana": "いもうとはかぜでがっこうをやすんでいます。",
+          "en": "My little sister is off school with a cold."
+        }
+      ],
+      "collocations": [
+        "風邪をひく",
+        "風邪薬"
+      ],
+      "notes": "Always 風邪をひく (catch a cold), never 風邪になる. Homophone of 風 (wind).",
+      "confusables": [
+        "v-n5-0567"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0577",
+      "word": "熱",
+      "kana": "ねつ",
+      "meanings": [
+        "fever",
+        "heat"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "health"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{熱|ねつ}があるから、{今日|きょう}は{休|やす}みます。",
+          "kana": "ねつがあるから、きょうはやすみます。",
+          "en": "I have a fever, so I'm taking today off."
+        },
+        {
+          "ja": "{昨日|きのう}は{熱|ねつ}が{高|たか}くて、{何|なに}も{食|た}べなかった。",
+          "kana": "きのうはねつがたかくて、なにもたべなかった。",
+          "en": "I had a high fever yesterday and didn't eat anything."
+        }
+      ],
+      "collocations": [
+        "熱がある",
+        "熱が出る",
+        "熱が下がる"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0578",
+      "word": "休み",
+      "kana": "やすみ",
+      "meanings": [
+        "day off",
+        "holiday",
+        "break"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "calendar"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{休|やす}みだから、ゆっくり{寝|ね}る。",
+          "kana": "あしたはやすみだから、ゆっくりねる。",
+          "en": "Tomorrow is my day off, so I'm going to sleep in."
+        },
+        {
+          "ja": "{来週|らいしゅう}の{月曜日|げつようび}は{会社|かいしゃ}が{休|やす}みです。",
+          "kana": "らいしゅうのげつようびはかいしゃがやすみです。",
+          "en": "The office is closed next Monday."
+        }
+      ],
+      "collocations": [
+        "夏休み",
+        "昼休み",
+        "休みを取る"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0579",
+      "word": "会議",
+      "kana": "かいぎ",
+      "meanings": [
+        "meeting",
+        "conference"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{午後|ごご}{二時|にじ}から{会議|かいぎ}があります。",
+          "kana": "ごごにじからかいぎがあります。",
+          "en": "There is a meeting from two in the afternoon."
+        },
+        {
+          "ja": "{今日|きょう}の{会議|かいぎ}は{長|なが}くて、{大変|たいへん}でした。",
+          "kana": "きょうのかいぎはながくて、たいへんでした。",
+          "en": "Today's meeting was long and exhausting."
+        }
+      ],
+      "collocations": [
+        "会議に出る",
+        "会議室"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0580",
+      "word": "医者",
+      "kana": "いしゃ",
+      "meanings": [
+        "doctor",
+        "physician"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "health",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{医者|いしゃ}に{薬|くすり}をもらいました。",
+          "kana": "いしゃにくすりをもらいました。",
+          "en": "I got some medicine from the doctor."
+        },
+        {
+          "ja": "{姉|あね}は{町|まち}の{病院|びょういん}で{医者|いしゃ}をしている。",
+          "kana": "あねはまちのびょういんでいしゃをしている。",
+          "en": "My older sister works as a doctor at the town hospital."
+        }
+      ],
+      "collocations": [
+        "医者に行く",
+        "お医者さん"
+      ],
+      "notes": "In speech usually お医者さん; 医師 is the formal job title on documents.",
+      "confusables": [
+        "v-n5-0661"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0581",
+      "word": "手紙",
+      "kana": "てがみ",
+      "meanings": [
+        "letter (mail)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{国|くに}の{母|はは}に{手紙|てがみ}を{書|か}いた。",
+          "kana": "くにのははにてがみをかいた。",
+          "en": "I wrote a letter to my mother back home."
+        },
+        {
+          "ja": "{先生|せんせい}から{長|なが}い{手紙|てがみ}をもらいました。",
+          "kana": "せんせいからながいてがみをもらいました。",
+          "en": "I received a long letter from my teacher."
+        }
+      ],
+      "collocations": [
+        "手紙を書く",
+        "手紙を出す",
+        "手紙をもらう"
+      ],
+      "confusables": [
+        "v-n5-0612"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0582",
+      "word": "新聞",
+      "kana": "しんぶん",
+      "meanings": [
+        "newspaper"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{毎朝|まいあさ}{新聞|しんぶん}を{読|よ}みます。",
+          "kana": "ちちはまいあさしんぶんをよみます。",
+          "en": "My father reads the newspaper every morning."
+        },
+        {
+          "ja": "コンビニで{新聞|しんぶん}を{買|か}って、{電車|でんしゃ}で{読|よ}みました。",
+          "kana": "コンビニでしんぶんをかって、でんしゃでよみました。",
+          "en": "I bought a newspaper at the convenience store and read it on the train."
+        }
+      ],
+      "collocations": [
+        "新聞を読む",
+        "新聞社"
+      ],
+      "confusables": [
+        "v-n5-0615"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0583",
+      "word": "テレビ",
+      "kana": "テレビ",
+      "meanings": [
+        "television",
+        "TV"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜|よる}はいつもテレビを{見|み}ている。",
+          "kana": "よるはいつもテレビをみている。",
+          "en": "At night I'm always watching TV."
+        },
+        {
+          "ja": "{私|わたし}の{部屋|へや}にはテレビがありません。",
+          "kana": "わたしのへやにはテレビがありません。",
+          "en": "There's no TV in my room."
+        }
+      ],
+      "collocations": [
+        "テレビを見る",
+        "テレビをつける",
+        "テレビを消す"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0584",
+      "word": "質問",
+      "kana": "しつもん",
+      "meanings": [
+        "question"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{何|なに}か{質問|しつもん}はありませんか。",
+          "kana": "なにかしつもんはありませんか。",
+          "en": "Do you have any questions?"
+        },
+        {
+          "ja": "{学生|がくせい}が{先生|せんせい}に{難|むずか}しい{質問|しつもん}をしました。",
+          "kana": "がくせいがせんせいにむずかしいしつもんをしました。",
+          "en": "A student asked the teacher a difficult question."
+        }
+      ],
+      "collocations": [
+        "質問をする",
+        "質問に答える",
+        "質問がある"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0585",
+      "word": "答え",
+      "kana": "こたえ",
+      "meanings": [
+        "answer",
+        "reply",
+        "solution"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "study"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{質問|しつもん}の{答|こた}えはノートに{書|か}いてください。",
+          "kana": "しつもんのこたえはノートにかいてください。",
+          "en": "Please write the answers to the questions in your notebook."
+        },
+        {
+          "ja": "{私|わたし}の{答|こた}えは{違|ちが}っていました。",
+          "kana": "わたしのこたえはちがっていました。",
+          "en": "My answer was wrong."
+        }
+      ],
+      "collocations": [
+        "答えを書く",
+        "正しい答え"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0586",
+      "word": "意味",
+      "kana": "いみ",
+      "meanings": [
+        "meaning",
+        "sense"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "language"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{漢字|かんじ}の{意味|いみ}を{知|し}っていますか。",
+          "kana": "このかんじのいみをしっていますか。",
+          "en": "Do you know the meaning of this kanji?"
+        },
+        {
+          "ja": "{英語|えいご}の{歌|うた}の{意味|いみ}が{分|わ}かって、{嬉|うれ}しかった。",
+          "kana": "えいごのうたのいみがわかって、うれしかった。",
+          "en": "I understood the meaning of the English song, and that made me happy."
+        }
+      ],
+      "collocations": [
+        "意味が分かる",
+        "意味を調べる"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0587",
+      "word": "字",
+      "kana": "じ",
+      "meanings": [
+        "character",
+        "letter",
+        "handwriting"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "language"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{妹|いもうと}は{字|じ}がとても{上手|じょうず}です。",
+          "kana": "いもうとはじがとてもじょうずです。",
+          "en": "My little sister has very good handwriting."
+        },
+        {
+          "ja": "{紙|かみ}に{大|おお}きい{字|じ}で{名前|なまえ}を{書|か}きました。",
+          "kana": "かみにおおきいじでなまえをかきました。",
+          "en": "I wrote my name on the paper in big letters."
+        }
+      ],
+      "collocations": [
+        "字を書く",
+        "字が上手",
+        "字が汚い"
+      ],
+      "notes": "On its own 字 usually means handwriting or a single written character; 漢字 and 文字 build on it.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0588",
+      "word": "歌手",
+      "kana": "かしゅ",
+      "meanings": [
+        "singer"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "work",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{姉|あね}は{歌|うた}が{上手|じょうず}で、{歌手|かしゅ}になった。",
+          "kana": "あねはうたがじょうずで、かしゅになった。",
+          "en": "My older sister sings well, and she became a singer."
+        },
+        {
+          "ja": "この{歌手|かしゅ}は{日本|にほん}でとても{有名|ゆうめい}です。",
+          "kana": "このかしゅはにほんでとてもゆうめいです。",
+          "en": "This singer is very famous in Japan."
+        }
+      ],
+      "collocations": [
+        "人気の歌手",
+        "歌手になる"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0589",
+      "word": "声",
+      "kana": "こえ",
+      "meanings": [
+        "voice"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "もう{少|すこ}し{大|おお}きい{声|こえ}で{話|はな}してください。",
+          "kana": "もうすこしおおきいこえではなしてください。",
+          "en": "Please speak a little louder."
+        },
+        {
+          "ja": "{母|はは}の{声|こえ}を{聞|き}いて、{元気|げんき}が{出|で}た。",
+          "kana": "ははのこえをきいて、げんきがでた。",
+          "en": "Hearing my mother's voice cheered me up."
+        }
+      ],
+      "collocations": [
+        "大きい声",
+        "声が小さい",
+        "声を出す"
+      ],
+      "notes": "声 is a voice (people, animals); 音 is any other sound.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0590",
+      "word": "歯",
+      "kana": "は",
+      "meanings": [
+        "tooth",
+        "teeth"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{甘|あま}い{物|もの}は{歯|は}に{悪|わる}いですよ。",
+          "kana": "あまいものははにわるいですよ。",
+          "en": "Sweets are bad for your teeth, you know."
+        },
+        {
+          "ja": "{毎晩|まいばん}、{寝|ね}る{前|まえ}に{歯|は}を{磨|みが}く。",
+          "kana": "まいばん、ねるまえにはをみがく。",
+          "en": "Every night I brush my teeth before bed."
+        }
+      ],
+      "collocations": [
+        "歯を磨く",
+        "歯が痛い",
+        "歯医者"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0591",
+      "word": "髪",
+      "kana": "かみ",
+      "meanings": [
+        "hair (on the head)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{姉|あね}は{髪|かみ}が{長|なが}くてきれいです。",
+          "kana": "あねはかみがながくてきれいです。",
+          "en": "My older sister has long, beautiful hair."
+        },
+        {
+          "ja": "{朝|あさ}、{髪|かみ}を{洗|あら}って{出|で}かけました。",
+          "kana": "あさ、かみをあらってでかけました。",
+          "en": "I washed my hair in the morning and went out."
+        }
+      ],
+      "collocations": [
+        "髪を切る",
+        "髪が長い",
+        "髪の毛"
+      ],
+      "notes": "髪 is the hair on your head (also 髪の毛); body hair and animal fur are 毛. Same kana as 紙 (paper) and 神 (god).",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0592",
+      "word": "鼻",
+      "kana": "はな",
+      "meanings": [
+        "nose"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{風邪|かぜ}で{鼻|はな}が{赤|あか}くなった。",
+          "kana": "かぜではながあかくなった。",
+          "en": "My nose turned red from a cold."
+        },
+        {
+          "ja": "{犬|いぬ}は{人|ひと}より{鼻|はな}がいいです。",
+          "kana": "いぬはひとよりはながいいです。",
+          "en": "Dogs have a better nose than people."
+        }
+      ],
+      "collocations": [
+        "鼻が高い",
+        "鼻水"
+      ],
+      "notes": "Same kana as 花 (flower); the pitch differs: 鼻 is heiban, 花 drops after the second mora.",
+      "confusables": [
+        "v-n5-0551"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0593",
+      "word": "背",
+      "kana": "せ",
+      "meanings": [
+        "height (of a person)",
+        "back (of the body)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{弟|おとうと}は{私|わたし}より{背|せ}が{高|たか}い。",
+          "kana": "おとうとはわたしよりせがたかい。",
+          "en": "My little brother is taller than me."
+        },
+        {
+          "ja": "{田中|たなか}さんは{背|せ}が{低|ひく}くて、{声|こえ}が{大|おお}きいです。",
+          "kana": "たなかさんはせがひくくて、こえがおおきいです。",
+          "en": "Mr. Tanaka is short and has a loud voice."
+        }
+      ],
+      "collocations": [
+        "背が高い",
+        "背が低い"
+      ],
+      "notes": "Mostly used in 背が高い/低い for a person's height; the back as a body part is usually 背中.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0594",
+      "word": "お腹",
+      "kana": "おなか",
+      "meanings": [
+        "stomach",
+        "belly"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{腹|なか}がすきました。{何|なに}か{食|た}べませんか。",
+          "kana": "おなかがすきました。なにかたべませんか。",
+          "en": "I'm hungry. Shall we get something to eat?"
+        },
+        {
+          "ja": "{昨日|きのう}の{夜|よる}からお{腹|なか}が{痛|いた}い。",
+          "kana": "きのうのよるからおなかがいたい。",
+          "en": "My stomach has been hurting since last night."
+        }
+      ],
+      "collocations": [
+        "お腹がすく",
+        "お腹がいっぱい",
+        "お腹が痛い"
+      ],
+      "notes": "The polite everyday word; 腹 (はら) alone sounds rough. 'Hungry' is お腹がすいた, 'full' is お腹がいっぱい.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0595",
+      "word": "晴れ",
+      "kana": "はれ",
+      "meanings": [
+        "clear weather",
+        "sunny weather"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{晴|は}れでしょう。",
+          "kana": "あしたははれでしょう。",
+          "en": "It will probably be sunny tomorrow."
+        },
+        {
+          "ja": "{今日|きょう}は{晴|は}れだから、{自転車|じてんしゃ}で{会社|かいしゃ}に{行|い}った。",
+          "kana": "きょうははれだから、じてんしゃでかいしゃにいった。",
+          "en": "It was sunny today, so I biked to work."
+        }
+      ],
+      "collocations": [
+        "晴れの日",
+        "晴れのち曇り"
+      ],
+      "confusables": [
+        "v-n5-0596"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0596",
+      "word": "曇り",
+      "kana": "くもり",
+      "meanings": [
+        "cloudy weather"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{曇|くも}りで、{少|すこ}し{寒|さむ}いです。",
+          "kana": "きょうはくもりで、すこしさむいです。",
+          "en": "It's cloudy and a little cold today."
+        },
+        {
+          "ja": "{午前|ごぜん}は{曇|くも}りで、{午後|ごご}は{雨|あめ}でした。",
+          "kana": "ごぜんはくもりで、ごごはあめでした。",
+          "en": "It was cloudy in the morning and rainy in the afternoon."
+        }
+      ],
+      "collocations": [
+        "曇りの日",
+        "曇りのち雨"
+      ],
+      "confusables": [
+        "v-n5-0595"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0597",
+      "word": "動物",
+      "kana": "どうぶつ",
+      "meanings": [
+        "animal"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{妹|いもうと}は{動物|どうぶつ}が{大好|だいす}きだ。",
+          "kana": "いもうとはどうぶつがだいすきだ。",
+          "en": "My little sister loves animals."
+        },
+        {
+          "ja": "この{本|ほん}にはいろいろな{動物|どうぶつ}の{写真|しゃしん}があります。",
+          "kana": "このほんにはいろいろなどうぶつのしゃしんがあります。",
+          "en": "This book has photos of all kinds of animals."
+        }
+      ],
+      "collocations": [
+        "動物園",
+        "動物が好き"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0598",
+      "word": "池",
+      "kana": "いけ",
+      "meanings": [
+        "pond"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{池|いけ}に{魚|さかな}がたくさんいます。",
+          "kana": "いけにさかながたくさんいます。",
+          "en": "There are lots of fish in the pond."
+        },
+        {
+          "ja": "{庭|にわ}に{小|ちい}さい{池|いけ}を{作|つく}りました。",
+          "kana": "にわにちいさいいけをつくりました。",
+          "en": "I made a small pond in the garden."
+        }
+      ],
+      "collocations": [
+        "池の魚",
+        "大きな池"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0599",
+      "word": "庭",
+      "kana": "にわ",
+      "meanings": [
+        "garden",
+        "yard"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{庭|にわ}で{犬|いぬ}と{遊|あそ}びました。",
+          "kana": "にわでいぬとあそびました。",
+          "en": "I played with the dog in the yard."
+        },
+        {
+          "ja": "{田中|たなか}さんの{家|いえ}の{庭|にわ}は{広|ひろ}くてきれいだ。",
+          "kana": "たなかさんのいえのにわはひろくてきれいだ。",
+          "en": "Mr. Tanaka's garden is spacious and beautiful."
+        }
+      ],
+      "collocations": [
+        "広い庭",
+        "庭の木"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0600",
+      "word": "石",
+      "kana": "いし",
+      "meanings": [
+        "stone",
+        "rock"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{川|かわ}に{大|おお}きい{石|いし}がある。",
+          "kana": "かわにおおきいいしがある。",
+          "en": "There is a big rock in the river."
+        },
+        {
+          "ja": "{靴|くつ}の{中|なか}に{小|ちい}さい{石|いし}が{入|はい}っていました。",
+          "kana": "くつのなかにちいさいいしがはいっていました。",
+          "en": "There was a small stone in my shoe."
+        }
+      ],
+      "collocations": [
+        "小さい石",
+        "石の橋"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0601",
+      "word": "畑",
+      "kana": "はたけ",
+      "meanings": [
+        "field (for crops)",
+        "vegetable garden"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature",
+        "plants"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{畑|はたけ}で{野菜|やさい}を{作|つく}っています。",
+          "kana": "ちちははたけでやさいをつくっています。",
+          "en": "My father grows vegetables in his field."
+        },
+        {
+          "ja": "おじいさんの{畑|はたけ}でトマトを{取|と}りました。",
+          "kana": "おじいさんのはたけでトマトをとりました。",
+          "en": "I picked tomatoes in my grandfather's field."
+        }
+      ],
+      "collocations": [
+        "畑で働く",
+        "野菜畑"
+      ],
+      "notes": "A dry field for vegetables or fruit; a flooded rice field is 田んぼ.",
+      "confusables": [
+        "v-n5-0647"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0602",
+      "word": "海岸",
+      "kana": "かいがん",
+      "meanings": [
+        "coast",
+        "seashore"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{海岸|かいがん}を{散歩|さんぽ}するのが{好|す}きです。",
+          "kana": "かいがんをさんぽするのがすきです。",
+          "en": "I like taking walks along the coast."
+        },
+        {
+          "ja": "{夏|なつ}の{海岸|かいがん}は{人|ひと}が{多|おお}くてにぎやかでした。",
+          "kana": "なつのかいがんはひとがおおくてにぎやかでした。",
+          "en": "The coast in summer was crowded and lively."
+        }
+      ],
+      "collocations": [
+        "海岸を歩く",
+        "海岸線"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0603",
+      "word": "星空",
+      "kana": "ほしぞら",
+      "meanings": [
+        "starry sky"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{山|やま}の{上|うえ}で{星空|ほしぞら}を{見|み}た。",
+          "kana": "やまのうえでほしぞらをみた。",
+          "en": "I looked at the starry sky from the top of the mountain."
+        },
+        {
+          "ja": "{今晩|こんばん}は{星空|ほしぞら}がきれいですね。",
+          "kana": "こんばんはほしぞらがきれいですね。",
+          "en": "The starry sky is beautiful tonight, isn't it?"
+        }
+      ],
+      "collocations": [
+        "きれいな星空",
+        "星空を見る"
+      ],
+      "notes": "星 (star) + 空 (sky); the そ→ぞ voicing is the usual rendaku of compounds.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0604",
+      "word": "月",
+      "kana": "つき",
+      "meanings": [
+        "moon",
+        "month"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature",
+        "calendar"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜|よる}、{空|そら}に{丸|まる}い{月|つき}が{出|で}ていた。",
+          "kana": "よる、そらにまるいつきがでていた。",
+          "en": "At night a round moon was out in the sky."
+        },
+        {
+          "ja": "{冬|ふゆ}の{月|つき}は{白|しろ}くてきれいです。",
+          "kana": "ふゆのつきはしろくてきれいです。",
+          "en": "The winter moon is white and beautiful."
+        }
+      ],
+      "collocations": [
+        "月が出る",
+        "月を見る"
+      ],
+      "notes": "Read つき for the moon or a month as a span of time; month names use がつ (一月, 何月).",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0605",
+      "word": "天気予報",
+      "kana": "てんきよほう",
+      "meanings": [
+        "weather forecast"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather",
+        "media"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{天気予報|てんきよほう}では{明日|あした}は{雨|あめ}です。",
+          "kana": "てんきよほうではあしたはあめです。",
+          "en": "According to the weather forecast, it will rain tomorrow."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、テレビで{天気予報|てんきよほう}を{見|み}る。",
+          "kana": "まいあさ、テレビでてんきよほうをみる。",
+          "en": "Every morning I watch the weather forecast on TV."
+        }
+      ],
+      "collocations": [
+        "天気予報を見る",
+        "天気予報が当たる"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0606",
+      "word": "会社員",
+      "kana": "かいしゃいん",
+      "meanings": [
+        "company employee",
+        "office worker"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{姉|あね}は{去年|きょねん}から{会社員|かいしゃいん}です。",
+          "kana": "あねはきょねんからかいしゃいんです。",
+          "en": "My older sister has been a company employee since last year."
+        },
+        {
+          "ja": "{父|ちち}は{会社員|かいしゃいん}で、{毎日|まいにち}{忙|いそが}しいです。",
+          "kana": "ちちはかいしゃいんで、まいにちいそがしいです。",
+          "en": "My father is a company employee and is busy every day."
+        }
+      ],
+      "collocations": [
+        "会社員になる"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0607",
+      "word": "店員",
+      "kana": "てんいん",
+      "meanings": [
+        "store clerk",
+        "shop staff"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "shopping",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{店員|てんいん}さんに{値段|ねだん}を{聞|き}きました。",
+          "kana": "てんいんさんにねだんをききました。",
+          "en": "I asked the clerk the price."
+        },
+        {
+          "ja": "あの{店|みせ}の{店員|てんいん}は{若|わか}くて{親切|しんせつ}だ。",
+          "kana": "あのみせのてんいんはわかくてしんせつだ。",
+          "en": "The clerk at that shop is young and kind."
+        }
+      ],
+      "collocations": [
+        "店員さん",
+        "店員を呼ぶ"
+      ],
+      "notes": "Add さん when addressing or referring to a clerk politely: 店員さん.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0608",
+      "word": "警察",
+      "kana": "けいさつ",
+      "meanings": [
+        "police"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{警察|けいさつ}の{人|ひと}が{駅前|えきまえ}に{立|た}っていた。",
+          "kana": "けいさつのひとがえきまえにたっていた。",
+          "en": "A police officer was standing in front of the station."
+        },
+        {
+          "ja": "{財布|さいふ}がなくて、{警察|けいさつ}に{電話|でんわ}しました。",
+          "kana": "さいふがなくて、けいさつにでんわしました。",
+          "en": "My wallet was gone, so I called the police."
+        }
+      ],
+      "collocations": [
+        "警察を呼ぶ",
+        "警察官"
+      ],
+      "notes": "警察 is the police as an organization; an individual officer is 警察官 or, informally, お巡りさん.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0609",
+      "word": "社長",
+      "kana": "しゃちょう",
+      "meanings": [
+        "company president"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "business",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{社長|しゃちょう}は{毎朝|まいあさ}{八時|はちじ}に{会社|かいしゃ}に{来|き}ます。",
+          "kana": "しゃちょうはまいあさはちじにかいしゃにきます。",
+          "en": "The president comes to the office at eight every morning."
+        },
+        {
+          "ja": "うちの{社長|しゃちょう}は{若|わか}くて、{元気|げんき}な{人|ひと}です。",
+          "kana": "うちのしゃちょうはわかくて、げんきなひとです。",
+          "en": "Our company president is a young, energetic person."
+        }
+      ],
+      "collocations": [
+        "社長になる",
+        "社長室"
+      ],
+      "notes": "Used as a title after a name (田中社長) or alone as a form of address, without さん.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0610",
+      "word": "留学生",
+      "kana": "りゅうがくせい",
+      "meanings": [
+        "international student",
+        "exchange student"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "school",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{留学生|りゅうがくせい}の{友達|ともだち}と{日本語|にほんご}で{話|はな}した。",
+          "kana": "りゅうがくせいのともだちとにほんごではなした。",
+          "en": "I talked in Japanese with a friend who is an international student."
+        },
+        {
+          "ja": "この{大学|だいがく}には{留学生|りゅうがくせい}が{多|おお}いです。",
+          "kana": "このだいがくにはりゅうがくせいがおおいです。",
+          "en": "This university has many international students."
+        }
+      ],
+      "collocations": [
+        "留学生になる",
+        "留学生の友達"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0611",
+      "word": "日本人",
+      "kana": "にほんじん",
+      "meanings": [
+        "Japanese person"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "people",
+        "society"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本人|にほんじん}の{友達|ともだち}が{三人|さんにん}います。",
+          "kana": "にほんじんのともだちがさんにんいます。",
+          "en": "I have three Japanese friends."
+        },
+        {
+          "ja": "{田中|たなか}さんは{日本人|にほんじん}で、{英語|えいご}も{上手|じょうず}だ。",
+          "kana": "たなかさんはにほんじんで、えいごもじょうずだ。",
+          "en": "Mr. Tanaka is Japanese, and he is good at English, too."
+        }
+      ],
+      "collocations": [
+        "日本人の友達",
+        "日本人の先生"
+      ],
+      "notes": "にほんじん is the everyday reading; にっぽんじん appears in formal or emphatic use.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0612",
+      "word": "葉書",
+      "kana": "はがき",
+      "meanings": [
+        "postcard"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{箱根|はこね}から{友達|ともだち}に{葉書|はがき}を{出|だ}しました。",
+          "kana": "はこねからともだちにはがきをだしました。",
+          "en": "I sent a postcard to a friend from Hakone."
+        },
+        {
+          "ja": "{今朝|けさ}、{国|くに}の{母|はは}から{葉書|はがき}が{来|き}ました。",
+          "kana": "けさ、くにのははからはがきがきました。",
+          "en": "This morning a postcard came from my mother back home."
+        }
+      ],
+      "altForms": [
+        "ハガキ"
+      ],
+      "collocations": [
+        "葉書を出す",
+        "絵葉書"
+      ],
+      "confusables": [
+        "v-n5-0581"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0613",
+      "word": "切手",
+      "kana": "きって",
+      "meanings": [
+        "postage stamp"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "objects"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{郵便局|ゆうびんきょく}で{切手|きって}を{三枚|さんまい}{買|か}いました。",
+          "kana": "ゆうびんきょくできってをさんまいかいました。",
+          "en": "I bought three stamps at the post office."
+        },
+        {
+          "ja": "{兄|あに}は{古|ふる}い{切手|きって}をたくさん{持|も}っている。",
+          "kana": "あにはふるいきってをたくさんもっている。",
+          "en": "My older brother has a lot of old stamps."
+        }
+      ],
+      "collocations": [
+        "切手を貼る",
+        "切手を買う"
+      ],
+      "notes": "Not to be confused with 切符 (きっぷ), a ticket.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0614",
+      "word": "ラジオ",
+      "kana": "ラジオ",
+      "meanings": [
+        "radio"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{車|くるま}の{中|なか}でラジオを{聞|き}きます。",
+          "kana": "くるまのなかでラジオをききます。",
+          "en": "I listen to the radio in the car."
+        },
+        {
+          "ja": "{古|ふる}いラジオが{本棚|ほんだな}の{上|うえ}にある。",
+          "kana": "ふるいラジオがほんだなのうえにある。",
+          "en": "There's an old radio on top of the bookshelf."
+        }
+      ],
+      "collocations": [
+        "ラジオを聞く",
+        "ラジオをつける"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0615",
+      "word": "雑誌",
+      "kana": "ざっし",
+      "meanings": [
+        "magazine"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{本屋|ほんや}で{料理|りょうり}の{雑誌|ざっし}を{買|か}いました。",
+          "kana": "ほんやでりょうりのざっしをかいました。",
+          "en": "I bought a cooking magazine at the bookstore."
+        },
+        {
+          "ja": "{図書館|としょかん}には{新|あたら}しい{雑誌|ざっし}がたくさんあります。",
+          "kana": "としょかんにはあたらしいざっしがたくさんあります。",
+          "en": "The library has lots of new magazines."
+        }
+      ],
+      "collocations": [
+        "雑誌を読む",
+        "雑誌を買う"
+      ],
+      "confusables": [
+        "v-n5-0582"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0616",
+      "word": "アニメ",
+      "kana": "アニメ",
+      "meanings": [
+        "anime",
+        "animated show"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "hobbies",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}と{日本|にほん}のアニメを{見|み}ました。",
+          "kana": "ともだちとにほんのアニメをみました。",
+          "en": "I watched some Japanese anime with a friend."
+        },
+        {
+          "ja": "{弟|おとうと}はアニメが{大好|だいす}きで、{毎晩|まいばん}{見|み}ている。",
+          "kana": "おとうとはアニメがだいすきで、まいばんみている。",
+          "en": "My little brother loves anime and watches it every night."
+        }
+      ],
+      "collocations": [
+        "アニメを見る",
+        "アニメが好き"
+      ],
+      "notes": "Clipped from アニメーション; the generic word for any animated show or film.",
+      "station": 12
+    },
+    {
+      "id": "v-n5-0617",
+      "word": "絵本",
+      "kana": "えほん",
+      "meanings": [
+        "picture book"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "hobbies"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎晩|まいばん}、{子供|こども}に{絵本|えほん}を{読|よ}みます。",
+          "kana": "まいばん、こどもにえほんをよみます。",
+          "en": "Every night I read picture books to my kids."
+        },
+        {
+          "ja": "{図書館|としょかん}で{猫|ねこ}の{絵本|えほん}を{借|か}りました。",
+          "kana": "としょかんでねこのえほんをかりました。",
+          "en": "I borrowed a picture book about cats from the library."
+        }
+      ],
+      "collocations": [
+        "絵本を読む",
+        "絵本を買う"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0618",
+      "word": "歌",
+      "kana": "うた",
+      "meanings": [
+        "song",
+        "singing"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{歌|うた}は{日本|にほん}で{有名|ゆうめい}です。",
+          "kana": "このうたはにほんでゆうめいです。",
+          "en": "This song is famous in Japan."
+        },
+        {
+          "ja": "{子供|こども}の{時|とき}、この{歌|うた}が{大好|だいす}きだった。",
+          "kana": "こどものとき、このうたがだいすきだった。",
+          "en": "When I was a child, I loved this song."
+        }
+      ],
+      "collocations": [
+        "歌を歌う",
+        "歌が上手"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0619",
+      "word": "スポーツ",
+      "kana": "スポーツ",
+      "meanings": [
+        "sports"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "sports",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "どんなスポーツが{好|す}きですか。",
+          "kana": "どんなスポーツがすきですか。",
+          "en": "What kind of sports do you like?"
+        },
+        {
+          "ja": "{兄|あに}はスポーツが{上手|じょうず}で、{友達|ともだち}が{多|おお}いです。",
+          "kana": "あにはスポーツがじょうずで、ともだちがおおいです。",
+          "en": "My older brother is good at sports and has many friends."
+        }
+      ],
+      "collocations": [
+        "スポーツをする",
+        "スポーツが好き"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0620",
+      "word": "サッカー",
+      "kana": "サッカー",
+      "meanings": [
+        "soccer"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "sports",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{弟|おとうと}は{毎週|まいしゅう}{土曜日|どようび}にサッカーをする。",
+          "kana": "おとうとはまいしゅうどようびにサッカーをする。",
+          "en": "My little brother plays soccer every Saturday."
+        },
+        {
+          "ja": "{昨日|きのう}、テレビでサッカーを{見|み}ました。",
+          "kana": "きのう、テレビでサッカーをみました。",
+          "en": "I watched soccer on TV yesterday."
+        }
+      ],
+      "collocations": [
+        "サッカーをする",
+        "サッカーの試合"
+      ],
+      "station": 12
+    },
+    {
+      "id": "v-n5-0621",
+      "word": "野球",
+      "kana": "やきゅう",
+      "meanings": [
+        "baseball"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "sports"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}はテレビで{野球|やきゅう}を{見|み}るのが{好|す}きです。",
+          "kana": "ちちはテレビでやきゅうをみるのがすきです。",
+          "en": "My father likes watching baseball on TV."
+        },
+        {
+          "ja": "{弟|おとうと}は{学校|がっこう}で{野球|やきゅう}をしている。",
+          "kana": "おとうとはがっこうでやきゅうをしている。",
+          "en": "My little brother plays baseball at school."
+        }
+      ],
+      "collocations": [
+        "野球をする",
+        "野球の試合"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0622",
+      "word": "テニス",
+      "kana": "テニス",
+      "meanings": [
+        "tennis"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "sports",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}、{公園|こうえん}でテニスをしました。",
+          "kana": "きのう、こうえんでテニスをしました。",
+          "en": "I played tennis in the park yesterday."
+        },
+        {
+          "ja": "{来週|らいしゅう}、{友達|ともだち}とテニスの{試合|しあい}がある。",
+          "kana": "らいしゅう、ともだちとテニスのしあいがある。",
+          "en": "I have a tennis match with a friend next week."
+        }
+      ],
+      "collocations": [
+        "テニスをする",
+        "テニスコート"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0623",
+      "word": "絵",
+      "kana": "え",
+      "meanings": [
+        "picture",
+        "painting",
+        "drawing"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "arts",
+        "hobbies"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{姉|あね}は{絵|え}をかくのが{上手|じょうず}です。",
+          "kana": "あねはえをかくのがじょうずです。",
+          "en": "My older sister is good at drawing."
+        },
+        {
+          "ja": "{博物館|はくぶつかん}で{古|ふる}い{絵|え}をたくさん{見|み}ました。",
+          "kana": "はくぶつかんでふるいえをたくさんみました。",
+          "en": "I saw lots of old paintings at the museum."
+        }
+      ],
+      "collocations": [
+        "絵をかく",
+        "絵を見る"
+      ],
+      "notes": "'To draw a picture' is 絵をかく (kanji 描く); it is not 書く, which is for writing.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0624",
+      "word": "ギター",
+      "kana": "ギター",
+      "meanings": [
+        "guitar"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{去年|きょねん}からギターを{習|なら}っています。",
+          "kana": "きょねんからギターをならっています。",
+          "en": "I've been taking guitar lessons since last year."
+        },
+        {
+          "ja": "{兄|あに}の{部屋|へや}には{古|ふる}いギターがあります。",
+          "kana": "あにのへやにはふるいギターがあります。",
+          "en": "There's an old guitar in my older brother's room."
+        }
+      ],
+      "collocations": [
+        "ギターを弾く",
+        "ギターを習う"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0625",
+      "word": "ピアノ",
+      "kana": "ピアノ",
+      "meanings": [
+        "piano"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{三十分|さんじゅっぷん}ピアノの{練習|れんしゅう}をする。",
+          "kana": "まいにちさんじゅっぷんピアノのれんしゅうをする。",
+          "en": "I practice the piano for thirty minutes every day."
+        },
+        {
+          "ja": "{音楽|おんがく}の{教室|きょうしつ}に{新|あたら}しいピアノが{来|き}ました。",
+          "kana": "おんがくのきょうしつにあたらしいピアノがきました。",
+          "en": "A new piano arrived in the music room."
+        }
+      ],
+      "collocations": [
+        "ピアノを弾く",
+        "ピアノを習う"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0626",
+      "word": "ゲーム",
+      "kana": "ゲーム",
+      "meanings": [
+        "game",
+        "video game"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{弟|おとうと}は{毎日|まいにち}{夜|よる}{遅|おそ}くまでゲームをしている。",
+          "kana": "おとうとはまいにちよるおそくまでゲームをしている。",
+          "en": "My little brother plays video games until late every night."
+        },
+        {
+          "ja": "{新|あたら}しいゲームを{買|か}いたいですが、{高|たか}いです。",
+          "kana": "あたらしいゲームをかいたいですが、たかいです。",
+          "en": "I want to buy the new game, but it's expensive."
+        }
+      ],
+      "collocations": [
+        "ゲームをする",
+        "テレビゲーム"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0627",
+      "word": "趣味",
+      "kana": "しゅみ",
+      "meanings": [
+        "hobby",
+        "taste"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "hobbies"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{私|わたし}の{趣味|しゅみ}は{料理|りょうり}と{旅行|りょこう}です。",
+          "kana": "わたしのしゅみはりょうりとりょこうです。",
+          "en": "My hobbies are cooking and traveling."
+        },
+        {
+          "ja": "{父|ちち}は{趣味|しゅみ}で{野菜|やさい}を{作|つく}っている。",
+          "kana": "ちちはしゅみでやさいをつくっている。",
+          "en": "My father grows vegetables as a hobby."
+        }
+      ],
+      "collocations": [
+        "趣味は何ですか",
+        "趣味がいい"
+      ],
+      "notes": "趣味がいい means 'to have good taste', not 'a good hobby'.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0628",
+      "word": "悲しい",
+      "kana": "かなしい",
+      "meanings": [
+        "sad",
+        "sorrowful"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}が{国|くに}に{帰|かえ}って、とても{悲|かな}しい。",
+          "kana": "ともだちがくににかえって、とてもかなしい。",
+          "en": "My friend went back to their country, and I'm really sad."
+        },
+        {
+          "ja": "{悲|かな}しい{時|とき}は、{音楽|おんがく}を{聞|き}きます。",
+          "kana": "かなしいときは、おんがくをききます。",
+          "en": "When I'm sad, I listen to music."
+        }
+      ],
+      "collocations": [
+        "悲しい話",
+        "悲しい顔"
+      ],
+      "confusables": [
+        "v-n5-0561"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0629",
+      "word": "怖い",
+      "kana": "こわい",
+      "meanings": [
+        "scary",
+        "frightening",
+        "afraid"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜|よる}の{森|もり}は{暗|くら}くて{怖|こわ}いです。",
+          "kana": "よるのもりはくらくてこわいです。",
+          "en": "The forest at night is dark and scary."
+        },
+        {
+          "ja": "{弟|おとうと}は{犬|いぬ}が{怖|こわ}くて、{近|ちか}くに{行|い}かない。",
+          "kana": "おとうとはいぬがこわくて、ちかくにいかない。",
+          "en": "My little brother is afraid of dogs and won't go near them."
+        }
+      ],
+      "collocations": [
+        "怖い話",
+        "怖い顔",
+        "犬が怖い"
+      ],
+      "notes": "Describes both the scary thing (怖い話) and the person who is afraid (犬が怖い).",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0630",
+      "word": "眠い",
+      "kana": "ねむい",
+      "meanings": [
+        "sleepy",
+        "drowsy"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}あまり{寝|ね}なかったから、{眠|ねむ}い。",
+          "kana": "きのうあまりねなかったから、ねむい。",
+          "en": "I didn't sleep much last night, so I'm sleepy."
+        },
+        {
+          "ja": "{午後|ごご}の{会議|かいぎ}は、いつも{眠|ねむ}いです。",
+          "kana": "ごごのかいぎは、いつもねむいです。",
+          "en": "I always get sleepy in afternoon meetings."
+        }
+      ],
+      "collocations": [
+        "眠くなる",
+        "眠い目"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0631",
+      "word": "得意",
+      "kana": "とくい",
+      "meanings": [
+        "good at",
+        "strong point"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "personality"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{妹|いもうと}は{料理|りょうり}が{得意|とくい}だ。",
+          "kana": "いもうとはりょうりがとくいだ。",
+          "en": "My little sister is good at cooking."
+        },
+        {
+          "ja": "{私|わたし}は{英語|えいご}が{得意|とくい}ではありません。",
+          "kana": "わたしはえいごがとくいではありません。",
+          "en": "I'm not good at English."
+        }
+      ],
+      "collocations": [
+        "得意な料理",
+        "得意になる"
+      ],
+      "notes": "What you are good at and confident in; 上手 praises someone else's skill. Opposite: 苦手.",
+      "confusables": [
+        "v-n5-0632"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0632",
+      "word": "苦手",
+      "kana": "にがて",
+      "meanings": [
+        "bad at",
+        "weak point",
+        "hard to deal with"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{泳|およ}ぐのが{苦手|にがて}だ。",
+          "kana": "わたしはおよぐのがにがてだ。",
+          "en": "I'm not good at swimming."
+        },
+        {
+          "ja": "{辛|から}い{食|た}べ{物|もの}は{苦手|にがて}です。",
+          "kana": "からいたべものはにがてです。",
+          "en": "I don't do well with spicy food."
+        }
+      ],
+      "collocations": [
+        "苦手な食べ物",
+        "苦手になる"
+      ],
+      "notes": "Something you are bad at or dislike dealing with; softer than 下手 or 嫌い. Opposite: 得意.",
+      "confusables": [
+        "v-n5-0631"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0633",
+      "word": "優しい",
+      "kana": "やさしい",
+      "meanings": [
+        "kind",
+        "gentle"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "personality"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんはいつも{優|やさ}しいです。",
+          "kana": "たなかさんはいつもやさしいです。",
+          "en": "Mr. Tanaka is always kind."
+        },
+        {
+          "ja": "{優|やさ}しい{声|こえ}で{子供|こども}に{話|はな}しました。",
+          "kana": "やさしいこえでこどもにはなしました。",
+          "en": "I spoke to the child in a gentle voice."
+        }
+      ],
+      "collocations": [
+        "優しい人",
+        "優しい声"
+      ],
+      "notes": "Kind/gentle. Same reading as 易しい (easy); the kanji tells them apart.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0634",
+      "word": "真面目",
+      "kana": "まじめ",
+      "meanings": [
+        "serious",
+        "diligent",
+        "earnest"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "personality"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{弟|おとうと}は{真面目|まじめ}で、{毎日|まいにち}{勉強|べんきょう}する。",
+          "kana": "おとうとはまじめで、まいにちべんきょうする。",
+          "en": "My little brother is diligent and studies every day."
+        },
+        {
+          "ja": "{田中|たなか}さんは{真面目|まじめ}な{人|ひと}ですが、{話|はなし}は{面白|おもしろ}いです。",
+          "kana": "たなかさんはまじめなひとですが、はなしはおもしろいです。",
+          "en": "Mr. Tanaka is a serious person, but his stories are funny."
+        }
+      ],
+      "collocations": [
+        "真面目な人",
+        "真面目に働く"
+      ],
+      "notes": "Positive: conscientious and sincere. Often written まじめ in kana.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0635",
+      "word": "気分",
+      "kana": "きぶん",
+      "meanings": [
+        "mood",
+        "feeling (physical)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "emotions",
+        "health"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{気分|きぶん}が{悪|わる}いから、{早|はや}く{帰|かえ}ります。",
+          "kana": "きょうはきぶんがわるいから、はやくかえります。",
+          "en": "I feel unwell today, so I'm going home early."
+        },
+        {
+          "ja": "{新|あたら}しい{服|ふく}を{着|き}て、{気分|きぶん}がいい。",
+          "kana": "あたらしいふくをきて、きぶんがいい。",
+          "en": "I'm wearing new clothes and feeling good."
+        }
+      ],
+      "collocations": [
+        "気分がいい",
+        "気分が悪い"
+      ],
+      "notes": "気分が悪い means feeling sick or in a bad mood; 気持ちが悪い is 'gross, disgusting'.",
+      "confusables": [
+        "v-n5-0560"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0636",
+      "word": "つまらない",
+      "kana": "つまらない",
+      "meanings": [
+        "boring",
+        "dull",
+        "trivial"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "emotions",
+        "usually-kana"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}の{映画|えいが}はつまらなかった。",
+          "kana": "きのうのえいがはつまらなかった。",
+          "en": "Yesterday's movie was boring."
+        },
+        {
+          "ja": "この{本|ほん}はつまらないから、{読|よ}みたくないです。",
+          "kana": "このほんはつまらないから、よみたくないです。",
+          "en": "This book is boring, so I don't want to read it."
+        }
+      ],
+      "altForms": [
+        "詰まらない"
+      ],
+      "collocations": [
+        "つまらない話",
+        "つまらない映画"
+      ],
+      "notes": "Boring or trivial. つまらない物ですが is the humble phrase used when handing over a gift.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0637",
+      "word": "素敵",
+      "kana": "すてき",
+      "meanings": [
+        "lovely",
+        "wonderful",
+        "nice"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "その{服|ふく}、とても{素敵|すてき}ですね。",
+          "kana": "そのふく、とてもすてきですね。",
+          "en": "That outfit is really lovely."
+        },
+        {
+          "ja": "{田中|たなか}さんの{家|いえ}には{素敵|すてき}な{庭|にわ}があります。",
+          "kana": "たなかさんのいえにはすてきなにわがあります。",
+          "en": "Mr. Tanaka's house has a lovely garden."
+        }
+      ],
+      "collocations": [
+        "素敵な人",
+        "素敵な店"
+      ],
+      "notes": "Warm, admiring praise for things, places and people; often written すてき.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0638",
+      "word": "可愛い",
+      "kana": "かわいい",
+      "meanings": [
+        "cute",
+        "adorable"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}の{猫|ねこ}は{小|ちい}さくて{可愛|かわい}い。",
+          "kana": "ともだちのねこはちいさくてかわいい。",
+          "en": "My friend's cat is small and cute."
+        },
+        {
+          "ja": "{妹|いもうと}に{可愛|かわい}い{帽子|ぼうし}を{買|か}いました。",
+          "kana": "いもうとにかわいいぼうしをかいました。",
+          "en": "I bought my little sister a cute hat."
+        }
+      ],
+      "collocations": [
+        "可愛い子",
+        "可愛い服"
+      ],
+      "notes": "Very often written かわいい in kana. Not to be confused with 可哀想 (かわいそう), 'pitiful'.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0639",
+      "word": "うるさい",
+      "kana": "うるさい",
+      "meanings": [
+        "noisy",
+        "loud",
+        "annoying"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "usually-kana"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{隣|となり}の{部屋|へや}はいつもうるさいです。",
+          "kana": "となりのへやはいつもうるさいです。",
+          "en": "The room next door is always noisy."
+        },
+        {
+          "ja": "{朝|あさ}、{鳥|とり}の{声|こえ}がうるさくて{起|お}きた。",
+          "kana": "あさ、とりのこえがうるさくておきた。",
+          "en": "The birds were so loud this morning that they woke me up."
+        }
+      ],
+      "altForms": [
+        "煩い"
+      ],
+      "collocations": [
+        "うるさい音",
+        "うるさい人"
+      ],
+      "notes": "Said alone to a person, うるさい！ means 'Shut up!' and is rude.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0640",
+      "word": "汚い",
+      "kana": "きたない",
+      "meanings": [
+        "dirty",
+        "messy"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{弟|おとうと}の{部屋|へや}はいつも{汚|きたな}い。",
+          "kana": "おとうとのへやはいつもきたない。",
+          "en": "My little brother's room is always messy."
+        },
+        {
+          "ja": "この{店|みせ}のトイレは{汚|きたな}いですね。",
+          "kana": "このみせのトイレはきたないですね。",
+          "en": "This shop's restroom is dirty, isn't it?"
+        }
+      ],
+      "collocations": [
+        "汚い部屋",
+        "字が汚い"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0641",
+      "word": "嫌",
+      "kana": "いや",
+      "meanings": [
+        "unpleasant",
+        "disagreeable",
+        "no way"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}{早|はや}く{起|お}きるのは{嫌|いや}だ。",
+          "kana": "あさはやくおきるのはいやだ。",
+          "en": "I hate getting up early in the morning."
+        },
+        {
+          "ja": "{嫌|いや}な{話|はなし}は{聞|き}きたくないです。",
+          "kana": "いやなはなしはききたくないです。",
+          "en": "I don't want to hear unpleasant stories."
+        }
+      ],
+      "collocations": [
+        "嫌な人",
+        "嫌になる"
+      ],
+      "notes": "嫌 (いや) is a reaction to one situation; 嫌い (きらい) is a standing dislike. Often written いや in kana.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0642",
+      "word": "明るい",
+      "kana": "あかるい",
+      "meanings": [
+        "bright",
+        "cheerful"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "personality"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{部屋|へや}は{窓|まど}が{大|おお}きくて{明|あか}るいですね。",
+          "kana": "このへやはまどがおおきくてあかるいですね。",
+          "en": "This room has a big window and is nice and bright."
+        },
+        {
+          "ja": "ハナは{明|あか}るくて、{友達|ともだち}が{多|おお}い。",
+          "kana": "ハナはあかるくて、ともだちがおおい。",
+          "en": "Hana is cheerful and has many friends."
+        }
+      ],
+      "collocations": [
+        "明るい部屋",
+        "明るい人"
+      ],
+      "confusables": [
+        "v-n5-0643"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0643",
+      "word": "暗い",
+      "kana": "くらい",
+      "meanings": [
+        "dark",
+        "gloomy"
+      ],
+      "pos": "adj-i",
+      "jlpt": 5,
+      "tags": [
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{外|そと}はもう{暗|くら}いから、{気|き}をつけてね。",
+          "kana": "そとはもうくらいから、きをつけてね。",
+          "en": "It's already dark outside, so be careful."
+        },
+        {
+          "ja": "{冬|ふゆ}は{夕方|ゆうがた}{五時|ごじ}でも{暗|くら}いです。",
+          "kana": "ふゆはゆうがたごじでもくらいです。",
+          "en": "In winter it's already dark at five in the evening."
+        }
+      ],
+      "collocations": [
+        "暗い部屋",
+        "暗い道"
+      ],
+      "notes": "Same kana as the particle くらい (about, roughly); context and pitch keep them apart.",
+      "confusables": [
+        "v-n5-0642"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0644",
+      "word": "幸せ",
+      "kana": "しあわせ",
+      "meanings": [
+        "happiness",
+        "happy"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家族|かぞく}が{元気|げんき}で、{私|わたし}はとても{幸|しあわ}せです。",
+          "kana": "かぞくがげんきで、わたしはとてもしあわせです。",
+          "en": "My family is well, and I'm very happy."
+        },
+        {
+          "ja": "{日曜日|にちようび}の{朝|あさ}、{猫|ねこ}と{寝|ね}る{時間|じかん}が{幸|しあわ}せだ。",
+          "kana": "にちようびのあさ、ねことねるじかんがしあわせだ。",
+          "en": "Sleeping in with my cat on Sunday mornings is pure happiness."
+        }
+      ],
+      "collocations": [
+        "幸せな家族",
+        "幸せになる"
+      ],
+      "notes": "A lasting state of happiness or good fortune; 嬉しい is the joy of the moment.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0645",
+      "word": "心",
+      "kana": "こころ",
+      "meanings": [
+        "heart",
+        "mind",
+        "spirit"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{優|やさ}しい{言葉|ことば}で{心|こころ}が{軽|かる}くなった。",
+          "kana": "やさしいことばでこころがかるくなった。",
+          "en": "The kind words lifted my spirits."
+        },
+        {
+          "ja": "{田中|たなか}さんは{心|こころ}が{広|ひろ}い{人|ひと}です。",
+          "kana": "たなかさんはこころがひろいひとです。",
+          "en": "Mr. Tanaka is a big-hearted person."
+        }
+      ],
+      "collocations": [
+        "心が優しい",
+        "心から"
+      ],
+      "notes": "The feeling heart or mind, not the organ (that is 心臓). 心から means 'from the bottom of my heart'.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0646",
+      "word": "人気",
+      "kana": "にんき",
+      "meanings": [
+        "popularity"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{店|みせ}のパンはとても{人気|にんき}があります。",
+          "kana": "このみせのパンはとてもにんきがあります。",
+          "en": "The bread at this shop is very popular."
+        },
+        {
+          "ja": "あの{歌手|かしゅ}は{若|わか}い{人|ひと}に{人気|にんき}があります。",
+          "kana": "あのかしゅはわかいひとににんきがあります。",
+          "en": "That singer is popular with young people."
+        }
+      ],
+      "collocations": [
+        "人気がある",
+        "人気のある店"
+      ],
+      "notes": "A noun: 'popular' is 人気がある, never 人気な. Read にんき; ひとけ (signs of people) is a different word.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0647",
+      "word": "田んぼ",
+      "kana": "たんぼ",
+      "meanings": [
+        "rice field",
+        "rice paddy"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature",
+        "plants"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{近|ちか}くに{広|ひろ}い{田|た}んぼがあります。",
+          "kana": "えきのちかくにひろいたんぼがあります。",
+          "en": "There are wide rice fields near the station."
+        },
+        {
+          "ja": "{夏|なつ}の{田|た}んぼは{緑|みどり}できれいでした。",
+          "kana": "なつのたんぼはみどりできれいでした。",
+          "en": "The rice fields in summer were green and beautiful."
+        }
+      ],
+      "collocations": [
+        "田んぼの道",
+        "広い田んぼ"
+      ],
+      "notes": "A flooded rice paddy; a dry vegetable field is 畑.",
+      "confusables": [
+        "v-n5-0601"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0648",
+      "word": "小鳥",
+      "kana": "ことり",
+      "meanings": [
+        "small bird",
+        "songbird"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{庭|にわ}の{木|き}に{小鳥|ことり}が{来|き}ました。",
+          "kana": "にわのきにことりがきました。",
+          "en": "A little bird came to the tree in the yard."
+        },
+        {
+          "ja": "{白|しろ}い{小鳥|ことり}が{窓|まど}の{外|そと}にいる。",
+          "kana": "しろいことりがまどのそとにいる。",
+          "en": "There's a little white bird outside the window."
+        }
+      ],
+      "collocations": [
+        "小鳥の声",
+        "小鳥を飼う"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0649",
+      "word": "金魚",
+      "kana": "きんぎょ",
+      "meanings": [
+        "goldfish"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家|いえ}に{赤|あか}い{金魚|きんぎょ}が{三匹|さんびき}います。",
+          "kana": "いえにあかいきんぎょがさんびきいます。",
+          "en": "We have three red goldfish at home."
+        },
+        {
+          "ja": "{妹|いもうと}は{毎朝|まいあさ}{金魚|きんぎょ}にご{飯|はん}をあげます。",
+          "kana": "いもうとはまいあさきんぎょにごはんをあげます。",
+          "en": "My little sister feeds the goldfish every morning."
+        }
+      ],
+      "collocations": [
+        "金魚を飼う",
+        "金魚鉢"
+      ],
+      "notes": "Counted with 〜匹: 一匹、二匹、三匹 (いっぴき、にひき、さんびき).",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0650",
+      "word": "夕日",
+      "kana": "ゆうひ",
+      "meanings": [
+        "evening sun",
+        "sunset"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{海|うみ}の{夕日|ゆうひ}はとてもきれいでした。",
+          "kana": "うみのゆうひはとてもきれいでした。",
+          "en": "The sunset over the sea was really beautiful."
+        },
+        {
+          "ja": "{今日|きょう}の{夕日|ゆうひ}は{大|おお}きくて{赤|あか}かった。",
+          "kana": "きょうのゆうひはおおきくてあかかった。",
+          "en": "Today's sunset was big and red."
+        }
+      ],
+      "collocations": [
+        "夕日を見る",
+        "夕日が沈む"
+      ],
+      "notes": "The setting sun itself; the morning sun is 朝日.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0651",
+      "word": "山登り",
+      "kana": "やまのぼり",
+      "meanings": [
+        "mountain climbing",
+        "hiking"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "sports",
+        "nature"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{友達|ともだち}と{山登|やまのぼ}りをしました。",
+          "kana": "にちようびにともだちとやまのぼりをしました。",
+          "en": "I went mountain climbing with friends on Sunday."
+        },
+        {
+          "ja": "{父|ちち}の{趣味|しゅみ}は{山登|やまのぼ}りだ。",
+          "kana": "ちちのしゅみはやまのぼりだ。",
+          "en": "My father's hobby is mountain climbing."
+        }
+      ],
+      "collocations": [
+        "山登りをする",
+        "山登りが好き"
+      ],
+      "notes": "Recreational hiking up a mountain; the sport of alpine climbing is 登山.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0652",
+      "word": "空気",
+      "kana": "くうき",
+      "meanings": [
+        "air",
+        "atmosphere"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "nature",
+        "science"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{山|やま}の{空気|くうき}はおいしいですね。",
+          "kana": "やまのくうきはおいしいですね。",
+          "en": "The mountain air is so fresh, isn't it?"
+        },
+        {
+          "ja": "{朝|あさ}の{空気|くうき}は{冷|つめ}たくて{気持|きも}ちがいい。",
+          "kana": "あさのくうきはつめたくてきもちがいい。",
+          "en": "The morning air is cold and refreshing."
+        }
+      ],
+      "collocations": [
+        "空気がきれい",
+        "空気がおいしい"
+      ],
+      "notes": "Fresh air is literally 'tasty': 空気がおいしい.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0653",
+      "word": "桜",
+      "kana": "さくら",
+      "meanings": [
+        "cherry blossom",
+        "cherry tree"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "plants",
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{四月|しがつ}に{桜|さくら}が{咲|さ}きます。",
+          "kana": "しがつにさくらがさきます。",
+          "en": "The cherry blossoms bloom in April."
+        },
+        {
+          "ja": "{公園|こうえん}の{桜|さくら}の{下|した}でお{弁当|べんとう}を{食|た}べました。",
+          "kana": "こうえんのさくらのしたでおべんとうをたべました。",
+          "en": "We ate our boxed lunches under the cherry trees in the park."
+        }
+      ],
+      "collocations": [
+        "桜が咲く",
+        "桜の木",
+        "桜が散る"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0654",
+      "word": "嵐",
+      "kana": "あらし",
+      "meanings": [
+        "storm"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{嵐|あらし}の{日|ひ}は{外|そと}に{出|で}ないでください。",
+          "kana": "あらしのひはそとにでないでください。",
+          "en": "Please don't go outside on stormy days."
+        },
+        {
+          "ja": "{昨日|きのう}の{夜|よる}は{嵐|あらし}で、{風|かぜ}がとても{強|つよ}かったです。",
+          "kana": "きのうのよるはあらしで、かぜがとてもつよかったです。",
+          "en": "There was a storm last night, and the wind was very strong."
+        }
+      ],
+      "collocations": [
+        "嵐が来る",
+        "嵐の夜"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0655",
+      "word": "涙",
+      "kana": "なみだ",
+      "meanings": [
+        "tear",
+        "tears"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{悲|かな}しい{映画|えいが}を{見|み}て、{涙|なみだ}が{出|で}た。",
+          "kana": "かなしいえいがをみて、なみだがでた。",
+          "en": "I watched a sad movie and tears came to my eyes."
+        },
+        {
+          "ja": "{母|はは}は{涙|なみだ}を{見|み}せませんでした。",
+          "kana": "はははなみだをみせませんでした。",
+          "en": "My mother didn't show her tears."
+        }
+      ],
+      "collocations": [
+        "涙が出る",
+        "涙を流す"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0656",
+      "word": "首",
+      "kana": "くび",
+      "meanings": [
+        "neck"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}から{首|くび}が{痛|いた}いです。",
+          "kana": "あさからくびがいたいです。",
+          "en": "My neck has been hurting since this morning."
+        },
+        {
+          "ja": "アオは{首|くび}が{長|なが}くて、{目|め}が{青|あお}い。",
+          "kana": "アオはくびがながくて、めがあおい。",
+          "en": "Ao has a long neck and blue eyes."
+        }
+      ],
+      "collocations": [
+        "首が痛い",
+        "首が長い"
+      ],
+      "notes": "首になる is an idiom for getting fired.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0657",
+      "word": "汗",
+      "kana": "あせ",
+      "meanings": [
+        "sweat"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{暑|あつ}くて、{汗|あせ}がたくさん{出|で}ました。",
+          "kana": "あつくて、あせがたくさんでました。",
+          "en": "It was hot, and I sweated a lot."
+        },
+        {
+          "ja": "{夏|なつ}は{少|すこ}し{歩|ある}くだけで{汗|あせ}が{出|で}る。",
+          "kana": "なつはすこしあるくだけであせがでる。",
+          "en": "In summer, I sweat from just walking a little."
+        }
+      ],
+      "collocations": [
+        "汗をかく",
+        "汗が出る"
+      ],
+      "notes": "'To sweat' is 汗をかく; 汗が出る describes sweat appearing.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0658",
+      "word": "駅員",
+      "kana": "えきいん",
+      "meanings": [
+        "station attendant",
+        "station staff"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "transport",
+        "people"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅員|えきいん}さんに{道|みち}を{聞|き}きました。",
+          "kana": "えきいんさんにみちをききました。",
+          "en": "I asked the station attendant for directions."
+        },
+        {
+          "ja": "{兄|あに}は{駅員|えきいん}で、{毎朝|まいあさ}{六時|ろくじ}から{働|はたら}きます。",
+          "kana": "あにはえきいんで、まいあさろくじからはたらきます。",
+          "en": "My older brother is a station attendant and works from six every morning."
+        }
+      ],
+      "collocations": [
+        "駅員さん",
+        "駅員に聞く"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0659",
+      "word": "銀行員",
+      "kana": "ぎんこういん",
+      "meanings": [
+        "bank employee",
+        "bank clerk"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "money",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}は{大学|だいがく}を{出|で}て{銀行員|ぎんこういん}になりました。",
+          "kana": "ともだちはだいがくをでてぎんこういんになりました。",
+          "en": "My friend finished university and became a bank employee."
+        },
+        {
+          "ja": "{銀行員|ぎんこういん}の{姉|あね}はいつもスーツを{着|き}ています。",
+          "kana": "ぎんこういんのあねはいつもスーツをきています。",
+          "en": "My older sister, a bank employee, always wears a suit."
+        }
+      ],
+      "collocations": [
+        "銀行員になる"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0660",
+      "word": "公務員",
+      "kana": "こうむいん",
+      "meanings": [
+        "civil servant",
+        "public employee"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "society",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄|あに}は{公務員|こうむいん}で、{町|まち}の{仕事|しごと}をしています。",
+          "kana": "あにはこうむいんで、まちのしごとをしています。",
+          "en": "My older brother is a civil servant and works for the town."
+        },
+        {
+          "ja": "{公務員|こうむいん}の{仕事|しごと}は{大変|たいへん}だと{思|おも}う。",
+          "kana": "こうむいんのしごとはたいへんだとおもう。",
+          "en": "I think a civil servant's job is tough."
+        }
+      ],
+      "collocations": [
+        "公務員になる",
+        "公務員試験"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0661",
+      "word": "看護師",
+      "kana": "かんごし",
+      "meanings": [
+        "nurse"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "health",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{看護師|かんごし}さんはとても{優|やさ}しかった。",
+          "kana": "かんごしさんはとてもやさしかった。",
+          "en": "The nurse was very kind."
+        },
+        {
+          "ja": "{母|はは}は{病院|びょういん}で{看護師|かんごし}をしています。",
+          "kana": "はははびょういんでかんごしをしています。",
+          "en": "My mother works as a nurse at a hospital."
+        }
+      ],
+      "collocations": [
+        "看護師になる",
+        "看護師さん"
+      ],
+      "notes": "Gender-neutral title in official use since 2002, replacing 看護婦 (female nurse).",
+      "confusables": [
+        "v-n5-0580"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0662",
+      "word": "運転手",
+      "kana": "うんてんしゅ",
+      "meanings": [
+        "driver (occupation)"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "transport",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "タクシーの{運転手|うんてんしゅ}さんは{親切|しんせつ}でした。",
+          "kana": "タクシーのうんてんしゅさんはしんせつでした。",
+          "en": "The taxi driver was kind."
+        },
+        {
+          "ja": "{父|ちち}はバスの{運転手|うんてんしゅ}で、{朝|あさ}が{早|はや}いです。",
+          "kana": "ちちはバスのうんてんしゅで、あさがはやいです。",
+          "en": "My father is a bus driver and starts early in the morning."
+        }
+      ],
+      "collocations": [
+        "タクシーの運転手",
+        "バスの運転手"
+      ],
+      "notes": "A professional driver (taxi, bus, truck); someone who simply drives is 運転する人.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0663",
+      "word": "アルバイト",
+      "kana": "アルバイト",
+      "meanings": [
+        "part-time job"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "work",
+        "money",
+        "loanword"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{週|しゅう}に{三日|みっか}、コンビニでアルバイトをしています。",
+          "kana": "しゅうにみっか、コンビニでアルバイトをしています。",
+          "en": "I work part-time at a convenience store three days a week."
+        },
+        {
+          "ja": "{新|あたら}しいアルバイトは{喫茶店|きっさてん}の{仕事|しごと}だ。",
+          "kana": "あたらしいアルバイトはきっさてんのしごとだ。",
+          "en": "My new part-time job is at a coffee shop."
+        }
+      ],
+      "altForms": [
+        "バイト"
+      ],
+      "collocations": [
+        "アルバイトをする",
+        "アルバイトの人"
+      ],
+      "notes": "From German Arbeit. Clipped to バイト in casual speech. パート is the part-time work of homemakers.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0664",
+      "word": "漫画",
+      "kana": "まんが",
+      "meanings": [
+        "manga",
+        "comic"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "hobbies"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}で{漫画|まんが}を{読|よ}んでいる{人|ひと}が{多|おお}い。",
+          "kana": "でんしゃでまんがをよんでいるひとがおおい。",
+          "en": "A lot of people read manga on the train."
+        },
+        {
+          "ja": "{弟|おとうと}の{部屋|へや}には{漫画|まんが}が{百冊|ひゃくさつ}ぐらいあります。",
+          "kana": "おとうとのへやにはまんががひゃくさつぐらいあります。",
+          "en": "There are about a hundred manga in my little brother's room."
+        }
+      ],
+      "altForms": [
+        "マンガ"
+      ],
+      "collocations": [
+        "漫画を読む",
+        "漫画家"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0665",
+      "word": "カラオケ",
+      "kana": "カラオケ",
+      "meanings": [
+        "karaoke"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "hobbies"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{金曜日|きんようび}の{夜|よる}、{友達|ともだち}とカラオケに{行|い}った。",
+          "kana": "きんようびのよる、ともだちとカラオケにいった。",
+          "en": "On Friday night I went to karaoke with friends."
+        },
+        {
+          "ja": "{田中|たなか}さんはカラオケが{上手|じょうず}です。",
+          "kana": "たなかさんはカラオケがじょうずです。",
+          "en": "Mr. Tanaka is good at karaoke."
+        }
+      ],
+      "collocations": [
+        "カラオケに行く",
+        "カラオケで歌う"
+      ],
+      "notes": "A Japanese coinage: 空 (empty) + オケ (orchestra). Written in katakana.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0666",
+      "word": "コンサート",
+      "kana": "コンサート",
+      "meanings": [
+        "concert"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{友達|ともだち}とコンサートに{行|い}きます。",
+          "kana": "らいげつ、ともだちとコンサートにいきます。",
+          "en": "Next month I'm going to a concert with a friend."
+        },
+        {
+          "ja": "{昨日|きのう}のコンサートは{人|ひと}が{多|おお}くて、{大変|たいへん}だった。",
+          "kana": "きのうのコンサートはひとがおおくて、たいへんだった。",
+          "en": "Yesterday's concert was so crowded it was exhausting."
+        }
+      ],
+      "collocations": [
+        "コンサートに行く",
+        "コンサートホール"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0667",
+      "word": "試合",
+      "kana": "しあい",
+      "meanings": [
+        "game",
+        "match"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "sports"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}はサッカーの{試合|しあい}があります。",
+          "kana": "あしたはサッカーのしあいがあります。",
+          "en": "There is a soccer game tomorrow."
+        },
+        {
+          "ja": "{昨日|きのう}の{野球|やきゅう}の{試合|しあい}は{面白|おもしろ}かったです。",
+          "kana": "きのうのやきゅうのしあいはおもしろかったです。",
+          "en": "Yesterday's baseball game was exciting."
+        }
+      ],
+      "collocations": [
+        "試合に出る",
+        "試合を見る",
+        "試合に勝つ"
+      ],
+      "notes": "A sports match or contest; a game you play for fun is ゲーム.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0668",
+      "word": "水泳",
+      "kana": "すいえい",
+      "meanings": [
+        "swimming"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "sports"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎週|まいしゅう}{水曜日|すいようび}に{水泳|すいえい}を{習|なら}っています。",
+          "kana": "まいしゅうすいようびにすいえいをならっています。",
+          "en": "I take swimming lessons every Wednesday."
+        },
+        {
+          "ja": "{妹|いもうと}は{水泳|すいえい}が{得意|とくい}で、{海|うみ}でもよく{泳|およ}ぎます。",
+          "kana": "いもうとはすいえいがとくいで、うみでもよくおよぎます。",
+          "en": "My little sister is good at swimming and often swims in the sea, too."
+        }
+      ],
+      "collocations": [
+        "水泳をする",
+        "水泳教室"
+      ],
+      "notes": "The sport or activity as a noun; the verb is 泳ぐ.",
+      "station": 13
+    },
+    {
+      "id": "v-n5-0669",
+      "word": "ダンス",
+      "kana": "ダンス",
+      "meanings": [
+        "dance",
+        "dancing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "arts",
+        "hobbies",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{学校|がっこう}の{後|あと}で、ダンスの{教室|きょうしつ}に{行|い}く。",
+          "kana": "がっこうのあとで、ダンスのきょうしつにいく。",
+          "en": "After school I go to dance class."
+        },
+        {
+          "ja": "{姉|あね}はダンスが{上手|じょうず}で、{友達|ともだち}に{教|おし}えています。",
+          "kana": "あねはダンスがじょうずで、ともだちにおしえています。",
+          "en": "My older sister is good at dancing and teaches her friends."
+        }
+      ],
+      "collocations": [
+        "ダンスをする",
+        "ダンスを習う"
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0670",
+      "word": "花火",
+      "kana": "はなび",
+      "meanings": [
+        "fireworks"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "culture",
+        "hobbies"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夏|なつ}の{夜|よる}、{川|かわ}で{花火|はなび}を{見|み}ました。",
+          "kana": "なつのよる、かわではなびをみました。",
+          "en": "On a summer night I watched fireworks by the river."
+        },
+        {
+          "ja": "{今年|ことし}の{夏|なつ}は{友達|ともだち}と{花火|はなび}をしたい。",
+          "kana": "ことしのなつはともだちとはなびをしたい。",
+          "en": "This summer I want to set off fireworks with my friends."
+        }
+      ],
+      "collocations": [
+        "花火を見る",
+        "花火大会"
+      ],
+      "notes": "Literally 'flower-fire'. 花火大会 is a summer fireworks festival.",
+      "station": 13
+    }
+  ]
+}

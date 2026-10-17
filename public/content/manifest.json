@@ -1,0 +1,3491 @@
+{
+  "schema": "tsuzuku.manifest/1",
+  "contentVersion": "0.0.0",
+  "generatedAt": "2026-10-17T19:50:26.247Z",
+  "files": [
+    {
+      "path": "_meta/components.json",
+      "type": "component",
+      "level": null,
+      "count": 284,
+      "bytes": 43671,
+      "sha256": "8952571a7e9cded1a3593c235c982c306349ae6c2cce01f1a984783fdc71de66",
+      "belts": [
+        "white",
+        "orange",
+        "green",
+        "blue",
+        "purple",
+        "brown"
+      ],
+      "stations": [
+        2,
+        3,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        44,
+        45
+      ]
+    },
+    {
+      "path": "conjugation/conjugation-001.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 131,
+      "bytes": 26446,
+      "sha256": "9abc9e2de24c7578b83db59b94fbbee79b66c380001d82c53f994c8a29844294",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-002.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 140,
+      "bytes": 29004,
+      "sha256": "91ec1dce1665b1d060624236a559853fead18a523e6ccdabf052f4d577da2d2c",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-003.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 132,
+      "bytes": 27207,
+      "sha256": "b39529f41dd7e2f7ed2439721f7457c49ac1398049f13692415422846530c95d",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-004.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 140,
+      "bytes": 28798,
+      "sha256": "2d18348669890ae4480b59c8df183c46fd33d853e5ddcc67ad68832e3ac06a7e",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-005.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 120,
+      "bytes": 25356,
+      "sha256": "2c3d4975b503a5647915727cbbcae170c5ddfa6a45d0f11a0936a1581bdee28d",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-006.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 120,
+      "bytes": 24894,
+      "sha256": "01074723da5f65f23897cb60d5cf0e576630e070f40bf0948d3e393e94f85a15",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "conjugation/conjugation-007.json",
+      "type": "conjugation",
+      "level": null,
+      "count": 120,
+      "bytes": 28264,
+      "sha256": "0e4c7bb6c2bf05644da57790ec114b12df8cd8a46554f4e95206ebb1b06f8c9a",
+      "belts": [],
+      "stations": []
+    },
+    {
+      "path": "grammar/n1/grammar-n1-001.json",
+      "type": "grammar",
+      "level": "n1",
+      "count": 30,
+      "bytes": 96572,
+      "sha256": "a977ea80d06e0e0d2c537e9ef19c9ba2b9b0295faf0bd9dab7bd55b02c04ea31",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "path": "grammar/n1/grammar-n1-002.json",
+      "type": "grammar",
+      "level": "n1",
+      "count": 20,
+      "bytes": 65285,
+      "sha256": "de1dc38b9e953b4a5b81c90d86ad8519da52cb2e7df2487d82f9e11cdbd6114d",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        50,
+        51
+      ]
+    },
+    {
+      "path": "grammar/n1/grammar-n1-003.json",
+      "type": "grammar",
+      "level": "n1",
+      "count": 20,
+      "bytes": 67583,
+      "sha256": "bbbfc63dd2a310b2c4adb3c40090e923ee96ed32cf80626438881e54ca12f1a0",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        52,
+        53
+      ]
+    },
+    {
+      "path": "grammar/n2/grammar-n2-001.json",
+      "type": "grammar",
+      "level": "n2",
+      "count": 34,
+      "bytes": 99976,
+      "sha256": "334e8608fd0cb3a328d7019c94e7ae34faffb02304ff7471c5803de8b22eb78b",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "path": "grammar/n2/grammar-n2-002.json",
+      "type": "grammar",
+      "level": "n2",
+      "count": 33,
+      "bytes": 99799,
+      "sha256": "122f0fb05a75af3324790fb2092f3a6cbeca6b1e45b333049491400f507939c4",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "path": "grammar/n2/grammar-n2-003.json",
+      "type": "grammar",
+      "level": "n2",
+      "count": 23,
+      "bytes": 73118,
+      "sha256": "fb6736e2feb7bf0f3df64f6e09e39ab4a0c310f1eaabef6147a1cb0ba55068a5",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        45,
+        46
+      ]
+    },
+    {
+      "path": "grammar/n3/grammar-n3-001.json",
+      "type": "grammar",
+      "level": "n3",
+      "count": 32,
+      "bytes": 97107,
+      "sha256": "46354dd0d50c8952f1ffbe927ee433d380929bb9d880353097191c6264e09157",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "path": "grammar/n3/grammar-n3-002.json",
+      "type": "grammar",
+      "level": "n3",
+      "count": 24,
+      "bytes": 75000,
+      "sha256": "74f39967b71397fcdcb90db553c80826e42635ad6af097a5e29d51651c2de0ab",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "path": "grammar/n3/grammar-n3-003.json",
+      "type": "grammar",
+      "level": "n3",
+      "count": 32,
+      "bytes": 95372,
+      "sha256": "e3f03a79e6a58f171aeded3a4ad6aabd76529f428cd4f833a088eda7aa7ba5ca",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "path": "grammar/n3/grammar-n3-004.json",
+      "type": "grammar",
+      "level": "n3",
+      "count": 22,
+      "bytes": 65353,
+      "sha256": "3e87463fd3d3f7568bf59116ed01df4ac5cb646be81cd374c482a56a9a045446",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "path": "grammar/n4/grammar-n4-001.json",
+      "type": "grammar",
+      "level": "n4",
+      "count": 30,
+      "bytes": 102291,
+      "sha256": "2e4d9e8714c9885ea378d6c8b2ef1bf3e16d487ca4b4dcf2e57d6c942a40a093",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "path": "grammar/n4/grammar-n4-002.json",
+      "type": "grammar",
+      "level": "n4",
+      "count": 30,
+      "bytes": 92260,
+      "sha256": "ab4d6cfe40dddba3f6fb596b1cce26601bbf6a1dada28558ced3ff1ab1a28e2d",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "path": "grammar/n4/grammar-n4-003.json",
+      "type": "grammar",
+      "level": "n4",
+      "count": 30,
+      "bytes": 82419,
+      "sha256": "d64ad31fb6145d953476807709c83d8f94a9100e8c4dddbb2fbe278198ab9184",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "path": "grammar/n5/grammar-n5-001.json",
+      "type": "grammar",
+      "level": "n5",
+      "count": 23,
+      "bytes": 64233,
+      "sha256": "dc99d88ac830fa4aeceddd6e59e8b4fa248686cc427d380de2ee8b2362721d29",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "path": "grammar/n5/grammar-n5-002.json",
+      "type": "grammar",
+      "level": "n5",
+      "count": 22,
+      "bytes": 60156,
+      "sha256": "5b35a7b0d4ff679bdf481cfb1178e9fd35a531d6e947ea5b9c84fe302ceab0d0",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "path": "grammar/n5/grammar-n5-003.json",
+      "type": "grammar",
+      "level": "n5",
+      "count": 23,
+      "bytes": 66581,
+      "sha256": "916c0b51124a4236f28eb798510ec0eb6d14c3456fe676bb7c41668ca872f1ce",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "path": "grammar/n5/grammar-n5-004.json",
+      "type": "grammar",
+      "level": "n5",
+      "count": 22,
+      "bytes": 61169,
+      "sha256": "17740a84d744a5ba60b95383a5051bc81752a82b4429aff4627ce67095bab270",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "kana/hiragana.json",
+      "type": "kana",
+      "level": null,
+      "count": 104,
+      "bytes": 45051,
+      "sha256": "27f4bb665ac12661cab5ebf24786206f0c6ec7315882954eb78222afd93cb5f0",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "kana/katakana.json",
+      "type": "kana",
+      "level": null,
+      "count": 134,
+      "bytes": 57762,
+      "sha256": "9d83bf9e8574083f7296f0cb898e4cbd6a94ee83fa10494ff5306a239ee12821",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        2,
+        3
+      ]
+    },
+    {
+      "path": "kanji/n2/kanji-n2-001.json",
+      "type": "kanji",
+      "level": "n2",
+      "count": 88,
+      "bytes": 77352,
+      "sha256": "39dfac74b3b4e36c8190779a24457aef90afc56ac871ea3f3d823a428b720ebf",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "path": "kanji/n2/kanji-n2-002.json",
+      "type": "kanji",
+      "level": "n2",
+      "count": 88,
+      "bytes": 78233,
+      "sha256": "811612abf8f6bcdc9454f955eaa7a0d3e1fce3cf0c0ddb41e301ec6212dd657a",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "path": "kanji/n2/kanji-n2-003.json",
+      "type": "kanji",
+      "level": "n2",
+      "count": 87,
+      "bytes": 79728,
+      "sha256": "1a581b7a8b0b972b35e345d05900a9f632e5c310093252426e694185264c69a3",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "path": "kanji/n2/kanji-n2-004.json",
+      "type": "kanji",
+      "level": "n2",
+      "count": 87,
+      "bytes": 76720,
+      "sha256": "5479dcf4c23761a934a36086ce607f8dbeb792bd0f1a09759f0694ac24a0840e",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        40,
+        41,
+        45,
+        46
+      ]
+    },
+    {
+      "path": "kanji/n3/kanji-n3-001.json",
+      "type": "kanji",
+      "level": "n3",
+      "count": 88,
+      "bytes": 81307,
+      "sha256": "5ba930293c27a505a5ab76de637bf816b09068d95fda12c0417ce3fcba441a81",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "path": "kanji/n3/kanji-n3-002.json",
+      "type": "kanji",
+      "level": "n3",
+      "count": 88,
+      "bytes": 76575,
+      "sha256": "5de8e151edbc0b62a8eaf2523025b82830ebd0865d0e595ade10fad4de4d7a8c",
+      "belts": [
+        "blue",
+        "purple"
+      ],
+      "stations": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "path": "kanji/n3/kanji-n3-003.json",
+      "type": "kanji",
+      "level": "n3",
+      "count": 87,
+      "bytes": 77623,
+      "sha256": "57be235343e52050a685e9b23ff7ca01c5c580f9bf29c9f9733d8423a06b3be7",
+      "belts": [
+        "blue",
+        "purple"
+      ],
+      "stations": [
+        26,
+        27,
+        30,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "path": "kanji/n3/kanji-n3-004.json",
+      "type": "kanji",
+      "level": "n3",
+      "count": 87,
+      "bytes": 61944,
+      "sha256": "cf3f3d0021088084c7baaade24fde4af2c44a1b72653b46782ed41902de1faf5",
+      "belts": [
+        "blue",
+        "purple"
+      ],
+      "stations": [
+        27,
+        28,
+        29,
+        31,
+        33,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "path": "kanji/n4/kanji-n4-001.json",
+      "type": "kanji",
+      "level": "n4",
+      "count": 100,
+      "bytes": 89178,
+      "sha256": "ee39a805c6a2c2513e521a092e93cce5b22cbcc0cc6f56865fdca75799b1929f",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "path": "kanji/n4/kanji-n4-002.json",
+      "type": "kanji",
+      "level": "n4",
+      "count": 100,
+      "bytes": 89382,
+      "sha256": "c1afbf0ec81a6507baff196e258c0b13ebb39bef1244860647002242c82193ed",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "path": "kanji/n5/kanji-n5-001.json",
+      "type": "kanji",
+      "level": "n5",
+      "count": 100,
+      "bytes": 87305,
+      "sha256": "53ecb8d9afc969b398074391f22a35fb951f32574feddcbcb23a50ac6c3ba184",
+      "belts": [
+        "yellow",
+        "orange"
+      ],
+      "stations": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s01.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2581,
+      "sha256": "2e66934330b29865b09687afc2042fbb0960927acfb6e6d3c1a8a1bf95086a89",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        1
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s02.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2672,
+      "sha256": "8ef4ea0dbf98e77beb8c52ef05fff34d0f8b66d55ee6c7fb0494f4f9f0c003b5",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        2
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s03.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2621,
+      "sha256": "8eb82aa5ace8ab22832f8a1fea83206f1db4d0d1302474f11cda8186bb30b136",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        3
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s04.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2825,
+      "sha256": "7691b030df4b0825f416423d442a939b682b305d8ad77aa0dddc0f90a085dd35",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        4
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s05.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2667,
+      "sha256": "cb33577ca540a2be4c18ecfb337a130c1c2f20a69e8b18718346db67ed8921e5",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        5
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s06.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2467,
+      "sha256": "605159a128ea51d3ed230125268407fc5d6613a3ab31a15c8b19c2d0c06b59ee",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        6
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s07.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2430,
+      "sha256": "ae18f20ab83214e988a2c6e3a3b59fa867f6273bed31e14c62cdbe93c3021bbc",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        7
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s08.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2473,
+      "sha256": "df2039c2080c2d59cd3841ffaf942711826e06b8f32449cbfd5058be82f094ae",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        8
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s09.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2507,
+      "sha256": "6bc079a148419c206a630f5155937f11e124d83c08ac97af9c6799a3bb22c48c",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        9
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s10.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2797,
+      "sha256": "4549782a2b16650ff6346eddff07cff26b20cb283f6ca52f4c1a0a7519839c23",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        10
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s11.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2525,
+      "sha256": "499c8f06bed04518d8cc00e202da9479b2d5d9b4675cf4e7a15449fa9da0317c",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        11
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s12.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2517,
+      "sha256": "56838fa3d590444a9c97c5b0db3aac888576d3321cc765d3bc4c838d305ff4fc",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        12
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s13.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2722,
+      "sha256": "f64fa5fde99b24758fa87f0a30597d3249e4f32654c26a24dbe15c3a27a184aa",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        13
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s14.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2867,
+      "sha256": "af5b2faf28ec87b1efb7e694a8f4bd04fd1231685478949e49080d1a242a1625",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        14
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s15.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2626,
+      "sha256": "ca611fad77a73201526f9cc7f1005314f976d470965f68e0adfa14a090a4c9ac",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        15
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s16.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2663,
+      "sha256": "44692c6098df22bfe1b1bbc01c5efe6fbd882d2b7faee85035d9a7644b739ff6",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s17.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2612,
+      "sha256": "ef6a269e66e704362f1d46d69af0779342436fd9d2ac82cecd7b39b950e6744b",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        17
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s18.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2413,
+      "sha256": "f9f5a1900521e70b132a6b5f65926d0a2eba54ab0d817d5ad4c74158583a1635",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        18
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s19.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2697,
+      "sha256": "21b1ac1ee42817b4624e7273970b4cb9efe7cd94ced5c302d7b5faf84dc6c579",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        19
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s20.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2778,
+      "sha256": "344f31290ce50f86641e2a448c9267a21b7408b88e338f7bdaebef05867856df",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        20
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s21.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2809,
+      "sha256": "e627ad9ca739016ffe68cbda738d67e58309c4bdd2ba57b86584dfb0207f06e9",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        21
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s22.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2623,
+      "sha256": "f3c7627c482d0a1231762846158c005f133914ceed1ba98f316ed7918e8e2a0c",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        22
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s23.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2767,
+      "sha256": "3e2f59759eeeda8b8bc7eab8c197b8261f67b55bc33425d7c5c0fe6366726dd1",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        23
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s24.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2751,
+      "sha256": "4aa6703ca4b3af29d541c824862879b2735ffb92f49eef4997af40f4c1d2822f",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        24
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s25.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2939,
+      "sha256": "acd218a32ce375dd83b6b12df71c334e077bc10b5fa7f00a0646f2acfbf6a571",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        25
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s26.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2576,
+      "sha256": "bd9d452497917af6c34c2b82bb393d95afcb462f74cd1e797f64352cbd20b9da",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        26
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s27.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2524,
+      "sha256": "b423bc8f375975ce1988f04042131c9ed7f465c8d198a2596b2b9f2f7ba5e28d",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        27
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s28.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2790,
+      "sha256": "a2a746f0e27ffb2129c038394b797a6e55ed15a9c38dd5ac4f5f477cc1862f5b",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        28
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s29.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2635,
+      "sha256": "48c79b3860a83d1d1829b7fbe7e590e82e6943a5ef99e34503255bac39470818",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        29
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s30.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2554,
+      "sha256": "bb252f50a2f881c4ea7c73859aa0cfaf89cd435fa346b8cf6d38f1ce80e96524",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        30
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s31.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2749,
+      "sha256": "e37431197699bd33f408109ae5a33ad450c2afd2d706e4d0b575c3d11b109f1c",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        31
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s32.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2882,
+      "sha256": "38c14b5b2d6241155cb1ed48656d0aa9082892eb204b572c9929e6d8c645340c",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        32
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s33.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2837,
+      "sha256": "7505c725616fff996a4b92fb0364ad71997eb8e67fb084f07cd7ecd0402df279",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        33
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s34.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2711,
+      "sha256": "f517b40dfbbde1de25d2edaef41edb831c513a752ae7a739d83632fb57104dce",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        34
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s35.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2833,
+      "sha256": "2a31c4ec6134f627c196b1f647a401f43b94ffe6a127d355bf15acd7c97d64d3",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        35
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s36.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2605,
+      "sha256": "d18ddd99775c97d2104639615ad5eeb67d702eebc002598ba0c0508cf86ad4b6",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        36
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s37.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2554,
+      "sha256": "2e6f1217ae89e1132ffb6ccac709974f033ce52f6eaf663bd5eb41a1ed4b98e8",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        37
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s38.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2666,
+      "sha256": "901e43669db295756b37967602bea29a5b6490c417c1b94d99940bf1e7684a7b",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        38
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s39.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2874,
+      "sha256": "8c4caee6e8e6748a5750dbfb1ff09de59aa3372313a84b83dafdb6f7b322cf32",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s40.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2761,
+      "sha256": "2f1d4d657283801761ef9274511fd6aeff7c2aa2e0dd19a0ef328d4ea9e08eaa",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        40
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s41.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2830,
+      "sha256": "3b5b24fd8ccaa1193c083ec2563f41ca4e7dd129d61951f2518521981c86f987",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        41
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s42.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 3036,
+      "sha256": "b53c72fff5fd8dce29307240cb6c1270cdb630b3026ce4a0d9790f116311ff1f",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        42
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s43.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2844,
+      "sha256": "4d7a74c31ba08f9b487de6ba01c993e37d963d0cb99dafe37d0a8946f78ee7e7",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        43
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s44.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2953,
+      "sha256": "d9a78c7a8066bfd4a1363b3324fd935a81d25f0981523e5c36dfaf6a334e4c0b",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        44
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s45.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2798,
+      "sha256": "7eeed44ca55f4216d6ce7a00649c1459e241a85a63e879b707bfb8f2c236bb92",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        45
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s46.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2690,
+      "sha256": "945ad1e1aee137ca72d5ba6ab1bebbc610e444daedcaa89df8f9255cb719532c",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        46
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s47.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2880,
+      "sha256": "c5c420ec9156932307324f91385c49555c65b3838018e67e7179ad330a9e7d73",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s48.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2899,
+      "sha256": "0cac7459ab46fda2419d358de19edb43f69181573b19dfbf9053046800c4fe7e",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        48
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s49.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2893,
+      "sha256": "e1116b42e271e49be2b66a2465c6cc5dda2267ad46cc170ddc57858f1bc79194",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        49
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s50.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2950,
+      "sha256": "e8fb00b5a5f78356859ee0d213ccca2e9098112ce5ad99a0ca6e8efa81ec13fb",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        50
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s51.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2933,
+      "sha256": "0e2daee56ca1f49b42a07958be14fa7062cb6a17e389df8dfb39c2bda1057b3f",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        51
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s52.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 2982,
+      "sha256": "10d9690ff6d6a7138cd9ae44be835482eb7d3975c6e842b13e0ff62f328ef438",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        52
+      ]
+    },
+    {
+      "path": "michikusa/michikusa-s53.json",
+      "type": "michikusa",
+      "level": null,
+      "count": 4,
+      "bytes": 3018,
+      "sha256": "5d11ba934839d76dcbb9238729def3760e661b82dd33ee4381a1487f13c895c7",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        53
+      ]
+    },
+    {
+      "path": "stories/kana/stories-s01.json",
+      "type": "story",
+      "level": "kana",
+      "count": 3,
+      "bytes": 43478,
+      "sha256": "cdc67dff817118eb30b036c9c556e57364af3294e590c8e9438002f6011df775",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        1
+      ]
+    },
+    {
+      "path": "stories/kana/stories-s02.json",
+      "type": "story",
+      "level": "kana",
+      "count": 3,
+      "bytes": 36890,
+      "sha256": "ffd399c3ae9b7ef5c185b818210468b6c83581b369da44c0de99fc7b70bfcb51",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        2
+      ]
+    },
+    {
+      "path": "stories/kana/stories-s03.json",
+      "type": "story",
+      "level": "kana",
+      "count": 3,
+      "bytes": 37266,
+      "sha256": "2cef66d22fff6286da5c374625b8228bb0d80d8e5ab3d8915cdf65eace1c97c1",
+      "belts": [
+        "white"
+      ],
+      "stations": [
+        3
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s47.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 120935,
+      "sha256": "c8b3fb2c5a4b723efa366edc789ec2625825d6ebb629c5b3a0f03c5757999348",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s48.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 104059,
+      "sha256": "dee10f02b3577ae966d036c72f24cc13738bddf4a066be59600ffa1855b9cda4",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        48
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s49.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 72594,
+      "sha256": "7447f407fc3e0702a574d57c3e907265028ff95263ec27ea5f98d7a4a2a33982",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        49
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s50.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 88933,
+      "sha256": "4ae3f787b9e4e8b7b4b9ac235b0afa154b60387acc8fb25e017fa86e7502d635",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        50
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s51.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 122968,
+      "sha256": "51e82175ab238d84f888a7765654137b79e94e0f192a38116dd07c060fc6c55c",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        51
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s52.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 135600,
+      "sha256": "f553641682bab06a17f5b4a86a50de7b3e0a8c92a8b90f9702bcff0ae10750d5",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        52
+      ]
+    },
+    {
+      "path": "stories/n1/stories-s53.json",
+      "type": "story",
+      "level": "n1",
+      "count": 2,
+      "bytes": 133018,
+      "sha256": "693c627e585396f851b9e40a835e15f5531ee0bb8ce8a353e51aa48312cd458e",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        53
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s39.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 100882,
+      "sha256": "9becc3353076fb357218489c161f7e3d648cc8855e1720fbdacadc760840c53f",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s40.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 115181,
+      "sha256": "35f94925a47c054455a8c03f63a5f7a4a0389d15b00ce4d97f12c76e72191ded",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        40
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s41.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 102562,
+      "sha256": "127e986cba9f0980e4826f2dea578dcb78f65e2c4616ab01b43f2cde853631a8",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        41
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s42.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 118494,
+      "sha256": "350f0b0f8ac5c1dbcc92debadf30f100c09f4bc4dd69ef3150fc29929778441d",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        42
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s43.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 115102,
+      "sha256": "a8f547fa7515a150f9df2ab59fa5944df57d4ccd5c2ef11d6639acce52bc6a6b",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        43
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s44.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 111385,
+      "sha256": "be1542e3b5c7599fe58a604f910fea140655cc96cb5a88d273b60a2c16b77ef9",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        44
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s45.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 109140,
+      "sha256": "e66431db7b83b52d5701f3ff3089efa416fa69d19ebe3e2f32e7dfcc4e9ff10b",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        45
+      ]
+    },
+    {
+      "path": "stories/n2/stories-s46.json",
+      "type": "story",
+      "level": "n2",
+      "count": 2,
+      "bytes": 115640,
+      "sha256": "14f75d5091806aad57dd9810ae740c96ae6cb7f661ab083f49dfe2d3782a2207",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        46
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s25.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 132320,
+      "sha256": "4903fe4aee3f50dd2af16697cf1a063c4e16eefdb41963536c76cf0ae39cd1b0",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        25
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s26.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 109395,
+      "sha256": "a5dc96c8ff39481f5990d23c969cd3167d26f401199e9b72716eae83d7bd88a2",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        26
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s27.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 153227,
+      "sha256": "cbb9a941c13b394b17519a9b2e372ad0b1bae959963211831958046067d39510",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        27
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s28.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 124300,
+      "sha256": "12a8a01fb950314514e4a4bfbd5aa578aaf32d032cf392d55fbe7b1f06f5a382",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        28
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s29.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 113823,
+      "sha256": "72c0769d306d1b0dd0819a398b8542edec4f0c03c0ce5c9588661bb9f5a359d5",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        29
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s30.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 123910,
+      "sha256": "43217eae069557ae23efd1fd4d7d4d2d1d44c9effae8f7642448ee69bccef1f7",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        30
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s31.json",
+      "type": "story",
+      "level": "n3",
+      "count": 3,
+      "bytes": 150429,
+      "sha256": "f32de66f819b103aaec0e0237f51bfc406f3920ec4792704cea36d07d9878208",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        31
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s32.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 110322,
+      "sha256": "a33dab3b0eb57a1ed042802c300b3a7fc71d7942d201d5144ad6d3e390d4bde5",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        32
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s33.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 89116,
+      "sha256": "2eb796e6b1e02442eecff097b56f714fc07abe39a478d5018e97676c999e3d1f",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        33
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s34.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 101079,
+      "sha256": "d05990f707e31bceba6bdc92aa22172d3151db66188559ce7bbaea45202eb5fe",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        34
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s35.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 124388,
+      "sha256": "7253aaac6e133a910f7d5423e81f4838aa7465ba3db9f27b975e70360d3dcff2",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        35
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s36.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 78140,
+      "sha256": "a784241f79748fcf91e6c359c14cac6797d5fb1bd02bbe45e7dba045f29ed92f",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        36
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s37.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 114125,
+      "sha256": "a9d4d434d7b8b46d908d2ac1e0032d8b338c7f41068a2374c50cd4a12c02a271",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        37
+      ]
+    },
+    {
+      "path": "stories/n3/stories-s38.json",
+      "type": "story",
+      "level": "n3",
+      "count": 2,
+      "bytes": 108530,
+      "sha256": "e057748c7c3845767ad1841ef38d70193ae0bb4da4dcbab7bddd9e3c7a71d69d",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        38
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s16.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 85186,
+      "sha256": "5b86a60dcf6954161c577b9b0aa48656c9ccfd972f09a17e63904edff3038ccd",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s17.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 73764,
+      "sha256": "b5adcdae1d220638a7d0ca5fb520c21c5e163409901ccf7a4282cbf82b7b186f",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        17
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s18.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 87859,
+      "sha256": "f47c63923bb847a1e6f4110816c44a8f4cba96887be19ceace724ddebfa010b7",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        18
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s19.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 83304,
+      "sha256": "4d9958349466c03de4605381dc749e2c6c60796d7a91f6176c584a97ff31047f",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        19
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s20.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 69589,
+      "sha256": "ac2ef6200cc03a8a2fd3a52d9dce76f6ec1ce78d764030f27db8a9e216c302b5",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        20
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s21.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 83797,
+      "sha256": "0b381c5b4325a628feeab3e51eeb1fd7708fa714f4ae54fd4d7fb9cc47128843",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        21
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s22.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 81540,
+      "sha256": "8b02de3355487a725b8d946914e57c010f6fd873b13909769b0b5da4f2d0f8da",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        22
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s23.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 70072,
+      "sha256": "a7db59129ec26fa8685d3f8f993b77f0810cc04fe55ad5e73fd028cace83f1e7",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        23
+      ]
+    },
+    {
+      "path": "stories/n4/stories-s24.json",
+      "type": "story",
+      "level": "n4",
+      "count": 3,
+      "bytes": 90238,
+      "sha256": "208c3822cd2a3a54f51a441fc45c6dac6949898b48cbb0b39c1c6e9171df5fde",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        24
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s04.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 55555,
+      "sha256": "f066edcd82a9b081a45136c3cfca80313195771d899c8d0f0797fbdb98ade73a",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        4
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s05.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 63598,
+      "sha256": "74f188c7e97130412ce1ffcc0eb7c0231130f8ca9985ec97aa07a794c166cef9",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        5
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s06.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 52538,
+      "sha256": "1100d2e3596c9dc46358e17300735cb023306c5e88614d286aab8dee0807962f",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        6
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s07.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 61669,
+      "sha256": "f169947e457b9652fc9ee24ba0383c693b28bcb3099ec46114c4199ad4f8824e",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        7
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s08.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 59626,
+      "sha256": "8da3313e835127ae2a97402629c1536bed5fe273ac45a66f28219fd11f365c4b",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        8
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s09.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 68838,
+      "sha256": "7d6b398cbb140048d5b2d5553692874bd58886597b8bc411482d35f7266de0ff",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        9
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s10.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 64586,
+      "sha256": "38291819a98112b41b9ebdd59d4f285e271b028c7f310a0304ac482277a9d45b",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        10
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s11.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 67783,
+      "sha256": "bcaf48256c94892b086af423cafbe27dcfddbfea18f2aba2a4db69e9f5bb535d",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        11
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s12.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 65302,
+      "sha256": "080a8844024452294866f84809b2fe6632bc20167f91f7821d874a2edcc00e85",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        12
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s13.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 71102,
+      "sha256": "a9c85fca65cb6f17397ab682757f575913650dfdce80130fffb642545393ed1f",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        13
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s14.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 63203,
+      "sha256": "d00feeada5583f57e3f51e906df1117956e12fffcfb6f807373c58c780cf60e8",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        14
+      ]
+    },
+    {
+      "path": "stories/n5/stories-s15.json",
+      "type": "story",
+      "level": "n5",
+      "count": 3,
+      "bytes": 70653,
+      "sha256": "b1d49a7dba4b22717f09f6adacf6a56c0b750477d3d938f5bcfb7cbf4ef93575",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        15
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-001.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 253574,
+      "sha256": "05f02b374d244f7e8aaa77c2a40b44ef8a3be84951ef5384899e585df2bb0050",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-002.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 258099,
+      "sha256": "48b152b454d914970e6148024823d520d64921648fa691d9bb001e4545c8f964",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-003.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 261768,
+      "sha256": "912c3762600b63c30679cd4f956e44ff84de91fdaf8ca4b0bed3472549117cab",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-004.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 242591,
+      "sha256": "0e9350256d6fe035d612aa19f550c4c7140ef2568d61cb3e6f1453eabd4da190",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-005.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 271027,
+      "sha256": "0bd90d7664438ba546498c533e982b42241843d618d663a7ee02b7c931671e98",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-006.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 263223,
+      "sha256": "d308e2fa2e325d335b430dd4735605f3e708d2f368e1c10f212f6a87576994cb",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-007.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 275955,
+      "sha256": "7778cc8216c62f2586c2078b2d0e9dfcd88935e5819296827dade508d192c6f8",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-008.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 243873,
+      "sha256": "b6169bd80763a7cc446535d2be389f0fab69f765c6019caeadf400cd0d8d961e",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        49,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-009.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 242548,
+      "sha256": "99b8376c9f1ec0f4a66bae435e8cef8af975a725eb683092e8bca01ef842cfa1",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "path": "vocab/n1/vocab-n1-010.json",
+      "type": "vocab",
+      "level": "n1",
+      "count": 150,
+      "bytes": 259223,
+      "sha256": "6546740e423a66b57b7845fc65971a2a3c9c105a37f9f551cfe08b5312596ceb",
+      "belts": [
+        "black"
+      ],
+      "stations": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-001.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 229662,
+      "sha256": "ffa61aa05f9a9c52e1dba7fc618d5be00fa835bbc238ba490a447179abbb93f7",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-002.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 213513,
+      "sha256": "0d243d40bc6e92603759669fc9d9756e93a857620696e64f3830eaeb4ca91274",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        39,
+        40
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-003.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 214031,
+      "sha256": "874d0fb631d80a93ac892d0e26f53305bc10d27991708a213d7185f9142af176",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        40,
+        41
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-004.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 141,
+      "bytes": 221853,
+      "sha256": "3a772c53007f8f5885c86a3b983bd31e72bffd7cfcd0701286fd6b417bb39e7c",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        41
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-005.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 217477,
+      "sha256": "b367c7b94374b6ef3e6bbfeb19c4b96d5be4b5faa6e1959551ddcf47766c3a67",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        41,
+        42
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-006.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 211054,
+      "sha256": "d7d7177e41f5b8ea75b702122e2490f428c4cb6fbebd363097f7b029810b3420",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        42,
+        43
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-007.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 141,
+      "bytes": 208402,
+      "sha256": "6641d81eecb4dc344d6eb2300bb5d264080b2385d80a65bad7412e666a51d775",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        43
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-008.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 141,
+      "bytes": 217209,
+      "sha256": "ef69f657bc2b9aaa04c55057f31ca9ccd7e5cdcc6c736768084fc919891864d2",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        43,
+        44
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-009.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 229047,
+      "sha256": "a19fa267c436508d40ebb58f1b4a2cee4ba6046c0658267f65afbac024e785bb",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        44,
+        45
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-010.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 227339,
+      "sha256": "ec92dea208bdb4b736de31c18641712ae0904cbe765eee020d898c6a79c44bfe",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        45
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-011.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 142,
+      "bytes": 226631,
+      "sha256": "576d96f6e59e491425b05b1b24ee9a73c6b3a1c59c7ea457a37725bd47d14369",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        45,
+        46
+      ]
+    },
+    {
+      "path": "vocab/n2/vocab-n2-012.json",
+      "type": "vocab",
+      "level": "n2",
+      "count": 141,
+      "bytes": 218072,
+      "sha256": "8834bf08fa341dcd910fd5abe804a6d0c09196c6ef44a3e4a6a5f2abe86afcab",
+      "belts": [
+        "brown"
+      ],
+      "stations": [
+        46
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-001.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 177641,
+      "sha256": "4ba00e28af2cf98e2f75f7e87aae31a519df0dbf030ea258d6026ddbbd78229b",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        25,
+        26
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-002.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 190009,
+      "sha256": "12d37810f0df839abaf168ea2ce7c3696791a255cb7e372ad4fa4d7eb73ad5d8",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        26,
+        27
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-003.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 189956,
+      "sha256": "14a09babd21a06d1c3056ec3859708149a637120d4571708a69c0eb6cf5494bd",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        27,
+        28
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-004.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 141,
+      "bytes": 174278,
+      "sha256": "9c419a391bf403e82a9052be7a33a3144de67b54c065173b2d6045df9ec32a1f",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        28,
+        29
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-005.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 196634,
+      "sha256": "6b093561a7583b5817af4cf1c3b01290892401922ff220c241692da7c5dee0ca",
+      "belts": [
+        "blue"
+      ],
+      "stations": [
+        29,
+        30
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-006.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 141,
+      "bytes": 181146,
+      "sha256": "db8959868933800489be755df96693d165892d005e646566f77db3c9be373bdc",
+      "belts": [
+        "blue",
+        "purple"
+      ],
+      "stations": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-007.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 199560,
+      "sha256": "14af380403ce45609b9f78d71b7156594fe3261b1e06fd33055f4c886479b41c",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        32,
+        33
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-008.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 198323,
+      "sha256": "141d12d2613c6935aca166263d1a9b1b0ca5fd8874cf33fd2ac578e726d7ba86",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        33,
+        34
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-009.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 191931,
+      "sha256": "dd4497c6aeba7be9b9523a08148eac484c78d15a1995a88cc2e479edb3626f2b",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        34,
+        35
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-010.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 141,
+      "bytes": 188280,
+      "sha256": "caa1b50f7f1ccc5da0111da1a56ed529ae52c5cafc19cc3afaadcb8440f545ea",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        35,
+        36
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-011.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 142,
+      "bytes": 197413,
+      "sha256": "8d36a41065e03a345e4591207101340e903b13522753727937f257719c8f6dac",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        36,
+        37
+      ]
+    },
+    {
+      "path": "vocab/n3/vocab-n3-012.json",
+      "type": "vocab",
+      "level": "n3",
+      "count": 141,
+      "bytes": 187617,
+      "sha256": "ff6ebc796f5f994bf8f0fa4ae4866d1b25b3bef2d26fb29f94e9521c8af77625",
+      "belts": [
+        "purple"
+      ],
+      "stations": [
+        37,
+        38
+      ]
+    },
+    {
+      "path": "vocab/n4/vocab-n4-001.json",
+      "type": "vocab",
+      "level": "n4",
+      "count": 130,
+      "bytes": 144454,
+      "sha256": "27a4165198d809f429dc4c269c5ff20eb8a069338f0e7a80b585a4fb614ef61a",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        16,
+        17
+      ]
+    },
+    {
+      "path": "vocab/n4/vocab-n4-002.json",
+      "type": "vocab",
+      "level": "n4",
+      "count": 130,
+      "bytes": 128188,
+      "sha256": "65b26dbca6b619891e3ea8b575e1be1372051f736c91b7c707e6c86b64abfe3f",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "path": "vocab/n4/vocab-n4-003.json",
+      "type": "vocab",
+      "level": "n4",
+      "count": 130,
+      "bytes": 130042,
+      "sha256": "ebed68cb4a062631e4ce966d1e61e28e73105429bcd4dbf3b4804070840b08b8",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "path": "vocab/n4/vocab-n4-004.json",
+      "type": "vocab",
+      "level": "n4",
+      "count": 130,
+      "bytes": 124385,
+      "sha256": "9f29488815c7f437ac8ad29eece880d8f52c1e20937510360e28ae36f9b72762",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "path": "vocab/n4/vocab-n4-005.json",
+      "type": "vocab",
+      "level": "n4",
+      "count": 130,
+      "bytes": 128827,
+      "sha256": "d7b87cf2fa7e633c6a6da98561811c57b0c6d4750598f1fd27844effc8701e18",
+      "belts": [
+        "green"
+      ],
+      "stations": [
+        23,
+        24
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-001.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 135,
+      "bytes": 132100,
+      "sha256": "02e9dd927a3ee6ff45b74f06cd60225b5523485f36065bd62146e46a118bd833",
+      "belts": [
+        "white",
+        "yellow"
+      ],
+      "stations": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-002.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 135,
+      "bytes": 123712,
+      "sha256": "b1aa07487f0f838a234372e488d1d253cefc30bd78a0addabff0daf071458019",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-003.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 135,
+      "bytes": 129885,
+      "sha256": "8c6e0b0a014861ffca2eed1cfe813ff6fd5a5fcaf97eb5c5686445d44805cef0",
+      "belts": [
+        "yellow"
+      ],
+      "stations": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-004.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 135,
+      "bytes": 119401,
+      "sha256": "6dc3b14724b90d4627c6a39b0e0edaf4f155b4019f732fb2d290c3f7d0c95575",
+      "belts": [
+        "yellow",
+        "orange"
+      ],
+      "stations": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-005.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 130,
+      "bytes": 131078,
+      "sha256": "21cc239bb973677983a380f36a3c1bb7a40cddc646f3b7782010b133b0f02cdb",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "path": "vocab/n5/vocab-n5-006.json",
+      "type": "vocab",
+      "level": "n5",
+      "count": 130,
+      "bytes": 119658,
+      "sha256": "04d2ca49f657c783ff9a168ca81839a19b5687d685abc6d0cb971c993253855e",
+      "belts": [
+        "orange"
+      ],
+      "stations": [
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "number": 1,
+      "path": "stations/01.json",
+      "counts": {
+        "kana": 71,
+        "vocab": 20,
+        "kanji": 0,
+        "grammar": 0,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 2,
+      "path": "stations/02.json",
+      "counts": {
+        "kana": 79,
+        "vocab": 20,
+        "kanji": 0,
+        "grammar": 0,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 3,
+      "path": "stations/03.json",
+      "counts": {
+        "kana": 88,
+        "vocab": 40,
+        "kanji": 0,
+        "grammar": 0,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 4,
+      "path": "stations/04.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 5,
+      "path": "stations/05.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 6,
+      "path": "stations/06.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 7,
+      "path": "stations/07.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 8,
+      "path": "stations/08.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 9,
+      "path": "stations/09.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 10,
+      "path": "stations/10.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 9,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 11,
+      "path": "stations/11.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 9,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 12,
+      "path": "stations/12.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 9,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 13,
+      "path": "stations/13.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 9,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 14,
+      "path": "stations/14.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 15,
+      "path": "stations/15.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 60,
+        "kanji": 8,
+        "grammar": 7,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 16,
+      "path": "stations/16.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 17,
+      "path": "stations/17.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 18,
+      "path": "stations/18.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 19,
+      "path": "stations/19.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 20,
+      "path": "stations/20.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 21,
+      "path": "stations/21.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 22,
+      "path": "stations/22.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 23,
+      "path": "stations/23.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 72,
+        "kanji": 22,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 24,
+      "path": "stations/24.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 74,
+        "kanji": 24,
+        "grammar": 10,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 25,
+      "path": "stations/25.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 26,
+      "path": "stations/26.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 27,
+      "path": "stations/27.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 28,
+      "path": "stations/28.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 29,
+      "path": "stations/29.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 30,
+      "path": "stations/30.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 31,
+      "path": "stations/31.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 3,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 32,
+      "path": "stations/32.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 33,
+      "path": "stations/33.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 34,
+      "path": "stations/34.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 35,
+      "path": "stations/35.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 36,
+      "path": "stations/36.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 7,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 37,
+      "path": "stations/37.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 122,
+        "kanji": 25,
+        "grammar": 7,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 38,
+      "path": "stations/38.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 121,
+        "kanji": 25,
+        "grammar": 8,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 39,
+      "path": "stations/39.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 212,
+        "kanji": 44,
+        "grammar": 12,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 40,
+      "path": "stations/40.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 212,
+        "kanji": 44,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 41,
+      "path": "stations/41.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 212,
+        "kanji": 44,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 42,
+      "path": "stations/42.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 212,
+        "kanji": 44,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 43,
+      "path": "stations/43.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 213,
+        "kanji": 44,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 44,
+      "path": "stations/44.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 213,
+        "kanji": 44,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 45,
+      "path": "stations/45.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 213,
+        "kanji": 43,
+        "grammar": 11,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 46,
+      "path": "stations/46.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 213,
+        "kanji": 43,
+        "grammar": 12,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 47,
+      "path": "stations/47.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 214,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 48,
+      "path": "stations/48.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 214,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 49,
+      "path": "stations/49.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 214,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 50,
+      "path": "stations/50.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 214,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 51,
+      "path": "stations/51.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 214,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 52,
+      "path": "stations/52.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 215,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    },
+    {
+      "number": 53,
+      "path": "stations/53.json",
+      "counts": {
+        "kana": 0,
+        "vocab": 215,
+        "kanji": 0,
+        "grammar": 10,
+        "story": 2,
+        "michikusa": 4
+      }
+    }
+  ],
+  "totals": {
+    "kana": 238,
+    "vocab": 6350,
+    "kanji": 1000,
+    "grammar": 450,
+    "story": 137,
+    "conjugation": 903,
+    "component": 284,
+    "michikusa": 212,
+    "station": 53
+  },
+  "componentsPath": "_meta/components.json",
+  "redirects": {}
+}

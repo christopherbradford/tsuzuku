@@ -1,0 +1,1341 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n5",
+  "writer": "grammar-n5-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n5-001",
+      "pattern": "NはNです",
+      "meaning": "N is N",
+      "formation": [
+        "N1 は N2 です",
+        "私 は 学生 です → 私は学生です (I am a student)",
+        "は is the topic particle: written は, read わ",
+        "です closes the sentence politely; it never changes for I, you, he or they"
+      ],
+      "explanation": "NはNです names or identifies something: put the topic first with は, then what you want to say about it, then です. You use it to introduce yourself (私はハナです), say what something is (これは駅です) or what day it is (今日は月曜日です). は is not a strong equals sign; it only announces what the sentence is about, so the second noun can be a role, a place or a time. The subject is often dropped when it is obvious. です is the polite ending; its plain partner だ comes later at Station 12.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{学生|がくせい}です。",
+          "kana": "わたしはがくせいです。",
+          "en": "I am a student."
+        },
+        {
+          "ja": "ハナさんは{日本人|にほんじん}です。",
+          "kana": "ハナさんはにほんじんです。",
+          "en": "Hana is Japanese."
+        },
+        {
+          "ja": "ここは{駅|えき}です。",
+          "kana": "ここはえきです。",
+          "en": "This is the station."
+        },
+        {
+          "ja": "{今日|きょう}は{月曜日|げつようび}です。",
+          "kana": "きょうはげつようびです。",
+          "en": "Today is Monday."
+        }
+      ],
+      "clozeHints": [
+        "です"
+      ],
+      "mistakes": [
+        "× 私わ学生です → ○ 私は学生です (the topic particle is spelled は even though it is read わ)",
+        "× 私は学生。 → ○ 私は学生です。 (in polite speech the sentence needs です at the end)",
+        "× 私は学生だです → ○ 私は学生です (です already carries the politeness; never stack だ and です)"
+      ],
+      "related": [
+        "g-n5-002",
+        "g-n5-003",
+        "g-n5-012"
+      ],
+      "tags": [
+        "people"
+      ],
+      "notes": "Forward link to add at merge: g-n5-068 (plain だ), which lives in a later grammar-n5 file.",
+      "station": 4
+    },
+    {
+      "id": "g-n5-002",
+      "pattern": "〜ではありません / 〜じゃありません",
+      "meaning": "is not …",
+      "formation": [
+        "N ではありません (careful, written or formal speech)",
+        "N じゃありません (everyday spoken polite)",
+        "N じゃないです (same meaning, slightly more casual; very common in conversation)",
+        "学生です → 学生ではありません / 学生じゃありません"
+      ],
+      "explanation": "〜ではありません and 〜じゃありません are the polite negative of です: the noun stays as it is and the ending changes. では is the full form you will see in writing and hear in announcements; じゃ is its spoken contraction and is what you will say most of the time. Both are fully polite. You use them to deny an identity or a fact (今日は休みじゃありません). They do not negate verbs or い-adjectives; those have their own negatives (ません at Station 6, くないです at Station 7).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{先生|せんせい}ではありません。",
+          "kana": "わたしはせんせいではありません。",
+          "en": "I am not a teacher."
+        },
+        {
+          "ja": "これは{水|みず}じゃありません。お{茶|ちゃ}です。",
+          "kana": "これはみずじゃありません。おちゃです。",
+          "en": "This isn't water. It's tea."
+        },
+        {
+          "ja": "{今日|きょう}は{休|やす}みじゃありません。",
+          "kana": "きょうはやすみじゃありません。",
+          "en": "Today is not a day off."
+        },
+        {
+          "ja": "ケンさんは{学生|がくせい}ではありません。",
+          "kana": "ケンさんはがくせいではありません。",
+          "en": "Ken is not a student."
+        }
+      ],
+      "clozeHints": [
+        "ではありません",
+        "じゃありません"
+      ],
+      "mistakes": [
+        "× 学生ないです → ○ 学生じゃないです (a noun cannot take ない directly; it needs じゃ or では first)",
+        "× 学生ではありませんです → ○ 学生ではありません (ありません is already polite; do not add です)",
+        "× 学生ではないます → ○ 学生ではありません (the polite negative is ありません, not ないます)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-012"
+      ],
+      "tags": [],
+      "notes": "Forward link to add at merge: g-n5-027 (な-adjective じゃないです), which lives in a later grammar-n5 file.",
+      "station": 4
+    },
+    {
+      "id": "g-n5-003",
+      "pattern": "〜か (yes/no question)",
+      "meaning": "is it …? (question marker)",
+      "formation": [
+        "Statement + か (word order does not change)",
+        "学生です → 学生ですか",
+        "Answer: はい、学生です。 / いいえ、学生じゃありません。",
+        "In careful writing the question ends with か。; a ？ is fine in messages"
+      ],
+      "explanation": "〜か turns a statement into a yes-no question: keep the sentence exactly as it is and add か at the end. You do not move any words and you do not raise your voice very much; か does the work. The answer repeats the frame: はい、そうです or いいえ、ちがいます. With ですか you can ask about identity, place or time (駅はここですか). Later you will put question words like 何 and どこ inside the same frame (Station 5). Do not drop です before か when speaking to people you do not know well; bare か after a noun sounds blunt.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ハナさんは{学生|がくせい}ですか。",
+          "kana": "ハナさんはがくせいですか。",
+          "en": "Are you a student, Hana?"
+        },
+        {
+          "ja": "それは{傘|かさ}ですか。",
+          "kana": "それはかさですか。",
+          "en": "Is that an umbrella?"
+        },
+        {
+          "ja": "{今日|きょう}は{休|やす}みですか。",
+          "kana": "きょうはやすみですか。",
+          "en": "Is today a day off?"
+        },
+        {
+          "ja": "{駅|えき}はここですか。",
+          "kana": "えきはここですか。",
+          "en": "Is the station here?"
+        }
+      ],
+      "clozeHints": [
+        "ですか"
+      ],
+      "mistakes": [
+        "× 学生ですか。はい、です。 → ○ 学生ですか。はい、そうです。 (です cannot stand alone in the answer; say そうです or repeat the noun)",
+        "× あなたは学生か。 → ○ あなたは学生ですか。 (か after a bare noun sounds blunt; keep です in polite speech)",
+        "× か学生ですか → ○ 学生ですか (か goes only at the very end of the sentence)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-009",
+        "g-n5-013"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 4
+    },
+    {
+      "id": "g-n5-004",
+      "pattern": "Nも",
+      "meaning": "N too; N also",
+      "formation": [
+        "N も (も takes the place of は)",
+        "私は学生です。→ ケンさんも学生です。(Ken is a student too)",
+        "In a negative sentence: ケンさんも学生じゃありません (Ken isn't a student either)",
+        "Time words take it too: 今日も雨です (it's rain today as well)"
+      ],
+      "explanation": "Nも adds a second item that shares what was said about the first: 私は学生です → ケンさんも学生です. も replaces は rather than following it, so you never say はも. It works on people, things and time words (明日も休みです). In a negative sentence も means 'not … either'. Note the direction: も marks the thing that is also true, not the quality. 'I also drink tea' (adding tea) is お茶も飲みます, with も on お茶. Combining two も in one sentence (〜も〜も, both … and) is a separate point at Station 8.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "ケンさんも{学生|がくせい}です。",
+          "kana": "ケンさんもがくせいです。",
+          "en": "Ken is a student too."
+        },
+        {
+          "ja": "{今日|きょう}も{雨|あめ}です。",
+          "kana": "きょうもあめです。",
+          "en": "It's raining today as well."
+        },
+        {
+          "ja": "{田中|たなか}さんも{先生|せんせい}ではありません。",
+          "kana": "たなかさんもせんせいではありません。",
+          "en": "Tanaka-san is not a teacher either."
+        },
+        {
+          "ja": "{明日|あした}も{休|やす}みです。",
+          "kana": "あしたもやすみです。",
+          "en": "Tomorrow is a day off too."
+        }
+      ],
+      "clozeHints": [
+        "も"
+      ],
+      "mistakes": [
+        "× ケンさんはも学生です → ○ ケンさんも学生です (も replaces は; the two particles never stack)",
+        "× 私はも学生じゃありません → ○ 私も学生じゃありません (same rule in the negative: も alone, meaning 'not … either')"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-002"
+      ],
+      "tags": [],
+      "notes": "Forward link to add at merge: g-n5-037 (〜も〜も), which lives in a later grammar-n5 file.",
+      "station": 4
+    },
+    {
+      "id": "g-n5-005",
+      "pattern": "これ・それ・あれ",
+      "meaning": "this, that, that over there",
+      "formation": [
+        "これ = the thing near the speaker",
+        "それ = the thing near the listener",
+        "あれ = the thing far from both",
+        "どれ = which one (question word, Station 5)",
+        "これ / それ / あれ + は + N + です"
+      ],
+      "explanation": "これ・それ・あれ point at things and stand in for a noun: これは鍵です. Choose by distance from the two speakers: これ for something in your hand or beside you, それ for something near the person you are talking to, あれ for something away from both of you. So when someone asks これは何ですか about an item they are holding, you answer それは〜です. These words stand alone; to say 'this book' you need この (next point). They refer to things, not people; pointing at a person with これ is rude, so use この人 or あの方.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "これは{鍵|かぎ}です。",
+          "kana": "これはかぎです。",
+          "en": "This is a key."
+        },
+        {
+          "ja": "それは{私|わたし}の{傘|かさ}です。",
+          "kana": "それはわたしのかさです。",
+          "en": "That's my umbrella."
+        },
+        {
+          "ja": "あれは{駅|えき}です。",
+          "kana": "あれはえきです。",
+          "en": "That over there is the station."
+        },
+        {
+          "ja": "それはコーヒーじゃありません。{紅茶|こうちゃ}です。",
+          "kana": "それはコーヒーじゃありません。こうちゃです。",
+          "en": "That isn't coffee. It's black tea."
+        }
+      ],
+      "clozeHints": [
+        "これ",
+        "それ",
+        "あれ"
+      ],
+      "mistakes": [
+        "× これ本は私のです → ○ この本は私のです (これ stands alone; before a noun use この)",
+        "× あれは本ですか (asking about a book in the listener's hand) → ○ それは本ですか (near the listener is それ; あれ is far from both of you)",
+        "× これは田中さんです (pointing at a person) → ○ こちらは田中さんです (people are introduced with こちら, not これ)"
+      ],
+      "related": [
+        "g-n5-006",
+        "g-n5-009",
+        "g-n5-014"
+      ],
+      "tags": [
+        "position",
+        "objects"
+      ],
+      "station": 4
+    },
+    {
+      "id": "g-n5-006",
+      "pattern": "この・その・あの + N",
+      "meaning": "this N, that N, that N over there",
+      "formation": [
+        "この + N = this N (near me)",
+        "その + N = that N (near you)",
+        "あの + N = that N over there (far from both)",
+        "どの + N = which N (question word, Station 5)",
+        "Never used alone: この本 ○, この ×"
+      ],
+      "explanation": "この・その・あの go in front of a noun to say which one you mean: この本 (this book), その店 (that shop by you), あの人 (that person over there). The distance rule is the same as for これ・それ・あれ, but these words cannot stand alone; they must be followed by a noun. Compare: これは本です (this is a book) vs この本は私のです (this book is mine). Because あの人 keeps the noun, it is the polite way to point out a person, while あれ is for things. You will meet どんな (what kind of) for the same slot at Station 7.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{人|ひと}は{田中|たなか}さんです。",
+          "kana": "このひとはたなかさんです。",
+          "en": "This person is Tanaka-san."
+        },
+        {
+          "ja": "その{店|みせ}はコンビニです。",
+          "kana": "そのみせはコンビニです。",
+          "en": "That shop is a convenience store."
+        },
+        {
+          "ja": "あの{人|ひと}は{先生|せんせい}ですか。",
+          "kana": "あのひとはせんせいですか。",
+          "en": "Is that person over there a teacher?"
+        },
+        {
+          "ja": "あの{建物|たてもの}は{病院|びょういん}です。",
+          "kana": "あのたてものはびょういんです。",
+          "en": "That building over there is a hospital."
+        }
+      ],
+      "clozeHints": [
+        "この",
+        "その",
+        "あの"
+      ],
+      "mistakes": [
+        "× これ人は誰ですか → ○ この人は誰ですか (before a noun use この, not これ)",
+        "× このは私の本です → ○ これは私の本です (この cannot stand alone; use これ)",
+        "× あのの人 → ○ あの人 (no の after この・その・あの; they attach to the noun directly)"
+      ],
+      "related": [
+        "g-n5-005",
+        "g-n5-009"
+      ],
+      "tags": [
+        "position"
+      ],
+      "notes": "Forward link to add at merge: g-n5-029 (どんなN), which lives in a later grammar-n5 file.",
+      "station": 4
+    },
+    {
+      "id": "g-n5-007",
+      "pattern": "NのN (possession, attribute)",
+      "meaning": "N's N; N of N",
+      "formation": [
+        "N1 の N2 (N1 describes or owns N2)",
+        "私の本 = my book (owner)",
+        "日本語の先生 = a teacher of Japanese (field)",
+        "会社の人 = a person from the company (belonging)",
+        "Order: describing noun first, main noun last"
+      ],
+      "explanation": "NのN links two nouns so the first one describes the second: 私の本 (my book), 大学の建物 (a university building), 日本の車 (a Japanese car). The noun before の is the owner, maker, place, field or type; the noun after の is the thing you are really talking about. English often reverses the order ('a book of mine'), so always ask 'which one is the main thing?' and put it last. You can chain: 友達のお母さんの車. の never joins two nouns as 'and'; that is と (Station 5). Dropping the second noun (私のです, mine) comes at Station 5 too.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "これは{私|わたし}の{財布|さいふ}です。",
+          "kana": "これはわたしのさいふです。",
+          "en": "This is my wallet."
+        },
+        {
+          "ja": "{田中|たなか}さんは{日本語|にほんご}の{先生|せんせい}です。",
+          "kana": "たなかさんはにほんごのせんせいです。",
+          "en": "Tanaka-san is a Japanese teacher."
+        },
+        {
+          "ja": "ケンさんは{私|わたし}の{友達|ともだち}です。",
+          "kana": "ケンさんはわたしのともだちです。",
+          "en": "Ken is my friend."
+        },
+        {
+          "ja": "あれは{大学|だいがく}の{建物|たてもの}です。",
+          "kana": "あれはだいがくのたてものです。",
+          "en": "That over there is a university building."
+        }
+      ],
+      "clozeHints": [
+        "の"
+      ],
+      "mistakes": [
+        "× 私本 → ○ 私の本 (two nouns in a row need の between them)",
+        "× 本の私 → ○ 私の本 (the owner or describer comes first; the thing comes last)",
+        "× 日本語先生 → ○ 日本語の先生 (even 'Japanese teacher' needs の)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-014",
+        "g-n5-016"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 4
+    },
+    {
+      "id": "g-n5-008",
+      "pattern": "〜ね / 〜よ (sentence-final)",
+      "meaning": "…, right? / …, you know",
+      "formation": [
+        "Sentence + ね (seeking agreement; information you both share)",
+        "Sentence + よ (giving information the listener does not have)",
+        "今日は日曜日ですね。 / 駅はあそこですよ。",
+        "Combined: 〜よね (asserting, then checking); よ always comes first"
+      ],
+      "explanation": "〜ね and 〜よ sit at the very end of a sentence and tell the listener how to take it. ね reaches out for agreement about something you both can see or know: いい天気ですね, あの人は田中さんですね. よ hands over information the listener does not have, or corrects them gently: 駅はあそこですよ. Use ね generously; it makes you sound warm and cooperative. Use よ with care: too much sounds pushy, and never use it when the listener already knows the fact. Both attach after です, ます, and later after plain forms. They are not question markers; か does that.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{日曜日|にちようび}ですね。",
+          "kana": "きょうはにちようびですね。",
+          "en": "It's Sunday today, isn't it?"
+        },
+        {
+          "ja": "この{店|みせ}はパン{屋|や}ですよ。",
+          "kana": "このみせはパンやですよ。",
+          "en": "This shop is a bakery, you know."
+        },
+        {
+          "ja": "あの{人|ひと}は{田中|たなか}さんですね。",
+          "kana": "あのひとはたなかさんですね。",
+          "en": "That person over there is Tanaka-san, right?"
+        },
+        {
+          "ja": "{駅|えき}はあそこですよ。",
+          "kana": "えきはあそこですよ。",
+          "en": "The station is over there."
+        }
+      ],
+      "clozeHints": [
+        "ですね",
+        "ですよ"
+      ],
+      "mistakes": [
+        "× 三時ですね (answering a stranger who asked the time) → ○ 三時ですよ (information new to the listener takes よ)",
+        "× ですねよ → ○ ですよね (when you combine them, よ comes before ね)",
+        "× 駅はあそこですよ。 (said when the listener just told you where it is) → ○ 駅はあそこですね。 (shared, obvious facts take ね)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-003"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 4
+    },
+    {
+      "id": "g-n5-009",
+      "pattern": "何・誰・どこ・いつ・どれ・どの (question words)",
+      "meaning": "what, who, where, when, which",
+      "formation": [
+        "The question word takes the slot of the unknown; word order does not change",
+        "これは何ですか / あの人は誰ですか / 駅はどこですか / 休みはいつですか",
+        "どれ = which one (stands alone) · どの + N = which N",
+        "何 is read なん before です and counters (何ですか, 何時), なに elsewhere (何を)",
+        "Answer in the same frame: 駅はあそこです"
+      ],
+      "explanation": "Question words in Japanese do not jump to the front. Take a statement, replace the unknown part with 何 (what), 誰 (who), どこ (where), いつ (when), どれ (which one) or どの+N (which N), and finish with ですか: あの人は田中さんです → あの人は誰ですか. The answer keeps the same frame, so you can echo the question with the gap filled. どれ and どの follow the これ/この split: どれ stands alone, どの needs a noun. いつ takes no particle before です. Read 何 as なん before です and before counters, and as なに before particles like を.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "これは{何|なん}ですか。",
+          "kana": "これはなんですか。",
+          "en": "What is this?"
+        },
+        {
+          "ja": "あの{人|ひと}は{誰|だれ}ですか。",
+          "kana": "あのひとはだれですか。",
+          "en": "Who is that person over there?"
+        },
+        {
+          "ja": "トイレはどこですか。",
+          "kana": "トイレはどこですか。",
+          "en": "Where is the restroom?"
+        },
+        {
+          "ja": "テストはいつですか。",
+          "kana": "テストはいつですか。",
+          "en": "When is the test?"
+        },
+        {
+          "ja": "ハナさんの{傘|かさ}はどれですか。",
+          "kana": "ハナさんのかさはどれですか。",
+          "en": "Which one is Hana's umbrella?"
+        }
+      ],
+      "clozeHints": [
+        "何",
+        "誰",
+        "どこ",
+        "いつ",
+        "どれ",
+        "どの"
+      ],
+      "mistakes": [
+        "× 何はこれですか → ○ これは何ですか (the question word stays where the answer would go; it does not move to the front)",
+        "× これはなにですか → ○ これはなんですか (before です, 何 is read なん)",
+        "× どれ本ですか → ○ どの本ですか (どれ stands alone; before a noun use どの)"
+      ],
+      "related": [
+        "g-n5-003",
+        "g-n5-005",
+        "g-n5-006",
+        "g-n5-013"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-010",
+      "pattern": "〜時〜分 (telling time)",
+      "meaning": "… o'clock … minutes",
+      "formation": [
+        "Number + 時 (hour) + Number + 分 (minutes)",
+        "Hours: 一時 いちじ · 二時 にじ · 三時 さんじ · 四時 よじ · 五時 ごじ · 六時 ろくじ · 七時 しちじ · 八時 はちじ · 九時 くじ · 十時 じゅうじ · 十一時 じゅういちじ · 十二時 じゅうにじ",
+        "Minutes: 一分 いっぷん · 二分 にふん · 三分 さんぷん · 四分 よんぷん · 五分 ごふん · 六分 ろっぷん · 七分 ななふん · 八分 はっぷん · 九分 きゅうふん · 十分 じゅっぷん",
+        "半 = half past: 三時半 さんじはん",
+        "Ask with 何時 なんじ: 今、何時ですか。",
+        "午前 / 午後 go before the hour: 午後三時 = 3 p.m."
+      ],
+      "explanation": "〜時〜分 tells the time: the hour number plus 時, then the minutes plus 分. Three hours are irregular and you must memorize them: 四時 よじ, 七時 しちじ, 九時 くじ. 分 changes its sound after certain numbers: いっぷん, さんぷん, よんぷん, ろっぷん, はっぷん, じゅっぷん, but にふん, ごふん, ななふん, きゅうふん. Half past is 半: 二時半. Put 午前 or 午後 in front for a.m. and p.m. Japanese also uses the 24-hour clock in timetables (十五時). To ask, say 今、何時ですか. At Station 6 you will add に to say at what time something happens.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{今|いま}、{三時|さんじ}です。",
+          "kana": "いま、さんじです。",
+          "en": "It's three o'clock now."
+        },
+        {
+          "ja": "{会議|かいぎ}は{午後|ごご}{二時半|にじはん}です。",
+          "kana": "かいぎはごごにじはんです。",
+          "en": "The meeting is at two-thirty in the afternoon."
+        },
+        {
+          "ja": "{今|いま}、{九時十五分|くじじゅうごふん}です。",
+          "kana": "いま、くじじゅうごふんです。",
+          "en": "It's nine fifteen now."
+        },
+        {
+          "ja": "{朝|あさ}ご{飯|はん}は{七時|しちじ}です。",
+          "kana": "あさごはんはしちじです。",
+          "en": "Breakfast is at seven."
+        },
+        {
+          "ja": "{今|いま}、{何時|なんじ}ですか。",
+          "kana": "いま、なんじですか。",
+          "en": "What time is it now?"
+        }
+      ],
+      "clozeHints": [
+        "時",
+        "分",
+        "半"
+      ],
+      "mistakes": [
+        "× よんじ → ○ よじ (four o'clock is よじ)",
+        "× ななじ → ○ しちじ (seven o'clock is しちじ in standard speech)",
+        "× さんふん → ○ さんぷん (after 三 the reading of 分 is ぷん)"
+      ],
+      "related": [
+        "g-n5-009",
+        "g-n5-011",
+        "g-n5-015",
+        "g-n5-020"
+      ],
+      "tags": [
+        "time",
+        "numbers"
+      ],
+      "notes": "八分 はちふん and 十分 じっぷん are also heard; the forms above are the most common in modern Tokyo speech.",
+      "station": 5
+    },
+    {
+      "id": "g-n5-011",
+      "pattern": "〜から〜まで",
+      "meaning": "from … to/until …",
+      "formation": [
+        "N1 から N2 まで (time or place)",
+        "九時から五時まで = from nine to five",
+        "駅から公園まで = from the station to the park",
+        "Either half can stand alone: 九時からです / 五時までです",
+        "まで marks the end point; までに (by a deadline) is a different N4 pattern"
+      ],
+      "explanation": "〜から〜まで gives a span with a start and an end: 九時から五時まで (from nine to five), 駅から大学まで (from the station to the university). から attaches straight to the starting point and まで to the ending point, with no extra particles. You can use just one half: 仕事は五時までです (work is until five). It works for times, dates, days and places alike, and the whole span can sit before です to describe opening hours or a trip. まで means 'all the way until'; to say 'by' a deadline you will later use までに.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}は{九時|くじ}から{三時|さんじ}までです。",
+          "kana": "ぎんこうはくじからさんじまでです。",
+          "en": "The bank is open from nine to three."
+        },
+        {
+          "ja": "{休|やす}みは{土曜日|どようび}から{月曜日|げつようび}までです。",
+          "kana": "やすみはどようびからげつようびまでです。",
+          "en": "The holiday is from Saturday to Monday."
+        },
+        {
+          "ja": "{昼|ひる}ご{飯|はん}は{十二時|じゅうにじ}からです。",
+          "kana": "ひるごはんはじゅうにじからです。",
+          "en": "Lunch is from twelve."
+        },
+        {
+          "ja": "{仕事|しごと}は{五時|ごじ}までです。",
+          "kana": "しごとはごじまでです。",
+          "en": "Work is until five."
+        },
+        {
+          "ja": "{駅|えき}から{公園|こうえん}まで{五分|ごふん}です。",
+          "kana": "えきからこうえんまでごふんです。",
+          "en": "It's five minutes from the station to the park."
+        }
+      ],
+      "clozeHints": [
+        "から",
+        "まで"
+      ],
+      "mistakes": [
+        "× 九時にから → ○ 九時から (から attaches directly to the time; no に)",
+        "× 五時まで九時から → ○ 九時から五時まで (start point first, end point second)",
+        "× 三時までに (meaning 'until three') → ○ 三時まで (まで = until the end point; までに = by a deadline)"
+      ],
+      "related": [
+        "g-n5-010",
+        "g-n5-020",
+        "g-n5-021"
+      ],
+      "tags": [
+        "time",
+        "position"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-012",
+      "pattern": "Nでした / Nではありませんでした",
+      "meaning": "was N / was not N",
+      "formation": [
+        "N でした (polite past)",
+        "N ではありませんでした / じゃありませんでした (polite past negative)",
+        "学生です → 学生でした → 学生ではありませんでした",
+        "Spoken: 学生じゃなかったです (same meaning, more casual)"
+      ],
+      "explanation": "Nでした is the past of Nです, and Nではありませんでした (spoken じゃありませんでした) is the past of the negative. The noun never changes; only the ending moves through time. Build the negative past in two steps: first negate (学生じゃありません), then add でした. You use these for yesterday's weather (昨日は雨でした), past jobs (田中さんは駅員でした) and days (先週は休みでした). They work only for nouns; verbs take ました and い-adjectives take かったです, which you meet soon. The plain forms だった and じゃなかった come at Station 12.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{雨|あめ}でした。",
+          "kana": "きのうはあめでした。",
+          "en": "It was rainy yesterday."
+        },
+        {
+          "ja": "{先週|せんしゅう}は{休|やす}みでした。",
+          "kana": "せんしゅうはやすみでした。",
+          "en": "I was off last week."
+        },
+        {
+          "ja": "{田中|たなか}さんは{駅員|えきいん}でした。",
+          "kana": "たなかさんはえきいんでした。",
+          "en": "Tanaka-san used to be a station employee."
+        },
+        {
+          "ja": "{昨日|きのう}は{月曜日|げつようび}ではありませんでした。",
+          "kana": "きのうはげつようびではありませんでした。",
+          "en": "Yesterday wasn't Monday."
+        },
+        {
+          "ja": "{先生|せんせい}は{日本人|にほんじん}じゃありませんでした。",
+          "kana": "せんせいはにほんじんじゃありませんでした。",
+          "en": "The teacher wasn't Japanese."
+        }
+      ],
+      "clozeHints": [
+        "ではありませんでした",
+        "じゃありませんでした",
+        "でした"
+      ],
+      "mistakes": [
+        "× 雨ですでした → ○ 雨でした (でした replaces です; do not stack them)",
+        "× 学生でしたじゃありません → ○ 学生じゃありませんでした (negative first, then past: じゃありません + でした)",
+        "× 昨日は休みだったです → ○ 昨日は休みでした (だった is the plain form; the polite past is でした)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-002",
+        "g-n5-017"
+      ],
+      "tags": [
+        "time"
+      ],
+      "notes": "Forward link to add at merge: g-n5-068 (plain だ / だった), which lives in a later grammar-n5 file.",
+      "station": 5
+    },
+    {
+      "id": "g-n5-013",
+      "pattern": "Nはどこですか / Nはどちらですか",
+      "meaning": "where is N?",
+      "formation": [
+        "N は どこ ですか (neutral)",
+        "N は どちら ですか (politer; also 'which of two')",
+        "Answer: N は ここ / そこ / あそこ です · N は こちら / そちら / あちら です",
+        "お国はどちらですか = where are you from? (polite small talk)"
+      ],
+      "explanation": "Nはどこですか asks where something is: the thing you are looking for is the topic, どこ sits where the answer will go, and ですか closes it. No particle is needed before ですか. Nはどちらですか is the same question one notch more polite, so use it with shop staff, hotel receptions and people you have just met; it can also mean 'which of the two'. Answer with the place words ここ・そこ・あそこ or the politer こちら・そちら・あちら, keeping the same frame: トイレはあそこです. Start with すみません to catch someone's attention first.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "すみません、トイレはどこですか。",
+          "kana": "すみません、トイレはどこですか。",
+          "en": "Excuse me, where is the restroom?"
+        },
+        {
+          "ja": "{駅|えき}はどこですか。",
+          "kana": "えきはどこですか。",
+          "en": "Where is the station?"
+        },
+        {
+          "ja": "お{国|くに}はどちらですか。",
+          "kana": "おくにはどちらですか。",
+          "en": "Where are you from?"
+        },
+        {
+          "ja": "{会社|かいしゃ}はどちらですか。",
+          "kana": "かいしゃはどちらですか。",
+          "en": "Where is your company?"
+        },
+        {
+          "ja": "ハナさんの{傘|かさ}はどこですか。",
+          "kana": "ハナさんのかさはどこですか。",
+          "en": "Where is Hana's umbrella?"
+        }
+      ],
+      "clozeHints": [
+        "どこですか",
+        "どちらですか"
+      ],
+      "mistakes": [
+        "× どこはトイレですか → ○ トイレはどこですか (the thing you look for is the topic; どこ sits where the answer goes)",
+        "× トイレはどこにですか → ○ トイレはどこですか (no に before ですか in this frame)",
+        "× トイレはどこ？ (to shop staff) → ○ トイレはどこですか (keep ですか with strangers)"
+      ],
+      "related": [
+        "g-n5-003",
+        "g-n5-005",
+        "g-n5-009"
+      ],
+      "tags": [
+        "position",
+        "places",
+        "communication"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-014",
+      "pattern": "Nの (pronominal の: 私のです)",
+      "meaning": "N's one; mine, yours",
+      "formation": [
+        "N の (the noun after の is dropped when it is obvious)",
+        "私の本です → 私のです (it's mine)",
+        "これは誰のですか = whose is this?",
+        "Not for people: 日本語の先生 cannot shrink to 日本語の"
+      ],
+      "explanation": "Nの with nothing after it means 'N's one': when the thing is already clear from the conversation, you drop the second noun. この傘は私の傘です becomes この傘は私のです (this umbrella is mine). It answers 誰のですか (whose is it?) in one word: 田中さんのです. The frame still ends in です, じゃありません or でした as usual. Use it only for things; you cannot shorten 日本語の先生 to 日本語の to mean the teacher. Do not confuse it with the の that joins two nouns (NのN): this の replaces a noun rather than linking to one.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "それは{私|わたし}のです。",
+          "kana": "それはわたしのです。",
+          "en": "That's mine."
+        },
+        {
+          "ja": "それは{誰|だれ}のですか。",
+          "kana": "それはだれのですか。",
+          "en": "Whose is that?"
+        },
+        {
+          "ja": "あれは{田中|たなか}さんのです。",
+          "kana": "あれはたなかさんのです。",
+          "en": "That one over there is Tanaka-san's."
+        },
+        {
+          "ja": "これはケンさんのじゃありません。",
+          "kana": "これはケンさんのじゃありません。",
+          "en": "This isn't Ken's."
+        }
+      ],
+      "clozeHints": [
+        "の"
+      ],
+      "mistakes": [
+        "× この傘は私です → ○ この傘は私のです (without の you are saying 'this umbrella is me')",
+        "× これは私の傘のです → ○ これは私の傘です / これは私のです (either keep the noun or drop it; not both)",
+        "× あの先生は日本語のです → ○ あの先生は日本語の先生です (の cannot stand in for a person noun)"
+      ],
+      "related": [
+        "g-n5-005",
+        "g-n5-007",
+        "g-n5-009"
+      ],
+      "tags": [
+        "objects"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-015",
+      "pattern": "〜ごろ / 〜ぐらい",
+      "meaning": "around (time) / about (amount)",
+      "formation": [
+        "Point in time + ごろ: 三時ごろ = around three o'clock",
+        "Amount or duration + ぐらい: 十分ぐらい = about ten minutes · 千円ぐらい = about a thousand yen",
+        "ごろ only for clock times, dates and periods: 何時ごろ, いつごろ, 三月ごろ",
+        "ぐらい for quantities, lengths, counts and prices; くらい is the same word"
+      ],
+      "explanation": "〜ごろ and 〜ぐらい both soften a number, but they attach to different things. ごろ follows a point in time on the clock or calendar: 七時ごろ (around seven), 三月ごろ (around March). ぐらい follows an amount: 十分ぐらい (about ten minutes), 三千円ぐらい (about three thousand yen), 七十歳ぐらい (about seventy years old). The test is simple: if you could answer いつ with it, use ごろ; if you could answer いくら or どのぐらい, use ぐらい. くらい is the same word as ぐらい and you will hear both. Never use ごろ with durations or money.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}ご{飯|はん}は{七時|しちじ}ごろです。",
+          "kana": "あさごはんはしちじごろです。",
+          "en": "Breakfast is around seven."
+        },
+        {
+          "ja": "{会議|かいぎ}は{三時|さんじ}ごろまでです。",
+          "kana": "かいぎはさんじごろまでです。",
+          "en": "The meeting runs until around three."
+        },
+        {
+          "ja": "{駅|えき}から{大学|だいがく}まで{十分|じゅっぷん}ぐらいです。",
+          "kana": "えきからだいがくまでじゅっぷんぐらいです。",
+          "en": "It's about ten minutes from the station to the university."
+        },
+        {
+          "ja": "この{時計|とけい}は{三千円|さんぜんえん}ぐらいです。",
+          "kana": "このとけいはさんぜんえんぐらいです。",
+          "en": "This watch is about three thousand yen."
+        },
+        {
+          "ja": "{田中|たなか}さんは{七十歳|ななじゅっさい}ぐらいです。",
+          "kana": "たなかさんはななじゅっさいぐらいです。",
+          "en": "Tanaka-san is about seventy."
+        }
+      ],
+      "clozeHints": [
+        "ごろ",
+        "ぐらい"
+      ],
+      "mistakes": [
+        "× 三時間ごろ → ○ 三時間ぐらい (a length of time takes ぐらい; ごろ marks a point on the clock or calendar)",
+        "× 千円ごろ → ○ 千円ぐらい (amounts of money take ぐらい)",
+        "× 三時ごろぐらい → ○ 三時ごろ (use one or the other, never both)"
+      ],
+      "related": [
+        "g-n5-010",
+        "g-n5-011",
+        "g-n5-020"
+      ],
+      "tags": [
+        "time",
+        "quantity"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-016",
+      "pattern": "NとN (and)",
+      "meaning": "N and N",
+      "formation": [
+        "N1 と N2 (a complete list of nouns)",
+        "パンと卵 = bread and eggs",
+        "Three or more: 本とノートとペン (と after every item except the last)",
+        "Nouns only: it cannot join adjectives, verbs or whole sentences",
+        "The list acts as one noun: パンと卵を食べます"
+      ],
+      "explanation": "NとN joins nouns into one list: パンと卵 (bread and eggs), 土曜日と日曜日 (Saturday and Sunday). と goes between the items, never after the last one, and the list then behaves like a single noun that can take は, を or です. と means the list is complete; if you are only naming some examples you will later use や. It joins nouns only. To say 'cheap and good' or 'eat and drink' you need the て-form of adjectives and verbs (Station 10). Watch for the other と that means 'together with a person' (Station 6).",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}ご{飯|はん}はパンと{卵|たまご}です。",
+          "kana": "あさごはんはパンとたまごです。",
+          "en": "Breakfast is bread and eggs."
+        },
+        {
+          "ja": "これは{水|みず}とお{茶|ちゃ}です。",
+          "kana": "これはみずとおちゃです。",
+          "en": "These are water and tea."
+        },
+        {
+          "ja": "{休|やす}みは{土曜日|どようび}と{日曜日|にちようび}です。",
+          "kana": "やすみはどようびとにちようびです。",
+          "en": "My days off are Saturday and Sunday."
+        },
+        {
+          "ja": "ハナさんとケンさんは{日本人|にほんじん}です。",
+          "kana": "ハナさんとケンさんはにほんじんです。",
+          "en": "Hana and Ken are Japanese."
+        }
+      ],
+      "clozeHints": [
+        "と"
+      ],
+      "mistakes": [
+        "× 犬と猫と → ○ 犬と猫 (no と after the last item of the list)",
+        "× 高いと新しい → ○ 高くて新しい (と joins nouns only; adjectives use the て-form)",
+        "× 食べると飲む → ○ 食べて飲む (と does not join verbs; use the て-form, which comes later)"
+      ],
+      "related": [
+        "g-n5-007",
+        "g-n5-022"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 5
+    },
+    {
+      "id": "g-n5-017",
+      "pattern": "Vます / Vません / Vました / Vませんでした",
+      "meaning": "do / don't / did / didn't (polite verb forms)",
+      "formation": [
+        "ます-stem + ます (non-past) · ません (negative) · ました (past) · ませんでした (past negative)",
+        "Group 1 (u-verbs): 飲む → 飲みます · 書く → 書きます · 話す → 話します (change the final u-sound to i)",
+        "Group 2 (ru-verbs): 食べる → 食べます · 見る → 見ます (drop る)",
+        "Irregular: する → します · 来る → 来ます (きます)",
+        "飲みます → 飲みません → 飲みました → 飲みませんでした",
+        "Non-past covers present habits and the future: 明日行きます = I will go tomorrow"
+      ],
+      "explanation": "Vます is the polite verb ending, and its four forms cover everything you need to say what you do: ます (do, will do), ません (don't, won't), ました (did), ませんでした (didn't). Find the ます-stem first. Group 1 verbs change the last u-sound to an i-sound (飲む → 飲み), Group 2 verbs drop る (食べる → 食べ), and する・来る become し・来 (き). Then swap the endings; the stem never changes. There is no separate future tense: 明日行きます is 'I will go tomorrow'. The verb always comes last. Plain forms (飲む, 飲まない) are for Station 12.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{毎朝|まいあさ}コーヒーを{飲|の}みます。",
+          "kana": "わたしはまいあさコーヒーをのみます。",
+          "en": "I drink coffee every morning."
+        },
+        {
+          "ja": "{今日|きょう}は{働|はたら}きません。",
+          "kana": "きょうははたらきません。",
+          "en": "I'm not working today."
+        },
+        {
+          "ja": "{昨日|きのう}、{友達|ともだち}と{映画|えいが}を{見|み}ました。",
+          "kana": "きのう、ともだちとえいがをみました。",
+          "en": "I watched a movie with a friend yesterday."
+        },
+        {
+          "ja": "{先週|せんしゅう}は{勉強|べんきょう}しませんでした。",
+          "kana": "せんしゅうはべんきょうしませんでした。",
+          "en": "I didn't study last week."
+        },
+        {
+          "ja": "ケンさんは{毎日|まいにち}{料理|りょうり}をします。",
+          "kana": "ケンさんはまいにちりょうりをします。",
+          "en": "Ken cooks every day."
+        }
+      ],
+      "clozeHints": [
+        "ませんでした",
+        "ました",
+        "ません",
+        "ます"
+      ],
+      "mistakes": [
+        "× 食べります → ○ 食べます (Group 2 verbs drop る and add ます; no り)",
+        "× 飲むます → ○ 飲みます (change the final u-sound to i before ます)",
+        "× 昨日行きます → ○ 昨日行きました (a past time word needs ました)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-012",
+        "g-n5-018"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "unlocksForms": [
+        "masu",
+        "masen",
+        "mashita",
+        "masen-deshita"
+      ],
+      "station": 6
+    },
+    {
+      "id": "g-n5-018",
+      "pattern": "Nを V",
+      "meaning": "(marks the object of a verb)",
+      "formation": [
+        "N を V (N is what the action is done to)",
+        "コーヒーを飲みます · 本を読みます · 日本語を勉強します",
+        "を is written を but read お",
+        "Question: 何を飲みますか (なにを)"
+      ],
+      "explanation": "Nを V marks the object, the thing the action is done to: コーヒーを飲みます (drink coffee), 写真を撮ります (take a photo), 日本語を勉強します (study Japanese). The object comes before the verb and the verb stays at the end. The particle is spelled を and pronounced お; this is its only job, so を is a reliable signal that a verb is coming. A few verbs that feel like they take objects in English use が instead, most importantly わかります (understand) and the likes/wants you meet at Station 9 (好きです, ほしいです). Place of action is で, not を.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎晩|まいばん}{本|ほん}を{読|よ}みます。",
+          "kana": "まいばんほんをよみます。",
+          "en": "I read a book every night."
+        },
+        {
+          "ja": "{昨日|きのう}、{靴|くつ}を{買|か}いました。",
+          "kana": "きのう、くつをかいました。",
+          "en": "I bought shoes yesterday."
+        },
+        {
+          "ja": "ハナさんは{写真|しゃしん}を{撮|と}りました。",
+          "kana": "ハナさんはしゃしんをとりました。",
+          "en": "Hana took a photo."
+        },
+        {
+          "ja": "{今日|きょう}は{朝|あさ}ご{飯|はん}を{食|た}べませんでした。",
+          "kana": "きょうはあさごはんをたべませんでした。",
+          "en": "I didn't eat breakfast today."
+        },
+        {
+          "ja": "{何|なに}を{飲|の}みますか。",
+          "kana": "なにをのみますか。",
+          "en": "What will you have to drink?"
+        }
+      ],
+      "clozeHints": [
+        "を"
+      ],
+      "mistakes": [
+        "× コーヒーが飲みます → ○ コーヒーを飲みます (the thing you drink is the object; mark it with を)",
+        "× 日本語をわかります → ○ 日本語がわかります (わかる takes が, not を)",
+        "× 本お読みます → ○ 本を読みます (the object particle is spelled を even though it sounds like お)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-019",
+        "g-n5-023"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 6
+    },
+    {
+      "id": "g-n5-019",
+      "pattern": "Nで V (place of action)",
+      "meaning": "at/in N (place where an action happens)",
+      "formation": [
+        "Place + で + action verb",
+        "図書館で勉強します = I study at the library",
+        "で = where something is done; に = where something exists or arrives (あります, います, 行きます)",
+        "Question: どこで食べますか"
+      ],
+      "explanation": "Nで V marks the place where an action happens: 図書館で勉強します (study at the library), 公園で走ります (run in the park), 駅前で晩ご飯を食べました (had dinner in front of the station). Use で whenever something is done somewhere. The contrast you must keep is with に: に marks where something simply is (Station 8, 駅にあります) or where movement ends (駅に行きます), while で marks where you act. So you go to the library with に, and study there with で. Ask どこで〜ますか to find out where someone does something.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{図書館|としょかん}で{勉強|べんきょう}します。",
+          "kana": "としょかんでべんきょうします。",
+          "en": "I study at the library."
+        },
+        {
+          "ja": "{毎朝|まいあさ}{公園|こうえん}で{走|はし}ります。",
+          "kana": "まいあさこうえんではしります。",
+          "en": "I run in the park every morning."
+        },
+        {
+          "ja": "{昨日|きのう}、{駅前|えきまえ}で{晩|ばん}ご{飯|はん}を{食|た}べました。",
+          "kana": "きのう、えきまえでばんごはんをたべました。",
+          "en": "I had dinner in front of the station yesterday."
+        },
+        {
+          "ja": "ケンさんはレストランで{働|はたら}きました。",
+          "kana": "ケンさんはレストランではたらきました。",
+          "en": "Ken worked at a restaurant."
+        },
+        {
+          "ja": "どこで{昼|ひる}ご{飯|はん}を{食|た}べますか。",
+          "kana": "どこでひるごはんをたべますか。",
+          "en": "Where will you eat lunch?"
+        }
+      ],
+      "clozeHints": [
+        "で"
+      ],
+      "mistakes": [
+        "× 図書館に勉強します → ○ 図書館で勉強します (an action at a place takes で; に is for existing or arriving there)",
+        "× 東京で住んでいます → ○ 東京に住んでいます (住む counts as existing somewhere, so it takes に)"
+      ],
+      "related": [
+        "g-n5-018",
+        "g-n5-021",
+        "g-n5-023"
+      ],
+      "tags": [
+        "places",
+        "actions"
+      ],
+      "notes": "Forward link to add at merge: g-n5-033 (NにNがあります/います), which lives in a later grammar-n5 file.",
+      "station": 6
+    },
+    {
+      "id": "g-n5-020",
+      "pattern": "Nに (point in time)",
+      "meaning": "at/on/in (a specific time)",
+      "formation": [
+        "Time + に + verb",
+        "七時に起きます · 月曜日に行きます · 三月に来ました",
+        "Use に with clock times, days of the week, dates, months and years",
+        "No に after relative words: 今日, 明日, 昨日, 毎朝, 今週, 来年",
+        "Usually no に after 朝, 昼, 夜 either: 朝、コーヒーを飲みます"
+      ],
+      "explanation": "Nに after a time word pins an action to a point on the clock or calendar: 六時に起きます (get up at six), 土曜日に買い物をします (shop on Saturday), 三月に来ました (came in March). The rule of thumb: if the time word is a number you could read off a clock or calendar, add に. Words that only make sense relative to now, such as 今日, 明日, 毎朝, 来週, take no particle at all: 明日行きます. 朝 and 夜 usually go without に as well. Ask 何時に〜ますか or いつ〜ますか; note that いつ never takes に.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎朝|まいあさ}{六時|ろくじ}に{起|お}きます。",
+          "kana": "まいあさろくじにおきます。",
+          "en": "I get up at six every morning."
+        },
+        {
+          "ja": "{土曜日|どようび}に{友達|ともだち}と{買|か}い{物|もの}をします。",
+          "kana": "どようびにともだちとかいものをします。",
+          "en": "I'm going shopping with a friend on Saturday."
+        },
+        {
+          "ja": "{会議|かいぎ}は{三時|さんじ}に{始|はじ}まります。",
+          "kana": "かいぎはさんじにはじまります。",
+          "en": "The meeting starts at three."
+        },
+        {
+          "ja": "{田中|たなか}さんは{三月|さんがつ}に{来|き}ました。",
+          "kana": "たなかさんはさんがつにきました。",
+          "en": "Tanaka-san came in March."
+        },
+        {
+          "ja": "{何時|なんじ}に{寝|ね}ますか。",
+          "kana": "なんじにねますか。",
+          "en": "What time do you go to bed?"
+        }
+      ],
+      "clozeHints": [
+        "に"
+      ],
+      "mistakes": [
+        "× 明日に行きます → ○ 明日行きます (relative time words like 明日, 今日, 毎朝 take no に)",
+        "× 七時起きます → ○ 七時に起きます (clock times need に)",
+        "× 月曜日で行きます → ○ 月曜日に行きます (で marks place or means, not time)"
+      ],
+      "related": [
+        "g-n5-010",
+        "g-n5-011",
+        "g-n5-015",
+        "g-n5-021"
+      ],
+      "tags": [
+        "time"
+      ],
+      "station": 6
+    },
+    {
+      "id": "g-n5-021",
+      "pattern": "Nへ / Nに (direction, destination)",
+      "meaning": "to N (direction, destination)",
+      "formation": [
+        "Place + へ / に + 行きます · 来ます · 帰ります",
+        "駅へ行きます = 駅に行きます",
+        "へ is written へ but read え",
+        "へ leans toward 'in the direction of'; に marks the end point; in everyday speech both are fine",
+        "Question: どこへ行きますか / どこに行きますか"
+      ],
+      "explanation": "Nへ and Nに mark where you are going with movement verbs: 駅へ行きます, うちに帰ります, 箱根へ行きます. In daily speech the two are interchangeable; へ has a slight feel of direction and に of arrival, and に is a little more common in conversation. The particle へ is pronounced え. Ask どこへ行きますか to find out someone's destination. Keep these apart from で: you go to a place with へ/に but do things there with で (図書館で勉強します). At Station 8 you will also see に marking where something exists (駅にあります).",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{明日|あした}、{箱根|はこね}へ{行|い}きます。",
+          "kana": "あした、はこねへいきます。",
+          "en": "I'm going to Hakone tomorrow."
+        },
+        {
+          "ja": "{先週|せんしゅう}、{田中|たなか}さんはうちに{来|き}ました。",
+          "kana": "せんしゅう、たなかさんはうちにきました。",
+          "en": "Tanaka-san came to my place last week."
+        },
+        {
+          "ja": "{今日|きょう}はまっすぐ{家|いえ}へ{帰|かえ}ります。",
+          "kana": "きょうはまっすぐいえへかえります。",
+          "en": "I'm going straight home today."
+        },
+        {
+          "ja": "{昨日|きのう}、{郵便局|ゆうびんきょく}に{行|い}きました。",
+          "kana": "きのう、ゆうびんきょくにいきました。",
+          "en": "I went to the post office yesterday."
+        },
+        {
+          "ja": "どこへ{行|い}きますか。",
+          "kana": "どこへいきますか。",
+          "en": "Where are you going?"
+        }
+      ],
+      "clozeHints": [
+        "へ",
+        "に"
+      ],
+      "mistakes": [
+        "× 駅を行きます → ○ 駅へ行きます / 駅に行きます (a destination takes へ or に, not を)",
+        "× 駅え行きます → ○ 駅へ行きます (the particle is spelled へ although it sounds like え)",
+        "× 図書館へ勉強します → ○ 図書館で勉強します (へ/に go with movement verbs; an action at a place takes で)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-019",
+        "g-n5-020"
+      ],
+      "tags": [
+        "travel",
+        "transport",
+        "position"
+      ],
+      "notes": "Forward link to add at merge: g-n5-033 (NにNがあります/います), which lives in a later grammar-n5 file.",
+      "station": 6
+    },
+    {
+      "id": "g-n5-022",
+      "pattern": "Nと V (together with)",
+      "meaning": "with N (doing something together)",
+      "formation": [
+        "Person + と + verb",
+        "友達と映画を見ます = I watch a movie with a friend",
+        "一緒に often follows: 友達と一緒に食べます",
+        "Question: 誰と行きますか · Alone: 一人で (with で, not と)"
+      ],
+      "explanation": "Nと V names the person you do something together with: 家族と晩ご飯を食べました (had dinner with my family), 田中さんと散歩をしました (took a walk with Tanaka-san). と attaches to the companion, who then joins you in the action; you can add 一緒に (together) for emphasis. Ask 誰と〜ますか to find out who someone is with. To say you did it alone, Japanese uses 一人で, with で rather than と. This と is a particle on a person before a verb; the と that lists nouns (パンと卵, Station 5) joins two nouns. The companion is not an object, so never use を here.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{家族|かぞく}と{晩|ばん}ご{飯|はん}を{食|た}べました。",
+          "kana": "にちようびにかぞくとばんごはんをたべました。",
+          "en": "I had dinner with my family on Sunday."
+        },
+        {
+          "ja": "ハナさんはケンさんと{箱根|はこね}へ{行|い}きます。",
+          "kana": "ハナさんはケンさんとはこねへいきます。",
+          "en": "Hana is going to Hakone with Ken."
+        },
+        {
+          "ja": "{誰|だれ}と{映画|えいが}を{見|み}ますか。",
+          "kana": "だれとえいがをみますか。",
+          "en": "Who are you watching the movie with?"
+        },
+        {
+          "ja": "{田中|たなか}さんと{公園|こうえん}で{散歩|さんぽ}をしました。",
+          "kana": "たなかさんとこうえんでさんぽをしました。",
+          "en": "I took a walk in the park with Tanaka-san."
+        }
+      ],
+      "clozeHints": [
+        "と"
+      ],
+      "mistakes": [
+        "× 友達に映画を見ました → ○ 友達と映画を見ました (doing something together takes と)",
+        "× 一人と食べます → ○ 一人で食べます ('alone' takes で)",
+        "× 友達と会社です → ○ 友達と会社へ行きます (と needs an action verb; it cannot sit in a plain です sentence)"
+      ],
+      "related": [
+        "g-n5-016",
+        "g-n5-018",
+        "g-n5-023"
+      ],
+      "tags": [
+        "people",
+        "actions"
+      ],
+      "station": 6
+    },
+    {
+      "id": "g-n5-023",
+      "pattern": "Nで (means, tool)",
+      "meaning": "by/with N (means, tool, language)",
+      "formation": [
+        "Means or tool + で + verb",
+        "電車で行きます = go by train · 箸で食べます = eat with chopsticks · 日本語で話します = speak in Japanese",
+        "On foot: 歩いて行きます (no で)",
+        "Question: 何で行きますか (なにで; なんで can also mean 'why')"
+      ],
+      "explanation": "Nで also marks the means you use to do something: transport (電車で行きます, go by train), a tool (箸で食べます, eat with chopsticks), a material or medium (カメラで撮ります, 日本語で話します). Think of で as 'by means of'. Going on foot is the exception: 歩いて行きます, with no で. This is the same particle as the place-of-action で (図書館で); the noun tells you which meaning is in play. Keep it apart from に (destination or time) and と (companion). To ask about transport, say 何で行きますか, read なにで to avoid sounding like なんで (why).",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{電車|でんしゃ}で{会社|かいしゃ}に{行|い}きます。",
+          "kana": "まいにちでんしゃでかいしゃにいきます。",
+          "en": "I go to work by train every day."
+        },
+        {
+          "ja": "{箸|はし}でご{飯|はん}を{食|た}べます。",
+          "kana": "はしでごはんをたべます。",
+          "en": "I eat rice with chopsticks."
+        },
+        {
+          "ja": "{田中|たなか}さんは{日本語|にほんご}で{話|はな}しました。",
+          "kana": "たなかさんはにほんごではなしました。",
+          "en": "Tanaka-san spoke in Japanese."
+        },
+        {
+          "ja": "{昨日|きのう}はバスで{駅|えき}へ{行|い}きました。",
+          "kana": "きのうはバスでえきへいきました。",
+          "en": "I went to the station by bus yesterday."
+        },
+        {
+          "ja": "ハナさんはカメラで{写真|しゃしん}を{撮|と}りました。",
+          "kana": "ハナさんはカメラでしゃしんをとりました。",
+          "en": "Hana took a photo with her camera."
+        }
+      ],
+      "clozeHints": [
+        "で"
+      ],
+      "mistakes": [
+        "× 電車に行きます → ○ 電車で行きます (the means of transport takes で; に marks where you are going)",
+        "× 歩いてで行きます → ○ 歩いて行きます (walking uses the て-form alone, with no で)",
+        "× 日本語に話します → ○ 日本語で話します (the language you use takes で)"
+      ],
+      "related": [
+        "g-n5-018",
+        "g-n5-019",
+        "g-n5-021",
+        "g-n5-022"
+      ],
+      "tags": [
+        "transport",
+        "objects",
+        "language"
+      ],
+      "station": 6
+    }
+  ]
+}

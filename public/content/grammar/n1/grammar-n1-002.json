@@ -1,0 +1,1144 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n1",
+  "writer": "grammar-n1-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n1-031",
+      "pattern": "〜に至る / 〜に至るまで",
+      "meaning": "finally reach …; all the way to …",
+      "formation": [
+        "N + に至る (often 〜に至った / 〜に至っている)",
+        "V-dictionary + に至る (結論を出すに至る)",
+        "N + に至るまで (… right down to N)",
+        "AからBに至るまで: 服装から話し方に至るまで",
+        "至る is read いたる; formal, mostly written"
+      ],
+      "explanation": "〜に至る (いたる) says that a long process finally arrives at a result or a stage: 話し合いの末、合意に至った. It stresses the road that led there, so you use it for conclusions, decisions and serious outcomes, not for simply arriving at a place. 〜に至るまで marks the far end of a range — AからBに至るまで, 'from A right down to B' — and highlights how far, or how small, the last item is. Both are formal and mostly written; in conversation 〜になる or plain 〜まで does the everyday work.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{長|なが}い{話|はな}し{合|あ}いの{末|すえ}、{両者|りょうしゃ}はようやく{合意|ごうい}に{至|いた}った。",
+          "kana": "ながいはなしあいのすえ、りょうしゃはようやくごういにいたった。",
+          "en": "After long talks, the two sides finally reached an agreement."
+        },
+        {
+          "ja": "この{店|みせ}は{食材|しょくざい}から{器|うつわ}に{至|いた}るまで、すべて{地元|じもと}のものを{使|つか}っている。",
+          "kana": "このみせはしょくざいからうつわにいたるまで、すべてじもとのものをつかっている。",
+          "en": "This restaurant uses local products for everything, from the ingredients right down to the dishes."
+        },
+        {
+          "ja": "{彼|かれ}が{会社|かいしゃ}を{辞|や}める{決断|けつだん}に{至|いた}るには、{一年|いちねん}かかったそうだ。",
+          "kana": "かれがかいしゃをやめるけつだんにいたるには、いちねんかかったそうだ。",
+          "en": "I hear it took him a year to reach the decision to leave the company."
+        },
+        {
+          "ja": "{事故|じこ}の{原因|げんいん}は、{小|ちい}さなねじ{一本|いっぽん}に{至|いた}るまで{徹底的|てっていてき}に{調|しら}べられた。",
+          "kana": "じこのげんいんは、ちいさなねじいっぽんにいたるまでてっていてきにしらべられた。",
+          "en": "The cause of the accident was investigated thoroughly, down to the last tiny screw."
+        }
+      ],
+      "clozeHints": [
+        "に至る",
+        "に至った",
+        "に至るまで"
+      ],
+      "mistakes": [
+        "× 結論を至った → ○ 結論に至った (至る takes に, never を)",
+        "× 駅に至った → ○ 駅に着いた (に至る is for the end of a long process, not ordinary arrival)"
+      ],
+      "related": [
+        "g-n1-032",
+        "g-n3-024",
+        "g-n2-009",
+        "g-n5-011"
+      ],
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-032",
+      "pattern": "〜に至って(は)",
+      "meaning": "only when it came to …; as for (the worst case) …",
+      "formation": [
+        "N + に至って + ようやく / 初めて … (only at this late stage)",
+        "V-dictionary + に至って (事故が起きるに至って)",
+        "ここに至って (set phrase: at this point)",
+        "N + に至っては + an even worse statement (the extreme case in a list)"
+      ],
+      "explanation": "〜に至って means 'only when things had reached this (late, serious) stage', often with regret that action came too late: 事故が起きるに至って、ようやく対策を取った. ここに至って 'at this point' is a common set phrase. With は, 〜に至っては picks out the most extreme case from a list and says something even worse about it: 兄も弟も料理が苦手だが、父に至っては卵も焼けない. You use it to climax a list, almost always negatively. Formal and written, but also heard in spoken criticism. It never means ordinary arrival.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{事故|じこ}が{起|お}きるに{至|いた}って、{会社|かいしゃ}はようやく{安全対策|あんぜんたいさく}を{見直|みなお}した。",
+          "kana": "じこがおきるにいたって、かいしゃはようやくあんぜんたいさくをみなおした。",
+          "en": "Only after an accident happened did the company finally review its safety measures."
+        },
+        {
+          "ja": "{兄|あに}も{弟|おとうと}も{料理|りょうり}が{苦手|にがて}だが、{父|ちち}に{至|いた}っては{卵|たまご}さえ{焼|や}けない。",
+          "kana": "あにもおとうともりょうりがにがてだが、ちちにいたってはたまごさえやけない。",
+          "en": "Both my brothers are bad at cooking, and as for my father, he can't even fry an egg."
+        },
+        {
+          "ja": "ここに{至|いた}って{計画|けいかく}を{変|か}えるのは、もう{無理|むり}だろう。",
+          "kana": "ここにいたってけいかくをかえるのは、もうむりだろう。",
+          "en": "At this stage, changing the plan is probably impossible."
+        },
+        {
+          "ja": "{売|う}り{上|あ}げは{全体|ぜんたい}に{落|お}ちたが、{新商品|しんしょうひん}に{至|いた}っては{半分|はんぶん}{以下|いか}だった。",
+          "kana": "うりあげはぜんたいにおちたが、しんしょうひんにいたってははんぶんいかだった。",
+          "en": "Sales fell across the board, and as for the new product, they were less than half."
+        }
+      ],
+      "clozeHints": [
+        "に至って",
+        "に至っては"
+      ],
+      "mistakes": [
+        "× 彼に至っては成績がいい → ○ 彼に至っては成績が最悪だ (に至っては introduces the worst extreme, not a positive exception)",
+        "× 駅に至って電話した → ○ 駅に着いて電話した (に至って is for a serious late stage, not simple arrival)"
+      ],
+      "related": [
+        "g-n1-031",
+        "g-n1-016",
+        "g-n3-079",
+        "g-n3-080"
+      ],
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-033",
+      "pattern": "〜を禁じ得ない",
+      "meaning": "cannot help feeling …",
+      "formation": [
+        "N (emotion) + を禁じ得ない",
+        "怒り / 涙 / 同情 / 驚き / 笑い / 不安 + を禁じ得ない",
+        "polite: 〜を禁じ得ません · past: 〜を禁じ得なかった",
+        "禁じ得ない is read きんじえない"
+      ],
+      "explanation": "〜を禁じ得ない (きんじえない) says you cannot hold back a feeling that rises on its own: 涙を禁じ得ない, 怒りを禁じ得ない, 驚きを禁じ得ない. Only a noun of emotion goes before を, and the feeling is the speaker's or the writer's; for other people add 様子だ or ようだ. It is formal — speeches, essays, news commentary — and sounds stiff in chat. Compare 〜ずにはいられない, the everyday way to say the same about feelings and actions, and 〜てやまない, a wish that never ends.",
+      "jlpt": 1,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{被害者|ひがいしゃ}の{話|はなし}を{聞|き}いて、{涙|なみだ}を{禁|きん}じ{得|え}なかった。",
+          "kana": "ひがいしゃのはなしをきいて、なみだをきんじえなかった。",
+          "en": "Listening to the victim's story, I could not hold back my tears."
+        },
+        {
+          "ja": "{何度|なんど}も{同|おな}じ{説明|せつめい}を{繰|く}り{返|かえ}す{役所|やくしょ}の{対応|たいおう}には、{怒|いか}りを{禁|きん}じ{得|え}ない。",
+          "kana": "なんどもおなじせつめいをくりかえすやくしょのたいおうには、いかりをきんじえない。",
+          "en": "I cannot help feeling angry at the way the office keeps repeating the same explanation."
+        },
+        {
+          "ja": "{突然|とつぜん}の{知|し}らせに、{誰|だれ}もが{驚|おどろ}きを{禁|きん}じ{得|え}ませんでした。",
+          "kana": "とつぜんのしらせに、だれもがおどろきをきんじえませんでした。",
+          "en": "At the sudden news, everyone was unable to hide their surprise."
+        },
+        {
+          "ja": "{家族|かぞく}を{失|うしな}った{人々|ひとびと}に、{深|ふか}い{同情|どうじょう}を{禁|きん}じ{得|え}ない。",
+          "kana": "かぞくをうしなったひとびとに、ふかいどうじょうをきんじえない。",
+          "en": "I cannot help feeling deep sympathy for those who lost their families."
+        }
+      ],
+      "clozeHints": [
+        "を禁じ得ない",
+        "を禁じ得なかった",
+        "を禁じ得ません"
+      ],
+      "mistakes": [
+        "× 笑うを禁じ得ない → ○ 笑いを禁じ得ない (only a noun of emotion goes before を禁じ得ない)",
+        "× 彼は怒りを禁じ得ない → ○ 彼は怒りを禁じ得ない様子だった (the pattern reports your own feeling; for others add 様子だ or ようだ)",
+        "× 涙を禁じない → ○ 涙を禁じ得ない (得ない, 'cannot', is part of the fixed form)"
+      ],
+      "related": [
+        "g-n3-057",
+        "g-n3-061",
+        "g-n1-039",
+        "g-n2-016"
+      ],
+      "tags": [
+        "emotions",
+        "formal"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-034",
+      "pattern": "〜極まる / 〜極まりない",
+      "meaning": "extremely …; the height of …",
+      "formation": [
+        "な-adjective stem + 極まりない (失礼極まりない、危険極まりない)",
+        "な-adjective stem + 極まる (不愉快極まる、迷惑極まる)",
+        "before a noun: 〜極まりない行為 / 〜極まる態度",
+        "past: 〜極まりなかった · polite: 〜極まりないです",
+        "極まる is read きわまる; both forms mean the same"
+      ],
+      "explanation": "〜極まりない (きわまりない) and 〜極まる attach to the stem of a な-adjective and mean 'extremely, to the utmost': 失礼極まりない, 危険極まりない, 不愉快極まる. They are almost always about something negative that you condemn. Note the trap: despite the ない, 極まりない is not a negative — it means exactly the same as 極まる. Both are formal and written, or stern spoken Japanese. They do not take い-adjectives; for those use 〜といったらない or 〜限りだ.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{客|きゃく}の{前|まえ}であくびをするとは、{失礼|しつれい}{極|きわ}まりない。",
+          "kana": "きゃくのまえであくびをするとは、しつれいきわまりない。",
+          "en": "Yawning in front of a customer is the height of rudeness."
+        },
+        {
+          "ja": "ヘルメットもつけずにバイクに{乗|の}るなんて、{危険|きけん}{極|きわ}まりない{行為|こうい}だ。",
+          "kana": "ヘルメットもつけずにバイクにのるなんて、きけんきわまりないこういだ。",
+          "en": "Riding a motorbike without even a helmet is an extremely dangerous thing to do."
+        },
+        {
+          "ja": "{深夜|しんや}の{騒音|そうおん}は{近所|きんじょ}にとって{迷惑|めいわく}{極|きわ}まる{問題|もんだい}だ。",
+          "kana": "しんやのそうおんはきんじょにとってめいわくきわまるもんだいだ。",
+          "en": "Late-night noise is an extremely troublesome problem for the neighbors."
+        },
+        {
+          "ja": "{説明|せつめい}もなく{予約|よやく}を{取|と}り{消|け}されて、{不愉快|ふゆかい}{極|きわ}まりなかった。",
+          "kana": "せつめいもなくよやくをとりけされて、ふゆかいきわまりなかった。",
+          "en": "Having my reservation cancelled without any explanation was utterly unpleasant."
+        }
+      ],
+      "clozeHints": [
+        "極まりない",
+        "極まる",
+        "極まりなかった"
+      ],
+      "mistakes": [
+        "× 危ない極まりない → ○ 危険極まりない (the pattern takes a な-adjective stem, not an い-adjective)",
+        "× 迷惑な極まりない → ○ 迷惑極まりない (drop な and attach directly to the stem)",
+        "× 失礼極まりない、つまり失礼ではない → ○ 失礼極まりない、つまり非常に失礼だ (極まりない is not a negation; the ない belongs to the fixed form)"
+      ],
+      "related": [
+        "g-n1-035",
+        "g-n1-038",
+        "g-n3-059",
+        "g-n2-080"
+      ],
+      "tags": [
+        "states",
+        "written"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-035",
+      "pattern": "〜の極み",
+      "meaning": "the height of …; the utmost …",
+      "formation": [
+        "N + の極み",
+        "贅沢の極み / 感激の極み / 疲労の極み / 痛恨の極み / 幸せの極み",
+        "〜の極みだ / 〜の極みです / 〜の極みにある",
+        "極み is read きわみ"
+      ],
+      "explanation": "Nの極み (きわみ) names the very peak of a state: 贅沢の極み 'the height of luxury', 感激の極み 'overjoyed', 痛恨の極み 'bitterly regrettable', 疲労の極み 'utter exhaustion'. It works for good and bad extremes, but mostly in set combinations with two-kanji nouns, so learn them as chunks rather than inventing new ones. Formal: speeches, writing, announcements. Unlike 〜極まりない it is a noun phrase, so it ends in だ or です, or links with の to another noun.",
+      "jlpt": 1,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{温泉|おんせん}に{入|はい}りながら{雪|ゆき}を{眺|なが}めるなんて、{贅沢|ぜいたく}の{極|きわ}みだ。",
+          "kana": "おんせんにはいりながらゆきをながめるなんて、ぜいたくのきわみだ。",
+          "en": "Watching the snow while soaking in a hot spring is the height of luxury."
+        },
+        {
+          "ja": "{長年|ながねん}の{夢|ゆめ}だった{賞|しょう}をいただき、{感激|かんげき}の{極|きわ}みです。",
+          "kana": "ながねんのゆめだったしょうをいただき、かんげきのきわみです。",
+          "en": "Receiving the award I had dreamed of for years, I am overjoyed."
+        },
+        {
+          "ja": "{最終回|さいしゅうかい}で{逆転|ぎゃくてん}されたのは{痛恨|つうこん}の{極|きわ}みだった。",
+          "kana": "さいしゅうかいでぎゃくてんされたのはつうこんのきわみだった。",
+          "en": "Being overtaken in the final inning was bitterly regrettable."
+        },
+        {
+          "ja": "{三日|みっか}{続|つづ}いた{徹夜|てつや}で、{社員|しゃいん}たちは{疲労|ひろう}の{極|きわ}みにあった。",
+          "kana": "みっかつづいたてつやで、しゃいんたちはひろうのきわみにあった。",
+          "en": "After three straight all-nighters, the staff were utterly exhausted."
+        }
+      ],
+      "clozeHints": [
+        "の極み"
+      ],
+      "mistakes": [
+        "× 贅沢な極み → ○ 贅沢の極み (the noun links with の, never な)",
+        "× 高いの極み → ○ 贅沢の極み (the pattern takes a noun, not an い-adjective)"
+      ],
+      "related": [
+        "g-n1-034",
+        "g-n1-036",
+        "g-n1-037"
+      ],
+      "tags": [
+        "emotions",
+        "formal"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-036",
+      "pattern": "〜の至り",
+      "meaning": "the utmost …; overcome with …",
+      "formation": [
+        "N + の至り (a closed set of nouns)",
+        "光栄の至り / 感激の至り / 恐縮の至り / 赤面の至り",
+        "若気の至り (set phrase: youthful indiscretion)",
+        "speeches and letters: 〜の至りです / 〜の至りでございます",
+        "至り is read いたり"
+      ],
+      "explanation": "Nの至り (いたり) is a fixed formal expression for the extreme of a feeling, used almost only in a few set combinations: 光栄の至り 'deeply honored', 感激の至り 'overwhelmed', 恐縮の至り 'terribly obliged or sorry', and 若気の至り 'youthful indiscretion', which names a result rather than a feeling. You will meet it in acceptance speeches, thank-you letters and apologies. Do not build new combinations; learn these chunks. 〜の極み is the broader partner that accepts more nouns.",
+      "jlpt": 1,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "このような{賞|しょう}をいただき、{光栄|こうえい}の{至|いた}りです。",
+          "kana": "このようなしょうをいただき、こうえいのいたりです。",
+          "en": "I am deeply honored to receive such an award."
+        },
+        {
+          "ja": "わざわざお{越|こ}しいただき、{恐縮|きょうしゅく}の{至|いた}りでございます。",
+          "kana": "わざわざおこしいただき、きょうしゅくのいたりでございます。",
+          "en": "I am most grateful that you took the trouble to come."
+        },
+        {
+          "ja": "{若|わか}い{頃|ころ}に{髪|かみ}を{金色|きんいろ}に{染|そ}めたのは、{若気|わかげ}の{至|いた}りだった。",
+          "kana": "わかいころにかみをきんいろにそめたのは、わかげのいたりだった。",
+          "en": "Dyeing my hair blond when I was young was a youthful indiscretion."
+        },
+        {
+          "ja": "{先生|せんせい}に{直接|ちょくせつ}お{会|あ}いできて、{感激|かんげき}の{至|いた}りです。",
+          "kana": "せんせいにちょくせつおあいできて、かんげきのいたりです。",
+          "en": "Being able to meet the professor in person, I am overwhelmed."
+        }
+      ],
+      "clozeHints": [
+        "の至り"
+      ],
+      "mistakes": [
+        "× 嬉しいの至り → ○ 感激の至り (only a few set nouns combine with の至り)",
+        "× 若気の至りで優勝した → ○ 若気の至りで無茶をした (若気の至り names a youthful mistake, not an achievement)"
+      ],
+      "related": [
+        "g-n1-035",
+        "g-n1-031",
+        "g-n1-037"
+      ],
+      "tags": [
+        "emotions",
+        "formal"
+      ],
+      "notes": "Receptive first: learners should recognize 光栄の至り and 若気の至り; producing new Nの至り combinations sounds odd.",
+      "station": 50
+    },
+    {
+      "id": "g-n1-037",
+      "pattern": "〜限りだ",
+      "meaning": "feel utterly …; nothing but …",
+      "formation": [
+        "い-adjective + 限りだ (嬉しい限りだ、心細い限りだ)",
+        "な-adjective + な + 限りだ (残念な限りだ)",
+        "only adjectives of the speaker's feeling: 嬉しい・羨ましい・悔しい・寂しい・心強い・残念な",
+        "polite: 〜限りです · past: 〜限りだった",
+        "限り is read かぎり"
+      ],
+      "explanation": "〜限りだ (かぎりだ) follows an adjective of feeling and means 'I feel nothing but …', the extreme of the speaker's own emotion: 嬉しい限りです 'I couldn't be happier', 羨ましい限りだ 'I'm so envious'. Only adjectives of emotion fit — 嬉しい, 寂しい, 心細い, 悔しい, 心強い, 残念な — and the subject is you, the speaker; for other people use 〜そうだ. Slightly formal, common in speeches, letters and polite conversation. Compare 〜の極み (nouns) and 〜てならない (everyday).",
+      "jlpt": 1,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{皆|みな}さんにまたお{会|あ}いできて、{嬉|うれ}しい{限|かぎ}りです。",
+          "kana": "みなさんにまたおあいできて、うれしいかぎりです。",
+          "en": "I couldn't be happier to see you all again."
+        },
+        {
+          "ja": "{毎年|まいとし}{海外旅行|かいがいりょこう}に{行|い}けるなんて、{羨|うらや}ましい{限|かぎ}りだ。",
+          "kana": "まいとしかいがいりょこうにいけるなんて、うらやましいかぎりだ。",
+          "en": "I'm so envious that you can travel abroad every year."
+        },
+        {
+          "ja": "{知|し}り{合|あ}いが{一人|ひとり}もいない{町|まち}で{暮|く}らすのは、{心細|こころぼそ}い{限|かぎ}りだった。",
+          "kana": "しりあいがひとりもいないまちでくらすのは、こころぼそいかぎりだった。",
+          "en": "Living in a town where I didn't know a single person felt terribly lonely."
+        },
+        {
+          "ja": "せっかくの{祭|まつ}りが{雨|あめ}で{中止|ちゅうし}になるとは、{残念|ざんねん}な{限|かぎ}りだ。",
+          "kana": "せっかくのまつりがあめでちゅうしになるとは、ざんねんなかぎりだ。",
+          "en": "It's a real shame that the festival we were looking forward to has been cancelled because of rain."
+        }
+      ],
+      "clozeHints": [
+        "限りだ",
+        "限りです",
+        "限りだった"
+      ],
+      "mistakes": [
+        "× 彼は嬉しい限りだ → ○ 彼は嬉しそうだ (限りだ expresses the speaker's own feeling)",
+        "× 忙しい限りだ → ○ 忙しくてたまらない (限りだ needs an adjective of emotion such as 嬉しい・羨ましい・寂しい)",
+        "× 残念限りだ → ○ 残念な限りだ (な-adjectives keep な before 限りだ)"
+      ],
+      "related": [
+        "g-n1-035",
+        "g-n3-059",
+        "g-n3-061",
+        "g-n3-062",
+        "g-n2-003"
+      ],
+      "tags": [
+        "emotions",
+        "formal"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-038",
+      "pattern": "〜といったらない / 〜といったらありはしない",
+      "meaning": "indescribably …; … beyond words",
+      "formation": [
+        "い-adjective + といったらない (嬉しいといったらない)",
+        "な-adjective stem / N + といったらない (不便といったらない、その混み方といったらない)",
+        "〜といったらありはしない / casual 〜といったらありゃしない (stronger, mostly negative)",
+        "spoken contraction: 〜ったらない (うるさいったらない)",
+        "polite: 〜といったらありません"
+      ],
+      "explanation": "〜といったらない says a quality is so extreme that words fail: 嬉しいといったらない 'unbelievably happy', 寒いといったらない 'unspeakably cold'. It works for good and bad extremes and attaches to い-adjectives, な-adjective stems and nouns. 〜といったらありはしない (casual ありゃしない) is the stronger form and leans negative — complaints about noise, rudeness and inconvenience. Both are spoken and emotional; in casual speech you will also hear the contraction 〜ったらない. In writing prefer 〜極まりない or 〜の極み.",
+      "jlpt": 1,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}の{電車|でんしゃ}の{混|こ}み{方|かた}といったらない。",
+          "kana": "あさのでんしゃのこみかたといったらない。",
+          "en": "The crowding on the morning train is beyond words."
+        },
+        {
+          "ja": "{十年|じゅうねん}ぶりに{親友|しんゆう}に{会|あ}えて、{嬉|うれ}しいといったらなかった。",
+          "kana": "じゅうねんぶりにしんゆうにあえて、うれしいといったらなかった。",
+          "en": "Seeing my best friend for the first time in ten years, I was happy beyond words."
+        },
+        {
+          "ja": "{隣|となり}の{工事|こうじ}の{音|おと}がうるさいといったらありはしない。",
+          "kana": "となりのこうじのおとがうるさいといったらありはしない。",
+          "en": "The noise from the construction next door is unbearably loud."
+        },
+        {
+          "ja": "{駅|えき}から{遠|とお}い{上|うえ}にバスもないなんて、{不便|ふべん}といったらありゃしない。",
+          "kana": "えきからとおいうえにバスもないなんて、ふべんといったらありゃしない。",
+          "en": "Far from the station and no bus either, it's hopelessly inconvenient."
+        },
+        {
+          "ja": "{初|はじ}めて{富士山|ふじさん}の{頂上|ちょうじょう}から{見|み}た{景色|けしき}の{美|うつく}しさといったらありませんでした。",
+          "kana": "はじめてふじさんのちょうじょうからみたけしきのうつくしさといったらありませんでした。",
+          "en": "The beauty of the view from the top of Mt. Fuji, which I saw for the first time, was indescribable."
+        }
+      ],
+      "clozeHints": [
+        "といったらない",
+        "といったらなかった",
+        "といったらありはしない",
+        "といったらありゃしない",
+        "といったらありませんでした"
+      ],
+      "mistakes": [
+        "× 嬉しいといったらありはしない → ○ 嬉しいといったらない (ありはしない is for negative extremes; keep ない for positive ones)",
+        "× 不便なといったらない → ○ 不便といったらない (な-adjectives drop な before といったらない)"
+      ],
+      "related": [
+        "g-n1-034",
+        "g-n1-035",
+        "g-n2-030",
+        "g-n3-104"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-039",
+      "pattern": "〜てやまない",
+      "meaning": "… with all one's heart; never stop …ing",
+      "formation": [
+        "V-て + やまない",
+        "only verbs of wishing and deep feeling: 願ってやまない・祈ってやまない・愛してやまない・期待してやまない・尊敬してやまない",
+        "polite: 〜てやみません",
+        "before a noun: 愛してやまない故郷",
+        "やまない is 止まない, 'does not stop'"
+      ],
+      "explanation": "〜てやまない (止まない) attaches to a handful of verbs of wishing and deep feeling — 願う, 祈る, 愛する, 期待する, 尊敬する — and means the feeling never ceases: 成功を願ってやまない 'I wish you success with all my heart'. It is formal and heartfelt: speeches, letters, essays, dedications. Not for everyday verbs (× 食べてやまない) and not for ongoing actions, which take 〜続ける. 〜を禁じ得ない is a feeling you cannot suppress; 〜てやまない is a feeling that never stops.",
+      "jlpt": 1,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{皆|みな}さんの{今後|こんご}のご{活躍|かつやく}を{願|ねが}ってやみません。",
+          "kana": "みなさんのこんごのごかつやくをねがってやみません。",
+          "en": "I sincerely wish you all every success in the future."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{愛|あい}してやまない{故郷|こきょう}の{海|うみ}を{描|えが}き{続|つづ}けた。",
+          "kana": "かのじょはあいしてやまないこきょうのうみをえがきつづけた。",
+          "en": "She kept painting the sea of the hometown she loved so dearly."
+        },
+        {
+          "ja": "{一日|いちにち}も{早|はや}い{復興|ふっこう}を{祈|いの}ってやまない。",
+          "kana": "いちにちもはやいふっこうをいのってやまない。",
+          "en": "I pray with all my heart for the earliest possible recovery."
+        },
+        {
+          "ja": "{私|わたし}が{尊敬|そんけい}してやまない{先生|せんせい}が、{来月|らいげつ}{退職|たいしょく}される。",
+          "kana": "わたしがそんけいしてやまないせんせいが、らいげつたいしょくされる。",
+          "en": "The teacher I respect so deeply is retiring next month."
+        }
+      ],
+      "clozeHints": [
+        "てやまない",
+        "てやみません"
+      ],
+      "mistakes": [
+        "× 毎日走ってやまない → ○ 毎日走り続けている (てやまない is only for verbs of wishing and deep feeling)",
+        "× 願いてやまない → ○ 願ってやまない (use the correct て-form of the verb)"
+      ],
+      "related": [
+        "g-n1-033",
+        "g-n3-061",
+        "g-n3-057",
+        "g-n4-017"
+      ],
+      "tags": [
+        "emotions",
+        "formal"
+      ],
+      "station": 50
+    },
+    {
+      "id": "g-n1-040",
+      "pattern": "〜に堪えない / 〜に堪える",
+      "meaning": "unbearable to …; overwhelmed with …; worth …ing",
+      "formation": [
+        "V-dictionary + に堪えない (見るに堪えない、聞くに堪えない、読むに堪えない)",
+        "N (feeling) + に堪えない (感謝に堪えない、遺憾に堪えない、同情に堪えない)",
+        "V-dictionary / N + に堪える (読むに堪える、鑑賞に堪える、批判に堪える)",
+        "polite: 〜に堪えません",
+        "堪える is read たえる; formal written"
+      ],
+      "explanation": "〜に堪えない (たえない) has two faces. After 見る, 聞く, 読む it means 'too awful to watch, hear or read': 見るに堪えない光景. After a noun of feeling — 感謝, 遺憾, 同情 — it means 'overwhelmed with': 感謝に堪えません. The affirmative 〜に堪える means 'can stand up to, is worth': 鑑賞に堪える作品, 批判に堪える理論. All of them are formal, written or ceremonial. Do not confuse the pattern with the everyday verb 耐える 'to endure', even though the reading is the same.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{事故現場|じこげんば}は{見|み}るに{堪|た}えない{光景|こうけい}だった。",
+          "kana": "じこげんばはみるにたえないこうけいだった。",
+          "en": "The scene of the accident was too terrible to look at."
+        },
+        {
+          "ja": "ネット{上|じょう}には{読|よ}むに{堪|た}えない{悪口|わるぐち}があふれている。",
+          "kana": "ネットじょうにはよむにたえないわるぐちがあふれている。",
+          "en": "The internet is full of abuse too vile to read."
+        },
+        {
+          "ja": "{皆様|みなさま}のご{支援|しえん}に、{感謝|かんしゃ}に{堪|た}えません。",
+          "kana": "みなさまのごしえんに、かんしゃにたえません。",
+          "en": "I am deeply grateful for everyone's support."
+        },
+        {
+          "ja": "{子供|こども}の{作品|さくひん}とはいえ、{十分|じゅうぶん}{鑑賞|かんしょう}に{堪|た}える{出来|でき}だ。",
+          "kana": "こどものさくひんとはいえ、じゅうぶんかんしょうにたえるできだ。",
+          "en": "Even though it's a child's work, it is well worth looking at."
+        }
+      ],
+      "clozeHints": [
+        "に堪えない",
+        "に堪えません",
+        "に堪える"
+      ],
+      "mistakes": [
+        "× 見ることに堪えない → ○ 見るに堪えない (the dictionary form attaches directly, without こと)",
+        "× 感謝に堪える → ○ 感謝に堪えない (with nouns of feeling the form is always negative)"
+      ],
+      "related": [
+        "g-n1-033",
+        "g-n1-054",
+        "g-n3-059",
+        "g-n2-016"
+      ],
+      "tags": [
+        "emotions",
+        "written"
+      ],
+      "notes": "Receptive first: the 'worth …ing' sense (〜に堪える) is rarer than 〜に堪えない; both are mostly met in reading.",
+      "station": 50
+    },
+    {
+      "id": "g-n1-041",
+      "pattern": "〜ずくめ",
+      "meaning": "nothing but …; all …",
+      "formation": [
+        "N + ずくめ",
+        "黒ずくめ / いいことずくめ / 規則ずくめ / 異例ずくめ / ごちそうずくめ",
+        "〜ずくめの + N / 〜ずくめだ / 〜ずくめで",
+        "a limited set of nouns; not interchangeable with 〜まみれ or 〜だらけ"
+      ],
+      "explanation": "Nずくめ means 'entirely made up of N, N from start to finish': 黒ずくめの服 'dressed all in black', いいことずくめの一年 'a year of nothing but good things', 規則ずくめの学校 'a school that is all rules'. It can be positive or negative, and it is about colors, events and rules — not dirt or flaws. Neutral register. The set of nouns is limited, so learn the common chunks. 〜まみれ is a physical covering; 〜だらけ means 'riddled with (bad) things'.",
+      "jlpt": 1,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今年|ことし}は{結婚|けっこん}に{昇進|しょうしん}にと、いいことずくめの{一年|いちねん}だった。",
+          "kana": "ことしはけっこんにしょうしんにと、いいことずくめのいちねんだった。",
+          "en": "What with a wedding and a promotion, this has been a year of nothing but good news."
+        },
+        {
+          "ja": "{黒|くろ}ずくめの{男|おとこ}が{店|みせ}の{前|まえ}に{立|た}っていた。",
+          "kana": "くろずくめのおとこがみせのまえにたっていた。",
+          "en": "A man dressed all in black was standing in front of the shop."
+        },
+        {
+          "ja": "{規則|きそく}ずくめの{寮生活|りょうせいかつ}には、{正直|しょうじき}うんざりしている。",
+          "kana": "きそくずくめのりょうせいかつには、しょうじきうんざりしている。",
+          "en": "Honestly, I'm fed up with dorm life and its endless rules."
+        },
+        {
+          "ja": "{今日|きょう}の{夕食|ゆうしょく}はごちそうずくめで、{食|た}べきれなかった。",
+          "kana": "きょうのゆうしょくはごちそうずくめで、たべきれなかった。",
+          "en": "Tonight's dinner was one feast after another; I couldn't finish it all."
+        }
+      ],
+      "clozeHints": [
+        "ずくめ"
+      ],
+      "mistakes": [
+        "× 泥ずくめの靴 → ○ 泥まみれの靴 (physical dirt takes まみれ; ずくめ is for colors, events and rules)",
+        "× 間違いずくめの答案 → ○ 間違いだらけの答案 (scattered flaws take だらけ; ずくめ means something is all one thing)"
+      ],
+      "related": [
+        "g-n1-042",
+        "g-n3-041",
+        "g-n4-066"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-042",
+      "pattern": "〜まみれ",
+      "meaning": "covered in …; smeared with …",
+      "formation": [
+        "N + まみれ",
+        "泥まみれ / 汗まみれ / 血まみれ / ほこりまみれ / 油まみれ",
+        "〜まみれになる / 〜まみれで / 〜まみれの + N",
+        "figurative: 借金まみれ (buried in debt)"
+      ],
+      "explanation": "Nまみれ means the whole surface is covered in something unpleasant that sticks: 泥まみれ 'covered in mud', 汗まみれ 'dripping with sweat', ほこりまみれ, 血まみれ. Only liquids, powders and dirt qualify — scattered objects or flaws take 〜だらけ, and abstract qualities take 〜ずくめ. The usual frames are 〜まみれになる 'to get covered in', 〜まみれで and 〜まみれの + noun. One common figurative use is 借金まみれ 'drowning in debt'. Neutral and vivid, fine in speech and writing.",
+      "jlpt": 1,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{子供|こども}たちは{泥|どろ}まみれになって{帰|かえ}ってきた。",
+          "kana": "こどもたちはどろまみれになってかえってきた。",
+          "en": "The kids came home covered in mud."
+        },
+        {
+          "ja": "{真夏|まなつ}の{工場|こうじょう}で、{作業員|さぎょういん}は{汗|あせ}まみれで{働|はたら}いていた。",
+          "kana": "まなつのこうじょうで、さぎょういんはあせまみれではたらいていた。",
+          "en": "In the factory in midsummer, the workers toiled drenched in sweat."
+        },
+        {
+          "ja": "{倉庫|そうこ}の{奥|おく}から、ほこりまみれの{古|ふる}いアルバムが{出|で}てきた。",
+          "kana": "そうこのおくから、ほこりまみれのふるいアルバムがでてきた。",
+          "en": "A dusty old photo album turned up from the back of the warehouse."
+        },
+        {
+          "ja": "{事業|じぎょう}に{失敗|しっぱい}して、{彼|かれ}は{借金|しゃっきん}まみれになった。",
+          "kana": "じぎょうにしっぱいして、かれはしゃっきんまみれになった。",
+          "en": "His business failed and he ended up drowning in debt."
+        }
+      ],
+      "clozeHints": [
+        "まみれ"
+      ],
+      "mistakes": [
+        "× 間違いまみれの作文 → ○ 間違いだらけの作文 (countable scattered things take だらけ; まみれ is for sticky, dirty coverings)",
+        "× 泥まみれな服 → ○ 泥まみれの服 (まみれ links to a noun with の)"
+      ],
+      "related": [
+        "g-n1-041",
+        "g-n3-041"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-043",
+      "pattern": "〜なりに / 〜なりの",
+      "meaning": "in one's own way; as befits …",
+      "formation": [
+        "N + なりに (私なりに、子供なりに、新人なりに)",
+        "N + なりの + N (私なりの考え)",
+        "adjective / verb plain + なりに (忙しいなりに、狭いなりに)",
+        "それなりに / それなりの (set phrase: reasonably, to a fair degree)"
+      ],
+      "explanation": "〜なりに means 'in a way that fits X's limits': 私なりに考えた 'I thought about it in my own (limited) way', 子供なりに 'as much as a child can'. It adds modesty or allowance — the result may be imperfect, but it suits the person or the situation. 〜なりの + noun does the same job before a noun: 私なりの答え. それなりに means 'reasonably, to a fair degree'. Because it implies limits, do not use it about a superior you respect (× 先生なりに).",
+      "jlpt": 1,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{私|わたし}なりに{努力|どりょく}したつもりですが、{結果|けっか}は{出|だ}せませんでした。",
+          "kana": "わたしなりにどりょくしたつもりですが、けっかはだせませんでした。",
+          "en": "I did my best in my own way, but I couldn't get results."
+        },
+        {
+          "ja": "{子供|こども}は{子供|こども}なりに、{家族|かぞく}の{問題|もんだい}を{感|かん}じ{取|と}っているものだ。",
+          "kana": "こどもはこどもなりに、かぞくのもんだいをかんじとっているものだ。",
+          "en": "Children sense family problems in their own childlike way."
+        },
+        {
+          "ja": "{狭|せま}い{部屋|へや}なら{狭|せま}いなりに、{工夫|くふう}して{暮|く}らせばいい。",
+          "kana": "せまいへやならせまいなりに、くふうしてくらせばいい。",
+          "en": "If the room is small, just live in a way that makes the most of a small space."
+        },
+        {
+          "ja": "{新人|しんじん}の{彼|かれ}には、{彼|かれ}なりの{考|かんが}えがあるようだ。",
+          "kana": "しんじんのかれには、かれなりのかんがえがあるようだ。",
+          "en": "New as he is, he seems to have ideas of his own."
+        },
+        {
+          "ja": "{安|やす}いホテルだったが、それなりに{快適|かいてき}だった。",
+          "kana": "やすいホテルだったが、それなりにかいてきだった。",
+          "en": "It was a cheap hotel, but reasonably comfortable."
+        }
+      ],
+      "clozeHints": [
+        "なりに",
+        "なりの"
+      ],
+      "mistakes": [
+        "× 先生なりに教えてくださった → ○ 先生は先生のやり方で教えてくださった (なりに implies limits; it sounds rude about a superior)",
+        "× 私なりな意見 → ○ 私なりの意見 (before a noun use なりの)"
+      ],
+      "related": [
+        "g-n2-049",
+        "g-n3-107",
+        "g-n3-019"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-044",
+      "pattern": "〜めく",
+      "meaning": "to seem …; to take on an air of …",
+      "formation": [
+        "N + めく (a godan verb: 春めく、謎めく、皮肉めく)",
+        "〜めいた + N (謎めいた話、冗談めいた口調、説教めいた話)",
+        "〜めいてくる (春めいてくる、秋めいてきた)",
+        "closed set: 春・秋・謎・皮肉・冗談・説教・作り物・古 + めく"
+      ],
+      "explanation": "Nめく turns a few nouns into a godan verb meaning 'to show signs of, to take on an air of': 春めく 'to feel spring-like', 謎めいた 'mysterious-seeming', 冗談めいた口調 'a half-joking tone', 説教めいた話 'a lecture-like talk'. Being a verb, it conjugates: 春めいてきた, 皮肉めいて. The set of nouns is small and fixed — 春, 秋, 謎, 皮肉, 冗談, 説教, 作り物 — so you cannot invent new ones. Written and literary, also in weather talk. Compare 〜っぽい (casual, broad) and 〜らしい (typical of).",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{三月|さんがつ}に{入|はい}り、{日差|ひざ}しがだいぶ{春|はる}めいてきた。",
+          "kana": "さんがつにはいり、ひざしがだいぶはるめいてきた。",
+          "en": "Now that March is here, the sunlight has taken on a real feel of spring."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{謎|なぞ}めいた{笑|わら}いを{浮|う}かべて、{何|なに}も{答|こた}えなかった。",
+          "kana": "かのじょはなぞめいたわらいをうかべて、なにもこたえなかった。",
+          "en": "She gave a mysterious smile and did not answer."
+        },
+        {
+          "ja": "{部長|ぶちょう}の{説教|せっきょう}めいた{話|はなし}は、{一時間|いちじかん}も{続|つづ}いた。",
+          "kana": "ぶちょうのせっきょうめいたはなしは、いちじかんもつづいた。",
+          "en": "The manager's sermon of a speech went on for a whole hour."
+        },
+        {
+          "ja": "{冗談|じょうだん}めいた{口調|くちょう}だったが、{目|め}は{笑|わら}っていなかった。",
+          "kana": "じょうだんめいたくちょうだったが、めはわらっていなかった。",
+          "en": "His tone was half-joking, but his eyes weren't smiling."
+        }
+      ],
+      "clozeHints": [
+        "めいて",
+        "めいた",
+        "めく"
+      ],
+      "mistakes": [
+        "× 子供めいた行動 → ○ 子供っぽい行動 (めく works only with a fixed set of nouns such as 春・謎・冗談・説教)",
+        "× 謎めくな話 → ○ 謎めいた話 (めく is a verb; before a noun use the た-form めいた)"
+      ],
+      "related": [
+        "g-n3-041",
+        "g-n4-035",
+        "g-n3-043",
+        "g-n1-045"
+      ],
+      "tags": [
+        "states",
+        "written"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-045",
+      "pattern": "〜がましい",
+      "meaning": "smacking of …; almost like …",
+      "formation": [
+        "N / V-ます stem + がましい (an い-adjective)",
+        "closed set: 恩着せがましい・押し付けがましい・言い訳がましい・弁解がましい・差し出がましい",
+        "conjugates like an い-adjective: 〜がましく、〜がましかった、〜がましくて",
+        "humble preface: 差し出がましいようですが、…"
+      ],
+      "explanation": "〜がましい builds an い-adjective meaning 'has the unpleasant air of': 恩着せがましい 'acting as if you owe them a favor', 押し付けがましい 'pushy', 言い訳がましい 'sounding like excuses', 差し出がましい 'presumptuous' (used humbly: 差し出がましいようですが). It is always critical, and the set of words is closed — learn them as vocabulary. It conjugates like any い-adjective: 〜がましく聞こえる. Careful spoken and written Japanese. 〜めく and 〜っぽい also mean 'seems like' but are not limited to negative judgments.",
+      "jlpt": 1,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{差|さ}し{出|で}がましいようですが、{一言|ひとこと}{申|もう}し{上|あ}げてもよろしいでしょうか。",
+          "kana": "さしでがましいようですが、ひとこともうしあげてもよろしいでしょうか。",
+          "en": "Forgive me for being presumptuous, but may I say one thing?"
+        },
+        {
+          "ja": "{彼|かれ}の{説明|せつめい}はどこか{言|い}い{訳|わけ}がましく{聞|き}こえた。",
+          "kana": "かれのせつめいはどこかいいわけがましくきこえた。",
+          "en": "His explanation somehow sounded like a string of excuses."
+        },
+        {
+          "ja": "{親切|しんせつ}も{度|ど}を{越|こ}すと、{押|お}し{付|つ}けがましいと{思|おも}われてしまう。",
+          "kana": "しんせつもどをこすと、おしつけがましいとおもわれてしまう。",
+          "en": "Even kindness, when overdone, comes across as pushy."
+        },
+        {
+          "ja": "{助|たす}けてあげたのにと{恩着|おんき}せがましいことを{言|い}うのはやめよう。",
+          "kana": "たすけてあげたのにとおんきせがましいことをいうのはやめよう。",
+          "en": "Let's not go on about how we helped them, as if they owed us something."
+        }
+      ],
+      "clozeHints": [
+        "がましい",
+        "がましく"
+      ],
+      "mistakes": [
+        "× 先生がましい態度 → ○ 偉そうな態度 (がましい is limited to a closed set of words)",
+        "× 恩着せがましいな人 → ○ 恩着せがましい人 (がましい is an い-adjective; no な)"
+      ],
+      "related": [
+        "g-n1-044",
+        "g-n3-041",
+        "g-n3-043"
+      ],
+      "tags": [
+        "personality"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-046",
+      "pattern": "〜たる / 〜たるもの",
+      "meaning": "as a … one should …; befitting a …",
+      "formation": [
+        "N + たるもの(は) + duty or ideal (教師たるもの、公平であるべきだ)",
+        "N + たる者 (same, written with the kanji 者)",
+        "N1 + たる + N2 (一国の代表たる人物): N1 is the identity of N2",
+        "a stiff literary form of である"
+      ],
+      "explanation": "Nたる is a literary form of である used before a noun. The common frame is Nたるもの 'anyone who is an N', followed by what such a person ought to do: 教師たるもの、生徒に公平であるべきだ. You use it to state the duties and ideals of a role — leaders, doctors, parents, professionals. 〜たる + noun also marks an identity: 一国の代表たる人物 'a person who represents a nation'. Very formal: speeches, editorials, mottos. For casual description use である or の.",
+      "jlpt": 1,
+      "register": "literary",
+      "examples": [
+        {
+          "ja": "{教師|きょうし}たるもの、{生徒|せいと}に{対|たい}して{常|つね}に{公平|こうへい}でなければならない。",
+          "kana": "きょうしたるもの、せいとにたいしてつねにこうへいでなければならない。",
+          "en": "Anyone who is a teacher must always be fair to their students."
+        },
+        {
+          "ja": "{医者|いしゃ}たる{者|もの}は、{患者|かんじゃ}の{話|はなし}に{耳|みみ}を{傾|かたむ}けるべきだ。",
+          "kana": "いしゃたるものは、かんじゃのはなしにみみをかたむけるべきだ。",
+          "en": "A doctor should listen carefully to what patients say."
+        },
+        {
+          "ja": "{一国|いっこく}の{代表|だいひょう}たる{人物|じんぶつ}の{発言|はつげん}としては、あまりに{軽率|けいそつ}だ。",
+          "kana": "いっこくのだいひょうたるじんぶつのはつげんとしては、あまりにけいそつだ。",
+          "en": "For a remark by someone who represents a nation, it is far too careless."
+        },
+        {
+          "ja": "{社会人|しゃかいじん}たるもの、{時間|じかん}を{守|まも}るのは{当然|とうぜん}のことだ。",
+          "kana": "しゃかいじんたるもの、じかんをまもるのはとうぜんのことだ。",
+          "en": "For a working adult, keeping to time goes without saying."
+        }
+      ],
+      "clozeHints": [
+        "たるもの",
+        "たる者",
+        "たる"
+      ],
+      "mistakes": [
+        "× 学生たるもの、遊んでもいい → ○ 学生たるもの、まず学業に励むべきだ (たるもの introduces a duty or ideal, not permission)",
+        "× 教師であるたるもの → ○ 教師たるもの (たる replaces である; never stack them)"
+      ],
+      "related": [
+        "g-n3-019",
+        "g-n3-035",
+        "g-n3-049",
+        "g-n1-027"
+      ],
+      "tags": [
+        "society",
+        "literary"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-047",
+      "pattern": "〜であれ / 〜であろうと",
+      "meaning": "whether … or …; no matter what …",
+      "formation": [
+        "N + であれ (理由が何であれ、相手が誰であれ)",
+        "N + であろうと / であろうが (same meaning, slightly softer)",
+        "N1であれN2であれ (大人であれ子供であれ)",
+        "question word + N + であれ: どんな理由であれ、いかなる場合であれ",
+        "な-adjective stem + であれ / であろうと (どれほど大変であろうと)"
+      ],
+      "explanation": "Nであれ, a literary command form of である, means 'even if it is N, no matter which N': 理由が何であれ、遅刻は遅刻だ. Doubled as AであれBであれ it means 'whether A or B, the same holds'. 〜であろうと is interchangeable and slightly less stiff; 〜であろうが also exists. Both pair naturally with question words (何, 誰, どんな, いかなる) and な-adjectives. The main clause states a rule that holds regardless. Formal and written; in conversation you would say 〜でも or 〜にしても.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{理由|りゆう}が{何|なん}であれ、{暴力|ぼうりょく}は{許|ゆる}されない。",
+          "kana": "りゆうがなんであれ、ぼうりょくはゆるされない。",
+          "en": "Whatever the reason, violence cannot be tolerated."
+        },
+        {
+          "ja": "{大人|おとな}であれ{子供|こども}であれ、ルールは{同|おな}じだ。",
+          "kana": "おとなであれこどもであれ、ルールはおなじだ。",
+          "en": "Adult or child, the rules are the same."
+        },
+        {
+          "ja": "{相手|あいて}が{誰|だれ}であろうと、{彼|かれ}は{自分|じぶん}の{意見|いけん}を{曲|ま}げない。",
+          "kana": "あいてがだれであろうと、かれはじぶんのいけんをまげない。",
+          "en": "No matter who he is up against, he won't bend his opinion."
+        },
+        {
+          "ja": "どんな{結果|けっか}であれ、{全力|ぜんりょく}を{尽|つ}くしたことに{変|か}わりはない。",
+          "kana": "どんなけっかであれ、ぜんりょくをつくしたことにかわりはない。",
+          "en": "Whatever the result, it doesn't change the fact that we gave it everything."
+        },
+        {
+          "ja": "{仕事|しごと}がどれほど{大変|たいへん}であろうと、{家族|かぞく}との{時間|じかん}は{大切|たいせつ}にしたい。",
+          "kana": "しごとがどれほどたいへんであろうと、かぞくとのじかんはたいせつにしたい。",
+          "en": "However tough work may be, I want to make time for my family."
+        }
+      ],
+      "clozeHints": [
+        "であれ",
+        "であろうと"
+      ],
+      "mistakes": [
+        "× 雨が降るであれ → ○ 雨であれ (であれ attaches to nouns and な-adjectives, not to verbs)",
+        "× 何であれば → ○ 何であれ (であれ is a fixed form; it is not the conditional であれば)"
+      ],
+      "related": [
+        "g-n2-048",
+        "g-n2-077",
+        "g-n2-078",
+        "g-n4-071",
+        "g-n1-013"
+      ],
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-048",
+      "pattern": "〜なくして(は)",
+      "meaning": "without …, (nothing is possible)",
+      "formation": [
+        "N + なくして(は) + negative or impossible result",
+        "努力なくして成功はない / 皆様の協力なくしては完成しなかった",
+        "V-dictionary + ことなくして(は)",
+        "written; the spoken equivalent is 〜がなければ / 〜がないと"
+      ],
+      "explanation": "Nなくして(は) means 'without N, nothing is possible': 努力なくして成功はない 'no success without effort', 皆様の協力なくしては完成しなかった. The main clause must be negative or express impossibility. It is a slogan-like written form found in speeches and essays; in speech you would use 〜がなければ or 〜がないと. The は is optional and adds emphasis. 〜なしに(は) is a close partner: 〜なくして leans toward essential conditions, 〜なしに toward 'without doing' something.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{日々|ひび}の{努力|どりょく}なくして、{成功|せいこう}はあり{得|え}ない。",
+          "kana": "ひびのどりょくなくして、せいこうはありえない。",
+          "en": "Without daily effort, there can be no success."
+        },
+        {
+          "ja": "{皆様|みなさま}のご{協力|きょうりょく}なくしては、この{事業|じぎょう}は{完成|かんせい}しなかったでしょう。",
+          "kana": "みなさまのごきょうりょくなくしては、このじぎょうはかんせいしなかったでしょう。",
+          "en": "Without everyone's cooperation, this project would never have been completed."
+        },
+        {
+          "ja": "{信頼|しんらい}なくして、{本当|ほんとう}の{友情|ゆうじょう}は{築|きず}けない。",
+          "kana": "しんらいなくして、ほんとうのゆうじょうはきずけない。",
+          "en": "Without trust, real friendship cannot be built."
+        },
+        {
+          "ja": "{地域|ちいき}の{理解|りかい}なくしては、{新|あたら}しい{空港|くうこう}の{建設|けんせつ}は{進|すす}められない。",
+          "kana": "ちいきのりかいなくしては、あたらしいくうこうのけんせつはすすめられない。",
+          "en": "Without the understanding of the local community, construction of the new airport cannot go ahead."
+        }
+      ],
+      "clozeHints": [
+        "なくして",
+        "なくしては"
+      ],
+      "mistakes": [
+        "× 努力なくして成功できる → ○ 努力なくして成功はない (the main clause must be negative or express impossibility)",
+        "× 食べるなくして → ○ 食べることなくして (verbs need こと before なくして)"
+      ],
+      "related": [
+        "g-n1-049",
+        "g-n2-019",
+        "g-n3-105",
+        "g-n5-086"
+      ],
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-049",
+      "pattern": "〜なしに(は) / 〜ことなしに",
+      "meaning": "without …ing",
+      "formation": [
+        "N + なしに (連絡なしに、断りなしに、休みなしに)",
+        "N + なしには + negative (準備なしには勝てない)",
+        "V-dictionary + ことなしに(は)",
+        "〜なしで / 〜ないで are the everyday spoken forms"
+      ],
+      "explanation": "Nなしに means 'without N happening': 連絡なしに休む 'to take a day off without notice', 休みなしに働く 'to work without a break'. With は and a negative main clause it becomes 'cannot … without': 準備なしには勝てない. 〜ことなしに lets you attach a verb: 誰にも知られることなしに. Written and formal; the everyday forms are 〜なしで and 〜ないで. 〜なくして(は) is similar but reserved for essential conditions (努力なくして成功はない).",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{事前|じぜん}の{連絡|れんらく}なしに{訪問|ほうもん}するのは{失礼|しつれい}だ。",
+          "kana": "じぜんのれんらくなしにほうもんするのはしつれいだ。",
+          "en": "Visiting without letting people know in advance is rude."
+        },
+        {
+          "ja": "{彼|かれ}は{十時間|じゅうじかん}、{休|やす}みなしに{運転|うんてん}し{続|つづ}けた。",
+          "kana": "かれはじゅうじかん、やすみなしにうんてんしつづけた。",
+          "en": "He drove for ten hours without a break."
+        },
+        {
+          "ja": "{十分|じゅうぶん}な{準備|じゅんび}なしには、この{試験|しけん}に{合格|ごうかく}することはできない。",
+          "kana": "じゅうぶんなじゅんびなしには、このしけんにごうかくすることはできない。",
+          "en": "Without thorough preparation, you cannot pass this exam."
+        },
+        {
+          "ja": "{誰|だれ}にも{知|し}られることなしに、{彼女|かのじょ}は{町|まち}を{出|で}て{行|い}った。",
+          "kana": "だれにもしられることなしに、かのじょはまちをでていった。",
+          "en": "She left town without anyone knowing."
+        }
+      ],
+      "clozeHints": [
+        "なしに",
+        "なしには",
+        "ことなしに"
+      ],
+      "mistakes": [
+        "× 知られるなしに → ○ 知られることなしに (a verb needs こと before なしに)",
+        "× 準備なしには合格できる → ○ 準備なしには合格できない (〜なしには requires a negative main clause)"
+      ],
+      "related": [
+        "g-n1-048",
+        "g-n3-105",
+        "g-n3-051",
+        "g-n4-007",
+        "g-n4-008"
+      ],
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "station": 51
+    },
+    {
+      "id": "g-n1-050",
+      "pattern": "〜いかんで / 〜いかんによらず",
+      "meaning": "depending on …; regardless of …",
+      "formation": [
+        "N(の) + いかんで / いかんによって(は) (結果いかんで、天候のいかんによっては)",
+        "N(の) + いかんだ (すべては君の努力いかんだ)",
+        "N(の) + いかんによらず / いかんにかかわらず / いかんを問わず (regardless of)",
+        "いかん is 如何, usually written in kana; official and written"
+      ],
+      "explanation": "いかん (如何) means 'how things stand'. Nいかんで and いかんによって(は) say the outcome depends on N: 結果いかんで方針が変わる. Nいかんだ ends a sentence: 'it all comes down to N'. The negative set — いかんによらず, いかんにかかわらず, いかんを問わず — means 'regardless of N': 理由のいかんによらず返金はできません. The noun is a state or outcome (結果, 理由, 天候, 努力), often with の before いかん. Strongly written and official: notices, contracts, business reports. In speech use 〜次第で and 〜にかかわらず.",
+      "jlpt": 1,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{試合|しあい}の{結果|けっか}いかんでは、{監督|かんとく}の{交代|こうたい}もあり{得|う}る。",
+          "kana": "しあいのけっかいかんでは、かんとくのこうたいもありうる。",
+          "en": "Depending on the result of the match, a change of manager is possible."
+        },
+        {
+          "ja": "{今後|こんご}の{売|う}り{上|あ}げいかんで、{新店舗|しんてんぽ}を{開|ひら}くかどうか{決|き}める。",
+          "kana": "こんごのうりあげいかんで、しんてんぽをひらくかどうかきめる。",
+          "en": "Depending on how sales go from here, we'll decide whether to open a new branch."
+        },
+        {
+          "ja": "{理由|りゆう}のいかんによらず、{申|もう}し{込|こ}み{後|ご}の{返金|へんきん}はいたしかねます。",
+          "kana": "りゆうのいかんによらず、もうしこみごのへんきんはいたしかねます。",
+          "en": "Regardless of the reason, we are unable to issue refunds after application."
+        },
+        {
+          "ja": "{成功|せいこう}するかどうかは、{君|きみ}たちの{努力|どりょく}いかんだ。",
+          "kana": "せいこうするかどうかは、きみたちのどりょくいかんだ。",
+          "en": "Whether you succeed comes down to how hard you work."
+        },
+        {
+          "ja": "{天候|てんこう}のいかんにかかわらず、{式典|しきてん}は{予定|よてい}どおり{行|おこな}います。",
+          "kana": "てんこうのいかんにかかわらず、しきてんはよていどおりおこないます。",
+          "en": "Regardless of the weather, the ceremony will go ahead as planned."
+        }
+      ],
+      "clozeHints": [
+        "いかんで",
+        "いかんでは",
+        "いかんによらず",
+        "いかんだ",
+        "いかんにかかわらず"
+      ],
+      "mistakes": [
+        "× 彼いかんで決まる → ○ 彼の返事いかんで決まる (いかん follows a noun for a state or outcome, not a person)",
+        "× 理由いかんによって返金できない → ○ 理由のいかんによらず返金できない (for 'regardless of' use いかんによらず, not いかんによって)"
+      ],
+      "related": [
+        "g-n2-006",
+        "g-n2-076",
+        "g-n2-077",
+        "g-n2-078",
+        "g-n3-014"
+      ],
+      "tags": [
+        "business",
+        "written"
+      ],
+      "station": 51
+    }
+  ]
+}

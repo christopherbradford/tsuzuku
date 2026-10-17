@@ -1,0 +1,1847 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n4",
+  "writer": "grammar-n4-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n4-001",
+      "pattern": "〜が開く / 〜を開ける (transitive / intransitive pairs)",
+      "meaning": "… opens (by itself) / someone opens …",
+      "formation": [
+        "N が + intransitive verb (自動詞): ドアが開く · 電気がつく · 窓が閉まる",
+        "N を + transitive verb (他動詞): ドアを開ける · 電気をつける · 窓を閉める",
+        "Core pairs: 開く / 開ける · 閉まる / 閉める · つく / つける · 消える / 消す",
+        "More pairs: 始まる / 始める · 止まる / 止める · 入る / 入れる · 出る / 出す · 落ちる / 落とす · 壊れる / 壊す",
+        "Sound hints: 〜まる is intransitive, 〜める transitive (閉まる / 閉める, 決まる / 決める); 〜す is almost always transitive"
+      ],
+      "explanation": "Japanese verbs often come in pairs: an intransitive verb says what happens to something and takes が, while its transitive partner says what someone does to it and takes を. ドアが開く is \"the door opens\"; ドアを開ける is \"I open the door\". You choose the intransitive verb to describe a scene or a result with nobody in view, and the transitive verb when the doer matters. The pairs have to be memorized, but patterns help: 〜まる is intransitive and 〜める transitive (閉まる / 閉める, 止まる / 止める), and 〜す is almost always transitive (消す, 出す, 落とす). Check the particle every time you learn a new verb.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{風|かぜ}でドアが{開|あ}きました。",
+          "kana": "かぜでドアがあきました。",
+          "en": "The door opened because of the wind."
+        },
+        {
+          "ja": "{暑|あつ}いので、{窓|まど}を{開|あ}けてください。",
+          "kana": "あついので、まどをあけてください。",
+          "en": "It is hot, so please open the window."
+        },
+        {
+          "ja": "{部屋|へや}の{電気|でんき}が{消|き}えているよ。",
+          "kana": "へやのでんきがきえているよ。",
+          "en": "The light in the room is off."
+        },
+        {
+          "ja": "{出|で}かける{前|まえ}に{電気|でんき}を{消|け}した。",
+          "kana": "でかけるまえにでんきをけした。",
+          "en": "I turned off the light before going out."
+        },
+        {
+          "ja": "{店|みせ}は{十時|じゅうじ}に{閉|し}まります。",
+          "kana": "みせはじゅうじにしまります。",
+          "en": "The shop closes at ten."
+        }
+      ],
+      "clozeHints": [
+        "開き",
+        "開け",
+        "消え",
+        "消し",
+        "閉まり"
+      ],
+      "mistakes": [
+        "× ドアを開きます → ○ ドアを開けます (開く is intransitive; with を you need the transitive 開ける)",
+        "× 電気が消しています → ○ 電気が消えています (消す needs a doer and を; the state of the light uses 消える)",
+        "× 授業を始まります → ○ 授業が始まります (始まる is intransitive and takes が)"
+      ],
+      "related": [
+        "g-n4-002",
+        "g-n4-003",
+        "g-n5-018",
+        "g-n5-032"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-002",
+      "pattern": "〜ている (resultant state with intransitives)",
+      "meaning": "is … (the state left by a change)",
+      "formation": [
+        "Intransitive change verb V-て + いる / います",
+        "ドアが開いている (the door is open) · 電気がついている (the light is on)",
+        "Group 1: 閉まる → 閉まっている · Group 2: 落ちる → 落ちている · Irregular: 来る → 来ている",
+        "Negative 〜ていない / 〜ていません: not (yet) in that state"
+      ],
+      "explanation": "With an intransitive verb of change, 〜ている describes the state left behind, not an action in progress. ドアが開いている means the door is open now because at some point it opened. You use it for what you see: 窓が閉まっている, 電気がついている, 財布が落ちている. The same ending on an action verb like 食べる means \"is eating\", so the verb decides: change verbs (開く, 閉まる, つく, 消える, 落ちる, 壊れる, 結婚する, 知る) give states, action verbs give progress. To say someone deliberately left a thing in that state, switch to the transitive verb with 〜てある.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{窓|まど}が{開|あ}いていますよ。{寒|さむ}くないですか。",
+          "kana": "まどがあいていますよ。さむくないですか。",
+          "en": "The window is open. Aren't you cold?"
+        },
+        {
+          "ja": "{駅前|えきまえ}のコンビニはもう{閉|し}まっていた。",
+          "kana": "えきまえのコンビニはもうしまっていた。",
+          "en": "The convenience store in front of the station was already closed."
+        },
+        {
+          "ja": "{会議室|かいぎしつ}の{電気|でんき}がついています。",
+          "kana": "かいぎしつのでんきがついています。",
+          "en": "The light in the meeting room is on."
+        },
+        {
+          "ja": "{財布|さいふ}が{道|みち}に{落|お}ちているのを{見|み}つけた。",
+          "kana": "さいふがみちにおちているのをみつけた。",
+          "en": "I found a wallet lying on the road."
+        },
+        {
+          "ja": "{田中|たなか}さんは{結婚|けっこん}しています。",
+          "kana": "たなかさんはけっこんしています。",
+          "en": "Mr. Tanaka is married."
+        }
+      ],
+      "clozeHints": [
+        "ています",
+        "ている",
+        "ていた"
+      ],
+      "mistakes": [
+        "× 窓が開けています → ○ 窓が開いています (to describe the open window, use the intransitive 開く)",
+        "× 田中さんは結婚します → ○ 田中さんは結婚しています (結婚します means will get married; the current state needs 〜ている)",
+        "× 鍵が落ちます → ○ 鍵が落ちています (落ちます is a future event; what you see on the floor is a state)"
+      ],
+      "related": [
+        "g-n4-001",
+        "g-n4-003",
+        "g-n5-048",
+        "g-n5-049"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-003",
+      "pattern": "〜てある",
+      "meaning": "has been done (and left that way on purpose)",
+      "formation": [
+        "Transitive V-て + ある / あります",
+        "N が + V-てある: 窓が開けてある (the window has been opened and left open)",
+        "N を + V-てある is also heard: 窓を開けてある",
+        "Group 1: 書く → 書いてある · Group 2: 開ける → 開けてある · Irregular: する → してある"
+      ],
+      "explanation": "〜てある attaches to a transitive verb and describes a state that somebody set up on purpose and that is still in place. 窓が開けてある tells you the window is open and that someone opened it, usually for a reason: airing the room, waiting for a guest. The doer is not named; the object takes が (or を). Compare 窓が開いている, which only reports that the window is open. You will meet 〜てある most with preparation verbs: 書いてある (it is written), 置いてある (it has been put there), 予約してある (it has been booked). To talk about doing the preparation itself, use 〜ておく.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{机|つくえ}の{上|うえ}にメモが{置|お}いてあります。",
+          "kana": "つくえのうえにメモがおいてあります。",
+          "en": "A note has been left on the desk."
+        },
+        {
+          "ja": "ホテルはもう{予約|よやく}してあるから、{安心|あんしん}して。",
+          "kana": "ホテルはもうよやくしてあるから、あんしんして。",
+          "en": "The hotel is already booked, so don't worry."
+        },
+        {
+          "ja": "{入口|いりぐち}に{今日|きょう}の{予定|よてい}が{書|か}いてあった。",
+          "kana": "いりぐちにきょうのよていがかいてあった。",
+          "en": "Today's schedule was written up at the entrance."
+        },
+        {
+          "ja": "{冷蔵庫|れいぞうこ}にケーキが{入|い}れてあるよ。",
+          "kana": "れいぞうこにケーキがいれてあるよ。",
+          "en": "There is a cake in the fridge for you."
+        },
+        {
+          "ja": "{切符|きっぷ}はもう{買|か}ってあります。",
+          "kana": "きっぷはもうかってあります。",
+          "en": "The tickets have already been bought."
+        }
+      ],
+      "clozeHints": [
+        "てあります",
+        "てある",
+        "てあった"
+      ],
+      "mistakes": [
+        "× 窓が開いてあります → ○ 窓が開けてあります (〜てある takes a transitive verb; 開く is intransitive)",
+        "× ドアが閉めています → ○ ドアが閉めてあります (a set-up state with a transitive verb needs 〜てある, not 〜ている)"
+      ],
+      "related": [
+        "g-n4-001",
+        "g-n4-002",
+        "g-n4-005",
+        "g-n5-032"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-004",
+      "pattern": "〜てしまう",
+      "meaning": "end up doing … (completion or regret)",
+      "formation": [
+        "V-て + しまう / しまいます",
+        "Group 1: 飲む → 飲んでしまう · Group 2: 忘れる → 忘れてしまう · Irregular: する → してしまう · 来る → 来てしまう",
+        "Casual contractions: 〜てしまう → 〜ちゃう · 〜でしまう → 〜じゃう (忘れちゃった · 飲んじゃった)",
+        "The past 〜てしまった / 〜てしまいました is by far the most common form"
+      ],
+      "explanation": "〜てしまう adds one of two feelings to an action. First, completion: 全部読んでしまった means you read the whole thing, nothing left. Second, and more often, regret or an unwanted result: 財布を忘れてしまった, 電車に遅れてしまった. Context tells you which, and sometimes both apply (I ate it all, oops). In speech 〜てしまう shrinks to 〜ちゃう and 〜でしまう to 〜じゃう: 忘れちゃった, 飲んじゃった. Use the full form with ます in polite situations and the contracted form with friends. It is not for things you are proud of; a happy result simply takes 〜た.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}に{傘|かさ}を{忘|わす}れてしまいました。",
+          "kana": "でんしゃのなかにかさをわすれてしまいました。",
+          "en": "I left my umbrella on the train."
+        },
+        {
+          "ja": "ケーキ、{全部|ぜんぶ}{食|た}べちゃったの？",
+          "kana": "ケーキ、ぜんぶたべちゃったの？",
+          "en": "Did you eat the whole cake?"
+        },
+        {
+          "ja": "{宿題|しゅくだい}はもうやってしまったから、{遊|あそ}べるよ。",
+          "kana": "しゅくだいはもうやってしまったから、あそべるよ。",
+          "en": "I have already finished my homework, so I can play."
+        },
+        {
+          "ja": "{大事|だいじ}なカメラを{落|お}として{壊|こわ}してしまった。",
+          "kana": "だいじなカメラをおとしてこわしてしまった。",
+          "en": "I dropped my precious camera and broke it."
+        },
+        {
+          "ja": "{朝|あさ}、{遅|おそ}く{起|お}きて、{会議|かいぎ}に{遅|おく}れてしまいました。",
+          "kana": "あさ、おそくおきて、かいぎにおくれてしまいました。",
+          "en": "I got up late this morning and ended up late for the meeting."
+        }
+      ],
+      "clozeHints": [
+        "てしまいました",
+        "てしまった",
+        "ちゃった",
+        "じゃった",
+        "てしまう"
+      ],
+      "mistakes": [
+        "× 忘れるしまいました → ○ 忘れてしまいました (しまう attaches to the て-form, never to the dictionary form)",
+        "× 飲んちゃった → ○ 飲んじゃった (after 〜で the contraction is 〜じゃう, not 〜ちゃう)",
+        "× 日本語が上手になってしまいました → ○ 日本語が上手になりました (〜てしまう signals regret; a happy result does not take it)"
+      ],
+      "related": [
+        "g-n4-005",
+        "g-n5-046",
+        "g-n5-061"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-005",
+      "pattern": "〜ておく",
+      "meaning": "do … in advance / leave … as it is",
+      "formation": [
+        "V-て + おく / おきます",
+        "Group 1: 買う → 買っておく · Group 2: 調べる → 調べておく · Irregular: する → しておく · 来る → 来ておく",
+        "Casual contraction: 〜ておく → 〜とく · 〜でおく → 〜どく (買っとく · 読んどく)",
+        "〜ておいてください = please do it beforehand / please leave it as it is"
+      ],
+      "explanation": "〜ておく means doing something now for later: preparing, arranging, or getting it out of the way. ホテルを予約しておく is booking the hotel ahead of the trip; 冷蔵庫に入れておく is putting it in the fridge so it keeps. The second use is leaving things alone: そのままにしておいて, \"leave it as it is\". The verb is always one you control; it does not go on 分かる or 降る. In conversation 〜ておく shrinks to 〜とく (買っとく, やっとく). Compare 〜てある, which describes the prepared state afterwards: 予約しておきました is \"I booked it\", 予約してあります is \"it is booked\".",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{前|まえ}に{部屋|へや}を{掃除|そうじ}しておきます。",
+          "kana": "かいぎのまえにへやをそうじしておきます。",
+          "en": "I will clean the room before the meeting."
+        },
+        {
+          "ja": "{旅行|りょこう}の{前|まえ}にホテルを{予約|よやく}しておいた。",
+          "kana": "りょこうのまえにホテルをよやくしておいた。",
+          "en": "I booked the hotel before the trip."
+        },
+        {
+          "ja": "ビール、{冷蔵庫|れいぞうこ}に{入|い}れといて。",
+          "kana": "ビール、れいぞうこにいれといて。",
+          "en": "Put the beer in the fridge for later, will you?"
+        },
+        {
+          "ja": "{窓|まど}はそのまま{開|あ}けておいてください。",
+          "kana": "まどはそのままあけておいてください。",
+          "en": "Please leave the window open as it is."
+        },
+        {
+          "ja": "{試験|しけん}のために{漢字|かんじ}を{覚|おぼ}えておこう。",
+          "kana": "しけんのためにかんじをおぼえておこう。",
+          "en": "Let's memorize the kanji ahead of the exam."
+        }
+      ],
+      "clozeHints": [
+        "ておきます",
+        "ておいた",
+        "ておいて",
+        "ておこう",
+        "といて"
+      ],
+      "mistakes": [
+        "× 予約するおきます → ○ 予約しておきます (おく follows the て-form)",
+        "× 雨が降っておきます → ○ 雨が降ります (〜ておく needs an action you control; weather cannot be prepared)",
+        "× 読んといて → ○ 読んどいて (after 〜で the contraction is 〜どく: 読んどく, 飲んどく)"
+      ],
+      "related": [
+        "g-n4-003",
+        "g-n4-004",
+        "g-n5-046"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-006",
+      "pattern": "〜たまま / 〜のまま",
+      "meaning": "with … left as it is / still …",
+      "formation": [
+        "V-た + まま: 電気をつけたまま寝る (fall asleep with the light left on)",
+        "V-ない + まま: 何も言わないまま帰った (left without saying anything)",
+        "N の + まま: そのまま · 靴のまま入る · 昔のまま",
+        "い-adjective + まま: 熱いまま · な-adjective + な + まま: きれいなまま",
+        "まま + で / だ / にする: そのままでいい · そのままにしておく"
+      ],
+      "explanation": "まま means a state is left unchanged while something else happens or time passes. V-たまま points at an action whose result stays: 窓を開けたまま出かけた, you went out and the window stayed open. Nのまま keeps a noun's state: 靴のまま, \"still in shoes\"; 昔のまま, \"just as it was long ago\". The feel is often slightly careless, which is why 〜たまま pairs well with 寝てしまった and 忘れた. そのまま is the everyday chunk: そのままでいいです, \"it is fine as it is\". Do not use まま for an action that continues; that is 〜ながら or 〜ている.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "テレビをつけたまま{寝|ね}てしまった。",
+          "kana": "テレビをつけたままねてしまった。",
+          "en": "I fell asleep with the TV on."
+        },
+        {
+          "ja": "{日本|にほん}では{靴|くつ}のまま{家|いえ}に{入|はい}らないでください。",
+          "kana": "にほんではくつのままいえにはいらないでください。",
+          "en": "In Japan, please don't enter the house with your shoes on."
+        },
+        {
+          "ja": "{窓|まど}を{開|あ}けたまま{出|で}かけたので、{部屋|へや}が{寒|さむ}い。",
+          "kana": "まどをあけたままでかけたので、へやがさむい。",
+          "en": "I went out with the window open, so the room is cold."
+        },
+        {
+          "ja": "その{町|まち}は{十年前|じゅうねんまえ}のままでした。",
+          "kana": "そのまちはじゅうねんまえのままでした。",
+          "en": "The town was just as it was ten years ago."
+        },
+        {
+          "ja": "{何|なに}も{言|い}わないまま、{彼|かれ}は{帰|かえ}っていった。",
+          "kana": "なにもいわないまま、かれはかえっていった。",
+          "en": "He went off home without saying a word."
+        }
+      ],
+      "clozeHints": [
+        "たまま",
+        "のまま",
+        "ないまま"
+      ],
+      "mistakes": [
+        "× 電気をつけるまま寝た → ○ 電気をつけたまま寝た (まま follows the た-form of the verb, not the dictionary form)",
+        "× 音楽を聞いたまま勉強する → ○ 音楽を聞きながら勉強する (an action going on at the same time is 〜ながら; まま is for a state left unchanged)",
+        "× 靴まま入った → ○ 靴のまま入った (a noun needs の before まま)"
+      ],
+      "related": [
+        "g-n4-002",
+        "g-n4-007",
+        "g-n5-064",
+        "g-n5-072"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-007",
+      "pattern": "〜ないで (without doing)",
+      "meaning": "without doing … / instead of doing …",
+      "formation": [
+        "V-ない + で: 朝ご飯を食べないで来た (came without eating breakfast)",
+        "Group 1: 使う → 使わないで · Group 2: 見る → 見ないで · Irregular: する → しないで · 来る → 来ないで",
+        "Also \"instead of\": 電車に乗らないで歩いた"
+      ],
+      "explanation": "〜ないで links two actions: the first did not happen while the second did. 朝ご飯を食べないで学校に行った, you went to school without eating. It also means \"instead of\": タクシーに乗らないで歩いた. Only verbs take 〜ないで, and both clauses share the same subject. The ending itself is relaxed and works at any level of politeness, because the politeness lives in the final verb. 〜ないでください is the request version you already know. Do not confuse it with 〜なくて, which gives a reason or cause (\"because I did not …\"); for \"without\" always choose 〜ないで. 〜ずに is its written twin.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今朝|けさ}は{朝|あさ}ご{飯|はん}を{食|た}べないで{会社|かいしゃ}に{来|き}ました。",
+          "kana": "けさはあさごはんをたべないでかいしゃにきました。",
+          "en": "This morning I came to work without eating breakfast."
+        },
+        {
+          "ja": "{辞書|じしょ}を{使|つか}わないで{日本語|にほんご}の{本|ほん}を{読|よ}んだ。",
+          "kana": "じしょをつかわないでにほんごのほんをよんだ。",
+          "en": "I read a Japanese book without using a dictionary."
+        },
+        {
+          "ja": "{昨日|きのう}はバスに{乗|の}らないで、{家|いえ}まで{歩|ある}いた。",
+          "kana": "きのうはバスにのらないで、いえまであるいた。",
+          "en": "Yesterday I walked home instead of taking the bus."
+        },
+        {
+          "ja": "{誰|だれ}にも{言|い}わないで、{一人|ひとり}で{決|き}めてしまった。",
+          "kana": "だれにもいわないで、ひとりできめてしまった。",
+          "en": "I decided on my own without telling anyone."
+        }
+      ],
+      "clozeHints": [
+        "ないで"
+      ],
+      "mistakes": [
+        "× 朝ご飯を食べなくて学校に行った → ○ 朝ご飯を食べないで学校に行った (\"without doing\" is 〜ないで; 〜なくて gives a reason)",
+        "× 食べないに来た → ○ 食べないで来た (the connector is で, not に)"
+      ],
+      "related": [
+        "g-n4-008",
+        "g-n4-009",
+        "g-n5-051",
+        "g-n5-063"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-008",
+      "pattern": "〜ずに",
+      "meaning": "without doing … (written style)",
+      "formation": [
+        "V-ない stem + ずに: 食べずに · 言わずに · 読まずに",
+        "Irregular: する → せずに (not しずに) · 来る → 来ずに (こずに)",
+        "Group 1: 使う → 使わずに · Group 2: 見る → 見ずに",
+        "〜ず alone (no に) joins clauses in formal writing: 休まず働く"
+      ],
+      "explanation": "〜ずに means the same as 〜ないで, \"without doing\", but belongs to writing, announcements and careful speech: 何も食べずに寝た, \"went to bed without eating anything\". Form it from the ない-stem plus ずに; the one trap is する, which becomes せずに. You will see it on signs and in news, in set phrases (相変わらず, 思わず), and in polite spoken explanations where 〜ないで would sound a little flat. Recognize it first; then use it in essays and formal messages. It never takes ください, so a request stays 〜ないでください. For \"because I did not\", use 〜なくて, not 〜ずに.",
+      "jlpt": 4,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{何|なに}も{言|い}わずに{部屋|へや}を{出|で}た。",
+          "kana": "かれはなにもいわずにへやをでた。",
+          "en": "He left the room without saying anything."
+        },
+        {
+          "ja": "{昨日|きのう}は{何|なに}も{食|た}べずに{寝|ね}てしまいました。",
+          "kana": "きのうはなにもたべずにねてしまいました。",
+          "en": "Yesterday I went to bed without eating anything."
+        },
+        {
+          "ja": "{宿題|しゅくだい}をせずに{遊|あそ}びに{行|い}ってはいけません。",
+          "kana": "しゅくだいをせずにあそびにいってはいけません。",
+          "en": "You must not go out to play without doing your homework."
+        },
+        {
+          "ja": "{辞書|じしょ}を{使|つか}わずにこの{手紙|てがみ}が{読|よ}めますか。",
+          "kana": "じしょをつかわずにこのてがみがよめますか。",
+          "en": "Can you read this letter without using a dictionary?"
+        }
+      ],
+      "clozeHints": [
+        "ずに"
+      ],
+      "mistakes": [
+        "× 勉強しずに → ○ 勉強せずに (する becomes せずに)",
+        "× 走らずにください → ○ 走らないでください (〜ずに cannot take ください; requests use 〜ないでください)",
+        "× 食べるずに → ○ 食べずに (ずに attaches to the ない-stem: 食べ, 言わ, 読ま)"
+      ],
+      "related": [
+        "g-n4-007",
+        "g-n4-009",
+        "g-n5-063"
+      ],
+      "tags": [
+        "written"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-009",
+      "pattern": "〜なくて (negative reason, sequence)",
+      "meaning": "… did not …, and so …",
+      "formation": [
+        "V-ない → V-なくて: 分からない → 分からなくて · 来ない → 来なくて",
+        "い-adjective: 高くない → 高くなくて · な-adjective / N: 元気じゃない → 元気じゃなくて",
+        "The second clause is usually a feeling or a result: 困った · 心配した · 大変だった · よかった",
+        "The て-form of ない itself: お金がなくて"
+      ],
+      "explanation": "〜なくて is the て-form of a negative. It joins a negative clause to what followed, and the link is usually cause: 電車が来なくて、遅れました, \"the train did not come, so I was late\". The second half is typically a feeling or an outcome you did not control (困る, 心配する, 残念だ, 大変だ), never a request or a command. It also works with adjectives and nouns: 高くなくて、よかった; 休みじゃなくて、残念だ. Contrast 〜ないで, which only takes verbs and means \"without doing\" or \"instead of\". If you say 朝ご飯を食べなくて会社に来た, listeners wait for a consequence; what you meant was 食べないで.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}、バスが{来|こ}なくて、{学校|がっこう}に{遅|おく}れました。",
+          "kana": "あさ、バスがこなくて、がっこうにおくれました。",
+          "en": "The bus did not come this morning, so I was late for school."
+        },
+        {
+          "ja": "{漢字|かんじ}が{読|よ}めなくて、{困|こま}っています。",
+          "kana": "かんじがよめなくて、こまっています。",
+          "en": "I can't read the kanji, and it is a real problem."
+        },
+        {
+          "ja": "{試験|しけん}が{難|むずか}しくなくて、よかった。",
+          "kana": "しけんがむずかしくなくて、よかった。",
+          "en": "I'm glad the exam wasn't hard."
+        },
+        {
+          "ja": "{彼|かれ}から{連絡|れんらく}がなくて、{心配|しんぱい}した。",
+          "kana": "かれかられんらくがなくて、しんぱいした。",
+          "en": "I didn't hear from him, and I was worried."
+        },
+        {
+          "ja": "{明日|あした}が{休|やす}みじゃなくて、{残念|ざんねん}です。",
+          "kana": "あしたがやすみじゃなくて、ざんねんです。",
+          "en": "It's a shame tomorrow isn't a day off."
+        }
+      ],
+      "clozeHints": [
+        "なくて"
+      ],
+      "mistakes": [
+        "× 朝ご飯を食べなくて会社に来た → ○ 朝ご飯を食べないで会社に来た (\"without eating\" is 〜ないで; 〜なくて would announce a reason)",
+        "× 分からなくて、聞いてください → ○ 分からなかったら、聞いてください (〜なくて cannot lead into a request; use a conditional)",
+        "× お金がないで、買えない → ○ お金がなくて、買えない (the て-form of ない is なくて)"
+      ],
+      "related": [
+        "g-n4-007",
+        "g-n4-008",
+        "g-n5-052",
+        "g-n5-057",
+        "g-n5-090"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-010",
+      "pattern": "〜より〜の方が / 〜の中で〜が一番 (comparison)",
+      "meaning": "… is more … than … / … is the most … of all",
+      "formation": [
+        "A は B より + adjective: 東京は大阪より大きい",
+        "B より A の方が + adjective: 大阪より東京の方が大きい (A is the one that is more …)",
+        "Question for two: A と B と、どちらが〜ですか → A の方が〜です",
+        "Superlative: group の中で N が一番 + adjective: 果物の中でりんごが一番好きです",
+        "Question for a group: 何 / 誰 / どこ / いつ が一番〜ですか (never どちら)"
+      ],
+      "explanation": "Japanese adjectives never change form to compare; the particles do the work. より marks the loser: 東京は大阪より大きい, Tokyo is bigger than Osaka. 〜の方が puts the winner in focus, so it answers questions: 大阪より東京の方が大きい. For two items ask どちらが, and answer with 〜の方が. For three or more, name the group with 〜の中で and crown the winner with が一番: 日本の町の中で京都が一番好きです. That question uses 何, どこ, 誰 or いつ, not どちら. 方 is read ほう here; the same kanji read かた means \"person\" in polite speech.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{昨日|きのう}より{暑|あつ}いですね。",
+          "kana": "きょうはきのうよりあついですね。",
+          "en": "It is hotter today than yesterday, isn't it?"
+        },
+        {
+          "ja": "{電車|でんしゃ}よりバスの{方|ほう}が{安|やす}いよ。",
+          "kana": "でんしゃよりバスのほうがやすいよ。",
+          "en": "The bus is cheaper than the train."
+        },
+        {
+          "ja": "{日本|にほん}の{食|た}べ{物|もの}の{中|なか}で、{何|なに}が{一番|いちばん}{好|す}きですか。",
+          "kana": "にほんのたべもののなかで、なにがいちばんすきですか。",
+          "en": "Of all Japanese foods, which do you like best?"
+        },
+        {
+          "ja": "{一年|いちねん}の{中|なか}で{八月|はちがつ}が{一番|いちばん}{暑|あつ}い。",
+          "kana": "いちねんのなかではちがつがいちばんあつい。",
+          "en": "August is the hottest month of the year."
+        },
+        {
+          "ja": "{家族|かぞく}の{中|なか}で{父|ちち}が{一番|いちばん}{早|はや}く{起|お}きます。",
+          "kana": "かぞくのなかでちちがいちばんはやくおきます。",
+          "en": "In my family, my father gets up the earliest."
+        }
+      ],
+      "clozeHints": [
+        "より",
+        "の方が",
+        "一番"
+      ],
+      "mistakes": [
+        "× 東京の方は大阪より大きい → ○ 東京の方が大阪より大きい (the winner takes が after 方, not は)",
+        "× 果物の中でどちらが一番好きですか → ○ 果物の中で何が一番好きですか (どちら is for two choices; for a group use 何・どこ・誰)",
+        "× 犬は猫よりもっと好きです → ○ 犬は猫より好きです (より already means \"more than\"; もっと is not needed)"
+      ],
+      "related": [
+        "g-n5-009",
+        "g-n5-024",
+        "g-n5-025",
+        "g-n5-044"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 16
+    },
+    {
+      "id": "g-n4-011",
+      "pattern": "〜ていく / 〜てくる (direction, change over time)",
+      "meaning": "do … and go / come; change from now on / up to now",
+      "formation": [
+        "V-て + いく / いきます: 持っていく · 歩いていく · 増えていく",
+        "V-て + くる / きます: 持ってくる · 歩いてくる · 増えてくる",
+        "Group 1: 買う → 買っていく / 買ってくる · Group 2: 連れる → 連れていく / 連れてくる · Irregular: する → していく / してくる",
+        "Direction: away from the speaker (いく) or toward the speaker (くる)",
+        "Time: change that continues from now (いく) or has built up to now (くる)"
+      ],
+      "explanation": "〜ていく and 〜てくる put a direction on an action. Physically: 持っていく is take (away from here), 持ってくる is bring (toward here); 歩いて帰っていった, he walked off home. In time: 〜てくる is change that has arrived at the present (暖かくなってきた, it has gotten warm; 三年勉強してきた, I have studied for three years), and 〜ていく is change that continues from now on (これからもっと寒くなっていく). Two chunks are everyday: 行ってきます when leaving the house, and ちょっと見てくる, \"I'll go take a look and come back\". いく and くる are usually written in kana here.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{明日|あした}のパーティーにワインを{持|も}っていきます。",
+          "kana": "あしたのパーティーにワインをもっていきます。",
+          "en": "I will take some wine to tomorrow's party."
+        },
+        {
+          "ja": "{日曜日|にちようび}に{弟|おとうと}を{連|つ}れてきてもいいですか。",
+          "kana": "にちようびにおとうとをつれてきてもいいですか。",
+          "en": "May I bring my little brother on Sunday?"
+        },
+        {
+          "ja": "{最近|さいきん}、だんだん{暖|あたた}かくなってきましたね。",
+          "kana": "さいきん、だんだんあたたかくなってきましたね。",
+          "en": "It has been getting warmer lately, hasn't it?"
+        },
+        {
+          "ja": "これからも{日本語|にほんご}の{勉強|べんきょう}を{続|つづ}けていくつもりです。",
+          "kana": "これからもにほんごのべんきょうをつづけていくつもりです。",
+          "en": "I intend to keep on studying Japanese from here on."
+        },
+        {
+          "ja": "ちょっとコンビニで{飲|の}み{物|もの}を{買|か}ってくるね。",
+          "kana": "ちょっとコンビニでのみものをかってくるね。",
+          "en": "I'll just pop to the convenience store for drinks and come back."
+        }
+      ],
+      "clozeHints": [
+        "ていき",
+        "ていく",
+        "てきて",
+        "てきました",
+        "てくる"
+      ],
+      "mistakes": [
+        "× 友達を持ってきました → ○ 友達を連れてきました (people are 連れてくる; 持ってくる is for things)",
+        "× だんだん寒くなっていきました → ○ だんだん寒くなってきました (change that has reached now is 〜てきた; 〜ていく looks forward)"
+      ],
+      "related": [
+        "g-n4-012",
+        "g-n5-021",
+        "g-n5-046"
+      ],
+      "tags": [
+        "position"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-012",
+      "pattern": "〜てみる",
+      "meaning": "try doing … (and see)",
+      "formation": [
+        "V-て + みる / みます",
+        "Group 1: 聞く → 聞いてみる · Group 2: 食べる → 食べてみる · Irregular: する → してみる · 来る → 来てみる",
+        "Common endings: 〜てみてください (please try) · 〜てみたい (I want to try) · 〜てみよう (let's try)",
+        "みる is written in kana here, not 見る"
+      ],
+      "explanation": "〜てみる means doing something to see how it turns out: 食べてみる, try eating it; 聞いてみる, try asking. The focus is on the attempt and the result you will learn, not on effort. You will use it constantly: 一度やってみます, \"I'll give it a go\"; 着てみてもいいですか, \"may I try it on?\"; 行ってみたい, \"I'd like to go and see\". Because the outcome is unknown, 〜てみる does not fit things you know will fail, and it is not \"try to\" in the sense of struggling; that meaning is 〜ようとする. Write みる in kana: it has drifted away from 見る \"look\".",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{靴|くつ}、{履|は}いてみてもいいですか。",
+          "kana": "このくつ、はいてみてもいいですか。",
+          "en": "May I try these shoes on?"
+        },
+        {
+          "ja": "{初|はじ}めて{日本|にほん}の{料理|りょうり}を{作|つく}ってみました。",
+          "kana": "はじめてにほんのりょうりをつくってみました。",
+          "en": "I tried making Japanese food for the first time."
+        },
+        {
+          "ja": "{分|わ}からなかったら、{先生|せんせい}に{聞|き}いてみたら？",
+          "kana": "わからなかったら、せんせいにきいてみたら？",
+          "en": "If you don't get it, why not try asking the teacher?"
+        },
+        {
+          "ja": "いつか{富士山|ふじさん}に{登|のぼ}ってみたいです。",
+          "kana": "いつかふじさんにのぼってみたいです。",
+          "en": "Someday I would like to try climbing Mount Fuji."
+        },
+        {
+          "ja": "{新|あたら}しいカフェができたから、{行|い}ってみようよ。",
+          "kana": "あたらしいカフェができたから、いってみようよ。",
+          "en": "A new cafe has opened, so let's go check it out."
+        }
+      ],
+      "clozeHints": [
+        "てみて",
+        "てみました",
+        "てみたら",
+        "てみたい",
+        "てみよう"
+      ],
+      "mistakes": [
+        "× 食べるみる → ○ 食べてみる (みる follows the て-form)",
+        "× 食べて見ます → ○ 食べてみます (as an auxiliary, みる is written in kana)",
+        "× 窓を開けてみたが、開かなかった → ○ 窓を開けようとしたが、開かなかった (a failed attempt is 〜ようとする; 〜てみる assumes the action happened)"
+      ],
+      "related": [
+        "g-n4-029",
+        "g-n5-041",
+        "g-n5-046",
+        "g-n5-054"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-013",
+      "pattern": "命令形 (imperative)",
+      "meaning": "do …! (blunt command)",
+      "formation": [
+        "Group 1: final う-row → え-row: 書く → 書け · 行く → 行け · 待つ → 待て · 読む → 読め · 話す → 話せ",
+        "Group 2: drop る, add ろ: 食べる → 食べろ · 見る → 見ろ · 起きる → 起きろ",
+        "Irregular: する → しろ · 来る → 来い (こい) · くれる → くれ",
+        "Casual request instead: V-て (待って · 来て); polite request: V-てください"
+      ],
+      "explanation": "The imperative is the blunt command form: 待て, 来い, 食べろ. You will hear it far more than you say it: coaches and parents (走れ！), emergencies (逃げろ！), road signs (止まれ), cheering (頑張れ！), and in quoted orders: 先生に早く来いと言われた. Among adults it sounds rough, so for real requests you keep 〜てください or the casual 〜て. Add よ to soften it among close friends (早くしろよ). The negative command is the dictionary form plus な, and the gentle parent-to-child form is 〜なさい. Learn it mainly to recognize it instantly.",
+      "jlpt": 4,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{試合|しあい}だ。みんな、{頑張|がんば}れ！",
+          "kana": "しあいだ。みんな、がんばれ！",
+          "en": "It's game time. Everyone, go for it!"
+        },
+        {
+          "ja": "{道|みち}に「{止|と}まれ」と{書|か}いてある。",
+          "kana": "みちに「とまれ」とかいてある。",
+          "en": "It says \"stop\" on the road."
+        },
+        {
+          "ja": "{父|ちち}に「{早|はや}く{起|お}きろ」と{言|い}われた。",
+          "kana": "ちちに「はやくおきろ」といわれた。",
+          "en": "My father told me, \"Get up now.\""
+        },
+        {
+          "ja": "{危|あぶ}ないから、そこで{待|ま}て。",
+          "kana": "あぶないから、そこでまて。",
+          "en": "It's dangerous, so wait right there."
+        },
+        {
+          "ja": "こっちに{来|こ}い。{見|み}せたい{物|もの}がある。",
+          "kana": "こっちにこい。みせたいものがある。",
+          "en": "Come here. There is something I want to show you."
+        }
+      ],
+      "clozeHints": [
+        "頑張れ",
+        "止まれ",
+        "起きろ",
+        "待て",
+        "来い"
+      ],
+      "mistakes": [
+        "× 食べれ → ○ 食べろ (Group 2 verbs take ろ, not the え-row)",
+        "× 来れ (これ) → ○ 来い (こい) (来る is irregular)",
+        "× 先生、ここに来い → ○ 先生、ここに来てください (the imperative is too blunt for teachers, customers or strangers)"
+      ],
+      "related": [
+        "g-n4-014",
+        "g-n4-015",
+        "g-n5-047",
+        "g-n5-062"
+      ],
+      "tags": [
+        "casual"
+      ],
+      "unlocksForms": [
+        "imperative"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-014",
+      "pattern": "〜な (prohibitive)",
+      "meaning": "don't …! (blunt)",
+      "formation": [
+        "Dictionary form + な: 行くな · 見るな · するな · 来るな",
+        "All groups the same: 泳ぐ → 泳ぐな · 忘れる → 忘れるな · する → するな",
+        "Softened with よ: 心配するなよ · 泣くなよ",
+        "Not the same as V-stem + な (clipped なさい): 食べな means \"eat\", 食べるな means \"don't eat\""
+      ],
+      "explanation": "Dictionary form plus な is the blunt \"don't\": 入るな, 泳ぐな, 忘れるな. Like the imperative, it is mostly heard: warning signs (入るな is harsher than 入らないでください), shouts in sport or danger (動くな！), parents, and close friends with よ to soften it (心配するなよ, \"don't worry\"). The ordinary request stays 〜ないでください, or 〜ないで among friends. Watch the trap: な on the ます-stem is a different, gentler ending that means do, not don't: 食べな is \"eat up\", 食べるな is \"don't eat\". The dictionary form before な tells them apart.",
+      "jlpt": 4,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{危|あぶ}ないから、ここで{泳|およ}ぐな。",
+          "kana": "あぶないから、ここでおよぐな。",
+          "en": "It's dangerous, so don't swim here."
+        },
+        {
+          "ja": "{大丈夫|だいじょうぶ}だよ。そんなに{心配|しんぱい}するなよ。",
+          "kana": "だいじょうぶだよ。そんなにしんぱいするなよ。",
+          "en": "It's fine. Don't worry so much."
+        },
+        {
+          "ja": "{明日|あした}の{約束|やくそく}、{忘|わす}れるなよ。",
+          "kana": "あしたのやくそく、わすれるなよ。",
+          "en": "Don't forget our plans for tomorrow."
+        },
+        {
+          "ja": "ドアに「{開|あ}けるな」と{書|か}いてあった。",
+          "kana": "ドアに「あけるな」とかいてあった。",
+          "en": "The door had \"do not open\" written on it."
+        },
+        {
+          "ja": "{先生|せんせい}に「{走|はし}るな」と{言|い}われた。",
+          "kana": "せんせいに「はしるな」といわれた。",
+          "en": "The teacher told us, \"No running.\""
+        }
+      ],
+      "clozeHints": [
+        "泳ぐな",
+        "心配するな",
+        "忘れるな",
+        "開けるな",
+        "走るな"
+      ],
+      "mistakes": [
+        "× 行かないな → ○ 行くな (prohibitive な follows the dictionary form, not the negative)",
+        "× 食べな (meaning don't eat) → ○ 食べるな (食べな on the ます-stem means \"eat\"; keep the dictionary form for \"don't\")",
+        "× お客様、ここに入るな → ○ お客様、ここには入らないでください (〜な is far too blunt for customers; use 〜ないでください)"
+      ],
+      "related": [
+        "g-n4-013",
+        "g-n4-015",
+        "g-n5-051",
+        "g-n5-062"
+      ],
+      "tags": [
+        "casual"
+      ],
+      "unlocksForms": [
+        "prohibitive"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-015",
+      "pattern": "〜なさい",
+      "meaning": "do … (firm but not rude command)",
+      "formation": [
+        "V-ます stem + なさい: 食べます → 食べなさい · 書きます → 書きなさい",
+        "Group 1: 読む → 読みなさい · Group 2: 起きる → 起きなさい · Irregular: する → しなさい · 来る → 来なさい (きなさい)",
+        "Casual clipped form: 〜な (食べな · 早くしな)",
+        "No negative: \"don't\" is 〜てはいけません or 〜ないで, never 〜ななさい"
+      ],
+      "explanation": "〜なさい is the command of someone responsible for you: a parent (早く寝なさい), a teacher (静かにしなさい), and every exam paper (正しいものを選びなさい). It attaches to the ます-stem, so there are no sound changes to learn. It is firmer than 〜てください but not rude, and it flows downward: adult to child, teacher to student. You never use it toward a boss, a customer or a friend; with them use 〜てください or 〜て. The clipped 〜な (食べな, 行きな) is casual and warm. おやすみなさい and ごめんなさい are fossils of this form that everyone says.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "もう{十時|じゅうじ}よ。{早|はや}く{寝|ね}なさい。",
+          "kana": "もうじゅうじよ。はやくねなさい。",
+          "en": "It's already ten. Go to bed now."
+        },
+        {
+          "ja": "{次|つぎ}の{文|ぶん}を{読|よ}んで、{質問|しつもん}に{答|こた}えなさい。",
+          "kana": "つぎのぶんをよんで、しつもんにこたえなさい。",
+          "en": "Read the following text and answer the questions."
+        },
+        {
+          "ja": "{野菜|やさい}も{全部|ぜんぶ}{食|た}べなさい。",
+          "kana": "やさいもぜんぶたべなさい。",
+          "en": "Eat all your vegetables too."
+        },
+        {
+          "ja": "{外|そと}で{遊|あそ}ぶ{前|まえ}に、{宿題|しゅくだい}をしなさい。",
+          "kana": "そとであそぶまえに、しゅくだいをしなさい。",
+          "en": "Do your homework before you go out to play."
+        }
+      ],
+      "clozeHints": [
+        "なさい"
+      ],
+      "mistakes": [
+        "× 食べるなさい → ○ 食べなさい (なさい attaches to the ます-stem)",
+        "× 部長、こちらに座りなさい → ○ 部長、こちらにお座りください (〜なさい flows downward; never aim it at a superior)",
+        "× 来(く)なさい → ○ 来(き)なさい (the ます-stem of 来る is き)"
+      ],
+      "related": [
+        "g-n4-013",
+        "g-n4-014",
+        "g-n5-047"
+      ],
+      "tags": [
+        "family",
+        "school"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-016",
+      "pattern": "〜てあげる / 〜てもらう / 〜てくれる",
+      "meaning": "do … for someone / have someone do … / someone does … for me",
+      "formation": [
+        "V-て + あげる: 私は友達に本を貸してあげた (I did it for someone else)",
+        "V-て + もらう: 私は友達に本を貸してもらった (I had someone do it for me; the doer takes に)",
+        "V-て + くれる: 友達が私に本を貸してくれた (someone did it for me; the doer is the subject)",
+        "Politeness levels: 〜てさしあげる ↑ 〜てあげる ↓ 〜てやる · 〜ていただく ↑ 〜てもらう · 〜てくださる ↑ 〜てくれる",
+        "Requests: 〜てくれる？ / 〜てくれませんか · 〜てもらえる？ / 〜てもらえませんか"
+      ],
+      "explanation": "These three turn an action into a favor, and the choice depends on who does it and for whom. 〜てあげる: you (or your side) do it for someone else; it can sound patronizing, so avoid it toward superiors and often just say the plain verb. 〜てくれる: someone does it for you or your side, and that person is the subject (母が作ってくれた). 〜てもらう: you receive the action; the doer takes に (母に作ってもらった). The same event can be told both ways; 〜てくれる thanks the doer, 〜てもらう centers on you. Requests use 〜てくれませんか or the softer 〜てもらえませんか.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}に{日本語|にほんご}を{教|おし}えてもらいました。",
+          "kana": "ともだちににほんごをおしえてもらいました。",
+          "en": "I had a friend teach me Japanese."
+        },
+        {
+          "ja": "{田中|たなか}さんが{駅|えき}まで{送|おく}ってくれた。",
+          "kana": "たなかさんがえきまでおくってくれた。",
+          "en": "Mr. Tanaka gave me a ride to the station."
+        },
+        {
+          "ja": "{妹|いもうと}に{新|あたら}しい{漢字|かんじ}を{教|おし}えてあげた。",
+          "kana": "いもうとにあたらしいかんじをおしえてあげた。",
+          "en": "I taught my little sister some new kanji."
+        },
+        {
+          "ja": "ちょっと{写真|しゃしん}を{撮|と}ってくれませんか。",
+          "kana": "ちょっとしゃしんをとってくれませんか。",
+          "en": "Could you take a photo for me?"
+        },
+        {
+          "ja": "{道|みち}が{分|わ}からなくて、{警察|けいさつ}の{人|ひと}に{教|おし}えてもらった。",
+          "kana": "みちがわからなくて、けいさつのひとにおしえてもらった。",
+          "en": "I didn't know the way, so I had a police officer tell me."
+        }
+      ],
+      "clozeHints": [
+        "てあげ",
+        "てもらい",
+        "てもらっ",
+        "てくれ"
+      ],
+      "mistakes": [
+        "× 先生が私に説明してあげました → ○ 先生が私に説明してくれました (someone doing it for you is 〜てくれる)",
+        "× 友達が手伝ってもらった → ○ 友達に手伝ってもらった (with 〜てもらう the doer takes に)",
+        "× 部長、荷物を持ってあげます → ○ 部長、荷物をお持ちします (〜てあげる sounds patronizing toward a superior)"
+      ],
+      "related": [
+        "g-n4-026",
+        "g-n5-079",
+        "g-n5-080",
+        "g-n5-081"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-017",
+      "pattern": "〜始める / 〜終わる / 〜続ける",
+      "meaning": "start … / finish … / keep on …",
+      "formation": [
+        "V-ます stem + 始める: 降り始める · 食べ始める · 読み始める",
+        "V-ます stem + 終わる: 食べ終わる · 読み終わる · 書き終わる",
+        "V-ます stem + 続ける: 降り続ける · 働き続ける · 走り続ける",
+        "The result is a Group 2 verb: 読み始めます · 読み終わった · 読み続けている"
+      ],
+      "explanation": "Drop ます and add 始める, 終わる or 続ける to say an action starts, ends or carries on. 雨が降り始めた, it started raining; レポートを書き終わった, I finished writing the report; 三時間走り続けた, I kept running for three hours. The new word conjugates as a Group 2 verb (始めます, 終わって, 続けている). 〜始める and 〜続ける work with almost any verb; 〜終わる needs an action with a natural end (eating, reading, writing), so you do not say 雨が降り終わった, you say 雨がやんだ. For a change of state, use 〜ようになる instead: 分かるようになった, not 分かり始めた.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{急|きゅう}に{雨|あめ}が{降|ふ}り{始|はじ}めました。",
+          "kana": "きゅうにあめがふりはじめました。",
+          "en": "It suddenly started to rain."
+        },
+        {
+          "ja": "{本|ほん}を{読|よ}み{終|お}わったら、{貸|か}してね。",
+          "kana": "ほんをよみおわったら、かしてね。",
+          "en": "When you finish reading the book, lend it to me."
+        },
+        {
+          "ja": "{彼|かれ}は{三十年間|さんじゅうねんかん}、この{店|みせ}で{働|はたら}き{続|つづ}けている。",
+          "kana": "かれはさんじゅうねんかん、このみせではたらきつづけている。",
+          "en": "He has kept working at this shop for thirty years."
+        },
+        {
+          "ja": "{赤|あか}ちゃんが{急|きゅう}に{泣|な}き{始|はじ}めた。",
+          "kana": "あかちゃんがきゅうになきはじめた。",
+          "en": "The baby suddenly started crying."
+        },
+        {
+          "ja": "みんなが{食|た}べ{終|お}わるまで{待|ま}ちましょう。",
+          "kana": "みんながたべおわるまでまちましょう。",
+          "en": "Let's wait until everyone has finished eating."
+        }
+      ],
+      "clozeHints": [
+        "始め",
+        "終わっ",
+        "終わる",
+        "続け"
+      ],
+      "mistakes": [
+        "× 食べて始める → ○ 食べ始める (these attach to the ます-stem, not the て-form)",
+        "× 雨が降り終わった → ○ 雨がやんだ (〜終わる needs an action with a natural end; weather stopping is やむ)",
+        "× 日本語が分かり始めました → ○ 日本語が分かるようになりました (a change in ability is 〜ようになる)"
+      ],
+      "related": [
+        "g-n4-018",
+        "g-n5-017"
+      ],
+      "tags": [
+        "time"
+      ],
+      "notes": "Forward link to add at merge: g-n4-044 (〜ようになる), which lives in grammar-n4-002.",
+      "station": 17
+    },
+    {
+      "id": "g-n4-018",
+      "pattern": "〜出す",
+      "meaning": "suddenly start … / … out",
+      "formation": [
+        "V-ます stem + 出す: 泣き出す · 笑い出す · 走り出す · 降り出す",
+        "Sudden start: 急に雨が降り出した (it suddenly started to rain)",
+        "Outward movement: 取り出す (take out) · 飛び出す (rush out) · 思い出す (recall)",
+        "Conjugates as Group 1: 出します · 出して · 出した"
+      ],
+      "explanation": "〜出す on the ます-stem has two faces. The first is a sudden, often uncontrolled start: 泣き出す burst into tears, 笑い出す burst out laughing, 走り出す take off running, 降り出す start pouring. Compared with 〜始める, which is neutral, 〜出す says it happened abruptly and caught someone off guard. The second face is literal \"out\": 取り出す take out, 飛び出す dart out, 思い出す bring back to mind. Because of the suddenness, 〜出す is not used for planned beginnings: you 勉強し始める, not 勉強し出す. It conjugates like 出す itself: 出した, 出して, 出しません.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{子供|こども}が{急|きゅう}に{泣|な}き{出|だ}した。",
+          "kana": "こどもがきゅうになきだした。",
+          "en": "The child suddenly burst into tears."
+        },
+        {
+          "ja": "{空|そら}が{暗|くら}くなって、{雨|あめ}が{降|ふ}り{出|だ}しました。",
+          "kana": "そらがくらくなって、あめがふりだしました。",
+          "en": "The sky went dark and it started to pour."
+        },
+        {
+          "ja": "{犬|いぬ}が{急|きゅう}に{道|みち}に{飛|と}び{出|だ}して、{危|あぶ}なかった。",
+          "kana": "いぬがきゅうにみちにとびだして、あぶなかった。",
+          "en": "A dog suddenly darted into the road; it was dangerous."
+        },
+        {
+          "ja": "{彼女|かのじょ}の{名前|なまえ}をやっと{思|おも}い{出|だ}した。",
+          "kana": "かのじょのなまえをやっとおもいだした。",
+          "en": "I finally remembered her name."
+        },
+        {
+          "ja": "{話|はなし}を{聞|き}いて、みんなが{笑|わら}い{出|だ}した。",
+          "kana": "はなしをきいて、みんながわらいだした。",
+          "en": "Hearing the story, everyone burst out laughing."
+        }
+      ],
+      "clozeHints": [
+        "出し"
+      ],
+      "mistakes": [
+        "× 来年、大学で勉強し出します → ○ 来年、大学で勉強し始めます (a planned start is 〜始める; 〜出す is sudden)",
+        "× 泣いて出した → ○ 泣き出した (〜出す joins the ます-stem)"
+      ],
+      "related": [
+        "g-n4-001",
+        "g-n4-017"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-019",
+      "pattern": "〜すぎる",
+      "meaning": "too … / … too much",
+      "formation": [
+        "V-ます stem + すぎる: 食べすぎる · 飲みすぎる · 働きすぎる",
+        "い-adjective minus い + すぎる: 高すぎる · 大きすぎる · いい → よすぎる",
+        "な-adjective + すぎる: 静かすぎる · 簡単すぎる",
+        "Negative ない → なさすぎる: 元気がなさすぎる",
+        "The result is a Group 2 verb: すぎます · すぎて · すぎた; noun form 〜すぎ (食べすぎ)"
+      ],
+      "explanation": "〜すぎる means \"too much\" or \"too …\": 食べすぎた, I ate too much; この靴は大きすぎる, these shoes are too big. It attaches to the ます-stem of a verb, to an い-adjective without its い, and directly to a な-adjective, and then conjugates as a Group 2 verb. The て-form 〜すぎて is a handy reason: 高すぎて買えない, too expensive to buy. The noun 〜すぎ names the excess: 飲みすぎ, 働きすぎ. It carries a judgment that something is beyond the right amount, so it is not a neutral \"very\"; for that use とても. いい becomes よすぎる.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{飲|の}みすぎて、{頭|あたま}が{痛|いた}い。",
+          "kana": "きのうはのみすぎて、あたまがいたい。",
+          "en": "I drank too much yesterday and my head hurts."
+        },
+        {
+          "ja": "このかばんは{私|わたし}には{大|おお}きすぎます。",
+          "kana": "このかばんはわたしにはおおきすぎます。",
+          "en": "This bag is too big for me."
+        },
+        {
+          "ja": "{仕事|しごと}が{多|おお}すぎて、{毎日|まいにち}{帰|かえ}りが{遅|おそ}い。",
+          "kana": "しごとがおおすぎて、まいにちかえりがおそい。",
+          "en": "I have too much work, so I get home late every day."
+        },
+        {
+          "ja": "この{問題|もんだい}は{簡単|かんたん}すぎると{思|おも}う。",
+          "kana": "このもんだいはかんたんすぎるとおもう。",
+          "en": "I think this question is too easy."
+        },
+        {
+          "ja": "{食|た}べすぎに{気|き}をつけてください。",
+          "kana": "たべすぎにきをつけてください。",
+          "en": "Please be careful not to overeat."
+        }
+      ],
+      "clozeHints": [
+        "すぎ"
+      ],
+      "mistakes": [
+        "× 食べるすぎる → ○ 食べすぎる (すぎる joins the ます-stem)",
+        "× 高いすぎる → ○ 高すぎる (い-adjectives drop the final い)",
+        "× この店はおいしすぎて好きです → ○ この店はとてもおいしくて好きです (〜すぎる judges an excess; a simple \"very\" is とても)"
+      ],
+      "related": [
+        "g-n4-020",
+        "g-n5-028"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-020",
+      "pattern": "〜やすい / 〜にくい",
+      "meaning": "easy to … / hard to …",
+      "formation": [
+        "V-ます stem + やすい: 読みやすい · 使いやすい · 分かりやすい · 壊れやすい",
+        "V-ます stem + にくい: 読みにくい · 使いにくい · 分かりにくい · 言いにくい",
+        "Both conjugate as い-adjectives: 読みやすかった · 使いにくくて · 分かりやすく",
+        "Cousins: 〜づらい (awkward or painful to: 言いづらい) · 〜がたい (formal, nearly impossible: 信じがたい)"
+      ],
+      "explanation": "〜やすい and 〜にくい on the ます-stem make an い-adjective meaning easy or hard to do: 読みやすい本, an easy-to-read book; 歩きにくい靴, shoes that are hard to walk in. They also mean \"tends to\" and \"tends not to\": 壊れやすい breaks easily, 風邪をひきやすい catches colds easily, 汚れにくい stays clean. As い-adjectives they take every adjective ending: 分かりやすかった, 使いにくくない. The judgment is about the thing or the action, not your skill, so \"I can't do it\" stays with the potential form: 読めない, not 読みにくい. 〜づらい is a cousin for things that feel awkward (言いづらい).",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{辞書|じしょ}は{説明|せつめい}が{分|わ}かりやすいです。",
+          "kana": "このじしょはせつめいがわかりやすいです。",
+          "en": "The explanations in this dictionary are easy to understand."
+        },
+        {
+          "ja": "{先生|せんせい}の{字|じ}は{小|ちい}さくて{読|よ}みにくい。",
+          "kana": "せんせいのじはちいさくてよみにくい。",
+          "en": "The teacher's handwriting is small and hard to read."
+        },
+        {
+          "ja": "この{町|まち}は{道|みち}が{広|ひろ}くて{歩|ある}きやすい。",
+          "kana": "このまちはみちがひろくてあるきやすい。",
+          "en": "The streets in this town are wide and easy to walk."
+        },
+        {
+          "ja": "{冬|ふゆ}は{風邪|かぜ}をひきやすいから、{気|き}をつけて。",
+          "kana": "ふゆはかぜをひきやすいから、きをつけて。",
+          "en": "You catch colds easily in winter, so take care."
+        },
+        {
+          "ja": "{新|あたら}しい{靴|くつ}は{歩|ある}きにくかった。",
+          "kana": "あたらしいくつはあるきにくかった。",
+          "en": "The new shoes were hard to walk in."
+        }
+      ],
+      "clozeHints": [
+        "やすい",
+        "にくい",
+        "にくかった"
+      ],
+      "mistakes": [
+        "× 読むやすい → ○ 読みやすい (やすい attaches to the ます-stem)",
+        "× 私は漢字が読みにくいです → ○ 私は漢字が読めません (your own inability is the potential form; 〜にくい judges the thing)",
+        "× 使いやすいなカメラ → ○ 使いやすいカメラ (〜やすい is an い-adjective; no な before a noun)"
+      ],
+      "related": [
+        "g-n4-019",
+        "g-n5-024",
+        "g-n5-077"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 17
+    },
+    {
+      "id": "g-n4-021",
+      "pattern": "〜(ら)れる (direct passive 受身)",
+      "meaning": "be … (done) by …",
+      "formation": [
+        "Group 1: final う-row → あ-row + れる: 書く → 書かれる · 読む → 読まれる · 言う → 言われる · 待つ → 待たれる",
+        "Group 2: drop る, add られる: 食べる → 食べられる · 見る → 見られる · ほめる → ほめられる",
+        "Irregular: する → される · 来る → 来られる (こられる)",
+        "The doer takes に (によって for makers and authors in writing): 先生にほめられた",
+        "The result is a Group 2 verb: 言われます · 言われて · 言われた"
+      ],
+      "explanation": "The direct passive turns the receiver of an action into the subject: 先生が私をほめた becomes 私は先生にほめられた, I was praised by the teacher. Group 1 verbs take the あ-row plus れる (書かれる), Group 2 take られる (見られる), and する and 来る become される and 来られる; the doer is marked with に. You use it when the receiver is the topic (呼ばれる, 頼まれる, 招待される), when the doer is unknown or unimportant (この寺は八百年前に建てられた), and in written explanations (日本語は日本で話されている). Group 2 passive and potential look identical (食べられる), so particles and context decide. Unpleasant, indirect uses come next.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{今日|きょう}、{先生|せんせい}にほめられました。",
+          "kana": "きょう、せんせいにほめられました。",
+          "en": "I was praised by the teacher today."
+        },
+        {
+          "ja": "{駅|えき}で{知|し}らない{人|ひと}に{道|みち}を{聞|き}かれた。",
+          "kana": "えきでしらないひとにみちをきかれた。",
+          "en": "A stranger asked me for directions at the station."
+        },
+        {
+          "ja": "{会議|かいぎ}で{急|きゅう}に{名前|なまえ}を{呼|よ}ばれて、びっくりした。",
+          "kana": "かいぎできゅうになまえをよばれて、びっくりした。",
+          "en": "My name was suddenly called in the meeting, and I was startled."
+        },
+        {
+          "ja": "この{寺|てら}は{八百年前|はっぴゃくねんまえ}に{建|た}てられました。",
+          "kana": "このてらははっぴゃくねんまえにたてられました。",
+          "en": "This temple was built eight hundred years ago."
+        },
+        {
+          "ja": "{英語|えいご}は{世界中|せかいじゅう}で{使|つか}われています。",
+          "kana": "えいごはせかいじゅうでつかわれています。",
+          "en": "English is used all over the world."
+        }
+      ],
+      "clozeHints": [
+        "ほめられ",
+        "聞かれ",
+        "呼ばれ",
+        "建てられ",
+        "使われ"
+      ],
+      "mistakes": [
+        "× 先生がほめられました (meaning I was praised) → ○ 先生にほめられました (the doer takes に; が would make the teacher the one praised)",
+        "× 読むられる → ○ 読まれる (Group 1 verbs change the final kana to the あ-row before れる)",
+        "× 人が私を押された → ○ 私は人に押された (in the passive the receiver becomes the subject)"
+      ],
+      "related": [
+        "g-n4-022",
+        "g-n4-023",
+        "g-n4-024",
+        "g-n5-077"
+      ],
+      "tags": [],
+      "notes": "Forward link to add at merge: g-n4-053 (〜れる / 〜られる as honorific), which lives in grammar-n4-002.",
+      "unlocksForms": [
+        "passive"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-022",
+      "pattern": "迷惑の受身 (indirect / adversity passive)",
+      "meaning": "have something happen to me (and suffer from it)",
+      "formation": [
+        "Affected person は + doer に + (object を) + passive verb",
+        "Intransitive verbs: 雨に降られた (I got rained on) · 友達に来られた (friends came, and it was a bother)",
+        "Someone else's object keeps を: 弟にケーキを食べられた (my brother ate my cake, on me) · 財布を盗まれた",
+        "Same passive form as the direct passive: 降られる · 来られる · 食べられる · 盗まれる"
+      ],
+      "explanation": "Japanese can make the person affected by an event into the subject, even when nothing was done to them directly, and the result almost always sounds like a complaint. 雨に降られた: it rained and I suffered. 隣の人に夜中に騒がれた: the neighbor made noise, on me. With an object, を stays: 弟にケーキを食べられた, my brother ate my cake. Notice the pattern: the object is my cake, my wallet, my foot, and I am the victim. English has no equivalent, so translate with \"on me\" or \"I had my … done\". Use it only for unwelcome events; good news stays active or takes 〜てもらう.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{帰|かえ}りに{雨|あめ}に{降|ふ}られて、{大変|たいへん}だった。",
+          "kana": "かえりにあめにふられて、たいへんだった。",
+          "en": "I got rained on on the way home; it was awful."
+        },
+        {
+          "ja": "{電車|でんしゃ}で{財布|さいふ}を{盗|ぬす}まれました。",
+          "kana": "でんしゃでさいふをぬすまれました。",
+          "en": "I had my wallet stolen on the train."
+        },
+        {
+          "ja": "{弟|おとうと}に{私|わたし}のケーキを{食|た}べられた。",
+          "kana": "おとうとにわたしのケーキをたべられた。",
+          "en": "My brother ate my cake on me."
+        },
+        {
+          "ja": "{夜中|よなか}に{友達|ともだち}に{来|こ}られて、{寝|ね}られなかった。",
+          "kana": "よなかにともだちにこられて、ねられなかった。",
+          "en": "Friends came over in the middle of the night, and I couldn't sleep."
+        },
+        {
+          "ja": "{試験|しけん}の{前|まえ}の{日|ひ}に、{彼女|かのじょ}に{泣|な}かれて{困|こま}った。",
+          "kana": "しけんのまえのひに、かのじょになかれてこまった。",
+          "en": "The day before the exam, my girlfriend cried on me and I didn't know what to do."
+        }
+      ],
+      "clozeHints": [
+        "降られ",
+        "盗まれ",
+        "食べられ",
+        "来られ",
+        "泣かれ"
+      ],
+      "mistakes": [
+        "× 雨が降られた → ○ 雨に降られた (the thing that acted on you takes に)",
+        "× 友達に来られて、うれしかった → ○ 友達が来てくれて、うれしかった (the adversity passive sounds like a complaint; a welcome visit uses 〜てくれる)",
+        "× 弟は私のケーキを食べられた → ○ 弟に私のケーキを食べられた (the doer takes に; the affected person is the topic)"
+      ],
+      "related": [
+        "g-n4-016",
+        "g-n4-021"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-023",
+      "pattern": "〜(さ)せる (causative 使役)",
+      "meaning": "make / let someone do …",
+      "formation": [
+        "Group 1: final う-row → あ-row + せる: 行く → 行かせる · 読む → 読ませる · 手伝う → 手伝わせる · 待つ → 待たせる",
+        "Group 2: drop る, add させる: 食べる → 食べさせる · 辞める → 辞めさせる",
+        "Irregular: する → させる · 来る → 来させる (こさせる)",
+        "Intransitive verb: person を (子供を買い物に行かせる) · Transitive verb: person に + object を (子供に野菜を食べさせる)",
+        "The result is a Group 2 verb: 行かせます · 行かせて · 行かせた"
+      ],
+      "explanation": "The causative says someone makes or lets another person do something: 母は弟を買い物に行かせた, \"made him go\"; 子供に好きな本を読ませる, \"lets them read\". Force or permission is settled by context, and 〜てあげる or 〜てくれる tips it toward permission (行かせてくれた, let me go). Group 1 verbs take the あ-row plus せる, Group 2 take させる, する becomes させる. The person doing the action takes を with an intransitive verb and に when there is already an object with を. It only flows downward or between equals (parent, boss, teacher), which is why asking for permission flips it into 〜させてください.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{母|はは}は{弟|おとうと}に{野菜|やさい}を{食|た}べさせた。",
+          "kana": "はははおとうとにやさいをたべさせた。",
+          "en": "My mother made my brother eat his vegetables."
+        },
+        {
+          "ja": "{部長|ぶちょう}は{新|あたら}しい{人|ひと}に{長|なが}いレポートを{書|か}かせました。",
+          "kana": "ぶちょうはあたらしいひとにながいレポートをかかせました。",
+          "en": "The manager had the new employee write a long report."
+        },
+        {
+          "ja": "{先生|せんせい}は{学生|がくせい}を{早|はや}く{帰|かえ}らせた。",
+          "kana": "せんせいはがくせいをはやくかえらせた。",
+          "en": "The teacher let the students go home early."
+        },
+        {
+          "ja": "{遅|おく}れてごめん。{待|ま}たせたね。",
+          "kana": "おくれてごめん。またせたね。",
+          "en": "Sorry I'm late. I kept you waiting."
+        },
+        {
+          "ja": "{子供|こども}を{一人|ひとり}で{旅行|りょこう}に{行|い}かせるのは{心配|しんぱい}だ。",
+          "kana": "こどもをひとりでりょこうにいかせるのはしんぱいだ。",
+          "en": "Letting my child travel alone worries me."
+        }
+      ],
+      "clozeHints": [
+        "食べさせ",
+        "書かせ",
+        "帰らせ",
+        "待たせ",
+        "行かせ"
+      ],
+      "mistakes": [
+        "× 子供を野菜を食べさせた → ○ 子供に野菜を食べさせた (two を in one clause is not allowed; the person takes に)",
+        "× 食べらせる → ○ 食べさせる (Group 2 verbs take させる)",
+        "× 先生を早く帰らせてください (student to teacher) → ○ 先生、早く帰ってください (the causative flows downward; you cannot \"let\" a superior act)"
+      ],
+      "related": [
+        "g-n4-021",
+        "g-n4-024",
+        "g-n4-025",
+        "g-n4-026"
+      ],
+      "tags": [
+        "people"
+      ],
+      "unlocksForms": [
+        "causative"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-024",
+      "pattern": "〜(さ)せられる (causative-passive 使役受身)",
+      "meaning": "be made to do …",
+      "formation": [
+        "Group 1: あ-row + せられる, usually shortened to される: 書く → 書かせられる → 書かされる · 待つ → 待たされる · 飲む → 飲まされる",
+        "Group 1 verbs ending in す keep the long form: 話す → 話させられる (never 話さされる)",
+        "Group 2: drop る, add させられる: 食べる → 食べさせられる · 辞める → 辞めさせられる",
+        "Irregular: する → させられる · 来る → 来させられる (こさせられる)",
+        "The person who forced you takes に: 部長に残業させられた"
+      ],
+      "explanation": "The causative-passive puts you in the position of being made to do something, and the tone is almost always resentful: 部長に遅くまで仕事をさせられた, I was made to work late; 子供のころ、毎日ピアノを練習させられた. Form the causative, then make it passive. Group 1 verbs usually shrink: 書かせられる becomes 書かされる, 待たせられる becomes 待たされる; only verbs ending in す keep the long form (話させられる). Group 2 and する take させられる. The one who forced you takes に. It is the mirror of 〜てもらう: 手伝ってもらった is grateful, 手伝わされた is a complaint. For \"was allowed to\", use 〜させてもらう.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}に{遅|おそ}くまで{仕事|しごと}をさせられた。",
+          "kana": "ぶちょうにおそくまでしごとをさせられた。",
+          "en": "The manager made me work late."
+        },
+        {
+          "ja": "{子供|こども}のころ、{母|はは}に{毎日|まいにち}{野菜|やさい}を{食|た}べさせられた。",
+          "kana": "こどものころ、ははにまいにちやさいをたべさせられた。",
+          "en": "As a child, I was made to eat vegetables every day by my mother."
+        },
+        {
+          "ja": "{駅|えき}で{友達|ともだち}に{一時間|いちじかん}も{待|ま}たされました。",
+          "kana": "えきでともだちにいちじかんもまたされました。",
+          "en": "My friend kept me waiting a whole hour at the station."
+        },
+        {
+          "ja": "パーティーでお{酒|さけ}をたくさん{飲|の}まされた。",
+          "kana": "パーティーでおさけをたくさんのまされた。",
+          "en": "At the party I was made to drink a lot."
+        },
+        {
+          "ja": "{先生|せんせい}に{同|おな}じ{漢字|かんじ}を{百回|ひゃっかい}も{書|か}かされた。",
+          "kana": "せんせいにおなじかんじをひゃっかいもかかされた。",
+          "en": "The teacher made me write the same kanji a hundred times."
+        }
+      ],
+      "clozeHints": [
+        "させられ",
+        "待たされ",
+        "飲まされ",
+        "書かされ"
+      ],
+      "mistakes": [
+        "× 待たせられさせた → ○ 待たされた (causative first, then one passive ending; never stack more)",
+        "× 話さされた → ○ 話させられた (Group 1 verbs ending in す do not take the short される form)",
+        "× 母は私に野菜を食べさせられた → ○ 私は母に野菜を食べさせられた (the person forced to act is the subject; the forcer takes に)"
+      ],
+      "related": [
+        "g-n4-016",
+        "g-n4-021",
+        "g-n4-023"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "unlocksForms": [
+        "causative-passive"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-025",
+      "pattern": "〜させてください",
+      "meaning": "please let me …",
+      "formation": [
+        "Causative V-て + ください: 行かせてください · 休ませてください · 手伝わせてください",
+        "Group 1: 行く → 行かせてください · Group 2: 考える → 考えさせてください · Irregular: する → させてください · 来る → 来させてください",
+        "Softer: 〜させてくれませんか · 〜させていただけませんか",
+        "Casual: 〜させて (やらせて · 行かせて)"
+      ],
+      "explanation": "〜させてください asks for permission by using the causative: you are literally asking the other person to let you do it. 今日は早く帰らせてください, please let me leave early; ちょっと考えさせてください, let me think it over; 手伝わせてください, let me help. It is polite but direct, right for a boss or a teacher when the request is reasonable. Soften it with 〜させていただけませんか in formal situations, and drop ください among friends: やらせて, \"let me do it\". Do not confuse it with 〜てください, which asks the listener to act: 休んでください is \"please rest\", 休ませてください is \"please let me rest\".",
+      "jlpt": 4,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{熱|ねつ}があるので、{休|やす}ませてください。",
+          "kana": "きょうはねつがあるので、やすませてください。",
+          "en": "I have a fever today, so please let me take the day off."
+        },
+        {
+          "ja": "この{仕事|しごと}、ぜひ{私|わたし}にやらせてください。",
+          "kana": "このしごと、ぜひわたしにやらせてください。",
+          "en": "Please let me be the one to do this job."
+        },
+        {
+          "ja": "{大切|たいせつ}なことなので、{少|すこ}し{考|かんが}えさせてください。",
+          "kana": "たいせつなことなので、すこしかんがえさせてください。",
+          "en": "It's an important matter, so please let me think about it a little."
+        },
+        {
+          "ja": "{荷物|にもつ}が{重|おも}そうですね。{持|も}たせてください。",
+          "kana": "にもつがおもそうですね。もたせてください。",
+          "en": "Your bags look heavy. Please let me carry them."
+        },
+        {
+          "ja": "{明日|あした}の{会議|かいぎ}には{私|わたし}も{出|で}させてください。",
+          "kana": "あしたのかいぎにはわたしもでさせてください。",
+          "en": "Please let me attend tomorrow's meeting too."
+        }
+      ],
+      "clozeHints": [
+        "せてください"
+      ],
+      "mistakes": [
+        "× 休んでください (meaning let me rest) → ○ 休ませてください (〜てください asks the listener to act; 〜させてください asks for permission)",
+        "× 考えらせてください → ○ 考えさせてください (Group 2 verbs take させる)",
+        "× 部長、早く帰らせろ → ○ 部長、早く帰らせてください (asking a superior needs ください, not the imperative)"
+      ],
+      "related": [
+        "g-n4-023",
+        "g-n4-026",
+        "g-n5-047",
+        "g-n5-054"
+      ],
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-026",
+      "pattern": "〜させていただく",
+      "meaning": "humbly be allowed to … (I will …)",
+      "formation": [
+        "Causative V-て + いただく / いただきます: 休ませていただきます · 説明させていただきます",
+        "Permission request: 〜させていただけませんか / 〜させていただいてもよろしいでしょうか",
+        "Announcing what you will do: 発表させていただきます · 失礼させていただきます",
+        "Group 1: 送る → 送らせていただく · Group 2: 辞める → 辞めさせていただく · Irregular: する → させていただく"
+      ],
+      "explanation": "〜させていただく is the humble way to say you will do something, framed as receiving permission: 今日は私が説明させていただきます, \"allow me to explain today\". いただく is the humble form of もらう, so the sentence thanks the listener for letting you act. It belongs to work, service and ceremonies: 休ませていただきます (I will be taking the day off), 失礼させていただきます (I will excuse myself). The question 〜させていただけませんか is the softest way to ask permission. Overuse sounds slippery, so keep it for actions that really affect the listener; for everyday politeness, 〜ます or お〜します is enough.",
+      "jlpt": 4,
+      "register": "humble",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{私|わたし}が{説明|せつめい}させていただきます。",
+          "kana": "きょうはわたしがせつめいさせていただきます。",
+          "en": "Allow me to do the explaining today."
+        },
+        {
+          "ja": "{来週|らいしゅう}、{三日|みっか}ほど{休|やす}ませていただきたいのですが。",
+          "kana": "らいしゅう、みっかほどやすませていただきたいのですが。",
+          "en": "I would like to take about three days off next week, if I may."
+        },
+        {
+          "ja": "{写真|しゃしん}を{撮|と}らせていただけませんか。",
+          "kana": "しゃしんをとらせていただけませんか。",
+          "en": "Would you allow me to take a photograph?"
+        },
+        {
+          "ja": "では、{先|さき}に{失礼|しつれい}させていただきます。",
+          "kana": "では、さきにしつれいさせていただきます。",
+          "en": "Well then, please excuse me for leaving first."
+        },
+        {
+          "ja": "{会議|かいぎ}の{時間|じかん}を{変|か}えさせていただきました。",
+          "kana": "かいぎのじかんをかえさせていただきました。",
+          "en": "We have taken the liberty of changing the meeting time."
+        }
+      ],
+      "clozeHints": [
+        "せていただ"
+      ],
+      "mistakes": [
+        "× 説明していただきます (meaning I will explain) → ○ 説明させていただきます (〜ていただく means you receive someone else's action; your own humble action needs the causative)",
+        "× 休ませてもらいます (to the boss) → ○ 休ませていただきます (toward a superior, use the humble いただく)",
+        "× 行かさせていただきます → ○ 行かせていただきます (Group 1 verbs take せる; さ is only for Group 2 and する)"
+      ],
+      "related": [
+        "g-n4-016",
+        "g-n4-023",
+        "g-n4-025"
+      ],
+      "tags": [
+        "humble",
+        "work"
+      ],
+      "notes": "Forward link to add at merge: g-n4-055 (special kenjōgo verbs), g-n4-059 (〜ていただく / 〜させていただく), both in grammar-n4-002.",
+      "station": 18
+    },
+    {
+      "id": "g-n4-027",
+      "pattern": "意向形 〜(よ)う (volitional, formation)",
+      "meaning": "let's … / I'll … (plain)",
+      "formation": [
+        "Group 1: final う-row → お-row + う: 行く → 行こう · 飲む → 飲もう · 話す → 話そう · 待つ → 待とう · 買う → 買おう",
+        "Group 2: drop る, add よう: 食べる → 食べよう · 見る → 見よう · 起きる → 起きよう",
+        "Irregular: する → しよう · 来る → 来よう (こよう)",
+        "Polite partner: 〜ましょう · Question: 〜(よ)うか (shall we?)"
+      ],
+      "explanation": "The volitional is the plain form of 〜ましょう: 行こう, let's go; 食べよう, let's eat; 頑張ろう, let's do our best. Group 1 verbs move the last kana to the お-row and add う (飲む → 飲もう), Group 2 add よう (見よう), and する and 来る become しよう and 来よう. Among friends and family it is the normal way to suggest something or to announce what you are about to do (そろそろ帰ろう). It also appears in thoughts to yourself: 今日は早く寝よう. With 〜と思う it becomes a plan, with 〜とする an attempt. For \"let's not\", say 〜ないでおこう or 〜のはやめよう.",
+      "jlpt": 4,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{疲|つか}れたから、もう{帰|かえ}ろう。",
+          "kana": "きょうはつかれたから、もうかえろう。",
+          "en": "I'm tired today, so let's head home."
+        },
+        {
+          "ja": "{週末|しゅうまつ}、{一緒|いっしょ}に{映画|えいが}を{見|み}よう。",
+          "kana": "しゅうまつ、いっしょにえいがをみよう。",
+          "en": "Let's watch a movie together this weekend."
+        },
+        {
+          "ja": "{来月|らいげつ}から、もっと{日本語|にほんご}を{勉強|べんきょう}しよう。",
+          "kana": "らいげつから、もっとにほんごをべんきょうしよう。",
+          "en": "From next month, I'll study Japanese harder."
+        },
+        {
+          "ja": "{天気|てんき}がいいから、{公園|こうえん}でお{弁当|べんとう}を{食|た}べよう。",
+          "kana": "てんきがいいから、こうえんでおべんとうをたべよう。",
+          "en": "The weather is nice, so let's eat our lunch boxes in the park."
+        },
+        {
+          "ja": "{明日|あした}は{早|はや}く{起|お}きて、{走|はし}ろう。",
+          "kana": "あしたははやくおきて、はしろう。",
+          "en": "Tomorrow I'll get up early and go for a run."
+        }
+      ],
+      "clozeHints": [
+        "帰ろう",
+        "見よう",
+        "しよう",
+        "食べよう",
+        "走ろう"
+      ],
+      "mistakes": [
+        "× 食べろう → ○ 食べよう (Group 2 verbs take よう)",
+        "× 行くよう → ○ 行こう (Group 1 verbs shift to the お-row: 行こ + う)",
+        "× 来(く)よう → ○ 来(こ)よう (来る is irregular)"
+      ],
+      "related": [
+        "g-n4-028",
+        "g-n4-029",
+        "g-n4-030",
+        "g-n5-039",
+        "g-n5-062"
+      ],
+      "tags": [
+        "casual"
+      ],
+      "unlocksForms": [
+        "volitional"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-028",
+      "pattern": "〜ようと思う",
+      "meaning": "I think I'll … (intention)",
+      "formation": [
+        "Volitional + と思う / と思います: 行こうと思う · 食べようと思います",
+        "Settled plan: 〜ようと思っている (I have been thinking of …)",
+        "Other people: 〜ようと思っている (彼は留学しようと思っているらしい)",
+        "Group 1: 買う → 買おうと思う · Group 2: 始める → 始めようと思う · Irregular: する → しようと思う · 来る → 来ようと思う"
+      ],
+      "explanation": "Volitional plus と思う states your own intention: 来年、日本に行こうと思います, I'm thinking of going to Japan next year. It is softer and more common than 〜つもりだ, because \"I think\" leaves room for change. 〜ようと思う is a decision made now or recently; 〜ようと思っている is a plan you have held for a while, and it is also the form for other people's intentions, since you cannot read their thoughts directly. The subject is normally I, or you in a question: 週末、何をしようと思っていますか. For \"I want to\", use 〜たい; for a firm plan, 〜つもりだ.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{日本|にほん}に{留学|りゅうがく}しようと{思|おも}っています。",
+          "kana": "らいねん、にほんにりゅうがくしようとおもっています。",
+          "en": "I'm thinking of studying abroad in Japan next year."
+        },
+        {
+          "ja": "{今日|きょう}は{早|はや}く{寝|ね}ようと{思|おも}う。",
+          "kana": "きょうははやくねようとおもう。",
+          "en": "I think I'll go to bed early today."
+        },
+        {
+          "ja": "{新|あたら}しいパソコンを{買|か}おうと{思|おも}っているんだ。",
+          "kana": "あたらしいパソコンをかおうとおもっているんだ。",
+          "en": "I've been thinking of buying a new computer."
+        },
+        {
+          "ja": "{夏休|なつやす}みに{何|なに}をしようと{思|おも}っていますか。",
+          "kana": "なつやすみになにをしようとおもっていますか。",
+          "en": "What are you thinking of doing over the summer break?"
+        },
+        {
+          "ja": "{週末|しゅうまつ}は{家|いえ}でゆっくり{休|やす}もうと{思|おも}います。",
+          "kana": "しゅうまつはいえでゆっくりやすもうとおもいます。",
+          "en": "I think I'll take it easy at home this weekend."
+        }
+      ],
+      "clozeHints": [
+        "ようと思",
+        "おうと思",
+        "もうと思"
+      ],
+      "mistakes": [
+        "× 行くと思います (meaning I intend to go) → ○ 行こうと思います (intention needs the volitional before と思う; 行くと思う is a prediction)",
+        "× 彼は留学しようと思います → ○ 彼は留学しようと思っています (another person's intention takes 〜と思っている)",
+        "× 行こうと思いたい → ○ 行きたいと思う (do not stack intention and desire; choose one)"
+      ],
+      "related": [
+        "g-n4-027",
+        "g-n4-029",
+        "g-n5-041",
+        "g-n5-066",
+        "g-n5-083"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 18
+    },
+    {
+      "id": "g-n4-029",
+      "pattern": "〜ようとする",
+      "meaning": "try to … / be about to …",
+      "formation": [
+        "Volitional + とする: 開けようとする · 逃げようとする · 行こうとする",
+        "Attempt that fails or is interrupted: 開けようとしたが、開かなかった",
+        "About to happen: 出かけようとしたとき、電話が鳴った",
+        "Negative 〜ようとしない: refuses to, shows no sign of (彼は謝ろうとしない)"
+      ],
+      "explanation": "Volitional plus とする describes an attempt at the moment it is made, or an action that is about to start. ドアを開けようとしたが、開かなかった: I tried to open the door, but it did not open. 出かけようとしたとき、雨が降り出した: just as I was about to leave, it started to rain. Unlike 〜てみる, which means you did it and saw the result, 〜ようとする often means the action did not succeed or had not yet happened. The negative 〜ようとしない is sharp: 彼は話を聞こうとしない, he refuses to listen. For a longer effort, use 〜ようにする or 頑張る.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{窓|まど}を{開|あ}けようとしたが、{開|あ}かなかった。",
+          "kana": "まどをあけようとしたが、あかなかった。",
+          "en": "I tried to open the window, but it wouldn't open."
+        },
+        {
+          "ja": "{家|いえ}を{出|で}ようとしたとき、{電話|でんわ}が{鳴|な}った。",
+          "kana": "いえをでようとしたとき、でんわがなった。",
+          "en": "Just as I was about to leave the house, the phone rang."
+        },
+        {
+          "ja": "{弟|おとうと}は{何度|なんど}{言|い}っても、{勉強|べんきょう}しようとしない。",
+          "kana": "おとうとはなんどいっても、べんきょうしようとしない。",
+          "en": "No matter how many times I tell him, my brother won't even try to study."
+        },
+        {
+          "ja": "{猫|ねこ}が{魚|さかな}を{取|と}ろうとしている。",
+          "kana": "ねこがさかなをとろうとしている。",
+          "en": "The cat is trying to get at the fish."
+        },
+        {
+          "ja": "{電車|でんしゃ}に{乗|の}ろうとしたら、ドアが{閉|し}まってしまった。",
+          "kana": "でんしゃにのろうとしたら、ドアがしまってしまった。",
+          "en": "Just as I tried to board the train, the doors closed on me."
+        }
+      ],
+      "clozeHints": [
+        "ようとし",
+        "ろうとし"
+      ],
+      "mistakes": [
+        "× 窓を開けてみたが、開かなかった → ○ 窓を開けようとしたが、開かなかった (a failed attempt is 〜ようとする; 〜てみる means the action happened)",
+        "× 行くとした → ○ 行こうとした (とする needs the volitional)",
+        "× 毎日日本語を話そうとしています (meaning I make an effort) → ○ 毎日日本語を話すようにしています (a continuing effort is 〜ようにする)"
+      ],
+      "related": [
+        "g-n4-012",
+        "g-n4-027",
+        "g-n4-028"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "notes": "Forward link to add at merge: g-n4-045 (〜ようにする), which lives in grammar-n4-002.",
+      "station": 18
+    },
+    {
+      "id": "g-n4-030",
+      "pattern": "〜(よ)うか (casual suggestion, offer)",
+      "meaning": "shall we …? / shall I …? (casual)",
+      "formation": [
+        "Volitional + か: 行こうか · 食べようか · 手伝おうか · しようか",
+        "Suggestion to a friend: そろそろ帰ろうか (shall we head home?)",
+        "Offer of help: 持とうか？ (want me to carry it?) · 手伝おうか？",
+        "Polite partner: 〜ましょうか · Casual answers: うん、そうしよう / いや、大丈夫"
+      ],
+      "explanation": "Volitional plus か is the casual twin of 〜ましょうか. It makes a suggestion that invites the other person's view (そろそろ行こうか, shall we get going?) or offers your help (荷物、持とうか, want me to take that?). Rising intonation keeps it a real question; falling intonation makes it a soft decision: じゃ、始めようか, \"right, let's start then\". Said to yourself it marks a decision in progress: さて、何を食べようか. Use it with friends, family and colleagues you are casual with; with others switch to 〜ましょうか. Answer yes with そうしよう, no with いや、いいよ or 大丈夫.",
+      "jlpt": 4,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "もう{遅|おそ}いし、そろそろ{帰|かえ}ろうか。",
+          "kana": "もうおそいし、そろそろかえろうか。",
+          "en": "It's late; shall we head home soon?"
+        },
+        {
+          "ja": "{荷物|にもつ}、{重|おも}そうだね。{持|も}とうか？",
+          "kana": "にもつ、おもそうだね。もとうか？",
+          "en": "Those bags look heavy. Want me to carry them?"
+        },
+        {
+          "ja": "{今日|きょう}の{晩|ばん}ご{飯|はん}、{何|なに}にしようか。",
+          "kana": "きょうのばんごはん、なににしようか。",
+          "en": "What shall we have for dinner tonight?"
+        },
+        {
+          "ja": "{疲|つか}れたね。あのカフェでちょっと{休|やす}もうか。",
+          "kana": "つかれたね。あのカフェでちょっとやすもうか。",
+          "en": "We're tired, aren't we? Shall we take a break at that cafe?"
+        },
+        {
+          "ja": "{分|わ}からないなら、{一緒|いっしょ}に{考|かんが}えようか？",
+          "kana": "わからないなら、いっしょにかんがえようか？",
+          "en": "If you don't get it, shall we think it through together?"
+        }
+      ],
+      "clozeHints": [
+        "ろうか",
+        "とうか",
+        "ようか",
+        "もうか"
+      ],
+      "mistakes": [
+        "× 先生、手伝おうか → ○ 先生、お手伝いしましょうか (〜(よ)うか is casual; to a teacher use 〜ましょうか or humble forms)",
+        "× 帰るか？ (as a suggestion) → ○ 帰ろうか (dictionary form plus か asks whether someone will; the suggestion needs the volitional)",
+        "× 食べろうか → ○ 食べようか (Group 2 verbs take よう)"
+      ],
+      "related": [
+        "g-n4-027",
+        "g-n5-039",
+        "g-n5-040",
+        "g-n5-053"
+      ],
+      "tags": [
+        "casual",
+        "communication"
+      ],
+      "station": 18
+    }
+  ]
+}

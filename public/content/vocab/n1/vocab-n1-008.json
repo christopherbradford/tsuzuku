@@ -1,0 +1,5288 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n1",
+  "writer": "vocab-n1-008",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n1-1051",
+      "word": "報じる",
+      "kana": "ほうじる",
+      "meanings": [
+        "to report (news)",
+        "to announce"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{各紙|かくし}は{一面|いちめん}で{新|あたら}しい{法案|ほうあん}の{成立|せいりつ}を{大|おお}きく{報|ほう}じた。",
+          "kana": "かくしはいちめんであたらしいほうあんのせいりつをおおきくほうじた。",
+          "en": "Every paper reported the passage of the new bill prominently on its front page."
+        },
+        {
+          "ja": "{海外|かいがい}のメディアでも、その{事故|じこ}は{大|おお}きく{報|ほう}じられています。",
+          "kana": "かいがいのメディアでも、そのじこはおおきくほうじられています。",
+          "en": "That accident is being widely reported by overseas media as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}やテレビなどが、ニュースとして{世|よ}の{中|なか}に{知|し}らせること。",
+        "kana": "しんぶんやテレビなどが、ニュースとしてよのなかにしらせること。"
+      },
+      "frequencyRank": 5800,
+      "notes": "News and written register; in speech 伝える or ニュースになる is more usual. The passive 報じられる is very common.",
+      "collocations": [
+        "ニュースが報じる",
+        "新聞で報じられる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1052",
+      "word": "専門家",
+      "kana": "せんもんか",
+      "meanings": [
+        "expert",
+        "specialist"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{専門家|せんもんか}の{意見|いけん}も{聞|き}いたうえで、{最終的|さいしゅうてき}な{判断|はんだん}を{下|くだ}すつもりです。",
+          "kana": "せんもんかのいけんもきいたうえで、さいしゅうてきなはんだんをくだすつもりです。",
+          "en": "I intend to make the final decision after hearing the experts' opinions as well."
+        },
+        {
+          "ja": "{素人|しろうと}の{私|わたし}には{分|わ}からなかったが、{専門家|せんもんか}が{見|み}ればすぐに{原因|げんいん}が{分|わ}かったそうだ。",
+          "kana": "しろうとのわたしにはわからなかったが、せんもんかがみればすぐにげんいんがわかったそうだ。",
+          "en": "I couldn't figure it out as a layperson, but apparently an expert spotted the cause right away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{分野|ぶんや}について{深|ふか}い{知識|ちしき}や{経験|けいけん}を{持|も}っている{人|ひと}。",
+        "kana": "あるぶんやについてふかいちしきやけいけんをもっているひと。"
+      },
+      "frequencyRank": 5811,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1053",
+      "word": "読者",
+      "kana": "どくしゃ",
+      "meanings": [
+        "reader"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "この{雑誌|ざっし}は{読者|どくしゃ}からの{投稿|とうこう}で{成|な}り{立|た}っている。",
+          "kana": "このざっしはどくしゃからのとうこうでなりたっている。",
+          "en": "This magazine is made up of contributions from its readers."
+        },
+        {
+          "ja": "{作者|さくしゃ}は{新作|しんさく}の{発表会|はっぴょうかい}で、{長年|ながねん}{支|ささ}えてくれた{読者|どくしゃ}に{感謝|かんしゃ}の{言葉|ことば}を{述|の}べました。",
+          "kana": "さくしゃはしんさくのはっぴょうかいで、ながねんささえてくれたどくしゃにかんしゃのことばをのべました。",
+          "en": "At the launch event for the new work, the author expressed thanks to the readers who had supported her for years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本|ほん}や{新聞|しんぶん}、{雑誌|ざっし}などを{読|よ}む{人|ひと}。",
+        "kana": "ほんやしんぶん、ざっしなどをよむひと。"
+      },
+      "frequencyRank": 5822,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1054",
+      "word": "速報",
+      "kana": "そくほう",
+      "meanings": [
+        "breaking news",
+        "news flash"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{試合|しあい}の{途中|とちゅう}で{地震|じしん}の{速報|そくほう}が{画面|がめん}に{流|なが}れた。",
+          "kana": "しあいのとちゅうでじしんのそくほうががめんにながれた。",
+          "en": "In the middle of the match, a breaking-news alert about an earthquake ran across the screen."
+        },
+        {
+          "ja": "{選挙|せんきょ}の{開票速報|かいひょうそくほう}は、{夜|よる}{八時|はちじ}から{各局|かくきょく}で{一斉|いっせい}に{始|はじ}まります。",
+          "kana": "せんきょのかいひょうそくほうは、よるはちじからかくきょくでいっせいにはじまります。",
+          "en": "The live vote-count coverage begins on every channel at once from eight in the evening."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きなニュースを、できるだけ{早|はや}く{短|みじか}く{伝|つた}える{知|し}らせ。",
+        "kana": "おおきなニュースを、できるだけはやくみじかくつたえるしらせ。"
+      },
+      "frequencyRank": 5833,
+      "collocations": [
+        "速報が入る",
+        "選挙速報"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1055",
+      "word": "中継",
+      "kana": "ちゅうけい",
+      "meanings": [
+        "live relay broadcast",
+        "relaying"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "technology"
+      ],
+      "examples": [
+        {
+          "ja": "{開会式|かいかいしき}の{様子|ようす}は{全国|ぜんこく}に{生|なま}で{中継|ちゅうけい}されます。",
+          "kana": "かいかいしきのようすはぜんこくになまでちゅうけいされます。",
+          "en": "The opening ceremony will be broadcast live across the country."
+        },
+        {
+          "ja": "{昨夜|さくや}はスタジアムからの{中継|ちゅうけい}を{見|み}ながら、{友達|ともだち}と{遅|おそ}くまで{盛|も}り{上|あ}がった。",
+          "kana": "さくやはスタジアムからのちゅうけいをみながら、ともだちとおそくまでもりあがった。",
+          "en": "Last night I watched the live feed from the stadium and had a great time with friends until late."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テレビやラジオで、{離|はな}れた{所|ところ}の{様子|ようす}をそのまま{伝|つた}えること。",
+        "kana": "テレビやラジオで、はなれたところのようすをそのままつたえること。"
+      },
+      "frequencyRank": 5844,
+      "collocations": [
+        "生中継",
+        "現場から中継する"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1056",
+      "word": "視聴者",
+      "kana": "しちょうしゃ",
+      "meanings": [
+        "viewer",
+        "television audience"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{番組|ばんぐみ}の{最後|さいご}に、{視聴者|しちょうしゃ}から{寄|よ}せられた{質問|しつもん}に{答|こた}えるコーナーがある。",
+          "kana": "ばんぐみのさいごに、しちょうしゃからよせられたしつもんにこたえるコーナーがある。",
+          "en": "At the end of the program there is a segment answering questions sent in by viewers."
+        },
+        {
+          "ja": "{放送|ほうそう}{直後|ちょくご}から、{視聴者|しちょうしゃ}の{皆様|みなさま}より{多|おお}くのご{意見|いけん}をいただきました。",
+          "kana": "ほうそうちょくごから、しちょうしゃのみなさまよりおおくのごいけんをいただきました。",
+          "en": "Right after the broadcast, we received a great many comments from our viewers."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テレビやラジオの{番組|ばんぐみ}を{見|み}たり{聞|き}いたりする{人|ひと}。",
+        "kana": "テレビやラジオのばんぐみをみたりきいたりするひと。"
+      },
+      "frequencyRank": 5855,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1057",
+      "word": "当事者",
+      "kana": "とうじしゃ",
+      "meanings": [
+        "party concerned",
+        "person directly involved"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{当事者|とうじしゃ}{同士|どうし}で{話|はな}し{合|あ}っても{解決|かいけつ}しないなら、{第三者|だいさんしゃ}に{入|はい}ってもらうしかない。",
+          "kana": "とうじしゃどうしではなしあってもかいけつしないなら、だいさんしゃにはいってもらうしかない。",
+          "en": "If the parties involved cannot settle it by talking among themselves, there is no choice but to bring in a third party."
+        },
+        {
+          "ja": "{私|わたし}は{当事者|とうじしゃ}ではないので、{詳|くわ}しい{事情|じじょう}については{何|なに}も{申|もう}し{上|あ}げられません。",
+          "kana": "わたしはとうじしゃではないので、くわしいじじょうについてはなにももうしあげられません。",
+          "en": "I'm not one of the parties involved, so I can't say anything about the details."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{事件|じけん}や{問題|もんだい}に{深|ふか}く{関|かか}わっている{人|ひと}。",
+        "kana": "そのじけんやもんだいにふかくかかわっているひと。"
+      },
+      "frequencyRank": 5866,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1058",
+      "word": "当局",
+      "kana": "とうきょく",
+      "meanings": [
+        "authorities",
+        "the office in charge"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{当局|とうきょく}は{事故|じこ}の{原因|げんいん}について、{現在|げんざい}{調査中|ちょうさちゅう}であると{発表|はっぴょう}した。",
+          "kana": "とうきょくはじこのげんいんについて、げんざいちょうさちゅうであるとはっぴょうした。",
+          "en": "The authorities announced that the cause of the accident is currently under investigation."
+        },
+        {
+          "ja": "{空港|くうこう}では{当局|とうきょく}の{指示|しじ}に{従|したが}って、{乗客|じょうきゃく}{全員|ぜんいん}がいったん{建物|たてもの}の{外|そと}に{出|で}た。",
+          "kana": "くうこうではとうきょくのしじにしたがって、じょうきゃくぜんいんがいったんたてもののそとにでた。",
+          "en": "At the airport, all the passengers stepped outside the building for a time on the authorities' instructions."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{問題|もんだい}を{取|と}り{扱|あつか}う{役所|やくしょ}や、{責任|せきにん}を{持|も}つ{組織|そしき}。",
+        "kana": "そのもんだいをとりあつかうやくしょや、せきにんをもつそしき。"
+      },
+      "frequencyRank": 5877,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1059",
+      "word": "特集",
+      "kana": "とくしゅう",
+      "meanings": [
+        "special feature",
+        "feature article"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{今月号|こんげつごう}は{京都|きょうと}の{秋|あき}を{特集|とくしゅう}していて、{写真|しゃしん}がとてもきれいだった。",
+          "kana": "こんげつごうはきょうとのあきをとくしゅうしていて、しゃしんがとてもきれいだった。",
+          "en": "This month's issue has a special feature on autumn in Kyoto, and the photos were beautiful."
+        },
+        {
+          "ja": "{来週|らいしゅう}の{番組|ばんぐみ}では、{地震|じしん}への{備|そな}えについて{一時間|いちじかん}の{特集|とくしゅう}を{組|く}む{予定|よてい}です。",
+          "kana": "らいしゅうのばんぐみでは、じしんへのそなえについていちじかんのとくしゅうをくむよていです。",
+          "en": "Next week's program will run an hour-long special on preparing for earthquakes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{雑誌|ざっし}や{番組|ばんぐみ}で、{一|ひと}つのテーマを{特|とく}に{大|おお}きく{取|と}り{上|あ}げること。",
+        "kana": "ざっしやばんぐみで、ひとつのテーマをとくにおおきくとりあげること。"
+      },
+      "frequencyRank": 5888,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1060",
+      "word": "生放送",
+      "kana": "なまほうそう",
+      "meanings": [
+        "live broadcast"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{生放送|なまほうそう}なので、{言|い}い{間違|まちが}えても{撮|と}り{直|なお}しはできません。",
+          "kana": "なまほうそうなので、いいまちがえてもとりなおしはできません。",
+          "en": "Since it is a live broadcast, you cannot redo it even if you misspeak."
+        },
+        {
+          "ja": "{昨日|きのう}の{生放送|なまほうそう}、{途中|とちゅう}で{音|おと}が{消|き}えてアナウンサーが{慌|あわ}てていたのが{面白|おもしろ}かった。",
+          "kana": "きのうのなまほうそう、とちゅうでおとがきえてアナウンサーがあわてていたのがおもしろかった。",
+          "en": "On yesterday's live show the sound cut out halfway through, and it was funny watching the announcer panic."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{撮|と}っておいたものではなく、{今|いま}の{様子|ようす}をそのまま{流|なが}す{放送|ほうそう}。",
+        "kana": "とっておいたものではなく、いまのようすをそのままながすほうそう。"
+      },
+      "frequencyRank": 5899,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1061",
+      "word": "録画",
+      "kana": "ろくが",
+      "meanings": [
+        "video recording",
+        "recording (a program)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "technology"
+      ],
+      "examples": [
+        {
+          "ja": "{見|み}たいドラマが{残業|ざんぎょう}と{重|かさ}なったので、{録画|ろくが}しておいた。",
+          "kana": "みたいドラマがざんぎょうとかさなったので、ろくがしておいた。",
+          "en": "The drama I wanted to see clashed with overtime, so I recorded it."
+        },
+        {
+          "ja": "この{講演|こうえん}は{録画|ろくが}して、{後日|ごじつ}ホームページで{公開|こうかい}する{予定|よてい}です。",
+          "kana": "このこうえんはろくがして、ごじつホームページでこうかいするよていです。",
+          "en": "This lecture will be recorded and posted on our website at a later date."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テレビの{番組|ばんぐみ}などを、{後|あと}で{見|み}られるように{記録|きろく}しておくこと。",
+        "kana": "テレビのばんぐみなどを、あとでみられるようにきろくしておくこと。"
+      },
+      "frequencyRank": 5910,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1062",
+      "word": "再放送",
+      "kana": "さいほうそう",
+      "meanings": [
+        "rerun",
+        "rebroadcast"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{先週|せんしゅう}{見逃|みのが}した{回|かい}は、{日曜|にちよう}の{午後|ごご}に{再放送|さいほうそう}されるそうだ。",
+          "kana": "せんしゅうみのがしたかいは、にちようのごごにさいほうそうされるそうだ。",
+          "en": "I hear the episode I missed last week will be rerun on Sunday afternoon."
+        },
+        {
+          "ja": "このドラマは{人気|にんき}が{高|たか}く、これまでに{何度|なんど}も{再放送|さいほうそう}されています。",
+          "kana": "このドラマはにんきがたかく、これまでになんどもさいほうそうされています。",
+          "en": "This drama is so popular that it has been rerun many times already."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一度|いちど}{放送|ほうそう}した{番組|ばんぐみ}を、もう{一度|いちど}{放送|ほうそう}すること。",
+        "kana": "いちどほうそうしたばんぐみを、もういちどほうそうすること。"
+      },
+      "frequencyRank": 5921,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1063",
+      "word": "中立",
+      "kana": "ちゅうりつ",
+      "meanings": [
+        "neutrality",
+        "impartiality"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{司会者|しかいしゃ}は{討論|とうろん}の{間|あいだ}、{常|つね}に{中立|ちゅうりつ}の{立場|たちば}を{保|たも}たなければならない。",
+          "kana": "しかいしゃはとうろんのあいだ、つねにちゅうりつのたちばをたもたなければならない。",
+          "en": "During a debate, the moderator must always maintain a neutral position."
+        },
+        {
+          "ja": "{友人|ゆうじん}{二人|ふたり}の{喧嘩|けんか}に{巻|ま}き{込|こ}まれたくなくて、{僕|ぼく}はずっと{中立|ちゅうりつ}を{守|まも}った。",
+          "kana": "ゆうじんふたりのけんかにまきこまれたくなくて、ぼくはずっとちゅうりつをまもった。",
+          "en": "Not wanting to get dragged into my two friends' fight, I stayed neutral the whole time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{対立|たいりつ}するどちらの{側|がわ}にもつかず、{同|おな}じ{距離|きょり}を{保|たも}つこと。",
+        "kana": "たいりつするどちらのがわにもつかず、おなじきょりをたもつこと。"
+      },
+      "frequencyRank": 5932,
+      "collocations": [
+        "中立を保つ",
+        "中立的な立場"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1064",
+      "word": "公正",
+      "kana": "こうせい",
+      "meanings": [
+        "fair",
+        "impartial"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "law",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{審査|しんさ}は{外部|がいぶ}の{委員|いいん}を{交|まじ}えて{公正|こうせい}に{行|おこな}われた。",
+          "kana": "しんさはがいぶのいいんをまじえてこうせいにおこなわれた。",
+          "en": "The screening was conducted fairly, with outside committee members taking part."
+        },
+        {
+          "ja": "どの{選手|せんしゅ}にも{公正|こうせい}な{判断|はんだん}を{下|くだ}すのが、{審判|しんぱん}の{最|もっと}も{大切|たいせつ}な{役目|やくめ}です。",
+          "kana": "どのせんしゅにもこうせいなはんだんをくだすのが、しんぱんのもっともたいせつなやくめです。",
+          "en": "Giving every player a fair ruling is a referee's most important duty."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{特定|とくてい}の{人|ひと}に{有利|ゆうり}にならず、{誰|だれ}に{対|たい}しても{正|ただ}しく{平等|びょうどう}な{様子|ようす}。",
+        "kana": "とくていのひとにゆうりにならず、だれにたいしてもただしくびょうどうなようす。"
+      },
+      "frequencyRank": 5943,
+      "collocations": [
+        "公正な取引",
+        "公正を期す"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1065",
+      "word": "拡散",
+      "kana": "かくさん",
+      "meanings": [
+        "spreading",
+        "diffusion",
+        "going viral"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "technology",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{確認|かくにん}の{取|と}れていない{情報|じょうほう}を{安易|あんい}に{拡散|かくさん}するのはやめましょう。",
+          "kana": "かくにんのとれていないじょうほうをあんいにかくさんするのはやめましょう。",
+          "en": "Let's not casually spread information that has not been confirmed."
+        },
+        {
+          "ja": "{迷子|まいご}の{犬|いぬ}の{写真|しゃしん}が{一晩|ひとばん}で{何千回|なんぜんかい}も{拡散|かくさん}され、{翌朝|よくあさ}には{飼|か}い{主|ぬし}が{見|み}つかった。",
+          "kana": "まいごのいぬのしゃしんがひとばんでなんぜんかいもかくさんされ、よくあさにはかいぬしがみつかった。",
+          "en": "The photo of the lost dog was shared thousands of times overnight, and by the next morning its owner had been found."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{情報|じょうほう}などが、インターネットを{通|つう}じて{広|ひろ}い{範囲|はんい}に{広|ひろ}がること。",
+        "kana": "じょうほうなどが、インターネットをつうじてひろいはんいにひろがること。"
+      },
+      "frequencyRank": 5954,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1066",
+      "word": "流出",
+      "kana": "りゅうしゅつ",
+      "meanings": [
+        "leak (of data)",
+        "outflow"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{顧客|こきゃく}の{個人情報|こじんじょうほう}が{外部|がいぶ}に{流出|りゅうしゅつ}した{可能性|かのうせい}があると{発表|はっぴょう}された。",
+          "kana": "こきゃくのこじんじょうほうががいぶにりゅうしゅつしたかのうせいがあるとはっぴょうされた。",
+          "en": "It was announced that customers' personal information may have leaked outside the company."
+        },
+        {
+          "ja": "{若|わか}い{人材|じんざい}の{海外|かいがい}への{流出|りゅうしゅつ}を、どう{食|く}い{止|と}めるかが{課題|かだい}だ。",
+          "kana": "わかいじんざいのかいがいへのりゅうしゅつを、どうくいとめるかがかだいだ。",
+          "en": "The challenge is how to stem the outflow of young talent overseas."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大切|たいせつ}な{情報|じょうほう}やお{金|かね}などが、{外|そと}へ{出|で}て{行|い}ってしまうこと。",
+        "kana": "たいせつなじょうほうやおかねなどが、そとへでていってしまうこと。"
+      },
+      "frequencyRank": 5965,
+      "station": 49
+    },
+    {
+      "id": "v-n1-1067",
+      "word": "匿名",
+      "kana": "とくめい",
+      "meanings": [
+        "anonymity",
+        "anonymous"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "media",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{匿名|とくめい}だからといって、{何|なに}を{書|か}いてもいいわけではない。",
+          "kana": "とくめいだからといって、なにをかいてもいいわけではない。",
+          "en": "Just because you are anonymous does not mean you can write anything you like."
+        },
+        {
+          "ja": "アンケートは{匿名|とくめい}で{行|おこな}いましたので、{正直|しょうじき}な{声|こえ}が{多|おお}く{集|あつ}まりました。",
+          "kana": "アンケートはとくめいでおこないましたので、しょうじきなこえがおおくあつまりました。",
+          "en": "Since the survey was anonymous, we gathered a lot of honest responses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{名前|なまえ}を{隠|かく}して、{誰|だれ}なのかを{明|あき}らかにしないこと。",
+        "kana": "なまえをかくして、だれなのかをあきらかにしないこと。"
+      },
+      "frequencyRank": 5976,
+      "collocations": [
+        "匿名で投稿する",
+        "匿名希望"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-1068",
+      "word": "実名",
+      "kana": "じつめい",
+      "meanings": [
+        "real name"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "その{記事|きじ}は{被害者|ひがいしゃ}の{実名|じつめい}を{出|だ}すべきかどうかで{議論|ぎろん}を{呼|よ}んだ。",
+          "kana": "そのきじはひがいしゃのじつめいをだすべきかどうかでぎろんをよんだ。",
+          "en": "The article sparked debate over whether the victim's real name should be published."
+        },
+        {
+          "ja": "このサイトでは{実名|じつめい}での{登録|とうろく}をお{願|ねが}いしていますので、ご{協力|きょうりょく}ください。",
+          "kana": "このサイトではじつめいでのとうろくをおねがいしていますので、ごきょうりょくください。",
+          "en": "This site asks you to register under your real name, so we appreciate your cooperation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{別|べつ}の{名前|なまえ}ではない、その{人|ひと}のほんとうの{名前|なまえ}。",
+        "kana": "べつのなまえではない、そのひとのほんとうのなまえ。"
+      },
+      "frequencyRank": 5987,
+      "confusables": [
+        "v-n1-1067"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1069",
+      "word": "司会者",
+      "kana": "しかいしゃ",
+      "meanings": [
+        "host",
+        "emcee",
+        "moderator"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "people",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{司会者|しかいしゃ}の{軽快|けいかい}な{話|はな}し{方|かた}のおかげで、{会場|かいじょう}の{空気|くうき}が{一気|いっき}に{和|なご}んだ。",
+          "kana": "しかいしゃのけいかいなはなしかたのおかげで、かいじょうのくうきがいっきになごんだ。",
+          "en": "Thanks to the host's lively way of speaking, the mood in the hall relaxed at once."
+        },
+        {
+          "ja": "{結婚式|けっこんしき}の{司会者|しかいしゃ}は、{新郎|しんろう}の{大学時代|だいがくじだい}の{友人|ゆうじん}が{務|つと}めることになりました。",
+          "kana": "けっこんしきのしかいしゃは、しんろうのだいがくじだいのゆうじんがつとめることになりました。",
+          "en": "A friend of the groom's from university will be serving as the emcee at the wedding."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会|かい}や{番組|ばんぐみ}を{進|すす}める{役割|やくわり}の{人|ひと}。",
+        "kana": "かいやばんぐみをすすめるやくわりのひと。"
+      },
+      "frequencyRank": 5998,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1070",
+      "word": "評論家",
+      "kana": "ひょうろんか",
+      "meanings": [
+        "critic",
+        "commentator"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "people",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{評論家|ひょうろんか}には{酷評|こくひょう}されたが、{観客|かんきゃく}の{評判|ひょうばん}は{悪|わる}くなかった。",
+          "kana": "ひょうろんかにはこくひょうされたが、かんきゃくのひょうばんはわるくなかった。",
+          "en": "The critics panned it, but the audience response was not bad."
+        },
+        {
+          "ja": "あの{評論家|ひょうろんか}はいつも{辛口|からくち}ですが、{指摘|してき}は{的|まと}を{射|い}ていると{思|おも}います。",
+          "kana": "あのひょうろんかはいつもからくちですが、してきはまとをいているとおもいます。",
+          "en": "That critic is always harsh, but I think his points hit the mark."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{作品|さくひん}や{社会|しゃかい}の{問題|もんだい}について、{意見|いけん}を{述|の}べることを{仕事|しごと}にする{人|ひと}。",
+        "kana": "さくひんやしゃかいのもんだいについて、いけんをのべることをしごとにするひと。"
+      },
+      "frequencyRank": 6009,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1071",
+      "word": "解説者",
+      "kana": "かいせつしゃ",
+      "meanings": [
+        "commentator",
+        "analyst"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "sports",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{元|もと}{選手|せんしゅ}の{解説者|かいせつしゃ}が、{試合|しあい}の{流|なが}れを{分|わ}かりやすく{説明|せつめい}してくれた。",
+          "kana": "もとせんしゅのかいせつしゃが、しあいのながれをわかりやすくせつめいしてくれた。",
+          "en": "The commentator, a former player, explained the flow of the game in an easy-to-follow way."
+        },
+        {
+          "ja": "{解説者|かいせつしゃ}の{予想|よそう}とは{裏腹|うらはら}に、{試合|しあい}は{意外|いがい}な{展開|てんかい}を{見|み}せた。",
+          "kana": "かいせつしゃのよそうとはうらはらに、しあいはいがいなてんかいをみせた。",
+          "en": "Contrary to the commentator's predictions, the match took an unexpected turn."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{試合|しあい}やニュースの{内容|ないよう}を、{分|わ}かりやすく{説明|せつめい}する{役割|やくわり}の{人|ひと}。",
+        "kana": "しあいやニュースのないようを、わかりやすくせつめいするやくわりのひと。"
+      },
+      "frequencyRank": 6020,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1072",
+      "word": "有識者",
+      "kana": "ゆうしきしゃ",
+      "meanings": [
+        "expert",
+        "knowledgeable person"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "politics",
+        "society",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{有識者|ゆうしきしゃ}による{会議|かいぎ}を{設|もう}け、{制度|せいど}の{見直|みなお}しを{進|すす}めている。",
+          "kana": "せいふはゆうしきしゃによるかいぎをもうけ、せいどのみなおしをすすめている。",
+          "en": "The government has set up a panel of experts and is moving ahead with a review of the system."
+        },
+        {
+          "ja": "{新|あたら}しい{条例|じょうれい}の{案|あん}は、{有識者|ゆうしきしゃ}の{意見|いけん}を{取|と}り{入|い}れて{修正|しゅうせい}されました。",
+          "kana": "あたらしいじょうれいのあんは、ゆうしきしゃのいけんをとりいれてしゅうせいされました。",
+          "en": "The draft of the new ordinance was revised to incorporate the experts' views."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{分野|ぶんや}について{広|ひろ}く{深|ふか}い{知識|ちしき}を{持|も}つ、{学者|がくしゃ}などの{人|ひと}。",
+        "kana": "そのぶんやについてひろくふかいちしきをもつ、がくしゃなどのひと。"
+      },
+      "frequencyRank": 6031,
+      "collocations": [
+        "有識者会議"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1073",
+      "word": "識者",
+      "kana": "しきしゃ",
+      "meanings": [
+        "well-informed person",
+        "expert"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "media",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{識者|しきしゃ}の{間|あいだ}でも、この{政策|せいさく}の{効果|こうか}については{意見|いけん}が{分|わ}かれている。",
+          "kana": "しきしゃのあいだでも、このせいさくのこうかについてはいけんがわかれている。",
+          "en": "Even among experts, opinions are divided on the effect of this policy."
+        },
+        {
+          "ja": "{番組|ばんぐみ}では{識者|しきしゃ}を{招|まね}き、{今回|こんかい}の{判決|はんけつ}の{意味|いみ}を{様々|さまざま}な{角度|かくど}から{論|ろん}じた。",
+          "kana": "ばんぐみではしきしゃをまねき、こんかいのはんけつのいみをさまざまなかくどからろんじた。",
+          "en": "The program invited well-informed commentators and discussed the meaning of this ruling from various angles."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いろいろな{問題|もんだい}を{正|ただ}しく{判断|はんだん}できる、{知識|ちしき}と{経験|けいけん}のある{人|ひと}。",
+        "kana": "いろいろなもんだいをただしくはんだんできる、ちしきとけいけんのあるひと。"
+      },
+      "frequencyRank": 6042,
+      "confusables": [
+        "v-n1-1072"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1074",
+      "word": "要人",
+      "kana": "ようじん",
+      "meanings": [
+        "key figure",
+        "dignitary"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{各国|かっこく}の{要人|ようじん}が{集|あつ}まるため、{駅|えき}の{周辺|しゅうへん}は{厳重|げんじゅう}な{警備|けいび}が{敷|し}かれている。",
+          "kana": "かっこくのようじんがあつまるため、えきのしゅうへんはげんじゅうなけいびがしかれている。",
+          "en": "Because key figures from many countries are gathering, tight security has been put in place around the station."
+        },
+        {
+          "ja": "{要人|ようじん}を{乗|の}せた{車|くるま}が{通|とお}るため、この{道路|どうろ}は{午後|ごご}の{間|あいだ}{通行止|つうこうど}めになります。",
+          "kana": "ようじんをのせたくるまがとおるため、このどうろはごごのあいだつうこうどめになります。",
+          "en": "Because a car carrying a VIP will be passing through, this road will be closed during the afternoon."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政府|せいふ}や{社会|しゃかい}で{重要|じゅうよう}な{立場|たちば}にある{人|ひと}。",
+        "kana": "せいふやしゃかいでじゅうようなたちばにあるひと。"
+      },
+      "frequencyRank": 6053,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1075",
+      "word": "情報源",
+      "kana": "じょうほうげん",
+      "meanings": [
+        "source of information"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{記者|きしゃ}は{情報源|じょうほうげん}を{明|あ}かすよう{求|もと}められても、{決|けっ}して{応|おう}じなかった。",
+          "kana": "きしゃはじょうほうげんをあかすようもとめられても、けっしておうじなかった。",
+          "en": "Even when asked to reveal the source, the reporter never complied."
+        },
+        {
+          "ja": "ネットの{噂|うわさ}を{信|しん}じる{前|まえ}に、まず{情報源|じょうほうげん}が{確|たし}かかどうかを{確|たし}かめたほうがいい。",
+          "kana": "ネットのうわさをしんじるまえに、まずじょうほうげんがたしかかどうかをたしかめたほうがいい。",
+          "en": "Before believing a rumor online, you should first check whether the source is reliable."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{情報|じょうほう}がどこから{出|で}たのかという、{元|もと}になる{人|ひと}や{資料|しりょう}。",
+        "kana": "あるじょうほうがどこからでたのかという、もとになるひとやしりょう。"
+      },
+      "frequencyRank": 6064,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1076",
+      "word": "言論",
+      "kana": "げんろん",
+      "meanings": [
+        "speech",
+        "public discourse"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "politics",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{言論|げんろん}の{自由|じゆう}は、{民主主義|みんしゅしゅぎ}を{支|ささ}える{最|もっと}も{基本的|きほんてき}な{権利|けんり}の{一|ひと}つだ。",
+          "kana": "げんろんのじゆうは、みんしゅしゅぎをささえるもっともきほんてきなけんりのひとつだ。",
+          "en": "Freedom of speech is one of the most basic rights underpinning democracy."
+        },
+        {
+          "ja": "かつてこの{国|くに}では、{政府|せいふ}を{批判|ひはん}する{言論|げんろん}が{厳|きび}しく{取|と}り{締|し}まられていました。",
+          "kana": "かつてこのくにでは、せいふをひはんするげんろんがきびしくとりしまられていました。",
+          "en": "In this country, speech that criticized the government was once strictly suppressed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}や{文字|もじ}で{自分|じぶん}の{意見|いけん}を{発表|はっぴょう}すること。また、その{意見|いけん}。",
+        "kana": "ことばやもじでじぶんのいけんをはっぴょうすること。また、そのいけん。"
+      },
+      "frequencyRank": 6075,
+      "collocations": [
+        "言論の自由",
+        "言論弾圧"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1077",
+      "word": "報道の自由",
+      "kana": "ほうどうのじゆう",
+      "meanings": [
+        "freedom of the press"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "politics",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{報道|ほうどう}の{自由|じゆう}が{守|まも}られてこそ、{権力|けんりょく}の{監視|かんし}が{可能|かのう}になる。",
+          "kana": "ほうどうのじゆうがまもられてこそ、けんりょくのかんしがかのうになる。",
+          "en": "Only when freedom of the press is protected does it become possible to keep watch over power."
+        },
+        {
+          "ja": "この{団体|だんたい}は{毎年|まいとし}、{世界|せかい}{各国|かっこく}の{報道|ほうどう}の{自由|じゆう}の{度合|どあ}いを{調|しら}べて{発表|はっぴょう}しています。",
+          "kana": "このだんたいはまいとし、せかいかっこくのほうどうのじゆうのどあいをしらべてはっぴょうしています。",
+          "en": "Every year this organization surveys and publishes the degree of press freedom in countries around the world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}やテレビが、{権力|けんりょく}に{邪魔|じゃま}されずに{事実|じじつ}を{伝|つた}えられる{権利|けんり}。",
+        "kana": "しんぶんやテレビが、けんりょくにじゃまされずにじじつをつたえられるけんり。"
+      },
+      "frequencyRank": 6086,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1078",
+      "word": "知る権利",
+      "kana": "しるけんり",
+      "meanings": [
+        "right to know"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "society",
+        "media",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{国民|こくみん}の{知|し}る{権利|けんり}に{応|こた}えるため、{会議|かいぎ}の{議事録|ぎじろく}は{原則|げんそく}として{公開|こうかい}される。",
+          "kana": "こくみんのしるけんりにこたえるため、かいぎのぎじろくはげんそくとしてこうかいされる。",
+          "en": "To honor the public's right to know, the minutes of the meeting are made public as a rule."
+        },
+        {
+          "ja": "{患者|かんじゃ}には{自分|じぶん}の{病気|びょうき}について{知|し}る{権利|けんり}があるのだから、{医者|いしゃ}は{正直|しょうじき}に{説明|せつめい}すべきだ。",
+          "kana": "かんじゃにはじぶんのびょうきについてしるけんりがあるのだから、いしゃはしょうじきにせつめいすべきだ。",
+          "en": "Patients have a right to know about their own illness, so doctors should explain things honestly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}が、{政府|せいふ}などの{持|も}つ{情報|じょうほう}を{求|もと}めて{受|う}け{取|と}ることができる{権利|けんり}。",
+        "kana": "こくみんが、せいふなどのもつじょうほうをもとめてうけとることができるけんり。"
+      },
+      "frequencyRank": 6097,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1079",
+      "word": "守秘義務",
+      "kana": "しゅひぎむ",
+      "meanings": [
+        "duty of confidentiality"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "work",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{医師|いし}には{守秘義務|しゅひぎむ}があるので、{患者|かんじゃ}の{情報|じょうほう}を{家族|かぞく}にも{勝手|かって}に{話|はな}せない。",
+          "kana": "いしにはしゅひぎむがあるので、かんじゃのじょうほうをかぞくにもかってにはなせない。",
+          "en": "Doctors have a duty of confidentiality, so they cannot freely discuss a patient's information even with family."
+        },
+        {
+          "ja": "{業務上|ぎょうむじょう}{知|し}り{得|え}た{情報|じょうほう}については、{退職後|たいしょくご}も{守秘義務|しゅひぎむ}を{負|お}うことになります。",
+          "kana": "ぎょうむじょうしりえたじょうほうについては、たいしょくごもしゅひぎむをおうことになります。",
+          "en": "You remain bound by a duty of confidentiality even after leaving the company regarding information learned on the job."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}で{知|し}った{秘密|ひみつ}を、ほかの{人|ひと}に{話|はな}してはならないという{義務|ぎむ}。",
+        "kana": "しごとでしったひみつを、ほかのひとにはなしてはならないというぎむ。"
+      },
+      "frequencyRank": 6108,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1080",
+      "word": "検閲",
+      "kana": "けんえつ",
+      "meanings": [
+        "censorship"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "media",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{戦時中|せんじちゅう}は{手紙|てがみ}も{検閲|けんえつ}され、{都合|つごう}の{悪|わる}い{部分|ぶぶん}は{黒|くろ}く{塗|ぬ}られていた。",
+          "kana": "せんじちゅうはてがみもけんえつされ、つごうのわるいぶぶんはくろくぬられていた。",
+          "en": "During the war even letters were censored, and inconvenient passages were blacked out."
+        },
+        {
+          "ja": "{憲法|けんぽう}は{検閲|けんえつ}を{禁|きん}じており、{国|くに}が{出版物|しゅっぱんぶつ}の{内容|ないよう}を{事前|じぜん}に{調|しら}べることはできません。",
+          "kana": "けんぽうはけんえつをきんじており、くにがしゅっぱんぶつのないようをじぜんにしらべることはできません。",
+          "en": "The constitution prohibits censorship, so the state cannot examine the content of publications in advance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}などが、{本|ほん}や{新聞|しんぶん}などの{内容|ないよう}を{発表前|はっぴょうまえ}に{調|しら}べて、{制限|せいげん}すること。",
+        "kana": "くになどが、ほんやしんぶんなどのないようをはっぴょうまえにしらべて、せいげんすること。"
+      },
+      "frequencyRank": 6119,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1081",
+      "word": "偏向",
+      "kana": "へんこう",
+      "meanings": [
+        "bias",
+        "slant"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{報道|ほうどう}が{偏向|へんこう}していると{批判|ひはん}された{局|きょく}は、{翌日|よくじつ}に{説明|せつめい}の{場|ば}を{設|もう}けた。",
+          "kana": "ほうどうがへんこうしているとひはんされたきょくは、よくじつにせつめいのばをもうけた。",
+          "en": "The station, criticized for biased reporting, held a briefing the next day to explain itself."
+        },
+        {
+          "ja": "この{教科書|きょうかしょ}は{特定|とくてい}の{思想|しそう}に{偏向|へんこう}しているとして、{採用|さいよう}を{見送|みおく}る{学校|がっこう}が{相次|あいつ}いだ。",
+          "kana": "このきょうかしょはとくていのしそうにへんこうしているとして、さいようをみおくるがっこうがあいついだ。",
+          "en": "One school after another declined to adopt the textbook, saying it was slanted toward a particular ideology."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}え{方|かた}や{伝|つた}え{方|かた}が{公平|こうへい}でなく、{一方|いっぽう}の{側|がわ}に{寄|よ}っていること。",
+        "kana": "かんがえかたやつたえかたがこうへいでなく、いっぽうのがわによっていること。"
+      },
+      "frequencyRank": 6130,
+      "collocations": [
+        "偏向報道"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1082",
+      "word": "論評",
+      "kana": "ろんぴょう",
+      "meanings": [
+        "commentary",
+        "critique"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{大臣|だいじん}は{記者|きしゃ}の{質問|しつもん}に{対|たい}し、「{論評|ろんぴょう}は{差|さ}し{控|ひか}える」と{述|の}べるにとどめた。",
+          "kana": "だいじんはきしゃのしつもんにたいし、「ろんぴょうはさしひかえる」とのべるにとどめた。",
+          "en": "In response to the reporter's question, the minister said only that he would refrain from comment."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{毎週|まいしゅう}、{新作|しんさく}の{映画|えいが}を{鋭|するど}く{論評|ろんぴょう}するコラムを{雑誌|ざっし}に{連載|れんさい}している。",
+          "kana": "かのじょはまいしゅう、しんさくのえいがをするどくろんぴょうするコラムをざっしにれんさいしている。",
+          "en": "Every week she writes a column for a magazine in which she sharply critiques new films."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ニュースや{作品|さくひん}について、{良|よ}いか{悪|わる}いかを{判断|はんだん}して{意見|いけん}を{述|の}べること。",
+        "kana": "ニュースやさくひんについて、よいかわるいかをはんだんしていけんをのべること。"
+      },
+      "frequencyRank": 6141,
+      "collocations": [
+        "論評を控える",
+        "論評を加える"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1083",
+      "word": "論調",
+      "kana": "ろんちょう",
+      "meanings": [
+        "tone (of an argument)",
+        "editorial stance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{出来事|できごと}でも、{新聞|しんぶん}によって{論調|ろんちょう}がまったく{異|こと}なるのが{興味深|きょうみぶか}い。",
+          "kana": "おなじできごとでも、しんぶんによってろんちょうがまったくことなるのがきょうみぶかい。",
+          "en": "It is fascinating how the tone differs completely from paper to paper, even for the same event."
+        },
+        {
+          "ja": "{政府|せいふ}の{対応|たいおう}を{批判|ひはん}する{論調|ろんちょう}が、{最近|さいきん}はテレビでも{目立|めだ}つようになりました。",
+          "kana": "せいふのたいおうをひはんするろんちょうが、さいきんはテレビでもめだつようになりました。",
+          "en": "Lately a critical tone toward the government's response has become noticeable on television too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}などが、{意見|いけん}を{述|の}べるときの{全体|ぜんたい}の{調子|ちょうし}や{方向|ほうこう}。",
+        "kana": "しんぶんやざっしなどが、いけんをのべるときのぜんたいのちょうしやほうこう。"
+      },
+      "frequencyRank": 6152,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1084",
+      "word": "紙面",
+      "kana": "しめん",
+      "meanings": [
+        "newspaper page",
+        "space in a paper"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{紙面|しめん}の{都合|つごう}で、{読者|どくしゃ}からの{投書|とうしょ}の{一部|いちぶ}を{省略|しょうりゃく}させていただきました。",
+          "kana": "しめんのつごうで、どくしゃからのとうしょのいちぶをしょうりゃくさせていただきました。",
+          "en": "Owing to space constraints, we have shortened some of the letters from readers."
+        },
+        {
+          "ja": "{翌日|よくじつ}の{紙面|しめん}は、どこを{開|ひら}いてもその{選手|せんしゅ}の{話題|わだい}で{埋|う}め{尽|つ}くされていた。",
+          "kana": "よくじつのしめんは、どこをひらいてもそのせんしゅのわだいでうめつくされていた。",
+          "en": "The next day's paper was filled with that athlete, whichever page you opened."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}の、{記事|きじ}や{写真|しゃしん}が{載|の}っている{面|めん}。また、その{広|ひろ}さ。",
+        "kana": "しんぶんの、きじやしゃしんがのっているめん。また、そのひろさ。"
+      },
+      "frequencyRank": 6163,
+      "collocations": [
+        "紙面を割く",
+        "紙面の都合"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1085",
+      "word": "大見出し",
+      "kana": "おおみだし",
+      "meanings": [
+        "banner headline"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{翌朝|よくあさ}の{新聞|しんぶん}は、{一面|いちめん}の{大見出|おおみだ}しでその{決定|けってい}を{伝|つた}えた。",
+          "kana": "よくあさのしんぶんは、いちめんのおおみだしでそのけっていをつたえた。",
+          "en": "The next morning's papers announced the decision in banner headlines on the front page."
+        },
+        {
+          "ja": "スポーツ{紙|し}の{大見出|おおみだ}しは、{毎朝|まいあさ}{駅|えき}の{売店|ばいてん}で{嫌|いや}でも{目|め}に{入|はい}る。",
+          "kana": "スポーツしのおおみだしは、まいあさえきのばいてんでいやでもめにはいる。",
+          "en": "The banner headlines of the sports papers catch your eye at the station kiosk every morning whether you like it or not."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}の{一番|いちばん}{上|うえ}に、{特|とく}に{大|おお}きな{文字|もじ}で{書|か}かれた{記事|きじ}の{題名|だいめい}。",
+        "kana": "しんぶんのいちばんうえに、とくにおおきなもじでかかれたきじのだいめい。"
+      },
+      "frequencyRank": 6174,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1086",
+      "word": "号外",
+      "kana": "ごうがい",
+      "meanings": [
+        "extra edition"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}で{配|くば}られていた{号外|ごうがい}を{受|う}け{取|と}って、{初|はじ}めてその{知|し}らせを{知|し}った。",
+          "kana": "えきまえでくばられていたごうがいをうけとって、はじめてそのしらせをしった。",
+          "en": "I first learned the news when I took an extra edition being handed out in front of the station."
+        },
+        {
+          "ja": "{大|おお}きな{事件|じけん}が{起|お}きると、{新聞社|しんぶんしゃ}は{急|いそ}いで{号外|ごうがい}を{刷|す}って{街頭|がいとう}で{配|くば}ります。",
+          "kana": "おおきなじけんがおきると、しんぶんしゃはいそいでごうがいをすってがいとうでくばります。",
+          "en": "When a major incident occurs, newspaper companies rush to print extras and hand them out on the street."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きなニュースを{急|いそ}いで{伝|つた}えるために、{特別|とくべつ}に{出|だ}す{新聞|しんぶん}。",
+        "kana": "おおきなニュースをいそいでつたえるために、とくべつにだすしんぶん。"
+      },
+      "frequencyRank": 6185,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1087",
+      "word": "一報",
+      "kana": "いっぽう",
+      "meanings": [
+        "first report",
+        "brief notice"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}の{一報|いっぽう}が{入|はい}ったのは、{午後|ごご}{三時|さんじ}を{少|すこ}し{回|まわ}ったころだった。",
+          "kana": "じこのいっぽうがはいったのは、ごごさんじをすこしまわったころだった。",
+          "en": "The first report of the accident came in a little after three in the afternoon."
+        },
+        {
+          "ja": "{無事|ぶじ}に{到着|とうちゃく}されましたら、{電話|でんわ}で{結構|けっこう}ですので{一報|いっぽう}をお{願|ねが}いいたします。",
+          "kana": "ぶじにとうちゃくされましたら、でんわでけっこうですのでいっぽうをおねがいいたします。",
+          "en": "Once you've arrived safely, please let us know; a phone call is fine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{最初|さいしょ}に{届|とど}く{短|みじか}い{知|し}らせ。また、{簡単|かんたん}に{知|し}らせること。",
+        "kana": "さいしょにとどくみじかいしらせ。また、かんたんにしらせること。"
+      },
+      "frequencyRank": 6196,
+      "collocations": [
+        "一報が入る",
+        "一報を受ける"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1088",
+      "word": "続報",
+      "kana": "ぞくほう",
+      "meanings": [
+        "follow-up report"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{詳|くわ}しいことはまだ{分|わ}かっておらず、{続報|ぞくほう}が{入|はい}り{次第|しだい}お{伝|つた}えします。",
+          "kana": "くわしいことはまだわかっておらず、ぞくほうがはいりしだいおつたえします。",
+          "en": "Details are not yet known; we will bring you more as soon as follow-up reports come in."
+        },
+        {
+          "ja": "{昨夜|さくや}の{火事|かじ}の{続報|ぞくほう}によると、けが{人|にん}は{幸|さいわ}い{一人|ひとり}もいなかったらしい。",
+          "kana": "さくやのかじのぞくほうによると、けがにんはさいわいひとりもいなかったらしい。",
+          "en": "According to follow-up reports on last night's fire, fortunately no one was injured."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{最初|さいしょ}の{知|し}らせの{後|あと}に{伝|つた}えられる、より{詳|くわ}しい{知|し}らせ。",
+        "kana": "さいしょのしらせのあとにつたえられる、よりくわしいしらせ。"
+      },
+      "frequencyRank": 6207,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1089",
+      "word": "誤報",
+      "kana": "ごほう",
+      "meanings": [
+        "false report",
+        "misinformation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{速|はや}さばかりを{競|きそ}った{結果|けっか}、{誤報|ごほう}を{流|なが}してしまっては{元|もと}も{子|こ}もない。",
+          "kana": "はやさばかりをきそったけっか、ごほうをながしてしまってはもともこもない。",
+          "en": "If, in competing only on speed, you end up putting out a false report, it defeats the whole purpose."
+        },
+        {
+          "ja": "{昨日|きのう}の{放送|ほうそう}の{一部|いちぶ}に{誤報|ごほう}がありましたので、{訂正|ていせい}しておわび{申|もう}し{上|あ}げます。",
+          "kana": "きのうのほうそうのいちぶにごほうがありましたので、ていせいしておわびもうしあげます。",
+          "en": "Part of yesterday's broadcast contained an erroneous report, which we hereby correct and apologize for."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{事実|じじつ}と{違|ちが}う、{間違|まちが}いのある{内容|ないよう}の{知|し}らせやニュース。",
+        "kana": "じじつとちがう、まちがいのあるないようのしらせやニュース。"
+      },
+      "frequencyRank": 6218,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1090",
+      "word": "独占取材",
+      "kana": "どくせんしゅざい",
+      "meanings": [
+        "exclusive interview",
+        "exclusive coverage"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "その{週刊誌|しゅうかんし}は{事件|じけん}の{関係者|かんけいしゃ}を{独占取材|どくせんしゅざい}し、{部数|ぶすう}を{大|おお}きく{伸|の}ばした。",
+          "kana": "そのしゅうかんしはじけんのかんけいしゃをどくせんしゅざいし、ぶすうをおおきくのばした。",
+          "en": "The weekly got an exclusive interview with people involved in the case and boosted its circulation sharply."
+        },
+        {
+          "ja": "{帰国|きこく}した{選手|せんしゅ}への{独占取材|どくせんしゅざい}が、{今夜|こんや}{九時|くじ}からの{番組|ばんぐみ}で{放送|ほうそう}されます。",
+          "kana": "きこくしたせんしゅへのどくせんしゅざいが、こんやくじからのばんぐみでほうそうされます。",
+          "en": "An exclusive interview with the athlete who has just returned home will air on tonight's nine o'clock program."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ひとつの{新聞|しんぶん}や{番組|ばんぐみ}だけが、{相手|あいて}から{話|はなし}を{聞|き}いて{記事|きじ}にすること。",
+        "kana": "ひとつのしんぶんやばんぐみだけが、あいてからはなしをきいてきじにすること。"
+      },
+      "frequencyRank": 6229,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1091",
+      "word": "直撃",
+      "kana": "ちょくげき",
+      "meanings": [
+        "direct hit",
+        "ambush interview"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "weather"
+      ],
+      "examples": [
+        {
+          "ja": "{台風|たいふう}が{直撃|ちょくげき}するおそれがあるため、{明日|あす}のイベントは{中止|ちゅうし}になった。",
+          "kana": "たいふうがちょくげきするおそれがあるため、あすのイベントはちゅうしになった。",
+          "en": "Because the typhoon may make a direct hit, tomorrow's event has been canceled."
+        },
+        {
+          "ja": "{記者|きしゃ}に{自宅前|じたくまえ}で{直撃|ちょくげき}された{社長|しゃちょう}は、{何|なに}も{答|こた}えずに{車|くるま}に{乗|の}り{込|こ}んだ。",
+          "kana": "きしゃにじたくまえでちょくげきされたしゃちょうは、なにもこたえずにくるまにのりこんだ。",
+          "en": "Ambushed by reporters in front of his home, the company president got into his car without answering anything."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{台風|たいふう}などがまっすぐ{当|あ}たること。また、{相手|あいて}に{突然|とつぜん}{会|あ}って{質問|しつもん}すること。",
+        "kana": "たいふうなどがまっすぐあたること。また、あいてにとつぜんあってしつもんすること。"
+      },
+      "frequencyRank": 6240,
+      "notes": "In journalism 直撃取材 means catching someone unannounced for comment.",
+      "station": 51
+    },
+    {
+      "id": "v-n1-1092",
+      "word": "密着",
+      "kana": "みっちゃく",
+      "meanings": [
+        "close coverage",
+        "sticking close"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{番組|ばんぐみ}は{新人|しんじん}{料理人|りょうりにん}の{一日|いちにち}に{密着|みっちゃく}し、{厨房|ちゅうぼう}の{裏側|うらがわ}を{映|うつ}し{出|だ}した。",
+          "kana": "ばんぐみはしんじんりょうりにんのいちにちにみっちゃくし、ちゅうぼうのうらがわをうつしだした。",
+          "en": "The program followed a rookie cook through a day and showed the behind-the-scenes side of the kitchen."
+        },
+        {
+          "ja": "この{服|ふく}は{体|からだ}に{密着|みっちゃく}するので、{冬|ふゆ}でも{風|かぜ}を{通|とお}さず{暖|あたた}かいです。",
+          "kana": "このふくはからだにみっちゃくするので、ふゆでもかぜをとおさずあたたかいです。",
+          "en": "These clothes fit snugly against your body, so they keep the wind out and stay warm even in winter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ぴったりと{付|つ}くこと。また、{相手|あいて}のそばで{長|なが}く{取材|しゅざい}すること。",
+        "kana": "ぴったりとつくこと。また、あいてのそばでながくしゅざいすること。"
+      },
+      "frequencyRank": 6251,
+      "collocations": [
+        "密着取材",
+        "密着ドキュメント"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1093",
+      "word": "潜入",
+      "kana": "せんにゅう",
+      "meanings": [
+        "infiltration",
+        "going undercover"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "{記者|きしゃ}は{工場|こうじょう}に{作業員|さぎょういん}として{潜入|せんにゅう}し、{労働|ろうどう}{環境|かんきょう}の{実態|じったい}を{記事|きじ}にした。",
+          "kana": "きしゃはこうじょうにさぎょういんとしてせんにゅうし、ろうどうかんきょうのじったいをきじにした。",
+          "en": "The reporter went into the factory undercover as a worker and wrote an article on the real working conditions."
+        },
+        {
+          "ja": "{泥棒|どろぼう}は{夜中|よなか}に{窓|まど}から{事務所|じむしょ}に{潜入|せんにゅう}したが、{警報|けいほう}が{鳴|な}ってすぐに{逃|に}げた。",
+          "kana": "どろぼうはよなかにまどからじむしょにせんにゅうしたが、けいほうがなってすぐににげた。",
+          "en": "The burglar slipped into the office through a window in the middle of the night, but fled as soon as the alarm went off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{誰|だれ}なのかを{隠|かく}して、こっそりと{中|なか}に{入|はい}ること。",
+        "kana": "だれなのかをかくして、こっそりとなかにはいること。"
+      },
+      "frequencyRank": 6262,
+      "collocations": [
+        "潜入取材"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1094",
+      "word": "暴露",
+      "kana": "ばくろ",
+      "meanings": [
+        "exposure",
+        "disclosure"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{元|もと}{社員|しゃいん}が{内部|ないぶ}の{不正|ふせい}を{暴露|ばくろ}したことで、{会社|かいしゃ}は{謝罪|しゃざい}に{追|お}い{込|こ}まれた。",
+          "kana": "もとしゃいんがないぶのふせいをばくろしたことで、かいしゃはしゃざいにおいこまれた。",
+          "en": "A former employee exposed internal wrongdoing, and the company was forced to apologize."
+        },
+        {
+          "ja": "あの{週刊誌|しゅうかんし}は、{有名人|ゆうめいじん}の{私生活|しせいかつ}を{暴露|ばくろ}する{記事|きじ}ばかり{載|の}せています。",
+          "kana": "あのしゅうかんしは、ゆうめいじんのしせいかつをばくろするきじばかりのせています。",
+          "en": "That weekly magazine runs nothing but articles exposing the private lives of celebrities."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{隠|かく}されていた{秘密|ひみつ}や{悪|わる}いことを、{人々|ひとびと}に{明|あき}らかにすること。",
+        "kana": "かくされていたひみつやわるいことを、ひとびとにあきらかにすること。"
+      },
+      "frequencyRank": 6273,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1095",
+      "word": "内部告発",
+      "kana": "ないぶこくはつ",
+      "meanings": [
+        "whistleblowing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "law",
+        "work",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{内部告発|ないぶこくはつ}をした{社員|しゃいん}が{不利益|ふりえき}を{受|う}けないよう、{法律|ほうりつ}で{保護|ほご}されている。",
+          "kana": "ないぶこくはつをしたしゃいんがふりえきをうけないよう、ほうりつでほごされている。",
+          "en": "Employees who blow the whistle are protected by law so that they do not suffer for it."
+        },
+        {
+          "ja": "この{事件|じけん}は、{工場|こうじょう}で{働|はたら}く{一人|ひとり}の{内部告発|ないぶこくはつ}がきっかけで{明|あか}るみに{出|で}た。",
+          "kana": "このじけんは、こうじょうではたらくひとりのないぶこくはつがきっかけであかるみにでた。",
+          "en": "This scandal came to light thanks to whistleblowing by one person who worked at the factory."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{組織|そしき}の{中|なか}の{人|ひと}が、その{組織|そしき}の{悪|わる}い{行|おこな}いを{外|そと}に{知|し}らせること。",
+        "kana": "そしきのなかのひとが、そのそしきのわるいおこないをそとにしらせること。"
+      },
+      "frequencyRank": 6284,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1096",
+      "word": "漏洩",
+      "kana": "ろうえい",
+      "meanings": [
+        "leak (of information)",
+        "leakage"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "law",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "パスワードの{管理|かんり}が{甘|あま}かったために、{機密|きみつ}{情報|じょうほう}が{漏洩|ろうえい}する{事態|じたい}となった。",
+          "kana": "パスワードのかんりがあまかったために、きみつじょうほうがろうえいするじたいとなった。",
+          "en": "Because password management was lax, confidential information ended up being leaked."
+        },
+        {
+          "ja": "{試験問題|しけんもんだい}の{漏洩|ろうえい}が{明|あき}らかになり、{試験|しけん}は{全面的|ぜんめんてき}にやり{直|なお}されることになりました。",
+          "kana": "しけんもんだいのろうえいがあきらかになり、しけんはぜんめんてきにやりなおされることになりました。",
+          "en": "After the leak of the exam questions came to light, it was decided that the exam would be completely redone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{秘密|ひみつ}にすべき{情報|じょうほう}などが、{外|そと}に{漏|も}れてしまうこと。",
+        "kana": "ひみつにすべきじょうほうなどが、そとにもれてしまうこと。"
+      },
+      "frequencyRank": 6295,
+      "altForms": [
+        "漏えい"
+      ],
+      "confusables": [
+        "v-n1-1066"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1097",
+      "word": "炎上",
+      "kana": "えんじょう",
+      "meanings": [
+        "online flaming",
+        "going up in flames"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "media",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{軽|かる}い{気持|きも}ちで{投稿|とうこう}した{一言|ひとこと}が{炎上|えんじょう}し、{一日中|いちにちじゅう}スマホが{鳴|な}りやまなかった。",
+          "kana": "かるいきもちでとうこうしたひとことがえんじょうし、いちにちじゅうスマホがなりやまなかった。",
+          "en": "One offhand remark I posted blew up online, and my phone did not stop buzzing all day."
+        },
+        {
+          "ja": "{有名人|ゆうめいじん}の{発言|はつげん}が{炎上|えんじょう}するたびに、{企業|きぎょう}は{広告|こうこく}を{取|と}り{下|さ}げるかどうか{判断|はんだん}を{迫|せま}られます。",
+          "kana": "ゆうめいじんのはつげんがえんじょうするたびに、きぎょうはこうこくをとりさげるかどうかはんだんをせまられます。",
+          "en": "Every time a celebrity's remark blows up online, companies are forced to decide whether to pull their ads."
+        }
+      ],
+      "definitionJa": {
+        "ja": "インターネット{上|じょう}の{発言|はつげん}に、{批判|ひはん}が{一度|いちど}に{大量|たいりょう}に{集|あつ}まること。",
+        "kana": "インターネットじょうのはつげんに、ひはんがいちどにたいりょうにあつまること。"
+      },
+      "frequencyRank": 6306,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1098",
+      "word": "風評",
+      "kana": "ふうひょう",
+      "meanings": [
+        "rumor",
+        "reputation by hearsay"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}の{後|あと}、{根拠|こんきょ}のない{風評|ふうひょう}によって{地元|じもと}の{農産物|のうさんぶつ}が{売|う}れなくなった。",
+          "kana": "じこのあと、こんきょのないふうひょうによってじもとののうさんぶつがうれなくなった。",
+          "en": "After the accident, baseless rumors made local farm produce stop selling."
+        },
+        {
+          "ja": "{風評|ふうひょう}に{惑|まど}わされず、{正|ただ}しい{情報|じょうほう}をもとに{行動|こうどう}していただきたいと{思|おも}います。",
+          "kana": "ふうひょうにまどわされず、ただしいじょうほうをもとにこうどうしていただきたいとおもいます。",
+          "en": "I ask that you not be misled by rumors and act on the basis of accurate information."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世間|せけん}に{広|ひろ}まる、{根拠|こんきょ}のはっきりしない{噂|うわさ}や{評判|ひょうばん}。",
+        "kana": "せけんにひろまる、こんきょのはっきりしないうわさやひょうばん。"
+      },
+      "frequencyRank": 6317,
+      "collocations": [
+        "風評被害"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1099",
+      "word": "寄稿",
+      "kana": "きこう",
+      "meanings": [
+        "contributing an article",
+        "contributed piece"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "communication",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{大学|だいがく}の{恩師|おんし}が{業界誌|ぎょうかいし}に{寄稿|きこう}した{文章|ぶんしょう}を、{偶然|ぐうぜん}{見|み}つけて{読|よ}んだ。",
+          "kana": "だいがくのおんしがぎょうかいしにきこうしたぶんしょうを、ぐうぜんみつけてよんだ。",
+          "en": "I happened to come across and read a piece my old university professor had contributed to a trade journal."
+        },
+        {
+          "ja": "{来月号|らいげつごう}の{特集|とくしゅう}に、ぜひ{先生|せんせい}にご{寄稿|きこう}いただきたくご{連絡|れんらく}いたしました。",
+          "kana": "らいげつごうのとくしゅうに、ぜひせんせいにごきこういただきたくごれんらくいたしました。",
+          "en": "I am writing to ask whether you would kindly contribute a piece to next month's special feature."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{頼|たの}まれて、{新聞|しんぶん}や{雑誌|ざっし}に{原稿|げんこう}を{書|か}いて{送|おく}ること。",
+        "kana": "たのまれて、しんぶんやざっしにげんこうをかいておくること。"
+      },
+      "frequencyRank": 6328,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1100",
+      "word": "特番",
+      "kana": "とくばん",
+      "meanings": [
+        "special program"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}はどの{局|きょく}も{特番|とくばん}ばかりで、いつものドラマが{見|み}られない。",
+          "kana": "ねんまつはどのきょくもとくばんばかりで、いつものドラマがみられない。",
+          "en": "At year's end every channel is nothing but specials, and you cannot watch the usual dramas."
+        },
+        {
+          "ja": "{昨夜|さくや}の{災害|さいがい}の{特番|とくばん}は、{専門家|せんもんか}の{解説|かいせつ}が{分|わ}かりやすくて{勉強|べんきょう}になりました。",
+          "kana": "さくやのさいがいのとくばんは、せんもんかのかいせつがわかりやすくてべんきょうになりました。",
+          "en": "Last night's disaster special was very informative, with the experts' commentary easy to follow."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつもの{番組|ばんぐみ}の{代|か}わりに、{特別|とくべつ}に{作|つく}って{放送|ほうそう}する{番組|ばんぐみ}。",
+        "kana": "いつものばんぐみのかわりに、とくべつにつくってほうそうするばんぐみ。"
+      },
+      "frequencyRank": 6339,
+      "notes": "Short for 特別番組.",
+      "station": 51
+    },
+    {
+      "id": "v-n1-1101",
+      "word": "部数",
+      "kana": "ぶすう",
+      "meanings": [
+        "number of copies",
+        "circulation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{紙|かみ}の{新聞|しんぶん}の{部数|ぶすう}は{年々|ねんねん}{減|へ}り{続|つづ}けている。",
+          "kana": "かみのしんぶんのぶすうはねんねんへりつづけている。",
+          "en": "The circulation of print newspapers keeps falling year after year."
+        },
+        {
+          "ja": "この{雑誌|ざっし}は{部数|ぶすう}こそ{少|すく}ないですが、{専門家|せんもんか}の{間|あいだ}ではよく{読|よ}まれています。",
+          "kana": "このざっしはぶすうこそすくないですが、せんもんかのあいだではよくよまれています。",
+          "en": "This magazine's circulation may be small, but it is widely read among specialists."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}などが、どれだけ{印刷|いんさつ}されて{出|で}たかを{表|あらわ}す{量|りょう}。",
+        "kana": "しんぶんやざっしなどが、どれだけいんさつされてでたかをあらわすりょう。"
+      },
+      "frequencyRank": 6350,
+      "collocations": [
+        "部数を伸ばす",
+        "発行部数"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1102",
+      "word": "増刷",
+      "kana": "ぞうさつ",
+      "meanings": [
+        "additional printing",
+        "reprint"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{発売|はつばい}から{一週間|いっしゅうかん}で{在庫|ざいこ}がなくなり、{急|いそ}いで{増刷|ぞうさつ}が{決|き}まった。",
+          "kana": "はつばいからいっしゅうかんでざいこがなくなり、いそいでぞうさつがきまった。",
+          "en": "Stock ran out within a week of release, and an additional printing was quickly decided on."
+        },
+        {
+          "ja": "この{参考書|さんこうしょ}は{毎年|まいとし}{増刷|ぞうさつ}されていて、{受験生|じゅけんせい}の{定番|ていばん}になっている。",
+          "kana": "このさんこうしょはまいとしぞうさつされていて、じゅけんせいのていばんになっている。",
+          "en": "This study guide gets reprinted every year and has become a standard for exam takers."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本|ほん}などがよく{売|う}れたとき、さらにおなじものを{印刷|いんさつ}して{増|ふ}やすこと。",
+        "kana": "ほんなどがよくうれたとき、さらにおなじものをいんさつしてふやすこと。"
+      },
+      "frequencyRank": 6361,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1103",
+      "word": "重版",
+      "kana": "じゅうはん",
+      "meanings": [
+        "reprint",
+        "second printing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{初|はじ}めて{出|だ}した{本|ほん}が{重版|じゅうはん}になったと{聞|き}いて、{思|おも}わず{声|こえ}が{出|で}た。",
+          "kana": "はじめてだしたほんがじゅうはんになったときいて、おもわずこえがでた。",
+          "en": "When I heard that my first book was going into a second printing, I let out a cry without meaning to."
+        },
+        {
+          "ja": "おかげさまで{本書|ほんしょ}は{発売|はつばい}{一|いっ}か{月|げつ}で{重版|じゅうはん}が{決|き}まりました。",
+          "kana": "おかげさまでほんしょははつばいいっかげつでじゅうはんがきまりました。",
+          "en": "Thanks to our readers, a second printing of this book was decided a month after its release."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一度|いちど}{出|だ}した{本|ほん}を、もう{一度|いちど}{印刷|いんさつ}して{出|だ}すこと。",
+        "kana": "いちどだしたほんを、もういちどいんさつしてだすこと。"
+      },
+      "frequencyRank": 6372,
+      "notes": "重版 counts printings (二刷, 三刷); 増刷 is the act of printing more copies.",
+      "collocations": [
+        "重版出来",
+        "重版がかかる"
+      ],
+      "confusables": [
+        "v-n1-1102"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1104",
+      "word": "絶版",
+      "kana": "ぜっぱん",
+      "meanings": [
+        "out of print"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "その{辞典|じてん}はすでに{絶版|ぜっぱん}で、{古本屋|ふるほんや}を{何軒|なんげん}も{回|まわ}ってようやく{手|て}に{入|い}れた。",
+          "kana": "そのじてんはすでにぜっぱんで、ふるほんやをなんげんもまわってようやくてにいれた。",
+          "en": "That dictionary is already out of print; I went round several secondhand bookshops before I finally got hold of one."
+        },
+        {
+          "ja": "{人気|にんき}がなかったわけではありませんが、{権利|けんり}の{問題|もんだい}で{絶版|ぜっぱん}になりました。",
+          "kana": "にんきがなかったわけではありませんが、けんりのもんだいでぜっぱんになりました。",
+          "en": "It wasn't that the book was unpopular; it went out of print because of a rights issue."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本|ほん}の{印刷|いんさつ}をやめて、もう{新|あたら}しく{売|う}られなくなること。",
+        "kana": "ほんのいんさつをやめて、もうあたらしくうられなくなること。"
+      },
+      "frequencyRank": 6383,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1105",
+      "word": "創刊",
+      "kana": "そうかん",
+      "meanings": [
+        "launch (of a publication)",
+        "first issue"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "この{雑誌|ざっし}は{創刊|そうかん}から{五十年|ごじゅうねん}、{一度|いちど}も{休|やす}まず{出|だ}し{続|つづ}けてきた。",
+          "kana": "このざっしはそうかんからごじゅうねん、いちどもやすまずだしつづけてきた。",
+          "en": "This magazine has kept publishing without a single break for fifty years since its launch."
+        },
+        {
+          "ja": "{来春|らいしゅん}、{若|わか}い{世代|せだい}{向|む}けの{新|あたら}しい{文芸誌|ぶんげいし}を{創刊|そうかん}する{予定|よてい}です。",
+          "kana": "らいしゅん、わかいせだいむけのあたらしいぶんげいしをそうかんするよていです。",
+          "en": "Next spring we plan to launch a new literary magazine aimed at the younger generation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}を{新|あたら}しく{作|つく}って、{初|はじ}めて{出|だ}すこと。",
+        "kana": "しんぶんやざっしをあたらしくつくって、はじめてだすこと。"
+      },
+      "frequencyRank": 6394,
+      "collocations": [
+        "創刊号"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1106",
+      "word": "休刊",
+      "kana": "きゅうかん",
+      "meanings": [
+        "suspension of publication"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{親|した}しんだ{雑誌|ざっし}が{来月|らいげつ}で{休刊|きゅうかん}になると{知|し}り、{寂|さび}しくなった。",
+          "kana": "ながねんしたしんだざっしがらいげつできゅうかんになるとしり、さびしくなった。",
+          "en": "I felt sad to learn that a magazine I had read for many years will suspend publication next month."
+        },
+        {
+          "ja": "この{新聞|しんぶん}は{年始|ねんし}の{三日間|みっかかん}、{休刊|きゅうかん}とさせていただきます。",
+          "kana": "このしんぶんはねんしのみっかかん、きゅうかんとさせていただきます。",
+          "en": "This newspaper will not be published for the first three days of the new year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}が、{出|だ}すのをしばらくの{間|あいだ}やめること。",
+        "kana": "しんぶんやざっしが、だすのをしばらくのあいだやめること。"
+      },
+      "frequencyRank": 6405,
+      "notes": "Often a softer way of announcing a 廃刊.",
+      "station": 51
+    },
+    {
+      "id": "v-n1-1107",
+      "word": "廃刊",
+      "kana": "はいかん",
+      "meanings": [
+        "discontinuation (of a publication)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{発行部数|はっこうぶすう}の{減少|げんしょう}が{止|と}まらず、{創刊|そうかん}{百年|ひゃくねん}の{地方紙|ちほうし}が{廃刊|はいかん}に{追|お}い{込|こ}まれた。",
+          "kana": "はっこうぶすうのげんしょうがとまらず、そうかんひゃくねんのちほうしがはいかんにおいこまれた。",
+          "en": "With its circulation decline unchecked, a century-old regional paper was driven to shut down."
+        },
+        {
+          "ja": "{子|こ}どものころ{毎月|まいつき}{楽|たの}しみにしていた{雑誌|ざっし}が、いつの{間|ま}にか{廃刊|はいかん}になっていた。",
+          "kana": "こどものころまいつきたのしみにしていたざっしが、いつのまにかはいかんになっていた。",
+          "en": "The magazine I looked forward to every month as a child had been discontinued before I knew it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}を{出|だ}すのを、すっかりやめてしまうこと。",
+        "kana": "しんぶんやざっしをだすのを、すっかりやめてしまうこと。"
+      },
+      "frequencyRank": 6416,
+      "confusables": [
+        "v-n1-1106"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1108",
+      "word": "聞き手",
+      "kana": "ききて",
+      "meanings": [
+        "listener",
+        "interviewer"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "people",
+        "media"
+      ],
+      "examples": [
+        {
+          "ja": "{話|はなし}が{上手|じょうず}な{人|ひと}ほど、{実|じつ}は{聞|き}き{手|て}に{回|まわ}っている{時間|じかん}が{長|なが}いものだ。",
+          "kana": "はなしがじょうずなひとほど、じつはききてにまわっているじかんがながいものだ。",
+          "en": "The better someone is at conversation, the more time they actually spend in the role of listener."
+        },
+        {
+          "ja": "インタビューでは、{聞|き}き{手|て}が{質問|しつもん}を{重|かさ}ねすぎないことも{大切|たいせつ}です。",
+          "kana": "インタビューでは、ききてがしつもんをかさねすぎないこともたいせつです。",
+          "en": "In an interview, it's also important that the interviewer not pile on too many questions."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{話|はなし}を{聞|き}く{側|がわ}の{人|ひと}。また、{質問|しつもん}をして{相手|あいて}の{話|はなし}を{引|ひ}き{出|だ}す{人|ひと}。",
+        "kana": "はなしをきくがわのひと。また、しつもんをしてあいてのはなしをひきだすひと。"
+      },
+      "frequencyRank": 6427,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1109",
+      "word": "語り手",
+      "kana": "かたりて",
+      "meanings": [
+        "narrator",
+        "storyteller"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "media",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "この{小説|しょうせつ}は{語|かた}り{手|て}が{章|しょう}ごとに{変|か}わるので、{同|おな}じ{出来事|できごと}が{違|ちが}う{角度|かくど}から{見|み}える。",
+          "kana": "このしょうせつはかたりてがしょうごとにかわるので、おなじできごとがちがうかくどからみえる。",
+          "en": "Because the narrator changes with each chapter, the same events in this novel are seen from different angles."
+        },
+        {
+          "ja": "{昔話|むかしばなし}の{会|かい}では、{年配|ねんぱい}の{語|かた}り{手|て}が{方言|ほうげん}を{交|まじ}えてゆっくりと{物語|ものがたり}を{聞|き}かせてくれました。",
+          "kana": "むかしばなしのかいでは、ねんぱいのかたりてがほうげんをまじえてゆっくりとものがたりをきかせてくれました。",
+          "en": "At the folktale gathering, an elderly storyteller slowly told us tales, mixing in some dialect."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{物語|ものがたり}を{話|はな}して{聞|き}かせる{人|ひと}。{小説|しょうせつ}で、{話|はなし}を{進|すす}めている{人|ひと}。",
+        "kana": "ものがたりをはなしてきかせるひと。しょうせつで、はなしをすすめているひと。"
+      },
+      "frequencyRank": 6438,
+      "confusables": [
+        "v-n1-1108"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1110",
+      "word": "関係筋",
+      "kana": "かんけいすじ",
+      "meanings": [
+        "sources close to the matter"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "politics",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{関係筋|かんけいすじ}によると、{両社|りょうしゃ}は{来月|らいげつ}にも{合併|がっぺい}を{正式|せいしき}に{発表|はっぴょう}する{見通|みとお}しだ。",
+          "kana": "かんけいすじによると、りょうしゃはらいげつにもがっぺいをせいしきにはっぴょうするみとおしだ。",
+          "en": "According to sources close to the matter, the two companies are expected to formally announce the merger as early as next month."
+        },
+        {
+          "ja": "{関係筋|かんけいすじ}の{話|はなし}として{報|ほう}じられた{内容|ないよう}について、{会社側|かいしゃがわ}はコメントを{避|さ}けています。",
+          "kana": "かんけいすじのはなしとしてほうじられたないようについて、かいしゃがわはコメントをさけています。",
+          "en": "The company is declining to comment on the details reported as coming from sources close to the matter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{問題|もんだい}に{深|ふか}く{関|かか}わっていて、{中|なか}の{事情|じじょう}をよく{知|し}っている{人々|ひとびと}。",
+        "kana": "そのもんだいにふかくかかわっていて、なかのじじょうをよくしっているひとびと。"
+      },
+      "frequencyRank": 6449,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1111",
+      "word": "しかしながら",
+      "kana": "しかしながら",
+      "meanings": [
+        "however",
+        "nevertheless"
+      ],
+      "pos": "conj",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{計画|けいかく}そのものは{悪|わる}くない。しかしながら、{予算|よさん}の{裏付|うらづ}けがまったくない。",
+          "kana": "けいかくそのものはわるくない。しかしながら、よさんのうらづけがまったくない。",
+          "en": "The plan itself is not bad. However, there is absolutely no budget backing it."
+        },
+        {
+          "ja": "ご{指摘|してき}はもっともです。しかしながら、{現状|げんじょう}では{直|ただ}ちに{対応|たいおう}することは{困難|こんなん}です。",
+          "kana": "ごしてきはもっともです。しかしながら、げんじょうではただちにたいおうすることはこんなんです。",
+          "en": "Your point is well taken. However, under the present circumstances it is difficult to respond immediately."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}に{述|の}べたことと{反対|はんたい}のことを{言|い}うときに{使|つか}う、{硬|かた}い{言葉|ことば}。",
+        "kana": "まえにのべたこととはんたいのことをいうときにつかう、かたいことば。"
+      },
+      "frequencyRank": 6460,
+      "altForms": [
+        "然し乍ら",
+        "然しながら"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1112",
+      "word": "そもそも",
+      "kana": "そもそも",
+      "meanings": [
+        "in the first place",
+        "to begin with"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "そもそも、なぜこの{会議|かいぎ}を{開|ひら}くことになったのか、{誰|だれ}も{覚|おぼ}えていない。",
+          "kana": "そもそも、なぜこのかいぎをひらくことになったのか、だれもおぼえていない。",
+          "en": "To begin with, nobody even remembers why this meeting came to be held."
+        },
+        {
+          "ja": "この{計画|けいかく}はそもそも{無理|むり}があったと、{今|いま}になって{思|おも}います。",
+          "kana": "このけいかくはそもそもむりがあったと、いまになっておもいます。",
+          "en": "Looking back now, I think this plan was flawed from the very start."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものごとのはじめ。また、「{最初|さいしょ}から{言|い}えば」という{意味|いみ}で{使|つか}う{言葉|ことば}。",
+        "kana": "ものごとのはじめ。また、「さいしょからいえば」といういみでつかうことば。"
+      },
+      "frequencyRank": 6471,
+      "altForms": [
+        "抑も",
+        "抑"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1113",
+      "word": "無論",
+      "kana": "むろん",
+      "meanings": [
+        "of course",
+        "naturally"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{費用|ひよう}は{無論|むろん}のこと、{準備|じゅんび}にかかる{時間|じかん}も{考|かんが}えておかなければならない。",
+          "kana": "ひようはむろんのこと、じゅんびにかかるじかんもかんがえておかなければならない。",
+          "en": "The cost goes without saying, but we must also consider the time preparation will take."
+        },
+        {
+          "ja": "{無論|むろん}、{君|きみ}の{努力|どりょく}は{認|みと}めるが、{結果|けっか}が{伴|ともな}わなければ{評価|ひょうか}はできない。",
+          "kana": "むろん、きみのどりょくはみとめるが、けっかがともなわなければひょうかはできない。",
+          "en": "Of course I acknowledge your effort, but I can't rate it highly unless results follow."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言|い}うまでもなく、{当然|とうぜん}だという{意味|いみ}の、やや{硬|かた}い{言葉|ことば}。",
+        "kana": "いうまでもなく、とうぜんだといういみの、ややかたいことば。"
+      },
+      "frequencyRank": 6482,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1114",
+      "word": "強いて",
+      "kana": "しいて",
+      "meanings": [
+        "forcibly",
+        "if pressed (to say)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "{特|とく}に{不満|ふまん}はないが、{強|し}いて{言|い}えば{会議|かいぎ}が{少|すこ}し{長|なが}すぎる。",
+          "kana": "とくにふまんはないが、しいていえばかいぎがすこしながすぎる。",
+          "en": "I have no particular complaints, but if pressed, I'd say the meetings run a little long."
+        },
+        {
+          "ja": "{嫌|いや}がっている{子|こ}どもに{強|し}いて{食|た}べさせる{必要|ひつよう}はありませんよ。",
+          "kana": "いやがっているこどもにしいてたべさせるひつようはありませんよ。",
+          "en": "There's no need to force a child to eat when they don't want to."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{無理|むり}にでも。「どうしてもと{言|い}うなら」という{意味|いみ}でも{使|つか}う。",
+        "kana": "むりにでも。「どうしてもというなら」といういみでもつかう。"
+      },
+      "frequencyRank": 6493,
+      "altForms": [
+        "しいて"
+      ],
+      "collocations": [
+        "強いて言えば",
+        "強いて挙げれば"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1115",
+      "word": "発行部数",
+      "kana": "はっこうぶすう",
+      "meanings": [
+        "circulation",
+        "number of copies printed"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "business",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{全国紙|ぜんこくし}の{発行部数|はっこうぶすう}は、この{十年|じゅうねん}で{三割|さんわり}{近|ちか}く{減|へ}ったという。",
+          "kana": "ぜんこくしのはっこうぶすうは、このじゅうねんでさんわりちかくへったという。",
+          "en": "The circulation of the national dailies is said to have fallen nearly 30 percent over the past ten years."
+        },
+        {
+          "ja": "{広告|こうこく}{料金|りょうきん}は、{雑誌|ざっし}の{発行部数|はっこうぶすう}によって{大|おお}きく{変|か}わります。",
+          "kana": "こうこくりょうきんは、ざっしのはっこうぶすうによっておおきくかわります。",
+          "en": "Advertising rates vary greatly depending on a magazine's circulation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新聞|しんぶん}や{雑誌|ざっし}が、{一度|いちど}にどれだけ{印刷|いんさつ}されて{出|で}るかという{量|りょう}。",
+        "kana": "しんぶんやざっしが、いちどにどれだけいんさつされてでるかというりょう。"
+      },
+      "frequencyRank": 6504,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1116",
+      "word": "以て",
+      "kana": "もって",
+      "meanings": [
+        "(by means of, with)",
+        "(as of a date)"
+      ],
+      "pos": "prt",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}を{以|もっ}て、{当店|とうてん}は{閉店|へいてん}させていただきます。{長|なが}い{間|あいだ}ありがとうございました。",
+          "kana": "ほんじつをもって、とうてんはへいてんさせていただきます。ながいあいだありがとうございました。",
+          "en": "As of today, our shop is closing. Thank you for your custom over the many years."
+        },
+        {
+          "ja": "{書面|しょめん}を{以|もっ}て{正式|せいしき}にご{通知|つうち}{申|もう}し{上|あ}げます。",
+          "kana": "しょめんをもってせいしきにごつうちもうしあげます。",
+          "en": "We hereby notify you formally in writing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「〜で」「〜によって」を{硬|かた}く{言|い}う{言葉|ことば}。{期限|きげん}を{表|あらわ}すときにも{使|つか}う。",
+        "kana": "「〜で」「〜によって」をかたくいうことば。きげんをあらわすときにもつかう。"
+      },
+      "frequencyRank": 6515,
+      "altForms": [
+        "もって"
+      ],
+      "collocations": [
+        "本日を以て",
+        "これを以て"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1117",
+      "word": "ひいては",
+      "kana": "ひいては",
+      "meanings": [
+        "by extension",
+        "and in turn"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{一人一人|ひとりひとり}の{節電|せつでん}が、ひいては{地域|ちいき}{全体|ぜんたい}の{安定|あんてい}した{電力|でんりょく}{供給|きょうきゅう}につながる。",
+          "kana": "ひとりひとりのせつでんが、ひいてはちいきぜんたいのあんていしたでんりょくきょうきゅうにつながる。",
+          "en": "Each person's energy saving leads, in turn, to a stable power supply for the whole region."
+        },
+        {
+          "ja": "{社員|しゃいん}の{健康|けんこう}を{守|まも}ることは、ひいては{会社|かいしゃ}の{利益|りえき}を{守|まも}ることにもなります。",
+          "kana": "しゃいんのけんこうをまもることは、ひいてはかいしゃのりえきをまもることにもなります。",
+          "en": "Protecting employees' health in turn protects the company's profits as well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それが{元|もと}になって、さらに{広|ひろ}い{範囲|はんい}に{結果|けっか}が{及|およ}ぶという{意味|いみ}の{言葉|ことば}。",
+        "kana": "それがもとになって、さらにひろいはんいにけっかがおよぶといういみのことば。"
+      },
+      "frequencyRank": 6526,
+      "altForms": [
+        "延いては"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1118",
+      "word": "詰まるところ",
+      "kana": "つまるところ",
+      "meanings": [
+        "in the end",
+        "after all is said and done"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{議論|ぎろん}は{長引|ながび}いたが、{詰|つ}まるところ{誰|だれ}が{責任|せきにん}を{取|と}るかという{一点|いってん}に{尽|つ}きる。",
+          "kana": "ぎろんはながびいたが、つまるところだれがせきにんをとるかといういってんにつきる。",
+          "en": "The debate dragged on, but in the end it comes down to one point: who takes responsibility."
+        },
+        {
+          "ja": "{色々|いろいろ}{理由|りゆう}を{並|なら}べていたが、{詰|つ}まるところ{彼|かれ}は{行|い}きたくないだけなのだ。",
+          "kana": "いろいろりゆうをならべていたが、つまるところかれはいきたくないだけなのだ。",
+          "en": "He listed all sorts of reasons, but in the end he simply doesn't want to go."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いろいろ{考|かんが}えた{後|あと}で、{結局|けっきょく}はこうだとまとめて{言|い}うときの{言葉|ことば}。",
+        "kana": "いろいろかんがえたあとで、けっきょくはこうだとまとめていうときのことば。"
+      },
+      "frequencyRank": 6537,
+      "altForms": [
+        "詰まる所",
+        "つまるところ"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1119",
+      "word": "翻って",
+      "kana": "ひるがえって",
+      "meanings": [
+        "conversely",
+        "turning to (ourselves)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{海外|かいがい}の{事例|じれい}は{参考|さんこう}になる。{翻|ひるがえ}って{日本|にほん}の{現状|げんじょう}を{見|み}ると、{課題|かだい}は{山積|やまづ}みだ。",
+          "kana": "かいがいのじれいはさんこうになる。ひるがえってにほんのげんじょうをみると、かだいはやまづみだ。",
+          "en": "Overseas examples are instructive. Turning to the situation in Japan, however, the problems are piled high."
+        },
+        {
+          "ja": "{若|わか}い{世代|せだい}の{意識|いしき}は{確実|かくじつ}に{変|か}わってきています。{翻|ひるがえ}って{私|わたし}たち{大人|おとな}はどうでしょうか。",
+          "kana": "わかいせだいのいしきはかくじつにかわってきています。ひるがえってわたしたちおとなはどうでしょうか。",
+          "en": "The attitudes of the younger generation are definitely changing. What about us adults, by comparison?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見方|みかた}を{変|か}えて、{反対|はんたい}の{側|がわ}や{自分|じぶん}のことに{目|め}を{向|む}けると、という{言葉|ことば}。",
+        "kana": "みかたをかえて、はんたいのがわやじぶんのことにめをむけると、ということば。"
+      },
+      "frequencyRank": 6548,
+      "altForms": [
+        "ひるがえって"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1120",
+      "word": "元来",
+      "kana": "がんらい",
+      "meanings": [
+        "originally",
+        "by nature"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{元来|がんらい}{無口|むくち}な{性格|せいかく}で、{人前|ひとまえ}で{話|はな}すのが{得意|とくい}ではなかった。",
+          "kana": "かれはがんらいむくちなせいかくで、ひとまえではなすのがとくいではなかった。",
+          "en": "He was by nature a man of few words and was never good at speaking in public."
+        },
+        {
+          "ja": "この{祭|まつ}りは{元来|がんらい}、{豊作|ほうさく}を{祈|いの}る{農村|のうそん}の{行事|ぎょうじ}として{始|はじ}まったものです。",
+          "kana": "このまつりはがんらい、ほうさくをいのるのうそんのぎょうじとしてはじまったものです。",
+          "en": "This festival originally began as a farming-village event praying for a good harvest."
+        }
+      ],
+      "definitionJa": {
+        "ja": "はじめからそうであるという{意味|いみ}。もともと。",
+        "kana": "はじめからそうであるといういみ。もともと。"
+      },
+      "frequencyRank": 6559,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1121",
+      "word": "決裁",
+      "kana": "けっさい",
+      "meanings": [
+        "approval (by a superior)",
+        "sign-off"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "この{金額|きんがく}になると{部長|ぶちょう}の{決裁|けっさい}が{必要|ひつよう}なので、{今日中|きょうじゅう}に{書類|しょるい}を{回|まわ}しておいて。",
+          "kana": "このきんがくになるとぶちょうのけっさいがひつようなので、きょうじゅうにしょるいをまわしておいて。",
+          "en": "At this amount we need the department head's sign-off, so get the paperwork to him today."
+        },
+        {
+          "ja": "{社長|しゃちょう}の{決裁|けっさい}が{下|お}りましたので、{来週|らいしゅう}から{新|あたら}しいシステムの{導入|どうにゅう}を{進|すす}めます。",
+          "kana": "しゃちょうのけっさいがおりましたので、らいしゅうからあたらしいシステムのどうにゅうをすすめます。",
+          "en": "The president has signed off, so we'll go ahead with introducing the new system from next week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{責任|せきにん}のある{人|ひと}が、{部下|ぶか}から{出|だ}された{計画|けいかく}を{認|みと}めるかどうか{決|き}めること。",
+        "kana": "せきにんのあるひとが、ぶかからだされたけいかくをみとめるかどうかきめること。"
+      },
+      "frequencyRank": 6570,
+      "notes": "Not 決済 (settlement, payment), which has the same reading.",
+      "collocations": [
+        "決裁を仰ぐ",
+        "決裁が下りる"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1122",
+      "word": "稟議",
+      "kana": "りんぎ",
+      "meanings": [
+        "circular approval request",
+        "internal approval"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいソフトを{導入|どうにゅう}するには、まず{稟議|りんぎ}を{上|あ}げて{承認|しょうにん}を{取|と}る{必要|ひつよう}がある。",
+          "kana": "あたらしいソフトをどうにゅうするには、まずりんぎをあげてしょうにんをとるひつようがある。",
+          "en": "To introduce the new software, we first have to put in an approval request and get it signed off."
+        },
+        {
+          "ja": "{稟議|りんぎ}が{通|とお}るまでに{二週間|にしゅうかん}もかかって、{結局|けっきょく}{注文|ちゅうもん}が{間|ま}に{合|あ}わなかった。",
+          "kana": "りんぎがとおるまでににしゅうかんもかかって、けっきょくちゅうもんがまにあわなかった。",
+          "en": "It took two whole weeks for the approval request to go through, and in the end the order didn't make it in time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{計画|けいかく}を{書類|しょるい}にして{関係者|かんけいしゃ}に{回|まわ}し、{承認|しょうにん}を{求|もと}めること。",
+        "kana": "かいしゃなどで、けいかくをしょるいにしてかんけいしゃにまわし、しょうにんをもとめること。"
+      },
+      "frequencyRank": 6581,
+      "collocations": [
+        "稟議を上げる",
+        "稟議書"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1123",
+      "word": "仕事納め",
+      "kana": "しごとおさめ",
+      "meanings": [
+        "last working day of the year"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{仕事納|しごとおさ}めは{二十八日|にじゅうはちにち}で、{午後|ごご}は{大掃除|おおそうじ}をしてから{解散|かいさん}の{予定|よてい}です。",
+          "kana": "ことしのしごとおさめはにじゅうはちにちで、ごごはおおそうじをしてからかいさんのよていです。",
+          "en": "This year's last working day is the 28th; in the afternoon we plan to do the big cleanup and then break up."
+        },
+        {
+          "ja": "{仕事納|しごとおさ}めの{日|ひ}は{毎年|まいとし}、{同僚|どうりょう}と{駅前|えきまえ}の{居酒屋|いざかや}で{一年|いちねん}の{疲|つか}れをねぎらう。",
+          "kana": "しごとおさめのひはまいとし、どうりょうとえきまえのいざかやでいちねんのつかれをねぎらう。",
+          "en": "Every year on the last working day, my coworkers and I unwind from the year at an izakaya by the station."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{年|とし}の{仕事|しごと}を{終|お}わりにすること。また、{年末|ねんまつ}の{最後|さいご}の{出勤|しゅっきん}。",
+        "kana": "そのとしのしごとをおわりにすること。また、ねんまつのさいごのしゅっきん。"
+      },
+      "frequencyRank": 6592,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1124",
+      "word": "仕事始め",
+      "kana": "しごとはじめ",
+      "meanings": [
+        "first working day of the year"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事始|しごとはじ}めの{朝|あさ}は、{社長|しゃちょう}の{挨拶|あいさつ}を{聞|き}いてから{全員|ぜんいん}で{近|ちか}くの{神社|じんじゃ}にお{参|まい}りする。",
+          "kana": "しごとはじめのあさは、しゃちょうのあいさつをきいてからぜんいんでちかくのじんじゃにおまいりする。",
+          "en": "On the first working day of the year, we listen to the president's address and then all visit the nearby shrine."
+        },
+        {
+          "ja": "{新年|しんねん}は{五日|いつか}が{仕事始|しごとはじ}めとなりますので、ご{不便|ふべん}をおかけしますがよろしくお{願|ねが}いいたします。",
+          "kana": "しんねんはいつかがしごとはじめとなりますので、ごふべんをおかけしますがよろしくおねがいいたします。",
+          "en": "Our first working day of the new year will be the fifth; we apologize for any inconvenience."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{年|とし}になって、{初|はじ}めて{仕事|しごと}をすること。また、その{最初|さいしょ}の{出勤|しゅっきん}。",
+        "kana": "あたらしいとしになって、はじめてしごとをすること。また、そのさいしょのしゅっきん。"
+      },
+      "frequencyRank": 6603,
+      "confusables": [
+        "v-n1-1123"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1125",
+      "word": "御用納め",
+      "kana": "ごようおさめ",
+      "meanings": [
+        "last business day of the year"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "calendar",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{役所|やくしょ}は{今日|きょう}が{御用納|ごようおさ}めなので、{住民票|じゅうみんひょう}が{要|い}るなら{午前中|ごぜんちゅう}に{行|い}ったほうがいい。",
+          "kana": "やくしょはきょうがごようおさめなので、じゅうみんひょうがいるならごぜんちゅうにいったほうがいい。",
+          "en": "Today is the city office's last business day of the year, so if you need a residence certificate, better go in the morning."
+        },
+        {
+          "ja": "{御用納|ごようおさ}めの{翌日|よくじつ}から、{市役所|しやくしょ}の{窓口|まどぐち}は{一月|いちがつ}{三日|みっか}まで{閉|し}まっている。",
+          "kana": "ごようおさめのよくじつから、しやくしょのまどぐちはいちがつみっかまでしまっている。",
+          "en": "From the day after the last business day of the year, the city hall counters stay closed until January third."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役所|やくしょ}などが、その{年|とし}の{仕事|しごと}をすべて{終|お}えること。{年末|ねんまつ}の{最後|さいご}の{出勤|しゅっきん}。",
+        "kana": "やくしょなどが、そのとしのしごとをすべておえること。ねんまつのさいごのしゅっきん。"
+      },
+      "frequencyRank": 6614,
+      "notes": "Used of government offices; private companies say 仕事納め.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1126",
+      "word": "御用始め",
+      "kana": "ごようはじめ",
+      "meanings": [
+        "first business day of the year"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "calendar",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{官公庁|かんこうちょう}の{御用始|ごようはじ}めは{一月四日|いちがつよっか}と{決|き}まっており、その{日|ひ}は{窓口|まどぐち}が{混|こ}み{合|あ}う。",
+          "kana": "かんこうちょうのごようはじめはいちがつよっかときまっており、そのひはまどぐちがこみあう。",
+          "en": "Government offices reopen for the year on January 4, and the counters are crowded that day."
+        },
+        {
+          "ja": "{御用始|ごようはじ}めの{日|ひ}に、{部長|ぶちょう}が{全員|ぜんいん}に{新年|しんねん}の{挨拶|あいさつ}をするのが{毎年|まいとし}の{習|なら}わしです。",
+          "kana": "ごようはじめのひに、ぶちょうがぜんいんにしんねんのあいさつをするのがまいとしのならわしです。",
+          "en": "It's our yearly custom for the department head to give everyone a New Year's greeting on the first business day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役所|やくしょ}などが、{新|あたら}しい{年|とし}になって{初|はじ}めて{仕事|しごと}をすること。",
+        "kana": "やくしょなどが、あたらしいとしになってはじめてしごとをすること。"
+      },
+      "frequencyRank": 6625,
+      "confusables": [
+        "v-n1-1125"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1127",
+      "word": "御礼",
+      "kana": "おんれい",
+      "meanings": [
+        "thanks",
+        "expression of gratitude"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "greetings",
+        "communication",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{日頃|ひごろ}のご{支援|しえん}に{対|たい}し、{心|こころ}より{御礼|おんれい}{申|もう}し{上|あ}げます。",
+          "kana": "ひごろのごしえんにたいし、こころよりおんれいもうしあげます。",
+          "en": "Please accept our heartfelt thanks for your continued support."
+        },
+        {
+          "ja": "このたびの{御礼|おんれい}として、ささやかですが{記念|きねん}の{品|しな}をお{送|おく}りいたしました。",
+          "kana": "このたびのおんれいとして、ささやかですがきねんのしなをおおくりいたしました。",
+          "en": "As a token of thanks for this occasion, we have sent you a small commemorative gift."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{感謝|かんしゃ}の{気持|きも}ちを{表|あらわ}すこと。また、その{言葉|ことば}や{品物|しなもの}。",
+        "kana": "かんしゃのきもちをあらわすこと。また、そのことばやしなもの。"
+      },
+      "frequencyRank": 6636,
+      "notes": "Formal reading of お礼 used in letters and speeches (御礼申し上げます).",
+      "collocations": [
+        "御礼申し上げます",
+        "御礼の品"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1128",
+      "word": "粗品",
+      "kana": "そしな",
+      "meanings": [
+        "small gift",
+        "token gift"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "shopping",
+        "culture",
+        "humble"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{挨拶|あいさつ}に、{隣|となり}の{方|かた}へ{粗品|そしな}としてタオルを{持|も}っていった。",
+          "kana": "ひっこしのあいさつに、となりのかたへそしなとしてタオルをもっていった。",
+          "en": "As a moving-in greeting, I took the neighbors a towel as a small gift."
+        },
+        {
+          "ja": "アンケートにご{協力|きょうりょく}いただいた{方|かた}には、{粗品|そしな}を{差|さ}し{上|あ}げております。",
+          "kana": "アンケートにごきょうりょくいただいたかたには、そしなをさしあげております。",
+          "en": "We are giving a small gift to everyone who takes part in the survey."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}にあげる{品物|しなもの}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "ひとにあげるしなものを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6647,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1129",
+      "word": "寸志",
+      "kana": "すんし",
+      "meanings": [
+        "small token of gratitude",
+        "small gratuity"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "culture",
+        "humble"
+      ],
+      "examples": [
+        {
+          "ja": "{歓迎会|かんげいかい}では{部長|ぶちょう}から{寸志|すんし}をいただいたので、{幹事|かんじ}が{最初|さいしょ}に{紹介|しょうかい}した。",
+          "kana": "かんげいかいではぶちょうからすんしをいただいたので、かんじがさいしょにしょうかいした。",
+          "en": "At the welcome party the department head gave a small contribution, so the organizer announced it first."
+        },
+        {
+          "ja": "{忘年会|ぼうねんかい}の{会費|かいひ}が{足|た}りない{分|ぶん}は、{課長|かちょう}の{寸志|すんし}でまかなうことになった。",
+          "kana": "ぼうねんかいのかいひがたりないぶんは、かちょうのすんしでまかなうことになった。",
+          "en": "The shortfall in the year-end party dues ended up being covered by a small contribution from the section chief."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{感謝|かんしゃ}の{気持|きも}ちを{表|あらわ}すために{渡|わた}す、{少|すこ}しのお{金|かね}や{品物|しなもの}。",
+        "kana": "かんしゃのきもちをあらわすためにわたす、すこしのおかねやしなもの。"
+      },
+      "frequencyRank": 6658,
+      "notes": "Written on the envelope by a superior giving money; never used for a gift to a superior.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1130",
+      "word": "心ばかり",
+      "kana": "こころばかり",
+      "meanings": [
+        "small token (of gratitude)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "greetings",
+        "humble",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{心|こころ}ばかりの{品|しな}ですが、{皆|みな}さんで{召|め}し{上|あ}がってください。",
+          "kana": "こころばかりのしなですが、みなさんでめしあがってください。",
+          "en": "It is only a small token, but please share it among you."
+        },
+        {
+          "ja": "お{世話|せわ}になった{先生|せんせい}へ、{心|こころ}ばかりのお{礼|れい}として{花束|はなたば}を{贈|おく}りました。",
+          "kana": "おせわになったせんせいへ、こころばかりのおれいとしてはなたばをおくりました。",
+          "en": "As a small token of thanks to the teacher who looked after me, I gave her a bouquet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{気持|きも}ちだけのわずかなものだと、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "きもちだけのわずかなものだと、へりくだっていうことば。"
+      },
+      "frequencyRank": 6669,
+      "collocations": [
+        "心ばかりの品",
+        "心ばかりのお礼"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1131",
+      "word": "お心遣い",
+      "kana": "おこころづかい",
+      "meanings": [
+        "your thoughtfulness",
+        "your kind consideration"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "greetings",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{先日|せんじつ}は{温|あたた}かいお{心遣|こころづか}いをいただき、{誠|まこと}にありがとうございました。",
+          "kana": "せんじつはあたたかいおこころづかいをいただき、まことにありがとうございました。",
+          "en": "Thank you very much for your warm thoughtfulness the other day."
+        },
+        {
+          "ja": "お{心遣|こころづか}いは{大変|たいへん}ありがたいのですが、お{気持|きも}ちだけ{頂戴|ちょうだい}いたします。",
+          "kana": "おこころづかいはたいへんありがたいのですが、おきもちだけちょうだいいたします。",
+          "en": "Your kindness is much appreciated, but the thought alone is more than enough."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{自分|じぶん}のためにしてくれた{配慮|はいりょ}を、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがじぶんのためにしてくれたはいりょを、うやまっていうことば。"
+      },
+      "frequencyRank": 6680,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1132",
+      "word": "小職",
+      "kana": "しょうしょく",
+      "meanings": [
+        "I (humble, used by officials)"
+      ],
+      "pos": "pron",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "business",
+        "humble",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{本件|ほんけん}につきましては{小職|しょうしょく}が{担当|たんとう}いたしますので、ご{不明|ふめい}な{点|てん}はお{申|もう}し{付|つ}けください。",
+          "kana": "ほんけんにつきましてはしょうしょくがたんとういたしますので、ごふめいなてんはおもうしつけください。",
+          "en": "I will be handling this matter, so please let me know if anything is unclear."
+        },
+        {
+          "ja": "{小職|しょうしょく}の{不手際|ふてぎわ}によりご{迷惑|めいわく}をおかけしましたこと、{深|ふか}くおわび{申|もう}し{上|あ}げます。",
+          "kana": "しょうしょくのふてぎわによりごめいわくをおかけしましたこと、ふかくおわびもうしあげます。",
+          "en": "I deeply apologize for the trouble my mishandling has caused you."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役所|やくしょ}や{会社|かいしゃ}で{働|はたら}く{人|ひと}が、{自分|じぶん}をへりくだって{言|い}う{言葉|ことば}。",
+        "kana": "やくしょやかいしゃではたらくひとが、じぶんをへりくだっていうことば。"
+      },
+      "frequencyRank": 6691,
+      "notes": "Business letters and emails; some find it stiff or old-fashioned, and わたくし is always safe.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1133",
+      "word": "幸甚",
+      "kana": "こうじん",
+      "meanings": [
+        "most grateful",
+        "greatly obliged"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "communication",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "ご{多忙|たぼう}のところ{恐縮|きょうしゅく}ですが、ご{出席|しゅっせき}いただければ{幸甚|こうじん}に{存|ぞん}じます。",
+          "kana": "ごたぼうのところきょうしゅくですが、ごしゅっせきいただければこうじんにぞんじます。",
+          "en": "I know you are very busy, but I would be most grateful if you could attend."
+        },
+        {
+          "ja": "ご{意見|いけん}をお{聞|き}かせいただけましたら{幸甚|こうじん}です。",
+          "kana": "ごいけんをおきかせいただけましたらこうじんです。",
+          "en": "I would be most grateful if you could share your views."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とてもありがたく、{幸|しあわ}せであること。{手紙|てがみ}で{使|つか}う{硬|かた}い{言葉|ことば}。",
+        "kana": "とてもありがたく、しあわせであること。てがみでつかうかたいことば。"
+      },
+      "frequencyRank": 6702,
+      "collocations": [
+        "幸甚に存じます",
+        "幸甚です"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1134",
+      "word": "謹啓",
+      "kana": "きんけい",
+      "meanings": [
+        "(opening of a very formal letter)"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "written",
+        "formal",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{謹啓|きんけい} {時下|じか}ますますご{清祥|せいしょう}のこととお{慶|よろこ}び{申|もう}し{上|あ}げます。",
+          "kana": "きんけい じかますますごせいしょうのこととおよろこびもうしあげます。",
+          "en": "Dear Sir or Madam: We trust that you are enjoying ever better health and prosperity."
+        },
+        {
+          "ja": "{改|あらた}まった{手紙|てがみ}では「{拝啓|はいけい}」より{丁寧|ていねい}な「{謹啓|きんけい}」で{書|か}き{始|はじ}めることがあります。",
+          "kana": "あらたまったてがみでは「はいけい」よりていねいな「きんけい」でかきはじめることがあります。",
+          "en": "A very formal letter sometimes opens with kinkei, which is politer than the usual haikei."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{丁寧|ていねい}な{手紙|てがみ}のはじめに{書|か}く、{挨拶|あいさつ}の{言葉|ことば}。",
+        "kana": "とてもていねいなてがみのはじめにかく、あいさつのことば。"
+      },
+      "frequencyRank": 6713,
+      "notes": "More formal than 拝啓; pairs with the closing 謹言 or 敬白 (拝啓 pairs with 敬具).",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1135",
+      "word": "拝復",
+      "kana": "はいふく",
+      "meanings": [
+        "(opening of a formal reply letter)"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "written",
+        "formal",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{拝復|はいふく} {先日|せんじつ}はご{丁寧|ていねい}なお{手紙|てがみ}をいただき、ありがとうございました。",
+          "kana": "はいふく せんじつはごていねいなおてがみをいただき、ありがとうございました。",
+          "en": "In reply to your letter: thank you for your kind letter the other day."
+        },
+        {
+          "ja": "{返事|へんじ}の{手紙|てがみ}は「{拝復|はいふく}」で{始|はじ}め、「{敬具|けいぐ}」で{結|むす}ぶのが{正式|せいしき}とされています。",
+          "kana": "へんじのてがみは「はいふく」ではじめ、「けいぐ」でむすぶのがせいしきとされています。",
+          "en": "A formal reply letter is supposed to open with haifuku and close with keigu."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{手紙|てがみ}の{返事|へんじ}を{書|か}くときに、はじめに{書|か}く{挨拶|あいさつ}の{言葉|ことば}。",
+        "kana": "てがみのへんじをかくときに、はじめにかくあいさつのことば。"
+      },
+      "frequencyRank": 6724,
+      "notes": "Used instead of 拝啓 when answering a letter; the closing is still 敬具.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1136",
+      "word": "謹呈",
+      "kana": "きんてい",
+      "meanings": [
+        "respectfully presenting (a book)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "arts",
+        "humble",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{著者|ちょしゃ}から「{謹呈|きんてい}」と{書|か}かれた{新刊|しんかん}が{届|とど}き、すぐにお{礼|れい}の{手紙|てがみ}を{書|か}いた。",
+          "kana": "ちょしゃから「きんてい」とかかれたしんかんがとどき、すぐにおれいのてがみをかいた。",
+          "en": "A newly published book arrived from its author with a \"respectfully presented\" slip, and I wrote a thank-you note right away."
+        },
+        {
+          "ja": "{出版社|しゅっぱんしゃ}を{通|つう}じて、{恩師|おんし}に{新|あたら}しい{本|ほん}を{謹呈|きんてい}いたしました。",
+          "kana": "しゅっぱんしゃをつうじて、おんしにあたらしいほんをきんていいたしました。",
+          "en": "Through my publisher, I respectfully presented my new book to my former teacher."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{本|ほん}などを、{相手|あいて}を{敬|うやま}って{差|さ}し{上|あ}げること。",
+        "kana": "じぶんのほんなどを、あいてをうやまってさしあげること。"
+      },
+      "frequencyRank": 6735,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1137",
+      "word": "謹製",
+      "kana": "きんせい",
+      "meanings": [
+        "carefully made",
+        "made with care (on labels)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "food",
+        "shopping",
+        "business",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{老舗|しにせ}の{箱|はこ}には「{当店|とうてん}{謹製|きんせい}」の{文字|もじ}があり、{中|なか}には{上品|じょうひん}な{和菓子|わがし}が{並|なら}んでいた。",
+          "kana": "しにせのはこには「とうてんきんせい」のもじがあり、なかにはじょうひんなわがしがならんでいた。",
+          "en": "The long-established shop's box bore the words \"carefully made by our shop,\" and inside lay elegant Japanese sweets."
+        },
+        {
+          "ja": "{土産|みやげ}の{包|つつ}みに「{謹製|きんせい}」とあると、それだけで{味|あじ}まで{上等|じょうとう}に{思|おも}えてくる。",
+          "kana": "みやげのつつみに「きんせい」とあると、それだけであじまでじょうとうにおもえてくる。",
+          "en": "When a souvenir's wrapping says 'carefully made,' even the taste starts to seem a cut above."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}をこめて{丁寧|ていねい}に{作|つく}ったものだと、{商品|しょうひん}に{書|か}く{言葉|ことば}。",
+        "kana": "こころをこめてていねいにつくったものだと、しょうひんにかくことば。"
+      },
+      "frequencyRank": 6746,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1138",
+      "word": "愚見",
+      "kana": "ぐけん",
+      "meanings": [
+        "my humble opinion"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "abstract",
+        "humble",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{愚見|ぐけん}ではございますが、この{案|あん}には{再考|さいこう}の{余地|よち}があるように{思|おも}われます。",
+          "kana": "ぐけんではございますが、このあんにはさいこうのよちがあるようにおもわれます。",
+          "en": "In my humble opinion, this proposal seems to leave room for reconsideration."
+        },
+        {
+          "ja": "{会議|かいぎ}の{最後|さいご}に、{愚見|ぐけん}を{述|の}べさせていただいてもよろしいでしょうか。",
+          "kana": "かいぎのさいごに、ぐけんをのべさせていただいてもよろしいでしょうか。",
+          "en": "At the end of the meeting, might I be permitted to offer my humble opinion?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{意見|いけん}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "じぶんのいけんを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6757,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1139",
+      "word": "拙宅",
+      "kana": "せったく",
+      "meanings": [
+        "my humble home"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "home",
+        "humble",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{拙宅|せったく}でささやかな{食事会|しょくじかい}を{開|ひら}きますので、ぜひお{越|こ}しください。",
+          "kana": "らいげつ、せったくでささやかなしょくじかいをひらきますので、ぜひおこしください。",
+          "en": "Next month I am holding a modest dinner at my home, so please do come."
+        },
+        {
+          "ja": "{拙宅|せったく}は{駅|えき}から{少|すこ}し{離|はな}れておりますので、お{車|くるま}でお{越|こ}しいただくのが{便利|べんり}です。",
+          "kana": "せったくはえきからすこしはなれておりますので、おくるまでおこしいただくのがべんりです。",
+          "en": "My home is a little way from the station, so it's most convenient to come by car."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{家|いえ}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "じぶんのいえを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6768,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1140",
+      "word": "拙著",
+      "kana": "せっちょ",
+      "meanings": [
+        "my book (humble)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "arts",
+        "humble",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{拙著|せっちょ}をお{読|よ}みいただき、{貴重|きちょう}なご{感想|かんそう}まで{頂戴|ちょうだい}し、{恐縮|きょうしゅく}しております。",
+          "kana": "せっちょをおよみいただき、きちょうなごかんそうまでちょうだいし、きょうしゅくしております。",
+          "en": "I am humbled that you read my book and even sent me your valuable impressions."
+        },
+        {
+          "ja": "{詳|くわ}しい{内容|ないよう}については、{拙著|せっちょ}の{第三章|だいさんしょう}で{述|の}べておりますのでご{参照|さんしょう}ください。",
+          "kana": "くわしいないようについては、せっちょのだいさんしょうでのべておりますのでごさんしょうください。",
+          "en": "I discuss the details in chapter three of my book, so please refer to that."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}が{書|か}いた{本|ほん}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "じぶんがかいたほんを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6779,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1141",
+      "word": "愚息",
+      "kana": "ぐそく",
+      "meanings": [
+        "my son (humble)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "family",
+        "humble",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{愚息|ぐそく}がいつも{大変|たいへん}お{世話|せわ}になっております。",
+          "kana": "ぐそくがいつもたいへんおせわになっております。",
+          "en": "Thank you for always taking such good care of my son."
+        },
+        {
+          "ja": "{愚息|ぐそく}はまだ{学生|がくせい}の{身|み}でございますが、どうぞよろしくお{願|ねが}いいたします。",
+          "kana": "ぐそくはまだがくせいのみでございますが、どうぞよろしくおねがいいたします。",
+          "en": "My son is still a student, but I hope you will look kindly on him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{息子|むすこ}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "じぶんのむすこを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6790,
+      "notes": "Humble word for one's own son when speaking to outsiders; today often replaced by 息子.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1142",
+      "word": "粗茶",
+      "kana": "そちゃ",
+      "meanings": [
+        "tea (humble, offered to a guest)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "drink",
+        "humble",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{粗茶|そちゃ}ですが、どうぞ{召|め}し{上|あ}がってください。",
+          "kana": "そちゃですが、どうぞめしあがってください。",
+          "en": "It is only simple tea, but please help yourself."
+        },
+        {
+          "ja": "「{粗茶|そちゃ}ですが」と{出|だ}されたお{茶|ちゃ}が、{実|じつ}は{高級|こうきゅう}な{玉露|ぎょくろ}だったことがある。",
+          "kana": "「そちゃですが」とだされたおちゃが、じつはこうきゅうなぎょくろだったことがある。",
+          "en": "Once, the tea served to me as 'just plain tea' turned out to be top-grade gyokuro."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}に{出|だ}すお{茶|ちゃ}を、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "きゃくにだすおちゃを、へりくだっていうことば。"
+      },
+      "frequencyRank": 6801,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1143",
+      "word": "ご厚情",
+      "kana": "ごこうじょう",
+      "meanings": [
+        "your kindness",
+        "your warm favor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "communication",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{在職中|ざいしょくちゅう}に{賜|たまわ}りましたご{厚情|こうじょう}に、{深|ふか}く{感謝|かんしゃ}{申|もう}し{上|あ}げます。",
+          "kana": "ざいしょくちゅうにたまわりましたごこうじょうに、ふかくかんしゃもうしあげます。",
+          "en": "I am deeply grateful for the kindness you showed me during my time at the company."
+        },
+        {
+          "ja": "{皆様|みなさま}のご{厚情|こうじょう}に{支|ささ}えられ、{無事|ぶじ}に{開店|かいてん}{十周年|じっしゅうねん}を{迎|むか}えることができました。",
+          "kana": "みなさまのごこうじょうにささえられ、ぶじにかいてんじっしゅうねんをむかえることができました。",
+          "en": "Sustained by your warm support, we have been able to mark the tenth anniversary of our opening."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{深|ふか}くて{温|あたた}かい{思|おも}いやりを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてのふかくてあたたかいおもいやりを、うやまっていうことば。"
+      },
+      "frequencyRank": 6812,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1144",
+      "word": "ご清祥",
+      "kana": "ごせいしょう",
+      "meanings": [
+        "your good health (letter greeting)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "greetings",
+        "communication",
+        "honorific",
+        "written",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{皆様|みなさま}にはますますご{清祥|せいしょう}のことと、{心|こころ}よりお{慶|よろこ}び{申|もう}し{上|あ}げます。",
+          "kana": "みなさまにはますますごせいしょうのことと、こころよりおよろこびもうしあげます。",
+          "en": "We are delighted to hear that you are all in continued good health."
+        },
+        {
+          "ja": "{暑|あつ}さ{厳|きび}しき{折|おり}、{先生|せんせい}にはご{清祥|せいしょう}にお{過|す}ごしのことと{存|ぞん}じます。",
+          "kana": "あつさきびしきおり、せんせいにはごせいしょうにおすごしのこととぞんじます。",
+          "en": "In this severe heat, I trust that you are keeping in good health."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{健康|けんこう}で{幸|しあわ}せに{過|す}ごしていることを、{手紙|てがみ}で{祝|いわ}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがけんこうでしあわせにすごしていることを、てがみでいわっていうことば。"
+      },
+      "frequencyRank": 6823,
+      "notes": "Said of people (their health); of a company use ご清栄 or ご隆盛.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1145",
+      "word": "ご芳志",
+      "kana": "ごほうし",
+      "meanings": [
+        "your kind contribution",
+        "your kindness"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "culture",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{故人|こじん}の{葬儀|そうぎ}に{際|さい}しましては{過分|かぶん}なご{芳志|ほうし}を{賜|たまわ}り、{誠|まこと}にありがとうございました。",
+          "kana": "こじんのそうぎにさいしましてはかぶんなごほうしをたまわり、まことにありがとうございました。",
+          "en": "Thank you most sincerely for your generous contribution on the occasion of the funeral."
+        },
+        {
+          "ja": "{皆様|みなさま}からのご{芳志|ほうし}は、{新|あたら}しい{図書館|としょかん}の{本|ほん}の{購入|こうにゅう}に{使|つか}わせていただきます。",
+          "kana": "みなさまからのごほうしは、あたらしいとしょかんのほんのこうにゅうにつかわせていただきます。",
+          "en": "Your kind contributions will go toward purchasing books for the new library."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{親切|しんせつ}な{気持|きも}ちや{寄付|きふ}を、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてのしんせつなきもちやきふを、うやまっていうことば。"
+      },
+      "frequencyRank": 6834,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1146",
+      "word": "ご厚志",
+      "kana": "ごこうし",
+      "meanings": [
+        "your kind donation",
+        "your goodwill"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "money",
+        "culture",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{皆様|みなさま}からのご{厚志|こうし}は、{被災地|ひさいち}の{復興|ふっこう}{支援|しえん}に{全額|ぜんがく}{充|あ}てさせていただきます。",
+          "kana": "みなさまからのごこうしは、ひさいちのふっこうしえんにぜんがくあてさせていただきます。",
+          "en": "Every yen of your generous donations will go toward supporting recovery in the disaster area."
+        },
+        {
+          "ja": "このたびは{多大|ただい}なるご{厚志|こうし}を{賜|たまわ}り、{厚|あつ}く{御礼|おんれい}{申|もう}し{上|あ}げます。",
+          "kana": "このたびはただいなるごこうしをたまわり、あつくおんれいもうしあげます。",
+          "en": "We offer our heartfelt thanks for your most generous goodwill on this occasion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{温|あたた}かい{心|こころ}や{寄付|きふ}を、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてのあたたかいこころやきふを、うやまっていうことば。"
+      },
+      "frequencyRank": 6845,
+      "confusables": [
+        "v-n1-1145"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1147",
+      "word": "ご助力",
+      "kana": "ごじょりょく",
+      "meanings": [
+        "your help",
+        "your assistance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{皆様|みなさま}のご{助力|じょりょく}なくしては、この{事業|じぎょう}を{成功|せいこう}させることはできませんでした。",
+          "kana": "みなさまのごじょりょくなくしては、このじぎょうをせいこうさせることはできませんでした。",
+          "en": "Without your help, we could not have made this project a success."
+        },
+        {
+          "ja": "{資料|しりょう}の{収集|しゅうしゅう}に{当|あ}たり、{多|おお}くの{方々|かたがた}のご{助力|じょりょく}を{賜|たまわ}りました。",
+          "kana": "しりょうのしゅうしゅうにあたり、おおくのかたがたのごじょりょくをたまわりました。",
+          "en": "In collecting the materials, I received the help of a great many people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{力|ちから}を{貸|か}してくれることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがちからをかしてくれることを、うやまっていうことば。"
+      },
+      "frequencyRank": 6856,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1148",
+      "word": "ご指導ご鞭撻",
+      "kana": "ごしどうごべんたつ",
+      "meanings": [
+        "your guidance and encouragement"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{未熟者|みじゅくもの}ではございますが、{今後|こんご}ともご{指導|しどう}ご{鞭撻|べんたつ}のほど、よろしくお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "みじゅくものではございますが、こんごともごしどうごべんたつのほど、よろしくおねがいもうしあげます。",
+          "en": "I still have much to learn, and I ask for your continued guidance and encouragement."
+        },
+        {
+          "ja": "{本日|ほんじつ}より{着任|ちゃくにん}いたしました。{皆様|みなさま}のご{指導|しどう}ご{鞭撻|べんたつ}を{賜|たまわ}りますようお{願|ねが}いいたします。",
+          "kana": "ほんじつよりちゃくにんいたしました。みなさまのごしどうごべんたつをたまわりますようおねがいいたします。",
+          "en": "I took up my post today. I ask for your guidance and encouragement."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{教|おし}え{導|みちび}き、{励|はげ}ましてくれることを{敬|うやま}って{言|い}う、{挨拶|あいさつ}の{決|き}まり{文句|もんく}。",
+        "kana": "おしえみちびき、はげましてくれることをうやまっていう、あいさつのきまりもんく。"
+      },
+      "frequencyRank": 6867,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1149",
+      "word": "小見出し",
+      "kana": "こみだし",
+      "meanings": [
+        "subheading"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{報告書|ほうこくしょ}には{小見出|こみだ}しを{付|つ}けると、{読|よ}む{側|がわ}の{負担|ふたん}がぐっと{減|へ}る。",
+          "kana": "ながいほうこくしょにはこみだしをつけると、よむがわのふたんがぐっとへる。",
+          "en": "Putting subheadings in a long report greatly lightens the load on the reader."
+        },
+        {
+          "ja": "{記事|きじ}の{小見出|こみだ}しは、{本文|ほんぶん}の{内容|ないよう}を{一行|いちぎょう}で{言|い}い{表|あらわ}すのが{理想|りそう}です。",
+          "kana": "きじのこみだしは、ほんぶんのないようをいちぎょうでいいあらわすのがりそうです。",
+          "en": "Ideally, an article's subheadings sum up the content of the text in a single line."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{長|なが}い{記事|きじ}などの{途中|とちゅう}に{付|つ}ける、{部分|ぶぶん}ごとの{短|みじか}い{題名|だいめい}。",
+        "kana": "ながいきじなどのとちゅうにつける、ぶぶんごとのみじかいだいめい。"
+      },
+      "frequencyRank": 6878,
+      "confusables": [
+        "v-n1-1085"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1150",
+      "word": "ご贔屓",
+      "kana": "ごひいき",
+      "meanings": [
+        "your patronage",
+        "your favor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "shopping",
+        "honorific",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{今後|こんご}とも{変|か}わらぬご{贔屓|ひいき}を{賜|たまわ}りますよう、お{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "こんごともかわらぬごひいきをたまわりますよう、おねがいもうしあげます。",
+          "en": "We ask for your continued patronage in the years to come."
+        },
+        {
+          "ja": "{祖父|そふ}は{若|わか}いころから、あの{店|みせ}をずっとご{贔屓|ひいき}にしてきたそうだ。",
+          "kana": "そふはわかいころから、あのみせをずっとごひいきにしてきたそうだ。",
+          "en": "My grandfather has apparently given that shop his custom ever since he was young."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}が{特定|とくてい}の{店|みせ}や{人|ひと}を{気|き}に{入|い}って、よく{利用|りよう}して{応援|おうえん}すること。",
+        "kana": "きゃくがとくていのみせやひとをきにいって、よくりようしておうえんすること。"
+      },
+      "frequencyRank": 6889,
+      "notes": "Plain 贔屓 also means favoritism.",
+      "altForms": [
+        "ごひいき"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1151",
+      "word": "ご用命",
+      "kana": "ごようめい",
+      "meanings": [
+        "your order",
+        "your request (for goods or service)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "shopping",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{印刷物|いんさつぶつ}のことなら、{小|ちい}さなものでも{何|なん}なりとご{用命|ようめい}ください。",
+          "kana": "いんさつぶつのことなら、ちいさなものでもなんなりとごようめいください。",
+          "en": "For anything printed, however small the job, please do not hesitate to place your order with us."
+        },
+        {
+          "ja": "お{部屋|へや}の{掃除|そうじ}などご{用命|ようめい}がございましたら、フロントまでお{電話|でんわ}ください。",
+          "kana": "おへやのそうじなどごようめいがございましたら、フロントまでおでんわください。",
+          "en": "If you need anything such as room cleaning, please call the front desk."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}からの{注文|ちゅうもん}や{言|い}いつけを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "きゃくからのちゅうもんやいいつけを、うやまっていうことば。"
+      },
+      "frequencyRank": 6900,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1152",
+      "word": "ご一報",
+      "kana": "ごいっぽう",
+      "meanings": [
+        "brief notice",
+        "quick word"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{到着|とうちゃく}が{遅|おく}れそうな{場合|ばあい}は、お{手数|てすう}ですがご{一報|いっぽう}いただけますと{助|たす}かります。",
+          "kana": "とうちゃくがおくれそうなばあいは、おてすうですがごいっぽういただけますとたすかります。",
+          "en": "If you look like arriving late, it would help if you could let me know briefly."
+        },
+        {
+          "ja": "{商品|しょうひん}が{届|とど}きましたら、ご{一報|いっぽう}くださいますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "しょうひんがとどきましたら、ごいっぽうくださいますようおねがいもうしあげます。",
+          "en": "Once the goods have arrived, we would ask that you kindly let us know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{簡単|かんたん}に{知|し}らせてくれることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがかんたんにしらせてくれることを、うやまっていうことば。"
+      },
+      "frequencyRank": 6911,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1153",
+      "word": "ご返信",
+      "kana": "ごへんしん",
+      "meanings": [
+        "your reply (to a message)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "お{忙|いそが}しいところ{恐|おそ}れ{入|い}りますが、{来週|らいしゅう}{月曜|げつよう}までにご{返信|へんしん}いただけますでしょうか。",
+          "kana": "おいそがしいところおそれいりますが、らいしゅうげつようまでにごへんしんいただけますでしょうか。",
+          "en": "I am sorry to trouble you when you are busy, but could you reply by next Monday?"
+        },
+        {
+          "ja": "{早速|さっそく}のご{返信|へんしん}をいただき、{誠|まこと}にありがとうございます。",
+          "kana": "さっそくのごへんしんをいただき、まことにありがとうございます。",
+          "en": "Thank you very much for your prompt reply."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}からの{手紙|てがみ}や{連絡|れんらく}への{返事|へんじ}を、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてからのてがみやれんらくへのへんじを、うやまっていうことば。"
+      },
+      "frequencyRank": 6922,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1154",
+      "word": "ご返答",
+      "kana": "ごへんとう",
+      "meanings": [
+        "your answer",
+        "your response"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{検討|けんとう}の{結果|けっか}につきましては、{後日|ごじつ}{改|あらた}めてご{返答|へんとう}{申|もう}し{上|あ}げます。",
+          "kana": "けんとうのけっかにつきましては、ごじつあらためてごへんとうもうしあげます。",
+          "en": "We will give you our answer on the outcome of our review at a later date."
+        },
+        {
+          "ja": "{期限|きげん}までにご{返答|へんとう}がない{場合|ばあい}は、{辞退|じたい}されたものとみなします。",
+          "kana": "きげんまでにごへんとうがないばあいは、じたいされたものとみなします。",
+          "en": "If we receive no reply by the deadline, we will take it that you have declined."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{質問|しつもん}や{頼|たの}みへの{答|こた}えを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "しつもんやたのみへのこたえを、うやまっていうことば。"
+      },
+      "frequencyRank": 6933,
+      "notes": "ご〜 covers both your answer (honorific) and our answer (humble ご返答申し上げます).",
+      "confusables": [
+        "v-n1-1153"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1155",
+      "word": "ご回答",
+      "kana": "ごかいとう",
+      "meanings": [
+        "answer (polite)",
+        "response to an inquiry"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "お{問|と}い{合|あ}わせの{件|けん}につきまして、{以下|いか}のとおりご{回答|かいとう}いたします。",
+          "kana": "おといあわせのけんにつきまして、いかのとおりごかいとういたします。",
+          "en": "Regarding your inquiry, we respond as follows."
+        },
+        {
+          "ja": "アンケートへのご{回答|かいとう}は、{三月|さんがつ}{末日|まつじつ}までにお{願|ねが}いいたします。",
+          "kana": "アンケートへのごかいとうは、さんがつまつじつまでにおねがいいたします。",
+          "en": "Please submit your answers to the survey by the end of March."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{質問|しつもん}や{問|と}い{合|あ}わせに{答|こた}えること。また、その{答|こた}え。{丁寧|ていねい}な{言|い}い{方|かた}。",
+        "kana": "しつもんやといあわせにこたえること。また、そのこたえ。ていねいないいかた。"
+      },
+      "frequencyRank": 6944,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1156",
+      "word": "ご承諾",
+      "kana": "ごしょうだく",
+      "meanings": [
+        "your consent",
+        "your approval"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{掲載|けいさい}に{当|あ}たっては、{事前|じぜん}にご{本人|ほんにん}のご{承諾|しょうだく}を{得|え}ております。",
+          "kana": "けいさいにあたっては、じぜんにごほんにんのごしょうだくをえております。",
+          "en": "We have obtained the person's consent in advance of publication."
+        },
+        {
+          "ja": "{価格|かかく}の{変更|へんこう}について、{取引先|とりひきさき}からご{承諾|しょうだく}をいただきました。",
+          "kana": "かかくのへんこうについて、とりひきさきからごしょうだくをいただきました。",
+          "en": "We have obtained our client's consent to the price change."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{頼|たの}みを{聞|き}き{入|い}れて{認|みと}めることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがたのみをききいれてみとめることを、うやまっていうことば。"
+      },
+      "frequencyRank": 6955,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1157",
+      "word": "ご快諾",
+      "kana": "ごかいだく",
+      "meanings": [
+        "your kind consent",
+        "ready acceptance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{急|きゅう}なお{願|ねが}いにもかかわらずご{快諾|かいだく}いただき、{心|こころ}より{感謝|かんしゃ}いたします。",
+          "kana": "きゅうなおねがいにもかかわらずごかいだくいただき、こころよりかんしゃいたします。",
+          "en": "Thank you from the bottom of my heart for so readily agreeing despite the short notice."
+        },
+        {
+          "ja": "{講演|こうえん}の{依頼|いらい}に、{先生|せんせい}は{二|ふた}つ{返事|へんじ}でご{快諾|かいだく}くださいました。",
+          "kana": "こうえんのいらいに、せんせいはふたつへんじでごかいだくくださいました。",
+          "en": "The professor readily agreed to our request for a lecture without a moment's hesitation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{頼|たの}みを{気持|きも}ちよく{引|ひ}き{受|う}けてくれることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがたのみをきもちよくひきうけてくれることを、うやまっていうことば。"
+      },
+      "frequencyRank": 6966,
+      "confusables": [
+        "v-n1-1156"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1158",
+      "word": "ご了解",
+      "kana": "ごりょうかい",
+      "meanings": [
+        "your understanding",
+        "your acknowledgment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{工事|こうじ}の{間|あいだ}は{騒音|そうおん}が{出|で}ますので、ご{近所|きんじょ}の{皆様|みなさま}にはあらかじめご{了解|りょうかい}をいただいています。",
+          "kana": "こうじのあいだはそうおんがでますので、ごきんじょのみなさまにはあらかじめごりょうかいをいただいています。",
+          "en": "There will be noise during the construction, so we have obtained the neighbors' understanding in advance."
+        },
+        {
+          "ja": "{会議|かいぎ}の{日程|にってい}{変更|へんこう}について、すでに{部長|ぶちょう}のご{了解|りょうかい}は{得|え}ています。",
+          "kana": "かいぎのにっていへんこうについて、すでにぶちょうのごりょうかいはえています。",
+          "en": "I've already got the department head's go-ahead on the change to the meeting schedule."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{事情|じじょう}を{分|わ}かって{認|みと}めてくれることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがじじょうをわかってみとめてくれることを、うやまっていうことば。"
+      },
+      "frequencyRank": 6977,
+      "notes": "Toward a superior ご了承 is preferred; 了解しました aimed upward is often judged rude.",
+      "station": 52
+    },
+    {
+      "id": "v-n1-1159",
+      "word": "弊職",
+      "kana": "へいしょく",
+      "meanings": [
+        "I (humble, business writing)"
+      ],
+      "pos": "pron",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "business",
+        "humble",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "ご{質問|しつもん}の{件|けん}につきましては、{弊職|へいしょく}より{改|あらた}めてご{連絡|れんらく}{差|さ}し{上|あ}げます。",
+          "kana": "ごしつもんのけんにつきましては、へいしょくよりあらためてごれんらくさしあげます。",
+          "en": "Regarding your question, I will contact you again myself."
+        },
+        {
+          "ja": "{資料|しりょう}は{弊職|へいしょく}が{本日中|ほんじつちゅう}に{取|と}りまとめ、{明朝|みょうちょう}お{送|おく}りいたします。",
+          "kana": "しりょうはへいしょくがほんじつちゅうにとりまとめ、みょうちょうおおくりいたします。",
+          "en": "I will compile the materials by the end of today and send them tomorrow morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{自分|じぶん}のことをへりくだって{言|い}う{言葉|ことば}。{主|おも}に{書|か}き{言葉|ことば}。",
+        "kana": "かいしゃなどで、じぶんのことをへりくだっていうことば。おもにかきことば。"
+      },
+      "frequencyRank": 6988,
+      "notes": "Rarer than 小職 and avoided by some style guides; わたくし is the safe choice.",
+      "confusables": [
+        "v-n1-1132"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1160",
+      "word": "ご放念",
+      "kana": "ごほうねん",
+      "meanings": [
+        "putting a matter out of mind",
+        "disregarding (please disregard)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{先|さき}ほどのメールは{誤|あやま}って{送信|そうしん}したものですので、ご{放念|ほうねん}くださいますようお{願|ねが}いいたします。",
+          "kana": "さきほどのメールはあやまってそうしんしたものですので、ごほうねんくださいますようおねがいいたします。",
+          "en": "The email I sent a moment ago went out by mistake, so please disregard it."
+        },
+        {
+          "ja": "{問題|もんだい}はすでに{解決|かいけつ}いたしましたので、どうぞご{放念|ほうねん}ください。",
+          "kana": "もんだいはすでにかいけついたしましたので、どうぞごほうねんください。",
+          "en": "The problem has already been resolved, so please think no more of it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{気|き}にかけるのをやめることを、{敬|うやま}って{言|い}う{言葉|ことば}。「{忘|わす}れてください」の{意味|いみ}。",
+        "kana": "きにかけるのをやめることを、うやまっていうことば。「わすれてください」のいみ。"
+      },
+      "frequencyRank": 6999,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1161",
+      "word": "ご健闘",
+      "kana": "ごけんとう",
+      "meanings": [
+        "your good fight",
+        "your best efforts"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "sports",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}の{大会|たいかい}に{出場|しゅつじょう}される{皆様|みなさま}のご{健闘|けんとう}をお{祈|いの}りしております。",
+          "kana": "ほんじつのたいかいにしゅつじょうされるみなさまのごけんとうをおいのりしております。",
+          "en": "We wish everyone competing in today's tournament the best of luck."
+        },
+        {
+          "ja": "ご{健闘|けんとう}むなしく{敗|やぶ}れはしましたが、{皆|みな}さんの{姿|すがた}に{多|おお}くの{人|ひと}が{勇気|ゆうき}をもらいました。",
+          "kana": "ごけんとうむなしくやぶれはしましたが、みなさんのすがたにおおくのひとがゆうきをもらいました。",
+          "en": "Despite your valiant efforts you were defeated, but many people drew courage from the way you fought."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{力|ちから}いっぱい{戦|たたか}い、{努力|どりょく}することを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがちからいっぱいたたかい、どりょくすることを、うやまっていうことば。"
+      },
+      "frequencyRank": 7010,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1162",
+      "word": "ご活躍",
+      "kana": "ごかつやく",
+      "meanings": [
+        "your success",
+        "your active work"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{新天地|しんてんち}でのますますのご{活躍|かつやく}を、{社員|しゃいん}{一同|いちどう}{心|こころ}よりお{祈|いの}り{申|もう}し{上|あ}げます。",
+          "kana": "しんてんちでのますますのごかつやくを、しゃいんいちどうこころよりおいのりもうしあげます。",
+          "en": "All of us at the company sincerely wish you ever greater success in your new post."
+        },
+        {
+          "ja": "{先生|せんせい}のご{活躍|かつやく}は、{新聞|しんぶん}やテレビでいつも{拝見|はいけん}しております。",
+          "kana": "せんせいのごかつやくは、しんぶんやテレビでいつもはいけんしております。",
+          "en": "I always follow your activities in the newspapers and on television."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{仕事|しごと}などで{大|おお}いに{力|ちから}を{出|だ}して{働|はたら}いていることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがしごとなどでおおいにちからをだしてはたらいていることを、うやまっていうことば。"
+      },
+      "frequencyRank": 7021,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1163",
+      "word": "ご発展",
+      "kana": "ごはってん",
+      "meanings": [
+        "your prosperity",
+        "your growth"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{貴社|きしゃ}のますますのご{発展|はってん}を{祈念|きねん}いたしまして、お{祝|いわ}いの{言葉|ことば}とさせていただきます。",
+          "kana": "きしゃのますますのごはってんをきねんいたしまして、おいわいのことばとさせていただきます。",
+          "en": "Allow me to close my congratulations by praying for your company's ever greater prosperity."
+        },
+        {
+          "ja": "{創立|そうりつ}{五十周年|ごじっしゅうねん}、{誠|まこと}におめでとうございます。{今後|こんご}のさらなるご{発展|はってん}をお{祈|いの}りいたします。",
+          "kana": "そうりつごじっしゅうねん、まことにおめでとうございます。こんごのさらなるごはってんをおいのりいたします。",
+          "en": "Congratulations on your fiftieth anniversary. We wish you continued growth in the years ahead."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{会社|かいしゃ}などが{大|おお}きく{育|そだ}ち、{栄|さか}えていくことを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてのかいしゃなどがおおきくそだち、さかえていくことを、うやまっていうことば。"
+      },
+      "frequencyRank": 7032,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1164",
+      "word": "ご隆盛",
+      "kana": "ごりゅうせい",
+      "meanings": [
+        "your prosperity (of a business)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{貴店|きてん}ますますご{隆盛|りゅうせい}のこととお{喜|よろこ}び{申|もう}し{上|あ}げます。",
+          "kana": "きてんますますごりゅうせいのこととおよろこびもうしあげます。",
+          "en": "We are delighted to hear that your shop continues to prosper."
+        },
+        {
+          "ja": "{貴社|きしゃ}のご{隆盛|りゅうせい}を{心|こころ}よりお{祝|いわ}い{申|もう}し{上|あ}げ、ご{挨拶|あいさつ}とさせていただきます。",
+          "kana": "きしゃのごりゅうせいをこころよりおいわいもうしあげ、ごあいさつとさせていただきます。",
+          "en": "With heartfelt congratulations on your company's prosperity, I offer these words of greeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{商売|しょうばい}などが{盛|さか}んで、よく{栄|さか}えていることを、{手紙|てがみ}で{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてのしょうばいなどがさかんで、よくさかえていることを、てがみでうやまっていうことば。"
+      },
+      "frequencyRank": 7043,
+      "confusables": [
+        "v-n1-1163"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1165",
+      "word": "ご多幸",
+      "kana": "ごたこう",
+      "meanings": [
+        "your happiness",
+        "your good fortune"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "greetings",
+        "communication",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{年|とし}が{皆様|みなさま}にとって{実|みの}り{多|おお}いものとなりますよう、ご{多幸|たこう}をお{祈|いの}りいたします。",
+          "kana": "あたらしいとしがみなさまにとってみのりおおいものとなりますよう、ごたこうをおいのりいたします。",
+          "en": "I wish you every happiness, and may the new year be a fruitful one for you all."
+        },
+        {
+          "ja": "ご{退職後|たいしょくご}のご{多幸|たこう}と、ご{家族|かぞく}のご{健康|けんこう}をお{祈|いの}り{申|もう}し{上|あ}げます。",
+          "kana": "ごたいしょくごのごたこうと、ごかぞくのごけんこうをおいのりもうしあげます。",
+          "en": "I wish you every happiness in your retirement and good health to your family."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}に{幸|しあわ}せが{多|おお}くあることを、{敬|うやま}って{祈|いの}る{言葉|ことば}。",
+        "kana": "あいてにしあわせがおおくあることを、うやまっていのることば。"
+      },
+      "frequencyRank": 7054,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1166",
+      "word": "ご芳名",
+      "kana": "ごほうめい",
+      "meanings": [
+        "your name (honorific)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "communication",
+        "honorific",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{受付|うけつけ}にてご{芳名|ほうめい}をご{記入|きにゅう}のうえ、{会場|かいじょう}へお{進|すす}みください。",
+          "kana": "うけつけにてごほうめいをごきにゅうのうえ、かいじょうへおすすみください。",
+          "en": "Please write your name at reception and then proceed to the hall."
+        },
+        {
+          "ja": "ご{寄付|きふ}くださった{方|かた}のご{芳名|ほうめい}は、{記念誌|きねんし}に{掲載|けいさい}させていただきます。",
+          "kana": "ごきふくださったかたのごほうめいは、きねんしにけいさいさせていただきます。",
+          "en": "The names of those who made donations will be printed in the commemorative publication."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{名前|なまえ}を、{敬|うやま}って{言|い}う{言葉|ことば}。{主|おも}に{受付|うけつけ}や{手紙|てがみ}で{使|つか}う。",
+        "kana": "あいてのなまえを、うやまっていうことば。おもにうけつけやてがみでつかう。"
+      },
+      "frequencyRank": 7065,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1167",
+      "word": "ご署名",
+      "kana": "ごしょめい",
+      "meanings": [
+        "your signature"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "law",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{内容|ないよう}をご{確認|かくにん}のうえ、{末尾|まつび}の{欄|らん}にご{署名|しょめい}をお{願|ねが}いいたします。",
+          "kana": "ないようをごかくにんのうえ、まつびのらんにごしょめいをおねがいいたします。",
+          "en": "Please check the contents and sign in the box at the end."
+        },
+        {
+          "ja": "この{書類|しょるい}はご{署名|しょめい}がないと{無効|むこう}になりますので、ご{注意|ちゅうい}ください。",
+          "kana": "このしょるいはごしょめいがないとむこうになりますので、ごちゅういください。",
+          "en": "Please note that this document is invalid without your signature."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{自分|じぶん}の{名前|なまえ}を{書類|しょるい}に{書|か}くことを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがじぶんのなまえをしょるいにかくことを、うやまっていうことば。"
+      },
+      "frequencyRank": 7076,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1168",
+      "word": "ご捺印",
+      "kana": "ごなついん",
+      "meanings": [
+        "your seal (stamping)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "law",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{契約書|けいやくしょ}{二通|につう}にご{署名|しょめい}・ご{捺印|なついん}のうえ、{一通|いっつう}をご{返送|へんそう}ください。",
+          "kana": "けいやくしょにつうにごしょめい・ごなついんのうえ、いっつうをごへんそうください。",
+          "en": "Please sign and seal both copies of the contract and return one to us."
+        },
+        {
+          "ja": "{印鑑|いんかん}をお{持|も}ちでない{場合|ばあい}、ご{捺印|なついん}の{代|か}わりにサインでも{結構|けっこう}です。",
+          "kana": "いんかんをおもちでないばあい、ごなついんのかわりにサインでもけっこうです。",
+          "en": "If you don't have your seal with you, a signature is fine instead of stamping."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{書類|しょるい}にはんこを{押|お}すことを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがしょるいにはんこをおすことを、うやまっていうことば。"
+      },
+      "frequencyRank": 7087,
+      "confusables": [
+        "v-n1-1167"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1169",
+      "word": "ご記帳",
+      "kana": "ごきちょう",
+      "meanings": [
+        "signing the guest book"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "お{越|こ}しの{際|さい}は、{入口|いりぐち}の{受付|うけつけ}でご{記帳|きちょう}をお{願|ねが}いいたします。",
+          "kana": "おこしのさいは、いりぐちのうけつけでごきちょうをおねがいいたします。",
+          "en": "When you arrive, please sign the book at the reception desk by the entrance."
+        },
+        {
+          "ja": "{葬儀|そうぎ}に{参列|さんれつ}された{方々|かたがた}には、{受付|うけつけ}でご{記帳|きちょう}いただきました。",
+          "kana": "そうぎにさんれつされたかたがたには、うけつけでごきちょういただきました。",
+          "en": "Those who attended the funeral signed the register at the reception desk."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{受付|うけつけ}などに{置|お}かれたノートに、{名前|なまえ}を{書|か}くことを{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "うけつけなどにおかれたノートに、なまえをかくことをうやまっていうことば。"
+      },
+      "frequencyRank": 7098,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1170",
+      "word": "伏して",
+      "kana": "ふして",
+      "meanings": [
+        "humbly",
+        "earnestly (begging)"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "humble",
+        "written",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "ご{迷惑|めいわく}をおかけしましたことを、{伏|ふ}してお{詫|わ}び{申|もう}し{上|あ}げます。",
+          "kana": "ごめいわくをおかけしましたことを、ふしておわびもうしあげます。",
+          "en": "I humbly apologize for the trouble I have caused you."
+        },
+        {
+          "ja": "どうかこの{願|ねが}いをお{聞|き}き{届|とど}けくださいますよう、{伏|ふ}してお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "どうかこのねがいをおききとどけくださいますよう、ふしておねがいもうしあげます。",
+          "en": "I humbly beg you to grant this request."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{頭|あたま}を{深|ふか}く{下|さ}げる{気持|きも}ちで、{心|こころ}から{頼|たの}んだり{謝|あやま}ったりする{様子|ようす}。",
+        "kana": "あたまをふかくさげるきもちで、こころからたのんだりあやまったりするようす。"
+      },
+      "frequencyRank": 7109,
+      "collocations": [
+        "伏してお願い申し上げます",
+        "伏してお詫び申し上げます"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1171",
+      "word": "衷心より",
+      "kana": "ちゅうしんより",
+      "meanings": [
+        "from the bottom of my heart"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "communication",
+        "formal",
+        "written",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "このたびの{受賞|じゅしょう}を、{衷心|ちゅうしん}よりお{祝|いわ}い{申|もう}し{上|あ}げます。",
+          "kana": "このたびのじゅしょうを、ちゅうしんよりおいわいもうしあげます。",
+          "en": "I congratulate you from the bottom of my heart on this award."
+        },
+        {
+          "ja": "{長年|ながねん}にわたるご{指導|しどう}に{対|たい}し、{衷心|ちゅうしん}より{感謝|かんしゃ}の{意|い}を{表|ひょう}します。",
+          "kana": "ながねんにわたるごしどうにたいし、ちゅうしんよりかんしゃのいをひょうします。",
+          "en": "I express my heartfelt gratitude for your many years of guidance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}からの{気持|きも}ちで。{手紙|てがみ}や{挨拶|あいさつ}で{使|つか}う、とても{硬|かた}い{言葉|ことば}。",
+        "kana": "こころからのきもちで。てがみやあいさつでつかう、とてもかたいことば。"
+      },
+      "frequencyRank": 7120,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1172",
+      "word": "万障お繰り合わせの上",
+      "kana": "ばんしょうおくりあわせのうえ",
+      "meanings": [
+        "clearing your schedule to attend"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "formal",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{万障|ばんしょう}お{繰|く}り{合|あ}わせの{上|うえ}、ぜひご{出席|しゅっせき}くださいますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "ばんしょうおくりあわせのうえ、ぜひごしゅっせきくださいますようおねがいもうしあげます。",
+          "en": "We hope you will clear your schedule and honor us with your attendance."
+        },
+        {
+          "ja": "ご{多用|たよう}とは{存|ぞん}じますが、{万障|ばんしょう}お{繰|く}り{合|あ}わせの{上|うえ}ご{来場|らいじょう}いただければ{幸|さいわ}いです。",
+          "kana": "ごたようとはぞんじますが、ばんしょうおくりあわせのうえごらいじょういただければさいわいです。",
+          "en": "I know you are very busy, but I would be grateful if you could arrange your schedule to attend."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{都合|つごう}をつけて{必|かなら}ず{来|き}てほしいと{頼|たの}むときの、{招待|しょうたい}の{手紙|てがみ}の{決|き}まり{文句|もんく}。",
+        "kana": "つごうをつけてかならずきてほしいとたのむときの、しょうたいのてがみのきまりもんく。"
+      },
+      "frequencyRank": 7131,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1173",
+      "word": "お手すきの際",
+      "kana": "おてすきのさい",
+      "meanings": [
+        "when you have a free moment"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{急|いそ}ぎではございませんので、お{手|て}すきの{際|さい}にご{確認|かくにん}いただければ{幸|さいわ}いです。",
+          "kana": "いそぎではございませんので、おてすきのさいにごかくにんいただければさいわいです。",
+          "en": "It is not urgent, so I would be grateful if you could check it when you have a free moment."
+        },
+        {
+          "ja": "お{手|て}すきの{際|さい}で{結構|けっこう}ですので、{一度|いちど}お{電話|でんわ}をいただけますでしょうか。",
+          "kana": "おてすきのさいでけっこうですので、いちどおでんわをいただけますでしょうか。",
+          "en": "Whenever you have a free moment, could you give me a call?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{忙|いそが}しくなくて、{時間|じかん}があるときを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがいそがしくなくて、じかんがあるときを、うやまっていうことば。"
+      },
+      "frequencyRank": 7142,
+      "altForms": [
+        "お手空きの際"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1174",
+      "word": "幸いに存じます",
+      "kana": "さいわいにぞんじます",
+      "meanings": [
+        "I would be grateful"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "humble",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "ご{都合|つごう}をお{知|し}らせいただけますと{幸|さいわ}いに{存|ぞん}じます。",
+          "kana": "ごつごうをおしらせいただけますとさいわいにぞんじます。",
+          "en": "I would be grateful if you could let me know when would suit you."
+        },
+        {
+          "ja": "ご{検討|けんとう}のうえ、{前向|まえむ}きなお{返事|へんじ}をいただければ{幸|さいわ}いに{存|ぞん}じます。",
+          "kana": "ごけんとうのうえ、まえむきなおへんじをいただければさいわいにぞんじます。",
+          "en": "After considering it, I would be grateful for a favorable reply."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「そうしてもらえるとうれしい」を、とても{丁寧|ていねい}に{言|い}う{言葉|ことば}。",
+        "kana": "「そうしてもらえるとうれしい」を、とてもていねいにいうことば。"
+      },
+      "frequencyRank": 7153,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1175",
+      "word": "存じ上げております",
+      "kana": "ぞんじあげております",
+      "meanings": [
+        "I know of you (humble)"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "humble",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "ご{高名|こうめい}はかねてより{存|ぞん}じ{上|あ}げております。お{会|あ}いできて{光栄|こうえい}です。",
+          "kana": "ごこうめいはかねてよりぞんじあげております。おあいできてこうえいです。",
+          "en": "I have long known of you by reputation. It is an honor to meet you."
+        },
+        {
+          "ja": "{先生|せんせい}のご{著書|ちょしょ}は、{学生|がくせい}のころから{存|ぞん}じ{上|あ}げております。",
+          "kana": "せんせいのごちょしょは、がくせいのころからぞんじあげております。",
+          "en": "I have known of your books since my student days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「{知|し}っています」をへりくだって{言|い}う{言葉|ことば}。{人|ひと}について{使|つか}う。",
+        "kana": "「しっています」をへりくだっていうことば。ひとについてつかう。"
+      },
+      "frequencyRank": 7164,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1176",
+      "word": "仰せの通り",
+      "kana": "おおせのとおり",
+      "meanings": [
+        "just as you say"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "honorific",
+        "formal",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{仰|おお}せの{通|とお}り、{今回|こんかい}の{遅|おく}れは{当方|とうほう}の{確認|かくにん}{不足|ぶそく}が{原因|げんいん}でございます。",
+          "kana": "おおせのとおり、こんかいのおくれはとうほうのかくにんぶそくがげんいんでございます。",
+          "en": "Just as you say, this delay was caused by our own failure to check."
+        },
+        {
+          "ja": "{仰|おお}せの{通|とお}りに{手配|てはい}いたしましたので、ご{安心|あんしん}ください。",
+          "kana": "おおせのとおりにてはいいたしましたので、ごあんしんください。",
+          "en": "I have made the arrangements just as you instructed, so please rest assured."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「あなたの{言|い}う{通|とお}り」を、{相手|あいて}を{高|たか}めて{言|い}う{言葉|ことば}。",
+        "kana": "「あなたのいうとおり」を、あいてをたかめていうことば。"
+      },
+      "frequencyRank": 7175,
+      "altForms": [
+        "仰せのとおり"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1177",
+      "word": "仰せつかる",
+      "kana": "おおせつかる",
+      "meanings": [
+        "to be ordered (by a superior)",
+        "to be entrusted with (humble)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "business",
+        "humble"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "このたび{司会|しかい}の{大役|たいやく}を{仰|おお}せつかりました、{営業部|えいぎょうぶ}の{田中|たなか}と{申|もう}します。",
+          "kana": "このたびしかいのたいやくをおおせつかりました、えいぎょうぶのたなかともうします。",
+          "en": "I am Tanaka from the sales department, and I have been given the important role of host today."
+        },
+        {
+          "ja": "{社長|しゃちょう}から{直々|じきじき}に{新店舗|しんてんぽ}の{立|た}ち{上|あ}げを{仰|おお}せつかり、{身|み}が{引|ひ}き{締|し}まる{思|おも}いだ。",
+          "kana": "しゃちょうからじきじきにしんてんぽのたちあげをおおせつかり、みがひきしまるおもいだ。",
+          "en": "The president personally charged me with launching the new store, and I feel the weight of it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|うえ}の{立場|たちば}の{人|ひと}から{命令|めいれい}や{仕事|しごと}を{受|う}けることを、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "うえのたちばのひとからめいれいやしごとをうけることを、へりくだっていうことば。"
+      },
+      "frequencyRank": 7186,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1178",
+      "word": "言付かる",
+      "kana": "ことづかる",
+      "meanings": [
+        "to be entrusted with a message"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}から{皆|みな}さんへの{伝言|でんごん}を{言付|ことづ}かってきましたので、お{伝|つた}えします。",
+          "kana": "ぶちょうからみなさんへのでんごんをことづかってきましたので、おつたえします。",
+          "en": "I was asked by the department head to pass on a message to all of you, so here it is."
+        },
+        {
+          "ja": "{母|はは}から、{先生|せんせい}にこの{手紙|てがみ}を{渡|わた}すよう{言付|ことづ}かりました。",
+          "kana": "ははから、せんせいにこのてがみをわたすようことづかりました。",
+          "en": "My mother asked me to give you this letter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}から、{伝言|でんごん}や{品物|しなもの}をほかの{人|ひと}に{届|とど}けるよう{頼|たの}まれること。",
+        "kana": "ひとから、でんごんやしなものをほかのひとにとどけるようたのまれること。"
+      },
+      "frequencyRank": 7197,
+      "altForms": [
+        "託かる"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1179",
+      "word": "申し付ける",
+      "kana": "もうしつける",
+      "meanings": [
+        "to order",
+        "to instruct (a subordinate)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "business",
+        "communication",
+        "formal"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "ご{入用|にゅうよう}のものがございましたら、{何|なん}なりと{係|かかり}の{者|もの}にお{申|もう}し{付|つ}けください。",
+          "kana": "ごにゅうようのものがございましたら、なんなりとかかりのものにおもうしつけください。",
+          "en": "If there is anything you need, please tell our staff without hesitation."
+        },
+        {
+          "ja": "{部長|ぶちょう}は{若手|わかて}に{雑用|ざつよう}ばかり{申|もう}し{付|つ}けるので、みんな{不満|ふまん}をためている。",
+          "kana": "ぶちょうはわかてにざつようばかりもうしつけるので、みんなふまんをためている。",
+          "en": "The department head keeps ordering the junior staff to do odd jobs, so everyone is quietly fed up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|うえ}の{立場|たちば}の{人|ひと}が{下|した}の{人|ひと}に、{命令|めいれい}したり{用事|ようじ}を{頼|たの}んだりすること。",
+        "kana": "うえのたちばのひとがしたのひとに、めいれいしたりようじをたのんだりすること。"
+      },
+      "frequencyRank": 7208,
+      "altForms": [
+        "申しつける"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1180",
+      "word": "申し伝える",
+      "kana": "もうしつたえる",
+      "meanings": [
+        "to pass on (a message) (humble)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "humble"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{田中|たなか}はただいま{席|せき}を{外|はず}しておりますので、{戻|もど}りましたらその{旨|むね}{申|もう}し{伝|つた}えます。",
+          "kana": "たなかはただいませきをはずしておりますので、もどりましたらそのむねもうしつたえます。",
+          "en": "Tanaka is away from his desk right now; when he returns I will pass that on to him."
+        },
+        {
+          "ja": "お{客様|きゃくさま}のご{要望|ようぼう}は、{担当|たんとう}の{者|もの}にしっかり{申|もう}し{伝|つた}えておきます。",
+          "kana": "おきゃくさまのごようぼうは、たんとうのものにしっかりもうしつたえておきます。",
+          "en": "I will make sure to pass your request on to the person in charge."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}からの{言葉|ことば}をほかの{人|ひと}に{伝|つた}えることを、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "ひとからのことばをほかのひとにつたえることを、へりくだっていうことば。"
+      },
+      "frequencyRank": 7219,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1181",
+      "word": "申し添える",
+      "kana": "もうしそえる",
+      "meanings": [
+        "to add (a remark) (humble)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "humble",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "なお、{参加費|さんかひ}は{当日|とうじつ}{受付|うけつけ}にてお{支払|しはら}いいただく{旨|むね}、{申|もう}し{添|そ}えます。",
+          "kana": "なお、さんかひはとうじつうけつけにておしはらいいただくむね、もうしそえます。",
+          "en": "I would add that the participation fee is to be paid at reception on the day."
+        },
+        {
+          "ja": "{最後|さいご}に{一点|いってん}、{申|もう}し{添|そ}えておきたいことがございます。",
+          "kana": "さいごにいってん、もうしそえておきたいことがございます。",
+          "en": "Finally, there is one point I would like to add."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}を{付|つ}け{加|くわ}えて{言|い}うことを、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "ことばをつけくわえていうことを、へりくだっていうことば。"
+      },
+      "frequencyRank": 7230,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1182",
+      "word": "お伺いを立てる",
+      "kana": "おうかがいをたてる",
+      "meanings": [
+        "to ask for instructions (humble)",
+        "to seek a superior's view"
+      ],
+      "pos": "expr",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "work",
+        "communication",
+        "humble",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{勝手|かって}に{決|き}めずに、まず{上司|じょうし}にお{伺|うかが}いを{立|た}てるのが{筋|すじ}というものだ。",
+          "kana": "かってにきめずに、まずじょうしにおうかがいをたてるのがすじというものだ。",
+          "en": "The proper thing is to check with the boss first rather than deciding on your own."
+        },
+        {
+          "ja": "{予算|よさん}の{件|けん}は、{来週|らいしゅう}の{会議|かいぎ}で{社長|しゃちょう}にお{伺|うかが}いを{立|た}てる{予定|よてい}です。",
+          "kana": "よさんのけんは、らいしゅうのかいぎでしゃちょうにおうかがいをたてるよていです。",
+          "en": "We plan to ask the president for his decision on the budget at next week's meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|うえ}の{立場|たちば}の{人|ひと}にどうすべきか{尋|たず}ねて、{指示|しじ}や{判断|はんだん}を{求|もと}めること。",
+        "kana": "うえのたちばのひとにどうすべきかたずねて、しじやはんだんをもとめること。"
+      },
+      "frequencyRank": 7241,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1183",
+      "word": "お目通し",
+      "kana": "おめとおし",
+      "meanings": [
+        "your looking over (a document)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{資料|しりょう}を{添付|てんぷ}いたしましたので、{会議|かいぎ}までにお{目通|めとお}しいただけますと{幸|さいわ}いです。",
+          "kana": "しりょうをてんぷいたしましたので、かいぎまでにおめとおしいただけますとさいわいです。",
+          "en": "I have attached the materials; I would be grateful if you could look them over before the meeting."
+        },
+        {
+          "ja": "{契約書|けいやくしょ}の{案|あん}をお{送|おく}りします。お{目通|めとお}しのうえ、ご{意見|いけん}をお{聞|き}かせください。",
+          "kana": "けいやくしょのあんをおおくりします。おめとおしのうえ、ごいけんをおきかせください。",
+          "en": "I am sending the draft contract. Please look it over and let me know your thoughts."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{書類|しょるい}などに{目|め}を{通|とお}して{読|よ}むことを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがしょるいなどにめをとおしてよむことを、うやまっていうことば。"
+      },
+      "frequencyRank": 7252,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1184",
+      "word": "お引き立て",
+      "kana": "おひきたて",
+      "meanings": [
+        "your patronage",
+        "your favor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "shopping",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{平素|へいそ}より{格別|かくべつ}のお{引|ひ}き{立|た}てを{賜|たまわ}り、{誠|まこと}にありがとうございます。",
+          "kana": "へいそよりかくべつのおひきたてをたまわり、まことにありがとうございます。",
+          "en": "Thank you very much for the special favor you always show us."
+        },
+        {
+          "ja": "{開店|かいてん}{以来|いらい}{二十年|にじゅうねん}、{地域|ちいき}の{皆様|みなさま}のお{引|ひ}き{立|た}てに{支|ささ}えられてまいりました。",
+          "kana": "かいてんいらいにじゅうねん、ちいきのみなさまのおひきたてにささえられてまいりました。",
+          "en": "For the twenty years since we opened, we have been sustained by the patronage of the local community."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}が{店|みせ}などを{気|き}に{入|い}って、よく{利用|りよう}してくれることを{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "きゃくがみせなどをきにいって、よくりようしてくれることをうやまっていうことば。"
+      },
+      "frequencyRank": 7263,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1185",
+      "word": "お取り計らい",
+      "kana": "おとりはからい",
+      "meanings": [
+        "your arrangements",
+        "your handling (of a matter)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{納期|のうき}の{件|けん}、{何卒|なにとぞ}よろしくお{取|と}り{計|はか}らいくださいますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "のうきのけん、なにとぞよろしくおとりはからいくださいますようおねがいもうしあげます。",
+          "en": "Regarding the delivery date, we would be grateful if you could kindly see to it."
+        },
+        {
+          "ja": "{急|きゅう}な{変更|へんこう}にもかかわらず、{迅速|じんそく}にお{取|と}り{計|はか}らいいただき{感謝|かんしゃ}しております。",
+          "kana": "きゅうなへんこうにもかかわらず、じんそくにおとりはからいいただきかんしゃしております。",
+          "en": "Despite the sudden change, I am grateful to you for handling it so promptly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{問題|もんだい}をうまく{処理|しょり}してくれることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがもんだいをうまくしょりしてくれることを、うやまっていうことば。"
+      },
+      "frequencyRank": 7274,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1186",
+      "word": "お見知りおき",
+      "kana": "おみしりおき",
+      "meanings": [
+        "remembering (a new acquaintance)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "greetings",
+        "communication",
+        "formal",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}より{担当|たんとう}させていただきます{田中|たなか}と{申|もう}します。どうぞお{見知|みし}りおきください。",
+          "kana": "ほんじつよりたんとうさせていただきますたなかともうします。どうぞおみしりおきください。",
+          "en": "I am Tanaka, and I will be in charge of your account from today. I hope you will remember me."
+        },
+        {
+          "ja": "{娘|むすめ}のハナでございます。{以後|いご}、お{見知|みし}りおきのほどお{願|ねが}い{申|もう}し{上|あ}げます。",
+          "kana": "むすめのハナでございます。いご、おみしりおきのほどおねがいもうしあげます。",
+          "en": "This is my daughter Hana. I hope you will remember her in future."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{初|はじ}めて{会|あ}った{人|ひと}に、{自分|じぶん}を{覚|おぼ}えておいてほしいと{頼|たの}むときの{言葉|ことば}。",
+        "kana": "はじめてあったひとに、じぶんをおぼえておいてほしいとたのむときのことば。"
+      },
+      "frequencyRank": 7285,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1187",
+      "word": "申し受ける",
+      "kana": "もうしうける",
+      "meanings": [
+        "to charge (a fee)",
+        "to accept (an order) (humble)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "money",
+        "humble",
+        "formal"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{送料|そうりょう}は{別途|べっと}{申|もう}し{受|う}けますので、あらかじめご{了承|りょうしょう}ください。",
+          "kana": "そうりょうはべっともうしうけますので、あらかじめごりょうしょうください。",
+          "en": "Shipping is charged separately, so please be aware of this in advance."
+        },
+        {
+          "ja": "キャンセルの{場合|ばあい}、{料金|りょうきん}の{半額|はんがく}を{手数料|てすうりょう}として{申|もう}し{受|う}けることになっております。",
+          "kana": "キャンセルのばあい、りょうきんのはんがくをてすうりょうとしてもうしうけることになっております。",
+          "en": "In the event of a cancellation, we charge half the fee as a handling charge."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{料金|りょうきん}などを{受|う}け{取|と}ることを、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "りょうきんなどをうけとることを、へりくだっていうことば。"
+      },
+      "frequencyRank": 7296,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1188",
+      "word": "ご来訪",
+      "kana": "ごらいほう",
+      "meanings": [
+        "your visit"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "travel",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}のご{来訪|らいほう}を、{社員|しゃいん}{一同|いちどう}{心|こころ}よりお{待|ま}ちしております。",
+          "kana": "らいしゅうのごらいほうを、しゃいんいちどうこころよりおまちしております。",
+          "en": "All of us look forward to your visit next week."
+        },
+        {
+          "ja": "{先日|せんじつ}はお{忙|いそが}しい{中|なか}、{弊社|へいしゃ}にご{来訪|らいほう}いただきありがとうございました。",
+          "kana": "せんじつはおいそがしいなか、へいしゃにごらいほういただきありがとうございました。",
+          "en": "Thank you for taking the time to visit our company the other day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{自分|じぶん}のところを{訪|たず}ねて{来|く}ることを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがじぶんのところをたずねてくることを、うやまっていうことば。"
+      },
+      "frequencyRank": 7307,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1189",
+      "word": "ご欠席",
+      "kana": "ごけっせき",
+      "meanings": [
+        "your absence"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "business",
+        "honorific"
+      ],
+      "examples": [
+        {
+          "ja": "ご{出席|しゅっせき}・ご{欠席|けっせき}のご{返事|へんじ}は、{同封|どうふう}のはがきにて{五月末|ごがつまつ}までにお{知|し}らせください。",
+          "kana": "ごしゅっせき・ごけっせきのごへんじは、どうふうのはがきにてごがつまつまでにおしらせください。",
+          "en": "Please let us know by the end of May on the enclosed postcard whether you will attend."
+        },
+        {
+          "ja": "ご{欠席|けっせき}の{場合|ばあい}も、お{手数|てすう}ですがその{旨|むね}ご{連絡|れんらく}いただけますと{幸|さいわ}いです。",
+          "kana": "ごけっせきのばあいも、おてすうですがそのむねごれんらくいただけますとさいわいです。",
+          "en": "If you will be unable to attend, we would appreciate it if you could let us know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}が{会|かい}や{式|しき}に{出|で}ないことを、{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "あいてがかいやしきにでないことを、うやまっていうことば。"
+      },
+      "frequencyRank": 7318,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1190",
+      "word": "拝命",
+      "kana": "はいめい",
+      "meanings": [
+        "receiving an appointment (humble)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "humble",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{四月|しがつ}{一日|ついたち}{付|づけ}で{支店長|してんちょう}を{拝命|はいめい}いたしました。{身|み}の{引|ひ}き{締|し}まる{思|おも}いです。",
+          "kana": "しがつついたちづけでしてんちょうをはいめいいたしました。みのひきしまるおもいです。",
+          "en": "As of April 1, I have been appointed branch manager. I feel the weight of the responsibility."
+        },
+        {
+          "ja": "このたび{会長職|かいちょうしょく}を{拝命|はいめい}し、{責任|せきにん}の{重|おも}さを{痛感|つうかん}しております。",
+          "kana": "このたびかいちょうしょくをはいめいし、せきにんのおもさをつうかんしております。",
+          "en": "Having been appointed chairman, I am keenly aware of the weight of the responsibility."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役割|やくわり}や{役職|やくしょく}を{与|あた}えられることを、へりくだって{言|い}う{言葉|ことば}。",
+        "kana": "やくわりややくしょくをあたえられることを、へりくだっていうことば。"
+      },
+      "frequencyRank": 7329,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1191",
+      "word": "然るに",
+      "kana": "しかるに",
+      "meanings": [
+        "however",
+        "and yet"
+      ],
+      "pos": "conj",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{我々|われわれ}は{十分|じゅうぶん}な{準備|じゅんび}をしたはずだった。{然|しか}るに、{結果|けっか}は{期待|きたい}を{大|おお}きく{裏切|うらぎ}るものだった。",
+          "kana": "われわれはじゅうぶんなじゅんびをしたはずだった。しかるに、けっかはきたいをおおきくうらぎるものだった。",
+          "en": "We had supposedly prepared thoroughly. And yet the result fell far short of expectations."
+        },
+        {
+          "ja": "{約束|やくそく}の{期日|きじつ}は{昨日|きのう}であった。{然|しか}るに、いまだ{何|なん}の{連絡|れんらく}もない。",
+          "kana": "やくそくのきじつはきのうであった。しかるに、いまだなんのれんらくもない。",
+          "en": "The agreed date was yesterday. And yet there has still been no word at all."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「それなのに」「ところが」を{硬|かた}く{言|い}う、{書|か}き{言葉|ことば}。",
+        "kana": "「それなのに」「ところが」をかたくいう、かきことば。"
+      },
+      "frequencyRank": 7340,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1192",
+      "word": "まして",
+      "kana": "まして",
+      "meanings": [
+        "much less",
+        "still more"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{平日|へいじつ}でさえ{席|せき}が{取|と}れないのだから、まして{連休|れんきゅう}に{予約|よやく}なしで{入|はい}れるはずがない。",
+          "kana": "へいじつでさえせきがとれないのだから、ましてれんきゅうによやくなしではいれるはずがない。",
+          "en": "You can't even get a seat on a weekday, so there's no way you could get in without a reservation on a long weekend."
+        },
+        {
+          "ja": "{大人|おとな}でも{難|むずか}しい{問題|もんだい}です。まして{子|こ}どもに{解|と}けるわけがありません。",
+          "kana": "おとなでもむずかしいもんだいです。ましてこどもにとけるわけがありません。",
+          "en": "It's a hard problem even for adults. There's no way a child could solve it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}に{述|の}べたことより、さらに{程度|ていど}が{強|つよ}いことを{言|い}うときの{言葉|ことば}。",
+        "kana": "まえにのべたことより、さらにていどがつよいことをいうときのことば。"
+      },
+      "frequencyRank": 7351,
+      "altForms": [
+        "況して"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1193",
+      "word": "況や",
+      "kana": "いわんや",
+      "meanings": [
+        "let alone",
+        "much less"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{専門家|せんもんか}でさえ{予測|よそく}を{誤|あやま}ったのだ。{況|いわん}や{素人|しろうと}の{我々|われわれ}に{分|わ}かるはずもない。",
+          "kana": "せんもんかでさえよそくをあやまったのだ。いわんやしろうとのわれわれにわかるはずもない。",
+          "en": "Even the experts got the forecast wrong; much less could amateurs like us have known."
+        },
+        {
+          "ja": "{一日|いちにち}でも{休|やす}めば{体|からだ}がなまる。{況|いわん}や{一|いっ}か{月|げつ}も{練習|れんしゅう}を{離|はな}れては{元|もと}に{戻|もど}すのに{苦労|くろう}する。",
+          "kana": "いちにちでもやすめばからだがなまる。いわんやいっかげつもれんしゅうをはなれてはもとにもどすのにくろうする。",
+          "en": "Skip even one day and your body gets rusty, let alone a month away from practice; getting back takes real effort."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「まして」をさらに{硬|かた}く{言|い}う、{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "「まして」をさらにかたくいう、ふるいかきことば。"
+      },
+      "frequencyRank": 7362,
+      "altForms": [
+        "況んや",
+        "いわんや"
+      ],
+      "confusables": [
+        "v-n1-1192"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1194",
+      "word": "就中",
+      "kana": "なかんずく",
+      "meanings": [
+        "above all",
+        "especially"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{和食|わしょく}の{中|なか}でも、{就中|なかんずく}{出汁|だし}の{味|あじ}こそが{料理人|りょうりにん}の{腕|うで}の{見|み}せどころだ。",
+          "kana": "わしょくのなかでも、なかんずくだしのあじこそがりょうりにんのうでのみせどころだ。",
+          "en": "Among all the elements of Japanese cuisine, it is above all the flavor of the stock that shows a cook's skill."
+        },
+        {
+          "ja": "{彼|かれ}の{作品|さくひん}、{就中|なかんずく}{晩年|ばんねん}の{短編|たんぺん}には、{静|しず}かな{深|ふか}みがある。",
+          "kana": "かれのさくひん、なかんずくばんねんのたんぺんには、しずかなふかみがある。",
+          "en": "His works, above all the short stories of his late years, have a quiet depth."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{多|おお}くの{中|なか}でも{特|とく}に、という{意味|いみ}の{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "おおくのなかでもとくに、といういみのふるいかきことば。"
+      },
+      "frequencyRank": 7373,
+      "altForms": [
+        "なかんずく"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1195",
+      "word": "蓋し",
+      "kana": "けだし",
+      "meanings": [
+        "indeed",
+        "in all likelihood"
+      ],
+      "pos": "adv",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "「{継続|けいぞく}は{力|ちから}なり」とは、{蓋|けだ}し{名言|めいげん}である。",
+          "kana": "「けいぞくはちからなり」とは、けだしめいげんである。",
+          "en": "\"Perseverance is strength\" is indeed a wise saying."
+        },
+        {
+          "ja": "{若者|わかもの}が{都会|とかい}へ{出|で}て{行|い}くのは、{蓋|けだ}し{当然|とうぜん}の{流|なが}れであろう。",
+          "kana": "わかものがとかいへでていくのは、けだしとうぜんのながれであろう。",
+          "en": "That young people leave for the cities is, in all likelihood, a natural course of events."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「{考|かんが}えてみるに」「まさに」という{意味|いみ}の、とても{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "「かんがえてみるに」「まさに」といういみの、とてもふるいかきことば。"
+      },
+      "frequencyRank": 7384,
+      "altForms": [
+        "けだし"
+      ],
+      "collocations": [
+        "蓋し名言"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1196",
+      "word": "然らば",
+      "kana": "しからば",
+      "meanings": [
+        "if so",
+        "in that case"
+      ],
+      "pos": "conj",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{予算|よさん}は{増|ふ}やせないという。{然|しか}らば、{今|いま}ある{人員|じんいん}でどう{成果|せいか}を{出|だ}すかを{考|かんが}えるしかない。",
+          "kana": "よさんはふやせないという。しからば、いまあるじんいんでどうせいかをだすかをかんがえるしかない。",
+          "en": "They say the budget cannot be increased. In that case, all we can do is work out how to deliver results with the staff we have."
+        },
+        {
+          "ja": "{相手|あいて}が{話|はな}し{合|あ}いに{応|おう}じないという。{然|しか}らば、こちらから{出向|でむ}くまでだ。",
+          "kana": "あいてがはなしあいにおうじないという。しからば、こちらからでむくまでだ。",
+          "en": "They say the other side won't come to the table. In that case, we simply go to them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「それならば」を{硬|かた}く{言|い}う、{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "「それならば」をかたくいう、ふるいかきことば。"
+      },
+      "frequencyRank": 7395,
+      "altForms": [
+        "しからば"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1197",
+      "word": "然れども",
+      "kana": "しかれども",
+      "meanings": [
+        "nevertheless",
+        "even so"
+      ],
+      "pos": "conj",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{道|みち}は{険|けわ}しい。{然|しか}れども、{進|すす}む{以外|いがい}に{我々|われわれ}に{選択肢|せんたくし}はない。",
+          "kana": "みちはけわしい。しかれども、すすむいがいにわれわれにせんたくしはない。",
+          "en": "The road is steep. Nevertheless, we have no choice but to go forward."
+        },
+        {
+          "ja": "{資金|しきん}は{乏|とぼ}しかった。{然|しか}れども、{彼|かれ}らは{研究|けんきゅう}を{一日|いちにち}たりとも{止|と}めなかった。",
+          "kana": "しきんはとぼしかった。しかれども、かれらはけんきゅうをいちにちたりともとめなかった。",
+          "en": "Funds were scarce. Even so, they did not halt their research for a single day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「しかし」「けれども」を{硬|かた}く{言|い}う、{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "「しかし」「けれども」をかたくいう、ふるいかきことば。"
+      },
+      "frequencyRank": 7406,
+      "altForms": [
+        "しかれども"
+      ],
+      "confusables": [
+        "v-n1-1191"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1198",
+      "word": "而して",
+      "kana": "しかして",
+      "meanings": [
+        "and then",
+        "thus"
+      ],
+      "pos": "conj",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{長年|ながねん}{研究|けんきゅう}を{重|かさ}ねた。{而|しか}して{得|え}た{結論|けつろん}は、{驚|おどろ}くほど{単純|たんじゅん}なものであった。",
+          "kana": "かれはながねんけんきゅうをかさねた。しかしてえたけつろんは、おどろくほどたんじゅんなものであった。",
+          "en": "He spent long years in research. And the conclusion he reached was astonishingly simple."
+        },
+        {
+          "ja": "{法|ほう}は{人|ひと}を{守|まも}るためにある。{而|しか}して、{人|ひと}もまた{法|ほう}を{守|まも}らねばならぬ。",
+          "kana": "ほうはひとをまもるためにある。しかして、ひともまたほうをまもらねばならぬ。",
+          "en": "The law exists to protect people. And people, in turn, must uphold the law."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「そして」「そうして」を{硬|かた}く{言|い}う、{古|ふる}い{書|か}き{言葉|ことば}。",
+        "kana": "「そして」「そうして」をかたくいう、ふるいかきことば。"
+      },
+      "frequencyRank": 7417,
+      "altForms": [
+        "然して",
+        "しかして"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1199",
+      "word": "所以",
+      "kana": "ゆえん",
+      "meanings": [
+        "reason",
+        "grounds (for a name or claim)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{誰|だれ}に{対|たい}しても{態度|たいど}を{変|か}えないところが、{彼女|かのじょ}が{信頼|しんらい}される{所以|ゆえん}だろう。",
+          "kana": "だれにたいしてもたいどをかえないところが、かのじょがしんらいされるゆえんだろう。",
+          "en": "The fact that she treats everyone the same is probably the reason she is trusted."
+        },
+        {
+          "ja": "この{町|まち}が「{水|みず}の{都|みやこ}」と{呼|よ}ばれる{所以|ゆえん}は、{縦横|じゅうおう}に{走|はし}る{運河|うんが}にある。",
+          "kana": "このまちが「みずのみやこ」とよばれるゆえんは、じゅうおうにはしるうんがにある。",
+          "en": "The reason this town is called the City of Water lies in the canals that crisscross it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そう{言|い}われたり、そうなったりする{理由|りゆう}やわけ。",
+        "kana": "そういわれたり、そうなったりするりゆうやわけ。"
+      },
+      "frequencyRank": 7428,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1200",
+      "word": "曰く",
+      "kana": "いわく",
+      "meanings": [
+        "(so says, according to)",
+        "hidden story"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}{曰|いわ}く、{昔|むかし}はこの{川|かわ}で{泳|およ}げるほど{水|みず}がきれいだったそうだ。",
+          "kana": "そぼいわく、むかしはこのかわでおよげるほどみずがきれいだったそうだ。",
+          "en": "According to my grandmother, the river used to be so clean you could swim in it."
+        },
+        {
+          "ja": "あの{古|ふる}い{屋敷|やしき}には{何|なに}か{曰|いわ}くがあるらしく、{長|なが}い{間|あいだ}{買|か}い{手|て}がつかない。",
+          "kana": "あのふるいやしきにはなにかいわくがあるらしく、ながいあいだかいてがつかない。",
+          "en": "There seems to be some story behind that old mansion, and it has gone unsold for a long time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「〜が{言|い}うには」という{意味|いみ}。また、{隠|かく}された{事情|じじょう}や{理由|りゆう}。",
+        "kana": "「〜がいうには」といういみ。また、かくされたじじょうやりゆう。"
+      },
+      "frequencyRank": 7439,
+      "collocations": [
+        "曰く付き",
+        "曰く言い難い"
+      ],
+      "station": 53
+    }
+  ]
+}

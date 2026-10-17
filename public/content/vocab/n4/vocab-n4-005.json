@@ -1,0 +1,4109 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n4",
+  "writer": "vocab-n4-005",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n4-0521",
+      "word": "地震",
+      "kana": "じしん",
+      "meanings": [
+        "earthquake"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}の{夜|よる}、{大|おお}きい{地震|じしん}があった。",
+          "kana": "きのうのよる、おおきいじしんがあった。",
+          "en": "There was a big earthquake last night."
+        },
+        {
+          "ja": "{地震|じしん}のときは、まず{机|つくえ}の{下|した}に{入|はい}ってください。",
+          "kana": "じしんのときは、まずつくえのしたにはいってください。",
+          "en": "In an earthquake, first get under a desk."
+        }
+      ],
+      "collocations": [
+        "地震が起きる",
+        "大きな地震"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0522",
+      "word": "台風",
+      "kana": "たいふう",
+      "meanings": [
+        "typhoon"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{台風|たいふう}で{電車|でんしゃ}が{止|と}まるかもしれません。",
+          "kana": "たいふうででんしゃがとまるかもしれません。",
+          "en": "The trains might stop because of the typhoon."
+        },
+        {
+          "ja": "{台風|たいふう}で{学校|がっこう}が{休|やす}みになった。",
+          "kana": "たいふうでがっこうがやすみになった。",
+          "en": "School was canceled because of the typhoon."
+        }
+      ],
+      "collocations": [
+        "台風が来る"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0523",
+      "word": "洪水",
+      "kana": "こうずい",
+      "meanings": [
+        "flood"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{雨|あめ}がたくさん{降|ふ}って、{町|まち}が{洪水|こうずい}になりました。",
+          "kana": "あめがたくさんふって、まちがこうずいになりました。",
+          "en": "It rained a lot and the town flooded."
+        },
+        {
+          "ja": "{雨|あめ}が{続|つづ}くと、この{川|かわ}は{洪水|こうずい}になりやすい。",
+          "kana": "あめがつづくと、このかわはこうずいになりやすい。",
+          "en": "When the rain keeps up, this river tends to flood."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0524",
+      "word": "雲",
+      "kana": "くも",
+      "meanings": [
+        "cloud"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{空|そら}に{雲|くも}が{一|ひと}つもなくて、いい{天気|てんき}だ。",
+          "kana": "そらにくもがひとつもなくて、いいてんきだ。",
+          "en": "There is not a single cloud in the sky, and the weather is nice."
+        },
+        {
+          "ja": "{黒|くろ}い{雲|くも}が{出|で}てきたので、{雨|あめ}が{降|ふ}るかもしれません。",
+          "kana": "くろいくもがでてきたので、あめがふるかもしれません。",
+          "en": "Dark clouds have come out, so it might rain."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0525",
+      "word": "星",
+      "kana": "ほし",
+      "meanings": [
+        "star"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{田舎|いなか}では{星|ほし}がたくさん{見|み}えます。",
+          "kana": "いなかではほしがたくさんみえます。",
+          "en": "You can see lots of stars in the countryside."
+        },
+        {
+          "ja": "{昨日|きのう}の{夜|よる}は{星|ほし}がきれいだったね。",
+          "kana": "きのうのよるはほしがきれいだったね。",
+          "en": "The stars were beautiful last night, weren't they?"
+        }
+      ],
+      "collocations": [
+        "星が見える"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0526",
+      "word": "光",
+      "kana": "ひかり",
+      "meanings": [
+        "light",
+        "ray"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{窓|まど}から{光|ひかり}が{入|はい}って、{部屋|へや}が{明|あか}るい。",
+          "kana": "まどからひかりがはいって、へやがあかるい。",
+          "en": "Light comes in through the window and the room is bright."
+        },
+        {
+          "ja": "{遠|とお}くに{町|まち}の{光|ひかり}が{見|み}えました。",
+          "kana": "とおくにまちのひかりがみえました。",
+          "en": "I could see the lights of the town in the distance."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0527",
+      "word": "森",
+      "kana": "もり",
+      "meanings": [
+        "forest",
+        "woods"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "plants"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{森|もり}には{珍|めずら}しい{鳥|とり}がいます。",
+          "kana": "このもりにはめずらしいとりがいます。",
+          "en": "There are rare birds in this forest."
+        },
+        {
+          "ja": "{子|こ}どものころ、よく{森|もり}で{遊|あそ}んだ。",
+          "kana": "こどものころ、よくもりであそんだ。",
+          "en": "When I was a kid, I often played in the forest."
+        }
+      ],
+      "confusables": [
+        "v-n4-0528"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0528",
+      "word": "林",
+      "kana": "はやし",
+      "meanings": [
+        "grove",
+        "woods"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "plants"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家|いえ}の{後|うし}ろに{小|ちい}さい{林|はやし}がある。",
+          "kana": "いえのうしろにちいさいはやしがある。",
+          "en": "There is a small grove behind the house."
+        },
+        {
+          "ja": "{林|はやし}の{中|なか}を{歩|ある}くと、{気持|きも}ちがいいですよ。",
+          "kana": "はやしのなかをあるくと、きもちがいいですよ。",
+          "en": "Walking through the woods feels great."
+        }
+      ],
+      "notes": "Smaller and sparser than 森 (forest); also a common surname.",
+      "confusables": [
+        "v-n4-0527"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0529",
+      "word": "草",
+      "kana": "くさ",
+      "meanings": [
+        "grass",
+        "weed"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{公園|こうえん}の{草|くさ}の{上|うえ}に{座|すわ}って、お{弁当|べんとう}を{食|た}べた。",
+          "kana": "こうえんのくさのうえにすわって、おべんとうをたべた。",
+          "en": "I sat on the grass in the park and ate my lunch."
+        },
+        {
+          "ja": "{夏|なつ}は{庭|にわ}の{草|くさ}がすぐに{長|なが}くなります。",
+          "kana": "なつはにわのくさがすぐにながくなります。",
+          "en": "In summer the grass in the garden gets long quickly."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0530",
+      "word": "葉",
+      "kana": "は",
+      "meanings": [
+        "leaf"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{秋|あき}になると、{木|き}の{葉|は}が{赤|あか}くなります。",
+          "kana": "あきになると、きのはがあかくなります。",
+          "en": "When autumn comes, the leaves of the trees turn red."
+        },
+        {
+          "ja": "{風|かぜ}で{木|き}の{葉|は}が{全部|ぜんぶ}{落|お}ちてしまった。",
+          "kana": "かぜできのはがぜんぶおちてしまった。",
+          "en": "The wind made all the leaves fall off the trees."
+        }
+      ],
+      "notes": "In speech often 葉っぱ (はっぱ).",
+      "station": 23
+    },
+    {
+      "id": "v-n4-0531",
+      "word": "枝",
+      "kana": "えだ",
+      "meanings": [
+        "branch",
+        "twig"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{鳥|とり}が{枝|えだ}に{止|と}まっている。",
+          "kana": "とりがえだにとまっている。",
+          "en": "A bird is perched on a branch."
+        },
+        {
+          "ja": "{庭|にわ}の{木|き}の{枝|えだ}が{長|なが}くなったので、{少|すこ}し{切|き}りました。",
+          "kana": "にわのきのえだがながくなったので、すこしきりました。",
+          "en": "The branches of the tree in the garden had grown long, so I trimmed them a little."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0532",
+      "word": "根",
+      "kana": "ね",
+      "meanings": [
+        "root"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{木|き}は{根|ね}が{深|ふか}くて、{強|つよ}い{風|かぜ}でも{倒|たお}れません。",
+          "kana": "このきはねがふかくて、つよいかぜでもたおれません。",
+          "en": "This tree has deep roots, so it will not fall even in a strong wind."
+        },
+        {
+          "ja": "この{花|はな}は{根|ね}が{弱|よわ}いから、{水|みず}をやりすぎないで。",
+          "kana": "このはなはねがよわいから、みずをやりすぎないで。",
+          "en": "This flower has weak roots, so do not overwater it."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0533",
+      "word": "虫",
+      "kana": "むし",
+      "meanings": [
+        "insect",
+        "bug"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夏|なつ}の{夜|よる}は{虫|むし}の{声|こえ}がよく{聞|き}こえる。",
+          "kana": "なつのよるはむしのこえがよくきこえる。",
+          "en": "On summer nights you can hear the insects clearly."
+        },
+        {
+          "ja": "{妹|いもうと}は{小|ちい}さいころから{虫|むし}が{嫌|きら}いです。",
+          "kana": "いもうとはちいさいころからむしがきらいです。",
+          "en": "My little sister has disliked bugs since she was small."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0534",
+      "word": "馬",
+      "kana": "うま",
+      "meanings": [
+        "horse"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{初|はじ}めて{馬|うま}に{乗|の}りましたが、とても{高|たか}かったです。",
+          "kana": "はじめてうまにのりましたが、とてもたかかったです。",
+          "en": "I rode a horse for the first time, and it was really high up."
+        },
+        {
+          "ja": "{昔|むかし}、{人|ひと}は{馬|うま}で{遠|とお}くまで{旅行|りょこう}した。",
+          "kana": "むかし、ひとはうまでとおくまでりょこうした。",
+          "en": "Long ago, people traveled far by horse."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0535",
+      "word": "牛",
+      "kana": "うし",
+      "meanings": [
+        "cow",
+        "cattle"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{牛|うし}が{草|くさ}を{食|た}べながら、ゆっくり{歩|ある}いている。",
+          "kana": "うしがくさをたべながら、ゆっくりあるいている。",
+          "en": "The cows are walking slowly while eating grass."
+        },
+        {
+          "ja": "{祖父|そふ}は{田舎|いなか}で{牛|うし}を{育|そだ}てています。",
+          "kana": "そふはいなかでうしをそだてています。",
+          "en": "My grandfather raises cattle in the countryside."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0536",
+      "word": "豚",
+      "kana": "ぶた",
+      "meanings": [
+        "pig",
+        "pork"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals",
+        "food"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今晩|こんばん}は{豚|ぶた}と{野菜|やさい}を{炒|いた}めて{食|た}べましょう。",
+          "kana": "こんばんはぶたとやさいをいためてたべましょう。",
+          "en": "Tonight let us stir-fry pork and vegetables."
+        },
+        {
+          "ja": "この{店|みせ}の{豚|ぶた}のカレーは{安|やす}くておいしい。",
+          "kana": "このみせのぶたのカレーはやすくておいしい。",
+          "en": "This place's pork curry is cheap and tasty."
+        }
+      ],
+      "notes": "The meat is 豚肉 (ぶたにく); on menus and in casual talk 豚 alone is also common.",
+      "collocations": [
+        "豚肉"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0537",
+      "word": "ねずみ",
+      "kana": "ねずみ",
+      "meanings": [
+        "mouse",
+        "rat"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{台所|だいどころ}にねずみが{出|で}て、びっくりした。",
+          "kana": "だいどころにねずみがでて、びっくりした。",
+          "en": "A mouse appeared in the kitchen and startled me."
+        },
+        {
+          "ja": "うちの{猫|ねこ}は、ねずみを{見|み}ても{逃|に}げます。",
+          "kana": "うちのねこは、ねずみをみてもにげます。",
+          "en": "Our cat runs away even when it sees a mouse."
+        }
+      ],
+      "notes": "Usually written ねずみ or ネズミ; the kanji 鼠 is rare in everyday text.",
+      "altForms": [
+        "鼠",
+        "ネズミ"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0538",
+      "word": "うさぎ",
+      "kana": "うさぎ",
+      "meanings": [
+        "rabbit"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "animals",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{公園|こうえん}で{子|こ}どもたちがうさぎと{遊|あそ}んでいます。",
+          "kana": "こうえんでこどもたちがうさぎとあそんでいます。",
+          "en": "Children are playing with rabbits in the park."
+        },
+        {
+          "ja": "うさぎは{耳|みみ}が{長|なが}くて、かわいいね。",
+          "kana": "うさぎはみみがながくて、かわいいね。",
+          "en": "Rabbits have long ears and are cute, aren't they?"
+        }
+      ],
+      "notes": "Usually written うさぎ or ウサギ; 兎 appears mainly in names and literature.",
+      "altForms": [
+        "兎",
+        "ウサギ"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0539",
+      "word": "季節",
+      "kana": "きせつ",
+      "meanings": [
+        "season"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "calendar",
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{一年|いちねん}で{一番|いちばん}{好|す}きな{季節|きせつ}はどれですか。",
+          "kana": "いちねんでいちばんすきなきせつはどれですか。",
+          "en": "Which season of the year do you like best?"
+        },
+        {
+          "ja": "{日本|にほん}には{季節|きせつ}が{四|よっ}つある。",
+          "kana": "にほんにはきせつがよっつある。",
+          "en": "Japan has four seasons."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0540",
+      "word": "気温",
+      "kana": "きおん",
+      "meanings": [
+        "air temperature"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{気温|きおん}が{三十度|さんじゅうど}まで{上|あ}がるそうだ。",
+          "kana": "きょうはきおんがさんじゅうどまであがるそうだ。",
+          "en": "I hear the temperature will go up to thirty degrees today."
+        },
+        {
+          "ja": "{夜|よる}になると{気温|きおん}が{下|さ}がりますから、{上着|うわぎ}を{持|も}って{行|い}きましょう。",
+          "kana": "よるになるときおんがさがりますから、うわぎをもっていきましょう。",
+          "en": "The temperature drops at night, so let us bring jackets."
+        }
+      ],
+      "collocations": [
+        "気温が上がる",
+        "気温が下がる"
+      ],
+      "confusables": [
+        "v-n4-0541"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0541",
+      "word": "湿度",
+      "kana": "しつど",
+      "meanings": [
+        "humidity"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本|にほん}の{夏|なつ}は{湿度|しつど}が{高|たか}くて、{暑|あつ}く{感|かん}じます。",
+          "kana": "にほんのなつはしつどがたかくて、あつくかんじます。",
+          "en": "Japanese summers are humid, so they feel hot."
+        },
+        {
+          "ja": "この{部屋|へや}、{湿度|しつど}が{高|たか}くて、{窓|まど}がぬれていた。",
+          "kana": "このへや、しつどがたかくて、まどがぬれていた。",
+          "en": "The humidity in this room was high, and the windows were wet."
+        }
+      ],
+      "confusables": [
+        "v-n4-0540"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0542",
+      "word": "予報",
+      "kana": "よほう",
+      "meanings": [
+        "forecast"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "weather",
+        "media"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{天気予報|てんきよほう}によると、{明日|あした}は{雪|ゆき}が{降|ふ}るらしい。",
+          "kana": "てんきよほうによると、あしたはゆきがふるらしい。",
+          "en": "According to the weather forecast, it will apparently snow tomorrow."
+        },
+        {
+          "ja": "{予報|よほう}では{晴|は}れでしたが、{午後|ごご}から{雨|あめ}になりました。",
+          "kana": "よほうでははれでしたが、ごごからあめになりました。",
+          "en": "The forecast said sunny, but it turned to rain in the afternoon."
+        }
+      ],
+      "notes": "Almost always in 天気予報 (weather forecast).",
+      "collocations": [
+        "天気予報"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0543",
+      "word": "梅雨",
+      "kana": "つゆ",
+      "meanings": [
+        "rainy season"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "weather",
+        "calendar"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{梅雨|つゆ}に{入|はい}ると、{毎日|まいにち}{雨|あめ}ばかりで{嫌|いや}になる。",
+          "kana": "つゆにはいると、まいにちあめばかりでいやになる。",
+          "en": "Once the rainy season starts, it is rain every day and I get sick of it."
+        },
+        {
+          "ja": "{今年|ことし}の{梅雨|つゆ}はいつ{終|お}わるでしょうか。",
+          "kana": "ことしのつゆはいつおわるでしょうか。",
+          "en": "I wonder when this year's rainy season will end."
+        }
+      ],
+      "notes": "Also read ばいう in compounds such as 梅雨前線; the season word on its own is つゆ.",
+      "collocations": [
+        "梅雨に入る",
+        "梅雨が明ける"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0544",
+      "word": "紅葉",
+      "kana": "こうよう",
+      "meanings": [
+        "autumn leaves",
+        "fall colors"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "plants",
+        "calendar"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{京都|きょうと}の{紅葉|こうよう}は{十一月|じゅういちがつ}の{終|お}わりが{一番|いちばん}きれいです。",
+          "kana": "きょうとのこうようはじゅういちがつのおわりがいちばんきれいです。",
+          "en": "The autumn leaves in Kyoto are prettiest at the end of November."
+        },
+        {
+          "ja": "{週末|しゅうまつ}、{山|やま}へ{紅葉|こうよう}を{見|み}に{行|い}かない？",
+          "kana": "しゅうまつ、やまへこうようをみにいかない？",
+          "en": "Want to go see the autumn leaves in the mountains this weekend?"
+        }
+      ],
+      "notes": "Read こうよう for the turning of the leaves; the same kanji read もみじ means the red maple leaves themselves.",
+      "station": 23
+    },
+    {
+      "id": "v-n4-0545",
+      "word": "正月",
+      "kana": "しょうがつ",
+      "meanings": [
+        "New Year",
+        "New Year holiday"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "calendar",
+        "culture"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{正月|しょうがつ}は{家族|かぞく}で{田舎|いなか}の{祖母|そぼ}の{家|いえ}に{行|い}きます。",
+          "kana": "おしょうがつはかぞくでいなかのそぼのいえにいきます。",
+          "en": "At New Year we go to my grandmother's house in the country as a family."
+        },
+        {
+          "ja": "{正月|しょうがつ}はいつも{友達|ともだち}と{神社|じんじゃ}に{行|い}っている。",
+          "kana": "しょうがつはいつもともだちとじんじゃにいっている。",
+          "en": "At New Year I always go to a shrine with friends."
+        }
+      ],
+      "notes": "Usually お正月; the New Year holiday is roughly January 1–3.",
+      "collocations": [
+        "お正月",
+        "正月休み"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0546",
+      "word": "連休",
+      "kana": "れんきゅう",
+      "meanings": [
+        "consecutive holidays",
+        "long weekend"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "calendar"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今度|こんど}の{連休|れんきゅう}、どこか{行|い}く？",
+          "kana": "こんどのれんきゅう、どこかいく？",
+          "en": "Are you going anywhere this long weekend?"
+        },
+        {
+          "ja": "{連休|れんきゅう}はどこも{人|ひと}が{多|おお}くて、{疲|つか}れました。",
+          "kana": "れんきゅうはどこもひとがおおくて、つかれました。",
+          "en": "Everywhere was crowded over the long weekend, and I got tired."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0547",
+      "word": "平日",
+      "kana": "へいじつ",
+      "meanings": [
+        "weekday"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "calendar",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{店|みせ}は{平日|へいじつ}の{昼|ひる}は{空|す}いていますよ。",
+          "kana": "このみせはへいじつのひるはすいていますよ。",
+          "en": "This restaurant is not crowded on weekday afternoons."
+        },
+        {
+          "ja": "{平日|へいじつ}は{仕事|しごと}で{忙|いそが}しいから、{土曜日|どようび}に{会|あ}おう。",
+          "kana": "へいじつはしごとでいそがしいから、どようびにあおう。",
+          "en": "I am busy with work on weekdays, so let us meet on Saturday."
+        }
+      ],
+      "confusables": [
+        "v-n4-0548"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0548",
+      "word": "週末",
+      "kana": "しゅうまつ",
+      "meanings": [
+        "weekend"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "calendar"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{週末|しゅうまつ}はたいてい{家|いえ}でゆっくりしている。",
+          "kana": "しゅうまつはたいていいえでゆっくりしている。",
+          "en": "On weekends I usually just relax at home."
+        },
+        {
+          "ja": "{週末|しゅうまつ}はどこかへ{出|で}かけましたか。",
+          "kana": "しゅうまつはどこかへでかけましたか。",
+          "en": "Did you go anywhere over the weekend?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0547"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0549",
+      "word": "今度",
+      "kana": "こんど",
+      "meanings": [
+        "next time",
+        "this time"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今度|こんど}、{一緒|いっしょ}にご{飯|はん}でも{食|た}べませんか。",
+          "kana": "こんど、いっしょにごはんでもたべませんか。",
+          "en": "Would you like to grab a meal together sometime?"
+        },
+        {
+          "ja": "{今度|こんど}の{試験|しけん}は{前|まえ}より{簡単|かんたん}だった。",
+          "kana": "こんどのしけんはまえよりかんたんだった。",
+          "en": "This exam was easier than the last one."
+        }
+      ],
+      "notes": "In invitations it means \"next time, sometime soon\"; for a current event it means \"this time\". Context decides.",
+      "station": 23
+    },
+    {
+      "id": "v-n4-0550",
+      "word": "最近",
+      "kana": "さいきん",
+      "meanings": [
+        "recently",
+        "lately"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{忙|いそが}しくて{全然|ぜんぜん}{運動|うんどう}していない。",
+          "kana": "さいきん、いそがしくてぜんぜんうんどうしていない。",
+          "en": "I have been so busy lately that I have not exercised at all."
+        },
+        {
+          "ja": "{最近|さいきん}、{駅|えき}の{前|まえ}に{新|あたら}しいスーパーができました。",
+          "kana": "さいきん、えきのまえにあたらしいスーパーができました。",
+          "en": "Recently a new supermarket opened in front of the station."
+        }
+      ],
+      "confusables": [
+        "v-n4-0565"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0551",
+      "word": "将来",
+      "kana": "しょうらい",
+      "meanings": [
+        "future"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{将来|しょうらい}は{外国|がいこく}で{働|はたら}きたいと{思|おも}っています。",
+          "kana": "しょうらいはがいこくではたらきたいとおもっています。",
+          "en": "In the future I want to work abroad."
+        },
+        {
+          "ja": "{息子|むすこ}は{将来|しょうらい}、{医者|いしゃ}になりたいと{言|い}っている。",
+          "kana": "むすこはしょうらい、いしゃになりたいといっている。",
+          "en": "My son says he wants to be a doctor in the future."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0552",
+      "word": "昔",
+      "kana": "むかし",
+      "meanings": [
+        "long ago",
+        "old days"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昔|むかし}、ここには{大|おお}きなお{寺|てら}があったそうです。",
+          "kana": "むかし、ここにはおおきなおてらがあったそうです。",
+          "en": "They say there used to be a big temple here long ago."
+        },
+        {
+          "ja": "{昔|むかし}はここから{海|うみ}が{見|み}えたんだって。",
+          "kana": "むかしはここからうみがみえたんだって。",
+          "en": "They say you could see the sea from here long ago."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0553",
+      "word": "以前",
+      "kana": "いぜん",
+      "meanings": [
+        "before",
+        "previously"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{以前|いぜん}、この{近|ちか}くに{住|す}んでいたことがあります。",
+          "kana": "いぜん、このちかくにすんでいたことがあります。",
+          "en": "I lived near here once before."
+        },
+        {
+          "ja": "{彼|かれ}は{以前|いぜん}、{先生|せんせい}だったそうだ。",
+          "kana": "かれはいぜん、せんせいだったそうだ。",
+          "en": "I hear he used to be a teacher."
+        }
+      ],
+      "confusables": [
+        "v-n4-0554"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0554",
+      "word": "以後",
+      "kana": "いご",
+      "meanings": [
+        "after",
+        "from then on"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜|よる}{十時|じゅうじ}{以後|いご}は{電話|でんわ}しないでください。",
+          "kana": "よるじゅうじいごはでんわしないでください。",
+          "en": "Please do not call after ten at night."
+        },
+        {
+          "ja": "それ{以後|いご}、{彼|かれ}には{会|あ}っていない。",
+          "kana": "それいご、かれにはあっていない。",
+          "en": "I have not seen him since then."
+        }
+      ],
+      "notes": "Marks \"after X\", including X itself; also \"from now on\" in apologies (以後、気をつけます).",
+      "confusables": [
+        "v-n4-0553"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0555",
+      "word": "再来週",
+      "kana": "さらいしゅう",
+      "meanings": [
+        "the week after next"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "calendar",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{再来週|さらいしゅう}、{友達|ともだち}が{京都|きょうと}から{遊|あそ}びに{来|く}る。",
+          "kana": "さらいしゅう、ともだちがきょうとからあそびにくる。",
+          "en": "The week after next, a friend is coming from Kyoto to visit."
+        },
+        {
+          "ja": "{再来週|さらいしゅう}の{月曜日|げつようび}に、また{来|き}てもいいですか。",
+          "kana": "さらいしゅうのげつようびに、またきてもいいですか。",
+          "en": "May I come again on the Monday of the week after next?"
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0556",
+      "word": "真ん中",
+      "kana": "まんなか",
+      "meanings": [
+        "middle",
+        "center"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "position"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{写真|しゃしん}の{真|ま}ん{中|なか}にいるのが{私|わたし}の{祖母|そぼ}です。",
+          "kana": "しゃしんのまんなかにいるのがわたしのそぼです。",
+          "en": "The one in the middle of the photo is my grandmother."
+        },
+        {
+          "ja": "ケーキを{真|ま}ん{中|なか}で{二|ふた}つに{切|き}って。",
+          "kana": "ケーキをまんなかでふたつにきって。",
+          "en": "Cut the cake in two down the middle."
+        }
+      ],
+      "collocations": [
+        "〜の真ん中",
+        "真ん中に座る"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0557",
+      "word": "砂",
+      "kana": "すな",
+      "meanings": [
+        "sand"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{靴|くつ}の{中|なか}に{砂|すな}が{入|はい}って{気持|きも}ち{悪|わる}い。",
+          "kana": "くつのなかにすながはいってきもちわるい。",
+          "en": "Sand got in my shoes and it feels gross."
+        },
+        {
+          "ja": "{子|こ}どもたちが{砂|すな}で{山|やま}を{作|つく}っています。",
+          "kana": "こどもたちがすなでやまをつくっています。",
+          "en": "The children are making a mountain out of sand."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0558",
+      "word": "土",
+      "kana": "つち",
+      "meanings": [
+        "soil",
+        "earth",
+        "ground"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "plants"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{雨|あめ}の{後|あと}は{土|つち}がやわらかくなります。",
+          "kana": "あめのあとはつちがやわらかくなります。",
+          "en": "After rain the soil gets soft."
+        },
+        {
+          "ja": "{手|て}が{土|つち}で{汚|よご}れてしまった。",
+          "kana": "てがつちでよごれてしまった。",
+          "en": "My hands got all dirty with soil."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0559",
+      "word": "火",
+      "kana": "ひ",
+      "meanings": [
+        "fire",
+        "flame"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{寒|さむ}いから、{火|ひ}のそばに{座|すわ}ろう。",
+          "kana": "さむいから、ひのそばにすわろう。",
+          "en": "It is cold, so let us sit by the fire."
+        },
+        {
+          "ja": "{料理|りょうり}が{終|お}わったら、{火|ひ}を{消|け}すのを{忘|わす}れないでください。",
+          "kana": "りょうりがおわったら、ひをけすのをわすれないでください。",
+          "en": "When you finish cooking, do not forget to turn off the heat."
+        }
+      ],
+      "collocations": [
+        "火をつける",
+        "火を消す"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0560",
+      "word": "火事",
+      "kana": "かじ",
+      "meanings": [
+        "fire (disaster)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "city",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜中|よなか}に{近|ちか}くで{火事|かじ}があったらしい。",
+          "kana": "よなかにちかくでかじがあったらしい。",
+          "en": "Apparently there was a fire nearby in the middle of the night."
+        },
+        {
+          "ja": "{火事|かじ}のときは、エレベーターを{使|つか}わないでください。",
+          "kana": "かじのときは、エレベーターをつかわないでください。",
+          "en": "In case of fire, do not use the elevator."
+        }
+      ],
+      "notes": "A fire as an incident. The flame itself is 火.",
+      "collocations": [
+        "火事になる"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0561",
+      "word": "植物",
+      "kana": "しょくぶつ",
+      "meanings": [
+        "plant"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{母|はは}は{植物|しょくぶつ}を{育|そだ}てるのが{上手|じょうず}です。",
+          "kana": "はははしょくぶつをそだてるのがじょうずです。",
+          "en": "My mother is good at growing plants."
+        },
+        {
+          "ja": "この{植物|しょくぶつ}は{水|みず}をあまりやらなくても{育|そだ}つ。",
+          "kana": "このしょくぶつはみずをあまりやらなくてもそだつ。",
+          "en": "This plant grows even if you do not water it much."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0562",
+      "word": "昼間",
+      "kana": "ひるま",
+      "meanings": [
+        "daytime"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昼間|ひるま}は{暑|あつ}いけど、{夜|よる}は{涼|すず}しくなる。",
+          "kana": "ひるまはあついけど、よるはすずしくなる。",
+          "en": "It is hot during the day, but it cools down at night."
+        },
+        {
+          "ja": "{昼間|ひるま}は{仕事|しごと}なので、{夜|よる}に{電話|でんわ}してもいいですか。",
+          "kana": "ひるまはしごとなので、よるにでんわしてもいいですか。",
+          "en": "I am at work during the day, so may I call you at night?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0563"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0563",
+      "word": "夜中",
+      "kana": "よなか",
+      "meanings": [
+        "middle of the night"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜中|よなか}までレポートを{書|か}いていました。",
+          "kana": "よなかまでレポートをかいていました。",
+          "en": "I was writing a report until the middle of the night."
+        },
+        {
+          "ja": "{暑|あつ}くて、{夜中|よなか}に{起|お}きてしまった。",
+          "kana": "あつくて、よなかにおきてしまった。",
+          "en": "It was so hot that I woke up in the middle of the night."
+        }
+      ],
+      "confusables": [
+        "v-n4-0562"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0564",
+      "word": "この間",
+      "kana": "このあいだ",
+      "meanings": [
+        "the other day",
+        "recently"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 5,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{間|あいだ}{借|か}りた{本|ほん}、もう{読|よ}み{終|お}わったよ。",
+          "kana": "このあいだかりたほん、もうよみおわったよ。",
+          "en": "I have already finished the book I borrowed the other day."
+        },
+        {
+          "ja": "この{間|あいだ}のパーティーの{写真|しゃしん}、{見|み}せてください。",
+          "kana": "このあいだのパーティーのしゃしん、みせてください。",
+          "en": "Please show me the photos from the party the other day."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0565",
+      "word": "この頃",
+      "kana": "このごろ",
+      "meanings": [
+        "these days",
+        "lately"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{頃|ごろ}、{朝|あさ}{早|はや}く{起|お}きられるようになりました。",
+          "kana": "このごろ、あさはやくおきられるようになりました。",
+          "en": "Lately I have been able to get up early in the morning."
+        },
+        {
+          "ja": "この{頃|ごろ}、{夜|よる}が{寒|さむ}くなってきたね。",
+          "kana": "このごろ、よるがさむくなってきたね。",
+          "en": "It has been getting cold at night lately, hasn't it?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0550"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0566",
+      "word": "夕べ",
+      "kana": "ゆうべ",
+      "meanings": [
+        "last night",
+        "evening"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夕|ゆう}べは{遅|おそ}くまで{友達|ともだち}と{話|はな}していた。",
+          "kana": "ゆうべはおそくまでともだちとはなしていた。",
+          "en": "Last night I was talking with a friend until late."
+        },
+        {
+          "ja": "{夕|ゆう}べはよく{眠|ねむ}れましたか。",
+          "kana": "ゆうべはよくねむれましたか。",
+          "en": "Did you sleep well last night?"
+        }
+      ],
+      "notes": "Also written 昨夜. In the sense \"evening\" it is more literary.",
+      "altForms": [
+        "昨夜"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0567",
+      "word": "社会",
+      "kana": "しゃかい",
+      "meanings": [
+        "society"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大学|だいがく}を{出|で}て、{社会|しゃかい}に{出|で}るのが{少|すこ}し{怖|こわ}い。",
+          "kana": "だいがくをでて、しゃかいにでるのがすこしこわい。",
+          "en": "I am a little scared of leaving university and going out into the world."
+        },
+        {
+          "ja": "{車|くるま}は{社会|しゃかい}を{大|おお}きく{変|か}えました。",
+          "kana": "くるまはしゃかいをおおきくかえました。",
+          "en": "Cars changed society greatly."
+        }
+      ],
+      "collocations": [
+        "社会人",
+        "社会に出る"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0568",
+      "word": "世界",
+      "kana": "せかい",
+      "meanings": [
+        "world"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "いつか{世界|せかい}{中|じゅう}を{旅行|りょこう}してみたいです。",
+          "kana": "いつかせかいじゅうをりょこうしてみたいです。",
+          "en": "Someday I would like to travel all over the world."
+        },
+        {
+          "ja": "{世界|せかい}で{一番|いちばん}{高|たか}い{山|やま}はどこにある？",
+          "kana": "せかいでいちばんたかいやまはどこにある？",
+          "en": "Where is the highest mountain in the world?"
+        }
+      ],
+      "collocations": [
+        "世界中"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0569",
+      "word": "文化",
+      "kana": "ぶんか",
+      "meanings": [
+        "culture"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{外国|がいこく}の{文化|ぶんか}を{知|し}るのは{楽|たの}しい。",
+          "kana": "がいこくのぶんかをしるのはたのしい。",
+          "en": "Learning about foreign cultures is fun."
+        },
+        {
+          "ja": "{日本|にほん}の{文化|ぶんか}を{外国|がいこく}の{友達|ともだち}に{紹介|しょうかい}しました。",
+          "kana": "にほんのぶんかをがいこくのともだちにしょうかいしました。",
+          "en": "I introduced Japanese culture to my friends from abroad."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0570",
+      "word": "習慣",
+      "kana": "しゅうかん",
+      "meanings": [
+        "habit",
+        "custom"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎朝|まいあさ}{走|はし}るのが{習慣|しゅうかん}になりました。",
+          "kana": "まいあさはしるのがしゅうかんになりました。",
+          "en": "Running every morning has become a habit."
+        },
+        {
+          "ja": "{寝|ね}る{前|まえ}に{本|ほん}を{読|よ}む{習慣|しゅうかん}をつけたい。",
+          "kana": "ねるまえにほんをよむしゅうかんをつけたい。",
+          "en": "I want to get into the habit of reading before bed."
+        }
+      ],
+      "collocations": [
+        "習慣になる"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0571",
+      "word": "伝統",
+      "kana": "でんとう",
+      "meanings": [
+        "tradition"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{祭|まつ}りには{三百年|さんびゃくねん}の{伝統|でんとう}があります。",
+          "kana": "このまつりにはさんびゃくねんのでんとうがあります。",
+          "en": "This festival has a three-hundred-year tradition."
+        },
+        {
+          "ja": "この{町|まち}には{古|ふる}い{伝統|でんとう}が{今|いま}も{残|のこ}っている。",
+          "kana": "このまちにはふるいでんとうがいまものこっている。",
+          "en": "An old tradition still lives on in this town."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0572",
+      "word": "祭り",
+      "kana": "まつり",
+      "meanings": [
+        "festival"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{町|まち}の{祭|まつ}りで{友達|ともだち}と{踊|おど}りました。",
+          "kana": "まちのまつりでともだちとおどりました。",
+          "en": "I danced with my friends at the town festival."
+        },
+        {
+          "ja": "{祭|まつ}りの{間|あいだ}は、{駅前|えきまえ}の{道|みち}が{車|くるま}で{通|とお}れなくなる。",
+          "kana": "まつりのあいだは、えきまえのみちがくるまでとおれなくなる。",
+          "en": "During the festival, the road in front of the station is closed to cars."
+        }
+      ],
+      "altForms": [
+        "祭"
+      ],
+      "collocations": [
+        "お祭り",
+        "夏祭り"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0573",
+      "word": "宗教",
+      "kana": "しゅうきょう",
+      "meanings": [
+        "religion"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}と{宗教|しゅうきょう}の{話|はなし}をするのは{難|むずか}しい。",
+          "kana": "ともだちとしゅうきょうのはなしをするのはむずかしい。",
+          "en": "Talking about religion with friends is difficult."
+        },
+        {
+          "ja": "{世界|せかい}にはいろいろな{宗教|しゅうきょう}があります。",
+          "kana": "せかいにはいろいろなしゅうきょうがあります。",
+          "en": "There are many different religions in the world."
+        }
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0574",
+      "word": "神",
+      "kana": "かみ",
+      "meanings": [
+        "god",
+        "deity"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本|にほん}には{山|やま}や{川|かわ}にも{神|かみ}がいると{考|かんが}える{人|ひと}がいます。",
+          "kana": "にほんにはやまやかわにもかみがいるとかんがえるひとがいます。",
+          "en": "In Japan some people believe there are gods in mountains and rivers too."
+        },
+        {
+          "ja": "{昔|むかし}の{人|ひと}は、{火|ひ}や{水|みず}を{神|かみ}だと{考|かんが}えていた。",
+          "kana": "むかしのひとは、ひやみずをかみだとかんがえていた。",
+          "en": "People long ago believed that fire and water were gods."
+        }
+      ],
+      "notes": "In speech usually 神様 (かみさま); 神 alone sounds abstract or written.",
+      "collocations": [
+        "神様"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0575",
+      "word": "戦争",
+      "kana": "せんそう",
+      "meanings": [
+        "war"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "politics"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{戦争|せんそう}の{話|はなし}をあまりしたがらない。",
+          "kana": "そふはせんそうのはなしをあまりしたがらない。",
+          "en": "My grandfather does not like to talk much about the war."
+        },
+        {
+          "ja": "{学校|がっこう}で{戦争|せんそう}の{歴史|れきし}を{勉強|べんきょう}しました。",
+          "kana": "がっこうでせんそうのれきしをべんきょうしました。",
+          "en": "We studied the history of the war at school."
+        }
+      ],
+      "confusables": [
+        "v-n4-0576"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0576",
+      "word": "平和",
+      "kana": "へいわ",
+      "meanings": [
+        "peace"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "politics"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{世界|せかい}がずっと{平和|へいわ}だったらいいのに。",
+          "kana": "せかいがずっとへいわだったらいいのに。",
+          "en": "I wish the world could always be at peace."
+        },
+        {
+          "ja": "{今|いま}、{世界|せかい}は{平和|へいわ}だと{言|い}えるでしょうか。",
+          "kana": "いま、せかいはへいわだといえるでしょうか。",
+          "en": "Can we say the world is at peace right now?"
+        }
+      ],
+      "notes": "Also used as a な-adjective: 平和な時代.",
+      "confusables": [
+        "v-n4-0575"
+      ],
+      "station": 23
+    },
+    {
+      "id": "v-n4-0577",
+      "word": "法律",
+      "kana": "ほうりつ",
+      "meanings": [
+        "law"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本|にほん}では{二十歳|はたち}から{法律|ほうりつ}でお{酒|さけ}が{飲|の}めます。",
+          "kana": "にほんでははたちからほうりつでおさけがのめます。",
+          "en": "In Japan, by law you can drink alcohol from age twenty."
+        },
+        {
+          "ja": "{兄|あに}は{大学|だいがく}で{法律|ほうりつ}を{勉強|べんきょう}している。",
+          "kana": "あにはだいがくでほうりつをべんきょうしている。",
+          "en": "My older brother is studying law at university."
+        }
+      ],
+      "collocations": [
+        "法律を守る"
+      ],
+      "confusables": [
+        "v-n4-0578"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0578",
+      "word": "規則",
+      "kana": "きそく",
+      "meanings": [
+        "rule",
+        "regulation"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "law",
+        "society"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{学校|がっこう}の{規則|きそく}は{厳|きび}しすぎると{思|おも}う。",
+          "kana": "このがっこうのきそくはきびしすぎるとおもう。",
+          "en": "I think this school's rules are too strict."
+        },
+        {
+          "ja": "{規則|きそく}ですから、ここでたばこを{吸|す}ってはいけません。",
+          "kana": "きそくですから、ここでたばこをすってはいけません。",
+          "en": "It is the rules, so you may not smoke here."
+        }
+      ],
+      "collocations": [
+        "規則を守る"
+      ],
+      "confusables": [
+        "v-n4-0577"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0579",
+      "word": "国際",
+      "kana": "こくさい",
+      "meanings": [
+        "international"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "politics"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、この{町|まち}で{国際|こくさい}{会議|かいぎ}が{開|ひら}かれます。",
+          "kana": "らいげつ、このまちでこくさいかいぎがひらかれます。",
+          "en": "An international conference will be held in this town next month."
+        },
+        {
+          "ja": "{姉|あね}は{国際|こくさい}{空港|くうこう}で{働|はたら}いている。",
+          "kana": "あねはこくさいくうこうではたらいている。",
+          "en": "My older sister works at the international airport."
+        }
+      ],
+      "notes": "Mainly used as the first half of compounds: 国際空港, 国際電話, 国際的.",
+      "collocations": [
+        "国際空港",
+        "国際電話",
+        "国際的"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0580",
+      "word": "政府",
+      "kana": "せいふ",
+      "meanings": [
+        "government"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{新|あたら}しい{税金|ぜいきん}について{発表|はっぴょう}した。",
+          "kana": "せいふはあたらしいぜいきんについてはっぴょうした。",
+          "en": "The government made an announcement about the new tax."
+        },
+        {
+          "ja": "この{橋|はし}は{政府|せいふ}のお{金|かね}で{作|つく}られました。",
+          "kana": "このはしはせいふのおかねでつくられました。",
+          "en": "This bridge was built with government money."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0581",
+      "word": "人口",
+      "kana": "じんこう",
+      "meanings": [
+        "population"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{町|まち}の{人口|じんこう}はだんだん{減|へ}っています。",
+          "kana": "このまちのじんこうはだんだんへっています。",
+          "en": "This town's population is gradually decreasing."
+        },
+        {
+          "ja": "この{国|くに}の{人口|じんこう}はどのくらいか{知|し}っている？",
+          "kana": "このくにのじんこうはどのくらいかしっている？",
+          "en": "Do you know roughly what this country's population is?"
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0582",
+      "word": "世話",
+      "kana": "せわ",
+      "meanings": [
+        "care",
+        "looking after"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "actions",
+        "society"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{間|あいだ}、{犬|いぬ}の{世話|せわ}を{母|はは}に{頼|たの}んだ。",
+          "kana": "りょこうのあいだ、いぬのせわをははにたのんだ。",
+          "en": "I asked my mother to look after the dog while I was traveling."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{祖母|そぼ}が{庭|にわ}の{花|はな}の{世話|せわ}をしています。",
+          "kana": "まいあさ、そぼがにわのはなのせわをしています。",
+          "en": "Every morning my grandmother looks after the flowers in the garden."
+        }
+      ],
+      "notes": "お世話になる = to be in someone's care, a key set phrase for thanks.",
+      "collocations": [
+        "お世話になる",
+        "世話をする"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0583",
+      "word": "関係",
+      "kana": "かんけい",
+      "meanings": [
+        "relationship",
+        "connection"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{問題|もんだい}は{私|わたし}には{関係|かんけい}がありません。",
+          "kana": "このもんだいはわたしにはかんけいがありません。",
+          "en": "This problem has nothing to do with me."
+        },
+        {
+          "ja": "{天気|てんき}と{気分|きぶん}には{関係|かんけい}があるかもしれない。",
+          "kana": "てんきときぶんにはかんけいがあるかもしれない。",
+          "en": "Weather and mood may be connected."
+        }
+      ],
+      "collocations": [
+        "関係がある",
+        "人間関係"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0584",
+      "word": "自然",
+      "kana": "しぜん",
+      "meanings": [
+        "nature"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{週末|しゅうまつ}は{自然|しぜん}の{中|なか}でゆっくりしたい。",
+          "kana": "しゅうまつはしぜんのなかでゆっくりしたい。",
+          "en": "On weekends I want to relax out in nature."
+        },
+        {
+          "ja": "この{町|まち}は{自然|しぜん}が{多|おお}くて、{空気|くうき}がきれいです。",
+          "kana": "このまちはしぜんがおおくて、くうきがきれいです。",
+          "en": "This town has lots of nature, and the air is clean."
+        }
+      ],
+      "notes": "Also a な-adjective meaning \"natural\" (自然な笑顔); 自然に = naturally.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0585",
+      "word": "環境",
+      "kana": "かんきょう",
+      "meanings": [
+        "environment"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{環境|かんきょう}のために、{車|くるま}より{自転車|じてんしゃ}を{使|つか}っています。",
+          "kana": "かんきょうのために、くるまよりじてんしゃをつかっています。",
+          "en": "For the environment, I use a bicycle rather than a car."
+        },
+        {
+          "ja": "{子|こ}どもが{育|そだ}つには、どんな{環境|かんきょう}がいいのだろう。",
+          "kana": "こどもがそだつには、どんなかんきょうがいいのだろう。",
+          "en": "What kind of environment is good for children to grow up in?"
+        }
+      ],
+      "collocations": [
+        "環境問題"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0586",
+      "word": "結婚式",
+      "kana": "けっこんしき",
+      "meanings": [
+        "wedding",
+        "wedding ceremony"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{友達|ともだち}の{結婚式|けっこんしき}に{出|で}る{予定|よてい}です。",
+          "kana": "らいげつ、ともだちのけっこんしきにでるよていです。",
+          "en": "Next month I am going to attend a friend's wedding."
+        },
+        {
+          "ja": "{姉|あね}の{結婚式|けっこんしき}で、{初|はじ}めて{着物|きもの}を{着|き}た。",
+          "kana": "あねのけっこんしきで、はじめてきものをきた。",
+          "en": "I wore a kimono for the first time at my older sister's wedding."
+        }
+      ],
+      "collocations": [
+        "結婚式を挙げる",
+        "結婚式に出る"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0587",
+      "word": "西洋",
+      "kana": "せいよう",
+      "meanings": [
+        "the West"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{西洋|せいよう}の{文化|ぶんか}に{興味|きょうみ}があって、{毎日|まいにち}{英語|えいご}を{勉強|べんきょう}している。",
+          "kana": "せいようのぶんかにきょうみがあって、まいにちえいごをべんきょうしている。",
+          "en": "I am interested in Western culture, so I study English every day."
+        },
+        {
+          "ja": "{西洋|せいよう}の{音楽|おんがく}より、{日本|にほん}の{音楽|おんがく}の{方|ほう}が{好|す}きです。",
+          "kana": "せいようのおんがくより、にほんのおんがくのほうがすきです。",
+          "en": "I like Japanese music better than Western music."
+        }
+      ],
+      "notes": "Europe and the Americas as opposed to 東洋 (the East); 西洋料理 = Western food.",
+      "collocations": [
+        "西洋料理"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0588",
+      "word": "文字",
+      "kana": "もじ",
+      "meanings": [
+        "letter",
+        "character (writing)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{文字|もじ}は{小|ちい}さすぎて{読|よ}めません。",
+          "kana": "このもじはちいさすぎてよめません。",
+          "en": "These letters are too small to read."
+        },
+        {
+          "ja": "{石|いし}に{古|ふる}い{文字|もじ}が{書|か}いてある。",
+          "kana": "いしにふるいもじがかいてある。",
+          "en": "Old characters are written on the stone."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0589",
+      "word": "世の中",
+      "kana": "よのなか",
+      "meanings": [
+        "the world",
+        "society"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{世|よ}の{中|なか}には{知|し}らないことがまだたくさんある。",
+          "kana": "よのなかにはしらないことがまだたくさんある。",
+          "en": "There are still so many things in the world I do not know."
+        },
+        {
+          "ja": "{世|よ}の{中|なか}には、いろいろな{考|かんが}えの{人|ひと}がいます。",
+          "kana": "よのなかには、いろいろなかんがえのひとがいます。",
+          "en": "There are people with all kinds of ideas in the world."
+        }
+      ],
+      "notes": "The world as \"society, the way things are\"; more colloquial than 社会.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0590",
+      "word": "責任",
+      "kana": "せきにん",
+      "meanings": [
+        "responsibility"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{自分|じぶん}の{仕事|しごと}には{責任|せきにん}を{持|も}ってください。",
+          "kana": "じぶんのしごとにはせきにんをもってください。",
+          "en": "Please take responsibility for your own work."
+        },
+        {
+          "ja": "{失敗|しっぱい}したら、{自分|じぶん}で{責任|せきにん}を{取|と}るつもりだ。",
+          "kana": "しっぱいしたら、じぶんでせきにんをとるつもりだ。",
+          "en": "If I fail, I intend to take responsibility myself."
+        }
+      ],
+      "collocations": [
+        "責任を持つ",
+        "責任がある"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0591",
+      "word": "経験",
+      "kana": "けいけん",
+      "meanings": [
+        "experience"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{外国|がいこく}で{働|はたら}いた{経験|けいけん}はありますか。",
+          "kana": "がいこくではたらいたけいけんはありますか。",
+          "en": "Do you have experience working abroad?"
+        },
+        {
+          "ja": "{学生|がくせい}のときにアルバイトをして、いい{経験|けいけん}になった。",
+          "kana": "がくせいのときにアルバイトをして、いいけいけんになった。",
+          "en": "I worked part-time as a student, and it was a good experience."
+        }
+      ],
+      "collocations": [
+        "経験がある"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0592",
+      "word": "意見",
+      "kana": "いけん",
+      "meanings": [
+        "opinion"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}で{自分|じぶん}の{意見|いけん}をはっきり{言|い}った。",
+          "kana": "かいぎでじぶんのいけんをはっきりいった。",
+          "en": "I stated my opinion clearly in the meeting."
+        },
+        {
+          "ja": "{私|わたし}の{意見|いけん}は{彼|かれ}と{違|ちが}います。",
+          "kana": "わたしのいけんはかれとちがいます。",
+          "en": "My opinion is different from his."
+        }
+      ],
+      "collocations": [
+        "意見を言う"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0593",
+      "word": "興味",
+      "kana": "きょうみ",
+      "meanings": [
+        "interest"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{日本|にほん}の{歴史|れきし}に{興味|きょうみ}を{持|も}ち{始|はじ}めました。",
+          "kana": "さいきん、にほんのれきしにきょうみをもちはじめました。",
+          "en": "Recently I have started to take an interest in Japanese history."
+        },
+        {
+          "ja": "{弟|おとうと}はサッカーに{全然|ぜんぜん}{興味|きょうみ}がない。",
+          "kana": "おとうとはサッカーにぜんぜんきょうみがない。",
+          "en": "My little brother has no interest in soccer at all."
+        }
+      ],
+      "collocations": [
+        "興味がある",
+        "興味を持つ"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0594",
+      "word": "予定",
+      "kana": "よてい",
+      "meanings": [
+        "plan",
+        "schedule"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}の{予定|よてい}はまだ{決|き}まっていない。",
+          "kana": "らいしゅうのよていはまだきまっていない。",
+          "en": "My plans for next week are not decided yet."
+        },
+        {
+          "ja": "{午後|ごご}{三時|さんじ}に{友達|ともだち}と{会|あ}う{予定|よてい}です。",
+          "kana": "ごごさんじにともだちとあうよていです。",
+          "en": "I am planning to meet a friend at three in the afternoon."
+        }
+      ],
+      "collocations": [
+        "予定がある",
+        "予定を立てる"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0595",
+      "word": "理由",
+      "kana": "りゆう",
+      "meanings": [
+        "reason"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{遅|おく}れた{理由|りゆう}を{説明|せつめい}してください。",
+          "kana": "おくれたりゆうをせつめいしてください。",
+          "en": "Please explain why you were late."
+        },
+        {
+          "ja": "{彼|かれ}が{会社|かいしゃ}をやめた{理由|りゆう}を{知|し}っている？",
+          "kana": "かれがかいしゃをやめたりゆうをしっている？",
+          "en": "Do you know why he quit the company?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0596"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0596",
+      "word": "原因",
+      "kana": "げんいん",
+      "meanings": [
+        "cause"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{事故|じこ}の{原因|げんいん}はまだ{分|わ}かっていないそうだ。",
+          "kana": "じこのげんいんはまだわかっていないそうだ。",
+          "en": "I hear the cause of the accident is not known yet."
+        },
+        {
+          "ja": "{火事|かじ}の{原因|げんいん}は、たばこの{火|ひ}だったようです。",
+          "kana": "かじのげんいんは、たばこのひだったようです。",
+          "en": "The cause of the fire seems to have been a cigarette."
+        }
+      ],
+      "confusables": [
+        "v-n4-0597",
+        "v-n4-0595"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0597",
+      "word": "結果",
+      "kana": "けっか",
+      "meanings": [
+        "result",
+        "outcome"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{試験|しけん}の{結果|けっか}は{来週|らいしゅう}{発表|はっぴょう}されます。",
+          "kana": "しけんのけっかはらいしゅうはっぴょうされます。",
+          "en": "The exam results will be announced next week."
+        },
+        {
+          "ja": "たくさん{勉強|べんきょう}したのに、{結果|けっか}はよくなかった。",
+          "kana": "たくさんべんきょうしたのに、けっかはよくなかった。",
+          "en": "I studied a lot, but the result was not good."
+        }
+      ],
+      "confusables": [
+        "v-n4-0596"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0598",
+      "word": "目的",
+      "kana": "もくてき",
+      "meanings": [
+        "purpose",
+        "goal"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{目的|もくてき}は{何|なん}ですか。",
+          "kana": "りょこうのもくてきはなんですか。",
+          "en": "What is the purpose of your trip?"
+        },
+        {
+          "ja": "{日本|にほん}に{来|き}た{目的|もくてき}は、{日本語|にほんご}の{勉強|べんきょう}だ。",
+          "kana": "にほんにきたもくてきは、にほんごのべんきょうだ。",
+          "en": "My purpose in coming to Japan is to study Japanese."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0599",
+      "word": "方法",
+      "kana": "ほうほう",
+      "meanings": [
+        "method",
+        "way"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "もっといい{方法|ほうほう}があるかもしれない。",
+          "kana": "もっといいほうほうがあるかもしれない。",
+          "en": "There might be a better way."
+        },
+        {
+          "ja": "{言葉|ことば}を{早|はや}く{覚|おぼ}える{方法|ほうほう}を{教|おし}えてください。",
+          "kana": "ことばをはやくおぼえるほうほうをおしえてください。",
+          "en": "Please teach me a way to memorize words quickly."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0600",
+      "word": "場合",
+      "kana": "ばあい",
+      "meanings": [
+        "case",
+        "situation"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{雨|あめ}の{場合|ばあい}は、{家|いえ}でパーティーをしましょう。",
+          "kana": "あめのばあいは、いえでパーティーをしましょう。",
+          "en": "If it rains, let us have the party at home."
+        },
+        {
+          "ja": "{遅|おく}れる{場合|ばあい}は、{必|かなら}ず{連絡|れんらく}してね。",
+          "kana": "おくれるばあいは、かならずれんらくしてね。",
+          "en": "If you are going to be late, be sure to let me know."
+        }
+      ],
+      "notes": "〜の場合 / 〜た場合 = in the case that …; 場合によって = depending on the case.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0601",
+      "word": "都合",
+      "kana": "つごう",
+      "meanings": [
+        "convenience",
+        "circumstances"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{都合|つごう}が{悪|わる}いので、{明後日|あさって}でもいいですか。",
+          "kana": "あしたはつごうがわるいので、あさってでもいいですか。",
+          "en": "Tomorrow does not work for me, so would the day after be okay?"
+        },
+        {
+          "ja": "{来週|らいしゅう}なら、いつでも{都合|つごう}がいいよ。",
+          "kana": "らいしゅうなら、いつでもつごうがいいよ。",
+          "en": "Next week, any time works for me."
+        }
+      ],
+      "notes": "都合がいい / 悪い = convenient / inconvenient for one's schedule.",
+      "collocations": [
+        "都合がいい",
+        "都合が悪い"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0602",
+      "word": "用事",
+      "kana": "ようじ",
+      "meanings": [
+        "errand",
+        "business to attend to"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ちょっと{用事|ようじ}があるから、{先|さき}に{帰|かえ}るね。",
+          "kana": "ちょっとようじがあるから、さきにかえるね。",
+          "en": "I have something to take care of, so I will head home first."
+        },
+        {
+          "ja": "{午後|ごご}は{銀行|ぎんこう}に{用事|ようじ}があります。",
+          "kana": "ごごはぎんこうにようじがあります。",
+          "en": "I have some business at the bank this afternoon."
+        }
+      ],
+      "collocations": [
+        "用事がある"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0603",
+      "word": "約束",
+      "kana": "やくそく",
+      "meanings": [
+        "promise",
+        "appointment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}との{約束|やくそく}を{忘|わす}れてしまった。",
+          "kana": "ともだちとのやくそくをわすれてしまった。",
+          "en": "I completely forgot about my plans with a friend."
+        },
+        {
+          "ja": "{子|こ}どもと、{週末|しゅうまつ}に{動物園|どうぶつえん}へ{行|い}く{約束|やくそく}をしています。",
+          "kana": "こどもと、しゅうまつにどうぶつえんへいくやくそくをしています。",
+          "en": "I have promised my kids to take them to the zoo this weekend."
+        }
+      ],
+      "collocations": [
+        "約束を守る",
+        "約束の時間"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0604",
+      "word": "失敗",
+      "kana": "しっぱい",
+      "meanings": [
+        "failure",
+        "mistake"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{失敗|しっぱい}しても、もう{一度|いちど}やってみましょう。",
+          "kana": "しっぱいしても、もういちどやってみましょう。",
+          "en": "Even if you fail, let us try once more."
+        },
+        {
+          "ja": "{初|はじ}めて{作|つく}ったケーキは、{失敗|しっぱい}だった。",
+          "kana": "はじめてつくったケーキは、しっぱいだった。",
+          "en": "The first cake I ever made was a failure."
+        }
+      ],
+      "confusables": [
+        "v-n4-0605"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0605",
+      "word": "成功",
+      "kana": "せいこう",
+      "meanings": [
+        "success"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{店|みせ}が{成功|せいこう}するかどうかはまだ{分|わ}からない。",
+          "kana": "あたらしいみせがせいこうするかどうかはまだわからない。",
+          "en": "Whether the new shop will succeed is still unclear."
+        },
+        {
+          "ja": "{兄|あに}は{小|ちい}さな{店|みせ}を{始|はじ}めて、{成功|せいこう}しました。",
+          "kana": "あにはちいさなみせをはじめて、せいこうしました。",
+          "en": "My older brother started a small shop and made a success of it."
+        }
+      ],
+      "confusables": [
+        "v-n4-0604"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0606",
+      "word": "注意",
+      "kana": "ちゅうい",
+      "meanings": [
+        "attention",
+        "caution",
+        "warning"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{車|くるま}が{多|おお}いので、{道|みち}を{渡|わた}るときは{注意|ちゅうい}してください。",
+          "kana": "くるまがおおいので、みちをわたるときはちゅういしてください。",
+          "en": "There are lots of cars, so please be careful when crossing the street."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}で{電話|でんわ}していたら、{注意|ちゅうい}された。",
+          "kana": "でんしゃのなかででんわしていたら、ちゅういされた。",
+          "en": "I was talking on the phone on the train and got told off."
+        }
+      ],
+      "notes": "注意する = to be careful, or to warn someone; 注意される = to be told off.",
+      "collocations": [
+        "注意する"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0607",
+      "word": "遠慮",
+      "kana": "えんりょ",
+      "meanings": [
+        "reserve",
+        "holding back"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{遠慮|えんりょ}しないで、どんどん{食|た}べてね。",
+          "kana": "えんりょしないで、どんどんたべてね。",
+          "en": "Do not hold back, go ahead and eat up."
+        },
+        {
+          "ja": "お{酒|さけ}はあまり{飲|の}めないので、{今日|きょう}は{遠慮|えんりょ}します。",
+          "kana": "おさけはあまりのめないので、きょうはえんりょします。",
+          "en": "I cannot drink much, so I will pass today."
+        }
+      ],
+      "notes": "Holding back out of politeness; ご遠慮ください = please refrain (on signs).",
+      "collocations": [
+        "ご遠慮ください",
+        "遠慮なく"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0608",
+      "word": "我慢",
+      "kana": "がまん",
+      "meanings": [
+        "patience",
+        "endurance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{歯|は}が{痛|いた}かったけど、{我慢|がまん}して{仕事|しごと}に{行|い}った。",
+          "kana": "はがいたかったけど、がまんしてしごとにいった。",
+          "en": "My tooth hurt, but I put up with it and went to work."
+        },
+        {
+          "ja": "{寒|さむ}いですが、ストーブをつけないで{我慢|がまん}しています。",
+          "kana": "さむいですが、ストーブをつけないでがまんしています。",
+          "en": "It is cold, but I am toughing it out without turning on the heater."
+        }
+      ],
+      "notes": "我慢する = to put up with, hold out; 我慢できない = cannot stand it.",
+      "collocations": [
+        "我慢する",
+        "我慢できない"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0609",
+      "word": "競争",
+      "kana": "きょうそう",
+      "meanings": [
+        "competition"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}と{競争|きょうそう}しながら{走|はし}ったら、{速|はや}くなった。",
+          "kana": "ともだちときょうそうしながらはしったら、はやくなった。",
+          "en": "Running in competition with my friend made me faster."
+        },
+        {
+          "ja": "{今|いま}、{二|ふた}つの{店|みせ}が{値段|ねだん}で{競争|きょうそう}しています。",
+          "kana": "いま、ふたつのみせがねだんできょうそうしています。",
+          "en": "Right now the two shops are competing on price."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0610",
+      "word": "発展",
+      "kana": "はってん",
+      "meanings": [
+        "development",
+        "growth"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{町|まち}はここ{十年|じゅうねん}で{大|おお}きく{発展|はってん}しました。",
+          "kana": "このまちはここじゅうねんでおおきくはってんしました。",
+          "en": "This town has developed a lot in the last ten years."
+        },
+        {
+          "ja": "{科学|かがく}の{発展|はってん}で、{世界|せかい}は{便利|べんり}になった。",
+          "kana": "かがくのはってんで、せかいはべんりになった。",
+          "en": "Advances in science have made the world convenient."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0611",
+      "word": "変化",
+      "kana": "へんか",
+      "meanings": [
+        "change"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{季節|きせつ}の{変化|へんか}がよく{分|わ}かる{場所|ばしょ}に{住|す}みたい。",
+          "kana": "きせつのへんかがよくわかるばしょにすみたい。",
+          "en": "I want to live somewhere you can really feel the changing seasons."
+        },
+        {
+          "ja": "{十年|じゅうねん}で、{町|まち}は{大|おお}きく{変化|へんか}しました。",
+          "kana": "じゅうねんで、まちはおおきくへんかしました。",
+          "en": "In ten years, the town has changed greatly."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0612",
+      "word": "比較",
+      "kana": "ひかく",
+      "meanings": [
+        "comparison"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{値段|ねだん}を{比較|ひかく}してから、{安|やす}い{方|ほう}を{買|か}いました。",
+          "kana": "ねだんをひかくしてから、やすいほうをかいました。",
+          "en": "I compared the prices and bought the cheaper one."
+        },
+        {
+          "ja": "ほかの{人|ひと}と{自分|じぶん}を{比較|ひかく}しない{方|ほう}がいい。",
+          "kana": "ほかのひととじぶんをひかくしないほうがいい。",
+          "en": "It is better not to compare yourself with others."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0613",
+      "word": "記憶",
+      "kana": "きおく",
+      "meanings": [
+        "memory"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{頃|ころ}の{記憶|きおく}はあまりない。",
+          "kana": "こどものころのきおくはあまりない。",
+          "en": "I do not have many memories from my childhood."
+        },
+        {
+          "ja": "{祖母|そぼ}は{昔|むかし}のことをよく{記憶|きおく}しています。",
+          "kana": "そぼはむかしのことをよくきおくしています。",
+          "en": "My grandmother remembers things from long ago well."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0614",
+      "word": "想像",
+      "kana": "そうぞう",
+      "meanings": [
+        "imagination"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{百年後|ひゃくねんご}の{世界|せかい}を{想像|そうぞう}してみてください。",
+          "kana": "ひゃくねんごのせかいをそうぞうしてみてください。",
+          "en": "Try to imagine the world a hundred years from now."
+        },
+        {
+          "ja": "あの{静|しず}かな{人|ひと}が{歌手|かしゅ}だなんて、{想像|そうぞう}できない。",
+          "kana": "あのしずかなひとがかしゅだなんて、そうぞうできない。",
+          "en": "I cannot imagine that quiet person being a singer."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0615",
+      "word": "問題",
+      "kana": "もんだい",
+      "meanings": [
+        "problem",
+        "question"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{問題|もんだい}、{難|むずか}しすぎて{全然|ぜんぜん}{分|わ}からない。",
+          "kana": "このもんだい、むずかしすぎてぜんぜんわからない。",
+          "en": "This problem is so hard I do not get it at all."
+        },
+        {
+          "ja": "{何|なに}か{問題|もんだい}があったら、すぐに{連絡|れんらく}してください。",
+          "kana": "なにかもんだいがあったら、すぐにれんらくしてください。",
+          "en": "If there is any problem, please contact me right away."
+        }
+      ],
+      "notes": "Both a difficulty and a test question; 問題ない = no problem.",
+      "collocations": [
+        "問題ない"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0616",
+      "word": "形",
+      "kana": "かたち",
+      "meanings": [
+        "shape",
+        "form"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "shapes",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "このお{菓子|かし}は{星|ほし}の{形|かたち}をしています。",
+          "kana": "このおかしはほしのかたちをしています。",
+          "en": "These sweets are shaped like stars."
+        },
+        {
+          "ja": "あの{雲|くも}、{動物|どうぶつ}みたいな{形|かたち}をしているね。",
+          "kana": "あのくも、どうぶつみたいなかたちをしているね。",
+          "en": "That cloud is shaped like an animal, isn't it?"
+        }
+      ],
+      "collocations": [
+        "形をしている",
+        "星の形"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0617",
+      "word": "危険",
+      "kana": "きけん",
+      "meanings": [
+        "dangerous",
+        "danger"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夜|よる}、{一人|ひとり}でこの{道|みち}を{歩|ある}くのは{危険|きけん}です。",
+          "kana": "よる、ひとりでこのみちをあるくのはきけんです。",
+          "en": "Walking this road alone at night is dangerous."
+        },
+        {
+          "ja": "この{道|みち}は{暗|くら}くて{危険|きけん}だから、{明|あか}るい{道|みち}を{通|とお}ろう。",
+          "kana": "このみちはくらくてきけんだから、あかるいみちをとおろう。",
+          "en": "This road is dark and dangerous, so let us take the well-lit one."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0618",
+      "word": "間違い",
+      "kana": "まちがい",
+      "meanings": [
+        "mistake",
+        "error"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{手紙|てがみ}には{漢字|かんじ}の{間違|まちが}いが{多|おお}い。",
+          "kana": "このてがみにはかんじのまちがいがおおい。",
+          "en": "This letter has a lot of kanji mistakes."
+        },
+        {
+          "ja": "{作文|さくぶん}の{間違|まちが}いを{先生|せんせい}に{直|なお}してもらいました。",
+          "kana": "さくぶんのまちがいをせんせいになおしてもらいました。",
+          "en": "I had my teacher correct the mistakes in my essay."
+        }
+      ],
+      "notes": "間違いない = no doubt, for sure; very common in speech.",
+      "collocations": [
+        "間違いが多い",
+        "間違いない"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0619",
+      "word": "もし",
+      "kana": "もし",
+      "meanings": [
+        "if",
+        "supposing"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "もし{時間|じかん}があったら、{手伝|てつだ}ってもらえませんか。",
+          "kana": "もしじかんがあったら、てつだってもらえませんか。",
+          "en": "If you have time, could you give me a hand?"
+        },
+        {
+          "ja": "もし{私|わたし}が{鳥|とり}だったら、{空|そら}を{自由|じゆう}に{飛|と}びたい。",
+          "kana": "もしわたしがとりだったら、そらをじゆうにとびたい。",
+          "en": "If I were a bird, I would want to fly freely through the sky."
+        }
+      ],
+      "notes": "Introduces a condition; the clause still needs 〜たら, 〜ば or 〜なら.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0620",
+      "word": "違い",
+      "kana": "ちがい",
+      "meanings": [
+        "difference"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{二|ふた}つの{言葉|ことば}の{違|ちが}いがよく{分|わ}からない。",
+          "kana": "このふたつのことばのちがいがよくわからない。",
+          "en": "I do not really understand the difference between these two words."
+        },
+        {
+          "ja": "{値段|ねだん}の{違|ちが}いは{百円|ひゃくえん}だけです。",
+          "kana": "ねだんのちがいはひゃくえんだけです。",
+          "en": "The difference in price is only a hundred yen."
+        }
+      ],
+      "collocations": [
+        "〜との違い",
+        "違いが分かる"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0621",
+      "word": "代わり",
+      "kana": "かわり",
+      "meanings": [
+        "substitute",
+        "replacement"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{母|はは}の{代|か}わりに{私|わたし}が{晩|ばん}ご{飯|はん}を{作|つく}った。",
+          "kana": "ははのかわりにわたしがばんごはんをつくった。",
+          "en": "I made dinner instead of my mother."
+        },
+        {
+          "ja": "{今日|きょう}は{姉|あね}の{代|か}わりに、{弟|おとうと}が{犬|いぬ}の{散歩|さんぽ}に{行|い}きます。",
+          "kana": "きょうはあねのかわりに、おとうとがいぬのさんぽにいきます。",
+          "en": "Today my little brother is walking the dog instead of my older sister."
+        }
+      ],
+      "notes": "〜の代わりに = instead of, in place of.",
+      "altForms": [
+        "代り"
+      ],
+      "collocations": [
+        "〜の代わりに"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0622",
+      "word": "最初",
+      "kana": "さいしょ",
+      "meanings": [
+        "beginning",
+        "first"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最初|さいしょ}は{難|むずか}しかったけど、だんだん{慣|な}れてきた。",
+          "kana": "さいしょはむずかしかったけど、だんだんなれてきた。",
+          "en": "It was hard at first, but I gradually got used to it."
+        },
+        {
+          "ja": "{最初|さいしょ}に{名前|なまえ}を{書|か}いてください。",
+          "kana": "さいしょになまえをかいてください。",
+          "en": "First, please write your name."
+        }
+      ],
+      "confusables": [
+        "v-n4-0623"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0623",
+      "word": "最後",
+      "kana": "さいご",
+      "meanings": [
+        "end",
+        "last"
+      ],
+      "pos": "n-adv",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{映画|えいが}の{最後|さいご}で{泣|な}いてしまいました。",
+          "kana": "えいがのさいごでないてしまいました。",
+          "en": "I ended up crying at the end of the movie."
+        },
+        {
+          "ja": "{最後|さいご}に{残|のこ}ったケーキは{誰|だれ}が{食|た}べる？",
+          "kana": "さいごにのこったケーキはだれがたべる？",
+          "en": "Who is eating the last piece of cake?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0622"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0624",
+      "word": "両方",
+      "kana": "りょうほう",
+      "meanings": [
+        "both"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{肉|にく}も{魚|さかな}も{両方|りょうほう}{好|す}きだ。",
+          "kana": "にくもさかなもりょうほうすきだ。",
+          "en": "I like both meat and fish."
+        },
+        {
+          "ja": "どちらにするか{決|き}められなくて、{両方|りょうほう}{買|か}いました。",
+          "kana": "どちらにするかきめられなくて、りょうほうかいました。",
+          "en": "I could not decide which one, so I bought both."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0625",
+      "word": "支度",
+      "kana": "したく",
+      "meanings": [
+        "preparation",
+        "getting ready"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{出|で}かける{支度|したく}に{一時間|いちじかん}もかかりました。",
+          "kana": "でかけるしたくにいちじかんもかかりました。",
+          "en": "It took me a whole hour to get ready to go out."
+        },
+        {
+          "ja": "もう{八時|はちじ}だよ。{早|はや}く{学校|がっこう}に{行|い}く{支度|したく}をして。",
+          "kana": "もうはちじだよ。はやくがっこうにいくしたくをして。",
+          "en": "It is already eight. Hurry up and get ready for school."
+        }
+      ],
+      "notes": "Getting ready to go out, eat or leave; 準備 and 用意 are the broader words.",
+      "collocations": [
+        "支度をする",
+        "食事の支度"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0626",
+      "word": "ずっと",
+      "kana": "ずっと",
+      "meanings": [
+        "the whole time",
+        "all along",
+        "by far"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}からずっと{雨|あめ}が{降|ふ}っている。",
+          "kana": "あさからずっとあめがふっている。",
+          "en": "It has been raining nonstop since this morning."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{方|ほう}がバスよりずっと{速|はや}いですよ。",
+          "kana": "でんしゃのほうがバスよりずっとはやいですよ。",
+          "en": "The train is much faster than the bus."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0627",
+      "word": "やっと",
+      "kana": "やっと",
+      "meanings": [
+        "at last",
+        "finally"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{長|なが}い{会議|かいぎ}がやっと{終|お}わりました。",
+          "kana": "ながいかいぎがやっとおわりました。",
+          "en": "The long meeting finally ended."
+        },
+        {
+          "ja": "{来月|らいげつ}、やっと{新|あたら}しい{家|いえ}に{引|ひ}っ{越|こ}せる。",
+          "kana": "らいげつ、やっとあたらしいいえにひっこせる。",
+          "en": "Next month I can finally move into the new house."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0628",
+      "word": "なるべく",
+      "kana": "なるべく",
+      "meanings": [
+        "as much as possible",
+        "if possible"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "なるべく{早|はや}く{返事|へんじ}をください。",
+          "kana": "なるべくはやくへんじをください。",
+          "en": "Please reply as soon as you can."
+        },
+        {
+          "ja": "{体|からだ}のために、なるべく{階段|かいだん}を{使|つか}うようにしている。",
+          "kana": "からだのために、なるべくかいだんをつかうようにしている。",
+          "en": "For my health, I try to use the stairs as much as possible."
+        }
+      ],
+      "confusables": [
+        "v-n4-0629"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0629",
+      "word": "できるだけ",
+      "kana": "できるだけ",
+      "meanings": [
+        "as much as possible",
+        "as … as one can"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "できるだけ{毎日|まいにち}{日本語|にほんご}を{話|はな}すようにしている。",
+          "kana": "できるだけまいにちにほんごをはなすようにしている。",
+          "en": "I try to speak Japanese every day as much as I can."
+        },
+        {
+          "ja": "できるだけ{安|やす}いホテルを{探|さが}しています。",
+          "kana": "できるだけやすいホテルをさがしています。",
+          "en": "I am looking for the cheapest hotel I can find."
+        }
+      ],
+      "altForms": [
+        "出来るだけ"
+      ],
+      "confusables": [
+        "v-n4-0628"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0630",
+      "word": "決して",
+      "kana": "けっして",
+      "meanings": [
+        "never",
+        "by no means"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{約束|やくそく}は{決|けっ}して{忘|わす}れません。",
+          "kana": "やくそくはけっしてわすれません。",
+          "en": "I will never forget my promise."
+        },
+        {
+          "ja": "この{話|はなし}は{決|けっ}して{誰|だれ}にも{言|い}わないで。",
+          "kana": "このはなしはけっしてだれにもいわないで。",
+          "en": "Never tell anyone about this."
+        }
+      ],
+      "notes": "Always paired with a negative: 決して〜ない.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0631",
+      "word": "必ず",
+      "kana": "かならず",
+      "meanings": [
+        "without fail",
+        "always",
+        "surely"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{出|で}かける{前|まえ}に{必|かなら}ず{窓|まど}を{閉|し}めてね。",
+          "kana": "でかけるまえにかならずまどをしめてね。",
+          "en": "Be sure to close the windows before you go out."
+        },
+        {
+          "ja": "{彼|かれ}は{約束|やくそく}の{時間|じかん}に{必|かなら}ず{来|き}ます。",
+          "kana": "かれはやくそくのじかんにかならずきます。",
+          "en": "He always comes at the agreed time."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0632",
+      "word": "ほとんど",
+      "kana": "ほとんど",
+      "meanings": [
+        "almost",
+        "mostly",
+        "hardly"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity",
+        "usually-kana"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{宿題|しゅくだい}はほとんど{終|お}わりました。",
+          "kana": "しゅくだいはほとんどおわりました。",
+          "en": "My homework is almost done."
+        },
+        {
+          "ja": "この{町|まち}では、{冬|ふゆ}はほとんど{雪|ゆき}が{降|ふ}らない。",
+          "kana": "このまちでは、ふゆはほとんどゆきがふらない。",
+          "en": "In this town it hardly ever snows in winter."
+        }
+      ],
+      "notes": "With a negative: \"hardly any\" (ほとんどない); the kanji 殆ど is rarely used.",
+      "altForms": [
+        "殆ど"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0633",
+      "word": "特に",
+      "kana": "とくに",
+      "meanings": [
+        "especially",
+        "in particular"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{夏|なつ}は{特|とく}に{暑|あつ}かった。",
+          "kana": "ことしのなつはとくにあつかった。",
+          "en": "This summer was especially hot."
+        },
+        {
+          "ja": "{日本|にほん}の{食|た}べ{物|もの}は、{特|とく}にすしが{好|す}きです。",
+          "kana": "にほんのたべものは、とくにすしがすきです。",
+          "en": "Of Japanese food, I especially like sushi."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0634",
+      "word": "別に",
+      "kana": "べつに",
+      "meanings": [
+        "not particularly",
+        "separately"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{別|べつ}に{急|いそ}いでいないから、ゆっくりでいいよ。",
+          "kana": "べつにいそいでいないから、ゆっくりでいいよ。",
+          "en": "I am not in any hurry, so take your time."
+        },
+        {
+          "ja": "{別|べつ}に{用事|ようじ}はありませんが、{声|こえ}が{聞|き}きたくて{電話|でんわ}しました。",
+          "kana": "べつにようじはありませんが、こえがききたくてでんわしました。",
+          "en": "Nothing in particular, I just wanted to hear your voice, so I called."
+        }
+      ],
+      "notes": "With a negative: \"not particularly\". On its own, 別に。 is a curt \"not really\" and can sound cold.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0635",
+      "word": "急に",
+      "kana": "きゅうに",
+      "meanings": [
+        "suddenly"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{急|きゅう}に{雨|あめ}が{降|ふ}り{出|だ}したので、{店|みせ}に{入|はい}りました。",
+          "kana": "きゅうにあめがふりだしたので、みせにはいりました。",
+          "en": "It suddenly started raining, so I went into a shop."
+        },
+        {
+          "ja": "{急|きゅう}に{予定|よてい}が{変|か}わって、{行|い}けなくなった。",
+          "kana": "きゅうによていがかわって、いけなくなった。",
+          "en": "My plans changed suddenly, and I could not go anymore."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0636",
+      "word": "久しぶり",
+      "kana": "ひさしぶり",
+      "meanings": [
+        "long time (since)",
+        "first time in a while"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "time"
+      ],
+      "pitch": 5,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{久|ひさ}しぶりに{高校|こうこう}の{友達|ともだち}に{会|あ}った。",
+          "kana": "ひさしぶりにこうこうのともだちにあった。",
+          "en": "I met a friend from high school for the first time in ages."
+        },
+        {
+          "ja": "{久|ひさ}しぶりですね。お{元気|げんき}でしたか。",
+          "kana": "ひさしぶりですね。おげんきでしたか。",
+          "en": "It has been a while. How have you been?"
+        }
+      ],
+      "notes": "お久しぶりです is the standard greeting after a long gap; 久しぶりに + verb = for the first time in a while.",
+      "altForms": [
+        "久し振り"
+      ],
+      "collocations": [
+        "お久しぶりです",
+        "久しぶりに"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0637",
+      "word": "相当",
+      "kana": "そうとう",
+      "meanings": [
+        "quite",
+        "considerably"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{問題|もんだい}は{相当|そうとう}{難|むずか}しいですね。",
+          "kana": "このもんだいはそうとうむずかしいですね。",
+          "en": "This problem is pretty difficult, isn't it?"
+        },
+        {
+          "ja": "{彼女|かのじょ}は{相当|そうとう}{疲|つか}れているようだった。",
+          "kana": "かのじょはそうとうつかれているようだった。",
+          "en": "She seemed quite tired."
+        }
+      ],
+      "notes": "Also a な-adjective (相当な金額) and a suru-verb (〜に相当する) at higher levels.",
+      "confusables": [
+        "v-n4-0638"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0638",
+      "word": "かなり",
+      "kana": "かなり",
+      "meanings": [
+        "quite",
+        "fairly",
+        "considerably"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅|えき}からホテルまではかなり{遠|とお}かった。",
+          "kana": "えきからホテルまではかなりとおかった。",
+          "en": "It was quite far from the station to the hotel."
+        },
+        {
+          "ja": "この{店|みせ}のカレーはかなり{辛|から}いですよ。",
+          "kana": "このみせのカレーはかなりからいですよ。",
+          "en": "The curry at this place is quite spicy."
+        }
+      ],
+      "confusables": [
+        "v-n4-0637"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0639",
+      "word": "はっきり",
+      "kana": "はっきり",
+      "meanings": [
+        "clearly",
+        "plainly"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{言|い}いたいことははっきり{言|い}ってください。",
+          "kana": "いいたいことははっきりいってください。",
+          "en": "Please say clearly what you want to say."
+        },
+        {
+          "ja": "{眼鏡|めがね}をかけないと、{字|じ}がはっきり{見|み}えない。",
+          "kana": "めがねをかけないと、じがはっきりみえない。",
+          "en": "Without my glasses I cannot see the letters clearly."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0640",
+      "word": "しっかり",
+      "kana": "しっかり",
+      "meanings": [
+        "firmly",
+        "properly"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}ご{飯|はん}をしっかり{食|た}べてから{出|で}かけよう。",
+          "kana": "あさごはんをしっかりたべてからでかけよう。",
+          "en": "Let us eat a proper breakfast before heading out."
+        },
+        {
+          "ja": "{風|かぜ}が{強|つよ}いので、ドアをしっかり{閉|し}めてください。",
+          "kana": "かぜがつよいので、ドアをしっかりしめてください。",
+          "en": "The wind is strong, so please close the door firmly."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0641",
+      "word": "ぐっすり",
+      "kana": "ぐっすり",
+      "meanings": [
+        "soundly (sleep)"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{疲|つか}れていたので、ぐっすり{眠|ねむ}れました。",
+          "kana": "きのうはつかれていたので、ぐっすりねむれました。",
+          "en": "I was tired yesterday, so I slept soundly."
+        },
+        {
+          "ja": "{赤|あか}ちゃんは{今|いま}、ぐっすり{寝|ね}ている。",
+          "kana": "あかちゃんはいま、ぐっすりねている。",
+          "en": "The baby is fast asleep right now."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0642",
+      "word": "びっくり",
+      "kana": "びっくり",
+      "meanings": [
+        "surprise"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{急|きゅう}に{後|うし}ろから{名前|なまえ}を{呼|よ}ばれて、びっくりした。",
+          "kana": "きゅうにうしろからなまえをよばれて、びっくりした。",
+          "en": "Someone suddenly called my name from behind, and it startled me."
+        },
+        {
+          "ja": "{値段|ねだん}を{見|み}たら、きっとびっくりしますよ。",
+          "kana": "ねだんをみたら、きっとびっくりしますよ。",
+          "en": "You will surely be surprised when you see the price."
+        }
+      ],
+      "notes": "びっくりする is the everyday way to say \"be surprised\"; 驚く is more neutral or written.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0643",
+      "word": "がっかり",
+      "kana": "がっかり",
+      "meanings": [
+        "disappointment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{楽|たの}しみにしていた{店|みせ}が{休|やす}みで、がっかりした。",
+          "kana": "たのしみにしていたみせがやすみで、がっかりした。",
+          "en": "The restaurant I had been looking forward to was closed, and I was disappointed."
+        },
+        {
+          "ja": "{試験|しけん}に{落|お}ちて、{弟|おとうと}はがっかりしています。",
+          "kana": "しけんにおちて、おとうとはがっかりしています。",
+          "en": "My little brother failed the exam and is disappointed."
+        }
+      ],
+      "notes": "がっかりする = to be disappointed; often after 〜て: 負けてがっかりした.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0644",
+      "word": "どんどん",
+      "kana": "どんどん",
+      "meanings": [
+        "rapidly",
+        "steadily",
+        "one after another"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity",
+        "onomatopoeia"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本語|にほんご}がどんどん{上手|じょうず}になっていますね。",
+          "kana": "にほんごがどんどんじょうずになっていますね。",
+          "en": "Your Japanese is getting better and better."
+        },
+        {
+          "ja": "{野菜|やさい}の{値段|ねだん}がどんどん{上|あ}がっている。",
+          "kana": "やさいのねだんがどんどんあがっている。",
+          "en": "Vegetable prices keep going up and up."
+        }
+      ],
+      "notes": "Fast, steady progress or momentum; also \"go ahead and …\" when urging someone.",
+      "confusables": [
+        "v-n4-0645"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0645",
+      "word": "だんだん",
+      "kana": "だんだん",
+      "meanings": [
+        "gradually",
+        "little by little"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{三月|さんがつ}になって、だんだん{暖|あたた}かくなってきた。",
+          "kana": "さんがつになって、だんだんあたたかくなってきた。",
+          "en": "It is March now, and it is gradually getting warmer."
+        },
+        {
+          "ja": "{新|あたら}しい{仕事|しごと}にだんだん{慣|な}れてきました。",
+          "kana": "あたらしいしごとにだんだんなれてきました。",
+          "en": "I am gradually getting used to my new job."
+        }
+      ],
+      "notes": "Gradual change over time; どんどん stresses speed and momentum.",
+      "altForms": [
+        "段々"
+      ],
+      "confusables": [
+        "v-n4-0644"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0646",
+      "word": "それに",
+      "kana": "それに",
+      "meanings": [
+        "besides",
+        "moreover"
+      ],
+      "pos": "conj",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{店|みせ}は{安|やす}い。それに、{店員|てんいん}も{親切|しんせつ}だ。",
+          "kana": "このみせはやすい。それに、てんいんもしんせつだ。",
+          "en": "This shop is cheap. What is more, the staff are friendly."
+        },
+        {
+          "ja": "{昨日|きのう}は{寒|さむ}かったです。それに、{風|かぜ}も{強|つよ}かったです。",
+          "kana": "きのうはさむかったです。それに、かぜもつよかったです。",
+          "en": "Yesterday was cold. What is more, the wind was strong too."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0647",
+      "word": "または",
+      "kana": "または",
+      "meanings": [
+        "or",
+        "either … or"
+      ],
+      "pos": "conj",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{電話|でんわ}またはメールでご{連絡|れんらく}ください。",
+          "kana": "でんわまたはメールでごれんらくください。",
+          "en": "Please contact us by phone or email."
+        },
+        {
+          "ja": "{飲|の}み{物|もの}は、{水|みず}またはお{茶|ちゃ}が{選|えら}べる。",
+          "kana": "のみものは、みずまたはおちゃがえらべる。",
+          "en": "For drinks, you can choose water or tea."
+        }
+      ],
+      "notes": "Slightly formal; in casual speech 〜か〜 (電話かメール) is more common.",
+      "altForms": [
+        "又は"
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0648",
+      "word": "けれども",
+      "kana": "けれども",
+      "meanings": [
+        "but",
+        "however"
+      ],
+      "pos": "conj",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{値段|ねだん}は{高|たか}いけれども、{品物|しなもの}はとてもいいです。",
+          "kana": "ねだんはたかいけれども、しなものはとてもいいです。",
+          "en": "The price is high, but the goods are very good."
+        },
+        {
+          "ja": "{急|いそ}いだけれども、{電車|でんしゃ}に{間|ま}に{合|あ}わなかった。",
+          "kana": "いそいだけれども、でんしゃにまにあわなかった。",
+          "en": "I hurried, but I did not make the train."
+        }
+      ],
+      "notes": "Full form of けれど / けど; けれども is the most formal of the three.",
+      "station": 24
+    },
+    {
+      "id": "v-n4-0649",
+      "word": "すると",
+      "kana": "すると",
+      "meanings": [
+        "then",
+        "thereupon"
+      ],
+      "pos": "conj",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ドアを{開|あ}けた。すると、{猫|ねこ}が{入|はい}ってきた。",
+          "kana": "ドアをあけた。すると、ねこがはいってきた。",
+          "en": "I opened the door. Then a cat came in."
+        },
+        {
+          "ja": "{電気|でんき}を{消|け}しました。すると、{星|ほし}がよく{見|み}えました。",
+          "kana": "でんきをけしました。すると、ほしがよくみえました。",
+          "en": "I turned off the lights. Then the stars came out clearly."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0650",
+      "word": "ところで",
+      "kana": "ところで",
+      "meanings": [
+        "by the way"
+      ],
+      "pos": "conj",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ところで、{来週|らいしゅう}の{土曜日|どようび}は{空|あ}いていますか。",
+          "kana": "ところで、らいしゅうのどようびはあいていますか。",
+          "en": "By the way, are you free next Saturday?"
+        },
+        {
+          "ja": "ところで、{昨日|きのう}のテストはどうだった？",
+          "kana": "ところで、きのうのテストはどうだった？",
+          "en": "By the way, how was yesterday's test?"
+        }
+      ],
+      "station": 24
+    }
+  ]
+}

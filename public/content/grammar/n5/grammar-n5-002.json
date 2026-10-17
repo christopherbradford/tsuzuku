@@ -1,0 +1,1266 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n5",
+  "writer": "grammar-n5-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n5-024",
+      "pattern": "い-adjective + N / い-adjective です",
+      "meaning": "a … N; it is … (い-adjective)",
+      "formation": [
+        "い-adjective + N: 大きい + 家 → 大きい家",
+        "い-adjective + です: 大きいです",
+        "Question: い-adjective + ですか: 大きいですか",
+        "いい (good) is irregular: いい天気, いいです (its other forms come from よい)"
+      ],
+      "explanation": "い-adjectives end in い in their dictionary form (高い, 新しい, おいしい) and go straight in front of a noun with nothing in between: 高い山, 新しい店. To make a polite sentence, put です after the adjective exactly as it is: この山は高いです. That です only adds politeness; the adjective already carries the tense, so you never say 高いだ. Two traps: きれい and 嫌い end in い but are な-adjectives, and いい (good) is irregular — its other forms come from よい (よくない, よかった).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{暑|あつ}いですね。",
+          "kana": "きょうはあついですね。",
+          "en": "It's hot today, isn't it?"
+        },
+        {
+          "ja": "{新|あたら}しい{駅|えき}は{大|おお}きいです。",
+          "kana": "あたらしいえきはおおきいです。",
+          "en": "The new station is big."
+        },
+        {
+          "ja": "この{店|みせ}のパンはおいしいです。",
+          "kana": "このみせのパンはおいしいです。",
+          "en": "The bread at this shop is delicious."
+        },
+        {
+          "ja": "{古|ふる}い{町|まち}を{歩|ある}きました。",
+          "kana": "ふるいまちをあるきました。",
+          "en": "I walked around an old town."
+        }
+      ],
+      "clozeHints": [
+        "暑いです",
+        "大きいです",
+        "おいしいです",
+        "古い"
+      ],
+      "mistakes": [
+        "× 大きいな家 → ○ 大きい家 (い-adjectives attach to nouns directly; な is for な-adjectives)",
+        "× この山は高いだ → ○ この山は高いです (plain い-adjectives never take だ; add です for politeness)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-025",
+        "g-n5-026",
+        "g-n5-028"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-025",
+      "pattern": "な-adjective + N / な-adjective です",
+      "meaning": "a … N; it is … (な-adjective)",
+      "formation": [
+        "な-adjective + な + N: 静か + な + 町 → 静かな町",
+        "な-adjective + です: 静かです",
+        "Question: 静かですか",
+        "きれい・嫌い・有名 end in い but are な-adjectives: きれいな花"
+      ],
+      "explanation": "な-adjectives behave like nouns. In front of a noun you need な: 静かな町, 元気な子ども, 有名な店. At the end of a sentence they take です directly, with no な: この町は静かです. The な is only a connector to a following noun, so it never appears before です. Many な-adjectives are Chinese-origin words (便利, 有名, 元気); a few end in い and look like い-adjectives but are not — きれい, 嫌い and 有名 all take な. You will meet the plain form だ at Station 12.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここはとても{静|しず}かな{公園|こうえん}ですね。",
+          "kana": "ここはとてもしずかなこうえんですね。",
+          "en": "This is a very quiet park, isn't it?"
+        },
+        {
+          "ja": "{父|ちち}は{今日|きょう}も{元気|げんき}です。",
+          "kana": "ちちはきょうもげんきです。",
+          "en": "My father is in good spirits today too."
+        },
+        {
+          "ja": "{京都|きょうと}は{有名|ゆうめい}な{町|まち}です。",
+          "kana": "きょうとはゆうめいなまちです。",
+          "en": "Kyoto is a famous city."
+        },
+        {
+          "ja": "この{辞書|じしょ}は{便利|べんり}です。",
+          "kana": "このじしょはべんりです。",
+          "en": "This dictionary is handy."
+        }
+      ],
+      "clozeHints": [
+        "静かな",
+        "元気です",
+        "有名な",
+        "便利です"
+      ],
+      "mistakes": [
+        "× 静かの町 → ○ 静かな町 (な-adjectives link to a noun with な, not の)",
+        "× きれい町 → ○ きれいな町 (きれい ends in い but is a な-adjective)",
+        "× 静かなです → ○ 静かです (な appears only before a noun)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-007",
+        "g-n5-024",
+        "g-n5-027"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-026",
+      "pattern": "〜くないです",
+      "meaning": "is not … (い-adjective negative)",
+      "formation": [
+        "い-adjective minus い + くないです: 高い → 高くないです",
+        "More examples: 寒い → 寒くないです · おいしい → おいしくないです",
+        "Stiffer equivalent: 〜くありません: 高くありません",
+        "いい → よくないです (never いくないです)",
+        "Preview of the past: 〜かったです · 〜くなかったです"
+      ],
+      "explanation": "To say an い-adjective is not so, drop the final い and add くないです: 高い → 高くないです, 寒い → 寒くないです. The form 〜くありません means the same and sounds a little stiffer; you will hear it in announcements. いい (good) is irregular: its negative is よくないです, never いくないです. Do not use じゃないです here — that ending belongs to な-adjectives and nouns. Later you will add the past forms, 〜かったです and 〜くなかったです, which follow the same stem.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "この{本|ほん}はあまり{高|たか}くないです。",
+          "kana": "このほんはあまりたかくないです。",
+          "en": "This book isn't very expensive."
+        },
+        {
+          "ja": "{今日|きょう}は{寒|さむ}くないですね。",
+          "kana": "きょうはさむくないですね。",
+          "en": "It's not cold today, is it?"
+        },
+        {
+          "ja": "{駅|えき}はここから{遠|とお}くないです。",
+          "kana": "えきはここからとおくないです。",
+          "en": "The station isn't far from here."
+        },
+        {
+          "ja": "このカメラはあまりよくないです。",
+          "kana": "このカメラはあまりよくないです。",
+          "en": "This camera isn't very good."
+        }
+      ],
+      "clozeHints": [
+        "くないです"
+      ],
+      "mistakes": [
+        "× 高いくないです → ○ 高くないです (drop the final い before くない)",
+        "× いくないです → ○ よくないです (いい becomes よ- in every form except the plain positive)",
+        "× 高いじゃないです → ○ 高くないです (じゃないです is for な-adjectives and nouns)"
+      ],
+      "related": [
+        "g-n5-002",
+        "g-n5-024",
+        "g-n5-027",
+        "g-n5-028"
+      ],
+      "tags": [
+        "states"
+      ],
+      "unlocksForms": [
+        "adj-neg"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-027",
+      "pattern": "〜じゃないです",
+      "meaning": "is not … (な-adjective negative)",
+      "formation": [
+        "な-adjective + じゃないです: 静か → 静かじゃないです",
+        "Also for nouns: 学生じゃないです",
+        "More careful: 〜じゃありません · 〜ではないです · 〜ではありません",
+        "Past negative: 〜じゃなかったです"
+      ],
+      "explanation": "To negate a な-adjective, add じゃないです straight after it, with no な: 静か → 静かじゃないです, 便利 → 便利じゃないです. The same ending negates nouns (学生じゃないです). More careful equivalents are じゃありません, ではないです and, most formal, ではありません — you will see the last one in writing and announcements. Never put くない on a な-adjective, and remember that きれい and 嫌い are な-adjectives: きれいじゃないです, 嫌いじゃないです. The past negative is じゃなかったです.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "この{町|まち}はあまり{静|しず}かじゃないです。",
+          "kana": "このまちはあまりしずかじゃないです。",
+          "en": "This town isn't very quiet."
+        },
+        {
+          "ja": "{日曜日|にちようび}は{暇|ひま}じゃないです。",
+          "kana": "にちようびはひまじゃないです。",
+          "en": "I'm not free on Sunday."
+        },
+        {
+          "ja": "{兄|あに}は{今日|きょう}、{元気|げんき}じゃないです。",
+          "kana": "あにはきょう、げんきじゃないです。",
+          "en": "My older brother isn't feeling well today."
+        },
+        {
+          "ja": "この{店|みせ}は{有名|ゆうめい}じゃありません。",
+          "kana": "このみせはゆうめいじゃありません。",
+          "en": "This shop isn't famous."
+        }
+      ],
+      "clozeHints": [
+        "じゃないです",
+        "じゃありません"
+      ],
+      "mistakes": [
+        "× 静かくないです → ○ 静かじゃないです (くない is for い-adjectives only)",
+        "× 静かなじゃないです → ○ 静かじゃないです (no な before じゃない)",
+        "× きれくないです → ○ きれいじゃないです (きれい is a な-adjective)"
+      ],
+      "related": [
+        "g-n5-002",
+        "g-n5-025",
+        "g-n5-026",
+        "g-n5-068"
+      ],
+      "tags": [
+        "states"
+      ],
+      "unlocksForms": [
+        "adj-neg"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-028",
+      "pattern": "とても / あまり〜ない",
+      "meaning": "very …; not very …",
+      "formation": [
+        "とても + adjective (positive): とても高いです · とても静かです",
+        "あまり + い-adjective negative: あまり高くないです",
+        "あまり + な-adjective negative: あまり静かじゃないです",
+        "あまり + verb negative: あまり食べません",
+        "Spoken variant: あんまり"
+      ],
+      "explanation": "とても strengthens a positive statement: とても高いです, とても静かです. あまり does the opposite and only works with a negative ending: あまり高くないです (not very expensive), あまり静かじゃないです (not very quiet). With a verb it means 'not much': あまりテレビを見ません. You cannot say あまり高いです — once you say あまり, the sentence has to end in ない or ません. In relaxed speech people often say あんまり. A softer alternative to とても is けっこう (quite); a stronger one is すごく.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "このカレーはとても{辛|から}いです。",
+          "kana": "このカレーはとてもからいです。",
+          "en": "This curry is very spicy."
+        },
+        {
+          "ja": "{今日|きょう}はあまり{忙|いそが}しくないです。",
+          "kana": "きょうはあまりいそがしくないです。",
+          "en": "I'm not very busy today."
+        },
+        {
+          "ja": "{私|わたし}はあまりコーヒーを{飲|の}みません。",
+          "kana": "わたしはあまりコーヒーをのみません。",
+          "en": "I don't drink coffee much."
+        },
+        {
+          "ja": "{京都|きょうと}の{秋|あき}はとてもきれいです。",
+          "kana": "きょうとのあきはとてもきれいです。",
+          "en": "Autumn in Kyoto is very beautiful."
+        }
+      ],
+      "clozeHints": [
+        "とても",
+        "あまり"
+      ],
+      "mistakes": [
+        "× あまり高いです → ○ あまり高くないです (あまり needs a negative ending)",
+        "× とても高くないです → ○ あまり高くないです (for 'not very' use あまり, not とても)",
+        "× あまりおいしいです → ○ とてもおいしいです (a positive degree takes とても)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-024",
+        "g-n5-026",
+        "g-n5-027"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-029",
+      "pattern": "どんなN",
+      "meaning": "what kind of N",
+      "formation": [
+        "どんな + N: どんな人 · どんな町 · どんな食べ物",
+        "どんな + N + ですか: どんな町ですか",
+        "Answer: adjective + N + です: 静かな町です · 小さい町です",
+        "Compare どの + N (which one, Station 5)"
+      ],
+      "explanation": "どんな + noun asks 'what kind of' and expects a description in the answer: どんな町ですか → 静かな町です. It never stands alone; a noun must follow it. Do not confuse it with どの (which one, Station 5): どの町 picks one town out of several, while どんな町 asks what the town is like. It also works inside verb sentences: どんな音楽を聞きますか. A natural reply often repeats the noun with an adjective in front: 小さい町です, 古い町です.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{小田原|おだわら}はどんな{町|まち}ですか。",
+          "kana": "おだわらはどんなまちですか。",
+          "en": "What kind of town is Odawara?"
+        },
+        {
+          "ja": "どんな{音楽|おんがく}をよく{聞|き}きますか。",
+          "kana": "どんなおんがくをよくききますか。",
+          "en": "What kind of music do you often listen to?"
+        },
+        {
+          "ja": "{田中|たなか}さんはどんな{人|ひと}ですか。",
+          "kana": "たなかさんはどんなひとですか。",
+          "en": "What kind of person is Tanaka-san?"
+        },
+        {
+          "ja": "{昨日|きのう}はどんな{天気|てんき}でしたか。",
+          "kana": "きのうはどんなてんきでしたか。",
+          "en": "What was the weather like yesterday?"
+        }
+      ],
+      "clozeHints": [
+        "どんな"
+      ],
+      "mistakes": [
+        "× どんなですか → ○ どんな町ですか (どんな must be followed by a noun)",
+        "× どの町ですか (asking for a description) → ○ どんな町ですか (どの picks one of several; どんな asks what it is like)"
+      ],
+      "related": [
+        "g-n5-006",
+        "g-n5-009",
+        "g-n5-024",
+        "g-n5-025"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-030",
+      "pattern": "〜はどうですか",
+      "meaning": "how is …?; how about …?",
+      "formation": [
+        "N + はどうですか: 仕事はどうですか",
+        "Past: N + はどうでしたか: 旅行はどうでしたか",
+        "Offering: お茶はどうですか",
+        "Politer: N + はいかがですか"
+      ],
+      "explanation": "Nはどうですか has two jobs. First, it asks for an impression or a report: 仕事はどうですか (how is work?), answered with an adjective such as 楽しいです or あまりよくないです. Second, it offers or suggests: お茶はどうですか (how about some tea?). For something already finished, use the past: 旅行はどうでしたか. Shop staff and hosts use the politer いかがですか with the same meaning. Note that どう stands directly before です; どんな, by contrast, always needs a noun after it.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{仕事|しごと}はどうですか。",
+          "kana": "あたらしいしごとはどうですか。",
+          "en": "How's the new job?"
+        },
+        {
+          "ja": "{箱根|はこね}の{旅行|りょこう}はどうでしたか。",
+          "kana": "はこねのりょこうはどうでしたか。",
+          "en": "How was the trip to Hakone?"
+        },
+        {
+          "ja": "お{茶|ちゃ}はどうですか。",
+          "kana": "おちゃはどうですか。",
+          "en": "How about some tea?"
+        },
+        {
+          "ja": "{日本|にほん}の{夏|なつ}はどうですか。",
+          "kana": "にほんのなつはどうですか。",
+          "en": "How do you find Japanese summers?"
+        }
+      ],
+      "clozeHints": [
+        "はどうですか",
+        "はどうでしたか"
+      ],
+      "mistakes": [
+        "× 仕事はどんなですか → ○ 仕事はどうですか (どう stands alone before です; どんな needs a noun)",
+        "× 旅行はどうですか (about last week's trip) → ○ 旅行はどうでしたか (a finished event takes でした)"
+      ],
+      "related": [
+        "g-n5-003",
+        "g-n5-012",
+        "g-n5-013",
+        "g-n5-029"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 7
+    },
+    {
+      "id": "g-n5-031",
+      "pattern": "はい / ええ / そうですね / そうですか",
+      "meaning": "yes; I see; that's right (listener responses)",
+      "formation": [
+        "はい — yes; I'm listening (neutral polite)",
+        "ええ — yes (softer, spoken)",
+        "そうですね — that's right; let me see…",
+        "そうですか — I see (falling tone); is that so? (rising tone)",
+        "Stretch the vowel to show feeling: そうですねえ"
+      ],
+      "explanation": "These are aizuchi — short responses you give while someone is talking to show you are following. はい and ええ mean yes but often just mean 'I hear you'; ええ is softer and more spoken. そうですね agrees ('that's right') or buys time ('let me see…'). そうですか, said with falling intonation, receives new information ('I see'); said with rising intonation it becomes a real question. Silence feels cold in Japanese conversation, so nod and drop in an aizuchi every few seconds. Be careful: too many はい can make it sound as if you agreed to something.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "「{明日|あした}は{雨|あめ}ですよ。」「そうですか。」",
+          "kana": "「あしたはあめですよ。」「そうですか。」",
+          "en": "“It's going to rain tomorrow.” “Oh, is it?”"
+        },
+        {
+          "ja": "「{今日|きょう}は{暑|あつ}いですね。」「そうですね。」",
+          "kana": "「きょうはあついですね。」「そうですね。」",
+          "en": "“It's hot today, isn't it?” “It sure is.”"
+        },
+        {
+          "ja": "「{田中|たなか}さんですか。」「はい、そうです。」",
+          "kana": "「たなかさんですか。」「はい、そうです。」",
+          "en": "“Are you Tanaka-san?” “Yes, that's right.”"
+        },
+        {
+          "ja": "「コーヒー、{飲|の}みますか。」「ええ、お{願|ねが}いします。」",
+          "kana": "「コーヒー、のみますか。」「ええ、おねがいします。」",
+          "en": "“Would you like some coffee?” “Yes, please.”"
+        }
+      ],
+      "clozeHints": [
+        "はい",
+        "ええ",
+        "そうですね",
+        "そうですか"
+      ],
+      "mistakes": [
+        "× はい、はい、はい → ○ はい (one calm はい per idea; rapid repeats sound impatient)",
+        "× そうですね (to news you did not know) → ○ そうですか (そうですね agrees; そうですか receives new information)",
+        "× そうですか↗ (meaning 'I see') → ○ そうですか↘ (falling intonation shows understanding; rising sounds like doubt)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-003",
+        "g-n5-008"
+      ],
+      "tags": [
+        "aizuchi",
+        "set-phrase",
+        "communication"
+      ],
+      "notes": "Chunk list taught as one pattern. Intonation decides そうですか: falling = I see, rising = really? Practise with shadowing rather than cloze alone.",
+      "station": 7
+    },
+    {
+      "id": "g-n5-032",
+      "pattern": "Nがあります / Nがいます",
+      "meaning": "there is …; I have … (existence)",
+      "formation": [
+        "N (thing, plant, place, event) + があります: 時間があります · 木があります",
+        "N (person, animal) + がいます: 妹がいます · 猫がいます",
+        "Negative: ありません · いません",
+        "Past: ありました · いました"
+      ],
+      "explanation": "あります and います say that something exists or that you have it. The thing that exists takes が. Use あります for things that do not move on their own — objects, plants, buildings, events, time, money — and います for people and animals: 車があります but 犬がいます. For possession the pattern is the same: 妹がいます (I have a younger sister), 時間があります. The negatives are ありません and いません; the past forms are ありました and いました. Remember: が, not は, when you are introducing the thing for the first time.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{時間|じかん}があります。",
+          "kana": "きょうはじかんがあります。",
+          "en": "I have time today."
+        },
+        {
+          "ja": "{私|わたし}は{妹|いもうと}がいます。",
+          "kana": "わたしはいもうとがいます。",
+          "en": "I have a younger sister."
+        },
+        {
+          "ja": "{明日|あした}はテストがあります。",
+          "kana": "あしたはテストがあります。",
+          "en": "There's a test tomorrow."
+        },
+        {
+          "ja": "{今晩|こんばん}、{友達|ともだち}のパーティーがあります。",
+          "kana": "こんばん、ともだちのパーティーがあります。",
+          "en": "There's a friend's party tonight."
+        }
+      ],
+      "clozeHints": [
+        "があります",
+        "がいます"
+      ],
+      "mistakes": [
+        "× 犬があります → ○ 犬がいます (animals and people take います)",
+        "× 車がいます → ○ 車があります (things that do not move by themselves take あります)",
+        "× 妹はいます (introducing her) → ○ 妹がいます (a thing mentioned for the first time takes が)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-033",
+        "g-n5-035",
+        "g-n5-036"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-033",
+      "pattern": "NにNがあります / います",
+      "meaning": "there is … in/at … (location of existence)",
+      "formation": [
+        "Place + に + N + があります: 机の上に本があります",
+        "Place + に + N + がいます: 公園に犬がいます",
+        "Position words with の: 机の上 · 駅の前 · かばんの中 · 家の近く",
+        "Questions: 何がありますか · 誰がいますか"
+      ],
+      "explanation": "To say where something exists, put the place first with に, then the thing with が, then あります or います: 机の上に本があります, 公園に犬がいます. Existence always takes に; で marks where an action happens (Station 6), so 公園で犬がいます is wrong. Position words such as 上, 下, 中, 前, 後ろ and 隣 attach to the place with の: 駅の前に. To ask, use 何がありますか for things and 誰がいますか for people. This order introduces something new; when the thing is already known, see NはNにあります (g-n5-036).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{机|つくえ}の{上|うえ}に{本|ほん}があります。",
+          "kana": "つくえのうえにほんがあります。",
+          "en": "There's a book on the desk."
+        },
+        {
+          "ja": "{公園|こうえん}に{犬|いぬ}がいます。",
+          "kana": "こうえんにいぬがいます。",
+          "en": "There's a dog in the park."
+        },
+        {
+          "ja": "{駅|えき}の{前|まえ}に{銀行|ぎんこう}があります。",
+          "kana": "えきのまえにぎんこうがあります。",
+          "en": "There's a bank in front of the station."
+        },
+        {
+          "ja": "{部屋|へや}に{誰|だれ}がいますか。",
+          "kana": "へやにだれがいますか。",
+          "en": "Who is in the room?"
+        },
+        {
+          "ja": "かばんの{中|なか}に{何|なに}がありますか。",
+          "kana": "かばんのなかになにがありますか。",
+          "en": "What's in the bag?"
+        }
+      ],
+      "clozeHints": [
+        "上に",
+        "前に",
+        "中に",
+        "がいます"
+      ],
+      "mistakes": [
+        "× 机の上で本があります → ○ 机の上に本があります (existence takes に; で marks where an action happens)",
+        "× 公園が犬にいます → ○ 公園に犬がいます (place に, thing が)",
+        "× 机の上に本がいます → ○ 机の上に本があります (books do not move by themselves: あります)"
+      ],
+      "related": [
+        "g-n5-013",
+        "g-n5-019",
+        "g-n5-032",
+        "g-n5-036"
+      ],
+      "tags": [
+        "position"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-034",
+      "pattern": "〜つ / 〜人 / 〜枚 / 〜本",
+      "meaning": "one, two, three … (counting things and people)",
+      "formation": [
+        "〜つ (general things): ひとつ ふたつ みっつ よっつ いつつ むっつ ななつ やっつ ここのつ とお",
+        "〜人 (people): ひとり ふたり さんにん よにん ごにん ろくにん しちにん はちにん きゅうにん じゅうにん",
+        "〜枚 (flat things): いちまい にまい さんまい よんまい ごまい ろくまい ななまい はちまい きゅうまい じゅうまい",
+        "〜本 (long thin things): いっぽん にほん さんぼん よんほん ごほん ろっぽん ななほん はっぽん きゅうほん じゅっぽん",
+        "Word order: N + を/が + number-counter + verb: りんごを三つ買いました",
+        "Question words: いくつ · 何人 · 何枚 · 何本"
+      ],
+      "explanation": "Japanese counts with a counter after the number. 〜つ counts things with no special counter and uses native numbers from one to ten (ひとつ … とお); from eleven you just say the number. 〜人 counts people — ひとり and ふたり are irregular, then さんにん, よにん and so on. 〜枚 counts flat things: paper, tickets, shirts. 〜本 counts long thin things — pens, bottles, umbrellas — and changes sound at 1, 3, 6, 8 and 10 (いっぽん, さんぼん, ろっぽん, はっぽん, じゅっぽん). The number plus counter normally sits after the particle, right before the verb: りんごを三つ買いました. Ask with いくつ, 何人, 何枚 and 何本.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "りんごを{三|みっ}つ{買|か}いました。",
+          "kana": "りんごをみっつかいました。",
+          "en": "I bought three apples."
+        },
+        {
+          "ja": "{教室|きょうしつ}に{学生|がくせい}が{五人|ごにん}います。",
+          "kana": "きょうしつにがくせいがごにんいます。",
+          "en": "There are five students in the classroom."
+        },
+        {
+          "ja": "{切符|きっぷ}が{二枚|にまい}あります。",
+          "kana": "きっぷがにまいあります。",
+          "en": "I have two tickets."
+        },
+        {
+          "ja": "ビールを{三本|さんぼん}{飲|の}みました。",
+          "kana": "ビールをさんぼんのみました。",
+          "en": "I drank three bottles of beer."
+        },
+        {
+          "ja": "{家族|かぞく}は{四人|よにん}です。",
+          "kana": "かぞくはよにんです。",
+          "en": "There are four people in my family."
+        }
+      ],
+      "clozeHints": [
+        "三つ",
+        "五人",
+        "二枚",
+        "三本",
+        "四人"
+      ],
+      "mistakes": [
+        "× さんほん → ○ さんぼん (本 changes sound after 1, 3, 6, 8 and 10)",
+        "× ににん → ○ ふたり (one and two people use ひとり and ふたり)",
+        "× りんごを三つを買いました → ○ りんごを三つ買いました (no particle after the number-counter)"
+      ],
+      "related": [
+        "g-n5-009",
+        "g-n5-018",
+        "g-n5-032",
+        "g-n5-043"
+      ],
+      "tags": [
+        "numbers",
+        "quantity",
+        "counter"
+      ],
+      "notes": "Productive target here: 〜つ 1–10, the others 1–5 plus the question word. The full tables live in the counter vocab entries.",
+      "station": 8
+    },
+    {
+      "id": "g-n5-035",
+      "pattern": "〜はありますか / 〜はいますか",
+      "meaning": "do you have …?; is there …?",
+      "formation": [
+        "N (thing) + はありますか: 英語のメニューはありますか",
+        "N (person, animal) + はいますか: 田中さんはいますか",
+        "Answers: はい、あります · いいえ、ありません",
+        "Softer: N + はありませんか"
+      ],
+      "explanation": "When you ask whether something exists or is available — in a shop, at a station, on the phone — the thing you ask about is the topic, so it takes は: メニューはありますか, 田中さんはいますか. Use ありますか for things and いますか for people and animals. Typical answers are はい、あります and すみません、ありません. Asking in the negative, 〜はありませんか, sounds a little softer and more hopeful. Remember the particle switch: が introduces something new (g-n5-032); は asks about a specific thing you already have in mind.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{英語|えいご}のメニューはありますか。",
+          "kana": "えいごのメニューはありますか。",
+          "en": "Do you have an English menu?"
+        },
+        {
+          "ja": "この{近|ちか}くにコンビニはありますか。",
+          "kana": "このちかくにコンビニはありますか。",
+          "en": "Is there a convenience store near here?"
+        },
+        {
+          "ja": "{田中|たなか}さんはいますか。",
+          "kana": "たなかさんはいますか。",
+          "en": "Is Tanaka-san in?"
+        },
+        {
+          "ja": "{今日|きょう}、{時間|じかん}はありますか。",
+          "kana": "きょう、じかんはありますか。",
+          "en": "Do you have time today?"
+        }
+      ],
+      "clozeHints": [
+        "はありますか",
+        "はいますか"
+      ],
+      "mistakes": [
+        "× 田中さんはありますか → ○ 田中さんはいますか (people take います)",
+        "× メニューがありますか (asking a waiter) → ○ メニューはありますか (the thing you ask about is the topic: は)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-003",
+        "g-n5-032",
+        "g-n5-036"
+      ],
+      "tags": [
+        "shopping",
+        "communication"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-036",
+      "pattern": "NはNにあります / います",
+      "meaning": "… is in/at … (location of a known thing)",
+      "formation": [
+        "N (known thing) + は + place + にあります: トイレは二階にあります",
+        "N (person, animal) + は + place + にいます: 父は台所にいます",
+        "Question: N + はどこにありますか · N + はどこにいますか",
+        "Compare NにNがあります (g-n5-033): place first, new thing with が"
+      ],
+      "explanation": "Use this order when the listener already knows the thing and wants to know where it is: the known thing is the topic with は, the place takes に, and the verb is あります for things or います for people and animals: トイレは二階にあります, 父は台所にいます. Compare 机の上に本があります (introducing the book) with 本は机の上にあります (telling where the book is) — same facts, different focus. To ask, say Nはどこにありますか or Nはどこにいますか; the shorter Nはどこですか (Station 5) also works for places and objects.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "トイレは{二階|にかい}にあります。",
+          "kana": "トイレはにかいにあります。",
+          "en": "The restroom is on the second floor."
+        },
+        {
+          "ja": "{父|ちち}は{今|いま}、{台所|だいどころ}にいます。",
+          "kana": "ちちはいま、だいどころにいます。",
+          "en": "My father is in the kitchen right now."
+        },
+        {
+          "ja": "{駅|えき}は{町|まち}の{北|きた}にあります。",
+          "kana": "えきはまちのきたにあります。",
+          "en": "The station is in the north of town."
+        },
+        {
+          "ja": "ケンは{今|いま}どこにいますか。",
+          "kana": "ケンはいまどこにいますか。",
+          "en": "Where is Ken right now?"
+        }
+      ],
+      "clozeHints": [
+        "にあります",
+        "にいます"
+      ],
+      "mistakes": [
+        "× 本は机の上があります → ○ 本は机の上にあります (the place needs に)",
+        "× トイレがどこにありますか → ○ トイレはどこにありますか (the thing you are looking for is the topic: は)",
+        "× 父は台所にあります → ○ 父は台所にいます (people take います)"
+      ],
+      "related": [
+        "g-n5-013",
+        "g-n5-032",
+        "g-n5-033",
+        "g-n5-035"
+      ],
+      "tags": [
+        "position"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-037",
+      "pattern": "〜も〜も",
+      "meaning": "both … and …; neither … nor …",
+      "formation": [
+        "N も N も + positive: 肉も魚も食べます (both)",
+        "N も N も + negative: 肉も魚も食べません (neither)",
+        "も replaces は・が・を: 父も母も先生です",
+        "After に・で・へ, add も: 東京にも京都にも"
+      ],
+      "explanation": "Put も after each of two or more nouns to say 'both … and …' with a positive verb, or 'neither … nor …' with a negative: 父も母も先生です, 肉も魚も食べません. も replaces は, が and を completely — do not keep them. After に, で or へ, も is added on top: 東京にも京都にも行きました. Do not add と between the nouns; も does the linking by itself. You already know single も meaning 'also' (Station 4); this pattern simply doubles it.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{父|ちち}も{母|はは}も{先生|せんせい}です。",
+          "kana": "ちちもははもせんせいです。",
+          "en": "Both my father and my mother are teachers."
+        },
+        {
+          "ja": "{肉|にく}も{魚|さかな}も{食|た}べません。",
+          "kana": "にくもさかなもたべません。",
+          "en": "I eat neither meat nor fish."
+        },
+        {
+          "ja": "{土曜日|どようび}も{日曜日|にちようび}も{仕事|しごと}です。",
+          "kana": "どようびもにちようびもしごとです。",
+          "en": "I work both Saturday and Sunday."
+        },
+        {
+          "ja": "{東京|とうきょう}にも{京都|きょうと}にも{友達|ともだち}がいます。",
+          "kana": "とうきょうにもきょうとにもともだちがいます。",
+          "en": "I have friends in both Tokyo and Kyoto."
+        }
+      ],
+      "clozeHints": [
+        "も"
+      ],
+      "mistakes": [
+        "× 父もと母も → ○ 父も母も (も links the nouns by itself; no と)",
+        "× 肉をも魚をも食べません → ○ 肉も魚も食べません (も replaces を, は and が)"
+      ],
+      "related": [
+        "g-n5-004",
+        "g-n5-016",
+        "g-n5-038"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-038",
+      "pattern": "Nだけ",
+      "meaning": "only …; just …",
+      "formation": [
+        "N + だけ: 水だけ · コーヒーだけ飲みます",
+        "Number + counter + だけ: 一つだけ · 一人だけ",
+        "N + だけ + です: 休みは日曜日だけです",
+        "After に・で, だけ follows the particle: 東京にだけあります"
+      ],
+      "explanation": "だけ means 'only' or 'just' and sits right after the noun or number it limits: 水だけ, 一人だけ. It usually replaces は, が and を — コーヒーだけ飲みます — while time words stand alone and place words keep their own particle: 日曜日だけ休みです, 東京にだけあります. だけ is neutral: it states a limit without complaining that it is too little. At N4 you will meet しか〜ない, which adds that feeling of 'no more than'. Before です it works like a noun: 休みは日曜日だけです.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}はコーヒーだけ{飲|の}みます。",
+          "kana": "あさはコーヒーだけのみます。",
+          "en": "In the morning I just drink coffee."
+        },
+        {
+          "ja": "{休|やす}みは{日曜日|にちようび}だけです。",
+          "kana": "やすみはにちようびだけです。",
+          "en": "My only day off is Sunday."
+        },
+        {
+          "ja": "{教室|きょうしつ}に{学生|がくせい}が{一人|ひとり}だけいます。",
+          "kana": "きょうしつにがくせいがひとりだけいます。",
+          "en": "There's only one student in the classroom."
+        },
+        {
+          "ja": "{漢字|かんじ}は{少|すこ}しだけ{分|わ}かります。",
+          "kana": "かんじはすこしだけわかります。",
+          "en": "I understand just a little kanji."
+        }
+      ],
+      "clozeHints": [
+        "だけ"
+      ],
+      "mistakes": [
+        "× コーヒーをだけ飲みます → ○ コーヒーだけ飲みます (だけ replaces を)",
+        "× だけコーヒー飲みます → ○ コーヒーだけ飲みます (だけ follows the noun it limits)"
+      ],
+      "related": [
+        "g-n5-004",
+        "g-n5-034",
+        "g-n5-037"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 8
+    },
+    {
+      "id": "g-n5-039",
+      "pattern": "〜ましょう",
+      "meaning": "let's …",
+      "formation": [
+        "V-ます stem + ましょう: 行きます → 行きましょう",
+        "Group 1: 飲みます → 飲みましょう · 帰ります → 帰りましょう",
+        "Group 2: 食べます → 食べましょう · 見ます → 見ましょう",
+        "Irregular: します → しましょう · 来ます → 来ましょう",
+        "Accepting an invitation: ええ、行きましょう"
+      ],
+      "explanation": "〜ましょう means 'let's …'. Take the ます form, drop ます and add ましょう: 行きます → 行きましょう, 食べます → 食べましょう, します → しましょう. Use it to propose doing something together when you expect the other person to agree, or to accept an invitation: ええ、行きましょう. It is also the natural reply to 〜ませんか. Because it assumes agreement, it can sound pushy with people you do not know well — then invite with 〜ませんか instead. 〜ましょうか, for offering help, comes at Station 10.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{駅|えき}まで{一緒|いっしょ}に{歩|ある}きましょう。",
+          "kana": "えきまでいっしょにあるきましょう。",
+          "en": "Let's walk to the station together."
+        },
+        {
+          "ja": "{少|すこ}し{休|やす}みましょう。",
+          "kana": "すこしやすみましょう。",
+          "en": "Let's take a short break."
+        },
+        {
+          "ja": "{来週|らいしゅう}、また{会|あ}いましょう。",
+          "kana": "らいしゅう、またあいましょう。",
+          "en": "Let's meet again next week."
+        },
+        {
+          "ja": "「{映画|えいが}を{見|み}ませんか。」「ええ、{見|み}ましょう。」",
+          "kana": "「えいがをみませんか。」「ええ、みましょう。」",
+          "en": "“Shall we see a movie?” “Yes, let's.”"
+        }
+      ],
+      "clozeHints": [
+        "ましょう"
+      ],
+      "mistakes": [
+        "× 行くましょう → ○ 行きましょう (attach ましょう to the ます stem)",
+        "× 行きますましょう → ○ 行きましょう (ましょう replaces ます)",
+        "× 食べましょう (to someone you barely know) → ○ 食べませんか (ましょう assumes agreement; ませんか leaves room to decline)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-040",
+        "g-n5-053"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "unlocksForms": [
+        "masho"
+      ],
+      "station": 9
+    },
+    {
+      "id": "g-n5-040",
+      "pattern": "〜ませんか",
+      "meaning": "won't you …?; would you like to …?",
+      "formation": [
+        "V-ます stem + ませんか: 行きます → 行きませんか",
+        "Group 1: 飲みます → 飲みませんか · 会います → 会いませんか",
+        "Group 2: 食べます → 食べませんか · 見ます → 見ませんか",
+        "Irregular: します → しませんか · 来ます → 来ませんか",
+        "Accept: ええ、いいですね · Decline: すみません、ちょっと…"
+      ],
+      "explanation": "〜ませんか invites someone to do something and leaves room for a no: 一緒に食べませんか (would you like to eat together?). Form it from the ます stem: 行きます → 行きませんか, 見ます → 見ませんか, します → しませんか. It looks like a negative question, and in context it can be one (食べませんか = aren't you eating?), but as an invitation it is more polite than ましょう because it does not assume agreement. Accept with いいですね or 〜ましょう; decline softly with すみません、ちょっと… rather than a blunt いいえ.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{一緒|いっしょ}に{昼|ひる}ごはんを{食|た}べませんか。",
+          "kana": "いっしょにひるごはんをたべませんか。",
+          "en": "Would you like to have lunch together?"
+        },
+        {
+          "ja": "{日曜日|にちようび}、{海|うみ}に{行|い}きませんか。",
+          "kana": "にちようび、うみにいきませんか。",
+          "en": "How about going to the beach on Sunday?"
+        },
+        {
+          "ja": "ちょっとお{茶|ちゃ}を{飲|の}みませんか。",
+          "kana": "ちょっとおちゃをのみませんか。",
+          "en": "Would you like to get some tea?"
+        },
+        {
+          "ja": "{今度|こんど}、うちに{来|き}ませんか。",
+          "kana": "こんど、うちにきませんか。",
+          "en": "Would you like to come over sometime?"
+        }
+      ],
+      "clozeHints": [
+        "ませんか"
+      ],
+      "mistakes": [
+        "× 行きますか (as an invitation) → ○ 行きませんか (行きますか only asks about plans; ませんか invites)",
+        "× 食べるませんか → ○ 食べませんか (attach ませんか to the ます stem)",
+        "× いいえ、行きません (declining an invitation) → ○ すみません、ちょっと… (a flat refusal sounds harsh)"
+      ],
+      "related": [
+        "g-n5-003",
+        "g-n5-017",
+        "g-n5-039"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 9
+    },
+    {
+      "id": "g-n5-041",
+      "pattern": "〜たいです",
+      "meaning": "want to …",
+      "formation": [
+        "V-ます stem + たいです: 行きます → 行きたいです",
+        "Group 1: 飲みます → 飲みたいです · 買います → 買いたいです",
+        "Group 2: 食べます → 食べたいです · 見ます → 見たいです",
+        "Irregular: します → したいです · 来ます → 来たいです",
+        "Object with が or を: 水が飲みたいです · 水を飲みたいです"
+      ],
+      "explanation": "〜たいです means 'want to …'. Drop ます from the ます form and add たいです: 行きます → 行きたいです, 食べます → 食べたいです, します → したいです. After たい the verb behaves like an い-adjective, so です follows directly and the negative and past follow adjective rules (g-n5-042). The object can take が or を: 水が飲みたいです, 水を飲みたいです. たい is for your own wishes; asking a customer or a superior 〜たいですか sounds intrusive, so invite with 〜ませんか or いかがですか instead. For other people's wishes you will later use 〜たがっています.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{日本|にほん}に{行|い}きたいです。",
+          "kana": "らいねん、にほんにいきたいです。",
+          "en": "I want to go to Japan next year."
+        },
+        {
+          "ja": "{今日|きょう}は{魚|さかな}が{食|た}べたいです。",
+          "kana": "きょうはさかながたべたいです。",
+          "en": "I feel like eating fish today."
+        },
+        {
+          "ja": "{日曜日|にちようび}は{何|なに}がしたいですか。",
+          "kana": "にちようびはなにがしたいですか。",
+          "en": "What do you want to do on Sunday?"
+        },
+        {
+          "ja": "{新|あたら}しいカメラを{買|か}いたいです。",
+          "kana": "あたらしいカメラをかいたいです。",
+          "en": "I want to buy a new camera."
+        }
+      ],
+      "clozeHints": [
+        "たいです"
+      ],
+      "mistakes": [
+        "× 行くたいです → ○ 行きたいです (たい attaches to the ます stem)",
+        "× 食べたいでした → ○ 食べたかったです (たい conjugates like an い-adjective)",
+        "× 先生は休みたいです → ○ 先生は休みたがっています (たい states your own wish; for others use たがる or report their words)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-042",
+        "g-n5-044",
+        "g-n5-045"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "unlocksForms": [
+        "tai"
+      ],
+      "station": 9
+    },
+    {
+      "id": "g-n5-042",
+      "pattern": "〜たくないです / 〜たかったです",
+      "meaning": "don't want to …; wanted to …",
+      "formation": [
+        "V-ます stem + たくないです (negative): 行きたくないです",
+        "V-ます stem + たかったです (past): 行きたかったです",
+        "V-ます stem + たくなかったです (past negative): 行きたくなかったです",
+        "Same endings as an い-adjective: 高くない · 高かった · 高くなかった"
+      ],
+      "explanation": "Because たい works like an い-adjective, its negative and past follow adjective endings. Not wanting to: drop い and add くないです — 行きたくないです. Wanted to: 〜たかったです — 行きたかったです. Did not want to: 〜たくなかったです — 行きたくなかったです. Never say たいじゃないです or たいでした. These are the same endings you use on 高い (高くない, 高かった, 高くなかった), so learning them here prepares you for every い-adjective. Keep them for your own feelings, or for asking friends about theirs.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{雨|あめ}の{日|ひ}は{出|で}かけたくないです。",
+          "kana": "あめのひはでかけたくないです。",
+          "en": "On rainy days I don't want to go out."
+        },
+        {
+          "ja": "{昨日|きのう}はもっと{寝|ね}たかったです。",
+          "kana": "きのうはもっとねたかったです。",
+          "en": "I wanted to sleep more yesterday."
+        },
+        {
+          "ja": "{本当|ほんとう}は{仕事|しごと}に{行|い}きたくなかったです。",
+          "kana": "ほんとうはしごとにいきたくなかったです。",
+          "en": "Honestly, I didn't want to go to work."
+        },
+        {
+          "ja": "{京都|きょうと}でお{寺|てら}が{見|み}たかったです。",
+          "kana": "きょうとでおてらがみたかったです。",
+          "en": "I wanted to see temples in Kyoto."
+        }
+      ],
+      "clozeHints": [
+        "たくないです",
+        "たかったです",
+        "たくなかったです"
+      ],
+      "mistakes": [
+        "× 行きたいじゃないです → ○ 行きたくないです (たい is like an い-adjective: たくない)",
+        "× 行きたいでした → ○ 行きたかったです (the past of たい is たかった)",
+        "× 行きたくないでした → ○ 行きたくなかったです (the past negative is たくなかった)"
+      ],
+      "related": [
+        "g-n5-026",
+        "g-n5-041",
+        "g-n5-068"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "unlocksForms": [
+        "adj-past",
+        "adj-past-neg"
+      ],
+      "station": 9
+    },
+    {
+      "id": "g-n5-043",
+      "pattern": "Nをください",
+      "meaning": "please give me …; … please",
+      "formation": [
+        "N + をください: 水をください",
+        "これ・それ・あれ + をください: これをください",
+        "N + を + number-counter + ください: コーヒーを二つください",
+        "Softer: N + をお願いします"
+      ],
+      "explanation": "Nをください means 'please give me N' and is the standard way to order or ask for a thing: 水をください, これをください. The object takes を. To say how many, put the number and counter between を and ください with no extra particle: コーヒーを二つください. Nをお願いします is a slightly softer alternative, and in casual speech people say ちょうだい. Use ください only for things; to ask someone to do something, you need the て-form, Vてください (Station 10).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "すみません、{水|みず}をください。",
+          "kana": "すみません、みずをください。",
+          "en": "Excuse me, could I have some water?"
+        },
+        {
+          "ja": "この{赤|あか}いのをください。",
+          "kana": "このあかいのをください。",
+          "en": "I'll take this red one, please."
+        },
+        {
+          "ja": "コーヒーを{二|ふた}つください。",
+          "kana": "コーヒーをふたつください。",
+          "en": "Two coffees, please."
+        },
+        {
+          "ja": "{切手|きって}を{三枚|さんまい}ください。",
+          "kana": "きってをさんまいください。",
+          "en": "Three stamps, please."
+        }
+      ],
+      "clozeHints": [
+        "をください",
+        "ください"
+      ],
+      "mistakes": [
+        "× 水がください → ○ 水をください (ください takes を)",
+        "× 水を二つをください → ○ 水を二つください (no particle after the number-counter)",
+        "× 書くをください → ○ 書いてください (for actions use the て-form + ください)"
+      ],
+      "related": [
+        "g-n5-005",
+        "g-n5-018",
+        "g-n5-034",
+        "g-n5-047"
+      ],
+      "tags": [
+        "shopping",
+        "communication"
+      ],
+      "station": 9
+    },
+    {
+      "id": "g-n5-044",
+      "pattern": "Nが好きです / 嫌いです / 上手です / 下手です",
+      "meaning": "like …; dislike …; be good at …; be bad at …",
+      "formation": [
+        "N + が好きです / が嫌いです: 猫が好きです",
+        "N + が上手です / が下手です: 料理が上手です",
+        "Stronger: 大好きです · 大嫌いです",
+        "Negative: 好きじゃないです (softer than 嫌いです)",
+        "Question: 何が好きですか · どんな音楽が好きですか"
+      ],
+      "explanation": "好き (like), 嫌い (dislike), 上手 (good at) and 下手 (bad at) are な-adjectives, and the thing you like or are good at takes が, not を: 猫が好きです, 料理が上手です. Strengthen with 大: 大好きです, 大嫌いです. 嫌いです is blunt; あまり好きじゃないです is the polite way to say you are not keen. 上手 is praise for other people — said about yourself it sounds boastful, so use 下手です or 好きです instead. Ask with 何が好きですか or どんな音楽が好きですか.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{私|わたし}は{甘|あま}いものが{好|す}きです。",
+          "kana": "わたしはあまいものがすきです。",
+          "en": "I like sweet things."
+        },
+        {
+          "ja": "{兄|あに}は{野菜|やさい}が{嫌|きら}いです。",
+          "kana": "あにはやさいがきらいです。",
+          "en": "My older brother dislikes vegetables."
+        },
+        {
+          "ja": "{田中|たなか}さんは{料理|りょうり}が{上手|じょうず}です。",
+          "kana": "たなかさんはりょうりがじょうずです。",
+          "en": "Tanaka-san is a good cook."
+        },
+        {
+          "ja": "{私|わたし}は{歌|うた}が{下手|へた}です。",
+          "kana": "わたしはうたがへたです。",
+          "en": "I'm a bad singer."
+        },
+        {
+          "ja": "どんな{音楽|おんがく}が{好|す}きですか。",
+          "kana": "どんなおんがくがすきですか。",
+          "en": "What kind of music do you like?"
+        }
+      ],
+      "clozeHints": [
+        "が好きです",
+        "が嫌いです",
+        "が上手です",
+        "が下手です"
+      ],
+      "mistakes": [
+        "× 猫を好きです → ○ 猫が好きです (好き takes が, not を)",
+        "× 私はテニスが上手です → ○ 私はテニスが好きです (上手 is praise for others; about yourself it sounds boastful)",
+        "× 好きいです → ○ 好きです (好き is a な-adjective; no extra い)"
+      ],
+      "related": [
+        "g-n5-025",
+        "g-n5-029",
+        "g-n5-045",
+        "g-n5-082"
+      ],
+      "tags": [
+        "emotions",
+        "hobbies"
+      ],
+      "notes": "得意 / 苦手 (N4) are the usual words for your own strengths and weaknesses; 上手 stays reserved for others.",
+      "station": 9
+    },
+    {
+      "id": "g-n5-045",
+      "pattern": "Nがほしいです",
+      "meaning": "want … (a thing)",
+      "formation": [
+        "N + がほしいです: 新しい靴がほしいです",
+        "Negative: ほしくないです · Past: ほしかったです · Past negative: ほしくなかったです",
+        "Question: 何がほしいですか",
+        "ほしい is an い-adjective; for actions use V-たいです"
+      ],
+      "explanation": "Nがほしいです means you want a thing. The thing takes が: 新しい靴がほしいです. ほしい is an い-adjective, so its negative is ほしくないです and its past is ほしかったです. Use it for your own wishes or to ask friends — 何がほしいですか to a customer or a superior sounds blunt, so shops phrase it differently. ほしい is for objects; for an action you want to do, use V-たいです (g-n5-041). For someone else's wishes you will later use 〜をほしがっています. It is usually written in kana, though you may see 欲しい.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{大|おお}きいかばんがほしいです。",
+          "kana": "おおきいかばんがほしいです。",
+          "en": "I want a big bag."
+        },
+        {
+          "ja": "{誕生日|たんじょうび}に{何|なに}がほしいですか。",
+          "kana": "たんじょうびになにがほしいですか。",
+          "en": "What do you want for your birthday?"
+        },
+        {
+          "ja": "{車|くるま}はあまりほしくないです。",
+          "kana": "くるまはあまりほしくないです。",
+          "en": "I don't really want a car."
+        },
+        {
+          "ja": "{去年|きょねん}は{新|あたら}しい{自転車|じてんしゃ}がほしかったです。",
+          "kana": "きょねんはあたらしいじてんしゃがほしかったです。",
+          "en": "Last year I wanted a new bicycle."
+        }
+      ],
+      "clozeHints": [
+        "がほしいです",
+        "ほしくないです",
+        "がほしかったです"
+      ],
+      "mistakes": [
+        "× 車をほしいです → ○ 車がほしいです (ほしい takes が)",
+        "× 食べるがほしいです → ○ 食べたいです (for an action use V-たいです)",
+        "× ほしいじゃないです → ○ ほしくないです (ほしい is an い-adjective)"
+      ],
+      "related": [
+        "g-n5-026",
+        "g-n5-041",
+        "g-n5-044"
+      ],
+      "tags": [
+        "emotions",
+        "shopping"
+      ],
+      "notes": "欲しい has a kanji spelling, but kana dominates in everyday writing; the app shows kana.",
+      "station": 9
+    }
+  ]
+}

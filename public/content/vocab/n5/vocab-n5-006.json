@@ -1,0 +1,4326 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n5",
+  "writer": "vocab-n5-006",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n5-0671",
+      "word": "とても",
+      "kana": "とても",
+      "meanings": [
+        "very"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0754"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}のパンはとてもおいしいです。",
+          "kana": "このみせのパンはとてもおいしいです。",
+          "en": "The bread at this shop is very good."
+        },
+        {
+          "ja": "{昨日|きのう}の{映画|えいが}はとても{面白|おもしろ}かったです。",
+          "kana": "きのうのえいがはとてもおもしろかったです。",
+          "en": "Yesterday’s movie was really interesting."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0672",
+      "word": "あまり",
+      "kana": "あまり",
+      "meanings": [
+        "not very",
+        "not much"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Takes a negative: あまり好きじゃない (I don’t like it much). Positive use (あまりに, too much) is N3.",
+      "confusables": [
+        "v-n5-0682"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}はあまり{寒|さむ}くないですね。",
+          "kana": "きょうはあまりさむくないですね。",
+          "en": "It’s not very cold today, is it?"
+        },
+        {
+          "ja": "ケンはあまりテレビを{見|み}ません。",
+          "kana": "ケンはあまりテレビをみません。",
+          "en": "Ken doesn’t watch much TV."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0673",
+      "word": "たくさん",
+      "kana": "たくさん",
+      "meanings": [
+        "a lot",
+        "many"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "沢山"
+      ],
+      "confusables": [
+        "v-n5-0755"
+      ],
+      "examples": [
+        {
+          "ja": "{公園|こうえん}に{人|ひと}がたくさんいます。",
+          "kana": "こうえんにひとがたくさんいます。",
+          "en": "There are a lot of people in the park."
+        },
+        {
+          "ja": "{昨日|きのう}はたくさん{寿司|すし}を{食|た}べた。",
+          "kana": "きのうはたくさんすしをたべた。",
+          "en": "I ate a lot of sushi yesterday."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0674",
+      "word": "少し",
+      "kana": "すこし",
+      "meanings": [
+        "a little",
+        "a bit"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0675"
+      ],
+      "examples": [
+        {
+          "ja": "{日本語|にほんご}が{少|すこ}し{分|わ}かります。",
+          "kana": "にほんごがすこしわかります。",
+          "en": "I understand a little Japanese."
+        },
+        {
+          "ja": "{塩|しお}を{少|すこ}し{入|い}れました。",
+          "kana": "しおをすこしいれました。",
+          "en": "I added a little salt."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0675",
+      "word": "ちょっと",
+      "kana": "ちょっと",
+      "meanings": [
+        "a little",
+        "a moment"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "More conversational than 少し. Alone, ちょっと… is a soft refusal (that’s a bit difficult).",
+      "confusables": [
+        "v-n5-0674"
+      ],
+      "examples": [
+        {
+          "ja": "ちょっと{待|ま}って、{今|いま}{行|い}く。",
+          "kana": "ちょっとまって、いまいく。",
+          "en": "Wait a sec, I’m coming now."
+        },
+        {
+          "ja": "この{靴|くつ}はちょっと{大|おお}きいです。",
+          "kana": "このくつはちょっとおおきいです。",
+          "en": "These shoes are a bit big."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0676",
+      "word": "もう",
+      "kana": "もう",
+      "meanings": [
+        "already",
+        "another",
+        "no longer"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "quantity"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "もう + past = already (もう食べた); もう + quantity = another (もう一つ); もう + negative = no longer.",
+      "confusables": [
+        "v-n5-0677"
+      ],
+      "examples": [
+        {
+          "ja": "もう{昼|ひる}ご{飯|はん}を{食|た}べましたか。",
+          "kana": "もうひるごはんをたべましたか。",
+          "en": "Have you already eaten lunch?"
+        },
+        {
+          "ja": "もう{十一時|じゅういちじ}だから、{寝|ね}る。",
+          "kana": "もうじゅういちじだから、ねる。",
+          "en": "It’s already eleven, so I’m going to bed."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0677",
+      "word": "まだ",
+      "kana": "まだ",
+      "meanings": [
+        "still",
+        "not yet"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0676"
+      ],
+      "examples": [
+        {
+          "ja": "{宿題|しゅくだい}はまだ{終|お}わっていません。",
+          "kana": "しゅくだいはまだおわっていません。",
+          "en": "I haven’t finished my homework yet."
+        },
+        {
+          "ja": "{外|そと}はまだ{明|あか}るいね。",
+          "kana": "そとはまだあかるいね。",
+          "en": "It’s still light outside, isn’t it?"
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0678",
+      "word": "いつも",
+      "kana": "いつも",
+      "meanings": [
+        "always",
+        "usually"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0679",
+        "v-n5-0762"
+      ],
+      "examples": [
+        {
+          "ja": "いつも{七時|しちじ}に{起|お}きます。",
+          "kana": "いつもしちじにおきます。",
+          "en": "I always get up at seven."
+        },
+        {
+          "ja": "{父|ちち}はいつも{新聞|しんぶん}を{読|よ}んでいます。",
+          "kana": "ちちはいつもしんぶんをよんでいます。",
+          "en": "My father is always reading the newspaper."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0679",
+      "word": "時々",
+      "kana": "ときどき",
+      "meanings": [
+        "sometimes"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0678",
+        "v-n5-0680"
+      ],
+      "examples": [
+        {
+          "ja": "{時々|ときどき}{映画|えいが}を{見|み}に{行|い}きます。",
+          "kana": "ときどきえいがをみにいきます。",
+          "en": "I sometimes go to see movies."
+        },
+        {
+          "ja": "{去年|きょねん}は{時々|ときどき}{海|うみ}で{泳|およ}ぎました。",
+          "kana": "きょねんはときどきうみでおよぎました。",
+          "en": "Last year I sometimes swam in the sea."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0680",
+      "word": "よく",
+      "kana": "よく",
+      "meanings": [
+        "often",
+        "well"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "states"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Frequency (よく行く, often go) or quality (よく分かる, understand well).",
+      "confusables": [
+        "v-n5-0679"
+      ],
+      "examples": [
+        {
+          "ja": "ケンはよく{図書館|としょかん}で{勉強|べんきょう}する。",
+          "kana": "ケンはよくとしょかんでべんきょうする。",
+          "en": "Ken often studies at the library."
+        },
+        {
+          "ja": "{子供|こども}の{時|とき}、よくこの{川|かわ}で{遊|あそ}びました。",
+          "kana": "こどものとき、よくこのかわであそびました。",
+          "en": "When I was a child, I often played in this river."
+        }
+      ],
+      "station": 13
+    },
+    {
+      "id": "v-n5-0681",
+      "word": "全部",
+      "kana": "ぜんぶ",
+      "meanings": [
+        "all",
+        "everything"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "collocations": [
+        "全部で",
+        "全部食べる"
+      ],
+      "examples": [
+        {
+          "ja": "ケーキを{全部|ぜんぶ}{食|た}べた。",
+          "kana": "ケーキをぜんぶたべた。",
+          "en": "I ate all the cake."
+        },
+        {
+          "ja": "{荷物|にもつ}は{全部|ぜんぶ}ここにあります。",
+          "kana": "にもつはぜんぶここにあります。",
+          "en": "All the luggage is here."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0682",
+      "word": "全然",
+      "kana": "ぜんぜん",
+      "meanings": [
+        "not at all"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Takes a negative: 全然分からない. Casual 全然大丈夫 (totally fine) is common in speech but informal.",
+      "confusables": [
+        "v-n5-0672"
+      ],
+      "examples": [
+        {
+          "ja": "{英語|えいご}が{全然|ぜんぜん}{分|わ}からない。",
+          "kana": "えいごがぜんぜんわからない。",
+          "en": "I don’t understand English at all."
+        },
+        {
+          "ja": "{昨日|きのう}は{全然|ぜんぜん}{寝|ね}ませんでした。",
+          "kana": "きのうはぜんぜんねませんでした。",
+          "en": "I didn’t sleep at all yesterday."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0683",
+      "word": "一緒に",
+      "kana": "いっしょに",
+      "meanings": [
+        "together"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "一緒に行く",
+        "一緒に食べる"
+      ],
+      "examples": [
+        {
+          "ja": "{一緒|いっしょ}に{昼|ひる}ご{飯|はん}を{食|た}べませんか。",
+          "kana": "いっしょにひるごはんをたべませんか。",
+          "en": "Won’t you have lunch with me?"
+        },
+        {
+          "ja": "{日曜日|にちようび}、ケンと{一緒|いっしょ}に{映画|えいが}を{見|み}た。",
+          "kana": "にちようび、ケンといっしょにえいがをみた。",
+          "en": "On Sunday I watched a movie with Ken."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0684",
+      "word": "すぐ",
+      "kana": "すぐ",
+      "meanings": [
+        "right away",
+        "soon",
+        "immediately"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "usually-kana"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "altForms": [
+        "直ぐ"
+      ],
+      "confusables": [
+        "v-n5-0757"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}はすぐそこです。",
+          "kana": "えきはすぐそこです。",
+          "en": "The station is right over there."
+        },
+        {
+          "ja": "{田中|たなか}さんはすぐ{返事|へんじ}をくれました。",
+          "kana": "たなかさんはすぐへんじをくれました。",
+          "en": "Mr. Tanaka replied right away."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0685",
+      "word": "ゆっくり",
+      "kana": "ゆっくり",
+      "meanings": [
+        "slowly",
+        "leisurely"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "time",
+        "onomatopoeia"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "collocations": [
+        "ゆっくり話す",
+        "ゆっくり休む"
+      ],
+      "examples": [
+        {
+          "ja": "もう{少|すこ}しゆっくり{話|はな}してください。",
+          "kana": "もうすこしゆっくりはなしてください。",
+          "en": "Please speak a little more slowly."
+        },
+        {
+          "ja": "{日曜日|にちようび}は{家|いえ}でゆっくり{休|やす}んだ。",
+          "kana": "にちようびはいえでゆっくりやすんだ。",
+          "en": "On Sunday I took it easy at home."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0686",
+      "word": "また",
+      "kana": "また",
+      "meanings": [
+        "again",
+        "also"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "又"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}また{会|あ}いましょう。",
+          "kana": "らいしゅうまたあいましょう。",
+          "en": "Let’s meet again next week."
+        },
+        {
+          "ja": "{今日|きょう}もまた{雨|あめ}ですね。",
+          "kana": "きょうもまたあめですね。",
+          "en": "It’s raining again today, isn’t it?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0687",
+      "word": "もっと",
+      "kana": "もっと",
+      "meanings": [
+        "more"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "もっと{安|やす}いのはありますか。",
+          "kana": "もっとやすいのはありますか。",
+          "en": "Do you have a cheaper one?"
+        },
+        {
+          "ja": "もっと{日本語|にほんご}を{話|はな}したいです。",
+          "kana": "もっとにほんごをはなしたいです。",
+          "en": "I want to speak more Japanese."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0688",
+      "word": "本当に",
+      "kana": "ほんとうに",
+      "meanings": [
+        "really",
+        "truly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "In speech often shortened to ほんとに.",
+      "examples": [
+        {
+          "ja": "{本当|ほんとう}においしかった。ありがとう。",
+          "kana": "ほんとうにおいしかった。ありがとう。",
+          "en": "It was really delicious. Thank you."
+        },
+        {
+          "ja": "{今日|きょう}は{本当|ほんとう}に{暑|あつ}いですね。",
+          "kana": "きょうはほんとうにあついですね。",
+          "en": "It’s really hot today, isn’t it?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0689",
+      "word": "大体",
+      "kana": "だいたい",
+      "meanings": [
+        "roughly",
+        "mostly",
+        "about"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0762"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}は{大体|だいたい}{終|お}わりました。",
+          "kana": "しごとはだいたいおわりました。",
+          "en": "I’ve mostly finished my work."
+        },
+        {
+          "ja": "{毎朝|まいあさ}{大体|だいたい}{六時|ろくじ}に{起|お}きる。",
+          "kana": "まいあさだいたいろくじにおきる。",
+          "en": "I get up at about six every morning."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0690",
+      "word": "初めて",
+      "kana": "はじめて",
+      "meanings": [
+        "for the first time"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{初|はじ}めて{日本|にほん}に{来|き}ました。",
+          "kana": "はじめてにほんにきました。",
+          "en": "I came to Japan for the first time."
+        },
+        {
+          "ja": "{妹|いもうと}は{初|はじ}めて{一人|ひとり}で{電車|でんしゃ}に{乗|の}ります。",
+          "kana": "いもうとははじめてひとりででんしゃにのります。",
+          "en": "My little sister is riding the train alone for the first time."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0691",
+      "word": "そして",
+      "kana": "そして",
+      "meanings": [
+        "and then",
+        "and"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0693"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}まで{歩|ある}きます。そして{電車|でんしゃ}に{乗|の}ります。",
+          "kana": "えきまであるきます。そしてでんしゃにのります。",
+          "en": "I walk to the station. Then I get on the train."
+        },
+        {
+          "ja": "{朝|あさ}ご{飯|はん}を{食|た}べた。そして{会社|かいしゃ}へ{行|い}った。",
+          "kana": "あさごはんをたべた。そしてかいしゃへいった。",
+          "en": "I ate breakfast. And then I went to work."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0692",
+      "word": "でも",
+      "kana": "でも",
+      "meanings": [
+        "but",
+        "however"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0694",
+        "v-n5-0769"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}は{高|たか}い。でも、おいしい。",
+          "kana": "このみせはたかい。でも、おいしい。",
+          "en": "This shop is expensive. But it’s good."
+        },
+        {
+          "ja": "{雨|あめ}でした。でも、{楽|たの}しかったです。",
+          "kana": "あめでした。でも、たのしかったです。",
+          "en": "It rained. But it was fun."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0693",
+      "word": "それから",
+      "kana": "それから",
+      "meanings": [
+        "and then",
+        "after that"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0691"
+      ],
+      "examples": [
+        {
+          "ja": "{買|か}い{物|もの}をして、それから{帰|かえ}りました。",
+          "kana": "かいものをして、それからかえりました。",
+          "en": "I did some shopping, and then went home."
+        },
+        {
+          "ja": "{宿題|しゅくだい}をします。それからゲームをします。",
+          "kana": "しゅくだいをします。それからゲームをします。",
+          "en": "I’ll do my homework. After that, I’ll play games."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0694",
+      "word": "しかし",
+      "kana": "しかし",
+      "meanings": [
+        "however",
+        "but"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "notes": "Stiffer than でも; common in writing and speeches. In chat, でも is the default.",
+      "confusables": [
+        "v-n5-0692"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}でした。しかし、{出|で}かけました。",
+          "kana": "あめでした。しかし、でかけました。",
+          "en": "It was raining. However, I went out."
+        },
+        {
+          "ja": "この{店|みせ}は{安|やす}いです。しかし、{遠|とお}いです。",
+          "kana": "このみせはやすいです。しかし、とおいです。",
+          "en": "This shop is cheap. However, it’s far away."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0695",
+      "word": "じゃあ",
+      "kana": "じゃあ",
+      "meanings": [
+        "well then",
+        "in that case"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "altForms": [
+        "じゃ"
+      ],
+      "confusables": [
+        "v-n5-0696",
+        "v-n5-0772"
+      ],
+      "examples": [
+        {
+          "ja": "じゃあ、{何|なに}を{食|た}べる？",
+          "kana": "じゃあ、なにをたべる？",
+          "en": "Well then, what shall we eat?"
+        },
+        {
+          "ja": "じゃあ、{明日|あした}{三時|さんじ}に{駅|えき}で。",
+          "kana": "じゃあ、あしたさんじにえきで。",
+          "en": "Well then, at the station at three tomorrow."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0696",
+      "word": "では",
+      "kana": "では",
+      "meanings": [
+        "well then",
+        "in that case"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "polite"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Polite counterpart of じゃあ; also opens farewells (では、また).",
+      "confusables": [
+        "v-n5-0695",
+        "v-n5-0698"
+      ],
+      "examples": [
+        {
+          "ja": "では、{始|はじ}めましょう。",
+          "kana": "では、はじめましょう。",
+          "en": "Well then, let’s begin."
+        },
+        {
+          "ja": "では、{会議|かいぎ}はこれで{終|お}わります。",
+          "kana": "では、かいぎはこれでおわります。",
+          "en": "Well then, that’s the end of the meeting."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0697",
+      "word": "だから",
+      "kana": "だから",
+      "meanings": [
+        "so",
+        "that is why"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0767",
+        "v-n5-0768"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}はテストだ。だから{今日|きょう}は{勉強|べんきょう}する。",
+          "kana": "あしたはテストだ。だからきょうはべんきょうする。",
+          "en": "There’s a test tomorrow. So I’m studying today."
+        },
+        {
+          "ja": "{今日|きょう}は{寒|さむ}いです。だから{温|あたた}かいお{茶|ちゃ}を{飲|の}みます。",
+          "kana": "きょうはさむいです。だからあたたかいおちゃをのみます。",
+          "en": "It’s cold today. So I’ll drink some warm tea."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0698",
+      "word": "それでは",
+      "kana": "それでは",
+      "meanings": [
+        "well then",
+        "so then"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "polite"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0696"
+      ],
+      "examples": [
+        {
+          "ja": "それでは、{会議|かいぎ}を{始|はじ}めます。",
+          "kana": "それでは、かいぎをはじめます。",
+          "en": "Well then, let’s start the meeting."
+        },
+        {
+          "ja": "それでは、{今日|きょう}はここまでです。",
+          "kana": "それでは、きょうはここまでです。",
+          "en": "Well then, that’s all for today."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0699",
+      "word": "あのう",
+      "kana": "あのう",
+      "meanings": [
+        "um",
+        "excuse me"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Filler used to get attention or buy time before speaking.",
+      "altForms": [
+        "あの"
+      ],
+      "examples": [
+        {
+          "ja": "あのう、{駅|えき}はどこですか。",
+          "kana": "あのう、えきはどこですか。",
+          "en": "Um, where is the station?"
+        },
+        {
+          "ja": "あのう、ここに{座|すわ}ってもいいですか。",
+          "kana": "あのう、ここにすわってもいいですか。",
+          "en": "Um, may I sit here?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0700",
+      "word": "ええと",
+      "kana": "ええと",
+      "meanings": [
+        "um",
+        "let me see"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "えーと",
+        "えっと"
+      ],
+      "examples": [
+        {
+          "ja": "ええと、{三時|さんじ}ごろに{行|い}きます。",
+          "kana": "ええと、さんじごろにいきます。",
+          "en": "Um, I’ll go at around three."
+        },
+        {
+          "ja": "ええと、{名前|なまえ}は{何|なん}だったかな。",
+          "kana": "ええと、なまえはなんだったかな。",
+          "en": "Um, what was the name again?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0701",
+      "word": "さあ",
+      "kana": "さあ",
+      "meanings": [
+        "come on",
+        "well now",
+        "hmm"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Urges action (さあ、行こう) or signals you don’t know the answer (さあ…).",
+      "examples": [
+        {
+          "ja": "さあ、{食|た}べましょう。",
+          "kana": "さあ、たべましょう。",
+          "en": "Come on, let’s eat."
+        },
+        {
+          "ja": "さあ、{分|わ}からない。{田中|たなか}さんに{聞|き}いて。",
+          "kana": "さあ、わからない。たなかさんにきいて。",
+          "en": "Hmm, I don’t know. Ask Mr. Tanaka."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0702",
+      "word": "ああ",
+      "kana": "ああ",
+      "meanings": [
+        "ah",
+        "oh"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ああ、{分|わ}かった。ありがとう。",
+          "kana": "ああ、わかった。ありがとう。",
+          "en": "Ah, I get it. Thanks."
+        },
+        {
+          "ja": "ああ、{田中|たなか}さんですか。お{元気|げんき}ですか。",
+          "kana": "ああ、たなかさんですか。おげんきですか。",
+          "en": "Oh, Mr. Tanaka. How are you?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0703",
+      "word": "勉強",
+      "kana": "べんきょう",
+      "meanings": [
+        "study",
+        "studying"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "勉強する",
+        "日本語の勉強"
+      ],
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{二時間|にじかん}{日本語|にほんご}を{勉強|べんきょう}します。",
+          "kana": "まいにちにじかんにほんごをべんきょうします。",
+          "en": "I study Japanese for two hours every day."
+        },
+        {
+          "ja": "{妹|いもうと}は{今|いま}{英語|えいご}の{勉強|べんきょう}をしています。",
+          "kana": "いもうとはいまえいごのべんきょうをしています。",
+          "en": "My little sister is studying English right now."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0704",
+      "word": "散歩",
+      "kana": "さんぽ",
+      "meanings": [
+        "walk",
+        "stroll"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "散歩する",
+        "散歩に行く"
+      ],
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{犬|いぬ}と{散歩|さんぽ}した。",
+          "kana": "あさ、いぬとさんぽした。",
+          "en": "I took a walk with my dog this morning."
+        },
+        {
+          "ja": "{夕方|ゆうがた}、{公園|こうえん}を{散歩|さんぽ}しませんか。",
+          "kana": "ゆうがた、こうえんをさんぽしませんか。",
+          "en": "Shall we take a walk in the park this evening?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0705",
+      "word": "練習",
+      "kana": "れんしゅう",
+      "meanings": [
+        "practice"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "study",
+        "sports"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "練習する",
+        "ピアノの練習"
+      ],
+      "examples": [
+        {
+          "ja": "{毎晩|まいばん}ギターを{練習|れんしゅう}しています。",
+          "kana": "まいばんギターをれんしゅうしています。",
+          "en": "I practice guitar every evening."
+        },
+        {
+          "ja": "{試合|しあい}の{前|まえ}にたくさん{練習|れんしゅう}しました。",
+          "kana": "しあいのまえにたくさんれんしゅうしました。",
+          "en": "I practiced a lot before the match."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0706",
+      "word": "掃除",
+      "kana": "そうじ",
+      "meanings": [
+        "cleaning"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "home"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "掃除する",
+        "部屋の掃除"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{部屋|へや}を{掃除|そうじ}します。",
+          "kana": "にちようびにへやをそうじします。",
+          "en": "I clean my room on Sundays."
+        },
+        {
+          "ja": "{母|はは}が{台所|だいどころ}を{掃除|そうじ}した。",
+          "kana": "ははがだいどころをそうじした。",
+          "en": "My mother cleaned the kitchen."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0707",
+      "word": "洗濯",
+      "kana": "せんたく",
+      "meanings": [
+        "laundry",
+        "washing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "clothing"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "洗濯する",
+        "洗濯物"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{天気|てんき}がいいから、{洗濯|せんたく}する。",
+          "kana": "きょうはてんきがいいから、せんたくする。",
+          "en": "The weather’s nice today, so I’m doing laundry."
+        },
+        {
+          "ja": "{昨日|きのう}、{洗濯|せんたく}をしましたか。",
+          "kana": "きのう、せんたくをしましたか。",
+          "en": "Did you do the laundry yesterday?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0708",
+      "word": "結婚",
+      "kana": "けっこん",
+      "meanings": [
+        "marriage"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "family",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "結婚する",
+        "結婚している"
+      ],
+      "examples": [
+        {
+          "ja": "{姉|あね}は{来年|らいねん}{結婚|けっこん}します。",
+          "kana": "あねはらいねんけっこんします。",
+          "en": "My older sister is getting married next year."
+        },
+        {
+          "ja": "{二人|ふたり}は{去年|きょねん}{結婚|けっこん}しました。",
+          "kana": "ふたりはきょねんけっこんしました。",
+          "en": "The two of them got married last year."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0709",
+      "word": "運動",
+      "kana": "うんどう",
+      "meanings": [
+        "exercise",
+        "sports"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "sports",
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "運動する",
+        "運動不足"
+      ],
+      "examples": [
+        {
+          "ja": "{週|しゅう}に{三回|さんかい}{運動|うんどう}しています。",
+          "kana": "しゅうにさんかいうんどうしています。",
+          "en": "I exercise three times a week."
+        },
+        {
+          "ja": "{運動|うんどう}した{後|あと}で、{水|みず}をたくさん{飲|の}んだ。",
+          "kana": "うんどうしたあとで、みずをたくさんのんだ。",
+          "en": "After exercising, I drank a lot of water."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0710",
+      "word": "説明",
+      "kana": "せつめい",
+      "meanings": [
+        "explanation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "説明する",
+        "説明を聞く"
+      ],
+      "examples": [
+        {
+          "ja": "{先生|せんせい}が{言葉|ことば}の{意味|いみ}を{説明|せつめい}した。",
+          "kana": "せんせいがことばのいみをせつめいした。",
+          "en": "The teacher explained the meaning of the word."
+        },
+        {
+          "ja": "{地図|ちず}で{道|みち}を{説明|せつめい}しましょうか。",
+          "kana": "ちずでみちをせつめいしましょうか。",
+          "en": "Shall I explain the way with a map?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0711",
+      "word": "返事",
+      "kana": "へんじ",
+      "meanings": [
+        "reply",
+        "answer"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "collocations": [
+        "返事をする",
+        "返事を書く"
+      ],
+      "examples": [
+        {
+          "ja": "{手紙|てがみ}の{返事|へんじ}を{書|か}きました。",
+          "kana": "てがみのへんじをかきました。",
+          "en": "I wrote a reply to the letter."
+        },
+        {
+          "ja": "ケンから{返事|へんじ}がまだありません。",
+          "kana": "ケンからへんじがまだありません。",
+          "en": "There’s still no reply from Ken."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0712",
+      "word": "準備",
+      "kana": "じゅんび",
+      "meanings": [
+        "preparation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "collocations": [
+        "準備する",
+        "旅行の準備"
+      ],
+      "examples": [
+        {
+          "ja": "パーティーの{準備|じゅんび}をしています。",
+          "kana": "パーティーのじゅんびをしています。",
+          "en": "I’m getting ready for the party."
+        },
+        {
+          "ja": "{旅行|りょこう}の{準備|じゅんび}は{昨日|きのう}{終|お}わりました。",
+          "kana": "りょこうのじゅんびはきのうおわりました。",
+          "en": "The preparations for the trip were finished yesterday."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0713",
+      "word": "案内",
+      "kana": "あんない",
+      "meanings": [
+        "guidance",
+        "showing around"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "travel",
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "collocations": [
+        "案内する",
+        "案内所"
+      ],
+      "examples": [
+        {
+          "ja": "{町|まち}を{案内|あんない}しましょうか。",
+          "kana": "まちをあんないしましょうか。",
+          "en": "Shall I show you around town?"
+        },
+        {
+          "ja": "{田中|たなか}さんが{駅|えき}の{中|なか}を{案内|あんない}してくれた。",
+          "kana": "たなかさんがえきのなかをあんないしてくれた。",
+          "en": "Mr. Tanaka showed us around the inside of the station."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0714",
+      "word": "紹介",
+      "kana": "しょうかい",
+      "meanings": [
+        "introduction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "紹介する",
+        "自己紹介"
+      ],
+      "examples": [
+        {
+          "ja": "{友達|ともだち}を{紹介|しょうかい}します。",
+          "kana": "ともだちをしょうかいします。",
+          "en": "Let me introduce my friend."
+        },
+        {
+          "ja": "{先生|せんせい}は{新|あたら}しい{学生|がくせい}を{紹介|しょうかい}しました。",
+          "kana": "せんせいはあたらしいがくせいをしょうかいしました。",
+          "en": "The teacher introduced the new student."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0715",
+      "word": "心配",
+      "kana": "しんぱい",
+      "meanings": [
+        "worry",
+        "concern"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Also a な-adjective: 心配な顔 (a worried face). 心配しないで = don’t worry.",
+      "collocations": [
+        "心配する",
+        "心配ない"
+      ],
+      "examples": [
+        {
+          "ja": "{大丈夫|だいじょうぶ}、{心配|しんぱい}しないで。",
+          "kana": "だいじょうぶ、しんぱいしないで。",
+          "en": "It’s okay, don’t worry."
+        },
+        {
+          "ja": "{明日|あした}の{天気|てんき}が{心配|しんぱい}です。",
+          "kana": "あしたのてんきがしんぱいです。",
+          "en": "I’m worried about tomorrow’s weather."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0716",
+      "word": "運転",
+      "kana": "うんてん",
+      "meanings": [
+        "driving"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "transport"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "運転する",
+        "運転手"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{車|くるま}の{運転|うんてん}が{上手|じょうず}です。",
+          "kana": "ちちはくるまのうんてんがじょうずです。",
+          "en": "My father is good at driving."
+        },
+        {
+          "ja": "{昨日|きのう}、{初|はじ}めて{車|くるま}を{運転|うんてん}した。",
+          "kana": "きのう、はじめてくるまをうんてんした。",
+          "en": "Yesterday I drove a car for the first time."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0717",
+      "word": "疲れる",
+      "kana": "つかれる",
+      "meanings": [
+        "to get tired"
+      ],
+      "pos": "v1",
+      "jlpt": 5,
+      "tags": [
+        "body",
+        "states"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "疲れた",
+        "疲れている"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{仕事|しごと}で{疲|つか}れた。",
+          "kana": "きょうはしごとでつかれた。",
+          "en": "I’m tired from work today."
+        },
+        {
+          "ja": "{山登|やまのぼ}りは{疲|つか}れますが、{楽|たの}しいです。",
+          "kana": "やまのぼりはつかれますが、たのしいです。",
+          "en": "Mountain climbing is tiring, but it’s fun."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0718",
+      "word": "困る",
+      "kana": "こまる",
+      "meanings": [
+        "to be troubled",
+        "to have a problem"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "emotions",
+        "states"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "困った",
+        "困っている"
+      ],
+      "examples": [
+        {
+          "ja": "{困|こま}った{時|とき}は{言|い}ってください。",
+          "kana": "こまったときはいってください。",
+          "en": "Please tell me when you’re in trouble."
+        },
+        {
+          "ja": "{鍵|かぎ}がなくて、{困|こま}っています。",
+          "kana": "かぎがなくて、こまっています。",
+          "en": "I don’t have my key, and I’m stuck."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0719",
+      "word": "消す",
+      "kana": "けす",
+      "meanings": [
+        "to turn off",
+        "to erase"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "notes": "Intransitive partner: 消える (N4). 電気を消す = turn off the light; 字を消す = erase writing.",
+      "collocations": [
+        "電気を消す",
+        "テレビを消す"
+      ],
+      "confusables": [
+        "v-n5-0720"
+      ],
+      "examples": [
+        {
+          "ja": "{出|で}かける{前|まえ}に{電気|でんき}を{消|け}してね。",
+          "kana": "でかけるまえにでんきをけしてね。",
+          "en": "Turn off the lights before you go out, okay?"
+        },
+        {
+          "ja": "{帰|かえ}る{時|とき}、ストーブを{消|け}します。",
+          "kana": "かえるとき、ストーブをけします。",
+          "en": "I turn off the heater when I leave."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0720",
+      "word": "付ける",
+      "kana": "つける",
+      "meanings": [
+        "to turn on",
+        "to attach"
+      ],
+      "pos": "v1",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "actions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "notes": "For lights and appliances usually written つける or 点ける; 付ける = attach, add (名前を付ける). Intransitive partner: 付く (N4).",
+      "collocations": [
+        "電気をつける",
+        "名前を付ける"
+      ],
+      "confusables": [
+        "v-n5-0719"
+      ],
+      "examples": [
+        {
+          "ja": "{暗|くら}いから、{電気|でんき}をつけました。",
+          "kana": "くらいから、でんきをつけました。",
+          "en": "It’s dark, so I turned on the light."
+        },
+        {
+          "ja": "ラジオをつけて、{音楽|おんがく}を{聞|き}きます。",
+          "kana": "ラジオをつけて、おんがくをききます。",
+          "en": "I turn on the radio and listen to music."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0721",
+      "word": "止まる",
+      "kana": "とまる",
+      "meanings": [
+        "to stop"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "transport",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "notes": "Transitive partner: 止める (N4).",
+      "collocations": [
+        "電車が止まる",
+        "時計が止まる"
+      ],
+      "examples": [
+        {
+          "ja": "{次|つぎ}の{駅|えき}で{電車|でんしゃ}が{止|と}まります。",
+          "kana": "つぎのえきででんしゃがとまります。",
+          "en": "The train stops at the next station."
+        },
+        {
+          "ja": "{赤|あか}い{信号|しんごう}で{車|くるま}が{止|と}まった。",
+          "kana": "あかいしんごうでくるまがとまった。",
+          "en": "The car stopped at the red light."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0722",
+      "word": "曲がる",
+      "kana": "まがる",
+      "meanings": [
+        "to turn",
+        "to bend"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "city",
+        "position"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "右に曲がる",
+        "角を曲がる"
+      ],
+      "examples": [
+        {
+          "ja": "あの{角|かど}を{右|みぎ}に{曲|ま}がってください。",
+          "kana": "あのかどをみぎにまがってください。",
+          "en": "Please turn right at that corner."
+        },
+        {
+          "ja": "{郵便局|ゆうびんきょく}の{前|まえ}で{左|ひだり}に{曲|ま}がりました。",
+          "kana": "ゆうびんきょくのまえでひだりにまがりました。",
+          "en": "I turned left in front of the post office."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0723",
+      "word": "渡る",
+      "kana": "わたる",
+      "meanings": [
+        "to cross"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "city",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "道を渡る",
+        "橋を渡る"
+      ],
+      "examples": [
+        {
+          "ja": "{信号|しんごう}で{道|みち}を{渡|わた}ります。",
+          "kana": "しんごうでみちをわたります。",
+          "en": "I cross the street at the traffic light."
+        },
+        {
+          "ja": "{橋|はし}を{渡|わた}って、{町|まち}に{入|はい}った。",
+          "kana": "はしをわたって、まちにはいった。",
+          "en": "I crossed the bridge and entered the town."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0724",
+      "word": "歌う",
+      "kana": "うたう",
+      "meanings": [
+        "to sing"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "music"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "歌を歌う"
+      ],
+      "examples": [
+        {
+          "ja": "{友達|ともだち}と{一緒|いっしょ}に{歌|うた}を{歌|うた}った。",
+          "kana": "ともだちといっしょにうたをうたった。",
+          "en": "I sang songs together with my friends."
+        },
+        {
+          "ja": "{妹|いもうと}は{歌|うた}を{歌|うた}うのが{好|す}きです。",
+          "kana": "いもうとはうたをうたうのがすきです。",
+          "en": "My little sister likes singing."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0725",
+      "word": "吸う",
+      "kana": "すう",
+      "meanings": [
+        "to smoke",
+        "to inhale"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "health",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "タバコを吸う",
+        "息を吸う"
+      ],
+      "examples": [
+        {
+          "ja": "ここでタバコを{吸|す}わないでください。",
+          "kana": "ここでタバコをすわないでください。",
+          "en": "Please don’t smoke here."
+        },
+        {
+          "ja": "{山|やま}のきれいな{空気|くうき}を{吸|す}いました。",
+          "kana": "やまのきれいなくうきをすいました。",
+          "en": "I breathed in the clean mountain air."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0726",
+      "word": "撮る",
+      "kana": "とる",
+      "meanings": [
+        "to take (a photo)"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "arts"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "写真を撮る"
+      ],
+      "examples": [
+        {
+          "ja": "ここで{写真|しゃしん}を{撮|と}ってもいいですか。",
+          "kana": "ここでしゃしんをとってもいいですか。",
+          "en": "May I take a photo here?"
+        },
+        {
+          "ja": "{桜|さくら}の{写真|しゃしん}をたくさん{撮|と}った。",
+          "kana": "さくらのしゃしんをたくさんとった。",
+          "en": "I took a lot of photos of the cherry blossoms."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0727",
+      "word": "引く",
+      "kana": "ひく",
+      "meanings": [
+        "to pull",
+        "to catch (a cold)"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "ドアを引く",
+        "風邪を引く"
+      ],
+      "confusables": [
+        "v-n5-0728"
+      ],
+      "examples": [
+        {
+          "ja": "このドアは{引|ひ}いて{開|あ}けます。",
+          "kana": "このドアはひいてあけます。",
+          "en": "You pull this door to open it."
+        },
+        {
+          "ja": "{風邪|かぜ}を{引|ひ}いて、{会社|かいしゃ}を{休|やす}みました。",
+          "kana": "かぜをひいて、かいしゃをやすみました。",
+          "en": "I caught a cold and took the day off work."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0728",
+      "word": "押す",
+      "kana": "おす",
+      "meanings": [
+        "to push",
+        "to press"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "ボタンを押す",
+        "ドアを押す"
+      ],
+      "confusables": [
+        "v-n5-0727"
+      ],
+      "examples": [
+        {
+          "ja": "{赤|あか}いボタンを{押|お}してください。",
+          "kana": "あかいボタンをおしてください。",
+          "en": "Please press the red button."
+        },
+        {
+          "ja": "ドアを{押|お}したが、{開|あ}かなかった。",
+          "kana": "ドアをおしたが、あかなかった。",
+          "en": "I pushed the door, but it didn’t open."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0729",
+      "word": "切る",
+      "kana": "きる",
+      "meanings": [
+        "to cut",
+        "to turn off",
+        "to hang up"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "cooking",
+        "actions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "野菜を切る",
+        "電話を切る"
+      ],
+      "examples": [
+        {
+          "ja": "{野菜|やさい}を{小|ちい}さく{切|き}ります。",
+          "kana": "やさいをちいさくきります。",
+          "en": "I cut the vegetables into small pieces."
+        },
+        {
+          "ja": "ケーキを{六|むっ}つに{切|き}りました。",
+          "kana": "ケーキをむっつにきりました。",
+          "en": "I cut the cake into six pieces."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0730",
+      "word": "並ぶ",
+      "kana": "ならぶ",
+      "meanings": [
+        "to line up",
+        "to stand in line"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "actions",
+        "position"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "notes": "Transitive partner: 並べる (N3).",
+      "collocations": [
+        "列に並ぶ",
+        "店の前に並ぶ"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}の{前|まえ}に{人|ひと}がたくさん{並|なら}んでいる。",
+          "kana": "みせのまえにひとがたくさんならんでいる。",
+          "en": "A lot of people are lined up in front of the shop."
+        },
+        {
+          "ja": "{三十分|さんじゅっぷん}{並|なら}んで、ラーメンを{食|た}べました。",
+          "kana": "さんじゅっぷんならんで、ラーメンをたべました。",
+          "en": "I waited in line for thirty minutes and ate ramen."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0731",
+      "word": "呼ぶ",
+      "kana": "よぶ",
+      "meanings": [
+        "to call",
+        "to invite"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "collocations": [
+        "タクシーを呼ぶ",
+        "名前を呼ぶ"
+      ],
+      "examples": [
+        {
+          "ja": "タクシーを{呼|よ}びましょうか。",
+          "kana": "タクシーをよびましょうか。",
+          "en": "Shall I call a taxi?"
+        },
+        {
+          "ja": "{先生|せんせい}が{私|わたし}の{名前|なまえ}を{呼|よ}びました。",
+          "kana": "せんせいがわたしのなまえをよびました。",
+          "en": "The teacher called my name."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0732",
+      "word": "吹く",
+      "kana": "ふく",
+      "meanings": [
+        "to blow"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Intransitive for wind (風が吹く) and transitive for instruments (笛を吹く).",
+      "collocations": [
+        "風が吹く"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{強|つよ}い{風|かぜ}が{吹|ふ}いています。",
+          "kana": "きょうはつよいかぜがふいています。",
+          "en": "A strong wind is blowing today."
+        },
+        {
+          "ja": "{海岸|かいがん}で{冷|つめ}たい{風|かぜ}が{吹|ふ}いていた。",
+          "kana": "かいがんでつめたいかぜがふいていた。",
+          "en": "A cold wind was blowing on the coast."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0733",
+      "word": "鳴く",
+      "kana": "なく",
+      "meanings": [
+        "to cry (of an animal)",
+        "to chirp"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "notes": "Animals 鳴く; people 泣く (N4) with the same reading.",
+      "collocations": [
+        "鳥が鳴く",
+        "猫が鳴く"
+      ],
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{鳥|とり}が{鳴|な}いていた。",
+          "kana": "あさ、とりがないていた。",
+          "en": "The birds were singing this morning."
+        },
+        {
+          "ja": "アオが{玄関|げんかん}で{鳴|な}いています。",
+          "kana": "アオがげんかんでないています。",
+          "en": "Ao is meowing at the front door."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0734",
+      "word": "咲く",
+      "kana": "さく",
+      "meanings": [
+        "to bloom"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "plants",
+        "nature"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "花が咲く"
+      ],
+      "examples": [
+        {
+          "ja": "{庭|にわ}の{花|はな}が{咲|さ}きました。",
+          "kana": "にわのはながさきました。",
+          "en": "The flowers in the garden have bloomed."
+        },
+        {
+          "ja": "{公園|こうえん}の{桜|さくら}はまだ{咲|さ}いていません。",
+          "kana": "こうえんのさくらはまださいていません。",
+          "en": "The cherry blossoms in the park haven’t bloomed yet."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0735",
+      "word": "晴れる",
+      "kana": "はれる",
+      "meanings": [
+        "to clear up",
+        "to be sunny"
+      ],
+      "pos": "v1",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "空が晴れる",
+        "晴れた日"
+      ],
+      "confusables": [
+        "v-n5-0736"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}は{晴|は}れるでしょう。",
+          "kana": "あしたははれるでしょう。",
+          "en": "It will probably be sunny tomorrow."
+        },
+        {
+          "ja": "{昨日|きのう}はよく{晴|は}れていた。",
+          "kana": "きのうはよくはれていた。",
+          "en": "It was nice and sunny yesterday."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0736",
+      "word": "曇る",
+      "kana": "くもる",
+      "meanings": [
+        "to get cloudy"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "weather"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "collocations": [
+        "空が曇る"
+      ],
+      "confusables": [
+        "v-n5-0735"
+      ],
+      "examples": [
+        {
+          "ja": "{空|そら}が{曇|くも}っている。{雨|あめ}かな。",
+          "kana": "そらがくもっている。あめかな。",
+          "en": "The sky’s clouded over. Maybe rain?"
+        },
+        {
+          "ja": "{今日|きょう}は{朝|あさ}から{曇|くも}っています。",
+          "kana": "きょうはあさからくもっています。",
+          "en": "It has been cloudy since this morning."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0737",
+      "word": "パソコン",
+      "kana": "パソコン",
+      "meanings": [
+        "computer"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "From \"personal computer\"; the everyday word, while コンピューター (N4) is more general.",
+      "examples": [
+        {
+          "ja": "{新|あたら}しいパソコンを{買|か}いました。",
+          "kana": "あたらしいパソコンをかいました。",
+          "en": "I bought a new computer."
+        },
+        {
+          "ja": "{毎日|まいにち}パソコンで{仕事|しごと}をしています。",
+          "kana": "まいにちパソコンでしごとをしています。",
+          "en": "I work on a computer every day."
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0738",
+      "word": "ニュース",
+      "kana": "ニュース",
+      "meanings": [
+        "news"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "media",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎朝|まいあさ}テレビでニュースを{見|み}ます。",
+          "kana": "まいあさテレビでニュースをみます。",
+          "en": "I watch the news on TV every morning."
+        },
+        {
+          "ja": "{今朝|けさ}のニュースはもう{聞|き}いた？",
+          "kana": "けさのニュースはもうきいた？",
+          "en": "Did you hear this morning’s news yet?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0739",
+      "word": "プレゼント",
+      "kana": "プレゼント",
+      "meanings": [
+        "present",
+        "gift"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "shopping",
+        "culture",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "collocations": [
+        "プレゼントをあげる",
+        "誕生日プレゼント"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}に{誕生日|たんじょうび}のプレゼントをあげた。",
+          "kana": "ははにたんじょうびのプレゼントをあげた。",
+          "en": "I gave my mom a birthday present."
+        },
+        {
+          "ja": "{父|ちち}に{何|なに}をプレゼントしますか。",
+          "kana": "ちちになにをプレゼントしますか。",
+          "en": "What will you give your father as a present?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0740",
+      "word": "パーティー",
+      "kana": "パーティー",
+      "meanings": [
+        "party"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "culture",
+        "hobbies",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{土曜日|どようび}にパーティーがあります。",
+          "kana": "どようびにパーティーがあります。",
+          "en": "There’s a party on Saturday."
+        },
+        {
+          "ja": "{昨日|きのう}のパーティーは{楽|たの}しかった？",
+          "kana": "きのうのパーティーはたのしかった？",
+          "en": "Was yesterday’s party fun?"
+        }
+      ],
+      "station": 14
+    },
+    {
+      "id": "v-n5-0741",
+      "word": "アパート",
+      "kana": "アパート",
+      "meanings": [
+        "apartment"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "places",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "notes": "A modest, usually two-storey rental building; a larger concrete block is a マンション (N4).",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{近|ちか}くのアパートに{住|す}んでいる。",
+          "kana": "えきのちかくのアパートにすんでいる。",
+          "en": "I live in an apartment near the station."
+        },
+        {
+          "ja": "{新|あたら}しいアパートは{広|ひろ}くて{明|あか}るいです。",
+          "kana": "あたらしいアパートはひろくてあかるいです。",
+          "en": "The new apartment is spacious and bright."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0742",
+      "word": "エレベーター",
+      "kana": "エレベーター",
+      "meanings": [
+        "elevator"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "places",
+        "loanword"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "エレベーターで{五階|ごかい}へ{行|い}きます。",
+          "kana": "エレベーターでごかいへいきます。",
+          "en": "I take the elevator to the fifth floor."
+        },
+        {
+          "ja": "エレベーターが{止|と}まって、{困|こま}った。",
+          "kana": "エレベーターがとまって、こまった。",
+          "en": "The elevator stopped, and I was stuck."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0743",
+      "word": "ポケット",
+      "kana": "ポケット",
+      "meanings": [
+        "pocket"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "clothing",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{鍵|かぎ}はポケットの{中|なか}にあります。",
+          "kana": "かぎはポケットのなかにあります。",
+          "en": "The key is in my pocket."
+        },
+        {
+          "ja": "{財布|さいふ}をポケットに{入|い}れました。",
+          "kana": "さいふをポケットにいれました。",
+          "en": "I put my wallet in my pocket."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0744",
+      "word": "ボタン",
+      "kana": "ボタン",
+      "meanings": [
+        "button"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "objects",
+        "clothing",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "ボタンを押す"
+      ],
+      "examples": [
+        {
+          "ja": "シャツのボタンが{一|ひと}つない。",
+          "kana": "シャツのボタンがひとつない。",
+          "en": "One of my shirt buttons is missing."
+        },
+        {
+          "ja": "このボタンを{押|お}すと、ドアが{開|あ}きます。",
+          "kana": "このボタンをおすと、ドアがあきます。",
+          "en": "When you press this button, the door opens."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0745",
+      "word": "ページ",
+      "kana": "ページ",
+      "meanings": [
+        "page"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "study",
+        "media",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{本|ほん}の{十|じゅう}ページを{開|あ}けてください。",
+          "kana": "ほんのじゅうページをあけてください。",
+          "en": "Please open your book to page ten."
+        },
+        {
+          "ja": "{昨日|きのう}は{五十|ごじゅう}ページ{読|よ}みました。",
+          "kana": "きのうはごじゅうページよみました。",
+          "en": "I read fifty pages yesterday."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0746",
+      "word": "テスト",
+      "kana": "テスト",
+      "meanings": [
+        "test",
+        "exam"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "school",
+        "study",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "collocations": [
+        "テストを受ける",
+        "テストがある"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}、{日本語|にほんご}のテストがある。",
+          "kana": "あした、にほんごのテストがある。",
+          "en": "I have a Japanese test tomorrow."
+        },
+        {
+          "ja": "{先週|せんしゅう}のテストは{難|むずか}しかったです。",
+          "kana": "せんしゅうのテストはむずかしかったです。",
+          "en": "Last week’s test was difficult."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0747",
+      "word": "クラス",
+      "kana": "クラス",
+      "meanings": [
+        "class"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "school",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{同|おな}じクラスに{友達|ともだち}が{三人|さんにん}います。",
+          "kana": "おなじクラスにともだちがさんにんいます。",
+          "en": "I have three friends in the same class."
+        },
+        {
+          "ja": "ハナのクラスは{九時|くじ}に{始|はじ}まる。",
+          "kana": "ハナのクラスはくじにはじまる。",
+          "en": "Hana’s class starts at nine."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0748",
+      "word": "スプーン",
+      "kana": "スプーン",
+      "meanings": [
+        "spoon"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "food",
+        "objects",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "スプーンでスープを{飲|の}みます。",
+          "kana": "スプーンでスープをのみます。",
+          "en": "I eat soup with a spoon."
+        },
+        {
+          "ja": "すみません、スプーンをもう{一|ひと}つください。",
+          "kana": "すみません、スプーンをもうひとつください。",
+          "en": "Excuse me, could I have one more spoon?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0749",
+      "word": "まず",
+      "kana": "まず",
+      "meanings": [
+        "first of all",
+        "to begin with"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "abstract",
+        "usually-kana"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "altForms": [
+        "先ず"
+      ],
+      "confusables": [
+        "v-n5-0766"
+      ],
+      "examples": [
+        {
+          "ja": "まず{手|て}を{洗|あら}ってください。",
+          "kana": "まずてをあらってください。",
+          "en": "First, please wash your hands."
+        },
+        {
+          "ja": "{朝|あさ}はまずコーヒーを{飲|の}みます。",
+          "kana": "あさはまずコーヒーをのみます。",
+          "en": "In the morning, I drink coffee first."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0750",
+      "word": "ちょうど",
+      "kana": "ちょうど",
+      "meanings": [
+        "exactly",
+        "just"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "time",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "丁度"
+      ],
+      "examples": [
+        {
+          "ja": "{今|いま}、ちょうど{十二時|じゅうにじ}です。",
+          "kana": "いま、ちょうどじゅうにじです。",
+          "en": "It’s exactly twelve o’clock now."
+        },
+        {
+          "ja": "ちょうどその{時|とき}、ケンが{来|き}た。",
+          "kana": "ちょうどそのとき、ケンがきた。",
+          "en": "Just at that moment, Ken came."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0751",
+      "word": "一番",
+      "kana": "いちばん",
+      "meanings": [
+        "most",
+        "number one",
+        "best"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "numbers"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0752"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}のラーメンが{一番|いちばん}おいしい。",
+          "kana": "このみせのラーメンがいちばんおいしい。",
+          "en": "This shop’s ramen is the best."
+        },
+        {
+          "ja": "{家族|かぞく}の{中|なか}で{母|はは}が{一番|いちばん}{早|はや}く{起|お}きます。",
+          "kana": "かぞくのなかでははがいちばんはやくおきます。",
+          "en": "In my family, my mother gets up the earliest."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0752",
+      "word": "一度",
+      "kana": "いちど",
+      "meanings": [
+        "once",
+        "one time"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "numbers"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "collocations": [
+        "もう一度",
+        "一度に"
+      ],
+      "confusables": [
+        "v-n5-0751"
+      ],
+      "examples": [
+        {
+          "ja": "もう{一度|いちど}{言|い}ってください。",
+          "kana": "もういちどいってください。",
+          "en": "Please say that one more time."
+        },
+        {
+          "ja": "{京都|きょうと}には{一度|いちど}{行|い}ったことがあります。",
+          "kana": "きょうとにはいちどいったことがあります。",
+          "en": "I’ve been to Kyoto once."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0753",
+      "word": "まっすぐ",
+      "kana": "まっすぐ",
+      "meanings": [
+        "straight",
+        "directly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "position",
+        "usually-kana"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "altForms": [
+        "真っ直ぐ"
+      ],
+      "examples": [
+        {
+          "ja": "この{道|みち}をまっすぐ{行|い}ってください。",
+          "kana": "このみちをまっすぐいってください。",
+          "en": "Please go straight down this road."
+        },
+        {
+          "ja": "{仕事|しごと}の{後|あと}で、まっすぐ{家|いえ}に{帰|かえ}った。",
+          "kana": "しごとのあとで、まっすぐいえにかえった。",
+          "en": "After work, I went straight home."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0754",
+      "word": "結構",
+      "kana": "けっこう",
+      "meanings": [
+        "quite",
+        "fairly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "As a な-adjective, 結構です means \"no, thank you\" or \"that’s fine\".",
+      "confusables": [
+        "v-n5-0671"
+      ],
+      "examples": [
+        {
+          "ja": "この{本|ほん}は{結構|けっこう}{難|むずか}しいね。",
+          "kana": "このほんはけっこうむずかしいね。",
+          "en": "This book is pretty hard, isn’t it?"
+        },
+        {
+          "ja": "{昨日|きのう}は{結構|けっこう}{歩|ある}きました。",
+          "kana": "きのうはけっこうあるきました。",
+          "en": "I walked quite a lot yesterday."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0755",
+      "word": "いっぱい",
+      "kana": "いっぱい",
+      "meanings": [
+        "a lot",
+        "full"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "お腹がいっぱい = I’m full. As a counter, 一杯 (いっぱい) is one cupful.",
+      "altForms": [
+        "一杯"
+      ],
+      "confusables": [
+        "v-n5-0673"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}は{人|ひと}でいっぱいだった。",
+          "kana": "えきはひとでいっぱいだった。",
+          "en": "The station was packed with people."
+        },
+        {
+          "ja": "お{腹|なか}がいっぱいで、もう{食|た}べられません。",
+          "kana": "おなかがいっぱいで、もうたべられません。",
+          "en": "I’m full, so I can’t eat any more."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0756",
+      "word": "後で",
+      "kana": "あとで",
+      "meanings": [
+        "later",
+        "afterwards"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0763"
+      ],
+      "examples": [
+        {
+          "ja": "{後|あと}で{電話|でんわ}します。",
+          "kana": "あとででんわします。",
+          "en": "I’ll call you later."
+        },
+        {
+          "ja": "{後|あと}で{一緒|いっしょ}に{昼|ひる}ご{飯|はん}を{食|た}べませんか。",
+          "kana": "あとでいっしょにひるごはんをたべませんか。",
+          "en": "Would you like to have lunch together later?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0757",
+      "word": "もうすぐ",
+      "kana": "もうすぐ",
+      "meanings": [
+        "soon",
+        "before long"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0684"
+      ],
+      "examples": [
+        {
+          "ja": "もうすぐ{春|はる}ですね。",
+          "kana": "もうすぐはるですね。",
+          "en": "It’ll be spring soon, won’t it?"
+        },
+        {
+          "ja": "もうすぐ{電車|でんしゃ}が{来|く}るよ。",
+          "kana": "もうすぐでんしゃがくるよ。",
+          "en": "The train is coming soon."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0758",
+      "word": "だいぶ",
+      "kana": "だいぶ",
+      "meanings": [
+        "quite",
+        "considerably"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Marks a big change or difference: だいぶよくなった (got much better).",
+      "altForms": [
+        "大分"
+      ],
+      "examples": [
+        {
+          "ja": "{風邪|かぜ}はだいぶよくなりました。",
+          "kana": "かぜはだいぶよくなりました。",
+          "en": "My cold has gotten a lot better."
+        },
+        {
+          "ja": "{外|そと}はもうだいぶ{暗|くら}いです。",
+          "kana": "そとはもうだいぶくらいです。",
+          "en": "It’s already quite dark outside."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0759",
+      "word": "ずいぶん",
+      "kana": "ずいぶん",
+      "meanings": [
+        "very",
+        "a great deal"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states",
+        "usually-kana"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Often carries mild surprise at the degree: ずいぶん待った (I waited a really long time).",
+      "altForms": [
+        "随分"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}はずいぶん{暖|あたた}かいですね。",
+          "kana": "きょうはずいぶんあたたかいですね。",
+          "en": "It’s really warm today, isn’t it?"
+        },
+        {
+          "ja": "ずいぶん{長|なが}い{間|あいだ}{待|ま}ちました。",
+          "kana": "ずいぶんながいあいだまちました。",
+          "en": "I waited a really long time."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0760",
+      "word": "なかなか",
+      "kana": "なかなか",
+      "meanings": [
+        "quite",
+        "not easily"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "quantity",
+        "states",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Positive: なかなかいい (quite good). With a negative: なかなか来ない (just won’t come).",
+      "altForms": [
+        "中々"
+      ],
+      "examples": [
+        {
+          "ja": "バスがなかなか{来|こ}ない。",
+          "kana": "バスがなかなかこない。",
+          "en": "The bus just won’t come."
+        },
+        {
+          "ja": "この{店|みせ}のカレーはなかなかおいしいですよ。",
+          "kana": "このみせのカレーはなかなかおいしいですよ。",
+          "en": "The curry at this shop is quite good."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0761",
+      "word": "きっと",
+      "kana": "きっと",
+      "meanings": [
+        "surely",
+        "certainly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}はきっと{晴|は}れますよ。",
+          "kana": "あしたはきっとはれますよ。",
+          "en": "It’ll surely be sunny tomorrow."
+        },
+        {
+          "ja": "ケンはきっと{来|く}ると{思|おも}う。",
+          "kana": "ケンはきっとくるとおもう。",
+          "en": "I think Ken will surely come."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0762",
+      "word": "たいてい",
+      "kana": "たいてい",
+      "meanings": [
+        "usually",
+        "mostly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "quantity",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "大抵"
+      ],
+      "confusables": [
+        "v-n5-0678",
+        "v-n5-0689"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}はたいてい{家|いえ}にいます。",
+          "kana": "にちようびはたいていいえにいます。",
+          "en": "On Sundays I’m usually at home."
+        },
+        {
+          "ja": "{昼|ひる}ご{飯|はん}はたいていコンビニで{買|か}います。",
+          "kana": "ひるごはんはたいていコンビニでかいます。",
+          "en": "I usually buy lunch at the convenience store."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0763",
+      "word": "さっき",
+      "kana": "さっき",
+      "meanings": [
+        "a little while ago",
+        "just now"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Conversational; in formal speech use 先ほど (N3).",
+      "confusables": [
+        "v-n5-0756"
+      ],
+      "examples": [
+        {
+          "ja": "さっき{田中|たなか}さんから{電話|でんわ}があった。",
+          "kana": "さっきたなかさんからでんわがあった。",
+          "en": "Tanaka-san called a little while ago."
+        },
+        {
+          "ja": "さっきまで{雨|あめ}が{降|ふ}っていた。",
+          "kana": "さっきまであめがふっていた。",
+          "en": "It was raining until just now."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0764",
+      "word": "ちゃんと",
+      "kana": "ちゃんと",
+      "meanings": [
+        "properly",
+        "exactly"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "states",
+        "onomatopoeia"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}ご{飯|はん}はちゃんと{食|た}べた？",
+          "kana": "あさごはんはちゃんとたべた？",
+          "en": "Did you eat a proper breakfast?"
+        },
+        {
+          "ja": "{毎日|まいにち}ちゃんと{薬|くすり}を{飲|の}んでください。",
+          "kana": "まいにちちゃんとくすりをのんでください。",
+          "en": "Please take your medicine properly every day."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0765",
+      "word": "いつか",
+      "kana": "いつか",
+      "meanings": [
+        "someday",
+        "sometime"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "An unspecified future (or past) time; not a question word here.",
+      "examples": [
+        {
+          "ja": "いつか{京都|きょうと}に{行|い}きたいです。",
+          "kana": "いつかきょうとにいきたいです。",
+          "en": "Someday I want to go to Kyoto."
+        },
+        {
+          "ja": "ハナはいつか{外国|がいこく}に{住|す}むでしょう。",
+          "kana": "ハナはいつかがいこくにすむでしょう。",
+          "en": "Hana will probably live abroad someday."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0766",
+      "word": "先に",
+      "kana": "さきに",
+      "meanings": [
+        "ahead",
+        "first",
+        "before"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "position"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0749"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{先|さき}に{帰|かえ}ります。",
+          "kana": "きょうはさきにかえります。",
+          "en": "I’m going home ahead of you today."
+        },
+        {
+          "ja": "{先|さき}に{行|い}って。すぐ{行|い}くから。",
+          "kana": "さきにいって。すぐいくから。",
+          "en": "Go on ahead. I’ll be right there."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0767",
+      "word": "それで",
+      "kana": "それで",
+      "meanings": [
+        "and so",
+        "so then"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0697"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}が{降|ふ}った。それで、{家|いえ}にいた。",
+          "kana": "あめがふった。それで、いえにいた。",
+          "en": "It rained. So I stayed home."
+        },
+        {
+          "ja": "{財布|さいふ}を{忘|わす}れました。それで、{家|いえ}に{帰|かえ}りました。",
+          "kana": "さいふをわすれました。それで、いえにかえりました。",
+          "en": "I forgot my wallet. So I went back home."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0768",
+      "word": "ですから",
+      "kana": "ですから",
+      "meanings": [
+        "therefore",
+        "so"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "polite"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0697"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}です。ですから、{傘|かさ}を{持|も}って{行|い}きます。",
+          "kana": "あめです。ですから、かさをもっていきます。",
+          "en": "It’s raining. So I’ll take an umbrella."
+        },
+        {
+          "ja": "{今日|きょう}は{休|やす}みです。ですから、{店|みせ}は{閉|し}まっています。",
+          "kana": "きょうはやすみです。ですから、みせはしまっています。",
+          "en": "Today is a holiday. So the shop is closed."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0769",
+      "word": "だけど",
+      "kana": "だけど",
+      "meanings": [
+        "but",
+        "however"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "confusables": [
+        "v-n5-0692"
+      ],
+      "examples": [
+        {
+          "ja": "{行|い}きたい。だけど、お{金|かね}がない。",
+          "kana": "いきたい。だけど、おかねがない。",
+          "en": "I want to go. But I don’t have any money."
+        },
+        {
+          "ja": "{眠|ねむ}い。だけど、{宿題|しゅくだい}がまだ{終|お}わらない。",
+          "kana": "ねむい。だけど、しゅくだいがまだおわらない。",
+          "en": "I’m sleepy. But my homework still isn’t done."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0770",
+      "word": "それとも",
+      "kana": "それとも",
+      "meanings": [
+        "or",
+        "or else"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "notes": "Joins two questions; for nouns inside one sentence use か (AかB).",
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}で{行|い}きますか。それともバスですか。",
+          "kana": "でんしゃでいきますか。それともバスですか。",
+          "en": "Are you going by train? Or by bus?"
+        },
+        {
+          "ja": "コーヒーがいい？それとも{紅茶|こうちゃ}？",
+          "kana": "コーヒーがいい？それともこうちゃ？",
+          "en": "Would you like coffee? Or tea?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0771",
+      "word": "それなら",
+      "kana": "それなら",
+      "meanings": [
+        "in that case",
+        "if so"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "それなら、{私|わたし}も{行|い}きます。",
+          "kana": "それなら、わたしもいきます。",
+          "en": "In that case, I’ll go too."
+        },
+        {
+          "ja": "{高|たか}い？それなら、{買|か}わない。",
+          "kana": "たかい？それなら、かわない。",
+          "en": "It’s expensive? In that case, I won’t buy it."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0772",
+      "word": "それじゃ",
+      "kana": "それじゃ",
+      "meanings": [
+        "well then",
+        "in that case"
+      ],
+      "pos": "conj",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "casual"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "altForms": [
+        "それじゃあ"
+      ],
+      "confusables": [
+        "v-n5-0695"
+      ],
+      "examples": [
+        {
+          "ja": "それじゃ、また{明日|あした}。",
+          "kana": "それじゃ、またあした。",
+          "en": "Well then, see you tomorrow."
+        },
+        {
+          "ja": "それじゃ、{私|わたし}はもう{帰|かえ}るね。",
+          "kana": "それじゃ、わたしはもうかえるね。",
+          "en": "Well then, I’m heading home now."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0773",
+      "word": "いや",
+      "kana": "いや",
+      "meanings": [
+        "no",
+        "well, no"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Casual \"no\", often opening a correction. Polite: いいえ or いえ.",
+      "examples": [
+        {
+          "ja": "いや、{違|ちが}う。これは{私|わたし}のじゃない。",
+          "kana": "いや、ちがう。これはわたしのじゃない。",
+          "en": "No, that’s wrong. This isn’t mine."
+        },
+        {
+          "ja": "いや、まだ{食|た}べていないよ。",
+          "kana": "いや、まだたべていないよ。",
+          "en": "No, I haven’t eaten yet."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0774",
+      "word": "あっ",
+      "kana": "あっ",
+      "meanings": [
+        "oh",
+        "ah"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "altForms": [
+        "あ"
+      ],
+      "examples": [
+        {
+          "ja": "あっ、{財布|さいふ}を{忘|わす}れた！",
+          "kana": "あっ、さいふをわすれた！",
+          "en": "Oh! I forgot my wallet!"
+        },
+        {
+          "ja": "あっ、{電車|でんしゃ}が{来|き}ましたよ。",
+          "kana": "あっ、でんしゃがきましたよ。",
+          "en": "Oh, the train is here."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0775",
+      "word": "やった",
+      "kana": "やった",
+      "meanings": [
+        "yay",
+        "I did it"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "emotions",
+        "communication",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "やった！{明日|あした}は{休|やす}みだ！",
+          "kana": "やった！あしたはやすみだ！",
+          "en": "Yay! Tomorrow’s a day off!"
+        },
+        {
+          "ja": "やった！テストが{全部|ぜんぶ}{終|お}わった！",
+          "kana": "やった！テストがぜんぶおわった！",
+          "en": "Yes! All my tests are over!"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0776",
+      "word": "わあ",
+      "kana": "わあ",
+      "meanings": [
+        "wow"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "emotions",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "わあ、きれいな{花|はな}ですね。",
+          "kana": "わあ、きれいなはなですね。",
+          "en": "Wow, what pretty flowers."
+        },
+        {
+          "ja": "わあ、この{寿司|すし}、{大|おお}きい！",
+          "kana": "わあ、このすし、おおきい！",
+          "en": "Wow, this sushi is huge!"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0777",
+      "word": "いえ",
+      "kana": "いえ",
+      "meanings": [
+        "no",
+        "not at all"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "polite"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Slightly lighter than いいえ; the usual polite reply to thanks or an apology.",
+      "examples": [
+        {
+          "ja": "いえ、{大丈夫|だいじょうぶ}です。",
+          "kana": "いえ、だいじょうぶです。",
+          "en": "No, I’m fine."
+        },
+        {
+          "ja": "いえ、{私|わたし}は{学生|がくせい}ではありません。",
+          "kana": "いえ、わたしはがくせいではありません。",
+          "en": "No, I’m not a student."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0778",
+      "word": "おめでとう",
+      "kana": "おめでとう",
+      "meanings": [
+        "congratulations"
+      ],
+      "pos": "int",
+      "jlpt": 5,
+      "tags": [
+        "greetings",
+        "communication",
+        "casual"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Polite form: おめでとうございます. Follows the occasion: 誕生日おめでとう, 結婚おめでとう.",
+      "examples": [
+        {
+          "ja": "{誕生日|たんじょうび}おめでとう！",
+          "kana": "たんじょうびおめでとう！",
+          "en": "Happy birthday!"
+        },
+        {
+          "ja": "{結婚|けっこん}おめでとう！{本当|ほんとう}によかったね。",
+          "kana": "けっこんおめでとう！ほんとうによかったね。",
+          "en": "Congratulations on your marriage! I’m really happy for you."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0779",
+      "word": "読書",
+      "kana": "どくしょ",
+      "meanings": [
+        "reading"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "media"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "collocations": [
+        "読書する",
+        "読書が好き"
+      ],
+      "examples": [
+        {
+          "ja": "{休|やす}みの{日|ひ}は{家|いえ}で{読書|どくしょ}をします。",
+          "kana": "やすみのひはいえでどくしょをします。",
+          "en": "On my days off I read at home."
+        },
+        {
+          "ja": "ハナの{趣味|しゅみ}は{読書|どくしょ}です。",
+          "kana": "ハナのしゅみはどくしょです。",
+          "en": "Hana’s hobby is reading."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0780",
+      "word": "自己紹介",
+      "kana": "じこしょうかい",
+      "meanings": [
+        "self-introduction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "people"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "collocations": [
+        "自己紹介する",
+        "自己紹介をする"
+      ],
+      "confusables": [
+        "v-n5-0714"
+      ],
+      "examples": [
+        {
+          "ja": "{初|はじ}めてのクラスで{自己紹介|じこしょうかい}をした。",
+          "kana": "はじめてのクラスでじこしょうかいをした。",
+          "en": "I introduced myself in my first class."
+        },
+        {
+          "ja": "では、{日本語|にほんご}で{自己紹介|じこしょうかい}をしてください。",
+          "kana": "では、にほんごでじこしょうかいをしてください。",
+          "en": "Well then, please introduce yourself in Japanese."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0781",
+      "word": "見物",
+      "kana": "けんぶつ",
+      "meanings": [
+        "sightseeing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "travel",
+        "hobbies"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Looking around a place or watching a show for fun; 見学 (N4) is a visit to learn something.",
+      "collocations": [
+        "見物する",
+        "見物に行く"
+      ],
+      "examples": [
+        {
+          "ja": "{京都|きょうと}の{町|まち}を{見物|けんぶつ}しました。",
+          "kana": "きょうとのまちをけんぶつしました。",
+          "en": "I looked around the town of Kyoto."
+        },
+        {
+          "ja": "{明日|あした}は{友達|ともだち}と{花火|はなび}を{見物|けんぶつ}します。",
+          "kana": "あしたはともだちとはなびをけんぶつします。",
+          "en": "Tomorrow I’m going to watch the fireworks with a friend."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0782",
+      "word": "早起き",
+      "kana": "はやおき",
+      "meanings": [
+        "getting up early",
+        "early riser"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "home"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "collocations": [
+        "早起きする",
+        "早起きが苦手"
+      ],
+      "examples": [
+        {
+          "ja": "{明日|あした}は{早起|はやお}きしなければなりません。",
+          "kana": "あしたははやおきしなければなりません。",
+          "en": "I have to get up early tomorrow."
+        },
+        {
+          "ja": "ケンは{毎日|まいにち}{早起|はやお}きです。",
+          "kana": "ケンはまいにちはやおきです。",
+          "en": "Ken is up early every day."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0783",
+      "word": "帰宅",
+      "kana": "きたく",
+      "meanings": [
+        "returning home"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Somewhat formal; in conversation 家に帰る is more common.",
+      "collocations": [
+        "帰宅する",
+        "帰宅時間"
+      ],
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{七時|しちじ}ごろ{帰宅|きたく}します。",
+          "kana": "まいにちしちじごろきたくします。",
+          "en": "I get home around seven every day."
+        },
+        {
+          "ja": "{昨日|きのう}は{十時|じゅうじ}に{帰宅|きたく}した。",
+          "kana": "きのうはじゅうじにきたくした。",
+          "en": "Yesterday I got home at ten."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0784",
+      "word": "待ち合わせ",
+      "kana": "まちあわせ",
+      "meanings": [
+        "meeting up",
+        "arranged meeting"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "待ち合わせをする",
+        "待ち合わせ場所"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{前|まえ}で{友達|ともだち}と{待|ま}ち{合|あ}わせをした。",
+          "kana": "えきのまえでともだちとまちあわせをした。",
+          "en": "I met up with a friend in front of the station."
+        },
+        {
+          "ja": "{待|ま}ち{合|あ}わせは{三時|さんじ}に{駅前|えきまえ}でいいですか。",
+          "kana": "まちあわせはさんじにえきまえでいいですか。",
+          "en": "Is three o’clock in front of the station okay for meeting up?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0785",
+      "word": "お願い",
+      "kana": "おねがい",
+      "meanings": [
+        "request",
+        "favor"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "お願いします (please) is the set phrase; the noun is a request or favor (お願いがある).",
+      "collocations": [
+        "お願いします",
+        "お願いがある"
+      ],
+      "examples": [
+        {
+          "ja": "{一|ひと}つお{願|ねが}いがあります。",
+          "kana": "ひとつおねがいがあります。",
+          "en": "I have a favor to ask."
+        },
+        {
+          "ja": "ケンにお{願|ねが}いをしたら、すぐ{来|き}てくれた。",
+          "kana": "ケンにおねがいをしたら、すぐきてくれた。",
+          "en": "When I asked Ken for a favor, he came right away."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0786",
+      "word": "利用",
+      "kana": "りよう",
+      "meanings": [
+        "use",
+        "utilization"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "More formal than 使う; common on signs and announcements (ご利用ください).",
+      "collocations": [
+        "利用する",
+        "ご利用"
+      ],
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{電車|でんしゃ}を{利用|りよう}しています。",
+          "kana": "まいにちでんしゃをりようしています。",
+          "en": "I use the train every day."
+        },
+        {
+          "ja": "{日曜日|にちようび}はよく{図書館|としょかん}を{利用|りよう}します。",
+          "kana": "にちようびはよくとしょかんをりようします。",
+          "en": "On Sundays I often use the library."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0787",
+      "word": "外出",
+      "kana": "がいしゅつ",
+      "meanings": [
+        "going out"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "actions",
+        "home"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Slightly formal; in conversation 出かける is more common. 外出中 = out (sign on a desk or door).",
+      "collocations": [
+        "外出する",
+        "外出中"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{今|いま}{外出|がいしゅつ}しています。",
+          "kana": "ちちはいまがいしゅつしています。",
+          "en": "My father is out right now."
+        },
+        {
+          "ja": "{雨|あめ}だから、{今日|きょう}は{外出|がいしゅつ}しない。",
+          "kana": "あめだから、きょうはがいしゅつしない。",
+          "en": "It’s raining, so I won’t go out today."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0788",
+      "word": "昼寝",
+      "kana": "ひるね",
+      "meanings": [
+        "nap",
+        "afternoon nap"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "time",
+        "home"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "昼寝する",
+        "昼寝をする"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}の{午後|ごご}は{昼寝|ひるね}をした。",
+          "kana": "にちようびのごごはひるねをした。",
+          "en": "I took a nap on Sunday afternoon."
+        },
+        {
+          "ja": "アオは{毎日|まいにち}{庭|にわ}で{昼寝|ひるね}をします。",
+          "kana": "アオはまいにちにわでひるねをします。",
+          "en": "Ao naps in the garden every day."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0789",
+      "word": "引っ越し",
+      "kana": "ひっこし",
+      "meanings": [
+        "moving house",
+        "move"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "altForms": [
+        "引越し"
+      ],
+      "collocations": [
+        "引っ越しする",
+        "引っ越しの準備"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{川崎|かわさき}に{引|ひ}っ{越|こ}しします。",
+          "kana": "らいげつ、かわさきにひっこしします。",
+          "en": "Next month I’m moving to Kawasaki."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{前|まえ}に、{部屋|へや}を{掃除|そうじ}しました。",
+          "kana": "ひっこしのまえに、へやをそうじしました。",
+          "en": "Before the move, I cleaned the room."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0790",
+      "word": "乾杯",
+      "kana": "かんぱい",
+      "meanings": [
+        "toast",
+        "cheers"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "drink",
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Also the interjection said when glasses are raised: 乾杯！",
+      "collocations": [
+        "乾杯する",
+        "ビールで乾杯"
+      ],
+      "examples": [
+        {
+          "ja": "じゃあ、{乾杯|かんぱい}しましょう。",
+          "kana": "じゃあ、かんぱいしましょう。",
+          "en": "Well then, let’s make a toast."
+        },
+        {
+          "ja": "ケンの{新|あたら}しい{仕事|しごと}に{乾杯|かんぱい}！",
+          "kana": "ケンのあたらしいしごとにかんぱい！",
+          "en": "Here’s to Ken’s new job!"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0791",
+      "word": "外食",
+      "kana": "がいしょく",
+      "meanings": [
+        "eating out"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "food",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "外食する",
+        "外食が多い"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{疲|つか}れたから、{外食|がいしょく}した。",
+          "kana": "きょうはつかれたから、がいしょくした。",
+          "en": "I was tired today, so I ate out."
+        },
+        {
+          "ja": "{週|しゅう}に{一度|いちど}、{家族|かぞく}で{外食|がいしょく}します。",
+          "kana": "しゅうにいちど、かぞくでがいしょくします。",
+          "en": "Once a week, we eat out as a family."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0792",
+      "word": "帰国",
+      "kana": "きこく",
+      "meanings": [
+        "return to one’s country"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "travel"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "帰国する"
+      ],
+      "examples": [
+        {
+          "ja": "{夏休|なつやす}みに{帰国|きこく}します。",
+          "kana": "なつやすみにきこくします。",
+          "en": "I’m going back to my country for summer vacation."
+        },
+        {
+          "ja": "{留学生|りゅうがくせい}の{友達|ともだち}が{先月|せんげつ}{帰国|きこく}しました。",
+          "kana": "りゅうがくせいのともだちがせんげつきこくしました。",
+          "en": "My exchange-student friend went back home last month."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0793",
+      "word": "ハンバーガー",
+      "kana": "ハンバーガー",
+      "meanings": [
+        "hamburger"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "food",
+        "loanword"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昼|ひる}ご{飯|はん}にハンバーガーを{食|た}べた。",
+          "kana": "ひるごはんにハンバーガーをたべた。",
+          "en": "I had a hamburger for lunch."
+        },
+        {
+          "ja": "この{店|みせ}のハンバーガーは{大|おお}きくて{安|やす}いです。",
+          "kana": "このみせのハンバーガーはおおきくてやすいです。",
+          "en": "The hamburgers at this shop are big and cheap."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0794",
+      "word": "ペット",
+      "kana": "ペット",
+      "meanings": [
+        "pet"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "animals",
+        "home",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ペットの{犬|いぬ}と{毎朝|まいあさ}{散歩|さんぽ}します。",
+          "kana": "ペットのいぬとまいあささんぽします。",
+          "en": "I take a walk with my pet dog every morning."
+        },
+        {
+          "ja": "{妹|いもうと}はペットがほしいと{言|い}っている。",
+          "kana": "いもうとはペットがほしいといっている。",
+          "en": "My little sister says she wants a pet."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0795",
+      "word": "ジョギング",
+      "kana": "ジョギング",
+      "meanings": [
+        "jogging"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "sports",
+        "hobbies",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "collocations": [
+        "ジョギングする",
+        "ジョギングをする"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}の{前|まえ}に{三十分|さんじゅっぷん}ジョギングする。",
+          "kana": "しごとのまえにさんじゅっぷんジョギングする。",
+          "en": "I jog for thirty minutes before work."
+        },
+        {
+          "ja": "{昨日|きのう}は{海岸|かいがん}でジョギングをしました。",
+          "kana": "きのうはかいがんでジョギングをしました。",
+          "en": "Yesterday I went jogging along the coast."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0796",
+      "word": "ソファ",
+      "kana": "ソファ",
+      "meanings": [
+        "sofa",
+        "couch"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "home",
+        "objects",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "altForms": [
+        "ソファー"
+      ],
+      "examples": [
+        {
+          "ja": "ソファに{座|すわ}ってテレビを{見|み}ます。",
+          "kana": "ソファにすわってテレビをみます。",
+          "en": "I sit on the sofa and watch TV."
+        },
+        {
+          "ja": "アオはソファの{上|うえ}で{寝|ね}ています。",
+          "kana": "アオはソファのうえでねています。",
+          "en": "Ao is sleeping on the sofa."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0797",
+      "word": "キャンプ",
+      "kana": "キャンプ",
+      "meanings": [
+        "camping",
+        "camp"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "travel",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "collocations": [
+        "キャンプをする",
+        "キャンプに行く"
+      ],
+      "examples": [
+        {
+          "ja": "{夏休|なつやす}みに{山|やま}でキャンプをしました。",
+          "kana": "なつやすみにやまでキャンプをしました。",
+          "en": "I went camping in the mountains over summer vacation."
+        },
+        {
+          "ja": "キャンプの{夜|よる}は{星空|ほしぞら}がきれいだった。",
+          "kana": "キャンプのよるはほしぞらがきれいだった。",
+          "en": "The starry sky was beautiful on the night of the camp."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0798",
+      "word": "バイク",
+      "kana": "バイク",
+      "meanings": [
+        "motorcycle",
+        "motorbike"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "transport",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "False friend: バイク is a motorcycle or scooter, never a bicycle (自転車).",
+      "examples": [
+        {
+          "ja": "{兄|あに}はバイクで{会社|かいしゃ}に{行|い}く。",
+          "kana": "あにはバイクでかいしゃにいく。",
+          "en": "My older brother goes to work by motorcycle."
+        },
+        {
+          "ja": "{新|あたら}しいバイクがほしいです。",
+          "kana": "あたらしいバイクがほしいです。",
+          "en": "I want a new motorcycle."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0799",
+      "word": "チケット",
+      "kana": "チケット",
+      "meanings": [
+        "ticket"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "travel",
+        "shopping",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "For concerts, planes and events; a train ticket bought at the station is usually 切符.",
+      "examples": [
+        {
+          "ja": "コンサートのチケットを{二枚|にまい}{買|か}いました。",
+          "kana": "コンサートのチケットをにまいかいました。",
+          "en": "I bought two concert tickets."
+        },
+        {
+          "ja": "{映画|えいが}のチケットはもう{持|も}っている？",
+          "kana": "えいがのチケットはもうもっている？",
+          "en": "Do you already have the movie tickets?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0800",
+      "word": "ドライブ",
+      "kana": "ドライブ",
+      "meanings": [
+        "drive",
+        "driving trip"
+      ],
+      "pos": "n-suru",
+      "jlpt": 5,
+      "tags": [
+        "hobbies",
+        "transport",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "collocations": [
+        "ドライブする",
+        "ドライブに行く"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{海|うみ}までドライブした。",
+          "kana": "にちようびにうみまでドライブした。",
+          "en": "On Sunday I drove out to the sea."
+        },
+        {
+          "ja": "{来週|らいしゅう}、{箱根|はこね}までドライブしませんか。",
+          "kana": "らいしゅう、はこねまでドライブしませんか。",
+          "en": "Shall we drive to Hakone next week?"
+        }
+      ],
+      "station": 15
+    }
+  ]
+}

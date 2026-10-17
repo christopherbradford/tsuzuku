@@ -1,0 +1,1457 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "story",
+  "level": "kana",
+  "writer": "stories-s02",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "s-02-1",
+      "stationId": "st-02",
+      "titleJa": "{六郷|ろくごう}のふね",
+      "titleEn": "The Rokugō Ferry",
+      "kind": "story",
+      "register": "polite",
+      "lines": [
+        {
+          "ja": "かわさきです。さくらです。",
+          "kana": "かわさきです。さくらです。",
+          "en": "This is Kawasaki. The cherry blossoms are out.",
+          "tokens": [
+            "かわさき",
+            "です",
+            "。",
+            "さくら",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0653"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0653",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "たまがわのふねです。",
+          "kana": "たまがわのふねです。",
+          "en": "A boat on the Tama river.",
+          "tokens": [
+            "たまがわ",
+            "の",
+            "ふね",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0518"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0518",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "サイトウさんのふねです。",
+          "kana": "サイトウさんのふねです。",
+          "en": "It is Saitō-san's boat.",
+          "tokens": [
+            "サイトウさん",
+            "の",
+            "ふね",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0518"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0518",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「おはようございます。」",
+          "kana": "「おはようございます。」",
+          "en": "\"Good morning.\"",
+          "tokens": [
+            "「",
+            "おはようございます",
+            "。",
+            "」"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0004",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "おじいさんがいます。",
+          "kana": "おじいさんがいます。",
+          "en": "An elderly man is there.",
+          "tokens": [
+            "おじいさん",
+            "が",
+            "います",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0091"
+          ],
+          "tokenIds": [
+            "v-n5-0091",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「はじめまして。{田中|たなか}です。」",
+          "kana": "「はじめまして。たなかです。」",
+          "en": "\"How do you do. I am Tanaka.\"",
+          "tokens": [
+            "「",
+            "はじめまして",
+            "。",
+            "田中",
+            "です",
+            "。",
+            "」"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0017",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「ハナです。よろしくおねがいします。」",
+          "kana": "「ハナです。よろしくおねがいします。」",
+          "en": "\"I am Hana. Pleased to meet you.\"",
+          "tokens": [
+            "「",
+            "ハナ",
+            "です",
+            "。",
+            "よろしくおねがいします",
+            "。",
+            "」"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0018",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{田中|たなか}さんのとけいです。",
+          "kana": "たなかさんのとけいです。",
+          "en": "This is Tanaka-san's pocket watch.",
+          "tokens": [
+            "田中さん",
+            "の",
+            "とけい",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0172"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0172",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「{八時|はちじ}です。」",
+          "kana": "「はちじです。」",
+          "en": "\"It is eight o'clock.\"",
+          "tokens": [
+            "「",
+            "八時",
+            "です",
+            "。",
+            "」"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0154",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「いくらですか。」",
+          "kana": "「いくらですか。」",
+          "en": "\"How much is it?\"",
+          "tokens": [
+            "「",
+            "いくら",
+            "です",
+            "か",
+            "。",
+            "」"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0061",
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「{五百円|ごひゃくえん}です。」",
+          "kana": "「ごひゃくえんです。」",
+          "en": "\"Five hundred yen.\"",
+          "tokens": [
+            "「",
+            "五百円",
+            "です",
+            "。",
+            "」"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0115",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "はい。いち、に、さん、よん、ご。",
+          "kana": "はい。いち、に、さん、よん、ご。",
+          "en": "Here you are. One, two, three, four, five.",
+          "tokens": [
+            "はい",
+            "。",
+            "いち",
+            "、",
+            "に",
+            "、",
+            "さん",
+            "、",
+            "よん",
+            "、",
+            "ご",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0031",
+            null,
+            "v-n5-0032",
+            null,
+            "v-n5-0033",
+            null,
+            "v-n5-0034",
+            null,
+            "v-n5-0035",
+            null
+          ]
+        },
+        {
+          "ja": "ハナ、ケン、{田中|たなか}さん。さんです。",
+          "kana": "ハナ、ケン、たなかさん。さんです。",
+          "en": "Hana, Ken, Tanaka-san. That makes three.",
+          "tokens": [
+            "ハナ",
+            "、",
+            "ケン",
+            "、",
+            "田中さん",
+            "。",
+            "さん",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0033",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "たまがわのさくらです。",
+          "kana": "たまがわのさくらです。",
+          "en": "Cherry blossoms on the Tama river.",
+          "tokens": [
+            "たまがわ",
+            "の",
+            "さくら",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0653"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0653",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「{九時|くじ}です。では、しつれいします。」",
+          "kana": "「くじです。では、しつれいします。」",
+          "en": "\"Nine o'clock. Well then, excuse me.\"",
+          "tokens": [
+            "「",
+            "九時",
+            "です",
+            "。",
+            "では",
+            "、",
+            "しつれいします",
+            "。",
+            "」"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0154",
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0028",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{田中|たなか}さんは、どこへ？",
+          "kana": "たなかさんは、どこへ？",
+          "en": "Where is Tanaka-san off to?",
+          "tokens": [
+            "田中さん",
+            "は",
+            "、",
+            "どこ",
+            "へ",
+            "？"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0056",
+            null,
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0001",
+        "v-n5-0004",
+        "v-n5-0017",
+        "v-n5-0018",
+        "v-n5-0028",
+        "v-n5-0031",
+        "v-n5-0032",
+        "v-n5-0033",
+        "v-n5-0034",
+        "v-n5-0035",
+        "v-n5-0056",
+        "v-n5-0061",
+        "v-n5-0091",
+        "v-n5-0115",
+        "v-n5-0154",
+        "v-n5-0172",
+        "v-n5-0518",
+        "v-n5-0653"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "Where does this episode take place?",
+          "choices": [
+            "At a harbour café in Yokohama",
+            "At the Tama river crossing in Kawasaki",
+            "On the mountain pass at Hakone",
+            "At Nihonbashi at dawn"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Who is Tanaka-san?",
+          "choices": [
+            "A child travelling with his family",
+            "The boatman",
+            "An elderly man with a pocket watch",
+            "A tea-stall woman"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "How much is the boat fare?",
+          "choices": [
+            "Five hundred yen",
+            "Three hundred yen",
+            "One thousand yen",
+            "One hundred yen"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "What time does Tanaka-san announce on the far bank?",
+          "choices": [
+            "Eight o'clock",
+            "Seven o'clock",
+            "Ten o'clock",
+            "Nine o'clock"
+          ],
+          "answer": 3
+        }
+      ],
+      "recapEn": "At the old Rokugō crossing on the Tama river, Hana and Ken take Saitō-san's boat and meet Tanaka-san, a polite elderly man with a pocket watch. They pay five hundred yen each, count three passengers and cross under the cherry blossoms. On the far bank Tanaka-san announces nine o'clock, excuses himself and walks off.",
+      "names": [
+        "ハナ",
+        "ケン",
+        "田中さん",
+        "サイトウさん",
+        "かわさき",
+        "たまがわ"
+      ]
+    },
+    {
+      "id": "s-02-2",
+      "stationId": "st-02",
+      "titleJa": "ふたりですか",
+      "titleEn": "Two of You?",
+      "kind": "dialogue",
+      "register": "polite",
+      "lines": [
+        {
+          "speaker": "サイトウさん",
+          "ja": "おはようございます。",
+          "kana": "おはようございます。",
+          "en": "Good morning.",
+          "tokens": [
+            "おはようございます",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0004",
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "おはようございます。",
+          "kana": "おはようございます。",
+          "en": "Good morning.",
+          "tokens": [
+            "おはようございます",
+            "。"
+          ],
+          "options": [
+            {
+              "text": "おはようございます。",
+              "kind": "best"
+            },
+            {
+              "text": "こんにちは。",
+              "kind": "ok",
+              "recast": "おはようございます。"
+            },
+            {
+              "text": "おはよう。",
+              "kind": "register-wrong",
+              "recast": "おはようございます。"
+            },
+            {
+              "text": "おはようございますです。",
+              "kind": "grammar-wrong",
+              "recast": "おはようございます。"
+            }
+          ],
+          "accept": [
+            "おはようございます",
+            "はい、おはようございます。"
+          ],
+          "mustInclude": [
+            "おはようございます"
+          ],
+          "tokenIds": [
+            "v-n5-0004",
+            null
+          ]
+        },
+        {
+          "speaker": "サイトウさん",
+          "ja": "ふたりですか。",
+          "kana": "ふたりですか。",
+          "en": "Two of you?",
+          "tokens": [
+            "ふたり",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0096"
+          ],
+          "tokenIds": [
+            "v-n5-0096",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "はい、ふたりです。",
+          "kana": "はい、ふたりです。",
+          "en": "Yes, two.",
+          "tokens": [
+            "はい",
+            "、",
+            "ふたり",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0096"
+          ],
+          "options": [
+            {
+              "text": "ふたりです。",
+              "kind": "ok",
+              "recast": "はい、ふたりです。"
+            },
+            {
+              "text": "はい、ふたりです。",
+              "kind": "best"
+            },
+            {
+              "text": "うん、ふたり。",
+              "kind": "register-wrong",
+              "recast": "はい、ふたりです。"
+            },
+            {
+              "text": "はい、ふたりですか。",
+              "kind": "grammar-wrong",
+              "recast": "はい、ふたりです。"
+            }
+          ],
+          "accept": [
+            "はい。ふたりです。",
+            "ええ、ふたりです。"
+          ],
+          "mustInclude": [
+            "ふたり"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0096",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "田中さん",
+          "ja": "すみません。わたしもおねがいします。",
+          "kana": "すみません。わたしもおねがいします。",
+          "en": "Excuse me. Me too, please.",
+          "tokens": [
+            "すみません",
+            "。",
+            "わたし",
+            "も",
+            "おねがいします",
+            "。"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0013",
+            null,
+            "v-n5-0041",
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "はい。わたしとケンと{田中|たなか}さんです。",
+          "kana": "はい。わたしとケンとたなかさんです。",
+          "en": "Yes. It is me, Ken and Tanaka-san.",
+          "tokens": [
+            "はい",
+            "。",
+            "わたし",
+            "と",
+            "ケン",
+            "と",
+            "田中さん",
+            "です",
+            "。"
+          ],
+          "options": [
+            {
+              "text": "わたしとケンと田中さんです。",
+              "kind": "ok",
+              "recast": "はい。わたしとケンと田中さんです。"
+            },
+            {
+              "text": "うん。わたしとケンと田中さん。",
+              "kind": "register-wrong",
+              "recast": "はい。わたしとケンと田中さんです。"
+            },
+            {
+              "text": "はい。わたしとケンと田中さんです。",
+              "kind": "best"
+            },
+            {
+              "text": "はい。わたしもケンも田中さんです。",
+              "kind": "grammar-wrong",
+              "recast": "はい。わたしとケンと田中さんです。"
+            }
+          ],
+          "accept": [
+            "はい、さんです。",
+            "わたしと、ケンと、田中さんです。"
+          ],
+          "mustInclude": [
+            "わたし",
+            "ケン",
+            "田中さん"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0041",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "サイトウさん",
+          "ja": "はい。いち、に、さん。さんですね。",
+          "kana": "はい。いち、に、さん。さんですね。",
+          "en": "Right. One, two, three. Three of you, then.",
+          "tokens": [
+            "はい",
+            "。",
+            "いち",
+            "、",
+            "に",
+            "、",
+            "さん",
+            "。",
+            "さん",
+            "です",
+            "ね",
+            "。"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0031",
+            null,
+            "v-n5-0032",
+            null,
+            "v-n5-0033",
+            null,
+            "v-n5-0033",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "コーヒー、どうですか。",
+          "kana": "コーヒー、どうですか。",
+          "en": "How about some coffee?",
+          "tokens": [
+            "コーヒー",
+            "、",
+            "どう",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "tokenIds": [
+            "v-n5-0409",
+            null,
+            "v-n5-0060",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "田中さん",
+          "ja": "ありがとうございます。いただきます。",
+          "kana": "ありがとうございます。いただきます。",
+          "en": "Thank you. I will have some.",
+          "tokens": [
+            "ありがとうございます",
+            "。",
+            "いただきます",
+            "。"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0010",
+            null,
+            "v-n5-0015",
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "どういたしまして。",
+          "kana": "どういたしまして。",
+          "en": "You're welcome.",
+          "tokens": [
+            "どういたしまして",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0012",
+            null
+          ]
+        },
+        {
+          "speaker": "田中さん",
+          "ja": "{八時|はちじ}ですね。",
+          "kana": "はちじですね。",
+          "en": "Eight o'clock.",
+          "tokens": [
+            "八時",
+            "です",
+            "ね",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            "v-n5-0154",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "サイトウさん",
+          "ja": "はい。では、いきます。",
+          "kana": "はい。では、いきます。",
+          "en": "Right. Off we go.",
+          "tokens": [
+            "はい",
+            "。",
+            "では",
+            "、",
+            "いきます",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "サイトウさん、おねがいします。",
+          "kana": "サイトウさん、おねがいします。",
+          "en": "Please, Saitō-san.",
+          "tokens": [
+            "サイトウさん",
+            "、",
+            "おねがいします",
+            "。"
+          ],
+          "options": [
+            {
+              "text": "サイトウさん、おねがいします。",
+              "kind": "best"
+            },
+            {
+              "text": "おねがいします。",
+              "kind": "ok",
+              "recast": "サイトウさん、おねがいします。"
+            },
+            {
+              "text": "サイトウさん、おねがい。",
+              "kind": "register-wrong",
+              "recast": "サイトウさん、おねがいします。"
+            },
+            {
+              "text": "サイトウさんのおねがいします。",
+              "kind": "grammar-wrong",
+              "recast": "サイトウさん、おねがいします。"
+            }
+          ],
+          "accept": [
+            "おねがいします。",
+            "サイトウさん、よろしくおねがいします。"
+          ],
+          "mustInclude": [
+            "おねがいします"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "ハナ、あれ。",
+          "kana": "ハナ、あれ。",
+          "en": "Hana, look at that.",
+          "tokens": [
+            "ハナ",
+            "、",
+            "あれ",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0047",
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "さくらですね。",
+          "kana": "さくらですね。",
+          "en": "Cherry blossoms.",
+          "tokens": [
+            "さくら",
+            "です",
+            "ね",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0653"
+          ],
+          "options": [
+            {
+              "text": "さくらです。",
+              "kind": "ok",
+              "recast": "さくらですね。"
+            },
+            {
+              "text": "さくらだね。",
+              "kind": "register-wrong",
+              "recast": "さくらですね。"
+            },
+            {
+              "text": "さくらねです。",
+              "kind": "grammar-wrong",
+              "recast": "さくらですね。"
+            },
+            {
+              "text": "さくらですね。",
+              "kind": "best"
+            }
+          ],
+          "accept": [
+            "あ、さくらですね。",
+            "さくらです。"
+          ],
+          "mustInclude": [
+            "さくら"
+          ],
+          "tokenIds": [
+            "v-n5-0653",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "田中さん",
+          "ja": "そうですね。はるですね。",
+          "kana": "そうですね。はるですね。",
+          "en": "Yes. It is spring.",
+          "tokens": [
+            "そうですね",
+            "。",
+            "はる",
+            "です",
+            "ね",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0224"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0023",
+            null,
+            "v-n5-0224",
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0001",
+        "v-n5-0004",
+        "v-n5-0010",
+        "v-n5-0012",
+        "v-n5-0013",
+        "v-n5-0015",
+        "v-n5-0019",
+        "v-n5-0023",
+        "v-n5-0031",
+        "v-n5-0032",
+        "v-n5-0033",
+        "v-n5-0041",
+        "v-n5-0047",
+        "v-n5-0060",
+        "v-n5-0096",
+        "v-n5-0154",
+        "v-n5-0224",
+        "v-n5-0409",
+        "v-n5-0653"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "What does the boatman first ask Hana?",
+          "choices": [
+            "Where she comes from",
+            "Whether there are two of them",
+            "What time it is",
+            "Whether she wants coffee"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What does Ken offer Tanaka-san?",
+          "choices": [
+            "Tea",
+            "Cake",
+            "Coffee",
+            "A ticket"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "What does Ken point out on the river at the end?",
+          "choices": [
+            "Cherry blossoms",
+            "A blue-grey cat",
+            "A train",
+            "Mount Fuji"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "What time does Tanaka-san say it is?",
+          "choices": [
+            "Nine o'clock",
+            "Seven o'clock",
+            "Six o'clock",
+            "Eight o'clock"
+          ],
+          "answer": 3
+        }
+      ],
+      "recapEn": "On the Kawasaki bank the boatman Saitō-san asks whether Hana and Ken are two; Tanaka-san joins and makes three. Ken offers Tanaka-san coffee from his flask, Tanaka-san announces eight o'clock, and as the boat pushes off Ken points at petals on the water: cherry blossoms, spring.",
+      "names": [
+        "ハナ",
+        "ケン",
+        "田中さん",
+        "サイトウさん"
+      ],
+      "learnerSpeaker": "ハナ"
+    },
+    {
+      "id": "s-02-3",
+      "stationId": "st-02",
+      "titleJa": "きっぷとじかん",
+      "titleEn": "Tickets and Times",
+      "kind": "story",
+      "register": "polite",
+      "lines": [
+        {
+          "ja": "ろくごうのふねです。",
+          "kana": "ろくごうのふねです。",
+          "en": "The Rokugō boat.",
+          "tokens": [
+            "ろくごう",
+            "の",
+            "ふね",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0518"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0518",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "きっぷは、ここです。",
+          "kana": "きっぷは、ここです。",
+          "en": "Tickets are sold here.",
+          "tokens": [
+            "きっぷ",
+            "は",
+            "、",
+            "ここ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0485"
+          ],
+          "tokenIds": [
+            "v-n5-0485",
+            null,
+            null,
+            "v-n5-0051",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{五百円|ごひゃくえん}です。",
+          "kana": "ごひゃくえんです。",
+          "en": "Five hundred yen.",
+          "tokens": [
+            "五百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "がくせいは、{三百円|さんびゃくえん}です。",
+          "kana": "がくせいは、さんびゃくえんです。",
+          "en": "Students: three hundred yen.",
+          "tokens": [
+            "がくせい",
+            "は",
+            "、",
+            "三百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0069",
+            null,
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "こどもは、{百円|ひゃくえん}です。",
+          "kana": "こどもは、ひゃくえんです。",
+          "en": "Children: one hundred yen.",
+          "tokens": [
+            "こども",
+            "は",
+            "、",
+            "百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0071",
+            null,
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "ふねは、いつですか。",
+          "kana": "ふねは、いつですか。",
+          "en": "When does the boat go?",
+          "tokens": [
+            "ふね",
+            "は",
+            "、",
+            "いつ",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0518"
+          ],
+          "tokenIds": [
+            "v-n5-0518",
+            null,
+            null,
+            "v-n5-0057",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{八時|はちじ}です。",
+          "kana": "はちじです。",
+          "en": "Eight o'clock.",
+          "tokens": [
+            "八時",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            "v-n5-0154",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{九時|くじ}です。",
+          "kana": "くじです。",
+          "en": "Nine o'clock.",
+          "tokens": [
+            "九時",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            "v-n5-0154",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{十時|じゅうじ}です。",
+          "kana": "じゅうじです。",
+          "en": "Ten o'clock.",
+          "tokens": [
+            "十時",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0154"
+          ],
+          "tokenIds": [
+            "v-n5-0154",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "ひとは、じゅうまでです。",
+          "kana": "ひとは、じゅうまでです。",
+          "en": "Up to ten people.",
+          "tokens": [
+            "ひと",
+            "は",
+            "、",
+            "じゅう",
+            "まで",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0066",
+            null,
+            null,
+            "v-n5-0040",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "わたしは、{五百円|ごひゃくえん}です。",
+          "kana": "わたしは、ごひゃくえんです。",
+          "en": "I pay five hundred yen.",
+          "tokens": [
+            "わたし",
+            "は",
+            "、",
+            "五百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "ケンも、{五百円|ごひゃくえん}です。",
+          "kana": "ケンも、ごひゃくえんです。",
+          "en": "Ken pays five hundred yen too.",
+          "tokens": [
+            "ケン",
+            "も",
+            "、",
+            "五百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{田中|たなか}さんも、{五百円|ごひゃくえん}です。",
+          "kana": "たなかさんも、ごひゃくえんです。",
+          "en": "Tanaka-san pays five hundred yen too.",
+          "tokens": [
+            "田中さん",
+            "も",
+            "、",
+            "五百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "いち、に、さん。{千五百円|せんごひゃくえん}です。",
+          "kana": "いち、に、さん。せんごひゃくえんです。",
+          "en": "One, two, three. One thousand five hundred yen.",
+          "tokens": [
+            "いち",
+            "、",
+            "に",
+            "、",
+            "さん",
+            "。",
+            "千五百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0031",
+            null,
+            "v-n5-0032",
+            null,
+            "v-n5-0033",
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "サイトウさん、ありがとうございます。",
+          "kana": "サイトウさん、ありがとうございます。",
+          "en": "Thank you, Saitō-san.",
+          "tokens": [
+            "サイトウさん",
+            "、",
+            "ありがとうございます",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0010",
+            null
+          ]
+        },
+        {
+          "ja": "「どういたしまして。」",
+          "kana": "「どういたしまして。」",
+          "en": "\"You're welcome.\"",
+          "tokens": [
+            "「",
+            "どういたしまして",
+            "。",
+            "」"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0012",
+            null,
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0010",
+        "v-n5-0012",
+        "v-n5-0031",
+        "v-n5-0032",
+        "v-n5-0033",
+        "v-n5-0040",
+        "v-n5-0041",
+        "v-n5-0051",
+        "v-n5-0057",
+        "v-n5-0066",
+        "v-n5-0069",
+        "v-n5-0071",
+        "v-n5-0115",
+        "v-n5-0154",
+        "v-n5-0485",
+        "v-n5-0518"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "How much does a student pay for the boat?",
+          "choices": [
+            "Five hundred yen",
+            "One hundred yen",
+            "Three hundred yen",
+            "One thousand yen"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "When is the first boat of the morning?",
+          "choices": [
+            "Seven o'clock",
+            "Eight o'clock",
+            "Nine o'clock",
+            "Ten o'clock"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "How many people can the boat take at most?",
+          "choices": [
+            "Three",
+            "Five",
+            "Eight",
+            "Ten"
+          ],
+          "answer": 3
+        },
+        {
+          "q": "How much do Hana, Ken and Tanaka-san pay altogether?",
+          "choices": [
+            "One thousand five hundred yen",
+            "One thousand yen",
+            "Five hundred yen",
+            "Three hundred yen"
+          ],
+          "answer": 0
+        }
+      ],
+      "recapEn": "The sign at the Rokugō landing, copied into Hana's diary: tickets sold here, five hundred yen, three hundred for students, one hundred for children; boats at eight, nine and ten; up to ten people. Hana, Ken and Tanaka-san pay five hundred each, one thousand five hundred yen in all, and Saitō-san says you're welcome.",
+      "names": [
+        "ケン",
+        "田中さん",
+        "サイトウさん",
+        "ろくごう"
+      ]
+    }
+  ]
+}

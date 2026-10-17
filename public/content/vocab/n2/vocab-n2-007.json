@@ -1,0 +1,4765 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n2",
+  "writer": "vocab-n2-007",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n2-0852",
+      "word": "器",
+      "kana": "うつわ",
+      "meanings": [
+        "vessel",
+        "container",
+        "dish",
+        "caliber (of a person)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects"
+      ],
+      "notes": "Also figurative: 器が大きい = big-hearted, able to handle big things.",
+      "examples": [
+        {
+          "ja": "{料理|りょうり}に{合|あ}わせて{器|うつわ}を{選|えら}ぶのも、{和食|わしょく}の{楽|たの}しみの{一|ひと}つです。",
+          "kana": "りょうりにあわせてうつわをえらぶのも、わしょくのたのしみのひとつです。",
+          "en": "Choosing dishes to match the food is one of the pleasures of Japanese cuisine."
+        },
+        {
+          "ja": "{母|はは}が{大切|たいせつ}にしていた{器|うつわ}を、{引|ひ}っ{越|こ}しの{時|とき}に{割|わ}ってしまった。",
+          "kana": "ははがたいせつにしていたうつわを、ひっこしのときにわってしまった。",
+          "en": "I broke a dish my mother had treasured when we moved house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{料理|りょうり}を{入|い}れる、{皿|さら}や{茶碗|ちゃわん}などの{道具|どうぐ}。",
+        "kana": "りょうりをいれる、さらやちゃわんなどのどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0853",
+      "word": "鉢",
+      "kana": "はち",
+      "meanings": [
+        "flowerpot",
+        "bowl"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects"
+      ],
+      "collocations": [
+        "植木鉢"
+      ],
+      "examples": [
+        {
+          "ja": "ベランダの{鉢|はち}に、{春|はる}になったら{花|はな}の{種|たね}をまくつもりだ。",
+          "kana": "ベランダのはちに、はるになったらはなのたねをまくつもりだ。",
+          "en": "Once spring comes, I plan to sow flower seeds in the pots on the balcony."
+        },
+        {
+          "ja": "{植木鉢|うえきばち}を{日当|ひあ}たりのいい{窓際|まどぎわ}に{移|うつ}したら、{葉|は}の{色|いろ}が{良|よ}くなってきました。",
+          "kana": "うえきばちをひあたりのいいまどぎわにうつしたら、はのいろがよくなってきました。",
+          "en": "After I moved the flowerpot to a sunny spot by the window, the leaves started looking healthier."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{花|はな}や{木|き}を{植|う}えるために、{土|つち}を{入|い}れて{使|つか}う{深|ふか}い{容器|ようき}。",
+        "kana": "はなやきをうえるために、つちをいれてつかうふかいようき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0854",
+      "word": "盆",
+      "kana": "ぼん",
+      "meanings": [
+        "tray"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "culture"
+      ],
+      "notes": "お盆 is also the midsummer festival for the ancestors; context tells which sense is meant.",
+      "examples": [
+        {
+          "ja": "{店員|てんいん}さんが{盆|ぼん}にのせて、お{茶|ちゃ}と{菓子|かし}を{運|はこ}んできてくれた。",
+          "kana": "てんいんさんがぼんにのせて、おちゃとかしをはこんできてくれた。",
+          "en": "The clerk brought over tea and sweets on a tray."
+        },
+        {
+          "ja": "お{茶|ちゃ}を{盆|ぼん}にのせたまま、こぼさないように{廊下|ろうか}を{歩|ある}くのは{意外|いがい}と{難|むずか}しい。",
+          "kana": "おちゃをぼんにのせたまま、こぼさないようにろうかをあるくのはいがいとむずかしい。",
+          "en": "Walking down the hall with tea on a tray without spilling it is surprisingly hard."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{食器|しょっき}や{料理|りょうり}をのせて{運|はこ}ぶための、{平|ひら}たい{道具|どうぐ}。",
+        "kana": "しょっきやりょうりをのせてはこぶための、ひらたいどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0855",
+      "word": "桶",
+      "kana": "おけ",
+      "meanings": [
+        "wooden bucket",
+        "tub"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "{温泉|おんせん}で、{木|き}の{桶|おけ}を{使|つか}って{湯|ゆ}を{体|からだ}にかけるのが{気持|きも}ちいい。",
+          "kana": "おんせんで、きのおけをつかってゆをからだにかけるのがきもちいい。",
+          "en": "At the hot spring, it feels great to pour water over yourself with a wooden bucket."
+        },
+        {
+          "ja": "{昔|むかし}は、どの{家|いえ}でも{井戸|いど}から{桶|おけ}で{水|みず}を{運|はこ}んでいたそうです。",
+          "kana": "むかしは、どのいえでもいどからおけでみずをはこんでいたそうです。",
+          "en": "I hear that in the old days every household carried water from the well in buckets."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{水|みず}やお{湯|ゆ}を{入|い}れて{使|つか}う、{木|き}で{作|つく}った{丸|まる}い{容器|ようき}。",
+        "kana": "みずやおゆをいれてつかう、きでつくったまるいようき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0856",
+      "word": "樽",
+      "kana": "たる",
+      "meanings": [
+        "barrel",
+        "cask"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "drink"
+      ],
+      "examples": [
+        {
+          "ja": "この{工場|こうじょう}では、{今|いま}も{大|おお}きな{木|き}の{樽|たる}で{酒|さけ}を{造|つく}っている。",
+          "kana": "このこうじょうでは、いまもおおきなきのたるでさけをつくっている。",
+          "en": "At this factory, they still make sake in large wooden barrels."
+        },
+        {
+          "ja": "{祭|まつ}りの{日|ひ}には、{酒屋|さかや}の{前|まえ}に{大|おお}きな{樽|たる}が{並|なら}べられ、{誰|だれ}でも{一杯|いっぱい}もらえる。",
+          "kana": "まつりのひには、さかやのまえにおおきなたるがならべられ、だれでもいっぱいもらえる。",
+          "en": "On festival days, big barrels are set out in front of the sake shop and anyone can get a cup."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{酒|さけ}や{醤油|しょうゆ}などをためておく、{木|き}で{作|つく}った{大|おお}きな{容器|ようき}。",
+        "kana": "おさけやしょうゆなどをためておく、きでつくったおおきなようき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0857",
+      "word": "籠",
+      "kana": "かご",
+      "meanings": [
+        "basket",
+        "cage"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "usually-kana"
+      ],
+      "altForms": [
+        "かご"
+      ],
+      "examples": [
+        {
+          "ja": "{買|か}った{野菜|やさい}を{籠|かご}に{入|い}れて、{自転車|じてんしゃ}で{家|いえ}まで{帰|かえ}った。",
+          "kana": "かったやさいをかごにいれて、じてんしゃでいえまでかえった。",
+          "en": "I put the vegetables I'd bought in the basket and rode my bike home."
+        },
+        {
+          "ja": "{猫|ねこ}が{気|き}に{入|い}って、{洗濯物|せんたくもの}を{入|い}れる{籠|かご}の{中|なか}でいつも{寝|ね}ています。",
+          "kana": "ねこがきにいって、せんたくものをいれるかごのなかでいつもねています。",
+          "en": "The cat has taken a liking to the laundry basket and always sleeps in it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{細|ほそ}い{木|き}や{糸|いと}などを{編|あ}んで{作|つく}った、ものを{入|い}れる{道具|どうぐ}。",
+        "kana": "ほそいきやいとなどをあんでつくった、ものをいれるどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0858",
+      "word": "梯子",
+      "kana": "はしご",
+      "meanings": [
+        "ladder"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "usually-kana"
+      ],
+      "notes": "Often written はしご. はしごする = to bar-hop (go from one place to the next).",
+      "altForms": [
+        "はしご"
+      ],
+      "examples": [
+        {
+          "ja": "{高|たか}い{所|ところ}の{電球|でんきゅう}を{替|か}えるのに、{物置|ものおき}から{梯子|はしご}を{出|だ}してきた。",
+          "kana": "たかいところのでんきゅうをかえるのに、ものおきからはしごをだしてきた。",
+          "en": "I got the ladder out of the shed to change a light bulb up high."
+        },
+        {
+          "ja": "{梯子|はしご}に{登|のぼ}る{時|とき}は、{下|した}で{誰|だれ}かに{押|お}さえてもらった{方|ほう}が{安全|あんぜん}ですよ。",
+          "kana": "はしごにのぼるときは、したでだれかにおさえてもらったほうがあんぜんですよ。",
+          "en": "When you climb a ladder, it's safer to have someone hold it at the bottom."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{高|たか}い{所|ところ}に{登|のぼ}るために、{立|た}てかけて{使|つか}う{道具|どうぐ}。",
+        "kana": "たかいところにのぼるために、たてかけてつかうどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0859",
+      "word": "塵取り",
+      "kana": "ちりとり",
+      "meanings": [
+        "dustpan"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "usually-kana"
+      ],
+      "altForms": [
+        "ちりとり"
+      ],
+      "examples": [
+        {
+          "ja": "{箒|ほうき}と{塵取|ちりと}りは、{玄関|げんかん}の{横|よこ}の{棚|たな}に{置|お}いてあります。",
+          "kana": "ほうきとちりとりは、げんかんのよこのたなにおいてあります。",
+          "en": "The broom and dustpan are on the shelf next to the entrance."
+        },
+        {
+          "ja": "{割|わ}れたガラスを{塵取|ちりと}りに{集|あつ}めて、{新聞紙|しんぶんし}に{包|つつ}んで{捨|す}てた。",
+          "kana": "われたガラスをちりとりにあつめて、しんぶんしにつつんですてた。",
+          "en": "I swept the broken glass into the dustpan, wrapped it in newspaper and threw it away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほうきで{集|あつ}めたごみを{取|と}るための{道具|どうぐ}。",
+        "kana": "ほうきであつめたごみをとるためのどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0860",
+      "word": "火鉢",
+      "kana": "ひばち",
+      "meanings": [
+        "hibachi",
+        "charcoal brazier"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}の{家|いえ}では、{冬|ふゆ}になると{火鉢|ひばち}のそばに{集|あつ}まって{手|て}を{温|あたた}めた。",
+          "kana": "むかしのいえでは、ふゆになるとひばちのそばにあつまっててをあたためた。",
+          "en": "In old houses, when winter came people gathered around the hibachi to warm their hands."
+        },
+        {
+          "ja": "{祖父|そふ}は{今|いま}でも、{冬|ふゆ}の{朝|あさ}は{火鉢|ひばち}で{餅|もち}を{焼|や}いて{食|た}べるのが{楽|たの}しみだと{言|い}う。",
+          "kana": "そふはいまでも、ふゆのあさはひばちでもちをやいてたべるのがたのしみだという。",
+          "en": "My grandfather says that even now, grilling rice cakes over the hibachi on winter mornings is a treat he looks forward to."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{中|なか}に{火|ひ}を{入|い}れて、{部屋|へや}や{手|て}を{暖|あたた}めるための{道具|どうぐ}。",
+        "kana": "なかにひをいれて、へややてをあたためるためのどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0861",
+      "word": "提灯",
+      "kana": "ちょうちん",
+      "meanings": [
+        "paper lantern"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{祭|まつ}りの{夜|よる}、{通|とお}りには{赤|あか}い{提灯|ちょうちん}がずらりと{並|なら}んでいた。",
+          "kana": "まつりのよる、とおりにはあかいちょうちんがずらりとならんでいた。",
+          "en": "On the night of the festival, red paper lanterns lined the street."
+        },
+        {
+          "ja": "{店|みせ}の{前|まえ}の{提灯|ちょうちん}に{明|あ}かりがつくと、そろそろ{夕飯|ゆうはん}の{時間|じかん}だなと{感|かん}じます。",
+          "kana": "みせのまえのちょうちんにあかりがつくと、そろそろゆうはんのじかんだなとかんじます。",
+          "en": "When the lantern in front of the restaurant lights up, I feel it's about time for dinner."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{紙|かみ}で{包|つつ}んだ{中|なか}にろうそくの{火|ひ}を{入|い}れて、{夜|よる}に{持|も}ち{歩|ある}いた{道具|どうぐ}。",
+        "kana": "かみでつつんだなかにろうそくのひをいれて、よるにもちあるいたどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0862",
+      "word": "行灯",
+      "kana": "あんどん",
+      "meanings": [
+        "andon lamp",
+        "paper-shaded lamp stand"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}の{宿|やど}では、{行灯|あんどん}の{小|ちい}さな{明|あ}かりの{下|もと}で{手紙|てがみ}を{書|か}いたそうだ。",
+          "kana": "むかしのやどでは、あんどんのちいさなあかりのもとでてがみをかいたそうだ。",
+          "en": "At inns long ago, people apparently wrote letters by the small light of an andon lamp."
+        },
+        {
+          "ja": "{旅館|りょかん}の{廊下|ろうか}には{行灯|あんどん}の{形|かたち}をした{明|あ}かりが{置|お}かれていて、{落|お}ち{着|つ}いた{雰囲気|ふんいき}だった。",
+          "kana": "りょかんのろうかにはあんどんのかたちをしたあかりがおかれていて、おちついたふんいきだった。",
+          "en": "Lamps shaped like andon stood along the inn's corridor, giving it a calm atmosphere."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{木|き}と{紙|かみ}で{作|つく}り、{中|なか}に{火|ひ}を{入|い}れて{部屋|へや}を{明|あか}るくした{昔|むかし}の{道具|どうぐ}。",
+        "kana": "きとかみでつくり、なかにひをいれてへやをあかるくしたむかしのどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0863",
+      "word": "屏風",
+      "kana": "びょうぶ",
+      "meanings": [
+        "folding screen"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{部屋|へや}の{隅|すみ}に、{金色|きんいろ}の{屏風|びょうぶ}が{飾|かざ}られている。",
+          "kana": "へやのすみに、きんいろのびょうぶがかざられている。",
+          "en": "A gold folding screen is displayed in the corner of the room."
+        },
+        {
+          "ja": "{結婚式|けっこんしき}の{写真|しゃしん}を{撮|と}る{時|とき}、{後|うし}ろに{大|おお}きな{屏風|びょうぶ}を{立|た}ててもらいました。",
+          "kana": "けっこんしきのしゃしんをとるとき、うしろにおおきなびょうぶをたててもらいました。",
+          "en": "When we took the wedding photos, they set up a large folding screen behind us."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{部屋|へや}に{立|た}てて{使|つか}う、{絵|え}などをかいた{折|お}りたためる{飾|かざ}り。",
+        "kana": "へやにたててつかう、えなどをかいたおりたためるかざり。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0864",
+      "word": "障子",
+      "kana": "しょうじ",
+      "meanings": [
+        "shoji",
+        "paper sliding door"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "confusables": [
+        "v-n2-0865"
+      ],
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{障子|しょうじ}を{通|とお}して{入|はい}ってくる{柔|やわ}らかい{光|ひかり}で{目|め}が{覚|さ}めた。",
+          "kana": "あさ、しょうじをとおしてはいってくるやわらかいひかりでめがさめた。",
+          "en": "In the morning I woke to the soft light coming in through the shoji."
+        },
+        {
+          "ja": "{子|こ}どもの{頃|ころ}、{障子|しょうじ}に{指|ゆび}で{穴|あな}を{開|あ}けて、よく{母|はは}に{叱|しか}られたものだ。",
+          "kana": "こどものころ、しょうじにゆびであなをあけて、よくははにしかられたものだ。",
+          "en": "When I was a kid, I used to poke holes in the shoji with my finger and often got scolded by my mother."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{細|ほそ}い{木|き}に{白|しろ}い{紙|かみ}を{貼|は}って{作|つく}った、{光|ひかり}を{通|とお}す{和室|わしつ}のドアや{窓|まど}。",
+        "kana": "ほそいきにしろいかみをはってつくった、ひかりをとおすわしつのドアやまど。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0865",
+      "word": "襖",
+      "kana": "ふすま",
+      "meanings": [
+        "fusuma",
+        "papered sliding door"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "notes": "障子 lets light through (thin paper on a lattice); 襖 is opaque and divides rooms.",
+      "confusables": [
+        "v-n2-0864"
+      ],
+      "examples": [
+        {
+          "ja": "{襖|ふすま}を{開|あ}けると、{隣|となり}の{部屋|へや}とつながって{広|ひろ}く{使|つか}えます。",
+          "kana": "ふすまをあけると、となりのへやとつながってひろくつかえます。",
+          "en": "If you open the fusuma, it connects with the next room and you get a bigger space."
+        },
+        {
+          "ja": "この{旅館|りょかん}の{襖|ふすま}には、{季節|きせつ}の{花|はな}が{描|えが}かれていて{見事|みごと}です。",
+          "kana": "このりょかんのふすまには、きせつのはながえがかれていてみごとです。",
+          "en": "The fusuma at this inn are painted with seasonal flowers, and they are stunning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{部屋|へや}と{部屋|へや}の{間|あいだ}に{立|た}てる、{厚|あつ}い{紙|かみ}を{貼|は}った{和室|わしつ}のドア。",
+        "kana": "へやとへやのあいだにたてる、あついかみをはったわしつのドア。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0866",
+      "word": "縁側",
+      "kana": "えんがわ",
+      "meanings": [
+        "engawa",
+        "veranda of a Japanese house"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}の{家|いえ}の{縁側|えんがわ}に{座|すわ}って、{二人|ふたり}でスイカを{食|た}べた。",
+          "kana": "そぼのいえのえんがわにすわって、ふたりでスイカをたべた。",
+          "en": "Sitting on the veranda of my grandmother's house, the two of us ate watermelon."
+        },
+        {
+          "ja": "{縁側|えんがわ}に{布団|ふとん}を{干|ほ}しておいたら、{夕方|ゆうがた}には{太陽|たいよう}の{匂|にお}いがした。",
+          "kana": "えんがわにふとんをほしておいたら、ゆうがたにはたいようのにおいがした。",
+          "en": "I left the futon out to air on the veranda, and by evening it smelled of sunshine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{日本|にほん}の{家|いえ}で、{部屋|へや}と{庭|にわ}の{間|あいだ}にある{細長|ほそなが}い{木|き}の{床|ゆか}。",
+        "kana": "にほんのいえで、へやとにわのあいだにあるほそながいきのゆか。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0867",
+      "word": "瓦",
+      "kana": "かわら",
+      "meanings": [
+        "roof tile"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "{台風|たいふう}で{屋根|やね}の{瓦|かわら}が{何枚|なんまい}か{飛|と}ばされてしまった。",
+          "kana": "たいふうでやねのかわらがなんまいかとばされてしまった。",
+          "en": "The typhoon blew several tiles off the roof."
+        },
+        {
+          "ja": "{古|ふる}い{寺|てら}の{屋根|やね}は、{瓦|かわら}を{一枚|いちまい}ずつ{職人|しょくにん}が{手|て}で{直|なお}しているそうです。",
+          "kana": "ふるいてらのやねは、かわらをいちまいずつしょくにんがてでなおしているそうです。",
+          "en": "I hear craftsmen are repairing the old temple's roof by hand, one tile at a time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{土|つち}を{焼|や}いて{作|つく}った、{屋根|やね}の{上|うえ}に{並|なら}べるもの。",
+        "kana": "つちをやいてつくった、やねのうえにならべるもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0868",
+      "word": "井戸",
+      "kana": "いど",
+      "meanings": [
+        "well"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "この{村|むら}では、{今|いま}でも{井戸|いど}の{水|みず}を{飲|の}み{水|みず}に{使|つか}っている{家|いえ}がある。",
+          "kana": "このむらでは、いまでもいどのみずをのみみずにつかっているいえがある。",
+          "en": "In this village, some houses still use well water for drinking."
+        },
+        {
+          "ja": "{公園|こうえん}の{奥|おく}に{古|ふる}い{井戸|いど}があるが、{今|いま}はふたがしてあって{水|みず}は{見|み}えない。",
+          "kana": "こうえんのおくにふるいいどがあるが、いまはふたがしてあってみずはみえない。",
+          "en": "There is an old well at the back of the park, but it's covered now and you can't see the water."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{地面|じめん}を{深|ふか}く{掘|ほ}って、{地下|ちか}の{水|みず}をくみ{上|あ}げる{所|ところ}。",
+        "kana": "じめんをふかくほって、ちかのみずをくみあげるところ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0869",
+      "word": "梁",
+      "kana": "はり",
+      "meanings": [
+        "beam (of a building)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{民家|みんか}の{天井|てんじょう}には、{太|ふと}くて{黒|くろ}い{梁|はり}が{何本|なんぼん}も{見|み}える。",
+          "kana": "ふるいみんかのてんじょうには、ふとくてくろいはりがなんぼんもみえる。",
+          "en": "In the ceiling of the old farmhouse you can see several thick black beams."
+        },
+        {
+          "ja": "この{店|みせ}は{昔|むかし}の{倉庫|そうこ}を{直|なお}したもので、{天井|てんじょう}の{梁|はり}がそのまま{残|のこ}されています。",
+          "kana": "このみせはむかしのそうこをなおしたもので、てんじょうのはりがそのままのこされています。",
+          "en": "This shop is a converted old warehouse, and the beams in the ceiling have been left as they were."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}の{屋根|やね}を{支|ささ}えるために、{柱|はしら}の{上|うえ}に{横|よこ}に{渡|わた}した{太|ふと}い{木|き}。",
+        "kana": "たてもののやねをささえるために、はしらのうえによこにわたしたふといき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0870",
+      "word": "土台",
+      "kana": "どだい",
+      "meanings": [
+        "foundation",
+        "base"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "abstract"
+      ],
+      "notes": "Literal building foundation and figurative basis (信頼が土台になる).",
+      "examples": [
+        {
+          "ja": "{家|いえ}を{建|た}てる{前|まえ}に、まず{土台|どだい}をしっかり{作|つく}らなければならない。",
+          "kana": "いえをたてるまえに、まずどだいをしっかりつくらなければならない。",
+          "en": "Before building a house, you first have to lay a solid foundation."
+        },
+        {
+          "ja": "{大学|だいがく}で{学|まな}んだ{基礎|きそ}が、{今|いま}の{仕事|しごと}の{土台|どだい}になっていると{感|かん}じる。",
+          "kana": "だいがくでまなんだきそが、いまのしごとのどだいになっているとかんじる。",
+          "en": "I feel that the fundamentals I learned at university are the foundation of my current work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}を{支|ささ}える{一番|いちばん}{下|した}の{部分|ぶぶん}。また、{何|なに}かのもとになるもの。",
+        "kana": "たてものをささえるいちばんしたのぶぶん。また、なにかのもとになるもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0871",
+      "word": "石垣",
+      "kana": "いしがき",
+      "meanings": [
+        "stone wall"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{城|しろ}の{石垣|いしがき}は、{四百年前|よんひゃくねんまえ}に{積|つ}まれたものだと{聞|き}いて{驚|おどろ}いた。",
+          "kana": "しろのいしがきは、よんひゃくねんまえにつまれたものだときいておどろいた。",
+          "en": "I was surprised to hear that the castle's stone walls were built four hundred years ago."
+        },
+        {
+          "ja": "{坂|さか}の{上|うえ}の{家|いえ}は、{道路|どうろ}に{面|めん}した{側|がわ}が{高|たか}い{石垣|いしがき}で{囲|かこ}まれている。",
+          "kana": "さかのうえのいえは、どうろにめんしたがわがたかいいしがきでかこまれている。",
+          "en": "The house at the top of the hill is enclosed by a tall stone wall on the side facing the road."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{石|いし}を{積|つ}み{上|あ}げて{作|つく}った、{家|いえ}や{道|みち}などの{周|まわ}りの{壁|かべ}。",
+        "kana": "いしをつみあげてつくった、いえやみちなどのまわりのかべ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0872",
+      "word": "垣根",
+      "kana": "かきね",
+      "meanings": [
+        "hedge",
+        "fence"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "notes": "Also figurative: 垣根を越える = to cross a barrier between people or groups.",
+      "examples": [
+        {
+          "ja": "{隣|となり}の{家|いえ}との{間|あいだ}には、{低|ひく}い{木|き}の{垣根|かきね}があるだけだ。",
+          "kana": "となりのいえとのあいだには、ひくいきのかきねがあるだけだ。",
+          "en": "Between our house and the neighbor's there is only a low hedge."
+        },
+        {
+          "ja": "{隣|となり}の{人|ひと}と{垣根越|かきねご}しに{話|はな}すうちに、すっかり{仲良|なかよ}くなりました。",
+          "kana": "となりのひととかきねごしにはなすうちに、すっかりなかよくなりました。",
+          "en": "Chatting with my neighbor over the hedge, we ended up becoming good friends."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{隣|となり}との{間|あいだ}に{作|つく}る、{低|ひく}い{木|き}などの{壁|かべ}のようなもの。",
+        "kana": "となりとのあいだにつくる、ひくいきなどのかべのようなもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0873",
+      "word": "物置",
+      "kana": "ものおき",
+      "meanings": [
+        "storage shed",
+        "storeroom"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{使|つか}わない{道具|どうぐ}は、{庭|にわ}の{物置|ものおき}にまとめてしまってある。",
+          "kana": "つかわないどうぐは、にわのものおきにまとめてしまってある。",
+          "en": "The tools we don't use are all stored away in the shed in the garden."
+        },
+        {
+          "ja": "{物置|ものおき}を{片付|かたづ}けたら、{子|こ}どもの{頃|ころ}に{使|つか}っていた{自転車|じてんしゃ}が{出|で}てきた。",
+          "kana": "ものおきをかたづけたら、こどものころにつかっていたじてんしゃがでてきた。",
+          "en": "When I cleaned out the shed, the bicycle I rode as a kid turned up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{使|つか}わない{道具|どうぐ}などをしまっておく{小|ちい}さな{建物|たてもの}や{部屋|へや}。",
+        "kana": "つかわないどうぐなどをしまっておくちいさなたてものやへや。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0874",
+      "word": "蔵",
+      "kana": "くら",
+      "meanings": [
+        "storehouse",
+        "traditional warehouse"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "places"
+      ],
+      "altForms": [
+        "倉"
+      ],
+      "examples": [
+        {
+          "ja": "{白|しろ}い{壁|かべ}の{蔵|くら}が{並|なら}ぶ{町並|まちな}みを、ゆっくり{歩|ある}いて{回|まわ}った。",
+          "kana": "しろいかべのくらがならぶまちなみを、ゆっくりあるいてまわった。",
+          "en": "I took a slow walk around the streets lined with white-walled storehouses."
+        },
+        {
+          "ja": "{祖父|そふ}の{家|いえ}の{蔵|くら}には、{何|なに}に{使|つか}うのか{分|わ}からない{古|ふる}い{道具|どうぐ}がたくさんある。",
+          "kana": "そふのいえのくらには、なににつかうのかわからないふるいどうぐがたくさんある。",
+          "en": "The storehouse at my grandfather's house is full of old tools I can't even identify."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{米|こめ}やお{酒|さけ}、{大事|だいじ}なものなどをしまっておくための、{壁|かべ}の{厚|あつ}い{建物|たてもの}。",
+        "kana": "こめやおさけ、だいじなものなどをしまっておくための、かべのあついたてもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0875",
+      "word": "戸棚",
+      "kana": "とだな",
+      "meanings": [
+        "cupboard"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{客用|きゃくよう}の{茶碗|ちゃわん}は、{台所|だいどころ}の{上|うえ}の{戸棚|とだな}にしまってある。",
+          "kana": "きゃくようのちゃわんは、だいどころのうえのとだなにしまってある。",
+          "en": "The teacups for guests are kept in the upper cupboard in the kitchen."
+        },
+        {
+          "ja": "{戸棚|とだな}の{奥|おく}から、{賞味期限|しょうみきげん}の{切|き}れたお{菓子|かし}がいくつも{出|で}てきました。",
+          "kana": "とだなのおくから、しょうみきげんのきれたおかしがいくつもでてきました。",
+          "en": "Several snacks past their best-before date turned up at the back of the cupboard."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{食器|しょっき}などを{入|い}れておく、{開|あ}け{閉|し}めできる{棚|たな}。",
+        "kana": "しょっきなどをいれておく、あけしめできるたな。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0876",
+      "word": "急須",
+      "kana": "きゅうす",
+      "meanings": [
+        "teapot (Japanese)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "drink",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "{急須|きゅうす}にお{湯|ゆ}を{入|い}れて、{一分|いっぷん}ほど{待|ま}ってから{茶|ちゃ}を{注|そそ}ぐ。",
+          "kana": "きゅうすにおゆをいれて、いっぷんほどまってからちゃをそそぐ。",
+          "en": "Pour hot water into the teapot, wait about a minute, then pour the tea."
+        },
+        {
+          "ja": "{最近|さいきん}はペットボトルのお{茶|ちゃ}ばかりで、{急須|きゅうす}を{使|つか}う{機会|きかい}が{減|へ}った。",
+          "kana": "さいきんはペットボトルのおちゃばかりで、きゅうすをつかうきかいがへった。",
+          "en": "These days it's all bottled tea, and I rarely have occasion to use a teapot anymore."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{茶|ちゃ}の{葉|は}を{入|い}れてお{湯|ゆ}を{注|そそ}ぎ、お{茶|ちゃ}を{入|い}れるための{小|ちい}さな{道具|どうぐ}。",
+        "kana": "おちゃのはをいれておゆをそそぎ、おちゃをいれるためのちいさなどうぐ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0877",
+      "word": "湯呑み",
+      "kana": "ゆのみ",
+      "meanings": [
+        "teacup (Japanese)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "drink",
+        "objects"
+      ],
+      "altForms": [
+        "湯飲み",
+        "湯のみ"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{毎朝|まいあさ}、{同|おな}じ{湯呑|ゆの}みで{熱|あつ}いお{茶|ちゃ}を{飲|の}む。",
+          "kana": "そふはまいあさ、おなじゆのみであついおちゃをのむ。",
+          "en": "Every morning my grandfather drinks hot tea from the same teacup."
+        },
+        {
+          "ja": "{旅行先|りょこうさき}の{陶器市|とうきいち}で、{夫婦|ふうふ}で{使|つか}う{湯呑|ゆの}みを{二|ふた}つ{買|か}いました。",
+          "kana": "りょこうさきのとうきいちで、ふうふでつかうゆのみをふたつかいました。",
+          "en": "At a pottery fair while traveling, we bought two teacups for the two of us to use."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{茶|ちゃ}を{飲|の}むための、{小|ちい}さくて{深|ふか}い{日本|にほん}の{茶碗|ちゃわん}。",
+        "kana": "おちゃをのむための、ちいさくてふかいにほんのちゃわん。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0878",
+      "word": "水筒",
+      "kana": "すいとう",
+      "meanings": [
+        "water bottle",
+        "canteen"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "drink"
+      ],
+      "examples": [
+        {
+          "ja": "{夏|なつ}の{遠足|えんそく}には、{大|おお}きめの{水筒|すいとう}にお{茶|ちゃ}を{入|い}れて{持|も}たせている。",
+          "kana": "なつのえんそくには、おおきめのすいとうにおちゃをいれてもたせている。",
+          "en": "For summer school outings, I send my kid off with tea in a large water bottle."
+        },
+        {
+          "ja": "{水筒|すいとう}を{忘|わす}れたので、{仕方|しかた}なく{自動販売機|じどうはんばいき}で{飲|の}み{物|もの}を{買|か}った。",
+          "kana": "すいとうをわすれたので、しかたなくじどうはんばいきでのみものをかった。",
+          "en": "I forgot my water bottle, so I had no choice but to buy a drink from a vending machine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{飲|の}み{物|もの}を{入|い}れて{持|も}ち{歩|ある}くための{容器|ようき}。",
+        "kana": "のみものをいれてもちあるくためのようき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0879",
+      "word": "土鍋",
+      "kana": "どなべ",
+      "meanings": [
+        "earthenware pot",
+        "clay pot"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "cooking",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{冬|ふゆ}は、{土鍋|どなべ}で{作|つく}る{鍋料理|なべりょうり}が{一番|いちばん}のごちそうだ。",
+          "kana": "ふゆは、どなべでつくるなべりょうりがいちばんのごちそうだ。",
+          "en": "In winter, hot pot made in a clay pot is the best treat."
+        },
+        {
+          "ja": "{土鍋|どなべ}で{炊|た}いたご{飯|はん}は、{少|すこ}し{焦|こ}げた{所|ところ}がまたおいしい。",
+          "kana": "どなべでたいたごはんは、すこしこげたところがまたおいしい。",
+          "en": "Rice cooked in a clay pot is delicious, especially the slightly scorched bits."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{土|つち}を{焼|や}いて{作|つく}った{鍋|なべ}。{鍋料理|なべりょうり}などに{使|つか}う。",
+        "kana": "つちをやいてつくったなべ。なべりょうりなどにつかう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0880",
+      "word": "風呂敷",
+      "kana": "ふろしき",
+      "meanings": [
+        "furoshiki",
+        "wrapping cloth"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は、お{土産|みやげ}を{風呂敷|ふろしき}に{包|つつ}んで{持|も}って{来|き}てくれた。",
+          "kana": "そぼは、おみやげをふろしきにつつんでもってきてくれた。",
+          "en": "My grandmother brought the gift wrapped in a furoshiki."
+        },
+        {
+          "ja": "{風呂敷|ふろしき}は、{包|つつ}む{物|もの}の{形|かたち}に{合|あ}わせて{結|むす}び{方|かた}を{変|か}えられるのが{便利|べんり}です。",
+          "kana": "ふろしきは、つつむもののかたちにあわせてむすびかたをかえられるのがべんりです。",
+          "en": "What's handy about a furoshiki is that you can change how you tie it to suit the shape of what you're wrapping."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものを{包|つつ}んで{運|はこ}ぶための、{四角|しかく}くて{大|おお}きな{布|ぬの}。",
+        "kana": "ものをつつんではこぶための、しかくくておおきなぬの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0881",
+      "word": "暖簾",
+      "kana": "のれん",
+      "meanings": [
+        "noren",
+        "shop curtain"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "shopping",
+        "culture",
+        "usually-kana"
+      ],
+      "altForms": [
+        "のれん"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}の{前|まえ}に{暖簾|のれん}が{出|で}ていれば、{営業中|えいぎょうちゅう}という{印|しるし}です。",
+          "kana": "みせのまえにのれんがでていれば、えいぎょうちゅうというしるしです。",
+          "en": "If the noren is hanging out in front of the shop, that means it's open."
+        },
+        {
+          "ja": "{雨|あめ}で{濡|ぬ}れた{暖簾|のれん}をくぐると、{中|なか}から{出汁|だし}のいい{匂|にお}いがしてきた。",
+          "kana": "あめでぬれたのれんをくぐると、なかからだしのいいにおいがしてきた。",
+          "en": "When I ducked under the rain-soaked noren, a lovely smell of broth drifted out from inside."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}の{入|い}り{口|ぐち}に{下|さ}げる{布|ぬの}。{店|みせ}の{名前|なまえ}などが{書|か}いてある。",
+        "kana": "みせのいりぐちにさげるぬの。みせのなまえなどがかいてある。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0882",
+      "word": "麻",
+      "kana": "あさ",
+      "meanings": [
+        "hemp",
+        "linen"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing"
+      ],
+      "examples": [
+        {
+          "ja": "{夏|なつ}は、{麻|あさ}のシャツが{涼|すず}しくて{気持|きも}ちがいい。",
+          "kana": "なつは、あさのシャツがすずしくてきもちがいい。",
+          "en": "In summer, a linen shirt is cool and comfortable."
+        },
+        {
+          "ja": "{麻|あさ}のカーテンに{替|か}えたら、{部屋|へや}が{明|あか}るく{見|み}えるようになった。",
+          "kana": "あさのカーテンにかえたら、へやがあかるくみえるようになった。",
+          "en": "After switching to linen curtains, the room started to look brighter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{植物|しょくぶつ}から{取|と}った{糸|いと}で{作|つく}った、{夏向|なつむ}きの{薄|うす}くて{丈夫|じょうぶ}な{布|ぬの}。",
+        "kana": "しょくぶつからとったいとでつくった、なつむきのうすくてじょうぶなぬの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0883",
+      "word": "綿",
+      "kana": "わた",
+      "meanings": [
+        "cotton (raw)",
+        "cotton wool",
+        "stuffing"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "objects"
+      ],
+      "notes": "Read めん in compounds such as 綿百パーセント; 木綿 (もめん) is cotton cloth.",
+      "examples": [
+        {
+          "ja": "{布団|ふとん}の{中|なか}の{綿|わた}が{古|ふる}くなったので、{新|あたら}しいものに{取|と}り{替|か}えた。",
+          "kana": "ふとんのなかのわたがふるくなったので、あたらしいものにとりかえた。",
+          "en": "The cotton stuffing in the futon had gotten old, so I replaced it with new."
+        },
+        {
+          "ja": "{破|やぶ}れたぬいぐるみから{綿|わた}が{出|で}てきたので、{針|はり}と{糸|いと}で{縫|ぬ}い{直|なお}した。",
+          "kana": "やぶれたぬいぐるみからわたがでてきたので、はりといとでぬいなおした。",
+          "en": "Stuffing was coming out of the torn stuffed animal, so I sewed it back up with needle and thread."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{植物|しょくぶつ}の{実|み}から{取|と}れる{白|しろ}くて{柔|やわ}らかいもの。{布団|ふとん}などに{入|い}れる。",
+        "kana": "しょくぶつのみからとれるしろくてやわらかいもの。ふとんなどにいれる。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0884",
+      "word": "毛糸",
+      "kana": "けいと",
+      "meanings": [
+        "wool yarn",
+        "knitting wool"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "hobbies"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}は{冬|ふゆ}になると、{毛糸|けいと}で{家族|かぞく}のマフラーを{編|あ}んでくれる。",
+          "kana": "はははふゆになると、けいとでかぞくのマフラーをあんでくれる。",
+          "en": "When winter comes, my mother knits scarves for the family out of wool."
+        },
+        {
+          "ja": "{余|あま}った{毛糸|けいと}で、{猫|ねこ}のおもちゃを{作|つく}ってみました。",
+          "kana": "あまったけいとで、ねこのおもちゃをつくってみました。",
+          "en": "I tried making a cat toy out of the leftover yarn."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{羊|ひつじ}などの{毛|け}で{作|つく}った、セーターなどを{編|あ}むのに{使|つか}う{太|ふと}い{糸|いと}。",
+        "kana": "ひつじなどのけでつくった、セーターなどをあむのにつかうふといいと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0885",
+      "word": "刺繍",
+      "kana": "ししゅう",
+      "meanings": [
+        "embroidery"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "arts",
+        "hobbies"
+      ],
+      "examples": [
+        {
+          "ja": "{胸|むね}に{小|ちい}さな{花|はな}の{刺繍|ししゅう}が{入|はい}ったシャツを{買|か}った。",
+          "kana": "むねにちいさなはなのししゅうがはいったシャツをかった。",
+          "en": "I bought a shirt with a small embroidered flower on the chest."
+        },
+        {
+          "ja": "{祖母|そぼ}は{目|め}が{悪|わる}くなった{今|いま}も、{毎日|まいにち}{少|すこ}しずつ{刺繍|ししゅう}を{続|つづ}けている。",
+          "kana": "そぼはめがわるくなったいまも、まいにちすこしずつししゅうをつづけている。",
+          "en": "Even now that her eyesight has weakened, my grandmother keeps doing a little embroidery every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{布|ぬの}に{針|はり}と{糸|いと}で{絵|え}や{模様|もよう}を{縫|ぬ}い{付|つ}けること。",
+        "kana": "ぬのにはりといとでえやもようをぬいつけること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0886",
+      "word": "織る",
+      "kana": "おる",
+      "meanings": [
+        "to weave"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "この{町|まち}では、{昔|むかし}から{絹|きぬ}の{布|ぬの}を{織|お}る{仕事|しごと}が{盛|さか}んだった。",
+          "kana": "このまちでは、むかしからきぬのぬのをおるしごとがさかんだった。",
+          "en": "In this town, weaving silk cloth has been a major trade since long ago."
+        },
+        {
+          "ja": "この{店|みせ}では、{客|きゃく}が{自分|じぶん}で{小|ちい}さな{布|ぬの}を{織|お}る{体験|たいけん}もできます。",
+          "kana": "このみせでは、きゃくがじぶんでちいさなぬのをおるたいけんもできます。",
+          "en": "At this shop, customers can also try weaving a small piece of cloth themselves."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{糸|いと}をたてと{横|よこ}に{組|く}み{合|あ}わせて{布|ぬの}を{作|つく}ること。",
+        "kana": "いとをたてとよこにくみあわせてぬのをつくること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0887",
+      "word": "革",
+      "kana": "かわ",
+      "meanings": [
+        "leather"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "objects"
+      ],
+      "notes": "Same reading as 皮 (skin, peel); 革 is tanned leather. 革靴 = leather shoes.",
+      "collocations": [
+        "革靴",
+        "革製品"
+      ],
+      "examples": [
+        {
+          "ja": "{革|かわ}の{鞄|かばん}は、{長|なが}く{使|つか}うほど{色|いろ}が{深|ふか}くなって{味|あじ}が{出|で}る。",
+          "kana": "かわのかばんは、ながくつかうほどいろがふかくなってあじがでる。",
+          "en": "The longer you use a leather bag, the deeper its color gets and the more character it takes on."
+        },
+        {
+          "ja": "{父|ちち}からもらった{革|かわ}の{財布|さいふ}を、{十年以上|じゅうねんいじょう}{使|つか}い{続|つづ}けている。",
+          "kana": "ちちからもらったかわのさいふを、じゅうねんいじょうつかいつづけている。",
+          "en": "I've been using the leather wallet my father gave me for more than ten years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{動物|どうぶつ}から{取|と}ったものを{加工|かこう}して{作|つく}る、{丈夫|じょうぶ}な{材料|ざいりょう}。{靴|くつ}や{財布|さいふ}に{使|つか}う。",
+        "kana": "どうぶつからとったものをかこうしてつくる、じょうぶなざいりょう。くつやさいふにつかう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0888",
+      "word": "裁縫",
+      "kana": "さいほう",
+      "meanings": [
+        "sewing",
+        "needlework"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "hobbies"
+      ],
+      "examples": [
+        {
+          "ja": "{裁縫|さいほう}は{苦手|にがて}だが、ボタンをつけるぐらいなら{自分|じぶん}でできる。",
+          "kana": "さいほうはにがてだが、ボタンをつけるぐらいならじぶんでできる。",
+          "en": "I'm not good at sewing, but I can at least sew on a button myself."
+        },
+        {
+          "ja": "{中学校|ちゅうがっこう}の{授業|じゅぎょう}で{裁縫|さいほう}を{習|なら}ったおかげで、{簡単|かんたん}な{直|なお}しは{自分|じぶん}でできます。",
+          "kana": "ちゅうがっこうのじゅぎょうでさいほうをならったおかげで、かんたんななおしはじぶんでできます。",
+          "en": "Thanks to the sewing I learned in junior high classes, I can do simple repairs myself."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{針|はり}と{糸|いと}を{使|つか}って{服|ふく}などを{縫|ぬ}うこと。",
+        "kana": "はりといとをつかってふくなどをぬうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0889",
+      "word": "仕立てる",
+      "kana": "したてる",
+      "meanings": [
+        "to tailor",
+        "to make (clothes)",
+        "to train (someone) up"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{結婚式|けっこんしき}のために、スーツを{一着|いっちゃく}{仕立|した}ててもらった。",
+          "kana": "けっこんしきのために、スーツをいっちゃくしたててもらった。",
+          "en": "I had a suit tailored for the wedding."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{若|わか}い{選手|せんしゅ}を{一流|いちりゅう}に{仕立|した}てる{監督|かんとく}として{知|し}られている。",
+          "kana": "かのじょはわかいせんしゅをいちりゅうにしたてるかんとくとしてしられている。",
+          "en": "She is known as a coach who turns young players into top-class athletes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{布|ぬの}を{切|き}って{縫|ぬ}い、{服|ふく}を{作|つく}ること。また、{人|ひと}を{育|そだ}てて{役|やく}に{立|た}つようにすること。",
+        "kana": "ぬのをきってぬい、ふくをつくること。また、ひとをそだててやくにたつようにすること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0890",
+      "word": "寸法",
+      "kana": "すんぽう",
+      "meanings": [
+        "measurements",
+        "dimensions"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "quantity"
+      ],
+      "collocations": [
+        "寸法を測る"
+      ],
+      "examples": [
+        {
+          "ja": "{家具|かぐ}を{買|か}う{前|まえ}に、{置|お}く{場所|ばしょ}の{寸法|すんぽう}を{測|はか}っておいてください。",
+          "kana": "かぐをかうまえに、おくばしょのすんぽうをはかっておいてください。",
+          "en": "Before buying furniture, please measure the dimensions of the space where it will go."
+        },
+        {
+          "ja": "カーテンの{寸法|すんぽう}を{間違|まちが}えて{注文|ちゅうもん}してしまい、{丈|たけ}が{十|じゅっ}センチも{足|た}りなかった。",
+          "kana": "カーテンのすんぽうをまちがえてちゅうもんしてしまい、たけがじゅっセンチもたりなかった。",
+          "en": "I ordered the curtains with the wrong measurements, and they were a full ten centimeters too short."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{長|なが}さや{大|おお}きさ。また、それを{測|はか}ること。",
+        "kana": "もののながさやおおきさ。また、それをはかること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0891",
+      "word": "丈",
+      "kana": "たけ",
+      "meanings": [
+        "length (of clothing)",
+        "height"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "quantity"
+      ],
+      "collocations": [
+        "丈を詰める",
+        "袖丈"
+      ],
+      "examples": [
+        {
+          "ja": "ズボンの{丈|たけ}が{長|なが}すぎたので、{店|みせ}で{直|なお}してもらった。",
+          "kana": "ズボンのたけがながすぎたので、みせでなおしてもらった。",
+          "en": "The trousers were too long, so I had them taken up at the shop."
+        },
+        {
+          "ja": "このコートは{丈|たけ}が{短|みじか}めなので、{自転車|じてんしゃ}に{乗|の}る{時|とき}も{邪魔|じゃま}にならない。",
+          "kana": "このコートはたけがみじかめなので、じてんしゃにのるときもじゃまにならない。",
+          "en": "This coat is on the short side, so it doesn't get in the way when I ride my bike."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{服|ふく}やズボンの{長|なが}さ。また、ものの{高|たか}さ。",
+        "kana": "ふくやズボンのながさ。また、もののたかさ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0892",
+      "word": "幅",
+      "kana": "はば",
+      "meanings": [
+        "width",
+        "range",
+        "breadth"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "quantity",
+        "shapes"
+      ],
+      "notes": "Also figurative: 幅が広い = wide-ranging; 幅を利かせる = to throw one's weight around.",
+      "examples": [
+        {
+          "ja": "この{道|みち}は{幅|はば}が{狭|せま}くて、{車|くるま}がすれ{違|ちが}うのも{大変|たいへん}だ。",
+          "kana": "このみちははばがせまくて、くるまがすれちがうのもたいへんだ。",
+          "en": "This road is so narrow that it's hard for cars even to pass each other."
+        },
+        {
+          "ja": "{一人|ひとり}で{何|なん}でもやるより、{人|ひと}に{任|まか}せることを{覚|おぼ}えてから{仕事|しごと}の{幅|はば}が{広|ひろ}がった。",
+          "kana": "ひとりでなんでもやるより、ひとにまかせることをおぼえてからしごとのはばがひろがった。",
+          "en": "Since I learned to delegate instead of doing everything myself, the range of my work has grown."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{横|よこ}の{長|なが}さ。また、{範囲|はんい}の{広|ひろ}さ。",
+        "kana": "もののよこのながさ。また、はんいのひろさ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0893",
+      "word": "紋",
+      "kana": "もん",
+      "meanings": [
+        "crest",
+        "family crest"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "collocations": [
+        "家紋"
+      ],
+      "examples": [
+        {
+          "ja": "{黒|くろ}い{着物|きもの}の{背中|せなか}に、{家|いえ}の{紋|もん}が{白|しろ}く{入|はい}っている。",
+          "kana": "くろいきもののせなかに、いえのもんがしろくはいっている。",
+          "en": "The family crest appears in white on the back of the black kimono."
+        },
+        {
+          "ja": "この{店|みせ}の{暖簾|のれん}や{提灯|ちょうちん}には、{昔|むかし}から{同|おな}じ{紋|もん}が{入|はい}っています。",
+          "kana": "このみせののれんやちょうちんには、むかしからおなじもんがはいっています。",
+          "en": "The shop's noren and lanterns have carried the same crest since long ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{家|いえ}ごとに{決|き}まっている、{着物|きもの}などにつける{形|かたち}の{模様|もよう}。",
+        "kana": "いえごとにきまっている、きものなどにつけるかたちのもよう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0894",
+      "word": "織物",
+      "kana": "おりもの",
+      "meanings": [
+        "textile",
+        "woven fabric"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "この{地方|ちほう}の{織物|おりもの}は、{細|こま}かい{模様|もよう}と{美|うつく}しい{色|いろ}で{知|し}られている。",
+          "kana": "このちほうのおりものは、こまかいもようとうつくしいいろでしられている。",
+          "en": "The textiles of this region are known for their fine patterns and beautiful colors."
+        },
+        {
+          "ja": "{博物館|はくぶつかん}には、{千年以上前|せんねんいじょうまえ}の{織物|おりもの}が{今|いま}も{色|いろ}を{残|のこ}して{展示|てんじ}されていた。",
+          "kana": "はくぶつかんには、せんねんいじょうまえのおりものがいまもいろをのこしててんじされていた。",
+          "en": "The museum displayed textiles more than a thousand years old that still kept their colors."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{糸|いと}をたてと{横|よこ}に{組|く}み{合|あ}わせて{作|つく}った{布|ぬの}のこと。",
+        "kana": "いとをたてとよこにくみあわせてつくったぬののこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0895",
+      "word": "履物",
+      "kana": "はきもの",
+      "meanings": [
+        "footwear"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing"
+      ],
+      "examples": [
+        {
+          "ja": "{畳|たたみ}の{部屋|へや}に{入|はい}る{時|とき}は、{履物|はきもの}を{脱|ぬ}いでください。",
+          "kana": "たたみのへやにはいるときは、はきものをぬいでください。",
+          "en": "Please take off your footwear when entering the tatami room."
+        },
+        {
+          "ja": "{玄関|げんかん}に{履物|はきもの}が{散|ち}らかっていると、それだけで{部屋|へや}が{汚|きたな}く{見|み}える。",
+          "kana": "げんかんにはきものがちらかっていると、それだけでへやがきたなくみえる。",
+          "en": "When footwear is scattered around the entryway, the whole place looks messy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{靴|くつ}やぞうりなど、{足|あし}にはくものをまとめて{言|い}う{言葉|ことば}。",
+        "kana": "くつやぞうりなど、あしにはくものをまとめていうことば。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0896",
+      "word": "草履",
+      "kana": "ぞうり",
+      "meanings": [
+        "zori",
+        "traditional flat sandals"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "confusables": [
+        "v-n2-0897"
+      ],
+      "examples": [
+        {
+          "ja": "{着物|きもの}に{合|あ}わせて、{新|あたら}しい{草履|ぞうり}を{一足|いっそく}{買|か}った。",
+          "kana": "きものにあわせて、あたらしいぞうりをいっそくかった。",
+          "en": "I bought a new pair of zori to go with the kimono."
+        },
+        {
+          "ja": "{草履|ぞうり}は{慣|な}れないと{歩|ある}きにくいので、{式|しき}の{前|まえ}に{少|すこ}し{練習|れんしゅう}しておくといい。",
+          "kana": "ぞうりはなれないとあるきにくいので、しきのまえにすこしれんしゅうしておくといい。",
+          "en": "Zori are hard to walk in until you get used to them, so it's a good idea to practice a little before the ceremony."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{着物|きもの}を{着|き}るときにはく、{平|ひら}たい{日本|にほん}のはきもの。",
+        "kana": "きものをきるときにはく、ひらたいにほんのはきもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0897",
+      "word": "下駄",
+      "kana": "げた",
+      "meanings": [
+        "geta",
+        "wooden clogs"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "notes": "下駄 are wooden with raised teeth; 草履 are flat sandals of straw, cloth or leather.",
+      "confusables": [
+        "v-n2-0896"
+      ],
+      "examples": [
+        {
+          "ja": "{浴衣|ゆかた}に{下駄|げた}をはいて、{夏祭|なつまつ}りに{出|で}かけた。",
+          "kana": "ゆかたにげたをはいて、なつまつりにでかけた。",
+          "en": "I put on a yukata and geta and went out to the summer festival."
+        },
+        {
+          "ja": "{下駄|げた}の{音|おと}が{近|ちか}づいてきて、{祭|まつ}りの{帰|かえ}りの{人|ひと}たちだと{分|わ}かった。",
+          "kana": "げたのおとがちかづいてきて、まつりのかえりのひとたちだとわかった。",
+          "en": "The clack of geta came closer, and I realized it was people heading home from the festival."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{木|き}で{作|つく}った{日本|にほん}のはきもの。{浴衣|ゆかた}などと{一緒|いっしょ}にはく。",
+        "kana": "きでつくったにほんのはきもの。ゆかたなどといっしょにはく。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0898",
+      "word": "足袋",
+      "kana": "たび",
+      "meanings": [
+        "tabi",
+        "split-toe socks"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{着物|きもの}の{時|とき}は、{靴下|くつした}ではなく{白|しろ}い{足袋|たび}をはく。",
+          "kana": "きもののときは、くつしたではなくしろいたびをはく。",
+          "en": "With a kimono, you wear white tabi rather than socks."
+        },
+        {
+          "ja": "{足袋|たび}は{小|ちい}さめを{選|えら}ぶと、{足|あし}にぴったり{合|あ}ってきれいに{見|み}えます。",
+          "kana": "たびはちいさめをえらぶと、あしにぴったりあってきれいにみえます。",
+          "en": "If you choose tabi slightly on the small side, they fit snugly and look neat."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{着物|きもの}のときにはく、つまさきが{二|ふた}つに{分|わ}かれた{白|しろ}い{靴下|くつした}。",
+        "kana": "きもののときにはく、つまさきがふたつにわかれたしろいくつした。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0899",
+      "word": "羽織",
+      "kana": "はおり",
+      "meanings": [
+        "haori",
+        "kimono jacket"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{少|すこ}し{寒|さむ}かったので、{着物|きもの}の{上|うえ}に{羽織|はおり}を{着|き}た。",
+          "kana": "すこしさむかったので、きもののうえにはおりをきた。",
+          "en": "It was a little cold, so I put a haori on over my kimono."
+        },
+        {
+          "ja": "{祖母|そぼ}から{譲|ゆず}られた{羽織|はおり}は、{裏|うら}に{美|うつく}しい{模様|もよう}が{描|えが}かれています。",
+          "kana": "そぼからゆずられたはおりは、うらにうつくしいもようがえがかれています。",
+          "en": "The haori my grandmother passed down to me has a beautiful pattern painted on the lining."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{着物|きもの}の{上|うえ}に{着|き}る、{短|みじか}い{上着|うわぎ}。",
+        "kana": "きもののうえにきる、みじかいうわぎ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0900",
+      "word": "帯",
+      "kana": "おび",
+      "meanings": [
+        "obi",
+        "sash"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "clothing",
+        "culture"
+      ],
+      "collocations": [
+        "帯を結ぶ",
+        "帯を締める"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}で{帯|おび}を{結|むす}ぶのは{難|むずか}しいので、{母|はは}に{手伝|てつだ}ってもらった。",
+          "kana": "ひとりでおびをむすぶのはむずかしいので、ははにてつだってもらった。",
+          "en": "Tying an obi by yourself is hard, so I had my mother help me."
+        },
+        {
+          "ja": "{帯|おび}の{色|いろ}を{変|か}えるだけで、{同|おな}じ{着物|きもの}でも{印象|いんしょう}がずいぶん{変|か}わります。",
+          "kana": "おびのいろをかえるだけで、おなじきものでもいんしょうがずいぶんかわります。",
+          "en": "Just changing the color of the obi gives the same kimono quite a different look."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{着物|きもの}を{着|き}るとき、{腰|こし}に{巻|ま}いて{結|むす}ぶ{長|なが}い{布|ぬの}。",
+        "kana": "きものをきるとき、こしにまいてむすぶながいぬの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0901",
+      "word": "出汁",
+      "kana": "だし",
+      "meanings": [
+        "dashi",
+        "soup stock"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking",
+        "usually-kana"
+      ],
+      "altForms": [
+        "だし"
+      ],
+      "collocations": [
+        "出汁を取る"
+      ],
+      "examples": [
+        {
+          "ja": "{味噌汁|みそしる}は、{出汁|だし}をきちんと{取|と}ると{味|あじ}が{全然|ぜんぜん}{違|ちが}う。",
+          "kana": "みそしるは、だしをきちんととるとあじがぜんぜんちがう。",
+          "en": "Miso soup tastes completely different when you make the stock properly."
+        },
+        {
+          "ja": "{祖母|そぼ}は{毎朝|まいあさ}、{昆布|こんぶ}とかつお{節|ぶし}で{丁寧|ていねい}に{出汁|だし}を{取|と}っていました。",
+          "kana": "そぼはまいあさ、こんぶとかつおぶしでていねいにだしをとっていました。",
+          "en": "Every morning my grandmother carefully made stock from kelp and dried bonito flakes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{魚|さかな}やこんぶなどを{煮|に}て{取|と}った、{料理|りょうり}の{味|あじ}のもとになる{液体|えきたい}。",
+        "kana": "さかなやこんぶなどをにてとった、りょうりのあじのもとになるえきたい。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0902",
+      "word": "旨味",
+      "kana": "うまみ",
+      "meanings": [
+        "umami",
+        "savory taste"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food"
+      ],
+      "altForms": [
+        "うま味",
+        "旨み"
+      ],
+      "examples": [
+        {
+          "ja": "トマトには{旨味|うまみ}が{多|おお}く、{煮込|にこ}むとスープが{深|ふか}い{味|あじ}になる。",
+          "kana": "トマトにはうまみがおおく、にこむとスープがふかいあじになる。",
+          "en": "Tomatoes are rich in umami, and when simmered they give the soup a deep flavor."
+        },
+        {
+          "ja": "{肉|にく}は{焼|や}く{前|まえ}に{少|すこ}し{塩|しお}を{振|ふ}っておくと、{旨味|うまみ}が{逃|に}げにくいそうです。",
+          "kana": "にくはやくまえにすこししおをふっておくと、うまみがにげにくいそうです。",
+          "en": "If you sprinkle a little salt on meat before grilling, I hear the savory flavor is less likely to escape."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{肉|にく}や{魚|さかな}、こんぶなどに{含|ふく}まれる、おいしさのもとになる{味|あじ}。",
+        "kana": "にくやさかな、こんぶなどにふくまれる、おいしさのもとになるあじ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0903",
+      "word": "具",
+      "kana": "ぐ",
+      "meanings": [
+        "ingredients (in a dish)",
+        "filling"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{味噌汁|みそしる}の{具|ぐ}は、{豆腐|とうふ}とわかめです。",
+          "kana": "きょうのみそしるのぐは、とうふとわかめです。",
+          "en": "Today's miso soup has tofu and wakame in it."
+        },
+        {
+          "ja": "カレーの{具|ぐ}は、{大|おお}きめに{切|き}った{方|ほう}がおいしいと{思|おも}う。",
+          "kana": "カレーのぐは、おおきめにきったほうがおいしいとおもう。",
+          "en": "I think curry tastes better when the ingredients are cut into bigger pieces."
+        }
+      ],
+      "definitionJa": {
+        "ja": "スープや{料理|りょうり}の{中|なか}に{入|い}れる、{肉|にく}や{野菜|やさい}などの{材料|ざいりょう}。",
+        "kana": "スープやりょうりのなかにいれる、にくややさいなどのざいりょう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0904",
+      "word": "薬味",
+      "kana": "やくみ",
+      "meanings": [
+        "condiment",
+        "garnish (ginger, scallion, etc.)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking"
+      ],
+      "examples": [
+        {
+          "ja": "そばには、ねぎやわさびなどの{薬味|やくみ}を{添|そ}えて{出|だ}す。",
+          "kana": "そばには、ねぎやわさびなどのやくみをそえてだす。",
+          "en": "Soba is served with condiments such as green onion and wasabi."
+        },
+        {
+          "ja": "{薬味|やくみ}に{生姜|しょうが}をたっぷりのせたら、{豆腐|とうふ}が{一段|いちだん}とおいしくなった。",
+          "kana": "やくみにしょうがをたっぷりのせたら、とうふがいちだんとおいしくなった。",
+          "en": "Topping the tofu with plenty of grated ginger as a condiment made it taste that much better."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{料理|りょうり}に{添|そ}えて、{香|かお}りや{味|あじ}をよくするねぎやわさびなど。",
+        "kana": "りょうりにそえて、かおりやあじをよくするねぎやわさびなど。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0905",
+      "word": "漬ける",
+      "kana": "つける",
+      "meanings": [
+        "to pickle",
+        "to marinate",
+        "to soak"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "cooking",
+        "actions"
+      ],
+      "notes": "漬ける = pickle or marinate; 浸ける = soak in liquid. 付ける (to attach) shares the reading.",
+      "altForms": [
+        "浸ける"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{毎年|まいとし}、{庭|にわ}でとれた{梅|うめ}を{塩|しお}に{漬|つ}けて{梅干|うめぼ}しを{作|つく}る。",
+          "kana": "そぼはまいとし、にわでとれたうめをしおにつけてうめぼしをつくる。",
+          "en": "Every year my grandmother pickles plums from the garden in salt to make umeboshi."
+        },
+        {
+          "ja": "{一晩|ひとばん}{醤油|しょうゆ}に{漬|つ}けておいた{魚|さかな}を{焼|や}いたら、{店|みせ}の{味|あじ}に{近|ちか}づいた{気|き}がする。",
+          "kana": "ひとばんしょうゆにつけておいたさかなをやいたら、みせのあじにちかづいたきがする。",
+          "en": "I grilled fish that had marinated overnight in soy sauce, and it felt a step closer to restaurant quality."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{野菜|やさい}などを{塩|しお}や{酢|す}などの{中|なか}に{入|い}れて、{味|あじ}をしみこませること。",
+        "kana": "やさいなどをしおやすなどのなかにいれて、あじをしみこませること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0906",
+      "word": "煮込む",
+      "kana": "にこむ",
+      "meanings": [
+        "to simmer",
+        "to stew"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "cooking"
+      ],
+      "trans": "vt",
+      "confusables": [
+        "v-n2-0907"
+      ],
+      "examples": [
+        {
+          "ja": "カレーは、{弱火|よわび}で{一時間|いちじかん}ほど{煮込|にこ}むとおいしくなる。",
+          "kana": "カレーは、よわびでいちじかんほどにこむとおいしくなる。",
+          "en": "Curry tastes better if you simmer it over low heat for about an hour."
+        },
+        {
+          "ja": "{寒|さむ}い{日|ひ}には、{野菜|やさい}をたっぷり{入|い}れたスープをことこと{煮込|にこ}みたくなります。",
+          "kana": "さむいひには、やさいをたっぷりいれたスープをことことにこみたくなります。",
+          "en": "On cold days I get the urge to simmer a soup full of vegetables."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{肉|にく}や{野菜|やさい}などを、{弱|よわ}い{火|ひ}で{時間|じかん}をかけて{煮|に}ること。",
+        "kana": "にくややさいなどを、よわいひでじかんをかけてにること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0907",
+      "word": "煮詰める",
+      "kana": "につめる",
+      "meanings": [
+        "to boil down",
+        "to reduce (a sauce)",
+        "to finalize (a plan)"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "cooking",
+        "abstract"
+      ],
+      "notes": "Figurative 話を煮詰める = to hammer out the details. 煮込む keeps the liquid; 煮詰める reduces it.",
+      "trans": "vt",
+      "confusables": [
+        "v-n2-0906"
+      ],
+      "examples": [
+        {
+          "ja": "ソースは、{半分|はんぶん}の{量|りょう}になるまで{煮詰|につ}めてください。",
+          "kana": "ソースは、はんぶんのりょうになるまでにつめてください。",
+          "en": "Reduce the sauce until it is half its volume."
+        },
+        {
+          "ja": "{来週|らいしゅう}までに、{二人|ふたり}で{計画|けいかく}を{煮詰|につ}めておこうと{思|おも}います。",
+          "kana": "らいしゅうまでに、ふたりでけいかくをにつめておこうとおもいます。",
+          "en": "I'm thinking the two of us should hammer out the details of the plan by next week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{煮|に}て{水|みず}を{少|すく}なくし、{味|あじ}を{濃|こ}くすること。また、{話|はなし}を{最後|さいご}まで{進|すす}めること。",
+        "kana": "にてみずをすくなくし、あじをこくすること。また、はなしをさいごまですすめること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0908",
+      "word": "炒る",
+      "kana": "いる",
+      "meanings": [
+        "to roast (beans, sesame)",
+        "to parch"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "cooking"
+      ],
+      "altForms": [
+        "煎る"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "ごまは、{使|つか}う{直前|ちょくぜん}に{軽|かる}く{炒|い}ると{香|かお}りがよくなる。",
+          "kana": "ごまは、つかうちょくぜんにかるくいるとかおりがよくなる。",
+          "en": "Sesame seeds smell better if you lightly toast them just before using."
+        },
+        {
+          "ja": "フライパンで{豆|まめ}をゆっくり{炒|い}っていると、{台所|だいどころ}にいい{匂|にお}いが{広|ひろ}がった。",
+          "kana": "フライパンでまめをゆっくりいっていると、だいどころにいいにおいがひろがった。",
+          "en": "As I slowly roasted the beans in the frying pan, a lovely smell filled the kitchen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{豆|まめ}やごまなどを、{油|あぶら}を{使|つか}わずに{火|ひ}で{熱|ねっ}して{乾|かわ}かすこと。",
+        "kana": "まめやごまなどを、あぶらをつかわずにひでねっしてかわかすこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0909",
+      "word": "和える",
+      "kana": "あえる",
+      "meanings": [
+        "to dress (vegetables)",
+        "to toss with (sauce)"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "cooking"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "ゆでたほうれん{草|そう}を、ごまと{醤油|しょうゆ}で{和|あ}えた。",
+          "kana": "ゆでたほうれんそうを、ごまとしょうゆであえた。",
+          "en": "I dressed the boiled spinach with sesame and soy sauce."
+        },
+        {
+          "ja": "きゅうりを{塩|しお}でもんでから、{酢|す}と{砂糖|さとう}で{和|あ}えると{簡単|かんたん}な{一品|いっぴん}になります。",
+          "kana": "きゅうりをしおでもんでから、すとさとうであえるとかんたんないっぴんになります。",
+          "en": "Rub cucumber with salt, then toss it with vinegar and sugar, and you have a simple side dish."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ゆでた{野菜|やさい}などを、ごまや{味噌|みそ}などとよく{混|ま}ぜること。",
+        "kana": "ゆでたやさいなどを、ごまやみそなどとよくまぜること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0910",
+      "word": "下ごしらえ",
+      "kana": "したごしらえ",
+      "meanings": [
+        "prep work (cooking)",
+        "advance preparation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "cooking"
+      ],
+      "altForms": [
+        "下拵え"
+      ],
+      "examples": [
+        {
+          "ja": "{客|きゃく}が{来|く}る{前|まえ}に、{野菜|やさい}を{切|き}って{料理|りょうり}の{下|した}ごしらえを{済|す}ませておいた。",
+          "kana": "きゃくがくるまえに、やさいをきってりょうりのしたごしらえをすませておいた。",
+          "en": "Before the guests arrived, I cut the vegetables and finished the prep work for the meal."
+        },
+        {
+          "ja": "{父|ちち}は{料理|りょうり}が{好|す}きで、{休|やす}みの{日|ひ}は{朝|あさ}から{晩|ばん}ご{飯|はん}の{下|した}ごしらえをしている。",
+          "kana": "ちちはりょうりがすきで、やすみのひはあさからばんごはんのしたごしらえをしている。",
+          "en": "My father loves cooking, and on his days off he starts prepping dinner in the morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{料理|りょうり}を{作|つく}る{前|まえ}に、{材料|ざいりょう}を{切|き}ったり{洗|あら}ったりしておくこと。",
+        "kana": "りょうりをつくるまえに、ざいりょうをきったりあらったりしておくこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0911",
+      "word": "漉す",
+      "kana": "こす",
+      "meanings": [
+        "to strain",
+        "to filter"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "cooking"
+      ],
+      "altForms": [
+        "濾す"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "スープは、{布|ぬの}で{一度|いちど}{漉|こ}すと、なめらかでおいしくなる。",
+          "kana": "スープは、ぬのでいちどこすと、なめらかでおいしくなる。",
+          "en": "If you strain the soup once through a cloth, it turns out smooth and delicious."
+        },
+        {
+          "ja": "プリンの{液|えき}は、{型|かた}に{入|い}れる{前|まえ}に{必|かなら}ず{漉|こ}してください。",
+          "kana": "プリンのえきは、かたにいれるまえにかならずこしてください。",
+          "en": "Be sure to strain the pudding mixture before pouring it into the molds."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{布|ぬの}などを{通|とお}して、{液体|えきたい}から{細|こま}かいものを{取|と}り{除|のぞ}くこと。",
+        "kana": "ぬのなどをとおして、えきたいからこまかいものをとりのぞくこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0912",
+      "word": "捏ねる",
+      "kana": "こねる",
+      "meanings": [
+        "to knead"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "cooking",
+        "usually-kana"
+      ],
+      "altForms": [
+        "こねる"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "パン{作|づく}りで{一番|いちばん}{疲|つか}れるのは、{生地|きじ}を{捏|こ}ねる{作業|さぎょう}だ。",
+          "kana": "パンづくりでいちばんつかれるのは、きじをこねるさぎょうだ。",
+          "en": "The most tiring part of making bread is kneading the dough."
+        },
+        {
+          "ja": "{子|こ}どもたちは{粘土|ねんど}を{捏|こ}ねて、{動物|どうぶつ}の{形|かたち}を{作|つく}って{遊|あそ}んでいます。",
+          "kana": "こどもたちはねんどをこねて、どうぶつのかたちをつくってあそんでいます。",
+          "en": "The children are kneading clay and shaping it into animals."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{粉|こな}に{水|みず}などを{混|ま}ぜて、{手|て}で{強|つよ}く{押|お}しながら{柔|やわ}らかくすること。",
+        "kana": "こなにみずなどをまぜて、てでつよくおしながらやわらかくすること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0913",
+      "word": "寝かせる",
+      "kana": "ねかせる",
+      "meanings": [
+        "to let rest (dough, meat)",
+        "to lay down",
+        "to put to bed"
+      ],
+      "pos": "v1",
+      "jlpt": 2,
+      "tags": [
+        "cooking",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{生地|きじ}は、{冷蔵庫|れいぞうこ}で{一晩|ひとばん}{寝|ね}かせるとおいしく{焼|や}ける。",
+          "kana": "きじは、れいぞうこでひとばんねかせるとおいしくやける。",
+          "en": "The dough bakes up better if you let it rest overnight in the refrigerator."
+        },
+        {
+          "ja": "{泣|な}いていた{赤|あか}ちゃんをやっと{寝|ね}かせたところなので、{静|しず}かにしてね。",
+          "kana": "ないていたあかちゃんをやっとねかせたところなので、しずかにしてね。",
+          "en": "I've only just gotten the crying baby to sleep, so keep it down, okay?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{横|よこ}にして{寝|ね}させること。また、{生地|きじ}や{肉|にく}などをしばらく{置|お}いておくこと。",
+        "kana": "よこにしてねさせること。また、きじやにくなどをしばらくおいておくこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0914",
+      "word": "熟成",
+      "kana": "じゅくせい",
+      "meanings": [
+        "aging",
+        "maturing (food, wine)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}の{肉|にく}は、{二週間|にしゅうかん}{熟成|じゅくせい}させてから{出|だ}すそうだ。",
+          "kana": "このみせのにくは、にしゅうかんじゅくせいさせてからだすそうだ。",
+          "en": "I hear this restaurant ages its meat for two weeks before serving it."
+        },
+        {
+          "ja": "{熟成|じゅくせい}が{進|すす}んだチーズは、{匂|にお}いは{強|つよ}いが{味|あじ}は{驚|おどろ}くほど{深|ふか}い。",
+          "kana": "じゅくせいがすすんだチーズは、においはつよいがあじはおどろくほどふかい。",
+          "en": "Well-aged cheese smells strong, but its flavor is surprisingly deep."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{肉|にく}やお{酒|さけ}などを{時間|じかん}をかけて{置|お}き、{味|あじ}をよくすること。",
+        "kana": "にくやおさけなどをじかんをかけておき、あじをよくすること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0915",
+      "word": "発酵",
+      "kana": "はっこう",
+      "meanings": [
+        "fermentation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking",
+        "science"
+      ],
+      "examples": [
+        {
+          "ja": "{味噌|みそ}や{醤油|しょうゆ}は、{発酵|はっこう}によって{作|つく}られる{日本|にほん}の{伝統的|でんとうてき}な{食品|しょくひん}だ。",
+          "kana": "みそやしょうゆは、はっこうによってつくられるにほんのでんとうてきなしょくひんだ。",
+          "en": "Miso and soy sauce are traditional Japanese foods made through fermentation."
+        },
+        {
+          "ja": "パン{生地|きじ}は、{暖|あたた}かい{所|ところ}に{置|お}くと{発酵|はっこう}が{早|はや}く{進|すす}みます。",
+          "kana": "パンきじは、あたたかいところにおくとはっこうがはやくすすみます。",
+          "en": "Bread dough ferments faster if you leave it somewhere warm."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{小|ちい}さな{生|い}きものの{働|はたら}きで、{食|た}べ{物|もの}が{味噌|みそ}やお{酒|さけ}などに{変|か}わること。",
+        "kana": "ちいさないきもののはたらきで、たべものがみそやおさけなどにかわること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0916",
+      "word": "保存食",
+      "kana": "ほぞんしょく",
+      "meanings": [
+        "preserved food",
+        "emergency food"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{地震|じしん}に{備|そな}えて、{水|みず}と{保存食|ほぞんしょく}を{三日分|みっかぶん}{用意|ようい}してある。",
+          "kana": "じしんにそなえて、みずとほぞんしょくをみっかぶんよういしてある。",
+          "en": "In case of an earthquake, I keep three days' worth of water and preserved food ready."
+        },
+        {
+          "ja": "{梅干|うめぼ}しや{干物|ひもの}は、{冷蔵庫|れいぞうこ}がなかった{時代|じだい}の{知恵|ちえ}から{生|う}まれた{保存食|ほぞんしょく}です。",
+          "kana": "うめぼしやひものは、れいぞうこがなかったじだいのちえからうまれたほぞんしょくです。",
+          "en": "Pickled plums and dried fish are preserved foods born of the wisdom of an age without refrigerators."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{長|なが}い{間|あいだ}{置|お}いておいても{食|た}べられるように{作|つく}った{食|た}べ{物|もの}。",
+        "kana": "ながいあいだおいておいてもたべられるようにつくったたべもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0917",
+      "word": "乾物",
+      "kana": "かんぶつ",
+      "meanings": [
+        "dried foods",
+        "dry goods"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "{乾物|かんぶつ}は{長|なが}く{保存|ほぞん}できるので、{買|か}い{置|お}きしておくと{便利|べんり}だ。",
+          "kana": "かんぶつはながくほぞんできるので、かいおきしておくとべんりだ。",
+          "en": "Dried foods keep for a long time, so it's handy to stock up on them."
+        },
+        {
+          "ja": "{乾物|かんぶつ}は{水|みず}で{戻|もど}してから{使|つか}うものが{多|おお}いので、{料理|りょうり}には{少|すこ}し{時間|じかん}がかかります。",
+          "kana": "かんぶつはみずでもどしてからつかうものがおおいので、りょうりにはすこしじかんがかかります。",
+          "en": "Many dried foods have to be soaked in water before use, so cooking with them takes a little time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{魚|さかな}や{野菜|やさい}などを{乾|かわ}かして、{長|なが}く{保存|ほぞん}できるようにした{食|た}べ{物|もの}。",
+        "kana": "さかなややさいなどをかわかして、ながくほぞんできるようにしたたべもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0918",
+      "word": "粉",
+      "kana": "こな",
+      "meanings": [
+        "flour",
+        "powder"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking"
+      ],
+      "notes": "Read こ in compounds: 小麦粉 (こむぎこ). 粉薬 (こなぐすり) = powdered medicine.",
+      "examples": [
+        {
+          "ja": "ケーキを{作|つく}るのに、{粉|こな}と{卵|たまご}と{砂糖|さとう}を{買|か}ってきた。",
+          "kana": "ケーキをつくるのに、こなとたまごとさとうをかってきた。",
+          "en": "I bought flour, eggs and sugar to make a cake."
+        },
+        {
+          "ja": "{粉|こな}が{飛|と}び{散|ち}って、{台所|だいどころ}の{床|ゆか}が{真|ま}っ{白|しろ}になってしまいました。",
+          "kana": "こながとびちって、だいどころのゆかがまっしろになってしまいました。",
+          "en": "The flour went everywhere and the kitchen floor ended up completely white."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{米|こめ}や{麦|むぎ}などを、とても{細|こま}かくくだいたもの。",
+        "kana": "こめやむぎなどを、とてもこまかくくだいたもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0919",
+      "word": "餡",
+      "kana": "あん",
+      "meanings": [
+        "sweet bean paste",
+        "filling"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "usually-kana"
+      ],
+      "altForms": [
+        "あん"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}の{饅頭|まんじゅう}は、{餡|あん}が{甘|あま}すぎなくて{食|た}べやすい。",
+          "kana": "このみせのまんじゅうは、あんがあますぎなくてたべやすい。",
+          "en": "The bean paste in this shop's manju isn't too sweet, so they're easy to eat."
+        },
+        {
+          "ja": "{祖母|そぼ}に{教|おそ}わりながら、{豆|まめ}を{煮|に}て{餡|あん}を{作|つく}ってみた。",
+          "kana": "そぼにおそわりながら、まめをにてあんをつくってみた。",
+          "en": "With my grandmother showing me how, I tried boiling beans to make sweet bean paste."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{豆|まめ}を{煮|に}て、{砂糖|さとう}を{入|い}れて{甘|あま}くしたもの。お{菓子|かし}に{使|つか}う。",
+        "kana": "まめをにて、さとうをいれてあまくしたもの。おかしにつかう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0920",
+      "word": "麹",
+      "kana": "こうじ",
+      "meanings": [
+        "koji",
+        "malted rice"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking",
+        "culture"
+      ],
+      "altForms": [
+        "糀"
+      ],
+      "examples": [
+        {
+          "ja": "{味噌|みそ}は、{大豆|だいず}と{塩|しお}と{麹|こうじ}を{混|ま}ぜて、{長|なが}い{時間|じかん}かけて{作|つく}る。",
+          "kana": "みそは、だいずとしおとこうじをまぜて、ながいじかんかけてつくる。",
+          "en": "Miso is made by mixing soybeans, salt and koji and letting it develop over a long time."
+        },
+        {
+          "ja": "{麹|こうじ}を{使|つか}った{甘酒|あまざけ}は、{砂糖|さとう}を{入|い}れなくても{自然|しぜん}な{甘|あま}さがあります。",
+          "kana": "こうじをつかったあまざけは、さとうをいれなくてもしぜんなあまさがあります。",
+          "en": "Amazake made with koji has a natural sweetness even without added sugar."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{米|こめ}や{麦|むぎ}などに{小|ちい}さな{生|い}きものをつけて{育|そだ}てたもの。{味噌|みそ}やお{酒|さけ}を{作|つく}るのに{使|つか}う。",
+        "kana": "こめやむぎなどにちいさないきものをつけてそだてたもの。みそやおさけをつくるのにつかう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0921",
+      "word": "酵母",
+      "kana": "こうぼ",
+      "meanings": [
+        "yeast"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "science"
+      ],
+      "examples": [
+        {
+          "ja": "パンがふくらむのは、{酵母|こうぼ}が{生地|きじ}の{中|なか}で{働|はたら}くからだ。",
+          "kana": "パンがふくらむのは、こうぼがきじのなかではたらくからだ。",
+          "en": "Bread rises because the yeast is working inside the dough."
+        },
+        {
+          "ja": "ワインの{味|あじ}は、ぶどうの{種類|しゅるい}だけでなく、{使|つか}う{酵母|こうぼ}によっても{変|か}わるそうです。",
+          "kana": "ワインのあじは、ぶどうのしゅるいだけでなく、つかうこうぼによってもかわるそうです。",
+          "en": "I hear the taste of wine depends not only on the grape variety but also on the yeast used."
+        }
+      ],
+      "definitionJa": {
+        "ja": "パンやお{酒|さけ}を{作|つく}るときに{使|つか}う、とても{小|ちい}さな{生|い}きもの。",
+        "kana": "パンやおさけをつくるときにつかう、とてもちいさないきもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0922",
+      "word": "献立",
+      "kana": "こんだて",
+      "meanings": [
+        "menu (for a meal)",
+        "meal plan"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{一週間分|いっしゅうかんぶん}の{献立|こんだて}を{先|さき}に{決|き}めておくと、{買|か}い{物|もの}が{楽|らく}になる。",
+          "kana": "いっしゅうかんぶんのこんだてをさきにきめておくと、かいものがらくになる。",
+          "en": "If you decide the week's menu in advance, shopping gets easier."
+        },
+        {
+          "ja": "{子|こ}どもは{学校|がっこう}の{給食|きゅうしょく}の{献立表|こんだてひょう}を{見|み}て、カレーの{日|ひ}を{毎週|まいしゅう}{楽|たの}しみにしている。",
+          "kana": "こどもはがっこうのきゅうしょくのこんだてひょうをみて、カレーのひをまいしゅうたのしみにしている。",
+          "en": "My child checks the school lunch menu and looks forward to curry day every week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ご{飯|はん}のときに{出|だ}す{料理|りょうり}の{種類|しゅるい}や{組|く}み{合|あ}わせ。",
+        "kana": "ごはんのときにだすりょうりのしゅるいやくみあわせ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0923",
+      "word": "食材",
+      "kana": "しょくざい",
+      "meanings": [
+        "ingredients",
+        "foodstuffs"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking",
+        "shopping"
+      ],
+      "examples": [
+        {
+          "ja": "この{店|みせ}では、{地元|じもと}の{食材|しょくざい}だけを{使|つか}った{料理|りょうり}が{食|た}べられる。",
+          "kana": "このみせでは、じもとのしょくざいだけをつかったりょうりがたべられる。",
+          "en": "At this restaurant you can eat dishes made only with local ingredients."
+        },
+        {
+          "ja": "{冷蔵庫|れいぞうこ}に{残|のこ}っている{食材|しょくざい}で、{何|なに}か{一品|いっぴん}{作|つく}れないか{考|かんが}えている。",
+          "kana": "れいぞうこにのこっているしょくざいで、なにかいっぴんつくれないかかんがえている。",
+          "en": "I'm trying to figure out whether I can make a dish out of the ingredients left in the fridge."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{料理|りょうり}を{作|つく}るのに{使|つか}う、{肉|にく}や{野菜|やさい}などの{材料|ざいりょう}。",
+        "kana": "りょうりをつくるのにつかう、にくややさいなどのざいりょう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0924",
+      "word": "惣菜",
+      "kana": "そうざい",
+      "meanings": [
+        "prepared side dishes",
+        "deli food"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "shopping"
+      ],
+      "altForms": [
+        "総菜"
+      ],
+      "examples": [
+        {
+          "ja": "{疲|つか}れた{日|ひ}は、デパートの{地下|ちか}で{惣菜|そうざい}を{買|か}って{帰|かえ}ることが{多|おお}い。",
+          "kana": "つかれたひは、デパートのちかでそうざいをかってかえることがおおい。",
+          "en": "On tiring days I often buy prepared dishes at the department store basement on my way home."
+        },
+        {
+          "ja": "スーパーの{惣菜|そうざい}は{夕方|ゆうがた}になると{値引|ねび}きされるので、その{時間|じかん}を{狙|ねら}って{行|い}く{人|ひと}も{多|おお}い。",
+          "kana": "スーパーのそうざいはゆうがたになるとねびきされるので、そのじかんをねらっていくひともおおい。",
+          "en": "Supermarket deli dishes get marked down in the evening, so plenty of people time their visit for then."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}で{売|う}っている、{作|つく}ってある{料理|りょうり}。ご{飯|はん}と{一緒|いっしょ}に{食|た}べる。",
+        "kana": "みせでうっている、つくってあるりょうり。ごはんといっしょにたべる。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0925",
+      "word": "産地",
+      "kana": "さんち",
+      "meanings": [
+        "producing area",
+        "place of origin"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "shopping",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "スーパーの{野菜|やさい}には、{産地|さんち}が{書|か}かれたシールが{貼|は}ってある。",
+          "kana": "スーパーのやさいには、さんちがかかれたシールがはってある。",
+          "en": "The vegetables at the supermarket have stickers showing where they were grown."
+        },
+        {
+          "ja": "{米|こめ}は{産地|さんち}によって{味|あじ}が{違|ちが}うので、いろいろ{食|た}べ{比|くら}べてみるのも{面白|おもしろ}い。",
+          "kana": "こめはさんちによってあじがちがうので、いろいろたべくらべてみるのもおもしろい。",
+          "en": "Rice tastes different depending on where it's grown, so it's fun to compare different kinds."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{野菜|やさい}や{果物|くだもの}などが{作|つく}られている{地域|ちいき}。",
+        "kana": "やさいやくだものなどがつくられているちいき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0926",
+      "word": "特産",
+      "kana": "とくさん",
+      "meanings": [
+        "regional specialty",
+        "special product (of a region)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "shopping",
+        "culture"
+      ],
+      "collocations": [
+        "特産品"
+      ],
+      "confusables": [
+        "v-n2-0927"
+      ],
+      "examples": [
+        {
+          "ja": "この{辺|あた}りの{特産|とくさん}はお{茶|ちゃ}で、どこの{店|みせ}でも{売|う}っている。",
+          "kana": "このあたりのとくさんはおちゃで、どこのみせでもうっている。",
+          "en": "The local specialty around here is tea, and every shop sells it."
+        },
+        {
+          "ja": "{道|みち}の{駅|えき}では、その{土地|とち}の{特産品|とくさんひん}を{使|つか}ったアイスが{人気|にんき}だった。",
+          "kana": "みちのえきでは、そのとちのとくさんひんをつかったアイスがにんきだった。",
+          "en": "At the roadside station, ice cream made with local specialty products was a hit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{地域|ちいき}で{特|とく}に{多|おお}く{作|つく}られる、ほかにはない{品物|しなもの}。",
+        "kana": "そのちいきでとくにおおくつくられる、ほかにはないしなもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0927",
+      "word": "名産",
+      "kana": "めいさん",
+      "meanings": [
+        "famous local product"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "shopping",
+        "culture"
+      ],
+      "notes": "Near-synonym of 特産: 名産 stresses fame, 特産 stresses that the region produces it.",
+      "collocations": [
+        "名産品"
+      ],
+      "confusables": [
+        "v-n2-0926"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{売店|ばいてん}で、この{土地|とち}の{名産|めいさん}だというお{菓子|かし}を{買|か}ってみた。",
+          "kana": "えきのばいてんで、このとちのめいさんだというおかしをかってみた。",
+          "en": "At the station kiosk I tried buying a sweet that is said to be a local specialty."
+        },
+        {
+          "ja": "{友人|ゆうじん}が{旅行|りょこう}の{帰|かえ}りに、{名産|めいさん}のみかんを{箱|はこ}ごと{送|おく}ってくれました。",
+          "kana": "ゆうじんがりょこうのかえりに、めいさんのみかんをはこごとおくってくれました。",
+          "en": "On the way back from a trip, a friend sent me a whole box of the region's famous mandarins."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{地域|ちいき}で{作|つく}られ、{全国|ぜんこく}に{名前|なまえ}が{知|し}られている{品物|しなもの}。",
+        "kana": "そのちいきでつくられ、ぜんこくになまえがしられているしなもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0928",
+      "word": "土産",
+      "kana": "みやげ",
+      "meanings": [
+        "souvenir",
+        "gift (brought back from a trip)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "travel",
+        "culture"
+      ],
+      "notes": "Almost always お土産 in speech. 手土産 = a gift brought along when visiting someone.",
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{土産|みやげ}に、{職場|しょくば}のみんなへお{菓子|かし}を{買|か}って{帰|かえ}った。",
+          "kana": "りょこうのみやげに、しょくばのみんなへおかしをかってかえった。",
+          "en": "As a souvenir from my trip, I bought sweets for everyone at work."
+        },
+        {
+          "ja": "{友達|ともだち}の{家|いえ}に{行|い}く{時|とき}は、{手土産|てみやげ}に{近所|きんじょ}のパン{屋|や}のパンを{持|も}って{行|い}くことが{多|おお}い。",
+          "kana": "ともだちのいえにいくときは、てみやげにきんじょのパンやのパンをもっていくことがおおい。",
+          "en": "When I visit a friend's house, I often bring bread from the local bakery as a small gift."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}に{行|い}ったときに{買|か}って、{家族|かぞく}や{友達|ともだち}に{渡|わた}す{品物|しなもの}。",
+        "kana": "りょこうにいったときにかって、かぞくやともだちにわたすしなもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0929",
+      "word": "卸",
+      "kana": "おろし",
+      "meanings": [
+        "wholesale"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping"
+      ],
+      "altForms": [
+        "卸し"
+      ],
+      "collocations": [
+        "卸売り",
+        "卸値"
+      ],
+      "confusables": [
+        "v-n2-0930"
+      ],
+      "examples": [
+        {
+          "ja": "この{市場|いちば}は{卸|おろし}が{中心|ちゅうしん}で、{一般|いっぱん}の{客|きゃく}は{朝|あさ}{九時|くじ}{以降|いこう}しか{入|はい}れない。",
+          "kana": "このいちばはおろしがちゅうしんで、いっぱんのきゃくはあさくじいこうしかはいれない。",
+          "en": "This market is mainly wholesale, and general customers can only enter after nine in the morning."
+        },
+        {
+          "ja": "{卸|おろし}の{値段|ねだん}で{買|か}えるので、まとめて{注文|ちゅうもん}すれば{一|ひと}つ{当|あ}たりはかなり{安|やす}くなります。",
+          "kana": "おろしのねだんでかえるので、まとめてちゅうもんすればひとつあたりはかなりやすくなります。",
+          "en": "Since we can buy at wholesale prices, ordering in bulk makes each unit considerably cheaper."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{作|つく}った{人|ひと}から{品物|しなもの}をまとめて{買|か}い、{店|みせ}に{売|う}ること。",
+        "kana": "つくったひとからしなものをまとめてかい、みせにうること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0930",
+      "word": "小売",
+      "kana": "こうり",
+      "meanings": [
+        "retail"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping",
+        "written"
+      ],
+      "altForms": [
+        "小売り"
+      ],
+      "collocations": [
+        "小売店",
+        "小売価格"
+      ],
+      "confusables": [
+        "v-n2-0929"
+      ],
+      "examples": [
+        {
+          "ja": "メーカーが{直接|ちょくせつ}{売|う}るようになり、{小売|こうり}の{店|みせ}は{厳|きび}しい{競争|きょうそう}にさらされている。",
+          "kana": "メーカーがちょくせつうるようになり、こうりのみせはきびしいきょうそうにさらされている。",
+          "en": "With manufacturers now selling directly, retail shops face stiff competition."
+        },
+        {
+          "ja": "{小売|こうり}の{値段|ねだん}は、{卸|おろし}の{値段|ねだん}に{店|みせ}の{利益|りえき}や{運|はこ}ぶ{費用|ひよう}を{足|た}して{決|き}められます。",
+          "kana": "こうりのねだんは、おろしのねだんにみせのりえきやはこぶひようをたしてきめられます。",
+          "en": "The retail price is set by adding the shop's profit and transport costs to the wholesale price."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}を{店|みせ}で{客|きゃく}に{一|ひと}つずつ{売|う}ること。",
+        "kana": "しなものをみせできゃくにひとつずつうること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0931",
+      "word": "問屋",
+      "kana": "とんや",
+      "meanings": [
+        "wholesaler",
+        "wholesale store"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping",
+        "places"
+      ],
+      "notes": "Also read といや in some trade names; とんや is the standard reading.",
+      "examples": [
+        {
+          "ja": "この{通|とお}りには{問屋|とんや}が{多|おお}く、{朝|あさ}から{荷物|にもつ}を{運|はこ}ぶトラックが{行|い}き{来|き}している。",
+          "kana": "このとおりにはとんやがおおく、あさからにもつをはこぶトラックがいききしている。",
+          "en": "This street has many wholesalers, and trucks carrying goods come and go from early morning."
+        },
+        {
+          "ja": "{父|ちち}は{若|わか}い{頃|ころ}、{問屋|とんや}で{働|はたら}きながら{商売|しょうばい}のやり{方|かた}を{覚|おぼ}えたそうです。",
+          "kana": "ちちはわかいころ、とんやではたらきながらしょうばいのやりかたをおぼえたそうです。",
+          "en": "When he was young, my father learned the ropes of business while working at a wholesaler."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}をまとめて{買|か}い、{店|みせ}に{売|う}る{商売|しょうばい}。また、その{店|みせ}。",
+        "kana": "しなものをまとめてかい、みせにうるしょうばい。また、そのみせ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0932",
+      "word": "値引き",
+      "kana": "ねびき",
+      "meanings": [
+        "discount",
+        "price reduction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{閉店|へいてん}の{前|まえ}に{行|い}くと、{弁当|べんとう}が{三割|さんわり}{値引|ねび}きされていることが{多|おお}い。",
+          "kana": "へいてんのまえにいくと、べんとうがさんわりねびきされていることがおおい。",
+          "en": "If you go just before closing, the bento are often discounted by thirty percent."
+        },
+        {
+          "ja": "{箱|はこ}に{少|すこ}し{傷|きず}があるという{理由|りゆう}で、{店員|てんいん}さんが{千円|せんえん}{値引|ねび}きしてくれた。",
+          "kana": "はこにすこしきずがあるというりゆうで、てんいんさんがせんえんねびきしてくれた。",
+          "en": "Because the box was slightly damaged, the clerk knocked a thousand yen off the price for me."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}まっている{値段|ねだん}より{安|やす}くして{売|う}ること。",
+        "kana": "きまっているねだんよりやすくしてうること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0933",
+      "word": "値切る",
+      "kana": "ねぎる",
+      "meanings": [
+        "to haggle",
+        "to beat down the price"
+      ],
+      "pos": "v5",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{市場|いちば}では、{少|すこ}しぐらい{値切|ねぎ}っても{失礼|しつれい}にはならないらしい。",
+          "kana": "いちばでは、すこしぐらいねぎってもしつれいにはならないらしい。",
+          "en": "At the market, apparently it isn't rude to haggle a little."
+        },
+        {
+          "ja": "{母|はは}は{外国|がいこく}の{市場|いちば}で、{笑顔|えがお}で{値切|ねぎ}って{半額|はんがく}まで{下|さ}げてもらったそうだ。",
+          "kana": "はははがいこくのいちばで、えがおでねぎってはんがくまでさげてもらったそうだ。",
+          "en": "At a market abroad, my mother apparently haggled with a smile and got the price cut in half."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{買|か}う{人|ひと}が{店|みせ}の{人|ひと}と{話|はな}して、{値段|ねだん}を{安|やす}くしてもらうこと。",
+        "kana": "かうひとがみせのひととはなして、ねだんをやすくしてもらうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0934",
+      "word": "掛け売り",
+      "kana": "かけうり",
+      "meanings": [
+        "selling on credit"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping",
+        "money"
+      ],
+      "notes": "The buyer pays later (掛け = on account). Opposite: 現金売り.",
+      "examples": [
+        {
+          "ja": "{昔|むかし}の{商店|しょうてん}では、{月末|げつまつ}にまとめて{払|はら}う{掛|か}け{売|う}りが{普通|ふつう}だった。",
+          "kana": "むかしのしょうてんでは、げつまつにまとめてはらうかけうりがふつうだった。",
+          "en": "In shops long ago, selling on credit with payment at the end of the month was the norm."
+        },
+        {
+          "ja": "{掛|か}け{売|う}りは{便利|べんり}な{反面|はんめん}、{代金|だいきん}が{回収|かいしゅう}できないリスクも{伴|ともな}います。",
+          "kana": "かけうりはべんりなはんめん、だいきんがかいしゅうできないリスクもともないます。",
+          "en": "Selling on credit is convenient, but it also carries the risk of never collecting the payment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}を{渡|わた}して、お{金|かね}は{後|あと}でまとめて{受|う}け{取|と}る{売|う}り{方|かた}。",
+        "kana": "しなものをわたして、おかねはあとでまとめてうけとるうりかた。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0935",
+      "word": "分割払い",
+      "kana": "ぶんかつばらい",
+      "meanings": [
+        "payment in installments"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "confusables": [
+        "v-n2-0936"
+      ],
+      "examples": [
+        {
+          "ja": "{高|たか}い{買|か}い{物|もの}だったので、{十二回|じゅうにかい}の{分割払|ぶんかつばら}いにした。",
+          "kana": "たかいかいものだったので、じゅうにかいのぶんかつばらいにした。",
+          "en": "It was an expensive purchase, so I paid in twelve installments."
+        },
+        {
+          "ja": "{分割払|ぶんかつばら}いにすると{手数料|てすうりょう}がかかる{場合|ばあい}があるので、{事前|じぜん}に{確認|かくにん}しましょう。",
+          "kana": "ぶんかつばらいにするとてすうりょうがかかるばあいがあるので、じぜんにかくにんしましょう。",
+          "en": "Paying in installments can incur a fee, so check beforehand."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{代金|だいきん}を{一度|いちど}に{払|はら}わず、{何回|なんかい}にもわたって{少|すこ}しずつ{払|はら}うこと。",
+        "kana": "だいきんをいちどにはらわず、なんかいにもわたってすこしずつはらうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0936",
+      "word": "一括払い",
+      "kana": "いっかつばらい",
+      "meanings": [
+        "lump-sum payment",
+        "paying in full"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "confusables": [
+        "v-n2-0935"
+      ],
+      "examples": [
+        {
+          "ja": "お{支払|しはら}いは{一括払|いっかつばら}いですと、{手数料|てすうりょう}はかかりません。",
+          "kana": "おしはらいはいっかつばらいですと、てすうりょうはかかりません。",
+          "en": "If you pay in a single payment, there is no handling fee."
+        },
+        {
+          "ja": "ボーナスが{出|で}たので、{残|のこ}りのローンを{一括払|いっかつばら}いで{済|す}ませることにした。",
+          "kana": "ボーナスがでたので、のこりのローンをいっかつばらいですませることにした。",
+          "en": "My bonus came in, so I decided to pay off the rest of the loan in one go."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{代金|だいきん}を{一度|いちど}に{全部|ぜんぶ}{払|はら}うこと。",
+        "kana": "だいきんをいちどにぜんぶはらうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0937",
+      "word": "着払い",
+      "kana": "ちゃくばらい",
+      "meanings": [
+        "payment on delivery",
+        "collect on delivery"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "notes": "The recipient pays the shipping fee when the parcel arrives; 元払い = the sender pays.",
+      "examples": [
+        {
+          "ja": "{返品|へんぴん}の{送料|そうりょう}は、{着払|ちゃくばら}いで{送|おく}っていただいて{結構|けっこう}です。",
+          "kana": "へんぴんのそうりょうは、ちゃくばらいでおくっていただいてけっこうです。",
+          "en": "For returns, you may send the item with the shipping charged to us on delivery."
+        },
+        {
+          "ja": "{荷物|にもつ}が{着払|ちゃくばら}いで{届|とど}いたので、{玄関|げんかん}で{配達|はいたつ}の{人|ひと}に{送料|そうりょう}を{払|はら}った。",
+          "kana": "にもつがちゃくばらいでとどいたので、げんかんではいたつのひとにそうりょうをはらった。",
+          "en": "The package came collect on delivery, so I paid the shipping fee to the courier at the door."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{荷物|にもつ}を{受|う}け{取|と}る{人|ひと}が、{届|とど}いたときに{送料|そうりょう}を{払|はら}うこと。",
+        "kana": "にもつをうけとるひとが、とどいたときにそうりょうをはらうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0938",
+      "word": "保証書",
+      "kana": "ほしょうしょ",
+      "meanings": [
+        "warranty card",
+        "written guarantee"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "{修理|しゅうり}を{頼|たの}む{時|とき}は、{保証書|ほしょうしょ}とレシートを{持|も}って{来|き}てください。",
+          "kana": "しゅうりをたのむときは、ほしょうしょとレシートをもってきてください。",
+          "en": "When you request a repair, please bring the warranty card and the receipt."
+        },
+        {
+          "ja": "{保証書|ほしょうしょ}をなくしてしまい、{修理代|しゅうりだい}を{全額|ぜんがく}{払|はら}うことになった。",
+          "kana": "ほしょうしょをなくしてしまい、しゅうりだいをぜんがくはらうことになった。",
+          "en": "I lost the warranty card and ended up having to pay the full cost of the repair."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{買|か}った{品物|しなもの}が{壊|こわ}れたとき、{決|き}まった{期間|きかん}は{無料|むりょう}で{直|なお}すと{約束|やくそく}した{紙|かみ}。",
+        "kana": "かったしなものがこわれたとき、きまったきかんはむりょうでなおすとやくそくしたかみ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0939",
+      "word": "下取り",
+      "kana": "したどり",
+      "meanings": [
+        "trade-in"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "collocations": [
+        "下取りに出す"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{車|くるま}を{下取|したど}りに{出|だ}して、{新|あたら}しい{車|くるま}を{少|すこ}し{安|やす}く{買|か}った。",
+          "kana": "ふるいくるまをしたどりにだして、あたらしいくるまをすこしやすくかった。",
+          "en": "I traded in my old car and bought a new one a little cheaper."
+        },
+        {
+          "ja": "このスマホは、{下取|したど}りに{出|だ}せば{一万円|いちまんえん}ほどになるそうです。",
+          "kana": "このスマホは、したどりにだせばいちまんえんほどになるそうです。",
+          "en": "Apparently this phone would fetch about ten thousand yen as a trade-in."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{品物|しなもの}を{買|か}うとき、{店|みせ}が{古|ふる}い{品物|しなもの}を{引|ひ}き{取|と}って{値段|ねだん}を{安|やす}くすること。",
+        "kana": "あたらしいしなものをかうとき、みせがふるいしなものをひきとってねだんをやすくすること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0940",
+      "word": "取り寄せ",
+      "kana": "とりよせ",
+      "meanings": [
+        "ordering in (from a supplier)",
+        "mail order"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "shopping"
+      ],
+      "collocations": [
+        "お取り寄せ"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}に{在庫|ざいこ}がなかったので、{取|と}り{寄|よ}せを{頼|たの}んで{一週間|いっしゅうかん}{待|ま}った。",
+          "kana": "みせにざいこがなかったので、とりよせをたのんでいっしゅうかんまった。",
+          "en": "The shop didn't have it in stock, so I asked them to order it and waited a week."
+        },
+        {
+          "ja": "{最近|さいきん}は、{全国|ぜんこく}の{名物|めいぶつ}をお{取|と}り{寄|よ}せして{家|いえ}で{楽|たの}しむ{人|ひと}が{増|ふ}えています。",
+          "kana": "さいきんは、ぜんこくのめいぶつをおとりよせしていえでたのしむひとがふえています。",
+          "en": "These days more and more people order regional specialties from all over the country to enjoy at home."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}にない{品物|しなもの}を、{作|つく}っている{所|ところ}やほかの{店|みせ}から{送|おく}ってもらうこと。",
+        "kana": "みせにないしなものを、つくっているところやほかのみせからおくってもらうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0941",
+      "word": "苦情",
+      "kana": "くじょう",
+      "meanings": [
+        "complaint"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "communication",
+        "shopping",
+        "business"
+      ],
+      "collocations": [
+        "苦情を言う",
+        "苦情が来る"
+      ],
+      "examples": [
+        {
+          "ja": "{商品|しょうひん}が{届|とど}かないという{苦情|くじょう}が、{客|きゃく}から{何件|なんけん}も{寄|よ}せられた。",
+          "kana": "しょうひんがとどかないというくじょうが、きゃくからなんけんもよせられた。",
+          "en": "Several complaints came in from customers saying their orders had not arrived."
+        },
+        {
+          "ja": "{夜中|よなか}の{工事|こうじ}の{音|おと}について、{近所|きんじょ}の{人|ひと}が{苦情|くじょう}を{言|い}いに{来|き}た。",
+          "kana": "よなかのこうじのおとについて、きんじょのひとがくじょうをいいにきた。",
+          "en": "A neighbor came over to complain about the noise from the construction work at night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{困|こま}ったことや{嫌|いや}なことについて、{相手|あいて}に{不満|ふまん}を{言|い}うこと。",
+        "kana": "こまったことやいやなことについて、あいてにふまんをいうこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0942",
+      "word": "施設",
+      "kana": "しせつ",
+      "meanings": [
+        "facility",
+        "institution"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}には、{高齢者|こうれいしゃ}のための{施設|しせつ}が{三|みっ}つある。",
+          "kana": "このまちには、こうれいしゃのためのしせつがみっつある。",
+          "en": "This town has three facilities for the elderly."
+        },
+        {
+          "ja": "{駅|えき}の{近|ちか}くに、プールや{図書館|としょかん}を{備|そな}えた{新|あたら}しい{施設|しせつ}ができるそうです。",
+          "kana": "えきのちかくに、プールやとしょかんをそなえたあたらしいしせつができるそうです。",
+          "en": "I hear a new facility with a pool and a library is being built near the station."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}や{病院|びょういん}など、ある{目的|もくてき}のために{作|つく}られた{建物|たてもの}。",
+        "kana": "がっこうやびょういんなど、あるもくてきのためにつくられたたてもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0943",
+      "word": "地帯",
+      "kana": "ちたい",
+      "meanings": [
+        "zone",
+        "belt (of land)",
+        "area"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "city"
+      ],
+      "collocations": [
+        "工業地帯",
+        "安全地帯"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{西側|にしがわ}は{工場|こうじょう}が{集|あつ}まる{地帯|ちたい}で、{夜|よる}はほとんど{人|ひと}がいない。",
+          "kana": "えきのにしがわはこうじょうがあつまるちたいで、よるはほとんどひとがいない。",
+          "en": "The west side of the station is an area full of factories, and there's hardly anyone around at night."
+        },
+        {
+          "ja": "この{辺|あた}りは{昔|むかし}から{米作|こめづく}りが{盛|さか}んな{地帯|ちたい}として{知|し}られています。",
+          "kana": "このあたりはむかしからこめづくりがさかんなちたいとしてしられています。",
+          "en": "This area has long been known as a rice-growing region."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{工場|こうじょう}が{多|おお}いなど、ある{特徴|とくちょう}を{持|も}った{広|ひろ}い{地域|ちいき}。",
+        "kana": "こうじょうがおおいなど、あるとくちょうをもったひろいちいき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0944",
+      "word": "地点",
+      "kana": "ちてん",
+      "meanings": [
+        "point",
+        "spot (location)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}があった{地点|ちてん}から{駅|えき}までは、{歩|ある}いて{十分|じゅっぷん}ほどです。",
+          "kana": "じこがあったちてんからえきまでは、あるいてじゅっぷんほどです。",
+          "en": "From the spot where the accident happened to the station is about a ten-minute walk."
+        },
+        {
+          "ja": "マラソンでは、{三十|さんじゅっ}キロ{地点|ちてん}を{過|す}ぎてから{急|きゅう}に{足|あし}が{重|おも}くなった。",
+          "kana": "マラソンでは、さんじゅっキロちてんをすぎてからきゅうにあしがおもくなった。",
+          "en": "In the marathon, my legs suddenly got heavy after I passed the thirty-kilometer mark."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{地図|ちず}の{上|うえ}などで{決|き}めた、ある{一|ひと}つの{所|ところ}。",
+        "kana": "ちずのうえなどできめた、あるひとつのところ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0945",
+      "word": "地形",
+      "kana": "ちけい",
+      "meanings": [
+        "terrain",
+        "topography"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "science"
+      ],
+      "examples": [
+        {
+          "ja": "この{辺|あた}りは{地形|ちけい}が{複雑|ふくざつ}で、{道|みち}が{細|ほそ}く{曲|ま}がりくねっている。",
+          "kana": "このあたりはちけいがふくざつで、みちがほそくまがりくねっている。",
+          "en": "The terrain around here is complicated, and the roads are narrow and winding."
+        },
+        {
+          "ja": "{空|そら}から{見|み}ると、{川|かわ}が{作|つく}った{地形|ちけい}の{様子|ようす}がよく{分|わ}かります。",
+          "kana": "そらからみると、かわがつくったちけいのようすがよくわかります。",
+          "en": "Seen from the air, you can clearly make out the landforms the river has carved."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{山|やま}や{川|かわ}、{坂|さか}などの、その{地域|ちいき}の{表面|ひょうめん}の{形|かたち}。",
+        "kana": "やまやかわ、さかなどの、そのちいきのひょうめんのかたち。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0946",
+      "word": "地盤",
+      "kana": "じばん",
+      "meanings": [
+        "ground (soil)",
+        "foundation",
+        "base of support"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "science"
+      ],
+      "notes": "Also a politician's 地盤 = home turf, support base.",
+      "examples": [
+        {
+          "ja": "この{土地|とち}は{地盤|じばん}が{弱|よわ}いので、{高|たか}い{建物|たてもの}を{建|た}てるのは{難|むずか}しい。",
+          "kana": "このとちはじばんがよわいので、たかいたてものをたてるのはむずかしい。",
+          "en": "The ground here is weak, so it's difficult to build tall buildings."
+        },
+        {
+          "ja": "{地震|じしん}の{後|あと}、{専門家|せんもんか}が{家|いえ}の{地盤|じばん}を{調|しら}べに{来|き}てくれました。",
+          "kana": "じしんのあと、せんもんかがいえのじばんをしらべにきてくれました。",
+          "en": "After the earthquake, an expert came to check the ground under our house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}を{建|た}てる{地面|じめん}の{固|かた}さや{強|つよ}さ。また、{政治家|せいじか}などを{支|ささ}える{人々|ひとびと}。",
+        "kana": "たてものをたてるじめんのかたさやつよさ。また、せいじかなどをささえるひとびと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0947",
+      "word": "街道",
+      "kana": "かいどう",
+      "meanings": [
+        "highway (historical)",
+        "main road"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "city",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{日本橋|にほんばし}から{京都|きょうと}までの{街道|かいどう}には、{昔|むかし}、{五十三|ごじゅうさん}の{宿場|しゅくば}があった。",
+          "kana": "にほんばしからきょうとまでのかいどうには、むかし、ごじゅうさんのしゅくばがあった。",
+          "en": "The highway from Nihonbashi to Kyoto once had fifty-three post towns."
+        },
+        {
+          "ja": "{街道沿|かいどうぞ}いの{古|ふる}い{茶屋|ちゃや}で、{名物|めいぶつ}の{団子|だんご}を{食|た}べながら{足|あし}を{休|やす}めた。",
+          "kana": "かいどうぞいのふるいちゃやで、めいぶつのだんごをたべながらあしをやすめた。",
+          "en": "At an old teahouse along the highway, I rested my feet while eating the local specialty dumplings."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}から{町|まち}と{町|まち}を{結|むす}ぶ、{大|おお}きな{道|みち}。",
+        "kana": "むかしからまちとまちをむすぶ、おおきなみち。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0948",
+      "word": "宿場",
+      "kana": "しゅくば",
+      "meanings": [
+        "post town",
+        "post station"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places",
+        "culture"
+      ],
+      "collocations": [
+        "宿場町"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}の{宿場|しゅくば}の{町並|まちな}みが、{今|いま}も{大切|たいせつ}に{残|のこ}されている。",
+          "kana": "むかしのしゅくばのまちなみが、いまもたいせつにのこされている。",
+          "en": "The streetscape of the old post town is still carefully preserved today."
+        },
+        {
+          "ja": "{江戸時代|えどじだい}、{旅人|たびびと}は{一日|いちにち}に{一|ひと}つか{二|ふた}つの{宿場|しゅくば}を{進|すす}むのが{普通|ふつう}だったという。",
+          "kana": "えどじだい、たびびとはいちにちにひとつかふたつのしゅくばをすすむのがふつうだったという。",
+          "en": "In the Edo period, travelers usually covered one or two post towns a day, they say."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、{街道|かいどう}の{途中|とちゅう}に{作|つく}られ、{旅|たび}する{人|ひと}が{泊|と}まった{町|まち}。",
+        "kana": "むかし、かいどうのとちゅうにつくられ、たびするひとがとまったまち。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0949",
+      "word": "関所",
+      "kana": "せきしょ",
+      "meanings": [
+        "checkpoint",
+        "barrier station"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{箱根|はこね}の{関所|せきしょ}では、{旅人|たびびと}が{通行|つうこう}の{許可|きょか}を{厳|きび}しく{調|しら}べられたという。",
+          "kana": "はこねのせきしょでは、たびびとがつうこうのきょかをきびしくしらべられたという。",
+          "en": "At the Hakone checkpoint, travelers' passes are said to have been strictly inspected."
+        },
+        {
+          "ja": "{関所|せきしょ}の{跡|あと}は{今|いま}、{公園|こうえん}になっていて、{当時|とうじ}の{建物|たてもの}も{建|た}て{直|なお}されています。",
+          "kana": "せきしょのあとはいま、こうえんになっていて、とうじのたてものもたてなおされています。",
+          "en": "The site of the checkpoint is now a park, and the buildings of that era have been rebuilt."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、{街道|かいどう}の{途中|とちゅう}にあって、{通|とお}る{人|ひと}や{荷物|にもつ}を{役人|やくにん}が{調|しら}べた{所|ところ}。",
+        "kana": "むかし、かいどうのとちゅうにあって、とおるひとやにもつをやくにんがしらべたところ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0950",
+      "word": "渡し",
+      "kana": "わたし",
+      "meanings": [
+        "ferry crossing",
+        "ferry"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "notes": "Same sound as 私; context (川, 船) makes it clear. 渡し船 = ferry boat.",
+      "collocations": [
+        "渡し船",
+        "渡し場"
+      ],
+      "examples": [
+        {
+          "ja": "{橋|はし}ができる{前|まえ}は、この{川|かわ}を{渡|わた}しで{越|こ}えるしかなかった。",
+          "kana": "はしができるまえは、このかわをわたしでこえるしかなかった。",
+          "en": "Before the bridge was built, the only way across this river was by ferry."
+        },
+        {
+          "ja": "{今|いま}も{観光用|かんこうよう}の{渡|わた}し{船|ぶね}が{残|のこ}っていて、{週末|しゅうまつ}は{家族連|かぞくづ}れで{混|こ}みます。",
+          "kana": "いまもかんこうようのわたしぶねがのこっていて、しゅうまつはかぞくづれでこみます。",
+          "en": "A ferry boat for sightseers still runs here, and on weekends it's crowded with families."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{橋|はし}のない{川|かわ}で、{人|ひと}を{船|ふね}で{向|む}こう{岸|ぎし}まで{運|はこ}ぶこと。また、その{船|ふね}。",
+        "kana": "はしのないかわで、ひとをふねでむこうぎしまではこぶこと。また、そのふね。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0951",
+      "word": "船着き場",
+      "kana": "ふなつきば",
+      "meanings": [
+        "landing",
+        "wharf",
+        "boat dock"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "places",
+        "travel"
+      ],
+      "altForms": [
+        "船着場"
+      ],
+      "examples": [
+        {
+          "ja": "{船着|ふなつ}き{場|ば}で{三十分|さんじゅっぷん}ほど{待|ま}つと、{島|しま}へ{行|い}く{船|ふね}が{来|き}た。",
+          "kana": "ふなつきばでさんじゅっぷんほどまつと、しまへいくふねがきた。",
+          "en": "After about a thirty-minute wait at the landing, the boat to the island arrived."
+        },
+        {
+          "ja": "{朝|あさ}の{船着|ふなつ}き{場|ば}には、{取|と}れたばかりの{魚|さかな}を{運|はこ}ぶ{人|ひと}たちの{声|こえ}が{響|ひび}いていた。",
+          "kana": "あさのふなつきばには、とれたばかりのさかなをはこぶひとたちのこえがひびいていた。",
+          "en": "In the morning, the wharf echoed with the voices of people hauling freshly caught fish."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{船|ふね}が{着|つ}いて、{人|ひと}や{荷物|にもつ}が{乗|の}り{降|お}りする{所|ところ}。",
+        "kana": "ふねがついて、ひとやにもつがのりおりするところ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0952",
+      "word": "峠",
+      "kana": "とうげ",
+      "meanings": [
+        "mountain pass",
+        "peak (of a crisis)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places"
+      ],
+      "notes": "Figurative: 峠を越す = to get past the critical point (an illness, a busy period).",
+      "examples": [
+        {
+          "ja": "{峠|とうげ}を{越|こ}えると、{急|きゅう}に{目|め}の{前|まえ}に{海|うみ}が{広|ひろ}がった。",
+          "kana": "とうげをこえると、きゅうにめのまえにうみがひろがった。",
+          "en": "Once we crossed the pass, the sea suddenly spread out before us."
+        },
+        {
+          "ja": "{医者|いしゃ}によると、{祖父|そふ}の{病気|びょうき}はもう{峠|とうげ}を{越|こ}したそうで、{家族|かぞく}みんなほっとしました。",
+          "kana": "いしゃによると、そふのびょうきはもうとうげをこしたそうで、かぞくみんなほっとしました。",
+          "en": "According to the doctor, my grandfather's illness has passed the critical point, and the whole family is relieved."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{山|やま}の{道|みち}で{一番|いちばん}{高|たか}い{所|ところ}。また、{一番|いちばん}{大変|たいへん}な{時期|じき}。",
+        "kana": "やまのみちでいちばんたかいところ。また、いちばんたいへんなじき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0953",
+      "word": "坂道",
+      "kana": "さかみち",
+      "meanings": [
+        "slope",
+        "hill road"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "city",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}から{家|いえ}までは{長|なが}い{坂道|さかみち}で、{自転車|じてんしゃ}では{帰|かえ}りがつらい。",
+          "kana": "えきからいえまではながいさかみちで、じてんしゃではかえりがつらい。",
+          "en": "It's a long uphill road from the station to my house, so the ride home by bike is tough."
+        },
+        {
+          "ja": "{雪|ゆき}の{日|ひ}の{坂道|さかみち}は、{歩|ある}くだけでも{滑|すべ}って{危|あぶ}ないので{気|き}をつけてください。",
+          "kana": "ゆきのひのさかみちは、あるくだけでもすべってあぶないのできをつけてください。",
+          "en": "On snowy days the hill road is slippery and dangerous even just to walk on, so please be careful."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{山|やま}や{丘|おか}などの、{上|あ}がったり{下|さ}がったりしている{道|みち}。",
+        "kana": "やまやおかなどの、あがったりさがったりしているみち。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0954",
+      "word": "石畳",
+      "kana": "いしだたみ",
+      "meanings": [
+        "stone pavement",
+        "cobblestones"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "city",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}にぬれた{石畳|いしだたみ}は{滑|すべ}りやすいので、{足元|あしもと}に{気|き}をつけてください。",
+          "kana": "あめにぬれたいしだたみはすべりやすいので、あしもとにきをつけてください。",
+          "en": "Wet cobblestones are slippery, so please watch your step."
+        },
+        {
+          "ja": "{古|ふる}い{町|まち}の{石畳|いしだたみ}を{歩|ある}いていると、{昔|むかし}に{戻|もど}ったような{気分|きぶん}になる。",
+          "kana": "ふるいまちのいしだたみをあるいていると、むかしにもどったようなきぶんになる。",
+          "en": "Walking the cobblestones of the old town, I feel as if I've gone back in time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{平|ひら}たい{石|いし}を{並|なら}べて{敷|し}いた{道|みち}。",
+        "kana": "ひらたいいしをならべてしいたみち。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0955",
+      "word": "並木",
+      "kana": "なみき",
+      "meanings": [
+        "row of trees",
+        "tree-lined street"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "city",
+        "places"
+      ],
+      "collocations": [
+        "並木道",
+        "桜並木"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}の{並木|なみき}が{黄色|きいろ}く{色|いろ}づき、{秋|あき}らしくなってきた。",
+          "kana": "えきまえのなみきがきいろくいろづき、あきらしくなってきた。",
+          "en": "The trees lining the street in front of the station have turned yellow, and it's starting to feel like autumn."
+        },
+        {
+          "ja": "{桜並木|さくらなみき}の{下|した}を{歩|ある}くのが、この{季節|きせつ}の{一番|いちばん}の{楽|たの}しみです。",
+          "kana": "さくらなみきのしたをあるくのが、このきせつのいちばんのたのしみです。",
+          "en": "Walking beneath the rows of cherry trees is my favorite part of this season."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道|みち}の{両側|りょうがわ}に、まっすぐ{並|なら}んで{植|う}えられている{木|き}。",
+        "kana": "みちのりょうがわに、まっすぐならんでうえられているき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0956",
+      "word": "一里塚",
+      "kana": "いちりづか",
+      "meanings": [
+        "milestone mound",
+        "milestone"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "culture"
+      ],
+      "notes": "Mounds placed one ri (about 3.9 km) apart along old highways; figuratively, a milestone on a long path.",
+      "examples": [
+        {
+          "ja": "{街道沿|かいどうぞ}いに{残|のこ}る{一里塚|いちりづか}は、{昔|むかし}の{旅人|たびびと}の{目印|めじるし}だった。",
+          "kana": "かいどうぞいにのこるいちりづかは、むかしのたびびとのめじるしだった。",
+          "en": "The milestone mounds that remain along the old highway were landmarks for travelers of the past."
+        },
+        {
+          "ja": "この{一里塚|いちりづか}の{上|うえ}の{大|おお}きな{木|き}は、{四百年近|よんひゃくねんちか}く{前|まえ}に{植|う}えられたものだそうです。",
+          "kana": "このいちりづかのうえのおおきなきは、よんひゃくねんちかくまえにうえられたものだそうです。",
+          "en": "The big tree on top of this milestone mound was apparently planted nearly four hundred years ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、{街道|かいどう}に{決|き}まった{距離|きょり}ごとに{作|つく}られた、{旅|たび}する{人|ひと}のための{目印|めじるし}。",
+        "kana": "むかし、かいどうにきまったきょりごとにつくられた、たびするひとのためのめじるし。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0957",
+      "word": "名物",
+      "kana": "めいぶつ",
+      "meanings": [
+        "famous local product",
+        "specialty (dish)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "travel",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}の{名物|めいぶつ}はうなぎで、{週末|しゅうまつ}は{店|みせ}の{前|まえ}に{行列|ぎょうれつ}ができる。",
+          "kana": "このまちのめいぶつはうなぎで、しゅうまつはみせのまえにぎょうれつができる。",
+          "en": "This town's specialty is eel, and on weekends lines form outside the restaurants."
+        },
+        {
+          "ja": "{名物|めいぶつ}だと{聞|き}いて{食|た}べてみたが、{正直|しょうじき}、{期待|きたい}したほどではなかった。",
+          "kana": "めいぶつだときいてたべてみたが、しょうじき、きたいしたほどではなかった。",
+          "en": "I tried it because I'd heard it was a local specialty, but honestly it wasn't as good as I'd hoped."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{地域|ちいき}で{有名|ゆうめい}な{食|た}べ{物|もの}や{品物|しなもの}。",
+        "kana": "そのちいきでゆうめいなたべものやしなもの。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0958",
+      "word": "旅籠",
+      "kana": "はたご",
+      "meanings": [
+        "hatago",
+        "old-style highway inn"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{江戸時代|えどじだい}の{旅籠|はたご}が、{今|いま}は{資料館|しりょうかん}として{公開|こうかい}されている。",
+          "kana": "えどじだいのはたごが、いまはしりょうかんとしてこうかいされている。",
+          "en": "An Edo-period inn is now open to the public as a museum."
+        },
+        {
+          "ja": "{昔|むかし}の{旅籠|はたご}を{直|なお}した{宿|やど}に{泊|と}まって、{当時|とうじ}の{旅人|たびびと}の{気分|きぶん}を{味|あじ}わった。",
+          "kana": "むかしのはたごをなおしたやどにとまって、とうじのたびびとのきぶんをあじわった。",
+          "en": "I stayed at an inn converted from an old hatago and got a taste of what travelers felt back then."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、{宿場|しゅくば}にあって、{旅|たび}する{人|ひと}が{泊|と}まった{宿|やど}。",
+        "kana": "むかし、しゅくばにあって、たびするひとがとまったやど。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0959",
+      "word": "本陣",
+      "kana": "ほんじん",
+      "meanings": [
+        "honjin",
+        "official inn for lords",
+        "headquarters"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{宿場|しゅくば}の{中心|ちゅうしん}には、{大名|だいみょう}が{泊|と}まった{本陣|ほんじん}の{跡|あと}が{残|のこ}っている。",
+          "kana": "しゅくばのちゅうしんには、だいみょうがとまったほんじんのあとがのこっている。",
+          "en": "In the center of the post town, the site of the honjin where feudal lords stayed still remains."
+        },
+        {
+          "ja": "{本陣|ほんじん}は{普通|ふつう}の{宿|やど}より{大|おお}きく、{門|もん}や{庭|にわ}も{立派|りっぱ}だったという。",
+          "kana": "ほんじんはふつうのやどよりおおきく、もんやにわもりっぱだったという。",
+          "en": "The honjin was larger than an ordinary inn, with an impressive gate and garden, they say."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、{宿場|しゅくば}で{特|とく}に{偉|えら}い{人|ひと}が{泊|と}まった{特別|とくべつ}な{宿|やど}。また、{中心|ちゅうしん}になる{所|ところ}。",
+        "kana": "むかし、しゅくばでとくにえらいひとがとまったとくべつなやど。また、ちゅうしんになるところ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0960",
+      "word": "旅程",
+      "kana": "りょてい",
+      "meanings": [
+        "itinerary",
+        "travel schedule"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel"
+      ],
+      "confusables": [
+        "v-n2-0961"
+      ],
+      "examples": [
+        {
+          "ja": "{三日間|みっかかん}の{旅程|りょてい}を、{出発前|しゅっぱつまえ}に{家族|かぞく}に{送|おく}っておいた。",
+          "kana": "みっかかんのりょていを、しゅっぱつまえにかぞくにおくっておいた。",
+          "en": "I sent my family the three-day itinerary before leaving."
+        },
+        {
+          "ja": "{旅程|りょてい}を{詰|つ}め{込|こ}みすぎると、ゆっくり{景色|けしき}を{楽|たの}しむ{余裕|よゆう}がなくなりますよ。",
+          "kana": "りょていをつめこみすぎると、ゆっくりけしきをたのしむよゆうがなくなりますよ。",
+          "en": "If you pack your itinerary too tightly, you won't have time to enjoy the scenery."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}で、いつどこへ{行|い}くかを{決|き}めた{予定|よてい}。",
+        "kana": "りょこうで、いつどこへいくかをきめたよてい。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0961",
+      "word": "行程",
+      "kana": "こうてい",
+      "meanings": [
+        "distance (of a journey)",
+        "leg",
+        "course"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel"
+      ],
+      "notes": "行程 = the ground to cover (一日の行程); 工程, same reading, is a step in a manufacturing process.",
+      "confusables": [
+        "v-n2-0960"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{行程|こうてい}は{約|やく}{二十|にじゅっ}キロで、{夕方|ゆうがた}には{次|つぎ}の{町|まち}に{着|つ}く{予定|よてい}だ。",
+          "kana": "きょうのこうていはやくにじゅっキロで、ゆうがたにはつぎのまちにつくよていだ。",
+          "en": "Today's leg is about twenty kilometers, and we plan to reach the next town by evening."
+        },
+        {
+          "ja": "{山登|やまのぼ}りの{行程|こうてい}が{長|なが}い{場合|ばあい}は、{途中|とちゅう}で{休|やす}む{場所|ばしょ}を{決|き}めておくと{安心|あんしん}です。",
+          "kana": "やまのぼりのこうていがながいばあいは、とちゅうでやすむばしょをきめておくとあんしんです。",
+          "en": "When a hike covers a long distance, it's reassuring to decide in advance where you'll rest along the way."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅|たび}などで、{一日|いちにち}に{進|すす}む{距離|きょり}や、{行|い}く{道|みち}の{長|なが}さ。",
+        "kana": "たびなどで、いちにちにすすむきょりや、いくみちのながさ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0962",
+      "word": "道中",
+      "kana": "どうちゅう",
+      "meanings": [
+        "during the journey",
+        "on the way"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "travel"
+      ],
+      "collocations": [
+        "道中お気をつけて"
+      ],
+      "examples": [
+        {
+          "ja": "{道中|どうちゅう}、{何度|なんど}も{雨|あめ}に{降|ふ}られたが、{無事|ぶじ}に{目的地|もくてきち}に{着|つ}いた。",
+          "kana": "どうちゅう、なんどもあめにふられたが、ぶじにもくてきちについた。",
+          "en": "We got rained on several times along the way, but arrived safely at our destination."
+        },
+        {
+          "ja": "「{道中|どうちゅう}お{気|き}をつけて」と、{宿|やど}の{人|ひと}が{見|み}えなくなるまで{手|て}を{振|ふ}ってくれました。",
+          "kana": "「どうちゅうおきをつけて」と、やどのひとがみえなくなるまでてをふってくれました。",
+          "en": "\"Safe travels,\" said the innkeeper, waving until we were out of sight."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}や{移動|いどう}をしている{間|あいだ}。{目的地|もくてきち}に{着|つ}くまでの{道|みち}の{途中|とちゅう}。",
+        "kana": "りょこうやいどうをしているあいだ。もくてきちにつくまでのみちのとちゅう。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0963",
+      "word": "渋滞",
+      "kana": "じゅうたい",
+      "meanings": [
+        "traffic jam",
+        "congestion"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{連休|れんきゅう}の{高速道路|こうそくどうろ}は{渋滞|じゅうたい}がひどく、{普段|ふだん}の{倍|ばい}の{時間|じかん}がかかった。",
+          "kana": "れんきゅうのこうそくどうろはじゅうたいがひどく、ふだんのばいのじかんがかかった。",
+          "en": "The expressway was badly jammed over the long weekend, and it took twice the usual time."
+        },
+        {
+          "ja": "{渋滞|じゅうたい}を{避|さ}けるために、{朝|あさ}{五時|ごじ}に{家|いえ}を{出|で}ることにしました。",
+          "kana": "じゅうたいをさけるために、あさごじにいえをでることにしました。",
+          "en": "To avoid traffic jams, we decided to leave the house at five in the morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{車|くるま}が{多|おお}すぎて、{道路|どうろ}がなかなか{進|すす}まなくなること。",
+        "kana": "くるまがおおすぎて、どうろがなかなかすすまなくなること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0964",
+      "word": "迂回",
+      "kana": "うかい",
+      "meanings": [
+        "detour",
+        "bypass"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{工事|こうじ}のため、この{先|さき}は{左|ひだり}に{迂回|うかい}してください。",
+          "kana": "こうじのため、このさきはひだりにうかいしてください。",
+          "en": "Due to construction, please detour to the left ahead."
+        },
+        {
+          "ja": "{橋|はし}が{通|とお}れなくなっていたので、{川沿|かわぞ}いの{道|みち}を{大|おお}きく{迂回|うかい}するしかなかった。",
+          "kana": "はしがとおれなくなっていたので、かわぞいのみちをおおきくうかいするしかなかった。",
+          "en": "The bridge was closed, so we had no choice but to make a long detour along the river road."
+        }
+      ],
+      "definitionJa": {
+        "ja": "まっすぐ{行|い}かずに、{別|べつ}の{道|みち}を{回|まわ}って{行|い}くこと。",
+        "kana": "まっすぐいかずに、べつのみちをまわっていくこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0965",
+      "word": "通行止め",
+      "kana": "つうこうどめ",
+      "meanings": [
+        "road closed",
+        "closed to traffic"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{大雪|おおゆき}で{峠|とうげ}の{道|みち}が{通行止|つうこうど}めになり、{遠回|とおまわ}りするしかなかった。",
+          "kana": "おおゆきでとうげのみちがつうこうどめになり、とおまわりするしかなかった。",
+          "en": "Heavy snow closed the mountain pass road, so we had no choice but to take the long way around."
+        },
+        {
+          "ja": "{祭|まつ}りの{日|ひ}は、{午後|ごご}から{駅前|えきまえ}の{通|とお}りが{通行止|つうこうど}めになります。",
+          "kana": "まつりのひは、ごごからえきまえのとおりがつうこうどめになります。",
+          "en": "On the day of the festival, the street in front of the station will be closed to traffic from the afternoon."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{工事|こうじ}や{事故|じこ}などのために、{道|みち}を{車|くるま}や{人|ひと}が{通|とお}れなくすること。",
+        "kana": "こうじやじこなどのために、みちをくるまやひとがとおれなくすること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0966",
+      "word": "車線",
+      "kana": "しゃせん",
+      "meanings": [
+        "traffic lane"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{右|みぎ}の{車線|しゃせん}は{右折|うせつ}{専用|せんよう}なので、まっすぐ{行|い}くなら{左|ひだり}に{寄|よ}ってください。",
+          "kana": "みぎのしゃせんはうせつせんようなので、まっすぐいくならひだりによってください。",
+          "en": "The right lane is for right turns only, so if you're going straight, move to the left."
+        },
+        {
+          "ja": "{高速道路|こうそくどうろ}で{車線|しゃせん}を{変|か}える{時|とき}は、{必|かなら}ず{後|うし}ろを{確認|かくにん}してからにしましょう。",
+          "kana": "こうそくどうろでしゃせんをかえるときは、かならずうしろをかくにんしてからにしましょう。",
+          "en": "When changing lanes on the expressway, always check behind you first."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{広|ひろ}い{道路|どうろ}で、{車|くるま}が{一|ひと}つの{方向|ほうこう}に{並|なら}んで{走|はし}るための{部分|ぶぶん}。",
+        "kana": "ひろいどうろで、くるまがひとつのほうこうにならんではしるためのぶぶん。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0967",
+      "word": "高架",
+      "kana": "こうか",
+      "meanings": [
+        "elevated (railway, road)",
+        "overhead structure"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{高架|こうか}の{下|した}は、{昼間|ひるま}でも{薄暗|うすぐら}くて{少|すこ}し{怖|こわ}い。",
+          "kana": "こうかのしたは、ひるまでもうすぐらくてすこしこわい。",
+          "en": "Under the elevated tracks it's dim even in the daytime, and a little scary."
+        },
+        {
+          "ja": "{線路|せんろ}が{高架|こうか}になってから、{踏切|ふみきり}で{待|ま}たされることがなくなった。",
+          "kana": "せんろがこうかになってから、ふみきりでまたされることがなくなった。",
+          "en": "Since the tracks were raised onto an elevated line, we no longer get held up at the railroad crossing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{線路|せんろ}や{道路|どうろ}を、{地面|じめん}より{高|たか}い{所|ところ}に{柱|はしら}で{支|ささ}えて{作|つく}ること。",
+        "kana": "せんろやどうろを、じめんよりたかいところにはしらでささえてつくること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0968",
+      "word": "路線",
+      "kana": "ろせん",
+      "meanings": [
+        "route",
+        "line (train, bus)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport"
+      ],
+      "notes": "Also figurative: a policy line (強硬路線 = a hard line).",
+      "collocations": [
+        "路線図",
+        "路線バス"
+      ],
+      "examples": [
+        {
+          "ja": "この{路線|ろせん}は{本数|ほんすう}が{少|すく}ないので、{時刻表|じこくひょう}を{確|たし}かめてから{出|で}かけよう。",
+          "kana": "このろせんはほんすうがすくないので、じこくひょうをたしかめてからでかけよう。",
+          "en": "There aren't many trains on this line, so let's check the timetable before heading out."
+        },
+        {
+          "ja": "{新|あたら}しい{路線|ろせん}が{開通|かいつう}して、{空港|くうこう}まで{三十分|さんじゅっぷん}で{行|い}けるようになりました。",
+          "kana": "あたらしいろせんがかいつうして、くうこうまでさんじゅっぷんでいけるようになりました。",
+          "en": "A new line has opened, and now you can get to the airport in thirty minutes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスが{通|とお}る、{決|き}まった{道|みち}。また、{進|すす}め{方|かた}や{方針|ほうしん}。",
+        "kana": "でんしゃやバスがとおる、きまったみち。また、すすめかたやほうしん。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0969",
+      "word": "始発",
+      "kana": "しはつ",
+      "meanings": [
+        "first train (of the day)",
+        "starting station"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "time"
+      ],
+      "confusables": [
+        "v-n2-0970"
+      ],
+      "examples": [
+        {
+          "ja": "{飛行機|ひこうき}に{間|ま}に{合|あ}うように、{始発|しはつ}の{電車|でんしゃ}で{空港|くうこう}へ{向|む}かった。",
+          "kana": "ひこうきにまにあうように、しはつのでんしゃでくうこうへむかった。",
+          "en": "To make my flight, I headed to the airport on the first train."
+        },
+        {
+          "ja": "{終電|しゅうでん}を{逃|のが}してしまい、{始発|しはつ}まで{駅前|えきまえ}のカフェで{時間|じかん}をつぶした。",
+          "kana": "しゅうでんをのがしてしまい、しはつまでえきまえのカフェでじかんをつぶした。",
+          "en": "I missed the last train and killed time at a cafe by the station until the first train."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一日|いちにち}の{中|なか}で{一番|いちばん}{早|はや}く{出|で}る{電車|でんしゃ}やバス。また、{出発|しゅっぱつ}する{最初|さいしょ}の{駅|えき}。",
+        "kana": "いちにちのなかでいちばんはやくでるでんしゃやバス。また、しゅっぱつするさいしょのえき。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0970",
+      "word": "終電",
+      "kana": "しゅうでん",
+      "meanings": [
+        "last train"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "time"
+      ],
+      "confusables": [
+        "v-n2-0969"
+      ],
+      "examples": [
+        {
+          "ja": "{飲|の}み{会|かい}が{長引|ながび}いて、{終電|しゅうでん}に{間|ま}に{合|あ}わなかった。",
+          "kana": "のみかいがながびいて、しゅうでんにまにあわなかった。",
+          "en": "The drinking party ran long and I missed the last train."
+        },
+        {
+          "ja": "{終電|しゅうでん}の{時間|じかん}が{近|ちか}いので、そろそろ{帰|かえ}らないと。",
+          "kana": "しゅうでんのじかんがちかいので、そろそろかえらないと。",
+          "en": "The last train is coming up soon, so I'd better head home."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一日|いちにち}の{中|なか}で{一番|いちばん}{遅|おそ}い{時間|じかん}に{走|はし}る{電車|でんしゃ}。",
+        "kana": "いちにちのなかでいちばんおそいじかんにはしるでんしゃ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0971",
+      "word": "直通",
+      "kana": "ちょくつう",
+      "meanings": [
+        "direct (service)",
+        "through service",
+        "direct line"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "この{電車|でんしゃ}は{空港|くうこう}まで{直通|ちょくつう}なので、{乗|の}り{換|か}えの{必要|ひつよう}はありません。",
+          "kana": "このでんしゃはくうこうまでちょくつうなので、のりかえのひつようはありません。",
+          "en": "This train goes straight through to the airport, so there's no need to change."
+        },
+        {
+          "ja": "{直通|ちょくつう}のバスがあれば、{重|おも}い{荷物|にもつ}を{持|も}って{乗|の}り{換|か}えずに{済|す}むのに。",
+          "kana": "ちょくつうのバスがあれば、おもいにもつをもってのりかえずにすむのに。",
+          "en": "If only there were a direct bus, we wouldn't have to change with all this heavy luggage."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{乗|の}り{換|か}えをしないで、{目的地|もくてきち}まで{行|い}けること。",
+        "kana": "のりかえをしないで、もくてきちまでいけること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0972",
+      "word": "各駅停車",
+      "kana": "かくえきていしゃ",
+      "meanings": [
+        "local train",
+        "train stopping at every station"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport"
+      ],
+      "collocations": [
+        "各停"
+      ],
+      "examples": [
+        {
+          "ja": "{急|いそ}がないなら、{座|すわ}れる{各駅停車|かくえきていしゃ}でゆっくり{行|い}くのも{悪|わる}くない。",
+          "kana": "いそがないなら、すわれるかくえきていしゃでゆっくりいくのもわるくない。",
+          "en": "If you're not in a hurry, taking the local train where you can get a seat isn't a bad option."
+        },
+        {
+          "ja": "{間違|まちが}えて{各駅停車|かくえきていしゃ}に{乗|の}ってしまい、{約束|やくそく}の{時間|じかん}に{二十分|にじゅっぷん}も{遅|おく}れた。",
+          "kana": "まちがえてかくえきていしゃにのってしまい、やくそくのじかんににじゅっぷんもおくれた。",
+          "en": "I got on a local train by mistake and was a full twenty minutes late for my appointment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{途中|とちゅう}の{全部|ぜんぶ}の{駅|えき}に{止|と}まる{電車|でんしゃ}。",
+        "kana": "とちゅうのぜんぶのえきにとまるでんしゃ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0973",
+      "word": "快速",
+      "kana": "かいそく",
+      "meanings": [
+        "rapid train",
+        "rapid service"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{快速|かいそく}はこの{駅|えき}に{止|と}まらないので、{次|つぎ}の{駅|えき}で{乗|の}り{換|か}えてください。",
+          "kana": "かいそくはこのえきにとまらないので、つぎのえきでのりかえてください。",
+          "en": "The rapid train doesn't stop at this station, so please change at the next one."
+        },
+        {
+          "ja": "{快速|かいそく}に{乗|の}れば、{会社|かいしゃ}まで{二十分|にじゅっぷん}くらいで{着|つ}きます。",
+          "kana": "かいそくにのれば、かいしゃまでにじゅっぷんくらいでつきます。",
+          "en": "If I take the rapid train, I get to the office in about twenty minutes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一部|いちぶ}の{駅|えき}を{止|と}まらずに{通|とお}り、{普通|ふつう}より{速|はや}く{着|つ}く{電車|でんしゃ}。",
+        "kana": "いちぶのえきをとまらずにとおり、ふつうよりはやくつくでんしゃ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0974",
+      "word": "運行",
+      "kana": "うんこう",
+      "meanings": [
+        "operation (of trains, buses)",
+        "service"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{強風|きょうふう}のため、{電車|でんしゃ}は{現在|げんざい}、{速度|そくど}を{落|お}として{運行|うんこう}しています。",
+          "kana": "きょうふうのため、でんしゃはげんざい、そくどをおとしてうんこうしています。",
+          "en": "Due to strong winds, trains are currently running at reduced speed."
+        },
+        {
+          "ja": "{年末年始|ねんまつねんし}は、バスが{休日|きゅうじつ}のダイヤで{運行|うんこう}されるので{注意|ちゅうい}が{必要|ひつよう}だ。",
+          "kana": "ねんまつねんしは、バスがきゅうじつのダイヤでうんこうされるのでちゅういがひつようだ。",
+          "en": "Over the New Year holidays, buses run on the holiday timetable, so be careful."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどを、{決|き}まった{時刻|じこく}と{道|みち}で{走|はし}らせること。",
+        "kana": "でんしゃやバスなどを、きまったじこくとみちではしらせること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0975",
+      "word": "遅延",
+      "kana": "ちえん",
+      "meanings": [
+        "delay"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{信号|しんごう}の{故障|こしょう}の{影響|えいきょう}で、{上|のぼ}り{線|せん}に{三十分|さんじゅっぷん}ほどの{遅延|ちえん}が{出|で}ています。",
+          "kana": "しんごうのこしょうのえいきょうで、のぼりせんにさんじゅっぷんほどのちえんがでています。",
+          "en": "Because of a signal failure, inbound trains are delayed by about thirty minutes."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{遅延|ちえん}で{遅刻|ちこく}した{場合|ばあい}は、{駅|えき}で{遅延証明書|ちえんしょうめいしょ}をもらってください。",
+          "kana": "でんしゃのちえんでちこくしたばあいは、えきでちえんしょうめいしょをもらってください。",
+          "en": "If you are late because of a train delay, please get a delay certificate at the station."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}などが、{決|き}まった{時刻|じこく}より{遅|おく}れること。",
+        "kana": "でんしゃなどが、きまったじこくよりおくれること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0976",
+      "word": "運休",
+      "kana": "うんきゅう",
+      "meanings": [
+        "suspension of service",
+        "cancellation (train, bus)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "formal"
+      ],
+      "confusables": [
+        "v-n2-0983"
+      ],
+      "examples": [
+        {
+          "ja": "{台風|たいふう}の{接近|せっきん}に{伴|ともな}い、{明日|あす}の{午後|ごご}は{全線|ぜんせん}で{運休|うんきゅう}となります。",
+          "kana": "たいふうのせっきんにともない、あすのごごはぜんせんでうんきゅうとなります。",
+          "en": "As the typhoon approaches, all lines will be suspended tomorrow afternoon."
+        },
+        {
+          "ja": "{大雪|おおゆき}で{新幹線|しんかんせん}が{運休|うんきゅう}になり、{出張|しゅっちょう}を{一日|いちにち}{延|の}ばすことになった。",
+          "kana": "おおゆきでしんかんせんがうんきゅうになり、しゅっちょうをいちにちのばすことになった。",
+          "en": "Heavy snow suspended the bullet train service, so I had to push my business trip back a day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどが、{予定|よてい}していた{運転|うんてん}をやめること。",
+        "kana": "でんしゃやバスなどが、よていしていたうんてんをやめること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0977",
+      "word": "振替",
+      "kana": "ふりかえ",
+      "meanings": [
+        "transfer (to another route or date)",
+        "substitution"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "time",
+        "money"
+      ],
+      "altForms": [
+        "振り替え"
+      ],
+      "collocations": [
+        "振替輸送",
+        "振替休日"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}で{電車|でんしゃ}が{止|と}まったので、バスへの{振替|ふりかえ}{輸送|ゆそう}を{利用|りよう}した。",
+          "kana": "じこででんしゃがとまったので、バスへのふりかえゆそうをりようした。",
+          "en": "The trains stopped because of an accident, so I used the substitute bus service."
+        },
+        {
+          "ja": "{日曜日|にちようび}と{祝日|しゅくじつ}が{重|かさ}なったので、{月曜日|げつようび}は{振替休日|ふりかえきゅうじつ}になります。",
+          "kana": "にちようびとしゅくじつがかさなったので、げつようびはふりかえきゅうじつになります。",
+          "en": "Since the public holiday falls on a Sunday, Monday will be a substitute holiday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{予定|よてい}していた{電車|でんしゃ}や{休|やす}みなどを、{別|べつ}のものに{変|か}えること。",
+        "kana": "よていしていたでんしゃややすみなどを、べつのものにかえること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0978",
+      "word": "乗務員",
+      "kana": "じょうむいん",
+      "meanings": [
+        "crew member",
+        "train or flight crew"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{具合|ぐあい}が{悪|わる}くなった{場合|ばあい}は、{近|ちか}くの{乗務員|じょうむいん}にお{知|し}らせください。",
+          "kana": "ぐあいがわるくなったばあいは、ちかくのじょうむいんにおしらせください。",
+          "en": "If you feel unwell, please inform a nearby crew member."
+        },
+        {
+          "ja": "{乗務員|じょうむいん}の{落|お}ち{着|つ}いた{案内|あんない}のおかげで、{乗客|じょうきゃく}は{慌|あわ}てずに{済|す}んだ。",
+          "kana": "じょうむいんのおちついたあんないのおかげで、じょうきゃくはあわてずにすんだ。",
+          "en": "Thanks to the crew's calm announcements, the passengers didn't panic."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}や{飛行機|ひこうき}などの{中|なか}で、{客|きゃく}の{世話|せわ}や{運転|うんてん}の{仕事|しごと}をする{人|ひと}。",
+        "kana": "でんしゃやひこうきなどのなかで、きゃくのせわやうんてんのしごとをするひと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0979",
+      "word": "車掌",
+      "kana": "しゃしょう",
+      "meanings": [
+        "train conductor"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{切符|きっぷ}をなくしてしまい、{車掌|しゃしょう}さんに{事情|じじょう}を{説明|せつめい}した。",
+          "kana": "きっぷをなくしてしまい、しゃしょうさんにじじょうをせつめいした。",
+          "en": "I lost my ticket and explained the situation to the conductor."
+        },
+        {
+          "ja": "{車掌|しゃしょう}のアナウンスが{丁寧|ていねい}で、{旅|たび}の{始|はじ}まりから{気持|きも}ちよく{過|す}ごせました。",
+          "kana": "しゃしょうのアナウンスがていねいで、たびのはじまりからきもちよくすごせました。",
+          "en": "The conductor's announcements were so courteous that the trip felt pleasant from the very start."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}の{中|なか}で、ドアの{開|あ}け{閉|し}めや{案内|あんない}などをする{人|ひと}。",
+        "kana": "でんしゃのなかで、ドアのあけしめやあんないなどをするひと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0980",
+      "word": "操縦",
+      "kana": "そうじゅう",
+      "meanings": [
+        "piloting",
+        "steering",
+        "operating (a machine)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "technology"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{頃|ころ}から、{飛行機|ひこうき}を{操縦|そうじゅう}するのが{夢|ゆめ}だった。",
+          "kana": "こどものころから、ひこうきをそうじゅうするのがゆめだった。",
+          "en": "Ever since I was a child, flying a plane has been my dream."
+        },
+        {
+          "ja": "{彼|かれ}はヘリコプターの{操縦|そうじゅう}の{資格|しかく}を{持|も}っていて、{週末|しゅうまつ}は{空|そら}を{飛|と}んでいる。",
+          "kana": "かれはヘリコプターのそうじゅうのしかくをもっていて、しゅうまつはそらをとんでいる。",
+          "en": "He has a helicopter pilot's license and spends his weekends in the air."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{飛行機|ひこうき}や{船|ふね}、{機械|きかい}などを{動|うご}かすこと。",
+        "kana": "ひこうきやふね、きかいなどをうごかすこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0981",
+      "word": "離陸",
+      "kana": "りりく",
+      "meanings": [
+        "takeoff"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "confusables": [
+        "v-n2-0982"
+      ],
+      "examples": [
+        {
+          "ja": "{飛行機|ひこうき}が{離陸|りりく}する{時|とき}の、{体|からだ}が{押|お}される{感|かん}じが{好|す}きだ。",
+          "kana": "ひこうきがりりくするときの、からだがおされるかんじがすきだ。",
+          "en": "I love the feeling of being pushed back into my seat when the plane takes off."
+        },
+        {
+          "ja": "{霧|きり}のため{離陸|りりく}が{一時間|いちじかん}{遅|おく}れ、{乗|の}り{継|つ}ぎに{間|ま}に{合|あ}うか{心配|しんぱい}になった。",
+          "kana": "きりのためりりくがいちじかんおくれ、のりつぎにまにあうかしんぱいになった。",
+          "en": "Takeoff was delayed an hour because of fog, and I started worrying about making my connection."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{飛行機|ひこうき}が{地面|じめん}を{離|はな}れて、{空|そら}に{飛|と}び{上|あ}がること。",
+        "kana": "ひこうきがじめんをはなれて、そらにとびあがること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0982",
+      "word": "着陸",
+      "kana": "ちゃくりく",
+      "meanings": [
+        "landing (aircraft)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "confusables": [
+        "v-n2-0981"
+      ],
+      "examples": [
+        {
+          "ja": "{当機|とうき}はまもなく{着陸|ちゃくりく}いたします。{座席|ざせき}のベルトをお{締|し}めください。",
+          "kana": "とうきはまもなくちゃくりくいたします。ざせきのベルトをおしめください。",
+          "en": "This aircraft will be landing shortly. Please fasten your seat belts."
+        },
+        {
+          "ja": "{強|つよ}い{風|かぜ}の{中|なか}、{飛行機|ひこうき}は{少|すこ}し{揺|ゆ}れながらも{無事|ぶじ}に{着陸|ちゃくりく}した。",
+          "kana": "つよいかぜのなか、ひこうきはすこしゆれながらもぶじにちゃくりくした。",
+          "en": "In the strong wind, the plane shook a little but landed safely."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{飛行機|ひこうき}が{空|そら}から{地面|じめん}に{降|お}りること。",
+        "kana": "ひこうきがそらからじめんにおりること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0983",
+      "word": "欠航",
+      "kana": "けっこう",
+      "meanings": [
+        "flight cancellation",
+        "cancellation (of a sailing)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "notes": "Same sound as 結構. 欠航 is only for planes and ships; trains and buses use 運休.",
+      "confusables": [
+        "v-n2-0976"
+      ],
+      "examples": [
+        {
+          "ja": "{霧|きり}のため{朝|あさ}の{便|びん}が{欠航|けっこう}になり、{空港|くうこう}で{半日|はんにち}{待|ま}たされた。",
+          "kana": "きりのためあさのびんがけっこうになり、くうこうではんにちまたされた。",
+          "en": "The morning flight was canceled because of fog, and I was kept waiting at the airport for half a day."
+        },
+        {
+          "ja": "{台風|たいふう}で{船|ふね}が{欠航|けっこう}になる{可能性|かのうせい}があるので、{島|しま}への{旅行|りょこう}は{延期|えんき}しました。",
+          "kana": "たいふうでふねがけっこうになるかのうせいがあるので、しまへのりょこうはえんきしました。",
+          "en": "Since the ferry might be canceled because of the typhoon, we postponed our trip to the island."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{天気|てんき}が{悪|わる}いなどの{理由|りゆう}で、{飛行機|ひこうき}や{船|ふね}が{出|で}ないこと。",
+        "kana": "てんきがわるいなどのりゆうで、ひこうきやふねがでないこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0984",
+      "word": "搭乗",
+      "kana": "とうじょう",
+      "meanings": [
+        "boarding (a plane)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "collocations": [
+        "搭乗券",
+        "搭乗口"
+      ],
+      "examples": [
+        {
+          "ja": "{搭乗|とうじょう}の{三十分|さんじゅっぷん}{前|まえ}までに、{二十番|にじゅうばん}ゲートにお{越|こ}しください。",
+          "kana": "とうじょうのさんじゅっぷんまえまでに、にじゅうばんゲートにおこしください。",
+          "en": "Please come to Gate 20 at least thirty minutes before boarding."
+        },
+        {
+          "ja": "{搭乗|とうじょう}が{始|はじ}まったのに、{友達|ともだち}がまだトイレから{戻|もど}ってこなくて{焦|あせ}った。",
+          "kana": "とうじょうがはじまったのに、ともだちがまだトイレからもどってこなくてあせった。",
+          "en": "Boarding had started but my friend still hadn't come back from the restroom, and I panicked."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}が{飛行機|ひこうき}や{船|ふね}に{乗|の}り{込|こ}むこと。",
+        "kana": "きゃくがひこうきやふねにのりこむこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0985",
+      "word": "税関",
+      "kana": "ぜいかん",
+      "meanings": [
+        "customs"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "money",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{税関|ぜいかん}で{荷物|にもつ}を{開|あ}けられ、お{土産|みやげ}のお{菓子|かし}まで{調|しら}べられた。",
+          "kana": "ぜいかんでにもつをあけられ、おみやげのおかしまでしらべられた。",
+          "en": "At customs they opened my luggage and even inspected the souvenir sweets."
+        },
+        {
+          "ja": "{税関|ぜいかん}では、{持|も}ち{込|こ}めない{食|た}べ{物|もの}がないか{係|かかり}の{人|ひと}に{聞|き}かれます。",
+          "kana": "ぜいかんでは、もちこめないたべものがないかかかりのひとにきかれます。",
+          "en": "At customs, the officer asks whether you have any food items that can't be brought in."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{空港|くうこう}や{港|みなと}で、{外国|がいこく}から{持|も}ち{込|こ}む{荷物|にもつ}を{調|しら}べ、{税金|ぜいきん}をかける{役所|やくしょ}。",
+        "kana": "くうこうやみなとで、がいこくからもちこむにもつをしらべ、ぜいきんをかけるやくしょ。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0986",
+      "word": "入国",
+      "kana": "にゅうこく",
+      "meanings": [
+        "entry into a country",
+        "immigration"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "law"
+      ],
+      "collocations": [
+        "入国審査"
+      ],
+      "confusables": [
+        "v-n2-0987"
+      ],
+      "examples": [
+        {
+          "ja": "{入国|にゅうこく}の{審査|しんさ}に{時間|じかん}がかかり、{空港|くうこう}を{出|で}たのは{夜中|よなか}だった。",
+          "kana": "にゅうこくのしんさにじかんがかかり、くうこうをでたのはよなかだった。",
+          "en": "Immigration took a long time, and it was the middle of the night by the time I left the airport."
+        },
+        {
+          "ja": "この{国|くに}に{入国|にゅうこく}するには、{事前|じぜん}にビザを{取|と}っておく{必要|ひつよう}があります。",
+          "kana": "このくにににゅうこくするには、じぜんにビザをとっておくひつようがあります。",
+          "en": "To enter this country, you need to get a visa in advance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{外国|がいこく}からその{国|くに}に{入|はい}ること。",
+        "kana": "がいこくからそのくににはいること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0987",
+      "word": "出国",
+      "kana": "しゅっこく",
+      "meanings": [
+        "departure from a country",
+        "leaving a country"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "law"
+      ],
+      "confusables": [
+        "v-n2-0986"
+      ],
+      "examples": [
+        {
+          "ja": "{出国|しゅっこく}の{手続|てつづ}きは、{思|おも}ったより{簡単|かんたん}に{済|す}んだ。",
+          "kana": "しゅっこくのてつづきは、おもったよりかんたんにすんだ。",
+          "en": "The departure procedures went more smoothly than I had expected."
+        },
+        {
+          "ja": "{出国|しゅっこく}する{前|まえ}に、{残|のこ}った{現金|げんきん}を{空港|くうこう}で{両替|りょうがえ}しておきました。",
+          "kana": "しゅっこくするまえに、のこったげんきんをくうこうでりょうがえしておきました。",
+          "en": "Before leaving the country, I exchanged my remaining cash at the airport."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{国|くに}を{出|で}て、{外国|がいこく}へ{行|い}くこと。",
+        "kana": "そのくにをでて、がいこくへいくこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0988",
+      "word": "滞在",
+      "kana": "たいざい",
+      "meanings": [
+        "stay",
+        "sojourn"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{京都|きょうと}には{一週間|いっしゅうかん}{滞在|たいざい}して、{毎日|まいにち}{違|ちが}う{寺|てら}を{見|み}て{回|まわ}った。",
+          "kana": "きょうとにはいっしゅうかんたいざいして、まいにちちがうてらをみてまわった。",
+          "en": "I stayed in Kyoto for a week and visited a different temple every day."
+        },
+        {
+          "ja": "{滞在中|たいざいちゅう}に{何|なに}か{困|こま}ったことがあれば、いつでも{連絡|れんらく}してください。",
+          "kana": "たいざいちゅうになにかこまったことがあれば、いつでもれんらくしてください。",
+          "en": "If you run into any trouble during your stay, please contact me anytime."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}などで、ある{所|ところ}にしばらくの{間|あいだ}とどまること。",
+        "kana": "りょこうなどで、あるところにしばらくのあいだとどまること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0989",
+      "word": "民宿",
+      "kana": "みんしゅく",
+      "meanings": [
+        "family-run guesthouse",
+        "minshuku"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{海|うみ}の{近|ちか}くの{民宿|みんしゅく}に{泊|と}まり、{朝|あさ}ごはんにとれたての{魚|さかな}を{食|た}べた。",
+          "kana": "うみのちかくのみんしゅくにとまり、あさごはんにとれたてのさかなをたべた。",
+          "en": "I stayed at a family-run guesthouse near the sea and had freshly caught fish for breakfast."
+        },
+        {
+          "ja": "{民宿|みんしゅく}のおばあさんが、まるで{孫|まご}のように{私|わたし}たちを{迎|むか}えてくれました。",
+          "kana": "みんしゅくのおばあさんが、まるでまごのようにわたしたちをむかえてくれました。",
+          "en": "The old lady who ran the guesthouse welcomed us as if we were her grandchildren."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{普通|ふつう}の{家|いえ}の{人|ひと}がやっている、{旅行|りょこう}する{人|ひと}のための{小|ちい}さな{宿|やど}。",
+        "kana": "ふつうのいえのひとがやっている、りょこうするひとのためのちいさなやど。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0990",
+      "word": "下宿",
+      "kana": "げしゅく",
+      "meanings": [
+        "lodging (in a private home)",
+        "boarding house"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "travel",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{大学|だいがく}{時代|じだい}は、{学校|がっこう}の{近|ちか}くの{古|ふる}い{家|いえ}に{下宿|げしゅく}していた。",
+          "kana": "だいがくじだいは、がっこうのちかくのふるいいえにげしゅくしていた。",
+          "en": "In my university days, I boarded in an old house near campus."
+        },
+        {
+          "ja": "{下宿|げしゅく}のおばさんは、{夜遅|よるおそ}く{帰|かえ}っても{必|かなら}ず{温|あたた}かいご{飯|はん}を{出|だ}してくれた。",
+          "kana": "げしゅくのおばさんは、よるおそくかえってもかならずあたたかいごはんをだしてくれた。",
+          "en": "The landlady at my boarding house always had a hot meal ready for me, however late I got home."
+        }
+      ],
+      "definitionJa": {
+        "ja": "お{金|かね}を{払|はら}って{人|ひと}の{家|いえ}の{部屋|へや}を{借|か}り、そこに{住|す}むこと。",
+        "kana": "おかねをはらってひとのいえのへやをかり、そこにすむこと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0991",
+      "word": "乗り継ぎ",
+      "kana": "のりつぎ",
+      "meanings": [
+        "connection (between flights or trains)",
+        "transfer"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{乗|の}り{継|つ}ぎの{時間|じかん}が{一時間|いちじかん}しかなく、{空港|くうこう}の{中|なか}を{走|はし}った。",
+          "kana": "のりつぎのじかんがいちじかんしかなく、くうこうのなかをはしった。",
+          "en": "I only had an hour for my connection, so I ran through the airport."
+        },
+        {
+          "ja": "{乗|の}り{継|つ}ぎで{三時間|さんじかん}も{待|ま}つなら、その{間|あいだ}に{空港|くうこう}の{外|そと}へ{出|で}て{食事|しょくじ}をしてきませんか。",
+          "kana": "のりつぎでさんじかんもまつなら、そのあいだにくうこうのそとへでてしょくじをしてきませんか。",
+          "en": "If we have a three-hour layover, why don't we leave the airport and get something to eat in the meantime?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{飛行機|ひこうき}や{電車|でんしゃ}を{降|お}りて、{別|べつ}の{飛行機|ひこうき}や{電車|でんしゃ}に{乗|の}り{換|か}えること。",
+        "kana": "ひこうきやでんしゃをおりて、べつのひこうきやでんしゃにのりかえること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0992",
+      "word": "時差",
+      "kana": "じさ",
+      "meanings": [
+        "time difference"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "travel",
+        "time"
+      ],
+      "collocations": [
+        "時差ぼけ",
+        "時差出勤"
+      ],
+      "examples": [
+        {
+          "ja": "{日本|にほん}とこの{国|くに}の{時差|じさ}は{八時間|はちじかん}なので、{電話|でんわ}をかける{時間|じかん}に{気|き}をつけている。",
+          "kana": "にほんとこのくにのじさははちじかんなので、でんわをかけるじかんにきをつけている。",
+          "en": "The time difference between Japan and this country is eight hours, so I'm careful about when I call."
+        },
+        {
+          "ja": "{時差|じさ}ぼけがひどくて、{会議|かいぎ}の{最中|さいちゅう}に{眠|ねむ}くなってしまいました。",
+          "kana": "じさぼけがひどくて、かいぎのさいちゅうにねむくなってしまいました。",
+          "en": "My jet lag was so bad that I got sleepy in the middle of the meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{離|はな}れた{国|くに}や{地域|ちいき}の{間|あいだ}にある、{時刻|じこく}の{違|ちが}い。",
+        "kana": "はなれたくにやちいきのあいだにある、じこくのちがい。"
+      },
+      "station": 43
+    }
+  ]
+}

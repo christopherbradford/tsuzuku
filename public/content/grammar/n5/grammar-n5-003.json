@@ -1,0 +1,1350 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n5",
+  "writer": "grammar-n5-003",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n5-046",
+      "pattern": "て-form (formation)",
+      "meaning": "the て-form of a verb",
+      "formation": [
+        "Group 1: う・つ・る → って (買う → 買って · 待つ → 待って · 乗る → 乗って)",
+        "Group 1: む・ぶ・ぬ → んで (飲む → 飲んで · 遊ぶ → 遊んで · 死ぬ → 死んで)",
+        "Group 1: く → いて (書く → 書いて) · ぐ → いで (泳ぐ → 泳いで) · す → して (話す → 話して)",
+        "Group 1 exception: 行く → 行って",
+        "Group 2: drop る, add て (食べる → 食べて · 見る → 見て · 起きる → 起きて)",
+        "Irregular: する → して · 来る → 来て (きて)"
+      ],
+      "explanation": "The て-form is the verb's connecting form. It never ends a polite sentence by itself, but almost everything you learn next hangs on it: requests (〜てください), ongoing actions (〜ています), permission (〜てもいいです) and chaining actions (〜て、〜). Group 2 verbs simply swap る for て. Group 1 verbs change their final sound: う・つ・る become って, む・ぶ・ぬ become んで, く becomes いて, ぐ becomes いで, す becomes して. Only 行く breaks the rule: 行って, not 行いて. Learn the sound changes as a chant with one model verb each; you will reuse exactly the same changes for the plain past 〜た.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}{起|お}きて、{顔|かお}を{洗|あら}います。",
+          "kana": "あさおきて、かおをあらいます。",
+          "en": "I get up in the morning and wash my face."
+        },
+        {
+          "ja": "{駅|えき}で{友達|ともだち}を{待|ま}っています。",
+          "kana": "えきでともだちをまっています。",
+          "en": "I'm waiting for a friend at the station."
+        },
+        {
+          "ja": "{本|ほん}を{読|よ}んで、{寝|ね}ます。",
+          "kana": "ほんをよんで、ねます。",
+          "en": "I read a book and then go to sleep."
+        },
+        {
+          "ja": "{日本語|にほんご}で{話|はな}してください。",
+          "kana": "にほんごではなしてください。",
+          "en": "Please speak in Japanese."
+        },
+        {
+          "ja": "{明日|あした}も{来|き}てください。",
+          "kana": "あしたもきてください。",
+          "en": "Please come tomorrow too."
+        }
+      ],
+      "clozeHints": [
+        "起きて",
+        "待って",
+        "読んで",
+        "話して",
+        "来て"
+      ],
+      "mistakes": [
+        "× 行いて → ○ 行って (行く is the one く-verb that takes って)",
+        "× 待ちて → ○ 待って (つ-ending Group 1 verbs become って)",
+        "× 見って → ○ 見て (Group 2 verbs just drop る and add て, with no small っ)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-047",
+        "g-n5-048",
+        "g-n5-050",
+        "g-n5-064"
+      ],
+      "tags": [],
+      "unlocksForms": [
+        "te"
+      ],
+      "notes": "The same sound changes give the plain past at Station 12: 書いて → 書いた, 飲んで → 飲んだ, 行って → 行った.",
+      "station": 10
+    },
+    {
+      "id": "g-n5-047",
+      "pattern": "〜てください",
+      "meaning": "please do …",
+      "formation": [
+        "V-て + ください",
+        "Group 1: 書く → 書いてください · 待つ → 待ってください",
+        "Group 2: 食べる → 食べてください",
+        "Irregular: する → してください · 来る → 来てください",
+        "Casual: drop ください → ちょっと待って"
+      ],
+      "explanation": "Attach ください to the て-form to ask someone to do something politely: 書いてください 'please write'. It is a request, not an order, so it is fine with strangers, shop staff and teachers, and you will hear it constantly from staff and in announcements. Among friends ください is dropped and the bare て-form does the job: ちょっと待って. To ask someone not to do something, use 〜ないでください; for a softer request you will later meet 〜ていただけませんか. Do not confuse it with Nをください, which asks for a thing, not an action.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここに{名前|なまえ}を{書|か}いてください。",
+          "kana": "ここになまえをかいてください。",
+          "en": "Please write your name here."
+        },
+        {
+          "ja": "もう{一度|いちど}ゆっくり{言|い}ってください。",
+          "kana": "もういちどゆっくりいってください。",
+          "en": "Please say that once more, slowly."
+        },
+        {
+          "ja": "{窓|まど}を{閉|し}めてください。",
+          "kana": "まどをしめてください。",
+          "en": "Please close the window."
+        },
+        {
+          "ja": "{写真|しゃしん}を{撮|と}ってください。",
+          "kana": "しゃしんをとってください。",
+          "en": "Please take a photo."
+        }
+      ],
+      "clozeHints": [
+        "てください"
+      ],
+      "mistakes": [
+        "× 書くください → ○ 書いてください (the dictionary form cannot take ください)",
+        "× 待ちてください → ○ 待ってください (Group 1 つ-verbs change to って)",
+        "× 来るてください → ○ 来てください (irregular 来る → 来て)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-043",
+        "g-n5-051",
+        "g-n5-040"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-048",
+      "pattern": "〜ています (progressive)",
+      "meaning": "be doing … (action in progress)",
+      "formation": [
+        "V-て + います",
+        "Negative: V-て + いません · Past: V-て + いました",
+        "Question: 何をしていますか",
+        "Casual spoken: 〜ている → 〜てる (食べてる)"
+      ],
+      "explanation": "V-て + います describes an action going on right now, like English 'is doing': 今、ご飯を食べています. Ask what someone is up to with 何をしていますか. The ending conjugates like います: いません for the negative, いました for the past, so 'was doing' is 〜ていました. In speech the い is usually dropped — 食べてる, 待ってる — but keep the full 〜ています when you speak politely. The same form also expresses a resulting state or a habit (住んでいます, 結婚しています); that is the next point.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{今|いま}、{何|なに}をしていますか。",
+          "kana": "いま、なにをしていますか。",
+          "en": "What are you doing right now?"
+        },
+        {
+          "ja": "{母|はは}は{台所|だいどころ}で{料理|りょうり}をしています。",
+          "kana": "はははだいどころでりょうりをしています。",
+          "en": "My mother is cooking in the kitchen."
+        },
+        {
+          "ja": "{子供|こども}たちが{公園|こうえん}で{遊|あそ}んでいます。",
+          "kana": "こどもたちがこうえんであそんでいます。",
+          "en": "The children are playing in the park."
+        },
+        {
+          "ja": "{雨|あめ}が{降|ふ}っています。",
+          "kana": "あめがふっています。",
+          "en": "It's raining."
+        },
+        {
+          "ja": "{昨日|きのう}の{夜|よる}は{本|ほん}を{読|よ}んでいました。",
+          "kana": "きのうのよるはほんをよんでいました。",
+          "en": "Last night I was reading a book."
+        }
+      ],
+      "clozeHints": [
+        "ています",
+        "でいます",
+        "ていました",
+        "でいました"
+      ],
+      "mistakes": [
+        "× 今、ご飯を食べます → ○ 今、ご飯を食べています (an action in progress needs て + います)",
+        "× 食べてあります → ○ 食べています (an ongoing action takes います, not あります)",
+        "× 今、雨が降ります → ○ 今、雨が降っています (降ります is future or habitual, not right now)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-049",
+        "g-n5-032",
+        "g-n5-017"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "unlocksForms": [
+        "te-iru"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-049",
+      "pattern": "〜ています (resultant state, habit)",
+      "meaning": "be in the state of …; do … regularly",
+      "formation": [
+        "V-て + います (state): 住んでいます · 結婚しています · 知っています · 持っています",
+        "V-て + います (habit, with 毎朝・いつも etc.): 毎朝コーヒーを飲んでいます",
+        "Clothing: シャツを着ています (is wearing)",
+        "Negative of 知っています: 知りません"
+      ],
+      "explanation": "The same V-て + います also describes a state that resulted from an action and still holds: 駅の近くに住んでいます 'I live near the station' (I moved there and am still there), 結婚しています 'is married', 知っています 'I know'. Verbs of change — 住む, 結婚する, 知る, 持つ, 着る — almost always appear this way. With a time word like 毎朝 or いつも it describes a habit instead: 毎朝走っています. Context decides which reading you get. One trap: the negative of 知っています is 知りません, never 知っていません.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{近|ちか}くに{住|す}んでいます。",
+          "kana": "えきのちかくにすんでいます。",
+          "en": "I live near the station."
+        },
+        {
+          "ja": "{田中|たなか}さんは{結婚|けっこん}しています。",
+          "kana": "たなかさんはけっこんしています。",
+          "en": "Mr. Tanaka is married."
+        },
+        {
+          "ja": "この{言葉|ことば}の{意味|いみ}を{知|し}っていますか。",
+          "kana": "このことばのいみをしっていますか。",
+          "en": "Do you know what this word means?"
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{牛乳|ぎゅうにゅう}を{飲|の}んでいます。",
+          "kana": "まいあさ、ぎゅうにゅうをのんでいます。",
+          "en": "I drink milk every morning."
+        },
+        {
+          "ja": "ケンは{黒|くろ}いシャツを{着|き}ています。",
+          "kana": "ケンはくろいシャツをきています。",
+          "en": "Ken is wearing a black shirt."
+        }
+      ],
+      "clozeHints": [
+        "ています",
+        "でいます"
+      ],
+      "mistakes": [
+        "× 知っていません → ○ 知りません (the negative of 知っています is irregular)",
+        "× 駅の近くに住みます → ○ 駅の近くに住んでいます (living somewhere is an ongoing state)",
+        "× 田中さんは結婚します → ○ 田中さんは結婚しています (結婚します means will get married)"
+      ],
+      "related": [
+        "g-n5-048",
+        "g-n5-046",
+        "g-n5-036"
+      ],
+      "tags": [
+        "states"
+      ],
+      "notes": "住む, 知る, 結婚する, 持つ and clothing verbs (着る, かぶる) almost never describe a current state in the plain ます form; expect ています.",
+      "station": 10
+    },
+    {
+      "id": "g-n5-050",
+      "pattern": "〜て、〜",
+      "meaning": "do …, and then …",
+      "formation": [
+        "V1-て、V2 (V1 happens first, then V2)",
+        "Only the last verb carries tense and politeness: 起きて、食べて、出かけます",
+        "Two or three て-clauses in a row are natural; the last verb closes the sentence"
+      ],
+      "explanation": "To string actions together in the order they happen, put every verb except the last in the て-form: 朝起きて、シャワーを浴びて、会社へ行きます. Only the final verb carries tense and politeness — 行きます, 行きました — so the て-forms themselves never tell you when. Use it for daily routines, directions and telling what you did at the weekend. It joins actions by one subject in sequence; it does not mean 'because' here, and it is not the 'and' between two nouns (that is NとN). For 'after doing', you will learn 〜てから.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{朝|あさ}{起|お}きて、シャワーを{浴|あ}びます。",
+          "kana": "あさおきて、シャワーをあびます。",
+          "en": "I get up in the morning and take a shower."
+        },
+        {
+          "ja": "{昨日|きのう}は{買|か}い{物|もの}をして、{映画|えいが}を{見|み}ました。",
+          "kana": "きのうはかいものをして、えいがをみました。",
+          "en": "Yesterday I went shopping and then saw a movie."
+        },
+        {
+          "ja": "{駅|えき}まで{歩|ある}いて、{電車|でんしゃ}に{乗|の}ります。",
+          "kana": "えきまであるいて、でんしゃにのります。",
+          "en": "I walk to the station and take the train."
+        },
+        {
+          "ja": "{家|うち}へ{帰|かえ}って、{晩|ばん}ご{飯|はん}を{作|つく}ります。",
+          "kana": "うちへかえって、ばんごはんをつくります。",
+          "en": "I go home and make dinner."
+        }
+      ],
+      "clozeHints": [
+        "て、"
+      ],
+      "mistakes": [
+        "× 起きます、食べます、行きます → ○ 起きて、食べて、行きます (only the last verb takes ます)",
+        "× 起きて、食べました、行きました → ○ 起きて、食べて、行きました (tense goes on the last verb only)",
+        "× 本て雑誌を読みます → ○ 本と雑誌を読みます (て joins actions, と joins nouns)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-016",
+        "g-n5-071"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-051",
+      "pattern": "〜ないでください",
+      "meaning": "please don't …",
+      "formation": [
+        "V-ない + でください",
+        "Group 1: あ-row + ない → 書く → 書かないでください · 吸う → 吸わないでください",
+        "Group 2: 食べる → 食べないでください",
+        "Irregular: する → しないでください · 来る → 来ないでください (こないで)",
+        "Casual: 忘れないで (drop ください)"
+      ],
+      "explanation": "V-ない + でください asks someone politely not to do something: ここで写真を撮らないでください. Make the ない-form first — Group 1 verbs shift the last sound to the あ-row and add ない (書く → 書かない, 待つ → 待たない), with う-verbs taking わ (吸う → 吸わない); Group 2 verbs drop る and add ない; する → しない, 来る → 来ない (こない). Then attach でください. You will see it on signs and hear it from staff. Among friends, drop ください for a caring 'don't': 忘れないで. It is a request, not a rule; the firm prohibition is 〜てはいけません.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここで{写真|しゃしん}を{撮|と}らないでください。",
+          "kana": "ここでしゃしんをとらないでください。",
+          "en": "Please don't take photos here."
+        },
+        {
+          "ja": "{電気|でんき}を{消|け}さないでください。",
+          "kana": "でんきをけさないでください。",
+          "en": "Please don't turn off the light."
+        },
+        {
+          "ja": "{宿題|しゅくだい}を{忘|わす}れないでください。",
+          "kana": "しゅくだいをわすれないでください。",
+          "en": "Please don't forget your homework."
+        },
+        {
+          "ja": "{図書館|としょかん}で{話|はな}さないでください。",
+          "kana": "としょかんではなさないでください。",
+          "en": "Please don't talk in the library."
+        },
+        {
+          "ja": "ドアを{開|あ}けないでください。",
+          "kana": "ドアをあけないでください。",
+          "en": "Please don't open the door."
+        }
+      ],
+      "clozeHints": [
+        "ないでください"
+      ],
+      "mistakes": [
+        "× 吸あないでください → ○ 吸わないでください (う-ending verbs take わ, not あ)",
+        "× くないでください → ○ こないでください (来る reads こ in the ない-form)",
+        "× 撮らなくてください → ○ 撮らないでください (the request takes ないで, not なくて)"
+      ],
+      "related": [
+        "g-n5-047",
+        "g-n5-063",
+        "g-n5-055"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "unlocksForms": [
+        "nai"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-052",
+      "pattern": "〜くて/〜で",
+      "meaning": "… and … (joining adjectives and nouns)",
+      "formation": [
+        "い-adjective: drop い, add くて (安い → 安くて · いい → よくて)",
+        "な-adjective: + で (静か → 静かで · きれい → きれいで)",
+        "Noun: + で (学生で · 日本人で)",
+        "Only the last word takes です: 安くておいしいです"
+      ],
+      "explanation": "To say something is 'A and B', put the first adjective in its て-form: い-adjectives drop い and take くて (安くておいしい), な-adjectives and nouns take で (静かできれい, 学生で十八歳). Only the last word carries です. いい becomes よくて. The two qualities should point the same way — cheap and tasty, or expensive and small; for a contrast use 〜が、〜. This で is the て-form of です, not the place particle で, and the same で links a noun to what follows: 弟は学生で、十八歳です.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{店|みせ}は{安|やす}くておいしいです。",
+          "kana": "このみせはやすくておいしいです。",
+          "en": "This restaurant is cheap and delicious."
+        },
+        {
+          "ja": "{田中|たなか}さんは{親切|しんせつ}で{元気|げんき}な{人|ひと}です。",
+          "kana": "たなかさんはしんせつでげんきなひとです。",
+          "en": "Mr. Tanaka is a kind, cheerful person."
+        },
+        {
+          "ja": "{部屋|へや}は{静|しず}かで{広|ひろ}かったです。",
+          "kana": "へやはしずかでひろかったです。",
+          "en": "The room was quiet and spacious."
+        },
+        {
+          "ja": "{私|わたし}の{町|まち}は{小|ちい}さくて{静|しず}かです。",
+          "kana": "わたしのまちはちいさくてしずかです。",
+          "en": "My town is small and quiet."
+        },
+        {
+          "ja": "{弟|おとうと}は{学生|がくせい}で、{十八歳|じゅうはっさい}です。",
+          "kana": "おとうとはがくせいで、じゅうはっさいです。",
+          "en": "My younger brother is a student and eighteen years old."
+        }
+      ],
+      "clozeHints": [
+        "くて",
+        "親切で",
+        "静かで",
+        "学生で"
+      ],
+      "mistakes": [
+        "× 安いで、おいしいです → ○ 安くて、おいしいです (い-adjectives take くて)",
+        "× 静かくて → ○ 静かで (な-adjectives take で)",
+        "× いくて → ○ よくて (いい changes to よ before くて)"
+      ],
+      "related": [
+        "g-n5-024",
+        "g-n5-025",
+        "g-n5-050",
+        "g-n5-058"
+      ],
+      "tags": [
+        "states"
+      ],
+      "unlocksForms": [
+        "adj-te"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-053",
+      "pattern": "〜ましょうか",
+      "meaning": "shall I …? (offering help)",
+      "formation": [
+        "V-ます stem + ましょうか",
+        "持ちます → 持ちましょうか · 開けます → 開けましょうか · します → しましょうか",
+        "Reply: はい、お願いします / いいえ、大丈夫です",
+        "Also 'shall we…?': そろそろ行きましょうか"
+      ],
+      "explanation": "〜ましょうか with a falling tone offers your help: 荷物を持ちましょうか 'Shall I carry your bags?' You are proposing to do the action for the listener, so the reply is はい、お願いします or いいえ、大丈夫です. It is the question form of 〜ましょう: with a 'we' action it means 'shall we…?' instead (そろそろ行きましょうか). Compare 〜ませんか, which invites the other person to join you; 〜ましょうか puts you on duty. Use it freely with strangers — holding a door, taking a photo, carrying luggage.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{荷物|にもつ}を{持|も}ちましょうか。",
+          "kana": "にもつをもちましょうか。",
+          "en": "Shall I carry your bags?"
+        },
+        {
+          "ja": "{窓|まど}を{開|あ}けましょうか。",
+          "kana": "まどをあけましょうか。",
+          "en": "Shall I open the window?"
+        },
+        {
+          "ja": "{写真|しゃしん}を{撮|と}りましょうか。",
+          "kana": "しゃしんをとりましょうか。",
+          "en": "Shall I take a photo for you?"
+        },
+        {
+          "ja": "タクシーを{呼|よ}びましょうか。",
+          "kana": "タクシーをよびましょうか。",
+          "en": "Shall I call a taxi?"
+        },
+        {
+          "ja": "{駅|えき}まで{一緒|いっしょ}に{行|い}きましょうか。",
+          "kana": "えきまでいっしょにいきましょうか。",
+          "en": "Shall we go to the station together?"
+        }
+      ],
+      "clozeHints": [
+        "ましょうか"
+      ],
+      "mistakes": [
+        "× 荷物を持ちますか → ○ 荷物を持ちましょうか (持ちますか asks about a fact; an offer needs ましょうか)",
+        "× 持ちましょうかください → ○ 持ちましょうか (never add ください to an offer)"
+      ],
+      "related": [
+        "g-n5-039",
+        "g-n5-040",
+        "g-n5-047"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 10
+    },
+    {
+      "id": "g-n5-054",
+      "pattern": "〜てもいいです",
+      "meaning": "may …; it is fine to …",
+      "formation": [
+        "V-て + もいいです",
+        "Question: V-てもいいですか (asking permission)",
+        "Group 1: 入る → 入ってもいいです · Group 2: 食べる → 食べてもいいです",
+        "Irregular: する → してもいいです · 来る → 来てもいいです",
+        "Answers: はい、どうぞ / いいえ、ちょっと…"
+      ],
+      "explanation": "V-て + もいいです gives permission: 'you may…', 'it's fine to…'. As a question, 〜てもいいですか is the standard polite way to ask whether you may do something — sit down, take a picture, use a pen. Literally it says 'even if you do it, it is good'. To grant permission answer はい、どうぞ or はい、いいですよ; to refuse politely, いいえ、ちょっと… with a trailing voice. The flat refusal 〜てはいけません is for rules. Later you will meet the more polite 〜てもよろしいですか.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここに{座|すわ}ってもいいですか。",
+          "kana": "ここにすわってもいいですか。",
+          "en": "May I sit here?"
+        },
+        {
+          "ja": "{写真|しゃしん}を{撮|と}ってもいいですか。",
+          "kana": "しゃしんをとってもいいですか。",
+          "en": "Is it okay to take pictures?"
+        },
+        {
+          "ja": "このペンを{使|つか}ってもいいですか。",
+          "kana": "このペンをつかってもいいですか。",
+          "en": "May I use this pen?"
+        },
+        {
+          "ja": "{今日|きょう}は{早|はや}く{帰|かえ}ってもいいですよ。",
+          "kana": "きょうははやくかえってもいいですよ。",
+          "en": "You can go home early today."
+        },
+        {
+          "ja": "ここでお{酒|さけ}を{飲|の}んでもいいです。",
+          "kana": "ここでおさけをのんでもいいです。",
+          "en": "You may drink alcohol here."
+        }
+      ],
+      "clozeHints": [
+        "てもいいです",
+        "でもいいです"
+      ],
+      "mistakes": [
+        "× 座るもいいですか → ○ 座ってもいいですか (て-form before もいい)",
+        "× 座ってはいいですか → ○ 座ってもいいですか (permission uses も; は belongs to the prohibition)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-055",
+        "g-n5-056"
+      ],
+      "tags": [],
+      "station": 11
+    },
+    {
+      "id": "g-n5-055",
+      "pattern": "〜てはいけません",
+      "meaning": "must not …",
+      "formation": [
+        "V-て + はいけません",
+        "Group 1: 入る → 入ってはいけません · 吸う → 吸ってはいけません",
+        "Group 2: 食べる → 食べてはいけません",
+        "Irregular: する → してはいけません · 来る → 来てはいけません",
+        "Casual contractions: 〜ちゃいけない / 〜じゃいけない / 〜ちゃだめ"
+      ],
+      "explanation": "V-て + はいけません says that something is not allowed: ここで泳いではいけません. It states a rule — on a sign, from a teacher, from a parent — so it sounds firm. It is a clear 'no' to a 〜てもいいですか question, but to a stranger it is blunt; soften with すみません、ちょっと… instead. In casual speech it shrinks to 〜ちゃいけない (食べちゃいけない) or 〜じゃいけない (飲んじゃいけない), or 〜ちゃだめ. It bans an action; for 'you don't have to' use 〜なくてもいいです.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "ここで{泳|およ}いではいけません。",
+          "kana": "ここでおよいではいけません。",
+          "en": "You must not swim here."
+        },
+        {
+          "ja": "{教室|きょうしつ}で{食|た}べてはいけません。",
+          "kana": "きょうしつでたべてはいけません。",
+          "en": "You mustn't eat in the classroom."
+        },
+        {
+          "ja": "ここで{写真|しゃしん}を{撮|と}ってはいけません。",
+          "kana": "ここでしゃしんをとってはいけません。",
+          "en": "You may not take photos here."
+        },
+        {
+          "ja": "{病院|びょういん}で{電話|でんわ}をしてはいけません。",
+          "kana": "びょういんででんわをしてはいけません。",
+          "en": "You may not make phone calls in the hospital."
+        }
+      ],
+      "clozeHints": [
+        "てはいけません",
+        "ではいけません"
+      ],
+      "mistakes": [
+        "× 泳いでもいけません → ○ 泳いではいけません (the prohibition uses は)",
+        "× 泳ぐはいけません → ○ 泳いではいけません (て-form before はいけません)"
+      ],
+      "related": [
+        "g-n5-054",
+        "g-n5-051",
+        "g-n5-056"
+      ],
+      "tags": [],
+      "station": 11
+    },
+    {
+      "id": "g-n5-056",
+      "pattern": "〜なくてもいいです",
+      "meaning": "do not have to …",
+      "formation": [
+        "V-ない → drop い, add くてもいいです",
+        "Group 1: 行く → 行かなくてもいいです",
+        "Group 2: 食べる → 食べなくてもいいです",
+        "Irregular: する → しなくてもいいです · 来る → 来なくてもいいです (こなくても)",
+        "Question: 〜なくてもいいですか"
+      ],
+      "explanation": "〜なくてもいいです tells someone an action is not necessary: 'you don't have to…'. Start from the ない-form, drop the final い and add くてもいいです: 行かない → 行かなくてもいいです, 来ない → 来なくてもいいです. It is the mirror image of 〜てもいいです (you may do it) and the gentle opposite of 〜なければなりません (you must). Use it to let a worried person off the hook — 全部食べなくてもいいですよ — or ask 〜なくてもいいですか to check whether something can be skipped.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{来|こ}なくてもいいです。",
+          "kana": "あしたはこなくてもいいです。",
+          "en": "You don't have to come tomorrow."
+        },
+        {
+          "ja": "{靴|くつ}を{脱|ぬ}がなくてもいいですよ。",
+          "kana": "くつをぬがなくてもいいですよ。",
+          "en": "You don't need to take off your shoes."
+        },
+        {
+          "ja": "{全部|ぜんぶ}{食|た}べなくてもいいです。",
+          "kana": "ぜんぶたべなくてもいいです。",
+          "en": "You don't have to eat all of it."
+        },
+        {
+          "ja": "{宿題|しゅくだい}は{今日|きょう}しなくてもいいですか。",
+          "kana": "しゅくだいはきょうしなくてもいいですか。",
+          "en": "Is it okay if I don't do the homework today?"
+        }
+      ],
+      "clozeHints": [
+        "なくてもいいです"
+      ],
+      "mistakes": [
+        "× 来ないでもいいです → ○ 来なくてもいいです (ない changes to なくて)",
+        "× 来なくてはいいです → ○ 来なくてもいいです (も, not は)"
+      ],
+      "related": [
+        "g-n5-054",
+        "g-n5-063",
+        "g-n5-088"
+      ],
+      "tags": [],
+      "station": 11
+    },
+    {
+      "id": "g-n5-057",
+      "pattern": "〜から (reason)",
+      "meaning": "because …; …, so …",
+      "formation": [
+        "Reason + から、result",
+        "Polite form before から: 暑いですから、窓を開けます · 時間がありませんから、…",
+        "Plain form before から (from Station 12): 暑いから、窓を開ける",
+        "Answering どうして: 〜ですから。/〜ますから。"
+      ],
+      "explanation": "〜から marks the clause before it as the reason: 暑いですから、窓を開けます 'It's hot, so I'll open the window'. The reason comes first, then から, then what follows from it. For now the clause before から ends in a polite form (です, ます); from Station 12 you can use the plain form too. To answer どうして, give just the reason and stop at から: 忙しいですから. This から states a cause plainly and a little assertively — good for your own plans and excuses; for a softer reason you will learn 〜ので. It is not the 'from' から in 九時から.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{暑|あつ}いですから、{窓|まど}を{開|あ}けます。",
+          "kana": "あついですから、まどをあけます。",
+          "en": "It's hot, so I'll open the window."
+        },
+        {
+          "ja": "{明日|あした}は{休|やす}みですから、{遅|おそ}くまで{寝|ね}ます。",
+          "kana": "あしたはやすみですから、おそくまでねます。",
+          "en": "Tomorrow is a day off, so I'll sleep in."
+        },
+        {
+          "ja": "{時間|じかん}がありませんから、タクシーで{行|い}きます。",
+          "kana": "じかんがありませんから、タクシーでいきます。",
+          "en": "I don't have time, so I'll take a taxi."
+        },
+        {
+          "ja": "「どうして{行|い}きませんか。」「{忙|いそが}しいですから。」",
+          "kana": "「どうしていきませんか。」「いそがしいですから。」",
+          "en": "“Why aren't you going?” “Because I'm busy.”"
+        }
+      ],
+      "clozeHints": [
+        "から"
+      ],
+      "mistakes": [
+        "× 窓を開けますから、暑いです → ○ 暑いですから、窓を開けます (the reason goes before から)",
+        "× 暑いですのから → ○ 暑いですから (から attaches directly, with no の)"
+      ],
+      "related": [
+        "g-n5-011",
+        "g-n5-060",
+        "g-n5-090",
+        "g-n5-009"
+      ],
+      "tags": [],
+      "notes": "Causal から follows a polite form (ですから) or a plain form (暑いから); the polite-inside version sounds slightly more careful and is the one to use with strangers.",
+      "station": 11
+    },
+    {
+      "id": "g-n5-058",
+      "pattern": "〜が、〜",
+      "meaning": "…, but …",
+      "formation": [
+        "Clause 1 (polite form) + が、clause 2",
+        "い-adjective: 高いですが、… · Noun: 雨でしたが、… · Verb: 行きましたが、…",
+        "Polite opener: すみませんが、/失礼ですが、"
+      ],
+      "explanation": "〜が、〜 joins two clauses with 'but': このカメラは高いですが、とてもいいです. The first clause ends in a polite form (です, ます, でした), then が, then the contrasting clause. It is softer than English 'but' and often just links two statements, which is why すみませんが、 and 失礼ですが、 are polite openers before a request or question: the が signals that something is coming. This が is not the subject particle that follows a noun. To start a new sentence with 'but', use でも or しかし.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "このカメラは{高|たか}いですが、とてもいいです。",
+          "kana": "このカメラはたかいですが、とてもいいです。",
+          "en": "This camera is expensive, but it's very good."
+        },
+        {
+          "ja": "{日本語|にほんご}は{難|むずか}しいですが、{面白|おもしろ}いです。",
+          "kana": "にほんごはむずかしいですが、おもしろいです。",
+          "en": "Japanese is hard, but it's interesting."
+        },
+        {
+          "ja": "すみませんが、{駅|えき}はどこですか。",
+          "kana": "すみませんが、えきはどこですか。",
+          "en": "Excuse me, but where is the station?"
+        },
+        {
+          "ja": "{昨日|きのう}は{雨|あめ}でしたが、{今日|きょう}は{晴|は}れです。",
+          "kana": "きのうはあめでしたが、きょうははれです。",
+          "en": "It rained yesterday, but today it's sunny."
+        }
+      ],
+      "clozeHints": [
+        "が、"
+      ],
+      "mistakes": [
+        "× 高いが、です → ○ 高いですが (です goes before が)",
+        "× 高いです。が、とてもいいです → ○ 高いですが、とてもいいです (this が joins clauses inside one sentence)"
+      ],
+      "related": [
+        "g-n5-059",
+        "g-n5-052",
+        "g-n5-032"
+      ],
+      "tags": [],
+      "station": 11
+    },
+    {
+      "id": "g-n5-059",
+      "pattern": "でも/しかし",
+      "meaning": "but; however (starting a sentence)",
+      "formation": [
+        "Sentence 1。でも、sentence 2。 (spoken, everyday)",
+        "Sentence 1。しかし、sentence 2。 (written, formal speech)",
+        "Both stand at the head of the second sentence, usually followed by 、"
+      ],
+      "explanation": "でも and しかし both open a new sentence with 'but'. でも is the everyday spoken one: 行きたいです。でも、お金がありません. しかし is heavier and belongs to writing, news and speeches; in casual chat it sounds stiff. Both sit at the very beginning of their sentence, usually followed by a comma, and the sentence before them is complete. To put 'but' inside one sentence, use 〜が、〜. Note that でも after a noun means 'even' or 'or something' (お茶でも飲みませんか) — a different word.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{行|い}きたいです。でも、お{金|かね}がありません。",
+          "kana": "いきたいです。でも、おかねがありません。",
+          "en": "I want to go. But I don't have the money."
+        },
+        {
+          "ja": "{雨|あめ}でした。でも、{公園|こうえん}へ{行|い}きました。",
+          "kana": "あめでした。でも、こうえんへいきました。",
+          "en": "It was raining. But we went to the park anyway."
+        },
+        {
+          "ja": "この{店|みせ}は{安|やす}いです。しかし、{遠|とお}いです。",
+          "kana": "このみせはやすいです。しかし、とおいです。",
+          "en": "This shop is cheap. However, it is far away."
+        },
+        {
+          "ja": "{薬|くすり}を{飲|の}みました。でも、{頭|あたま}が{痛|いた}いです。",
+          "kana": "くすりをのみました。でも、あたまがいたいです。",
+          "en": "I took some medicine. But my head still hurts."
+        }
+      ],
+      "clozeHints": [
+        "でも、",
+        "しかし、"
+      ],
+      "mistakes": [
+        "× 高いです、でも買います → ○ 高いです。でも、買います (でも starts a new sentence)",
+        "× 高いですしかし、 → ○ 高いです。しかし、 (しかし never attaches to the end of a clause)"
+      ],
+      "related": [
+        "g-n5-058",
+        "g-n5-060"
+      ],
+      "tags": [],
+      "notes": "しかし in everyday conversation sounds like a newsreader; でも is the default in speech, and clause-final けど is the casual cousin of が.",
+      "station": 11
+    },
+    {
+      "id": "g-n5-060",
+      "pattern": "だから/それで",
+      "meaning": "so; that is why (starting a sentence)",
+      "formation": [
+        "Sentence 1。だから、sentence 2。 (speaker's own conclusion, strong)",
+        "Sentence 1。それで、sentence 2。 (natural result, neutral)",
+        "Polite: ですから、 in place of だから、",
+        "Not after それで: requests, invitations, decisions (use だから)"
+      ],
+      "explanation": "Both open a sentence that follows from the one before. だから is 'so / that's why' with the speaker's own push behind it: 明日はテストです。だから、今日は勉強します. It can sound forceful, so in polite talk ですから is common. それで is 'and so / as a result' and simply reports a consequence: 雨が降りました。それで、家にいました. Use それで for facts that followed and だから when you are reasoning or justifying. After それで you cannot put a request, invitation or decision; use だから for those. Inside one sentence, use 〜から instead.",
+      "jlpt": 5,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{明日|あした}はテストです。だから、{今日|きょう}は{勉強|べんきょう}します。",
+          "kana": "あしたはテストです。だから、きょうはべんきょうします。",
+          "en": "There's a test tomorrow. So I'm studying today."
+        },
+        {
+          "ja": "{風邪|かぜ}をひきました。それで、{会社|かいしゃ}を{休|やす}みました。",
+          "kana": "かぜをひきました。それで、かいしゃをやすみました。",
+          "en": "I caught a cold. So I took the day off work."
+        },
+        {
+          "ja": "お{金|かね}がありません。だから、{買|か}いません。",
+          "kana": "おかねがありません。だから、かいません。",
+          "en": "I have no money. So I'm not buying it."
+        },
+        {
+          "ja": "{雨|あめ}が{降|ふ}りました。それで、{家|いえ}にいました。",
+          "kana": "あめがふりました。それで、いえにいました。",
+          "en": "It rained. So I stayed home."
+        }
+      ],
+      "clozeHints": [
+        "だから、",
+        "それで、"
+      ],
+      "mistakes": [
+        "× 雨です。それで、早く帰りましょう → ○ 雨です。だから、早く帰りましょう (それで cannot lead into an invitation or decision)",
+        "× 雨ですから。それで、家にいます → ○ 雨です。それで、家にいます (use one connector, not two)"
+      ],
+      "related": [
+        "g-n5-057",
+        "g-n5-059",
+        "g-n5-090"
+      ],
+      "tags": [],
+      "station": 11
+    },
+    {
+      "id": "g-n5-061",
+      "pattern": "もう〜ました/まだ〜ていません",
+      "meaning": "already did …; have not … yet",
+      "formation": [
+        "もう + V-ました (already done)",
+        "まだ + V-ていません (not yet)",
+        "Question: もう〜ましたか → はい、もう〜ました / いいえ、まだです",
+        "Never: まだ〜ませんでした for 'not yet'"
+      ],
+      "explanation": "もう with the past tense says an action is already finished: もう昼ご飯を食べました. The matching negative is not the past but まだ + 〜ていません: まだ食べていません 'I haven't eaten yet' — the eating is still pending, so Japanese treats it as an unfinished state. To the question もう〜ましたか answer はい、もう〜ました or simply いいえ、まだです. まだ食べませんでした sounds wrong because it reports a closed event. もう also means 'any more' with a negative (もう食べません) and まだ 'still' with a positive (まだ食べています).",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "もう{昼|ひる}ご{飯|はん}を{食|た}べましたか。",
+          "kana": "もうひるごはんをたべましたか。",
+          "en": "Have you had lunch already?"
+        },
+        {
+          "ja": "いいえ、まだ{食|た}べていません。",
+          "kana": "いいえ、まだたべていません。",
+          "en": "No, I haven't eaten yet."
+        },
+        {
+          "ja": "{宿題|しゅくだい}はもう{終|お}わりました。",
+          "kana": "しゅくだいはもうおわりました。",
+          "en": "I've already finished my homework."
+        },
+        {
+          "ja": "{田中|たなか}さんはまだ{来|き}ていません。",
+          "kana": "たなかさんはまだきていません。",
+          "en": "Mr. Tanaka hasn't arrived yet."
+        },
+        {
+          "ja": "{切符|きっぷ}はもう{買|か}いましたか。",
+          "kana": "きっぷはもうかいましたか。",
+          "en": "Have you already bought the tickets?"
+        }
+      ],
+      "clozeHints": [
+        "もう",
+        "まだ"
+      ],
+      "mistakes": [
+        "× まだ食べませんでした → ○ まだ食べていません (not yet is an unfinished state: ていません)",
+        "× もう食べていません → ○ もう食べました (already done takes the past; もう〜ていません means not any more)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-048",
+        "g-n5-049"
+      ],
+      "tags": [
+        "time"
+      ],
+      "notes": "まだです alone is a complete answer: 「もう食べましたか。」「いいえ、まだです。」",
+      "station": 11
+    },
+    {
+      "id": "g-n5-062",
+      "pattern": "dictionary form (plain non-past)",
+      "meaning": "do …; will do … (plain style)",
+      "formation": [
+        "Group 1: ます-stem い-row → う-row (書きます → 書く · 飲みます → 飲む · 買います → 買う)",
+        "Group 2: ます-stem + る (食べます → 食べる · 見ます → 見る · 起きます → 起きる)",
+        "Irregular: します → する · 来ます → 来る (くる)",
+        "Meaning = 〜ます: present habit or future, without politeness"
+      ],
+      "explanation": "The dictionary form is the verb as a dictionary lists it — 書く, 食べる, する — and it is also the plain non-past: it means exactly what 〜ます means, a habit or a future action, minus the politeness. Use it to end sentences among friends and family, inside longer sentences before と思います, 前に or つもり, and to look verbs up. Recover it from ます: Group 1 shifts the stem's last sound to the う-row (飲みます → 飲む), Group 2 adds る (食べます → 食べる); します → する, 来ます → 来る. Beware: some verbs ending in -eru/-iru (帰る, 入る, 知る) are Group 1.",
+      "jlpt": 5,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{明日|あした}、{友達|ともだち}と{映画|えいが}を{見|み}る。",
+          "kana": "あした、ともだちとえいがをみる。",
+          "en": "Tomorrow I'm going to see a movie with a friend."
+        },
+        {
+          "ja": "{毎朝|まいあさ}{六時|ろくじ}に{起|お}きる。",
+          "kana": "まいあさろくじにおきる。",
+          "en": "I get up at six every morning."
+        },
+        {
+          "ja": "{今日|きょう}は{何|なに}をする？",
+          "kana": "きょうはなにをする？",
+          "en": "What are you doing today?"
+        },
+        {
+          "ja": "{今晩|こんばん}、{田中|たなか}さんも{来|く}る。",
+          "kana": "こんばん、たなかさんもくる。",
+          "en": "Mr. Tanaka is coming tonight too."
+        },
+        {
+          "ja": "{日曜日|にちようび}はいつも{公園|こうえん}を{走|はし}る。",
+          "kana": "にちようびはいつもこうえんをはしる。",
+          "en": "On Sundays I always run in the park."
+        }
+      ],
+      "clozeHints": [
+        "見る",
+        "起きる",
+        "する",
+        "来る",
+        "走る"
+      ],
+      "mistakes": [
+        "× 食べう → ○ 食べる (Group 2 verbs add る to the ます-stem)",
+        "× きる → ○ くる (来ます is irregular: its dictionary form is 来る, not きる)",
+        "× 行くです → ○ 行く/行きます (plain forms never take です)"
+      ],
+      "related": [
+        "g-n5-017",
+        "g-n5-063",
+        "g-n5-064",
+        "g-n5-066"
+      ],
+      "tags": [],
+      "notes": "Common Group 1 verbs that look like Group 2: 帰る, 入る, 知る, 走る, 切る, 要る.",
+      "station": 12
+    },
+    {
+      "id": "g-n5-063",
+      "pattern": "〜ない (plain negative)",
+      "meaning": "do not …; will not … (plain style)",
+      "formation": [
+        "Group 1: final う-row → あ-row + ない (書く → 書かない · 飲む → 飲まない · 待つ → 待たない)",
+        "Group 1 う-ending: う → わ (買う → 買わない · 言う → 言わない)",
+        "Group 2: drop る + ない (食べる → 食べない · 見る → 見ない)",
+        "Irregular: する → しない · 来る → 来ない (こない) · ある → ない"
+      ],
+      "explanation": "〜ない is the plain form of 〜ません. Group 1 verbs move the last sound to the あ-row and add ない (書く → 書かない); verbs ending in う take わ, not あ (買う → 買わない). Group 2 verbs drop る and add ない (食べる → 食べない). する → しない, 来る → 来ない (read こない), and the negative of ある is simply ない. Use it to end casual sentences, before と思います (来ないと思います) and as the base of 〜ないでください and 〜なくてもいいです. ない itself behaves like an い-adjective, which is why its past is なかった.",
+      "jlpt": 5,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{何|なに}も{食|た}べない。",
+          "kana": "きょうはなにもたべない。",
+          "en": "I'm not eating anything today."
+        },
+        {
+          "ja": "{明日|あした}は{学校|がっこう}へ{行|い}かない。",
+          "kana": "あしたはがっこうへいかない。",
+          "en": "I'm not going to school tomorrow."
+        },
+        {
+          "ja": "ケンはお{酒|さけ}を{飲|の}まない。",
+          "kana": "ケンはおさけをのまない。",
+          "en": "Ken doesn't drink."
+        },
+        {
+          "ja": "{時間|じかん}がないから、{朝|あさ}ご{飯|はん}は{食|た}べない。",
+          "kana": "じかんがないから、あさごはんはたべない。",
+          "en": "I don't have time, so I'm skipping breakfast."
+        },
+        {
+          "ja": "{日曜日|にちようび}は{全然|ぜんぜん}{勉強|べんきょう}しない。",
+          "kana": "にちようびはぜんぜんべんきょうしない。",
+          "en": "I don't study at all on Sundays."
+        }
+      ],
+      "clozeHints": [
+        "ない"
+      ],
+      "mistakes": [
+        "× 買あない → ○ 買わない (う-ending verbs take わ)",
+        "× 見らない → ○ 見ない (Group 2: just drop る)",
+        "× あらない → ○ ない (the negative of ある is ない)"
+      ],
+      "related": [
+        "g-n5-062",
+        "g-n5-065",
+        "g-n5-051",
+        "g-n5-017"
+      ],
+      "tags": [],
+      "unlocksForms": [
+        "nai"
+      ],
+      "station": 12
+    },
+    {
+      "id": "g-n5-064",
+      "pattern": "〜た (plain past)",
+      "meaning": "did … (plain style)",
+      "formation": [
+        "Same sound changes as the て-form, with た/だ instead of て/で",
+        "Group 1: う・つ・る → った · む・ぶ・ぬ → んだ · く → いた · ぐ → いだ · す → した · 行く → 行った",
+        "Group 2: drop る + た (食べる → 食べた · 見る → 見た)",
+        "Irregular: する → した · 来る → 来た (きた)"
+      ],
+      "explanation": "〜た is the plain past, the casual counterpart of 〜ました. If you know the て-form you already know it: change て to た and で to だ — 書いて → 書いた, 飲んで → 飲んだ, 行って → 行った, 食べて → 食べた, して → した, 来て → 来た. Use it to end sentences among friends, in a diary, and inside bigger patterns such as 〜たことがあります, 〜た後で and 〜たら. The negative past is 〜なかった, never 〜ないた. 飲んだ and 飲みました are one meaning in two registers; pick by who is listening.",
+      "jlpt": 5,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}、{友達|ともだち}と{映画|えいが}を{見|み}た。",
+          "kana": "きのう、ともだちとえいがをみた。",
+          "en": "Yesterday I saw a movie with a friend."
+        },
+        {
+          "ja": "{朝|あさ}ご{飯|はん}にパンを{食|た}べた。",
+          "kana": "あさごはんにパンをたべた。",
+          "en": "I had bread for breakfast."
+        },
+        {
+          "ja": "{先週|せんしゅう}、{海|うみ}へ{行|い}った。",
+          "kana": "せんしゅう、うみへいった。",
+          "en": "Last week I went to the beach."
+        },
+        {
+          "ja": "{昨日|きのう}の{夜|よる}は{十一時|じゅういちじ}に{寝|ね}た。",
+          "kana": "きのうのよるはじゅういちじにねた。",
+          "en": "Last night I went to bed at eleven."
+        },
+        {
+          "ja": "ケンは{駅|えき}で{新聞|しんぶん}を{買|か}った。",
+          "kana": "ケンはえきでしんぶんをかった。",
+          "en": "Ken bought a newspaper at the station."
+        }
+      ],
+      "clozeHints": [
+        "見た",
+        "食べた",
+        "行った",
+        "寝た",
+        "買った"
+      ],
+      "mistakes": [
+        "× 行いた → ○ 行った (行く is irregular, like its て-form 行って)",
+        "× 飲みた → ○ 飲んだ (む-verbs become んだ)",
+        "× くた → ○ きた (来る reads き in the past: 来た)"
+      ],
+      "related": [
+        "g-n5-046",
+        "g-n5-062",
+        "g-n5-065",
+        "g-n5-073"
+      ],
+      "tags": [],
+      "unlocksForms": [
+        "ta"
+      ],
+      "station": 12
+    },
+    {
+      "id": "g-n5-065",
+      "pattern": "〜なかった (plain past negative)",
+      "meaning": "did not … (plain style)",
+      "formation": [
+        "V-ない → drop い, add かった",
+        "Group 1: 書かない → 書かなかった · 買わない → 買わなかった",
+        "Group 2: 食べない → 食べなかった",
+        "Irregular: しない → しなかった · 来ない → 来なかった (こなかった) · ない → なかった"
+      ],
+      "explanation": "〜なかった is the plain form of 〜ませんでした. Build the ない-form, drop its い and add かった — exactly what you do to an い-adjective (高い → 高かった): 行かない → 行かなかった, 食べない → 食べなかった, しない → しなかった, 来ない → 来なかった. It closes casual sentences, appears before と思います (来なかったと思います) and later inside 〜なかったら. Learners often invent 〜ないでした or 〜ませんかった; neither exists. The negative past of ある is なかった on its own: お金がなかった.",
+      "jlpt": 5,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{全然|ぜんぜん}{寝|ね}なかった。",
+          "kana": "きのうはぜんぜんねなかった。",
+          "en": "I didn't sleep at all yesterday."
+        },
+        {
+          "ja": "{今朝|けさ}、{新聞|しんぶん}を{読|よ}まなかった。",
+          "kana": "けさ、しんぶんをよまなかった。",
+          "en": "I didn't read the paper this morning."
+        },
+        {
+          "ja": "ハナはパーティーに{来|こ}なかった。",
+          "kana": "ハナはパーティーにこなかった。",
+          "en": "Hana didn't come to the party."
+        },
+        {
+          "ja": "{日曜日|にちようび}は{何|なに}もしなかった。",
+          "kana": "にちようびはなにもしなかった。",
+          "en": "I didn't do anything on Sunday."
+        },
+        {
+          "ja": "お{金|かね}がなかったから、{買|か}わなかった。",
+          "kana": "おかねがなかったから、かわなかった。",
+          "en": "I had no money, so I didn't buy it."
+        }
+      ],
+      "clozeHints": [
+        "なかった"
+      ],
+      "mistakes": [
+        "× 行かないでした → ○ 行かなかった (ない changes to なかった like an い-adjective)",
+        "× 行きませんかった → ○ 行かなかった/行きませんでした (do not mix plain and polite endings)"
+      ],
+      "related": [
+        "g-n5-063",
+        "g-n5-064",
+        "g-n5-017"
+      ],
+      "tags": [],
+      "unlocksForms": [
+        "nakatta"
+      ],
+      "station": 12
+    },
+    {
+      "id": "g-n5-066",
+      "pattern": "〜と思います",
+      "meaning": "I think that …",
+      "formation": [
+        "Plain form + と思います",
+        "Verb: 来る/来ない/来た/来なかった + と思います",
+        "い-adjective: 高い + と思います · な-adjective: 便利だ + と思います",
+        "Noun: 学生だ + と思います",
+        "Asking: どう思いますか · Someone else's opinion: 〜と思っています"
+      ],
+      "explanation": "〜と思います expresses your opinion or guess: 明日は雨が降ると思います 'I think it will rain tomorrow'. The clause before と is in the plain form — dictionary form, ない, た, なかった; な-adjectives and nouns take だ before と (便利だと思います, 学生だと思います). 思います itself is polite, so the whole sentence stays polite. To ask someone's view, say どう思いますか. For another person's standing opinion use 〜と思っています. To say you think something is not the case, put the negative inside the clause: 来ないと思います, not 来ると思いません.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{雨|あめ}が{降|ふ}ると{思|おも}います。",
+          "kana": "あしたはあめがふるとおもいます。",
+          "en": "I think it will rain tomorrow."
+        },
+        {
+          "ja": "この{店|みせ}は{少|すこ}し{高|たか}いと{思|おも}います。",
+          "kana": "このみせはすこしたかいとおもいます。",
+          "en": "I think this shop is a bit expensive."
+        },
+        {
+          "ja": "{田中|たなか}さんは{今日|きょう}{来|こ}ないと{思|おも}います。",
+          "kana": "たなかさんはきょうこないとおもいます。",
+          "en": "I don't think Mr. Tanaka is coming today."
+        },
+        {
+          "ja": "{日本|にほん}の{電車|でんしゃ}は{便利|べんり}だと{思|おも}います。",
+          "kana": "にほんのでんしゃはべんりだとおもいます。",
+          "en": "I think Japanese trains are convenient."
+        },
+        {
+          "ja": "ケンはもう{寝|ね}たと{思|おも}います。",
+          "kana": "ケンはもうねたとおもいます。",
+          "en": "I think Ken has already gone to bed."
+        }
+      ],
+      "clozeHints": [
+        "と思います"
+      ],
+      "mistakes": [
+        "× 降りますと思います → ○ 降ると思います (plain form before と)",
+        "× 便利と思います → ○ 便利だと思います (な-adjectives and nouns need だ)",
+        "× 来ると思いません → ○ 来ないと思います (put the negative inside the clause)"
+      ],
+      "related": [
+        "g-n5-062",
+        "g-n5-063",
+        "g-n5-064",
+        "g-n5-068",
+        "g-n5-067"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 12
+    },
+    {
+      "id": "g-n5-067",
+      "pattern": "〜と言いました",
+      "meaning": "said that …; said “…”",
+      "formation": [
+        "Direct quote: 「…」と言いました",
+        "Indirect quote: plain form + と言いました (来ると言いました)",
+        "Noun / な-adjective: 〜だと言いました",
+        "Speaker: Nは/Nが … と言いました · Listener: Nに … と言いました",
+        "Habitual or general: 〜と言います (people say…)"
+      ],
+      "explanation": "〜と言いました reports what someone said. Put the words inside 「 」 to quote them exactly — 田中さんは「また来ます」と言いました — or rephrase them in the plain form for an indirect report: 田中さんはまた来ると言いました. Nouns and な-adjectives take だ before と. Mark the person spoken to with に: 母に「行く」と言いました. と is the quoting particle you met in 〜と思います. In an indirect report drop か and です from the quoted clause, and remember that 話しました (talked) cannot take と: it is 言いました that quotes.",
+      "jlpt": 5,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんは「また{来|き}ます」と{言|い}いました。",
+          "kana": "たなかさんは「またきます」といいました。",
+          "en": "Mr. Tanaka said, “I'll come again.”"
+        },
+        {
+          "ja": "ケンは「おいしい」と{言|い}いました。",
+          "kana": "ケンは「おいしい」といいました。",
+          "en": "Ken said it was delicious."
+        },
+        {
+          "ja": "{先生|せんせい}は{明日|あした}テストがあると{言|い}いました。",
+          "kana": "せんせいはあしたテストがあるといいました。",
+          "en": "The teacher said there is a test tomorrow."
+        },
+        {
+          "ja": "ハナは{来週|らいしゅう}{休|やす}むと{言|い}いました。",
+          "kana": "ハナはらいしゅうやすむといいました。",
+          "en": "Hana said she would take next week off."
+        },
+        {
+          "ja": "{母|はは}に「{今日|きょう}は{帰|かえ}らない」と{言|い}いました。",
+          "kana": "ははに「きょうはかえらない」といいました。",
+          "en": "I told my mother I wouldn't be coming home today."
+        }
+      ],
+      "clozeHints": [
+        "と言いました"
+      ],
+      "mistakes": [
+        "× 田中さんは来ますと言いました → ○ 田中さんは来ると言いました (an indirect quote takes the plain form)",
+        "× 田中さんと「また来ます」言いました → ○ 田中さんは「また来ます」と言いました (と follows the quote; the speaker takes は)",
+        "× 「おいしい」と話しました → ○ 「おいしい」と言いました (話す does not quote)"
+      ],
+      "related": [
+        "g-n5-066",
+        "g-n5-062",
+        "g-n5-022"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 12
+    },
+    {
+      "id": "g-n5-068",
+      "pattern": "だ/だった/じゃない/じゃなかった (plain adjectives and nouns)",
+      "meaning": "is; was; is not; was not (plain style)",
+      "formation": [
+        "Noun / な-adjective: Nだ · Nだった · Nじゃない · Nじゃなかった (学生だ · 静かだった)",
+        "い-adjective: 高い · 高かった · 高くない · 高くなかった (no だ)",
+        "Polite ↔ plain: です → だ · でした → だった · じゃありません → じゃない · じゃありませんでした → じゃなかった",
+        "Before と思います だ stays: 便利だと思います",
+        "Written / formal: じゃない → ではない"
+      ],
+      "explanation": "In plain style です becomes だ, でした becomes だった, じゃありません becomes じゃない and じゃありませんでした becomes じゃなかった. They attach to nouns and な-adjectives: 学生だ, 静かだった, 暇じゃない, 元気じゃなかった. い-adjectives never take だ — they are complete on their own: 高い, 高かった, 高くない, 高くなかった. Inside a clause (before と思います) だ is required, but at the end of a casual sentence it is often dropped or softened with ね or よ: 今日は休み。/きれいだね. In writing, じゃない appears as ではない.",
+      "jlpt": 5,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{休|やす}みだ。",
+          "kana": "きょうはやすみだ。",
+          "en": "Today is a day off."
+        },
+        {
+          "ja": "{昨日|きのう}のテストは{簡単|かんたん}だった。",
+          "kana": "きのうのテストはかんたんだった。",
+          "en": "Yesterday's test was easy."
+        },
+        {
+          "ja": "この{部屋|へや}はあまりきれいじゃない。",
+          "kana": "このへやはあまりきれいじゃない。",
+          "en": "This room isn't very clean."
+        },
+        {
+          "ja": "{先週|せんしゅう}は{暇|ひま}じゃなかった。",
+          "kana": "せんしゅうはひまじゃなかった。",
+          "en": "I wasn't free last week."
+        },
+        {
+          "ja": "{昨日|きのう}はとても{寒|さむ}かった。",
+          "kana": "きのうはとてもさむかった。",
+          "en": "It was really cold yesterday."
+        }
+      ],
+      "clozeHints": [
+        "じゃなかった",
+        "じゃない",
+        "だった",
+        "かった",
+        "だ"
+      ],
+      "mistakes": [
+        "× 高いだ → ○ 高い (い-adjectives never take だ)",
+        "× 静かじゃないだった → ○ 静かじゃなかった (the past of じゃない is じゃなかった)",
+        "× 学生だったです → ○ 学生でした (plain and polite endings do not stack)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n5-002",
+        "g-n5-012",
+        "g-n5-025",
+        "g-n5-027",
+        "g-n5-066"
+      ],
+      "tags": [
+        "states"
+      ],
+      "unlocksForms": [
+        "adj-neg",
+        "adj-past",
+        "adj-past-neg"
+      ],
+      "notes": "Casual questions drop だ: 休み？/元気？ Adding だ before か (休みだか) is wrong; use 休みですか or just 休み？",
+      "station": 12
+    }
+  ]
+}

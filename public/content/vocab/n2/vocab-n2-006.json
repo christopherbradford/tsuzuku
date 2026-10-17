@@ -1,0 +1,5038 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n2",
+  "writer": "vocab-n2-006",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n2-0710",
+      "word": "資料",
+      "kana": "しりょう",
+      "meanings": [
+        "materials",
+        "documents",
+        "data"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "study"
+      ],
+      "collocations": [
+        "資料を集める",
+        "会議の資料"
+      ],
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{資料|しりょう}は、{昨日|きのう}メールで{送|おく}っておきました。",
+          "kana": "かいぎのしりょうは、きのうメールでおくっておきました。",
+          "en": "I sent the meeting materials by email yesterday."
+        },
+        {
+          "ja": "{発表|はっぴょう}の{前|まえ}に、{図書館|としょかん}で{資料|しりょう}を{集|あつ}めなければならない。",
+          "kana": "はっぴょうのまえに、としょかんでしりょうをあつめなければならない。",
+          "en": "Before the presentation, I have to gather materials at the library."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{調|しら}べたり{説明|せつめい}したりするときに{使|つか}う{書類|しょるい}やデータ。",
+        "kana": "しらべたりせつめいしたりするときにつかうしょるいやデータ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0711",
+      "word": "提出",
+      "kana": "ていしゅつ",
+      "meanings": [
+        "submission",
+        "handing in"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work"
+      ],
+      "collocations": [
+        "書類を提出する",
+        "提出期限"
+      ],
+      "examples": [
+        {
+          "ja": "レポートの{提出|ていしゅつ}は{金曜日|きんようび}の{五時|ごじ}までです。",
+          "kana": "レポートのていしゅつはきんようびのごじまでです。",
+          "en": "The report is due by five on Friday."
+        },
+        {
+          "ja": "{申|もう}し{込|こ}みの{書類|しょるい}は、{来週|らいしゅう}の{月曜日|げつようび}までに{提出|ていしゅつ}してください。",
+          "kana": "もうしこみのしょるいは、らいしゅうのげつようびまでにていしゅつしてください。",
+          "en": "Please submit the application documents by next Monday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{書類|しょるい}やレポートなどを、{決|き}められた{所|ところ}に{出|だ}すこと。",
+        "kana": "しょるいやレポートなどを、きめられたところにだすこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0712",
+      "word": "合格",
+      "kana": "ごうかく",
+      "meanings": [
+        "passing (an exam)",
+        "success"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "notes": "Opposite: 不合格. Takes に (試験に合格する), not を.",
+      "collocations": [
+        "試験に合格する",
+        "合格発表"
+      ],
+      "examples": [
+        {
+          "ja": "{兄|あに}は{二回目|にかいめ}の{受験|じゅけん}でやっと{合格|ごうかく}した。",
+          "kana": "あにはにかいめのじゅけんでやっとごうかくした。",
+          "en": "My brother finally passed on his second try."
+        },
+        {
+          "ja": "この{試験|しけん}は{難|むずか}しくて、{合格|ごうかく}する{人|ひと}は{三割|さんわり}もいないそうだ。",
+          "kana": "このしけんはむずかしくて、ごうかくするひとはさんわりもいないそうだ。",
+          "en": "This exam is so hard that apparently not even thirty percent of people pass."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{試験|しけん}や{検査|けんさ}で、{決|き}められた{基準|きじゅん}に{達|たっ}すること。",
+        "kana": "しけんやけんさで、きめられたきじゅんにたっすること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0713",
+      "word": "受験",
+      "kana": "じゅけん",
+      "meanings": [
+        "taking an exam",
+        "entrance exams"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "collocations": [
+        "大学を受験する",
+        "受験勉強"
+      ],
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{来年|らいねん}、{高校|こうこう}を{受験|じゅけん}します。",
+          "kana": "むすめはらいねん、こうこうをじゅけんします。",
+          "en": "My daughter will take high school entrance exams next year."
+        },
+        {
+          "ja": "{受験|じゅけん}のころは、{毎晩|まいばん}{遅|おそ}くまで{勉強|べんきょう}していた。",
+          "kana": "じゅけんのころは、まいばんおそくまでべんきょうしていた。",
+          "en": "Around exam time, I studied until late every night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入学|にゅうがく}や{資格|しかく}のための{試験|しけん}を{受|う}けること。",
+        "kana": "にゅうがくやしかくのためのしけんをうけること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0714",
+      "word": "営業",
+      "kana": "えいぎょう",
+      "meanings": [
+        "sales",
+        "business operations"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "notes": "営業中 on a sign = open for business; 営業部 = the sales department.",
+      "collocations": [
+        "営業中",
+        "営業部",
+        "営業時間"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{営業|えいぎょう}の{仕事|しごと}で、{毎日|まいにち}お{客|きゃく}さんを{回|まわ}っている。",
+          "kana": "かれはえいぎょうのしごとで、まいにちおきゃくさんをまわっている。",
+          "en": "He works in sales and visits customers every day."
+        },
+        {
+          "ja": "この{店|みせ}は{日曜日|にちようび}も{夜|よる}{十時|じゅうじ}まで{営業|えいぎょう}しています。",
+          "kana": "このみせはにちようびもよるじゅうじまでえいぎょうしています。",
+          "en": "This shop is open until ten at night, even on Sundays."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}や{会社|かいしゃ}が{商売|しょうばい}をすること。{商品|しょうひん}を{売|う}る{仕事|しごと}。",
+        "kana": "みせやかいしゃがしょうばいをすること。しょうひんをうるしごと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0715",
+      "word": "開発",
+      "kana": "かいはつ",
+      "meanings": [
+        "development"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "technology",
+        "business"
+      ],
+      "collocations": [
+        "新製品を開発する",
+        "開発中"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいアプリの{開発|かいはつ}には{二年|にねん}かかった。",
+          "kana": "あたらしいアプリのかいはつにはにねんかかった。",
+          "en": "Developing the new app took two years."
+        },
+        {
+          "ja": "{駅|えき}の{周辺|しゅうへん}は{開発|かいはつ}が{進|すす}み、{高|たか}いビルが{次々|つぎつぎ}と{建|た}っている。",
+          "kana": "えきのしゅうへんはかいはつがすすみ、たかいビルがつぎつぎとたっている。",
+          "en": "Development around the station is moving ahead, and tall buildings are going up one after another."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{製品|せいひん}や{技術|ぎじゅつ}を{研究|けんきゅう}して{作|つく}り{出|だ}すこと。",
+        "kana": "あたらしいせいひんやぎじゅつをけんきゅうしてつくりだすこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0716",
+      "word": "企画",
+      "kana": "きかく",
+      "meanings": [
+        "plan",
+        "project",
+        "planning"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "collocations": [
+        "イベントを企画する",
+        "企画を立てる"
+      ],
+      "examples": [
+        {
+          "ja": "{夏|なつ}のイベントの{企画|きかく}を{任|まか}されることになりました。",
+          "kana": "なつのイベントのきかくをまかされることになりました。",
+          "en": "I have been put in charge of planning the summer event."
+        },
+        {
+          "ja": "{新|あたら}しい{商品|しょうひん}の{企画|きかく}は、{若|わか}い{社員|しゃいん}のアイデアから{生|う}まれた。",
+          "kana": "あたらしいしょうひんのきかくは、わかいしゃいんのアイデアからうまれた。",
+          "en": "The plan for the new product came from a young employee's idea."
+        }
+      ],
+      "definitionJa": {
+        "ja": "イベントや{商品|しょうひん}などについて、{何|なに}をどうするか{考|かんが}えて{計画|けいかく}を{作|つく}ること。",
+        "kana": "イベントやしょうひんなどについて、なにをどうするかかんがえてけいかくをつくること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0717",
+      "word": "提案",
+      "kana": "ていあん",
+      "meanings": [
+        "proposal",
+        "suggestion"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "communication"
+      ],
+      "collocations": [
+        "提案を受け入れる",
+        "新しい案を提案する"
+      ],
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}は{私|わたし}の{提案|ていあん}をすぐに{受|う}け{入|い}れてくれた。",
+          "kana": "ぶちょうはわたしのていあんをすぐにうけいれてくれた。",
+          "en": "The manager accepted my proposal right away."
+        },
+        {
+          "ja": "{会議|かいぎ}で{新|あたら}しい{働|はたら}き{方|かた}を{提案|ていあん}したが、{反対|はんたい}する{人|ひと}も{多|おお}かった。",
+          "kana": "かいぎであたらしいはたらきかたをていあんしたが、はんたいするひともおおかった。",
+          "en": "At the meeting I proposed a new way of working, but many people were against it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}えや{計画|けいかく}を{出|だ}して、「こうしてはどうか」と{相手|あいて}に{言|い}うこと。",
+        "kana": "かんがえやけいかくをだして、「こうしてはどうか」とあいてにいうこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0718",
+      "word": "業界",
+      "kana": "ぎょうかい",
+      "meanings": [
+        "industry",
+        "business world"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "collocations": [
+        "出版業界",
+        "業界用語"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{十年|じゅうねん}{以上|いじょう}、{出版|しゅっぱん}{業界|ぎょうかい}で{働|はたら}いている。",
+          "kana": "かのじょはじゅうねんいじょう、しゅっぱんぎょうかいではたらいている。",
+          "en": "She has worked in the publishing industry for over ten years."
+        },
+        {
+          "ja": "{自動車|じどうしゃ}{業界|ぎょうかい}は{今|いま}、{大|おお}きく{変|か}わろうとしている。",
+          "kana": "じどうしゃぎょうかいはいま、おおきくかわろうとしている。",
+          "en": "The auto industry is now on the verge of major change."
+        }
+      ],
+      "definitionJa": {
+        "ja": "おなじ{種類|しゅるい}の{商売|しょうばい}をしている{会社|かいしゃ}や{人|ひと}の{集|あつ}まり。",
+        "kana": "おなじしゅるいのしょうばいをしているかいしゃやひとのあつまり。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0719",
+      "word": "業務",
+      "kana": "ぎょうむ",
+      "meanings": [
+        "business operations",
+        "duties",
+        "work"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business",
+        "formal"
+      ],
+      "notes": "More formal than 仕事; used in notices and job descriptions (業務内容 = job duties).",
+      "collocations": [
+        "業務時間",
+        "業務内容"
+      ],
+      "examples": [
+        {
+          "ja": "システムの{点検|てんけん}のため、{本日|ほんじつ}の{業務|ぎょうむ}は{午後三時|ごごさんじ}で{終了|しゅうりょう}いたします。",
+          "kana": "システムのてんけんのため、ほんじつのぎょうむはごごさんじでしゅうりょういたします。",
+          "en": "Due to a system inspection, today's business will end at three in the afternoon."
+        },
+        {
+          "ja": "{新|あたら}しいシステムのおかげで、{毎日|まいにち}の{業務|ぎょうむ}がずいぶん{楽|らく}になった。",
+          "kana": "あたらしいシステムのおかげで、まいにちのぎょうむがずいぶんらくになった。",
+          "en": "Thanks to the new system, our daily work has become much easier."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{役所|やくしょ}などで、{決|き}まって{行|おこな}う{仕事|しごと}。",
+        "kana": "かいしゃややくしょなどで、きまっておこなうしごと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0720",
+      "word": "部署",
+      "kana": "ぶしょ",
+      "meanings": [
+        "department",
+        "section"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{四月|しがつ}から{新|あたら}しい{部署|ぶしょ}で{働|はたら}くことになった。",
+          "kana": "しがつからあたらしいぶしょではたらくことになった。",
+          "en": "From April I will be working in a new department."
+        },
+        {
+          "ja": "{問|と}い{合|あ}わせの{内容|ないよう}によって、{担当|たんとう}する{部署|ぶしょ}が{違|ちが}います。",
+          "kana": "といあわせのないようによって、たんとうするぶしょがちがいます。",
+          "en": "The department in charge differs depending on the nature of the inquiry."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{役所|やくしょ}の{中|なか}で、{仕事|しごと}の{種類|しゅるい}ごとに{作|つく}られた{組織|そしき}の{一|ひと}つ。",
+        "kana": "かいしゃややくしょのなかで、しごとのしゅるいごとにつくられたそしきのひとつ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0721",
+      "word": "人事",
+      "kana": "じんじ",
+      "meanings": [
+        "personnel affairs",
+        "human resources"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "notes": "人事部 = HR department. 人事異動 = personnel reshuffle.",
+      "collocations": [
+        "人事部",
+        "人事異動"
+      ],
+      "examples": [
+        {
+          "ja": "{人事|じんじ}から{来月|らいげつ}の{異動|いどう}について{連絡|れんらく}があった。",
+          "kana": "じんじかららいげつのいどうについてれんらくがあった。",
+          "en": "HR contacted me about next month's transfer."
+        },
+        {
+          "ja": "{今年|ことし}の{人事|じんじ}で、{彼女|かのじょ}は{課長|かちょう}になった。",
+          "kana": "ことしのじんじで、かのじょはかちょうになった。",
+          "en": "In this year's personnel changes, she became section chief."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{社員|しゃいん}を{採用|さいよう}したりほかの{仕事|しごと}に{移|うつ}したりすること。",
+        "kana": "かいしゃなどで、しゃいんをさいようしたりほかのしごとにうつしたりすること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0722",
+      "word": "部下",
+      "kana": "ぶか",
+      "meanings": [
+        "subordinate",
+        "staff member under one"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "notes": "Opposite of 上司 (boss). 後輩 is about seniority, 部下 about reporting line.",
+      "examples": [
+        {
+          "ja": "{部下|ぶか}の{失敗|しっぱい}は{上司|じょうし}の{責任|せきにん}でもある。",
+          "kana": "ぶかのしっぱいはじょうしのせきにんでもある。",
+          "en": "A subordinate's mistake is also the boss's responsibility."
+        },
+        {
+          "ja": "{私|わたし}の{上司|じょうし}は{部下|ぶか}の{話|はなし}をよく{聞|き}いてくれる{人|ひと}です。",
+          "kana": "わたしのじょうしはぶかのはなしをよくきいてくれるひとです。",
+          "en": "My boss is someone who really listens to the people under him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、ある{人|ひと}の{下|した}で{働|はたら}く{人|ひと}。{上司|じょうし}の{反対|はんたい}。",
+        "kana": "かいしゃなどで、あるひとのしたではたらくひと。じょうしのはんたい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0723",
+      "word": "取引先",
+      "kana": "とりひきさき",
+      "meanings": [
+        "client",
+        "business partner"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "notes": "Any company you do business with, buying or selling. Compare 得意先 (regular customer you sell to).",
+      "examples": [
+        {
+          "ja": "{明日|あした}は{取引先|とりひきさき}との{打|う}ち{合|あ}わせが{二件|にけん}あります。",
+          "kana": "あしたはとりひきさきとのうちあわせがにけんあります。",
+          "en": "Tomorrow I have two meetings with clients."
+        },
+        {
+          "ja": "{取引先|とりひきさき}から、{納品|のうひん}が{遅|おく}れているという{苦情|くじょう}が{届|とど}いた。",
+          "kana": "とりひきさきから、のうひんがおくれているというくじょうがとどいた。",
+          "en": "A complaint came in from a client saying that delivery was running late."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}を{売|う}ったり{買|か}ったりして、{商売|しょうばい}の{関係|かんけい}がある{会社|かいしゃ}。",
+        "kana": "しょうひんをうったりかったりして、しょうばいのかんけいがあるかいしゃ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0724",
+      "word": "納期",
+      "kana": "のうき",
+      "meanings": [
+        "delivery deadline",
+        "due date"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "time"
+      ],
+      "collocations": [
+        "納期に間に合う",
+        "納期を守る"
+      ],
+      "examples": [
+        {
+          "ja": "{納期|のうき}まであと{三日|みっか}しかないのに、まだ{半分|はんぶん}も{終|お}わっていない。",
+          "kana": "のうきまであとみっかしかないのに、まだはんぶんもおわっていない。",
+          "en": "Only three days to the deadline, and we are not even half done."
+        },
+        {
+          "ja": "ご{注文|ちゅうもん}の{商品|しょうひん}の{納期|のうき}は、{来月|らいげつ}{十日|とおか}を{予定|よてい}しております。",
+          "kana": "ごちゅうもんのしょうひんののうきは、らいげつとおかをよていしております。",
+          "en": "The delivery date for the product you ordered is scheduled for the tenth of next month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{注文|ちゅうもん}された{商品|しょうひん}を{相手|あいて}に{届|とど}けなければならない{期限|きげん}。",
+        "kana": "ちゅうもんされたしょうひんをあいてにとどけなければならないきげん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0725",
+      "word": "手順",
+      "kana": "てじゅん",
+      "meanings": [
+        "procedure",
+        "steps"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "abstract"
+      ],
+      "collocations": [
+        "手順を踏む",
+        "手順どおりに"
+      ],
+      "examples": [
+        {
+          "ja": "{説明書|せつめいしょ}の{手順|てじゅん}どおりにやれば、{誰|だれ}でも{組|く}み{立|た}てられます。",
+          "kana": "せつめいしょのてじゅんどおりにやれば、だれでもくみたてられます。",
+          "en": "If you follow the steps in the manual, anyone can assemble it."
+        },
+        {
+          "ja": "{新|あたら}しい{機械|きかい}の{使|つか}い{方|かた}を、{手順|てじゅん}を{追|お}って{説明|せつめい}します。",
+          "kana": "あたらしいきかいのつかいかたを、てじゅんをおってせつめいします。",
+          "en": "I will explain how to use the new machine, step by step."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{作業|さぎょう}を{進|すす}めるときの、{正|ただ}しい{順序|じゅんじょ}。",
+        "kana": "しごとやさぎょうをすすめるときの、ただしいじゅんじょ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0726",
+      "word": "工程",
+      "kana": "こうてい",
+      "meanings": [
+        "manufacturing process",
+        "work stage"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "collocations": [
+        "製造工程",
+        "工程表"
+      ],
+      "examples": [
+        {
+          "ja": "この{工場|こうじょう}では{全|すべ}ての{工程|こうてい}を{機械|きかい}が{行|おこな}っている。",
+          "kana": "このこうじょうではすべてのこうていをきかいがおこなっている。",
+          "en": "In this factory, machines carry out every stage of the process."
+        },
+        {
+          "ja": "{商品|しょうひん}ができるまでの{工程|こうてい}を、{工場|こうじょう}で{見学|けんがく}させてもらった。",
+          "kana": "しょうひんができるまでのこうていを、こうじょうでけんがくさせてもらった。",
+          "en": "They let us tour the factory and see the stages a product goes through."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものを{作|つく}るときの、{作業|さぎょう}の{順序|じゅんじょ}や{一|ひと}つ{一|ひと}つの{段階|だんかい}。",
+        "kana": "ものをつくるときの、さぎょうのじゅんじょやひとつひとつのだんかい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0727",
+      "word": "品質",
+      "kana": "ひんしつ",
+      "meanings": [
+        "quality (of goods)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "states"
+      ],
+      "collocations": [
+        "品質がいい",
+        "品質管理"
+      ],
+      "examples": [
+        {
+          "ja": "{値段|ねだん}は{高|たか}いが、{品質|ひんしつ}がいいので{長|なが}く{使|つか}える。",
+          "kana": "ねだんはたかいが、ひんしつがいいのでながくつかえる。",
+          "en": "It is expensive, but the quality is good, so it lasts a long time."
+        },
+        {
+          "ja": "この{会社|かいしゃ}は{品質|ひんしつ}の{管理|かんり}が{厳|きび}しいことで{知|し}られている。",
+          "kana": "このかいしゃはひんしつのかんりがきびしいことでしられている。",
+          "en": "This company is known for its strict quality control."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}などの{性質|せいしつ}。ものの{良|よ}し{悪|あ}し。",
+        "kana": "しょうひんなどのせいしつ。もののよしあし。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0728",
+      "word": "研修",
+      "kana": "けんしゅう",
+      "meanings": [
+        "training",
+        "in-house training"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "study"
+      ],
+      "collocations": [
+        "研修を受ける",
+        "新人研修"
+      ],
+      "examples": [
+        {
+          "ja": "{新入社員|しんにゅうしゃいん}は{最初|さいしょ}の{二週間|にしゅうかん}、{研修|けんしゅう}を{受|う}けます。",
+          "kana": "しんにゅうしゃいんはさいしょのにしゅうかん、けんしゅうをうけます。",
+          "en": "New employees receive training for the first two weeks."
+        },
+        {
+          "ja": "{来月|らいげつ}、{本社|ほんしゃ}で{三日間|みっかかん}の{研修|けんしゅう}があるので、{出張|しゅっちょう}しなければならない。",
+          "kana": "らいげつ、ほんしゃでみっかかんのけんしゅうがあるので、しゅっちょうしなければならない。",
+          "en": "Next month there is a three-day training session at the head office, so I have to go on a business trip."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}に{必要|ひつよう}な{知識|ちしき}や{技術|ぎじゅつ}を、{会社|かいしゃ}などで{習|なら}うこと。",
+        "kana": "しごとにひつようなちしきやぎじゅつを、かいしゃなどでならうこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0729",
+      "word": "報告書",
+      "kana": "ほうこくしょ",
+      "meanings": [
+        "report (document)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "collocations": [
+        "報告書を書く",
+        "報告書をまとめる"
+      ],
+      "examples": [
+        {
+          "ja": "{出張|しゅっちょう}の{報告書|ほうこくしょ}を{今週中|こんしゅうちゅう}に{提出|ていしゅつ}しなければならない。",
+          "kana": "しゅっちょうのほうこくしょをこんしゅうちゅうにていしゅつしなければならない。",
+          "en": "I have to submit my business-trip report by the end of this week."
+        },
+        {
+          "ja": "{事故|じこ}の{原因|げんいん}について、{詳|くわ}しい{報告書|ほうこくしょ}が{発表|はっぴょう}された。",
+          "kana": "じこのげんいんについて、くわしいほうこくしょがはっぴょうされた。",
+          "en": "A detailed report on the cause of the accident was released."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{調|しら}べたことや{仕事|しごと}の{結果|けっか}を、{上司|じょうし}などに{知|し}らせるために{書|か}いた{書類|しょるい}。",
+        "kana": "しらべたことやしごとのけっかを、じょうしなどにしらせるためにかいたしょるい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0730",
+      "word": "会議室",
+      "kana": "かいぎしつ",
+      "meanings": [
+        "meeting room",
+        "conference room"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{三階|さんがい}の{会議室|かいぎしつ}は{十時|じゅうじ}から{予約|よやく}が{入|はい}っています。",
+          "kana": "さんがいのかいぎしつはじゅうじからよやくがはいっています。",
+          "en": "The meeting room on the third floor is booked from ten."
+        },
+        {
+          "ja": "{会議室|かいぎしつ}が{全部|ぜんぶ}{埋|う}まっていたので、{打|う}ち{合|あ}わせは{食堂|しょくどう}でやることにした。",
+          "kana": "かいぎしつがぜんぶうまっていたので、うちあわせはしょくどうでやることにした。",
+          "en": "All the meeting rooms were taken, so we decided to hold the meeting in the cafeteria."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{会議|かいぎ}をするための{部屋|へや}。",
+        "kana": "かいしゃなどで、かいぎをするためのへや。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0731",
+      "word": "時期",
+      "kana": "じき",
+      "meanings": [
+        "time",
+        "period",
+        "season"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "notes": "A stretch of time with a character to it (梅雨の時期). Not 時機 (the right moment).",
+      "collocations": [
+        "時期が早い",
+        "この時期"
+      ],
+      "examples": [
+        {
+          "ja": "{今|いま}は{引|ひ}っ{越|こ}しの{時期|じき}なので、{業者|ぎょうしゃ}の{予約|よやく}が{取|と}りにくい。",
+          "kana": "いまはひっこしのじきなので、ぎょうしゃのよやくがとりにくい。",
+          "en": "It is moving season now, so it is hard to book a mover."
+        },
+        {
+          "ja": "{桜|さくら}が{咲|さ}く{時期|じき}は、{毎年|まいとし}{少|すこ}しずつ{違|ちが}う。",
+          "kana": "さくらがさくじきは、まいとしすこしずつちがう。",
+          "en": "The time when the cherry blossoms bloom differs a little every year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{行|おこな}われたり{起|お}こったりする、ある{長|なが}さの{時間|じかん}。",
+        "kana": "なにかがおこなわれたりおこったりする、あるながさのじかん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0732",
+      "word": "翌日",
+      "kana": "よくじつ",
+      "meanings": [
+        "the next day",
+        "the following day"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "written"
+      ],
+      "notes": "Written or formal counterpart of 次の日. Series: 翌朝, 翌週, 翌月, 翌年.",
+      "confusables": [
+        "v-n2-0782",
+        "v-n2-0784"
+      ],
+      "examples": [
+        {
+          "ja": "{夜|よる}{遅|おそ}くまで{飲|の}んだせいで、{翌日|よくじつ}は{頭|あたま}が{痛|いた}かった。",
+          "kana": "よるおそくまでのんだせいで、よくじつはあたまがいたかった。",
+          "en": "Because I drank until late at night, my head hurt the next day."
+        },
+        {
+          "ja": "{申|もう}し{込|こ}みの{翌日|よくじつ}には、{確認|かくにん}のメールが{届|とど}きます。",
+          "kana": "もうしこみのよくじつには、かくにんのメールがとどきます。",
+          "en": "A confirmation email arrives the day after you apply."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{一日|いちにち}のつぎに{来|く}る{一日|いちにち}。{今日|きょう}から{見|み}れば{明日|あした}。",
+        "kana": "あるいちにちのつぎにくるいちにち。きょうからみればあした。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0733",
+      "word": "直前",
+      "kana": "ちょくぜん",
+      "meanings": [
+        "just before",
+        "immediately before"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "collocations": [
+        "試験の直前",
+        "直前になって"
+      ],
+      "confusables": [
+        "v-n2-0734"
+      ],
+      "examples": [
+        {
+          "ja": "{出発|しゅっぱつ}の{直前|ちょくぜん}になって、パスポートを{忘|わす}れたことに{気|き}づいた。",
+          "kana": "しゅっぱつのちょくぜんになって、パスポートをわすれたことにきづいた。",
+          "en": "Right before departure, I realized I had forgotten my passport."
+        },
+        {
+          "ja": "{電車|でんしゃ}が{出|で}る{直前|ちょくぜん}に{駆|か}け{込|こ}むのは{危|あぶ}ないのでやめましょう。",
+          "kana": "でんしゃがでるちょくぜんにかけこむのはあぶないのでやめましょう。",
+          "en": "Rushing onto a train just before it departs is dangerous, so let's not do it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{起|お}こる、ほんの{少|すこ}し{前|まえ}。",
+        "kana": "なにかがおこる、ほんのすこしまえ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0734",
+      "word": "直後",
+      "kana": "ちょくご",
+      "meanings": [
+        "just after",
+        "immediately after"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "confusables": [
+        "v-n2-0733"
+      ],
+      "examples": [
+        {
+          "ja": "{食事|しょくじ}の{直後|ちょくご}に{運動|うんどう}をするのは{体|からだ}によくない。",
+          "kana": "しょくじのちょくごにうんどうをするのはからだによくない。",
+          "en": "Exercising right after a meal is not good for you."
+        },
+        {
+          "ja": "{地震|じしん}の{直後|ちょくご}は、{電話|でんわ}がなかなかつながらなかった。",
+          "kana": "じしんのちょくごは、でんわがなかなかつながらなかった。",
+          "en": "Right after the earthquake, it was hard to get through on the phone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{起|お}こった、ほんの{少|すこ}しあと。",
+        "kana": "なにかがおこった、ほんのすこしあと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0735",
+      "word": "事前",
+      "kana": "じぜん",
+      "meanings": [
+        "beforehand",
+        "in advance"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "collocations": [
+        "事前に連絡する",
+        "事前準備"
+      ],
+      "confusables": [
+        "v-n2-0788"
+      ],
+      "examples": [
+        {
+          "ja": "{見学|けんがく}を{希望|きぼう}される{方|かた}は、{事前|じぜん}にお{申|もう}し{込|こ}みください。",
+          "kana": "けんがくをきぼうされるかたは、じぜんにおもうしこみください。",
+          "en": "Those wishing to visit should apply in advance."
+        },
+        {
+          "ja": "{工事|こうじ}の{日程|にってい}は、{事前|じぜん}に{近所|きんじょ}の{人|ひと}たちに{知|し}らせておいた。",
+          "kana": "こうじのにっていは、じぜんにきんじょのひとたちにしらせておいた。",
+          "en": "We let the neighbors know the construction schedule in advance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かをする{前|まえ}。{何|なに}かが{起|お}こる{前|まえ}。",
+        "kana": "なにかをするまえ。なにかがおこるまえ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0736",
+      "word": "近年",
+      "kana": "きんねん",
+      "meanings": [
+        "in recent years"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "written"
+      ],
+      "notes": "Written register; spans several years. For a few weeks or months use 最近 or 近頃.",
+      "confusables": [
+        "v-n2-0737",
+        "v-n2-0795"
+      ],
+      "examples": [
+        {
+          "ja": "{近年|きんねん}、{日本|にほん}を{訪|おとず}れる{外国人|がいこくじん}{観光客|かんこうきゃく}が{増|ふ}えている。",
+          "kana": "きんねん、にほんをおとずれるがいこくじんかんこうきゃくがふえている。",
+          "en": "In recent years, the number of foreign tourists visiting Japan has been increasing."
+        },
+        {
+          "ja": "{近年|きんねん}、{夏|なつ}の{気温|きおん}は{上|あ}がり{続|つづ}けている。",
+          "kana": "きんねん、なつのきおんはあがりつづけている。",
+          "en": "In recent years, summer temperatures have kept rising."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}に{近|ちか}い{何年|なんねん}かの{間|あいだ}。{最近|さいきん}の{何年|なんねん}か。",
+        "kana": "いまにちかいなんねんかのあいだ。さいきんのなんねんか。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0737",
+      "word": "近頃",
+      "kana": "ちかごろ",
+      "meanings": [
+        "these days",
+        "lately"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "notes": "Slightly more conversational and old-fashioned than 最近. 近頃の若者 = young people these days.",
+      "examples": [
+        {
+          "ja": "{近頃|ちかごろ}、{夜|よる}なかなか{眠|ねむ}れなくて{困|こま}っているんです。",
+          "kana": "ちかごろ、よるなかなかねむれなくてこまっているんです。",
+          "en": "Lately I have been having trouble falling asleep at night."
+        },
+        {
+          "ja": "{近頃|ちかごろ}の{子供|こども}は{外|そと}で{遊|あそ}ぶことが{少|すく}なくなったと{祖母|そぼ}が{言|い}っていた。",
+          "kana": "ちかごろのこどもはそとであそぶことがすくなくなったとそぼがいっていた。",
+          "en": "My grandmother was saying that children these days rarely play outside anymore."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{少|すこ}し{前|まえ}から{今|いま}までの{間|あいだ}。{最近|さいきん}。",
+        "kana": "すこしまえからいままでのあいだ。さいきん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0738",
+      "word": "当分",
+      "kana": "とうぶん",
+      "meanings": [
+        "for the time being",
+        "for a while"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "collocations": [
+        "当分の間"
+      ],
+      "confusables": [
+        "v-n2-0781"
+      ],
+      "examples": [
+        {
+          "ja": "{足|あし}をけがしたので、{当分|とうぶん}はジョギングを{休|やす}むつもりだ。",
+          "kana": "あしをけがしたので、とうぶんはジョギングをやすむつもりだ。",
+          "en": "I hurt my foot, so I plan to take a break from jogging for a while."
+        },
+        {
+          "ja": "{工事|こうじ}のため、この{道|みち}は{当分|とうぶん}の{間|あいだ}{通|とお}れません。",
+          "kana": "こうじのため、このみちはとうぶんのあいだとおれません。",
+          "en": "Because of construction, this road will be closed for the time being."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}からしばらくの{間|あいだ}。すぐには{変|か}わらない{長|なが}さの{時間|じかん}。",
+        "kana": "いまからしばらくのあいだ。すぐにはかわらないながさのじかん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0739",
+      "word": "日々",
+      "kana": "ひび",
+      "meanings": [
+        "every day",
+        "daily",
+        "days"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "collocations": [
+        "日々の生活",
+        "日々努力する"
+      ],
+      "examples": [
+        {
+          "ja": "{小|ちい}さなことでも、{日々|ひび}の{努力|どりょく}が{大切|たいせつ}だと{思|おも}う。",
+          "kana": "ちいさなことでも、ひびのどりょくがたいせつだとおもう。",
+          "en": "Even for small things, I think daily effort matters."
+        },
+        {
+          "ja": "{日々|ひび}の{生活|せいかつ}に{追|お}われて、{趣味|しゅみ}の{時間|じかん}がなかなか{取|と}れない。",
+          "kana": "ひびのせいかつにおわれて、しゅみのじかんがなかなかとれない。",
+          "en": "Caught up in daily life, I can hardly find time for my hobbies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{毎日|まいにち}。{一日|いちにち}{一日|いちにち}。{毎日|まいにち}{続|つづ}いていく{暮|く}らし。",
+        "kana": "まいにち。いちにちいちにち。まいにちつづいていくくらし。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0740",
+      "word": "年々",
+      "kana": "ねんねん",
+      "meanings": [
+        "year by year",
+        "every year"
+      ],
+      "pos": "adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "notes": "Used with gradual change (増える, 減る, 上がる). Compare 月々 and 日々.",
+      "confusables": [
+        "v-n2-0789"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}の{人口|じんこう}は{年々|ねんねん}{減|へ}っている。",
+          "kana": "このまちのじんこうはねんねんへっている。",
+          "en": "This town's population is decreasing year by year."
+        },
+        {
+          "ja": "{祖父|そふ}は{年々|ねんねん}{耳|みみ}が{遠|とお}くなってきた。",
+          "kana": "そふはねんねんみみがとおくなってきた。",
+          "en": "My grandfather's hearing has been getting worse year by year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}ごとに{少|すこ}しずつ。{年|とし}がたつにつれて。",
+        "kana": "いちねんごとにすこしずつ。としがたつにつれて。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0741",
+      "word": "〜行",
+      "kana": "ぎょう",
+      "meanings": [
+        "(counter for lines of text)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "language",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Lines of writing: 一行 いちぎょう, 三行 さんぎょう, 十行 じゅうぎょう. Read こう in 銀行・旅行.",
+      "examples": [
+        {
+          "ja": "{作文|さくぶん}は{十行|じゅうぎょう}{以上|いじょう}{書|か}いてください。",
+          "kana": "さくぶんはじゅうぎょういじょうかいてください。",
+          "en": "Please write at least ten lines for your composition."
+        },
+        {
+          "ja": "{三行目|さんぎょうめ}の{漢字|かんじ}が{間違|まちが}っているので、{直|なお}してください。",
+          "kana": "さんぎょうめのかんじがまちがっているので、なおしてください。",
+          "en": "The kanji on the third line is wrong, so please fix it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{文字|もじ}が{横|よこ}に{並|なら}んだひとまとまりがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "もじがよこにならんだひとまとまりがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0742",
+      "word": "〜曲",
+      "kana": "きょく",
+      "meanings": [
+        "(counter for songs and pieces of music)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "music",
+        "numbers",
+        "counter"
+      ],
+      "notes": "一曲 いっきょく, 六曲 ろっきょく, 十曲 じゅっきょく. The noun 曲 = a song or piece.",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}はコンサートで{新曲|しんきょく}を{含|ふく}めて{二十曲|にじゅっきょく}も{歌|うた}った。",
+          "kana": "かのじょはコンサートでしんきょくをふくめてにじゅっきょくもうたった。",
+          "en": "At the concert she sang as many as twenty songs, including new ones."
+        },
+        {
+          "ja": "{今日|きょう}は{時間|じかん}がないから、{一曲|いっきょく}だけ{歌|うた}って{帰|かえ}ろう。",
+          "kana": "きょうはじかんがないから、いっきょくだけうたってかえろう。",
+          "en": "We do not have time today, so let's sing just one song and head home."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{歌|うた}や{音楽|おんがく}の{作品|さくひん}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "うたやおんがくのさくひんがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0743",
+      "word": "〜社",
+      "kana": "しゃ",
+      "meanings": [
+        "(counter for companies)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "numbers",
+        "counter"
+      ],
+      "examples": [
+        {
+          "ja": "{見積|みつ}もりは{三社|さんしゃ}から{取|と}って{比|くら}べることにした。",
+          "kana": "みつもりはさんしゃからとってくらべることにした。",
+          "en": "I decided to get quotes from three companies and compare them."
+        },
+        {
+          "ja": "{就職活動|しゅうしょくかつどう}では{十社|じゅっしゃ}{以上|いじょう}{受|う}けて、やっと{一社|いっしゃ}から{内定|ないてい}をもらった。",
+          "kana": "しゅうしょくかつどうではじゅっしゃいじょううけて、やっといっしゃからないていをもらった。",
+          "en": "In my job hunt I applied to more than ten companies and finally got an offer from one."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{企業|きぎょう}や{店|みせ}などがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "きぎょうやみせなどがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0744",
+      "word": "〜校",
+      "kana": "こう",
+      "meanings": [
+        "(counter for schools)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "school",
+        "numbers",
+        "counter"
+      ],
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{大学|だいがく}を{三校|さんこう}{受|う}けて、{二校|にこう}に{合格|ごうかく}した。",
+          "kana": "むすめはだいがくをさんこううけて、にこうにごうかくした。",
+          "en": "My daughter applied to three universities and got into two."
+        },
+        {
+          "ja": "この{市|し}には{高校|こうこう}が{五校|ごこう}あるが、{生徒|せいと}の{数|かず}は{減|へ}り{続|つづ}けている。",
+          "kana": "このしにはこうこうがごこうあるが、せいとのかずはへりつづけている。",
+          "en": "This city has five high schools, but the number of students keeps falling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}など、{学|まな}ぶ{所|ところ}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "だいがくなど、まなぶところがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0745",
+      "word": "〜箱",
+      "kana": "はこ",
+      "meanings": [
+        "(counter for boxes)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Sound changes: 一箱 ひとはこ, 三箱 さんぱこ (or さんはこ), 六箱 ろっぱこ, 八箱 はっぱこ, 十箱 じゅっぱこ.",
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{荷物|にもつ}は{全部|ぜんぶ}で{三十箱|さんじゅっぱこ}になった。",
+          "kana": "ひっこしのにもつはぜんぶでさんじゅっぱこになった。",
+          "en": "The moving boxes came to thirty in all."
+        },
+        {
+          "ja": "お{菓子|かし}を{一箱|ひとはこ}{買|か}って、{職場|しょくば}のみんなに{配|くば}った。",
+          "kana": "おかしをひとはこかって、しょくばのみんなにくばった。",
+          "en": "I bought a box of sweets and handed them out to everyone at work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{紙|かみ}などで{作|つく}った{四角|しかく}い{容器|ようき}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "かみなどでつくったしかくいようきがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0746",
+      "word": "〜袋",
+      "kana": "ふくろ",
+      "meanings": [
+        "(counter for bags)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "shopping",
+        "numbers",
+        "counter"
+      ],
+      "notes": "一袋 ひとふくろ, 二袋 ふたふくろ, 三袋 さんぶくろ, then number + ふくろ.",
+      "examples": [
+        {
+          "ja": "スーパーで{安|やす}かったので、みかんを{二袋|ふたふくろ}も{買|か}ってしまった。",
+          "kana": "スーパーでやすかったので、みかんをふたふくろもかってしまった。",
+          "en": "They were cheap at the supermarket, so I ended up buying two whole bags of mandarins."
+        },
+        {
+          "ja": "{米|こめ}を{一袋|ひとふくろ}{持|も}ち{上|あ}げたら、{腰|こし}を{痛|いた}めてしまった。",
+          "kana": "こめをひとふくろもちあげたら、こしをいためてしまった。",
+          "en": "When I lifted a bag of rice, I hurt my back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものを{入|い}れる{柔|やわ}らかい{容器|ようき}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "ものをいれるやわらかいようきがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0747",
+      "word": "転職",
+      "kana": "てんしょく",
+      "meanings": [
+        "changing jobs",
+        "career change"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "collocations": [
+        "転職活動",
+        "転職する"
+      ],
+      "confusables": [
+        "v-n2-0748"
+      ],
+      "examples": [
+        {
+          "ja": "{今|いま}の{会社|かいしゃ}に{不満|ふまん}はないが、{転職|てんしょく}を{考|かんが}え{始|はじ}めている。",
+          "kana": "いまのかいしゃにふまんはないが、てんしょくをかんがえはじめている。",
+          "en": "I am not unhappy at my current company, but I have started thinking about changing jobs."
+        },
+        {
+          "ja": "{転職|てんしょく}して{三|さん}か{月|げつ}、ようやく{新|あたら}しい{職場|しょくば}に{慣|な}れてきました。",
+          "kana": "てんしょくしてさんかげつ、ようやくあたらしいしょくばになれてきました。",
+          "en": "Three months after changing jobs, I am finally getting used to my new workplace."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}の{仕事|しごと}をやめて、ほかの{会社|かいしゃ}や{仕事|しごと}に{変|か}わること。",
+        "kana": "いまのしごとをやめて、ほかのかいしゃやしごとにかわること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0748",
+      "word": "転勤",
+      "kana": "てんきん",
+      "meanings": [
+        "job transfer",
+        "relocation for work"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "travel"
+      ],
+      "notes": "Transfer to another branch or city within the same company. 転職 = changing employer; 異動 = any reassignment.",
+      "confusables": [
+        "v-n2-0747",
+        "v-n2-0751"
+      ],
+      "examples": [
+        {
+          "ja": "{夫|おっと}の{転勤|てんきん}が{決|き}まり、{家族|かぞく}で{引|ひ}っ{越|こ}すことになった。",
+          "kana": "おっとのてんきんがきまり、かぞくでひっこすことになった。",
+          "en": "My husband's transfer was decided, so the whole family is moving."
+        },
+        {
+          "ja": "{転勤|てんきん}が{多|おお}い{仕事|しごと}なので、{家|いえ}を{買|か}うかどうか{迷|まよ}っている。",
+          "kana": "てんきんがおおいしごとなので、いえをかうかどうかまよっている。",
+          "en": "My job involves a lot of transfers, so I am torn over whether to buy a house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "おなじ{会社|かいしゃ}の{中|なか}で、{働|はたら}く{所|ところ}がほかの{町|まち}や{支店|してん}に{変|か}わること。",
+        "kana": "おなじかいしゃのなかで、はたらくところがほかのまちやしてんにかわること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0749",
+      "word": "昇進",
+      "kana": "しょうしん",
+      "meanings": [
+        "promotion (at work)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "collocations": [
+        "部長に昇進する"
+      ],
+      "confusables": [
+        "v-n2-0821",
+        "v-n2-0822"
+      ],
+      "examples": [
+        {
+          "ja": "{課長|かちょう}に{昇進|しょうしん}したら、{責任|せきにん}も{仕事|しごと}の{量|りょう}も{増|ふ}えた。",
+          "kana": "かちょうにしょうしんしたら、せきにんもしごとのりょうもふえた。",
+          "en": "After my promotion to section chief, both my responsibilities and my workload grew."
+        },
+        {
+          "ja": "{昇進|しょうしん}のお{祝|いわ}いに、{同僚|どうりょう}たちが{食事|しょくじ}に{誘|さそ}ってくれた。",
+          "kana": "しょうしんのおいわいに、どうりょうたちがしょくじにさそってくれた。",
+          "en": "To celebrate my promotion, my colleagues invited me out for a meal."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{今|いま}より{上|うえ}の{役職|やくしょく}に{上|あ}がること。",
+        "kana": "かいしゃなどで、いまよりうえのやくしょくにあがること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0750",
+      "word": "定年",
+      "kana": "ていねん",
+      "meanings": [
+        "mandatory retirement age"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "time"
+      ],
+      "collocations": [
+        "定年退職",
+        "定年を迎える"
+      ],
+      "examples": [
+        {
+          "ja": "{父|ちち}は{定年|ていねん}まであと{二年|にねん}で、{退職後|たいしょくご}の{生活|せいかつ}を{楽|たの}しみにしている。",
+          "kana": "ちちはていねんまであとにねんで、たいしょくごのせいかつをたのしみにしている。",
+          "en": "My father has two years to retirement and is looking forward to life afterwards."
+        },
+        {
+          "ja": "{定年|ていねん}を{迎|むか}えた{後|あと}も、{週|しゅう}に{三日|みっか}は{働|はたら}き{続|つづ}けるつもりです。",
+          "kana": "ていねんをむかえたあとも、しゅうにみっかははたらきつづけるつもりです。",
+          "en": "Even after reaching retirement age, I intend to keep working three days a week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{役所|やくしょ}で、{決|き}められた{年齢|ねんれい}になると{仕事|しごと}をやめるという{決|き}まり。またその{年齢|ねんれい}。",
+        "kana": "かいしゃややくしょで、きめられたねんれいになるとしごとをやめるというきまり。またそのねんれい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0751",
+      "word": "異動",
+      "kana": "いどう",
+      "meanings": [
+        "personnel transfer",
+        "reshuffle"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "notes": "Same reading as 移動 (physical movement) but written with 異; 異動 is only about posts and departments.",
+      "collocations": [
+        "人事異動",
+        "異動になる"
+      ],
+      "confusables": [
+        "v-n2-0748"
+      ],
+      "examples": [
+        {
+          "ja": "{春|はる}の{異動|いどう}で、{別|べつ}の{部署|ぶしょ}に{移|うつ}ることになった。",
+          "kana": "はるのいどうで、べつのぶしょにうつることになった。",
+          "en": "In the spring reshuffle I will be moving to a different department."
+        },
+        {
+          "ja": "{田中|たなか}さんは{四月|しがつ}の{異動|いどう}で{営業|えいぎょう}から{人事|じんじ}に{移|うつ}った。",
+          "kana": "たなかさんはしがつのいどうでえいぎょうからじんじにうつった。",
+          "en": "In the April reshuffle, Tanaka-san moved from Sales to HR."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{働|はたら}く{人|ひと}の{役職|やくしょく}や{働|はたら}く{所|ところ}が{変|か}わること。",
+        "kana": "かいしゃなどで、はたらくひとのやくしょくやはたらくところがかわること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0752",
+      "word": "雇用",
+      "kana": "こよう",
+      "meanings": [
+        "employment",
+        "hiring"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "society",
+        "formal"
+      ],
+      "collocations": [
+        "雇用を増やす",
+        "終身雇用"
+      ],
+      "confusables": [
+        "v-n2-0753"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{工場|こうじょう}ができて、{地元|じもと}の{雇用|こよう}が{増|ふ}えた。",
+          "kana": "あたらしいこうじょうができて、じもとのこようがふえた。",
+          "en": "A new factory was built, and local employment increased."
+        },
+        {
+          "ja": "{政府|せいふ}は{若者|わかもの}の{雇用|こよう}を{増|ふ}やすための{新|あたら}しい{対策|たいさく}を{発表|はっぴょう}した。",
+          "kana": "せいふはわかもののこようをふやすためのあたらしいたいさくをはっぴょうした。",
+          "en": "The government announced new measures to boost youth employment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などが{人|ひと}を{雇|やと}って{働|はたら}かせること。",
+        "kana": "かいしゃなどがひとをやとってはたらかせること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0753",
+      "word": "解雇",
+      "kana": "かいこ",
+      "meanings": [
+        "dismissal",
+        "firing",
+        "layoff"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "formal"
+      ],
+      "notes": "Formal word; in conversation クビになる is common.",
+      "confusables": [
+        "v-n2-0752"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}の{業績|ぎょうせき}が{悪化|あっか}し、{多|おお}くの{社員|しゃいん}が{解雇|かいこ}された。",
+          "kana": "かいしゃのぎょうせきがあっかし、おおくのしゃいんがかいこされた。",
+          "en": "The company's performance worsened, and many employees were laid off."
+        },
+        {
+          "ja": "{理由|りゆう}もなく{社員|しゃいん}を{解雇|かいこ}することは、{法律|ほうりつ}で{禁止|きんし}されている。",
+          "kana": "りゆうもなくしゃいんをかいこすることは、ほうりつできんしされている。",
+          "en": "Dismissing employees without reason is prohibited by law."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などが、{雇|やと}っている{人|ひと}を{一方的|いっぽうてき}にやめさせること。",
+        "kana": "かいしゃなどが、やとっているひとをいっぽうてきにやめさせること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0754",
+      "word": "正社員",
+      "kana": "せいしゃいん",
+      "meanings": [
+        "full-time employee",
+        "regular employee"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "notes": "Permanent staff with full benefits, as opposed to 契約社員, 派遣社員 or アルバイト.",
+      "examples": [
+        {
+          "ja": "{三年間|さんねんかん}アルバイトをしてから、やっと{正社員|せいしゃいん}になれた。",
+          "kana": "さんねんかんアルバイトをしてから、やっとせいしゃいんになれた。",
+          "en": "After three years as a part-timer, I finally became a full-time employee."
+        },
+        {
+          "ja": "{正社員|せいしゃいん}になると、{給料|きゅうりょう}だけでなく{休|やす}みの{制度|せいど}も{変|か}わる。",
+          "kana": "せいしゃいんになると、きゅうりょうだけでなくやすみのせいどもかわる。",
+          "en": "Once you become a full-time employee, not just your pay but your leave system changes too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}と{期限|きげん}のない{契約|けいやく}を{結|むす}んで{働|はたら}く{社員|しゃいん}。アルバイトではない。",
+        "kana": "かいしゃときげんのないけいやくをむすんではたらくしゃいん。アルバイトではない。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0755",
+      "word": "新人",
+      "kana": "しんじん",
+      "meanings": [
+        "newcomer",
+        "new employee",
+        "rookie"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "collocations": [
+        "新人研修",
+        "新人歌手"
+      ],
+      "examples": [
+        {
+          "ja": "{新人|しんじん}のころは{電話|でんわ}に{出|で}るのさえ{緊張|きんちょう}した。",
+          "kana": "しんじんのころはでんわにでるのさえきんちょうした。",
+          "en": "When I was new, even answering the phone made me nervous."
+        },
+        {
+          "ja": "{今年|ことし}の{新人|しんじん}は{元気|げんき}がよくて、{職場|しょくば}が{明|あか}るくなった。",
+          "kana": "ことしのしんじんはげんきがよくて、しょくばがあかるくなった。",
+          "en": "This year's new hires are full of energy, and the workplace has brightened up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{学校|がっこう}などに{新|あたら}しく{入|はい}った{人|ひと}。{仕事|しごと}を{始|はじ}めたばかりの{人|ひと}。",
+        "kana": "かいしゃやがっこうなどにあたらしくはいったひと。しごとをはじめたばかりのひと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0756",
+      "word": "本社",
+      "kana": "ほんしゃ",
+      "meanings": [
+        "head office",
+        "headquarters"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "places"
+      ],
+      "notes": "Opposite: 支社 (branch office), 支店 (branch shop).",
+      "confusables": [
+        "v-n2-0836"
+      ],
+      "examples": [
+        {
+          "ja": "{本社|ほんしゃ}は{都心|としん}にあるが、{工場|こうじょう}は{全部|ぜんぶ}{地方|ちほう}にある。",
+          "kana": "ほんしゃはとしんにあるが、こうじょうはぜんぶちほうにある。",
+          "en": "The head office is in the city center, but all the factories are in the provinces."
+        },
+        {
+          "ja": "{本社|ほんしゃ}からの{指示|しじ}で、{全|すべ}ての{支店|してん}が{同|おな}じ{商品|しょうひん}を{売|う}ることになった。",
+          "kana": "ほんしゃからのしじで、すべてのしてんがおなじしょうひんをうることになった。",
+          "en": "On instructions from head office, every branch is now to sell the same products."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}の{中心|ちゅうしん}になる{事務所|じむしょ}。{支店|してん}や{支社|ししゃ}をまとめる{所|ところ}。",
+        "kana": "かいしゃのちゅうしんになるじむしょ。してんやししゃをまとめるところ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0757",
+      "word": "担当者",
+      "kana": "たんとうしゃ",
+      "meanings": [
+        "person in charge",
+        "contact person"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{担当者|たんとうしゃ}が{席|せき}を{外|はず}しておりますので、{折|お}り{返|かえ}しお{電話|でんわ}いたします。",
+          "kana": "たんとうしゃがせきをはずしておりますので、おりかえしおでんわいたします。",
+          "en": "The person in charge is away from their desk, so we will call you back."
+        },
+        {
+          "ja": "{問題|もんだい}が{起|お}きたら、まず{担当者|たんとうしゃ}に{連絡|れんらく}するのが{決|き}まりだ。",
+          "kana": "もんだいがおきたら、まずたんとうしゃにれんらくするのがきまりだ。",
+          "en": "When a problem comes up, the rule is to contact the person in charge first."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{仕事|しごと}を{担当|たんとう}して、{責任|せきにん}をもって{行|おこな}う{人|ひと}。",
+        "kana": "あるしごとをたんとうして、せきにんをもっておこなうひと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0758",
+      "word": "窓口",
+      "kana": "まどぐち",
+      "meanings": [
+        "service counter",
+        "window",
+        "point of contact"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "work",
+        "communication"
+      ],
+      "collocations": [
+        "窓口で手続きする",
+        "相談窓口"
+      ],
+      "examples": [
+        {
+          "ja": "{切符|きっぷ}の{払|はら}い{戻|もど}しは{二番|にばん}の{窓口|まどぐち}でお{願|ねが}いします。",
+          "kana": "きっぷのはらいもどしはにばんのまどぐちでおねがいします。",
+          "en": "For ticket refunds, please go to window number two."
+        },
+        {
+          "ja": "{市役所|しやくしょ}の{窓口|まどぐち}は{平日|へいじつ}の{午後五時|ごごごじ}までしか{開|あ}いていない。",
+          "kana": "しやくしょのまどぐちはへいじつのごごごじまでしかあいていない。",
+          "en": "The counters at city hall are only open until five on weekdays."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役所|やくしょ}や{銀行|ぎんこう}などで、{客|きゃく}の{相手|あいて}をして{手続|てつづ}きをする{所|ところ}。",
+        "kana": "やくしょやぎんこうなどで、きゃくのあいてをしててつづきをするところ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0759",
+      "word": "経理",
+      "kana": "けいり",
+      "meanings": [
+        "accounting (department)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business",
+        "money"
+      ],
+      "collocations": [
+        "経理部",
+        "経理の仕事"
+      ],
+      "confusables": [
+        "v-n2-0760"
+      ],
+      "examples": [
+        {
+          "ja": "{領収書|りょうしゅうしょ}は{月末|げつまつ}までに{経理|けいり}に{出|だ}してください。",
+          "kana": "りょうしゅうしょはげつまつまでにけいりにだしてください。",
+          "en": "Please hand your receipts to Accounting by the end of the month."
+        },
+        {
+          "ja": "{経理|けいり}の{仕事|しごと}は{細|こま}かい{数字|すうじ}を{扱|あつか}うので、{集中力|しゅうちゅうりょく}が{必要|ひつよう}だ。",
+          "kana": "けいりのしごとはこまかいすうじをあつかうので、しゅうちゅうりょくがひつようだ。",
+          "en": "Accounting work deals with fine-grained numbers, so it requires concentration."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}のお{金|かね}の{出入|でい}りを{計算|けいさん}して{記録|きろく}する{仕事|しごと}。またその{部署|ぶしょ}。",
+        "kana": "かいしゃのおかねのでいりをけいさんしてきろくするしごと。またそのぶしょ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0760",
+      "word": "総務",
+      "kana": "そうむ",
+      "meanings": [
+        "general affairs (department)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "notes": "The department that runs the office itself: supplies, facilities, events, paperwork.",
+      "confusables": [
+        "v-n2-0759",
+        "v-n2-0721"
+      ],
+      "examples": [
+        {
+          "ja": "コピー{用紙|ようし}が{足|た}りないときは、{総務|そうむ}に{頼|たの}めば{用意|ようい}してくれる。",
+          "kana": "コピーようしがたりないときは、そうむにたのめばよういしてくれる。",
+          "en": "When we are out of copy paper, General Affairs will get more if you ask them."
+        },
+        {
+          "ja": "{会社|かいしゃ}の{引|ひ}っ{越|こ}しの{準備|じゅんび}は、{総務|そうむ}が{中心|ちゅうしん}になって{進|すす}めている。",
+          "kana": "かいしゃのひっこしのじゅんびは、そうむがちゅうしんになってすすめている。",
+          "en": "General Affairs is taking the lead in preparing for the office move."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などで、{建物|たてもの}や{道具|どうぐ}の{管理|かんり}など{全体|ぜんたい}に{関|かか}わる{仕事|しごと}をする{部署|ぶしょ}。",
+        "kana": "かいしゃなどで、たてものやどうぐのかんりなどぜんたいにかかわるしごとをするぶしょ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0761",
+      "word": "役職",
+      "kana": "やくしょく",
+      "meanings": [
+        "managerial post",
+        "job title"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "collocations": [
+        "役職に就く",
+        "役職名"
+      ],
+      "examples": [
+        {
+          "ja": "{名刺|めいし}には{名前|なまえ}の{上|うえ}に{役職|やくしょく}が{書|か}いてある。",
+          "kana": "めいしにはなまえのうえにやくしょくがかいてある。",
+          "en": "On the business card, the job title is written above the name."
+        },
+        {
+          "ja": "{彼|かれ}は{役職|やくしょく}に{就|つ}いてから、{急|きゅう}に{忙|いそが}しくなった。",
+          "kana": "かれはやくしょくについてから、きゅうにいそがしくなった。",
+          "en": "Since he took a management post, he has suddenly become busy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}などの{組織|そしき}の{中|なか}で、{部長|ぶちょう}や{課長|かちょう}のような{責任|せきにん}のある{立場|たちば}。",
+        "kana": "かいしゃなどのそしきのなかで、ぶちょうやかちょうのようなせきにんのあるたちば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0762",
+      "word": "履歴書",
+      "kana": "りれきしょ",
+      "meanings": [
+        "résumé"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "collocations": [
+        "履歴書を送る",
+        "履歴書を書く"
+      ],
+      "examples": [
+        {
+          "ja": "{履歴書|りれきしょ}には{写真|しゃしん}を{貼|は}って、{黒|くろ}のペンで{書|か}いてください。",
+          "kana": "りれきしょにはしゃしんをはって、くろのペンでかいてください。",
+          "en": "Attach a photo to your résumé and write it in black pen."
+        },
+        {
+          "ja": "アルバイトの{面接|めんせつ}なのに、{履歴書|りれきしょ}を{持|も}ってくるのを{忘|わす}れてしまった。",
+          "kana": "アルバイトのめんせつなのに、りれきしょをもってくるのをわすれてしまった。",
+          "en": "It was only a part-time job interview, but I forgot to bring my résumé."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}を{探|さが}すときに{出|だ}す、{今|いま}までの{学校|がっこう}や{仕事|しごと}について{書|か}いた{書類|しょるい}。",
+        "kana": "しごとをさがすときにだす、いままでのがっこうやしごとについてかいたしょるい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0763",
+      "word": "塾",
+      "kana": "じゅく",
+      "meanings": [
+        "cram school"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "school",
+        "places"
+      ],
+      "collocations": [
+        "塾に通う",
+        "学習塾"
+      ],
+      "examples": [
+        {
+          "ja": "{息子|むすこ}は{学校|がっこう}が{終|お}わると、{週|しゅう}に{三日|みっか}{塾|じゅく}に{通|かよ}っている。",
+          "kana": "むすこはがっこうがおわると、しゅうにみっかじゅくにかよっている。",
+          "en": "After school, my son goes to cram school three days a week."
+        },
+        {
+          "ja": "{塾|じゅく}の{先生|せんせい}の{教|おし}え{方|かた}が{分|わ}かりやすくて、{数学|すうがく}が{好|す}きになった。",
+          "kana": "じゅくのせんせいのおしえかたがわかりやすくて、すうがくがすきになった。",
+          "en": "The cram school teacher explains things so clearly that I came to like math."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}が{終|お}わったあとなどに、{子供|こども}が{勉強|べんきょう}を{習|なら}いに{行|い}く{所|ところ}。",
+        "kana": "がっこうがおわったあとなどに、こどもがべんきょうをならいにいくところ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0764",
+      "word": "専攻",
+      "kana": "せんこう",
+      "meanings": [
+        "major",
+        "specialization"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "collocations": [
+        "経済学を専攻する",
+        "専攻科目"
+      ],
+      "examples": [
+        {
+          "ja": "{大学|だいがく}では{経済|けいざい}を{専攻|せんこう}していましたが、{今|いま}は{全|まった}く{違|ちが}う{仕事|しごと}をしています。",
+          "kana": "だいがくではけいざいをせんこうしていましたが、いまはまったくちがうしごとをしています。",
+          "en": "I majored in economics at university, but now I do completely different work."
+        },
+        {
+          "ja": "{彼|かれ}の{専攻|せんこう}は{日本|にほん}の{歴史|れきし}で、{特|とく}に{江戸時代|えどじだい}に{詳|くわ}しい。",
+          "kana": "かれのせんこうはにほんのれきしで、とくにえどじだいにくわしい。",
+          "en": "His major is Japanese history, and he knows the Edo period especially well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}などで、{一|ひと}つの{分野|ぶんや}を{選|えら}んで{専門|せんもん}に{研究|けんきゅう}すること。",
+        "kana": "だいがくなどで、ひとつのぶんやをえらんでせんもんにけんきゅうすること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0765",
+      "word": "講座",
+      "kana": "こうざ",
+      "meanings": [
+        "course",
+        "lecture series"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "collocations": [
+        "講座を受ける",
+        "公開講座"
+      ],
+      "examples": [
+        {
+          "ja": "{市|し}の{文化|ぶんか}センターで{週|しゅう}に{一度|いちど}、{書道|しょどう}の{講座|こうざ}を{受|う}けている。",
+          "kana": "しのぶんかセンターでしゅうにいちど、しょどうのこうざをうけている。",
+          "en": "I take a calligraphy course once a week at the city cultural center."
+        },
+        {
+          "ja": "{市民|しみん}{向|む}けの{無料|むりょう}の{講座|こうざ}に{申|もう}し{込|こ}んだら、{定員|ていいん}がもういっぱいだった。",
+          "kana": "しみんむけのむりょうのこうざにもうしこんだら、ていいんがもういっぱいだった。",
+          "en": "When I tried to sign up for the free course for residents, it was already full."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{一|ひと}つのことについて、{決|き}まった{期間|きかん}{続|つづ}けて{行|おこな}う{講義|こうぎ}や{教室|きょうしつ}。",
+        "kana": "あるひとつのことについて、きまったきかんつづけておこなうこうぎやきょうしつ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0766",
+      "word": "推薦",
+      "kana": "すいせん",
+      "meanings": [
+        "recommendation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work"
+      ],
+      "collocations": [
+        "推薦状",
+        "推薦入試"
+      ],
+      "examples": [
+        {
+          "ja": "{先生|せんせい}の{推薦|すいせん}で、{面接|めんせつ}だけで{大学|だいがく}に{入|はい}れた。",
+          "kana": "せんせいのすいせんで、めんせつだけでだいがくにはいれた。",
+          "en": "With my teacher's recommendation, I got into university with just an interview."
+        },
+        {
+          "ja": "{部長|ぶちょう}の{推薦|すいせん}がなければ、この{研修|けんしゅう}には{参加|さんか}できません。",
+          "kana": "ぶちょうのすいせんがなければ、このけんしゅうにはさんかできません。",
+          "en": "Without the manager's recommendation, you cannot take part in this training."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いいと{考|かんが}える{人|ひと}やものを、ほかの{人|ひと}に{勧|すす}めること。",
+        "kana": "いいとかんがえるひとやものを、ほかのひとにすすめること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0767",
+      "word": "博士",
+      "kana": "はかせ",
+      "meanings": [
+        "doctor (PhD)",
+        "expert"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "people"
+      ],
+      "notes": "The degree is officially read はくし (博士号, 博士課程); はかせ is the everyday reading and also means \"whiz\" (物知り博士).",
+      "confusables": [
+        "v-n2-0768"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}はアメリカの{大学|だいがく}で{博士|はかせ}の{学位|がくい}を{取|と}った。",
+          "kana": "かれはアメリカのだいがくではかせのがくいをとった。",
+          "en": "He earned his doctorate at a university in America."
+        },
+        {
+          "ja": "{祖父|そふ}は{虫|むし}のことなら{何|なん}でも{知|し}っていて、{近所|きんじょ}では「{虫|むし}{博士|はかせ}」と{呼|よ}ばれている。",
+          "kana": "そふはむしのことならなんでもしっていて、きんじょでは「むしはかせ」とよばれている。",
+          "en": "My grandfather knows everything about insects and is known around the neighborhood as the bug expert."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学院|だいがくいん}で{取|と}れる{一番|いちばん}{上|うえ}の{学位|がくい}。また、あることをとてもよく{知|し}っている{人|ひと}。",
+        "kana": "だいがくいんでとれるいちばんうえのがくい。また、あることをとてもよくしっているひと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0768",
+      "word": "修士",
+      "kana": "しゅうし",
+      "meanings": [
+        "master's degree",
+        "master's student"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "collocations": [
+        "修士課程",
+        "修士論文"
+      ],
+      "confusables": [
+        "v-n2-0767"
+      ],
+      "examples": [
+        {
+          "ja": "{大学院|だいがくいん}で{修士|しゅうし}を{取|と}ってから{就職|しゅうしょく}するつもりです。",
+          "kana": "だいがくいんでしゅうしをとってからしゅうしょくするつもりです。",
+          "en": "I plan to get my master's at graduate school before finding a job."
+        },
+        {
+          "ja": "{修士|しゅうし}の{論文|ろんぶん}は、{実験|じっけん}の{結果|けっか}がなかなか{出|で}なくて{苦労|くろう}した。",
+          "kana": "しゅうしのろんぶんは、じっけんのけっかがなかなかでなくてくろうした。",
+          "en": "I struggled with my master's thesis because the experiment results were slow to come."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}を{卒業|そつぎょう}したあと、{大学院|だいがくいん}で{二年|にねん}ほど{研究|けんきゅう}して{取|と}る{学位|がくい}。",
+        "kana": "だいがくをそつぎょうしたあと、だいがくいんでにねんほどけんきゅうしてとるがくい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0769",
+      "word": "学位",
+      "kana": "がくい",
+      "meanings": [
+        "academic degree"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "collocations": [
+        "学位を取る",
+        "学位論文"
+      ],
+      "examples": [
+        {
+          "ja": "{働|はたら}きながら{夜間|やかん}の{大学|だいがく}に{通|かよ}い、{学位|がくい}を{取|と}った。",
+          "kana": "はたらきながらやかんのだいがくにかよい、がくいをとった。",
+          "en": "I attended university at night while working and earned a degree."
+        },
+        {
+          "ja": "{学位|がくい}を{持|も}っていなくても、{経験|けいけん}があれば{応募|おうぼ}できる{仕事|しごと}です。",
+          "kana": "がくいをもっていなくても、けいけんがあればおうぼできるしごとです。",
+          "en": "Even without a degree, you can apply for this job if you have experience."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}などで{決|き}められた{勉強|べんきょう}や{研究|けんきゅう}を{終|お}えた{人|ひと}に{与|あた}えられる{資格|しかく}。",
+        "kana": "だいがくなどできめられたべんきょうやけんきゅうをおえたひとにあたえられるしかく。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0770",
+      "word": "研究室",
+      "kana": "けんきゅうしつ",
+      "meanings": [
+        "laboratory",
+        "professor's office",
+        "seminar group"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "science",
+        "places"
+      ],
+      "notes": "In Japanese universities also means the professor's lab or seminar you belong to (〜研究室の学生).",
+      "examples": [
+        {
+          "ja": "{卒業|そつぎょう}{論文|ろんぶん}のことで、{明日|あした}{先生|せんせい}の{研究室|けんきゅうしつ}に{行|い}く。",
+          "kana": "そつぎょうろんぶんのことで、あしたせんせいのけんきゅうしつにいく。",
+          "en": "Tomorrow I am going to my professor's office about my graduation thesis."
+        },
+        {
+          "ja": "{四年生|よねんせい}になると、{学生|がくせい}はそれぞれの{研究室|けんきゅうしつ}に{分|わ}かれて{卒業論文|そつぎょうろんぶん}を{書|か}く。",
+          "kana": "よねんせいになると、がくせいはそれぞれのけんきゅうしつにわかれてそつぎょうろんぶんをかく。",
+          "en": "In their fourth year, students split up into their respective labs to write graduation theses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}などで{研究|けんきゅう}をするための{部屋|へや}。また、{先生|せんせい}を{中心|ちゅうしん}にした{研究|けんきゅう}のグループ。",
+        "kana": "だいがくなどでけんきゅうをするためのへや。また、せんせいをちゅうしんにしたけんきゅうのグループ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0771",
+      "word": "学会",
+      "kana": "がっかい",
+      "meanings": [
+        "academic society",
+        "academic conference"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "science"
+      ],
+      "collocations": [
+        "学会で発表する",
+        "学会に入る"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{教授|きょうじゅ}は{海外|かいがい}で{開|ひら}かれる{学会|がっかい}で{発表|はっぴょう}する。",
+          "kana": "らいげつ、きょうじゅはかいがいでひらかれるがっかいではっぴょうする。",
+          "en": "Next month the professor will present at a conference held overseas."
+        },
+        {
+          "ja": "{学会|がっかい}の{準備|じゅんび}で{忙|いそが}しく、{今週|こんしゅう}は{一度|いちど}も{家|いえ}でゆっくりできなかった。",
+          "kana": "がっかいのじゅんびでいそがしく、こんしゅうはいちどもいえでゆっくりできなかった。",
+          "en": "Busy preparing for the conference, I could not relax at home even once this week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "おなじ{分野|ぶんや}の{研究|けんきゅう}をする{人|ひと}たちが{作|つく}る{団体|だんたい}。その{団体|だんたい}が{開|ひら}く{集|あつ}まり。",
+        "kana": "おなじぶんやのけんきゅうをするひとたちがつくるだんたい。そのだんたいがひらくあつまり。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0772",
+      "word": "実習",
+      "kana": "じっしゅう",
+      "meanings": [
+        "practical training",
+        "practicum"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work"
+      ],
+      "collocations": [
+        "教育実習",
+        "実習生"
+      ],
+      "examples": [
+        {
+          "ja": "{看護|かんご}の{学生|がくせい}は{病院|びょういん}で{三週間|さんしゅうかん}の{実習|じっしゅう}を{行|おこな}う。",
+          "kana": "かんごのがくせいはびょういんでさんしゅうかんのじっしゅうをおこなう。",
+          "en": "Nursing students do three weeks of practical training at a hospital."
+        },
+        {
+          "ja": "{教育|きょういく}{実習|じっしゅう}で{初|はじ}めて{生徒|せいと}の{前|まえ}で{授業|じゅぎょう}をしたときは、{足|あし}が{震|ふる}えた。",
+          "kana": "きょういくじっしゅうではじめてせいとのまえでじゅぎょうをしたときは、あしがふるえた。",
+          "en": "The first time I taught a class in front of students during my teaching practicum, my legs were shaking."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{習|なら}った{知識|ちしき}を{使|つか}って、{実際|じっさい}の{現場|げんば}で{仕事|しごと}や{作業|さぎょう}をやってみること。",
+        "kana": "ならったちしきをつかって、じっさいのげんばでしごとやさぎょうをやってみること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0773",
+      "word": "面談",
+      "kana": "めんだん",
+      "meanings": [
+        "interview",
+        "one-on-one meeting"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "school",
+        "communication"
+      ],
+      "notes": "A talk to discuss progress or concerns (teacher-parent, boss-staff). 面接 is the selection interview.",
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}、{上司|じょうし}と{今後|こんご}の{仕事|しごと}について{面談|めんだん}がある。",
+          "kana": "らいしゅう、じょうしとこんごのしごとについてめんだんがある。",
+          "en": "Next week I have a one-on-one with my boss about my future work."
+        },
+        {
+          "ja": "{息子|むすこ}の{学校|がっこう}で{先生|せんせい}との{面談|めんだん}があり、{仕事|しごと}を{早|はや}めに{切|き}り{上|あ}げた。",
+          "kana": "むすこのがっこうでせんせいとのめんだんがあり、しごとをはやめにきりあげた。",
+          "en": "There was a parent-teacher meeting at my son's school, so I finished work early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上司|じょうし}と{部下|ぶか}、{先生|せんせい}と{親|おや}などが{実際|じっさい}に{会|あ}って{話|はな}し{合|あ}うこと。",
+        "kana": "じょうしとぶか、せんせいとおやなどがじっさいにあってはなしあうこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0774",
+      "word": "設立",
+      "kana": "せつりつ",
+      "meanings": [
+        "establishment",
+        "founding (an organization)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "society",
+        "formal"
+      ],
+      "collocations": [
+        "会社を設立する",
+        "設立記念日"
+      ],
+      "confusables": [
+        "v-n2-0776",
+        "v-n2-0775"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{三年前|さんねんまえ}に{自分|じぶん}の{会社|かいしゃ}を{設立|せつりつ}した。",
+          "kana": "かのじょはさんねんまえにじぶんのかいしゃをせつりつした。",
+          "en": "She established her own company three years ago."
+        },
+        {
+          "ja": "この{学校|がっこう}は{設立|せつりつ}から{五十年|ごじゅうねん}、{多|おお}くの{卒業生|そつぎょうせい}を{送|おく}り{出|だ}してきた。",
+          "kana": "このがっこうはせつりつからごじゅうねん、おおくのそつぎょうせいをおくりだしてきた。",
+          "en": "In the fifty years since its founding, this school has sent many graduates out into the world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{学校|がっこう}などの{組織|そしき}を{新|あたら}しく{作|つく}ること。",
+        "kana": "かいしゃやがっこうなどのそしきをあたらしくつくること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0775",
+      "word": "創業",
+      "kana": "そうぎょう",
+      "meanings": [
+        "founding (a business)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "formal"
+      ],
+      "notes": "Starting a business, often of a shop or family firm (創業百年). 設立 is the legal founding of a company or body.",
+      "confusables": [
+        "v-n2-0774",
+        "v-n2-0776"
+      ],
+      "examples": [
+        {
+          "ja": "{創業|そうぎょう}{二百年|にひゃくねん}の{店|みせ}で、{昔|むかし}ながらの{和菓子|わがし}を{買|か}った。",
+          "kana": "そうぎょうにひゃくねんのみせで、むかしながらのわがしをかった。",
+          "en": "I bought traditional Japanese sweets at a shop founded two hundred years ago."
+        },
+        {
+          "ja": "{創業|そうぎょう}したばかりの{会社|かいしゃ}なので、{社員|しゃいん}は{全部|ぜんぶ}で{五人|ごにん}しかいない。",
+          "kana": "そうぎょうしたばかりのかいしゃなので、しゃいんはぜんぶでごにんしかいない。",
+          "en": "The company has only just been founded, so it has just five employees in all."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しく{事業|じぎょう}や{店|みせ}を{始|はじ}めること。",
+        "kana": "あたらしくじぎょうやみせをはじめること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0776",
+      "word": "創立",
+      "kana": "そうりつ",
+      "meanings": [
+        "founding (a school or company)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "school",
+        "formal"
+      ],
+      "collocations": [
+        "創立記念日",
+        "創立者"
+      ],
+      "confusables": [
+        "v-n2-0774",
+        "v-n2-0775"
+      ],
+      "examples": [
+        {
+          "ja": "{母校|ぼこう}は{今年|ことし}、{創立|そうりつ}{百周年|ひゃくしゅうねん}を{迎|むか}える。",
+          "kana": "ぼこうはことし、そうりつひゃくしゅうねんをむかえる。",
+          "en": "My old school celebrates its hundredth anniversary this year."
+        },
+        {
+          "ja": "{創立|そうりつ}{記念日|きねんび}は{授業|じゅぎょう}が{休|やす}みになるので、{生徒|せいと}たちは{喜|よろこ}んでいる。",
+          "kana": "そうりつきねんびはじゅぎょうがやすみになるので、せいとたちはよろこんでいる。",
+          "en": "Classes are off on the school's founding anniversary, so the students are happy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学校|がっこう}や{会社|かいしゃ}などを{初|はじ}めて{作|つく}ること。",
+        "kana": "がっこうやかいしゃなどをはじめてつくること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0777",
+      "word": "元日",
+      "kana": "がんじつ",
+      "meanings": [
+        "New Year's Day"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "culture"
+      ],
+      "notes": "January 1 as a whole day. 元旦 strictly means the morning of January 1.",
+      "confusables": [
+        "v-n2-0778"
+      ],
+      "examples": [
+        {
+          "ja": "{元日|がんじつ}は{家族|かぞく}そろって{近所|きんじょ}の{神社|じんじゃ}にお{参|まい}りに{行|い}く。",
+          "kana": "がんじつはかぞくそろってきんじょのじんじゃにおまいりにいく。",
+          "en": "On New Year's Day the whole family goes to pray at the local shrine."
+        },
+        {
+          "ja": "{元日|がんじつ}は{多|おお}くの{店|みせ}が{休|やす}みなので、{前|まえ}の{日|ひ}に{買|か}い{物|もの}を{済|す}ませておいた。",
+          "kana": "がんじつはおおくのみせがやすみなので、まえのひにかいものをすませておいた。",
+          "en": "Many shops are closed on New Year's Day, so I finished my shopping the day before."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}の{最初|さいしょ}の{一日|いちにち}。{正月|しょうがつ}が{始|はじ}まる{一月|いちがつ}のついたち。",
+        "kana": "いちねんのさいしょのいちにち。しょうがつがはじまるいちがつのついたち。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0778",
+      "word": "大晦日",
+      "kana": "おおみそか",
+      "meanings": [
+        "New Year's Eve"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "culture"
+      ],
+      "confusables": [
+        "v-n2-0777"
+      ],
+      "examples": [
+        {
+          "ja": "{大晦日|おおみそか}の{夜|よる}は、{家族|かぞく}でそばを{食|た}べながら{年|とし}を{越|こ}すのが{習慣|しゅうかん}だ。",
+          "kana": "おおみそかのよるは、かぞくでそばをたべながらとしをこすのがしゅうかんだ。",
+          "en": "On New Year's Eve, it is our custom to see in the new year eating soba as a family."
+        },
+        {
+          "ja": "{今年|ことし}の{大晦日|おおみそか}は、{初|はじ}めて{一人|ひとり}で{過|す}ごすことになりそうだ。",
+          "kana": "ことしのおおみそかは、はじめてひとりですごすことになりそうだ。",
+          "en": "It looks like I will be spending this New Year's Eve alone for the first time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}の{最後|さいご}の{一日|いちにち}。つぎの{一日|いちにち}は{元日|がんじつ}。",
+        "kana": "いちねんのさいごのいちにち。つぎのいちにちはがんじつ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0779",
+      "word": "年末年始",
+      "kana": "ねんまつねんし",
+      "meanings": [
+        "year-end and New Year holidays"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "time"
+      ],
+      "collocations": [
+        "年末年始の休み",
+        "年末年始休業"
+      ],
+      "examples": [
+        {
+          "ja": "{年末年始|ねんまつねんし}は{実家|じっか}に{帰|かえ}って、のんびり{過|す}ごす{予定|よてい}です。",
+          "kana": "ねんまつねんしはじっかにかえって、のんびりすごすよていです。",
+          "en": "Over the year-end and New Year holidays, I plan to go back to my parents' place and relax."
+        },
+        {
+          "ja": "{年末年始|ねんまつねんし}は{病院|びょういん}も{休|やす}みになるので、{薬|くすり}を{多|おお}めにもらっておいた。",
+          "kana": "ねんまつねんしはびょういんもやすみになるので、くすりをおおめにもらっておいた。",
+          "en": "Hospitals close over the New Year holidays too, so I got an extra supply of medicine in advance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{年末|ねんまつ}と{年始|ねんし}。{十二月|じゅうにがつ}の{終|お}わりから{一月|いちがつ}の{始|はじ}めまでの{休|やす}みの{期間|きかん}。",
+        "kana": "ねんまつとねんし。じゅうにがつのおわりからいちがつのはじめまでのやすみのきかん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0780",
+      "word": "当初",
+      "kana": "とうしょ",
+      "meanings": [
+        "at first",
+        "initially",
+        "original"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "collocations": [
+        "当初の予定",
+        "当初は"
+      ],
+      "examples": [
+        {
+          "ja": "{工事|こうじ}は{当初|とうしょ}の{予定|よてい}より{三|さん}か{月|げつ}{遅|おく}れている。",
+          "kana": "こうじはとうしょのよていよりさんかげつおくれている。",
+          "en": "The construction is three months behind the original schedule."
+        },
+        {
+          "ja": "{当初|とうしょ}は{一人|ひとり}で{始|はじ}めた{店|みせ}が、{今|いま}では{十人|じゅうにん}の{従業員|じゅうぎょういん}を{抱|かか}えるまでになった。",
+          "kana": "とうしょはひとりではじめたみせが、いまではじゅうにんのじゅうぎょういんをかかえるまでになった。",
+          "en": "The shop I started alone at first has now grown to have ten employees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{始|はじ}まった{最初|さいしょ}のころ。",
+        "kana": "なにかがはじまったさいしょのころ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0781",
+      "word": "当面",
+      "kana": "とうめん",
+      "meanings": [
+        "for the present",
+        "for now"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal"
+      ],
+      "notes": "More businesslike than 当分; also 当面の課題 = the immediate issue.",
+      "confusables": [
+        "v-n2-0738"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいシステムが{入|はい}るまで、{当面|とうめん}は{今|いま}のやり{方|かた}で{進|すす}めます。",
+          "kana": "あたらしいシステムがはいるまで、とうめんはいまのやりかたですすめます。",
+          "en": "Until the new system comes in, we will proceed with the current method for the time being."
+        },
+        {
+          "ja": "{景気|けいき}が{悪|わる}いので、{当面|とうめん}は{新|あたら}しい{社員|しゃいん}を{採用|さいよう}しない{方針|ほうしん}だ。",
+          "kana": "けいきがわるいので、とうめんはあたらしいしゃいんをさいようしないほうしんだ。",
+          "en": "With the economy weak, the policy for now is not to hire new employees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}{目|め}の{前|まえ}にある{問題|もんだい}について。{今|いま}からしばらくの{間|あいだ}。",
+        "kana": "いまめのまえにあるもんだいについて。いまからしばらくのあいだ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0782",
+      "word": "翌年",
+      "kana": "よくねん",
+      "meanings": [
+        "the next year",
+        "the following year"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "calendar",
+        "written"
+      ],
+      "notes": "Also read よくとし. Relative to a past or future point, unlike 来年 (relative to now).",
+      "confusables": [
+        "v-n2-0732",
+        "v-n2-0785"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}は{大学|だいがく}で{出会|であ}い、{翌年|よくねん}に{結婚|けっこん}した。",
+          "kana": "ふたりはだいがくでであい、よくねんにけっこんした。",
+          "en": "The two met at university and married the following year."
+        },
+        {
+          "ja": "{会社|かいしゃ}に{入|はい}った{翌年|よくねん}、{私|わたし}は{海外|かいがい}の{支社|ししゃ}に{送|おく}られた。",
+          "kana": "かいしゃにはいったよくねん、わたしはかいがいのししゃにおくられた。",
+          "en": "The year after I joined the company, I was sent to an overseas branch."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{年|とし}のつぎの{年|とし}。{今年|ことし}から{見|み}れば{来年|らいねん}。",
+        "kana": "あるとしのつぎのとし。ことしからみればらいねん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0783",
+      "word": "翌週",
+      "kana": "よくしゅう",
+      "meanings": [
+        "the next week",
+        "the following week"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "calendar"
+      ],
+      "confusables": [
+        "v-n2-0732"
+      ],
+      "examples": [
+        {
+          "ja": "{面接|めんせつ}の{結果|けっか}は、{翌週|よくしゅう}の{月曜日|げつようび}に{届|とど}いた。",
+          "kana": "めんせつのけっかは、よくしゅうのげつようびにとどいた。",
+          "en": "The interview results arrived the following Monday."
+        },
+        {
+          "ja": "{申|もう}し{込|こ}みをすると、{翌週|よくしゅう}にはカードが{郵送|ゆうそう}されてきます。",
+          "kana": "もうしこみをすると、よくしゅうにはカードがゆうそうされてきます。",
+          "en": "Once you apply, the card is mailed to you the following week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{週|しゅう}のつぎの{週|しゅう}。{今週|こんしゅう}から{見|み}れば{来週|らいしゅう}。",
+        "kana": "あるしゅうのつぎのしゅう。こんしゅうからみればらいしゅう。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0784",
+      "word": "翌朝",
+      "kana": "よくあさ",
+      "meanings": [
+        "the next morning"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "written"
+      ],
+      "notes": "Also read よくちょう in formal writing.",
+      "confusables": [
+        "v-n2-0732"
+      ],
+      "examples": [
+        {
+          "ja": "{夜中|よなか}まで{雨|あめ}が{降|ふ}り{続|つづ}いたが、{翌朝|よくあさ}はきれいに{晴|は}れた。",
+          "kana": "よなかまであめがふりつづいたが、よくあさはきれいにはれた。",
+          "en": "It kept raining until the middle of the night, but the next morning was beautifully clear."
+        },
+        {
+          "ja": "{遅|おそ}くまで{仕事|しごと}をしても、{翌朝|よくあさ}は{六時|ろくじ}に{起|お}きなければならない。",
+          "kana": "おそくまでしごとをしても、よくあさはろくじにおきなければならない。",
+          "en": "Even when I work late, I have to get up at six the next morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{一日|いちにち}のつぎの{朝|あさ}。{今日|きょう}から{見|み}れば{明日|あした}の{朝|あさ}。",
+        "kana": "あるいちにちのつぎのあさ。きょうからみればあしたのあさ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0785",
+      "word": "前年",
+      "kana": "ぜんねん",
+      "meanings": [
+        "the previous year",
+        "the year before"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "calendar",
+        "written"
+      ],
+      "collocations": [
+        "前年比",
+        "前年度"
+      ],
+      "confusables": [
+        "v-n2-0782"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{売|う}り{上|あ}げは{前年|ぜんねん}より{一割|いちわり}ほど{増|ふ}えた。",
+          "kana": "ことしのうりあげはぜんねんよりいちわりほどふえた。",
+          "en": "This year's sales rose about ten percent from the previous year."
+        },
+        {
+          "ja": "{前年|ぜんねん}の{大雨|おおあめ}の{経験|けいけん}から、{町|まち}は{早|はや}めに{避難|ひなん}の{準備|じゅんび}を{始|はじ}めた。",
+          "kana": "ぜんねんのおおあめのけいけんから、まちははやめにひなんのじゅんびをはじめた。",
+          "en": "Learning from the heavy rain of the previous year, the town began preparing evacuations early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{年|とし}の{一|ひと}つ{前|まえ}の{年|とし}。{今年|ことし}から{見|み}れば{去年|きょねん}。",
+        "kana": "あるとしのひとつまえのとし。ことしからみればきょねん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0786",
+      "word": "連日",
+      "kana": "れんじつ",
+      "meanings": [
+        "day after day",
+        "for days on end"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "written"
+      ],
+      "collocations": [
+        "連日の猛暑",
+        "連日報道される"
+      ],
+      "examples": [
+        {
+          "ja": "{連日|れんじつ}の{残業|ざんぎょう}で、{週末|しゅうまつ}はずっと{寝|ね}ていた。",
+          "kana": "れんじつのざんぎょうで、しゅうまつはずっとねていた。",
+          "en": "After days of overtime in a row, I slept all weekend."
+        },
+        {
+          "ja": "{連日|れんじつ}の{暑|あつ}さで、{野菜|やさい}の{値段|ねだん}が{上|あ}がっている。",
+          "kana": "れんじつのあつさで、やさいのねだんがあがっている。",
+          "en": "With the heat continuing day after day, vegetable prices are rising."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{休|やす}みなく{毎日|まいにち}{続|つづ}けて。{毎日|まいにち}{毎日|まいにち}。",
+        "kana": "やすみなくまいにちつづけて。まいにちまいにち。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0787",
+      "word": "終日",
+      "kana": "しゅうじつ",
+      "meanings": [
+        "all day",
+        "the whole day"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal",
+        "written"
+      ],
+      "notes": "Notice and announcement language; in speech say 一日中.",
+      "examples": [
+        {
+          "ja": "{台風|たいふう}のため、{明日|あす}は{終日|しゅうじつ}お{休|やす}みとさせていただきます。",
+          "kana": "たいふうのため、あすはしゅうじつおやすみとさせていただきます。",
+          "en": "Due to the typhoon, we will be closed all day tomorrow."
+        },
+        {
+          "ja": "{昨日|きのう}は{終日|しゅうじつ}{雨|あめ}で、{洗濯物|せんたくもの}が{全然|ぜんぜん}{乾|かわ}かなかった。",
+          "kana": "きのうはしゅうじつあめで、せんたくものがぜんぜんかわかなかった。",
+          "en": "It rained all day yesterday, and the laundry did not dry at all."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{朝|あさ}から{晩|ばん}まで。{一日|いちにち}{中|じゅう}。",
+        "kana": "あさからばんまで。いちにちじゅう。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0788",
+      "word": "事後",
+      "kana": "じご",
+      "meanings": [
+        "after the fact",
+        "afterwards"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "collocations": [
+        "事後報告",
+        "事後処理"
+      ],
+      "confusables": [
+        "v-n2-0735"
+      ],
+      "examples": [
+        {
+          "ja": "{勝手|かって}に{決|き}めて{事後|じご}に{報告|ほうこく}するのは、やめてほしい。",
+          "kana": "かってにきめてじごにほうこくするのは、やめてほしい。",
+          "en": "I wish you would stop deciding on your own and reporting afterwards."
+        },
+        {
+          "ja": "{事後|じご}{報告|ほうこく}でもかまわないので、{何|なに}かあったら{必|かなら}ず{知|し}らせてください。",
+          "kana": "じごほうこくでもかまわないので、なにかあったらかならずしらせてください。",
+          "en": "Reporting after the fact is fine, so if anything happens, be sure to let me know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{起|お}こったり{終|お}わったりしたあと。{事前|じぜん}の{反対|はんたい}。",
+        "kana": "なにかがおこったりおわったりしたあと。じぜんのはんたい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0789",
+      "word": "月々",
+      "kana": "つきづき",
+      "meanings": [
+        "every month",
+        "monthly"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "money"
+      ],
+      "collocations": [
+        "月々の家賃",
+        "月々払い"
+      ],
+      "confusables": [
+        "v-n2-0740"
+      ],
+      "examples": [
+        {
+          "ja": "{月々|つきづき}の{支払|しはら}いは{一万円|いちまんえん}ほどです。",
+          "kana": "つきづきのしはらいはいちまんえんほどです。",
+          "en": "The monthly payments are about ten thousand yen."
+        },
+        {
+          "ja": "{月々|つきづき}{決|き}まった{額|がく}を{貯金|ちょきん}するのが、{昔|むかし}からの{習慣|しゅうかん}だ。",
+          "kana": "つきづききまったがくをちょきんするのが、むかしからのしゅうかんだ。",
+          "en": "Putting a fixed amount into savings every month has been my habit for years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{月|つき}ごとに。{一|いっ}か{月|げつ}ごとに{繰|く}り{返|かえ}して。",
+        "kana": "つきごとに。いっかげつごとにくりかえして。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0790",
+      "word": "即座",
+      "kana": "そくざ",
+      "meanings": [
+        "immediately",
+        "on the spot"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time"
+      ],
+      "notes": "Almost always 即座に. Stresses no hesitation; 即日 is about the same calendar day.",
+      "confusables": [
+        "v-n2-0792"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}はどんな{質問|しつもん}にも{即座|そくざ}に{答|こた}えられる。",
+          "kana": "かれはどんなしつもんにもそくざにこたえられる。",
+          "en": "He can answer any question on the spot."
+        },
+        {
+          "ja": "{店員|てんいん}は{客|きゃく}の{苦情|くじょう}に{即座|そくざ}に{対応|たいおう}した。",
+          "kana": "てんいんはきゃくのくじょうにそくざにたいおうした。",
+          "en": "The clerk dealt with the customer's complaint on the spot."
+        }
+      ],
+      "definitionJa": {
+        "ja": "すぐそのとき。{少|すこ}しも{時間|じかん}をおかずに。",
+        "kana": "すぐそのとき。すこしもじかんをおかずに。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0791",
+      "word": "早急",
+      "kana": "さっきゅう",
+      "meanings": [
+        "urgent",
+        "prompt"
+      ],
+      "pos": "adj-na",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal",
+        "business"
+      ],
+      "notes": "Also read そうきゅう, now equally common. 早急に = as soon as possible; typical in business email.",
+      "examples": [
+        {
+          "ja": "{問題|もんだい}が{見|み}つかったので、{早急|さっきゅう}に{対応|たいおう}する{必要|ひつよう}がある。",
+          "kana": "もんだいがみつかったので、さっきゅうにたいおうするひつようがある。",
+          "en": "A problem was found, so it needs to be dealt with immediately."
+        },
+        {
+          "ja": "お{客様|きゃくさま}からの{問|と}い{合|あ}わせには、{早急|さっきゅう}な{返事|へんじ}が{求|もと}められる。",
+          "kana": "おきゃくさまからのといあわせには、さっきゅうなへんじがもとめられる。",
+          "en": "Inquiries from customers call for a prompt reply."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{急|いそ}いでいる{様子|ようす}。できるだけ{早|はや}く。",
+        "kana": "とてもいそいでいるようす。できるだけはやく。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0792",
+      "word": "即日",
+      "kana": "そくじつ",
+      "meanings": [
+        "same day",
+        "on the day"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "business"
+      ],
+      "collocations": [
+        "即日発送",
+        "即日配達"
+      ],
+      "confusables": [
+        "v-n2-0790"
+      ],
+      "examples": [
+        {
+          "ja": "{午前中|ごぜんちゅう}にご{注文|ちゅうもん}いただいた{商品|しょうひん}は、{即日|そくじつ}{発送|はっそう}いたします。",
+          "kana": "ごぜんちゅうにごちゅうもんいただいたしょうひんは、そくじつはっそういたします。",
+          "en": "Items ordered before noon ship the same day."
+        },
+        {
+          "ja": "この{店|みせ}では、めがねを{注文|ちゅうもん}したら{即日|そくじつ}{受|う}け{取|と}れる。",
+          "kana": "このみせでは、めがねをちゅうもんしたらそくじつうけとれる。",
+          "en": "At this shop, you can pick up glasses the same day you order them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かをしたその{一日|いちにち}のうちに。その{当日|とうじつ}。",
+        "kana": "なにかをしたそのいちにちのうちに。そのとうじつ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0793",
+      "word": "常時",
+      "kana": "じょうじ",
+      "meanings": [
+        "at all times",
+        "constantly"
+      ],
+      "pos": "adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal"
+      ],
+      "notes": "Written and technical; in speech いつも.",
+      "confusables": [
+        "v-n2-0794"
+      ],
+      "examples": [
+        {
+          "ja": "この{倉庫|そうこ}は{温度|おんど}を{常時|じょうじ}{五度|ごど}に{保|たも}っている。",
+          "kana": "このそうこはおんどをじょうじごどにたもっている。",
+          "en": "This warehouse keeps the temperature at five degrees at all times."
+        },
+        {
+          "ja": "この{部屋|へや}は{常時|じょうじ}カメラで{監視|かんし}されています。",
+          "kana": "このへやはじょうじカメラでかんしされています。",
+          "en": "This room is under camera surveillance at all times."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつも。{休|やす}むことなくずっと。",
+        "kana": "いつも。やすむことなくずっと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0794",
+      "word": "随時",
+      "kana": "ずいじ",
+      "meanings": [
+        "at any time",
+        "as needed"
+      ],
+      "pos": "adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal",
+        "written"
+      ],
+      "notes": "Not continuously (that is 常時) but whenever the need arises.",
+      "collocations": [
+        "随時募集",
+        "随時更新"
+      ],
+      "confusables": [
+        "v-n2-0793"
+      ],
+      "examples": [
+        {
+          "ja": "アルバイトは{随時|ずいじ}{募集|ぼしゅう}しておりますので、お{気軽|きがる}にご{連絡|れんらく}ください。",
+          "kana": "アルバイトはずいじぼしゅうしておりますので、おきがるにごれんらくください。",
+          "en": "We are recruiting part-time staff at any time, so please feel free to contact us."
+        },
+        {
+          "ja": "{申|もう}し{込|こ}みは{随時|ずいじ}{受|う}け{付|つ}けていますが、{定員|ていいん}になり{次第|しだい}{締|し}め{切|き}ります。",
+          "kana": "もうしこみはずいじうけつけていますが、ていいんになりしだいしめきります。",
+          "en": "Applications are accepted at any time, but close as soon as the quota is reached."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}まったときではなく、いつでも{必要|ひつよう}なときに。",
+        "kana": "きまったときではなく、いつでもひつようなときに。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0795",
+      "word": "昨今",
+      "kana": "さっこん",
+      "meanings": [
+        "these days",
+        "nowadays"
+      ],
+      "pos": "n-adv",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "formal",
+        "written"
+      ],
+      "notes": "Stiff, written word for 最近; common in news and speeches (昨今の情勢).",
+      "confusables": [
+        "v-n2-0736"
+      ],
+      "examples": [
+        {
+          "ja": "{昨今|さっこん}、スマホで{何|なん}でも{済|す}ませる{若者|わかもの}が{増|ふ}えているという。",
+          "kana": "さっこん、スマホでなんでもすませるわかものがふえているという。",
+          "en": "These days, more and more young people are said to do everything on their smartphones."
+        },
+        {
+          "ja": "{昨今|さっこん}の{物価|ぶっか}の{上昇|じょうしょう}は、{家計|かけい}に{大|おお}きな{影響|えいきょう}を{与|あた}えている。",
+          "kana": "さっこんのぶっかのじょうしょうは、かけいにおおきなえいきょうをあたえている。",
+          "en": "The recent rise in prices is having a major impact on household budgets."
+        }
+      ],
+      "definitionJa": {
+        "ja": "このごろ。{最近|さいきん}。{書|か}き{言葉|ことば}などでよく{使|つか}う。",
+        "kana": "このごろ。さいきん。かきことばなどでよくつかう。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0796",
+      "word": "往年",
+      "kana": "おうねん",
+      "meanings": [
+        "former years",
+        "one's heyday"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "written",
+        "literary"
+      ],
+      "notes": "Almost always 往年の〜, with a nostalgic tone.",
+      "collocations": [
+        "往年の名作",
+        "往年のスター"
+      ],
+      "examples": [
+        {
+          "ja": "{往年|おうねん}の{名選手|めいせんしゅ}が{久|ひさ}しぶりにテレビに{出|で}ていた。",
+          "kana": "おうねんのめいせんしゅがひさしぶりにテレビにでていた。",
+          "en": "A famous player of yesteryear appeared on TV for the first time in a while."
+        },
+        {
+          "ja": "{祖母|そぼ}は{往年|おうねん}の{映画|えいが}スターの{話|はなし}になると、{急|きゅう}に{生|い}き{生|い}きとする。",
+          "kana": "そぼはおうねんのえいがスターのはなしになると、きゅうにいきいきとする。",
+          "en": "When the talk turns to movie stars of yesteryear, my grandmother suddenly comes alive."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}。ある{人|ひと}やものが{一番|いちばん}{盛|さか}んだったころ。",
+        "kana": "むかし。あるひとやものがいちばんさかんだったころ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0797",
+      "word": "旬",
+      "kana": "しゅん",
+      "meanings": [
+        "season (for food)",
+        "peak season"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "time",
+        "calendar"
+      ],
+      "notes": "Also 旬の話題 = a hot topic right now. Read じゅん in 上旬・中旬・下旬.",
+      "collocations": [
+        "旬の野菜",
+        "旬を迎える"
+      ],
+      "examples": [
+        {
+          "ja": "{秋|あき}は{旬|しゅん}の{魚|さかな}がおいしい{季節|きせつ}だ。",
+          "kana": "あきはしゅんのさかながおいしいきせつだ。",
+          "en": "Autumn is the season when fish are at their best."
+        },
+        {
+          "ja": "{旬|しゅん}の{野菜|やさい}は{安|やす}くて{栄養|えいよう}もあるので、{積極的|せっきょくてき}に{使|つか}っている。",
+          "kana": "しゅんのやさいはやすくてえいようもあるので、せっきょくてきにつかっている。",
+          "en": "Seasonal vegetables are cheap and nutritious, so I use them as much as I can."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{魚|さかな}や{野菜|やさい}などが{一番|いちばん}たくさん{取|と}れて、{一番|いちばん}おいしい{時期|じき}。",
+        "kana": "さかなややさいなどがいちばんたくさんとれて、いちばんおいしいじき。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0798",
+      "word": "時節",
+      "kana": "じせつ",
+      "meanings": [
+        "season",
+        "time of year",
+        "the times"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "calendar",
+        "formal",
+        "written"
+      ],
+      "notes": "Letter language. 時節柄 = given the season or the current situation.",
+      "collocations": [
+        "時節柄",
+        "時節の挨拶"
+      ],
+      "examples": [
+        {
+          "ja": "{寒|さむ}い{時節|じせつ}ですので、どうぞお{体|からだ}を{大切|たいせつ}になさってください。",
+          "kana": "さむいじせつですので、どうぞおからだをたいせつになさってください。",
+          "en": "It is a cold time of year, so please take good care of yourself."
+        },
+        {
+          "ja": "{桜|さくら}の{時節|じせつ}になると、この{公園|こうえん}は{大勢|おおぜい}の{人|ひと}でにぎわう。",
+          "kana": "さくらのじせつになると、このこうえんはおおぜいのひとでにぎわう。",
+          "en": "When cherry blossom season comes, this park bustles with crowds of people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}の{中|なか}のある{季節|きせつ}。その{時代|じだい}の{世|よ}の{中|なか}の{様子|ようす}。",
+        "kana": "いちねんのなかのあるきせつ。そのじだいのよのなかのようす。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0799",
+      "word": "節目",
+      "kana": "ふしめ",
+      "meanings": [
+        "turning point",
+        "milestone"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "notes": "From the joints of bamboo; a point where one stage ends and another begins.",
+      "collocations": [
+        "人生の節目",
+        "節目を迎える"
+      ],
+      "examples": [
+        {
+          "ja": "{三十歳|さんじゅっさい}は{人生|じんせい}の{一|ひと}つの{節目|ふしめ}だと{思|おも}う。",
+          "kana": "さんじゅっさいはじんせいのひとつのふしめだとおもう。",
+          "en": "I think thirty is one of life's milestones."
+        },
+        {
+          "ja": "{結婚|けっこん}{十周年|じゅっしゅうねん}という{節目|ふしめ}に、{夫婦|ふうふ}で{旅行|りょこう}に{出|で}かけた。",
+          "kana": "けっこんじゅっしゅうねんというふしめに、ふうふでりょこうにでかけた。",
+          "en": "For the milestone of our tenth wedding anniversary, my husband and I went on a trip."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人生|じんせい}やものごとの{流|なが}れの{中|なか}で、{一|ひと}つの{区切|くぎ}りとなる{大切|たいせつ}なとき。",
+        "kana": "じんせいやものごとのながれのなかで、ひとつのくぎりとなるたいせつなとき。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0800",
+      "word": "〜周年",
+      "kana": "しゅうねん",
+      "meanings": [
+        "(suffix for anniversaries)"
+      ],
+      "pos": "suf",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "time"
+      ],
+      "notes": "Number + 周年 = the nth anniversary of a founding, opening or marriage (結婚二十周年).",
+      "collocations": [
+        "創立十周年",
+        "周年記念"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、この{店|みせ}は{開店|かいてん}{十周年|じゅっしゅうねん}を{迎|むか}えます。",
+          "kana": "らいげつ、このみせはかいてんじゅっしゅうねんをむかえます。",
+          "en": "Next month this shop marks its tenth anniversary."
+        },
+        {
+          "ja": "{会社|かいしゃ}の{創立|そうりつ}{五十周年|ごじゅっしゅうねん}を{記念|きねん}して、{社員|しゃいん}{全員|ぜんいん}に{特別|とくべつ}ボーナスが{出|で}た。",
+          "kana": "かいしゃのそうりつごじゅっしゅうねんをきねんして、しゃいんぜんいんにとくべつボーナスがでた。",
+          "en": "To mark the company's fiftieth anniversary, every employee received a special bonus."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{始|はじ}まってから{何年|なんねん}たったかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "はじまってからなんねんたったかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0801",
+      "word": "彼岸",
+      "kana": "ひがん",
+      "meanings": [
+        "equinoctial week",
+        "Buddhist equinox observance"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "culture"
+      ],
+      "notes": "Usually お彼岸: the week around each equinox, when families tend graves. 暑さ寒さも彼岸まで = heat and cold last only until Higan.",
+      "examples": [
+        {
+          "ja": "お{彼岸|ひがん}には{毎年|まいとし}、{家族|かぞく}でお{墓参|はかまい}りに{行|い}きます。",
+          "kana": "おひがんにはまいとし、かぞくでおはかまいりにいきます。",
+          "en": "Every year during Higan week, we visit the family grave together."
+        },
+        {
+          "ja": "{彼岸|ひがん}が{過|す}ぎると、{暑|あつ}さも{寒|さむ}さも{和|やわ}らぐと{昔|むかし}から{言|い}われている。",
+          "kana": "ひがんがすぎると、あつさもさむさもやわらぐとむかしからいわれている。",
+          "en": "It has long been said that both the heat and the cold ease once the equinox week has passed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{春|はる}と{秋|あき}の、{昼|ひる}と{夜|よる}の{長|なが}さがほぼおなじになるころの{一週間|いっしゅうかん}。{亡|な}くなった{人|ひと}に{祈|いの}る{習慣|しゅうかん}がある。",
+        "kana": "はるとあきの、ひるとよるのながさがほぼおなじになるころのいっしゅうかん。なくなったひとにいのるしゅうかんがある。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0802",
+      "word": "〜錠",
+      "kana": "じょう",
+      "meanings": [
+        "(counter for tablets and pills)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "health",
+        "numbers",
+        "counter"
+      ],
+      "notes": "For tablets; capsules take カプセル, powders 〜包 (ほう).",
+      "examples": [
+        {
+          "ja": "この{薬|くすり}は{食後|しょくご}に{二錠|にじょう}ずつ{飲|の}んでください。",
+          "kana": "このくすりはしょくごににじょうずつのんでください。",
+          "en": "Take two tablets of this medicine after each meal."
+        },
+        {
+          "ja": "{頭痛|ずつう}がひどかったので、{痛|いた}み{止|ど}めを{二錠|にじょう}{飲|の}んで{寝|ね}た。",
+          "kana": "ずつうがひどかったので、いたみどめをにじょうのんでねた。",
+          "en": "My headache was awful, so I took two painkillers and went to bed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{丸|まる}くて{小|ちい}さい{薬|くすり}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "まるくてちいさいくすりがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0803",
+      "word": "〜粒",
+      "kana": "つぶ",
+      "meanings": [
+        "(counter for grains and pills)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "numbers",
+        "counter",
+        "quantity"
+      ],
+      "notes": "Small round things: rice, beans, grapes, pills, tears. 一粒 ひとつぶ, 二粒 ふたつぶ, 三粒 さんつぶ.",
+      "examples": [
+        {
+          "ja": "{米|こめ}を{一粒|ひとつぶ}も{残|のこ}さずに{食|た}べなさいと{祖母|そぼ}によく{言|い}われた。",
+          "kana": "こめをひとつぶものこさずにたべなさいとそぼによくいわれた。",
+          "en": "My grandmother often told me to eat every single grain of rice."
+        },
+        {
+          "ja": "ぶどうを{一粒|ひとつぶ}{口|くち}に{入|い}れたら、{驚|おどろ}くほど{甘|あま}かった。",
+          "kana": "ぶどうをひとつぶくちにいれたら、おどろくほどあまかった。",
+          "en": "When I popped a grape into my mouth, it was surprisingly sweet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{米|こめ}や{薬|くすり}など、{小|ちい}さくて{丸|まる}いものがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "こめやくすりなど、ちいさくてまるいものがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0804",
+      "word": "〜滴",
+      "kana": "てき",
+      "meanings": [
+        "(counter for drops of liquid)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "quantity",
+        "numbers",
+        "counter"
+      ],
+      "notes": "一滴 いってき, 二滴 にてき, 三滴 さんてき, 六滴 ろくてき, 十滴 じゅってき.",
+      "examples": [
+        {
+          "ja": "{目薬|めぐすり}は{一回|いっかい}に{一滴|いってき}で{十分|じゅうぶん}です。",
+          "kana": "めぐすりはいっかいにいってきでじゅうぶんです。",
+          "en": "One drop of eye drops at a time is enough."
+        },
+        {
+          "ja": "{雨|あめ}が{一滴|いってき}も{降|ふ}らない{日|ひ}が、もう{一|いっ}か{月|げつ}{以上|いじょう}{続|つづ}いている。",
+          "kana": "あめがいってきもふらないひが、もういっかげついじょうつづいている。",
+          "en": "It has now been more than a month without a single drop of rain."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{水|みず}などの{液体|えきたい}が{丸|まる}くなって{落|お}ちるとき、いくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "みずなどのえきたいがまるくなっておちるとき、いくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0805",
+      "word": "〜切れ",
+      "kana": "きれ",
+      "meanings": [
+        "(counter for slices)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Slices of bread, fish, cake or meat. 一切れ ひときれ, 二切れ ふたきれ, 三切れ さんきれ.",
+      "examples": [
+        {
+          "ja": "{朝|あさ}はパンを{二切|ふたき}れと、ゆで{卵|たまご}を{一|ひと}つ{食|た}べる。",
+          "kana": "あさはパンをふたきれと、ゆでたまごをひとつたべる。",
+          "en": "For breakfast I have two slices of bread and a boiled egg."
+        },
+        {
+          "ja": "{夕食|ゆうしょく}に{魚|さかな}を{三切|みき}れ{焼|や}いたが、{息子|むすこ}が{二切|ふたき}れも{食|た}べてしまった。",
+          "kana": "ゆうしょくにさかなをみきれやいたが、むすこがふたきれもたべてしまった。",
+          "en": "I grilled three slices of fish for dinner, but my son ate two of them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{薄|うす}く{切|き}った{魚|さかな}やパンなどがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "うすくきったさかなやパンなどがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0806",
+      "word": "〜束",
+      "kana": "たば",
+      "meanings": [
+        "(counter for bundles and bunches)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Bundles tied together: vegetables, flowers, papers, keys. 一束 ひとたば, 二束 ふたたば, 三束 さんたば.",
+      "examples": [
+        {
+          "ja": "{八百屋|やおや}でほうれん{草|そう}を{二束|ふたたば}{買|か}ってきた。",
+          "kana": "やおやでほうれんそうをふたたばかってきた。",
+          "en": "I bought two bunches of spinach at the greengrocer's."
+        },
+        {
+          "ja": "{花屋|はなや}で{花|はな}を{一束|ひとたば}{買|か}って、{母|はは}の{誕生日|たんじょうび}に{贈|おく}った。",
+          "kana": "はなやではなをひとたばかって、ははのたんじょうびにおくった。",
+          "en": "I bought a bunch of flowers at the florist and gave them to my mother for her birthday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{花|はな}や{野菜|やさい}などを{一|ひと}つに{結|むす}んだものがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "はなややさいなどをひとつにむすんだものがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0807",
+      "word": "〜缶",
+      "kana": "かん",
+      "meanings": [
+        "(counter for cans)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "drink",
+        "numbers",
+        "counter"
+      ],
+      "notes": "一缶 ひとかん, 二缶 にかん, 三缶 さんかん. 缶ビール = canned beer.",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{毎晩|まいばん}ビールを{二缶|にかん}{飲|の}む。",
+          "kana": "ちちはまいばんビールをにかんのむ。",
+          "en": "My father drinks two cans of beer every night."
+        },
+        {
+          "ja": "{災害|さいがい}に{備|そな}えて、{水|みず}と{缶詰|かんづめ}を{十缶|じゅっかん}ほど{用意|ようい}してある。",
+          "kana": "さいがいにそなえて、みずとかんづめをじゅっかんほどよういしてある。",
+          "en": "In case of a disaster, I have about ten cans of food and some water set aside."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{金属|きんぞく}の{容器|ようき}に{入|はい}った{飲|の}み{物|もの}などがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "きんぞくのようきにはいったのみものなどがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0808",
+      "word": "〜瓶",
+      "kana": "びん",
+      "meanings": [
+        "(counter for bottles and jars)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "drink",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Counts bottled or jarred goods; for bottles of drink 〜本 is more common.",
+      "examples": [
+        {
+          "ja": "お{土産|みやげ}に{地元|じもと}のジャムを{三瓶|さんびん}{買|か}った。",
+          "kana": "おみやげにじもとのジャムをさんびんかった。",
+          "en": "I bought three jars of local jam as souvenirs."
+        },
+        {
+          "ja": "{祖父|そふ}は{毎晩|まいばん}、{日本酒|にほんしゅ}を{一瓶|ひとびん}{空|あ}けてしまう。",
+          "kana": "そふはまいばん、にほんしゅをひとびんあけてしまう。",
+          "en": "My grandfather polishes off a whole bottle of sake every evening."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{口|くち}の{細|ほそ}い{容器|ようき}に{入|はい}った{飲|の}み{物|もの}やジャムなどがいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "くちのほそいようきにはいったのみものやジャムなどがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0809",
+      "word": "〜機",
+      "kana": "き",
+      "meanings": [
+        "(counter for aircraft and machines)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Aircraft, helicopters and large machines. 一機 いっき, 六機 ろっき, 十機 じゅっき.",
+      "examples": [
+        {
+          "ja": "{空港|くうこう}には{飛行機|ひこうき}が{十機|じゅっき}ほど{並|なら}んでいた。",
+          "kana": "くうこうにはひこうきがじゅっきほどならんでいた。",
+          "en": "About ten planes were lined up at the airport."
+        },
+        {
+          "ja": "この{工場|こうじょう}では、{一年|いちねん}に{小型|こがた}の{飛行機|ひこうき}を{五機|ごき}ほど{作|つく}っている。",
+          "kana": "このこうじょうでは、いちねんにこがたのひこうきをごきほどつくっている。",
+          "en": "This factory builds about five small aircraft a year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{空|そら}を{飛|と}ぶ{乗|の}り{物|もの}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "そらをとぶのりものがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0810",
+      "word": "〜両",
+      "kana": "りょう",
+      "meanings": [
+        "(counter for train cars)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Train and tram cars (十両編成 = ten-car train). Not for road vehicles, which take 〜台.",
+      "examples": [
+        {
+          "ja": "{朝|あさ}の{電車|でんしゃ}は{十両|じゅうりょう}あっても、どの{車両|しゃりょう}も{満員|まんいん}だ。",
+          "kana": "あさのでんしゃはじゅうりょうあっても、どのしゃりょうもまんいんだ。",
+          "en": "Even with ten cars, the morning train is packed in every car."
+        },
+        {
+          "ja": "{週末|しゅうまつ}の{昼間|ひるま}は、この{電車|でんしゃ}は{六両|ろくりょう}で{走|はし}っている。",
+          "kana": "しゅうまつのひるまは、このでんしゃはろくりょうではしっている。",
+          "en": "On weekend afternoons, this train runs with six cars."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}や{列車|れっしゃ}の、つながった{一|ひと}つ{一|ひと}つの{車|くるま}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "でんしゃやれっしゃの、つながったひとつひとつのくるまがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0811",
+      "word": "〜局",
+      "kana": "きょく",
+      "meanings": [
+        "(counter for TV or radio stations)",
+        "(counter for games of go or shogi)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "media",
+        "numbers",
+        "counter"
+      ],
+      "examples": [
+        {
+          "ja": "この{地域|ちいき}ではテレビが{五局|ごきょく}{映|うつ}ります。",
+          "kana": "このちいきではテレビがごきょくうつります。",
+          "en": "You can get five TV channels in this area."
+        },
+        {
+          "ja": "{祖父|そふ}は{碁|ご}が{好|す}きで、{友人|ゆうじん}と{一日|いちにち}に{三局|さんきょく}も{打|う}つことがある。",
+          "kana": "そふはごがすきで、ゆうじんといちにちにさんきょくもうつことがある。",
+          "en": "My grandfather loves go and sometimes plays as many as three games a day with a friend."
+        }
+      ],
+      "definitionJa": {
+        "ja": "テレビやラジオの{放送|ほうそう}をする{会社|かいしゃ}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "テレビやラジオのほうそうをするかいしゃがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0812",
+      "word": "〜隻",
+      "kana": "せき",
+      "meanings": [
+        "(counter for ships)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Ships and large boats. Small boats may take 〜艘 (そう). 一隻 いっせき, 十隻 じゅっせき.",
+      "examples": [
+        {
+          "ja": "{港|みなと}には{大|おお}きな{船|ふね}が{二隻|にせき}{止|と}まっていた。",
+          "kana": "みなとにはおおきなふねがにせきとまっていた。",
+          "en": "Two large ships were moored in the harbor."
+        },
+        {
+          "ja": "{昔|むかし}、この{港|みなと}からは{一度|いちど}に{十隻|じゅっせき}{以上|いじょう}の{船|ふね}が{出|で}ていったそうだ。",
+          "kana": "むかし、このみなとからはいちどにじゅっせきいじょうのふねがでていったそうだ。",
+          "en": "Long ago, more than ten ships at a time would set out from this port, they say."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{船|ふね}がいくつあるかを{表|あらわ}す{言葉|ことば}。{大|おお}きな{船|ふね}に{使|つか}う。",
+        "kana": "ふねがいくつあるかをあらわすことば。おおきなふねにつかう。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0813",
+      "word": "〜棟",
+      "kana": "むね",
+      "meanings": [
+        "(counter for buildings)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "places",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Also read とう, especially in building names and official writing (A棟, 三棟 さんとう).",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{裏|うら}に{新|あたら}しいマンションが{三棟|さんむね}{建|た}った。",
+          "kana": "えきのうらにあたらしいマンションがさんむねたった。",
+          "en": "Three new apartment buildings went up behind the station."
+        },
+        {
+          "ja": "{台風|たいふう}で{倉庫|そうこ}が{二棟|ふたむね}{壊|こわ}れ、{中|なか}の{商品|しょうひん}も{使|つか}えなくなった。",
+          "kana": "たいふうでそうこがふたむねこわれ、なかのしょうひんもつかえなくなった。",
+          "en": "The typhoon destroyed two warehouse buildings, and the goods inside were ruined too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "たてものがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0814",
+      "word": "〜坪",
+      "kana": "つぼ",
+      "meanings": [
+        "(unit of area, about 3.3 square meters)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "quantity",
+        "counter"
+      ],
+      "notes": "Still used in real estate for land and floor area. One tsubo = two tatami mats.",
+      "confusables": [
+        "v-n2-0815"
+      ],
+      "examples": [
+        {
+          "ja": "{実家|じっか}の{庭|にわ}は{五十坪|ごじゅっつぼ}くらいあって、{野菜|やさい}を{育|そだ}てている。",
+          "kana": "じっかのにわはごじゅっつぼくらいあって、やさいをそだてている。",
+          "en": "My parents' garden is about fifty tsubo, and they grow vegetables there."
+        },
+        {
+          "ja": "{駅前|えきまえ}の{土地|とち}は{一坪|ひとつぼ}{百万円|ひゃくまんえん}もするそうだ。",
+          "kana": "えきまえのとちはひとつぼひゃくまんえんもするそうだ。",
+          "en": "Land in front of the station apparently costs a million yen per tsubo."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{家|いえ}や{部屋|へや}の{広|ひろ}さの{単位|たんい}。{畳|たたみ}を{二|ふた}つ{並|なら}べたくらい。",
+        "kana": "いえやへやのひろさのたんい。たたみをふたつならべたくらい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0815",
+      "word": "〜畳",
+      "kana": "じょう",
+      "meanings": [
+        "(counter for tatami mats, room size)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "home",
+        "quantity",
+        "counter"
+      ],
+      "notes": "Room sizes: 四畳半 よじょうはん, 六畳 ろくじょう, 八畳 はちじょう. The noun 畳 is read たたみ.",
+      "confusables": [
+        "v-n2-0814"
+      ],
+      "examples": [
+        {
+          "ja": "{六畳|ろくじょう}の{部屋|へや}にベッドと{机|つくえ}を{置|お}いたら、もういっぱいだ。",
+          "kana": "ろくじょうのへやにベッドとつくえをおいたら、もういっぱいだ。",
+          "en": "Put a bed and a desk in a six-mat room and it is already full."
+        },
+        {
+          "ja": "{学生|がくせい}のころは{四畳半|よじょうはん}の{部屋|へや}に{住|す}んでいた。",
+          "kana": "がくせいのころはよじょうはんのへやにすんでいた。",
+          "en": "When I was a student, I lived in a four-and-a-half-mat room."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{和室|わしつ}の{広|ひろ}さを、たたみがいくつ{入|はい}るかで{表|あらわ}す{言葉|ことば}。",
+        "kana": "わしつのひろさを、たたみがいくつはいるかであらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0816",
+      "word": "〜段",
+      "kana": "だん",
+      "meanings": [
+        "(counter for steps and levels)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "numbers",
+        "counter",
+        "quantity"
+      ],
+      "notes": "Stairs, shelves, tiers, and ranks in martial arts and shogi (三段). 一段 いちだん, 三段 さんだん.",
+      "examples": [
+        {
+          "ja": "{階段|かいだん}を{二段|にだん}ずつ{上|のぼ}ったら、{息|いき}が{切|き}れた。",
+          "kana": "かいだんをにだんずつのぼったら、いきがきれた。",
+          "en": "I took the stairs two steps at a time and got out of breath."
+        },
+        {
+          "ja": "{本棚|ほんだな}の{上|うえ}から{二段目|にだんめ}に、{辞書|じしょ}が{並|なら}んでいる。",
+          "kana": "ほんだなのうえからにだんめに、じしょがならんでいる。",
+          "en": "The dictionaries are lined up on the second shelf from the top of the bookcase."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|のぼ}り{下|お}りするときに{足|あし}を{置|お}く{所|ところ}がいくつあるかを{表|あらわ}す{言葉|ことば}。",
+        "kana": "のぼりおりするときにあしをおくところがいくつあるかをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0817",
+      "word": "〜周",
+      "kana": "しゅう",
+      "meanings": [
+        "(counter for laps and circuits)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "sports",
+        "numbers",
+        "counter"
+      ],
+      "notes": "一周 いっしゅう, 十周 じゅっしゅう. 一周する = to go once around.",
+      "examples": [
+        {
+          "ja": "{毎朝|まいあさ}、{公園|こうえん}を{三周|さんしゅう}{走|はし}ってから{出勤|しゅっきん}している。",
+          "kana": "まいあさ、こうえんをさんしゅうはしってからしゅっきんしている。",
+          "en": "Every morning I run three laps around the park before going to work."
+        },
+        {
+          "ja": "{運動会|うんどうかい}で、{子供|こども}たちはグラウンドを{二周|にしゅう}{走|はし}った。",
+          "kana": "うんどうかいで、こどもたちはグラウンドをにしゅうはしった。",
+          "en": "At the sports day, the children ran two laps of the field."
+        }
+      ],
+      "definitionJa": {
+        "ja": "おなじ{所|ところ}を{回|まわ}って{始|はじ}めの{所|ところ}に{戻|もど}る{回数|かいすう}を{表|あらわ}す{言葉|ことば}。",
+        "kana": "おなじところをまわってはじめのところにもどるかいすうをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0818",
+      "word": "〜便",
+      "kana": "びん",
+      "meanings": [
+        "(counter for flights and services)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "transport",
+        "travel",
+        "numbers",
+        "counter"
+      ],
+      "notes": "Scheduled flights, ferries and buses (最終便 = last service). Also read べん in 便利・不便.",
+      "examples": [
+        {
+          "ja": "この{島|しま}への{船|ふね}は{一日|いちにち}に{三便|さんびん}しかない。",
+          "kana": "このしまへのふねはいちにちにさんびんしかない。",
+          "en": "There are only three ferry services a day to this island."
+        },
+        {
+          "ja": "{夜|よる}の{最終便|さいしゅうびん}に{乗|の}れば、{今日中|きょうじゅう}に{家|いえ}に{帰|かえ}れる。",
+          "kana": "よるのさいしゅうびんにのれば、きょうじゅうにいえにかえれる。",
+          "en": "If I catch the last flight tonight, I can get home today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}まった{時間|じかん}に{出|で}る{飛行機|ひこうき}や{船|ふね}の{一|ひと}つ{一|ひと}つを{表|あらわ}す{言葉|ことば}。",
+        "kana": "きまったじかんにでるひこうきやふねのひとつひとつをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0819",
+      "word": "〜年代",
+      "kana": "ねんだい",
+      "meanings": [
+        "(suffix for decades, as in the 1980s)"
+      ],
+      "pos": "suf",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "time"
+      ],
+      "notes": "一九八〇年代 or 八〇年代 = the 1980s. As a noun, 年代 also means an age bracket (二十代 uses 〜代).",
+      "examples": [
+        {
+          "ja": "この{歌|うた}は{八十年代|はちじゅうねんだい}に{大|だい}ヒットした。",
+          "kana": "このうたははちじゅうねんだいにだいヒットした。",
+          "en": "This song was a huge hit in the eighties."
+        },
+        {
+          "ja": "{祖父母|そふぼ}は{六十年代|ろくじゅうねんだい}に{結婚|けっこん}し、この{町|まち}に{家|いえ}を{建|た}てた。",
+          "kana": "そふぼはろくじゅうねんだいにけっこんし、このまちにいえをたてた。",
+          "en": "My grandparents married in the sixties and built a house in this town."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{十年|じゅうねん}をひとまとまりにした{時代|じだい}を{表|あらわ}す{言葉|ことば}。",
+        "kana": "じゅうねんをひとまとまりにしたじだいをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0820",
+      "word": "〜世紀",
+      "kana": "せいき",
+      "meanings": [
+        "(counter for centuries)"
+      ],
+      "pos": "counter",
+      "jlpt": 2,
+      "tags": [
+        "calendar",
+        "time",
+        "counter"
+      ],
+      "notes": "二十一世紀 にじゅういっせいき. Sound changes: 一世紀 いっせいき, 八世紀 はっせいき, 十世紀 じゅっせいき.",
+      "examples": [
+        {
+          "ja": "この{寺|てら}は{八世紀|はっせいき}に{建|た}てられたと{言|い}われている。",
+          "kana": "このてらははっせいきにたてられたといわれている。",
+          "en": "This temple is said to have been built in the eighth century."
+        },
+        {
+          "ja": "{二十一世紀|にじゅういっせいき}に{入|はい}って、{人々|ひとびと}の{暮|く}らしは{大|おお}きく{変|か}わった。",
+          "kana": "にじゅういっせいきにはいって、ひとびとのくらしはおおきくかわった。",
+          "en": "Since the start of the twenty-first century, people's lives have changed greatly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{百年|ひゃくねん}を{一|ひと}つとして{時代|じだい}を{表|あらわ}す{言葉|ことば}。",
+        "kana": "ひゃくねんをひとつとしてじだいをあらわすことば。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0821",
+      "word": "昇給",
+      "kana": "しょうきゅう",
+      "meanings": [
+        "pay raise"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "money"
+      ],
+      "confusables": [
+        "v-n2-0749"
+      ],
+      "examples": [
+        {
+          "ja": "{四月|しがつ}に{昇給|しょうきゅう}があって、{給料|きゅうりょう}が{少|すこ}し{上|あ}がった。",
+          "kana": "しがつにしょうきゅうがあって、きゅうりょうがすこしあがった。",
+          "en": "I got a raise in April, and my salary went up a little."
+        },
+        {
+          "ja": "{今年|ことし}は{会社|かいしゃ}の{業績|ぎょうせき}が{悪|わる}く、{昇給|しょうきゅう}は{見送|みおく}られることになった。",
+          "kana": "ことしはかいしゃのぎょうせきがわるく、しょうきゅうはみおくられることになった。",
+          "en": "The company's results were poor this year, so raises have been put off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{働|はたら}く{人|ひと}の{給料|きゅうりょう}が{今|いま}より{上|あ}がること。",
+        "kana": "はたらくひとのきゅうりょうがいまよりあがること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0822",
+      "word": "降格",
+      "kana": "こうかく",
+      "meanings": [
+        "demotion",
+        "relegation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "sports"
+      ],
+      "notes": "Also used for sports teams dropping to a lower division.",
+      "confusables": [
+        "v-n2-0749"
+      ],
+      "examples": [
+        {
+          "ja": "ミスが{続|つづ}いて、{彼|かれ}は{部長|ぶちょう}から{課長|かちょう}に{降格|こうかく}された。",
+          "kana": "ミスがつづいて、かれはぶちょうからかちょうにこうかくされた。",
+          "en": "After a string of mistakes, he was demoted from department head to section chief."
+        },
+        {
+          "ja": "{降格|こうかく}が{決|き}まった{彼|かれ}は、{何|なに}も{言|い}わずに{部屋|へや}を{出|で}ていった。",
+          "kana": "こうかくがきまったかれは、なにもいわずにへやをでていった。",
+          "en": "His demotion decided, he left the room without a word."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{役職|やくしょく}や{立場|たちば}が{今|いま}より{下|した}に{下|さ}がること。{昇進|しょうしん}の{反対|はんたい}。",
+        "kana": "やくしょくやたちばがいまよりしたにさがること。しょうしんのはんたい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0823",
+      "word": "得意先",
+      "kana": "とくいさき",
+      "meanings": [
+        "regular customer",
+        "client"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "notes": "A customer you sell to regularly. 取引先 covers suppliers as well.",
+      "confusables": [
+        "v-n2-0723"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}は{得意先|とくいさき}を{回|まわ}って{挨拶|あいさつ}をするのが{毎年|まいとし}の{習慣|しゅうかん}だ。",
+          "kana": "ねんまつはとくいさきをまわってあいさつをするのがまいとしのしゅうかんだ。",
+          "en": "At the end of the year, it is our annual custom to go around greeting our regular clients."
+        },
+        {
+          "ja": "{長年|ながねん}の{得意先|とくいさき}を{失|うしな}うのは、{会社|かいしゃ}にとって{大|おお}きな{損失|そんしつ}だ。",
+          "kana": "ながねんのとくいさきをうしなうのは、かいしゃにとっておおきなそんしつだ。",
+          "en": "Losing a longtime client is a major loss for the company."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつも{商品|しょうひん}を{買|か}ってくれる{客|きゃく}や{会社|かいしゃ}。",
+        "kana": "いつもしょうひんをかってくれるきゃくやかいしゃ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0824",
+      "word": "仕入れ",
+      "kana": "しいれ",
+      "meanings": [
+        "purchasing (stock)",
+        "procurement"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping"
+      ],
+      "notes": "Noun from 仕入れる (to stock, to lay in goods). 仕入れ値 = cost price.",
+      "collocations": [
+        "仕入れ値",
+        "仕入れに行く"
+      ],
+      "examples": [
+        {
+          "ja": "{店長|てんちょう}は{毎朝|まいあさ}{五時|ごじ}に{市場|いちば}へ{仕入|しい}れに{行|い}く。",
+          "kana": "てんちょうはまいあさごじにいちばへしいれにいく。",
+          "en": "The manager goes to the market at five every morning to buy stock."
+        },
+        {
+          "ja": "{仕入|しい}れの{値段|ねだん}が{上|あ}がったので、{売|う}り{値|ね}も{少|すこ}し{上|あ}げざるを{得|え}なかった。",
+          "kana": "しいれのねだんがあがったので、うりねもすこしあげざるをえなかった。",
+          "en": "Our purchase prices went up, so we had no choice but to raise our selling prices a little."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{店|みせ}が{売|う}るための{商品|しょうひん}や{材料|ざいりょう}を{買|か}い{入|い}れること。",
+        "kana": "みせがうるためのしょうひんやざいりょうをかいいれること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0825",
+      "word": "発注",
+      "kana": "はっちゅう",
+      "meanings": [
+        "placing an order"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "notes": "The buyer's side; 受注 is the seller's side. 注文 is the everyday word.",
+      "confusables": [
+        "v-n2-0826"
+      ],
+      "examples": [
+        {
+          "ja": "{在庫|ざいこ}が{少|すく}なくなったので、{追加|ついか}で{百個|ひゃっこ}{発注|はっちゅう}した。",
+          "kana": "ざいこがすくなくなったので、ついかでひゃっこはっちゅうした。",
+          "en": "Stock was running low, so I ordered another hundred."
+        },
+        {
+          "ja": "{部品|ぶひん}の{発注|はっちゅう}を{忘|わす}れていたせいで、{生産|せいさん}が{二日|ふつか}{止|と}まってしまった。",
+          "kana": "ぶひんのはっちゅうをわすれていたせいで、せいさんがふつかとまってしまった。",
+          "en": "Because someone forgot to order the parts, production stopped for two days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}や{材料|ざいりょう}を{作|つく}ったり{送|おく}ったりするように{注文|ちゅうもん}を{出|だ}すこと。",
+        "kana": "しょうひんやざいりょうをつくったりおくったりするようにちゅうもんをだすこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0826",
+      "word": "受注",
+      "kana": "じゅちゅう",
+      "meanings": [
+        "receiving an order"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "confusables": [
+        "v-n2-0825"
+      ],
+      "examples": [
+        {
+          "ja": "{新製品|しんせいひん}は{発売前|はつばいまえ}なのに、もう{千件|せんけん}{以上|いじょう}{受注|じゅちゅう}している。",
+          "kana": "しんせいひんははつばいまえなのに、もうせんけんいじょうじゅちゅうしている。",
+          "en": "The new product has not launched yet, but we have already received over a thousand orders."
+        },
+        {
+          "ja": "{小|ちい}さな{工場|こうじょう}だが、{海外|かいがい}からの{受注|じゅちゅう}も{年々|ねんねん}{増|ふ}えている。",
+          "kana": "ちいさなこうじょうだが、かいがいからのじゅちゅうもねんねんふえている。",
+          "en": "It is a small factory, but orders from overseas are growing year by year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{客|きゃく}から{商品|しょうひん}や{仕事|しごと}の{注文|ちゅうもん}を{受|う}けること。{発注|はっちゅう}の{反対|はんたい}。",
+        "kana": "きゃくからしょうひんやしごとのちゅうもんをうけること。はっちゅうのはんたい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0827",
+      "word": "見本",
+      "kana": "みほん",
+      "meanings": [
+        "sample",
+        "specimen"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "objects"
+      ],
+      "notes": "Native word; サンプル is equally common in business.",
+      "collocations": [
+        "見本市",
+        "見本を見せる"
+      ],
+      "examples": [
+        {
+          "ja": "{布|ぬの}の{見本|みほん}を{何枚|なんまい}か{送|おく}っていただけますか。",
+          "kana": "ぬののみほんをなんまいかおくっていただけますか。",
+          "en": "Could you send me a few fabric samples?"
+        },
+        {
+          "ja": "{店頭|てんとう}に{見本|みほん}が{置|お}いてあるので、{色|いろ}や{大|おお}きさを{確|たし}かめてから{注文|ちゅうもん}できます。",
+          "kana": "てんとうにみほんがおいてあるので、いろやおおきさをたしかめてからちゅうもんできます。",
+          "en": "Samples are on display in the shop, so you can check the color and size before ordering."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}がどんなものかを{客|きゃく}に{見|み}せるために{用意|ようい}した{例|れい}。",
+        "kana": "しょうひんがどんなものかをきゃくにみせるためによういしたれい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0828",
+      "word": "議事録",
+      "kana": "ぎじろく",
+      "meanings": [
+        "minutes (of a meeting)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "communication"
+      ],
+      "collocations": [
+        "議事録を取る",
+        "議事録を作成する"
+      ],
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{後|あと}、{新人|しんじん}が{議事録|ぎじろく}をまとめて{全員|ぜんいん}に{送|おく}った。",
+          "kana": "かいぎのあと、しんじんがぎじろくをまとめてぜんいんにおくった。",
+          "en": "After the meeting, the new hire wrote up the minutes and sent them to everyone."
+        },
+        {
+          "ja": "{議事録|ぎじろく}を{読|よ}めば、{会議|かいぎ}に{出|で}られなかった{人|ひと}も{決|き}まったことが{分|わ}かる。",
+          "kana": "ぎじろくをよめば、かいぎにでられなかったひともきまったことがわかる。",
+          "en": "By reading the minutes, even people who missed the meeting can see what was decided."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会議|かいぎ}で{話|はな}し{合|あ}ったことや{決|き}まったことを{書|か}き{残|のこ}した{記録|きろく}。",
+        "kana": "かいぎではなしあったことやきまったことをかきのこしたきろく。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0829",
+      "word": "企画書",
+      "kana": "きかくしょ",
+      "meanings": [
+        "project proposal (document)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "work"
+      ],
+      "confusables": [
+        "v-n2-0729"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}の{会議|かいぎ}までに{企画書|きかくしょ}を{仕上|しあ}げなければならない。",
+          "kana": "らいしゅうのかいぎまでにきかくしょをしあげなければならない。",
+          "en": "I have to finish the proposal by next week's meeting."
+        },
+        {
+          "ja": "{彼女|かのじょ}の{企画書|きかくしょ}は{内容|ないよう}が{具体的|ぐたいてき}で、{部長|ぶちょう}もすぐに{納得|なっとく}した。",
+          "kana": "かのじょのきかくしょはないようがぐたいてきで、ぶちょうもすぐになっとくした。",
+          "en": "Her proposal was concrete in its details, and the manager was convinced right away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{計画|けいかく}の{目的|もくてき}や{内容|ないよう}、{費用|ひよう}などをまとめて{書|か}いた{書類|しょるい}。",
+        "kana": "あたらしいけいかくのもくてきやないよう、ひようなどをまとめてかいたしょるい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0830",
+      "word": "派遣",
+      "kana": "はけん",
+      "meanings": [
+        "dispatch",
+        "temp staffing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "notes": "Sending someone somewhere on a mission; in work talk short for 派遣社員 (agency temp).",
+      "collocations": [
+        "派遣社員",
+        "海外に派遣する"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{派遣|はけん}で{今|いま}の{会社|かいしゃ}に{来|き}て、{二年目|にねんめ}になる。",
+          "kana": "かのじょははけんでいまのかいしゃにきて、にねんめになる。",
+          "en": "She came to her current company as a temp and is now in her second year."
+        },
+        {
+          "ja": "{地震|じしん}の{被害|ひがい}を{受|う}けた{地域|ちいき}に、{医師|いし}や{看護師|かんごし}が{派遣|はけん}された。",
+          "kana": "じしんのひがいをうけたちいきに、いしやかんごしがはけんされた。",
+          "en": "Doctors and nurses were dispatched to the area hit by the earthquake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}をある{仕事|しごと}や{所|ところ}に{行|い}かせること。ほかの{会社|かいしゃ}で{働|はたら}くために{送|おく}られること。",
+        "kana": "ひとをあるしごとやところにいかせること。ほかのかいしゃではたらくためにおくられること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0831",
+      "word": "出荷",
+      "kana": "しゅっか",
+      "meanings": [
+        "shipping (goods)",
+        "shipment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business"
+      ],
+      "confusables": [
+        "v-n2-0832"
+      ],
+      "examples": [
+        {
+          "ja": "ご{注文|ちゅうもん}の{商品|しょうひん}は{本日|ほんじつ}{出荷|しゅっか}いたしました。",
+          "kana": "ごちゅうもんのしょうひんはほんじつしゅっかいたしました。",
+          "en": "Your order was shipped today."
+        },
+        {
+          "ja": "この{地域|ちいき}のりんごは、{十月|じゅうがつ}の{終|お}わりから{全国|ぜんこく}に{出荷|しゅっか}される。",
+          "kana": "このちいきのりんごは、じゅうがつのおわりからぜんこくにしゅっかされる。",
+          "en": "Apples from this region are shipped nationwide from the end of October."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}を{工場|こうじょう}や{店|みせ}から{送|おく}り{出|だ}すこと。",
+        "kana": "しょうひんをこうじょうやみせからおくりだすこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0832",
+      "word": "入荷",
+      "kana": "にゅうか",
+      "meanings": [
+        "arrival of goods",
+        "restocking"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "shopping"
+      ],
+      "collocations": [
+        "入荷待ち",
+        "再入荷"
+      ],
+      "confusables": [
+        "v-n2-0831"
+      ],
+      "examples": [
+        {
+          "ja": "{人気|にんき}の{商品|しょうひん}なので、{入荷|にゅうか}してもすぐに{売|う}り{切|き}れてしまう。",
+          "kana": "にんきのしょうひんなので、にゅうかしてもすぐにうりきれてしまう。",
+          "en": "It is a popular item, so even when it comes in, it sells out right away."
+        },
+        {
+          "ja": "お{問|と}い{合|あ}わせの{商品|しょうひん}は、{来週|らいしゅう}{入荷|にゅうか}する{予定|よてい}でございます。",
+          "kana": "おといあわせのしょうひんは、らいしゅうにゅうかするよていでございます。",
+          "en": "The item you asked about is scheduled to come in next week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{注文|ちゅうもん}した{商品|しょうひん}が{店|みせ}や{倉庫|そうこ}に{届|とど}くこと。",
+        "kana": "ちゅうもんしたしょうひんがみせやそうこにとどくこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0833",
+      "word": "請求書",
+      "kana": "せいきゅうしょ",
+      "meanings": [
+        "invoice",
+        "bill"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "money"
+      ],
+      "notes": "Asks for payment; 領収書 is the receipt you get after paying.",
+      "examples": [
+        {
+          "ja": "{先月分|せんげつぶん}の{請求書|せいきゅうしょ}が{届|とど}いたので、{今週中|こんしゅうちゅう}に{振|ふ}り{込|こ}みます。",
+          "kana": "せんげつぶんのせいきゅうしょがとどいたので、こんしゅうちゅうにふりこみます。",
+          "en": "Last month's invoice arrived, so I will transfer the payment this week."
+        },
+        {
+          "ja": "{請求書|せいきゅうしょ}の{金額|きんがく}が{見積|みつ}もりと{違|ちが}っていたので、{問|と}い{合|あ}わせた。",
+          "kana": "せいきゅうしょのきんがくがみつもりとちがっていたので、といあわせた。",
+          "en": "The amount on the invoice differed from the estimate, so I made an inquiry."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}やサービスの{代金|だいきん}を{払|はら}うように{相手|あいて}に{求|もと}める{書類|しょるい}。",
+        "kana": "しょうひんやサービスのだいきんをはらうようにあいてにもとめるしょるい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0834",
+      "word": "商談",
+      "kana": "しょうだん",
+      "meanings": [
+        "business negotiation",
+        "sales talk"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "communication"
+      ],
+      "collocations": [
+        "商談がまとまる",
+        "商談中"
+      ],
+      "examples": [
+        {
+          "ja": "{午後|ごご}の{商談|しょうだん}がうまくいけば、{大|おお}きな{契約|けいやく}が{取|と}れそうだ。",
+          "kana": "ごごのしょうだんがうまくいけば、おおきなけいやくがとれそうだ。",
+          "en": "If this afternoon's negotiation goes well, we should land a big contract."
+        },
+        {
+          "ja": "{商談|しょうだん}の{前|まえ}に、{相手|あいて}の{会社|かいしゃ}について{十分|じゅうぶん}に{調|しら}べておくことが{大切|たいせつ}だ。",
+          "kana": "しょうだんのまえに、あいてのかいしゃについてじゅうぶんにしらべておくことがたいせつだ。",
+          "en": "Before a business negotiation, it is important to research the other company thoroughly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{商品|しょうひん}の{売|う}り{買|か}いや{契約|けいやく}について、{相手|あいて}と{話|はな}し{合|あ}うこと。",
+        "kana": "しょうひんのうりかいやけいやくについて、あいてとはなしあうこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0835",
+      "word": "進捗",
+      "kana": "しんちょく",
+      "meanings": [
+        "progress (of work)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "collocations": [
+        "進捗状況",
+        "進捗を確認する"
+      ],
+      "examples": [
+        {
+          "ja": "{毎週|まいしゅう}{月曜日|げつようび}に、プロジェクトの{進捗|しんちょく}を{報告|ほうこく}しています。",
+          "kana": "まいしゅうげつようびに、プロジェクトのしんちょくをほうこくしています。",
+          "en": "Every Monday I report on the project's progress."
+        },
+        {
+          "ja": "{工事|こうじ}の{進捗|しんちょく}が{遅|おく}れているため、{完成|かんせい}は{来年|らいねん}の{春|はる}になりそうだ。",
+          "kana": "こうじのしんちょくがおくれているため、かんせいはらいねんのはるになりそうだ。",
+          "en": "The construction is behind schedule, so completion will likely be next spring."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}や{計画|けいかく}がどのくらい{進|すす}んでいるか。{進|すす}み{具合|ぐあい}。",
+        "kana": "しごとやけいかくがどのくらいすすんでいるか。すすみぐあい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0836",
+      "word": "支社",
+      "kana": "ししゃ",
+      "meanings": [
+        "branch office"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "business",
+        "places"
+      ],
+      "notes": "Counterpart of 本社. Shops and bank branches are 支店.",
+      "confusables": [
+        "v-n2-0756"
+      ],
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{海外|かいがい}に{初|はじ}めての{支社|ししゃ}ができる{予定|よてい}だ。",
+          "kana": "らいねん、かいがいにはじめてのししゃができるよていだ。",
+          "en": "Next year our first overseas branch office is scheduled to open."
+        },
+        {
+          "ja": "{支社|ししゃ}で{三年|さんねん}{働|はたら}いた{後|あと}、{本社|ほんしゃ}に{戻|もど}ってきました。",
+          "kana": "ししゃでさんねんはたらいたあと、ほんしゃにもどってきました。",
+          "en": "After working three years at a branch office, I came back to head office."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{本社|ほんしゃ}から{離|はな}れた{町|まち}などに{作|つく}られた、{会社|かいしゃ}の{事務所|じむしょ}。",
+        "kana": "ほんしゃからはなれたまちなどにつくられた、かいしゃのじむしょ。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0837",
+      "word": "内定",
+      "kana": "ないてい",
+      "meanings": [
+        "informal job offer",
+        "unofficial decision"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "notes": "The job offer students receive months before they start; also an unofficial decision in general.",
+      "collocations": [
+        "内定をもらう",
+        "内定が決まる"
+      ],
+      "examples": [
+        {
+          "ja": "{第一|だいいち}{志望|しぼう}の{会社|かいしゃ}から{内定|ないてい}をもらって、ほっとした。",
+          "kana": "だいいちしぼうのかいしゃからないていをもらって、ほっとした。",
+          "en": "I got an offer from my first-choice company and felt relieved."
+        },
+        {
+          "ja": "{内定|ないてい}が{出|で}ても、{卒業|そつぎょう}できなければ{取|と}り{消|け}されることがある。",
+          "kana": "ないていがでても、そつぎょうできなければとりけされることがある。",
+          "en": "Even if you get a job offer, it can be withdrawn if you fail to graduate."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}に{入|はい}る{人|ひと}を{採用|さいよう}すると、{発表|はっぴょう}の{前|まえ}に{決|き}めて{本人|ほんにん}に{知|し}らせること。",
+        "kana": "かいしゃにはいるひとをさいようすると、はっぴょうのまえにきめてほんにんにしらせること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0838",
+      "word": "就職活動",
+      "kana": "しゅうしょくかつどう",
+      "meanings": [
+        "job hunting"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "study"
+      ],
+      "notes": "Almost always shortened to 就活 (しゅうかつ) in speech.",
+      "altForms": [
+        "就活"
+      ],
+      "examples": [
+        {
+          "ja": "{大学三年|だいがくさんねん}の{秋|あき}から{就職活動|しゅうしょくかつどう}を{始|はじ}める{学生|がくせい}が{多|おお}い。",
+          "kana": "だいがくさんねんのあきからしゅうしょくかつどうをはじめるがくせいがおおい。",
+          "en": "Many students start job hunting in the autumn of their third year of university."
+        },
+        {
+          "ja": "{就活|しゅうかつ}のために、{髪|かみ}を{黒|くろ}く{染|そ}め{直|なお}した。",
+          "kana": "しゅうかつのために、かみをくろくそめなおした。",
+          "en": "For my job hunt, I dyed my hair back to black."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学生|がくせい}などが、{働|はたら}く{会社|かいしゃ}を{探|さが}して{面接|めんせつ}などを{受|う}けること。",
+        "kana": "がくせいなどが、はたらくかいしゃをさがしてめんせつなどをうけること。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0839",
+      "word": "新卒",
+      "kana": "しんそつ",
+      "meanings": [
+        "new graduate"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work",
+        "study"
+      ],
+      "notes": "Short for 新規卒業者. Opposite in hiring: 中途 (mid-career).",
+      "collocations": [
+        "新卒採用",
+        "新卒で入社する"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}は{毎年|まいとし}{新卒|しんそつ}を{二十人|にじゅうにん}ほど{採用|さいよう}している。",
+          "kana": "このかいしゃはまいとししんそつをにじゅうにんほどさいようしている。",
+          "en": "This company hires about twenty new graduates every year."
+        },
+        {
+          "ja": "{新卒|しんそつ}で{入|はい}った{会社|かいしゃ}に、もう{二十年|にじゅうねん}も{勤|つと}めている。",
+          "kana": "しんそつではいったかいしゃに、もうにじゅうねんもつとめている。",
+          "en": "I have now been with the company I joined straight out of school for twenty years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{年|とし}に{学校|がっこう}を{卒業|そつぎょう}したばかりの{人|ひと}。",
+        "kana": "そのとしにがっこうをそつぎょうしたばかりのひと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0840",
+      "word": "年収",
+      "kana": "ねんしゅう",
+      "meanings": [
+        "annual income"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "collocations": [
+        "年収が上がる",
+        "平均年収"
+      ],
+      "examples": [
+        {
+          "ja": "{転職|てんしょく}して{年収|ねんしゅう}は{下|さ}がったが、{自由|じゆう}な{時間|じかん}が{増|ふ}えた。",
+          "kana": "てんしょくしてねんしゅうはさがったが、じゆうなじかんがふえた。",
+          "en": "I changed jobs and my annual income dropped, but I have more free time."
+        },
+        {
+          "ja": "この{仕事|しごと}の{年収|ねんしゅう}は{四百万円|よんひゃくまんえん}ほどだと{求人|きゅうじん}の{広告|こうこく}に{書|か}いてあった。",
+          "kana": "このしごとのねんしゅうはよんひゃくまんえんほどだときゅうじんのこうこくにかいてあった。",
+          "en": "The job ad said the annual income for this position is around four million yen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年間|いちねんかん}に{入|はい}ってくる{収入|しゅうにゅう}の{合計|ごうけい}。",
+        "kana": "いちねんかんにはいってくるしゅうにゅうのごうけい。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0841",
+      "word": "有給",
+      "kana": "ゆうきゅう",
+      "meanings": [
+        "paid leave"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "work"
+      ],
+      "notes": "Short for 有給休暇; also 有休.",
+      "collocations": [
+        "有給を取る",
+        "有給休暇"
+      ],
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}、{有給|ゆうきゅう}を{二日|ふつか}{取|と}って{温泉|おんせん}に{行|い}くつもりだ。",
+          "kana": "らいしゅう、ゆうきゅうをふつかとっておんせんにいくつもりだ。",
+          "en": "Next week I plan to take two days of paid leave and go to a hot spring."
+        },
+        {
+          "ja": "{有給|ゆうきゅう}が{余|あま}っているなら、{無理|むり}せず{休|やす}んだほうがいいよ。",
+          "kana": "ゆうきゅうがあまっているなら、むりせずやすんだほうがいいよ。",
+          "en": "If you have paid leave left over, you should take it instead of pushing yourself."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{休|やす}んでも{給料|きゅうりょう}がもらえる{休暇|きゅうか}。",
+        "kana": "やすんでもきゅうりょうがもらえるきゅうか。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0842",
+      "word": "志望",
+      "kana": "しぼう",
+      "meanings": [
+        "wish",
+        "aspiration",
+        "choice (of school or job)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work"
+      ],
+      "notes": "Same reading as 死亡 (death); context makes it clear.",
+      "collocations": [
+        "第一志望",
+        "志望校",
+        "志望動機"
+      ],
+      "examples": [
+        {
+          "ja": "{第一|だいいち}{志望|しぼう}の{大学|だいがく}に{落|お}ちて、{一週間|いっしゅうかん}{何|なに}もやる{気|き}が{起|お}きなかった。",
+          "kana": "だいいちしぼうのだいがくにおちて、いっしゅうかんなにもやるきがおきなかった。",
+          "en": "I failed to get into my first-choice university and had no motivation for a week."
+        },
+        {
+          "ja": "{志望|しぼう}の{理由|りゆう}を{聞|き}かれて、うまく{答|こた}えられなかった。",
+          "kana": "しぼうのりゆうをきかれて、うまくこたえられなかった。",
+          "en": "When asked why I wanted to join, I could not answer well."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{学校|がっこう}や{会社|かいしゃ}などに{入|はい}りたいと{望|のぞ}むこと。",
+        "kana": "あるがっこうやかいしゃなどにはいりたいとのぞむこと。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0843",
+      "word": "模試",
+      "kana": "もし",
+      "meanings": [
+        "practice exam",
+        "mock exam"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "notes": "Short for 模擬試験. Same sound as もし (if); the pitch and context differ.",
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}に{模試|もし}があるので、{今週|こんしゅう}は{遊|あそ}びに{行|い}けない。",
+          "kana": "にちようびにもしがあるので、こんしゅうはあそびにいけない。",
+          "en": "I have a practice exam on Sunday, so I cannot go out this week."
+        },
+        {
+          "ja": "{模試|もし}の{結果|けっか}が{返|かえ}ってきて、{苦手|にがて}な{科目|かもく}がはっきりした。",
+          "kana": "もしのけっかがかえってきて、にがてなかもくがはっきりした。",
+          "en": "The practice exam results came back and made clear which subjects I am weak in."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入学|にゅうがく}{試験|しけん}などの{前|まえ}に、{力|ちから}を{試|ため}すために{受|う}ける{練習|れんしゅう}の{試験|しけん}。",
+        "kana": "にゅうがくしけんなどのまえに、ちからをためすためにうけるれんしゅうのしけん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0844",
+      "word": "過去問",
+      "kana": "かこもん",
+      "meanings": [
+        "past exam questions"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "notes": "Short for 過去の問題; the standard exam-prep word.",
+      "collocations": [
+        "過去問を解く"
+      ],
+      "examples": [
+        {
+          "ja": "{試験|しけん}の{前|まえ}に{過去問|かこもん}を{五年分|ごねんぶん}{解|と}いておいた。",
+          "kana": "しけんのまえにかこもんをごねんぶんといておいた。",
+          "en": "Before the exam, I worked through five years of past questions."
+        },
+        {
+          "ja": "この{大学|だいがく}の{過去問|かこもん}は{図書館|としょかん}で{借|か}りられる。",
+          "kana": "このだいがくのかこもんはとしょかんでかりられる。",
+          "en": "You can borrow this university's past exam papers from the library."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{試験|しけん}で{前|まえ}に{実際|じっさい}に{出|で}た{問題|もんだい}。{練習|れんしゅう}のために{使|つか}う。",
+        "kana": "しけんでまえにじっさいにでたもんだい。れんしゅうのためにつかう。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0845",
+      "word": "卒論",
+      "kana": "そつろん",
+      "meanings": [
+        "graduation thesis"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "notes": "Short for 卒業論文; the full form is used in writing.",
+      "examples": [
+        {
+          "ja": "{卒論|そつろん}の{締|し}め{切|き}りが{近|ちか}くて、{毎日|まいにち}{図書館|としょかん}にこもっている。",
+          "kana": "そつろんのしめきりがちかくて、まいにちとしょかんにこもっている。",
+          "en": "My thesis deadline is close, so I am holed up in the library every day."
+        },
+        {
+          "ja": "{卒論|そつろん}のテーマは、{地元|じもと}の{方言|ほうげん}についてにした。",
+          "kana": "そつろんのテーマは、じもとのほうげんについてにした。",
+          "en": "I chose the local dialect as the theme of my graduation thesis."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}を{卒業|そつぎょう}するために{書|か}く{論文|ろんぶん}。",
+        "kana": "だいがくをそつぎょうするためにかくろんぶん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0846",
+      "word": "参考書",
+      "kana": "さんこうしょ",
+      "meanings": [
+        "reference book",
+        "study guide"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "media"
+      ],
+      "confusables": [
+        "v-n2-0847"
+      ],
+      "examples": [
+        {
+          "ja": "{本屋|ほんや}で{英語|えいご}の{参考書|さんこうしょ}を{何冊|なんさつ}も{見比|みくら}べて、{一冊|いっさつ}{選|えら}んだ。",
+          "kana": "ほんやでえいごのさんこうしょをなんさつもみくらべて、いっさつえらんだ。",
+          "en": "At the bookstore I compared several English study guides and chose one."
+        },
+        {
+          "ja": "{参考書|さんこうしょ}を{何冊|なんさつ}{買|か}っても、{読|よ}まなければ{意味|いみ}がない。",
+          "kana": "さんこうしょをなんさつかっても、よまなければいみがない。",
+          "en": "No matter how many study guides you buy, they are pointless if you do not read them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{勉強|べんきょう}や{研究|けんきゅう}の{役|やく}に{立|た}つように、{分|わ}かりやすく{説明|せつめい}した{本|ほん}。",
+        "kana": "べんきょうやけんきゅうのやくにたつように、わかりやすくせつめいしたほん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0847",
+      "word": "問題集",
+      "kana": "もんだいしゅう",
+      "meanings": [
+        "workbook",
+        "exercise book"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study"
+      ],
+      "confusables": [
+        "v-n2-0846"
+      ],
+      "examples": [
+        {
+          "ja": "この{問題集|もんだいしゅう}を{一冊|いっさつ}{終|お}えれば、{試験|しけん}の{準備|じゅんび}は{十分|じゅうぶん}だろう。",
+          "kana": "このもんだいしゅうをいっさつおえれば、しけんのじゅんびはじゅうぶんだろう。",
+          "en": "If you finish this one workbook, you should be well prepared for the exam."
+        },
+        {
+          "ja": "{塾|じゅく}で{使|つか}っている{問題集|もんだいしゅう}は、{学校|がっこう}のものより{難|むずか}しい。",
+          "kana": "じゅくでつかっているもんだいしゅうは、がっこうのものよりむずかしい。",
+          "en": "The workbook we use at cram school is harder than the one from school."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{練習|れんしゅう}のための{問題|もんだい}をたくさん{集|あつ}めた{本|ほん}。",
+        "kana": "れんしゅうのためのもんだいをたくさんあつめたほん。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0848",
+      "word": "偏差値",
+      "kana": "へんさち",
+      "meanings": [
+        "deviation score (school ranking index)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "notes": "A standardized score (mean 50) used to rank students and schools in Japan.",
+      "examples": [
+        {
+          "ja": "{偏差値|へんさち}だけで{学校|がっこう}を{選|えら}ぶのは、よくないと{思|おも}う。",
+          "kana": "へんさちだけでがっこうをえらぶのは、よくないとおもう。",
+          "en": "I do not think it is good to choose a school by its deviation score alone."
+        },
+        {
+          "ja": "{模試|もし}で{偏差値|へんさち}が{五|ご}{上|あ}がって、{志望校|しぼうこう}が{見|み}えてきた。",
+          "kana": "もしでへんさちがごあがって、しぼうこうがみえてきた。",
+          "en": "My deviation score went up five points on the practice exam, and my target school is now within reach."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{試験|しけん}の{点数|てんすう}が、{全体|ぜんたい}の{平均|へいきん}からどのくらい{離|はな}れているかを{表|あらわ}す{数値|すうち}。",
+        "kana": "しけんのてんすうが、ぜんたいのへいきんからどのくらいはなれているかをあらわすすうち。"
+      },
+      "station": 42
+    },
+    {
+      "id": "v-n2-0849",
+      "word": "浪人",
+      "kana": "ろうにん",
+      "meanings": [
+        "student retaking entrance exams",
+        "masterless samurai"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "people",
+        "culture"
+      ],
+      "notes": "Originally a samurai without a lord; now a graduate studying for another try at entrance exams.",
+      "collocations": [
+        "一浪する",
+        "浪人生"
+      ],
+      "examples": [
+        {
+          "ja": "{兄|あに}は{一年|いちねん}{浪人|ろうにん}して、{希望|きぼう}の{大学|だいがく}に{入|はい}った。",
+          "kana": "あにはいちねんろうにんして、きぼうのだいがくにはいった。",
+          "en": "My brother spent a year retaking exams and got into the university he wanted."
+        },
+        {
+          "ja": "{浪人|ろうにん}{中|ちゅう}は{友達|ともだち}と{遊|あそ}ぶのも{我慢|がまん}して、{勉強|べんきょう}ばかりしていた。",
+          "kana": "ろうにんちゅうはともだちとあそぶのもがまんして、べんきょうばかりしていた。",
+          "en": "While retaking my exams, I even held off on hanging out with friends and did nothing but study."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入学|にゅうがく}{試験|しけん}に{落|お}ちて、つぎの{年|とし}の{試験|しけん}のために{勉強|べんきょう}している{人|ひと}。",
+        "kana": "にゅうがくしけんにおちて、つぎのとしのしけんのためにべんきょうしているひと。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0850",
+      "word": "履修",
+      "kana": "りしゅう",
+      "meanings": [
+        "taking (a course)",
+        "course registration"
+      ],
+      "pos": "n-suru",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "collocations": [
+        "履修登録",
+        "必修科目を履修する"
+      ],
+      "examples": [
+        {
+          "ja": "{一年生|いちねんせい}は{必|かなら}ずこの{授業|じゅぎょう}を{履修|りしゅう}しなければならない。",
+          "kana": "いちねんせいはかならずこのじゅぎょうをりしゅうしなければならない。",
+          "en": "First-years must take this class."
+        },
+        {
+          "ja": "{興味|きょうみ}のある{科目|かもく}を{履修|りしゅう}したら、{毎日|まいにち}{朝|あさ}{一番|いちばん}の{授業|じゅぎょう}になってしまった。",
+          "kana": "きょうみのあるかもくをりしゅうしたら、まいにちあさいちばんのじゅぎょうになってしまった。",
+          "en": "I registered for the subjects that interested me, and ended up with first-period classes every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大学|だいがく}などで、{科目|かもく}を{選|えら}んで{講義|こうぎ}を{受|う}けること。",
+        "kana": "だいがくなどで、かもくをえらんでこうぎをうけること。"
+      },
+      "station": 43
+    },
+    {
+      "id": "v-n2-0851",
+      "word": "家庭教師",
+      "kana": "かていきょうし",
+      "meanings": [
+        "private tutor"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "study",
+        "work",
+        "people"
+      ],
+      "collocations": [
+        "家庭教師をつける"
+      ],
+      "examples": [
+        {
+          "ja": "{大学生|だいがくせい}のとき、{家庭教師|かていきょうし}のアルバイトをしていた。",
+          "kana": "だいがくせいのとき、かていきょうしのアルバイトをしていた。",
+          "en": "When I was in college, I worked part-time as a private tutor."
+        },
+        {
+          "ja": "{息子|むすこ}に{家庭教師|かていきょうし}をつけてから、{数学|すうがく}の{成績|せいせき}が{上|あ}がった。",
+          "kana": "むすこにかていきょうしをつけてから、すうがくのせいせきがあがった。",
+          "en": "Since we got my son a private tutor, his math grades have improved."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{生徒|せいと}の{家|いえ}に{行|い}って、{一人|ひとり}ずつ{勉強|べんきょう}を{教|おし}える{先生|せんせい}。",
+        "kana": "せいとのいえにいって、ひとりずつべんきょうをおしえるせんせい。"
+      },
+      "station": 43
+    }
+  ]
+}

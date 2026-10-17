@@ -1,0 +1,4388 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n4",
+  "writer": "vocab-n4-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n4-0001",
+      "word": "自分",
+      "kana": "じぶん",
+      "meanings": [
+        "oneself",
+        "myself"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{自分|じぶん}のことは{自分|じぶん}で{決|き}めたい。",
+          "kana": "じぶんのことはじぶんできめたい。",
+          "en": "I want to decide things about myself on my own."
+        },
+        {
+          "ja": "{弟|おとうと}は{自分|じぶん}で{晩|ばん}ご{飯|はん}を{作|つく}りました。",
+          "kana": "おとうとはじぶんでばんごはんをつくりました。",
+          "en": "My younger brother made dinner by himself."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0002",
+      "word": "彼",
+      "kana": "かれ",
+      "meanings": [
+        "he",
+        "boyfriend"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{毎朝|まいあさ}{六時|ろくじ}に{起|お}きるそうです。",
+          "kana": "かれはまいあさろくじにおきるそうです。",
+          "en": "I hear he gets up at six every morning."
+        },
+        {
+          "ja": "{彼|かれ}とは{去年|きょねん}の{夏|なつ}に{別|わか}れた。",
+          "kana": "かれとはきょねんのなつにわかれた。",
+          "en": "I broke up with my boyfriend last summer."
+        }
+      ],
+      "notes": "Also \"boyfriend\" in casual speech (彼ができた). Avoid using it for someone present; use the name + さん instead.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0003",
+      "word": "彼女",
+      "kana": "かのじょ",
+      "meanings": [
+        "she",
+        "girlfriend"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{英語|えいご}も{中国語|ちゅうごくご}も{話|はな}せる。",
+          "kana": "かのじょはえいごもちゅうごくごもはなせる。",
+          "en": "She can speak both English and Chinese."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{昨日|きのう}、{新|あたら}しい{靴|くつ}を{買|か}いました。",
+          "kana": "かのじょはきのう、あたらしいくつをかいました。",
+          "en": "She bought new shoes yesterday."
+        }
+      ],
+      "notes": "Also \"girlfriend\" (彼女がいる). Like 彼, it is not used for someone you are speaking to.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0004",
+      "word": "みんな",
+      "kana": "みんな",
+      "meanings": [
+        "everyone",
+        "everybody",
+        "all"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "quantity",
+        "usually-kana"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "みんなで{写真|しゃしん}を{撮|と}りましょう。",
+          "kana": "みんなでしゃしんをとりましょう。",
+          "en": "Let’s take a photo all together."
+        },
+        {
+          "ja": "{昨日|きのう}のパーティーには、みんな{来|き}てくれた。",
+          "kana": "きのうのパーティーには、みんなきてくれた。",
+          "en": "Everyone came to yesterday’s party."
+        }
+      ],
+      "notes": "皆 is also read みな in formal speech; みんな is the everyday form. みなさん is the polite way to address a group.",
+      "altForms": [
+        "皆"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0005",
+      "word": "僕",
+      "kana": "ぼく",
+      "meanings": [
+        "I (used by men)"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "casual"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{僕|ぼく}も{一緒|いっしょ}に{行|い}っていい？",
+          "kana": "ぼくもいっしょにいっていい？",
+          "en": "Can I come along too?"
+        },
+        {
+          "ja": "{僕|ぼく}は{子供|こども}のころ、{野球|やきゅう}が{大好|だいす}きだった。",
+          "kana": "ぼくはこどものころ、やきゅうがだいすきだった。",
+          "en": "When I was a kid, I loved baseball."
+        }
+      ],
+      "notes": "Softer and more boyish than 俺; fine for men in casual or semi-formal settings. Women normally use 私.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0006",
+      "word": "君",
+      "kana": "きみ",
+      "meanings": [
+        "you (casual)"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "casual"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{君|きみ}の{意見|いけん}が{聞|き}きたいんだ。",
+          "kana": "きみのいけんがききたいんだ。",
+          "en": "I want to hear your opinion."
+        },
+        {
+          "ja": "{君|きみ}が{作|つく}ったカレー、{本当|ほんとう}においしかったよ。",
+          "kana": "きみがつくったカレー、ほんとうにおいしかったよ。",
+          "en": "The curry you made was really delicious."
+        }
+      ],
+      "notes": "Used by men toward equals or juniors, or affectionately; not for superiors. In most situations the name + さん is safer.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0007",
+      "word": "大人",
+      "kana": "おとな",
+      "meanings": [
+        "adult",
+        "grown-up"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大人|おとな}は{一人|ひとり}{千円|せんえん}、{子供|こども}は{無料|むりょう}です。",
+          "kana": "おとなはひとりせんえん、こどもはむりょうです。",
+          "en": "Adults are one thousand yen each, and children are free."
+        },
+        {
+          "ja": "{大人|おとな}になったら、{一人|ひとり}で{外国|がいこく}に{行|い}きたい。",
+          "kana": "おとなになったら、ひとりでがいこくにいきたい。",
+          "en": "When I grow up, I want to go abroad by myself."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0008",
+      "word": "客",
+      "kana": "きゃく",
+      "meanings": [
+        "guest",
+        "customer"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "business"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{客|きゃく}が{少|すく}なくて{店|みせ}が{静|しず}かだ。",
+          "kana": "きょうはきゃくがすくなくてみせがしずかだ。",
+          "en": "There are few customers today, so the shop is quiet."
+        },
+        {
+          "ja": "{土曜日|どようび}は{客|きゃく}が{多|おお}くて、とても{忙|いそが}しかったです。",
+          "kana": "どようびはきゃくがおおくて、とてもいそがしかったです。",
+          "en": "On Saturday there were a lot of customers, and it was really busy."
+        }
+      ],
+      "notes": "Covers both guests at home and customers in a shop; staff say お客さん or お客様.",
+      "collocations": [
+        "お客さん",
+        "お客様"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0009",
+      "word": "女性",
+      "kana": "じょせい",
+      "meanings": [
+        "woman",
+        "female"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{女性|じょせい}のお{客|きゃく}さんが{多|おお}い{店|みせ}です。",
+          "kana": "じょせいのおきゃくさんがおおいみせです。",
+          "en": "It’s a shop with many female customers."
+        },
+        {
+          "ja": "{駅|えき}で{知|し}らない{女性|じょせい}に{道|みち}を{聞|き}かれた。",
+          "kana": "えきでしらないじょせいにみちをきかれた。",
+          "en": "A woman I didn’t know asked me for directions at the station."
+        }
+      ],
+      "notes": "Neutral, adult-sounding word used in writing and announcements; 女の人 is the everyday spoken equivalent.",
+      "confusables": [
+        "v-n4-0010"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0010",
+      "word": "男性",
+      "kana": "だんせい",
+      "meanings": [
+        "man",
+        "male"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{受付|うけつけ}に{背|せ}の{高|たか}い{男性|だんせい}が{立|た}っていた。",
+          "kana": "うけつけにせのたかいだんせいがたっていた。",
+          "en": "A tall man was standing at the reception desk."
+        },
+        {
+          "ja": "この{仕事|しごと}は{男性|だんせい}より{女性|じょせい}のほうが{多|おお}いです。",
+          "kana": "このしごとはだんせいよりじょせいのほうがおおいです。",
+          "en": "In this job there are more women than men."
+        }
+      ],
+      "notes": "Neutral, adult-sounding word; 男の人 is the everyday spoken equivalent.",
+      "confusables": [
+        "v-n4-0009"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0011",
+      "word": "両親",
+      "kana": "りょうしん",
+      "meanings": [
+        "parents"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{両親|りょうしん}は{今|いま}も{箱根|はこね}に{住|す}んでいます。",
+          "kana": "りょうしんはいまもはこねにすんでいます。",
+          "en": "My parents still live in Hakone."
+        },
+        {
+          "ja": "{両親|りょうしん}に{京都|きょうと}のお{菓子|かし}を{送|おく}った。",
+          "kana": "りょうしんにきょうとのおかしをおくった。",
+          "en": "I sent my parents some sweets from Kyoto."
+        }
+      ],
+      "notes": "Both parents together; for someone else’s parents say ご両親.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0012",
+      "word": "親",
+      "kana": "おや",
+      "meanings": [
+        "parent"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{親|おや}になって、{初|はじ}めて{分|わ}かることがある。",
+          "kana": "おやになって、はじめてわかることがある。",
+          "en": "There are things you only understand once you become a parent."
+        },
+        {
+          "ja": "{日曜日|にちようび}はいつも{親|おや}に{電話|でんわ}をかけています。",
+          "kana": "にちようびはいつもおやにでんわをかけています。",
+          "en": "I always call my parents on Sundays."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0013",
+      "word": "娘",
+      "kana": "むすめ",
+      "meanings": [
+        "daughter",
+        "girl"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{来年|らいねん}{小学校|しょうがっこう}に{入|はい}ります。",
+          "kana": "むすめはらいねんしょうがっこうにはいります。",
+          "en": "My daughter starts elementary school next year."
+        },
+        {
+          "ja": "{娘|むすめ}が{初|はじ}めて{自分|じぶん}で{料理|りょうり}を{作|つく}った。",
+          "kana": "むすめがはじめてじぶんでりょうりをつくった。",
+          "en": "My daughter cooked a meal by herself for the first time."
+        }
+      ],
+      "notes": "Your own daughter; someone else’s is 娘さん or お嬢さん.",
+      "confusables": [
+        "v-n4-0014",
+        "v-n4-0060"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0014",
+      "word": "息子",
+      "kana": "むすこ",
+      "meanings": [
+        "son"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{息子|むすこ}は{毎日|まいにち}サッカーの{練習|れんしゅう}に{行|い}っている。",
+          "kana": "むすこはまいにちサッカーのれんしゅうにいっている。",
+          "en": "My son goes to soccer practice every day."
+        },
+        {
+          "ja": "{息子|むすこ}さんは{今|いま}おいくつですか。",
+          "kana": "むすこさんはいまおいくつですか。",
+          "en": "How old is your son?"
+        }
+      ],
+      "notes": "Your own son; someone else’s is 息子さん.",
+      "confusables": [
+        "v-n4-0013"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0015",
+      "word": "夫",
+      "kana": "おっと",
+      "meanings": [
+        "husband"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夫|おっと}は{料理|りょうり}が{上手|じょうず}で、よく{作|つく}ってくれます。",
+          "kana": "おっとはりょうりがじょうずで、よくつくってくれます。",
+          "en": "My husband is a good cook and often cooks for me."
+        },
+        {
+          "ja": "{夫|おっと}は{今朝|けさ}{早|はや}く{会社|かいしゃ}に{出|で}かけた。",
+          "kana": "おっとはけさはやくかいしゃにでかけた。",
+          "en": "My husband left for work early this morning."
+        }
+      ],
+      "notes": "Neutral word for your own husband, common in writing and increasingly in speech; 主人 is the traditional spoken term.",
+      "confusables": [
+        "v-n4-0038"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0016",
+      "word": "妻",
+      "kana": "つま",
+      "meanings": [
+        "wife"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{妻|つま}と{二人|ふたり}で{映画|えいが}を{見|み}に{行|い}った。",
+          "kana": "つまとふたりでえいがをみにいった。",
+          "en": "I went to see a movie with my wife."
+        },
+        {
+          "ja": "{妻|つま}は{銀行|ぎんこう}で{働|はたら}いています。",
+          "kana": "つまはぎんこうではたらいています。",
+          "en": "My wife works at a bank."
+        }
+      ],
+      "notes": "Neutral word for your own wife; 家内 is humble and old-fashioned, 奥さん is for someone else’s wife.",
+      "confusables": [
+        "v-n4-0039",
+        "v-n4-0040"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0017",
+      "word": "子",
+      "kana": "こ",
+      "meanings": [
+        "child",
+        "kid"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{隣|となり}の{子|こ}は{毎朝|まいあさ}{元気|げんき}に{挨拶|あいさつ}してくれる。",
+          "kana": "となりのこはまいあさげんきにあいさつしてくれる。",
+          "en": "The kid next door greets me cheerfully every morning."
+        },
+        {
+          "ja": "あの{子|こ}はまだ{三歳|さんさい}ですが、もうひらがなが{読|よ}めます。",
+          "kana": "あのこはまださんさいですが、もうひらがながよめます。",
+          "en": "That child is only three, but she can already read hiragana."
+        }
+      ],
+      "notes": "Short for 子供 in speech (この子, うちの子, 男の子); also a suffix in 〜っ子.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0018",
+      "word": "力",
+      "kana": "ちから",
+      "meanings": [
+        "strength",
+        "power",
+        "ability"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "abstract"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{箱|はこ}、{重|おも}くて{一人|ひとり}の{力|ちから}じゃ{持|も}てない。",
+          "kana": "このはこ、おもくてひとりのちからじゃもてない。",
+          "en": "This box is so heavy I can’t lift it on my own."
+        },
+        {
+          "ja": "{言葉|ことば}には{人|ひと}を{元気|げんき}にする{力|ちから}があります。",
+          "kana": "ことばにはひとをげんきにするちからがあります。",
+          "en": "Words have the power to cheer people up."
+        }
+      ],
+      "collocations": [
+        "力がある",
+        "力を入れる"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0019",
+      "word": "気",
+      "kana": "き",
+      "meanings": [
+        "spirit",
+        "mind",
+        "feeling",
+        "mood"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{誰|だれ}かに{見|み}られている{気|き}がする。",
+          "kana": "だれかにみられているきがする。",
+          "en": "I have the feeling someone is watching me."
+        },
+        {
+          "ja": "{祖母|そぼ}は{九十歳|きゅうじゅっさい}ですが、{気|き}が{若|わか}いです。",
+          "kana": "そぼはきゅうじゅっさいですが、きがわかいです。",
+          "en": "My grandmother is ninety, but she is young at heart."
+        }
+      ],
+      "notes": "Rarely stands alone; lives in set phrases: 気がする (have a feeling), 気になる (weigh on one’s mind), 気に入る (take a liking to), 気をつける (be careful).",
+      "collocations": [
+        "気がする",
+        "気になる",
+        "気に入る"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0020",
+      "word": "信じる",
+      "kana": "しんじる",
+      "meanings": [
+        "to believe",
+        "to trust"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}の{言|い}うことを{信|しん}じています。",
+          "kana": "かのじょのいうことをしんじています。",
+          "en": "I believe what she says."
+        },
+        {
+          "ja": "{誰|だれ}も{僕|ぼく}の{話|はなし}を{信|しん}じてくれなかった。",
+          "kana": "だれもぼくのはなしをしんじてくれなかった。",
+          "en": "Nobody believed my story."
+        }
+      ],
+      "notes": "The person or thing believed takes を; 〜と信じる = to believe that. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "〜と信じる",
+        "人を信じる"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0021",
+      "word": "考える",
+      "kana": "かんがえる",
+      "meanings": [
+        "to think",
+        "to consider"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{留学|りゅうがく}するかどうか、まだ{考|かんが}えています。",
+          "kana": "りゅうがくするかどうか、まだかんがえています。",
+          "en": "I’m still thinking about whether to study abroad."
+        },
+        {
+          "ja": "{答|こた}えを{言|い}う{前|まえ}に、もう{一度|いちど}よく{考|かんが}えて。",
+          "kana": "こたえをいうまえに、もういちどよくかんがえて。",
+          "en": "Think it over once more before you give your answer."
+        }
+      ],
+      "notes": "Deliberate thinking and weighing options; 思う is a feeling or opinion.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0022",
+      "word": "笑う",
+      "kana": "わらう",
+      "meanings": [
+        "to laugh",
+        "to smile"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{彼|かれ}の{話|はなし}がおかしくて、みんな{大|おお}きな{声|こえ}で{笑|わら}った。",
+          "kana": "かれのはなしがおかしくて、みんなおおきなこえでわらった。",
+          "en": "His story was so funny that everyone laughed out loud."
+        },
+        {
+          "ja": "{赤|あか}ちゃんはお{母|かあ}さんの{顔|かお}を{見|み}るとよく{笑|わら}います。",
+          "kana": "あかちゃんはおかあさんのかおをみるとよくわらいます。",
+          "en": "The baby often smiles when she sees her mother’s face."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0023",
+      "word": "泣く",
+      "kana": "なく",
+      "meanings": [
+        "to cry",
+        "to weep"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "その{映画|えいが}を{見|み}て、{泣|な}いてしまいました。",
+          "kana": "そのえいがをみて、ないてしまいました。",
+          "en": "I ended up crying when I watched that movie."
+        },
+        {
+          "ja": "{娘|むすめ}は{病院|びょういん}でも{全然|ぜんぜん}{泣|な}かない。",
+          "kana": "むすめはびょういんでもぜんぜんなかない。",
+          "en": "My daughter doesn’t cry at all, even at the hospital."
+        }
+      ],
+      "notes": "Only for people crying; animals and birds 鳴く (same reading, different kanji).",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0024",
+      "word": "怒る",
+      "kana": "おこる",
+      "meanings": [
+        "to get angry",
+        "to scold"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{約束|やくそく}を{忘|わす}れて、{彼女|かのじょ}に{怒|おこ}られた。",
+          "kana": "やくそくをわすれて、かのじょにおこられた。",
+          "en": "I forgot our promise and my girlfriend got angry at me."
+        },
+        {
+          "ja": "{父|ちち}はあまり{怒|おこ}りませんが、{怒|おこ}ると{怖|こわ}いです。",
+          "kana": "ちちはあまりおこりませんが、おこるとこわいです。",
+          "en": "My father rarely gets angry, but when he does, he is scary."
+        }
+      ],
+      "notes": "怒られる (passive) is the usual way to say \"I got told off\".",
+      "collocations": [
+        "怒られる"
+      ],
+      "confusables": [
+        "v-n4-0119"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0025",
+      "word": "仲",
+      "kana": "なか",
+      "meanings": [
+        "relationship",
+        "terms (between people)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{妹|いもうと}とは{昔|むかし}から{仲|なか}がいいです。",
+          "kana": "いもうととはむかしからなかがいいです。",
+          "en": "My sister and I have always gotten along well."
+        },
+        {
+          "ja": "あの{二人|ふたり}は{最近|さいきん}{仲|なか}が{悪|わる}いと{思|おも}う。",
+          "kana": "あのふたりはさいきんなかがわるいとおもう。",
+          "en": "I think those two haven’t been getting along lately."
+        }
+      ],
+      "notes": "How people get along: 仲がいい = to be close, 仲が悪い = not to get along. Not 中 (inside), which has the same reading.",
+      "collocations": [
+        "仲がいい",
+        "仲が悪い",
+        "仲良く"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0026",
+      "word": "不安",
+      "kana": "ふあん",
+      "meanings": [
+        "anxious",
+        "uneasy",
+        "worried"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{試験|しけん}の{結果|けっか}が{出|で}るまで、ずっと{不安|ふあん}だった。",
+          "kana": "しけんのけっかがでるまで、ずっとふあんだった。",
+          "en": "I was anxious the whole time until the exam results came out."
+        },
+        {
+          "ja": "{来月|らいげつ}から{新|あたら}しい{会社|かいしゃ}で{働|はたら}くので、{少|すこ}し{不安|ふあん}です。",
+          "kana": "らいげつからあたらしいかいしゃではたらくので、すこしふあんです。",
+          "en": "I start at a new company next month, so I’m a little anxious."
+        }
+      ],
+      "notes": "Opposite of 安心; also a noun (不安がある). Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "不安になる",
+        "不安がある"
+      ],
+      "confusables": [
+        "v-n4-0100"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0027",
+      "word": "仕方",
+      "kana": "しかた",
+      "meanings": [
+        "way (of doing)",
+        "method"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{雨|あめ}なら{仕方|しかた}がない。{家|いえ}で{映画|えいが}を{見|み}よう。",
+          "kana": "あめならしかたがない。いえでえいがをみよう。",
+          "en": "If it’s raining, it can’t be helped. Let’s watch a movie at home."
+        },
+        {
+          "ja": "{漢字|かんじ}の{勉強|べんきょう}の{仕方|しかた}を{先生|せんせい}に{聞|き}きました。",
+          "kana": "かんじのべんきょうのしかたをせんせいにききました。",
+          "en": "I asked my teacher how to go about studying kanji."
+        }
+      ],
+      "notes": "Mostly in 仕方がない (it can’t be helped). As a suffix, 〜方 (かた) means \"way of doing\": 使い方, やり方.",
+      "collocations": [
+        "仕方がない",
+        "仕方なく"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0028",
+      "word": "ぜひ",
+      "kana": "ぜひ",
+      "meanings": [
+        "by all means",
+        "definitely"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "abstract",
+        "usually-kana"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今度|こんど}ぜひうちに{遊|あそ}びに{来|き}てください。",
+          "kana": "こんどぜひうちにあそびにきてください。",
+          "en": "Please do come over to my place sometime."
+        },
+        {
+          "ja": "{今度|こんど}の{試合|しあい}、ぜひ{見|み}に{来|き}てよ。",
+          "kana": "こんどのしあい、ぜひみにきてよ。",
+          "en": "Do come and watch the next game!"
+        }
+      ],
+      "notes": "Strengthens a request, invitation or wish (ぜひ〜てください, ぜひ〜たい); not used with plain statements of fact.",
+      "altForms": [
+        "是非"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0029",
+      "word": "訳",
+      "kana": "わけ",
+      "meanings": [
+        "reason",
+        "meaning",
+        "circumstances"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}が{急|きゅう}に{会社|かいしゃ}をやめた{訳|わけ}を{知|し}っていますか。",
+          "kana": "かれがきゅうにかいしゃをやめたわけをしっていますか。",
+          "en": "Do you know why he suddenly quit the company?"
+        },
+        {
+          "ja": "{彼女|かのじょ}が{泣|な}いている{訳|わけ}が{分|わ}からなかった。",
+          "kana": "かのじょがないているわけがわからなかった。",
+          "en": "I didn’t understand why she was crying."
+        }
+      ],
+      "notes": "The reason or logic behind something; 訳が分からない = it makes no sense. The grammar pattern 〜わけではない (N3) is usually written in kana.",
+      "collocations": [
+        "訳が分からない",
+        "訳を話す"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0030",
+      "word": "変",
+      "kana": "へん",
+      "meanings": [
+        "strange",
+        "odd",
+        "unusual"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "personality"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{冷蔵庫|れいぞうこ}から{変|へん}な{音|おと}がする。",
+          "kana": "れいぞうこからへんなおとがする。",
+          "en": "There’s a strange noise coming from the fridge."
+        },
+        {
+          "ja": "{暑|あつ}かったり{寒|さむ}かったりして、{今年|ことし}の{天気|てんき}は{変|へん}ですね。",
+          "kana": "あつかったりさむかったりして、ことしのてんきはへんですね。",
+          "en": "Hot one day and cold the next, this year’s weather is strange, isn’t it?"
+        }
+      ],
+      "collocations": [
+        "変な人",
+        "変な音"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0031",
+      "word": "無理",
+      "kana": "むり",
+      "meanings": [
+        "impossible",
+        "unreasonable",
+        "overdoing it"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}までに{終|お}わらせるのは{無理|むり}だよ。",
+          "kana": "あしたまでにおわらせるのはむりだよ。",
+          "en": "There’s no way to finish it by tomorrow."
+        },
+        {
+          "ja": "{一日|いちにち}で{京都|きょうと}まで{歩|ある}くのは{無理|むり}です。",
+          "kana": "いちにちできょうとまであるくのはむりです。",
+          "en": "Walking all the way to Kyoto in one day is impossible."
+        }
+      ],
+      "notes": "無理しないで = don’t push yourself. Also a noun with する: 無理をする (to overdo it).",
+      "collocations": [
+        "無理をする",
+        "無理に"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0032",
+      "word": "楽しみ",
+      "kana": "たのしみ",
+      "meanings": [
+        "pleasure",
+        "something to look forward to"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "hobbies"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}の{旅行|りょこう}を{楽|たの}しみにしています。",
+          "kana": "らいげつのりょこうをたのしみにしています。",
+          "en": "I’m looking forward to next month’s trip."
+        },
+        {
+          "ja": "{土曜日|どようび}の{花火|はなび}が{今|いま}から{楽|たの}しみだな。",
+          "kana": "どようびのはなびがいまからたのしみだな。",
+          "en": "I’m already looking forward to Saturday’s fireworks."
+        }
+      ],
+      "collocations": [
+        "楽しみにする",
+        "楽しみだ"
+      ],
+      "confusables": [
+        "v-n4-0033",
+        "v-n4-0114"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0033",
+      "word": "楽しむ",
+      "kana": "たのしむ",
+      "meanings": [
+        "to enjoy",
+        "to have fun"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "hobbies"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{毎日|まいにち}、{庭|にわ}で{花|はな}を{育|そだ}てるのを{楽|たの}しんでいる。",
+          "kana": "そふはまいにち、にわではなをそだてるのをたのしんでいる。",
+          "en": "My grandfather enjoys growing flowers in the garden every day."
+        },
+        {
+          "ja": "{京都|きょうと}では{料理|りょうり}もお{寺|てら}も{楽|たの}しみました。",
+          "kana": "きょうとではりょうりもおてらもたのしみました。",
+          "en": "In Kyoto I enjoyed both the food and the temples."
+        }
+      ],
+      "confusables": [
+        "v-n4-0032"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0034",
+      "word": "相手",
+      "kana": "あいて",
+      "meanings": [
+        "partner",
+        "the other person",
+        "opponent"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{相手|あいて}の{目|め}を{見|み}て{話|はな}すのは{大切|たいせつ}だ。",
+          "kana": "あいてのめをみてはなすのはたいせつだ。",
+          "en": "It’s important to look the other person in the eye when you talk."
+        },
+        {
+          "ja": "テニスの{試合|しあい}で、{相手|あいて}はとても{強|つよ}かったです。",
+          "kana": "テニスのしあいで、あいてはとてもつよかったです。",
+          "en": "In the tennis match, my opponent was very strong."
+        }
+      ],
+      "notes": "The person you deal with: a conversation partner, an opponent in a match, or 結婚相手. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "話し相手",
+        "相手にする"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0035",
+      "word": "思い出す",
+      "kana": "おもいだす",
+      "meanings": [
+        "to recall",
+        "to remember"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "emotions"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "この{歌|うた}を{聞|き}くと、{高校|こうこう}の{時|とき}を{思|おも}い{出|だ}します。",
+          "kana": "このうたをきくと、こうこうのときをおもいだします。",
+          "en": "Whenever I hear this song, I remember my high school days."
+        },
+        {
+          "ja": "あの{人|ひと}の{名前|なまえ}がどうしても{思|おも}い{出|だ}せない。",
+          "kana": "あのひとのなまえがどうしてもおもいだせない。",
+          "en": "I just can’t remember that person’s name."
+        }
+      ],
+      "notes": "To bring something back to mind; 覚える is to memorize and 忘れる to forget.",
+      "confusables": [
+        "v-n4-0036"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0036",
+      "word": "思い出",
+      "kana": "おもいで",
+      "meanings": [
+        "memory",
+        "recollection"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家族|かぞく}で{行|い}った{海|うみ}は{一番|いちばん}の{思|おも}い{出|で}だ。",
+          "kana": "かぞくでいったうみはいちばんのおもいでだ。",
+          "en": "That trip to the sea with my family is my favorite memory."
+        },
+        {
+          "ja": "{学校|がっこう}の{思|おも}い{出|で}を{友達|ともだち}と{話|はな}しました。",
+          "kana": "がっこうのおもいでをともだちとはなしました。",
+          "en": "I talked with a friend about memories of school."
+        }
+      ],
+      "collocations": [
+        "思い出になる",
+        "いい思い出"
+      ],
+      "confusables": [
+        "v-n4-0035"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0037",
+      "word": "気をつける",
+      "kana": "きをつける",
+      "meanings": [
+        "to be careful",
+        "to pay attention"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "actions",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{暗|くら}いから、{帰|かえ}るときは{車|くるま}に{気|き}をつけてね。",
+          "kana": "くらいから、かえるときはくるまにきをつけてね。",
+          "en": "It’s dark, so watch out for cars on your way home."
+        },
+        {
+          "ja": "これからは{食|た}べすぎに{気|き}をつけます。",
+          "kana": "これからはたべすぎにきをつけます。",
+          "en": "From now on I’ll be careful not to overeat."
+        }
+      ],
+      "notes": "Two accent units (き↓を つけ↓る), so no single pitch nucleus is given. 気をつけて on its own is \"take care\".",
+      "collocations": [
+        "気をつけて",
+        "体に気をつける"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0038",
+      "word": "主人",
+      "kana": "しゅじん",
+      "meanings": [
+        "(one’s own) husband",
+        "master",
+        "owner"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{主人|しゅじん}は{今|いま}、{仕事|しごと}で{浜松|はままつ}にいます。",
+          "kana": "しゅじんはいま、しごとではままつにいます。",
+          "en": "My husband is in Hamamatsu for work right now."
+        },
+        {
+          "ja": "{主人|しゅじん}は{毎晩|まいばん}{遅|おそ}くまで{働|はたら}いている。",
+          "kana": "しゅじんはまいばんおそくまではたらいている。",
+          "en": "My husband works late every night."
+        }
+      ],
+      "notes": "Traditional word used mainly by women for their own husband; ご主人 is someone else’s. Some speakers now prefer 夫.",
+      "confusables": [
+        "v-n4-0041",
+        "v-n4-0015"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0039",
+      "word": "家内",
+      "kana": "かない",
+      "meanings": [
+        "(one’s own) wife"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "humble"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家内|かない}は{今|いま}、{買|か}い{物|もの}に{出|で}かけています。",
+          "kana": "かないはいま、かいものにでかけています。",
+          "en": "My wife is out shopping right now."
+        },
+        {
+          "ja": "{家内|かない}が{作|つく}った{弁当|べんとう}を{会社|かいしゃ}に{持|も}ってきました。",
+          "kana": "かないがつくったべんとうをかいしゃにもってきました。",
+          "en": "I brought the lunch my wife made to the office."
+        }
+      ],
+      "notes": "Humble, somewhat old-fashioned word for one’s own wife; 妻 is more neutral today.",
+      "confusables": [
+        "v-n4-0040",
+        "v-n4-0016"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0040",
+      "word": "奥さん",
+      "kana": "おくさん",
+      "meanings": [
+        "(someone else’s) wife"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "polite"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんの{奥|おく}さんは{看護師|かんごし}だそうです。",
+          "kana": "たなかさんのおくさんはかんごしだそうです。",
+          "en": "I hear Mr. Tanaka’s wife is a nurse."
+        },
+        {
+          "ja": "{先輩|せんぱい}の{奥|おく}さんに{初|はじ}めて{会|あ}った。",
+          "kana": "せんぱいのおくさんにはじめてあった。",
+          "en": "I met my senior colleague’s wife for the first time."
+        }
+      ],
+      "notes": "For someone else’s wife; the more formal form is 奥様. Never use it for your own wife.",
+      "confusables": [
+        "v-n4-0039",
+        "v-n4-0016"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0041",
+      "word": "ご主人",
+      "kana": "ごしゅじん",
+      "meanings": [
+        "(someone else’s) husband"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "polite"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ご{主人|しゅじん}は{何|なん}の{仕事|しごと}をしていますか。",
+          "kana": "ごしゅじんはなんのしごとをしていますか。",
+          "en": "What does your husband do for a living?"
+        },
+        {
+          "ja": "ご{主人|しゅじん}によろしくお{伝|つた}えください。",
+          "kana": "ごしゅじんによろしくおつたえください。",
+          "en": "Please give my regards to your husband."
+        }
+      ],
+      "confusables": [
+        "v-n4-0038"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0042",
+      "word": "赤ちゃん",
+      "kana": "あかちゃん",
+      "meanings": [
+        "baby"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{赤|あか}ちゃんが{泣|な}いているから、{静|しず}かにして。",
+          "kana": "あかちゃんがないているから、しずかにして。",
+          "en": "The baby is crying, so keep it down."
+        },
+        {
+          "ja": "{姉|あね}の{赤|あか}ちゃんは{来月|らいげつ}で{一歳|いっさい}になります。",
+          "kana": "あねのあかちゃんはらいげつでいっさいになります。",
+          "en": "My sister’s baby turns one next month."
+        }
+      ],
+      "notes": "Everyday affectionate word; 赤ん坊 is the plainer term.",
+      "confusables": [
+        "v-n4-0112"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0043",
+      "word": "お子さん",
+      "kana": "おこさん",
+      "meanings": [
+        "(someone else’s) child"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "polite"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{子|こ}さんは{今|いま}おいくつですか。",
+          "kana": "おこさんはいまおいくつですか。",
+          "en": "How old is your child?"
+        },
+        {
+          "ja": "お{子|こ}さんも{一緒|いっしょ}に{来|き}てもいいですよ。",
+          "kana": "おこさんもいっしょにきてもいいですよ。",
+          "en": "Your child is welcome to come along too."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0044",
+      "word": "孫",
+      "kana": "まご",
+      "meanings": [
+        "grandchild"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{孫|まご}に{会|あ}うのをとても{楽|たの}しみにしている。",
+          "kana": "そぼはまごにあうのをとてもたのしみにしている。",
+          "en": "My grandmother is really looking forward to seeing her grandchildren."
+        },
+        {
+          "ja": "{孫|まご}が{書|か}いた{手紙|てがみ}を{何度|なんど}も{読|よ}みました。",
+          "kana": "まごがかいたてがみをなんどもよみました。",
+          "en": "I read the letter my grandchild wrote over and over."
+        }
+      ],
+      "notes": "Someone else’s grandchild is お孫さん.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0045",
+      "word": "祖父",
+      "kana": "そふ",
+      "meanings": [
+        "grandfather"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{八十歳|はちじゅっさい}ですが、{毎日|まいにち}{散歩|さんぽ}しています。",
+          "kana": "そふははちじゅっさいですが、まいにちさんぽしています。",
+          "en": "My grandfather is eighty, but he goes for a walk every day."
+        },
+        {
+          "ja": "{祖父|そふ}は{若|わか}いころ、{船|ふね}で{働|はたら}いていた。",
+          "kana": "そふはわかいころ、ふねではたらいていた。",
+          "en": "My grandfather worked on ships when he was young."
+        }
+      ],
+      "notes": "Humble word for your own grandfather when talking to others; おじいさん when addressing him or for someone else’s.",
+      "confusables": [
+        "v-n4-0046"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0046",
+      "word": "祖母",
+      "kana": "そぼ",
+      "meanings": [
+        "grandmother"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}が{作|つく}る{料理|りょうり}は{何|なん}でもおいしい。",
+          "kana": "そぼがつくるりょうりはなんでもおいしい。",
+          "en": "Everything my grandmother cooks is delicious."
+        },
+        {
+          "ja": "{祖母|そぼ}に{着物|きもの}の{着方|きかた}を{教|おし}えてもらいました。",
+          "kana": "そぼにきもののきかたをおしえてもらいました。",
+          "en": "My grandmother taught me how to put on a kimono."
+        }
+      ],
+      "notes": "Humble word for your own grandmother when talking to others; おばあさん when addressing her or for someone else’s.",
+      "confusables": [
+        "v-n4-0045"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0047",
+      "word": "兄弟",
+      "kana": "きょうだい",
+      "meanings": [
+        "siblings",
+        "brothers"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄弟|きょうだい}は{三人|さんにん}いて、{私|わたし}が{一番|いちばん}{上|うえ}です。",
+          "kana": "きょうだいはさんにんいて、わたしがいちばんうえです。",
+          "en": "There are three of us siblings, and I’m the oldest."
+        },
+        {
+          "ja": "{兄弟|きょうだい}の{中|なか}で、{妹|いもうと}が{一番|いちばん}{背|せ}が{高|たか}い。",
+          "kana": "きょうだいのなかで、いもうとがいちばんせがたかい。",
+          "en": "Of all us siblings, my younger sister is the tallest."
+        }
+      ],
+      "notes": "Covers brothers and sisters together; 姉妹 is sisters only. ご兄弟はいますか asks about siblings.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0048",
+      "word": "親戚",
+      "kana": "しんせき",
+      "meanings": [
+        "relative",
+        "relatives"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{正月|しょうがつ}には{親戚|しんせき}がみんな{集|あつ}まる。",
+          "kana": "おしょうがつにはしんせきがみんなあつまる。",
+          "en": "At New Year all the relatives get together."
+        },
+        {
+          "ja": "{京都|きょうと}の{親戚|しんせき}から{野菜|やさい}をたくさんもらいました。",
+          "kana": "きょうとのしんせきからやさいをたくさんもらいました。",
+          "en": "I got a lot of vegetables from relatives in Kyoto."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0049",
+      "word": "おじ",
+      "kana": "おじ",
+      "meanings": [
+        "uncle"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "おじは{小田原|おだわら}で{小|ちい}さな{店|みせ}をやっています。",
+          "kana": "おじはおだわらでちいさなみせをやっています。",
+          "en": "My uncle runs a small shop in Odawara."
+        },
+        {
+          "ja": "{子供|こども}のころ、おじによく{海|うみ}に{連|つ}れて{行|い}ってもらった。",
+          "kana": "こどものころ、おじによくうみにつれていってもらった。",
+          "en": "When I was a kid, my uncle often took me to the sea."
+        }
+      ],
+      "notes": "叔父 is a parent’s younger brother, 伯父 an older one; in kana the difference disappears. おじさん is also \"middle-aged man\".",
+      "altForms": [
+        "叔父",
+        "伯父"
+      ],
+      "confusables": [
+        "v-n4-0050"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0050",
+      "word": "おば",
+      "kana": "おば",
+      "meanings": [
+        "aunt"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "おばが{送|おく}ってくれたりんごがすごくおいしかった。",
+          "kana": "おばがおくってくれたりんごがすごくおいしかった。",
+          "en": "The apples my aunt sent me were really delicious."
+        },
+        {
+          "ja": "おばは{料理|りょうり}が{上手|じょうず}で、{正月|しょうがつ}はみんなおばの{家|いえ}に{集|あつ}まります。",
+          "kana": "おばはりょうりがじょうずで、しょうがつはみんなおばのいえにあつまります。",
+          "en": "My aunt is a great cook, so at New Year everyone gathers at her house."
+        }
+      ],
+      "notes": "叔母 is a parent’s younger sister, 伯母 an older one. おばさん is also \"middle-aged woman\".",
+      "altForms": [
+        "叔母",
+        "伯母"
+      ],
+      "confusables": [
+        "v-n4-0049"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0051",
+      "word": "知り合い",
+      "kana": "しりあい",
+      "meanings": [
+        "acquaintance"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{前|まえ}で{知|し}り{合|あ}いに{会|あ}いました。",
+          "kana": "えきのまえでしりあいにあいました。",
+          "en": "I ran into an acquaintance in front of the station."
+        },
+        {
+          "ja": "この{町|まち}には{知|し}り{合|あ}いが{一人|ひとり}もいない。",
+          "kana": "このまちにはしりあいがひとりもいない。",
+          "en": "I don’t know a single person in this town."
+        }
+      ],
+      "notes": "Someone you know but who is not quite a 友達.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0052",
+      "word": "彼ら",
+      "kana": "かれら",
+      "meanings": [
+        "they"
+      ],
+      "pos": "pron",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}らは{大学|だいがく}の{時|とき}からの{友達|ともだち}だ。",
+          "kana": "かれらはだいがくのときからのともだちだ。",
+          "en": "They’ve been friends since university."
+        },
+        {
+          "ja": "{彼|かれ}らは{来週|らいしゅう}、{日本|にほん}に{来|く}るそうです。",
+          "kana": "かれらはらいしゅう、にほんにくるそうです。",
+          "en": "I hear they are coming to Japan next week."
+        }
+      ],
+      "notes": "Mostly in writing or narration; in conversation Japanese usually names the group (あの人たち, みんな).",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0053",
+      "word": "方",
+      "kana": "かた",
+      "meanings": [
+        "person (polite)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "polite"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "あちらの{方|かた}が{新|あたら}しい{先生|せんせい}です。",
+          "kana": "あちらのかたがあたらしいせんせいです。",
+          "en": "That person over there is the new teacher."
+        },
+        {
+          "ja": "{困|こま}っていたら、{親切|しんせつ}な{方|かた}が{助|たす}けてくれました。",
+          "kana": "こまっていたら、しんせつなかたがたすけてくれました。",
+          "en": "When I was in trouble, a kind person helped me."
+        }
+      ],
+      "notes": "Polite replacement for 人: この方, あちらの方. Not to be confused with 方 (ほう) \"side, direction\".",
+      "confusables": [
+        "v-n4-0063"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0054",
+      "word": "市民",
+      "kana": "しみん",
+      "meanings": [
+        "citizen",
+        "resident (of a city)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "このプールは{市民|しみん}なら{安|やす}く{使|つか}えます。",
+          "kana": "このプールはしみんならやすくつかえます。",
+          "en": "City residents can use this pool at a discount."
+        },
+        {
+          "ja": "{駅前|えきまえ}に{市民|しみん}が{使|つか}える{新|あたら}しいプールができた。",
+          "kana": "えきまえにしみんがつかえるあたらしいプールができた。",
+          "en": "A new pool that city residents can use has opened in front of the station."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0055",
+      "word": "青年",
+      "kana": "せいねん",
+      "meanings": [
+        "young man",
+        "youth"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{一人|ひとり}の{青年|せいねん}が{道|みち}を{教|おし}えてくれた。",
+          "kana": "ひとりのせいねんがみちをおしえてくれた。",
+          "en": "A young man showed me the way."
+        },
+        {
+          "ja": "{親切|しんせつ}な{青年|せいねん}が{重|おも}い{荷物|にもつ}を{持|も}ってくれました。",
+          "kana": "しんせつなせいねんがおもいにもつをもってくれました。",
+          "en": "A kind young man carried my heavy luggage for me."
+        }
+      ],
+      "notes": "Somewhat formal or written; in speech 若い人 or 若者 is more common.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0056",
+      "word": "先輩",
+      "kana": "せんぱい",
+      "meanings": [
+        "senior (at school or work)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "school",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先輩|せんぱい}に{仕事|しごと}のやり{方|かた}を{教|おし}えてもらいました。",
+          "kana": "せんぱいにしごとのやりかたをおしえてもらいました。",
+          "en": "My senior colleague taught me how to do the job."
+        },
+        {
+          "ja": "{今晩|こんばん}は{先輩|せんぱい}と{駅前|えきまえ}で{飲|の}む{約束|やくそく}がある。",
+          "kana": "こんばんはせんぱいとえきまえでのむやくそくがある。",
+          "en": "Tonight I’m meeting a senior colleague for drinks in front of the station."
+        }
+      ],
+      "notes": "Someone who joined your school, club or company before you; 後輩 is the opposite. Also used as a title after a name.",
+      "confusables": [
+        "v-n4-0116"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0057",
+      "word": "恋人",
+      "kana": "こいびと",
+      "meanings": [
+        "lover",
+        "boyfriend or girlfriend"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{恋人|こいびと}の{誕生日|たんじょうび}にプレゼントを{買|か}った。",
+          "kana": "こいびとのたんじょうびにプレゼントをかった。",
+          "en": "I bought a present for my partner’s birthday."
+        },
+        {
+          "ja": "{妹|いもうと}は{恋人|こいびと}と{毎週|まいしゅう}{映画|えいが}を{見|み}に{行|い}きます。",
+          "kana": "いもうとはこいびととまいしゅうえいがをみにいきます。",
+          "en": "My sister goes to the movies with her boyfriend every week."
+        }
+      ],
+      "notes": "Romantic partner of either gender; in casual speech 彼 / 彼女 are more common. Listed at N4 or N3 depending on the source.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0058",
+      "word": "泥棒",
+      "kana": "どろぼう",
+      "meanings": [
+        "thief",
+        "burglar"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "law"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}、{隣|となり}の{家|いえ}に{泥棒|どろぼう}が{入|はい}ったそうです。",
+          "kana": "きのう、となりのいえにどろぼうがはいったそうです。",
+          "en": "I hear a burglar broke into the house next door yesterday."
+        },
+        {
+          "ja": "{泥棒|どろぼう}が{怖|こわ}いから、{寝|ね}る{前|まえ}に{窓|まど}を{閉|し}めておく。",
+          "kana": "どろぼうがこわいから、ねるまえにまどをしめておく。",
+          "en": "I’m worried about burglars, so I close the windows before bed."
+        }
+      ],
+      "collocations": [
+        "泥棒に入られる"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0059",
+      "word": "お宅",
+      "kana": "おたく",
+      "meanings": [
+        "your home (polite)",
+        "your family"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "home",
+        "people",
+        "polite"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{宅|たく}は{駅|えき}から{近|ちか}いですか。",
+          "kana": "おたくはえきからちかいですか。",
+          "en": "Is your home close to the station?"
+        },
+        {
+          "ja": "お{宅|たく}の{猫|ねこ}は{何|なん}という{名前|なまえ}ですか。",
+          "kana": "おたくのねこはなんというなまえですか。",
+          "en": "What is your cat’s name?"
+        }
+      ],
+      "notes": "Polite word for the listener’s house or household. The slang sense \"nerd\" (オタク) is a different word.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0060",
+      "word": "お嬢さん",
+      "kana": "おじょうさん",
+      "meanings": [
+        "(someone else’s) daughter",
+        "young lady"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "polite"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{嬢|じょう}さんは{今年|ことし}{大学|だいがく}を{卒業|そつぎょう}なさるんですね。",
+          "kana": "おじょうさんはことしだいがくをそつぎょうなさるんですね。",
+          "en": "Your daughter is graduating from university this year, isn’t she?"
+        },
+        {
+          "ja": "お{嬢|じょう}さんはピアノがお{上手|じょうず}ですね。",
+          "kana": "おじょうさんはピアノがおじょうずですね。",
+          "en": "Your daughter plays the piano beautifully, doesn’t she?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0013"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0061",
+      "word": "別れる",
+      "kana": "わかれる",
+      "meanings": [
+        "to part",
+        "to say goodbye",
+        "to break up"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{駅|えき}で{友達|ともだち}と{別|わか}れて、{一人|ひとり}で{帰|かえ}った。",
+          "kana": "えきでともだちとわかれて、ひとりでかえった。",
+          "en": "I said goodbye to my friend at the station and went home alone."
+        },
+        {
+          "ja": "{駅|えき}で{別|わか}れるとき、{母|はは}は{少|すこ}し{泣|な}いていました。",
+          "kana": "えきでわかれるとき、はははすこしないていました。",
+          "en": "When we said goodbye at the station, my mother was crying a little."
+        }
+      ],
+      "notes": "Parting after meeting, or breaking up (彼と別れた). 分かれる (same reading) is for roads or groups splitting.",
+      "collocations": [
+        "〜と別れる",
+        "別れを言う"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0062",
+      "word": "骨",
+      "kana": "ほね",
+      "meanings": [
+        "bone"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{自転車|じてんしゃ}で{倒|たお}れて、{腕|うで}の{骨|ほね}が{折|お}れました。",
+          "kana": "じてんしゃでたおれて、うでのほねがおれました。",
+          "en": "I fell off my bike and broke a bone in my arm."
+        },
+        {
+          "ja": "この{魚|さかな}は{骨|ほね}が{多|おお}くて{食|た}べにくい。",
+          "kana": "このさかなはほねがおおくてたべにくい。",
+          "en": "This fish has a lot of bones and is hard to eat."
+        }
+      ],
+      "notes": "Also fish bones (魚の骨). 骨が折れる is literally a broken bone and figuratively \"hard work\".",
+      "collocations": [
+        "骨が折れる",
+        "魚の骨"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0063",
+      "word": "肩",
+      "kana": "かた",
+      "meanings": [
+        "shoulder"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{肩|かた}に{何|なに}かついていますよ。",
+          "kana": "かたになにかついていますよ。",
+          "en": "There’s something on your shoulder."
+        },
+        {
+          "ja": "パソコンの{仕事|しごと}が{長|なが}くて、{肩|かた}が{痛|いた}い。",
+          "kana": "パソコンのしごとがながくて、かたがいたい。",
+          "en": "I’ve been at the computer for ages, and my shoulders hurt."
+        }
+      ],
+      "collocations": [
+        "肩がこる"
+      ],
+      "confusables": [
+        "v-n4-0053"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0064",
+      "word": "腕",
+      "kana": "うで",
+      "meanings": [
+        "arm",
+        "skill"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{腕|うで}が{太|ふと}くなるように、{毎日|まいにち}{運動|うんどう}しています。",
+          "kana": "うでがふとくなるように、まいにちうんどうしています。",
+          "en": "I exercise every day so that my arms get bigger."
+        },
+        {
+          "ja": "{祖父|そふ}は{料理|りょうり}の{腕|うで}がよくて、{寿司|すし}も{作|つく}れる。",
+          "kana": "そふはりょうりのうでがよくて、すしもつくれる。",
+          "en": "My grandfather is a skilled cook and can even make sushi."
+        }
+      ],
+      "notes": "腕がいい = to be skilled (a good cook, a good carpenter).",
+      "collocations": [
+        "腕がいい",
+        "腕を組む"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0065",
+      "word": "腰",
+      "kana": "こし",
+      "meanings": [
+        "lower back",
+        "hips",
+        "waist"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{腰|こし}が{悪|わる}くて、{長|なが}く{歩|ある}けない。",
+          "kana": "ちちはこしがわるくて、ながくあるけない。",
+          "en": "My father has a bad back and can’t walk for long."
+        },
+        {
+          "ja": "{重|おも}い{箱|はこ}を{持|も}って、{腰|こし}が{痛|いた}くなりました。",
+          "kana": "おもいはこをもって、こしがいたくなりました。",
+          "en": "I lifted a heavy box and my lower back started hurting."
+        }
+      ],
+      "collocations": [
+        "腰が痛い",
+        "腰をかける"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0066",
+      "word": "背中",
+      "kana": "せなか",
+      "meanings": [
+        "back (of the body)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{背中|せなか}が{少|すこ}し{曲|ま}がっている。",
+          "kana": "そふはせなかがすこしまがっている。",
+          "en": "My grandfather’s back is slightly bent."
+        },
+        {
+          "ja": "{暑|あつ}くて、{背中|せなか}に{汗|あせ}をたくさんかきました。",
+          "kana": "あつくて、せなかにあせをたくさんかきました。",
+          "en": "It was so hot that my back was covered in sweat."
+        }
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0067",
+      "word": "髪の毛",
+      "kana": "かみのけ",
+      "meanings": [
+        "hair (on the head)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{髪|かみ}の{毛|け}が{長|なが}くなったので、{切|き}りに{行|い}きたい。",
+          "kana": "かみのけがながくなったので、きりにいきたい。",
+          "en": "My hair has gotten long, so I want to go get it cut."
+        },
+        {
+          "ja": "{娘|むすめ}の{髪|かみ}の{毛|け}は{妻|つま}と{同|おな}じ{色|いろ}です。",
+          "kana": "むすめのかみのけはつまとおなじいろです。",
+          "en": "My daughter’s hair is the same color as my wife’s."
+        }
+      ],
+      "notes": "Same as 髪 but a touch more concrete, used for the strands themselves; 毛 alone is body hair or fur.",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0068",
+      "word": "笑顔",
+      "kana": "えがお",
+      "meanings": [
+        "smile",
+        "smiling face"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{店員|てんいん}さんの{笑顔|えがお}がすてきで、また{来|き}たくなりました。",
+          "kana": "てんいんさんのえがおがすてきで、またきたくなりました。",
+          "en": "The clerk’s smile was so lovely that it made me want to come again."
+        },
+        {
+          "ja": "{写真|しゃしん}を{撮|と}るから、{笑顔|えがお}でこっちを{見|み}て。",
+          "kana": "しゃしんをとるから、えがおでこっちをみて。",
+          "en": "I’m taking a photo, so look this way and smile."
+        }
+      ],
+      "notes": "A smiling face, not the act of laughing (笑う). 笑顔で = with a smile. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "笑顔で",
+        "笑顔になる"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0069",
+      "word": "喉",
+      "kana": "のど",
+      "meanings": [
+        "throat"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{喉|のど}が{痛|いた}いので、{今日|きょう}は{歌|うた}えません。",
+          "kana": "のどがいたいので、きょうはうたえません。",
+          "en": "My throat hurts, so I can’t sing today."
+        },
+        {
+          "ja": "カラオケで{歌|うた}いすぎて、{喉|のど}が{痛|いた}くなった。",
+          "kana": "カラオケでうたいすぎて、のどがいたくなった。",
+          "en": "I sang too much at karaoke and my throat got sore."
+        }
+      ],
+      "notes": "Often written in kana (のど). 喉が渇く = to be thirsty.",
+      "collocations": [
+        "喉が痛い",
+        "喉が渇く"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0070",
+      "word": "性格",
+      "kana": "せいかく",
+      "meanings": [
+        "personality",
+        "character"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "personality"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄|あに}と{弟|おとうと}は{顔|かお}は{似|に}ているけど、{性格|せいかく}は{全然|ぜんぜん}{違|ちが}う。",
+          "kana": "あにとおとうとはかおはにているけど、せいかくはぜんぜんちがう。",
+          "en": "My older and younger brothers look alike, but their personalities are totally different."
+        },
+        {
+          "ja": "{妻|つま}は{明|あか}るい{性格|せいかく}で、{誰|だれ}とでもすぐ{友達|ともだち}になります。",
+          "kana": "つまはあかるいせいかくで、だれとでもすぐともだちになります。",
+          "en": "My wife has a cheerful personality and quickly makes friends with anyone."
+        }
+      ],
+      "notes": "A person’s nature; 性格がいい = good-natured. 正確 (accurate) has the same reading. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "性格がいい",
+        "明るい性格"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0071",
+      "word": "血",
+      "kana": "ち",
+      "meanings": [
+        "blood"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{指|ゆび}から{血|ち}が{出|で}ているよ。{大丈夫|だいじょうぶ}？",
+          "kana": "ゆびからちがでているよ。だいじょうぶ？",
+          "en": "Your finger is bleeding. Are you okay?"
+        },
+        {
+          "ja": "{料理|りょうり}をしていて{手|て}を{切|き}って、{少|すこ}し{血|ち}が{出|で}ました。",
+          "kana": "りょうりをしていててをきって、すこしちがでました。",
+          "en": "I cut my hand while cooking and bled a little."
+        }
+      ],
+      "collocations": [
+        "血が出る"
+      ],
+      "station": 16
+    },
+    {
+      "id": "v-n4-0072",
+      "word": "毛",
+      "kana": "け",
+      "meanings": [
+        "hair (on body or animals)",
+        "fur",
+        "wool"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "animals"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{黒|くろ}い{服|ふく}に{猫|ねこ}の{毛|け}がたくさんついています。",
+          "kana": "くろいふくにねこのけがたくさんついています。",
+          "en": "There’s a lot of cat hair on my black clothes."
+        },
+        {
+          "ja": "この{犬|いぬ}は{毛|け}が{長|なが}くて、{夏|なつ}は{暑|あつ}そうだ。",
+          "kana": "このいぬはけがながくて、なつはあつそうだ。",
+          "en": "This dog has long fur, so it must be hot in summer."
+        }
+      ],
+      "notes": "Individual hairs, body hair and animal fur; the hair on your head as a whole is 髪 (or 髪の毛).",
+      "station": 16
+    },
+    {
+      "id": "v-n4-0073",
+      "word": "ひげ",
+      "kana": "ひげ",
+      "meanings": [
+        "beard",
+        "mustache",
+        "whiskers"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}はひげがあるほうが{若|わか}く{見|み}える。",
+          "kana": "ちちはひげがあるほうがわかくみえる。",
+          "en": "My father looks younger with a beard."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{出|で}かける{前|まえ}にひげをそります。",
+          "kana": "まいあさ、でかけるまえにひげをそります。",
+          "en": "Every morning I shave before going out."
+        }
+      ],
+      "notes": "One word for beard, mustache and animal whiskers; 髭 is a non-jōyō kanji, so kana is standard.",
+      "altForms": [
+        "髭"
+      ],
+      "collocations": [
+        "ひげをそる",
+        "ひげを伸ばす"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0074",
+      "word": "お大事に",
+      "kana": "おだいじに",
+      "meanings": [
+        "take care of yourself",
+        "get well soon"
+      ],
+      "pos": "expr",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "greetings",
+        "set-phrase"
+      ],
+      "examples": [
+        {
+          "ja": "{風邪|かぜ}ですか。{無理|むり}しないで、お{大事|だいじ}に。",
+          "kana": "かぜですか。むりしないで、おだいじに。",
+          "en": "You have a cold? Don’t push yourself, and get well soon."
+        },
+        {
+          "ja": "{薬|くすり}は{一日|いちにち}{三回|さんかい}です。お{大事|だいじ}にしてください。",
+          "kana": "くすりはいちにちさんかいです。おだいじにしてください。",
+          "en": "Take the medicine three times a day. Please take care of yourself."
+        }
+      ],
+      "notes": "Said to someone who is ill or leaving the doctor’s; the full form is お大事になさってください. No single pitch nucleus is given for the set phrase.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0075",
+      "word": "入院",
+      "kana": "にゅういん",
+      "meanings": [
+        "hospitalization",
+        "being admitted to hospital"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}が{入院|にゅういん}したので、お{見舞|みま}いに{行|い}った。",
+          "kana": "そふがにゅういんしたので、おみまいにいった。",
+          "en": "My grandfather was hospitalized, so I went to visit him."
+        },
+        {
+          "ja": "{父|ちち}は{二週間|にしゅうかん}{入院|にゅういん}していましたが、{今|いま}は{元気|げんき}です。",
+          "kana": "ちちはにしゅうかんにゅういんしていましたが、いまはげんきです。",
+          "en": "My father was in the hospital for two weeks, but he is fine now."
+        }
+      ],
+      "collocations": [
+        "入院する",
+        "入院中"
+      ],
+      "confusables": [
+        "v-n4-0076"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0076",
+      "word": "退院",
+      "kana": "たいいん",
+      "meanings": [
+        "leaving hospital",
+        "discharge"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{母|はは}は{来週|らいしゅう}{退院|たいいん}できるそうです。",
+          "kana": "はははらいしゅうたいいんできるそうです。",
+          "en": "I hear my mother can leave the hospital next week."
+        },
+        {
+          "ja": "{退院|たいいん}したら、まず{寿司|すし}を{食|た}べに{行|い}きたい。",
+          "kana": "たいいんしたら、まずすしをたべにいきたい。",
+          "en": "Once I’m out of the hospital, the first thing I want to do is go eat sushi."
+        }
+      ],
+      "confusables": [
+        "v-n4-0075"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0077",
+      "word": "注射",
+      "kana": "ちゅうしゃ",
+      "meanings": [
+        "injection",
+        "shot"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{子供|こども}のころ、{注射|ちゅうしゃ}が{大嫌|だいきら}いだった。",
+          "kana": "こどものころ、ちゅうしゃがだいきらいだった。",
+          "en": "When I was a kid, I hated getting shots."
+        },
+        {
+          "ja": "{犬|いぬ}を{年|ねん}に{一回|いっかい}、{注射|ちゅうしゃ}に{連|つ}れて{行|い}きます。",
+          "kana": "いぬをねんにいっかい、ちゅうしゃにつれていきます。",
+          "en": "I take my dog for a shot once a year."
+        }
+      ],
+      "notes": "Same reading as 駐車 (parking); context makes it clear.",
+      "collocations": [
+        "注射を打つ"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0078",
+      "word": "お見舞い",
+      "kana": "おみまい",
+      "meanings": [
+        "visit to a sick person",
+        "get-well gift"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "お{見舞|みま}いに{果物|くだもの}を{持|も}っていきました。",
+          "kana": "おみまいにくだものをもっていきました。",
+          "en": "I took some fruit when I visited her in the hospital."
+        },
+        {
+          "ja": "{明日|あした}、{入院|にゅういん}している{先輩|せんぱい}のお{見舞|みま}いに{行|い}く。",
+          "kana": "あした、にゅういんしているせんぱいのおみまいにいく。",
+          "en": "Tomorrow I’m going to visit my senior colleague in the hospital."
+        }
+      ],
+      "collocations": [
+        "お見舞いに行く"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0079",
+      "word": "医学",
+      "kana": "いがく",
+      "meanings": [
+        "medicine (field of study)",
+        "medical science"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "study",
+        "science"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{大学|だいがく}で{医学|いがく}を{勉強|べんきょう}している。",
+          "kana": "むすめはだいがくでいがくをべんきょうしている。",
+          "en": "My daughter is studying medicine at university."
+        },
+        {
+          "ja": "{祖父|そふ}は{若|わか}いころ、{医学|いがく}の{本|ほん}をたくさん{読|よ}んでいたそうです。",
+          "kana": "そふはわかいころ、いがくのほんをたくさんよんでいたそうです。",
+          "en": "I hear my grandfather read lots of medical books when he was young."
+        }
+      ],
+      "notes": "The academic field, not the pills (薬).",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0080",
+      "word": "歯医者",
+      "kana": "はいしゃ",
+      "meanings": [
+        "dentist"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{歯|は}が{痛|いた}いなら、{早|はや}く{歯医者|はいしゃ}に{行|い}ったほうがいいですよ。",
+          "kana": "はがいたいなら、はやくはいしゃにいったほうがいいですよ。",
+          "en": "If your tooth hurts, you should see a dentist soon."
+        },
+        {
+          "ja": "{来週|らいしゅう}の{水曜日|すいようび}に{歯医者|はいしゃ}の{予約|よやく}を{入|い}れた。",
+          "kana": "らいしゅうのすいようびにはいしゃのよやくをいれた。",
+          "en": "I booked a dentist appointment for next Wednesday."
+        }
+      ],
+      "notes": "Both the dentist and the dental clinic: 歯医者に行く = go to the dentist’s.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0081",
+      "word": "具合",
+      "kana": "ぐあい",
+      "meanings": [
+        "condition (of health)",
+        "state"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{具合|ぐあい}が{悪|わる}いなら、{無理|むり}しないで{休|やす}んで。",
+          "kana": "ぐあいがわるいなら、むりしないでやすんで。",
+          "en": "If you’re feeling unwell, don’t push yourself, just rest."
+        },
+        {
+          "ja": "{母|はは}の{具合|ぐあい}はだいぶよくなりました。",
+          "kana": "ははのぐあいはだいぶよくなりました。",
+          "en": "My mother’s condition has improved quite a bit."
+        }
+      ],
+      "notes": "具合が悪い = to feel unwell, or for a machine to be acting up.",
+      "collocations": [
+        "具合が悪い",
+        "具合はどうですか"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0082",
+      "word": "調子",
+      "kana": "ちょうし",
+      "meanings": [
+        "condition",
+        "state (of health or things)",
+        "tune"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最近|さいきん}パソコンの{調子|ちょうし}が{悪|わる}いんです。",
+          "kana": "さいきんパソコンのちょうしがわるいんです。",
+          "en": "My computer hasn’t been working well lately."
+        },
+        {
+          "ja": "{今日|きょう}は{体|からだ}の{調子|ちょうし}がいいから、{走|はし}りに{行|い}こう。",
+          "kana": "きょうはからだのちょうしがいいから、はしりにいこう。",
+          "en": "I’m feeling good today, so I’ll go for a run."
+        }
+      ],
+      "notes": "調子はどう？ asks how someone or something is doing. 調子に乗る = to get carried away.",
+      "collocations": [
+        "調子がいい",
+        "調子が悪い",
+        "調子に乗る"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0083",
+      "word": "治る",
+      "kana": "なおる",
+      "meanings": [
+        "to get better",
+        "to heal",
+        "to be cured"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "health"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{薬|くすり}を{飲|の}んだら、{風邪|かぜ}がすぐ{治|なお}った。",
+          "kana": "くすりをのんだら、かぜがすぐなおった。",
+          "en": "After I took the medicine, my cold got better right away."
+        },
+        {
+          "ja": "{骨|ほね}が{治|なお}るまで、{三|さん}か{月|げつ}ぐらいかかります。",
+          "kana": "ほねがなおるまで、さんかげつぐらいかかります。",
+          "en": "It will take about three months for the bone to heal."
+        }
+      ],
+      "notes": "For illness and injuries; 直る (same reading) is for broken things being fixed. The transitive partner is 治す.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0084",
+      "word": "倒れる",
+      "kana": "たおれる",
+      "meanings": [
+        "to fall over",
+        "to collapse"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "actions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{暑|あつ}さで{倒|たお}れる{人|ひと}が{増|ふ}えているそうです。",
+          "kana": "あつさでたおれるひとがふえているそうです。",
+          "en": "I hear more and more people are collapsing from the heat."
+        },
+        {
+          "ja": "{昨日|きのう}の{嵐|あらし}で、{庭|にわ}の{木|き}が{倒|たお}れてしまった。",
+          "kana": "きのうのあらしで、にわのきがたおれてしまった。",
+          "en": "The tree in our garden got knocked down in yesterday’s storm."
+        }
+      ],
+      "notes": "People collapsing from illness, and also trees or buildings falling. The transitive partner is 倒す.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0085",
+      "word": "太る",
+      "kana": "ふとる",
+      "meanings": [
+        "to gain weight",
+        "to get fat"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "health"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{正月|しょうがつ}に{食|た}べすぎて、{三|さん}キロも{太|ふと}った。",
+          "kana": "しょうがつにたべすぎて、さんキロもふとった。",
+          "en": "I ate too much over New Year and gained three kilos."
+        },
+        {
+          "ja": "{最近|さいきん}{運動|うんどう}していないので、{少|すこ}し{太|ふと}りました。",
+          "kana": "さいきんうんどうしていないので、すこしふとりました。",
+          "en": "I haven’t been exercising lately, so I’ve put on a little weight."
+        }
+      ],
+      "notes": "太っている (is overweight) describes the state; 太る is the change.",
+      "confusables": [
+        "v-n4-0086"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0086",
+      "word": "痩せる",
+      "kana": "やせる",
+      "meanings": [
+        "to lose weight",
+        "to get thin"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "body",
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{夏|なつ}までに{五|ご}キロ{痩|や}せたいです。",
+          "kana": "なつまでにごキロやせたいです。",
+          "en": "I want to lose five kilos by summer."
+        },
+        {
+          "ja": "{久|ひさ}しぶりに{会|あ}った{友達|ともだち}は、ずいぶん{痩|や}せていた。",
+          "kana": "ひさしぶりにあったともだちは、ずいぶんやせていた。",
+          "en": "The friend I saw for the first time in ages had gotten a lot thinner."
+        }
+      ],
+      "notes": "痩せている = is thin (state). Often written in kana (やせる).",
+      "confusables": [
+        "v-n4-0085"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0087",
+      "word": "生きる",
+      "kana": "いきる",
+      "meanings": [
+        "to live",
+        "to be alive"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{百歳|ひゃくさい}まで{元気|げんき}に{生|い}きた。",
+          "kana": "そぼはひゃくさいまでげんきにいきた。",
+          "en": "My grandmother lived in good health to a hundred."
+        },
+        {
+          "ja": "{人|ひと}は{水|みず}がなければ{生|い}きられません。",
+          "kana": "ひとはみずがなければいきられません。",
+          "en": "People cannot live without water."
+        }
+      ],
+      "notes": "Being alive or living one’s life; 住む is to reside somewhere.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0088",
+      "word": "亡くなる",
+      "kana": "なくなる",
+      "meanings": [
+        "to pass away",
+        "to die"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "health",
+        "polite"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{去年|きょねん}の{冬|ふゆ}に{亡|な}くなりました。",
+          "kana": "そふはきょねんのふゆになくなりました。",
+          "en": "My grandfather passed away last winter."
+        },
+        {
+          "ja": "{祖母|そぼ}が{亡|な}くなって、もう{三年|さんねん}になる。",
+          "kana": "そぼがなくなって、もうさんねんになる。",
+          "en": "It has been three years now since my grandmother passed away."
+        }
+      ],
+      "notes": "Respectful, indirect word for 死ぬ; used of people, not animals or things. 無くなる (same reading) means to run out or be lost.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0089",
+      "word": "眠る",
+      "kana": "ねむる",
+      "meanings": [
+        "to sleep",
+        "to fall asleep"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "health",
+        "body",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}は{暑|あつ}くて、なかなか{眠|ねむ}れなかった。",
+          "kana": "きのうはあつくて、なかなかねむれなかった。",
+          "en": "It was so hot last night that I couldn’t get to sleep."
+        },
+        {
+          "ja": "{赤|あか}ちゃんは{今|いま}、{気持|きも}ちよさそうに{眠|ねむ}っています。",
+          "kana": "あかちゃんはいま、きもちよさそうにねむっています。",
+          "en": "The baby is sleeping peacefully right now."
+        }
+      ],
+      "notes": "The state of being asleep; 寝る also covers lying down and going to bed.",
+      "collocations": [
+        "ぐっすり眠る",
+        "眠れない"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0090",
+      "word": "悩む",
+      "kana": "なやむ",
+      "meanings": [
+        "to worry",
+        "to be troubled",
+        "to agonize over"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{大学|だいがく}に{行|い}くか{働|はたら}くか、ずっと{悩|なや}んでいます。",
+          "kana": "だいがくにいくかはたらくか、ずっとなやんでいます。",
+          "en": "I’ve been agonizing over whether to go to university or to work."
+        },
+        {
+          "ja": "{一人|ひとり}で{悩|なや}まないで、{何|なん}でも{話|はな}してね。",
+          "kana": "ひとりでなやまないで、なんでもはなしてね。",
+          "en": "Don’t struggle with it alone, just tell me anything."
+        }
+      ],
+      "notes": "Longer, deeper worry than 困る; the problem takes で or に (将来のことで悩む). Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "〜で悩む",
+        "悩んでいる"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0091",
+      "word": "喜ぶ",
+      "kana": "よろこぶ",
+      "meanings": [
+        "to be glad",
+        "to be pleased",
+        "to rejoice"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "プレゼントをあげたら、{母|はは}はとても{喜|よろこ}びました。",
+          "kana": "プレゼントをあげたら、はははとてもよろこびました。",
+          "en": "When I gave my mother the present, she was really pleased."
+        },
+        {
+          "ja": "{孫|まご}が{遊|あそ}びに{来|く}ると、{祖父|そふ}はいつもとても{喜|よろこ}ぶ。",
+          "kana": "まごがあそびにくると、そふはいつもとてもよろこぶ。",
+          "en": "Whenever the grandchildren come to visit, my grandfather is always delighted."
+        }
+      ],
+      "notes": "Describes someone else’s visible joy; for your own feeling say 嬉しい.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0092",
+      "word": "驚く",
+      "kana": "おどろく",
+      "meanings": [
+        "to be surprised",
+        "to be astonished"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{急|きゅう}に{後|うし}ろから{呼|よ}ばれて{驚|おどろ}いた。",
+          "kana": "きゅうにうしろからよばれておどろいた。",
+          "en": "I was startled when someone suddenly called me from behind."
+        },
+        {
+          "ja": "{値段|ねだん}を{聞|き}いて、みんな{驚|おどろ}きました。",
+          "kana": "ねだんをきいて、みんなおどろきました。",
+          "en": "Everyone was astonished when they heard the price."
+        }
+      ],
+      "notes": "Slightly more formal than びっくりする; the transitive partner is 驚かす.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0093",
+      "word": "感じる",
+      "kana": "かんじる",
+      "meanings": [
+        "to feel",
+        "to sense"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{久|ひさ}しぶりに{走|はし}って、{体|からだ}が{重|おも}いと{感|かん}じた。",
+          "kana": "ひさしぶりにはしって、からだがおもいとかんじた。",
+          "en": "I ran for the first time in a while and felt how heavy my body was."
+        },
+        {
+          "ja": "{秋|あき}の{風|かぜ}に{冬|ふゆ}が{近|ちか}いのを{感|かん}じます。",
+          "kana": "あきのかぜにふゆがちかいのをかんじます。",
+          "en": "I can feel winter approaching in the autumn wind."
+        }
+      ],
+      "collocations": [
+        "〜と感じる",
+        "痛みを感じる"
+      ],
+      "confusables": [
+        "v-n4-0094"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0094",
+      "word": "感じ",
+      "kana": "かんじ",
+      "meanings": [
+        "feeling",
+        "impression",
+        "sense"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{先生|せんせい}は{優|やさ}しそうな{感|かん}じの{人|ひと}です。",
+          "kana": "あたらしいせんせいはやさしそうなかんじのひとです。",
+          "en": "The new teacher seems like a kind sort of person."
+        },
+        {
+          "ja": "この{店|みせ}、{明|あか}るくていい{感|かん}じだね。",
+          "kana": "このみせ、あかるくていいかんじだね。",
+          "en": "This place is bright and has a nice feel, doesn’t it?"
+        }
+      ],
+      "notes": "Same reading as 漢字; 感じがいい人 = a pleasant person.",
+      "collocations": [
+        "感じがする",
+        "いい感じ",
+        "感じがいい"
+      ],
+      "confusables": [
+        "v-n4-0093"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0095",
+      "word": "嘘",
+      "kana": "うそ",
+      "meanings": [
+        "lie",
+        "falsehood"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}が{嘘|うそ}をついていたことが{後|あと}で{分|わ}かりました。",
+          "kana": "かれがうそをついていたことがあとでわかりました。",
+          "en": "I found out later that he had been lying."
+        },
+        {
+          "ja": "{嘘|うそ}でしょう？{本当|ほんとう}にあの{二人|ふたり}が{結婚|けっこん}するの？",
+          "kana": "うそでしょう？ほんとうにあのふたりがけっこんするの？",
+          "en": "No way! Are those two really getting married?"
+        }
+      ],
+      "notes": "嘘！ or 嘘でしょう？ is a casual \"no way!\" rather than an accusation.",
+      "altForms": [
+        "ウソ"
+      ],
+      "collocations": [
+        "嘘をつく",
+        "嘘でしょう"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0096",
+      "word": "冗談",
+      "kana": "じょうだん",
+      "meanings": [
+        "joke"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんはいつも{冗談|じょうだん}を{言|い}って、みんなを{笑|わら}わせる。",
+          "kana": "たなかさんはいつもじょうだんをいって、みんなをわらわせる。",
+          "en": "Mr. Tanaka is always cracking jokes and making everyone laugh."
+        },
+        {
+          "ja": "{冗談|じょうだん}だと{思|おも}っていましたが、{本当|ほんとう}の{話|はなし}でした。",
+          "kana": "じょうだんだとおもっていましたが、ほんとうのはなしでした。",
+          "en": "I thought it was a joke, but it was a true story."
+        }
+      ],
+      "notes": "冗談じゃない = you must be joking (annoyed).",
+      "collocations": [
+        "冗談を言う",
+        "冗談じゃない"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0097",
+      "word": "迷う",
+      "kana": "まよう",
+      "meanings": [
+        "to get lost",
+        "to be unable to decide",
+        "to hesitate"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{道|みち}に{迷|まよ}って、{約束|やくそく}の{時間|じかん}に{遅|おく}れてしまった。",
+          "kana": "みちにまよって、やくそくのじかんにおくれてしまった。",
+          "en": "I got lost and ended up late for my appointment."
+        },
+        {
+          "ja": "どちらのケーキを{買|か}うか、まだ{迷|まよ}っています。",
+          "kana": "どちらのケーキをかうか、まだまよっています。",
+          "en": "I still can’t decide which cake to buy."
+        }
+      ],
+      "notes": "道に迷う = to lose your way; どちらにするか迷う = to be torn between options. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "道に迷う",
+        "迷っている"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0098",
+      "word": "気に入る",
+      "kana": "きにいる",
+      "meanings": [
+        "to like",
+        "to be pleased with"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "set-phrase"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "この{店|みせ}のコーヒーが{気|き}に{入|い}って、{毎週|まいしゅう}{来|き}ています。",
+          "kana": "このみせのコーヒーがきにいって、まいしゅうきています。",
+          "en": "I’ve taken a liking to this shop’s coffee and come every week."
+        },
+        {
+          "ja": "{姉|あね}は{僕|ぼく}があげた{帽子|ぼうし}をとても{気|き}に{入|い}ってくれた。",
+          "kana": "あねはぼくがあげたぼうしをとてもきにいってくれた。",
+          "en": "My sister really liked the hat I gave her."
+        }
+      ],
+      "notes": "The liked thing is the subject (〜が気に入る); 気に入っている = to like (state); お気に入り = favorite. No single pitch nucleus is given for the phrase.",
+      "collocations": [
+        "気に入っている",
+        "お気に入り"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0099",
+      "word": "悔しい",
+      "kana": "くやしい",
+      "meanings": [
+        "frustrating",
+        "vexing",
+        "regrettable (after losing)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最後|さいご}の{一点|いってん}で{負|ま}けて、{本当|ほんとう}に{悔|くや}しかったです。",
+          "kana": "さいごのいってんでまけて、ほんとうにくやしかったです。",
+          "en": "Losing by the last point was really frustrating."
+        },
+        {
+          "ja": "{試合|しあい}に{負|ま}けて、{悔|くや}しくて{眠|ねむ}れなかった。",
+          "kana": "しあいにまけて、くやしくてねむれなかった。",
+          "en": "We lost the match, and I was so frustrated I couldn’t sleep."
+        }
+      ],
+      "notes": "The sting of losing or being unable to do something; stronger and more personal than 残念.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0100",
+      "word": "安心",
+      "kana": "あんしん",
+      "meanings": [
+        "relief",
+        "peace of mind"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{娘|むすめ}から{電話|でんわ}があって、やっと{安心|あんしん}した。",
+          "kana": "むすめからでんわがあって、やっとあんしんした。",
+          "en": "My daughter called, and I finally felt relieved."
+        },
+        {
+          "ja": "この{道|みち}は{明|あか}るいので、{夜|よる}でも{安心|あんしん}して{歩|ある}けます。",
+          "kana": "このみちはあかるいので、よるでもあんしんしてあるけます。",
+          "en": "This street is well lit, so you can walk it with peace of mind even at night."
+        }
+      ],
+      "notes": "Also a な-adjective: 安心な場所. The opposite is 心配.",
+      "collocations": [
+        "安心する",
+        "安心して"
+      ],
+      "confusables": [
+        "v-n4-0026"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0101",
+      "word": "役に立つ",
+      "kana": "やくにたつ",
+      "meanings": [
+        "to be useful",
+        "to be helpful"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "study",
+        "set-phrase"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "この{辞書|じしょ}は{漢字|かんじ}の{勉強|べんきょう}にとても{役|やく}に{立|た}ちます。",
+          "kana": "このじしょはかんじのべんきょうにとてもやくにたちます。",
+          "en": "This dictionary is very useful for studying kanji."
+        },
+        {
+          "ja": "{先輩|せんぱい}に{教|おし}えてもらったことが、{今日|きょう}とても{役|やく}に{立|た}った。",
+          "kana": "せんぱいにおしえてもらったことが、きょうとてもやくにたった。",
+          "en": "What my senior colleague taught me really came in handy today."
+        }
+      ],
+      "notes": "Fixed phrase: the useful thing is the subject and the purpose takes に. 役に立たない = useless. No single pitch nucleus is given for the phrase.",
+      "collocations": [
+        "役に立たない",
+        "〜の役に立つ"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0102",
+      "word": "失礼",
+      "kana": "しつれい",
+      "meanings": [
+        "rude",
+        "impolite"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "personality",
+        "communication"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{人|ひと}の{話|はなし}を{聞|き}かないのは{失礼|しつれい}です。",
+          "kana": "ひとのはなしをきかないのはしつれいです。",
+          "en": "Not listening to what people say is rude."
+        },
+        {
+          "ja": "{返事|へんじ}をしないで{帰|かえ}ってしまって、{失礼|しつれい}なことをした。",
+          "kana": "へんじをしないでかえってしまって、しつれいなことをした。",
+          "en": "I left without replying, which was a rude thing to do."
+        }
+      ],
+      "notes": "Also a set phrase: 失礼します (excuse me, when entering or leaving) and 失礼しました (sorry about that).",
+      "collocations": [
+        "失礼します",
+        "失礼しました"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0103",
+      "word": "丁寧",
+      "kana": "ていねい",
+      "meanings": [
+        "polite",
+        "careful",
+        "thorough"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "personality",
+        "communication"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{店員|てんいん}さんが{丁寧|ていねい}に{使|つか}い{方|かた}を{教|おし}えてくれた。",
+          "kana": "てんいんさんがていねいにつかいかたをおしえてくれた。",
+          "en": "The shop clerk carefully explained how to use it."
+        },
+        {
+          "ja": "お{客|きゃく}さんには{丁寧|ていねい}な{言葉|ことば}で{話|はな}してください。",
+          "kana": "おきゃくさんにはていねいなことばではなしてください。",
+          "en": "Please speak to customers in polite language."
+        }
+      ],
+      "notes": "Both courteous manners and careful work; 丁寧語 is the polite です/ます style.",
+      "collocations": [
+        "丁寧に",
+        "丁寧な言葉"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0104",
+      "word": "熱心",
+      "kana": "ねっしん",
+      "meanings": [
+        "enthusiastic",
+        "eager",
+        "earnest"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "personality"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{毎日|まいにち}{熱心|ねっしん}に{日本語|にほんご}を{勉強|べんきょう}しています。",
+          "kana": "かれはまいにちねっしんににほんごをべんきょうしています。",
+          "en": "He studies Japanese enthusiastically every day."
+        },
+        {
+          "ja": "{弟|おとうと}はサッカーには{熱心|ねっしん}だけど、{勉強|べんきょう}は{全然|ぜんぜん}しない。",
+          "kana": "おとうとはサッカーにはねっしんだけど、べんきょうはぜんぜんしない。",
+          "en": "My brother is keen on soccer, but he doesn’t study at all."
+        }
+      ],
+      "collocations": [
+        "熱心に",
+        "仕事熱心"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0105",
+      "word": "正直",
+      "kana": "しょうじき",
+      "meanings": [
+        "honest",
+        "frank"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "personality"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{正直|しょうじき}に{言|い}うと、あの{映画|えいが}はつまらなかった。",
+          "kana": "しょうじきにいうと、あのえいがはつまらなかった。",
+          "en": "To be honest, that movie was boring."
+        },
+        {
+          "ja": "{正直|しょうじき}な{人|ひと}と{一緒|いっしょ}に{働|はたら}きたいです。",
+          "kana": "しょうじきなひとといっしょにはたらきたいです。",
+          "en": "I want to work with honest people."
+        }
+      ],
+      "notes": "Also an adverb in speech: 正直、よく分からない = honestly, I’m not sure.",
+      "collocations": [
+        "正直に言うと",
+        "正直な人"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0106",
+      "word": "厳しい",
+      "kana": "きびしい",
+      "meanings": [
+        "strict",
+        "severe",
+        "harsh"
+      ],
+      "pos": "adj-i",
+      "jlpt": 4,
+      "tags": [
+        "personality",
+        "states"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{厳|きび}しい{人|ひと}でしたが、いつも{私|わたし}のことを{考|かんが}えてくれました。",
+          "kana": "ちちはきびしいひとでしたが、いつもわたしのことをかんがえてくれました。",
+          "en": "My father was a strict man, but he always thought of me."
+        },
+        {
+          "ja": "この{会社|かいしゃ}は{時間|じかん}に{厳|きび}しいから、{遅|おく}れないでね。",
+          "kana": "このかいしゃはじかんにきびしいから、おくれないでね。",
+          "en": "This company is strict about time, so don’t be late."
+        }
+      ],
+      "notes": "People, rules, and also weather or conditions (厳しい寒さ).",
+      "collocations": [
+        "厳しい先生",
+        "寒さが厳しい"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0107",
+      "word": "優しさ",
+      "kana": "やさしさ",
+      "meanings": [
+        "kindness",
+        "gentleness"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "personality",
+        "emotions"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}の{優|やさ}しさに{何度|なんど}も{助|たす}けられた。",
+          "kana": "かのじょのやさしさになんどもたすけられた。",
+          "en": "Her kindness has helped me many times."
+        },
+        {
+          "ja": "{祖母|そぼ}の{優|やさ}しさを、{今|いま}も{時々|ときどき}{思|おも}い{出|だ}します。",
+          "kana": "そぼのやさしさを、いまもときどきおもいだします。",
+          "en": "I still think back now and then on my grandmother’s kindness."
+        }
+      ],
+      "notes": "Noun from 優しい with 〜さ; the same pattern gives 大きさ, 高さ, 暑さ.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0108",
+      "word": "偉い",
+      "kana": "えらい",
+      "meanings": [
+        "great",
+        "admirable",
+        "high-ranking"
+      ],
+      "pos": "adj-i",
+      "jlpt": 4,
+      "tags": [
+        "personality",
+        "people"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{一人|ひとり}で{宿題|しゅくだい}を{全部|ぜんぶ}やったの？{偉|えら}いね。",
+          "kana": "ひとりでしゅくだいをぜんぶやったの？えらいね。",
+          "en": "You did all your homework by yourself? Good for you!"
+        },
+        {
+          "ja": "{会社|かいしゃ}の{偉|えら}い{人|ひと}が{明日|あした}{店|みせ}に{来|き}ます。",
+          "kana": "かいしゃのえらいひとがあしたみせにきます。",
+          "en": "Someone high up in the company is coming to the shop tomorrow."
+        }
+      ],
+      "notes": "Praise for effort or character (偉いね = good for you); also \"of high position\" (偉い人).",
+      "collocations": [
+        "偉い人",
+        "偉いね"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0109",
+      "word": "承知",
+      "kana": "しょうち",
+      "meanings": [
+        "consent",
+        "understanding (a request)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "polite"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}に{頼|たの}まれて、「{承知|しょうち}しました」と{答|こた}えた。",
+          "kana": "ぶちょうにたのまれて、「しょうちしました」とこたえた。",
+          "en": "When my boss asked me, I answered, \"Certainly.\""
+        },
+        {
+          "ja": "はい、{承知|しょうち}しました。{三時|さんじ}までに{送|おく}ります。",
+          "kana": "はい、しょうちしました。さんじまでにおくります。",
+          "en": "Yes, understood. I’ll send it by three."
+        }
+      ],
+      "notes": "承知しました is the formal \"understood, will do\" used with superiors and customers; かしこまりました is one step more formal.",
+      "collocations": [
+        "承知しました",
+        "承知する"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0110",
+      "word": "若者",
+      "kana": "わかもの",
+      "meanings": [
+        "young person",
+        "young people"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{最近|さいきん}の{若者|わかもの}は{新聞|しんぶん}をあまり{読|よ}まないそうです。",
+          "kana": "さいきんのわかものはしんぶんをあまりよまないそうです。",
+          "en": "I hear young people these days don’t read newspapers much."
+        },
+        {
+          "ja": "{駅前|えきまえ}の{新|あたら}しい{店|みせ}は、{若者|わかもの}でいっぱいだった。",
+          "kana": "えきまえのあたらしいみせは、わかものでいっぱいだった。",
+          "en": "The new shop in front of the station was packed with young people."
+        }
+      ],
+      "notes": "Collective flavor (若者たち, 最近の若者); slightly formal or written. In conversation 若い人 is more common.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0111",
+      "word": "お年寄り",
+      "kana": "おとしより",
+      "meanings": [
+        "elderly person",
+        "the elderly"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "polite"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{町|まち}はお{年寄|としよ}りが{多|おお}くて、{静|しず}かだ。",
+          "kana": "このまちはおとしよりがおおくて、しずかだ。",
+          "en": "This town has a lot of elderly people and is quiet."
+        },
+        {
+          "ja": "{若|わか}い{人|ひと}よりお{年寄|としよ}りの{方|ほう}が{早起|はやお}きだと{思|おも}います。",
+          "kana": "わかいひとよりおとしよりのほうがはやおきだとおもいます。",
+          "en": "I think elderly people get up earlier than young people."
+        }
+      ],
+      "notes": "Polite, gentle word for elderly people; 老人 sounds clinical and bare 年寄り can sound blunt.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0112",
+      "word": "赤ん坊",
+      "kana": "あかんぼう",
+      "meanings": [
+        "baby",
+        "infant"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "family",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{赤|あか}ん{坊|ぼう}が{眠|ねむ}っている{間|あいだ}に{洗濯|せんたく}をした。",
+          "kana": "あかんぼうがねむっているあいだにせんたくをした。",
+          "en": "I did the laundry while the baby was asleep."
+        },
+        {
+          "ja": "{赤|あか}ん{坊|ぼう}のころの{写真|しゃしん}を{母|はは}が{見|み}せてくれました。",
+          "kana": "あかんぼうのころのしゃしんをははがみせてくれました。",
+          "en": "My mother showed me photos from when I was a baby."
+        }
+      ],
+      "notes": "Plainer than 赤ちゃん, which is the affectionate everyday word.",
+      "confusables": [
+        "v-n4-0042"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0113",
+      "word": "かわいそう",
+      "kana": "かわいそう",
+      "meanings": [
+        "pitiful",
+        "poor (deserving sympathy)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "usually-kana"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{雨|あめ}の{中|なか}、{犬|いぬ}が{外|そと}で{待|ま}っていてかわいそうだった。",
+          "kana": "あめのなか、いぬがそとでまっていてかわいそうだった。",
+          "en": "The dog was waiting outside in the rain, and I felt so sorry for it."
+        },
+        {
+          "ja": "{財布|さいふ}をなくして{困|こま}っている{人|ひと}がいて、かわいそうでした。",
+          "kana": "さいふをなくしてこまっているひとがいて、かわいそうでした。",
+          "en": "There was someone who had lost their wallet and was in trouble, and I felt sorry for them."
+        }
+      ],
+      "notes": "Sympathy for someone’s misfortune, not \"cute\" (かわいい). かわいそうに = you poor thing.",
+      "altForms": [
+        "可哀想",
+        "可哀相"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0114",
+      "word": "楽",
+      "kana": "らく",
+      "meanings": [
+        "easy",
+        "comfortable",
+        "relaxed"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{椅子|いす}は{座|すわ}ると{腰|こし}が{楽|らく}です。",
+          "kana": "このいすはすわるとこしがらくです。",
+          "en": "This chair is easy on my lower back when I sit in it."
+        },
+        {
+          "ja": "{駅|えき}まではバスで{行|い}くほうが{楽|らく}だよ。",
+          "kana": "えきまではバスでいくほうがらくだよ。",
+          "en": "It’s easier to take the bus to the station."
+        }
+      ],
+      "notes": "楽な仕事 = an easy job; 楽になる = to feel better. Not 楽しい (fun).",
+      "collocations": [
+        "楽になる",
+        "楽な仕事"
+      ],
+      "confusables": [
+        "v-n4-0032"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0115",
+      "word": "健康",
+      "kana": "けんこう",
+      "meanings": [
+        "healthy",
+        "health"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "health"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{健康|けんこう}のために、{毎朝|まいあさ}{三十分|さんじゅっぷん}{歩|ある}いています。",
+          "kana": "けんこうのために、まいあささんじゅっぷんあるいています。",
+          "en": "For my health, I walk for thirty minutes every morning."
+        },
+        {
+          "ja": "{甘|あま}い{物|もの}を{食|た}べすぎるのは{健康|けんこう}によくない。",
+          "kana": "あまいものをたべすぎるのはけんこうによくない。",
+          "en": "Eating too many sweets isn’t good for your health."
+        }
+      ],
+      "notes": "Noun (健康のため) and な-adjective (健康な人). 元気 is how you feel today; 健康 is your overall health. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "健康のために",
+        "健康な体"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0116",
+      "word": "後輩",
+      "kana": "こうはい",
+      "meanings": [
+        "junior (at school or work)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "school",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{後輩|こうはい}に{仕事|しごと}を{教|おし}えるのは{難|むずか}しいですね。",
+          "kana": "こうはいにしごとをおしえるのはむずかしいですね。",
+          "en": "Teaching a junior colleague the job is hard, isn’t it?"
+        },
+        {
+          "ja": "{後輩|こうはい}が{仕事|しごと}で{困|こま}っていたから、{少|すこ}し{手伝|てつだ}った。",
+          "kana": "こうはいがしごとでこまっていたから、すこしてつだった。",
+          "en": "A junior colleague was having trouble with some work, so I helped a bit."
+        }
+      ],
+      "notes": "Someone who joined your school, club or company after you; the opposite of 先輩. Unlike 先輩, it is not used as a title after a name.",
+      "confusables": [
+        "v-n4-0056"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0117",
+      "word": "祈る",
+      "kana": "いのる",
+      "meanings": [
+        "to pray",
+        "to wish (for)"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{神社|じんじゃ}でみんなが{元気|げんき}でいられるように{祈|いの}った。",
+          "kana": "じんじゃでみんながげんきでいられるようにいのった。",
+          "en": "At the shrine I prayed that everyone would stay healthy."
+        },
+        {
+          "ja": "{病気|びょうき}の{友達|ともだち}が{早|はや}く{治|なお}るように{祈|いの}りました。",
+          "kana": "びょうきのともだちがはやくなおるようにいのりました。",
+          "en": "I prayed that my sick friend would get better soon."
+        }
+      ],
+      "notes": "Also in letters: ご成功をお祈りします = I wish you success.",
+      "collocations": [
+        "〜ように祈る",
+        "成功を祈る"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0118",
+      "word": "褒める",
+      "kana": "ほめる",
+      "meanings": [
+        "to praise",
+        "to compliment"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}に{作文|さくぶん}を{褒|ほ}められて、うれしかった。",
+          "kana": "せんせいにさくぶんをほめられて、うれしかった。",
+          "en": "The teacher praised my essay, and I was happy."
+        },
+        {
+          "ja": "{上手|じょうず}にできたときは、{子供|こども}をたくさん{褒|ほ}めてください。",
+          "kana": "じょうずにできたときは、こどもをたくさんほめてください。",
+          "en": "When they do well, praise your children a lot."
+        }
+      ],
+      "notes": "Often heard in the passive: 褒められる = to be praised.",
+      "altForms": [
+        "誉める"
+      ],
+      "confusables": [
+        "v-n4-0119"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0119",
+      "word": "叱る",
+      "kana": "しかる",
+      "meanings": [
+        "to scold"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{宿題|しゅくだい}をしなかったので、{母|はは}に{叱|しか}られました。",
+          "kana": "しゅくだいをしなかったので、ははにしかられました。",
+          "en": "I didn’t do my homework, so my mother scolded me."
+        },
+        {
+          "ja": "{弟|おとうと}を{叱|しか}った{後|あと}で、{少|すこ}し{言|い}いすぎたと{思|おも}った。",
+          "kana": "おとうとをしかったあとで、すこしいいすぎたとおもった。",
+          "en": "After scolding my brother, I felt I had gone a bit too far."
+        }
+      ],
+      "notes": "A superior correcting a junior (parent, teacher, boss); 怒る is simply getting angry.",
+      "confusables": [
+        "v-n4-0118",
+        "v-n4-0024"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0120",
+      "word": "慣れる",
+      "kana": "なれる",
+      "meanings": [
+        "to get used to",
+        "to grow accustomed to"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{仕事|しごと}にはもう{慣|な}れましたか。",
+          "kana": "あたらしいしごとにはもうなれましたか。",
+          "en": "Have you gotten used to your new job yet?"
+        },
+        {
+          "ja": "{日本|にほん}の{夏|なつ}の{暑|あつ}さには、まだ{慣|な}れない。",
+          "kana": "にほんのなつのあつさには、まだなれない。",
+          "en": "I still haven’t gotten used to the heat of Japanese summers."
+        }
+      ],
+      "notes": "The thing you get used to takes に. 慣れている = to be used to.",
+      "collocations": [
+        "〜に慣れる",
+        "慣れている"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0121",
+      "word": "飽きる",
+      "kana": "あきる",
+      "meanings": [
+        "to get tired of",
+        "to lose interest in"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "emotions"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{同|おな}じ{弁当|べんとう}で、もう{飽|あ}きた。",
+          "kana": "まいにちおなじべんとうで、もうあきた。",
+          "en": "I’m sick of having the same lunch every day."
+        },
+        {
+          "ja": "{息子|むすこ}は{新|あたら}しいおもちゃにすぐ{飽|あ}きてしまいます。",
+          "kana": "むすこはあたらしいおもちゃにすぐあきてしまいます。",
+          "en": "My son gets tired of new toys right away."
+        }
+      ],
+      "notes": "The thing you tire of takes に.",
+      "collocations": [
+        "〜に飽きる",
+        "飽きっぽい"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0122",
+      "word": "自信",
+      "kana": "じしん",
+      "meanings": [
+        "confidence",
+        "self-confidence"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "personality"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{練習|れんしゅう}したので、{今|いま}は{自信|じしん}があります。",
+          "kana": "まいにちれんしゅうしたので、いまはじしんがあります。",
+          "en": "I practiced every day, so now I feel confident."
+        },
+        {
+          "ja": "{英語|えいご}で{話|はな}すのは、まだ{自信|じしん}がない。",
+          "kana": "えいごではなすのは、まだじしんがない。",
+          "en": "I’m still not confident speaking in English."
+        }
+      ],
+      "notes": "自信がある / ない = to be confident / not confident. 地震 (earthquake) has the same reading. Listed at N4 or N3 depending on the source.",
+      "collocations": [
+        "自信がある",
+        "自信を持つ"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0123",
+      "word": "お祝い",
+      "kana": "おいわい",
+      "meanings": [
+        "celebration",
+        "congratulatory gift"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "culture",
+        "emotions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄|あに}の{結婚|けっこん}のお{祝|いわ}いに、みんなで{食事|しょくじ}をした。",
+          "kana": "あにのけっこんのおいわいに、みんなでしょくじをした。",
+          "en": "To celebrate my brother’s wedding, we all had a meal together."
+        },
+        {
+          "ja": "{娘|むすめ}の{入学|にゅうがく}のお{祝|いわ}いに、{時計|とけい}を{買|か}いました。",
+          "kana": "むすめのにゅうがくのおいわいに、とけいをかいました。",
+          "en": "I bought a watch as a gift to celebrate my daughter starting school."
+        }
+      ],
+      "notes": "From 祝う (to celebrate); the gift and the party are both お祝い.",
+      "collocations": [
+        "お祝いをする",
+        "お祝いの言葉"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0124",
+      "word": "おかげ",
+      "kana": "おかげ",
+      "meanings": [
+        "thanks to",
+        "owing to"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}のおかげで、{日本語|にほんご}が{上手|じょうず}になりました。",
+          "kana": "せんせいのおかげで、にほんごがじょうずになりました。",
+          "en": "Thanks to my teacher, my Japanese has gotten better."
+        },
+        {
+          "ja": "{君|きみ}が{手伝|てつだ}ってくれたおかげで、{早|はや}く{終|お}わったよ。",
+          "kana": "きみがてつだってくれたおかげで、はやくおわったよ。",
+          "en": "Thanks to your help, we finished early."
+        }
+      ],
+      "notes": "〜のおかげで credits a good result to someone or something; おかげさまで is the polite reply \"I’m fine, thank you\".",
+      "altForms": [
+        "お陰"
+      ],
+      "collocations": [
+        "〜のおかげで",
+        "おかげさまで"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0125",
+      "word": "校長",
+      "kana": "こうちょう",
+      "meanings": [
+        "school principal",
+        "headmaster"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{校長|こうちょう}{先生|せんせい}の{話|はなし}はいつも{長|なが}い。",
+          "kana": "こうちょうせんせいのはなしはいつもながい。",
+          "en": "The principal’s speeches are always long."
+        },
+        {
+          "ja": "{娘|むすめ}の{学校|がっこう}の{校長|こうちょう}は、まだ{四十歳|よんじゅっさい}だそうです。",
+          "kana": "むすめのがっこうのこうちょうは、まだよんじゅっさいだそうです。",
+          "en": "I hear the principal of my daughter’s school is only forty."
+        }
+      ],
+      "notes": "In schools the principal is addressed and referred to as 校長先生, never bare 校長.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0126",
+      "word": "けんか",
+      "kana": "けんか",
+      "meanings": [
+        "quarrel",
+        "fight"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "communication",
+        "usually-kana"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{小|ちい}さいころ、{弟|おとうと}とよくけんかしました。",
+          "kana": "ちいさいころ、おとうととよくけんかしました。",
+          "en": "When I was little, I often fought with my younger brother."
+        },
+        {
+          "ja": "つまらないことで{友達|ともだち}とけんかしてしまった。",
+          "kana": "つまらないことでともだちとけんかしてしまった。",
+          "en": "I ended up fighting with a friend over something trivial."
+        }
+      ],
+      "notes": "Arguments as well as physical fights; 喧嘩 uses non-jōyō kanji, so kana is standard.",
+      "altForms": [
+        "喧嘩",
+        "ケンカ"
+      ],
+      "collocations": [
+        "けんかをする",
+        "けんかになる"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0127",
+      "word": "構う",
+      "kana": "かまう",
+      "meanings": [
+        "to mind",
+        "to care about",
+        "to pay attention to"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "communication"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{少|すこ}しぐらい{遅|おそ}くなっても{構|かま}わないよ。",
+          "kana": "すこしぐらいおそくなってもかまわないよ。",
+          "en": "I don’t mind if you’re a little late."
+        },
+        {
+          "ja": "{忙|いそが}しいので、{今|いま}は{猫|ねこ}を{構|かま}ってあげられません。",
+          "kana": "いそがしいので、いまはねこをかまってあげられません。",
+          "en": "I’m busy, so I can’t give the cat any attention right now."
+        }
+      ],
+      "notes": "Mostly negative: 構いません / 構わない = I don’t mind, that’s fine.",
+      "collocations": [
+        "構いません",
+        "構わない"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0128",
+      "word": "可愛がる",
+      "kana": "かわいがる",
+      "meanings": [
+        "to dote on",
+        "to be affectionate toward"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "emotions",
+        "family"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{猫|ねこ}を{自分|じぶん}の{子供|こども}のように{可愛|かわい}がっています。",
+          "kana": "そぼはねこをじぶんのこどものようにかわいがっています。",
+          "en": "My grandmother dotes on her cat as if it were her own child."
+        },
+        {
+          "ja": "{初|はじ}めての{孫|まご}だから、{両親|りょうしん}はとても{可愛|かわい}がっている。",
+          "kana": "はじめてのまごだから、りょうしんはとてもかわいがっている。",
+          "en": "It’s their first grandchild, so my parents dote on her a lot."
+        }
+      ],
+      "notes": "Showing affection to a child, pet or junior; often written かわいがる.",
+      "station": 17
+    },
+    {
+      "id": "v-n4-0129",
+      "word": "気がつく",
+      "kana": "きがつく",
+      "meanings": [
+        "to notice",
+        "to realize",
+        "to come to"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "emotions",
+        "set-phrase"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{家|いえ}に{帰|かえ}ってから、かばんがないことに{気|き}がついた。",
+          "kana": "いえにかえってから、かばんがないことにきがついた。",
+          "en": "After I got home, I noticed my bag was gone."
+        },
+        {
+          "ja": "{音楽|おんがく}を{聞|き}いていて、{駅|えき}に{着|つ}いたことに{気|き}がつきませんでした。",
+          "kana": "おんがくをきいていて、えきについたことにきがつきませんでした。",
+          "en": "I was listening to music and didn’t notice we had arrived at the station."
+        }
+      ],
+      "notes": "The thing noticed takes に (〜に気がつく). 気づく is the one-word equivalent. No single pitch nucleus is given for the phrase.",
+      "altForms": [
+        "気が付く"
+      ],
+      "collocations": [
+        "〜に気がつく"
+      ],
+      "station": 17
+    },
+    {
+      "id": "v-n4-0130",
+      "word": "お巡りさん",
+      "kana": "おまわりさん",
+      "meanings": [
+        "police officer (friendly term)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "polite"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{道|みち}が{分|わ}からなくて、お{巡|まわ}りさんに{聞|き}きました。",
+          "kana": "みちがわからなくて、おまわりさんにききました。",
+          "en": "I didn’t know the way, so I asked a police officer."
+        },
+        {
+          "ja": "{駅前|えきまえ}でお{巡|まわ}りさんが{子供|こども}たちに{信号|しんごう}の{渡|わた}り{方|かた}を{教|おし}えていた。",
+          "kana": "えきまえでおまわりさんがこどもたちにしんごうのわたりかたをおしえていた。",
+          "en": "In front of the station, a police officer was teaching kids how to cross at the light."
+        }
+      ],
+      "notes": "Friendly everyday word for a police officer on the street; 警察官 is the formal title and 警察 is the police as a whole.",
+      "station": 17
+    }
+  ]
+}

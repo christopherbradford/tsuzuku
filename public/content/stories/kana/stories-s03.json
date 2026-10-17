@@ -1,0 +1,1478 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "story",
+  "level": "kana",
+  "writer": "stories-s03",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "s-03-1",
+      "stationId": "st-03",
+      "titleJa": "みなとのカフェ",
+      "titleEn": "The Harbor Café",
+      "kind": "story",
+      "register": "polite",
+      "lines": [
+        {
+          "ja": "おはようございます、よこはま。",
+          "kana": "おはようございます、よこはま。",
+          "en": "Good morning, Yokohama.",
+          "tokens": [
+            "おはようございます",
+            "、",
+            "よこはま",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0004",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "わたしは、よこはまのひとです。",
+          "kana": "わたしは、よこはまのひとです。",
+          "en": "I am from Yokohama.",
+          "tokens": [
+            "わたし",
+            "は",
+            "、",
+            "よこはま",
+            "の",
+            "ひと",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0066",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "かぞくは、あそこ。でも、ここです。",
+          "kana": "かぞくは、あそこ。でも、ここです。",
+          "en": "My family is over there. But I am here.",
+          "tokens": [
+            "かぞく",
+            "は",
+            "、",
+            "あそこ",
+            "。",
+            "でも",
+            "、",
+            "ここ",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0077",
+            null,
+            null,
+            "v-n5-0053",
+            null,
+            null,
+            null,
+            "v-n5-0051",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「いらっしゃいませ。」タカギさんです。",
+          "kana": "「いらっしゃいませ。」タカギさんです。",
+          "en": "\"Welcome!\" That is Takagi-san.",
+          "tokens": [
+            "「",
+            "いらっしゃいませ",
+            "。",
+            "」",
+            "タカギさん",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0029",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "メニューは、カタカナです。",
+          "kana": "メニューは、カタカナです。",
+          "en": "The menu is in katakana.",
+          "tokens": [
+            "メニュー",
+            "は",
+            "、",
+            "カタカナ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0513"
+          ],
+          "tokenIds": [
+            "v-n5-0513",
+            null,
+            null,
+            "v-n5-0079",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "ケンは、カタカナのせんせいです。",
+          "kana": "ケンは、カタカナのせんせいです。",
+          "en": "Ken is the katakana teacher.",
+          "tokens": [
+            "ケン",
+            "は",
+            "、",
+            "カタカナ",
+            "の",
+            "せんせい",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0079",
+            null,
+            "v-n5-0068",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「はい、みなさん。コーヒー。」",
+          "kana": "「はい、みなさん。コーヒー。」",
+          "en": "\"Right, everyone. Coffee.\"",
+          "tokens": [
+            "「",
+            "はい",
+            "、",
+            "みなさん",
+            "。",
+            "コーヒー",
+            "。",
+            "」"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0001",
+            null,
+            "v-n5-0073",
+            null,
+            "v-n5-0409",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "わたしは、がくせいです。",
+          "kana": "わたしは、がくせいです。",
+          "en": "I am the student.",
+          "tokens": [
+            "わたし",
+            "は",
+            "、",
+            "がくせい",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            "v-n5-0069",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "いす、{一|いち}、{二|に}、{三|さん}。",
+          "kana": "いす、いち、に、さん。",
+          "en": "Chairs: one, two, three.",
+          "tokens": [
+            "いす",
+            "、",
+            "一",
+            "、",
+            "二",
+            "、",
+            "三",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0177"
+          ],
+          "tokenIds": [
+            "v-n5-0177",
+            null,
+            "v-n5-0031",
+            null,
+            "v-n5-0032",
+            null,
+            "v-n5-0033",
+            null
+          ]
+        },
+        {
+          "ja": "{三|さん}は、ねこです。",
+          "kana": "さんは、ねこです。",
+          "en": "Number three is a cat.",
+          "tokens": [
+            "三",
+            "は",
+            "、",
+            "ねこ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0553"
+          ],
+          "tokenIds": [
+            "v-n5-0033",
+            null,
+            null,
+            "v-n5-0553",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "このねこは、アオです。",
+          "kana": "このねこは、アオです。",
+          "en": "This cat is Ao.",
+          "tokens": [
+            "この",
+            "ねこ",
+            "は",
+            "、",
+            "アオ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0553"
+          ],
+          "tokenIds": [
+            "v-n5-0048",
+            "v-n5-0553",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "ケーキ、いただきます。",
+          "kana": "ケーキ、いただきます。",
+          "en": "Cake. Let's eat.",
+          "tokens": [
+            "ケーキ",
+            "、",
+            "いただきます",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0481",
+            null,
+            "v-n5-0015",
+            null
+          ]
+        },
+        {
+          "ja": "ごちそうさまでした。よこはまは、ケーキ。",
+          "kana": "ごちそうさまでした。よこはまは、ケーキ。",
+          "en": "That was good. Yokohama: cake.",
+          "tokens": [
+            "ごちそうさまでした",
+            "。",
+            "よこはま",
+            "は",
+            "、",
+            "ケーキ",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0016",
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0481",
+            null
+          ]
+        },
+        {
+          "ja": "ねこは、どこですか。",
+          "kana": "ねこは、どこですか。",
+          "en": "Where is the cat?",
+          "tokens": [
+            "ねこ",
+            "は",
+            "、",
+            "どこ",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0553"
+          ],
+          "tokenIds": [
+            "v-n5-0553",
+            null,
+            null,
+            "v-n5-0056",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "「さようなら。」ケンです。",
+          "kana": "「さようなら。」ケンです。",
+          "en": "\"Goodbye, then,\" says Ken.",
+          "tokens": [
+            "「",
+            "さようなら",
+            "。",
+            "」",
+            "ケン",
+            "です",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            "v-n5-0008",
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "わたしは、「アオ、またね。」",
+          "kana": "わたしは、「アオ、またね。」",
+          "en": "Me: \"See you, Ao.\"",
+          "tokens": [
+            "わたし",
+            "は",
+            "、",
+            "「",
+            "アオ",
+            "、",
+            "また",
+            "ね",
+            "。",
+            "」"
+          ],
+          "plusOne": [
+            "v-n5-0686"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            null,
+            null,
+            null,
+            "v-n5-0686",
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0001",
+        "v-n5-0004",
+        "v-n5-0008",
+        "v-n5-0015",
+        "v-n5-0016",
+        "v-n5-0029",
+        "v-n5-0031",
+        "v-n5-0032",
+        "v-n5-0033",
+        "v-n5-0041",
+        "v-n5-0048",
+        "v-n5-0051",
+        "v-n5-0053",
+        "v-n5-0056",
+        "v-n5-0066",
+        "v-n5-0068",
+        "v-n5-0069",
+        "v-n5-0073",
+        "v-n5-0077",
+        "v-n5-0079",
+        "v-n5-0177",
+        "v-n5-0409",
+        "v-n5-0481",
+        "v-n5-0513",
+        "v-n5-0553",
+        "v-n5-0686"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "Where is the café?",
+          "choices": [
+            "In Shinagawa, by the shore",
+            "In Yokohama, Hana's home town",
+            "At Nihonbashi in Tokyo",
+            "At the Kawasaki ferry crossing"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "What does Ken pretend to be while he reads the menu?",
+          "choices": [
+            "A cook",
+            "The café owner",
+            "The katakana teacher",
+            "A student"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Where is the cat sitting?",
+          "choices": [
+            "On the menu",
+            "Under the table",
+            "On the first chair",
+            "On the third chair"
+          ],
+          "answer": 3
+        },
+        {
+          "q": "What is on the third chair when they leave?",
+          "choices": [
+            "Nothing; the cat has gone",
+            "The cat, asleep",
+            "Ken's bag",
+            "A plate of cake"
+          ],
+          "answer": 0
+        }
+      ],
+      "recapEn": "In a harbor café in Yokohama, Hana's home town, Takagi-san welcomed Hana and Ken. The menu was katakana; Ken played katakana teacher and read it aloud, Hana his student. A cat sat on the third chair and Hana named it Ao. Cake went on her list. When they left, the chair was empty; Hana wrote \"see you, Ao\".",
+      "names": [
+        "ケン",
+        "アオ",
+        "タカギさん",
+        "よこはま"
+      ]
+    },
+    {
+      "id": "s-03-2",
+      "stationId": "st-03",
+      "titleJa": "カウンターで",
+      "titleEn": "At the Counter",
+      "kind": "dialogue",
+      "register": "polite",
+      "lines": [
+        {
+          "speaker": "タカギさん",
+          "ja": "いらっしゃいませ。",
+          "kana": "いらっしゃいませ。",
+          "en": "Welcome!",
+          "tokens": [
+            "いらっしゃいませ",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0029",
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "こんにちは。コーヒーをおねがいします。",
+          "kana": "こんにちは。コーヒーをおねがいします。",
+          "en": "Hello. A coffee, please.",
+          "tokens": [
+            "こんにちは",
+            "。",
+            "コーヒー",
+            "を",
+            "おねがいします",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "accept": [
+            "コーヒーをおねがいします。",
+            "コーヒー、おねがいします。"
+          ],
+          "mustInclude": [
+            "コーヒー",
+            "おねがいします"
+          ],
+          "options": [
+            {
+              "text": "こんにちは。コーヒーをおねがいします。",
+              "kind": "best"
+            },
+            {
+              "text": "こんにちは。コーヒー、おねがいします。",
+              "kind": "ok",
+              "recast": "こんにちは。コーヒーをおねがいします。"
+            },
+            {
+              "text": "コーヒー。",
+              "kind": "register-wrong",
+              "recast": "コーヒーをおねがいします。"
+            },
+            {
+              "text": "こんにちは。コーヒーはおねがいします。",
+              "kind": "grammar-wrong",
+              "recast": "こんにちは。コーヒーをおねがいします。"
+            }
+          ],
+          "tokenIds": [
+            "v-n5-0006",
+            null,
+            "v-n5-0409",
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "はい、コーヒーですね。",
+          "kana": "はい、コーヒーですね。",
+          "en": "Yes, one coffee.",
+          "tokens": [
+            "はい",
+            "、",
+            "コーヒー",
+            "です",
+            "ね",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0409",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "ケーキも、どうですか。",
+          "kana": "ケーキも、どうですか。",
+          "en": "How about some cake too?",
+          "tokens": [
+            "ケーキ",
+            "も",
+            "、",
+            "どう",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0481",
+            null,
+            null,
+            "v-n5-0060",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "はい、ケーキもおねがいします。",
+          "kana": "はい、ケーキもおねがいします。",
+          "en": "Yes, cake too, please.",
+          "tokens": [
+            "はい",
+            "、",
+            "ケーキ",
+            "も",
+            "おねがいします",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "accept": [
+            "ケーキもおねがいします。",
+            "ええ、ケーキもおねがいします。"
+          ],
+          "mustInclude": [
+            "ケーキ"
+          ],
+          "options": [
+            {
+              "text": "はい、ケーキもおねがいします。",
+              "kind": "best"
+            },
+            {
+              "text": "はい。ケーキも、おねがいします。",
+              "kind": "ok",
+              "recast": "はい、ケーキもおねがいします。"
+            },
+            {
+              "text": "うん、ケーキも。",
+              "kind": "register-wrong",
+              "recast": "はい、ケーキもおねがいします。"
+            },
+            {
+              "text": "はい、ケーキをもおねがいします。",
+              "kind": "grammar-wrong",
+              "recast": "はい、ケーキもおねがいします。"
+            }
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0481",
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "ケーキは、いくつですか。",
+          "kana": "ケーキは、いくつですか。",
+          "en": "How many cakes?",
+          "tokens": [
+            "ケーキ",
+            "は",
+            "、",
+            "いくつ",
+            "です",
+            "か",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0481",
+            null,
+            null,
+            "v-n5-0062",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "{一|ひと}つ、おねがいします。",
+          "kana": "ひとつ、おねがいします。",
+          "en": "One, please.",
+          "tokens": [
+            "一つ",
+            "、",
+            "おねがいします",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0111"
+          ],
+          "accept": [
+            "ひとつ、おねがいします。",
+            "ひとつです。"
+          ],
+          "mustInclude": [
+            "一つ"
+          ],
+          "options": [
+            {
+              "text": "一つ、おねがいします。",
+              "kind": "best"
+            },
+            {
+              "text": "一つです。",
+              "kind": "ok",
+              "recast": "一つ、おねがいします。"
+            },
+            {
+              "text": "一つ。",
+              "kind": "register-wrong",
+              "recast": "一つ、おねがいします。"
+            },
+            {
+              "text": "一人、おねがいします。",
+              "kind": "grammar-wrong",
+              "recast": "一つ、おねがいします。"
+            }
+          ],
+          "tokenIds": [
+            "v-n5-0111",
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "わたしも、ケーキを。",
+          "kana": "わたしも、ケーキを。",
+          "en": "Cake for me too.",
+          "tokens": [
+            "わたし",
+            "も",
+            "、",
+            "ケーキ",
+            "を",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            "v-n5-0481",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "はい。では、{二|ふた}つですね。",
+          "kana": "はい。では、ふたつですね。",
+          "en": "Right. So that is two, then.",
+          "tokens": [
+            "はい",
+            "。",
+            "では",
+            "、",
+            "二つ",
+            "です",
+            "ね",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0111"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            null,
+            null,
+            "v-n5-0111",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "それと、ジュースを。",
+          "kana": "それと、ジュースを。",
+          "en": "And a juice.",
+          "tokens": [
+            "それ",
+            "と",
+            "、",
+            "ジュース",
+            "を",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0468"
+          ],
+          "tokenIds": [
+            "v-n5-0046",
+            null,
+            null,
+            "v-n5-0468",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "ジュースは、これと、それと、あれです。",
+          "kana": "ジュースは、これと、それと、あれです。",
+          "en": "For juice we have this one, that one, and that one over there.",
+          "tokens": [
+            "ジュース",
+            "は",
+            "、",
+            "これ",
+            "と",
+            "、",
+            "それ",
+            "と",
+            "、",
+            "あれ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0468"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0468",
+            null,
+            null,
+            "v-n5-0045",
+            null,
+            null,
+            "v-n5-0046",
+            null,
+            null,
+            "v-n5-0047",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ケン",
+          "ja": "では、それを。",
+          "kana": "では、それを。",
+          "en": "Then that one.",
+          "tokens": [
+            "では",
+            "、",
+            "それ",
+            "を",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            "v-n5-0046",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "はい、{千九百円|せんきゅうひゃくえん}です。",
+          "kana": "はい、せんきゅうひゃくえんです。",
+          "en": "That comes to 1,900 yen.",
+          "tokens": [
+            "はい",
+            "、",
+            "千九百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "はい、おねがいします。",
+          "kana": "はい、おねがいします。",
+          "en": "Here you are.",
+          "tokens": [
+            "はい",
+            "、",
+            "おねがいします",
+            "。"
+          ],
+          "accept": [
+            "おねがいします。"
+          ],
+          "mustInclude": [
+            "おねがいします"
+          ],
+          "options": [
+            {
+              "text": "はい、おねがいします。",
+              "kind": "best"
+            },
+            {
+              "text": "おねがいします。",
+              "kind": "ok",
+              "recast": "はい、おねがいします。"
+            },
+            {
+              "text": "はい、これ。",
+              "kind": "register-wrong",
+              "recast": "はい、おねがいします。"
+            },
+            {
+              "text": "はい、おねがいです。",
+              "kind": "grammar-wrong",
+              "recast": "はい、おねがいします。"
+            }
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0019",
+            null
+          ]
+        },
+        {
+          "speaker": "タカギさん",
+          "ja": "ありがとうございます。コーヒーは、あそこです。",
+          "kana": "ありがとうございます。コーヒーは、あそこです。",
+          "en": "Thank you. Your coffee will be over there.",
+          "tokens": [
+            "ありがとうございます",
+            "。",
+            "コーヒー",
+            "は",
+            "、",
+            "あそこ",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "aizuchiSlot": true,
+          "tokenIds": [
+            "v-n5-0010",
+            null,
+            "v-n5-0409",
+            null,
+            null,
+            "v-n5-0053",
+            null,
+            null
+          ]
+        },
+        {
+          "speaker": "ハナ",
+          "ja": "はい。タカギさん、ありがとうございます。",
+          "kana": "はい。タカギさん、ありがとうございます。",
+          "en": "Okay. Thank you, Takagi-san.",
+          "tokens": [
+            "はい",
+            "。",
+            "タカギさん",
+            "、",
+            "ありがとうございます",
+            "。"
+          ],
+          "accept": [
+            "ありがとうございます。",
+            "はい、ありがとうございます。"
+          ],
+          "mustInclude": [
+            "ありがとうございます"
+          ],
+          "options": [
+            {
+              "text": "はい。タカギさん、ありがとうございます。",
+              "kind": "best"
+            },
+            {
+              "text": "タカギさん、ありがとうございます。",
+              "kind": "ok",
+              "recast": "はい。タカギさん、ありがとうございます。"
+            },
+            {
+              "text": "タカギさん、ありがとう。",
+              "kind": "register-wrong",
+              "recast": "タカギさん、ありがとうございます。"
+            },
+            {
+              "text": "はい。タカギさんは、ありがとうございます。",
+              "kind": "grammar-wrong",
+              "recast": "はい。タカギさん、ありがとうございます。"
+            }
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            null,
+            null,
+            "v-n5-0010",
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0001",
+        "v-n5-0006",
+        "v-n5-0010",
+        "v-n5-0019",
+        "v-n5-0029",
+        "v-n5-0041",
+        "v-n5-0045",
+        "v-n5-0046",
+        "v-n5-0047",
+        "v-n5-0053",
+        "v-n5-0060",
+        "v-n5-0062",
+        "v-n5-0111",
+        "v-n5-0115",
+        "v-n5-0409",
+        "v-n5-0468",
+        "v-n5-0481"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "What does Hana order first?",
+          "choices": [
+            "Coffee",
+            "Juice",
+            "Milk",
+            "Bread"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "How many cakes do they order in the end?",
+          "choices": [
+            "One",
+            "Two",
+            "Three",
+            "None"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "How does Ken choose his juice?",
+          "choices": [
+            "He reads the menu aloud",
+            "He asks Hana to choose",
+            "He points to one of the bottles Takagi-san shows him",
+            "He takes the cheapest one"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "How much is the whole order?",
+          "choices": [
+            "500 yen",
+            "1,400 yen",
+            "1,500 yen",
+            "1,900 yen"
+          ],
+          "answer": 3
+        }
+      ],
+      "recapEn": "At the counter Hana ordered a coffee and, when Takagi-san suggested it, a cake. Ken wanted cake too, so the order became two, plus a juice that he chose from the three Takagi-san pointed out. The bill was 1,900 yen; the coffee was waiting at the far end of the counter.",
+      "names": [
+        "タカギさん"
+      ],
+      "learnerSpeaker": "ハナ"
+    },
+    {
+      "id": "s-03-3",
+      "stationId": "st-03",
+      "titleJa": "メニュー",
+      "titleEn": "The Menu",
+      "kind": "story",
+      "register": "polite",
+      "lines": [
+        {
+          "ja": "いらっしゃいませ、こんにちは。",
+          "kana": "いらっしゃいませ、こんにちは。",
+          "en": "Welcome, and hello.",
+          "tokens": [
+            "いらっしゃいませ",
+            "、",
+            "こんにちは",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0029",
+            null,
+            "v-n5-0006",
+            null
+          ]
+        },
+        {
+          "ja": "{一|いち}、コーヒー、{五百|ごひゃく}。",
+          "kana": "いち、コーヒー、ごひゃく。",
+          "en": "One: coffee, 500.",
+          "tokens": [
+            "一",
+            "、",
+            "コーヒー",
+            "、",
+            "五百",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0409"
+          ],
+          "tokenIds": [
+            "v-n5-0031",
+            null,
+            "v-n5-0409",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{二|に}、ミルク、{三百|さんびゃく}。",
+          "kana": "に、ミルク、さんびゃく。",
+          "en": "Two: milk, 300.",
+          "tokens": [
+            "二",
+            "、",
+            "ミルク",
+            "、",
+            "三百",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0462"
+          ],
+          "tokenIds": [
+            "v-n5-0032",
+            null,
+            "v-n5-0462",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{三|さん}、ジュース、{四百|よんひゃく}。",
+          "kana": "さん、ジュース、よんひゃく。",
+          "en": "Three: juice, 400.",
+          "tokens": [
+            "三",
+            "、",
+            "ジュース",
+            "、",
+            "四百",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0468"
+          ],
+          "tokenIds": [
+            "v-n5-0033",
+            null,
+            "v-n5-0468",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{四|よん}、ケーキ、{五百|ごひゃく}。",
+          "kana": "よん、ケーキ、ごひゃく。",
+          "en": "Four: cake, 500.",
+          "tokens": [
+            "四",
+            "、",
+            "ケーキ",
+            "、",
+            "五百",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0034",
+            null,
+            "v-n5-0481",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{五|ご}、パン、{三百|さんびゃく}。",
+          "kana": "ご、パン、さんびゃく。",
+          "en": "Five: bread, 300.",
+          "tokens": [
+            "五",
+            "、",
+            "パン",
+            "、",
+            "三百",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0410"
+          ],
+          "tokenIds": [
+            "v-n5-0035",
+            null,
+            "v-n5-0410",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "わたしは、{一|いち}と{四|よん}。",
+          "kana": "わたしは、いちとよん。",
+          "en": "Me: one and four.",
+          "tokens": [
+            "わたし",
+            "は",
+            "、",
+            "一",
+            "と",
+            "四",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0041",
+            null,
+            null,
+            "v-n5-0031",
+            null,
+            "v-n5-0034",
+            null
+          ]
+        },
+        {
+          "ja": "ケンは、{三|さん}と{四|よん}。",
+          "kana": "ケンは、さんとよん。",
+          "en": "Ken: three and four.",
+          "tokens": [
+            "ケン",
+            "は",
+            "、",
+            "三",
+            "と",
+            "四",
+            "。"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0033",
+            null,
+            "v-n5-0034",
+            null
+          ]
+        },
+        {
+          "ja": "アオは、ミルク？",
+          "kana": "アオは、ミルク？",
+          "en": "Milk for Ao?",
+          "tokens": [
+            "アオ",
+            "は",
+            "、",
+            "ミルク",
+            "？"
+          ],
+          "plusOne": [
+            "v-n5-0462"
+          ],
+          "tokenIds": [
+            null,
+            null,
+            null,
+            "v-n5-0462",
+            null
+          ]
+        },
+        {
+          "ja": "いいえ、いいえ。",
+          "kana": "いいえ、いいえ。",
+          "en": "No, no.",
+          "tokens": [
+            "いいえ",
+            "、",
+            "いいえ",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0002",
+            null,
+            "v-n5-0002",
+            null
+          ]
+        },
+        {
+          "ja": "いくらですか。",
+          "kana": "いくらですか。",
+          "en": "How much is it?",
+          "tokens": [
+            "いくら",
+            "です",
+            "か",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0061",
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "{千九百円|せんきゅうひゃくえん}です。",
+          "kana": "せんきゅうひゃくえんです。",
+          "en": "It is 1,900 yen.",
+          "tokens": [
+            "千九百円",
+            "です",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0115"
+          ],
+          "tokenIds": [
+            "v-n5-0115",
+            null,
+            null
+          ]
+        },
+        {
+          "ja": "はい、ありがとうございます。",
+          "kana": "はい、ありがとうございます。",
+          "en": "Here you are. Thank you.",
+          "tokens": [
+            "はい",
+            "、",
+            "ありがとうございます",
+            "。"
+          ],
+          "tokenIds": [
+            "v-n5-0001",
+            null,
+            "v-n5-0010",
+            null
+          ]
+        },
+        {
+          "ja": "ケーキ、ごちそうさまでした。",
+          "kana": "ケーキ、ごちそうさまでした。",
+          "en": "Thank you for the cake.",
+          "tokens": [
+            "ケーキ",
+            "、",
+            "ごちそうさまでした",
+            "。"
+          ],
+          "plusOne": [
+            "v-n5-0481"
+          ],
+          "tokenIds": [
+            "v-n5-0481",
+            null,
+            "v-n5-0016",
+            null
+          ]
+        }
+      ],
+      "vocabIds": [
+        "v-n5-0001",
+        "v-n5-0002",
+        "v-n5-0006",
+        "v-n5-0010",
+        "v-n5-0016",
+        "v-n5-0029",
+        "v-n5-0031",
+        "v-n5-0032",
+        "v-n5-0033",
+        "v-n5-0034",
+        "v-n5-0035",
+        "v-n5-0041",
+        "v-n5-0061",
+        "v-n5-0115",
+        "v-n5-0409",
+        "v-n5-0410",
+        "v-n5-0462",
+        "v-n5-0468",
+        "v-n5-0481"
+      ],
+      "grammarIds": [],
+      "comprehension": [
+        {
+          "q": "What is item number four on the menu?",
+          "choices": [
+            "Coffee",
+            "Juice",
+            "Cake",
+            "Bread"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "How much is a coffee?",
+          "choices": [
+            "500 yen",
+            "300 yen",
+            "400 yen",
+            "1,900 yen"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "What does Ken have?",
+          "choices": [
+            "Coffee and cake",
+            "Juice and cake",
+            "Milk",
+            "Bread"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Does Ao get any milk?",
+          "choices": [
+            "Yes, a small cup",
+            "Yes, with some bread",
+            "Only water",
+            "No"
+          ],
+          "answer": 3
+        }
+      ],
+      "recapEn": "The harbor café's menu: five katakana items with prices, numbered one to five. Hana had coffee and cake, Ken juice and cake; the cat Ao looked at the milk and was told no. The total came to 1,900 yen, and Hana thanked the café for the cake.",
+      "names": [
+        "ケン",
+        "アオ"
+      ]
+    }
+  ]
+}

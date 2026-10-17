@@ -1,0 +1,1745 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n4",
+  "writer": "grammar-n4-002",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n4-031",
+      "pattern": "〜そうだ (hearsay)",
+      "meaning": "I hear that …",
+      "formation": [
+        "Plain form + そうだ / そうです",
+        "V: 雨が降る → 雨が降るそうだ · 降った → 降ったそうだ",
+        "い-adj: 高い → 高いそうだ",
+        "な-adj: 便利だ → 便利だそうだ",
+        "N: 休みだ → 休みだそうだ",
+        "Negative and past go inside: 来ないそうだ · 来なかったそうだ"
+      ],
+      "explanation": "〜そうだ after a plain form reports something you heard or read: 明日は雨が降るそうです, 'I hear it will rain tomorrow'. The information comes from outside you — a forecast, a friend, the news — so it pairs naturally with 〜によると. Keep the plain form whole: 高いそうだ, 便利だそうだ, 休みだそうだ, 来なかったそうだ. Only the final そうだ changes to そうです for politeness; it has no negative or past of its own. Do not confuse it with appearance そうだ, which attaches to the ます stem (降りそうだ, 'looks like rain'). For a vaguer rumor, use 〜らしい.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{天気予報|てんきよほう}によると、{明日|あした}は{雨|あめ}が{降|ふ}るそうです。",
+          "kana": "てんきよほうによると、あしたはあめがふるそうです。",
+          "en": "According to the weather forecast, I hear it will rain tomorrow."
+        },
+        {
+          "ja": "ケンさんは{来月|らいげつ}{京都|きょうと}に{引|ひ}っ{越|こ}すそうだ。",
+          "kana": "ケンさんはらいげつきょうとにひっこすそうだ。",
+          "en": "I hear Ken is moving to Kyoto next month."
+        },
+        {
+          "ja": "あの{店|みせ}のラーメンはとてもおいしいそうですよ。",
+          "kana": "あのみせのラーメンはとてもおいしいそうですよ。",
+          "en": "I hear the ramen at that shop is really good."
+        },
+        {
+          "ja": "{田中|たなか}さんは{昔|むかし}、{先生|せんせい}だったそうです。",
+          "kana": "たなかさんはむかし、せんせいだったそうです。",
+          "en": "I hear Mr. Tanaka used to be a teacher."
+        }
+      ],
+      "clozeHints": [
+        "そうです",
+        "そうだ"
+      ],
+      "mistakes": [
+        "× 雨が降りそうです (meaning 'I heard') → ○ 雨が降るそうです (hearsay そうだ follows the plain form, not the ます stem)",
+        "× 便利そうだ (meaning 'I heard it is convenient') → ○ 便利だそうだ (hearsay keeps だ after nouns and な-adjectives)",
+        "× 高いだそうです → ○ 高いそうです (い-adjectives never take だ)"
+      ],
+      "related": [
+        "g-n4-032",
+        "g-n4-035",
+        "g-n4-037",
+        "g-n5-062",
+        "g-n5-067"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-032",
+      "pattern": "〜そうだ (appearance)",
+      "meaning": "looks like …; seems about to …",
+      "formation": [
+        "V-ます stem + そうだ: 降ります → 降りそうだ · 落ちます → 落ちそうだ",
+        "い-adj minus い + そうだ: おいしい → おいしそうだ · 高い → 高そうだ",
+        "な-adj stem + そうだ: 元気 → 元気そうだ",
+        "Exceptions: いい → よさそうだ · ない → なさそうだ",
+        "Before a noun: 〜そうな N (おいしそうなケーキ) · as adverb 〜そうに",
+        "Polite: 〜そうです · past 〜そうだった"
+      ],
+      "explanation": "Appearance そうだ says what something looks like from what you see right now: このケーキはおいしそうだ, 'this cake looks delicious'; 雨が降りそうだ, 'it looks like it is about to rain'. Attach it to the ます stem of a verb or to an adjective with its final い removed; いい becomes よさそう. Because it describes an impression, you cannot use it for qualities that are obvious at a glance, like きれい or 赤い — just say the adjective. It is a な-adjective itself, so you get そうな人 and そうに走る. Hearsay そうだ, after a full plain form, is a different pattern.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "このケーキ、とてもおいしそうですね。",
+          "kana": "このケーキ、とてもおいしそうですね。",
+          "en": "This cake looks really delicious."
+        },
+        {
+          "ja": "{空|そら}が{暗|くら}い。{雨|あめ}が{降|ふ}りそうだ。",
+          "kana": "そらがくらい。あめがふりそうだ。",
+          "en": "The sky is dark. It looks like it's going to rain."
+        },
+        {
+          "ja": "{彼|かれ}は{今日|きょう}、とても{眠|ねむ}そうだった。",
+          "kana": "かれはきょう、とてもねむそうだった。",
+          "en": "He looked really sleepy today."
+        },
+        {
+          "ja": "{荷物|にもつ}が{重|おも}そうですね。{持|も}ちましょうか。",
+          "kana": "にもつがおもそうですね。もちましょうか。",
+          "en": "Your bags look heavy. Shall I carry them?"
+        },
+        {
+          "ja": "{子|こ}どもたちは{元気|げんき}そうに{走|はし}っていた。",
+          "kana": "こどもたちはげんきそうにはしっていた。",
+          "en": "The children were running around looking full of energy."
+        }
+      ],
+      "clozeHints": [
+        "そうです",
+        "そうだ",
+        "そうに"
+      ],
+      "mistakes": [
+        "× おいしいそうだ (meaning 'looks delicious') → ○ おいしそうだ (drop い before appearance そうだ)",
+        "× いそうだ → ○ よさそうだ (いい becomes よさそう)",
+        "× きれいそうな人 → ○ きれいな人 (for qualities you can see at a glance, just use the adjective)"
+      ],
+      "related": [
+        "g-n4-031",
+        "g-n4-033",
+        "g-n4-034",
+        "g-n5-017",
+        "g-n5-024"
+      ],
+      "tags": [
+        "states"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-033",
+      "pattern": "〜ようだ",
+      "meaning": "it seems that …; like …",
+      "formation": [
+        "V plain + ようだ: 誰かいるようだ · 出かけたようだ",
+        "い-adj + ようだ: 寒いようだ",
+        "な-adj + な + ようだ: 静かなようだ",
+        "N + の + ようだ: 夢のようだ",
+        "Polite: 〜ようです · before a noun 〜ような N · as adverb 〜ように"
+      ],
+      "explanation": "〜ようだ gives your own judgment from evidence: the lights are off, so 誰もいないようだ, 'it seems nobody is here'. It is softer than stating a fact and more grounded than a guess. Attach it like a noun modifier: plain verbs and い-adjectives directly, な-adjectives with な, nouns with の. The same form also means 'like' for comparisons: 夢のようだ, 'like a dream'; 冬のように寒い, 'cold like winter'. ようだ sounds a little careful; in relaxed talk you will hear みたいだ instead. Hearsay is そうだ or らしい, not ようだ.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{誰|だれ}もいないようですね。{電気|でんき}が{消|き}えています。",
+          "kana": "だれもいないようですね。でんきがきえています。",
+          "en": "It seems nobody is here. The lights are off."
+        },
+        {
+          "ja": "{風邪|かぜ}をひいたようだ。{頭|あたま}が{痛|いた}い。",
+          "kana": "かぜをひいたようだ。あたまがいたい。",
+          "en": "I seem to have caught a cold. My head hurts."
+        },
+        {
+          "ja": "{外|そと}は{冬|ふゆ}のように{寒|さむ}かった。",
+          "kana": "そとはふゆのようにさむかった。",
+          "en": "It was as cold as winter outside."
+        },
+        {
+          "ja": "{田中|たなか}さんはもう{帰|かえ}ったようです。",
+          "kana": "たなかさんはもうかえったようです。",
+          "en": "It seems Mr. Tanaka has already gone home."
+        }
+      ],
+      "clozeHints": [
+        "ようです",
+        "ようだ",
+        "ように",
+        "ような"
+      ],
+      "mistakes": [
+        "× 静かようだ → ○ 静かなようだ (な-adjectives need な before ようだ)",
+        "× 夢ようだ → ○ 夢のようだ (nouns take の before ようだ)",
+        "× 雨が降るようです (meaning 'I heard') → ○ 雨が降るそうです (ようだ is your own judgment from evidence, not hearsay)"
+      ],
+      "related": [
+        "g-n4-032",
+        "g-n4-034",
+        "g-n4-035",
+        "g-n4-041",
+        "g-n5-076"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-034",
+      "pattern": "〜みたいだ",
+      "meaning": "seems like …; like … (conversational)",
+      "formation": [
+        "V plain + みたいだ: 寝ているみたいだ",
+        "い-adj + みたいだ: 忙しいみたいだ",
+        "な-adj / N + みたいだ (no な, no の): 元気みたいだ · 子どもみたいだ",
+        "Polite: 〜みたいです · before a noun 〜みたいな N · as adverb 〜みたいに",
+        "Casual speech often ends on みたい alone"
+      ],
+      "explanation": "〜みたいだ is the everyday, spoken twin of ようだ: a judgment from what you see or hear (雨が降っているみたい, 'looks like it is raining') or a comparison (春みたいに暖かい, 'warm like spring'). The big convenience is that it attaches directly to everything — plain verbs, adjectives, nouns — with no な or の. It takes です for politeness and works fine with coworkers and friends, but in writing, reports and formal speech switch to ようだ. For reporting what someone told you, use そうだ or らしい.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{外|そと}、{雨|あめ}が{降|ふ}っているみたい。",
+          "kana": "そと、あめがふっているみたい。",
+          "en": "Looks like it's raining outside."
+        },
+        {
+          "ja": "ケンは{今日|きょう}、{忙|いそが}しいみたいだよ。",
+          "kana": "ケンはきょう、いそがしいみたいだよ。",
+          "en": "Ken seems busy today."
+        },
+        {
+          "ja": "{今日|きょう}は{春|はる}みたいに{暖|あたた}かいですね。",
+          "kana": "きょうははるみたいにあたたかいですね。",
+          "en": "It's warm like spring today, isn't it?"
+        },
+        {
+          "ja": "{田中|たなか}さんはまだ{来|き}ていないみたいです。",
+          "kana": "たなかさんはまだきていないみたいです。",
+          "en": "It seems Mr. Tanaka hasn't arrived yet."
+        }
+      ],
+      "clozeHints": [
+        "みたい"
+      ],
+      "mistakes": [
+        "× 元気なみたいだ → ○ 元気みたいだ (みたいだ attaches directly to な-adjectives and nouns)",
+        "× 子どものみたいだ → ○ 子どもみたいだ (no の before みたいだ)",
+        "× (in a written report) 問題があるみたいです → ○ 問題があるようです (みたいだ is conversational; use ようだ in writing and formal speech)"
+      ],
+      "related": [
+        "g-n4-033",
+        "g-n4-032",
+        "g-n4-035"
+      ],
+      "tags": [
+        "casual"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-035",
+      "pattern": "〜らしい",
+      "meaning": "apparently …; typical of …",
+      "formation": [
+        "V plain + らしい: 来るらしい · 来たらしい",
+        "い-adj + らしい: 高いらしい",
+        "な-adj / N + らしい (no だ): 有名らしい · 休みらしい",
+        "Polite: 〜らしいです · conjugates like an い-adjective: らしくない · らしかった",
+        "N + らしい = typical of N: 春らしい天気 · 彼らしい答え"
+      ],
+      "explanation": "〜らしい reports what you have heard or gathered without committing to it: 新しい先生が来るらしい, 'apparently a new teacher is coming'. It sits between hearsay そうだ (clearly from a source) and ようだ (your own judgment): you are passing on information, keeping a little distance. Attach it directly to plain forms, adjectives and nouns, with no だ. The same word after a noun means 'typical of': 春らしい日, 'a spring-like day'; 彼らしい, 'just like him'. らしい behaves as an い-adjective, so you get らしくない and らしかった.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}から{新|あたら}しい{先生|せんせい}が{来|く}るらしい。",
+          "kana": "らいしゅうからあたらしいせんせいがくるらしい。",
+          "en": "Apparently a new teacher is coming from next week."
+        },
+        {
+          "ja": "あの{店|みせ}は{週末|しゅうまつ}、{人|ひと}が{多|おお}いらしいですよ。",
+          "kana": "あのみせはしゅうまつ、ひとがおおいらしいですよ。",
+          "en": "Apparently that shop gets very crowded on weekends."
+        },
+        {
+          "ja": "{今日|きょう}は{春|はる}らしい{暖|あたた}かい{日|ひ}ですね。",
+          "kana": "きょうははるらしいあたたかいひですね。",
+          "en": "It's a warm, spring-like day today."
+        },
+        {
+          "ja": "ケンは{昨日|きのう}、{遅|おそ}くまで{働|はたら}いていたらしい。",
+          "kana": "ケンはきのう、おそくまではたらいていたらしい。",
+          "en": "Apparently Ken was working until late last night."
+        }
+      ],
+      "clozeHints": [
+        "らしい"
+      ],
+      "mistakes": [
+        "× 休みだらしい → ○ 休みらしい (no だ before らしい)",
+        "× 雨が降るらしいだ → ○ 雨が降るらしい (らしい already ends like an い-adjective; never add だ)",
+        "× 風邪をひいたらしいです (about yourself, after checking) → ○ 風邪をひいたようです (らしい reports what you heard or inferred from a distance; ようだ is your own judgment)"
+      ],
+      "related": [
+        "g-n4-031",
+        "g-n4-033",
+        "g-n4-034",
+        "g-n4-037"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-036",
+      "pattern": "〜かもしれない",
+      "meaning": "might …; maybe …",
+      "formation": [
+        "Plain form + かもしれない / かもしれません",
+        "V: 遅れる → 遅れるかもしれない · 遅れた → 遅れたかもしれない",
+        "い-adj: 寒い → 寒いかもしれない",
+        "な-adj / N (no だ): 無理 → 無理かもしれない · 休み → 休みかもしれない",
+        "Casual speech often shortens it to 〜かも"
+      ],
+      "explanation": "〜かもしれない marks a real possibility you are not sure about — roughly fifty-fifty: 午後は雨が降るかもしれない, 'it might rain this afternoon'. Put the plain form in front (no だ after nouns and な-adjectives) and make only the ending polite: かもしれません. Use it to hedge a prediction, admit a worry (財布を忘れたかもしれない) or soften a suggestion. If you are fairly confident, でしょう or はずだ fits better; if you are passing on what others said, use そうだ. Among friends the whole thing shrinks to かも: 遅れるかも.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{午後|ごご}は{雨|あめ}が{降|ふ}るかもしれません。",
+          "kana": "ごごはあめがふるかもしれません。",
+          "en": "It might rain in the afternoon."
+        },
+        {
+          "ja": "{財布|さいふ}を{電車|でんしゃ}に{忘|わす}れたかもしれない。",
+          "kana": "さいふをでんしゃにわすれたかもしれない。",
+          "en": "I might have left my wallet on the train."
+        },
+        {
+          "ja": "{明日|あした}は{休|やす}みかもしれません。",
+          "kana": "あしたはやすみかもしれません。",
+          "en": "Tomorrow might be a day off."
+        },
+        {
+          "ja": "{少|すこ}し{遅|おく}れるかも。{先|さき}に{始|はじ}めていて。",
+          "kana": "すこしおくれるかも。さきにはじめていて。",
+          "en": "I might be a bit late. Start without me."
+        }
+      ],
+      "clozeHints": [
+        "かもしれません",
+        "かもしれない",
+        "かも"
+      ],
+      "mistakes": [
+        "× 休みだかもしれない → ○ 休みかもしれない (no だ before かもしれない)",
+        "× 雨が降りますかもしれません → ○ 雨が降るかもしれません (plain form in front; politeness goes at the end)",
+        "× 明日は晴れるかもしれない (when you are fairly sure) → ○ 明日は晴れるでしょう (かもしれない is a weak maybe; でしょう is more confident)"
+      ],
+      "related": [
+        "g-n5-076",
+        "g-n5-066",
+        "g-n4-063"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-037",
+      "pattern": "〜によると",
+      "meaning": "according to …",
+      "formation": [
+        "N + によると、〜そうだ / 〜らしい / 〜ということだ",
+        "天気予報によると、明日は雪だそうです",
+        "Also N + によれば (slightly more formal)",
+        "Typical sources: 天気予報 · ニュース · 新聞 · 先生の話 · 友達の話"
+      ],
+      "explanation": "〜によると names the source of what you are about to report: 天気予報によると、明日は雪だそうです, 'according to the forecast, it will snow tomorrow'. It opens the sentence and expects a hearsay ending — そうだ, らしい or ということだ — so the two halves frame the information together. The source is a noun: a forecast, the news, a person's 話. によれば means the same and sounds a touch more formal. Do not confuse it with によって, which means 'depending on' or 'by means of'.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{天気予報|てんきよほう}によると、{今夜|こんや}は{雪|ゆき}だそうです。",
+          "kana": "てんきよほうによると、こんやはゆきだそうです。",
+          "en": "According to the forecast, it will snow tonight."
+        },
+        {
+          "ja": "ニュースによると、{電車|でんしゃ}が{止|と}まっているらしい。",
+          "kana": "ニュースによると、でんしゃがとまっているらしい。",
+          "en": "According to the news, the trains have stopped."
+        },
+        {
+          "ja": "{先生|せんせい}の{話|はなし}によると、{試験|しけん}は{来月|らいげつ}だそうだ。",
+          "kana": "せんせいのはなしによると、しけんはらいげつだそうだ。",
+          "en": "According to what the teacher said, the exam is next month."
+        },
+        {
+          "ja": "{新聞|しんぶん}によれば、{今年|ことし}の{夏|なつ}は{暑|あつ}くなるそうです。",
+          "kana": "しんぶんによれば、ことしのなつはあつくなるそうです。",
+          "en": "According to the newspaper, this summer will be hot."
+        }
+      ],
+      "clozeHints": [
+        "によると",
+        "によれば"
+      ],
+      "mistakes": [
+        "× 天気予報によると、明日は雨です → ○ 天気予報によると、明日は雨だそうです (close the sentence with hearsay そうだ or らしい, not a bare fact)",
+        "× 天気予報によって、雨だそうです → ○ 天気予報によると、雨だそうです (によって means 'depending on' or 'by means of'; a source of information takes によると)"
+      ],
+      "related": [
+        "g-n4-031",
+        "g-n4-035",
+        "g-n4-038"
+      ],
+      "tags": [
+        "communication",
+        "media"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-038",
+      "pattern": "〜という",
+      "meaning": "called …; that …",
+      "formation": [
+        "N1 + という + N2: 「さくら」という店 · 田中さんという人",
+        "Clause + という + N: 来月引っ越すという話",
+        "〜ということだ: hearsay, or 'in other words'",
+        "〜というのは …: defining a word (「関守」というのは…)",
+        "Casual speech: 〜っていう"
+      ],
+      "explanation": "〜という links a name or a statement to the noun that follows. With a name, it means 'called': 「さくら」という喫茶店, 'a café called Sakura'; 田中さんという人, 'a person called Tanaka'. With a clause, it spells out the content of a 話, ニュース or 意味: 店を開くという話, 'the story that he is opening a shop'. 〜ということだ at the end of a sentence reports hearsay or sums up: 'in other words'. 〜というのは introduces a definition. In casual talk the whole thing contracts to っていう.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}に「さくら」という{喫茶店|きっさてん}があります。",
+          "kana": "えきまえに「さくら」というきっさてんがあります。",
+          "en": "There's a café called Sakura in front of the station."
+        },
+        {
+          "ja": "{田中|たなか}さんという{人|ひと}から{電話|でんわ}がありました。",
+          "kana": "たなかさんというひとからでんわがありました。",
+          "en": "There was a phone call from someone called Tanaka."
+        },
+        {
+          "ja": "ケンが{店|みせ}を{開|ひら}くという{話|はなし}は{本当|ほんとう}？",
+          "kana": "ケンがみせをひらくというはなしはほんとう？",
+          "en": "Is it true that Ken is opening a restaurant?"
+        },
+        {
+          "ja": "{来週|らいしゅう}は{休|やす}みだということです。",
+          "kana": "らいしゅうはやすみだということです。",
+          "en": "I'm told that next week is a holiday."
+        }
+      ],
+      "clozeHints": [
+        "という"
+      ],
+      "mistakes": [
+        "× さくらの喫茶店 (meaning 'a café called Sakura') → ○ さくらという喫茶店 (use という to attach a name to a noun)",
+        "× 田中さんといって人 → ○ 田中さんという人 (という is a fixed form before a noun; do not change it to the て-form)"
+      ],
+      "related": [
+        "g-n5-067",
+        "g-n4-039",
+        "g-n4-090"
+      ],
+      "tags": [
+        "communication",
+        "language"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-039",
+      "pattern": "〜って (casual quotative, topic)",
+      "meaning": "(casual) … they say; speaking of …",
+      "formation": [
+        "Quotation: 〜って = 〜と: 行くって言ってた · 「無理」って",
+        "Hearsay: 〜って = 〜そうだ: 明日は休みだって",
+        "Topic: N + って = N + は / N + というのは: 京都って遠い？",
+        "Naming: N + って + N = N + という + N: アオって猫",
+        "Casual conversation only; in polite speech use と / は / という"
+      ],
+      "explanation": "〜って is the all-purpose casual particle you will hear in every friendly conversation. After a clause it quotes or reports: 来ないって, 'he says he is not coming'; 行くって話してた, 'she was saying she would go'. After a noun it raises a topic, like a lively は: 日本の夏って暑いね, 'Japanese summers sure are hot'. Between two nouns it means 'called': アオって猫, 'the cat called Ao'. It is casual only — with a boss or a customer, switch back to と言っていました, 〜そうです, は and という.",
+      "jlpt": 4,
+      "register": "casual",
+      "examples": [
+        {
+          "ja": "ケン、{今日|きょう}は{来|こ}ないって。",
+          "kana": "ケン、きょうはこないって。",
+          "en": "Ken says he's not coming today."
+        },
+        {
+          "ja": "{田中|たなか}さん、{来月|らいげつ}{京都|きょうと}に{行|い}くって{話|はな}してたよ。",
+          "kana": "たなかさん、らいげつきょうとにいくってはなしてたよ。",
+          "en": "Mr. Tanaka was saying he's going to Kyoto next month."
+        },
+        {
+          "ja": "{日本|にほん}の{夏|なつ}って、{本当|ほんとう}に{暑|あつ}いね。",
+          "kana": "にほんのなつって、ほんとうにあついね。",
+          "en": "Japanese summers really are hot, aren't they?"
+        },
+        {
+          "ja": "アオって{猫|ねこ}、{見|み}たことある？",
+          "kana": "アオってねこ、みたことある？",
+          "en": "Have you ever seen the cat called Ao?"
+        }
+      ],
+      "clozeHints": [
+        "って"
+      ],
+      "mistakes": [
+        "× (to your boss) 明日は休みだって → ○ 明日は休みだそうです (って is casual; report with そうです or と聞きました in polite speech)",
+        "× 行くって言いました → ○ 行くと言いました (in polite speech quote with と, not って)"
+      ],
+      "related": [
+        "g-n5-067",
+        "g-n4-038",
+        "g-n4-031"
+      ],
+      "tags": [
+        "casual",
+        "communication"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-040",
+      "pattern": "〜とか",
+      "meaning": "… and … (and so on); things like …",
+      "formation": [
+        "N とか N とか (+ particle): パンとか果物とかを食べる",
+        "V plain とか V plain とか (する): 泳ぐとか走るとかする",
+        "The list is open: the items are examples, not the whole set",
+        "Vague hearsay in casual speech: 〜とか言ってた · 〜とか聞いた",
+        "Compare: や (nouns only, a little more formal) · たり〜たりする (verbs)"
+      ],
+      "explanation": "〜とか lists examples and leaves the list open: 映画とか買い物とか, 'things like movies and shopping'. Unlike と, which closes a complete list, とか hints there is more. It works after nouns and after plain verbs (泳ぐとか走るとかしたい), and the particle for the whole group comes after the last とか. In relaxed speech とか also blurs a report: 店を開くとか言ってた, 'he was saying something about opening a shop'. It is conversational; in writing use や〜など for nouns and たり〜たりする for verbs.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{休|やす}みの{日|ひ}は{映画|えいが}とか{買|か}い{物|もの}とかをします。",
+          "kana": "やすみのひはえいがとかかいものとかをします。",
+          "en": "On my days off I do things like watch movies and go shopping."
+        },
+        {
+          "ja": "{朝|あさ}はパンとか{果物|くだもの}とかを{食|た}べる。",
+          "kana": "あさはパンとかくだものとかをたべる。",
+          "en": "In the morning I eat things like bread and fruit."
+        },
+        {
+          "ja": "{週末|しゅうまつ}は{泳|およ}ぐとか{走|はし}るとかしたい。",
+          "kana": "しゅうまつはおよぐとかはしるとかしたい。",
+          "en": "On weekends I want to do things like swim or run."
+        },
+        {
+          "ja": "ケンは{来年|らいねん}、{店|みせ}を{開|ひら}くとか{言|い}ってたよ。",
+          "kana": "ケンはらいねん、みせをひらくとかいってたよ。",
+          "en": "Ken was saying something about opening a restaurant next year."
+        }
+      ],
+      "clozeHints": [
+        "とか"
+      ],
+      "mistakes": [
+        "× パンと果物とか食べた → ○ パンとか果物とか食べた (と closes the list; とか keeps it open, so use とか on each item)",
+        "× (in a formal report) 米とか野菜とかを売っています → ○ 米や野菜などを売っています (とか is conversational; や〜など fits writing)"
+      ],
+      "related": [
+        "g-n5-016",
+        "g-n5-074",
+        "g-n4-039"
+      ],
+      "tags": [
+        "casual"
+      ],
+      "station": 19
+    },
+    {
+      "id": "g-n4-041",
+      "pattern": "〜ように (purpose)",
+      "meaning": "so that …",
+      "formation": [
+        "V dictionary form + ように: 聞こえるように · 分かるように",
+        "V-ない + ように: 忘れないように · 遅れないように",
+        "The verb before ように is non-volitional: potential (できる · 読める), 分かる · ある · なる, or a negative",
+        "〜ように + main clause saying what you do to get there"
+      ],
+      "explanation": "〜ように (purpose) states a result you hope for, then what you do to reach it: 後ろの人にも聞こえるように大きい声で話した, 'I spoke loudly so that the people at the back could hear'. The verb before ように is one you cannot simply decide to do — a potential like 話せる, 分かる, なる, or any negative (忘れないように). That is the dividing line with ために, which takes a verb you choose to do (買うために). The two clauses may have different subjects. 〜ようにする and 〜ようになる grow out of this same ように.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{後|うし}ろの{人|ひと}にも{聞|き}こえるように{大|おお}きい{声|こえ}で{話|はな}した。",
+          "kana": "うしろのひとにもきこえるようにおおきいこえではなした。",
+          "en": "I spoke loudly so that the people at the back could hear too."
+        },
+        {
+          "ja": "{忘|わす}れないように、メモを{書|か}いておきます。",
+          "kana": "わすれないように、メモをかいておきます。",
+          "en": "I'll write a memo so that I don't forget."
+        },
+        {
+          "ja": "{日本語|にほんご}が{話|はな}せるように{毎日|まいにち}{練習|れんしゅう}しています。",
+          "kana": "にほんごがはなせるようにまいにちれんしゅうしています。",
+          "en": "I practice every day so that I can speak Japanese."
+        },
+        {
+          "ja": "{風邪|かぜ}をひかないように、{暖|あたた}かくして{寝|ね}てね。",
+          "kana": "かぜをひかないように、あたたかくしてねてね。",
+          "en": "Sleep warm so you don't catch a cold."
+        }
+      ],
+      "clozeHints": [
+        "ように"
+      ],
+      "mistakes": [
+        "× 日本語を話すように勉強している → ○ 日本語が話せるように勉強している (before purpose ように use a non-volitional verb such as the potential; a volitional verb takes ために)",
+        "× 遅れるないように → ○ 遅れないように (attach ように to the ない-form directly)"
+      ],
+      "related": [
+        "g-n4-042",
+        "g-n4-044",
+        "g-n4-045",
+        "g-n5-077"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-042",
+      "pattern": "〜ために (purpose)",
+      "meaning": "in order to …; for the sake of …",
+      "formation": [
+        "V dictionary form + ために: 買うために · 働くために",
+        "N + の + ために: 家族のために · 体のために",
+        "The verb is volitional (something you can decide to do) and both clauses share one subject",
+        "Before a noun: 〜ための N (旅行のためのお金)"
+      ],
+      "explanation": "〜ために (purpose) means 'in order to' or 'for the sake of': 新しいカメラを買うために、アルバイトをしています, 'I work part-time in order to buy a new camera'. The verb in front is one you deliberately do — buy, work, pass — and the person doing both halves is the same. After a noun add の: 家族のために, 体のために. When the goal is a state you cannot simply will, such as 分かる, できる or a negative, Japanese switches to ように. ために also has a second life meaning 'because of'; the past tense or a bad outcome usually signals that reading.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{新|あたら}しいカメラを{買|か}うために、アルバイトをしています。",
+          "kana": "あたらしいカメラをかうために、アルバイトをしています。",
+          "en": "I'm working part-time in order to buy a new camera."
+        },
+        {
+          "ja": "{家族|かぞく}のために、{毎日|まいにち}{料理|りょうり}を{作|つく}る。",
+          "kana": "かぞくのために、まいにちりょうりをつくる。",
+          "en": "I cook every day for my family."
+        },
+        {
+          "ja": "{日本|にほん}で{働|はたら}くために、{日本語|にほんご}を{勉強|べんきょう}している。",
+          "kana": "にほんではたらくために、にほんごをべんきょうしている。",
+          "en": "I'm studying Japanese in order to work in Japan."
+        },
+        {
+          "ja": "{体|からだ}のために、{毎朝|まいあさ}{駅|えき}まで{歩|ある}いています。",
+          "kana": "からだのために、まいあさえきまであるいています。",
+          "en": "For my health, I walk to the station every morning."
+        }
+      ],
+      "clozeHints": [
+        "ために"
+      ],
+      "mistakes": [
+        "× 分かるために説明する → ○ 分かるように説明する (ために takes a verb you can decide to do; 分かる and できる take ように)",
+        "× 家族ために → ○ 家族のために (nouns need の before ために)",
+        "× 遅れないために早く出た → ○ 遅れないように早く出た (negative purposes take ように)"
+      ],
+      "related": [
+        "g-n4-041",
+        "g-n4-043",
+        "g-n4-050"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-043",
+      "pattern": "〜ために (cause)",
+      "meaning": "because of …; due to …",
+      "formation": [
+        "V plain (often past) + ために: 事故があったために",
+        "い-adj + ために: 高かったために",
+        "な-adj + な + ために: 不便なために",
+        "N + の + ために: 雪のために · 台風のために",
+        "Mostly written or formal spoken Japanese; the result is usually negative or outside your control"
+      ],
+      "explanation": "〜ために (cause) means 'because of' or 'due to': 雪のために、電車が止まりました, 'the trains stopped because of the snow'. The first clause is a fact — usually in the past, or a noun with の — and the second is its consequence, typically something unwelcome and beyond anyone's control. You will meet it in announcements, news and written notices more than in chat, where から and ので do the job. Because the second clause reports a result, it cannot be a request, suggestion or command; for those, use ので or から. Context separates it from purpose ために, which takes a dictionary-form verb.",
+      "jlpt": 4,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{雪|ゆき}のために、{電車|でんしゃ}が{止|と}まりました。",
+          "kana": "ゆきのために、でんしゃがとまりました。",
+          "en": "Because of the snow, the trains stopped."
+        },
+        {
+          "ja": "{事故|じこ}があったために、{道|みち}が{込|こ}んでいます。",
+          "kana": "じこがあったために、みちがこんでいます。",
+          "en": "Because there was an accident, the roads are congested."
+        },
+        {
+          "ja": "{風邪|かぜ}のために、{会議|かいぎ}を{休|やす}んだ。",
+          "kana": "かぜのために、かいぎをやすんだ。",
+          "en": "I missed the meeting because of a cold."
+        },
+        {
+          "ja": "{台風|たいふう}のために、{今日|きょう}の{試合|しあい}はなくなった。",
+          "kana": "たいふうのために、きょうのしあいはなくなった。",
+          "en": "Due to the typhoon, today's match was called off."
+        }
+      ],
+      "clozeHints": [
+        "ために"
+      ],
+      "mistakes": [
+        "× 雪ために → ○ 雪のために (nouns take の)",
+        "× 雪のために、電車に乗りましょう → ○ 雪が降っているので、電車に乗りましょう (cause ために states a result, not a suggestion or request; use ので or から for those)"
+      ],
+      "related": [
+        "g-n4-042",
+        "g-n5-057",
+        "g-n5-090"
+      ],
+      "tags": [
+        "formal",
+        "abstract"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-044",
+      "pattern": "〜ようになる",
+      "meaning": "come to …; reach the point where …",
+      "formation": [
+        "V dictionary form + ようになる: 魚を食べるようになった",
+        "V potential + ようになる: 話せるようになった · 読めるようになる",
+        "V-ない + ようになる: 食べないようになった (more often simply 食べなくなった)",
+        "Polite: 〜ようになります · past 〜ようになりました"
+      ],
+      "explanation": "〜ようになる describes a change that has taken place over time: 漢字が読めるようになった, 'I have become able to read kanji'; 朝早く起きるようになった, 'I have started getting up early'. The most common partner is the potential form, because ability is the classic thing that grows. With a dictionary form it marks a new habit; for a habit you stopped, 〜なくなった is more natural than ないようになった. Keep it apart from ようにする, which is the effort you make, and from ことになる, which is a decision made for you.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{練習|れんしゅう}して、{漢字|かんじ}が{読|よ}めるようになった。",
+          "kana": "まいにちれんしゅうして、かんじがよめるようになった。",
+          "en": "After practicing every day, I've become able to read kanji."
+        },
+        {
+          "ja": "{子|こ}どもが{一人|ひとり}で{服|ふく}を{着|き}られるようになりました。",
+          "kana": "こどもがひとりでふくをきられるようになりました。",
+          "en": "My child has become able to get dressed alone."
+        },
+        {
+          "ja": "{最近|さいきん}、{朝|あさ}{早|はや}く{起|お}きるようになった。",
+          "kana": "さいきん、あさはやくおきるようになった。",
+          "en": "Recently I've started getting up early."
+        },
+        {
+          "ja": "{日本|にほん}に{来|き}て、{魚|さかな}をよく{食|た}べるようになりました。",
+          "kana": "にほんにきて、さかなをよくたべるようになりました。",
+          "en": "Since coming to Japan, I've come to eat fish often."
+        }
+      ],
+      "clozeHints": [
+        "ようになった",
+        "ようになりました",
+        "ようになる"
+      ],
+      "mistakes": [
+        "× 日本語を話すようになりたい → ○ 日本語が話せるようになりたい (for ability, use the potential form before ようになる)",
+        "× 漢字が読められるようになった → ○ 漢字が読めるようになった (Group 1 potential: 読む → 読める)"
+      ],
+      "related": [
+        "g-n5-077",
+        "g-n4-048",
+        "g-n4-045",
+        "g-n4-047"
+      ],
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-045",
+      "pattern": "〜ようにする",
+      "meaning": "make an effort to …; make sure to …",
+      "formation": [
+        "V dictionary form + ようにする: 毎日歩くようにする",
+        "V-ない + ようにする: 遅れないようにする",
+        "〜ようにしている: a habit you keep up",
+        "〜ようにしてください: a soft instruction",
+        "〜ようにします: 'I will make sure to' (a promise)"
+      ],
+      "explanation": "〜ようにする means you make a deliberate effort toward a behavior: 毎日野菜を食べるようにしています, 'I make a point of eating vegetables every day'. The verb is in the dictionary or ない-form, and する carries the tense: ようにしている for an ongoing habit, ようにします for a promise, ようにしてください for a gentle instruction that is softer than a bare てください. It is about trying, so it fits goals you do not always manage. The result of such effort, when it finally arrives, is expressed with ようになる instead.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}、{野菜|やさい}を{食|た}べるようにしています。",
+          "kana": "まいにち、やさいをたべるようにしています。",
+          "en": "I make a point of eating vegetables every day."
+        },
+        {
+          "ja": "{寝|ね}る{前|まえ}はテレビを{見|み}ないようにしている。",
+          "kana": "ねるまえはテレビをみないようにしている。",
+          "en": "I try not to watch TV before bed."
+        },
+        {
+          "ja": "{明日|あした}は{遅|おく}れないようにしてください。",
+          "kana": "あしたはおくれないようにしてください。",
+          "en": "Please make sure you're not late tomorrow."
+        },
+        {
+          "ja": "これからは{毎朝|まいあさ}{早|はや}く{起|お}きるようにします。",
+          "kana": "これからはまいあさはやくおきるようにします。",
+          "en": "From now on I'll make sure to get up early every morning."
+        }
+      ],
+      "clozeHints": [
+        "ようにして",
+        "ようにします"
+      ],
+      "mistakes": [
+        "× 野菜を食べるようになっています (meaning 'I make an effort') → ○ 野菜を食べるようにしています (ようにする is your effort; ようになる is a change that happened)",
+        "× 遅れるないようにする → ○ 遅れないようにする (ない-form before ように)"
+      ],
+      "related": [
+        "g-n4-041",
+        "g-n4-044",
+        "g-n4-046"
+      ],
+      "tags": [
+        "abstract",
+        "health"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-046",
+      "pattern": "〜ことにする",
+      "meaning": "decide to …",
+      "formation": [
+        "V dictionary form + ことにする: 毎朝走ることにする",
+        "V-ない + ことにする: お酒を飲まないことにする",
+        "〜ことにした: the decision has been made (most common)",
+        "〜ことにしている: a rule you keep as a habit",
+        "Polite: 〜ことにします · 〜ことにしました"
+      ],
+      "explanation": "〜ことにする announces a decision you make yourself: 京都に引っ越すことにしました, 'I have decided to move to Kyoto'. The verb stays in the dictionary or ない-form; する takes the tense. ことにした is the usual past; ことにする or ことにします is a decision you are making on the spot (今日は家にいることにします); ことにしている is a personal rule you keep. Because the choice is yours, it sounds more assertive than ことになる, which presents the decision as made by others or by circumstances — Japanese speakers often prefer that softer form for big news.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{京都|きょうと}に{引|ひ}っ{越|こ}すことにしました。",
+          "kana": "らいねん、きょうとにひっこすことにしました。",
+          "en": "I've decided to move to Kyoto next year."
+        },
+        {
+          "ja": "{今日|きょう}から、お{酒|さけ}を{飲|の}まないことにした。",
+          "kana": "きょうから、おさけをのまないことにした。",
+          "en": "I've decided not to drink alcohol from today."
+        },
+        {
+          "ja": "{毎朝|まいあさ}、{駅|えき}まで{歩|ある}くことにしている。",
+          "kana": "まいあさ、えきまであるくことにしている。",
+          "en": "I make it a rule to walk to the station every morning."
+        },
+        {
+          "ja": "{雨|あめ}だから、{今日|きょう}は{家|いえ}にいることにします。",
+          "kana": "あめだから、きょうはいえにいることにします。",
+          "en": "It's raining, so I'll stay home today."
+        }
+      ],
+      "clozeHints": [
+        "ことにしました",
+        "ことにした",
+        "ことにしている",
+        "ことにします"
+      ],
+      "mistakes": [
+        "× 引っ越しますことにした → ○ 引っ越すことにした (plain dictionary form before ことにする)",
+        "× 引っ越すことになった (when it was your own choice) → ○ 引っ越すことにした (ことにする is your decision; ことになる is a decision made for you or by circumstances)",
+        "× 飲むないことにした → ○ 飲まないことにした (negative: ない-form)"
+      ],
+      "related": [
+        "g-n4-047",
+        "g-n4-045",
+        "g-n5-083"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-047",
+      "pattern": "〜ことになる",
+      "meaning": "it has been decided that …; it turns out that …",
+      "formation": [
+        "V dictionary form + ことになる: 京都で働くことになった",
+        "V-ない + ことになる: 会議はしないことになった",
+        "〜ことになっている: a rule or fixed arrangement",
+        "Polite: 〜ことになりました (very common for announcements: 結婚することになりました)"
+      ],
+      "explanation": "〜ことになる presents a decision or outcome as something that was settled around you: 来月から京都で働くことになりました, 'it has been decided that I will work in Kyoto from next month'. The company, the schedule or simply circumstances decided; you report the result. Japanese speakers also use it for their own big news — a wedding, a move — because it sounds modest. ことになっている describes a standing rule or custom: 靴を脱ぐことになっています, 'you are supposed to take your shoes off'. For a choice you clearly made yourself, use ことにする.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}から{京都|きょうと}で{働|はたら}くことになりました。",
+          "kana": "らいげつからきょうとではたらくことになりました。",
+          "en": "It's been decided that I'll work in Kyoto from next month."
+        },
+        {
+          "ja": "{田中|たなか}さんと{一緒|いっしょ}に{歩|ある}くことになった。",
+          "kana": "たなかさんといっしょにあるくことになった。",
+          "en": "It turned out that I'd be walking with Mr. Tanaka."
+        },
+        {
+          "ja": "この{店|みせ}では、{靴|くつ}を{脱|ぬ}ぐことになっています。",
+          "kana": "このみせでは、くつをぬぐことになっています。",
+          "en": "In this restaurant, you're supposed to take your shoes off."
+        },
+        {
+          "ja": "{会議|かいぎ}は{来週|らいしゅう}にすることになった。",
+          "kana": "かいぎはらいしゅうにすることになった。",
+          "en": "It was decided that the meeting would be next week."
+        }
+      ],
+      "clozeHints": [
+        "ことになりました",
+        "ことになった",
+        "ことになっています"
+      ],
+      "mistakes": [
+        "× 結婚することにしました (announcing to colleagues) → ○ 結婚することになりました (Japanese speakers soften big personal news with ことになる, as if circumstances decided)",
+        "× 働きますことになりました → ○ 働くことになりました (dictionary form before ことになる)"
+      ],
+      "related": [
+        "g-n4-046",
+        "g-n4-044",
+        "g-n4-048"
+      ],
+      "tags": [
+        "abstract",
+        "work"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-048",
+      "pattern": "〜くなる / 〜になる",
+      "meaning": "become …",
+      "formation": [
+        "い-adj minus い + くなる: 寒い → 寒くなる · 大きい → 大きくなる",
+        "いい → よくなる",
+        "な-adj + になる: 元気 → 元気になる · 静か → 静かになる",
+        "N + になる: 先生になる · 春になる",
+        "Past: 〜くなった / 〜になった · polite 〜くなりました / 〜になりました"
+      ],
+      "explanation": "〜くなる and 〜になる express a change of state — 'become', 'get', 'turn'. い-adjectives drop い and take く: 寒くなる, 'get cold'; いい becomes よくなる. な-adjectives and nouns take に: 静かになる, 'become quiet'; 大学生になる, 'become a university student'. The change happens on its own, or at least nobody is named as making it happen; when someone deliberately changes something, use 〜くする / 〜にする. This く / に form is the adverb form of adjectives, which you will keep meeting (早く, 静かに).",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{十月|じゅうがつ}になって、{朝|あさ}は{寒|さむ}くなりました。",
+          "kana": "じゅうがつになって、あさはさむくなりました。",
+          "en": "It's October now and the mornings have become cold."
+        },
+        {
+          "ja": "{薬|くすり}を{飲|の}んで、{少|すこ}しよくなった。",
+          "kana": "くすりをのんで、すこしよくなった。",
+          "en": "I took some medicine and got a little better."
+        },
+        {
+          "ja": "{妹|いもうと}は{来年|らいねん}、{大学生|だいがくせい}になります。",
+          "kana": "いもうとはらいねん、だいがくせいになります。",
+          "en": "My younger sister will become a university student next year."
+        },
+        {
+          "ja": "{夜|よる}になると、この{通|とお}りは{静|しず}かになる。",
+          "kana": "よるになると、このとおりはしずかになる。",
+          "en": "When night comes, this street becomes quiet."
+        }
+      ],
+      "clozeHints": [
+        "くなる",
+        "くなった",
+        "くなりました",
+        "になる",
+        "になった",
+        "になります"
+      ],
+      "mistakes": [
+        "× 寒いになる → ○ 寒くなる (い-adjectives drop い and add く)",
+        "× 静かくなる → ○ 静かになる (な-adjectives and nouns take に)",
+        "× いくなる → ○ よくなる (いい changes to よく)"
+      ],
+      "related": [
+        "g-n4-049",
+        "g-n4-044",
+        "g-n5-024",
+        "g-n5-025",
+        "g-n5-052"
+      ],
+      "tags": [
+        "states"
+      ],
+      "unlocksForms": [
+        "adj-adv"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-049",
+      "pattern": "〜くする / 〜にする",
+      "meaning": "make … (a certain way); decide on …",
+      "formation": [
+        "い-adj minus い + くする: 短い → 短くする · 小さい → 小さくする",
+        "いい → よくする",
+        "な-adj + にする: きれいにする · 静かにする",
+        "N + にする: choosing from options (お茶にします)",
+        "Someone deliberately changes the state; compare 〜くなる / 〜になる, where it changes by itself"
+      ],
+      "explanation": "〜くする and 〜にする mean someone makes something a certain way: 音を小さくする, 'turn the sound down'; 部屋をきれいにする, 'make the room clean'. The adjective takes the same く / に form as with なる, but する needs an agent and an object marked with を. With a noun, 〜にする means to choose or settle on something — お茶にします, 'I will have tea' — which is what you say when ordering. Use なる when nobody is doing the changing (部屋がきれいになった) and する when someone is (部屋をきれいにした).",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{音|おと}を{少|すこ}し{小|ちい}さくしてください。",
+          "kana": "おとをすこしちいさくしてください。",
+          "en": "Please turn the sound down a little."
+        },
+        {
+          "ja": "{部屋|へや}をきれいにしてから、{出|で}かけた。",
+          "kana": "へやをきれいにしてから、でかけた。",
+          "en": "I cleaned the room and then went out."
+        },
+        {
+          "ja": "{私|わたし}は{飲|の}み{物|もの}はお{茶|ちゃ}にします。",
+          "kana": "わたしはのみものはおちゃにします。",
+          "en": "I'll have tea to drink."
+        },
+        {
+          "ja": "{髪|かみ}を{短|みじか}くした。{夏|なつ}は{暑|あつ}いから。",
+          "kana": "かみをみじかくした。なつはあついから。",
+          "en": "I cut my hair short. Summer is hot."
+        }
+      ],
+      "clozeHints": [
+        "くして",
+        "にして",
+        "にします",
+        "くした"
+      ],
+      "mistakes": [
+        "× 部屋をきれいくする → ○ 部屋をきれいにする (な-adjectives take に)",
+        "× 音が小さくしてください → ○ 音を小さくしてください (する takes the thing you change with を)",
+        "× 部屋がきれいにした → ○ 部屋がきれいになった (if nobody is doing it, use なる)"
+      ],
+      "related": [
+        "g-n4-048",
+        "g-n5-018",
+        "g-n4-046"
+      ],
+      "tags": [
+        "actions"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-050",
+      "pattern": "〜のに (in order to)",
+      "meaning": "for …ing; to … (it takes, is useful)",
+      "formation": [
+        "V dictionary form + のに + かかる / 使う / 便利だ / 必要だ",
+        "駅まで行くのに三十分かかる",
+        "N + に + かかる (no の): 旅行に十万円かかった",
+        "Typical partners: 時間がかかる · お金がかかる · 便利だ · 必要だ · 使う · いい"
+      ],
+      "explanation": "〜のに (purpose) connects an activity to what it costs or what helps it: 駅まで行くのに三十分かかる, 'it takes thirty minutes to get to the station'; 漢字を調べるのに便利だ, 'handy for looking up kanji'. The の turns the verb into a noun and に points at the purpose, so the second half is almost always かかる, 使う, 便利だ, 必要だ or いい. A plain noun takes に alone (旅行にお金がかかる). ために would be wrong here. Watch the other のに, 'although', which follows a finished clause and has a contrasting second half.",
+      "jlpt": 4,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{駅|えき}まで{行|い}くのに、{三十分|さんじゅっぷん}かかります。",
+          "kana": "えきまでいくのに、さんじゅっぷんかかります。",
+          "en": "It takes thirty minutes to get to the station."
+        },
+        {
+          "ja": "この{辞書|じしょ}は{漢字|かんじ}を{調|しら}べるのに{便利|べんり}だ。",
+          "kana": "このじしょはかんじをしらべるのにべんりだ。",
+          "en": "This dictionary is handy for looking up kanji."
+        },
+        {
+          "ja": "{新|あたら}しい{家|いえ}を{建|た}てるのに、{三年|さんねん}かかった。",
+          "kana": "あたらしいいえをたてるのに、さんねんかかった。",
+          "en": "It took three years to build the new house."
+        },
+        {
+          "ja": "{日本|にほん}で{働|はたら}くのに、{何|なに}が{必要|ひつよう}ですか。",
+          "kana": "にほんではたらくのに、なにがひつようですか。",
+          "en": "What do you need in order to work in Japan?"
+        }
+      ],
+      "clozeHints": [
+        "のに"
+      ],
+      "mistakes": [
+        "× 行くために三十分かかる → ○ 行くのに三十分かかる (with かかる, 便利だ or 必要だ, Japanese uses のに)",
+        "× 勉強のに時間がかかる → ○ 勉強するのに時間がかかる (のに follows a verb; a bare noun takes に alone)"
+      ],
+      "related": [
+        "g-n4-042",
+        "g-n5-082",
+        "g-n4-073"
+      ],
+      "tags": [
+        "time",
+        "money"
+      ],
+      "station": 20
+    },
+    {
+      "id": "g-n4-051",
+      "pattern": "お〜になる",
+      "meaning": "(honorific) someone does …",
+      "formation": [
+        "お + V-ます stem + になる: 読みます → お読みになる · 帰ります → お帰りになる",
+        "Polite: お〜になります · past お〜になりました",
+        "Works for Group 1 and Group 2 verbs whose ます stem has two or more syllables",
+        "Not for する-verbs (use ご〜になる: ご利用になる) nor for 見る · 来る · いる · 言う · 食べる · する, which have special honorific verbs",
+        "For the person you respect, never for yourself or your own group"
+      ],
+      "explanation": "お〜になる raises the person who performs the action: 社長はもうお帰りになりました, 'the president has already gone home'. Take the ます stem, put お in front and になる after; only なる changes for tense and politeness. You use it about teachers, customers, senior colleagues and their actions — never about yourself. It needs a stem of at least two syllables, so 見る, 来る, いる, 言う and 食べる use special verbs instead (ご覧になる, いらっしゃる, おっしゃる, 召し上がる). Do not stack it with the れる / られる honorific: one marker is enough.",
+      "jlpt": 4,
+      "register": "honorific",
+      "examples": [
+        {
+          "ja": "{社長|しゃちょう}はもうお{帰|かえ}りになりました。",
+          "kana": "しゃちょうはもうおかえりになりました。",
+          "en": "The president has already gone home."
+        },
+        {
+          "ja": "{先生|せんせい}はこの{本|ほん}をお{読|よ}みになりましたか。",
+          "kana": "せんせいはこのほんをおよみになりましたか。",
+          "en": "Did you read this book, Professor?"
+        },
+        {
+          "ja": "お{客様|きゃくさま}は{何時|なんじ}にお{着|つ}きになりますか。",
+          "kana": "おきゃくさまはなんじにおつきになりますか。",
+          "en": "What time will the guest arrive?"
+        },
+        {
+          "ja": "{部長|ぶちょう}は{会議|かいぎ}で{何|なに}かお{話|はな}しになりましたか。",
+          "kana": "ぶちょうはかいぎでなにかおはなしになりましたか。",
+          "en": "Did the department head say anything at the meeting?"
+        }
+      ],
+      "clozeHints": [
+        "お帰りになりました",
+        "お読みになりました",
+        "お着きになります",
+        "お話しになりました"
+      ],
+      "mistakes": [
+        "× 先生はお見になりました → ○ 先生はご覧になりました (見る has its own honorific verb)",
+        "× 私はお帰りになります → ○ 私は帰ります (お〜になる is never used about yourself)",
+        "× お帰りになられました → ○ お帰りになりました (double honorific; one marker is enough)"
+      ],
+      "related": [
+        "g-n4-052",
+        "g-n4-053",
+        "g-n4-054",
+        "g-n4-060"
+      ],
+      "tags": [
+        "honorific",
+        "work"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-052",
+      "pattern": "special sonkeigo verbs いらっしゃる・おっしゃる・召し上がる・ご覧になる・なさる",
+      "meaning": "(honorific) is, goes, comes; says; eats; looks; does",
+      "formation": [
+        "いる · 行く · 来る → いらっしゃる (ます: いらっしゃいます)",
+        "言う → おっしゃる (おっしゃいます)",
+        "食べる · 飲む → 召し上がる (召し上がります)",
+        "見る → ご覧になる (ご覧になります)",
+        "する → なさる (なさいます)",
+        "Also: 知っている → ご存じだ · くれる → くださる (くださいます)"
+      ],
+      "explanation": "A handful of everyday verbs do not take お〜になる; they have special honorific replacements you simply memorize. いらっしゃる covers いる, 行く and 来る; おっしゃる is 言う; 召し上がる is 食べる and 飲む; ご覧になる is 見る; なさる is する. You use them about the person you respect — a teacher, a customer, a senior — and their ます forms are slightly irregular: いらっしゃいます, おっしゃいます, なさいます, くださいます (the り drops). Never apply them to yourself; your own actions take the humble set (おる, 申す, いただく). Shop staff greet you with いらっしゃいませ, which is this same いらっしゃる.",
+      "jlpt": 4,
+      "register": "honorific",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}は{今|いま}、{教室|きょうしつ}にいらっしゃいます。",
+          "kana": "せんせいはいま、きょうしつにいらっしゃいます。",
+          "en": "The teacher is in the classroom now."
+        },
+        {
+          "ja": "{社長|しゃちょう}がおっしゃったことをメモしました。",
+          "kana": "しゃちょうがおっしゃったことをメモしました。",
+          "en": "I wrote down what the president said."
+        },
+        {
+          "ja": "どうぞ、{召|め}し{上|あ}がってください。",
+          "kana": "どうぞ、めしあがってください。",
+          "en": "Please go ahead and eat."
+        },
+        {
+          "ja": "この{写真|しゃしん}をもうご{覧|らん}になりましたか。",
+          "kana": "このしゃしんをもうごらんになりましたか。",
+          "en": "Have you already seen this photo?"
+        },
+        {
+          "ja": "{週末|しゅうまつ}は{何|なに}をなさいますか。",
+          "kana": "しゅうまつはなにをなさいますか。",
+          "en": "What will you be doing this weekend?"
+        }
+      ],
+      "clozeHints": [
+        "いらっしゃいます",
+        "おっしゃった",
+        "召し上がって",
+        "ご覧になりました",
+        "なさいます"
+      ],
+      "mistakes": [
+        "× 先生がいらっしゃります → ○ 先生がいらっしゃいます (いらっしゃる · おっしゃる · なさる · くださる drop り before ます)",
+        "× 私は明日いらっしゃいます → ○ 私は明日参ります (honorific verbs are for the other person; for yourself use humble 参る or plain 行きます)",
+        "× ご覧しましたか → ○ ご覧になりましたか (ご覧 takes になる, not する)"
+      ],
+      "related": [
+        "g-n4-051",
+        "g-n4-053",
+        "g-n4-055",
+        "g-n4-057"
+      ],
+      "tags": [
+        "honorific",
+        "communication"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-053",
+      "pattern": "〜れる / 〜られる (honorific)",
+      "meaning": "(light honorific) someone does …",
+      "formation": [
+        "Same shape as the passive",
+        "Group 1: 書く → 書かれる · 行く → 行かれる · 話す → 話される",
+        "Group 2: 食べる → 食べられる · 出る → 出られる",
+        "Irregular: する → される · 来る → 来られる",
+        "Polite: 〜れます / 〜られます; lighter than お〜になる and very common in business speech"
+      ],
+      "explanation": "The passive shape doubles as a light honorific: 部長は明日京都へ行かれます, 'the department head is going to Kyoto tomorrow'. The subject is the respected person and the sentence is otherwise ordinary — no を→に shuffle as in a real passive. It is less weighty than お〜になる, so it is the default in offices, on the phone and in emails. Context tells you whether 書かれました is 'was written' or 'he wrote'; with a person as subject and no agent marked by に, it is the honorific. Never use it about yourself, and never stack it on お〜になる.",
+      "jlpt": 4,
+      "register": "honorific",
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}は{明日|あした}、{京都|きょうと}へ{行|い}かれます。",
+          "kana": "ぶちょうはあした、きょうとへいかれます。",
+          "en": "The department head is going to Kyoto tomorrow."
+        },
+        {
+          "ja": "{先生|せんせい}は{去年|きょねん}、{本|ほん}を{書|か}かれました。",
+          "kana": "せんせいはきょねん、ほんをかかれました。",
+          "en": "The professor wrote a book last year."
+        },
+        {
+          "ja": "{田中|たなか}さんは{毎朝|まいあさ}{何時|なんじ}に{起|お}きられますか。",
+          "kana": "たなかさんはまいあさなんじにおきられますか。",
+          "en": "What time do you get up every morning, Mr. Tanaka?"
+        },
+        {
+          "ja": "{社長|しゃちょう}はもう{会社|かいしゃ}を{出|で}られました。",
+          "kana": "しゃちょうはもうかいしゃをでられました。",
+          "en": "The president has already left the office."
+        }
+      ],
+      "clozeHints": [
+        "行かれます",
+        "書かれました",
+        "起きられます",
+        "出られました"
+      ],
+      "mistakes": [
+        "× 先生は本を書きられました → ○ 先生は本を書かれました (Group 1: change the final u-sound to the a-sound and add れる)",
+        "× 私は七時に起きられます (meaning 'I get up', honorific) → ○ 私は七時に起きます (honorific れる / られる is never about yourself)",
+        "× 先生はお書きになられました → ○ 先生はお書きになりました (one honorific marker, not two)"
+      ],
+      "related": [
+        "g-n4-021",
+        "g-n4-051",
+        "g-n4-052",
+        "g-n5-077"
+      ],
+      "tags": [
+        "honorific",
+        "work"
+      ],
+      "notes": "Same shape as the passive and, for Group 2, the potential; context decides. Lighter than お〜になる and heard constantly in workplaces.",
+      "station": 21
+    },
+    {
+      "id": "g-n4-054",
+      "pattern": "お〜する / ご〜する",
+      "meaning": "(humble) I do … (for you)",
+      "formation": [
+        "お + V-ます stem + する: 持ちます → お持ちする · 送ります → お送りする",
+        "ご + する-noun + する: 案内 → ご案内する · 説明 → ご説明する",
+        "Polite: お〜します · more humble: お〜いたします",
+        "Used when your action involves or benefits the other person (carry their bag, show them the way)",
+        "Not for 見る · 言う · 行く · 食べる · いる, which have special humble verbs"
+      ],
+      "explanation": "お〜する lowers your own action to show respect to the person it touches: 荷物、お持ちします, 'let me carry your bags'; 駅までお送りします, 'I will see you to the station'. Take the ます stem, add お in front and する after; する-nouns of Chinese origin take ご instead (ご案内します, ご説明します). It only works when someone receives the action — you cannot humbly run or sleep on your own. する can be upgraded to いたします for extra humility. Pair it in your mind with お〜になる: same お, opposite direction.",
+      "jlpt": 4,
+      "register": "humble",
+      "examples": [
+        {
+          "ja": "{荷物|にもつ}、お{持|も}ちします。",
+          "kana": "にもつ、おもちします。",
+          "en": "Let me carry your bags."
+        },
+        {
+          "ja": "{駅|えき}まで{車|くるま}でお{送|おく}りしましょうか。",
+          "kana": "えきまでくるまでおおくりしましょうか。",
+          "en": "Shall I drive you to the station?"
+        },
+        {
+          "ja": "{会議室|かいぎしつ}までご{案内|あんない}します。",
+          "kana": "かいぎしつまでごあんないします。",
+          "en": "I'll show you to the meeting room."
+        },
+        {
+          "ja": "{後|あと}でもう{一度|いちど}お{電話|でんわ}します。",
+          "kana": "あとでもういちどおでんわします。",
+          "en": "I'll call you again later."
+        },
+        {
+          "ja": "{使|つか}い{方|かた}をご{説明|せつめい}しましょうか。",
+          "kana": "つかいかたをごせつめいしましょうか。",
+          "en": "Shall I explain how to use it?"
+        }
+      ],
+      "clozeHints": [
+        "お持ちします",
+        "お送りしましょうか",
+        "ご案内します",
+        "お電話します",
+        "ご説明しましょうか"
+      ],
+      "mistakes": [
+        "× 先生の荷物をお持ちになります (about yourself) → ○ 先生の荷物をお持ちします (お〜になる is honorific for others; お〜する is humble for you)",
+        "× 私は毎朝お走りします → ○ 私は毎朝走ります (humble お〜する needs someone who receives the action; a private act stays plain)",
+        "× お案内します → ○ ご案内します (Chinese-origin する-nouns take ご)"
+      ],
+      "related": [
+        "g-n4-051",
+        "g-n4-055",
+        "g-n4-059",
+        "g-n4-060"
+      ],
+      "tags": [
+        "humble",
+        "work"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-055",
+      "pattern": "special kenjōgo verbs おる・申す・いただく・拝見する・伺う・参る",
+      "meaning": "(humble) I am; I say; I receive, eat; I see; I ask, visit; I go, come",
+      "formation": [
+        "いる → おる (おります)",
+        "言う → 申す (申します) · 申し上げる",
+        "食べる · 飲む · もらう → いただく (いただきます)",
+        "見る → 拝見する (拝見します)",
+        "聞く · 行く · 訪ねる → 伺う (伺います)",
+        "行く · 来る → 参る (参ります) · する → いたす (いたします)"
+      ],
+      "explanation": "These humble verbs replace ordinary ones when you talk about yourself or your own group to someone you respect. ハナと申します introduces you; 事務所に伺います announces a visit; お手紙を拝見しました says you read their letter; 駅におります, すぐ参ります tell them where you are and that you are coming; お茶をいただきました thanks them for the tea. The subject is always 'I' or 'we' — your boss too, when you speak to a client about your own company. For the other person's actions switch to the honorific set (いらっしゃる, おっしゃる, 召し上がる, ご覧になる).",
+      "jlpt": 4,
+      "register": "humble",
+      "examples": [
+        {
+          "ja": "{初|はじ}めまして、ハナと{申|もう}します。",
+          "kana": "はじめまして、ハナともうします。",
+          "en": "How do you do, my name is Hana."
+        },
+        {
+          "ja": "{明日|あした}の{午後|ごご}、{事務所|じむしょ}に{伺|うかが}います。",
+          "kana": "あしたのごご、じむしょにうかがいます。",
+          "en": "I'll visit your office tomorrow afternoon."
+        },
+        {
+          "ja": "お{手紙|てがみ}を{拝見|はいけん}しました。",
+          "kana": "おてがみをはいけんしました。",
+          "en": "I read your letter."
+        },
+        {
+          "ja": "{今|いま}、{駅|えき}におります。すぐ{参|まい}ります。",
+          "kana": "いま、えきにおります。すぐまいります。",
+          "en": "I'm at the station now. I'll be right there."
+        },
+        {
+          "ja": "お{茶|ちゃ}をいただきました。ありがとうございます。",
+          "kana": "おちゃをいただきました。ありがとうございます。",
+          "en": "Thank you for the tea."
+        }
+      ],
+      "clozeHints": [
+        "申します",
+        "伺います",
+        "拝見しました",
+        "おります",
+        "参ります",
+        "いただきました"
+      ],
+      "mistakes": [
+        "× 先生は事務所におります → ○ 先生は事務所にいらっしゃいます (humble おる is for yourself and your group; for the other person use いらっしゃる)",
+        "× 先生のお手紙をご覧になりました (about yourself) → ○ 先生のお手紙を拝見しました (ご覧になる is honorific; 拝見する is the humble 'see')",
+        "× (to a client) 社長はもういらっしゃいました → ○ 社長はもう参りました (to outsiders, your own boss belongs to your group and takes humble forms)"
+      ],
+      "related": [
+        "g-n4-052",
+        "g-n4-054",
+        "g-n4-059",
+        "g-n4-057"
+      ],
+      "tags": [
+        "humble",
+        "communication"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-056",
+      "pattern": "〜ていただけませんか / 〜てくださいませんか",
+      "meaning": "could you please …?",
+      "formation": [
+        "V-て + いただけませんか (humble: 'could I receive your doing …?')",
+        "V-て + くださいませんか (honorific: 'would you not kindly do …?')",
+        "Softer still: 〜ていただけないでしょうか",
+        "Casual equivalents: 〜てくれない？ · 〜てもらえない？",
+        "Replies: ええ、いいですよ · すみません、ちょっと…"
+      ],
+      "explanation": "〜ていただけませんか and 〜てくださいませんか are polite requests, a clear step above 〜てください: 写真を撮っていただけませんか, 'could you take a photo for us?'. The first looks at the request from your side — could I receive this favor — using the potential of humble いただく; the second asks the other person not to withhold the favor, using honorific くださる. Both are safe with strangers, staff, teachers and clients. Make it softer still with 〜ていただけないでしょうか. With friends, drop to 〜てくれない？ or 〜てもらえない？.",
+      "jlpt": 4,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "すみません、{写真|しゃしん}を{撮|と}っていただけませんか。",
+          "kana": "すみません、しゃしんをとっていただけませんか。",
+          "en": "Excuse me, could you take a photo for us?"
+        },
+        {
+          "ja": "もう{少|すこ}しゆっくり{話|はな}していただけませんか。",
+          "kana": "もうすこしゆっくりはなしていただけませんか。",
+          "en": "Could you speak a little more slowly, please?"
+        },
+        {
+          "ja": "この{漢字|かんじ}の{読|よ}み{方|かた}を{教|おし}えてくださいませんか。",
+          "kana": "このかんじのよみかたをおしえてくださいませんか。",
+          "en": "Would you tell me how to read this kanji?"
+        },
+        {
+          "ja": "{駅|えき}までの{道|みち}を{書|か}いていただけないでしょうか。",
+          "kana": "えきまでのみちをかいていただけないでしょうか。",
+          "en": "Would you mind drawing me the way to the station?"
+        }
+      ],
+      "clozeHints": [
+        "ていただけませんか",
+        "てくださいませんか",
+        "ていただけないでしょうか"
+      ],
+      "mistakes": [
+        "× 書いてもらえませんか (to a teacher or client) → ○ 書いていただけませんか (もらう is plain; いただく is the humble form the situation needs)",
+        "× 書いていただきませんか → ○ 書いていただけませんか (use the potential いただける: 'could I receive')",
+        "× 書くていただけませんか → ○ 書いていただけませんか (て-form before いただけませんか)"
+      ],
+      "related": [
+        "g-n5-047",
+        "g-n5-080",
+        "g-n5-081",
+        "g-n4-016",
+        "g-n4-059"
+      ],
+      "tags": [
+        "polite",
+        "communication"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-057",
+      "pattern": "〜でございます / 〜でいらっしゃる",
+      "meaning": "(very polite) is …",
+      "formation": [
+        "N + でございます: formal, humble です — about yourself, your company, things and places",
+        "N + でいらっしゃいます: honorific です — about the other person (田中様でいらっしゃいますか)",
+        "あります → ございます: お手洗いは二階にございます",
+        "Heard from staff, in announcements and business calls; you mostly need to recognize it"
+      ],
+      "explanation": "〜でございます is the extra-polite form of です that staff and announcers use: こちらが会議室でございます, 'this is the meeting room'. It is humble in flavor, so it fits yourself, your company, objects and places. When the noun describes the respected person, switch to the honorific 〜でいらっしゃいます: 田中様でいらっしゃいますか, 'are you Mr. Tanaka?'. The same ございます replaces あります: 二階にございます. As a learner you mainly need to understand these when a receptionist or shop clerk speaks; produce them only in clearly formal settings — with friends and colleagues, です is right.",
+      "jlpt": 4,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "こちらが{会議室|かいぎしつ}でございます。",
+          "kana": "こちらがかいぎしつでございます。",
+          "en": "This is the meeting room."
+        },
+        {
+          "ja": "{失礼|しつれい}ですが、{田中|たなか}{様|さま}でいらっしゃいますか。",
+          "kana": "しつれいですが、たなかさまでいらっしゃいますか。",
+          "en": "Excuse me, are you Mr. Tanaka?"
+        },
+        {
+          "ja": "お{手洗|てあら}いは{二階|にかい}にございます。",
+          "kana": "おてあらいはにかいにございます。",
+          "en": "The restrooms are on the second floor."
+        },
+        {
+          "ja": "{私|わたくし}はハナでございます。",
+          "kana": "わたくしはハナでございます。",
+          "en": "I am Hana."
+        }
+      ],
+      "clozeHints": [
+        "でございます",
+        "でいらっしゃいます",
+        "ございます"
+      ],
+      "mistakes": [
+        "× 私は田中でいらっしゃいます → ○ 私は田中でございます (でいらっしゃる is honorific, only for the other person)",
+        "× お客様は学生でございますか → ○ お客様は学生でいらっしゃいますか (about the customer, use the honorific)"
+      ],
+      "related": [
+        "g-n5-001",
+        "g-n4-052",
+        "g-n4-055",
+        "g-n4-060"
+      ],
+      "tags": [
+        "formal",
+        "business"
+      ],
+      "notes": "私 is read わたくし in this register. Treat the pattern as receptive first: recognize it from staff and announcements before you try to produce it.",
+      "station": 21
+    },
+    {
+      "id": "g-n4-058",
+      "pattern": "お〜ください",
+      "meaning": "(honorific) please do …",
+      "formation": [
+        "お + V-ます stem + ください: 入ります → お入りください · 待ちます → お待ちください",
+        "ご + する-noun + ください: 利用 → ご利用ください · 注意 → ご注意ください",
+        "Special verbs: 見る → ご覧ください · 食べる → 召し上がってください · 来る → お越しください",
+        "More respectful than 〜てください; typical of signs, announcements and service staff"
+      ],
+      "explanation": "お〜ください is the honorific request: お待ちください, 'please wait'; お入りください, 'please come in'. Put お before the ます stem and ください after; する-nouns of Chinese origin take ご (ご注意ください, ご利用ください). It is more respectful than 〜てください and is the form you see on signs, hear in station announcements and get from hotel and shop staff. Verbs with special honorific forms use those instead: ご覧ください for 見る, 召し上がってください for 食べる. Since you are asking the respected person to act, this is honorific; your own offers take お〜します.",
+      "jlpt": 4,
+      "register": "honorific",
+      "examples": [
+        {
+          "ja": "こちらで{少|すこ}しお{待|ま}ちください。",
+          "kana": "こちらですこしおまちください。",
+          "en": "Please wait here a moment."
+        },
+        {
+          "ja": "どうぞ、お{入|はい}りください。",
+          "kana": "どうぞ、おはいりください。",
+          "en": "Please come in."
+        },
+        {
+          "ja": "{車|くるま}にご{注意|ちゅうい}ください。",
+          "kana": "くるまにごちゅういください。",
+          "en": "Please watch out for cars."
+        },
+        {
+          "ja": "こちらの{地図|ちず}をご{覧|らん}ください。",
+          "kana": "こちらのちずをごらんください。",
+          "en": "Please take a look at this map."
+        },
+        {
+          "ja": "お{名前|なまえ}をこちらにお{書|か}きください。",
+          "kana": "おなまえをこちらにおかきください。",
+          "en": "Please write your name here."
+        }
+      ],
+      "clozeHints": [
+        "お待ちください",
+        "お入りください",
+        "ご注意ください",
+        "ご覧ください",
+        "お書きください"
+      ],
+      "mistakes": [
+        "× お待ってください → ○ お待ちください (use the ます stem, not the て-form, after お)",
+        "× お見ください → ○ ご覧ください (見る has the special form ご覧)",
+        "× ご待ちください → ○ お待ちください (native verbs take お; する-nouns take ご)"
+      ],
+      "related": [
+        "g-n5-047",
+        "g-n4-051",
+        "g-n4-052",
+        "g-n4-060"
+      ],
+      "tags": [
+        "honorific",
+        "communication"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-059",
+      "pattern": "〜ていただく / 〜させていただく",
+      "meaning": "(humble) have someone do … for me; be allowed to do …",
+      "formation": [
+        "V-て + いただく: humble 〜てもらう (先生に教えていただきました)",
+        "V causative て + いただく: 'I will take the liberty of …' (休ませていただきます)",
+        "Group 1: 休む → 休ませていただく · Group 2: 見る → 見させていただく · する → させていただく",
+        "Asking permission: 〜させていただけませんか",
+        "Use 〜させていただく only when the other person's permission or kindness is really involved"
+      ],
+      "explanation": "〜ていただく is the humble version of 〜てもらう: 先生に教えていただきました, 'I had the teacher kindly teach me'. The giver takes に and you, the grateful receiver, are the subject. 〜させていただく adds the causative: you receive permission to act, so 明日は休ませていただきます means 'I will be taking tomorrow off, with your leave', and 使わせていただけませんか asks 'might I use this?'. It is very common in offices, but overuse sounds servile — only reach for させていただく when someone's permission or kindness really is in play. Otherwise plain します is perfectly polite.",
+      "jlpt": 4,
+      "register": "humble",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}に{日本語|にほんご}を{教|おし}えていただきました。",
+          "kana": "せんせいににほんごをおしえていただきました。",
+          "en": "I had the teacher teach me Japanese."
+        },
+        {
+          "ja": "{田中|たなか}さんに{駅|えき}まで{送|おく}っていただいた。",
+          "kana": "たなかさんにえきまでおくっていただいた。",
+          "en": "Mr. Tanaka kindly gave me a ride to the station."
+        },
+        {
+          "ja": "{明日|あした}は{休|やす}ませていただきます。",
+          "kana": "あしたはやすませていただきます。",
+          "en": "I will be taking tomorrow off, with your permission."
+        },
+        {
+          "ja": "この{写真|しゃしん}を{使|つか}わせていただけませんか。",
+          "kana": "このしゃしんをつかわせていただけませんか。",
+          "en": "Might I be allowed to use this photo?"
+        }
+      ],
+      "clozeHints": [
+        "ていただきました",
+        "ていただいた",
+        "せていただきます",
+        "せていただけませんか"
+      ],
+      "mistakes": [
+        "× 先生が教えていただきました → ○ 先生に教えていただきました (the giver takes に; the subject is the humble speaker)",
+        "× 休みさせていただきます → ○ 休ませていただきます (Group 1 causative: 休む → 休ませる)",
+        "× 毎朝、走らせていただいています (nobody allowed it) → ○ 毎朝、走っています (させていただく needs someone whose permission matters)"
+      ],
+      "related": [
+        "g-n4-026",
+        "g-n4-023",
+        "g-n5-080",
+        "g-n4-056",
+        "g-n4-054"
+      ],
+      "tags": [
+        "humble",
+        "work"
+      ],
+      "station": 21
+    },
+    {
+      "id": "g-n4-060",
+      "pattern": "お / ご + N (bikago)",
+      "meaning": "(beautifying prefix) …",
+      "formation": [
+        "お + native Japanese nouns: お名前 · お金 · お茶 · お水 · お店 · お仕事",
+        "ご + Chinese-origin nouns: ご家族 · ご住所 · ご連絡 · ご予定 · ご旅行",
+        "Common exceptions that take お: お電話 · お時間 · お料理 · お返事",
+        "Some words almost never appear bare: お茶 · ご飯 · おにぎり",
+        "Not on your own things in humble speech (× 私のお名前) and not on loanwords (× おコーヒー)"
+      ],
+      "explanation": "お and ご in front of a noun make speech gentle and respectful, especially about things belonging to the listener: お名前, 'your name'; ご家族, 'your family'; ご予定, 'your plans'. The rule of thumb is お for native Japanese words and ご for Chinese-origin words, with a few frequent exceptions like お電話 and お時間. Many everyday words carry お almost always — お茶, ご飯 — and women's and service speech uses it more. Do not add it to loanwords, and drop it from your own belongings when you are being humble: 私の名前, not 私のお名前.",
+      "jlpt": 4,
+      "register": "polite",
+      "examples": [
+        {
+          "ja": "お{名前|なまえ}とご{住所|じゅうしょ}を{書|か}いてください。",
+          "kana": "おなまえとごじゅうしょをかいてください。",
+          "en": "Please write your name and address."
+        },
+        {
+          "ja": "ご{家族|かぞく}はお{元気|げんき}ですか。",
+          "kana": "ごかぞくはおげんきですか。",
+          "en": "Is your family well?"
+        },
+        {
+          "ja": "{週末|しゅうまつ}のご{予定|よてい}はいかがですか。",
+          "kana": "しゅうまつのごよていはいかがですか。",
+          "en": "What are your plans for the weekend?"
+        },
+        {
+          "ja": "お{仕事|しごと}はお{忙|いそが}しいですか。",
+          "kana": "おしごとはおいそがしいですか。",
+          "en": "Is work keeping you busy?"
+        }
+      ],
+      "clozeHints": [
+        "お名前",
+        "ご住所",
+        "ご家族",
+        "お元気",
+        "ご予定",
+        "お仕事"
+      ],
+      "mistakes": [
+        "× ご名前 → ○ お名前 (native Japanese words take お)",
+        "× お家族 → ○ ご家族 (Chinese-origin words usually take ご)",
+        "× 私のお仕事は… (speaking humbly about yourself) → ○ 私の仕事は… (do not beautify your own things in humble speech)"
+      ],
+      "related": [
+        "g-n4-051",
+        "g-n4-054",
+        "g-n4-058",
+        "g-n5-007"
+      ],
+      "tags": [
+        "polite",
+        "language"
+      ],
+      "station": 21
+    }
+  ]
+}

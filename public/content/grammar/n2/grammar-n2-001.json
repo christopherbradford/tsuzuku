@@ -1,0 +1,1868 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "grammar",
+  "level": "n2",
+  "writer": "grammar-n2-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "g-n2-001",
+      "pattern": "〜に限らず",
+      "meaning": "not only …, but (more widely) …",
+      "formation": [
+        "N + に限らず、〜も / 〜でも",
+        "週末 → 週末に限らず、平日も",
+        "日本 → 日本に限らず、どこの国でも"
+      ],
+      "explanation": "N に限らず says 'not limited to N': you name one obvious case and then widen the claim to everything else, usually with も or でも after the comma. Use it when the point is that something applies broadly, not just to the first example (週末に限らず平日も). The ず ending is the written negative of 限る, so the phrase sounds a little crisp; in casual chat だけでなく does the same job. It is not 〜に限って, which narrows instead of widening.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "この{店|みせ}は{週末|しゅうまつ}に{限|かぎ}らず、{平日|へいじつ}も{混|こ}んでいる。",
+          "kana": "このみせはしゅうまつにかぎらず、へいじつもこんでいる。",
+          "en": "This shop is crowded not just on weekends but on weekdays too."
+        },
+        {
+          "ja": "{日本|にほん}に{限|かぎ}らず、どこの{国|くに}にも{似|に}たような{問題|もんだい}があります。",
+          "kana": "にほんにかぎらず、どこのくににもにたようなもんだいがあります。",
+          "en": "Not only Japan but every country has similar problems."
+        },
+        {
+          "ja": "{子|こ}どもに{限|かぎ}らず、{大人|おとな}もこのゲームに{夢中|むちゅう}だ。",
+          "kana": "こどもにかぎらず、おとなもこのゲームにむちゅうだ。",
+          "en": "Not just children; adults are hooked on this game too."
+        },
+        {
+          "ja": "{英語|えいご}に{限|かぎ}らず、{言葉|ことば}は{毎日|まいにち}{使|つか}わないと{忘|わす}れてしまう。",
+          "kana": "えいごにかぎらず、ことばはまいにちつかわないとわすれてしまう。",
+          "en": "Not just English; any language slips away if you don't use it every day."
+        }
+      ],
+      "clozeHints": [
+        "に限らず"
+      ],
+      "mistakes": [
+        "× 週末に限らなく、平日も → ○ 週末に限らず、平日も (the set phrase uses the written negative ず, not なく)",
+        "× 週末だけに限らず → ○ 週末に限らず (だけ is redundant; に限らず already means 'not limited to')"
+      ],
+      "related": [
+        "g-n3-082",
+        "g-n3-081",
+        "g-n2-025",
+        "g-n2-002",
+        "g-n2-003",
+        "g-n3-062"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-002",
+      "pattern": "〜に限って",
+      "meaning": "just when …; … of all things (would never)",
+      "formation": [
+        "N + に限って、〜 (unlucky coincidence)",
+        "急いでいる時 → 急いでいる時に限って、電車が遅れる",
+        "N(person) + に限って、〜ない / 〜はずがない (trust)",
+        "うちの子 → うちの子に限って、そんなことはしない"
+      ],
+      "explanation": "N に限って picks out one case as the unlucky or special exception: 'of all days, just when, precisely at'. You use it to grumble about bad timing (急いでいる時に限って電車が遅れる) or, with a person and a negative ending (うちの子に限って〜はずがない), to say that this one person would never do such a thing. The first use often takes the plain non-past for a habitual pattern; the second needs a strong denial after it. It does not mean 'only' in a neutral sense; for that use だけ or に限り.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{急|いそ}いでいる{時|とき}に{限|かぎ}って、{電車|でんしゃ}が{遅|おく}れる。",
+          "kana": "いそいでいるときにかぎって、でんしゃがおくれる。",
+          "en": "Just when I'm in a hurry, the train is late."
+        },
+        {
+          "ja": "{傘|かさ}を{忘|わす}れた{日|ひ}に{限|かぎ}って、{雨|あめ}が{降|ふ}るんです。",
+          "kana": "かさをわすれたひにかぎって、あめがふるんです。",
+          "en": "It rains precisely on the days I forget my umbrella."
+        },
+        {
+          "ja": "うちの{子|こ}に{限|かぎ}って、そんなことをするはずがない。",
+          "kana": "うちのこにかぎって、そんなことをするはずがない。",
+          "en": "My child, of all people, would never do such a thing."
+        },
+        {
+          "ja": "{大事|だいじ}な{会議|かいぎ}の{日|ひ}に{限|かぎ}って、{熱|ねつ}が{出|で}てしまった。",
+          "kana": "だいじなかいぎのひにかぎって、ねつがでてしまった。",
+          "en": "Of all days, I came down with a fever on the day of the big meeting."
+        }
+      ],
+      "clozeHints": [
+        "に限って"
+      ],
+      "mistakes": [
+        "× 急いでいる時に限って、電車が早く来た → ○ 急いでいる時に限って、電車が遅れた (に限って introduces an unlucky coincidence, not a lucky one)",
+        "× うちの子に限って、きっとやった → ○ うちの子に限って、やるはずがない (with a person it voices trust and takes a negative)"
+      ],
+      "related": [
+        "g-n2-001",
+        "g-n2-003",
+        "g-n3-062",
+        "g-n4-064"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-003",
+      "pattern": "〜に限り",
+      "meaning": "only for …; limited to …",
+      "formation": [
+        "N + に限り、〜 (notices, rules)",
+        "会員の方 → 会員の方に限り、無料です",
+        "本日 → 本日に限り、二割引"
+      ],
+      "explanation": "N に限り is the notice-board way to say 'only for N': a restriction on who, when or under which condition something applies (会員に限り無料). You meet it on posters, tickets, coupons and announcements, and you use it when writing or announcing rules, not in friendly talk, where だけ is natural. It attaches directly to a noun and is followed by the condition or benefit. Do not confuse it with に限って (bad luck) or に限らず (not limited to).",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}に{限|かぎ}り、{全品|ぜんぴん}{二割引|にわりびき}です。",
+          "kana": "ほんじつにかぎり、ぜんぴんにわりびきです。",
+          "en": "Today only, everything is twenty percent off."
+        },
+        {
+          "ja": "{会員|かいいん}の{方|かた}に{限|かぎ}り、{入場|にゅうじょう}は{無料|むりょう}です。",
+          "kana": "かいいんのかたにかぎり、にゅうじょうはむりょうです。",
+          "en": "Admission is free for members only."
+        },
+        {
+          "ja": "この{券|けん}は{平日|へいじつ}に{限|かぎ}り{有効|ゆうこう}です。",
+          "kana": "このけんはへいじつにかぎりゆうこうです。",
+          "en": "This ticket is valid on weekdays only."
+        },
+        {
+          "ja": "{雨天|うてん}の{場合|ばあい}に{限|かぎ}り、{大会|たいかい}は{翌日|よくじつ}に{延期|えんき}します。",
+          "kana": "うてんのばあいにかぎり、たいかいはよくじつにえんきします。",
+          "en": "Only in case of rain will the event be postponed to the next day."
+        }
+      ],
+      "clozeHints": [
+        "に限り"
+      ],
+      "mistakes": [
+        "× 会員に限り、誰でも入れます → ○ 会員に限り、無料で入れます (に限り restricts the group; 誰でも contradicts it)",
+        "× 平日に限りで有効 → ○ 平日に限り有効 (に限り is already adverbial; no で)"
+      ],
+      "related": [
+        "g-n2-001",
+        "g-n2-002",
+        "g-n3-062",
+        "g-n5-038"
+      ],
+      "tags": [
+        "shopping",
+        "written"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-004",
+      "pattern": "〜をはじめ(として)",
+      "meaning": "starting with …; … and others like it",
+      "formation": [
+        "N + をはじめ、〜",
+        "N + をはじめとして、〜",
+        "N + をはじめとする + N",
+        "東京 → 東京をはじめ、大きな都市では",
+        "米 → 米をはじめとする食品"
+      ],
+      "explanation": "N をはじめ, or the fuller N をはじめとして, says 'starting with N' and then names the group it stands for: 東京をはじめ、大きな都市 (Tokyo and other big cities). Pick the most representative or highest-ranked member as N; the rest are implied by the noun or clause that follows. Before a noun it becomes をはじめとする (米をはじめとする食品). Write はじめ in kana here; it is a set phrase, not the verb 始める. It sounds a little formal, fitting speeches, reports and news.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{東京|とうきょう}をはじめ、{大|おお}きな{都市|とし}では{家賃|やちん}が{高|たか}い。",
+          "kana": "とうきょうをはじめ、おおきなとしではやちんがたかい。",
+          "en": "In Tokyo and other big cities, rent is high."
+        },
+        {
+          "ja": "{社長|しゃちょう}をはじめとして、{社員|しゃいん}{全員|ぜんいん}が{式|しき}に{出席|しゅっせき}しました。",
+          "kana": "しゃちょうをはじめとして、しゃいんぜんいんがしきにしゅっせきしました。",
+          "en": "Everyone from the president down attended the ceremony."
+        },
+        {
+          "ja": "この{町|まち}には{寺|てら}をはじめ、{古|ふる}い{建物|たてもの}がたくさん{残|のこ}っている。",
+          "kana": "このまちにはてらをはじめ、ふるいたてものがたくさんのこっている。",
+          "en": "This town has many old buildings, temples first among them."
+        },
+        {
+          "ja": "{米|こめ}をはじめとする{食品|しょくひん}の{値段|ねだん}が{上|あ}がっている。",
+          "kana": "こめをはじめとするしょくひんのねだんがあがっている。",
+          "en": "Food prices, rice above all, are rising."
+        }
+      ],
+      "clozeHints": [
+        "をはじめ"
+      ],
+      "mistakes": [
+        "× 東京を始めて、大きな都市では → ○ 東京をはじめ、大きな都市では (this はじめ is not the verb 始める; write it in kana, no て)",
+        "× 東京をはじめの都市 → ○ 東京をはじめとする都市 (before a noun use をはじめとする)"
+      ],
+      "related": [
+        "g-n3-082",
+        "g-n3-085",
+        "g-n2-001"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-005",
+      "pattern": "〜次第 (as soon as)",
+      "meaning": "as soon as …, (I will) …",
+      "formation": [
+        "V-ます stem + 次第、〜ます (plan or promise)",
+        "Group 1: 分かる → 分かり次第 · 終わる → 終わり次第",
+        "Group 2: できる → でき次第",
+        "する-noun: 到着する → 到着次第"
+      ],
+      "explanation": "V-stem + 次第 means 'as soon as X happens, I will…': 分かり次第連絡します. You attach 次第 to the ます-stem (分かり、終わり、届き) or to a する-noun directly (到着次第), and the main clause is a plan or promise in the non-past, usually polite, because this is office and service language. The event must be one you wait for, not one you control casually. 〜たら is the everyday equivalent; 〜たとたん describes something that already happened and is not a promise.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{詳|くわ}しいことが{分|わ}かり{次第|しだい}、ご{連絡|れんらく}します。",
+          "kana": "くわしいことがわかりしだい、ごれんらくします。",
+          "en": "I will contact you as soon as I know the details."
+        },
+        {
+          "ja": "{会議|かいぎ}が{終|お}わり{次第|しだい}、そちらに{向|む}かいます。",
+          "kana": "かいぎがおわりしだい、そちらにむかいます。",
+          "en": "I'll head over as soon as the meeting ends."
+        },
+        {
+          "ja": "{商品|しょうひん}が{届|とど}き{次第|しだい}、お{支払|しはら}いをお{願|ねが}いします。",
+          "kana": "しょうひんがとどきしだい、おしはらいをおねがいします。",
+          "en": "Please pay as soon as the goods arrive."
+        },
+        {
+          "ja": "{準備|じゅんび}ができ{次第|しだい}、{出発|しゅっぱつ}しましょう。",
+          "kana": "じゅんびができしだい、しゅっぱつしましょう。",
+          "en": "Let's leave as soon as we're ready."
+        }
+      ],
+      "clozeHints": [
+        "次第"
+      ],
+      "mistakes": [
+        "× 分かった次第、連絡します → ○ 分かり次第、連絡します (次第 attaches to the ます-stem, never to the た-form)",
+        "× 分かり次第、連絡しました → ○ 分かり次第、連絡します (the main clause is a plan or promise, not a past event)"
+      ],
+      "related": [
+        "g-n2-006",
+        "g-n3-090",
+        "g-n5-084",
+        "g-n5-071"
+      ],
+      "tags": [
+        "business",
+        "time"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-006",
+      "pattern": "〜次第だ / 〜次第で (depends on)",
+      "meaning": "depends on …; depending on …",
+      "formation": [
+        "N + 次第だ (sentence end)",
+        "N + 次第で(は)、〜 (continues)",
+        "努力 → 成功は努力次第だ",
+        "天気 → 天気次第で予定を変える"
+      ],
+      "explanation": "N 次第だ means 'it depends on N' and ends the sentence (成功は努力次第だ); N 次第で(は) means 'depending on N' and continues it (天気次第で予定を変える). N is the deciding factor: effort, weather, price, the other person. The 次第では form hints that under some conditions the result could change. This is a noun-only pattern; after a verb stem 次第 means 'as soon as' instead. For 'depending on' with a verb clause you use によって.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{成功|せいこう}するかどうかは、{君|きみ}の{努力|どりょく}{次第|しだい}だ。",
+          "kana": "せいこうするかどうかは、きみのどりょくしだいだ。",
+          "en": "Whether you succeed depends on your effort."
+        },
+        {
+          "ja": "{天気|てんき}{次第|しだい}で、{予定|よてい}を{変|か}えるかもしれません。",
+          "kana": "てんきしだいで、よていをかえるかもしれません。",
+          "en": "Depending on the weather, we may change the plan."
+        },
+        {
+          "ja": "{値段|ねだん}{次第|しだい}では、{買|か}ってもいいと{思|おも}っている。",
+          "kana": "ねだんしだいでは、かってもいいとおもっている。",
+          "en": "Depending on the price, I'm willing to buy it."
+        },
+        {
+          "ja": "{結果|けっか}は{考|かんが}え{方|かた}{次第|しだい}で、{大|おお}きく{変|か}わります。",
+          "kana": "けっかはかんがえかたしだいで、おおきくかわります。",
+          "en": "Results change greatly depending on how you think."
+        }
+      ],
+      "clozeHints": [
+        "次第"
+      ],
+      "mistakes": [
+        "× 努力する次第だ → ○ 努力次第だ (this 次第 follows a noun, not a verb)",
+        "× 天気次第に予定を変える → ○ 天気次第で予定を変える (the adverbial form is 次第で)"
+      ],
+      "related": [
+        "g-n2-005",
+        "g-n3-014",
+        "g-n2-076"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-007",
+      "pattern": "〜はもちろん / 〜はもとより",
+      "meaning": "… goes without saying, and also …",
+      "formation": [
+        "N + はもちろん(のこと)、N + も",
+        "N + はもとより、N + も (written, formal)",
+        "英語 → 英語はもちろん、中国語も話せる",
+        "運動 → 運動はもとより睡眠も必要だ"
+      ],
+      "explanation": "N はもちろん, N も says 'N goes without saying, and also…': you concede the obvious case, then add the one that matters. はもちろんのこと stretches it a little; はもとより is the written or formal twin with the same shape. The second item takes も (or でも / にも). Use it to praise or to warn (大人はもちろん子どもにも安全). It is softer and more conversational than のみならず and ばかりか, which push toward the surprising extra.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{英語|えいご}はもちろん、{中国語|ちゅうごくご}も{話|はな}せる。",
+          "kana": "かれはえいごはもちろん、ちゅうごくごもはなせる。",
+          "en": "He speaks English, of course, and Chinese too."
+        },
+        {
+          "ja": "この{薬|くすり}は{大人|おとな}はもちろん、{子|こ}どもにも{安全|あんぜん}です。",
+          "kana": "このくすりはおとなはもちろん、こどもにもあんぜんです。",
+          "en": "This medicine is safe not just for adults but for children as well."
+        },
+        {
+          "ja": "{健康|けんこう}のためには、{運動|うんどう}はもとより{十分|じゅうぶん}な{睡眠|すいみん}も{必要|ひつよう}だ。",
+          "kana": "けんこうのためには、うんどうはもとよりじゅうぶんなすいみんもひつようだ。",
+          "en": "For your health you need exercise, naturally, but also enough sleep."
+        },
+        {
+          "ja": "{平日|へいじつ}はもちろんのこと、{週末|しゅうまつ}も{働|はたら}いている。",
+          "kana": "へいじつはもちろんのこと、しゅうまつもはたらいている。",
+          "en": "I work on weekends, let alone weekdays."
+        }
+      ],
+      "clozeHints": [
+        "はもちろん",
+        "はもとより"
+      ],
+      "mistakes": [
+        "× 英語はもちろん、中国語は話せる → ○ 英語はもちろん、中国語も話せる (the second item takes も)",
+        "× 英語がもちろん → ○ 英語はもちろん (the first item takes は)"
+      ],
+      "related": [
+        "g-n3-082",
+        "g-n3-081",
+        "g-n2-025",
+        "g-n2-026",
+        "g-n2-001"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-008",
+      "pattern": "〜に先立って",
+      "meaning": "prior to … (a formal event)",
+      "formation": [
+        "N + に先立って、〜",
+        "N + に先立ち、〜 (written)",
+        "N + に先立つ + N",
+        "V-dictionary + に先立って",
+        "開会 → 開会に先立って挨拶がある"
+      ],
+      "explanation": "N に先立って means 'prior to N', where N is a formal event: an opening, a construction job, a product launch, an exam. It introduces the preparation that comes first (開会に先立って挨拶がある). The written form is に先立ち; before a noun use に先立つ. A dictionary-form verb may also precede it (試験を始めるに先立って). Keep it for ceremonies and official steps; for everyday sequence you say 前に.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{開会|かいかい}に{先立|さきだ}って、{市長|しちょう}の{挨拶|あいさつ}があります。",
+          "kana": "かいかいにさきだって、しちょうのあいさつがあります。",
+          "en": "Prior to the opening, the mayor will give an address."
+        },
+        {
+          "ja": "{工事|こうじ}に{先立|さきだ}ち、{近所|きんじょ}の{方|かた}に{説明会|せつめいかい}を{行|おこな}った。",
+          "kana": "こうじにさきだち、きんじょのかたにせつめいかいをおこなった。",
+          "en": "Before the construction began, we held an information session for the neighbors."
+        },
+        {
+          "ja": "{新製品|しんせいひん}の{発売|はつばい}に{先立|さきだ}って、{記者|きしゃ}{発表|はっぴょう}が{行|おこな}われた。",
+          "kana": "しんせいひんのはつばいにさきだって、きしゃはっぴょうがおこなわれた。",
+          "en": "A press announcement was held ahead of the new product's release."
+        },
+        {
+          "ja": "{試験|しけん}を{始|はじ}めるに{先立|さきだ}って、{注意|ちゅうい}を{読|よ}み{上|あ}げます。",
+          "kana": "しけんをはじめるにさきだって、ちゅういをよみあげます。",
+          "en": "Before beginning the exam, I will read out the instructions."
+        }
+      ],
+      "clozeHints": [
+        "に先立って",
+        "に先立ち"
+      ],
+      "mistakes": [
+        "× 朝ご飯に先立って歯を磨く → ○ 朝ご飯の前に歯を磨く (に先立って is for formal events, not daily routine)",
+        "× 開会を先立って → ○ 開会に先立って (the particle is に)"
+      ],
+      "related": [
+        "g-n5-069",
+        "g-n2-045",
+        "g-n2-071"
+      ],
+      "tags": [
+        "business",
+        "time"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-009",
+      "pattern": "〜にわたって",
+      "meaning": "over (the whole span of) …",
+      "formation": [
+        "N(period, area, count) + にわたって、〜",
+        "N + にわたり、〜 (written)",
+        "N + にわたる + N",
+        "三時間 → 三時間にわたって行われた",
+        "十回 → 十回にわたる話し合い"
+      ],
+      "explanation": "N にわたって means 'over the whole span of N': a period (三時間、二十年), an area (広い範囲) or a count (十回). It stresses scale, so the thing described should be substantial, such as a conference, a power outage or a career. にわたり is the written variant; before a noun use にわたる (十回にわたる話し合い). Do not use it for ordinary short actions. Compare から〜にかけて, which gives the two ends of a range rather than its whole extent.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}は{三時間|さんじかん}にわたって{行|おこな}われた。",
+          "kana": "かいぎはさんじかんにわたっておこなわれた。",
+          "en": "The meeting went on for three hours."
+        },
+        {
+          "ja": "{台風|たいふう}の{影響|えいきょう}で、{広|ひろ}い{範囲|はんい}にわたって{停電|ていでん}が{起|お}きています。",
+          "kana": "たいふうのえいきょうで、ひろいはんいにわたってていでんがおきています。",
+          "en": "Because of the typhoon, power outages are occurring over a wide area."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{二十年|にじゅうねん}にわたり、この{学校|がっこう}で{教|おし}えてきた。",
+          "kana": "かのじょはにじゅうねんにわたり、このがっこうでおしえてきた。",
+          "en": "She has taught at this school for twenty years."
+        },
+        {
+          "ja": "{十回|じゅっかい}にわたる{話|はな}し{合|あ}いの{末|すえ}、やっと{結論|けつろん}が{出|で}た。",
+          "kana": "じゅっかいにわたるはなしあいのすえ、やっとけつろんがでた。",
+          "en": "After ten rounds of talks, a conclusion was finally reached."
+        }
+      ],
+      "clozeHints": [
+        "にわたって",
+        "にわたり",
+        "にわたる"
+      ],
+      "mistakes": [
+        "× 三時間をわたって → ○ 三時間にわたって (the particle is に)",
+        "× 一時間にわたって昼ご飯を食べた → ○ 一時間昼ご飯を食べた (にわたって is for scale and formality, not everyday routines)"
+      ],
+      "related": [
+        "g-n3-024",
+        "g-n3-072",
+        "g-n3-012"
+      ],
+      "tags": [
+        "time",
+        "quantity"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-010",
+      "pattern": "〜にかけては",
+      "meaning": "when it comes to … (nobody beats)",
+      "formation": [
+        "N + にかけては、〜 (a strength)",
+        "料理 → 料理にかけては、誰にも負けない",
+        "魚の新鮮さ → 魚の新鮮さにかけては、町で一番だ"
+      ],
+      "explanation": "N にかけては means 'when it comes to N' and introduces a strength: 料理にかけては誰にも負けない. Use it to praise a skill or quality in a field you name (speed, freshness, repairs), typically followed by 一番, 誰にも負けない or 頼りになる. The は is part of the phrase and signals the comparison; without it にかけて means 'extending over' a time or place. It is not used for weaknesses or for neutral topics. For those use について or に関して.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{料理|りょうり}にかけては、ケンは{誰|だれ}にも{負|ま}けない。",
+          "kana": "りょうりにかけては、ケンはだれにもまけない。",
+          "en": "When it comes to cooking, Ken is second to none."
+        },
+        {
+          "ja": "{足|あし}の{速|はや}さにかけては、クラスで{一番|いちばん}だった。",
+          "kana": "あしのはやさにかけては、クラスでいちばんだった。",
+          "en": "When it came to running speed, I was the fastest in my class."
+        },
+        {
+          "ja": "{魚|さかな}の{新鮮|しんせん}さにかけては、この{店|みせ}が{町|まち}で{一番|いちばん}です。",
+          "kana": "さかなのしんせんさにかけては、このみせがまちでいちばんです。",
+          "en": "For freshness of fish, this shop is the best in town."
+        },
+        {
+          "ja": "{機械|きかい}の{修理|しゅうり}にかけては、{父|ちち}は{本当|ほんとう}に{頼|たよ}りになる。",
+          "kana": "きかいのしゅうりにかけては、ちちはほんとうにたよりになる。",
+          "en": "When it comes to fixing machines, my father is really dependable."
+        }
+      ],
+      "clozeHints": [
+        "にかけては"
+      ],
+      "mistakes": [
+        "× 料理にかけては、あまり上手ではない → ○ 料理にかけては、誰にも負けない (にかけては praises a strength; it is not used for weaknesses)",
+        "× 料理にかけて、誰にも負けない → ○ 料理にかけては、誰にも負けない (は is part of the pattern; without it the meaning shifts to 'over a span')"
+      ],
+      "related": [
+        "g-n3-024",
+        "g-n3-018",
+        "g-n3-020"
+      ],
+      "tags": [
+        "personality"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-011",
+      "pattern": "〜からして",
+      "meaning": "even …, to begin with; judging from …",
+      "formation": [
+        "N + からして、〜 (the first clue; the rest follows)",
+        "名前 → 名前からして面白そうだ",
+        "N + からして、〜だろう / 〜ようだ (judging from)",
+        "話し方 → 話し方からして、この辺の人ではない"
+      ],
+      "explanation": "N からして has two jobs. First, 'even N, to begin with': you pick the first and smallest clue and imply the rest follows (名前からして面白そうだ). Second, 'judging from N': the evidence that leads to your guess (話し方からして、この辺の人ではない). Either way the sentence ends in a judgment: そうだ, ようだ, だろう, と思う. N is the clue, never the person judging; for 'from someone's point of view' use からすると.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "あの{店|みせ}は{名前|なまえ}からして{面白|おもしろ}そうだ。",
+          "kana": "あのみせはなまえからしておもしろそうだ。",
+          "en": "Even the name of that shop sounds interesting."
+        },
+        {
+          "ja": "{話|はな}し{方|かた}からして、{彼|かれ}はこの{辺|へん}の{人|ひと}ではないだろう。",
+          "kana": "はなしかたからして、かれはこのへんのひとではないだろう。",
+          "en": "Judging from the way he talks, he's not from around here."
+        },
+        {
+          "ja": "この{計画|けいかく}は{考|かんが}え{方|かた}からして{間違|まちが}っていると{思|おも}います。",
+          "kana": "このけいかくはかんがえかたからしてまちがっているとおもいます。",
+          "en": "I think this plan is wrong from its very premise."
+        },
+        {
+          "ja": "{服装|ふくそう}からして、{彼女|かのじょ}は{何|なに}かのパーティーに{行|い}くようだ。",
+          "kana": "ふくそうからして、かのじょはなにかのパーティーにいくようだ。",
+          "en": "Judging by her clothes, she seems to be going to some party."
+        }
+      ],
+      "clozeHints": [
+        "からして"
+      ],
+      "mistakes": [
+        "× 彼からして、来ないと思う → ○ 彼の態度からして、来ないと思う (for 'judging from', からして follows the evidence, not a person)",
+        "× 名前からしては面白い → ○ 名前からして面白い (no は after からして)"
+      ],
+      "related": [
+        "g-n2-012",
+        "g-n3-079",
+        "g-n4-033"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-012",
+      "pattern": "〜からすると / 〜からすれば / 〜から見ると",
+      "meaning": "from the standpoint of …; judging from …",
+      "formation": [
+        "N + からすると / からすれば / からしたら、〜",
+        "N + から見ると / から見れば / から見て、〜",
+        "親 → 親からすると、子どもは心配だ",
+        "空の色 → 空の色からすれば、雨になりそうだ"
+      ],
+      "explanation": "N からすると, からすれば or から見ると mean 'from N's standpoint' or 'judging from N'. N can be a person or group (親からすると), and then the clause states how things look to them; or N can be evidence (空の色からすれば), and then you draw a conclusion with そうだ, だろう or でしょう. から見れば and から見て are the same with 見る. The ending is a judgment, never a request or command. にとって gives a viewpoint too but is followed by an evaluation (大切だ), not a deduction.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{親|おや}からすると、{子|こ}どもはいくつになっても{心配|しんぱい}なものだ。",
+          "kana": "おやからすると、こどもはいくつになってもしんぱいなものだ。",
+          "en": "From a parent's point of view, you worry about your children no matter how old they get."
+        },
+        {
+          "ja": "{外国人|がいこくじん}から{見|み}ると、{日本|にほん}の{電車|でんしゃ}はとても{正確|せいかく}だそうです。",
+          "kana": "がいこくじんからみると、にほんのでんしゃはとてもせいかくだそうです。",
+          "en": "Seen through foreign eyes, Japan's trains are very punctual, I hear."
+        },
+        {
+          "ja": "{空|そら}の{色|いろ}からすれば、{午後|ごご}は{雨|あめ}になりそうだ。",
+          "kana": "そらのいろからすれば、ごごはあめになりそうだ。",
+          "en": "Judging from the color of the sky, it looks like rain this afternoon."
+        },
+        {
+          "ja": "{経験者|けいけんしゃ}から{見|み}れば、この{問題|もんだい}は{難|むずか}しくないでしょう。",
+          "kana": "けいけんしゃからみれば、このもんだいはむずかしくないでしょう。",
+          "en": "To someone with experience, this problem probably isn't hard."
+        }
+      ],
+      "clozeHints": [
+        "からすると",
+        "からすれば",
+        "から見ると",
+        "から見れば"
+      ],
+      "mistakes": [
+        "× 親からすると、心配してください → ○ 親からすると、心配だ (the main clause is a judgment, not a request)",
+        "× 親にすると心配だ → ○ 親からすると心配だ (the source of the viewpoint takes から)"
+      ],
+      "related": [
+        "g-n2-011",
+        "g-n3-020",
+        "g-n3-019",
+        "g-n2-049"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 39
+    },
+    {
+      "id": "g-n2-013",
+      "pattern": "〜ざるを得ない",
+      "meaning": "have no choice but to …",
+      "formation": [
+        "V-ない stem + ざるを得ない (えない)",
+        "Group 1: 行く → 行かざるを得ない · 従う → 従わざるを得ない",
+        "Group 2: 認める → 認めざるを得ない",
+        "Irregular: する → せざるを得ない · 来る → 来(こ)ざるを得ない",
+        "Polite / past: 〜ざるを得ません · 〜ざるを得なかった"
+      ],
+      "explanation": "V-ない-stem + ざるを得ない means 'have no choice but to': circumstances force the action and you do it reluctantly (中止せざるを得ない). Form it from the ない-form minus ない: 行かざる, 食べざる, 来(こ)ざる; する is irregular: せざる. 得ない reads えない and conjugates normally (得ません, 得なかった). It sounds a bit formal and written; in speech しかない or ないわけにはいかない are lighter. It never describes a glad or voluntary act.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{台風|たいふう}が{近|ちか}づいているので、{旅行|りょこう}は{中止|ちゅうし}せざるを{得|え}ない。",
+          "kana": "たいふうがちかづいているので、りょこうはちゅうしせざるをえない。",
+          "en": "With the typhoon approaching, we have no choice but to cancel the trip."
+        },
+        {
+          "ja": "{上司|じょうし}の{命令|めいれい}なので、{従|したが}わざるを{得|え}ませんでした。",
+          "kana": "じょうしのめいれいなので、したがわざるをえませんでした。",
+          "en": "It was my boss's order, so I had no choice but to comply."
+        },
+        {
+          "ja": "{証拠|しょうこ}を{見|み}せられて、{自分|じぶん}の{間違|まちが}いを{認|みと}めざるを{得|え}なかった。",
+          "kana": "しょうこをみせられて、じぶんのまちがいをみとめざるをえなかった。",
+          "en": "Shown the evidence, I had to admit my mistake."
+        },
+        {
+          "ja": "{給料|きゅうりょう}が{安|やす}いので、アルバイトをせざるを{得|え}ない。",
+          "kana": "きゅうりょうがやすいので、アルバイトをせざるをえない。",
+          "en": "With my salary so low, I have to work a part-time job too."
+        }
+      ],
+      "clozeHints": [
+        "ざるを得ない",
+        "ざるを得ませんでした",
+        "ざるを得なかった"
+      ],
+      "mistakes": [
+        "× 中止しざるを得ない → ○ 中止せざるを得ない (する becomes せざる)",
+        "× 行かないざるを得ない → ○ 行かざるを得ない (attach ざる to the ない-stem and drop ない)"
+      ],
+      "related": [
+        "g-n3-058",
+        "g-n3-064",
+        "g-n3-063",
+        "g-n3-051"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-014",
+      "pattern": "〜かねる",
+      "meaning": "cannot bring oneself to …; be unable to … (polite refusal)",
+      "formation": [
+        "V-ます stem + かねる / かねます",
+        "Group 1: 分かる → 分かりかねます",
+        "Group 2: 決める → 決めかねます · 答える → 答えかねます",
+        "Humble: お答えしかねます · お教えしかねます"
+      ],
+      "explanation": "V-stem + かねる means 'cannot bring oneself to, be unable to' for reasons of position, feeling or policy, and is the standard soft refusal in service and business Japanese: お答えしかねます. Attach it to the ます-stem (答え, 決め, 賛成し). Although the form is affirmative, the meaning is negative, so never add ません. In the plain form (賛成しかねる部分もある) it is a measured way to say you find something hard to accept. It has nothing to do with かねない.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{申|もう}し{訳|わけ}ありませんが、その{質問|しつもん}にはお{答|こた}えしかねます。",
+          "kana": "もうしわけありませんが、そのしつもんにはおこたえしかねます。",
+          "en": "I'm sorry, but I am unable to answer that question."
+        },
+        {
+          "ja": "{個人|こじん}{情報|じょうほう}ですので、お{教|おし}えしかねます。",
+          "kana": "こじんじょうほうですので、おおしえしかねます。",
+          "en": "As it is personal information, I'm afraid I cannot tell you."
+        },
+        {
+          "ja": "{彼|かれ}の{意見|いけん}には{賛成|さんせい}しかねる{部分|ぶぶん}もある。",
+          "kana": "かれのいけんにはさんせいしかねるぶぶんもある。",
+          "en": "There are parts of his opinion I find hard to agree with."
+        },
+        {
+          "ja": "{一人|ひとり}では{決|き}めかねますので、{上司|じょうし}に{相談|そうだん}します。",
+          "kana": "ひとりではきめかねますので、じょうしにそうだんします。",
+          "en": "I can't decide this alone, so I'll consult my boss."
+        }
+      ],
+      "clozeHints": [
+        "かねます",
+        "かねる"
+      ],
+      "mistakes": [
+        "× お答えしかねません → ○ お答えしかねます (かねる is already negative in meaning; かねない means something else entirely)",
+        "× 答えるかねます → ○ 答えかねます (attach to the ます-stem)"
+      ],
+      "related": [
+        "g-n2-015",
+        "g-n2-016",
+        "g-n4-054",
+        "g-n5-077"
+      ],
+      "tags": [
+        "business",
+        "communication"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-015",
+      "pattern": "〜かねない",
+      "meaning": "might well … (something bad)",
+      "formation": [
+        "V-ます stem + かねない / かねません",
+        "Group 1: 起こす → 起こしかねない · なる → なりかねない",
+        "Group 2: 忘れる → 忘れかねない",
+        "Irregular: する → しかねない"
+      ],
+      "explanation": "V-stem + かねない means 'might well do' something undesirable: 事故を起こしかねない. Attach it to the ます-stem. You use it to warn about a bad outcome you think is quite possible, judging from someone's character or the situation (彼なら忘れかねない). Good outcomes never take かねない; use かもしれない for those. おそれがある is the written, impersonal cousin used in news and notices.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "そんなに{急|いそ}ぐと、{事故|じこ}を{起|お}こしかねないよ。",
+          "kana": "そんなにいそぐと、じこをおこしかねないよ。",
+          "en": "If you rush like that, you could well cause an accident."
+        },
+        {
+          "ja": "{彼|かれ}なら、{約束|やくそく}を{忘|わす}れかねない。",
+          "kana": "かれなら、やくそくをわすれかねない。",
+          "en": "Knowing him, he might well forget the promise."
+        },
+        {
+          "ja": "{無理|むり}を{続|つづ}けると、{体|からだ}を{壊|こわ}しかねません。",
+          "kana": "むりをつづけると、からだをこわしかねません。",
+          "en": "If you keep overdoing it, you may ruin your health."
+        },
+        {
+          "ja": "この{問題|もんだい}を{放|ほう}っておくと、{大|おお}きなトラブルになりかねない。",
+          "kana": "このもんだいをほうっておくと、おおきなトラブルになりかねない。",
+          "en": "If we leave this problem alone, it could turn into big trouble."
+        }
+      ],
+      "clozeHints": [
+        "かねない",
+        "かねません"
+      ],
+      "mistakes": [
+        "× 彼なら合格しかねない → ○ 彼なら合格するかもしれない (かねない is only for undesirable outcomes)",
+        "× 事故を起こすかねない → ○ 事故を起こしかねない (attach to the ます-stem)"
+      ],
+      "related": [
+        "g-n2-014",
+        "g-n2-017",
+        "g-n4-036",
+        "g-n2-016"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-016",
+      "pattern": "〜得る / 〜得ない",
+      "meaning": "can possibly …; cannot possibly …",
+      "formation": [
+        "V-ます stem + 得る (うる / える)",
+        "Negative: V-ます stem + 得ない (えない) · past 得た (えた)",
+        "Group 1: 起こる → 起こり得る · ある → あり得る / あり得ない",
+        "Group 2: 考える → 考え得る",
+        "Irregular: する → し得る · 予想する → 予想し得ない"
+      ],
+      "explanation": "V-stem + 得る says that something can happen or can be done in principle: 起こり得る, 考え得る. The dictionary form reads うる or える; the negative 得ない (えない) and past 得た (えた) read with え only. あり得る / あり得ない are the most common uses: 'possible / impossible'. It is a judgment about possibility, not about a person's skill, so for 'I can swim' you use the potential form 泳げる. Stem attachment: Group 1 起こり得る, Group 2 考え得る, する → し得る.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{地震|じしん}はいつでも{起|お}こり{得|う}る。",
+          "kana": "じしんはいつでもおこりうる。",
+          "en": "An earthquake can happen at any time."
+        },
+        {
+          "ja": "そんなことはあり{得|え}ない。",
+          "kana": "そんなことはありえない。",
+          "en": "That's impossible."
+        },
+        {
+          "ja": "{考|かんが}え{得|う}る{方法|ほうほう}はすべて{試|ため}しました。",
+          "kana": "かんがえうるほうほうはすべてためしました。",
+          "en": "I tried every conceivable method."
+        },
+        {
+          "ja": "この{計画|けいかく}には{予想|よそう}し{得|え}ない{問題|もんだい}が{出|で}てくるかもしれない。",
+          "kana": "このけいかくにはよそうしえないもんだいがでてくるかもしれない。",
+          "en": "Problems nobody can foresee may come up in this plan."
+        }
+      ],
+      "clozeHints": [
+        "得る",
+        "得ない"
+      ],
+      "mistakes": [
+        "× 起こる得る → ○ 起こり得る (attach to the ます-stem)",
+        "× 彼は泳ぎ得る → ○ 彼は泳げる (得る is about possibility in general, not a person's ability)",
+        "× あり得るない → ○ あり得ない (negate 得る itself: 得ない)"
+      ],
+      "related": [
+        "g-n2-015",
+        "g-n3-003",
+        "g-n5-077",
+        "g-n4-064"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "notes": "Dictionary form 得る is read うる in formal or written use and える in speech; the examples use うる. Negative and past are always えない / えた.",
+      "station": 40
+    },
+    {
+      "id": "g-n2-017",
+      "pattern": "〜おそれがある",
+      "meaning": "there is a risk that …",
+      "formation": [
+        "V-dictionary + おそれがある",
+        "V-ない + おそれがある",
+        "N + のおそれがある",
+        "止まる → 電車が止まるおそれがある",
+        "大雨 → 大雨のおそれがあります"
+      ],
+      "explanation": "〜おそれがある means 'there is a risk that…': 大雨のおそれがあります. Use it only for unwelcome outcomes: heavy rain, stopped trains, side effects, data leaks. Attach a dictionary-form verb (止まる, 出る) or a noun with の. It is the impersonal voice of weather bulletins, notices and reports, so it stays formal; in conversation you say かもしれない or 〜かねない. For a hopeful possibility use 可能性がある.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{今夜|こんや}から{明日|あした}にかけて、{大雨|おおあめ}のおそれがあります。",
+          "kana": "こんやからあしたにかけて、おおあめのおそれがあります。",
+          "en": "There is a risk of heavy rain from tonight through tomorrow."
+        },
+        {
+          "ja": "この{薬|くすり}は{飲|の}みすぎると、{副作用|ふくさよう}が{出|で}るおそれがある。",
+          "kana": "このくすりはのみすぎると、ふくさようがでるおそれがある。",
+          "en": "Taking too much of this medicine carries a risk of side effects."
+        },
+        {
+          "ja": "{強|つよ}い{風|かぜ}で、{電車|でんしゃ}が{止|と}まるおそれがあります。",
+          "kana": "つよいかぜで、でんしゃがとまるおそれがあります。",
+          "en": "Due to strong winds, trains may stop."
+        },
+        {
+          "ja": "{個人|こじん}{情報|じょうほう}が{外|そと}に{漏|も}れるおそれがあるため、{注意|ちゅうい}が{必要|ひつよう}だ。",
+          "kana": "こじんじょうほうがそとにもれるおそれがあるため、ちゅういがひつようだ。",
+          "en": "Because there is a risk of personal information leaking, caution is needed."
+        }
+      ],
+      "clozeHints": [
+        "おそれがある",
+        "おそれがあります"
+      ],
+      "mistakes": [
+        "× 明日は晴れるおそれがある → ○ 明日は晴れるでしょう (おそれがある warns of something bad; use it only for unwelcome outcomes)",
+        "× 大雨おそれがある → ○ 大雨のおそれがある (a noun needs の)"
+      ],
+      "related": [
+        "g-n2-015",
+        "g-n4-036",
+        "g-n3-055"
+      ],
+      "tags": [
+        "weather",
+        "media"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-018",
+      "pattern": "〜に相違ない",
+      "meaning": "must be …; without a doubt (written)",
+      "formation": [
+        "Plain form + に相違ない (そういない)",
+        "N + に相違ない · な-adj + である + に相違ない",
+        "いる → いるに相違ない · であった → であったに相違ない",
+        "彼女 → 彼女に相違ない"
+      ],
+      "explanation": "〜に相違ない means 'must be, without doubt' and is the written, stiff form of に違いない. Nouns attach directly (彼女に相違ない), な-adjectives with である, verbs and い-adjectives in the plain form (いるに相違ない, であったに相違ない). You meet it in novels, reports and legal wording; in speech it sounds theatrical, so use に違いない or きっと. The speaker is sure but has not confirmed. Note the reading そうい, not そうちがい.",
+      "jlpt": 2,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{犯人|はんにん}はこの{建物|たてもの}の{中|なか}にいるに{相違|そうい}ない。",
+          "kana": "はんにんはこのたてもののなかにいるにそういない。",
+          "en": "The culprit must be inside this building."
+        },
+        {
+          "ja": "この{手紙|てがみ}を{書|か}いたのは{彼女|かのじょ}に{相違|そうい}ない。",
+          "kana": "このてがみをかいたのはかのじょにそういない。",
+          "en": "It was unquestionably she who wrote this letter."
+        },
+        {
+          "ja": "{当時|とうじ}の{人々|ひとびと}にとって、{旅|たび}は{大変|たいへん}なものであったに{相違|そうい}ない。",
+          "kana": "とうじのひとびとにとって、たびはたいへんなものであったにそういない。",
+          "en": "For people of that time, travel must have been a hardship."
+        },
+        {
+          "ja": "{彼|かれ}は{何|なに}か{隠|かく}しているに{相違|そうい}ない。",
+          "kana": "かれはなにかかくしているにそういない。",
+          "en": "He must be hiding something."
+        }
+      ],
+      "clozeHints": [
+        "に相違ない"
+      ],
+      "mistakes": [
+        "× 明日は雨に相違ないよね → ○ 明日はきっと雨だよね (に相違ない is written and formal; in conversation use に違いない or きっと)",
+        "× 彼女だに相違ない → ○ 彼女に相違ない (nouns attach directly, no だ)"
+      ],
+      "related": [
+        "g-n3-073",
+        "g-n3-037",
+        "g-n4-063"
+      ],
+      "tags": [
+        "written"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-019",
+      "pattern": "〜ないことには",
+      "meaning": "unless …, (not) …",
+      "formation": [
+        "V-ない + ことには、〜ない",
+        "い-adj -くない + ことには、〜ない",
+        "な-adj / N + でないことには、〜ない",
+        "見てみる → 見てみないことには、決められない",
+        "丈夫 → 丈夫でないことには、続けられない"
+      ],
+      "explanation": "V-ない + ことには, 〜ない means 'unless you do X, nothing happens': 見てみないことには決められない. The first clause is always negative, and the main clause is negative too (できない, 分からない, 始まらない). For nouns and な-adjectives use でないことには. It frames the first action as a precondition, like てからでないと. Unlike plain なければ, it carries the feeling 'it is pointless to even try before that'.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{実際|じっさい}に{見|み}てみないことには、{買|か}うかどうか{決|き}められない。",
+          "kana": "じっさいにみてみないことには、かうかどうかきめられない。",
+          "en": "Unless I actually see it, I can't decide whether to buy it."
+        },
+        {
+          "ja": "お{金|かね}がないことには、{何|なに}も{始|はじ}まらない。",
+          "kana": "おかねがないことには、なにもはじまらない。",
+          "en": "Without money, nothing can get started."
+        },
+        {
+          "ja": "{本人|ほんにん}に{聞|き}いてみないことには、{本当|ほんとう}の{理由|りゆう}は{分|わ}かりません。",
+          "kana": "ほんにんにきいてみないことには、ほんとうのりゆうはわかりません。",
+          "en": "Unless we ask the person directly, we won't know the real reason."
+        },
+        {
+          "ja": "{体|からだ}が{丈夫|じょうぶ}でないことには、{長|なが}い{旅|たび}は{続|つづ}けられない。",
+          "kana": "からだがじょうぶでないことには、ながいたびはつづけられない。",
+          "en": "Unless you're physically strong, you can't keep up a long journey."
+        }
+      ],
+      "clozeHints": [
+        "ないことには"
+      ],
+      "mistakes": [
+        "× 見てみないことには、買います → ○ 見てみないことには、買えません (the main clause must be negative)",
+        "× 見ることには決められない → ○ 見ないことには決められない (the first clause is always negative)"
+      ],
+      "related": [
+        "g-n5-087",
+        "g-n5-086",
+        "g-n3-110",
+        "g-n3-080"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-020",
+      "pattern": "〜て初めて",
+      "meaning": "only after …, (did I finally) …",
+      "formation": [
+        "V-て + 初めて、〜 (realization)",
+        "Group 1: 失う → 失って初めて · 住む → 住んで初めて",
+        "Group 2: 病気になる → 病気になって初めて",
+        "Irregular: する → して初めて"
+      ],
+      "explanation": "V-て + 初めて means 'only after X did I…'; the て-clause is the experience, the main clause the realization or change (病気になって初めて健康の大切さが分かった). The main clause typically ends in 分かる, 気づく or できる, often in the past or with ものだ for a general truth. It is not simple sequence like てから, and it is not the adverb 初めて meaning 'for the first time' on its own, though the sense is related: the first time X happened, Y finally followed.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{病気|びょうき}になって{初|はじ}めて、{健康|けんこう}の{大切|たいせつ}さが{分|わ}かった。",
+          "kana": "びょうきになってはじめて、けんこうのたいせつさがわかった。",
+          "en": "Only when I got sick did I understand how precious health is."
+        },
+        {
+          "ja": "{自分|じぶん}で{働|はたら}いて{初|はじ}めて、{親|おや}の{苦労|くろう}が{分|わ}かりました。",
+          "kana": "じぶんではたらいてはじめて、おやのくろうがわかりました。",
+          "en": "It was only when I started working myself that I understood my parents' hardships."
+        },
+        {
+          "ja": "{外国|がいこく}に{住|す}んで{初|はじ}めて、{日本|にほん}の{良|よ}さに{気|き}づく{人|ひと}は{多|おお}い。",
+          "kana": "がいこくにすんではじめて、にほんのよさにきづくひとはおおい。",
+          "en": "Many people notice Japan's good points only after living abroad."
+        },
+        {
+          "ja": "{失|うしな}って{初|はじ}めて、その{価値|かち}に{気|き}づくものだ。",
+          "kana": "うしなってはじめて、そのかちにきづくものだ。",
+          "en": "You realize the value of something only once you've lost it."
+        }
+      ],
+      "clozeHints": [
+        "て初めて",
+        "で初めて"
+      ],
+      "mistakes": [
+        "× 病気になって初めて、健康に気をつけてください → ○ 病気になって初めて、健康の大切さが分かった (the main clause states a realization, not a request)",
+        "× 病気になった初めて → ○ 病気になって初めて (use the て-form)"
+      ],
+      "related": [
+        "g-n5-071",
+        "g-n2-021",
+        "g-n3-092",
+        "g-n3-110"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-021",
+      "pattern": "〜てこそ",
+      "meaning": "only by doing … (does it hold true)",
+      "formation": [
+        "V-て + こそ、〜 (positive result)",
+        "Group 1: 聞く → 聞いてこそ · やる → やってこそ",
+        "Group 2: 続ける → 続けてこそ",
+        "Irregular: 苦労する → 苦労してこそ",
+        "N / な-adj + でこそ: 元気でこそ"
+      ],
+      "explanation": "V-て + こそ means 'only by doing X' and stresses that X is the real condition for a positive result: 苦労してこそ喜びが分かる. The main clause states something valuable gained (力がつく, 関係が作れる, 集中できる), often with のだ for conviction. Nouns and な-adjectives use でこそ (元気でこそ). It does not introduce a negative outcome. Compare て初めて, which reports a realization; てこそ asserts a principle.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{苦労|くろう}してこそ、{成功|せいこう}の{喜|よろこ}びが{分|わ}かる。",
+          "kana": "くろうしてこそ、せいこうのよろこびがわかる。",
+          "en": "Only by struggling do you understand the joy of success."
+        },
+        {
+          "ja": "{自分|じぶん}でやってこそ、{本当|ほんとう}の{力|ちから}がつくんだよ。",
+          "kana": "じぶんでやってこそ、ほんとうのちからがつくんだよ。",
+          "en": "It's only by doing it yourself that you build real ability."
+        },
+        {
+          "ja": "{相手|あいて}の{話|はなし}を{聞|き}いてこそ、よい{関係|かんけい}が{作|つく}れる。",
+          "kana": "あいてのはなしをきいてこそ、よいかんけいがつくれる。",
+          "en": "Only by listening to the other person can you build a good relationship."
+        },
+        {
+          "ja": "{家族|かぞく}が{元気|げんき}でこそ、{仕事|しごと}にも{集中|しゅうちゅう}できるのです。",
+          "kana": "かぞくがげんきでこそ、しごとにもしゅうちゅうできるのです。",
+          "en": "Only when my family is well can I focus on work."
+        }
+      ],
+      "clozeHints": [
+        "てこそ",
+        "でこそ"
+      ],
+      "mistakes": [
+        "× 苦労してこそ、失敗した → ○ 苦労してこそ、成功できる (the main clause is a positive result)",
+        "× 苦労するこそ → ○ 苦労してこそ (こそ attaches to the て-form here)"
+      ],
+      "related": [
+        "g-n2-020",
+        "g-n2-022",
+        "g-n2-087"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-022",
+      "pattern": "〜からこそ",
+      "meaning": "precisely because …",
+      "formation": [
+        "V / い-adj plain form + からこそ、〜(のだ)",
+        "N / な-adj + だからこそ、〜",
+        "忙しい → 忙しいからこそ、休むべきだ",
+        "田舎 → 田舎だからこそ、星がきれいだ"
+      ],
+      "explanation": "〜からこそ means 'precisely because': you take an ordinary reason and insist that it, and not something else, is the point (忙しいからこそ休むべきだ). Verbs and い-adjectives use the plain form; nouns and な-adjectives add だ (田舎だからこそ). The sentence often closes with のだ / んです to underline the claim, and the reason is frequently surprising, the opposite of what a listener expects. こそ never attaches to ので.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{君|きみ}のことを{大切|たいせつ}に{思|おも}っているからこそ、{厳|きび}しく{言|い}うんだ。",
+          "kana": "きみのことをたいせつにおもっているからこそ、きびしくいうんだ。",
+          "en": "It's precisely because I care about you that I'm strict."
+        },
+        {
+          "ja": "{忙|いそが}しいからこそ、{休|やす}む{時間|じかん}を{作|つく}るべきです。",
+          "kana": "いそがしいからこそ、やすむじかんをつくるべきです。",
+          "en": "Precisely because you're busy, you should make time to rest."
+        },
+        {
+          "ja": "{田舎|いなか}だからこそ、{星|ほし}がきれいに{見|み}えるのだ。",
+          "kana": "いなかだからこそ、ほしがきれいにみえるのだ。",
+          "en": "It's exactly because this is the countryside that the stars look so beautiful."
+        },
+        {
+          "ja": "{失敗|しっぱい}したからこそ、{学|まな}べることがある。",
+          "kana": "しっぱいしたからこそ、まなべることがある。",
+          "en": "There are things you learn precisely because you failed."
+        }
+      ],
+      "clozeHints": [
+        "からこそ"
+      ],
+      "mistakes": [
+        "× 忙しいのでこそ → ○ 忙しいからこそ (こそ pairs with から, never ので)",
+        "× 田舎からこそ → ○ 田舎だからこそ (nouns need だ before からこそ)"
+      ],
+      "related": [
+        "g-n5-057",
+        "g-n2-021",
+        "g-n2-087",
+        "g-n2-023"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-023",
+      "pattern": "〜だけに / 〜だけあって",
+      "meaning": "as you would expect from …; all the more because …",
+      "formation": [
+        "V / い-adj plain form + だけに / だけあって",
+        "な-adj + な + だけに / だけあって",
+        "N + (である) + だけに / だけあって",
+        "さすが(に) + N + だけあって、〜",
+        "期待していた → 期待していただけに、残念だった"
+      ],
+      "explanation": "〜だけあって means 'as you would expect from X': the result fits X's reputation or effort (有名な店だけあって味は最高). 〜だけに shares that use but can also mean 'all the more because', when X makes an emotion stronger (高かっただけに、ショックは大きかった). Verbs and い-adjectives use the plain form, な-adjectives keep な, nouns attach directly. さすが(に) often opens the sentence. だけあって is praise only; だけに works for disappointment too.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{十年|じゅうねん}も{日本|にほん}に{住|す}んでいただけあって、{日本語|にほんご}がうまい。",
+          "kana": "かれはじゅうねんもにほんにすんでいただけあって、にほんごがうまい。",
+          "en": "Having lived in Japan for ten years, as you'd expect, his Japanese is good."
+        },
+        {
+          "ja": "{高|たか}かっただけに、{壊|こわ}れた{時|とき}のショックは{大|おお}きかった。",
+          "kana": "たかかっただけに、こわれたときのショックはおおきかった。",
+          "en": "Precisely because it was expensive, the shock when it broke was all the greater."
+        },
+        {
+          "ja": "さすがに{有名|ゆうめい}な{店|みせ}だけあって、{味|あじ}は{最高|さいこう}でした。",
+          "kana": "さすがにゆうめいなみせだけあって、あじはさいこうでした。",
+          "en": "As you'd expect of a famous restaurant, the food was superb."
+        },
+        {
+          "ja": "{期待|きたい}していただけに、{中止|ちゅうし}の{知|し}らせは{残念|ざんねん}だった。",
+          "kana": "きたいしていただけに、ちゅうしのしらせはざんねんだった。",
+          "en": "Because I'd been looking forward to it, the news of the cancellation was all the more disappointing."
+        }
+      ],
+      "clozeHints": [
+        "だけに",
+        "だけあって"
+      ],
+      "mistakes": [
+        "× 期待していただけあって、残念だった → ○ 期待していただけに、残念だった (だけあって only introduces a fitting good result; for a heightened negative feeling use だけに)",
+        "× 有名だけあって → ○ 有名なだけあって (な-adjectives keep な)"
+      ],
+      "related": [
+        "g-n2-022",
+        "g-n2-084",
+        "g-n5-038",
+        "g-n3-107"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 40
+    },
+    {
+      "id": "g-n2-024",
+      "pattern": "〜に越したことはない",
+      "meaning": "nothing beats …; it's best to …",
+      "formation": [
+        "V-dictionary + に越したことはない (こしたことはない)",
+        "い-adj + に越したことはない",
+        "な-adj stem / N + (である)に越したことはない",
+        "注意する → 注意するに越したことはない",
+        "早い → 早いに越したことはありません"
+      ],
+      "explanation": "〜に越したことはない means 'nothing is better than X, so X is best', often with the feeling 'to be safe'. Attach a dictionary-form verb (注意するに越したことはない) or an い-adjective directly (早いに越したことはない); nouns and な-adjectives take である or attach directly. It states a general preference, not a strong obligation, and is usually followed by a practical concession (が、…). The polite ending is に越したことはありません.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{海外|かいがい}では、{注意|ちゅうい}するに{越|こ}したことはない。",
+          "kana": "かいがいでは、ちゅういするにこしたことはない。",
+          "en": "Abroad, you can never be too careful."
+        },
+        {
+          "ja": "{旅行|りょこう}の{準備|じゅんび}は{早|はや}いに{越|こ}したことはありません。",
+          "kana": "りょこうのじゅんびははやいにこしたことはありません。",
+          "en": "When it comes to trip preparations, the earlier the better."
+        },
+        {
+          "ja": "{家賃|やちん}は{安|やす}いに{越|こ}したことはないが、{駅|えき}から{近|ちか}い{方|ほう}がいい。",
+          "kana": "やちんはやすいにこしたことはないが、えきからちかいほうがいい。",
+          "en": "Cheaper rent is always better, but I'd rather be near the station."
+        },
+        {
+          "ja": "{病院|びょういん}に{行|い}かずに{済|す}むなら、それに{越|こ}したことはない。",
+          "kana": "びょういんにいかずにすむなら、それにこしたことはない。",
+          "en": "If I can get by without going to the hospital, so much the better."
+        }
+      ],
+      "clozeHints": [
+        "に越したことはない",
+        "に越したことはありません"
+      ],
+      "mistakes": [
+        "× 安いのに越したことはない → ○ 安いに越したことはない (い-adjectives attach directly)",
+        "× 注意しに越したことはない → ○ 注意するに越したことはない (use the dictionary form)"
+      ],
+      "related": [
+        "g-n5-089",
+        "g-n3-062",
+        "g-n3-035"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-025",
+      "pattern": "〜のみならず",
+      "meaning": "not only … but also … (written)",
+      "formation": [
+        "N + のみならず、〜も / 〜でも",
+        "Plain form + のみならず",
+        "な-adj + である + のみならず",
+        "国内 → 国内のみならず、海外でも",
+        "壊した → 建物を壊したのみならず、人々の心にも"
+      ],
+      "explanation": "〜のみならず means 'not only… but also' in written or formal Japanese: 国内のみならず海外でも. のみ is the literary だけ and ならず the literary ではなく, so nouns attach directly, verbs and い-adjectives in the plain form, な-adjectives with である. The second part keeps its own particle and adds も (でも, にも). You see it in essays, reports and speeches; in conversation use だけでなく. The added item is usually broader or more significant.",
+      "jlpt": 2,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "この{製品|せいひん}は{国内|こくない}のみならず、{海外|かいがい}でも{人気|にんき}がある。",
+          "kana": "このせいひんはこくないのみならず、かいがいでもにんきがある。",
+          "en": "This product is popular not only in Japan but overseas too."
+        },
+        {
+          "ja": "{彼|かれ}は{学者|がくしゃ}としてのみならず、{詩人|しじん}としても{知|し}られている。",
+          "kana": "かれはがくしゃとしてのみならず、しじんとしてもしられている。",
+          "en": "He is known not only as a scholar but also as a poet."
+        },
+        {
+          "ja": "{地震|じしん}は{建物|たてもの}を{壊|こわ}したのみならず、{人々|ひとびと}の{心|こころ}にも{深|ふか}い{傷|きず}を{残|のこ}した。",
+          "kana": "じしんはたてものをこわしたのみならず、ひとびとのこころにもふかいきずをのこした。",
+          "en": "The earthquake not only destroyed buildings but left deep scars on people's hearts."
+        },
+        {
+          "ja": "{喫煙|きつえん}は{本人|ほんにん}のみならず、{周|まわ}りの{人|ひと}の{健康|けんこう}にも{害|がい}を{与|あた}える。",
+          "kana": "きつえんはほんにんのみならず、まわりのひとのけんこうにもがいをあたえる。",
+          "en": "Smoking harms not only the smoker but also the health of those around them."
+        }
+      ],
+      "clozeHints": [
+        "のみならず"
+      ],
+      "mistakes": [
+        "× 国内のみならず、海外も → ○ 国内のみならず、海外でも (the second part keeps its particle plus も)",
+        "× 国内だけのみならず → ○ 国内のみならず (のみ already means 'only')"
+      ],
+      "related": [
+        "g-n3-082",
+        "g-n3-081",
+        "g-n2-007",
+        "g-n2-026",
+        "g-n2-001"
+      ],
+      "tags": [
+        "written"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-026",
+      "pattern": "〜ばかりか",
+      "meaning": "not only … but even …",
+      "formation": [
+        "N + ばかりか、〜も / 〜まで / 〜さえ",
+        "Plain form + ばかりか",
+        "な-adj + な + ばかりか",
+        "忘れた → 約束を忘れたばかりか、謝りもしなかった",
+        "英語 → 英語ばかりか、フランス語も"
+      ],
+      "explanation": "〜ばかりか means 'not only… but even…': the second clause piles on something more striking, often marked by も, まで or さえ (約束を忘れたばかりか謝りもしなかった). Nouns attach directly, verbs and い-adjectives in the plain form, な-adjectives with な. The tone is emphatic, so it suits complaints and surprised praise alike. Unlike だけでなく, you cannot follow it with a request or wish; it only describes.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{約束|やくそく}を{忘|わす}れたばかりか、{謝|あやま}りもしなかった。",
+          "kana": "かれはやくそくをわすれたばかりか、あやまりもしなかった。",
+          "en": "Not only did he forget the promise, he didn't even apologize."
+        },
+        {
+          "ja": "この{薬|くすり}は{効|き}かないばかりか、{体|からだ}に{悪|わる}い{影響|えいきょう}まで{与|あた}える。",
+          "kana": "このくすりはきかないばかりか、からだにわるいえいきょうまであたえる。",
+          "en": "Far from working, this medicine even has harmful effects on the body."
+        },
+        {
+          "ja": "{田中|たなか}さんは{道|みち}を{教|おし}えてくれたばかりか、{駅|えき}まで{送|おく}ってくれた。",
+          "kana": "たなかさんはみちをおしえてくれたばかりか、えきまでおくってくれた。",
+          "en": "Mr. Tanaka not only showed me the way but even took me to the station."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{英語|えいご}ばかりか、フランス{語|ご}も{話|はな}せる。",
+          "kana": "かのじょはえいごばかりか、フランスごもはなせる。",
+          "en": "She speaks not only English but even French."
+        }
+      ],
+      "clozeHints": [
+        "ばかりか"
+      ],
+      "mistakes": [
+        "× 英語ばかりか、話せる → ○ 英語ばかりか、フランス語も話せる (the second clause must add a more striking item with も / まで / さえ)",
+        "× 忘れるばかりか謝らなかった → ○ 忘れたばかりか謝らなかった (match the tense of the first clause to the event)"
+      ],
+      "related": [
+        "g-n3-081",
+        "g-n3-082",
+        "g-n2-025",
+        "g-n2-007",
+        "g-n3-079"
+      ],
+      "tags": [
+        "quantity"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-027",
+      "pattern": "〜上で",
+      "meaning": "after doing … (and on that basis); in doing …",
+      "formation": [
+        "V-た + 上で (うえで)、〜 (after; a required step)",
+        "N + の上で、〜 (after)",
+        "V-dictionary + 上で、〜 (in doing; for)",
+        "相談した → 相談した上で決める",
+        "学ぶ → 外国語を学ぶ上で大切なこと"
+      ],
+      "explanation": "〜上で has two readings of the situation. After a た-form verb or N の, it means 'after doing X and on that basis' (相談した上で決める): X is a necessary step. After a dictionary-form verb or N の, it means 'in doing X, for X' (外国語を学ぶ上で大切なこと): X is the field in which something matters. The particle で may drop before a comma in notices (確認の上、). Read it うえで. Do not mix it up with 上に, which means 'on top of that'.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{家族|かぞく}とよく{相談|そうだん}した{上|うえ}で、{決|き}めたいと{思|おも}います。",
+          "kana": "かぞくとよくそうだんしたうえで、きめたいとおもいます。",
+          "en": "I'd like to decide after talking it over properly with my family."
+        },
+        {
+          "ja": "{内容|ないよう}をご{確認|かくにん}の{上|うえ}で、サインをお{願|ねが}いします。",
+          "kana": "ないようをごかくにんのうえで、サインをおねがいします。",
+          "en": "Please sign after checking the contents."
+        },
+        {
+          "ja": "{外国語|がいこくご}を{学|まな}ぶ{上|うえ}で、{一番|いちばん}{大切|たいせつ}なのは{続|つづ}けることだ。",
+          "kana": "がいこくごをまなぶうえで、いちばんたいせつなのはつづけることだ。",
+          "en": "In learning a foreign language, the most important thing is to keep going."
+        },
+        {
+          "ja": "{仕事|しごと}をする{上|うえ}で、{人間|にんげん}{関係|かんけい}は{避|さ}けて{通|とお}れない。",
+          "kana": "しごとをするうえで、にんげんかんけいはさけてとおれない。",
+          "en": "In doing a job, you cannot avoid dealing with people."
+        }
+      ],
+      "clozeHints": [
+        "上で"
+      ],
+      "mistakes": [
+        "× 相談する上で、決めた → ○ 相談した上で、決めた (for 'after doing', the verb is in the た-form)",
+        "× 確認上で → ○ 確認の上で (a noun needs の)"
+      ],
+      "related": [
+        "g-n5-070",
+        "g-n5-071",
+        "g-n3-071",
+        "g-n3-110"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-028",
+      "pattern": "〜に反して",
+      "meaning": "contrary to …; against …",
+      "formation": [
+        "N + に反して、〜 (はんして)",
+        "N + に反し、〜 (written)",
+        "N + に反する + N",
+        "予想 → 予想に反して、簡単に終わった",
+        "規則 → 規則に反する行為"
+      ],
+      "explanation": "N に反して means 'contrary to N', where N is an expectation, forecast, wish, rule or order: 予想に反して. The written variant is に反し; before a noun, に反する (規則に反する行為). It needs something that was supposed to happen or be obeyed, so it does not compare two unrelated things; for that use に対して or と違って. The result that follows is usually the opposite of what N promised. It is formal and common in news and reports.",
+      "jlpt": 2,
+      "register": "written",
+      "examples": [
+        {
+          "ja": "{予想|よそう}に{反|はん}して、{試合|しあい}は{簡単|かんたん}に{終|お}わった。",
+          "kana": "よそうにはんして、しあいはかんたんにおわった。",
+          "en": "Contrary to expectations, the match ended easily."
+        },
+        {
+          "ja": "{親|おや}の{期待|きたい}に{反|はん}して、{彼|かれ}は{大学|だいがく}を{辞|や}めてしまった。",
+          "kana": "おやのきたいにはんして、かれはだいがくをやめてしまった。",
+          "en": "Against his parents' hopes, he dropped out of university."
+        },
+        {
+          "ja": "{規則|きそく}に{反|はん}する{行為|こうい}は{認|みと}められません。",
+          "kana": "きそくにはんするこういはみとめられません。",
+          "en": "Acts that violate the rules are not permitted."
+        },
+        {
+          "ja": "{天気|てんき}{予報|よほう}に{反|はん}し、{午後|ごご}から{強|つよ}い{雨|あめ}が{降|ふ}り{出|だ}した。",
+          "kana": "てんきよほうにはんし、ごごからつよいあめがふりだした。",
+          "en": "Contrary to the forecast, heavy rain started in the afternoon."
+        }
+      ],
+      "clozeHints": [
+        "に反して",
+        "に反する",
+        "に反し"
+      ],
+      "mistakes": [
+        "× 予想を反して → ○ 予想に反して (the particle is に)",
+        "× 兄に反して、弟は静かだ → ○ 兄と違って、弟は静かだ (a plain contrast takes と違って or に対して; に反して needs an expectation or rule that is contradicted)"
+      ],
+      "related": [
+        "g-n3-017",
+        "g-n3-028",
+        "g-n2-029",
+        "g-n4-073"
+      ],
+      "tags": [
+        "written"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-029",
+      "pattern": "〜にもかかわらず",
+      "meaning": "despite …; in spite of …",
+      "formation": [
+        "N + にもかかわらず、〜",
+        "Plain form + にもかかわらず",
+        "な-adj + である + にもかかわらず",
+        "Sentence-initial: それにもかかわらず、〜",
+        "雨 → 雨にもかかわらず、多くの人が集まった"
+      ],
+      "explanation": "〜にもかかわらず means 'despite, in spite of': something happened although the first clause gave every reason for the opposite (雨にもかかわらず多くの人が集まった). Nouns attach directly, verbs and い-adjectives in the plain form, な-adjectives with である. The sentence-opener それにもかかわらず works like 'nevertheless'. It is more formal than のに and carries no personal complaint; it also never ends with a request. Do not confuse it with にかかわらず, 'regardless of'.",
+      "jlpt": 2,
+      "register": "formal",
+      "examples": [
+        {
+          "ja": "{雨|あめ}にもかかわらず、{多|おお}くの{人|ひと}が{集|あつ}まった。",
+          "kana": "あめにもかかわらず、おおくのひとがあつまった。",
+          "en": "Despite the rain, many people gathered."
+        },
+        {
+          "ja": "{一生懸命|いっしょうけんめい}{練習|れんしゅう}したにもかかわらず、{試合|しあい}に{負|ま}けてしまった。",
+          "kana": "いっしょうけんめいれんしゅうしたにもかかわらず、しあいにまけてしまった。",
+          "en": "Despite practicing hard, we lost the match."
+        },
+        {
+          "ja": "{彼|かれ}は{忙|いそが}しいにもかかわらず、わざわざ{会|あ}いに{来|き}てくれた。",
+          "kana": "かれはいそがしいにもかかわらず、わざわざあいにきてくれた。",
+          "en": "Even though he's busy, he went out of his way to come and see me."
+        },
+        {
+          "ja": "{何度|なんど}も{注意|ちゅうい}した。それにもかかわらず、{彼|かれ}は{同|おな}じミスを{繰|く}り{返|かえ}した。",
+          "kana": "なんどもちゅういした。それにもかかわらず、かれはおなじミスをくりかえした。",
+          "en": "I warned him many times. Nevertheless, he repeated the same mistake."
+        }
+      ],
+      "clozeHints": [
+        "にもかかわらず"
+      ],
+      "mistakes": [
+        "× 雨なのにもかかわらず → ○ 雨にもかかわらず (nouns attach directly; do not add なの)",
+        "× 雨にもかかわらず、中止になった → ○ 雨のため、中止になった (the second clause must run against what the first leads you to expect)"
+      ],
+      "related": [
+        "g-n4-073",
+        "g-n4-071",
+        "g-n2-046",
+        "g-n2-047",
+        "g-n2-077",
+        "g-n2-028"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-030",
+      "pattern": "〜というと / 〜といえば / 〜といったら",
+      "meaning": "speaking of …; when you say …",
+      "formation": [
+        "N + というと、〜 (picking up a topic; asking 'you mean…?')",
+        "N + といえば、〜 (association)",
+        "N + といったら、〜 (association; extreme degree)",
+        "秋 → 秋といえば、紅葉ですね",
+        "寒さ → あの寒さといったら、忘れられないほどだった"
+      ],
+      "explanation": "N というと, といえば or といったら mean 'speaking of N' and pick up a word just mentioned or a topic to free-associate from: 秋といえば紅葉ですね. というと also asks for confirmation ('when you say N, you mean…?'). といったら has an extra use: it marks an extreme degree, often ending in ほど or ない (あの寒さといったら). All three are written in kana. They introduce an association, not a story about yourself; for 'as for N' use は.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{秋|あき}といえば、やはり{紅葉|こうよう}ですね。",
+          "kana": "あきといえば、やはりこうようですね。",
+          "en": "Speaking of autumn, it has to be the colored leaves."
+        },
+        {
+          "ja": "{京都|きょうと}というと、{古|ふる}いお{寺|てら}を{思|おも}い{出|だ}す{人|ひと}が{多|おお}い。",
+          "kana": "きょうとというと、ふるいおてらをおもいだすひとがおおい。",
+          "en": "When people hear \"Kyoto,\" many think of old temples."
+        },
+        {
+          "ja": "{田中|たなか}さんといえば、{最近|さいきん}{全然|ぜんぜん}{見|み}かけませんね。",
+          "kana": "たなかさんといえば、さいきんぜんぜんみかけませんね。",
+          "en": "Speaking of Mr. Tanaka, I haven't seen him at all lately."
+        },
+        {
+          "ja": "あの{時|とき}の{寒|さむ}さといったら、{今|いま}でも{忘|わす}れられないほどだった。",
+          "kana": "あのときのさむさといったら、いまでもわすれられないほどだった。",
+          "en": "The cold that day was something I still can't forget."
+        },
+        {
+          "ja": "「{会議|かいぎ}は{来週|らいしゅう}です」「{来週|らいしゅう}というと、{水曜日|すいようび}ですか」",
+          "kana": "「かいぎはらいしゅうです」「らいしゅうというと、すいようびですか」",
+          "en": "\"The meeting is next week.\" \"Next week, you mean Wednesday?\""
+        }
+      ],
+      "clozeHints": [
+        "というと",
+        "といえば",
+        "といったら"
+      ],
+      "mistakes": [
+        "× 秋といえば、私は行きました → ○ 秋といえば、紅葉ですね (the pattern names what the topic brings to mind; it does not start an unrelated story)",
+        "× 京都といえばは → ○ 京都といえば (no extra は)"
+      ],
+      "related": [
+        "g-n4-038",
+        "g-n4-039",
+        "g-n3-008",
+        "g-n3-077"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-031",
+      "pattern": "〜ことに(は) (emotive)",
+      "meaning": "to my (surprise, regret, delight), …",
+      "formation": [
+        "Emotion V-た + ことに、〜: 驚いたことに · 困ったことに",
+        "Emotion い-adj + ことに、〜: 嬉しいことに · 悲しいことに",
+        "Emotion な-adj + な + ことに、〜: 残念なことに · 不思議なことに",
+        "Fuller form: 〜ことには"
+      ],
+      "explanation": "Emotion word + ことに means 'to my (surprise, regret, delight), …' and fronts the speaker's feeling before the fact: 驚いたことに, 残念なことに, 嬉しいことに. Verbs of emotion take the た-form, い-adjectives attach directly, な-adjectives keep な. The clause that follows is a statement of fact, never a request or guess. ことには is the slightly older fuller form. It is a comment pattern for narration and essays; in casual talk you just say びっくりしたけど.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{驚|おどろ}いたことに、{彼|かれ}は{一度|いちど}も{日本|にほん}に{来|き}たことがないそうだ。",
+          "kana": "おどろいたことに、かれはいちどもにほんにきたことがないそうだ。",
+          "en": "Surprisingly, he has apparently never been to Japan."
+        },
+        {
+          "ja": "{残念|ざんねん}なことに、{楽|たの}しみにしていた{花火|はなび}{大会|たいかい}は{中止|ちゅうし}になった。",
+          "kana": "ざんねんなことに、たのしみにしていたはなびたいかいはちゅうしになった。",
+          "en": "Sadly, the fireworks show I had looked forward to was canceled."
+        },
+        {
+          "ja": "{嬉|うれ}しいことに、{息子|むすこ}が{希望|きぼう}の{大学|だいがく}に{合格|ごうかく}しました。",
+          "kana": "うれしいことに、むすこがきぼうのだいがくにごうかくしました。",
+          "en": "To my delight, my son got into the university he wanted."
+        },
+        {
+          "ja": "{困|こま}ったことには、{財布|さいふ}を{家|いえ}に{忘|わす}れてきてしまった。",
+          "kana": "こまったことには、さいふをいえにわすれてきてしまった。",
+          "en": "The trouble is, I left my wallet at home."
+        }
+      ],
+      "clozeHints": [
+        "ことに"
+      ],
+      "mistakes": [
+        "× 驚くことに → ○ 驚いたことに (verbs of emotion take the た-form here)",
+        "× 残念ことに → ○ 残念なことに (な-adjectives keep な)",
+        "× 嬉しいことに、頑張ってください → ○ 嬉しいことに、合格した (the clause after ことに reports a fact, not a request)"
+      ],
+      "related": [
+        "g-n3-104",
+        "g-n3-068",
+        "g-n2-032",
+        "g-n2-033"
+      ],
+      "tags": [
+        "emotions"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-032",
+      "pattern": "〜ことだから",
+      "meaning": "since it's (someone we know), surely …",
+      "formation": [
+        "N(person) + のことだから、〜だろう / 〜はずだ / 〜に違いない",
+        "(adjective +) 彼 → 真面目な彼のことだから、時間どおりに来るだろう",
+        "ハナ → ハナのことだから、きっと道に迷っている"
+      ],
+      "explanation": "N のことだから means 'since it is N, and we both know what N is like, surely…': 真面目な彼のことだから時間どおりに来るだろう. N is a person whose character is known to speaker and listener, often with an adjective attached. The main clause is a confident guess: だろう, はずだ, に違いない, きっと. It does not work for weather, things or strangers; use だから or ので. It reads as warm and familiar, not formal.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{真面目|まじめ}な{彼|かれ}のことだから、{時間|じかん}どおりに{来|く}るだろう。",
+          "kana": "まじめなかれのことだから、じかんどおりにくるだろう。",
+          "en": "Knowing how conscientious he is, he'll surely come on time."
+        },
+        {
+          "ja": "ハナのことだから、きっと{道|みち}に{迷|まよ}っているに{違|ちが}いない。",
+          "kana": "ハナのことだから、きっとみちにまよっているにちがいない。",
+          "en": "Knowing Hana, she has surely gotten lost."
+        },
+        {
+          "ja": "{田中|たなか}さんのことだから、もう{準備|じゅんび}を{終|お}えているはずです。",
+          "kana": "たなかさんのことだから、もうじゅんびをおえているはずです。",
+          "en": "Being Mr. Tanaka, he's bound to have finished the preparations already."
+        },
+        {
+          "ja": "{忘|わす}れっぽい{弟|おとうと}のことだから、また{鍵|かぎ}をなくしたのだろう。",
+          "kana": "わすれっぽいおとうとのことだから、またかぎをなくしたのだろう。",
+          "en": "Given how forgetful my brother is, he's probably lost his keys again."
+        }
+      ],
+      "clozeHints": [
+        "のことだから"
+      ],
+      "mistakes": [
+        "× 彼ことだから → ○ 彼のことだから (the person takes の)",
+        "× 雨のことだから、中止だろう → ○ 雨だから、中止だろう (ことだから is for people whose character you know, not for things or weather)"
+      ],
+      "related": [
+        "g-n2-031",
+        "g-n3-073",
+        "g-n4-063",
+        "g-n2-033"
+      ],
+      "tags": [
+        "people",
+        "personality"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-033",
+      "pattern": "〜ことはない (no need)",
+      "meaning": "there is no need to …",
+      "formation": [
+        "V-dictionary + ことはない / ことはありません",
+        "何も + V-dictionary + ことはない (no need at all)",
+        "Past: V-dictionary + ことはなかった(のに)",
+        "急ぐ → そんなに急ぐことはないよ",
+        "謝る → 何も謝ることはありません"
+      ],
+      "explanation": "V-dictionary + ことはない means 'there is no need to', often with reassurance: そんなに急ぐことはないよ. 何も〜ことはない strengthens it ('no need at all'). The past ことはなかった(のに) says someone did something unnecessary. Keep the verb in the dictionary form; with the た-form, 〜たことはない means 'have never done', a different pattern. なくてもいい gives permission not to do something; ことはない argues that doing it is pointless.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{時間|じかん}はまだあるから、そんなに{急|いそ}ぐことはないよ。",
+          "kana": "じかんはまだあるから、そんなにいそぐことはないよ。",
+          "en": "There's still time, so there's no need to rush like that."
+        },
+        {
+          "ja": "{小|ちい}さなミスなので、{何|なに}も{謝|あやま}ることはありません。",
+          "kana": "ちいさなミスなので、なにもあやまることはありません。",
+          "en": "It's a small mistake; there's no need to apologize."
+        },
+        {
+          "ja": "{君|きみ}が{悪|わる}いわけではないのだから、{気|き}にすることはない。",
+          "kana": "きみがわるいわけではないのだから、きにすることはない。",
+          "en": "It's not your fault, so there's no need to worry about it."
+        },
+        {
+          "ja": "わざわざ{来|く}ることはなかったのに。{電話|でんわ}で{十分|じゅうぶん}だったよ。",
+          "kana": "わざわざくることはなかったのに。でんわでじゅうぶんだったよ。",
+          "en": "You didn't need to come all this way. A phone call would have been enough."
+        }
+      ],
+      "clozeHints": [
+        "ことはない",
+        "ことはありません",
+        "ことはなかった"
+      ],
+      "mistakes": [
+        "× 急いだことはない → ○ 急ぐことはない (for 'no need' use the dictionary form; 急いだことはない means 'I have never hurried')",
+        "× 急ぐことがない → ○ 急ぐことはない (the set phrase takes は)"
+      ],
+      "related": [
+        "g-n5-056",
+        "g-n5-073",
+        "g-n3-006",
+        "g-n2-032"
+      ],
+      "tags": [
+        "communication"
+      ],
+      "station": 41
+    },
+    {
+      "id": "g-n2-034",
+      "pattern": "〜というものだ / 〜というものではない",
+      "meaning": "that is what … is; it is not the case that …",
+      "formation": [
+        "N / plain form + というものだ / というものです",
+        "〜ば / 〜たら + いい + というものではない / というものでもない",
+        "友達 → 助けるのが友達というものだ",
+        "高ければいい → 高ければいいというものではない"
+      ],
+      "explanation": "〜というものだ states what something essentially is, with conviction: 困っている人を助けるのが友達というものだ. It also labels behavior (それはわがままというものだ). 〜というものではない, or the softer というものでもない, denies a common assumption, usually after a conditional: 高ければいいというものではない ('it is not as if expensive means good'). Nouns and plain forms attach directly. Compare ものだ for general truths and ということだ for hearsay; というものだ is the speaker's own judgment.",
+      "jlpt": 2,
+      "register": "neutral",
+      "examples": [
+        {
+          "ja": "{困|こま}っている{人|ひと}を{助|たす}けるのが{友達|ともだち}というものだ。",
+          "kana": "こまっているひとをたすけるのがともだちというものだ。",
+          "en": "Helping a friend in need is what friendship is."
+        },
+        {
+          "ja": "{一人|ひとり}だけ{休|やす}むなんて、それはわがままというものです。",
+          "kana": "ひとりだけやすむなんて、それはわがままというものです。",
+          "en": "Taking a day off by yourself is simply selfish."
+        },
+        {
+          "ja": "{高|たか}ければいいというものではない。",
+          "kana": "たかければいいというものではない。",
+          "en": "It's not as if expensive means good."
+        },
+        {
+          "ja": "お{金|かね}があれば{幸|しあわ}せになれるというものでもないだろう。",
+          "kana": "おかねがあればしあわせになれるというものでもないだろう。",
+          "en": "Having money doesn't necessarily make you happy."
+        },
+        {
+          "ja": "{毎日|まいにち}{練習|れんしゅう}すればうまくなるというものではありません。",
+          "kana": "まいにちれんしゅうすればうまくなるというものではありません。",
+          "en": "Practicing every day doesn't automatically make you good."
+        }
+      ],
+      "clozeHints": [
+        "というものだ",
+        "というものです",
+        "というものではない",
+        "というものでもない",
+        "というものではありません"
+      ],
+      "mistakes": [
+        "× 友達ということだ → ○ 友達というものだ (ということだ reports hearsay or a conclusion; というものだ states what something essentially is)",
+        "× 高いのはいいというものではない → ○ 高ければいいというものではない (the negative form usually follows a conditional 〜ば / 〜たら)"
+      ],
+      "related": [
+        "g-n3-033",
+        "g-n3-034",
+        "g-n3-007",
+        "g-n3-076"
+      ],
+      "tags": [
+        "abstract"
+      ],
+      "station": 41
+    }
+  ]
+}

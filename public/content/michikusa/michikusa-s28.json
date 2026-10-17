@@ -1,0 +1,46 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s28",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-28-1",
+      "stationId": "st-28",
+      "kind": "road-history",
+      "titleEn": "Ferry across the Tenryū",
+      "bodyEn": "Mitsuke, the twenty-eighth post town, grew up around the ancient provincial seat of Tōtōmi; its name means a lookout, like the guarded mitsuke gates of Edo Castle. West of town the Tenryū, flowing down from Lake Suwa, was too wide and swift to wade, so travelers crossed by ferry. Hiroshige shows the boats in river mist.",
+      "sourceNote": "Hiroshige, Hōeidō Tōkaidō No. 29 Mitsuke: Tenryūgawa zu; 東海道宿村大概帳 (1843)"
+    },
+    {
+      "id": "m-28-2",
+      "stationId": "st-28",
+      "kind": "etymology",
+      "titleEn": "A knife named for a cook",
+      "bodyEn": "包丁 (hōchō), the kitchen knife, was once a man. In the Chinese classic Zhuangzi, the cook Pao Ding (庖丁) carves an ox so skillfully that his blade never dulls. Japanese borrowed 庖丁 to mean a cook, then a cook's knife, 庖丁刀, and finally dropped the second half. The simpler 包 replaced the rarer 庖 in twentieth-century spelling reform.",
+      "ja": "{包丁|ほうちょう}",
+      "kana": "ほうちょう",
+      "sourceNote": "Zhuangzi (荘子) 養生主; Nihon Kokugo Daijiten (日本国語大辞典), entry 包丁"
+    },
+    {
+      "id": "m-28-3",
+      "stationId": "st-28",
+      "kind": "kanji-origin",
+      "titleEn": "Looking straight ahead",
+      "bodyEn": "The oldest forms of 直 show an eye (目) with a straight line rising from it: a gaze that goes dead ahead. The Shuowen Jiezi glosses it 'to look straight'. From straight came honest (正直), direct (直接), and to set straight, naosu (直す), to fix. Attach it to another verb and you redo the action: kakinaosu, rewrite.",
+      "ja": "{書|か}き{直|なお}す",
+      "kana": "かきなおす",
+      "sourceNote": "Shuowen Jiezi (説文解字), entry 直 「正見也」; 新字源"
+    },
+    {
+      "id": "m-28-4",
+      "stationId": "st-28",
+      "kind": "proverb",
+      "titleEn": "Poling with the current",
+      "bodyEn": "Nagare ni sao sasu: to push a pole into the stream, as the Tenryū boatmen did, and ride with the current. The idiom originally means going with the flow and gaining speed. Most speakers today take it to mean the opposite, resisting the current, as national language surveys keep showing, so expect both readings in the wild.",
+      "ja": "{流|なが}れに{棹|さお}さす",
+      "kana": "ながれにさおさす",
+      "sourceNote": "Nihon Kokugo Daijiten (日本国語大辞典), entry 流れに棹さす; 文化庁 国語に関する世論調査"
+    }
+  ]
+}

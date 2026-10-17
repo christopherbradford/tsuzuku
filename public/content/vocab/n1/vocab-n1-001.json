@@ -1,0 +1,6106 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n1",
+  "writer": "vocab-n1-001",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n1-0001",
+      "word": "縁",
+      "kana": "えん",
+      "meanings": [
+        "connection",
+        "fate that links people",
+        "ties"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "people",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{旅先|たびさき}で{出会|であ}った{人|ひと}と、{十年|じゅうねん}たった{今|いま}も{縁|えん}が{続|つづ}いている。",
+          "kana": "たびさきでであったひとと、じゅうねんたったいまもえんがつづいている。",
+          "en": "Ten years on, I am still connected to a person I met while traveling."
+        },
+        {
+          "ja": "{不思議|ふしぎ}なご{縁|えん}で、{今回|こんかい}{皆|みな}さんと{一緒|いっしょ}に{働|はたら}くことになりました。",
+          "kana": "ふしぎなごえんで、こんかいみなさんといっしょにはたらくことになりました。",
+          "en": "By a curious stroke of fate, I will be working alongside all of you this time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}と{人|ひと}を{結|むす}びつける、{目|め}に{見|み}えないつながり。",
+        "kana": "ひととひとをむすびつける、めにみえないつながり。"
+      },
+      "frequencyRank": 5000,
+      "notes": "Also read えにし in poetic use. 縁がある / 縁がない: to be (not) fated to meet; ご縁 in polite speech.",
+      "collocations": [
+        "縁がある",
+        "ご縁",
+        "縁を切る"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0002",
+      "word": "覆う",
+      "kana": "おおう",
+      "meanings": [
+        "to cover",
+        "to envelop"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "nature"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{朝|あさ}になると、{町|まち}は{一面|いちめん}{白|しろ}い{霧|きり}に{覆|おお}われていた。",
+          "kana": "あさになると、まちはいちめんしろいきりにおおわれていた。",
+          "en": "By morning the town was blanketed in white fog."
+        },
+        {
+          "ja": "{雪|ゆき}が{降|ふ}る{前|まえ}に、{庭|にわ}の{木|き}をわらで{覆|おお}っておきましょう。",
+          "kana": "ゆきがふるまえに、にわのきをわらでおおっておきましょう。",
+          "en": "Before the snow comes, let's cover the garden trees with straw."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{上|うえ}に{何|なに}かをかぶせて、{全体|ぜんたい}を{隠|かく}すこと。",
+        "kana": "もののうえになにかをかぶせて、ぜんたいをかくすこと。"
+      },
+      "frequencyRank": 5007,
+      "collocations": [
+        "霧に覆われる",
+        "手で顔を覆う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0003",
+      "word": "漂う",
+      "kana": "ただよう",
+      "meanings": [
+        "to drift",
+        "to float",
+        "to hang in the air (smell, mood)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "nature"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{店|みせ}に{入|はい}ると、{焼|や}きたてのパンの{香|かお}りが{漂|ただよ}っていた。",
+          "kana": "みせにはいると、やきたてのパンのかおりがただよっていた。",
+          "en": "When I walked into the shop, the smell of freshly baked bread hung in the air."
+        },
+        {
+          "ja": "{会議室|かいぎしつ}には、{誰|だれ}も{口|くち}を{開|ひら}かない{重|おも}い{空気|くうき}が{漂|ただよ}っている。",
+          "kana": "かいぎしつには、だれもくちをひらかないおもいくうきがただよっている。",
+          "en": "A heavy mood hangs over the meeting room, and no one is saying a word."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{水|みず}や{空気|くうき}の{中|なか}を、ゆっくりと{流|なが}れたり{浮|う}かんだりすること。",
+        "kana": "みずやくうきのなかを、ゆっくりとながれたりうかんだりすること。"
+      },
+      "frequencyRank": 5013,
+      "collocations": [
+        "香りが漂う",
+        "雰囲気が漂う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0004",
+      "word": "覗く",
+      "kana": "のぞく",
+      "meanings": [
+        "to peek into",
+        "to look in on",
+        "to peer through"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "places"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{帰|かえ}り{道|みち}、{新|あたら}しくできた{本屋|ほんや}をちょっと{覗|のぞ}いてみた。",
+          "kana": "かえりみち、あたらしくできたほんやをちょっとのぞいてみた。",
+          "en": "On the way home I popped into the new bookstore for a quick look."
+        },
+        {
+          "ja": "{時間|じかん}があれば、{帰|かえ}りに{母|はは}の{様子|ようす}を{覗|のぞ}いてきてくれませんか。",
+          "kana": "じかんがあれば、かえりにははのようすをのぞいてきてくれませんか。",
+          "en": "If you have time, could you look in on my mother on your way home?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{狭|せま}いところから、そっと{中|なか}の{様子|ようす}を{見|み}ること。",
+        "kana": "せまいところから、そっとなかのようすをみること。"
+      },
+      "frequencyRank": 5020,
+      "notes": "Also 'to show through' (雲の間から覗く青空). Casual 覗いてみる = drop in for a quick look.",
+      "collocations": [
+        "中を覗く",
+        "店を覗く"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0005",
+      "word": "携わる",
+      "kana": "たずさわる",
+      "meanings": [
+        "to be engaged in",
+        "to be involved in (work)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "work",
+        "business",
+        "formal"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{父|ちち}は{四十年|よんじゅうねん}にわたって{橋|はし}の{設計|せっけい}に{携|たずさ}わってきた。",
+          "kana": "ちちはよんじゅうねんにわたってはしのせっけいにたずさわってきた。",
+          "en": "My father has been involved in bridge design for forty years."
+        },
+        {
+          "ja": "{将来|しょうらい}は{環境|かんきょう}を{守|まも}る{仕事|しごと}に{携|たずさ}わりたいと{思|おも}っています。",
+          "kana": "しょうらいはかんきょうをまもるしごとにたずさわりたいとおもっています。",
+          "en": "In the future I would like to be involved in work that protects the environment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{仕事|しごと}や{活動|かつどう}に、{自分|じぶん}も{関|かか}わって{働|はたら}くこと。",
+        "kana": "あるしごとやかつどうに、じぶんもかかわってはたらくこと。"
+      },
+      "frequencyRank": 5026,
+      "collocations": [
+        "〜に携わる",
+        "研究に携わる"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0006",
+      "word": "繁栄",
+      "kana": "はんえい",
+      "meanings": [
+        "prosperity",
+        "flourishing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}は{港|みなと}のおかげで{江戸時代|えどじだい}から{繁栄|はんえい}してきた。",
+          "kana": "このまちはみなとのおかげでえどじだいからはんえいしてきた。",
+          "en": "Thanks to its port, this town has prospered since the Edo period."
+        },
+        {
+          "ja": "{経済|けいざい}の{繁栄|はんえい}だけを{追|お}い{求|もと}めれば、{自然|しぜん}は{壊|こわ}れていくだろう。",
+          "kana": "けいざいのはんえいだけをおいもとめれば、しぜんはこわれていくだろう。",
+          "en": "If we chase economic prosperity alone, nature will surely be destroyed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{町|まち}などが{豊|ゆた}かになって、{大|おお}きく{発展|はってん}すること。",
+        "kana": "くにやまちなどがゆたかになって、おおきくはってんすること。"
+      },
+      "frequencyRank": 5033,
+      "confusables": [
+        "v-n1-0007",
+        "v-n1-0092"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0007",
+      "word": "衰退",
+      "kana": "すいたい",
+      "meanings": [
+        "decline",
+        "decay"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{若者|わかもの}が{都会|とかい}へ{出|で}ていき、{地元|じもと}の{商店街|しょうてんがい}は{衰退|すいたい}する{一方|いっぽう}だ。",
+          "kana": "わかものがとかいへでていき、じもとのしょうてんがいはすいたいするいっぽうだ。",
+          "en": "Young people leave for the city, and the local shopping street keeps on declining."
+        },
+        {
+          "ja": "{伝統|でんとう}{工芸|こうげい}の{衰退|すいたい}を{食|く}い{止|と}めようと、{若|わか}い{職人|しょくにん}たちが{新|あたら}しい{商品|しょうひん}を{作|つく}り{始|はじ}めた。",
+          "kana": "でんとうこうげいのすいたいをくいとめようと、わかいしょくにんたちがあたらしいしょうひんをつくりはじめた。",
+          "en": "To halt the decline of traditional crafts, young artisans have begun making new products."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{盛|さか}んだったものの{力|ちから}が{弱|よわ}くなり、だめになっていくこと。",
+        "kana": "さかんだったもののちからがよわくなり、だめになっていくこと。"
+      },
+      "frequencyRank": 5040,
+      "confusables": [
+        "v-n1-0006",
+        "v-n1-0091"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0008",
+      "word": "葛藤",
+      "kana": "かっとう",
+      "meanings": [
+        "inner conflict",
+        "dilemma",
+        "friction"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}を{取|と}るか{家族|かぞく}との{時間|じかん}を{取|と}るか、{彼|かれ}は{長|なが}い{間|あいだ}{葛藤|かっとう}していた。",
+          "kana": "しごとをとるかかぞくとのじかんをとるか、かれはながいあいだかっとうしていた。",
+          "en": "He wrestled for a long time with whether to choose his work or time with his family."
+        },
+        {
+          "ja": "{親|おや}の{期待|きたい}と{自分|じぶん}の{夢|ゆめ}との{間|あいだ}で{葛藤|かっとう}する{若者|わかもの}は{少|すく}なくない。",
+          "kana": "おやのきたいとじぶんのゆめとのあいだでかっとうするわかものはすくなくない。",
+          "en": "Plenty of young people are torn between their parents' expectations and their own dreams."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}の{中|なか}で、{反対|はんたい}の{気持|きも}ちや{考|かんが}えがぶつかって{迷|まよ}うこと。",
+        "kana": "こころのなかで、はんたいのきもちやかんがえがぶつかってまようこと。"
+      },
+      "frequencyRank": 5046,
+      "collocations": [
+        "心の葛藤",
+        "葛藤を抱える"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0009",
+      "word": "苦悩",
+      "kana": "くのう",
+      "meanings": [
+        "anguish",
+        "agony",
+        "suffering"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{小説|しょうせつ}の{主人公|しゅじんこう}は、{自分|じぶん}の{選択|せんたく}が{正|ただ}しかったのかと{苦悩|くのう}し{続|つづ}ける。",
+          "kana": "しょうせつのしゅじんこうは、じぶんのせんたくがただしかったのかとくのうしつづける。",
+          "en": "The novel's protagonist keeps agonizing over whether his choice was right."
+        },
+        {
+          "ja": "{当時|とうじ}の{私|わたし}は、{誰|だれ}にも{言|い}えない{苦悩|くのう}を{抱|かか}えたまま{毎日|まいにち}{会社|かいしゃ}に{通|かよ}っていました。",
+          "kana": "とうじのわたしは、だれにもいえないくのうをかかえたまままいにちかいしゃにかよっていました。",
+          "en": "Back then I went to the office every day carrying an anguish I could not share with anyone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{答|こた}えの{出|で}ない{問題|もんだい}などで、{心|こころ}が{深|ふか}く{苦|くる}しむこと。",
+        "kana": "こたえのでないもんだいなどで、こころがふかくくるしむこと。"
+      },
+      "frequencyRank": 5053,
+      "confusables": [
+        "v-n1-0104",
+        "v-n1-0008"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0010",
+      "word": "宿命",
+      "kana": "しゅくめい",
+      "meanings": [
+        "destiny",
+        "fate (unavoidable)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}が{出会|であ}ったのは{偶然|ぐうぜん}ではなく{宿命|しゅくめい}だったのかもしれない。",
+          "kana": "ふたりがであったのはぐうぜんではなくしゅくめいだったのかもしれない。",
+          "en": "Perhaps their meeting was not chance but destiny."
+        },
+        {
+          "ja": "{小|ちい}さな{島|しま}で{生|う}まれた{者|もの}にとって、{海|うみ}と{共|とも}に{生|い}きるのは{宿命|しゅくめい}のようなものだ。",
+          "kana": "ちいさなしまでうまれたものにとって、うみとともにいきるのはしゅくめいのようなものだ。",
+          "en": "For someone born on a small island, living with the sea is something like destiny."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{生|う}まれる{前|まえ}から{決|き}まっていて、{変|か}えることができない{運命|うんめい}。",
+        "kana": "うまれるまえからきまっていて、かえることができないうんめい。"
+      },
+      "frequencyRank": 5059,
+      "notes": "Stronger and more fixed than 運命; often used for burdens one is born with (宿命のライバル).",
+      "collocations": [
+        "宿命のライバル",
+        "宿命を背負う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0011",
+      "word": "情緒",
+      "kana": "じょうちょ",
+      "meanings": [
+        "atmosphere",
+        "emotional charm",
+        "emotion"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{石畳|いしだたみ}の{道|みち}には、{昔|むかし}ながらの{情緒|じょうちょ}が{残|のこ}っている。",
+          "kana": "ふるいいしだたみのみちには、むかしながらのじょうちょがのこっている。",
+          "en": "The old cobblestone street keeps a charm from times gone by."
+        },
+        {
+          "ja": "{運河|うんが}{沿|ぞ}いの{倉庫街|そうこがい}は、{夜|よる}になると{独特|どくとく}の{情緒|じょうちょ}を{見|み}せてくれます。",
+          "kana": "うんがぞいのそうこがいは、よるになるとどくとくのじょうちょをみせてくれます。",
+          "en": "At night, the warehouse district along the canal takes on an atmosphere all its own."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{所|ところ}やものから{感|かん}じられる、しみじみとした{味|あじ}わいや{気分|きぶん}。",
+        "kana": "そのところやものからかんじられる、しみじみとしたあじわいやきぶん。"
+      },
+      "frequencyRank": 5066,
+      "notes": "Also read じょうしょ, especially in 情緒不安定. 下町情緒 / 異国情緒 = the feel of an old quarter or a foreign place.",
+      "collocations": [
+        "異国情緒",
+        "情緒がある",
+        "情緒不安定"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0012",
+      "word": "遮る",
+      "kana": "さえぎる",
+      "meanings": [
+        "to block",
+        "to interrupt",
+        "to obstruct"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{高|たか}いビルが{建|た}って、{部屋|へや}からの{眺|なが}めが{遮|さえぎ}られてしまった。",
+          "kana": "たかいビルがたって、へやからのながめがさえぎられてしまった。",
+          "en": "A tall building went up and blocked the view from my room."
+        },
+        {
+          "ja": "{話|はなし}の{途中|とちゅう}で{相手|あいて}の{言葉|ことば}を{遮|さえぎ}るのは、{失礼|しつれい}に{当|あ}たります。",
+          "kana": "はなしのとちゅうであいてのことばをさえぎるのは、しつれいにあたります。",
+          "en": "Interrupting someone in the middle of what they are saying is considered rude."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{間|あいだ}に{入|はい}って、{光|ひかり}や{風|かぜ}、{人|ひと}の{話|はなし}などが{通|とお}らないようにすること。",
+        "kana": "あいだにはいって、ひかりやかぜ、ひとのはなしなどがとおらないようにすること。"
+      },
+      "frequencyRank": 5073,
+      "collocations": [
+        "話を遮る",
+        "光を遮る"
+      ],
+      "confusables": [
+        "v-n1-0022"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0013",
+      "word": "揺らぐ",
+      "kana": "ゆらぐ",
+      "meanings": [
+        "to waver",
+        "to be shaken (belief, position)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "states"
+      ],
+      "trans": "vi",
+      "pairId": "v-n1-0124",
+      "examples": [
+        {
+          "ja": "{何度|なんど}{失敗|しっぱい}しても、{彼女|かのじょ}の{決意|けつい}が{揺|ゆ}らぐことはなかった。",
+          "kana": "なんどしっぱいしても、かのじょのけついがゆらぐことはなかった。",
+          "en": "No matter how many times she failed, her resolve never wavered."
+        },
+        {
+          "ja": "{今回|こんかい}の{不正|ふせい}で、{会社|かいしゃ}への{信頼|しんらい}が{大|おお}きく{揺|ゆ}らいでいる。",
+          "kana": "こんかいのふせいで、かいしゃへのしんらいがおおきくゆらいでいる。",
+          "en": "Trust in the company has been badly shaken by this misconduct."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{気持|きも}ちや{立場|たちば}などがしっかりせず、ぐらぐらと{動|うご}くこと。",
+        "kana": "きもちやたちばなどがしっかりせず、ぐらぐらとうごくこと。"
+      },
+      "frequencyRank": 5079,
+      "collocations": [
+        "決意が揺らぐ",
+        "信頼が揺らぐ"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0014",
+      "word": "交わす",
+      "kana": "かわす",
+      "meanings": [
+        "to exchange (words, glances)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{近所|きんじょ}の{人|ひと}と{挨拶|あいさつ}を{交|か}わすだけで{気分|きぶん}がよくなる。",
+          "kana": "あさ、きんじょのひととあいさつをかわすだけできぶんがよくなる。",
+          "en": "Just exchanging greetings with a neighbor in the morning puts me in a good mood."
+        },
+        {
+          "ja": "{両国|りょうこく}の{代表|だいひょう}は、{会談|かいだん}の{後|あと}に{固|かた}い{握手|あくしゅ}を{交|か}わした。",
+          "kana": "りょうこくのだいひょうは、かいだんのあとにかたいあくしゅをかわした。",
+          "en": "After the talks, the two countries' representatives exchanged a firm handshake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}や{約束|やくそく}などを、お{互|たが}いにやり{取|と}りすること。",
+        "kana": "ことばややくそくなどを、おたがいにやりとりすること。"
+      },
+      "frequencyRank": 5086,
+      "collocations": [
+        "言葉を交わす",
+        "握手を交わす",
+        "契約を交わす"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0015",
+      "word": "滅びる",
+      "kana": "ほろびる",
+      "meanings": [
+        "to perish",
+        "to be destroyed",
+        "to die out"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "literary"
+      ],
+      "trans": "vi",
+      "pairId": "v-n1-0116",
+      "examples": [
+        {
+          "ja": "どんなに{栄|さか}えた{国|くに}も、いつかは{滅|ほろ}びる{運命|うんめい}にある。",
+          "kana": "どんなにさかえたくにも、いつかはほろびるうんめいにある。",
+          "en": "However much a nation flourishes, it is fated to fall one day."
+        },
+        {
+          "ja": "{恐竜|きょうりゅう}が{滅|ほろ}びた{原因|げんいん}については、{今|いま}も{様々|さまざま}な{説|せつ}がある。",
+          "kana": "きょうりゅうがほろびたげんいんについては、いまもさまざまなせつがある。",
+          "en": "There are still various theories about why the dinosaurs died out."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{生|い}きものなどが、すっかりなくなって{消|き}えてしまうこと。",
+        "kana": "くにやいきものなどが、すっかりなくなってきえてしまうこと。"
+      },
+      "frequencyRank": 5092,
+      "altForms": [
+        "亡びる"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0016",
+      "word": "絶える",
+      "kana": "たえる",
+      "meanings": [
+        "to cease",
+        "to die out",
+        "to come to an end"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "states"
+      ],
+      "trans": "vi",
+      "pairId": "v-n1-0117",
+      "examples": [
+        {
+          "ja": "{祭|まつ}りの{夜|よる}は、{遅|おそ}くまで{人|ひと}の{流|なが}れが{絶|た}えなかった。",
+          "kana": "まつりのよるは、おそくまでひとのながれがたえなかった。",
+          "en": "On the night of the festival the stream of people never let up until late."
+        },
+        {
+          "ja": "{両家|りょうけ}の{交流|こうりゅう}は、{祖父|そふ}の{代|だい}で{一度|いちど}{絶|た}えてしまったそうです。",
+          "kana": "りょうけのこうりゅうは、そふのだいでいちどたえてしまったそうです。",
+          "en": "I hear the two families' contact was broken off once, in my grandfather's generation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{続|つづ}いていたものが、そこで{止|と}まってなくなること。",
+        "kana": "つづいていたものが、そこでとまってなくなること。"
+      },
+      "frequencyRank": 5099,
+      "collocations": [
+        "絶え間なく",
+        "笑いが絶えない"
+      ],
+      "confusables": [
+        "v-n1-0037"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0017",
+      "word": "捧げる",
+      "kana": "ささげる",
+      "meanings": [
+        "to dedicate",
+        "to devote",
+        "to offer up"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{一生|いっしょう}を{子|こ}どもたちの{教育|きょういく}に{捧|ささ}げた。",
+          "kana": "かれはいっしょうをこどもたちのきょういくにささげた。",
+          "en": "He devoted his whole life to children's education."
+        },
+        {
+          "ja": "この{歌|うた}を、{遠|とお}くで{頑張|がんば}っているすべての{人|ひと}に{捧|ささ}げます。",
+          "kana": "このうたを、とおくでがんばっているすべてのひとにささげます。",
+          "en": "I dedicate this song to everyone out there working hard, wherever you are."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大切|たいせつ}なものを、{神|かみ}や{人|ひと}のために{差|さ}し{出|だ}すこと。",
+        "kana": "たいせつなものを、かみやひとのためにさしだすこと。"
+      },
+      "frequencyRank": 5106,
+      "collocations": [
+        "人生を捧げる",
+        "花を捧げる"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0018",
+      "word": "侵す",
+      "kana": "おかす",
+      "meanings": [
+        "to violate (rights)",
+        "to invade",
+        "to encroach on"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{個人|こじん}のプライバシーを{侵|おか}すような{取材|しゅざい}は{許|ゆる}されない。",
+          "kana": "こじんのプライバシーをおかすようなしゅざいはゆるされない。",
+          "en": "Reporting that violates people's privacy cannot be allowed."
+        },
+        {
+          "ja": "{国境|こっきょう}を{侵|おか}された{国|くに}は、{直|ただ}ちに{国際|こくさい}{社会|しゃかい}に{訴|うった}えた。",
+          "kana": "こっきょうをおかされたくには、ただちにこくさいしゃかいにうったえた。",
+          "en": "The country whose border had been violated immediately appealed to the international community."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{他人|たにん}の{権利|けんり}や{国|くに}などに、{勝手|かって}に{入|はい}って{傷|きず}つけること。",
+        "kana": "たにんのけんりやくになどに、かってにはいってきずつけること。"
+      },
+      "frequencyRank": 5112,
+      "notes": "Three verbs read おかす: 侵す (rights, territory), 犯す (crimes, errors), 冒す (danger).",
+      "collocations": [
+        "権利を侵す",
+        "領土を侵す"
+      ],
+      "confusables": [
+        "v-n1-0019",
+        "v-n1-0128"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0019",
+      "word": "犯す",
+      "kana": "おかす",
+      "meanings": [
+        "to commit (a crime, an error)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{同|おな}じ{過|あやま}ちを{二度|にど}と{犯|おか}さないように、{原因|げんいん}をきちんと{調|しら}べよう。",
+          "kana": "おなじあやまちをにどとおかさないように、げんいんをきちんとしらべよう。",
+          "en": "Let's find out exactly what caused it so we never make the same mistake again."
+        },
+        {
+          "ja": "{罪|つみ}を{犯|おか}した{人|ひと}にも、やり{直|なお}す{機会|きかい}は{与|あた}えられるべきだ。",
+          "kana": "つみをおかしたひとにも、やりなおすきかいはあたえられるべきだ。",
+          "en": "Even people who have committed crimes should be given a chance to start over."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{法律|ほうりつ}や{決|き}まりを{破|やぶ}って、{悪|わる}いことや{間違|まちが}いをすること。",
+        "kana": "ほうりつやきまりをやぶって、わるいことやまちがいをすること。"
+      },
+      "frequencyRank": 5119,
+      "collocations": [
+        "過ちを犯す",
+        "罪を犯す"
+      ],
+      "confusables": [
+        "v-n1-0018",
+        "v-n1-0128"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0020",
+      "word": "覆す",
+      "kana": "くつがえす",
+      "meanings": [
+        "to overturn",
+        "to reverse (a decision)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{最後|さいご}の{一分|いっぷん}で{二点|にてん}を{取|と}り、{試合|しあい}の{流|なが}れを{覆|くつがえ}した。",
+          "kana": "さいごのいっぷんでにてんをとり、しあいのながれをくつがえした。",
+          "en": "They scored twice in the final minute and turned the game around."
+        },
+        {
+          "ja": "{新|あたら}しい{発見|はっけん}が、これまでの{常識|じょうしき}を{覆|くつがえ}すかもしれません。",
+          "kana": "あたらしいはっけんが、これまでのじょうしきをくつがえすかもしれません。",
+          "en": "The new discovery may overturn everything we took for granted."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それまでの{決定|けってい}や{考|かんが}えを、{反対|はんたい}のものにひっくり{返|かえ}すこと。",
+        "kana": "それまでのけっていやかんがえを、はんたいのものにひっくりかえすこと。"
+      },
+      "frequencyRank": 5125,
+      "collocations": [
+        "常識を覆す",
+        "判決を覆す"
+      ],
+      "confusables": [
+        "v-n1-0122"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0021",
+      "word": "隔てる",
+      "kana": "へだてる",
+      "meanings": [
+        "to separate",
+        "to put between (distance, time)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "position",
+        "abstract"
+      ],
+      "trans": "vt",
+      "pairId": "v-n1-0120",
+      "examples": [
+        {
+          "ja": "{川|かわ}を{隔|へだ}てて{向|む}こう{岸|ぎし}に、{古|ふる}い{寺|てら}の{屋根|やね}が{見|み}える。",
+          "kana": "かわをへだててむこうぎしに、ふるいてらのやねがみえる。",
+          "en": "Across the river, on the far bank, you can see the roof of an old temple."
+        },
+        {
+          "ja": "{十年|じゅうねん}の{時|とき}を{隔|へだ}てて、{二人|ふたり}は{同|おな}じ{駅|えき}のホームで{再会|さいかい}した。",
+          "kana": "じゅうねんのときをへだてて、ふたりはおなじえきのホームでさいかいした。",
+          "en": "After ten years apart, the two met again on the same station platform."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{間|あいだ}に{何|なに}かを{置|お}いて、ものとものを{離|はな}すこと。",
+        "kana": "あいだになにかをおいて、ものとものをはなすこと。"
+      },
+      "frequencyRank": 5132,
+      "collocations": [
+        "十年を隔てて",
+        "分け隔てなく"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0022",
+      "word": "阻む",
+      "kana": "はばむ",
+      "meanings": [
+        "to block",
+        "to hinder",
+        "to stand in the way of"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "abstract",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{大雪|おおゆき}が{行|ゆ}く{手|て}を{阻|はば}み、{登山|とざん}チームは{引|ひ}き{返|かえ}すしかなかった。",
+          "kana": "おおゆきがゆくてをはばみ、とざんチームはひきかえすしかなかった。",
+          "en": "Heavy snow blocked the way ahead, and the climbing team had no choice but to turn back."
+        },
+        {
+          "ja": "{反対派|はんたいは}の{議員|ぎいん}たちが、{法案|ほうあん}の{成立|せいりつ}を{阻|はば}もうとしている。",
+          "kana": "はんたいはのぎいんたちが、ほうあんのせいりつをはばもうとしている。",
+          "en": "Opposition lawmakers are trying to block the bill from passing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{進|すす}む{道|みち}や{計画|けいかく}の{邪魔|じゃま}をして、{前|まえ}へ{行|い}かせないこと。",
+        "kana": "あいてのすすむみちやけいかくのじゃまをして、まえへいかせないこと。"
+      },
+      "frequencyRank": 5139,
+      "collocations": [
+        "行く手を阻む",
+        "成長を阻む"
+      ],
+      "confusables": [
+        "v-n1-0012"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0023",
+      "word": "趣",
+      "kana": "おもむき",
+      "meanings": [
+        "charm",
+        "elegant atmosphere",
+        "flavor (of a place)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{苔|こけ}むした{石|いし}の{庭|にわ}には、{何|なん}とも{言|い}えない{趣|おもむき}がある。",
+          "kana": "こけむしたいしのにわには、なんともいえないおもむきがある。",
+          "en": "The moss-covered stone garden has an indescribable charm."
+        },
+        {
+          "ja": "{同|おな}じ{景色|けしき}でも、{雨|あめ}の{日|ひ}と{晴|は}れの{日|ひ}では{趣|おもむき}がまるで{違|ちが}いますね。",
+          "kana": "おなじけしきでも、あめのひとはれのひではおもむきがまるでちがいますね。",
+          "en": "The same scenery has a completely different feel on a rainy day and on a sunny one, doesn't it?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{静|しず}かで{深|ふか}い{味|あじ}わいが{感|かん}じられる、その{所|ところ}やものの{感|かん}じ。",
+        "kana": "しずかでふかいあじわいがかんじられる、そのところやもののかんじ。"
+      },
+      "frequencyRank": 5145,
+      "collocations": [
+        "趣がある",
+        "趣のある"
+      ],
+      "confusables": [
+        "v-n1-0024"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0024",
+      "word": "風情",
+      "kana": "ふぜい",
+      "meanings": [
+        "taste",
+        "charm",
+        "air (of a scene)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "nature",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{雨|あめ}に{濡|ぬ}れた{石|いし}の{道|みち}も、それはそれで{風情|ふぜい}があっていい。",
+          "kana": "あめにぬれたいしのみちも、それはそれでふぜいがあっていい。",
+          "en": "A stone path wet with rain has a charm all its own."
+        },
+        {
+          "ja": "{窓|まど}の{外|そと}で{風鈴|ふうりん}が{鳴|な}っていて、なかなか{風情|ふぜい}のある{宿|やど}だった。",
+          "kana": "まどのそとでふうりんがなっていて、なかなかふぜいのあるやどだった。",
+          "en": "A wind chime was ringing outside the window; the inn had a real charm to it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自然|しぜん}や{古|ふる}い{町|まち}などから{感|かん}じられる、しみじみとした{味|あじ}わい。",
+        "kana": "しぜんやふるいまちなどからかんじられる、しみじみとしたあじわい。"
+      },
+      "frequencyRank": 5152,
+      "collocations": [
+        "風情がある",
+        "風情を楽しむ"
+      ],
+      "confusables": [
+        "v-n1-0023"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0025",
+      "word": "余韻",
+      "kana": "よいん",
+      "meanings": [
+        "lingering impression",
+        "afterglow",
+        "reverberation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "emotions",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{映画|えいが}が{終|お}わっても、しばらく{席|せき}を{立|た}てないほどの{余韻|よいん}が{残|のこ}った。",
+          "kana": "えいががおわっても、しばらくせきをたてないほどのよいんがのこった。",
+          "en": "Even after the movie ended, the lingering feeling kept me in my seat for a while."
+        },
+        {
+          "ja": "{鐘|かね}の{音|ね}の{余韻|よいん}が、{静|しず}かな{谷|たに}にいつまでも{響|ひび}いていた。",
+          "kana": "かねのねのよいんが、しずかなたににいつまでもひびいていた。",
+          "en": "The lingering tone of the bell went on echoing through the quiet valley."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{終|お}わった{後|あと}にも{心|こころ}に{残|のこ}る、{深|ふか}い{感|かん}じや{味|あじ}わい。",
+        "kana": "おわったあとにもこころにのこる、ふかいかんじやあじわい。"
+      },
+      "frequencyRank": 5158,
+      "collocations": [
+        "余韻に浸る",
+        "余韻が残る"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0026",
+      "word": "名残",
+      "kana": "なごり",
+      "meanings": [
+        "traces (of what has passed)",
+        "lingering remains"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "time",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{四月|しがつ}になっても、{山|やま}の{日陰|ひかげ}には{冬|ふゆ}の{名残|なごり}の{雪|ゆき}が{残|のこ}っていた。",
+          "kana": "しがつになっても、やまのひかげにはふゆのなごりのゆきがのこっていた。",
+          "en": "Even in April, snow left over from winter lingered in the shade of the mountain."
+        },
+        {
+          "ja": "{昔|むかし}{城下町|じょうかまち}だった{名残|なごり}で、この{辺|あた}りの{道|みち}は{今|いま}も{細|ほそ}く{曲|ま}がりくねっている。",
+          "kana": "むかしじょうかまちだったなごりで、このあたりのみちはいまもほそくまがりくねっている。",
+          "en": "A remnant of its days as a castle town, the streets around here are still narrow and winding."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることが{終|お}わった{後|あと}にも、まだ{残|のこ}っている{感|かん}じや{様子|ようす}。",
+        "kana": "あることがおわったあとにも、まだのこっているかんじやようす。"
+      },
+      "frequencyRank": 5165,
+      "collocations": [
+        "冬の名残",
+        "名残惜しい"
+      ],
+      "confusables": [
+        "v-n1-0027"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0027",
+      "word": "面影",
+      "kana": "おもかげ",
+      "meanings": [
+        "vestiges",
+        "traces of a former appearance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "people",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{久|ひさ}しぶりに{会|あ}った{友人|ゆうじん}には、{子|こ}どもの{頃|ころ}の{面影|おもかげ}がはっきりと{残|のこ}っていた。",
+          "kana": "ひさしぶりにあったゆうじんには、こどものころのおもかげがはっきりとのこっていた。",
+          "en": "The friend I met after so long still clearly showed traces of the child I remembered."
+        },
+        {
+          "ja": "{再開発|さいかいはつ}で{駅前|えきまえ}はすっかり{変|か}わり、{昔|むかし}の{面影|おもかげ}はどこにも{見当|みあ}たらない。",
+          "kana": "さいかいはつでえきまえはすっかりかわり、むかしのおもかげはどこにもみあたらない。",
+          "en": "Redevelopment has completely changed the station area, and no trace of how it used to look remains."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{記憶|きおく}の{中|なか}に{残|のこ}る{顔|かお}や{形|かたち}。また、{昔|むかし}の{様子|ようす}を{感|かん}じさせるもの。",
+        "kana": "きおくのなかにのこるかおやかたち。また、むかしのようすをかんじさせるもの。"
+      },
+      "frequencyRank": 5172,
+      "collocations": [
+        "面影が残る",
+        "昔の面影"
+      ],
+      "confusables": [
+        "v-n1-0026"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0028",
+      "word": "業",
+      "kana": "ごう",
+      "meanings": [
+        "karma",
+        "deeds that bring consequences"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{悪|わる}いことをすれば{業|ごう}となって{自分|じぶん}に{返|かえ}ってくる、と{祖母|そぼ}はよく{言|い}っていた。",
+          "kana": "わるいことをすればごうとなってじぶんにかえってくる、とそぼはよくいっていた。",
+          "en": "My grandmother often said that bad deeds come back to you as karma."
+        },
+        {
+          "ja": "{人|ひと}を{疑|うたが}うのは{刑事|けいじ}という{仕事|しごと}の{業|ごう}のようなものだ、と{彼|かれ}は{苦笑|くしょう}した。",
+          "kana": "ひとをうたがうのはけいじというしごとのごうのようなものだ、とかれはくしょうした。",
+          "en": "Doubting people is something like the karma of a detective's job, he said with a wry smile."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{行|おこな}いの{結果|けっか}が、{後|あと}になって{自分|じぶん}に{返|かえ}ってくること。",
+        "kana": "おこないのけっかが、あとになってじぶんにかえってくること。"
+      },
+      "frequencyRank": 5178,
+      "notes": "Buddhist term; 業が深い = burdened with deep karma or stubborn desire. Distinct from 業 (ぎょう) 'industry, trade'.",
+      "collocations": [
+        "業が深い",
+        "業を背負う"
+      ],
+      "confusables": [
+        "v-n1-0029"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0029",
+      "word": "因果",
+      "kana": "いんが",
+      "meanings": [
+        "cause and effect",
+        "karma"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{何事|なにごと}にも{因果|いんが}があり、{今|いま}の{結果|けっか}は{過去|かこ}の{行|おこな}いから{生|う}まれている。",
+          "kana": "なにごとにもいんががあり、いまのけっかはかこのおこないからうまれている。",
+          "en": "Everything has a cause and effect; today's results grow out of past actions."
+        },
+        {
+          "ja": "{事故|じこ}の{原因|げんいん}と{結果|けっか}を{調|しら}べ、その{因果|いんが}{関係|かんけい}をはっきりさせる{必要|ひつよう}がある。",
+          "kana": "じこのげんいんとけっかをしらべ、そのいんがかんけいをはっきりさせるひつようがある。",
+          "en": "We need to investigate the cause and effect of the accident and establish the causal link clearly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{原因|げんいん}から{結果|けっか}が{生|う}まれるという、ふたつの{間|あいだ}のつながり。",
+        "kana": "あるげんいんからけっかがうまれるという、ふたつのあいだのつながり。"
+      },
+      "frequencyRank": 5185,
+      "collocations": [
+        "因果関係",
+        "因果応報"
+      ],
+      "confusables": [
+        "v-n1-0028"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0030",
+      "word": "無常",
+      "kana": "むじょう",
+      "meanings": [
+        "impermanence",
+        "transience"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{桜|さくら}が{散|ち}るのを{見|み}て、{人|ひと}は{昔|むかし}から{世|よ}の{無常|むじょう}を{感|かん}じてきた。",
+          "kana": "さくらがちるのをみて、ひとはむかしからよのむじょうをかんじてきた。",
+          "en": "Watching the cherry blossoms fall, people have long felt the impermanence of the world."
+        },
+        {
+          "ja": "{百年|ひゃくねん}{続|つづ}いた{老舗|しにせ}が{閉店|へいてん}すると{聞|き}いて、{無常|むじょう}を{感|かん}じずにはいられなかった。",
+          "kana": "ひゃくねんつづいたしにせがへいてんするときいて、むじょうをかんじずにはいられなかった。",
+          "en": "Hearing that a shop in business for a century was closing, I could not help feeling how fleeting things are."
+        }
+      ],
+      "definitionJa": {
+        "ja": "すべてのものは{変|か}わり{続|つづ}け、{同|おな}じままではいられないということ。",
+        "kana": "すべてのものはかわりつづけ、おなじままではいられないということ。"
+      },
+      "frequencyRank": 5191,
+      "collocations": [
+        "諸行無常",
+        "無常観"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0031",
+      "word": "悟り",
+      "kana": "さとり",
+      "meanings": [
+        "enlightenment",
+        "realization"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{長|なが}い{修行|しゅぎょう}の{末|すえ}に{悟|さと}りを{開|ひら}いた{僧|そう}の{話|はなし}が、この{寺|てら}に{伝|つた}わっている。",
+          "kana": "ながいしゅぎょうのすえにさとりをひらいたそうのはなしが、このてらにつたわっている。",
+          "en": "This temple hands down the story of a monk who attained enlightenment after long training."
+        },
+        {
+          "ja": "{座禅|ざぜん}を{組|く}んだくらいで{悟|さと}りが{開|ひら}けるものではないよ、と{和尚|おしょう}さんは{笑|わら}った。",
+          "kana": "ざぜんをくんだくらいでさとりがひらけるものではないよ、とおしょうさんはわらった。",
+          "en": "You won't reach enlightenment just by sitting in zazen, the priest laughed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{迷|まよ}いが{消|き}えて、ものごとの{正|ただ}しいありかたがはっきり{分|わ}かること。",
+        "kana": "まよいがきえて、ものごとのただしいありかたがはっきりわかること。"
+      },
+      "frequencyRank": 5198,
+      "collocations": [
+        "悟りを開く",
+        "悟りの境地"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0032",
+      "word": "煩悩",
+      "kana": "ぼんのう",
+      "meanings": [
+        "worldly desires",
+        "earthly passions"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{大晦日|おおみそか}の{鐘|かね}は、{百八|ひゃくはち}の{煩悩|ぼんのう}を{払|はら}うために{百八回|ひゃくはっかい}つかれる。",
+          "kana": "おおみそかのかねは、ひゃくはちのぼんのうをはらうためにひゃくはっかいつかれる。",
+          "en": "The New Year's Eve bell is rung 108 times to drive away the 108 worldly desires."
+        },
+        {
+          "ja": "ダイエット{中|ちゅう}なのにケーキを{前|まえ}にすると{手|て}が{伸|の}びてしまう。{煩悩|ぼんのう}には{勝|か}てないね。",
+          "kana": "ダイエットちゅうなのにケーキをまえにするとてがのびてしまう。ぼんのうにはかてないね。",
+          "en": "I'm on a diet, but put a cake in front of me and my hand reaches for it. You just can't beat earthly desires."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}の{心|こころ}を{苦|くる}しめる、{欲|ほ}しがる{気持|きも}ちや{怒|いか}りなどのこと。",
+        "kana": "ひとのこころをくるしめる、ほしがるきもちやいかりなどのこと。"
+      },
+      "frequencyRank": 5205,
+      "collocations": [
+        "煩悩を払う",
+        "百八の煩悩"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0033",
+      "word": "境地",
+      "kana": "きょうち",
+      "meanings": [
+        "state of mind",
+        "stage (reached)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{努力|どりょく}を{重|かさ}ね、{彼女|かのじょ}はようやく{自分|じぶん}だけの{表現|ひょうげん}の{境地|きょうち}にたどり{着|つ}いた。",
+          "kana": "ながねんどりょくをかさね、かのじょはようやくじぶんだけのひょうげんのきょうちにたどりついた。",
+          "en": "After years of effort, she finally reached a form of expression that was hers alone."
+        },
+        {
+          "ja": "{何度|なんど}も{負|ま}けを{経験|けいけん}して、{今|いま}では{勝|か}ち{負|ま}けにこだわらない{境地|きょうち}に{達|たっ}しました。",
+          "kana": "なんどもまけをけいけんして、いまではかちまけにこだわらないきょうちにたっしました。",
+          "en": "Having experienced defeat many times, I have reached a state where I no longer worry about winning or losing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{経験|けいけん}を{重|かさ}ねてたどり{着|つ}いた、{心|こころ}の{状態|じょうたい}や{段階|だんかい}。",
+        "kana": "けいけんをかさねてたどりついた、こころのじょうたいやだんかい。"
+      },
+      "frequencyRank": 5211,
+      "collocations": [
+        "新しい境地を開く",
+        "悟りの境地"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0034",
+      "word": "刹那",
+      "kana": "せつな",
+      "meanings": [
+        "instant",
+        "moment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "ボールが{手|て}を{離|はな}れた{刹那|せつな}、{彼|かれ}は{失敗|しっぱい}を{悟|さと}った。",
+          "kana": "ボールがてをはなれたせつな、かれはしっぱいをさとった。",
+          "en": "The instant the ball left his hand, he knew he had failed."
+        },
+        {
+          "ja": "{花火|はなび}が{開|ひら}く{刹那|せつな}の{美|うつく}しさを、カメラは{十分|じゅうぶん}には{伝|つた}えてくれない。",
+          "kana": "はなびがひらくせつなのうつくしさを、カメラはじゅうぶんにはつたえてくれない。",
+          "en": "A camera can never quite capture the beauty of the instant a firework bursts open."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほんの{短|みじか}い{時間|じかん}。まばたきをするほどの{一瞬|いっしゅん}。",
+        "kana": "ほんのみじかいじかん。まばたきをするほどのいっしゅん。"
+      },
+      "frequencyRank": 5218,
+      "notes": "Buddhist unit of the shortest time; literary. 刹那的 = living only for the moment.",
+      "collocations": [
+        "刹那的",
+        "その刹那"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0035",
+      "word": "栄える",
+      "kana": "さかえる",
+      "meanings": [
+        "to prosper",
+        "to flourish"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "この{辺|あた}りは{昔|むかし}、{宿場町|しゅくばまち}として{大|おお}いに{栄|さか}えたそうだ。",
+          "kana": "このあたりはむかし、しゅくばまちとしておおいにさかえたそうだ。",
+          "en": "This area is said to have flourished as a post town long ago."
+        },
+        {
+          "ja": "{文化|ぶんか}が{栄|さか}えるには、{人々|ひとびと}が{安心|あんしん}して{暮|く}らせる{平和|へいわ}な{時代|じだい}が{必要|ひつよう}です。",
+          "kana": "ぶんかがさかえるには、ひとびとがあんしんしてくらせるへいわなじだいがひつようです。",
+          "en": "For culture to flourish, people need a peaceful era in which they can live without fear."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{町|まち}や{国|くに}、{文化|ぶんか}などが{豊|ゆた}かになって、{大|おお}いに{発展|はってん}すること。",
+        "kana": "まちやくに、ぶんかなどがゆたかになって、おおいにはってんすること。"
+      },
+      "frequencyRank": 5224,
+      "collocations": [
+        "町が栄える",
+        "商業が栄える"
+      ],
+      "confusables": [
+        "v-n1-0036"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0036",
+      "word": "衰える",
+      "kana": "おとろえる",
+      "meanings": [
+        "to weaken",
+        "to decline (strength, ability)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "body",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{年|とし}を{取|と}っても{足腰|あしこし}が{衰|おとろ}えないように、{毎日|まいにち}{歩|ある}くようにしている。",
+          "kana": "としをとってもあしこしがおとろえないように、まいにちあるくようにしている。",
+          "en": "I make a point of walking every day so my legs don't weaken as I get older."
+        },
+        {
+          "ja": "{台風|たいふう}の{勢|いきお}いは{夜|よる}のうちに{衰|おとろ}え、{朝|あさ}には{青空|あおぞら}が{広|ひろ}がっていた。",
+          "kana": "たいふうのいきおいはよるのうちにおとろえ、あさにはあおぞらがひろがっていた。",
+          "en": "The typhoon weakened overnight, and by morning the sky was clear and blue."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{体|からだ}や{記憶|きおく}の{力|ちから}などが、だんだん{弱|よわ}くなっていくこと。",
+        "kana": "からだやきおくのちからなどが、だんだんよわくなっていくこと。"
+      },
+      "frequencyRank": 5231,
+      "collocations": [
+        "体力が衰える",
+        "記憶力が衰える"
+      ],
+      "confusables": [
+        "v-n1-0035"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0037",
+      "word": "途絶える",
+      "kana": "とだえる",
+      "meanings": [
+        "to come to a stop",
+        "to be cut off (contact, flow)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}してから、{昔|むかし}の{同僚|どうりょう}との{連絡|れんらく}はすっかり{途絶|とだ}えてしまった。",
+          "kana": "ひっこしてから、むかしのどうりょうとのれんらくはすっかりとだえてしまった。",
+          "en": "Since I moved, I have completely lost touch with my old colleagues."
+        },
+        {
+          "ja": "{電波|でんぱ}が{届|とど}かず、{船|ふね}との{通信|つうしん}が{一時|いちじ}{途絶|とだ}えた。",
+          "kana": "でんぱがとどかず、ふねとのつうしんがいちじとだえた。",
+          "en": "The signal could not get through, and communication with the ship was cut off for a time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{続|つづ}いていた{連絡|れんらく}や{流|なが}れなどが、{途中|とちゅう}で{止|と}まってしまうこと。",
+        "kana": "つづいていたれんらくやながれなどが、とちゅうでとまってしまうこと。"
+      },
+      "frequencyRank": 5238,
+      "collocations": [
+        "連絡が途絶える",
+        "足音が途絶える"
+      ],
+      "confusables": [
+        "v-n1-0016"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0038",
+      "word": "承る",
+      "kana": "うけたまわる",
+      "meanings": [
+        "to humbly receive (an order, request)",
+        "to humbly hear"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "humble",
+        "polite"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "ご{予約|よやく}の{変更|へんこう}、{確|たし}かに{承|うけたまわ}りました。",
+          "kana": "ごよやくのへんこう、たしかにうけたまわりました。",
+          "en": "We have duly received your reservation change."
+        },
+        {
+          "ja": "{田中|たなか}は{席|せき}を{外|はず}しておりますので、よろしければ{私|わたくし}がご{用件|ようけん}を{承|うけたまわ}ります。",
+          "kana": "たなかはせきをはずしておりますので、よろしければわたくしがごようけんをうけたまわります。",
+          "en": "Tanaka is away from his desk right now; if you like, I can take your message."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「{聞|き}く」「{引|ひ}き{受|う}ける」を、{相手|あいて}を{敬|うやま}って{言|い}う{言葉|ことば}。",
+        "kana": "「きく」「ひきうける」を、あいてをうやまっていうことば。"
+      },
+      "frequencyRank": 5244,
+      "notes": "Humble for 聞く, 受ける and 引き受ける; set service phrases 承りました / 承知いたしました.",
+      "collocations": [
+        "ご注文を承る",
+        "ご意見を承る"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0039",
+      "word": "仕える",
+      "kana": "つかえる",
+      "meanings": [
+        "to serve (a master, a lord)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "work",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}の{家|いえ}は{代々|だいだい}、この{神社|じんじゃ}に{仕|つか}える{家系|かけい}だったそうだ。",
+          "kana": "そふのいえはだいだい、このじんじゃにつかえるかけいだったそうだ。",
+          "en": "My grandfather's family, I'm told, served this shrine for generations."
+        },
+        {
+          "ja": "{長年|ながねん}{一人|ひとり}の{主人|しゅじん}に{仕|つか}えてきた{執事|しつじ}は、{屋敷|やしき}のことなら{何|なん}でも{知|し}っている。",
+          "kana": "ながねんひとりのしゅじんにつかえてきたしつじは、やしきのことならなんでもしっている。",
+          "en": "The butler, who has served one master for many years, knows everything about the house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{主人|しゅじん}や{神|かみ}などのそばにいて、そのために{働|はたら}くこと。",
+        "kana": "しゅじんやかみなどのそばにいて、そのためにはたらくこと。"
+      },
+      "frequencyRank": 5251,
+      "collocations": [
+        "神に仕える",
+        "主君に仕える"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0040",
+      "word": "授ける",
+      "kana": "さずける",
+      "meanings": [
+        "to grant",
+        "to award",
+        "to impart (knowledge)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "school",
+        "formal"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{卒業式|そつぎょうしき}で、{校長|こうちょう}が{一人一人|ひとりひとり}に{卒業証書|そつぎょうしょうしょ}を{授|さず}けた。",
+          "kana": "そつぎょうしきで、こうちょうがひとりひとりにそつぎょうしょうしょをさずけた。",
+          "en": "At the graduation ceremony, the principal presented each student with a diploma."
+        },
+        {
+          "ja": "{師匠|ししょう}は{弟子|でし}たちに、{長年|ながねん}{磨|みが}いてきた{技|わざ}を{惜|お}しみなく{授|さず}けている。",
+          "kana": "ししょうはでしたちに、ながねんみがいてきたわざをおしみなくさずけている。",
+          "en": "The master is freely passing on to his apprentices the skills he has honed over many years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|うえ}の{立場|たちば}の{人|ひと}が、{大切|たいせつ}なものや{知識|ちしき}を{下|した}の{人|ひと}に{与|あた}えること。",
+        "kana": "うえのたちばのひとが、たいせつなものやちしきをしたのひとにあたえること。"
+      },
+      "frequencyRank": 5257,
+      "collocations": [
+        "学位を授ける",
+        "知恵を授ける"
+      ],
+      "confusables": [
+        "v-n1-0041"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0041",
+      "word": "授かる",
+      "kana": "さずかる",
+      "meanings": [
+        "to be granted",
+        "to be blessed with (a child)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "family",
+        "abstract"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{結婚|けっこん}して{五年目|ごねんめ}に、{二人|ふたり}はようやく{子|こ}どもを{授|さず}かった。",
+          "kana": "けっこんしてごねんめに、ふたりはようやくこどもをさずかった。",
+          "en": "In their fifth year of marriage, the two were finally blessed with a child."
+        },
+        {
+          "ja": "{人|ひと}は{誰|だれ}でも、{何|なに}かひとつは{神様|かみさま}から{才能|さいのう}を{授|さず}かっているものだと{思|おも}う。",
+          "kana": "ひとはだれでも、なにかひとつはかみさまからさいのうをさずかっているものだとおもう。",
+          "en": "I believe everyone has been granted at least one talent by the heavens."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{神|かみ}や{上|うえ}の{立場|たちば}の{人|ひと}から、{大切|たいせつ}なものを{与|あた}えられること。",
+        "kana": "かみやうえのたちばのひとから、たいせつなものをあたえられること。"
+      },
+      "frequencyRank": 5264,
+      "collocations": [
+        "子どもを授かる",
+        "命を授かる"
+      ],
+      "confusables": [
+        "v-n1-0040"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0042",
+      "word": "賜る",
+      "kana": "たまわる",
+      "meanings": [
+        "to be granted (by a superior)",
+        "to bestow"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "honorific",
+        "humble",
+        "formal"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}はお{忙|いそが}しい{中|なか}、{貴重|きちょう}なご{意見|いけん}を{賜|たまわ}り、{誠|まこと}にありがとうございます。",
+          "kana": "ほんじつはおいそがしいなか、きちょうなごいけんをたまわり、まことにありがとうございます。",
+          "en": "Thank you very much for taking time out of your busy day to give us your valuable opinions."
+        },
+        {
+          "ja": "{創業|そうぎょう}{以来|いらい}{長年|ながねん}にわたりご{愛顧|あいこ}を{賜|たまわ}りましたこと、{心|こころ}より{御礼|おんれい}{申|もう}し{上|あ}げます。",
+          "kana": "そうぎょういらいながねんにわたりごあいこをたまわりましたこと、こころよりおんれいもうしあげます。",
+          "en": "We offer our heartfelt thanks for the patronage you have shown us over the many years since our founding."
+        }
+      ],
+      "definitionJa": {
+        "ja": "「もらう」をへりくだって{言|い}う{言葉|ことば}。{上|うえ}の{立場|たちば}の{人|ひと}からものをいただくこと。",
+        "kana": "「もらう」をへりくだっていうことば。うえのたちばのひとからものをいただくこと。"
+      },
+      "frequencyRank": 5271,
+      "notes": "Humble for もらう (ご意見を賜る) and honorific for くださる (お言葉を賜る); the language of speeches and formal letters.",
+      "collocations": [
+        "ご指導を賜る",
+        "ご愛顧を賜る"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0043",
+      "word": "鑑みる",
+      "kana": "かんがみる",
+      "meanings": [
+        "to take into account",
+        "to consider in light of"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "formal",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{現在|げんざい}の{状況|じょうきょう}に{鑑|かんが}みて、{今年|ことし}の{祭|まつ}りは{規模|きぼ}を{縮小|しゅくしょう}して{行|おこな}う。",
+          "kana": "げんざいのじょうきょうにかんがみて、ことしのまつりはきぼをしゅくしょうしておこなう。",
+          "en": "In light of the current situation, this year's festival will be held on a smaller scale."
+        },
+        {
+          "ja": "{過去|かこ}の{事故|じこ}の{例|れい}に{鑑|かんが}みれば、この{安全|あんぜん}{対策|たいさく}は{決|けっ}して{十分|じゅうぶん}とは{言|い}えない。",
+          "kana": "かこのじこのれいにかんがみれば、このあんぜんたいさくはけっしてじゅうぶんとはいえない。",
+          "en": "Judged against past accidents, these safety measures can hardly be called sufficient."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過去|かこ}の{例|れい}や{今|いま}の{状況|じょうきょう}を{考|かんが}えに{入|い}れて、{判断|はんだん}すること。",
+        "kana": "かこのれいやいまのじょうきょうをかんがえにいれて、はんだんすること。"
+      },
+      "frequencyRank": 5277,
+      "notes": "Formal and written; the standard pattern is 〜に鑑みて (〜を鑑みて is heard but often criticized).",
+      "collocations": [
+        "〜に鑑みて",
+        "状況に鑑みる"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0044",
+      "word": "諮る",
+      "kana": "はかる",
+      "meanings": [
+        "to consult (a body)",
+        "to refer (a matter) to"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "formal"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{会費|かいひ}については、{来月|らいげつ}の{総会|そうかい}に{諮|はか}ることになった。",
+          "kana": "あたらしいかいひについては、らいげつのそうかいにはかることになった。",
+          "en": "The new membership fee will be put to next month's general meeting."
+        },
+        {
+          "ja": "{市長|しちょう}は{新|あたら}しい{計画|けいかく}を{議会|ぎかい}に{諮|はか}り、{意見|いけん}を{求|もと}めました。",
+          "kana": "しちょうはあたらしいけいかくをぎかいにはかり、いけんをもとめました。",
+          "en": "The mayor put the new plan before the city council and asked for its views."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{問題|もんだい}について、{会議|かいぎ}や{専門|せんもん}の{人|ひと}に{意見|いけん}を{求|もと}めること。",
+        "kana": "あるもんだいについて、かいぎやせんもんのひとにいけんをもとめること。"
+      },
+      "frequencyRank": 5284,
+      "notes": "Homophone of 図る (plan), 計る / 測る / 量る (measure) and 謀る (plot); 諮る means putting a matter to a council or meeting.",
+      "collocations": [
+        "会議に諮る",
+        "委員会に諮る"
+      ],
+      "confusables": [
+        "v-n1-0045"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0045",
+      "word": "謀る",
+      "kana": "はかる",
+      "meanings": [
+        "to plot",
+        "to scheme"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "business",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}の{乗|の}っ{取|と}りを{謀|はか}った{役員|やくいん}たちは、{次々|つぎつぎ}と{辞任|じにん}に{追|お}い{込|こ}まれた。",
+          "kana": "かいしゃののっとりをはかったやくいんたちは、つぎつぎとじにんにおいこまれた。",
+          "en": "The executives who had plotted to take over the company were forced to resign one after another."
+        },
+        {
+          "ja": "{物語|ものがたり}の{後半|こうはん}では、{王|おう}の{弟|おとうと}が{密|ひそ}かに{反乱|はんらん}を{謀|はか}っていることが{明|あき}らかになる。",
+          "kana": "ものがたりのこうはんでは、おうのおとうとがひそかにはんらんをはかっていることがあきらかになる。",
+          "en": "In the second half of the story, it comes to light that the king's brother is secretly plotting a rebellion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悪|わる}いことを、{人|ひと}に{知|し}られないようにこっそり{計画|けいかく}すること。",
+        "kana": "わるいことを、ひとにしられないようにこっそりけいかくすること。"
+      },
+      "frequencyRank": 5290,
+      "notes": "Negative: to scheme or plot. Homophone of 図る (aim, plan), 計る / 測る / 量る (measure) and 諮る (consult).",
+      "collocations": [
+        "暗殺を謀る",
+        "悪事を謀る"
+      ],
+      "confusables": [
+        "v-n1-0044"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0046",
+      "word": "滴る",
+      "kana": "したたる",
+      "meanings": [
+        "to drip",
+        "to trickle"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "body",
+        "actions"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{走|はし}り{終|お}えると、{額|ひたい}から{汗|あせ}が{滴|したた}り{落|お}ちた。",
+          "kana": "はしりおえると、ひたいからあせがしたたりおちた。",
+          "en": "When I finished running, sweat dripped from my forehead."
+        },
+        {
+          "ja": "{雨上|あめあ}がりの{森|もり}では、{葉|は}の{先|さき}から{水|みず}が{滴|したた}る{音|おと}だけが{聞|き}こえていた。",
+          "kana": "あめあがりのもりでは、はのさきからみずがしたたるおとだけがきこえていた。",
+          "en": "In the forest after the rain, the only sound was water dripping from the tips of the leaves."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{水|みず}などが、しずくになってぽたぽたと{落|お}ちること。",
+        "kana": "みずなどが、しずくになってぽたぽたとおちること。"
+      },
+      "frequencyRank": 5297,
+      "collocations": [
+        "汗が滴る",
+        "滴るような緑"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0047",
+      "word": "滲む",
+      "kana": "にじむ",
+      "meanings": [
+        "to blur",
+        "to run (ink)",
+        "to ooze"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "objects"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{雨|あめ}に{濡|ぬ}れて、{手紙|てがみ}の{文字|もじ}がところどころ{滲|にじ}んでいた。",
+          "kana": "あめにぬれて、てがみのもじがところどころにじんでいた。",
+          "en": "The letter had gotten wet in the rain, and the writing had blurred in places."
+        },
+        {
+          "ja": "{何気|なにげ}ない{一言|ひとこと}にも、{彼女|かのじょ}の{優|やさ}しさが{滲|にじ}み{出|で}ていますね。",
+          "kana": "なにげないひとことにも、かのじょのやさしさがにじみでていますね。",
+          "en": "Her kindness shows through even in the most casual remark, doesn't it?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{色|いろ}や{水|みず}が{広|ひろ}がってぼやけること。また、{気持|きも}ちが{外|そと}に{表|あらわ}れること。",
+        "kana": "いろやみずがひろがってぼやけること。また、きもちがそとにあらわれること。"
+      },
+      "frequencyRank": 5304,
+      "collocations": [
+        "涙で滲む",
+        "血が滲む",
+        "苦労が滲む"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0048",
+      "word": "瞬く",
+      "kana": "またたく",
+      "meanings": [
+        "to twinkle",
+        "to blink"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "body"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{山|やま}の{上|うえ}では、{街|まち}では{見|み}えない{無数|むすう}の{星|ほし}が{瞬|またた}いていた。",
+          "kana": "やまのうえでは、まちではみえないむすうのほしがまたたいていた。",
+          "en": "Up on the mountain, countless stars you never see in the city were twinkling."
+        },
+        {
+          "ja": "{遠|とお}くの{灯台|とうだい}の{光|ひかり}が、{霧|きり}の{向|む}こうで{弱々|よわよわ}しく{瞬|またた}いている。",
+          "kana": "とおくのとうだいのひかりが、きりのむこうでよわよわしくまたたいている。",
+          "en": "The lighthouse's light flickers faintly beyond the fog in the distance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{星|ほし}や{遠|とお}くの{光|ひかり}が、ついたり{消|き}えたりして{見|み}えること。",
+        "kana": "ほしやとおくのひかりが、ついたりきえたりしてみえること。"
+      },
+      "frequencyRank": 5310,
+      "notes": "Also read しばたく for blinking the eyes; 瞬く間に (またたくまに) = in the blink of an eye.",
+      "collocations": [
+        "瞬く間に",
+        "星が瞬く"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0049",
+      "word": "煌めく",
+      "kana": "きらめく",
+      "meanings": [
+        "to glitter",
+        "to sparkle"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "states",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{夕日|ゆうひ}を{受|う}けて、{海面|かいめん}が{金色|きんいろ}に{煌|きら}めいている。",
+          "kana": "ゆうひをうけて、かいめんがきんいろにきらめいている。",
+          "en": "Catching the evening sun, the surface of the sea sparkles gold."
+        },
+        {
+          "ja": "{都会|とかい}の{夜景|やけい}は{宝石|ほうせき}をちりばめたように{煌|きら}めいて、{田舎|いなか}{育|そだ}ちの{私|わたし}を{驚|おどろ}かせた。",
+          "kana": "とかいのやけいはほうせきをちりばめたようにきらめいて、いなかそだちのわたしをおどろかせた。",
+          "en": "The city lights glittered like scattered jewels and amazed me, a kid from the countryside."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{光|ひかり}を{受|う}けて、きらきらと{美|うつく}しく{光|ひか}ること。",
+        "kana": "ひかりをうけて、きらきらとうつくしくひかること。"
+      },
+      "frequencyRank": 5317,
+      "altForms": [
+        "きらめく"
+      ],
+      "collocations": [
+        "星が煌めく",
+        "煌めく才能"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0050",
+      "word": "佇む",
+      "kana": "たたずむ",
+      "meanings": [
+        "to stand still",
+        "to linger (standing)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{前|まえ}で、{一人|ひとり}の{老人|ろうじん}が{長|なが}いこと{雨|あめ}の{中|なか}に{佇|たたず}んでいた。",
+          "kana": "えきのまえで、ひとりのろうじんがながいことあめのなかにたたずんでいた。",
+          "en": "In front of the station, an old man stood for a long while in the rain."
+        },
+        {
+          "ja": "{湖|みずうみ}のほとりに{古|ふる}い{教会|きょうかい}が{静|しず}かに{佇|たたず}んでいます。",
+          "kana": "みずうみのほとりにふるいきょうかいがしずかにたたずんでいます。",
+          "en": "An old church stands quietly on the shore of the lake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "しばらくの{間|あいだ}、{同|おな}じ{所|ところ}にじっと{立|た}っていること。",
+        "kana": "しばらくのあいだ、おなじところにじっとたっていること。"
+      },
+      "frequencyRank": 5323,
+      "altForms": [
+        "たたずむ"
+      ],
+      "collocations": [
+        "静かに佇む",
+        "佇まい"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0051",
+      "word": "彷徨う",
+      "kana": "さまよう",
+      "meanings": [
+        "to wander",
+        "to roam"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "travel",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{地図|ちず}を{持|も}たずに{出|で}かけ、{知|し}らない{街|まち}を{半日|はんにち}{彷徨|さまよ}うことになった。",
+          "kana": "ちずをもたずにでかけ、しらないまちをはんにちさまようことになった。",
+          "en": "I went out without a map and ended up wandering an unfamiliar town for half a day."
+        },
+        {
+          "ja": "{眠|ねむ}れない{夜|よる}は、{考|かんが}えがあちこちを{彷徨|さまよ}って、なかなかまとまらない。",
+          "kana": "ねむれないよるは、かんがえがあちこちをさまよって、なかなかまとまらない。",
+          "en": "On sleepless nights my thoughts wander all over the place and refuse to settle."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どこへ{行|い}くか{決|き}まらないまま、あちこちを{歩|ある}き{回|まわ}ること。",
+        "kana": "どこへいくかきまらないまま、あちこちをあるきまわること。"
+      },
+      "frequencyRank": 5330,
+      "altForms": [
+        "さまよう"
+      ],
+      "collocations": [
+        "街を彷徨う",
+        "生死の境を彷徨う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0052",
+      "word": "霞む",
+      "kana": "かすむ",
+      "meanings": [
+        "to grow hazy",
+        "to be blurred",
+        "to be overshadowed"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "weather",
+        "nature",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{春|はる}の{朝|あさ}、{遠|とお}くの{山々|やまやま}が{薄|うす}く{霞|かす}んで{見|み}えた。",
+          "kana": "はるのあさ、とおくのやまやまがうすくかすんでみえた。",
+          "en": "On the spring morning, the distant mountains looked faintly hazy."
+        },
+        {
+          "ja": "{涙|なみだ}で{目|め}が{霞|かす}んで、{手紙|てがみ}の{最後|さいご}の{行|ぎょう}が{読|よ}めなかった。",
+          "kana": "なみだでめがかすんで、てがみのさいごのぎょうがよめなかった。",
+          "en": "My eyes blurred with tears, and I could not read the last line of the letter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{霧|きり}や{涙|なみだ}などで、ものがぼんやりして、はっきり{見|み}えなくなること。",
+        "kana": "きりやなみだなどで、ものがぼんやりして、はっきりみえなくなること。"
+      },
+      "frequencyRank": 5337,
+      "collocations": [
+        "目が霞む",
+        "存在が霞む"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0053",
+      "word": "窺う",
+      "kana": "うかがう",
+      "meanings": [
+        "to peep at",
+        "to watch for (a chance)",
+        "to gauge (a mood)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "communication"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{上司|じょうし}の{顔色|かおいろ}を{窺|うかが}いながら、{休暇|きゅうか}の{話|はなし}を{切|き}り{出|だ}した。",
+          "kana": "かれはじょうしのかおいろをうかがいながら、きゅうかのはなしをきりだした。",
+          "en": "Gauging his boss's mood, he brought up the subject of taking leave."
+        },
+        {
+          "ja": "{猫|ねこ}は{草|くさ}むらに{身|み}を{隠|かく}し、{飛|と}びかかる{機会|きかい}をじっと{窺|うかが}っている。",
+          "kana": "ねこはくさむらにみをかくし、とびかかるきかいをじっとうかがっている。",
+          "en": "The cat hides in the grass, waiting for just the right moment to pounce."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}の{様子|ようす}や{機会|きかい}を、{気|き}づかれないようにそっと{見|み}ること。",
+        "kana": "あいてのようすやきかいを、きづかれないようにそっとみること。"
+      },
+      "frequencyRank": 5343,
+      "notes": "Not the humble 伺う (to visit, to ask), though both read うかがう. 機会を窺う = watch for a chance; 〜が窺える = can be inferred.",
+      "collocations": [
+        "顔色を窺う",
+        "様子を窺う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0054",
+      "word": "蔑む",
+      "kana": "さげすむ",
+      "meanings": [
+        "to look down on",
+        "to despise"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "people",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{人|ひと}を{職業|しょくぎょう}で{蔑|さげす}むような{態度|たいど}は、{周|まわ}りからの{信頼|しんらい}を{失|うしな}わせる。",
+          "kana": "ひとをしょくぎょうでさげすむようなたいどは、まわりからのしんらいをうしなわせる。",
+          "en": "Looking down on people because of their jobs costs you the trust of those around you."
+        },
+        {
+          "ja": "{失敗|しっぱい}した{仲間|なかま}を{蔑|さげす}むのではなく、{次|つぎ}にどうすればいいか{一緒|いっしょ}に{考|かんが}えましょう。",
+          "kana": "しっぱいしたなかまをさげすむのではなく、つぎにどうすればいいかいっしょにかんがえましょう。",
+          "en": "Instead of looking down on a teammate who failed, let's think together about what to do next."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}を{自分|じぶん}より{下|した}だと{考|かんが}えて、ばかにすること。",
+        "kana": "あいてをじぶんよりしただとかんがえて、ばかにすること。"
+      },
+      "frequencyRank": 5350,
+      "collocations": [
+        "人を蔑む",
+        "蔑むような目"
+      ],
+      "confusables": [
+        "v-n1-0055"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0055",
+      "word": "貶す",
+      "kana": "けなす",
+      "meanings": [
+        "to speak ill of",
+        "to disparage"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "emotions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{他人|たにん}の{作品|さくひん}を{貶|けな}すばかりで、{自分|じぶん}では{何|なに}も{作|つく}らない{人|ひと}もいる。",
+          "kana": "たにんのさくひんをけなすばかりで、じぶんではなにもつくらないひともいる。",
+          "en": "Some people do nothing but run down other people's work and never make anything themselves."
+        },
+        {
+          "ja": "{弟|おとうと}はせっかく{私|わたし}が{作|つく}った{料理|りょうり}を{貶|けな}して、{結局|けっきょく}{全部|ぜんぶ}{食|た}べた。",
+          "kana": "おとうとはせっかくわたしがつくったりょうりをけなして、けっきょくぜんぶたべた。",
+          "en": "My little brother ran down the meal I had gone to the trouble of cooking, then ate every last bit of it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}やものの{悪|わる}い{点|てん}ばかりを{取|と}り{上|あ}げて、{悪|わる}く{言|い}うこと。",
+        "kana": "ひとやもののわるいてんばかりをとりあげて、わるくいうこと。"
+      },
+      "frequencyRank": 5356,
+      "notes": "Often written けなす; the opposite of 褒める (褒めたり貶したり).",
+      "altForms": [
+        "けなす"
+      ],
+      "collocations": [
+        "作品を貶す",
+        "人を貶す"
+      ],
+      "confusables": [
+        "v-n1-0054"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0056",
+      "word": "崇める",
+      "kana": "あがめる",
+      "meanings": [
+        "to revere",
+        "to worship"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "abstract",
+        "literary"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "この{山|やま}は{古|ふる}くから{神|かみ}が{宿|やど}る{場所|ばしょ}として{崇|あが}められてきた。",
+          "kana": "このやまはふるくからかみがやどるばしょとしてあがめられてきた。",
+          "en": "Since ancient times this mountain has been revered as a place where a god dwells."
+        },
+        {
+          "ja": "{人々|ひとびと}はその{若|わか}い{指導者|しどうしゃ}を{英雄|えいゆう}のように{崇|あが}めたが、{私|わたし}には{不安|ふあん}しかなかった。",
+          "kana": "ひとびとはそのわかいしどうしゃをえいゆうのようにあがめたが、わたしにはふあんしかなかった。",
+          "en": "People revered the young leader like a hero, but all I felt was unease."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{神|かみ}やとても{偉|えら}い{人|ひと}として、{心|こころ}から{尊敬|そんけい}すること。",
+        "kana": "かみやとてもえらいひととして、こころからそんけいすること。"
+      },
+      "frequencyRank": 5363,
+      "collocations": [
+        "神として崇める",
+        "師と崇める"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0057",
+      "word": "媚びる",
+      "kana": "こびる",
+      "meanings": [
+        "to flatter",
+        "to fawn on",
+        "to pander to"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "personality"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{誰|だれ}にも{媚|こ}びず、{自分|じぶん}の{意見|いけん}をはっきり{言|い}う{人|ひと}だ。",
+          "kana": "かのじょはだれにもこびず、じぶんのいけんをはっきりいうひとだ。",
+          "en": "She is someone who never fawns on anyone and says exactly what she thinks."
+        },
+        {
+          "ja": "{客|きゃく}に{媚|こ}びた{味|あじ}にはしたくないと、その{料理人|りょうりにん}は{語|かた}っていました。",
+          "kana": "きゃくにこびたあじにはしたくないと、そのりょうりにんはかたっていました。",
+          "en": "That cook told me he did not want to make food that pandered to customers' tastes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}に{気|き}に{入|い}られようとして、{必要|ひつよう}{以上|いじょう}に{機嫌|きげん}を{取|と}ること。",
+        "kana": "あいてにきにいられようとして、ひつよういじょうにきげんをとること。"
+      },
+      "frequencyRank": 5370,
+      "collocations": [
+        "権力に媚びる",
+        "客に媚びない"
+      ],
+      "confusables": [
+        "v-n1-0107"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0058",
+      "word": "弔う",
+      "kana": "とむらう",
+      "meanings": [
+        "to mourn",
+        "to hold a memorial for"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "emotions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{村人|むらびと}たちは{毎年|まいとし}この{日|ひ}に{集|あつ}まり、{災害|さいがい}で{亡|な}くなった{人々|ひとびと}を{弔|とむら}う。",
+          "kana": "むらびとたちはまいとしこのひにあつまり、さいがいでなくなったひとびとをとむらう。",
+          "en": "Every year on this day the villagers gather to mourn those who died in the disaster."
+        },
+        {
+          "ja": "{亡|な}くなった{猫|ねこ}を{庭|にわ}の{隅|すみ}に{埋|う}め、{家族|かぞく}みんなで{静|しず}かに{弔|とむら}いました。",
+          "kana": "なくなったねこをにわのすみにうめ、かぞくみんなでしずかにとむらいました。",
+          "en": "We buried our cat that had died in a corner of the garden, and the whole family quietly mourned her."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{亡|な}くなった{人|ひと}の{死|し}を{悲|かな}しみ、その{人|ひと}のために{祈|いの}ること。",
+        "kana": "なくなったひとのしをかなしみ、そのひとのためにいのること。"
+      },
+      "frequencyRank": 5376,
+      "collocations": [
+        "死者を弔う",
+        "霊を弔う"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0059",
+      "word": "弔い",
+      "kana": "とむらい",
+      "meanings": [
+        "mourning",
+        "funeral",
+        "memorial service"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{弔|とむら}いの{席|せき}では、{派手|はで}な{服装|ふくそう}や{明|あか}るい{色|いろ}のネクタイは{避|さ}けるのが{礼儀|れいぎ}だ。",
+          "kana": "とむらいのせきでは、はでなふくそうやあかるいいろのネクタイはさけるのがれいぎだ。",
+          "en": "At a funeral, it is proper etiquette to avoid flashy clothes and brightly colored ties."
+        },
+        {
+          "ja": "{海|うみ}で{亡|な}くなった{漁師|りょうし}たちの{弔|とむら}いが、{毎年|まいとし}{夏|なつ}の{終|お}わりに{浜|はま}で{行|おこな}われる。",
+          "kana": "うみでなくなったりょうしたちのとむらいが、まいとしなつのおわりにはまでおこなわれる。",
+          "en": "A memorial for the fishermen lost at sea is held on the beach every year at summer's end."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{亡|な}くなった{人|ひと}のために{祈|いの}り、{悲|かな}しみを{表|あらわ}すこと。また、そのための{式|しき}。",
+        "kana": "なくなったひとのためにいのり、かなしみをあらわすこと。また、そのためのしき。"
+      },
+      "frequencyRank": 5383,
+      "collocations": [
+        "弔いの席",
+        "弔い合戦"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0060",
+      "word": "追悼",
+      "kana": "ついとう",
+      "meanings": [
+        "mourning (the dead)",
+        "memorial"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}から{十年|じゅうねん}を{迎|むか}え、{現場|げんば}の{近|ちか}くで{追悼|ついとう}の{式|しき}が{行|おこな}われた。",
+          "kana": "じこからじゅうねんをむかえ、げんばのちかくでついとうのしきがおこなわれた。",
+          "en": "Ten years after the accident, a memorial ceremony was held near the site."
+        },
+        {
+          "ja": "{亡|な}くなった{作家|さっか}を{追悼|ついとう}して、{書店|しょてん}では{彼女|かのじょ}の{全作品|ぜんさくひん}を{集|あつ}めたコーナーが{設|もう}けられている。",
+          "kana": "なくなったさっかをついとうして、しょてんではかのじょのぜんさくひんをあつめたコーナーがもうけられている。",
+          "en": "In tribute to the late author, the bookstore has set up a corner gathering all of her works."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{亡|な}くなった{人|ひと}のことを{思|おも}い{出|だ}して、その{死|し}を{悲|かな}しむこと。",
+        "kana": "なくなったひとのことをおもいだして、そのしをかなしむこと。"
+      },
+      "frequencyRank": 5389,
+      "collocations": [
+        "追悼式",
+        "追悼の意を表す"
+      ],
+      "confusables": [
+        "v-n1-0061"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0061",
+      "word": "哀悼",
+      "kana": "あいとう",
+      "meanings": [
+        "condolence",
+        "grief (for the dead)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "formal",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{被害|ひがい}に{遭|あ}われた{方々|かたがた}に、{心|こころ}から{哀悼|あいとう}の{意|い}を{表|ひょう}します。",
+          "kana": "ひがいにあわれたかたがたに、こころからあいとうのいをひょうします。",
+          "en": "I express my heartfelt condolences to those who were affected."
+        },
+        {
+          "ja": "{元|もと}{首相|しゅしょう}の{死去|しきょ}を{受|う}けて、{各国|かっこく}から{哀悼|あいとう}のメッセージが{寄|よ}せられた。",
+          "kana": "もとしゅしょうのしきょをうけて、かっこくからあいとうのメッセージがよせられた。",
+          "en": "Following the former prime minister's death, messages of condolence poured in from countries around the world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}の{死|し}を{悲|かな}しみ、その{気持|きも}ちを{言葉|ことば}や{態度|たいど}で{表|あらわ}すこと。",
+        "kana": "ひとのしをかなしみ、そのきもちをことばやたいどであらわすこと。"
+      },
+      "frequencyRank": 5396,
+      "notes": "Almost always in the formal phrase 哀悼の意を表する; 追悼 is the act or event of remembering the dead.",
+      "collocations": [
+        "哀悼の意を表する"
+      ],
+      "confusables": [
+        "v-n1-0060"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0062",
+      "word": "悲哀",
+      "kana": "ひあい",
+      "meanings": [
+        "sorrow",
+        "pathos"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "この{映画|えいが}には、{都会|とかい}で{働|はたら}く{中年|ちゅうねん}の{悲哀|ひあい}が{静|しず}かに{描|えが}かれている。",
+          "kana": "このえいがには、とかいではたらくちゅうねんのひあいがしずかにえがかれている。",
+          "en": "This film quietly portrays the sorrows of middle-aged people working in the city."
+        },
+        {
+          "ja": "{売|う}れなくなった{歌手|かしゅ}の{悲哀|ひあい}を、{彼|かれ}は{笑|わら}い{話|ばなし}にして{語|かた}った。",
+          "kana": "うれなくなったかしゅのひあいを、かれはわらいばなしにしてかたった。",
+          "en": "He turned the sorrows of a singer whose records no longer sell into a funny story."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人生|じんせい}の{中|なか}で{感|かん}じる、しみじみとした{悲|かな}しさ。",
+        "kana": "じんせいのなかでかんじる、しみじみとしたかなしさ。"
+      },
+      "frequencyRank": 5403,
+      "collocations": [
+        "人生の悲哀",
+        "サラリーマンの悲哀"
+      ],
+      "confusables": [
+        "v-n1-0063"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0063",
+      "word": "哀愁",
+      "kana": "あいしゅう",
+      "meanings": [
+        "melancholy",
+        "wistful sadness"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "arts",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{秋|あき}の{夕暮|ゆうぐ}れに{聞|き}こえてきた{笛|ふえ}の{音|ね}には、どこか{哀愁|あいしゅう}が{漂|ただよ}っていた。",
+          "kana": "あきのゆうぐれにきこえてきたふえのねには、どこかあいしゅうがただよっていた。",
+          "en": "The sound of a flute at dusk in autumn carried a certain melancholy."
+        },
+        {
+          "ja": "{人気|ひとけ}のない{冬|ふゆ}の{海岸|かいがん}は、{哀愁|あいしゅう}を{誘|さそ}う{風景|ふうけい}です。",
+          "kana": "ひとけのないふゆのかいがんは、あいしゅうをさそうふうけいです。",
+          "en": "A deserted winter shore is a scene that stirs a quiet melancholy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}にしみるような、どこか{悲|かな}しくて{静|しず}かな{感|かん}じ。",
+        "kana": "こころにしみるような、どこかかなしくてしずかなかんじ。"
+      },
+      "frequencyRank": 5409,
+      "collocations": [
+        "哀愁を帯びる",
+        "哀愁が漂う"
+      ],
+      "confusables": [
+        "v-n1-0064",
+        "v-n1-0062"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0064",
+      "word": "郷愁",
+      "kana": "きょうしゅう",
+      "meanings": [
+        "nostalgia",
+        "homesickness"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{田舎|いなか}の{祭|まつ}りの{写真|しゃしん}を{見|み}ていたら、{急|きゅう}に{郷愁|きょうしゅう}に{襲|おそ}われた。",
+          "kana": "いなかのまつりのしゃしんをみていたら、きゅうにきょうしゅうにおそわれた。",
+          "en": "Looking at photos of the festival back home, I was suddenly overcome with nostalgia."
+        },
+        {
+          "ja": "この{味噌汁|みそしる}の{味|あじ}は、{都会|とかい}で{暮|く}らす{人|ひと}の{郷愁|きょうしゅう}をかき{立|た}てるのだろう。",
+          "kana": "このみそしるのあじは、とかいでくらすひとのきょうしゅうをかきたてるのだろう。",
+          "en": "The taste of this miso soup must stir up nostalgia in people living in the city."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ふるさとや{昔|むかし}のことを、{懐|なつ}かしく{感|かん}じる{気持|きも}ち。",
+        "kana": "ふるさとやむかしのことを、なつかしくかんじるきもち。"
+      },
+      "frequencyRank": 5416,
+      "collocations": [
+        "郷愁を誘う",
+        "郷愁に駆られる"
+      ],
+      "confusables": [
+        "v-n1-0063",
+        "v-n1-0066"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0065",
+      "word": "追憶",
+      "kana": "ついおく",
+      "meanings": [
+        "recollection",
+        "reminiscence"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{古|ふる}いアルバムを{開|ひら}くたびに、{若|わか}い{日|ひ}の{追憶|ついおく}にふけっていた。",
+          "kana": "そぼはふるいアルバムをひらくたびに、わかいひのついおくにふけっていた。",
+          "en": "Every time my grandmother opened the old album she lost herself in memories of her youth."
+        },
+        {
+          "ja": "この{曲|きょく}を{聞|き}くと、{学生|がくせい}{時代|じだい}の{追憶|ついおく}が{次々|つぎつぎ}と{浮|う}かんできます。",
+          "kana": "このきょくをきくと、がくせいじだいのついおくがつぎつぎとうかんできます。",
+          "en": "Whenever I hear this song, memories of my student days come flooding back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過|す}ぎた{昔|むかし}のことを、{懐|なつ}かしく{思|おも}い{出|だ}すこと。",
+        "kana": "すぎたむかしのことを、なつかしくおもいだすこと。"
+      },
+      "frequencyRank": 5422,
+      "collocations": [
+        "追憶にふける"
+      ],
+      "confusables": [
+        "v-n1-0067"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0066",
+      "word": "懐古",
+      "kana": "かいこ",
+      "meanings": [
+        "nostalgia (for the past)",
+        "reminiscing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{昭和|しょうわ}の{町並|まちな}みを{再現|さいげん}したこの{施設|しせつ}は、{懐古|かいこ}の{情|じょう}を{誘|さそ}うと{人気|にんき}だ。",
+          "kana": "しょうわのまちなみをさいげんしたこのしせつは、かいこのじょうをさそうとにんきだ。",
+          "en": "This facility recreating a Shōwa-era townscape is popular for stirring up nostalgia."
+        },
+        {
+          "ja": "{懐古|かいこ}{趣味|しゅみ}だと{笑|わら}われても、{私|わたし}はやはり{紙|かみ}の{手紙|てがみ}が{好|す}きだ。",
+          "kana": "かいこしゅみだとわらわれても、わたしはやはりかみのてがみがすきだ。",
+          "en": "Call it a taste for the old days if you like, but I still prefer letters on paper."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}のことを{懐|なつ}かしがって、よかったと{振|ふ}り{返|かえ}ること。",
+        "kana": "むかしのことをなつかしがって、よかったとふりかえること。"
+      },
+      "frequencyRank": 5429,
+      "notes": "Fond longing for the old days (懐古趣味 = retro taste); 回顧, same reading, is the neutral act of looking back.",
+      "collocations": [
+        "懐古趣味",
+        "懐古の情"
+      ],
+      "confusables": [
+        "v-n1-0067"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0067",
+      "word": "回顧",
+      "kana": "かいこ",
+      "meanings": [
+        "looking back",
+        "retrospection"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "time",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{引退|いんたい}した{監督|かんとく}は、インタビューで{四十年|よんじゅうねん}の{現場|げんば}{生活|せいかつ}を{回顧|かいこ}した。",
+          "kana": "いんたいしたかんとくは、インタビューでよんじゅうねんのげんばせいかつをかいこした。",
+          "en": "In the interview, the retired director looked back over forty years on set."
+        },
+        {
+          "ja": "この{本|ほん}は、{戦後|せんご}の{復興|ふっこう}を{支|ささ}えた{技術者|ぎじゅつしゃ}たちの{回顧|かいこ}{録|ろく}をまとめたものです。",
+          "kana": "このほんは、せんごのふっこうをささえたぎじゅつしゃたちのかいころくをまとめたものです。",
+          "en": "This book brings together the memoirs of the engineers who supported the postwar recovery."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過去|かこ}に{起|お}こったことや{自分|じぶん}の{経験|けいけん}を、{順|じゅん}に{思|おも}い{出|だ}すこと。",
+        "kana": "かこにおこったことやじぶんのけいけんを、じゅんにおもいだすこと。"
+      },
+      "frequencyRank": 5436,
+      "collocations": [
+        "回顧録",
+        "回顧展"
+      ],
+      "confusables": [
+        "v-n1-0066",
+        "v-n1-0065"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0068",
+      "word": "憧憬",
+      "kana": "しょうけい",
+      "meanings": [
+        "longing",
+        "yearning (for an ideal)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{若|わか}い{頃|ころ}の{彼|かれ}は、{外国|がいこく}の{暮|く}らしに{強|つよ}い{憧憬|しょうけい}を{抱|いだ}いていた。",
+          "kana": "わかいころのかれは、がいこくのくらしにつよいしょうけいをいだいていた。",
+          "en": "When he was young, he harbored a strong longing for life abroad."
+        },
+        {
+          "ja": "{都会|とかい}への{憧憬|しょうけい}は、{田舎|いなか}の{若者|わかもの}の{心|こころ}をいつの{時代|じだい}も{動|うご}かしてきた。",
+          "kana": "とかいへのしょうけいは、いなかのわかもののこころをいつのじだいもうごかしてきた。",
+          "en": "A longing for the city has stirred the hearts of young people in the countryside in every era."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{理想|りそう}とするものに{強|つよ}く{心|こころ}を{引|ひ}かれ、そうなりたいと{願|ねが}うこと。",
+        "kana": "りそうとするものにつよくこころをひかれ、そうなりたいとねがうこと。"
+      },
+      "frequencyRank": 5442,
+      "notes": "Literary equivalent of 憧れ; traditionally also read どうけい.",
+      "collocations": [
+        "憧憬を抱く",
+        "憧憬の的"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0069",
+      "word": "郷里",
+      "kana": "きょうり",
+      "meanings": [
+        "hometown",
+        "one's native place"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "family",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{盆|ぼん}と{正月|しょうがつ}には{必|かなら}ず{郷里|きょうり}に{帰|かえ}り、{両親|りょうしん}の{顔|かお}を{見|み}るようにしている。",
+          "kana": "ぼんとしょうがつにはかならずきょうりにかえり、りょうしんのかおをみるようにしている。",
+          "en": "At Obon and New Year I always make a point of going back to my hometown to see my parents."
+        },
+        {
+          "ja": "{定年|ていねん}を{迎|むか}えたら{郷里|きょうり}に{戻|もど}って、{畑|はたけ}でもやろうかと{考|かんが}えています。",
+          "kana": "ていねんをむかえたらきょうりにもどって、はたけでもやろうかとかんがえています。",
+          "en": "Once I retire I am thinking of going back to my hometown and maybe taking up farming."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}が{生|う}まれ{育|そだ}った{所|ところ}。ふるさと。",
+        "kana": "じぶんがうまれそだったところ。ふるさと。"
+      },
+      "frequencyRank": 5449,
+      "collocations": [
+        "郷里に帰る",
+        "郷里を離れる"
+      ],
+      "confusables": [
+        "v-n1-0070"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0070",
+      "word": "異郷",
+      "kana": "いきょう",
+      "meanings": [
+        "foreign land",
+        "strange land (away from home)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "travel",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{異郷|いきょう}の{地|ち}で{病|やまい}に{倒|たお}れた{彼|かれ}を、{見知|みし}らぬ{人々|ひとびと}が{親切|しんせつ}に{助|たす}けてくれた。",
+          "kana": "いきょうのちでやまいにたおれたかれを、みしらぬひとびとがしんせつにたすけてくれた。",
+          "en": "When he fell ill in a foreign land, strangers kindly came to his aid."
+        },
+        {
+          "ja": "{言葉|ことば}も{通|つう}じない{異郷|いきょう}で、{彼女|かのじょ}は{十年間|じゅうねんかん}{一人|ひとり}で{店|みせ}を{守|まも}り{続|つづ}けた。",
+          "kana": "ことばもつうじないいきょうで、かのじょはじゅうねんかんひとりでみせをまもりつづけた。",
+          "en": "In a foreign land where she could not even speak the language, she kept the shop going alone for ten years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{生|う}まれた{所|ところ}から{遠|とお}く{離|はな}れた、よその{国|くに}や{町|まち}。",
+        "kana": "じぶんのうまれたところからとおくはなれた、よそのくにやまち。"
+      },
+      "frequencyRank": 5455,
+      "collocations": [
+        "異郷の地",
+        "異郷で暮らす"
+      ],
+      "confusables": [
+        "v-n1-0069"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0071",
+      "word": "辺境",
+      "kana": "へんきょう",
+      "meanings": [
+        "frontier",
+        "remote region"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}は{辺境|へんきょう}と{呼|よ}ばれた{土地|とち}も、{今|いま}では{新幹線|しんかんせん}で{数時間|すうじかん}の{距離|きょり}だ。",
+          "kana": "むかしはへんきょうとよばれたとちも、いまではしんかんせんですうじかんのきょりだ。",
+          "en": "Land once called the frontier is now just a few hours away by bullet train."
+        },
+        {
+          "ja": "{若|わか}い{医師|いし}は、{自|みずか}ら{望|のぞ}んで{国|くに}の{辺境|へんきょう}にある{診療所|しんりょうじょ}へ{赴任|ふにん}した。",
+          "kana": "わかいいしは、みずからのぞんでくにのへんきょうにあるしんりょうじょへふにんした。",
+          "en": "The young doctor asked to be posted to a clinic on the country's remote frontier."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{中心|ちゅうしん}から{遠|とお}く{離|はな}れた、{人|ひと}の{少|すく}ない{所|ところ}。",
+        "kana": "くにのちゅうしんからとおくはなれた、ひとのすくないところ。"
+      },
+      "frequencyRank": 5462,
+      "collocations": [
+        "辺境の地",
+        "辺境の村"
+      ],
+      "confusables": [
+        "v-n1-0072"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0072",
+      "word": "秘境",
+      "kana": "ひきょう",
+      "meanings": [
+        "unexplored region",
+        "hidden scenic spot"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "travel",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "{車|くるま}でも{行|い}きにくいその{村|むら}は、{最後|さいご}の{秘境|ひきょう}として{旅行|りょこう}{雑誌|ざっし}に{紹介|しょうかい}された。",
+          "kana": "くるまでもいきにくいそのむらは、さいごのひきょうとしてりょこうざっしにしょうかいされた。",
+          "en": "That village, hard to reach even by car, was featured in a travel magazine as the last hidden frontier."
+        },
+        {
+          "ja": "{秘境|ひきょう}と{呼|よ}ばれる{温泉|おんせん}まで、{駅|えき}からバスで{三時間|さんじかん}もかかるんだって。",
+          "kana": "ひきょうとよばれるおんせんまで、えきからバスでさんじかんもかかるんだって。",
+          "en": "They say it takes three whole hours by bus from the station to get to that hot spring they call a hidden gem."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}がほとんど{訪|おとず}れたことのない、まだあまり{知|し}られていない{所|ところ}。",
+        "kana": "ひとがほとんどおとずれたことのない、まだあまりしられていないところ。"
+      },
+      "frequencyRank": 5469,
+      "collocations": [
+        "秘境駅",
+        "秘境の温泉"
+      ],
+      "confusables": [
+        "v-n1-0071"
+      ],
+      "station": 47
+    },
+    {
+      "id": "v-n1-0073",
+      "word": "幽玄",
+      "kana": "ゆうげん",
+      "meanings": [
+        "profound grace",
+        "subtle, mysterious beauty"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "culture",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{能|のう}の{舞台|ぶたい}は、{言葉|ことば}では{説明|せつめい}しにくい{幽玄|ゆうげん}の{美|び}を{感|かん}じさせる。",
+          "kana": "のうのぶたいは、ことばではせつめいしにくいゆうげんのびをかんじさせる。",
+          "en": "A noh stage conveys a profound, subtle beauty that is hard to put into words."
+        },
+        {
+          "ja": "{霧|きり}に{包|つつ}まれた{杉林|すぎばやし}を{歩|ある}いていると、どこか{幽玄|ゆうげん}な{世界|せかい}に{迷|まよ}い{込|こ}んだ{気分|きぶん}になる。",
+          "kana": "きりにつつまれたすぎばやしをあるいていると、どこかゆうげんなせかいにまよいこんだきぶんになる。",
+          "en": "Walking through a cedar grove wrapped in fog, I feel as if I have strayed into some otherworldly realm."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}では{言|い}い{表|あらわ}せないほど、{奥|おく}が{深|ふか}くて{静|しず}かな{美|うつく}しさ。",
+        "kana": "ことばではいいあらわせないほど、おくがふかくてしずかなうつくしさ。"
+      },
+      "frequencyRank": 5475,
+      "notes": "Aesthetic ideal of medieval poetry and noh; also used as a な-adjective (幽玄な世界).",
+      "collocations": [
+        "幽玄の美",
+        "幽玄な世界"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0074",
+      "word": "侘び",
+      "kana": "わび",
+      "meanings": [
+        "wabi (beauty in austere simplicity)",
+        "quiet refinement"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{何|なに}もない{小|ちい}さな{茶室|ちゃしつ}にこそ、{侘|わ}びの{心|こころ}があるのだと{先生|せんせい}は{言|い}った。",
+          "kana": "なにもないちいさなちゃしつにこそ、わびのこころがあるのだとせんせいはいった。",
+          "en": "It is in a small, bare tea room that the spirit of wabi lives, the teacher said."
+        },
+        {
+          "ja": "{欠|か}けた{茶碗|ちゃわん}をあえて{使|つか}い{続|つづ}けるところに、{侘|わ}びを{楽|たの}しむ{心|こころ}が{表|あらわ}れています。",
+          "kana": "かけたちゃわんをあえてつかいつづけるところに、わびをたのしむこころがあらわれています。",
+          "en": "Deliberately going on using a chipped tea bowl shows a spirit that delights in wabi."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{質素|しっそ}で{静|しず}かなものの{中|なか}に、{深|ふか}い{美|うつく}しさを{見|み}つける{心|こころ}。",
+        "kana": "しっそでしずかなもののなかに、ふかいうつくしさをみつけるこころ。"
+      },
+      "frequencyRank": 5482,
+      "altForms": [
+        "わび"
+      ],
+      "collocations": [
+        "侘び寂び",
+        "侘びの心"
+      ],
+      "confusables": [
+        "v-n1-0075"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0075",
+      "word": "寂び",
+      "kana": "さび",
+      "meanings": [
+        "sabi (beauty of age and patina)",
+        "quiet elegance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{茶碗|ちゃわん}の{色|いろ}あせた{表面|ひょうめん}に、{寂|さ}びの{美|うつく}しさを{見|み}いだす。",
+          "kana": "ふるいちゃわんのいろあせたひょうめんに、さびのうつくしさをみいだす。",
+          "en": "One finds the beauty of sabi in the faded surface of an old tea bowl."
+        },
+        {
+          "ja": "{苔|こけ}の{生|は}えた{石灯籠|いしどうろう}には、{新品|しんぴん}にはない{寂|さ}びがある。",
+          "kana": "こけのはえたいしどうろうには、しんぴんにはないさびがある。",
+          "en": "A moss-covered stone lantern has a weathered beauty that nothing new can have."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{古|ふる}くなって{落|お}ち{着|つ}いたものの{中|なか}にある、{静|しず}かで{深|ふか}い{味|あじ}わい。",
+        "kana": "ふるくなっておちついたもののなかにある、しずかでふかいあじわい。"
+      },
+      "frequencyRank": 5488,
+      "notes": "Paired as 侘び寂び. Not 寂しい; 錆び (rust) is a cousin word with the same reading.",
+      "altForms": [
+        "さび"
+      ],
+      "collocations": [
+        "侘び寂び",
+        "寂びの美"
+      ],
+      "confusables": [
+        "v-n1-0074"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0076",
+      "word": "粋",
+      "kana": "いき",
+      "meanings": [
+        "chic",
+        "stylish (in an understated way)",
+        "sophisticated"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "personality",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{着物|きもの}を{粋|いき}に{着|き}こなすおじいさんが、{下町|したまち}の{祭|まつ}りを{歩|ある}いていた。",
+          "kana": "きものをいきにきこなすおじいさんが、したまちのまつりをあるいていた。",
+          "en": "An old man wearing a kimono with understated flair was strolling through the downtown festival."
+        },
+        {
+          "ja": "{黙|だま}って{勘定|かんじょう}を{済|す}ませておいてくれるなんて、ずいぶん{粋|いき}なことをするじゃないか。",
+          "kana": "だまってかんじょうをすませておいてくれるなんて、ずいぶんいきなことをするじゃないか。",
+          "en": "Quietly settling the bill for us without a word, now that's a classy thing to do."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{態度|たいど}や{服|ふく}が{飾|かざ}りすぎず、さっぱりとあか{抜|ぬ}けている{様子|ようす}。",
+        "kana": "たいどやふくがかざりすぎず、さっぱりとあかぬけているようす。"
+      },
+      "frequencyRank": 5495,
+      "notes": "Edo-era ideal of understated chic; the opposite is 野暮. Also read すい (粋を集める) with a different sense.",
+      "collocations": [
+        "粋な計らい",
+        "粋な着こなし"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0077",
+      "word": "風流",
+      "kana": "ふうりゅう",
+      "meanings": [
+        "refined",
+        "tasteful",
+        "elegant (in a traditional way)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{月|つき}を{眺|なが}めながら{酒|さけ}を{飲|の}むなんて、ずいぶん{風流|ふうりゅう}なことをするね。",
+          "kana": "つきをながめながらさけをのむなんて、ずいぶんふうりゅうなことをするね。",
+          "en": "Drinking sake while gazing at the moon, how refined of you."
+        },
+        {
+          "ja": "{俳句|はいく}を{詠|よ}みながら{旅|たび}をするなんて、{風流|ふうりゅう}な{休日|きゅうじつ}の{過|す}ごし{方|かた}ですね。",
+          "kana": "はいくをよみながらたびをするなんて、ふうりゅうなきゅうじつのすごしかたですね。",
+          "en": "Traveling while composing haiku, what an elegant way to spend a holiday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自然|しぜん}や{詩|し}、{歌|うた}などを{楽|たの}しむ、{上品|じょうひん}で{落|お}ち{着|つ}いた{様子|ようす}。",
+        "kana": "しぜんやし、うたなどをたのしむ、じょうひんでおちついたようす。"
+      },
+      "frequencyRank": 5502,
+      "collocations": [
+        "風流な遊び",
+        "風流人"
+      ],
+      "confusables": [
+        "v-n1-0078"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0078",
+      "word": "風雅",
+      "kana": "ふうが",
+      "meanings": [
+        "elegance",
+        "refined taste (poetry, tea)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "arts",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{茶|ちゃ}の{湯|ゆ}や{俳句|はいく}を{楽|たの}しむ{風雅|ふうが}な{暮|く}らしに、{退職後|たいしょくご}は{憧|あこが}れている。",
+          "kana": "ちゃのゆやはいくをたのしむふうがなくらしに、たいしょくごはあこがれている。",
+          "en": "After retirement I dream of a refined life of tea ceremony and haiku."
+        },
+        {
+          "ja": "{昔|むかし}の{貴族|きぞく}たちは、{月|つき}を{眺|なが}めて{歌|うた}を{詠|よ}むことを{風雅|ふうが}の{極|きわ}みとした。",
+          "kana": "むかしのきぞくたちは、つきをながめてうたをよむことをふうがのきわみとした。",
+          "en": "The nobles of old regarded gazing at the moon and composing poems as the height of refinement."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{詩|し}や{歌|うた}、お{茶|ちゃ}などを{楽|たの}しむ、{上品|じょうひん}で{美|うつく}しい{趣味|しゅみ}。",
+        "kana": "しやうた、おちゃなどをたのしむ、じょうひんでうつくしいしゅみ。"
+      },
+      "frequencyRank": 5508,
+      "collocations": [
+        "風雅な暮らし",
+        "風雅を解する"
+      ],
+      "confusables": [
+        "v-n1-0077",
+        "v-n1-0079"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0079",
+      "word": "雅",
+      "kana": "みやび",
+      "meanings": [
+        "courtly elegance",
+        "refinement"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{京都|きょうと}の{古|ふる}い{祭|まつ}りには、{千年|せんねん}{前|まえ}の{都|みやこ}の{雅|みやび}が{今|いま}も{残|のこ}っている。",
+          "kana": "きょうとのふるいまつりには、せんねんまえのみやこのみやびがいまものこっている。",
+          "en": "Kyoto's old festivals still preserve the courtly elegance of the capital of a thousand years ago."
+        },
+        {
+          "ja": "{十二単|じゅうにひとえ}の{色|いろ}の{重|かさ}ね{方|かた}には、{平安|へいあん}の{貴族|きぞく}が{求|もと}めた{雅|みやび}が{表|あらわ}れている。",
+          "kana": "じゅうにひとえのいろのかさねかたには、へいあんのきぞくがもとめたみやびがあらわれている。",
+          "en": "The layering of colors in the jūnihitoe reveals the courtly elegance the Heian nobles sought."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}の{貴族|きぞく}のように、{上品|じょうひん}で{美|うつく}しい{様子|ようす}。",
+        "kana": "むかしのきぞくのように、じょうひんでうつくしいようす。"
+      },
+      "frequencyRank": 5515,
+      "notes": "Heian court ideal; the opposite of 俗. Also a な-adjective (雅な衣装).",
+      "collocations": [
+        "雅な衣装",
+        "雅の世界"
+      ],
+      "confusables": [
+        "v-n1-0078",
+        "v-n1-0080"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0080",
+      "word": "俗",
+      "kana": "ぞく",
+      "meanings": [
+        "worldly",
+        "vulgar",
+        "common (not refined)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{有名人|ゆうめいじん}の{噂話|うわさばなし}ばかりで、{俗|ぞく}な{週刊誌|しゅうかんし}だと{笑|わら}われても{仕方|しかた}がない。",
+          "kana": "ゆうめいじんのうわさばなしばかりで、ぞくなしゅうかんしだとわらわれてもしかたがない。",
+          "en": "Full of nothing but celebrity gossip, it deserves to be laughed at as a vulgar weekly."
+        },
+        {
+          "ja": "{金|かね}の{話|はなし}ばかりで{俗|ぞく}だと{言|い}われるかもしれないが、{生活|せいかつ}がかかっているんだ。",
+          "kana": "かねのはなしばかりでぞくだといわれるかもしれないが、せいかつがかかっているんだ。",
+          "en": "You might call me vulgar for talking about nothing but money, but my livelihood is at stake."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{高|たか}い{理想|りそう}や{上品|じょうひん}さがなく、ありふれていて{低|ひく}い{感|かん}じがする{様子|ようす}。",
+        "kana": "たかいりそうやじょうひんさがなく、ありふれていてひくいかんじがするようす。"
+      },
+      "frequencyRank": 5521,
+      "notes": "俗に = commonly, popularly (俗に言う); 俗世間 = the mundane world; 俗っぽい = tacky.",
+      "collocations": [
+        "俗に言う",
+        "俗っぽい"
+      ],
+      "confusables": [
+        "v-n1-0081",
+        "v-n1-0079"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0081",
+      "word": "卑俗",
+      "kana": "ひぞく",
+      "meanings": [
+        "vulgar",
+        "coarse"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "language",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}は{卑俗|ひぞく}だと{言|い}われた{言葉|ことば}が、{今|いま}では{辞書|じしょ}に{載|の}っていることもある。",
+          "kana": "むかしはひぞくだといわれたことばが、いまではじしょにのっていることもある。",
+          "en": "Words once called vulgar sometimes appear in dictionaries today."
+        },
+        {
+          "ja": "{笑|わら}いを{取|と}るためなら{卑俗|ひぞく}な{表現|ひょうげん}も{構|かま}わない、という{考|かんが}えには{賛成|さんせい}できません。",
+          "kana": "わらいをとるためならひぞくなひょうげんもかまわない、というかんがえにはさんせいできません。",
+          "en": "I cannot agree with the idea that any coarse expression is fine as long as it gets a laugh."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上品|じょうひん}さがまったくなく、{下品|げひん}で{程度|ていど}が{低|ひく}い{様子|ようす}。",
+        "kana": "じょうひんさがまったくなく、げひんでていどがひくいようす。"
+      },
+      "frequencyRank": 5528,
+      "collocations": [
+        "卑俗な表現",
+        "卑俗な趣味"
+      ],
+      "confusables": [
+        "v-n1-0080",
+        "v-n1-0082"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0082",
+      "word": "高尚",
+      "kana": "こうしょう",
+      "meanings": [
+        "lofty",
+        "refined",
+        "highbrow"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{高尚|こうしょう}な{趣味|しゅみ}だと{思|おも}われがちだが、{俳句|はいく}は{誰|だれ}でも{気軽|きがる}に{始|はじ}められる。",
+          "kana": "こうしょうなしゅみだとおもわれがちだが、はいくはだれでもきがるにはじめられる。",
+          "en": "People tend to think of it as a highbrow hobby, but anyone can take up haiku casually."
+        },
+        {
+          "ja": "{彼|かれ}の{話|はなし}はいつも{高尚|こうしょう}すぎて、{私|わたし}には{半分|はんぶん}も{理解|りかい}できなかった。",
+          "kana": "かれのはなしはいつもこうしょうすぎて、わたしにははんぶんもりかいできなかった。",
+          "en": "His talk was always so highbrow that I could not follow even half of it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学問|がくもん}や{趣味|しゅみ}などの{程度|ていど}が{高|たか}く、{上品|じょうひん}で{立派|りっぱ}な{様子|ようす}。",
+        "kana": "がくもんやしゅみなどのていどがたかく、じょうひんでりっぱなようす。"
+      },
+      "frequencyRank": 5535,
+      "collocations": [
+        "高尚な趣味",
+        "高尚な理想"
+      ],
+      "confusables": [
+        "v-n1-0081"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0083",
+      "word": "気品",
+      "kana": "きひん",
+      "meanings": [
+        "grace",
+        "dignity",
+        "refinement"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{何気|なにげ}ない{仕草|しぐさ}の{一|ひと}つ{一|ひと}つに、{彼女|かのじょ}の{気品|きひん}が{表|あらわ}れていた。",
+          "kana": "なにげないしぐさのひとつひとつに、かのじょのきひんがあらわれていた。",
+          "en": "Her grace showed in every one of her small, unconscious gestures."
+        },
+        {
+          "ja": "{白|しろ}い{花|はな}を{一輪|いちりん}だけ{生|い}けたその{部屋|へや}には、{静|しず}かな{気品|きひん}が{感|かん}じられました。",
+          "kana": "しろいはなをいちりんだけいけたそのへやには、しずかなきひんがかんじられました。",
+          "en": "With just a single white flower arranged in it, the room had an air of quiet grace."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}やものから{自然|しぜん}に{感|かん}じられる、{上品|じょうひん}で{美|うつく}しい{感|かん}じ。",
+        "kana": "ひとやものからしぜんにかんじられる、じょうひんでうつくしいかんじ。"
+      },
+      "frequencyRank": 5541,
+      "collocations": [
+        "気品がある",
+        "気品に満ちた"
+      ],
+      "confusables": [
+        "v-n1-0084",
+        "v-n1-0085"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0084",
+      "word": "品格",
+      "kana": "ひんかく",
+      "meanings": [
+        "dignity",
+        "character",
+        "class"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{勝|か}った{後|あと}で{相手|あいて}に{深|ふか}く{礼|れい}をする{姿|すがた}に、{選手|せんしゅ}としての{品格|ひんかく}を{感|かん}じた。",
+          "kana": "かったあとであいてにふかくれいをするすがたに、せんしゅとしてのひんかくをかんじた。",
+          "en": "The way he bowed deeply to his opponent after winning showed real class as an athlete."
+        },
+        {
+          "ja": "{言葉|ことば}づかいが{乱|みだ}れると、{国|くに}の{品格|ひんかく}まで{疑|うたが}われかねない、と{祖父|そふ}はよく{言|い}う。",
+          "kana": "ことばづかいがみだれると、くにのひんかくまでうたがわれかねない、とそふはよくいう。",
+          "en": "When people's language gets sloppy, even the nation's dignity comes into question, my grandfather often says."
+        }
+      ],
+      "definitionJa": {
+        "ja": "その{人|ひと}やものが{持|も}っている、{上品|じょうひん}さや{立派|りっぱ}さ。",
+        "kana": "そのひとやものがもっている、じょうひんさやりっぱさ。"
+      },
+      "frequencyRank": 5548,
+      "collocations": [
+        "品格がある",
+        "品格を疑う"
+      ],
+      "confusables": [
+        "v-n1-0083",
+        "v-n1-0085"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0085",
+      "word": "風格",
+      "kana": "ふうかく",
+      "meanings": [
+        "dignity",
+        "stature",
+        "distinctive character"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{百年|ひゃくねん}を{超|こ}える{木造|もくぞう}の{駅舎|えきしゃ}には、{新|あたら}しい{建物|たてもの}にはない{風格|ふうかく}がある。",
+          "kana": "ひゃくねんをこえるもくぞうのえきしゃには、あたらしいたてものにはないふうかくがある。",
+          "en": "The wooden station building, over a hundred years old, has a dignity new buildings lack."
+        },
+        {
+          "ja": "まだ{二十代|にじゅうだい}なのに、{彼女|かのじょ}にはすでにリーダーとしての{風格|ふうかく}が{備|そな}わっている。",
+          "kana": "まだにじゅうだいなのに、かのじょにはすでにリーダーとしてのふうかくがそなわっている。",
+          "en": "Though still in her twenties, she already has the bearing of a leader."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{長|なが}い{時間|じかん}をかけて{自然|しぜん}にできた、{立派|りっぱ}で{重|おも}みのある{感|かん}じ。",
+        "kana": "ながいじかんをかけてしぜんにできた、りっぱでおもみのあるかんじ。"
+      },
+      "frequencyRank": 5554,
+      "collocations": [
+        "風格がある",
+        "風格が漂う"
+      ],
+      "confusables": [
+        "v-n1-0083",
+        "v-n1-0084",
+        "v-n1-0086"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0086",
+      "word": "貫禄",
+      "kana": "かんろく",
+      "meanings": [
+        "presence",
+        "dignity (of experience)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{課長|かちょう}になって{三年|さんねん}、{彼|かれ}もすっかり{貫禄|かんろく}がついてきた。",
+          "kana": "かちょうになってさんねん、かれもすっかりかんろくがついてきた。",
+          "en": "Three years into being section chief, he has really grown into the role."
+        },
+        {
+          "ja": "{初|はじ}めて{会|あ}ったとき、その{老人|ろうじん}の{貫禄|かんろく}に{圧倒|あっとう}されて{声|こえ}も{出|で}なかった。",
+          "kana": "はじめてあったとき、そのろうじんのかんろくにあっとうされてこえもでなかった。",
+          "en": "The first time we met, the old man's commanding presence so overwhelmed me that I could not even speak."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{経験|けいけん}を{積|つ}んだ{人|ひと}から{感|かん}じられる、どっしりとした{重|おも}みや{威厳|いげん}。",
+        "kana": "けいけんをつんだひとからかんじられる、どっしりとしたおもみやいげん。"
+      },
+      "frequencyRank": 5561,
+      "collocations": [
+        "貫禄がある",
+        "貫禄がつく"
+      ],
+      "confusables": [
+        "v-n1-0085"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0087",
+      "word": "威光",
+      "kana": "いこう",
+      "meanings": [
+        "authority",
+        "prestige (that commands respect)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{社長|しゃちょう}の{威光|いこう}を{借|か}りて{部下|ぶか}を{動|うご}かそうとしても、{長|なが}くは{続|つづ}かない。",
+          "kana": "しゃちょうのいこうをかりてぶかをうごかそうとしても、ながくはつづかない。",
+          "en": "Trying to move your staff by borrowing the president's authority will not work for long."
+        },
+        {
+          "ja": "かつては{親|おや}の{威光|いこう}で{何|なん}でも{通|とお}った{彼|かれ}も、{今|いま}では{自分|じぶん}の{力|ちから}で{道|みち}を{切|き}り{開|ひら}いている。",
+          "kana": "かつてはおやのいこうでなんでもとおったかれも、いまではじぶんのちからでみちをきりひらいている。",
+          "en": "He once got his way on his parents' prestige alone; now he is carving out his own path by his own efforts."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}を{自然|しぜん}に{従|したが}わせるような、{強|つよ}い{力|ちから}や{偉|えら}さ。",
+        "kana": "ひとをしぜんにしたがわせるような、つよいちからやえらさ。"
+      },
+      "frequencyRank": 5568,
+      "collocations": [
+        "威光を借りる",
+        "親の威光"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0088",
+      "word": "栄華",
+      "kana": "えいが",
+      "meanings": [
+        "glory",
+        "splendor (of power or wealth)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "society",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{栄華|えいが}を{極|きわ}めた{一族|いちぞく}も、{今|いま}は{屋敷|やしき}の{跡|あと}が{残|のこ}るだけだ。",
+          "kana": "えいがをきわめたいちぞくも、いまはやしきのあとがのこるだけだ。",
+          "en": "Of the clan that once knew such glory, only the ruins of their mansion remain."
+        },
+        {
+          "ja": "{都|みやこ}の{栄華|えいが}を{歌|うた}ったその{詩|し}は、{千年|せんねん}たった{今|いま}も{多|おお}くの{人|ひと}に{読|よ}まれている。",
+          "kana": "みやこのえいがをうたったそのしは、せんねんたったいまもおおくのひとによまれている。",
+          "en": "That poem singing of the capital's splendor is still read by many a thousand years on."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{力|ちから}や{財産|ざいさん}を{手|て}に{入|い}れて、{華|はな}やかな{毎日|まいにち}を{送|おく}ること。",
+        "kana": "おおきなちからやざいさんをてにいれて、はなやかなまいにちをおくること。"
+      },
+      "frequencyRank": 5574,
+      "notes": "Homophone of 映画 (film); context makes it clear. 栄華を極める = to be at the height of one's glory.",
+      "collocations": [
+        "栄華を極める",
+        "栄華を誇る"
+      ],
+      "confusables": [
+        "v-n1-0092",
+        "v-n1-0137"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0089",
+      "word": "盛衰",
+      "kana": "せいすい",
+      "meanings": [
+        "rise and fall",
+        "ups and downs"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "この{博物館|はくぶつかん}では、{港町|みなとまち}の{盛衰|せいすい}を{写真|しゃしん}と{模型|もけい}でたどることができる。",
+          "kana": "このはくぶつかんでは、みなとまちのせいすいをしゃしんともけいでたどることができる。",
+          "en": "At this museum you can trace the rise and fall of the port town through photos and models."
+        },
+        {
+          "ja": "{企業|きぎょう}の{盛衰|せいすい}は、{時代|じだい}の{変化|へんか}を{読|よ}めるかどうかにかかっていると{言|い}ってもいい。",
+          "kana": "きぎょうのせいすいは、じだいのへんかをよめるかどうかにかかっているといってもいい。",
+          "en": "You could say the rise and fall of a company hinges on whether it can read the changes of the times."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{盛|さか}んになったり{弱|よわ}くなったりすること。{力|ちから}の{上|あ}がり{下|さ}がり。",
+        "kana": "さかんになったりよわくなったりすること。ちからのあがりさがり。"
+      },
+      "frequencyRank": 5581,
+      "collocations": [
+        "栄枯盛衰",
+        "盛衰をたどる"
+      ],
+      "confusables": [
+        "v-n1-0090"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0090",
+      "word": "興亡",
+      "kana": "こうぼう",
+      "meanings": [
+        "rise and fall (of nations)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}の{本棚|ほんだな}には、{古代|こだい}{帝国|ていこく}の{興亡|こうぼう}を{描|えが}いた{歴史書|れきししょ}が{並|なら}んでいた。",
+          "kana": "そふのほんだなには、こだいていこくのこうぼうをえがいたれきししょがならんでいた。",
+          "en": "My grandfather's bookshelf was lined with histories tracing the rise and fall of ancient empires."
+        },
+        {
+          "ja": "{国|くに}の{興亡|こうぼう}をかけた{戦|たたか}いが、まさにこの{平野|へいや}で{繰|く}り{広|ひろ}げられたのです。",
+          "kana": "くにのこうぼうをかけたたたかいが、まさにこのへいやでくりひろげられたのです。",
+          "en": "It was right here on this plain that a battle for the very survival of the nation was fought."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}などが{新|あたら}しく{起|お}こって{盛|さか}んになることと、{力|ちから}を{失|うしな}って{消|き}えること。",
+        "kana": "くになどがあたらしくおこってさかんになることと、ちからをうしなってきえること。"
+      },
+      "frequencyRank": 5587,
+      "collocations": [
+        "国家の興亡",
+        "興亡の歴史"
+      ],
+      "confusables": [
+        "v-n1-0089"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0091",
+      "word": "没落",
+      "kana": "ぼつらく",
+      "meanings": [
+        "downfall",
+        "ruin (of a family, class)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{明治|めいじ}になって{武士|ぶし}の{家|いえ}は{没落|ぼつらく}し、{多|おお}くが{新|あたら}しい{仕事|しごと}を{探|さが}さなければならなかった。",
+          "kana": "めいじになってぶしのいえはぼつらくし、おおくがあたらしいしごとをさがさなければならなかった。",
+          "en": "With the Meiji era, samurai families fell into ruin and many had to look for new work."
+        },
+        {
+          "ja": "{没落|ぼつらく}した{貴族|きぞく}の{娘|むすめ}が{主人公|しゅじんこう}の{小説|しょうせつ}を、{最近|さいきん}{読|よ}み{終|お}えました。",
+          "kana": "ぼつらくしたきぞくのむすめがしゅじんこうのしょうせつを、さいきんよみおえました。",
+          "en": "I recently finished a novel whose heroine is the daughter of a fallen aristocratic family."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{豊|ゆた}かだった{家|いえ}や{人|ひと}が、{力|ちから}や{財産|ざいさん}を{失|うしな}って{落|お}ちぶれること。",
+        "kana": "ゆたかだったいえやひとが、ちからやざいさんをうしなっておちぶれること。"
+      },
+      "frequencyRank": 5594,
+      "collocations": [
+        "没落貴族",
+        "家が没落する"
+      ],
+      "confusables": [
+        "v-n1-0007"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0092",
+      "word": "隆盛",
+      "kana": "りゅうせい",
+      "meanings": [
+        "prosperity",
+        "flourishing (period)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{江戸|えど}の{後半|こうはん}、この{町|まち}は{織物|おりもの}で{隆盛|りゅうせい}を{極|きわ}めた。",
+          "kana": "えどのこうはん、このまちはおりものでりゅうせいをきわめた。",
+          "en": "In the latter half of the Edo period, this town flourished on its textiles."
+        },
+        {
+          "ja": "{仏教|ぶっきょう}{文化|ぶんか}が{隆盛|りゅうせい}を{迎|むか}えた{時代|じだい}に、{多|おお}くの{寺|てら}や{仏像|ぶつぞう}が{作|つく}られました。",
+          "kana": "ぶっきょうぶんかがりゅうせいをむかえたじだいに、おおくのてらやぶつぞうがつくられました。",
+          "en": "In the era when Buddhist culture was at its height, many temples and Buddhist statues were made."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{文化|ぶんか}などの{力|ちから}がとても{盛|さか}んで、{豊|ゆた}かに{発展|はってん}していること。",
+        "kana": "くにやぶんかなどのちからがとてもさかんで、ゆたかにはってんしていること。"
+      },
+      "frequencyRank": 5601,
+      "collocations": [
+        "隆盛を極める",
+        "ご隆盛"
+      ],
+      "confusables": [
+        "v-n1-0006",
+        "v-n1-0088"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0093",
+      "word": "本望",
+      "kana": "ほんもう",
+      "meanings": [
+        "long-cherished wish",
+        "satisfaction (at a wish fulfilled)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{好|す}きな{仕事|しごと}を{最後|さいご}までやり{通|とお}せたのだから、{本望|ほんもう}だ。",
+          "kana": "すきなしごとをさいごまでやりとおせたのだから、ほんもうだ。",
+          "en": "I got to see the work I love through to the end, so I have no regrets."
+        },
+        {
+          "ja": "{一度|いちど}でいいからあの{舞台|ぶたい}に{立|た}てたら{本望|ほんもう}です、と{若|わか}い{役者|やくしゃ}は{言|い}った。",
+          "kana": "いちどでいいからあのぶたいにたてたらほんもうです、とわかいやくしゃはいった。",
+          "en": "If I could stand on that stage just once, I'd ask for nothing more, the young actor said."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}からずっと{願|ねが}っていたこと。また、それがかなって{満足|まんぞく}すること。",
+        "kana": "まえからずっとねがっていたこと。また、それがかなってまんぞくすること。"
+      },
+      "frequencyRank": 5607,
+      "notes": "Usually predicative: 〜できれば本望だ = I would ask nothing more; 本望を遂げる = to attain a long-held wish.",
+      "collocations": [
+        "本望を遂げる",
+        "本望だ"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0094",
+      "word": "永劫",
+      "kana": "えいごう",
+      "meanings": [
+        "eternity",
+        "forever"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "この{約束|やくそく}を{破|やぶ}ったら{未来|みらい}{永劫|えいごう}{許|ゆる}さないからね、と{妹|いもうと}は{言|い}った。",
+          "kana": "このやくそくをやぶったらみらいえいごうゆるさないからね、といもうとはいった。",
+          "en": "Break this promise and I will never, ever forgive you, my little sister said."
+        },
+        {
+          "ja": "{永劫|えいごう}に{続|つづ}くかに{思|おも}われた{冬|ふゆ}も、{三月|さんがつ}に{入|はい}るとようやく{終|お}わりが{見|み}えてきた。",
+          "kana": "えいごうにつづくかにおもわれたふゆも、さんがつにはいるとようやくおわりがみえてきた。",
+          "en": "The winter that had seemed as if it would last forever finally showed signs of ending once March came."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{終|お}わりがないほど、どこまでも{長|なが}い{時間|じかん}。{永遠|えいえん}。",
+        "kana": "おわりがないほど、どこまでもながいじかん。えいえん。"
+      },
+      "frequencyRank": 5614,
+      "notes": "Buddhist term for an immeasurably long time; mostly in the set phrase 未来永劫 (for all eternity).",
+      "collocations": [
+        "未来永劫",
+        "永劫回帰"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0095",
+      "word": "慈しみ",
+      "kana": "いつくしみ",
+      "meanings": [
+        "tender love",
+        "compassion"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{庭|にわ}の{草花|くさばな}の{一本一本|いっぽんいっぽん}に、{慈|いつく}しみのこもった{目|め}を{向|む}けていた。",
+          "kana": "そぼはにわのくさばなのいっぽんいっぽんに、いつくしみのこもっためをむけていた。",
+          "en": "My grandmother looked on every single flower in her garden with tender love."
+        },
+        {
+          "ja": "{動物|どうぶつ}たちへの{慈|いつく}しみに{満|み}ちたその{絵本|えほん}は、{大人|おとな}の{読者|どくしゃ}にも{愛|あい}されている。",
+          "kana": "どうぶつたちへのいつくしみにみちたそのえほんは、おとなのどくしゃにもあいされている。",
+          "en": "That picture book, full of tenderness toward animals, is loved by adult readers too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{弱|よわ}いものや{小|ちい}さいものを、かわいがって{大切|たいせつ}にする{心|こころ}。",
+        "kana": "よわいものやちいさいものを、かわいがってたいせつにするこころ。"
+      },
+      "frequencyRank": 5620,
+      "collocations": [
+        "慈しみの心",
+        "慈しみ深い"
+      ],
+      "confusables": [
+        "v-n1-0096"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0096",
+      "word": "憐れみ",
+      "kana": "あわれみ",
+      "meanings": [
+        "pity",
+        "compassion"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}が{欲|ほ}しかったのは{憐|あわ}れみではなく、{対等|たいとう}な{仲間|なかま}として{扱|あつか}われることだった。",
+          "kana": "かれがほしかったのはあわれみではなく、たいとうななかまとしてあつかわれることだった。",
+          "en": "What he wanted was not pity but to be treated as an equal."
+        },
+        {
+          "ja": "{道|みち}に{倒|たお}れた{旅人|たびびと}に{憐|あわ}れみを{感|かん}じて、{老人|ろうじん}は{家|いえ}に{連|つ}れ{帰|かえ}って{看病|かんびょう}した。",
+          "kana": "みちにたおれたたびびとにあわれみをかんじて、ろうじんはいえにつれかえってかんびょうした。",
+          "en": "Taking pity on a traveler collapsed by the roadside, the old man brought him home and nursed him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}をかわいそうだ、{気|き}の{毒|どく}だと{感|かん}じる{心|こころ}。",
+        "kana": "あいてをかわいそうだ、きのどくだとかんじるこころ。"
+      },
+      "frequencyRank": 5627,
+      "altForms": [
+        "哀れみ"
+      ],
+      "collocations": [
+        "憐れみを乞う",
+        "憐れみの目"
+      ],
+      "confusables": [
+        "v-n1-0095"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0097",
+      "word": "畏敬",
+      "kana": "いけい",
+      "meanings": [
+        "reverence",
+        "awe"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{何百年|なんびゃくねん}も{生|い}き{続|つづ}けてきた{大木|たいぼく}を{前|まえ}にして、{自然|しぜん}への{畏敬|いけい}の{念|ねん}を{抱|いだ}いた。",
+          "kana": "なんびゃくねんもいきつづけてきたたいぼくをまえにして、しぜんへのいけいのねんをいだいた。",
+          "en": "Standing before a great tree that had lived for centuries, I felt a reverence for nature."
+        },
+        {
+          "ja": "{弟子|でし}たちは{師匠|ししょう}を{畏敬|いけい}のまなざしで{見|み}つめ、{一言|ひとこと}も{聞|き}き{漏|も}らすまいとしていた。",
+          "kana": "でしたちはししょうをいけいのまなざしでみつめ、ひとこともききもらすまいとしていた。",
+          "en": "The apprentices gazed at their master with reverence, determined not to miss a single word."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{力|ちから}を{持|も}つものを、{恐|おそ}れながら{心|こころ}から{尊敬|そんけい}すること。",
+        "kana": "おおきなちからをもつものを、おそれながらこころからそんけいすること。"
+      },
+      "frequencyRank": 5634,
+      "collocations": [
+        "畏敬の念",
+        "畏敬の念を抱く"
+      ],
+      "confusables": [
+        "v-n1-0098"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0098",
+      "word": "畏怖",
+      "kana": "いふ",
+      "meanings": [
+        "awe",
+        "dread"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "nature",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{噴火|ふんか}する{火山|かざん}の{姿|すがた}に、{人々|ひとびと}は{言葉|ことば}を{失|うしな}い、{畏怖|いふ}の{念|ねん}を{覚|おぼ}えた。",
+          "kana": "ふんかするかざんのすがたに、ひとびとはことばをうしない、いふのねんをおぼえた。",
+          "en": "At the sight of the erupting volcano, people fell silent, struck with awe and dread."
+        },
+        {
+          "ja": "{昔|むかし}の{人|ひと}にとって{雷|かみなり}は、{神|かみ}の{怒|いか}りとして{畏怖|いふ}する{対象|たいしょう}でした。",
+          "kana": "むかしのひとにとってかみなりは、かみのいかりとしていふするたいしょうでした。",
+          "en": "For people long ago, thunder was something to be dreaded as the anger of the gods."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{力|ちから}を{持|も}つものを、{心|こころ}の{奥|おく}から{恐|おそ}れること。",
+        "kana": "おおきなちからをもつものを、こころのおくからおそれること。"
+      },
+      "frequencyRank": 5640,
+      "collocations": [
+        "畏怖の念",
+        "畏怖する"
+      ],
+      "confusables": [
+        "v-n1-0097"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0099",
+      "word": "崇高",
+      "kana": "すうこう",
+      "meanings": [
+        "sublime",
+        "lofty",
+        "noble"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "states",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{人|ひと}を{救|すく}うという{崇高|すうこう}な{理想|りそう}を{掲|かか}げて、{彼女|かのじょ}は{医者|いしゃ}になった。",
+          "kana": "ひとをすくうというすうこうなりそうをかかげて、かのじょはいしゃになった。",
+          "en": "Holding up the lofty ideal of saving lives, she became a doctor."
+        },
+        {
+          "ja": "{夜明|よあ}けの{山頂|さんちょう}から{見|み}た{景色|けしき}は、{崇高|すうこう}としか{言|い}いようのないものだった。",
+          "kana": "よあけのさんちょうからみたけしきは、すうこうとしかいいようのないものだった。",
+          "en": "The view from the summit at dawn was nothing short of sublime."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}や{考|かんが}えなどが{高|たか}くて{立派|りっぱ}で、{自然|しぜん}に{尊敬|そんけい}したくなる{様子|ようす}。",
+        "kana": "こころやかんがえなどがたかくてりっぱで、しぜんにそんけいしたくなるようす。"
+      },
+      "frequencyRank": 5647,
+      "collocations": [
+        "崇高な理想",
+        "崇高な精神"
+      ],
+      "confusables": [
+        "v-n1-0100",
+        "v-n1-0082"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0100",
+      "word": "荘厳",
+      "kana": "そうごん",
+      "meanings": [
+        "solemn",
+        "majestic",
+        "sublime"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "states",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{夜明|よあ}けの{光|ひかり}の{中|なか}に{浮|う}かび{上|あ}がる{大仏|だいぶつ}の{姿|すがた}は、{実|じつ}に{荘厳|そうごん}だった。",
+          "kana": "よあけのひかりのなかにうかびあがるだいぶつのすがたは、じつにそうごんだった。",
+          "en": "The great Buddha statue emerging in the light of dawn was truly majestic."
+        },
+        {
+          "ja": "パイプオルガンの{荘厳|そうごん}な{響|ひび}きが、{石造|いしづく}りの{教会|きょうかい}いっぱいに{広|ひろ}がっていきます。",
+          "kana": "パイプオルガンのそうごんなひびきが、いしづくりのきょうかいいっぱいにひろがっていきます。",
+          "en": "The majestic sound of the pipe organ swells to fill the whole stone church."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きく{立派|りっぱ}で{重|おも}みがあり、{自然|しぜん}と{頭|あたま}が{下|さ}がるような{様子|ようす}。",
+        "kana": "おおきくりっぱでおもみがあり、しぜんとあたまがさがるようなようす。"
+      },
+      "frequencyRank": 5653,
+      "collocations": [
+        "荘厳な雰囲気",
+        "荘厳な儀式"
+      ],
+      "confusables": [
+        "v-n1-0099"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0101",
+      "word": "凄惨",
+      "kana": "せいさん",
+      "meanings": [
+        "gruesome",
+        "ghastly",
+        "horrific"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}{現場|げんば}はあまりに{凄惨|せいさん}で、{記者|きしゃ}たちも{言葉|ことば}を{失|うしな}った。",
+          "kana": "じこげんばはあまりにせいさんで、きしゃたちもことばをうしなった。",
+          "en": "The accident scene was so horrific that even the reporters were lost for words."
+        },
+        {
+          "ja": "{戦争|せんそう}の{凄惨|せいさん}な{記憶|きおく}を、{祖父|そふ}は{亡|な}くなるまでほとんど{語|かた}ろうとしなかった。",
+          "kana": "せんそうのせいさんなきおくを、そふはなくなるまでほとんどかたろうとしなかった。",
+          "en": "Until the day he died, my grandfather hardly ever spoke of his horrific memories of the war."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見|み}ていられないほど、ひどくむごたらしい{様子|ようす}。",
+        "kana": "みていられないほど、ひどくむごたらしいようす。"
+      },
+      "frequencyRank": 5660,
+      "collocations": [
+        "凄惨な事件",
+        "凄惨な光景"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0102",
+      "word": "慟哭",
+      "kana": "どうこく",
+      "meanings": [
+        "wailing",
+        "loud weeping"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{知|し}らせを{受|う}けた{母親|ははおや}の{慟哭|どうこく}が、{廊下|ろうか}の{奥|おく}まで{響|ひび}いた。",
+          "kana": "しらせをうけたははおやのどうこくが、ろうかのおくまでひびいた。",
+          "en": "The mother's wail at the news echoed all the way down the corridor."
+        },
+        {
+          "ja": "{葬儀|そうぎ}の{間|あいだ}{黙|だま}って{耐|た}えていた{父|ちち}が、{棺|ひつぎ}が{運|はこ}び{出|だ}される{瞬間|しゅんかん}に{慟哭|どうこく}した。",
+          "kana": "そうぎのあいだだまってたえていたちちが、ひつぎがはこびだされるしゅんかんにどうこくした。",
+          "en": "My father, who had held himself together silently throughout the funeral, broke down wailing the moment the coffin was carried out."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悲|かな}しみのあまり、{大|おお}きな{声|こえ}を{上|あ}げて{激|はげ}しく{泣|な}くこと。",
+        "kana": "かなしみのあまり、おおきなこえをあげてはげしくなくこと。"
+      },
+      "frequencyRank": 5667,
+      "collocations": [
+        "慟哭の声",
+        "慟哭する"
+      ],
+      "confusables": [
+        "v-n1-0103"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0103",
+      "word": "嗚咽",
+      "kana": "おえつ",
+      "meanings": [
+        "sobbing",
+        "choked crying"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{暗|くら}い{客席|きゃくせき}のあちこちから、{嗚咽|おえつ}をこらえる{声|こえ}が{聞|き}こえてきた。",
+          "kana": "くらいきゃくせきのあちこちから、おえつをこらえるこえがきこえてきた。",
+          "en": "From here and there in the darkened audience came the sound of people holding back sobs."
+        },
+        {
+          "ja": "{電話|でんわ}の{向|む}こうで{母|はは}が{嗚咽|おえつ}しているのが{分|わ}かり、{私|わたし}は{何|なに}も{言|い}えなくなった。",
+          "kana": "でんわのむこうでははがおえつしているのがわかり、わたしはなにもいえなくなった。",
+          "en": "I could tell my mother was sobbing on the other end of the line, and I could not say a word."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{声|こえ}を{我慢|がまん}しながら、のどを{詰|つ}まらせるように{泣|な}くこと。",
+        "kana": "こえをがまんしながら、のどをつまらせるようになくこと。"
+      },
+      "frequencyRank": 5673,
+      "collocations": [
+        "嗚咽を漏らす",
+        "嗚咽をこらえる"
+      ],
+      "confusables": [
+        "v-n1-0102"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0104",
+      "word": "懊悩",
+      "kana": "おうのう",
+      "meanings": [
+        "anguish",
+        "agonizing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{進学|しんがく}か{就職|しゅうしょく}かで{懊悩|おうのう}する{若者|わかもの}の{姿|すがた}は、いつの{時代|じだい}も{変|か}わらない。",
+          "kana": "しんがくかしゅうしょくかでおうのうするわかもののすがたは、いつのじだいもかわらない。",
+          "en": "The sight of young people agonizing over college versus a job is the same in every era."
+        },
+        {
+          "ja": "{詩人|しじん}は{長|なが}い{懊悩|おうのう}の{末|すえ}に、{一行|いちぎょう}の{言葉|ことば}をようやく{書|か}き{上|あ}げた。",
+          "kana": "しじんはながいおうのうのすえに、いちぎょうのことばをようやくかきあげた。",
+          "en": "After long anguish, the poet at last finished a single line of verse."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悩|なや}み{苦|くる}しんで、どうしたらいいか{分|わ}からなくなること。",
+        "kana": "なやみくるしんで、どうしたらいいかわからなくなること。"
+      },
+      "frequencyRank": 5680,
+      "collocations": [
+        "懊悩する",
+        "懊悩の日々"
+      ],
+      "confusables": [
+        "v-n1-0009"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0105",
+      "word": "廃れる",
+      "kana": "すたれる",
+      "meanings": [
+        "to fall out of use",
+        "to go out of fashion",
+        "to decline"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{手紙|てがみ}を{書|か}く{習慣|しゅうかん}は{廃|すた}れたと{言|い}われるが、{年賀状|ねんがじょう}だけは{今|いま}も{続|つづ}いている。",
+          "kana": "てがみをかくしゅうかんはすたれたといわれるが、ねんがじょうだけはいまもつづいている。",
+          "en": "Letter writing is said to have died out, but New Year's cards at least still carry on."
+        },
+        {
+          "ja": "どんなに{流行|はや}った{言葉|ことば}も、{数年|すうねん}たてばたいてい{廃|すた}れてしまうものです。",
+          "kana": "どんなにはやったことばも、すうねんたてばたいていすたれてしまうものです。",
+          "en": "However popular a word becomes, it usually falls out of use within a few years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{流行|りゅうこう}しなくなったり{使|つか}われなくなったりして、{消|き}えていくこと。",
+        "kana": "りゅうこうしなくなったりつかわれなくなったりして、きえていくこと。"
+      },
+      "frequencyRank": 5686,
+      "collocations": [
+        "流行が廃れる",
+        "廃れた言葉"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0106",
+      "word": "慄く",
+      "kana": "おののく",
+      "meanings": [
+        "to tremble (with fear)",
+        "to shudder"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "body",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{地震|じしん}の{揺|ゆ}れが{収|おさ}まった{後|あと}も、{恐怖|きょうふ}に{慄|おのの}いて{動|うご}けなかった。",
+          "kana": "じしんのゆれがおさまったあとも、きょうふにおののいてうごけなかった。",
+          "en": "Even after the earthquake stopped shaking, I was trembling with fear and could not move."
+        },
+        {
+          "ja": "{国王|こくおう}の{怒|いか}りに{家来|けらい}たちは{慄|おのの}き、{誰|だれ}{一人|ひとり}{顔|かお}を{上|あ}げようとしなかった。",
+          "kana": "こくおうのいかりにけらいたちはおののき、だれひとりかおをあげようとしなかった。",
+          "en": "The retainers trembled at the king's wrath, and not one of them dared raise his head."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{恐|おそ}ろしさや{寒|さむ}さなどで、{体|からだ}がぶるぶると{震|ふる}えること。",
+        "kana": "おそろしさやさむさなどで、からだがぶるぶるとふるえること。"
+      },
+      "frequencyRank": 5693,
+      "notes": "Also written 戦く; often kana. 恐怖に慄く, 怒りに慄く.",
+      "altForms": [
+        "戦く",
+        "おののく"
+      ],
+      "collocations": [
+        "恐怖に慄く",
+        "震え慄く"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0107",
+      "word": "阿る",
+      "kana": "おもねる",
+      "meanings": [
+        "to flatter",
+        "to curry favor with"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "society",
+        "written"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{読者|どくしゃ}に{阿|おもね}る{記事|きじ}ばかり{書|か}いていては、{新聞|しんぶん}への{信頼|しんらい}は{育|そだ}たない。",
+          "kana": "どくしゃにおもねるきじばかりかいていては、しんぶんへのしんらいはそだたない。",
+          "en": "If a paper only writes articles that pander to its readers, trust in it will never grow."
+        },
+        {
+          "ja": "{権力|けんりょく}に{阿|おもね}ることなく{真実|しんじつ}を{書|か}き{続|つづ}けた{記者|きしゃ}を、{私|わたし}は{今|いま}も{尊敬|そんけい}している。",
+          "kana": "けんりょくにおもねることなくしんじつをかきつづけたきしゃを、わたしはいまもそんけいしている。",
+          "en": "I still respect the journalist who kept writing the truth without ever fawning on those in power."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{力|ちから}のある{相手|あいて}に{気|き}に{入|い}られようと、{自分|じぶん}の{考|かんが}えを{隠|かく}して{従|したが}うこと。",
+        "kana": "ちからのあるあいてにきにいられようと、じぶんのかんがえをかくしてしたがうこと。"
+      },
+      "frequencyRank": 5700,
+      "altForms": [
+        "おもねる"
+      ],
+      "collocations": [
+        "権力に阿る",
+        "世間に阿る"
+      ],
+      "confusables": [
+        "v-n1-0057"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0108",
+      "word": "奉る",
+      "kana": "たてまつる",
+      "meanings": [
+        "to offer (to a god or superior)",
+        "to revere"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "literary"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{秋|あき}の{祭|まつ}りでは、その{年|とし}の{新米|しんまい}を{神|かみ}に{奉|たてまつ}る{儀式|ぎしき}が{行|おこな}われる。",
+          "kana": "あきのまつりでは、そのとしのしんまいをかみにたてまつるぎしきがおこなわれる。",
+          "en": "At the autumn festival, a rite is held to offer the year's new rice to the gods."
+        },
+        {
+          "ja": "{村人|むらびと}たちは{山|やま}の{神|かみ}に{酒|さけ}と{魚|さかな}を{奉|たてまつ}り、{一年|いちねん}の{無事|ぶじ}を{祈|いの}ったという。",
+          "kana": "むらびとたちはやまのかみにさけとさかなをたてまつり、いちねんのぶじをいのったという。",
+          "en": "The villagers are said to have offered sake and fish to the mountain god and prayed for a safe year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{神|かみ}や{上|うえ}の{立場|たちば}の{人|ひと}にものを{差|さ}し{上|あ}げること。また、{敬|うやま}うこと。",
+        "kana": "かみやうえのたちばのひとにものをさしあげること。また、うやまうこと。"
+      },
+      "frequencyRank": 5706,
+      "notes": "Also a humble auxiliary in classical style (申し奉る). Ironic sense: 社長に奉っておく = install someone as a flattered figurehead.",
+      "collocations": [
+        "神に奉る",
+        "祭り上げる"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0109",
+      "word": "献じる",
+      "kana": "けんじる",
+      "meanings": [
+        "to offer (formally)",
+        "to dedicate"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "formal",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{優勝|ゆうしょう}した{選手|せんしゅ}は、{初|はじ}めてのメダルを{亡|な}き{母|はは}に{献|けん}じると{語|かた}った。",
+          "kana": "ゆうしょうしたせんしゅは、はじめてのメダルをなきははにけんじるとかたった。",
+          "en": "The winning athlete said he would dedicate his first medal to his late mother."
+        },
+        {
+          "ja": "{新|あたら}しい{橋|はし}の{完成|かんせい}を{祝|いわ}い、{地元|じもと}の{人々|ひとびと}は{神社|じんじゃ}に{酒|さけ}を{献|けん}じた。",
+          "kana": "あたらしいはしのかんせいをいわい、じもとのひとびとはじんじゃにさけをけんじた。",
+          "en": "To celebrate the completion of the new bridge, local people offered sake at the shrine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{神|かみ}や{上|うえ}の{人|ひと}に、ものや{作品|さくひん}などをささげること。",
+        "kana": "かみやうえのひとに、ものやさくひんなどをささげること。"
+      },
+      "frequencyRank": 5713,
+      "altForms": [
+        "献ずる"
+      ],
+      "collocations": [
+        "花を献じる",
+        "一杯を献じる"
+      ],
+      "confusables": [
+        "v-n1-0017"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0110",
+      "word": "殉じる",
+      "kana": "じゅんじる",
+      "meanings": [
+        "to die for (a cause)",
+        "to sacrifice oneself for"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{自分|じぶん}の{信念|しんねん}に{殉|じゅん}じた{人々|ひとびと}の{名|な}が、この{碑|ひ}に{刻|きざ}まれている。",
+          "kana": "じぶんのしんねんにじゅんじたひとびとのなが、このひにきざまれている。",
+          "en": "The names of those who gave their lives for their beliefs are carved on this monument."
+        },
+        {
+          "ja": "{職務|しょくむ}に{殉|じゅん}じた{消防士|しょうぼうし}のために、{市|し}は{毎年|まいとし}{慰霊|いれい}の{式|しき}を{行|おこな}っている。",
+          "kana": "しょくむにじゅんじたしょうぼうしのために、しはまいとしいれいのしきをおこなっている。",
+          "en": "Every year the city holds a memorial ceremony for the firefighters who died in the line of duty."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{目的|もくてき}や{人|ひと}のために、{自分|じぶん}のいのちを{捨|す}てること。",
+        "kana": "あるもくてきやひとのために、じぶんのいのちをすてること。"
+      },
+      "frequencyRank": 5719,
+      "altForms": [
+        "殉ずる"
+      ],
+      "collocations": [
+        "信念に殉じる",
+        "職に殉じる"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0111",
+      "word": "契る",
+      "kana": "ちぎる",
+      "meanings": [
+        "to pledge",
+        "to vow (to each other)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "family",
+        "literary"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{二人|ふたり}は{若|わか}い{頃|ころ}に{将来|しょうらい}を{契|ちぎ}り、{五十年|ごじゅうねん}たった{今|いま}も{仲良|なかよ}く{暮|く}らしている。",
+          "kana": "ふたりはわかいころにしょうらいをちぎり、ごじゅうねんたったいまもなかよくくらしている。",
+          "en": "The two pledged their future to each other when young, and fifty years on they still live happily together."
+        },
+        {
+          "ja": "{物語|ものがたり}の{中|なか}で、{三人|さんにん}の{武士|ぶし}は{兄弟|きょうだい}の{契|ちぎ}りを{結|むす}び、{生死|せいし}を{共|とも}にすることを{誓|ちか}う。",
+          "kana": "ものがたりのなかで、さんにんのぶしはきょうだいのちぎりをむすび、せいしをともにすることをちかう。",
+          "en": "In the story, three samurai swear brotherhood and vow to live and die together."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{固|かた}く{約束|やくそく}すること。{特|とく}に、{夫婦|ふうふ}になることを{誓|ちか}うこと。",
+        "kana": "かたくやくそくすること。とくに、ふうふになることをちかうこと。"
+      },
+      "frequencyRank": 5726,
+      "notes": "Literary; mostly of marriage vows or sworn bonds (兄弟の契りを結ぶ). Not 千切る (to tear).",
+      "collocations": [
+        "将来を契る",
+        "契りを結ぶ"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0112",
+      "word": "繕う",
+      "kana": "つくろう",
+      "meanings": [
+        "to mend",
+        "to patch up",
+        "to keep up (appearances)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "home",
+        "clothing",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{破|やぶ}れた{靴下|くつした}を{捨|す}てずに、{丁寧|ていねい}に{繕|つくろ}って{使|つか}い{続|つづ}けた。",
+          "kana": "そぼはやぶれたくつしたをすてずに、ていねいにつくろってつかいつづけた。",
+          "en": "My grandmother never threw out torn socks; she mended them carefully and kept using them."
+        },
+        {
+          "ja": "{慌|あわ}てて{笑顔|えがお}を{繕|つくろ}ったが、{彼|かれ}の{声|こえ}は{明|あき}らかに{震|ふる}えていた。",
+          "kana": "あわててえがおをつくろったが、かれのこえはあきらかにふるえていた。",
+          "en": "He hastily put on a smile, but his voice was clearly shaking."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{破|やぶ}れたところを{直|なお}すこと。また、{失敗|しっぱい}などを{隠|かく}してうまく{見|み}せること。",
+        "kana": "やぶれたところをなおすこと。また、しっぱいなどをかくしてうまくみせること。"
+      },
+      "frequencyRank": 5733,
+      "collocations": [
+        "体裁を繕う",
+        "その場を繕う"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0113",
+      "word": "綻びる",
+      "kana": "ほころびる",
+      "meanings": [
+        "to come apart at the seams",
+        "to begin to open (buds)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "objects",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{使|つか}ったかばんは、{縫|ぬ}い{目|め}が{綻|ほころ}びて{中|なか}の{布|ぬの}が{見|み}えていた。",
+          "kana": "ながねんつかったかばんは、ぬいめがほころびてなかのぬのがみえていた。",
+          "en": "The bag I had used for years had come apart at the seams, and the lining showed through."
+        },
+        {
+          "ja": "{計画|けいかく}は{最初|さいしょ}こそ{順調|じゅんちょう}だったが、{資金|しきん}の{問題|もんだい}からしだいに{綻|ほころ}び{始|はじ}めた。",
+          "kana": "けいかくはさいしょこそじゅんちょうだったが、しきんのもんだいからしだいにほころびはじめた。",
+          "en": "The plan went smoothly at first, but money problems gradually caused it to come apart."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{縫|ぬ}った{糸|いと}がほどけて{開|あ}くこと。また、うまくいっていたことが{壊|こわ}れ{始|はじ}めること。",
+        "kana": "ぬったいとがほどけてあくこと。また、うまくいっていたことがこわれはじめること。"
+      },
+      "frequencyRank": 5739,
+      "collocations": [
+        "縫い目が綻びる",
+        "計画が綻びる"
+      ],
+      "confusables": [
+        "v-n1-0114"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0114",
+      "word": "綻ぶ",
+      "kana": "ほころぶ",
+      "meanings": [
+        "to break into a smile",
+        "to start to open (buds, seams)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "body"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{合格|ごうかく}の{知|し}らせを{聞|き}いて、{父|ちち}の{顔|かお}が{思|おも}わず{綻|ほころ}んだ。",
+          "kana": "ごうかくのしらせをきいて、ちちのかおがおもわずほころんだ。",
+          "en": "Hearing that I had passed, my father's face broke into a smile in spite of himself."
+        },
+        {
+          "ja": "{庭|にわ}の{梅|うめ}が{綻|ほころ}び{始|はじ}めると、{春|はる}が{近|ちか}いことを{実感|じっかん}します。",
+          "kana": "にわのうめがほころびはじめると、はるがちかいことをじっかんします。",
+          "en": "When the plum blossoms in the garden start to open, I really feel that spring is near."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{花|はな}のつぼみが{少|すこ}し{開|ひら}くこと。また、{顔|かお}が{自然|しぜん}に{笑顔|えがお}になること。",
+        "kana": "はなのつぼみがすこしひらくこと。また、かおがしぜんにえがおになること。"
+      },
+      "frequencyRank": 5746,
+      "notes": "Same root as 綻びる; 顔が綻ぶ is the common idiom for a face relaxing into a smile.",
+      "collocations": [
+        "顔が綻ぶ",
+        "梅が綻ぶ"
+      ],
+      "confusables": [
+        "v-n1-0113"
+      ],
+      "station": 48
+    },
+    {
+      "id": "v-n1-0115",
+      "word": "朽ちる",
+      "kana": "くちる",
+      "meanings": [
+        "to rot",
+        "to decay",
+        "to fall into obscurity"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "states",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{山道|やまみち}の{脇|わき}に、{屋根|やね}が{朽|く}ちて{今|いま}にも{倒|たお}れそうな{小屋|こや}が{建|た}っていた。",
+          "kana": "やまみちのわきに、やねがくちていまにもたおれそうなこやがたっていた。",
+          "en": "Beside the mountain path stood a hut with a rotted roof that looked about to collapse."
+        },
+        {
+          "ja": "{名|な}を{残|のこ}した{英雄|えいゆう}も、{名|な}もなく{朽|く}ちていった{人々|ひとびと}も、{同|おな}じ{土|つち}に{眠|ねむ}っている。",
+          "kana": "なをのこしたえいゆうも、なもなくくちていったひとびとも、おなじつちにねむっている。",
+          "en": "Heroes whose names live on and people who faded away nameless lie in the same earth."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{木|き}などが{腐|くさ}ってぼろぼろになること。また、{知|し}られないまま{消|き}えていくこと。",
+        "kana": "きなどがくさってぼろぼろになること。また、しられないままきえていくこと。"
+      },
+      "frequencyRank": 5752,
+      "collocations": [
+        "朽ち果てる",
+        "名が朽ちる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0116",
+      "word": "滅ぼす",
+      "kana": "ほろぼす",
+      "meanings": [
+        "to destroy",
+        "to ruin",
+        "to wipe out"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "literary"
+      ],
+      "trans": "vt",
+      "pairId": "v-n1-0015",
+      "examples": [
+        {
+          "ja": "{酒|さけ}で{身|み}を{滅|ほろ}ぼした{男|おとこ}の{話|はなし}は、{落語|らくご}によく{出|で}てくる。",
+          "kana": "さけでみをほろぼしたおとこのはなしは、らくごによくでてくる。",
+          "en": "Stories of men who ruined themselves with drink often turn up in rakugo."
+        },
+        {
+          "ja": "{外|そと}から{持|も}ち{込|こ}まれた{動物|どうぶつ}が、{島|しま}にしかいない{鳥|とり}を{滅|ほろ}ぼしてしまうおそれがあります。",
+          "kana": "そとからもちこまれたどうぶつが、しまにしかいないとりをほろぼしてしまうおそれがあります。",
+          "en": "There is a danger that animals brought in from outside will wipe out birds found nowhere but on this island."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{生|い}きものなどを、ひとつ{残|のこ}らずなくしてしまうこと。",
+        "kana": "くにやいきものなどを、ひとつのこらずなくしてしまうこと。"
+      },
+      "frequencyRank": 5759,
+      "collocations": [
+        "身を滅ぼす",
+        "国を滅ぼす"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0117",
+      "word": "絶やす",
+      "kana": "たやす",
+      "meanings": [
+        "to let die out",
+        "to exterminate",
+        "to run out of"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "pairId": "v-n1-0016",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は、{店|みせ}の{花|はな}を{一日|いちにち}も{絶|た}やしたことがないのが{自慢|じまん}だった。",
+          "kana": "そぼは、みせのはなをいちにちもたやしたことがないのがじまんだった。",
+          "en": "My grandmother's pride was that she had never let the shop go a single day without flowers."
+        },
+        {
+          "ja": "{昔|むかし}はどの{家|いえ}でも、{冬|ふゆ}の{間|あいだ}は{火|ひ}を{絶|た}やさないように{気|き}をつけていたものです。",
+          "kana": "むかしはどのいえでも、ふゆのあいだはひをたやさないようにきをつけていたものです。",
+          "en": "In the old days every household took care not to let the fire go out during the winter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{続|つづ}いていたものを{止|と}めて、なくしてしまうこと。また、{全部|ぜんぶ}{死|し}なせてしまうこと。",
+        "kana": "つづいていたものをとめて、なくしてしまうこと。また、ぜんぶしなせてしまうこと。"
+      },
+      "frequencyRank": 5766,
+      "collocations": [
+        "笑顔を絶やさない",
+        "火を絶やす"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0118",
+      "word": "阻害",
+      "kana": "そがい",
+      "meanings": [
+        "obstruction",
+        "hindrance",
+        "inhibition"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "business",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{長時間|ちょうじかん}{労働|ろうどう}は、{社員|しゃいん}の{健康|けんこう}だけでなく{創造性|そうぞうせい}も{阻害|そがい}する。",
+          "kana": "ちょうじかんろうどうは、しゃいんのけんこうだけでなくそうぞうせいもそがいする。",
+          "en": "Long working hours harm not only employees' health but their creativity as well."
+        },
+        {
+          "ja": "{新|あたら}しい{規制|きせい}が{自由|じゆう}な{競争|きょうそう}を{阻害|そがい}しているとして、{業界|ぎょうかい}から{強|つよ}い{反発|はんぱつ}が{出|で}ている。",
+          "kana": "あたらしいきせいがじゆうなきょうそうをそがいしているとして、ぎょうかいからつよいはんぱつがでている。",
+          "en": "The industry is pushing back hard, arguing that the new regulations are hindering free competition."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}かが{進|すす}んだり{働|はたら}いたりするのを、{邪魔|じゃま}して{止|と}めること。",
+        "kana": "なにかがすすんだりはたらいたりするのを、じゃましてとめること。"
+      },
+      "frequencyRank": 5772,
+      "collocations": [
+        "成長を阻害する",
+        "阻害要因"
+      ],
+      "confusables": [
+        "v-n1-0022"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0119",
+      "word": "遮断",
+      "kana": "しゃだん",
+      "meanings": [
+        "cutting off",
+        "blocking",
+        "interception"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "transport",
+        "actions",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{大雨|おおあめ}で{道路|どうろ}が{遮断|しゃだん}され、{村|むら}は{二日間|ふつかかん}{孤立|こりつ}した。",
+          "kana": "おおあめでどうろがしゃだんされ、むらはふつかかんこりつした。",
+          "en": "Heavy rain cut off the road, and the village was isolated for two days."
+        },
+        {
+          "ja": "この{部屋|へや}は{外|そと}の{音|おと}を{完全|かんぜん}に{遮断|しゃだん}できるので、{録音|ろくおん}に{使|つか}われています。",
+          "kana": "このへやはそとのおとをかんぜんにしゃだんできるので、ろくおんにつかわれています。",
+          "en": "This room can block out outside sound completely, so it is used for recording."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電気|でんき}や{道|みち}、{光|ひかり}などの{流|なが}れを、{途中|とちゅう}で{切|き}って{止|と}めること。",
+        "kana": "でんきやみち、ひかりなどのながれを、とちゅうできってとめること。"
+      },
+      "frequencyRank": 5779,
+      "collocations": [
+        "遮断機",
+        "情報を遮断する"
+      ],
+      "confusables": [
+        "v-n1-0012"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0120",
+      "word": "隔たる",
+      "kana": "へだたる",
+      "meanings": [
+        "to be distant",
+        "to be apart (in space, time, views)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "position",
+        "abstract"
+      ],
+      "trans": "vi",
+      "pairId": "v-n1-0021",
+      "examples": [
+        {
+          "ja": "{二人|ふたり}の{考|かんが}えは{大|おお}きく{隔|へだ}たっていて、{話|はな}し{合|あ}いは{平行線|へいこうせん}のままだった。",
+          "kana": "ふたりのかんがえはおおきくへだたっていて、はなしあいはへいこうせんのままだった。",
+          "en": "The two were far apart in their thinking, and the talks went nowhere."
+        },
+        {
+          "ja": "{都市|とし}と{地方|ちほう}では、{受|う}けられる{医療|いりょう}の{質|しつ}が{大|おお}きく{隔|へだ}たっているのが{現状|げんじょう}です。",
+          "kana": "としとちほうでは、うけられるいりょうのしつがおおきくへだたっているのがげんじょうです。",
+          "en": "The reality is that there is a wide gap between cities and rural areas in the quality of medical care available."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{所|ところ}や{時間|じかん}、{考|かんが}えなどが、{遠|とお}く{離|はな}れていること。",
+        "kana": "ところやじかん、かんがえなどが、とおくはなれていること。"
+      },
+      "frequencyRank": 5785,
+      "collocations": [
+        "隔たりがある",
+        "大きく隔たる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0121",
+      "word": "隔離",
+      "kana": "かくり",
+      "meanings": [
+        "isolation",
+        "quarantine"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "health",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "{感染|かんせん}が{分|わ}かった{患者|かんじゃ}は、{別|べつ}の{病棟|びょうとう}に{隔離|かくり}されることになった。",
+          "kana": "かんせんがわかったかんじゃは、べつのびょうとうにかくりされることになった。",
+          "en": "Patients found to be infected were to be isolated in a separate ward."
+        },
+        {
+          "ja": "{病気|びょうき}の{鳥|とり}を{見|み}つけたら、すぐにほかの{鳥|とり}から{隔離|かくり}してください。",
+          "kana": "びょうきのとりをみつけたら、すぐにほかのとりからかくりしてください。",
+          "en": "If you find a sick bird, separate it from the other birds right away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{病気|びょうき}などが{広|ひろ}がらないように、ほかから{離|はな}して{別|べつ}の{所|ところ}に{置|お}くこと。",
+        "kana": "びょうきなどがひろがらないように、ほかからはなしてべつのところにおくこと。"
+      },
+      "frequencyRank": 5792,
+      "collocations": [
+        "隔離病棟",
+        "隔離する"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0122",
+      "word": "翻す",
+      "kana": "ひるがえす",
+      "meanings": [
+        "to reverse (a decision)",
+        "to flip over",
+        "to wave (a flag)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "pairId": "v-n1-0123",
+      "examples": [
+        {
+          "ja": "{一度|いちど}は{賛成|さんせい}と{言|い}ったのに、{彼|かれ}は{翌日|よくじつ}になって{意見|いけん}を{翻|ひるがえ}した。",
+          "kana": "いちどはさんせいといったのに、かれはよくじつになっていけんをひるがえした。",
+          "en": "He had said he agreed, yet the next day he reversed his opinion."
+        },
+        {
+          "ja": "{選手|せんしゅ}たちは{優勝旗|ゆうしょうき}を{高|たか}く{翻|ひるがえ}しながら、{場内|じょうない}を{一周|いっしゅう}しました。",
+          "kana": "せんしゅたちはゆうしょうきをたかくひるがえしながら、じょうないをいっしゅうしました。",
+          "en": "The players did a lap of the stadium, waving the championship flag high."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{布|ぬの}などを{風|かぜ}にひらひらさせること。また、{決|き}めたことを{急|きゅう}に{変|か}えること。",
+        "kana": "ぬのなどをかぜにひらひらさせること。また、きめたことをきゅうにかえること。"
+      },
+      "frequencyRank": 5799,
+      "collocations": [
+        "前言を翻す",
+        "身を翻す"
+      ],
+      "confusables": [
+        "v-n1-0020"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0123",
+      "word": "翻る",
+      "kana": "ひるがえる",
+      "meanings": [
+        "to flutter",
+        "to flip over",
+        "to be reversed"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "states"
+      ],
+      "trans": "vi",
+      "pairId": "v-n1-0122",
+      "examples": [
+        {
+          "ja": "{運動会|うんどうかい}の{朝|あさ}、{校庭|こうてい}には{色|いろ}とりどりの{旗|はた}が{風|かぜ}に{翻|ひるがえ}っていた。",
+          "kana": "うんどうかいのあさ、こうていにはいろとりどりのはたがかぜにひるがえっていた。",
+          "en": "On the morning of sports day, flags of every color fluttered in the wind over the schoolyard."
+        },
+        {
+          "ja": "{坂|さか}を{下|くだ}る{自転車|じてんしゃ}の{上|うえ}で、{少女|しょうじょ}のスカートが{風|かぜ}に{翻|ひるがえ}る。",
+          "kana": "さかをくだるじてんしゃのうえで、しょうじょのスカートがかぜにひるがえる。",
+          "en": "On a bicycle coasting down the hill, a girl's skirt flutters in the wind."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{布|ぬの}や{葉|は}などが、{風|かぜ}を{受|う}けてひらひらと{動|うご}くこと。",
+        "kana": "ぬのやはなどが、かぜをうけてひらひらとうごくこと。"
+      },
+      "frequencyRank": 5805,
+      "collocations": [
+        "旗が翻る",
+        "風に翻る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0124",
+      "word": "揺るがす",
+      "kana": "ゆるがす",
+      "meanings": [
+        "to shake (foundations, trust)",
+        "to rock"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "pairId": "v-n1-0013",
+      "examples": [
+        {
+          "ja": "{一人|ひとり}の{社員|しゃいん}の{不正|ふせい}が、{会社|かいしゃ}{全体|ぜんたい}の{信用|しんよう}を{揺|ゆ}るがす{事態|じたい}になった。",
+          "kana": "ひとりのしゃいんのふせいが、かいしゃぜんたいのしんようをゆるがすじたいになった。",
+          "en": "One employee's misconduct turned into a situation that shook trust in the whole company."
+        },
+        {
+          "ja": "{大地|だいち}を{揺|ゆ}るがすような{太鼓|たいこ}の{音|おと}に、{観客|かんきゃく}は{息|いき}をのんだ。",
+          "kana": "だいちをゆるがすようなたいこのおとに、かんきゃくはいきをのんだ。",
+          "en": "At the sound of drums that seemed to shake the very earth, the audience held its breath."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きく{動|うご}かして、しっかりしていたものをぐらつかせること。",
+        "kana": "おおきくうごかして、しっかりしていたものをぐらつかせること。"
+      },
+      "frequencyRank": 5812,
+      "collocations": [
+        "根底から揺るがす",
+        "世界を揺るがす"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0125",
+      "word": "蠢く",
+      "kana": "うごめく",
+      "meanings": [
+        "to wriggle",
+        "to squirm",
+        "to stir (ominously)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "animals",
+        "actions",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{石|いし}をどけると、その{下|した}で{小|ちい}さな{虫|むし}たちが{蠢|うごめ}いていた。",
+          "kana": "いしをどけると、そのしたでちいさなむしたちがうごめいていた。",
+          "en": "When I moved the stone, tiny insects were wriggling underneath."
+        },
+        {
+          "ja": "{暗|くら}い{路地|ろじ}の{奥|おく}で、{何|なに}かが{蠢|うごめ}く{気配|けはい}がして{足|あし}を{止|と}めた。",
+          "kana": "くらいろじのおくで、なにかがうごめくけはいがしてあしをとめた。",
+          "en": "Deep in the dark alley I sensed something stirring and stopped in my tracks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{虫|むし}などが、{小|ちい}さくもぞもぞと{動|うご}き{続|つづ}けること。",
+        "kana": "むしなどが、ちいさくもぞもぞとうごきつづけること。"
+      },
+      "frequencyRank": 5818,
+      "altForms": [
+        "うごめく"
+      ],
+      "collocations": [
+        "虫が蠢く",
+        "闇に蠢く"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0126",
+      "word": "蔓延る",
+      "kana": "はびこる",
+      "meanings": [
+        "to run rampant",
+        "to overgrow",
+        "to spread (evil)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "plants",
+        "society",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{夏|なつ}の{間|あいだ}に{庭|にわ}には{雑草|ざっそう}が{蔓延|はびこ}り、{花|はな}が{見|み}えなくなってしまった。",
+          "kana": "なつのあいだににわにはざっそうがはびこり、はながみえなくなってしまった。",
+          "en": "Over the summer the garden was overrun with weeds and the flowers disappeared from view."
+        },
+        {
+          "ja": "{不正|ふせい}が{蔓延|はびこ}る{組織|そしき}では、{正直|しょうじき}な{人|ひと}ほど{早|はや}く{辞|や}めていくものだ。",
+          "kana": "ふせいがはびこるそしきでは、しょうじきなひとほどはやくやめていくものだ。",
+          "en": "In an organization where wrongdoing runs rampant, it is the honest people who leave first."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{草|くさ}などがどんどん{広|ひろ}がること。また、{悪|わる}いものが{社会|しゃかい}に{広|ひろ}がること。",
+        "kana": "くさなどがどんどんひろがること。また、わるいものがしゃかいにひろがること。"
+      },
+      "frequencyRank": 5825,
+      "altForms": [
+        "はびこる"
+      ],
+      "collocations": [
+        "悪がはびこる",
+        "雑草がはびこる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0127",
+      "word": "蝕む",
+      "kana": "むしばむ",
+      "meanings": [
+        "to eat away at",
+        "to undermine (health, mind)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "health",
+        "abstract",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "ストレスは{気|き}づかないうちに{心|こころ}と{体|からだ}を{蝕|むしば}んでいく。",
+          "kana": "ストレスはきづかないうちにこころとからだをむしばんでいく。",
+          "en": "Stress eats away at your mind and body before you even notice."
+        },
+        {
+          "ja": "{長年|ながねん}の{無理|むり}がたたって、{祖父|そふ}の{体|からだ}は{病|やまい}に{蝕|むしば}まれていた。",
+          "kana": "ながねんのむりがたたって、そふのからだはやまいにむしばまれていた。",
+          "en": "Years of overwork had taken their toll, and illness had eaten away at my grandfather's body."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{虫|むし}が{食|た}べるように、{少|すこ}しずつ{中|なか}から{悪|わる}くしていくこと。",
+        "kana": "むしがたべるように、すこしずつなかからわるくしていくこと。"
+      },
+      "frequencyRank": 5832,
+      "altForms": [
+        "むしばむ"
+      ],
+      "collocations": [
+        "健康を蝕む",
+        "心を蝕む"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0128",
+      "word": "冒す",
+      "kana": "おかす",
+      "meanings": [
+        "to brave (danger)",
+        "to risk",
+        "to desecrate"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "abstract"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{命|いのち}の{危険|きけん}を{冒|おか}してまで{山頂|さんちょう}を{目指|めざ}す{必要|ひつよう}はない。",
+          "kana": "いのちのきけんをおかしてまでさんちょうをめざすひつようはない。",
+          "en": "There is no need to risk your life to reach the summit."
+        },
+        {
+          "ja": "{新|あたら}しい{事業|じぎょう}を{始|はじ}めるには、ある{程度|ていど}の{危険|きけん}を{冒|おか}す{覚悟|かくご}が{必要|ひつよう}だ。",
+          "kana": "あたらしいじぎょうをはじめるには、あるていどのきけんをおかすかくごがひつようだ。",
+          "en": "Starting a new business takes a readiness to run a certain amount of risk."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{危険|きけん}だと{分|わ}かっていながら、あえて{何|なに}かをすること。",
+        "kana": "きけんだとわかっていながら、あえてなにかをすること。"
+      },
+      "frequencyRank": 5838,
+      "notes": "Used for taking on danger (危険を冒す); in the passive, to be attacked by illness (病に冒される).",
+      "collocations": [
+        "危険を冒す",
+        "病に冒される"
+      ],
+      "confusables": [
+        "v-n1-0018",
+        "v-n1-0019"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0129",
+      "word": "窄める",
+      "kana": "すぼめる",
+      "meanings": [
+        "to narrow (shoulders, lips)",
+        "to pucker",
+        "to close (an umbrella)"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "body",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{肩|かた}を{窄|すぼ}めて、{小|ちい}さな{声|こえ}で「すみません」と{言|い}った。",
+          "kana": "かれはかたをすぼめて、ちいさなこえで「すみません」といった。",
+          "en": "He hunched his shoulders and said, in a small voice, 'I'm sorry.'"
+        },
+        {
+          "ja": "{雨|あめ}が{弱|よわ}まってきたので、{傘|かさ}を{窄|すぼ}めて{軒下|のきした}で{少|すこ}し{待|ま}つことにした。",
+          "kana": "あめがよわまってきたので、かさをすぼめてのきしたですこしまつことにした。",
+          "en": "The rain was easing, so I half-closed my umbrella and decided to wait a little under the eaves."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{口|くち}や{肩|かた}、{傘|かさ}などを、{小|ちい}さく{狭|せま}くすること。",
+        "kana": "くちやかた、かさなどを、ちいさくせまくすること。"
+      },
+      "frequencyRank": 5845,
+      "altForms": [
+        "すぼめる"
+      ],
+      "collocations": [
+        "肩を窄める",
+        "口を窄める"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0130",
+      "word": "竦む",
+      "kana": "すくむ",
+      "meanings": [
+        "to cower",
+        "to freeze (with fear)",
+        "to shrink back"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "body",
+        "emotions"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "ステージに{立|た}った{瞬間|しゅんかん}、{足|あし}が{竦|すく}んで{一歩|いっぽ}も{動|うご}けなくなった。",
+          "kana": "ステージにたったしゅんかん、あしがすくんでいっぽもうごけなくなった。",
+          "en": "The moment I stepped onstage, my legs froze and I could not move a step."
+        },
+        {
+          "ja": "{大型|おおがた}の{犬|いぬ}に{急|きゅう}に{吠|ほ}えられて、{子|こ}どもは{竦|すく}んだまま{泣|な}き{出|だ}しました。",
+          "kana": "おおがたのいぬにきゅうにほえられて、こどもはすくんだままなきだしました。",
+          "en": "Suddenly barked at by a big dog, the child froze on the spot and burst into tears."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{恐|おそ}ろしさなどで{体|からだ}がかたくなり、{動|うご}けなくなること。",
+        "kana": "おそろしさなどでからだがかたくなり、うごけなくなること。"
+      },
+      "frequencyRank": 5851,
+      "altForms": [
+        "すくむ"
+      ],
+      "collocations": [
+        "足が竦む",
+        "身が竦む"
+      ],
+      "confusables": [
+        "v-n1-0106"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0131",
+      "word": "翳す",
+      "kana": "かざす",
+      "meanings": [
+        "to hold up (over, toward)",
+        "to hold out (a card, a hand)"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "transport"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{改札|かいさつ}でカードを{翳|かざ}すだけで、{切符|きっぷ}を{買|か}わずに{電車|でんしゃ}に{乗|の}れる。",
+          "kana": "かいさつでカードをかざすだけで、きっぷをかわずにでんしゃにのれる。",
+          "en": "You just hold your card over the reader at the ticket gate and board the train without buying a ticket."
+        },
+        {
+          "ja": "まぶしさに{手|て}を{翳|かざ}して{空|そら}を{見上|みあ}げると、{飛行機|ひこうき}が{白|しろ}い{線|せん}を{引|ひ}いていた。",
+          "kana": "まぶしさにてをかざしてそらをみあげると、ひこうきがしろいせんをひいていた。",
+          "en": "Shading my eyes with my hand, I looked up and saw a plane drawing a white line across the sky."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{手|て}やものを、{何|なに}かの{上|うえ}や{前|まえ}に{軽|かる}く{上|あ}げて{向|む}けること。",
+        "kana": "てやものを、なにかのうえやまえにかるくあげてむけること。"
+      },
+      "frequencyRank": 5858,
+      "notes": "Almost always written かざす in daily life (手をかざす, カードをかざす); the kanji is literary.",
+      "altForms": [
+        "かざす"
+      ],
+      "collocations": [
+        "手を翳す",
+        "カードを翳す"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0132",
+      "word": "燻る",
+      "kana": "くすぶる",
+      "meanings": [
+        "to smolder",
+        "to linger unresolved",
+        "to stagnate"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "states"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}は{終|お}わったが、{社員|しゃいん}たちの{間|あいだ}には{不満|ふまん}がまだ{燻|くすぶ}っていた。",
+          "kana": "かいぎはおわったが、しゃいんたちのあいだにはふまんがまだくすぶっていた。",
+          "en": "The meeting was over, but discontent still smoldered among the staff."
+        },
+        {
+          "ja": "{火事|かじ}は{消|け}し{止|と}められたが、{翌朝|よくあさ}になっても{焼|や}け{跡|あと}からは{煙|けむり}が{燻|くすぶ}っていた。",
+          "kana": "かじはけしとめられたが、よくあさになってもやけあとからはけむりがくすぶっていた。",
+          "en": "The fire had been put out, but even the next morning smoke still smoldered from the burned ruins."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{火|ひ}が{燃|も}え{上|あ}がらずに、{煙|けむり}だけが{出|で}ていること。また、{不満|ふまん}などが{消|き}えずに{残|のこ}ること。",
+        "kana": "ひがもえあがらずに、けむりだけがでていること。また、ふまんなどがきえずにのこること。"
+      },
+      "frequencyRank": 5865,
+      "altForms": [
+        "くすぶる"
+      ],
+      "collocations": [
+        "不満が燻る",
+        "火が燻る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0133",
+      "word": "迸る",
+      "kana": "ほとばしる",
+      "meanings": [
+        "to gush out",
+        "to surge",
+        "to burst forth"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "actions",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "ホースが{外|はず}れて、{勢|いきお}いよく{水|みず}が{迸|ほとばし}った。",
+          "kana": "ホースがはずれて、いきおいよくみずがほとばしった。",
+          "en": "The hose came loose and water gushed out with full force."
+        },
+        {
+          "ja": "{若|わか}い{画家|がか}の{作品|さくひん}からは、{抑|おさ}えきれない{情熱|じょうねつ}が{迸|ほとばし}っているように{感|かん}じられた。",
+          "kana": "わかいがかのさくひんからは、おさえきれないじょうねつがほとばしっているようにかんじられた。",
+          "en": "The young painter's work seemed to overflow with a passion that could not be held back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{水|みず}などが{強|つよ}い{力|ちから}で{飛|と}び{出|だ}すこと。また、{強|つよ}い{気持|きも}ちが{一度|いちど}に{表|あらわ}れること。",
+        "kana": "みずなどがつよいちからでとびだすこと。また、つよいきもちがいちどにあらわれること。"
+      },
+      "frequencyRank": 5871,
+      "altForms": [
+        "ほとばしる"
+      ],
+      "collocations": [
+        "情熱が迸る",
+        "血が迸る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0134",
+      "word": "感慨",
+      "kana": "かんがい",
+      "meanings": [
+        "deep emotion",
+        "strong feelings (looking back)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{自分|じぶん}が{通|かよ}った{小学校|しょうがっこう}に{娘|むすめ}が{入学|にゅうがく}するのを{見|み}て、{感慨|かんがい}を{覚|おぼ}えた。",
+          "kana": "じぶんがかよったしょうがっこうにむすめがにゅうがくするのをみて、かんがいをおぼえた。",
+          "en": "Watching my daughter enter the same elementary school I went to, I was filled with emotion."
+        },
+        {
+          "ja": "{三十年|さんじゅうねん}ぶりに{故郷|こきょう}の{駅|えき}に{降|お}り{立|た}ったとき、{胸|むね}に{込|こ}み{上|あ}げてきたのは{言葉|ことば}にならない{感慨|かんがい}だった。",
+          "kana": "さんじゅうねんぶりにこきょうのえきにおりたったとき、むねにこみあげてきたのはことばにならないかんがいだった。",
+          "en": "Stepping off the train in my hometown for the first time in thirty years, what welled up in me was a feeling too deep for words."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}に{深|ふか}く{感|かん}じて、しみじみとした{気持|きも}ちになること。",
+        "kana": "こころにふかくかんじて、しみじみとしたきもちになること。"
+      },
+      "frequencyRank": 5878,
+      "collocations": [
+        "感慨深い",
+        "感慨にふける"
+      ],
+      "confusables": [
+        "v-n1-0135"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0135",
+      "word": "感傷",
+      "kana": "かんしょう",
+      "meanings": [
+        "sentimentality",
+        "being sentimental"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{卒業|そつぎょう}アルバムを{開|ひら}くと、つい{感傷|かんしょう}に{浸|ひた}ってしまう。",
+          "kana": "そつぎょうアルバムをひらくと、ついかんしょうにひたってしまう。",
+          "en": "Whenever I open my graduation album, I can't help getting sentimental."
+        },
+        {
+          "ja": "{感傷|かんしょう}に{流|なが}されず、{冷静|れいせい}に{事実|じじつ}だけを{見|み}てほしいと{弁護士|べんごし}は{言|い}った。",
+          "kana": "かんしょうにながされず、れいせいにじじつだけをみてほしいとべんごしはいった。",
+          "en": "The lawyer asked them to set sentiment aside and look coolly at the facts alone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ちょっとしたことにも{心|こころ}を{動|うご}かされて、{悲|かな}しい{気持|きも}ちになりやすいこと。",
+        "kana": "ちょっとしたことにもこころをうごかされて、かなしいきもちになりやすいこと。"
+      },
+      "frequencyRank": 5884,
+      "notes": "Homophone of 鑑賞 (appreciation of art) and 干渉 (interference); 感傷的 = sentimental.",
+      "collocations": [
+        "感傷に浸る",
+        "感傷的"
+      ],
+      "confusables": [
+        "v-n1-0134"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0136",
+      "word": "虚無",
+      "kana": "きょむ",
+      "meanings": [
+        "nothingness",
+        "emptiness",
+        "nihility"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{長年|ながねん}{追|お}いかけた{目標|もくひょう}を{達成|たっせい}した{後|あと}、{彼|かれ}は{虚無|きょむ}{感|かん}に{襲|おそ}われた。",
+          "kana": "ながねんおいかけたもくひょうをたっせいしたあと、かれはきょむかんにおそわれた。",
+          "en": "After achieving the goal he had chased for years, he was hit by a sense of emptiness."
+        },
+        {
+          "ja": "{戦争|せんそう}で{全|すべ}てを{失|うしな}った{主人公|しゅじんこう}は、{虚無|きょむ}の{中|なか}から{少|すこ}しずつ{生|い}きる{意味|いみ}を{探|さが}していく。",
+          "kana": "せんそうですべてをうしなったしゅじんこうは、きょむのなかからすこしずついきるいみをさがしていく。",
+          "en": "Having lost everything in the war, the protagonist slowly searches for a reason to live from within the void."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}もなく、{価値|かち}も{意味|いみ}も{感|かん}じられない{状態|じょうたい}。",
+        "kana": "なにもなく、かちもいみもかんじられないじょうたい。"
+      },
+      "frequencyRank": 5891,
+      "collocations": [
+        "虚無感",
+        "虚無的"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0137",
+      "word": "栄光",
+      "kana": "えいこう",
+      "meanings": [
+        "glory",
+        "honor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "sports"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}の{栄光|えいこう}にすがるのではなく、{今|いま}できることを{考|かんが}えよう。",
+          "kana": "むかしのえいこうにすがるのではなく、いまできることをかんがえよう。",
+          "en": "Instead of clinging to past glory, let's think about what we can do now."
+        },
+        {
+          "ja": "{十年間|じゅうねんかん}{努力|どりょく}し{続|つづ}けた{彼女|かのじょ}に、ついに{金|きん}メダルという{栄光|えいこう}の{瞬間|しゅんかん}が{訪|おとず}れた。",
+          "kana": "じゅうねんかんどりょくしつづけたかのじょに、ついにきんメダルというえいこうのしゅんかんがおとずれた。",
+          "en": "After ten years of unbroken effort, her moment of glory finally came: a gold medal."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{成功|せいこう}をして、{多|おお}くの{人|ひと}にほめたたえられる{名誉|めいよ}。",
+        "kana": "おおきなせいこうをして、おおくのひとにほめたたえられるめいよ。"
+      },
+      "frequencyRank": 5898,
+      "collocations": [
+        "栄光に輝く",
+        "過去の栄光"
+      ],
+      "confusables": [
+        "v-n1-0088"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0138",
+      "word": "屈辱",
+      "kana": "くつじょく",
+      "meanings": [
+        "humiliation",
+        "disgrace"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{大差|たいさ}で{負|ま}けた{屈辱|くつじょく}をばねに、チームは{翌年|よくねん}{見事|みごと}に{優勝|ゆうしょう}した。",
+          "kana": "たいさでまけたくつじょくをばねに、チームはよくねんみごとにゆうしょうした。",
+          "en": "Driven by the humiliation of that lopsided loss, the team won the title the next year."
+        },
+        {
+          "ja": "{皆|みな}の{前|まえ}で{部下|ぶか}に{間違|まちが}いを{指摘|してき}されるのは、{彼|かれ}にとって{耐|た}えがたい{屈辱|くつじょく}だったようだ。",
+          "kana": "みなのまえでぶかにまちがいをしてきされるのは、かれにとってたえがたいくつじょくだったようだ。",
+          "en": "Having a subordinate point out his mistake in front of everyone seems to have been an unbearable humiliation for him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}にばかにされたり{恥|はじ}をかかされたりして、{悔|くや}しく{感|かん}じること。",
+        "kana": "ひとにばかにされたりはじをかかされたりして、くやしくかんじること。"
+      },
+      "frequencyRank": 5904,
+      "collocations": [
+        "屈辱を味わう",
+        "屈辱的"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0139",
+      "word": "悲嘆",
+      "kana": "ひたん",
+      "meanings": [
+        "grief",
+        "lamentation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{愛犬|あいけん}を{亡|な}くした{友人|ゆうじん}は、{悲嘆|ひたん}に{暮|く}れて{何日|なんにち}も{外|そと}に{出|で}なかった。",
+          "kana": "あいけんをなくしたゆうじんは、ひたんにくれてなんにちもそとにでなかった。",
+          "en": "My friend, who had lost her beloved dog, was so lost in grief that she did not go out for days."
+        },
+        {
+          "ja": "{家|いえ}が{流|なが}された{住民|じゅうみん}たちの{悲嘆|ひたん}は{深|ふか}く、{言葉|ことば}をかけることさえためらわれた。",
+          "kana": "いえがながされたじゅうみんたちのひたんはふかく、ことばをかけることさえためらわれた。",
+          "en": "The grief of the residents whose homes had been swept away was so deep that I hesitated even to speak to them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{悲|かな}しいことにあって、{深|ふか}く{悲|かな}しみ{嘆|なげ}くこと。",
+        "kana": "とてもかなしいことにあって、ふかくかなしみなげくこと。"
+      },
+      "frequencyRank": 5911,
+      "collocations": [
+        "悲嘆に暮れる"
+      ],
+      "confusables": [
+        "v-n1-0062"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0140",
+      "word": "荒廃",
+      "kana": "こうはい",
+      "meanings": [
+        "devastation",
+        "ruin",
+        "dilapidation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "states",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{人|ひと}が{住|す}まなくなった{家|いえ}は、わずか{数年|すうねん}で{驚|おどろ}くほど{荒廃|こうはい}する。",
+          "kana": "ひとがすまなくなったいえは、わずかすうねんでおどろくほどこうはいする。",
+          "en": "A house with no one living in it falls into shocking disrepair in just a few years."
+        },
+        {
+          "ja": "{長|なが}い{内戦|ないせん}で{国土|こくど}が{荒廃|こうはい}し、{田畑|たはた}の{多|おお}くが{使|つか}えなくなっている。",
+          "kana": "ながいないせんでこくどがこうはいし、たはたのおおくがつかえなくなっている。",
+          "en": "The long civil war has left the land devastated, and much of the farmland can no longer be used."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}や{畑|はたけ}などが{手入|てい}れされずに{荒|あ}れて、ひどい{状態|じょうたい}になること。",
+        "kana": "たてものやはたけなどがていれされずにあれて、ひどいじょうたいになること。"
+      },
+      "frequencyRank": 5917,
+      "collocations": [
+        "荒廃した土地",
+        "心の荒廃"
+      ],
+      "confusables": [
+        "v-n1-0141"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0141",
+      "word": "廃墟",
+      "kana": "はいきょ",
+      "meanings": [
+        "ruins",
+        "abandoned building"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}{栄|さか}えた{鉱山|こうざん}の{町|まち}は、{今|いま}では{草|くさ}に{覆|おお}われた{廃墟|はいきょ}になっている。",
+          "kana": "むかしさかえたこうざんのまちは、いまではくさにおおわれたはいきょになっている。",
+          "en": "The mining town that once thrived is now a ruin covered in grass."
+        },
+        {
+          "ja": "かつての{工場|こうじょう}の{廃墟|はいきょ}を{利用|りよう}して、{町|まち}は{新|あたら}しい{美術館|びじゅつかん}を{作|つく}る{計画|けいかく}を{立|た}てている。",
+          "kana": "かつてのこうじょうのはいきょをりようして、まちはあたらしいびじゅつかんをつくるけいかくをたてている。",
+          "en": "The town is drawing up plans to turn the ruins of the old factory into a new art museum."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{壊|こわ}れたり{荒|あ}れたりして、{人|ひと}が{使|つか}わなくなった{建物|たてもの}や{町|まち}。",
+        "kana": "こわれたりあれたりして、ひとがつかわなくなったたてものやまち。"
+      },
+      "frequencyRank": 5924,
+      "collocations": [
+        "廃墟と化す",
+        "廃墟巡り"
+      ],
+      "confusables": [
+        "v-n1-0140"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0142",
+      "word": "晩年",
+      "kana": "ばんねん",
+      "meanings": [
+        "later years",
+        "last years of life"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{晩年|ばんねん}、{海|うみ}の{見|み}える{小|ちい}さな{家|いえ}で{絵|え}を{描|か}いて{過|す}ごした。",
+          "kana": "そふはばんねん、うみのみえるちいさないえでえをかいてすごした。",
+          "en": "In his later years, my grandfather spent his time painting in a small house with a view of the sea."
+        },
+        {
+          "ja": "この{画家|がか}の{晩年|ばんねん}の{作品|さくひん}には、{若|わか}い{頃|ころ}にはなかった{静|しず}けさが{感|かん}じられます。",
+          "kana": "このがかのばんねんのさくひんには、わかいころにはなかったしずけさがかんじられます。",
+          "en": "This painter's late works have a stillness that was absent from his youth."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}の{一生|いっしょう}の、{終|お}わりに{近|ちか}い{時期|じき}。{年|とし}を{取|と}ってからの{時期|じき}。",
+        "kana": "ひとのいっしょうの、おわりにちかいじき。としをとってからのじき。"
+      },
+      "frequencyRank": 5931,
+      "collocations": [
+        "晩年を過ごす",
+        "晩年の作品"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0143",
+      "word": "黄昏",
+      "kana": "たそがれ",
+      "meanings": [
+        "dusk",
+        "twilight",
+        "decline (of a career, era)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "time",
+        "nature",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{黄昏|たそがれ}の{海岸|かいがん}を{歩|ある}きながら、{二人|ふたり}は{今後|こんご}のことを{静|しず}かに{話|はな}し{合|あ}った。",
+          "kana": "たそがれのかいがんをあるきながら、ふたりはこんごのことをしずかにはなしあった。",
+          "en": "Walking along the shore at dusk, the two quietly talked over what would come next."
+        },
+        {
+          "ja": "{窓|まど}から{黄昏|たそがれ}の{町|まち}を{眺|なが}めていると、{家々|いえいえ}に{次々|つぎつぎ}と{明|あ}かりがともっていった。",
+          "kana": "まどからたそがれのまちをながめていると、いえいえにつぎつぎとあかりがともっていった。",
+          "en": "As I gazed out the window at the town in the twilight, lights came on one after another in the houses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{太陽|たいよう}が{沈|しず}んで、{周|まわ}りが{薄暗|うすぐら}くなるころ。{夕方|ゆうがた}。",
+        "kana": "たいようがしずんで、まわりがうすぐらくなるころ。ゆうがた。"
+      },
+      "frequencyRank": 5937,
+      "notes": "Literary word for 夕暮れ; 黄昏時 (たそがれどき). Also a verb 黄昏れる (to be lost in melancholy).",
+      "collocations": [
+        "黄昏時",
+        "人生の黄昏"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0144",
+      "word": "綴る",
+      "kana": "つづる",
+      "meanings": [
+        "to write (prose, letters)",
+        "to spell",
+        "to bind together"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "arts",
+        "written"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{毎晩|まいばん}、その{日|ひ}の{出来事|できごと}を{日記|にっき}に{綴|つづ}っていた。",
+          "kana": "そぼはまいばん、そのひのできごとをにっきにつづっていた。",
+          "en": "Every night my grandmother wrote down the day's events in her diary."
+        },
+        {
+          "ja": "{被災地|ひさいち}の{子|こ}どもたちが{綴|つづ}った{手紙|てがみ}を{読|よ}んで、{思|おも}わず{涙|なみだ}がこぼれました。",
+          "kana": "ひさいちのこどもたちがつづったてがみをよんで、おもわずなみだがこぼれました。",
+          "en": "Reading the letters written by children in the disaster area, I could not keep the tears from falling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}をつなげて、{手紙|てがみ}や{日記|にっき}などを{書|か}くこと。",
+        "kana": "ことばをつなげて、てがみやにっきなどをかくこと。"
+      },
+      "frequencyRank": 5944,
+      "collocations": [
+        "思いを綴る",
+        "日記を綴る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0145",
+      "word": "奏でる",
+      "kana": "かなでる",
+      "meanings": [
+        "to play (a string instrument)",
+        "to make music"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "arts",
+        "literary"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{広場|ひろば}では{若者|わかもの}がギターを{奏|かな}で、{通|とお}りがかりの{人|ひと}が{足|あし}を{止|と}めていた。",
+          "kana": "ひろばではわかものがギターをかなで、とおりがかりのひとがあしをとめていた。",
+          "en": "In the square a young man was playing guitar, and passersby stopped to listen."
+        },
+        {
+          "ja": "{風|かぜ}が{竹林|ちくりん}を{抜|ぬ}けるたびに、{葉|は}がさらさらと{音楽|おんがく}を{奏|かな}でているようだった。",
+          "kana": "かぜがちくりんをぬけるたびに、はがさらさらとおんがくをかなでているようだった。",
+          "en": "Each time the wind passed through the bamboo grove, the leaves seemed to rustle out a kind of music."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{楽器|がっき}を{使|つか}って、{音楽|おんがく}を{演奏|えんそう}すること。",
+        "kana": "がっきをつかって、おんがくをえんそうすること。"
+      },
+      "frequencyRank": 5950,
+      "collocations": [
+        "音楽を奏でる",
+        "ハーモニーを奏でる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0146",
+      "word": "彩る",
+      "kana": "いろどる",
+      "meanings": [
+        "to color",
+        "to adorn",
+        "to add color to"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "colors",
+        "arts"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{秋|あき}になると、{赤|あか}や{黄色|きいろ}の{葉|は}が{山|やま}{全体|ぜんたい}を{彩|いろど}る。",
+          "kana": "あきになると、あかやきいろのはがやまぜんたいをいろどる。",
+          "en": "In autumn, red and yellow leaves paint the whole mountain with color."
+        },
+        {
+          "ja": "{皿|さら}の{上|うえ}を{季節|きせつ}の{野菜|やさい}で{彩|いろど}るのが、この{店|みせ}の{料理人|りょうりにん}のこだわりです。",
+          "kana": "さらのうえをきせつのやさいでいろどるのが、このみせのりょうりにんのこだわりです。",
+          "en": "Dressing each plate with seasonal vegetables is this restaurant's chef's signature touch."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{色|いろ}をつけたり{飾|かざ}りをつけたりして、{美|うつく}しく{見|み}せること。",
+        "kana": "いろをつけたりかざりをつけたりして、うつくしくみせること。"
+      },
+      "frequencyRank": 5957,
+      "collocations": [
+        "食卓を彩る",
+        "人生を彩る"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0147",
+      "word": "蘇る",
+      "kana": "よみがえる",
+      "meanings": [
+        "to be revived",
+        "to come back (memories)",
+        "to be restored"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{懐|なつ}かしい{曲|きょく}を{聞|き}いた{瞬間|しゅんかん}、{高校時代|こうこうじだい}の{記憶|きおく}が{鮮|あざ}やかに{蘇|よみがえ}った。",
+          "kana": "なつかしいきょくをきいたしゅんかん、こうこうじだいのきおくがあざやかによみがえった。",
+          "en": "The moment I heard the old song, memories of high school came vividly back."
+        },
+        {
+          "ja": "{一度|いちど}は{枯|か}れたと{思|おも}った{庭|にわ}の{木|き}が、{春|はる}になって{見事|みごと}に{蘇|よみがえ}りました。",
+          "kana": "いちどはかれたとおもったにわのきが、はるになってみごとによみがえりました。",
+          "en": "The garden tree we thought had died came back to life beautifully in the spring."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{死|し}んだものが{生|い}き{返|かえ}ること。また、{忘|わす}れていたことが{再|ふたた}び{心|こころ}に{浮|う}かぶこと。",
+        "kana": "しんだものがいきかえること。また、わすれていたことがふたたびこころにうかぶこと。"
+      },
+      "frequencyRank": 5964,
+      "altForms": [
+        "甦る",
+        "よみがえる"
+      ],
+      "collocations": [
+        "記憶が蘇る",
+        "蘇る伝統"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0148",
+      "word": "囁く",
+      "kana": "ささやく",
+      "meanings": [
+        "to whisper",
+        "to murmur"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{図書館|としょかん}で{友人|ゆうじん}が{耳元|みみもと}で{何|なに}か{囁|ささや}いたが、よく{聞|き}き{取|と}れなかった。",
+          "kana": "としょかんでゆうじんがみみもとでなにかささやいたが、よくききとれなかった。",
+          "en": "In the library my friend whispered something in my ear, but I could not quite catch it."
+        },
+        {
+          "ja": "{母親|ははおや}は{眠|ねむ}りかけた{赤|あか}ん{坊|ぼう}に、{優|やさ}しく{子守歌|こもりうた}を{囁|ささや}いている。",
+          "kana": "ははおやはねむりかけたあかんぼうに、やさしくこもりうたをささやいている。",
+          "en": "The mother is softly whispering a lullaby to her baby as it drifts off to sleep."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{周|まわ}りに{聞|き}こえないように、{小|ちい}さな{声|こえ}でそっと{話|はな}すこと。",
+        "kana": "まわりにきこえないように、ちいさなこえでそっとはなすこと。"
+      },
+      "frequencyRank": 5970,
+      "altForms": [
+        "ささやく"
+      ],
+      "collocations": [
+        "耳元で囁く",
+        "〜が囁かれる"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0149",
+      "word": "聳える",
+      "kana": "そびえる",
+      "meanings": [
+        "to tower",
+        "to rise high"
+      ],
+      "pos": "v1",
+      "jlpt": 1,
+      "tags": [
+        "nature",
+        "position",
+        "literary"
+      ],
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{駅|えき}を{出|で}ると、{目|め}の{前|まえ}に{雪|ゆき}をかぶった{山|やま}が{聳|そび}えていた。",
+          "kana": "えきをでると、めのまえにゆきをかぶったやまがそびえていた。",
+          "en": "When I came out of the station, a snow-capped mountain towered right in front of me."
+        },
+        {
+          "ja": "{百|ひゃく}メートルを{超|こ}える{塔|とう}が{町|まち}の{真|ま}ん{中|なか}に{聳|そび}え、どこからでも{見|み}えます。",
+          "kana": "ひゃくメートルをこえるとうがまちのまんなかにそびえ、どこからでもみえます。",
+          "en": "A tower over a hundred meters tall rises in the middle of town and can be seen from anywhere."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{山|やま}や{建物|たてもの}などが、とても{高|たか}く{立|た}っていること。",
+        "kana": "やまやたてものなどが、とてもたかくたっていること。"
+      },
+      "frequencyRank": 5977,
+      "altForms": [
+        "そびえる"
+      ],
+      "collocations": [
+        "聳え立つ",
+        "空に聳える"
+      ],
+      "station": 49
+    },
+    {
+      "id": "v-n1-0150",
+      "word": "貫く",
+      "kana": "つらぬく",
+      "meanings": [
+        "to carry through (a belief)",
+        "to pierce",
+        "to go through"
+      ],
+      "pos": "v5",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions"
+      ],
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{周|まわ}りに{何|なに}を{言|い}われても、{彼|かれ}は{最後|さいご}まで{自分|じぶん}の{信念|しんねん}を{貫|つらぬ}いた。",
+          "kana": "まわりになにをいわれても、かれはさいごまでじぶんのしんねんをつらぬいた。",
+          "en": "No matter what people around him said, he stuck to his beliefs to the end."
+        },
+        {
+          "ja": "この{川|かわ}は{県|けん}の{中央|ちゅうおう}を{南北|なんぼく}に{貫|つらぬ}いて、{海|うみ}へと{注|そそ}いでいます。",
+          "kana": "このかわはけんのちゅうおうをなんぼくにつらぬいて、うみへとそそいでいます。",
+          "en": "This river runs north to south right through the center of the prefecture before emptying into the sea."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{端|はし}から{端|はし}まで{通|とお}り{抜|ぬ}けること。また、{考|かんが}えを{最後|さいご}まで{変|か}えずに{通|とお}すこと。",
+        "kana": "はしからはしまでとおりぬけること。また、かんがえをさいごまでかえずにとおすこと。"
+      },
+      "frequencyRank": 5983,
+      "collocations": [
+        "信念を貫く",
+        "初志貫徹"
+      ],
+      "station": 50
+    }
+  ]
+}

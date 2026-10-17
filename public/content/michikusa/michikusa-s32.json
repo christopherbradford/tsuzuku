@@ -1,0 +1,47 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s32",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-32-1",
+      "stationId": "st-32",
+      "kind": "road-history",
+      "titleEn": "The Town That Climbed Uphill",
+      "bodyEn": "Shirasuka once stood by the shore below the hill. The great Hōei earthquake of 1707 sent a tsunami through it, and the whole post town was rebuilt on the top of Shiomizaka, the 'tide-viewing slope'. From there travelers bound for Edo got their first wide view of the Pacific; Hiroshige painted a daimyō's procession winding down toward that sea.",
+      "ja": "{潮見坂|しおみざか}",
+      "kana": "しおみざか",
+      "sourceNote": "Shirasuka post-town records (1707 Hōei quake relocation); Hiroshige 'Shirasuka'"
+    },
+    {
+      "id": "m-32-2",
+      "stationId": "st-32",
+      "kind": "kanji-origin",
+      "titleEn": "Morning Tide, Evening Tide",
+      "bodyEn": "Hiroshige titled his print 汐見阪, but today the hill is written 潮見坂. Both 潮 and 汐 read しお and mean tide: 潮 pairs water with 朝 (morning), 汐 pairs it with 夕 (evening) — the morning and evening tides of old Chinese usage. Modern Japanese keeps 潮 for everything (潮風, 満潮, 風潮) and leaves 汐 to names and poetry.",
+      "ja": "{潮風|しおかぜ}",
+      "kana": "しおかぜ",
+      "sourceNote": "Standard kanji dictionaries (新字源): 潮 = 氵+朝 morning tide, 汐 = 氵+夕 evening tide"
+    },
+    {
+      "id": "m-32-3",
+      "stationId": "st-32",
+      "kind": "etymology",
+      "titleEn": "Giving Up Means Seeing Clearly",
+      "bodyEn": "諦める now means 'to give up', yet it began as 明らめる, 'to make clear'. The kanji 諦 is Buddhist: the 四諦 are the Four Noble Truths, the things seen as they truly are. Seeing a situation plainly and accepting it slid into letting it go. The old sense survives in written 諦観, clear-eyed acceptance rather than defeat.",
+      "ja": "{諦|あきら}める",
+      "kana": "あきらめる",
+      "sourceNote": "Kōjien / Nihon Kokugo Daijiten, entry あきらめる (明らめる); Buddhist term 四諦"
+    },
+    {
+      "id": "m-32-4",
+      "stationId": "st-32",
+      "kind": "usage",
+      "titleEn": "Cannot Not: Two Double Negatives",
+      "bodyEn": "〜ずにはいられない is literally 'cannot stay without doing': the written ず from Arai, plus に, plus はいられない. It names an urge you cannot hold back — 笑わずにはいられない, I can't help laughing. 〜ないわけにはいかない looks similar but means duty: 行かないわけにはいかない, I have no choice but to go. Remember する → せずにはいられない.",
+      "ja": "{笑|わら}わずにはいられない。",
+      "kana": "わらわずにはいられない。"
+    }
+  ]
+}

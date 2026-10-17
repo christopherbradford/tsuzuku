@@ -9,7 +9,8 @@
  * `componentsPath` and `redirects` (`_meta/redirects.json` when present).
  *
  * Fails (throws / exit 1) when a station bundle is missing or any content
- * file exceeds 120 KB. Output is deterministic: files sorted by path, fixed
+ * file exceeds 300 KB (measured vocab is 1.3–1.85 KB per item, so a 150-item N1
+ * file is ≈ 276 KB; stories are one file per station). Output is deterministic: files sorted by path, fixed
  * key order, redirects sorted; `generatedAt` is kept from the previous
  * manifest when nothing else changed, so a re-run is byte-identical.
  */
@@ -22,7 +23,7 @@ import { BELT_IDS, CONTENT_KINDS, STATIONS } from '../src/content/types.ts';
 import type { Belt, ContentKind, ContentManifest, Level, ManifestFile, ManifestStation, StationBundle } from '../src/content/types.ts';
 
 /** Hard cap for one hand-written content file (bytes). */
-export const MAX_FILE_BYTES = 120 * 1024;
+export const MAX_FILE_BYTES = 300 * 1024;
 export const COMPONENTS_PATH = '_meta/components.json';
 
 export interface BuildIndexOptions {

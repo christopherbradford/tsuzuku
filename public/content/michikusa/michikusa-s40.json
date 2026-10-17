@@ -1,0 +1,45 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s40",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-40-1",
+      "stationId": "st-40",
+      "kind": "road-history",
+      "titleEn": "Tie-Dye for Sale at Narumi",
+      "bodyEn": "Hiroshige's Narumi print shows shopfronts hung with lengths of patterned cloth: Arimatsu shibori. The craft dates from 1608, when the Owari domain founded Arimatsu on the highway just east of Narumi; Takeda Shōkurō is credited with starting it there. Travelers bought tie-dyed towels and summer kimono as souvenirs, and both towns grew prosperous on the trade.",
+      "sourceNote": "Hiroshige, Fifty-three Stations (Hōeidō ed.), Narumi 'Meibutsu Arimatsu shibori'"
+    },
+    {
+      "id": "m-40-2",
+      "stationId": "st-40",
+      "kind": "kanji-origin",
+      "titleEn": "絞: Threads That Cross",
+      "bodyEn": "絞 pairs 糸, thread, with 交, to cross or intertwine, and the Shuowen Jiezi glosses it as binding tight, as a cord binds a neck. From that come 絞る, to wring or squeeze, and 絞り, cloth bound, stitched and twisted so that dye cannot reach the tied parts. Each knot leaves a pale ring once the thread is cut away.",
+      "ja": "{絞|しぼ}り",
+      "kana": "しぼり",
+      "sourceNote": "Shuowen Jiezi, entry 絞 (縊也、从交从糸); Daijisen, entry 絞り"
+    },
+    {
+      "id": "m-40-3",
+      "stationId": "st-40",
+      "kind": "usage",
+      "titleEn": "Two Readings of 得る",
+      "bodyEn": "After a verb stem, 得る means 'can happen' or 'can be done' and is read either うる or える: あり得る is ありうる or ありえる. The older うる sounds more formal and is the usual choice in writing. The negative, though, is always 得ない, read えない: ありえない, never ありうない. This station's 〜ざるを得ない is a fixed form read ざるをえない.",
+      "ja": "あり{得|う}る",
+      "kana": "ありうる"
+    },
+    {
+      "id": "m-40-4",
+      "stationId": "st-40",
+      "kind": "culture",
+      "titleEn": "Bashō's Plovers in the Dark",
+      "bodyEn": "In the winter of 1687 Matsuo Bashō stayed with poets in Narumi and opened a linked-verse session with this hokku: plovers crying as if to say, look at the darkness over Hoshizaki. His hosts raised a stone, the Chidorizuka, carved from his own handwriting, and it is regarded as the only Bashō monument set up during his lifetime.",
+      "ja": "{星崎|ほしざき}の{闇|やみ}を{見|み}よとや{啼|な}く{千鳥|ちどり}",
+      "kana": "ほしざきのやみをみよとやなくちどり",
+      "sourceNote": "Bashō, hokku of the Narumi kasen (1687); Chidorizuka monument, Narumi"
+    }
+  ]
+}

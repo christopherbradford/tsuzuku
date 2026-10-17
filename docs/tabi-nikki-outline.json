@@ -1,0 +1,1612 @@
+{
+  "cast": {
+    "ハナ": {
+      "nameEn": "Hana",
+      "age": 24,
+      "home": "Yokohama (Kanagawa ward; Station 3 passes within sight of her street)",
+      "role": "The diarist, the わたし of every story text. Quit an office job in Yokohama in February; the diary is both her reason and her method.",
+      "voice": "Warm, dry, observant. Short declarative sentences, one concrete detail per line (a smell, a number, a temperature), then a small question or image to end. Never gushes; says 'good' when she means 'wonderful'. Polite register in narration until Station 24; casual narration from Station 25; written/literary register in the late essays.",
+      "habits": [
+        "Writes the breakfast time and the weather at the top of every entry.",
+        "Keeps a 'small kindnesses' tally (小さな親切) in the back of the diary — a tick for every kindness received (thread kindness-tally).",
+        "Keeps a list of one local dish per station (thread one-dish-per-station).",
+        "Insists every blue-grey cat is the same cat, アオ."
+      ],
+      "neverDoes": "No romance plot, no illness, no drama about money; never mocks a local; never names her former company or any real person."
+    },
+    "ケン": {
+      "nameEn": "Ken",
+      "age": 31,
+      "relation": "Hana's cousin (their mothers are sisters).",
+      "role": "A cook between restaurants (left a Yokohama bistro in March; wants a small shop of his own 'someday'). Carries a canvas knife roll, three spice tins and too many socks.",
+      "voice": "Few words, casual register from Station 10 onward in dialogues (〜ちゃう, 〜とく, 〜じゃん, dropped particles). Food metaphors for everything. Pretends to dislike the cat and keeps dropping fish near it. Says 「まあね」 when praised.",
+      "habits": [
+        "Ends up in someone else's kitchen at nearly every station (thread borrowed-kitchens).",
+        "Counts bowls of noodles eaten on the road (his own tally, rival to Hana's).",
+        "Checks the weight of his pack every morning and never removes anything."
+      ]
+    },
+    "田中さん": {
+      "nameJaRuby": "{田中|たなか}さん",
+      "nameEn": "Tanaka-san",
+      "age": "about seventy",
+      "role": "A retired station master (which railway, which station, he never says). Keeps turning up on the road ahead of or behind them and never explains how; he only says 「{電車|でんしゃ}で」.",
+      "voice": "Brisk, polite, kind. Checks his pocket watch against every clock and announces the time. Gives short orders (「{座|すわ}りなさい」「{食|た}べなさい」) that are always for your own good. His weather forecasts are always wrong (thread tanaka-weather). Uses keigo naturally to shopkeepers.",
+      "secret": "Forty years ago he and a friend started walking the Tōkaidō to Kyoto and stopped at Ishiyakushi when work got busy; the friend moved away and they never resumed. He has been 'catching up' with Hana and Ken station by station. Revealed only in Station 44's monologue; he walks the last day into Kyoto with them (Station 53). No illness, no death, no tragedy — just a walk left unfinished."
+    },
+    "アオ": {
+      "nameEn": "Ao",
+      "role": "A blue-grey stray cat with yellow eyes and a white tip on the tail. Appears at about a third of the stations, sits on things (the diary, Ken's pack, a ferry bench) and leaves. Nobody owns it; nobody explains it.",
+      "rule": "Hana: same cat. Ken: can't be. Never resolved by evidence; resolved by Ken giving in at Ōtsu (Station 53). Ao is never in danger, never ill, never fed on-page by Ken 'on purpose'."
+    },
+    "innkeepers": "A different innkeeper (or café owner, shopkeeper, boat hand, child) at every station — one-episode locals, named in the episode's locals list, written in katakana at Stations 1–3 and with ruby elsewhere. They must be listed in names.",
+    "runningJokes": [
+      "「{同|おな}じ{猫|ねこ}だよ」「{違|ちが}うって」 — the cat argument, one exchange per Ao appearance, never longer.",
+      "Tanaka-san announces the exact time; the clock on the wall is always a minute off and he says the clock is wrong.",
+      "Ken's pack gets heavier at every station (a jar of something local) and he claims it is lighter.",
+      "Hana's breakfast-time header: the inn always serves breakfast at a time she finds either too early or too late; she writes the time anyway.",
+      "Tanaka weather: whatever he predicts, the opposite happens, and he is pleased either way."
+    ]
+  },
+  "threads": [
+    {
+      "id": "kindness-tally",
+      "summary": "Hana keeps a tally of small kindnesses in the back of the diary. The count is never large; it is what the road is made of.",
+      "startsAt": 4,
+      "developsAt": [
+        8,
+        14,
+        23,
+        32,
+        39,
+        47
+      ],
+      "paysOffAt": 53
+    },
+    {
+      "id": "borrowed-kitchens",
+      "summary": "Ken, between restaurants, cooks in other people's kitchens all the way to Kyoto and slowly decides what his own shop will be: one counter, one dish a day, dishes learned on the road.",
+      "startsAt": 6,
+      "developsAt": [
+        11,
+        18,
+        20,
+        26,
+        30,
+        40,
+        49
+      ],
+      "paysOffAt": 53
+    },
+    {
+      "id": "same-cat",
+      "summary": "Is アオ one cat or many? Hana says one, Ken says impossible. A one-line argument each time the blue-grey cat appears.",
+      "startsAt": 3,
+      "developsAt": [
+        8,
+        13,
+        19,
+        25,
+        30,
+        36,
+        44,
+        51
+      ],
+      "paysOffAt": 53
+    },
+    {
+      "id": "tanaka-walk",
+      "summary": "Tanaka-san keeps turning up by train and never says why. His own unfinished walk, stopped forty years ago at Ishiyakushi, is revealed there; he finishes it with them.",
+      "startsAt": 2,
+      "developsAt": [
+        9,
+        17,
+        22,
+        27,
+        37,
+        44
+      ],
+      "paysOffAt": 53
+    },
+    {
+      "id": "fuji-watch",
+      "summary": "Mount Fuji hides, appears, switches sides and finally disappears behind them; Hana notes each sighting like a visit from someone shy.",
+      "startsAt": 10,
+      "developsAt": [
+        13,
+        14,
+        16,
+        23
+      ],
+      "paysOffAt": 32
+    },
+    {
+      "id": "tanaka-weather",
+      "summary": "Weather as the year's clock: a typhoon, a gust, autumn wind, a cold shower, snow clearing. Tanaka-san's forecasts are always wrong until the one place where rain is guaranteed.",
+      "startsAt": 7,
+      "developsAt": [
+        15,
+        18,
+        19,
+        26,
+        45,
+        46
+      ],
+      "paysOffAt": 49
+    },
+    {
+      "id": "one-dish-per-station",
+      "summary": "Hana's list of one local dish per station, from a harbour-café cake to Hashirii mochi; the list is read back whole in the final consolidation reading.",
+      "startsAt": 3,
+      "developsAt": [
+        9,
+        12,
+        20,
+        30,
+        38,
+        41,
+        42,
+        51
+      ],
+      "paysOffAt": 53
+    },
+    {
+      "id": "home-and-work",
+      "summary": "Postcards and calls home to Yokohama (family unnamed), and the slow letting-go of the office job Hana left — ending with the diary being the work.",
+      "startsAt": 4,
+      "developsAt": [
+        14,
+        21,
+        32,
+        45
+      ],
+      "paysOffAt": 52
+    },
+    {
+      "id": "old-road-new-town",
+      "summary": "The old road fading while towns grow around it: relay stations turned bus stops, restored honjin, preserved townscapes, and the fork where the two great roads meet.",
+      "startsAt": 22,
+      "developsAt": [
+        28,
+        31,
+        33,
+        41,
+        47
+      ],
+      "paysOffAt": 52
+    },
+    {
+      "id": "the-diary",
+      "summary": "The diary as an object: first entry, first plain form, first casual entry, rereading the first pages, almost abandoning it at Fudesute-yama, and the long last night's reading.",
+      "startsAt": 4,
+      "developsAt": [
+        12,
+        25,
+        34,
+        38,
+        48
+      ],
+      "paysOffAt": 53
+    }
+  ],
+  "season": {
+    "1": "03/28 · late March, full cherry blossom, cold clear dawn at Nihonbashi, warm by noon on the Shinagawa shore road",
+    "2": "03/29 · bright, breezy spring day on the Tama river at the old Rokugō crossing; petals on the water",
+    "3": "03/30 · mild, hazy harbour morning in Yokohama; café windows open for the first time this year",
+    "4": "04/01 · soft rain overnight, clearing; the Gontazaka hill slick with petals",
+    "5": "04/02 · cold before dawn (6°C), pink sky over Totsuka; warm afternoon",
+    "6": "04/04 · warm, bright; pine grove smelling of resin, whitebait boats out off Enoshima — PAUSE 1 follows (Ken's season at the whitebait shack, 04/05–07/02)",
+    "7": "07/04 · rainy season just ended; hot and humid; Tanabata streamers swaying in the arcade",
+    "8": "07/06 · hot sea haze, low tide in the evening at Ōiso beach",
+    "9": "07/08 · 31°C; cicadas; castle moat lotus in bud at Odawara",
+    "10": "07/10 · mist on the Hakone climb, 19°C at the pass, hydrangeas finishing, hot-spring steam at dusk",
+    "11": "07/13 · clear and hot; the spring water of Mishima at a constant 15°C",
+    "12": "07/15 · hot, early fish market at Numazu harbour, horse mackerel drying on racks",
+    "13": "07/17 · very clear dawn; Fuji visible above the Hara rice fields, still with a little snow in the gullies",
+    "14": "07/19 · hot; Fuji appears on the LEFT at the Yoshiwara bend",
+    "15": "07/22 · typhoon approaching; rain all day, wind at night; they stay two nights",
+    "16": "07/25 · typhoon passed; washed clear sky, Suruga Bay deep blue from Satta Pass; 33°C",
+    "17": "07/27 · hot, still; sea sparkling at Okitsu; greenhouse mikan at a stand",
+    "18": "07/29 · strong summer sea wind at Ejiri and the Miho pine grove; hats lost",
+    "19": "08/01 · hot city afternoon in Shizuoka; rumours of another typhoon that never comes",
+    "20": "08/04 · damp heat in the Mariko valley, cool inside the tororo teahouse",
+    "21": "08/07 · cool and dark inside the Utsunoya tunnel, blazing outside; first dragonflies",
+    "22": "08/10 · hot; tea fields on the hills around Fujieda, a slow bus",
+    "23": "08/13 · Obon lanterns in Shimada; wide Ōi river low and braided after dry weeks",
+    "24": "08/16 · Obon end; hot afternoon in the river-crossing quarter of Shimada/Kanaya — PAUSE 2 follows (tea country, 08/21–09/22)",
+    "25": "09/23 · autumn equinox; red spider lilies along the road up Sayo-no-Nakayama; first cool evening",
+    "26": "09/26 · dry autumn wind through Kakegawa castle town; high clouds",
+    "27": "09/29 · warm, still; late crown melons in the shop windows at Fukuroi",
+    "28": "10/02 · bright; wide Tenryū river running fast after rain upstream",
+    "29": "10/06 · first cold north wind over harvested rice stubble around Hamamatsu",
+    "30": "10/09 · clear; Lake Hamana flat and silver at the Imagire strait; eel smoke",
+    "31": "10/10 · clear; the preserved Arai checkpoint in low autumn light",
+    "32": "10/13 · very clear morning on Shiomizaka; Fuji faint on the horizon for the last time",
+    "33": "10/15 · grey, mild; Futagawa honjin museum quiet",
+    "34": "10/17 · bright; the Toyokawa river wide and slow at the Toyohashi bridge",
+    "35": "10/20 · autumn rain beginning in the afternoon in the Goyu pine avenue",
+    "36": "10/20 · the same evening (Goyu and Akasaka are one walk apart); rain, lanterns at Akasaka",
+    "37": "10/23 · crisp; purple barley fields being prepared at Fujikawa; persimmons",
+    "38": "10/26 · still, golden afternoon on the long Yahagi bridge at Okazaki; smell of Hatchō miso",
+    "39": "10/29 · cool and clear; the Yatsuhashi iris garden bare; dry leaves on the horse-market site",
+    "40": "11/01 · mild; indigo smell in an Arimatsu shibori workshop",
+    "41": "11/04 · first ginkgo yellow at Atsuta; cool bright — PAUSE 3 follows (Nagoya, 11/05–12/09)",
+    "42": "12/10 · cold, bright; the head of Ise Bay choppy; clam shells on the Kuwana shore",
+    "43": "12/13 · cold clear night; Yokkaichi factory lights across the water",
+    "44": "12/17 · still, grey, 5°C; dry leaves on the Ishiyakushi temple steps",
+    "45": "12/19 · a passing cold shower (時雨) then sun at Shōno",
+    "46": "12/23 · snow overnight, clearing to blue over Kameyama castle; the Suzuka range white",
+    "47": "12/31–01/01 · New Year's Eve and New Year's Day in Seki; frost, bells, first sunrise over the preserved street",
+    "48": "01/04 · cold, dry; Fudesute-yama bare; ice in puddles",
+    "49": "01/07 · cold rain on the Suzuka pass, as Tsuchiyama's saying promises; seven-herb porridge",
+    "50": "01/10 · cold sun; kanpyō shop, Lake Biwa's hills first seen from the road",
+    "51": "01/13 · frost then sun; dengaku grilling at the Megawa teahouse",
+    "52": "01/16 · grey and cold at the Kusatsu fork; a lecture room with a kerosene heater",
+    "53": "01/19–01/20 · Great Cold; Lake Biwa steel-grey from Ōtsu; the Hashirii spring unfrozen; arrival at Sanjō Ōhashi, Kyoto, on 01/21 in thin winter sun"
+  },
+  "episodes": [
+    {
+      "station": 1,
+      "nameJa": "品川",
+      "nameRomaji": "Shinagawa",
+      "keeperJa": "潮の関守",
+      "keeperEn": "Tide Keeper",
+      "belt": "white",
+      "level": "kana",
+      "date": "03/28",
+      "synopsis": "Dawn at Nihonbashi under full cherry blossom. s-01-1: a picture-book roll call — Hana (わたし), Ken, and a small knot of travellers greet one another (おはようございます), say their names, and count off ひとり、ふたり … up to ten people; a teacher with students, a friend, はい／いいえ answers to 'ready?'. They walk the shore road to Shinagawa; the tide is out; Hana writes 'ひとつ' for the first station. s-01-2: a greetings exchange at the Shinagawa roadside — Hana greets a tea-stall woman (ミヤさん), exchanges names, はじめまして／よろしく, thank-you and goodbye. s-01-3: a numbered count-along list of the ten travellers' names (katakana) or a 1–10 count-along as they pass ten lanterns. Everything stays inside greetings, numbers 1–10, わたし／あなた／ひと／せんせい／ともだち, はい／いいえ.",
+      "recapEn": "At dawn under the cherry blossoms, Hana and her cousin Ken set out from Nihonbashi with a handful of travellers, greeting each other and counting off one to ten. They reached Shinagawa by the shore road; Hana wrote 'one' for the first station.",
+      "locals": [
+        {
+          "nameJa": "ミヤさん",
+          "nameEn": "Miya-san",
+          "role": "tea-stall woman at the Shinagawa roadside"
+        }
+      ],
+      "threadBeats": [],
+      "hook": "Hana counts the travellers once more at dusk and gets one fewer than at dawn — then one more, as Ken comes back with two cups of tea.",
+      "grammarFocus": "No grammar yet: hiragana 46 + dakuten/handakuten; greetings, はい／いいえ, numbers 1–10, わたし／あなた／ひと／せんせい／ともだち."
+    },
+    {
+      "station": 2,
+      "nameJa": "川崎",
+      "nameRomaji": "Kawasaki",
+      "keeperJa": "渡しの関守",
+      "keeperEn": "Ferry Keeper",
+      "belt": "white",
+      "level": "kana",
+      "date": "03/29",
+      "synopsis": "The Tama river at the old Rokugō crossing, petals on the water. s-02-1: a boatman (サイトウさん) gives spring rides from the Kawasaki bank; Hana and Ken meet an old man with a pocket watch who greets them very politely — 田中さん (ruby), a retired station master. They count coins for the fare (いち、に、さん … えん is a plusOne), count the people in the boat, and 田中さん says the time out loud. s-02-2: a greeting-and-counting dialogue with the boatman: good morning, how many people, two, three with Tanaka-san, はい, thank you. s-02-3: a short fare table or timetable in kana and kanji numerals (one person … ten people; boat times). Yōon, っ and long vowels appear naturally (きっぷ, おじいさん, コーヒー as a joke from Ken), and the first katakana word (ケン, ハナ, ボート).",
+      "recapEn": "At the Kawasaki ferry crossing Hana and Ken met Tanaka-san, a polite retired station master with a pocket watch who announced the time. They counted coins and people for the boatman and crossed the Tama river together; Tanaka-san waved and said 'see you' as if he meant it.",
+      "locals": [
+        {
+          "nameJa": "サイトウさん",
+          "nameEn": "Saitō-san",
+          "role": "boatman at the Rokugō crossing"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk"
+      ],
+      "hook": "On the far bank Tanaka-san checks his watch, says 'nine o'clock', bows, and walks off toward the station as if he has a train to catch — and perhaps he does.",
+      "grammarFocus": "No grammar yet: yōon, っ, long vowels, katakana 46; greetings, numbers 1–10, counting people and coins."
+    },
+    {
+      "station": 3,
+      "nameJa": "神奈川",
+      "nameRomaji": "Kanagawa",
+      "keeperJa": "湊の関守",
+      "keeperEn": "Port Keeper",
+      "belt": "white",
+      "level": "kana",
+      "date": "03/30",
+      "synopsis": "A hazy harbour morning in Yokohama — Hana's own town; her street is two stops away but she does not go home. s-03-1: a harbour café with a katakana menu (コーヒー、ケーキ、ジュース、ミルク、パン …); the owner (タカギさん) says いらっしゃいませ; Ken reads the whole menu out loud as practice; a blue-grey cat with a white tail-tip sits on the third chair; Hana names it アオ. s-03-2: ordering at the counter — Hana asks for coffee and cake, Ken for juice, numbers for how many, はい／いいえ, thank you. s-03-3: the menu itself as a numbered katakana list with kanji numerals for prices or item numbers. Mora and pitch bootcamp: long-vowel loanwords are read slowly and clearly. Food list begins (cake).",
+      "recapEn": "In a Yokohama harbour café Hana and Ken read the katakana menu and ordered coffee and cake. A blue-grey stray cat with a white tail-tip sat on the third chair; Hana named it Ao. It was Hana's home town, but she did not go home.",
+      "locals": [
+        {
+          "nameJa": "タカギさん",
+          "nameEn": "Takagi-san",
+          "role": "harbour café owner"
+        }
+      ],
+      "threadBeats": [
+        "same-cat",
+        "one-dish-per-station"
+      ],
+      "hook": "When they leave, the cat is gone from the chair, and Ken says 'well, that's that' — Hana writes 'アオ、また' (see you, Ao).",
+      "grammarFocus": "No grammar yet: katakana dakuten/yōon/extended kana, mora & pitch; loanword menu items; numbers; いらっしゃいませ／ください as fixed greetings."
+    },
+    {
+      "station": 4,
+      "nameJa": "保土ヶ谷",
+      "nameRomaji": "Hodogaya",
+      "keeperJa": "坂の関守",
+      "keeperEn": "Hill Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "04/01",
+      "synopsis": "Overnight rain has stuck petals to the Gontazaka hill; the road climbs out of Yokohama. s-04-1: the first proper diary entry. A small hill-top inn; the innkeeper 森さん shows them the room and Hana asks about everything — これは何ですか (a wooden box: it is the shoe cupboard; that: the bath; that over there: the hill they climbed). Introductions: わたしはハナです、ケンはいとこです、料理人です (plusOne as needed). Hana writes the date, the breakfast time and the weather at the top for the first time, and draws a small tick box in the back: the small-kindnesses tally starts with 森さん's dry towel. s-04-2: polite introductions with 森さん (name, from Yokohama, this is Ken, is this the bath?). s-04-3: a postcard home — three lines of です sentences about the inn.",
+      "recapEn": "On the first of April Hana wrote her first real diary entry at a hill-top inn in Hodogaya: date, breakfast time, weather. She introduced herself and Ken to the innkeeper Mori-san and asked what everything was. In the back of the diary she started a tally of small kindnesses with one tick.",
+      "locals": [
+        {
+          "nameJa": "{森|もり}さん",
+          "nameEn": "Mori-san",
+          "role": "innkeeper of the hill-top inn"
+        }
+      ],
+      "threadBeats": [
+        "kindness-tally",
+        "the-diary",
+        "home-and-work"
+      ],
+      "hook": "Hana asks what the sound outside is; Mori-san says 'that is the rain stopping', and she writes that down too.",
+      "grammarFocus": "です／は／も, これ・それ・あれ, question か."
+    },
+    {
+      "station": 5,
+      "nameJa": "戸塚",
+      "nameRomaji": "Totsuka",
+      "keeperJa": "夜明けの関守",
+      "keeperEn": "Dawn Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "04/02",
+      "synopsis": "Hana wakes at four, cold, and watches the sky go pink over Totsuka. s-05-1: what time it is now, what time breakfast is (七時から八時まで), what time the inn's front door opens; the innkeeper's daughter (小川さん, a university student helping at the inn) explains the day's bus timetable from Totsuka station to the shrine: から〜まで. The first full sentence with の: ケンの時計、わたしの日記. Hana counts the hours of walking today and writes the number. s-05-2: a dialogue at the front desk with 小川さん about breakfast time, check-out time and the bus from … to …. s-05-3: a timetable or notice — breakfast 7:00–8:00, bath 6:00–23:00, bus times — written as a standalone sign.",
+      "recapEn": "Hana woke before dawn in Totsuka and watched the sky turn pink. She asked the innkeeper's daughter Ogawa-san what time breakfast was (seven to eight) and when the bus ran, and learned to say 'from … to …'. Ken slept through the dawn and said it was the same as any other.",
+      "locals": [
+        {
+          "nameJa": "{小川|おがわ}さん",
+          "nameEn": "Ogawa-san",
+          "role": "innkeeper's daughter, a university student helping at the front desk"
+        }
+      ],
+      "threadBeats": [],
+      "hook": "At seven exactly the breakfast gong sounds and Ken, still half asleep, asks what time it is — Hana writes 'seven, Ken; seven' and underlines it.",
+      "grammarFocus": "Numbers and time, から〜まで, possessive/connective の."
+    },
+    {
+      "station": 6,
+      "nameJa": "藤沢",
+      "nameRomaji": "Fujisawa",
+      "keeperJa": "松林の関守",
+      "keeperEn": "Pine Grove Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "04/04",
+      "synopsis": "Warm and bright; they walk through the pine grove to the shore with Enoshima ahead. s-06-1: Ken buys fresh whitebait (しらす) at a small market stall from 山本さん, who runs a whitebait shack; Ken asks to borrow the inn's kitchen that evening and cooks whitebait rice. Hana lists what they did and did not do today: walked (歩きました), ate, did not swim, did not buy a hat; where (浜で), with whom (ケンと), to where (海へ). 山本さん offers Ken a season's work at the shack from tomorrow; Ken says yes. Hana writes: 'We will stop here until Tanabata.' s-06-2: a polite dialogue at the stall — what is this, how much, two please, where will you eat it, I will cook it at the inn. s-06-3: a postcard home listing today's verbs (we walked, we ate whitebait, we did not swim).",
+      "recapEn": "In Fujisawa Hana and Ken walked through the pine grove to the shore. Ken bought fresh whitebait from Yamamoto-san's stall and cooked it in the inn's kitchen. Yamamoto-san offered Ken a season's work at her whitebait shack; he accepted. They will pause here until Tanabata in July.",
+      "locals": [
+        {
+          "nameJa": "{山本|やまもと}さん",
+          "nameEn": "Yamamoto-san",
+          "role": "woman who runs a whitebait stall and shack by Enoshima"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "one-dish-per-station"
+      ],
+      "hook": "Hana closes the diary on a page that says 'Station 6 — to be continued in summer', and the pine grove smells of resin all night.",
+      "grammarFocus": "ます／ません／ました; particles を／で／に／へ／と."
+    },
+    {
+      "station": 7,
+      "nameJa": "平塚",
+      "nameRomaji": "Hiratsuka",
+      "keeperJa": "七夕の関守",
+      "keeperEn": "Tanabata Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "07/04",
+      "synopsis": "Three months later: the rainy season has just ended and the walk resumes at Hiratsuka's Tanabata festival. s-07-1: the arcade is hung with huge paper streamers — big, long, red, blue, very bright; the air is hot and not very windy; Hana describes colours and sizes with い／な adjectives and とても／あまり. A boy (ユウタ, about eight, in katakana) hands her a strip of paper to write a wish; she writes 'to reach Kyoto'. Small talk with his grandmother using the first aizuchi (そうですか、へえ、いいですね). Tanaka-san appears, predicts rain for tonight; it stays clear and starry. s-07-2: a polite small-talk dialogue with the grandmother about the decorations (big, pretty, hot today, isn't it), with aizuchi. s-07-3: the wish strips as a short standalone list, or a festival notice (dates, times, 'very big, very bright').",
+      "recapEn": "After a spring and early summer paused in Fujisawa, Hana and Ken resumed the walk at Hiratsuka's Tanabata festival. Under huge bright streamers Hana wrote a wish — to reach Kyoto — on a strip a boy named Yūta gave her. Tanaka-san reappeared and predicted rain; the night was clear.",
+      "locals": [
+        {
+          "nameJa": "ユウタ",
+          "nameEn": "Yūta",
+          "role": "a boy of about eight handing out wish strips"
+        },
+        {
+          "nameJa": "{石井|いしい}さん",
+          "nameEn": "Ishii-san",
+          "role": "Yūta's grandmother"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-weather",
+        "tanaka-walk"
+      ],
+      "hook": "Tanaka-san looks at the clear sky, says 'the forecast was wrong, good', and asks what time they leave tomorrow.",
+      "grammarFocus": "い／な adjectives, とても／あまり; first aizuchi (そうですか、へえ、いいですね)."
+    },
+    {
+      "station": 8,
+      "nameJa": "大磯",
+      "nameRomaji": "Ōiso",
+      "keeperJa": "浜辺の関守",
+      "keeperEn": "Shore Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "07/06",
+      "synopsis": "Hot sea haze; low tide in the evening on Ōiso beach, a town of old pines and the first seaside resort on the Tōkaidō. s-08-1: counting on the beach — shells (五つ), people (三人), bottles of tea (二本), postcards (四枚); where things and people are: the inn is by the station, Ken is on the sand, a blue-grey cat is under the boat (アオがいます — the cat argument in two lines). A fisherman's wife (加藤さん) gives them two cold bottles of tea; a tick goes in the tally. s-08-2: a polite dialogue with 加藤さん — are there many people today, how many bottles, where is the station, is there a cat here (yes, there is one, always). s-08-3: a beach notice or a shell-count list with counters.",
+      "recapEn": "On Ōiso beach at low tide Hana counted shells, people, bottles and postcards. Katō-san, a fisherman's wife, gave them two cold bottles of tea. A blue-grey cat sat under a boat; Hana said it was Ao, Ken said it could not be. The kindness tally reached three.",
+      "locals": [
+        {
+          "nameJa": "{加藤|かとう}さん",
+          "nameEn": "Katō-san",
+          "role": "fisherman's wife who gives them tea"
+        }
+      ],
+      "threadBeats": [
+        "kindness-tally",
+        "same-cat"
+      ],
+      "hook": "Hana counts: five shells, three people, two bottles, one cat — 'and under the boat there is still one cat'.",
+      "grammarFocus": "あります／います; counters 〜つ／〜人／〜枚／〜本."
+    },
+    {
+      "station": 9,
+      "nameJa": "小田原",
+      "nameRomaji": "Odawara",
+      "keeperJa": "城下の関守",
+      "keeperEn": "Castle Town Keeper",
+      "belt": "yellow",
+      "level": "N5",
+      "date": "07/08",
+      "synopsis": "Thirty-one degrees, cicadas, lotus in bud in the castle moat. s-09-1: Tanaka-san is on the station bench 'by chance'; Hana invites him to see the castle (一緒に行きませんか／行きましょう) and he accepts briskly. In a kamaboko shop by the castle they order fish cake and cold tea (かまぼこを二つください); Ken wants to see the kitchen (見たいです); the shopkeeper (高橋さん) lets him. Hana writes what she wants to do next: cross Hakone, see Fuji, eat something cold. Yellow Shinsa — polite forms consolidated. s-09-2: the invitation to Tanaka-san and the ordering at the shop (polite). s-09-3: a shop menu conversation or a menu card for kamaboko and drinks with prices.",
+      "recapEn": "In hot Odawara Hana invited Tanaka-san to see the castle; he came. At a kamaboko shop by the moat they ordered fish cake and cold tea, and Ken was allowed to see the kitchen. Hana wrote what she wanted next: to cross Hakone and see Fuji. Tanaka-san said he would 'probably' be in Hakone too.",
+      "locals": [
+        {
+          "nameJa": "{高橋|たかはし}さん",
+          "nameEn": "Takahashi-san",
+          "role": "kamaboko shopkeeper"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "one-dish-per-station"
+      ],
+      "hook": "Asked how he will get to Hakone, Tanaka-san says only 'by train' and checks his watch; the mountains behind the castle are already in cloud.",
+      "grammarFocus": "〜ましょう／〜ませんか, 〜たい, 〜をください · Yellow Shinsa."
+    },
+    {
+      "station": 10,
+      "nameJa": "箱根",
+      "nameRomaji": "Hakone",
+      "keeperJa": "大関所の関守",
+      "keeperEn": "Great Checkpoint Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/10",
+      "synopsis": "The long climb from Odawara into mist; 19°C at the pass, hydrangeas finishing, steam from the hot springs at dusk. s-10-1: at the reconstructed Hakone checkpoint by Lake Ashi a guide in period costume (佐藤さん) asks them to show their 'pass' (the stamp card — 見せてください); people are doing things all around: a child is eating a black egg, Ken is taking photos, the lake is hidden, Fuji is not showing (first fuji-watch beat: 'Fuji is hiding'). Evening: the inn's hot spring; what everyone is doing (入っています). s-10-2: FIRST CASUAL dialogue — Ken and Hana in the bath-house corridor: 'show me the stamp', 'wait a sec', 'it's raining again', 'I'm eating', plain forms and contractions in Ken's mouth. s-10-3: a checkpoint notice (please show your pass; please do not run; please wait here).",
+      "recapEn": "Hana and Ken climbed into Hakone's mist and showed their stamp card to a costumed guide at the checkpoint by Lake Ashi. Fuji stayed hidden all day. In the evening they soaked in the inn's hot spring; Ken began speaking to Hana in plain, casual Japanese, and she wrote it down as he said it.",
+      "locals": [
+        {
+          "nameJa": "{佐藤|さとう}さん",
+          "nameEn": "Satō-san",
+          "role": "costumed guide at the checkpoint"
+        }
+      ],
+      "threadBeats": [
+        "fuji-watch"
+      ],
+      "hook": "From the bath Hana watches the mist move and writes 'Fuji is there. It is just not showing' — Tanaka-san, somewhere, has predicted a clear morning.",
+      "grammarFocus": "て-form, 〜てください, 〜ています; from here dialogues are casual register."
+    },
+    {
+      "station": 11,
+      "nameJa": "三島",
+      "nameRomaji": "Mishima",
+      "keeperJa": "湧水の関守",
+      "keeperEn": "Spring Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/13",
+      "synopsis": "Down the mountain into clear heat; Mishima's spring water from Fuji runs through the town at 15°C, under footbridges and past the great shrine. s-11-1: rules at Mishima Taisha written on a board — you may take photos here, you may not here, you may not eat in the grounds; a shrine attendant (中村さん) explains gently. They cool their feet in the stream (ここで足を入れてもいいです). Over cold somen Ken explains why he became a cook: because his mother worked late and he cooked for his sister; because eating alone was sad; 'but I don't like being told what to cook' — から／が／でも. s-11-2: casual dialogue by the stream — 'can I put my feet in?', 'go ahead', 'why did you become a cook anyway?', Ken's plain-form answer. s-11-3: the shrine rules board as a notice (may / may not).",
+      "recapEn": "In Mishima, where Fuji's spring water runs through the streets, Hana and Ken read the shrine's rules about what may and may not be done and cooled their feet in the stream. Over cold noodles Ken finally explained why he became a cook: cooking for his little sister when their mother worked late.",
+      "locals": [
+        {
+          "nameJa": "{中村|なかむら}さん",
+          "nameEn": "Nakamura-san",
+          "role": "shrine attendant at Mishima Taisha"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens"
+      ],
+      "hook": "Ken says the water is the same water that will be in Numazu's fish tomorrow, and Hana, feet in the stream, decides that is reason enough to keep walking.",
+      "grammarFocus": "〜てもいい／〜てはいけない; 〜から／〜が／でも."
+    },
+    {
+      "station": 12,
+      "nameJa": "沼津",
+      "nameRomaji": "Numazu",
+      "keeperJa": "港市の関守",
+      "keeperEn": "Harbor Market Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/15",
+      "synopsis": "Five in the morning at Numazu harbour: the fish market, horse mackerel (あじ) split and drying on racks, deep-sea fish Hana cannot name. s-12-1: Hana writes in plain form for the first time (歩いた、食べた、見た) because 'the diary is only for me'; what she thinks about the road so far (歩くのは楽しいと思う; 疲れると思う; Ken is a good cook, I think). Ken talks shop with a stall holder (大野さん) and buys dried aji for the inn's kitchen. Hana's food list: aji no himono. s-12-2: casual dialogue at the stall and at breakfast — 'this one's good, I think', 'that's expensive', 'you think so?', plain-form opinions. s-12-3: a short forum post by Hana ('Day 12 of the Tōkaidō walk — I think the fish here is the best so far') in plain form.",
+      "recapEn": "At Numazu's early fish market Hana watched horse mackerel drying on racks and, for the first time, wrote her diary in plain form — 'the diary is only for me'. She wrote what she thought of the road so far: tiring, good, and better with Ken's cooking. Ken bought dried aji for breakfast.",
+      "locals": [
+        {
+          "nameJa": "{大野|おおの}さん",
+          "nameEn": "Ōno-san",
+          "role": "fish-market stall holder"
+        }
+      ],
+      "threadBeats": [
+        "the-diary",
+        "one-dish-per-station"
+      ],
+      "hook": "Hana writes 'I think tomorrow we will see Fuji' in plain form, then adds in polite form 'probably' — just in case.",
+      "grammarFocus": "Plain forms; 〜と思う."
+    },
+    {
+      "station": 13,
+      "nameJa": "原",
+      "nameRomaji": "Hara",
+      "keeperJa": "富士見の関守",
+      "keeperEn": "Fuji-View Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/17",
+      "synopsis": "A very clear dawn: Fuji stands enormous above the Hara rice fields, snow still in its gullies. s-13-1: the order of the morning — before breakfast Hana ran to the field edge; after eating they packed; Ken drank coffee while looking at the mountain (見ながら); they left after paying. Has anyone climbed Fuji? Hana never has; Ken has, once, at nineteen, and does not want to again; the innkeeper (鈴木さん) has climbed it eleven times. A blue-grey cat sits on the field wall facing the mountain (same-cat beat). s-13-2: casual dialogue over breakfast — 'ever climbed it?', 'once, never again', 'eat before you look', 〜たことがある. s-13-3: a postcard with Fuji on the front: three lines about the morning in order (before / after / while).",
+      "recapEn": "At Hara, Fuji finally appeared, huge above the rice fields in a clear dawn. Hana ran to see it before breakfast. Ken admitted he had climbed it once at nineteen and never would again; the innkeeper Suzuki-san had climbed it eleven times. A blue-grey cat sat on the wall facing the mountain.",
+      "locals": [
+        {
+          "nameJa": "{鈴木|すずき}さん",
+          "nameEn": "Suzuki-san",
+          "role": "innkeeper who has climbed Fuji eleven times"
+        }
+      ],
+      "threadBeats": [
+        "fuji-watch",
+        "same-cat"
+      ],
+      "hook": "Hana writes 'I have seen Fuji' and then, smaller, 'I have not climbed it — yet?', and leaves the question mark.",
+      "grammarFocus": "〜前に／〜後で／〜てから／〜ながら; 〜たことがある."
+    },
+    {
+      "station": 14,
+      "nameJa": "吉原",
+      "nameRomaji": "Yoshiwara",
+      "keeperJa": "左富士の関守",
+      "keeperEn": "Left-Fuji Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/19",
+      "synopsis": "Hot; the road bends and Fuji, which has been on the right all the way from Edo, appears on the LEFT at the Yoshiwara bend. s-14-1: what Hana can and cannot do yet — she can read the menu, she can say the time, she cannot yet read the bus sign without ruby, she cannot swim. A girl (アヤ, about seven) at the Left-Fuji marker gives Hana a paper crane; Hana gives her a Tanabata-wish strip from Hiratsuka (あげる／もらう／くれる all three in one afternoon); the girl's mother (藤田さん) explains the Left Fuji. Kindness tally tick. s-14-2: casual dialogue with Ken — 'can you read that?', 'nope', 'I can', 'she gave you a crane? give me one', 〜ことができる／potential. s-14-3: a postcard home: 'Fuji is on the left here. A girl gave me a crane. I can read menus now.'",
+      "recapEn": "At the Yoshiwara bend Fuji switched to the left side of the road. Hana listed what she could and could not yet do. A small girl, Aya, gave her a paper crane; Hana gave her a Tanabata wish strip in return. The crane now lives in the diary's back pocket.",
+      "locals": [
+        {
+          "nameJa": "アヤ",
+          "nameEn": "Aya",
+          "role": "a girl of about seven at the Left-Fuji marker"
+        },
+        {
+          "nameJa": "{藤田|ふじた}さん",
+          "nameEn": "Fujita-san",
+          "role": "Aya's mother"
+        }
+      ],
+      "threadBeats": [
+        "fuji-watch",
+        "kindness-tally",
+        "home-and-work"
+      ],
+      "hook": "Ken says the mountain is 'just on the other side now, like us', and Hana realises she can understand everything he says — almost.",
+      "grammarFocus": "Potential form, 〜ことができる; あげる／もらう／くれる."
+    },
+    {
+      "station": 15,
+      "nameJa": "蒲原",
+      "nameRomaji": "Kanbara",
+      "keeperJa": "雪夜の関守",
+      "keeperEn": "Snowy Night Keeper",
+      "belt": "orange",
+      "level": "N5",
+      "date": "07/22",
+      "synopsis": "A typhoon is coming up the coast; rain all day, wind at night; two nights at a small inn whose wall carries the famous woodblock print of Kanbara under night snow. The innkeeper (渡辺さん) says it never snows here. s-15-1: conditionals — if it snowed here like the picture (〜たら); if the rain keeps up they must stay (〜なければならない); turn right and there is the sea (〜と); if you want Satta Pass, go early (〜なら). Before the pass: buy water, fix Ken's strap, check the weather. Tanaka-san phones to say it will clear by noon; it clears at four. Orange Shinsa. s-15-2: casual dialogue at the window — 'if it stops, we go', 'if not?', 'then we eat'. s-15-3: the inn's typhoon notice (if a warning is issued, guests must …).",
+      "recapEn": "A typhoon kept Hana and Ken two nights in Kanbara, under a print of the town in snow that never really falls there. Hana practised 'if' sentences: if it snowed, if the rain kept up they must stay, if they want the pass they must leave early. Tanaka-san's forecast was wrong by four hours.",
+      "locals": [
+        {
+          "nameJa": "{渡辺|わたなべ}さん",
+          "nameEn": "Watanabe-san",
+          "role": "innkeeper with the snow print on the wall"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-weather"
+      ],
+      "hook": "The rain stops at four; Hana writes 'if the sky is like this tomorrow, we climb', and the print of the snow looks, for once, like a promise.",
+      "grammarFocus": "〜たら／〜と／〜ば／〜なら; 〜なければならない · Orange Shinsa (N5)."
+    },
+    {
+      "station": 16,
+      "nameJa": "由比",
+      "nameRomaji": "Yui",
+      "keeperJa": "薩埵峠の関守",
+      "keeperEn": "Satta Pass Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "07/25",
+      "synopsis": "The typhoon has washed the sky; from Satta Pass Suruga Bay is deep blue and Fuji stands clear above the highway and the sea. s-16-1: Ken has left the bag of dried sakura-ebi in the Kanbara inn (置いてきてしまった); the window won't close / the door opens (transitive–intransitive pairs on the inn's sliding doors and the pass gate); preparing for the climb — fill the bottles, cool the towels, check the map in advance (〜ておく). At the top the innkeeper's son from Kanbara (渡辺さんの息子, listed as 渡辺ユウ) arrives by bicycle with the forgotten sakura-ebi; tally tick. s-16-2: casual dialogue on the pass — 'you left it?!', 'I left it', 'I'd put the water in already', 〜ちゃった in input. s-16-3: a postcard with the pass view: 'I have finished the first mountain. Fuji is behind us now.'",
+      "recapEn": "From Satta Pass, after the typhoon, Hana and Ken saw Suruga Bay and Fuji perfectly clear. Ken had left the sakura-ebi at the Kanbara inn; the innkeeper's son Yū cycled up with it. Hana learned to prepare things in advance and to regret things done — ておく and てしまう on the same mountain.",
+      "locals": [
+        {
+          "nameJa": "{渡辺|わたなべ}ユウ",
+          "nameEn": "Yū Watanabe",
+          "role": "the Kanbara innkeeper's teenage son, on a bicycle"
+        }
+      ],
+      "threadBeats": [
+        "fuji-watch",
+        "kindness-tally",
+        "borrowed-kitchens"
+      ],
+      "hook": "Ken opens the bag, eats one dried shrimp and says 'worth it' — and Hana notes that Fuji has gone back to the right side, as if it has walked around them.",
+      "grammarFocus": "Transitive/intransitive pairs, 〜てしまう, 〜ておく."
+    },
+    {
+      "station": 17,
+      "nameJa": "興津",
+      "nameRomaji": "Okitsu",
+      "keeperJa": "清見の関守",
+      "keeperEn": "Kiyomi Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "07/27",
+      "synopsis": "Hot and still; the sea sparkles at Okitsu. s-17-1: the site of the old Kiyomi barrier and the temple above it with a sign of prohibitions (入るな、走るな、触るな — imperative/〜な as written signs); 〜なさい from Tanaka-san, who is waiting on the temple steps and gives brisk orders: sit, drink, eat (座りなさい、飲みなさい). They try greenhouse mikan and mikan juice at a roadside stand (食べてみる); the stand owner (清水さん) says the real mikan come in winter. Movement in time: the heat has been getting worse (暑くなってきた); they will go on getting used to it (慣れていく). s-17-2: casual dialogue at the stand — 'try this', 'sour!', 'it'll get sweeter toward winter', 'don't eat it all'. s-17-3: the temple sign of prohibitions as a standalone notice.",
+      "recapEn": "At Okitsu Tanaka-san was waiting on the temple steps and ordered them to sit, drink and eat. A temple sign listed things not to do. They tried greenhouse mikan from Shimizu-san's stand — sour, 'sweeter toward winter'. Hana wrote that the heat had been getting worse and they would get used to it.",
+      "locals": [
+        {
+          "nameJa": "{清水|しみず}さん",
+          "nameEn": "Shimizu-san",
+          "role": "roadside mikan-stand owner"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "one-dish-per-station"
+      ],
+      "hook": "Tanaka-san says 'tomorrow, go early; the wind will be calm' — and Hana writes 'so: wind tomorrow'.",
+      "grammarFocus": "〜ていく／〜てくる, 〜てみる, imperative／〜な／〜なさい."
+    },
+    {
+      "station": 18,
+      "nameJa": "江尻",
+      "nameRomaji": "Ejiri",
+      "keeperJa": "突風の関守",
+      "keeperEn": "Gust Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "07/29",
+      "synopsis": "A strong summer sea wind at Ejiri (today's Shimizu) and the Miho pine grove. s-18-1: a gust steals Hana's hat (帽子を風に飛ばされた); papers are blown out of a stranger's hands, as in the famous print; the inn's cook is away and the innkeeper (林さん) makes Ken cook dinner for all the guests (ケンに作らせた); Ken is made to wait out the wind before buying fish (待たされた). Passive for small misfortunes, causative for the innkeeper's cheerful bossiness, causative-passive for Ken's grumbling. Everyone at the long table praises the dinner (褒められた). s-18-2: casual dialogue — 'my hat got taken', 'you got made to cook?', 'I got made to', 'you loved it'. s-18-3: a short forum post by a guest: 'Stayed at an inn in Shimizu, the cook was away and a travelling cook was made to cook — best dinner on the trip.'",
+      "recapEn": "A gust at Ejiri took Hana's hat into the sea. At the inn the cook was away, so the innkeeper Hayashi-san made Ken cook dinner for every guest; he grumbled about being made to wait out the wind to buy fish, then was praised by the whole table. Hana bought a new hat, blue.",
+      "locals": [
+        {
+          "nameJa": "{林|はやし}さん",
+          "nameEn": "Hayashi-san",
+          "role": "innkeeper whose cook is away"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "tanaka-weather"
+      ],
+      "hook": "Ken, washing up, says 'next time I get made to cook, I'm charging' — then quietly asks Hayashi-san for the recipe of her pickles.",
+      "grammarFocus": "Passive, causative, causative-passive."
+    },
+    {
+      "station": 19,
+      "nameJa": "府中",
+      "nameRomaji": "Fuchū",
+      "keeperJa": "駿府の関守",
+      "keeperEn": "Sunpu Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/01",
+      "synopsis": "A hot city afternoon in Shizuoka (old Sunpu). s-19-1: Sunpu castle park, the moat and the rebuilt gate; rumours about the weather ahead — a shop radio says another typhoon is coming (来るそうだ), Tanaka-san says it will miss (it does, so for once he is right by accident); things that look delicious in the arcade — Abekawa mochi dusted with soybean flour (おいしそう), green tea soft-serve; what the city seems like: busy but kind (親切みたいだ), like a bigger Yokohama (〜らしい for 'typical of a castle town'). A blue-grey cat on the moat wall (same-cat). The mochi-shop owner (松本さん) explains the name of the sweet. s-19-2: casual dialogue — 'looks good', 'apparently it's coming', 'seems like it'll miss', hearsay vs appearance. s-19-3: a postcard: 'Shizuoka seems like a big, gentle town. The mochi looked delicious and was.'",
+      "recapEn": "In Shizuoka city Hana and Ken walked Sunpu castle park in the heat and ate Abekawa mochi from Matsumoto-san's shop. A radio said another typhoon was coming; Tanaka-san said it would miss, and for once it did. Hana wrote that the city seemed busy but kind. A blue-grey cat watched from the moat wall.",
+      "locals": [
+        {
+          "nameJa": "{松本|まつもと}さん",
+          "nameEn": "Matsumoto-san",
+          "role": "Abekawa mochi shop owner"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-weather",
+        "same-cat",
+        "one-dish-per-station"
+      ],
+      "hook": "The typhoon turns out to sea; Tanaka-san says 'as I said', and Hana writes 'he seems to have been right — it looks like a first'.",
+      "grammarFocus": "〜そうだ (hearsay / appearance), 〜ようだ／〜みたい, 〜らしい."
+    },
+    {
+      "station": 20,
+      "nameJa": "鞠子",
+      "nameRomaji": "Mariko",
+      "keeperJa": "とろろ汁の関守",
+      "keeperEn": "Tororo Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/04",
+      "synopsis": "Damp heat in the narrow Mariko valley, cool inside a thatched tororo-jiru teahouse that has served grated yam soup to travellers for centuries. s-20-1: Ken eats two bowls and decides to learn the recipe (作り方を習うことにした); the teahouse cook (青木さん) lets him into the kitchen 'so that he can see the grating' (見えるように); Hana writes what she has become able to do — read a menu without ruby, understand Ken's contractions, order for both of them (できるようになった); she walks for the sake of the diary (日記のために). Food list: tororo-jiru on barley rice. s-20-2: casual dialogue in the kitchen doorway — 'you decided to learn it?', 'yeah, so I can make it at my place someday', 'what place?', 'someday place'. s-20-3: the teahouse's menu card with a short note on how to eat tororo (pour it over barley rice so that …).",
+      "recapEn": "At the old tororo teahouse in Mariko Ken ate two bowls of grated yam soup over barley rice and decided to learn the recipe from the cook, Aoki-san, 'for his someday place'. Hana listed what she had become able to do since Nihonbashi, and decided she walks for the sake of the diary.",
+      "locals": [
+        {
+          "nameJa": "{青木|あおき}さん",
+          "nameEn": "Aoki-san",
+          "role": "cook at the tororo teahouse"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "one-dish-per-station"
+      ],
+      "hook": "Ken writes the recipe on the back page of Hana's diary without asking, and she lets him — the first page in his handwriting.",
+      "grammarFocus": "〜ように／〜ために, 〜ようになる, 〜ことにする."
+    },
+    {
+      "station": 21,
+      "nameJa": "岡部",
+      "nameRomaji": "Okabe",
+      "keeperJa": "宇津ノ谷の関守",
+      "keeperEn": "Utsunoya Pass Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/07",
+      "synopsis": "Cool and dark inside the brick Meiji tunnel under Utsunoya Pass, blazing outside; first dragonflies. s-21-1 is a DIALOGUE in polite register: a formal old inn at Okabe where the staff use keigo — the proprietress (大石さん) says お待ちしておりました, ご案内いたします; Hana practises humble requests (お願いしてもよろしいですか; 荷物を預かっていただけませんか; 明日の朝、早く出たいのですが). Ken, out of his depth, answers in plain form and is gently corrected by Hana; Tanaka-san, arriving, uses keigo perfectly and the proprietress is delighted. Register switching begins: Hana notices she speaks three ways in one hour. Home thread: she phones home from the inn's old telephone and uses polite forms with her own mother by mistake. s-21-2: casual dialogue in the room — Ken: 'why's everyone talking like that?', Hana explains, imitating. s-21-3: the inn's printed welcome notice in keigo (meal times, bath, check-out) as a standalone text.",
+      "recapEn": "At a formal old inn under Utsunoya Pass the staff spoke in keigo and Hana practised humble requests: could they keep her bag, might she leave early. Ken answered in plain form and was corrected; Tanaka-san's keigo delighted the proprietress Ōishi-san. Hana phoned home and used polite forms with her own mother by mistake.",
+      "locals": [
+        {
+          "nameJa": "{大石|おおいし}さん",
+          "nameEn": "Ōishi-san",
+          "role": "proprietress of the formal inn"
+        }
+      ],
+      "threadBeats": [
+        "home-and-work",
+        "tanaka-walk"
+      ],
+      "hook": "Ōishi-san asks Tanaka-san how he came; he says 「電車で参りました」 and Hana realises even his mystery has a humble form.",
+      "grammarFocus": "Keigo basics (お〜になる／お〜する), 〜ていただけませんか; register switching begins."
+    },
+    {
+      "station": 22,
+      "nameJa": "藤枝",
+      "nameRomaji": "Fujieda",
+      "keeperJa": "継立の関守",
+      "keeperEn": "Relay Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/10",
+      "synopsis": "Hot; tea fields on the hills around Fujieda, a town that once changed horses and porters. s-22-1: the old relay site is a bus stop now; they do not know whether the bus will come (〜かどうか); Hana asks a tea farmer at the stop (田村さん) when it comes and whether it stops at the station; Tanaka-san should be here by now (〜はずだ) — he has just arrived (〜たところだ), having only just eaten (〜ばかり). Old-road thread opens: the relay is a bench and a timetable. 田村さん offers Ken a month's kitchen work at her tea farm in Kanaya after Obon; he will decide at the river. s-22-2: casual dialogue at the stop — 'think it's coming?', 'dunno', 'he should be here', 'just got here'. s-22-3: the bus timetable with a holiday notice.",
+      "recapEn": "At Fujieda, where horses were once changed, Hana and Ken waited at a bus stop not knowing whether the bus would come. Tanaka-san, who should have been there already, arrived just as they gave up. Tamura-san, a tea farmer, offered Ken a month's work in her farm kitchen after Obon; he said he would decide at the Ōi river.",
+      "locals": [
+        {
+          "nameJa": "{田村|たむら}さん",
+          "nameEn": "Tamura-san",
+          "role": "tea farmer waiting for the same bus"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "old-road-new-town",
+        "borrowed-kitchens"
+      ],
+      "hook": "The bus comes exactly as Tanaka-san's watch says it should, and he looks at Hana as if the whole afternoon had been his doing.",
+      "grammarFocus": "〜かどうか, embedded questions, 〜はず／〜ばかり／〜ところ."
+    },
+    {
+      "station": 23,
+      "nameJa": "島田",
+      "nameRomaji": "Shimada",
+      "keeperJa": "大井川の関守",
+      "keeperEn": "Ōi River Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/13",
+      "synopsis": "Obon lanterns in Shimada; the wide Ōi river low and braided after dry weeks — the river that once stopped travellers when it rose. s-23-1: even if it rains they will cross tomorrow by the long bridge (〜ても); though famous for stopping people, it is almost dry (〜のに); the more Hana walks the more she notices (〜ば〜ほど): roof colours, which inns have cats, how people say goodbye; the inn's grandmother (岡田さん) ties a bon lantern for travellers' ancestors too and gives Hana a cold towel — tally tick. Fuji shows far and small one more time (fuji-watch). Hot, shallow, long (〜し). s-23-2: casual dialogue at the bank — 'even if it rains?', 'even if'; Ken's noodle tally revealed: bowl thirty-one. s-23-3: a postcard: 'Even if it rains, we cross. The more I walk, the more I see.'",
+      "recapEn": "On Obon night in Shimada the Ōi river lay low and braided; Hana wrote that even if it rained they would cross, and that the more she walked the more she noticed. The inn's grandmother Okada-san lit a lantern for travellers too. Far upstream, small, Fuji showed one more time. Ken's noodle tally stood at thirty-one.",
+      "locals": [
+        {
+          "nameJa": "{岡田|おかだ}さん",
+          "nameEn": "Okada-san",
+          "role": "the inn's grandmother who ties bon lanterns"
+        }
+      ],
+      "threadBeats": [
+        "kindness-tally",
+        "fuji-watch"
+      ],
+      "hook": "The lantern goes out at midnight; Hana writes 'the river is wide and the bridge is long and tomorrow we cross both', and sleeps.",
+      "grammarFocus": "〜ても／〜のに, 〜し, 〜ば〜ほど."
+    },
+    {
+      "station": 24,
+      "nameJa": "金谷",
+      "nameRomaji": "Kanaya",
+      "keeperJa": "川越しの関守",
+      "keeperEn": "River Crossing Keeper",
+      "belt": "green",
+      "level": "N4",
+      "date": "08/16",
+      "synopsis": "Obon ends; a hot afternoon in the preserved river-crossing quarter where porters once carried travellers across the Ōi, then up the old stone-paved slope on the Kanaya side. s-24-1 is a DIALOGUE in polite register: a long conversation at the river-crossing museum with a volunteer guide (野村さん, retired, talkative) about why the two of them walk (歩いているんです; 仕事を辞めたんです; 料理人なんですが …), with fillers (あのう、ええと、まあ) and backchannels (ええ、そうなんですか、なるほど) on both sides; 野村さん explains the porters' fare system. Green Shinsa. Ken decides: he takes Tamura-san's tea-farm kitchen for a month; Hana will stay in the tea country too and fill the diary. s-24-2: casual dialogue with Ken on the stone slope — 'so you're staying?', 'I'm staying, it's a kitchen, isn't it', 'it's a kitchen'. s-24-3: the museum's visitor notice or the old porters' fare table as a standalone piece.",
+      "recapEn": "At the river-crossing museum a volunteer guide, Nomura-san, asked Hana and Ken why they walk; the answer took an hour and many 'well's and 'I see's. Ken took a month's work in Tamura-san's tea-farm kitchen at Kanaya; Hana stayed in the tea country to write. The summer walk ended at the top of the old stone slope.",
+      "locals": [
+        {
+          "nameJa": "{野村|のむら}さん",
+          "nameEn": "Nomura-san",
+          "role": "retired volunteer guide at the river-crossing museum"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "home-and-work"
+      ],
+      "hook": "Nomura-san asks when they will reach Kyoto; Hana says 'in winter, probably', and hears herself say 'probably' the way Tanaka-san says 'by train'.",
+      "grammarFocus": "〜んです, conversation strategies (fillers, aizuchi) · Green Shinsa (N4)."
+    },
+    {
+      "station": 25,
+      "nameJa": "日坂",
+      "nameRomaji": "Nissaka",
+      "keeperJa": "小夜の中山の関守",
+      "keeperEn": "Sayo-no-Nakayama Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "09/23",
+      "synopsis": "Autumn equinox after a month in the tea country: red spider lilies along the steep road up Sayo-no-Nakayama, the first cool evening. s-25-1: the FIRST CASUAL-REGISTER NARRATION — Hana writes as she now speaks to Ken. The Night-Weeping Stone legend, told plainly as 'a sad old story the town tells gently' (nothing violent on the page); why the climb is hard (坂が急なわけじゃない、一か月歩いてなかったわけだ); the pass's famous moon poem recalled by the teahouse owner (小林さん), who sells the old 'child-raising candy'; a blue-grey cat on the step (same-cat, six). s-25-2: casual dialogue on the slope — 'no wonder it's hard', 'that's not why', 'so that's why you're slow'. s-25-3: a forum post: 'Back on the Tōkaidō after a month of tea — Sayo-no-Nakayama at the equinox, spider lilies, a stone with a story.'",
+      "recapEn": "After a month in tea country Hana and Ken climbed Sayo-no-Nakayama at the autumn equinox between red spider lilies. Hana wrote her first casual-register entry, explained why her legs hurt (a month off, not the slope), heard the Night-Weeping Stone story from Kobayashi-san at the teahouse, and counted the sixth blue-grey cat.",
+      "locals": [
+        {
+          "nameJa": "{小林|こばやし}さん",
+          "nameEn": "Kobayashi-san",
+          "role": "teahouse owner who sells the pass's old candy"
+        }
+      ],
+      "threadBeats": [
+        "the-diary",
+        "same-cat"
+      ],
+      "hook": "The moon comes up over the pass exactly where the old poem put it, and Hana writes 'so that's why people kept walking' — and does not explain.",
+      "grammarFocus": "Plateau Arc begins; 〜わけ family (〜わけだ／〜わけじゃない／〜わけにはいかない later); first casual narration."
+    },
+    {
+      "station": 26,
+      "nameJa": "掛川",
+      "nameRomaji": "Kakegawa",
+      "keeperJa": "秋風の関守",
+      "keeperEn": "Autumn Wind Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "09/26",
+      "synopsis": "A dry autumn wind through Kakegawa castle town, high clouds; the rebuilt wooden keep and the castle palace. s-26-1 (casual narration): every time they rest, Ken cooks something (休むたびに); while the wind is still down they cross the castle park (風が弱いうちに); while Hana sleeps Ken has bought Kakegawa tea (寝ている間に); what changes depending on the weather (天気によって) — the colour of the keep, Tanaka-san's forecasts, the kind of noodles Ken wants. A castle volunteer (横山さん) lets Ken use the park kitchen hut to make tea rice. s-26-2: casual dialogue in the wind — 'every time we stop you cook', 'every time you stop you write', 'depends on the day'. s-26-3: a notice in the castle park (opening hours vary by season / depending on the weather the keep may close).",
+      "recapEn": "An autumn wind blew through Kakegawa castle town. Every time they rested Ken cooked; while Hana slept he bought Kakegawa tea; a volunteer, Yokoyama-san, lent him the park's kitchen hut. Hana wrote that what the day was depended on the weather, and that Tanaka-san had predicted calm.",
+      "locals": [
+        {
+          "nameJa": "{横山|よこやま}さん",
+          "nameEn": "Yokoyama-san",
+          "role": "castle park volunteer"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "tanaka-weather"
+      ],
+      "hook": "The wind drops at sunset, as nobody predicted, and Ken says 'while it's quiet — eat', which is becoming his version of a diary entry.",
+      "grammarFocus": "〜たびに／〜うちに／〜間に, 〜によって."
+    },
+    {
+      "station": 27,
+      "nameJa": "袋井",
+      "nameRomaji": "Fukuroi",
+      "keeperJa": "出茶屋の関守",
+      "keeperEn": "Teahouse Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "09/29",
+      "synopsis": "Warm and still; Fukuroi calls itself the exact midpoint of the Tōkaidō, and late crown melons sit in the shop windows. s-27-1 is a DIALOGUE in neutral register: at a reconstructed roadside teahouse Hana asks for the same things three ways to three people — the young worker (ミキ, casual-polite), an elderly regular (井上さん, polite), Tanaka-san (casual, joking): may I sit here, could I have melon, tell me about the halfway marker. Say It Three Ways begins. Hana speaks of herself as a traveller, not a tourist (〜として), about the road (〜について), toward people (〜に対して). Tanaka-san admits he 'always wanted to see the halfway point'. s-27-2: casual dialogue with Ken over melon — may be the bridge text. s-27-3: the teahouse menu or the midpoint sign; may be bridge if s-27-2 is not.",
+      "recapEn": "At Fukuroi, the exact midpoint of the Tōkaidō, Hana sat in a roadside teahouse and asked for melon three ways to three people, learning that register is a kind of kindness. She wrote that she walks as a traveller, not a tourist. Tanaka-san said he had always wanted to see the halfway point.",
+      "locals": [
+        {
+          "nameJa": "ミキ",
+          "nameEn": "Miki",
+          "role": "young teahouse worker"
+        },
+        {
+          "nameJa": "{井上|いのうえ}さん",
+          "nameEn": "Inoue-san",
+          "role": "elderly regular customer at the teahouse"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "one-dish-per-station"
+      ],
+      "hook": "Twenty-six stations behind, twenty-six ahead: Hana draws a line down the middle of a diary page and writes 'half' on both sides.",
+      "grammarFocus": "〜に対して／〜について／〜として; Say It Three Ways begins; first bridge: true text allowed."
+    },
+    {
+      "station": 28,
+      "nameJa": "見付",
+      "nameRomaji": "Mitsuke",
+      "keeperJa": "天竜川の関守",
+      "keeperEn": "Tenryū Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "10/02",
+      "synopsis": "Bright; the wide Tenryū river running fast after rain upstream; Mitsuke (today's Iwata) with its white Meiji-era wooden school building. s-28-1 is the station's BRIDGE text (casual narration, authentic register, dropped particles and fillers): the river rules — crossing is by the bridge only, boats are for fishing, swimming is not done (〜ことになっている); the town grows along the station road while the old post road empties (新しい町は広がる一方、旧道は静かになる一方だ); compound verbs (歩き続ける、読み終わる、見上げる、書き出す). Hana copies a forum-style community notice board outside the old school (lost cat — blue-grey, found; a cooking class seeking a teacher). The school's caretaker (坂本さん) explains the rules. s-28-2: casual dialogue by the river — 'you're supposed to cross by the bridge', 'who says', 'the sign says, so'. s-28-3: the notice board itself as a standalone piece (several short notices), may be bridge if s-28-1 is not.",
+      "recapEn": "At Mitsuke the Tenryū river ran fast; crossing is done by the bridge, the rules said. Hana wrote in her most natural voice yet: the new town spreading one way, the old road emptying the other. On a notice board outside the old white school she read of a blue-grey cat found and a cooking class seeking a teacher.",
+      "locals": [
+        {
+          "nameJa": "{坂本|さかもと}さん",
+          "nameEn": "Sakamoto-san",
+          "role": "caretaker of the old school building"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town"
+      ],
+      "hook": "Ken photographs the 'cooking class seeks teacher' notice and says nothing; Hana writes 'he keeps walking, but he looked twice'.",
+      "grammarFocus": "〜ことになっている, 〜一方, compound verbs; bridge: true (coverage ≥ 0.93)."
+    },
+    {
+      "station": 29,
+      "nameJa": "浜松",
+      "nameRomaji": "Hamamatsu",
+      "keeperJa": "冬枯れの関守",
+      "keeperEn": "Winter Field Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "10/06",
+      "synopsis": "The first cold north wind over harvested rice stubble on the way into Hamamatsu, the biggest town since Shizuoka. s-29-1 (casual narration): Hana's first two-minute monologue written out in full — what one should do on a long road (〜べきだ; 〜ものだ); it can't be that they are already past halfway (〜はずがない) … but they are; the winter that is coming. Monologue Marathon begins. A gyōza-shop owner (平野さん) serves Hamamatsu gyōza in a ring with bean sprouts in the middle; Ken takes notes. s-29-2: casual dialogue at the counter — 'you should rest', 'should I?', 'no way we're past half', 'we are, though'; may be the bridge text. s-29-3: the shop menu or a postcard ('The fields are cut. Gyōza: yes.'); may be bridge if s-29-2 is not.",
+      "recapEn": "Under the first cold wind over cut rice fields, Hana wrote her first long monologue — what one should do on a long road, and how it could not be true that they were already past halfway. In Hamamatsu, Hirano-san served gyōza arranged in a ring with bean sprouts in the middle; Ken wrote down the ring.",
+      "locals": [
+        {
+          "nameJa": "{平野|ひらの}さん",
+          "nameEn": "Hirano-san",
+          "role": "gyōza shop owner"
+        }
+      ],
+      "threadBeats": [
+        "one-dish-per-station",
+        "borrowed-kitchens"
+      ],
+      "hook": "Hana ends the monologue with 'winter is a place we are walking to' and then, embarrassed, 'anyway: gyōza'.",
+      "grammarFocus": "〜ものだ／〜べき, 〜はずがない; Monologue Marathon begins."
+    },
+    {
+      "station": 30,
+      "nameJa": "舞坂",
+      "nameRomaji": "Maisaka",
+      "keeperJa": "今切の関守",
+      "keeperEn": "Imagire Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "10/09",
+      "synopsis": "Clear; Lake Hamana flat and silver at the Imagire strait, where an old earthquake opened the lake to the sea and travellers once crossed by boat; eel smoke from the shops. s-30-1 is a DIALOGUE, casual, the station's BRIDGE text: Ken's contracted speech rendered faithfully (食べちゃう、置いとく、行っとこ、〜じゃん、〜んだって) as they cross the strait on foot by the road bridge, talking about the old ferry; Ken is forgetful today (忘れっぽい), Hana stops for photos (止まりがち), the eel-shop owner (山田さん) looks proud (自慢げ). Hamana eel for dinner; food list. A blue-grey cat on the shop step (same-cat, seven). s-30-2: a second casual dialogue at dinner — 'you're gonna eat it all?', 'leave some for the cat', 'that's not Ao'. s-30-3: the eel shop's menu or a sign at the old ferry landing; may be bridge if neither other text is.",
+      "recapEn": "At the Imagire strait Hana and Ken crossed Lake Hamana's mouth by the bridge, talking about the ferry that used to run. Ken's speech was all contractions and Hana wrote it as he said it. Yamada-san grilled them Hamana eel, looking proud; a blue-grey cat sat on his step, and the argument happened as usual.",
+      "locals": [
+        {
+          "nameJa": "{山田|やまだ}さん",
+          "nameEn": "Yamada-san",
+          "role": "eel shop owner at Maisaka"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens",
+        "same-cat",
+        "one-dish-per-station"
+      ],
+      "hook": "Ken 'accidentally' drops a strip of eel skin by the step and says 'whatever cat that is, it eats'.",
+      "grammarFocus": "〜っぽい／〜がち／〜げ; contractions receptive (〜ちゃう／〜とく); bridge: true."
+    },
+    {
+      "station": 31,
+      "nameJa": "新居",
+      "nameRomaji": "Arai",
+      "keeperJa": "新居関所の関守",
+      "keeperEn": "Arai Checkpoint Keeper",
+      "belt": "blue",
+      "level": "N3",
+      "date": "10/10",
+      "synopsis": "Low autumn light on the Arai checkpoint, the only Tōkaidō barrier whose original building survives. s-31-1 in WRITTEN register: Hana copies a museum placard (である／〜により／〜とされる) and sets beside it, line for line, her own spoken notes on the same facts, so the two registers face each other; the old inspection of travellers and their passes; the attendant (吉田さん) answers Ken's question about the salted fish once served at the inns here. Blue Shinsa. Old-road thread: a barrier that stopped people is now a place people come to on purpose. s-31-2: casual dialogue — 'why's the sign talk like that?', 'that's how written Japanese talks', 'then write me like that', 'no'; may be the bridge text. s-31-3: the placard as a standalone written-register notice, or the museum's visitor rules; may be bridge if s-31-2 is not.",
+      "recapEn": "At the preserved Arai checkpoint Hana copied a museum placard in written Japanese and set her own spoken notes beside it, line for line. Yoshida-san, the attendant, told Ken about the salted fish once served to travellers here. A barrier that once stopped people, Hana wrote, is now where people choose to go.",
+      "locals": [
+        {
+          "nameJa": "{吉田|よしだ}さん",
+          "nameEn": "Yoshida-san",
+          "role": "museum attendant at the checkpoint"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town"
+      ],
+      "hook": "Hana writes the day's entry twice, once in each register, and finds the written one shorter and the spoken one truer.",
+      "grammarFocus": "Written vs spoken register · Blue Shinsa."
+    },
+    {
+      "station": 32,
+      "nameJa": "白須賀",
+      "nameRomaji": "Shirasuka",
+      "keeperJa": "潮見坂の関守",
+      "keeperEn": "Shiomizaka Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/13",
+      "synopsis": "A very clear morning on Shiomizaka, the slope where travellers from the west first see the Pacific — and, on the clearest days, the last faint Fuji before it is gone for good. s-32-1 (casual narration): Hana cannot help stopping at every bend (止まらずにはいられない); they cannot not call home — it is her mother's birthday (電話しないわけにはいかない); the call, in which her mother asks about the cat first; Fuji, a pale triangle on the horizon, for the last time (fuji-watch payoff). An old man sweeping the slope (前田さん) says he looks for Fuji every morning and sees it ten times a year; tally tick for the sweet potato he gives them. s-32-2: casual dialogue on the slope — 'can't help stopping, huh', 'can't', 'we have to call', 'I know we have to call'; may be the bridge text.",
+      "recapEn": "On Shiomizaka, in rare clear air, Hana saw Fuji for the last time — a pale triangle far behind them. She could not help stopping at every bend, and could not not call home: it was her mother's birthday, and her mother asked about the cat first. Maeda-san, sweeping the slope, gave them a roasted sweet potato.",
+      "locals": [
+        {
+          "nameJa": "{前田|まえだ}さん",
+          "nameEn": "Maeda-san",
+          "role": "old man who sweeps the slope and watches for Fuji"
+        }
+      ],
+      "threadBeats": [
+        "fuji-watch",
+        "home-and-work",
+        "kindness-tally"
+      ],
+      "hook": "Hana writes 'Fuji: last. Mother: fine. Potato: hot.' and underlines none of them, which is how she says goodbye.",
+      "grammarFocus": "〜ずにはいられない, 〜ないわけにはいかない."
+    },
+    {
+      "station": 33,
+      "nameJa": "二川",
+      "nameRomaji": "Futagawa",
+      "keeperJa": "猿ヶ馬場の関守",
+      "keeperEn": "Saru-ga-Baba Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/15",
+      "synopsis": "Grey and mild; the Futagawa honjin museum, a restored official inn where lords once slept, quiet on a weekday. s-33-1 in WRITTEN register, the station's BRIDGE text: a local news item about the honjin's restoration (read aloud from a wall display by the curator 清田さん), with news-style grammar (〜によると、〜が明らかになった、〜とみられる); then Hana's own diary summary of the day using formal connectives (したがって、そのため、一方で、なお). Old-road thread: a building saved by a town that decided it mattered. Ken is more interested in the honjin's kitchen (a reconstructed kamado) than in the lords. s-33-2: casual dialogue in the kitchen room — 'the news thing was way formal', 'that's news for you', 'this stove, though', Ken on the kamado.",
+      "recapEn": "At the restored Futagawa honjin the curator Kiyota-san read them a news report on its restoration, and Hana rewrote the day in formal connectives — therefore, for that reason, on the other hand. Ken ignored the lords' rooms and stood a long time in front of the reconstructed kitchen stove.",
+      "locals": [
+        {
+          "nameJa": "{清田|きよた}さん",
+          "nameEn": "Kiyota-san",
+          "role": "curator at the honjin museum"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town"
+      ],
+      "hook": "Hana's summary ends 'therefore, the inn remains' — and in the margin, spoken: 'and Ken wants the stove'.",
+      "grammarFocus": "Formal connectives, news-style grammar; bridge: true (written register)."
+    },
+    {
+      "station": 34,
+      "nameJa": "吉田",
+      "nameRomaji": "Yoshida",
+      "keeperJa": "豊川橋の関守",
+      "keeperEn": "Toyokawa Bridge Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/17",
+      "synopsis": "Bright; the Toyokawa river wide and slow under the long bridge into Toyohashi (old Yoshida), the castle corner tower above the bank. s-34-1 (casual narration): Hana now defines unfamiliar words in Japanese in the diary (「本陣」とは…のことだ) — J-J definitions default on; a misunderstanding at a udon shop that must be a joke (冗談に違いない): Ken orders Toyohashi curry udon and finds rice hidden under the noodles; the owner (岩田さん) says it is not a joke, it is the local way; Hana writes it is only a bowl of noodles (〜にすぎない) and yet the best thing today. Food list: curry udon with hidden rice. s-34-2: casual dialogue at the shop — 'this has to be a joke', 'it's just how it is here', 'it's just udon', 'it's not just udon'; may be the bridge text.",
+      "recapEn": "Crossing the long Toyokawa bridge into Toyohashi, Hana began defining words in Japanese inside the diary. At Iwata-san's shop Ken found rice hidden under his curry udon and was sure it was a joke; it was simply the local way. 'Only a bowl of noodles,' Hana wrote, 'and the best thing today.'",
+      "locals": [
+        {
+          "nameJa": "{岩田|いわた}さん",
+          "nameEn": "Iwata-san",
+          "role": "udon shop owner in Toyohashi"
+        }
+      ],
+      "threadBeats": [
+        "the-diary",
+        "one-dish-per-station"
+      ],
+      "hook": "Ken writes the curry-udon layering on the recipe page at the back and labels it 'not a joke'.",
+      "grammarFocus": "〜に違いない／〜にすぎない; J-J definitions default on."
+    },
+    {
+      "station": 35,
+      "nameJa": "御油",
+      "nameRomaji": "Goyu",
+      "keeperJa": "旅籠の関守",
+      "keeperEn": "Inn Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/20",
+      "synopsis": "Autumn rain beginning in the afternoon as they enter the Goyu pine avenue, the best surviving stretch of roadside pines on the Tōkaidō. s-35-1 is a DIALOGUE, casual: an old-style hatago inn kept by 村上さん, with sound words woven through the whole conversation — rain on the tiles (ザーザー、ポツポツ), footsteps on the wooden corridor (ギシギシ、トントン), the kettle (シュンシュン), Ken slurping (ズルズル); giongo strand I. Not only the rain but the wind too (雨ばかりでなく風も); 村上さん shows where travellers once wrote on the pillars. Ken borrows the hearth. s-35-2: a second casual dialogue at the hearth with Ken — the kettle noises, 'not only hungry but cold', 'then eat'; may be the bridge text.",
+      "recapEn": "Rain began as Hana and Ken walked the old pine avenue into Goyu. At Murakami-san's hatago the whole evening was sounds: rain drumming, floorboards creaking, the kettle hissing, Ken slurping. Not only rain but wind came, so they decided to walk the short way to Akasaka that same night under lanterns.",
+      "locals": [
+        {
+          "nameJa": "{村上|むらかみ}さん",
+          "nameEn": "Murakami-san",
+          "role": "keeper of the old hatago inn at Goyu"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens"
+      ],
+      "hook": "Murakami-san says Akasaka is 'one pine avenue away'; Ken says 'then we eat there too', and the kettle agrees.",
+      "grammarFocus": "Onomatopoeia strand I (giongo), 〜ばかりでなく."
+    },
+    {
+      "station": 36,
+      "nameJa": "赤坂",
+      "nameRomaji": "Akasaka",
+      "keeperJa": "宿の灯の関守",
+      "keeperEn": "Lantern Inn Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/20",
+      "synopsis": "The same evening — Goyu and Akasaka are the closest pair of post towns on the road, one lantern-lit pine avenue apart. s-36-1 is the BRIDGE text (casual narration): manner words — walking softly (そっと), rain dripping (ぽたぽた), lanterns swaying (ゆらゆら), sleeping soundly (ぐっすり); gitaigo strand II; dinner at the old lantern inn is interrupted in the middle (食事の最中に) by a blue-grey cat walking in from the rain and sitting by the hearth (same-cat, eight — 'it followed us from Goyu'); the innkeeper (近藤さん) shows the inn's lanterns and the old guest-register. s-36-2: casual dialogue at the hearth — 'it came in the middle of dinner', 'it's soaked', 'same cat', 'it is not the — fine, it's wet'.",
+      "recapEn": "One lantern-lit pine avenue after Goyu, Hana and Ken reached Akasaka the same rainy night. In the middle of dinner at Kondō-san's old lantern inn a soaked blue-grey cat walked in and sat by the hearth. Hana wrote the evening in manner words — softly, dripping, swaying — and slept soundly.",
+      "locals": [
+        {
+          "nameJa": "{近藤|こんどう}さん",
+          "nameEn": "Kondō-san",
+          "role": "innkeeper of the old lantern inn at Akasaka"
+        }
+      ],
+      "threadBeats": [
+        "same-cat"
+      ],
+      "hook": "In the morning the cat is gone and there are small wet prints on the diary's cover, which Hana does not wipe off.",
+      "grammarFocus": "Onomatopoeia strand II (gitaigo), 〜最中に; bridge: true."
+    },
+    {
+      "station": 37,
+      "nameJa": "藤川",
+      "nameRomaji": "Fujikawa",
+      "keeperJa": "棒鼻の関守",
+      "keeperEn": "Bōbana Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/23",
+      "synopsis": "Crisp; persimmons on bare branches, fields being prepared for Fujikawa's purple barley, the restored Bōbana marker at the town's edge. s-37-1 in NEUTRAL register: a leaflet for travellers (旅行者向けのパンフレット) picked up at the rest house — Hana rewrites it shorter, then longer (Reduce & Expand begins); a sign that says 'for walkers' (歩く人向き); since they have come this far they will walk every step to Kyoto (ここまで来たからには); Tanaka-san, met at the marker, says he too 'has come this far, so …' and stops mid-sentence (tanaka-walk). The rest-house attendant (藤井さん) gives them dried persimmons. s-37-2: casual dialogue — 'leaflet's for tourists', 'we're tourists', 'we're walkers', 'since we've come this far, walkers'; may be the bridge text.",
+      "recapEn": "At Fujikawa's town-edge marker Hana took a leaflet for travellers and rewrote it shorter and then longer. Since they had come this far, she wrote, they would walk every step to Kyoto. Tanaka-san, meeting them at the marker, began 'I too have come this far, so…' and did not finish. Fujii-san gave them dried persimmons.",
+      "locals": [
+        {
+          "nameJa": "{藤井|ふじい}さん",
+          "nameEn": "Fujii-san",
+          "role": "rest-house attendant"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "home-and-work"
+      ],
+      "hook": "Hana writes the unfinished sentence down exactly as Tanaka-san left it, with the 'so…' and the space after.",
+      "grammarFocus": "〜向け／〜向き, 〜からには; Reduce & Expand begins."
+    },
+    {
+      "station": 38,
+      "nameJa": "岡崎",
+      "nameRomaji": "Okazaki",
+      "keeperJa": "矢矧橋の関守",
+      "keeperEn": "Yahagi Bridge Keeper",
+      "belt": "purple",
+      "level": "N3",
+      "date": "10/26",
+      "synopsis": "A still golden afternoon on the long Yahagi bridge into Okazaki, castle town and home of Hatchō miso, aged in cedar vats under river stones. s-38-1 (casual narration): a consolidation episode — Hana rereads her first diary pages from Hodogaya on the bridge and lists how she wrote then and how she writes now, reusing the Blue–Purple grammar set (〜わけ、〜たびに、〜ずにはいられない、〜に違いない、〜最中に、〜からには); a miso-brewery guide (竹内さん) shows the stone-topped vats; miso-dengaku and miso-katsu on the food list. Purple Shinsa. s-38-2: casual dialogue on the bridge — Ken reads her first entry aloud in her old polite voice; 'that's not how I sound', 'it's how you sounded'; may be the bridge text.",
+      "recapEn": "On the long Yahagi bridge Hana reread her first diary pages from April and saw how far her Japanese had walked. In Okazaki, Takeuchi-san showed them Hatchō miso ageing under river stones in cedar vats; Ken tasted it from three years. Ken read her first entry aloud in her old polite voice; she did not recognise herself.",
+      "locals": [
+        {
+          "nameJa": "{竹内|たけうち}さん",
+          "nameEn": "Takeuchi-san",
+          "role": "miso-brewery guide"
+        }
+      ],
+      "threadBeats": [
+        "the-diary",
+        "one-dish-per-station"
+      ],
+      "hook": "Hana writes a new first line for the old first page — 'This is Hodogaya; it is raining; we are beginning' — and does not cross out the original.",
+      "grammarFocus": "Consolidation of the Blue–Purple set · Purple Shinsa (N3)."
+    },
+    {
+      "station": 39,
+      "nameJa": "池鯉鮒",
+      "nameRomaji": "Chiryū",
+      "keeperJa": "馬市の関守",
+      "keeperEn": "Horse Market Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "10/29",
+      "synopsis": "Cool and clear; dry leaves on the site of the old horse market, and the Yatsuhashi iris garden bare out of season, with the ancient poem about irises on a stone. s-39-1 in WRITTEN register: an essay-like entry on what travellers carry — not only Hana (ハナに限らず), beginning with Ken's knife roll (ケンの包丁をはじめ), and what depends on each person (人次第); the famous thing here is not in season, so what is left is the garden's shape and the poem; the kindness tally reread — twenty-eight ticks by now; the garden's caretaker (佐々木さん) explains when the irises bloom (May) and gives them a seed packet. Breadth Campaign peak. s-39-2: casual dialogue by the empty pond — 'nothing's blooming', 'that's up to the season', 'everyone carries something', Ken's pack weighed; may be the bridge text.",
+      "recapEn": "At Chiryū the horse market was dry leaves and the iris garden bare; the irises bloom in May, said Sasaki-san, and gave them seeds. Hana wrote an essay on what travellers carry — not only her: Ken's knives, Tanaka-san's watch, her twenty-eight ticks of kindness — and how what is left out of season is the shape of a place.",
+      "locals": [
+        {
+          "nameJa": "{佐々木|ささき}さん",
+          "nameEn": "Sasaki-san",
+          "role": "caretaker of the iris garden"
+        }
+      ],
+      "threadBeats": [
+        "kindness-tally",
+        "borrowed-kitchens"
+      ],
+      "hook": "Ken puts the seed packet in his pack and says it is lighter than yesterday; Hana writes 'twenty-nine' in the back.",
+      "grammarFocus": "〜に限らず／〜をはじめ／〜次第; Breadth Campaign peak."
+    },
+    {
+      "station": 40,
+      "nameJa": "鳴海",
+      "nameRomaji": "Narumi",
+      "keeperJa": "絞りの関守",
+      "keeperEn": "Shibori Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "11/01",
+      "synopsis": "Mild; the smell of indigo in an Arimatsu tie-dye workshop between Narumi and Nagoya, old merchant houses along the road. s-40-1 is a DIALOGUE in polite register, the station's BRIDGE text: a craftsperson (小島さん, seventy, blunt, authentic Nagoya-area speech with fillers) explains what cannot be hurried — the binding, the dyeing, the drying (急ぎかねる; 一日では仕上げ得ない); she offers Ken a lesson in binding and he cannot refuse (断らざるを得ない → 断るわけにいかない; he ties a terrible cloth and is told so). Hana notices the craft is like cooking: time is the ingredient. s-40-2: casual dialogue walking on — 'you got made to tie cloth', 'couldn't say no', 'you could've', 'couldn't'.",
+      "recapEn": "In an Arimatsu shibori workshop Kojima-san explained what cannot be hurried: binding, dyeing, drying. She made Ken try the binding; he could not refuse and produced a terrible cloth, which she told him. Hana wrote that time is an ingredient here too. Tomorrow: Atsuta, and then five weeks in Nagoya.",
+      "locals": [
+        {
+          "nameJa": "{小島|こじま}さん",
+          "nameEn": "Kojima-san",
+          "role": "shibori craftsperson, seventy"
+        }
+      ],
+      "threadBeats": [
+        "borrowed-kitchens"
+      ],
+      "hook": "Kojima-san keeps Ken's terrible cloth 'to dye it properly' and says to collect it in a month — so now he has a reason to stay in Nagoya.",
+      "grammarFocus": "〜ざるを得ない／〜かねる／〜得る; bridge: true (polite dialogue)."
+    },
+    {
+      "station": 41,
+      "nameJa": "宮",
+      "nameRomaji": "Miya",
+      "keeperJa": "熱田の関守",
+      "keeperEn": "Atsuta Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "11/04",
+      "synopsis": "First ginkgo yellow at Atsuta shrine in Nagoya, cool and bright; the old Shichiri ferry landing where the road left the land for seven ri of water. s-41-1 in WRITTEN register: a structured essay (序論・本論・結論) on shrines and roads — a road is best when it has somewhere to stop (休む場所があるに越したことはない); shrines were not only places of prayer but of rest and water (祈りの場のみならず); conclusion: the ferry landing is a stop that became an end. Food list: kishimen at the shrine's noodle stand, then hitsumabushi. A shrine groundskeeper (大西さん) shows the ferry landing's old lantern. PAUSE 3 announced: Ken takes five weeks in a Nagoya kitchen; Hana stays, writes, and rides the trains Tanaka-san keeps mentioning. s-41-2: casual dialogue over kishimen — 'intro, body, conclusion?', 'that's an essay', 'the conclusion is: more noodles'; may be the bridge text.",
+      "recapEn": "At Atsuta shrine, under the first yellow ginkgo, Hana wrote a proper essay — introduction, body, conclusion — on shrines as places of rest along roads, and ate kishimen at the shrine stand. Ōnishi-san showed them the old ferry landing's lantern. Ken took five weeks' work in a Nagoya kitchen; the walk would resume in December.",
+      "locals": [
+        {
+          "nameJa": "{大西|おおにし}さん",
+          "nameEn": "Ōnishi-san",
+          "role": "shrine groundskeeper"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town",
+        "one-dish-per-station",
+        "borrowed-kitchens"
+      ],
+      "hook": "Hana's conclusion reads 'a stop that became an end' — and then, below it, 'for them; not for us', and the autumn section of the diary closes.",
+      "grammarFocus": "〜に越したことはない／〜のみならず; essay structure."
+    },
+    {
+      "station": 42,
+      "nameJa": "桑名",
+      "nameRomaji": "Kuwana",
+      "keeperJa": "七里の渡しの関守",
+      "keeperEn": "Seven-Ri Ferry Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "12/10",
+      "synopsis": "Winter begins: cold and bright after five weeks in Nagoya; they cross the head of Ise Bay by water on a seasonal sightseeing boat (or watch the bay from the train and talk about the old ferry). s-42-1 (casual narration): how the coastline changes as they go (進むにつれて), factories giving way to reed beds and river mouths (〜に伴って), the cold arriving with the wind (〜とともに); Kuwana's hamaguri clams grilled on the shore and simmered as shigure-ni; a clam-shop owner (伊藤さん) says winter clams are the sweetest. Ken collected his properly dyed shibori cloth before leaving Nagoya and wears it as a scarf. s-42-2: casual dialogue on the boat — 'it keeps changing as we go', 'so do you', 'how', 'you ordered for me in Nagoya dialect'; may be the bridge text.",
+      "recapEn": "After five weeks in Nagoya, Hana and Ken crossed the head of Ise Bay as the old ferry once did, watching factories give way to reed beds and river mouths as they went. At Kuwana, Itō-san grilled hamaguri clams on the shore; winter clams are sweetest, he said. Ken wore his shibori cloth as a scarf.",
+      "locals": [
+        {
+          "nameJa": "{伊藤|いとう}さん",
+          "nameEn": "Itō-san",
+          "role": "clam-shop owner on the Kuwana shore"
+        }
+      ],
+      "threadBeats": [
+        "one-dish-per-station",
+        "borrowed-kitchens"
+      ],
+      "hook": "The first clam opens on the grill with a small sound, and Ken says 'winter', the way other people say 'look'.",
+      "grammarFocus": "〜につれて／〜に伴って／〜とともに."
+    },
+    {
+      "station": 43,
+      "nameJa": "四日市",
+      "nameRomaji": "Yokkaichi",
+      "keeperJa": "三重川の関守",
+      "keeperEn": "Mie River Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "12/13",
+      "synopsis": "A cold clear night; Yokkaichi's factory complex lit across the water like a second town. s-43-1 is a DIALOGUE, casual, the station's BRIDGE text: a fast-paced conversation at a ramen counter (listening target 1.2×) with the owner (野口さん) and a night-shift worker (リョウ, late twenties) — although the view is not pretty, it is honest (きれいじゃないものの); even if it is only a factory, it is where people's evenings are (工場とはいえ); even for Ken, the ramen is good (ケンにしても); Yokkaichi's tonteki pork is mentioned as the local dish to try tomorrow. Dropped particles, overlapping talk, fillers. s-43-2: a second casual dialogue outside, slower — Hana and Ken on the bridge watching the lights: 'not pretty, though', 'honest, though'.",
+      "recapEn": "In Yokkaichi, under the factory lights across the water, Hana and Ken ate ramen at Noguchi-san's counter beside a night-shift worker, Ryō, in a fast, overlapping conversation. The view was not pretty, Hana wrote, but it was honest: this is where people's evenings are. Tomorrow, tonteki.",
+      "locals": [
+        {
+          "nameJa": "{野口|のぐち}さん",
+          "nameEn": "Noguchi-san",
+          "role": "ramen counter owner"
+        },
+        {
+          "nameJa": "リョウ",
+          "nameEn": "Ryō",
+          "role": "night-shift worker at the counter"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town",
+        "one-dish-per-station"
+      ],
+      "hook": "Ryō says the lights look best from the road bridge at two in the morning, and Ken, counting bowl number sixty, says 'we're asleep by then — probably'.",
+      "grammarFocus": "〜ものの／〜とはいえ／〜にしても; listening 1.2×; bridge: true."
+    },
+    {
+      "station": 44,
+      "nameJa": "石薬師",
+      "nameRomaji": "Ishiyakushi",
+      "keeperJa": "薬師の関守",
+      "keeperEn": "Yakushi Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "12/17",
+      "synopsis": "Still, grey, five degrees; dry leaves on the steps of the Ishiyakushi temple in a quiet village post town. s-44-1 in NEUTRAL register, built around a long monologue by Tanaka-san (extended monologue listening): forty years ago he and a friend set out to walk to Kyoto; work got busy, they stopped here and meant to resume; the friend moved away; he never finished (結局、歩かずじまいだった); it will not happen twice (二度とそうはなるまい). He has been catching up with Hana and Ken by train since Kawasaki. No tragedy — a walk left undone. A blue-grey cat sits on the steps through the whole speech (same-cat, nine). The caretaker (西村さん) remembers two young men from long ago, or says he does. s-44-2: casual dialogue after — 'so that's why', 'that's why', 'we finish it with him', 'obviously'; may be the bridge text.",
+      "recapEn": "On the steps of the Ishiyakushi temple Tanaka-san finally told them: forty years ago he and a friend walked this far toward Kyoto, stopped when work got busy, and never resumed. He had been catching them up by train since Kawasaki. 'Not twice,' he said. A blue-grey cat listened to all of it.",
+      "locals": [
+        {
+          "nameJa": "{西村|にしむら}さん",
+          "nameEn": "Nishimura-san",
+          "role": "temple caretaker"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-walk",
+        "same-cat"
+      ],
+      "hook": "Hana asks if he will walk the rest with them instead of taking the train; Tanaka-san checks his watch, as if the answer were a departure time, and says 'from Seki'.",
+      "grammarFocus": "〜まい／〜ずじまい; extended monologue listening."
+    },
+    {
+      "station": 45,
+      "nameJa": "庄野",
+      "nameRomaji": "Shōno",
+      "keeperJa": "白雨の関守",
+      "keeperEn": "Sudden Shower Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "12/19",
+      "synopsis": "A cold passing shower (時雨) sweeps over Shōno like the famous print's sudden rain, then sun. s-45-1 in FORMAL register, the station's BRIDGE text: sheltering under a shop eave, Hana drafts on her phone a business e-mail to her former employer (never named) — business register lines: お世話になっております、〜の件につきまして、ご確認いただけますと幸いです — asking that her last documents be sent to her home; she takes the walk as the occasion (散歩がてら) to decide she will not ask for her job back, and notes that Ken cooks while also planning his shop (料理のかたわら). The shop owner (堀さん) lends them an umbrella and says to leave it at Kameyama — tally tick. s-45-2: casual dialogue under the eave — 'you're writing to work?', 'to old work', 'say it properly, then', 'I'm saying it very properly'.",
+      "recapEn": "A cold shower caught Hana and Ken at Shōno. Under a shop eave Hana drafted a formal e-mail to her former employer asking for her last papers — and decided, mid-sentence, not to ask for the job back. Hori-san lent them an umbrella to leave at Kameyama. The sun came out before she pressed send.",
+      "locals": [
+        {
+          "nameJa": "{堀|ほり}さん",
+          "nameEn": "Hori-san",
+          "role": "shop owner who lends the umbrella"
+        }
+      ],
+      "threadBeats": [
+        "home-and-work",
+        "tanaka-weather",
+        "kindness-tally",
+        "borrowed-kitchens"
+      ],
+      "hook": "She sends the e-mail, closes the phone, and writes in the diary in plain form: 'done' — one word, the shortest entry of the year.",
+      "grammarFocus": "〜がてら／〜かたわら; business mail register; bridge: true (formal)."
+    },
+    {
+      "station": 46,
+      "nameJa": "亀山",
+      "nameRomaji": "Kameyama",
+      "keeperJa": "雪晴れの関守",
+      "keeperEn": "Snow Clearing Keeper",
+      "belt": "brown",
+      "level": "N2",
+      "date": "12/23",
+      "synopsis": "Snow overnight, clearing to blue over Kameyama castle's white turret wall; the Suzuka range white to the west. s-46-1 in WRITTEN register, mixing written and casual: the Plateau Arc ends — a reflective entry that sets formal sentences on the season beside casual asides (「…である。— いや、寒いだけだ。」); the first snow of the walk, finally real, nine stations after the Kanbara print; Tanaka-san's forecast ('no snow before Kyoto') wrong one last ordinary time; they return Hori-san's umbrella at a shop in Kameyama whose owner (中島さん) knows her, and are given hot amazake. Brown Shinsa. Plans: New Year in Seki, Tanaka-san arriving by the last train of the year. s-46-2: casual dialogue in the snow — 'so it does snow', 'not in Kanbara', 'everything's white but the castle wall was already white', Ken's noodle tally at sixty-four; may be the bridge text.",
+      "recapEn": "The first real snow of the walk fell on Kameyama and cleared to blue over the castle. Hana wrote the end of the road's long middle in two voices, formal and casual. They returned the borrowed umbrella to Nakajima-san, who gave them hot amazake. Tanaka-san had predicted no snow; they meet him in Seki for New Year.",
+      "locals": [
+        {
+          "nameJa": "{中島|なかじま}さん",
+          "nameEn": "Nakajima-san",
+          "role": "shop owner in Kameyama who takes back the umbrella"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-weather",
+        "kindness-tally"
+      ],
+      "hook": "Hana writes the formal line 'thus the year turns' and, beside it, the casual one 'and we have seven stations left', and lets them share the page.",
+      "grammarFocus": "Plateau Arc complete · Brown Shinsa (N2); written register with casual asides."
+    },
+    {
+      "station": 47,
+      "nameJa": "関",
+      "nameRomaji": "Seki",
+      "keeperJa": "関の関守",
+      "keeperEn": "Keeper of the Barrier",
+      "belt": "black",
+      "level": "N1",
+      "date": "12/31",
+      "synopsis": "New Year's Eve and New Year's Day in Seki, the best-preserved post town on the Tōkaidō — a kilometre of old wooden houses under frost; the temple bell; first sunrise down the street. s-47-1 in LITERARY register: an old prohibition sign in a machiya museum (〜べからず); eave-shadows reaching almost to the next house (〜んばかり); the street like a scroll unrolled (〜ごとく); Ken cooks osechi with the machiya innkeeper (松井さん) and her mother; Tanaka-san arrives on the year's last train and at midnight writes 'to finish walking' on a wish board. Tally tick: 松井さん's family shares their first meal of the year with three strangers. s-47-2: casual dialogue at the bell — 'so from here he walks', 'resolution?', 'Kyoto; yours', 'one dish a day'; may be the bridge text.",
+      "recapEn": "They saw the year out in Seki, a kilometre of preserved wooden houses under frost. Hana's diary turned literary: an old sign of prohibitions, eave-shadows reaching to the next house. Ken cooked osechi with the innkeeper Matsui-san's family; Tanaka-san arrived on the last train of the year and, at midnight, wrote 'to finish walking' on a wish board.",
+      "locals": [
+        {
+          "nameJa": "{松井|まつい}さん",
+          "nameEn": "Matsui-san",
+          "role": "machiya innkeeper in Seki, cooking osechi with her mother"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town",
+        "tanaka-walk",
+        "kindness-tally",
+        "borrowed-kitchens"
+      ],
+      "hook": "At dawn the three of them stand in the street as the first sun comes down it like water down a channel, and Tanaka-san does not check his watch.",
+      "grammarFocus": "〜べからず／〜んばかり／〜ごとく; literary register."
+    },
+    {
+      "station": 48,
+      "nameJa": "坂下",
+      "nameRomaji": "Sakashita",
+      "keeperJa": "筆捨山の関守",
+      "keeperEn": "Fudesute Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/04",
+      "synopsis": "Cold and dry; ice in the puddles; Fudesute-yama, the 'brush-throwing mountain' where a painter is said to have given up on the view, bare above the almost-vanished post town of Sakashita. s-48-1 in LITERARY register, the station's BRIDGE text: Hana nearly abandons the diary — with this page (〜をもって) she thinks of ending it; even a master (〜といえども) threw his brush away; and so (〜ゆえに) she sits on a cold stone for an hour not writing; then an unpolished, authentic essay passage on why she keeps going (the tally, Ken's recipe pages, the cat prints). Tanaka-san, now walking with them daily, silently hands her a pencil; a woman from the last house in Sakashita (大塚さん) brings tea. s-48-2: casual dialogue — 'you were gonna quit the diary?', 'for an hour', 'then write that', 'I did'.",
+      "recapEn": "Below Fudesute-yama, where a painter once threw away his brush, Hana sat an hour on a cold stone thinking of ending the diary. Tanaka-san handed her a pencil without a word; Ōtsuka-san from the last house in Sakashita brought tea. Hana wrote about the hour she did not write, and kept going.",
+      "locals": [
+        {
+          "nameJa": "{大塚|おおつか}さん",
+          "nameEn": "Ōtsuka-san",
+          "role": "woman from the last house in Sakashita"
+        }
+      ],
+      "threadBeats": [
+        "the-diary",
+        "tanaka-walk"
+      ],
+      "hook": "She writes 'the painter threw his brush away because the mountain was too good; I am keeping mine because the road is only good enough' — and underlines nothing.",
+      "grammarFocus": "〜をもって／〜といえども／〜ゆえに; bridge: true (authentic essay)."
+    },
+    {
+      "station": 49,
+      "nameJa": "土山",
+      "nameRomaji": "Tsuchiyama",
+      "keeperJa": "春雨の関守",
+      "keeperEn": "Spring Rain Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/07",
+      "synopsis": "Cold rain on the Suzuka pass, exactly as the old saying promises — 'the slope shines, Suzuka clouds, and in between at Tsuchiyama it rains'; seven-herb porridge in the morning. s-49-1 in FORMAL register: walking while remembering the year (歩きつつ、思い出しつつ); though wet, content (濡れながらも); Ken admits his tendency to overpack (詰め込みすぎるきらいがある) and, at last, unpacks on the inn floor: four jars, the seed packet, the shibori cloth, three spice tins, the sakura-ebi bag kept empty; Hana calls the rain an early 春雨 as a joke and Tanaka-san's forecast — rain — is finally right, because here it always is (tanaka-weather payoff). The inn's owner (本田さん) serves the pass's tea. s-49-2: casual dialogue over the unpacked floor — 'you kept the empty bag?', 'it's light', 'that's the point', 'exactly'; may be the bridge text.",
+      "recapEn": "Rain fell on the Suzuka pass as Tsuchiyama's saying promises; Tanaka-san's forecast of rain was, for once and forever, right. Hana called it early spring rain as a joke. Ken admitted he tends to overpack and emptied his bag on the inn floor: jars, seeds, the shibori cloth, the empty sakura-ebi bag he had kept. Honda-san served the pass's tea.",
+      "locals": [
+        {
+          "nameJa": "{本田|ほんだ}さん",
+          "nameEn": "Honda-san",
+          "role": "inn owner at Tsuchiyama"
+        }
+      ],
+      "threadBeats": [
+        "tanaka-weather",
+        "borrowed-kitchens"
+      ],
+      "hook": "Ken repacks everything, including the empty bag, and says the pack is lighter; for the first time Hana agrees — it is.",
+      "grammarFocus": "〜ながらも／〜つつ／〜きらいがある."
+    },
+    {
+      "station": 50,
+      "nameJa": "水口",
+      "nameRomaji": "Minakuchi",
+      "keeperJa": "干瓢の関守",
+      "keeperEn": "Kanpyō Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/10",
+      "synopsis": "Cold sun; a kanpyō shop in Minakuchi, the castle town once famous for drying gourd strips in summer; from the road the first low hills around Lake Biwa. s-50-1 in FORMAL register: the shop owner (福田さん) shows last summer's dried strips and photographs of the July drying racks, and they eat kanpyō-maki; Hana traces how they came this far (ここに至るまで) — the pauses, the trains, the kitchens; at the sight of the hills that hide the lake she cannot suppress what she feels (感動を禁じ得ない); the cold is extreme (寒いこと極まりない) and the sun kind. Tanaka-san, walking, points out the hills by name. s-50-2: casual dialogue in the shop — 'it's dried in summer, so this is last year's', 'so it waited for us', 'kanpyō doesn't wait', 'it did, though'; may be the bridge text.",
+      "recapEn": "At a kanpyō shop in Minakuchi, Fukuda-san showed them last summer's dried gourd strips and photographs of the drying racks, and they ate kanpyō rolls. From the road Hana saw, for the first time, the hills around Lake Biwa, and could not hold back what she felt. She traced the whole year back to Nihonbashi in one formal page.",
+      "locals": [
+        {
+          "nameJa": "{福田|ふくだ}さん",
+          "nameEn": "Fukuda-san",
+          "role": "kanpyō shop owner"
+        }
+      ],
+      "threadBeats": [
+        "one-dish-per-station",
+        "tanaka-walk"
+      ],
+      "hook": "Tanaka-san says the lake is 'two stations and one hill away' and checks his watch, and for once the clock on the shop wall agrees with him.",
+      "grammarFocus": "〜に至る／〜を禁じ得ない／〜極まりない."
+    },
+    {
+      "station": 51,
+      "nameJa": "石部",
+      "nameRomaji": "Ishibe",
+      "keeperJa": "目川の関守",
+      "keeperEn": "Megawa Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/13",
+      "synopsis": "Frost then sun; the Megawa teahouse quarter near Ishibe, famous since Edo for tofu dengaku grilled with miso and for bean rice. s-51-1 in CASUAL register, the station's BRIDGE text: a day of nothing but good things (いいことずくめ) — the dengaku, a warm bench, a lift refused and then accepted for Tanaka-san's bag; Ken mud-splashed to the knee (泥まみれ) after helping a farmer's van out of a frozen rut; Hana's own way of walking (私なりの歩き方): slow, noting, stopping; abstract vocabulary band: 余裕、習慣、距離、ささやかさ. The teahouse owner (三浦さん) grills dengaku over charcoal; a blue-grey cat on the warm bench (same-cat, ten — the last before Ōtsu). s-51-2: casual dialogue on the bench — 'all good things today', 'you're covered in mud', 'still good', 'same cat', 'later'.",
+      "recapEn": "At the Megawa teahouses near Ishibe, Miura-san grilled tofu dengaku over charcoal and the day was nothing but good things, even with Ken mud-splashed to the knee from pushing a farmer's van out of a frozen rut. Hana wrote about her own way of walking — slow, noting, stopping. A blue-grey cat kept the warm bench.",
+      "locals": [
+        {
+          "nameJa": "{三浦|みうら}さん",
+          "nameEn": "Miura-san",
+          "role": "Megawa teahouse owner"
+        }
+      ],
+      "threadBeats": [
+        "one-dish-per-station",
+        "same-cat",
+        "kindness-tally"
+      ],
+      "hook": "Ken puts the last dengaku skewer down on the bench 'for nobody in particular' and walks on without looking back; Hana looks.",
+      "grammarFocus": "〜ずくめ／〜まみれ／〜なりに; abstract vocabulary bands; bridge: true (casual)."
+    },
+    {
+      "station": 52,
+      "nameJa": "草津",
+      "nameRomaji": "Kusatsu",
+      "keeperJa": "追分の関守",
+      "keeperEn": "Fork Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/16",
+      "synopsis": "Grey and cold at the Kusatsu fork, where the Tōkaidō and the Nakasendō meet under an old stone signpost; Kusatsu's preserved honjin is the largest surviving on the road. s-52-1 in FORMAL register: a lecture-style passage by a local historian (岡本さん) by a kerosene heater — being the junction (〜とあって), every traveller once passed here; when a town becomes a junction (〜ともなると) it grows; the crowds are not hard to imagine (〜にかたくない). Which road next: the Nakasendō back through the mountains, or two last stations to Kyoto. They choose Kyoto and promise the mountain road 'another year'. Payoffs: the diary is the work now (home-and-work); two roads, one stone (old-road). s-52-2: casual dialogue under the signpost — 'we could go back the long way', 'another year', 'you mean it?', 'write it down'; may be the bridge text.",
+      "recapEn": "At the Kusatsu fork, under the stone signpost where the Tōkaidō meets the Nakasendō, a historian, Okamoto-san, lectured them by a kerosene heater on why junction towns grow. Asked which road next, they chose the last two stations to Kyoto and promised the mountain road another year. Hana wrote: the diary is the work now.",
+      "locals": [
+        {
+          "nameJa": "{岡本|おかもと}さん",
+          "nameEn": "Okamoto-san",
+          "role": "local historian giving a small lecture at the honjin"
+        }
+      ],
+      "threadBeats": [
+        "old-road-new-town",
+        "home-and-work",
+        "tanaka-walk"
+      ],
+      "hook": "Tanaka-san touches the signpost's Nakasendō face and says 'another year, then', in the voice of a man reading a timetable he intends to keep.",
+      "grammarFocus": "〜とあって／〜ともなると／〜にかたくない; lecture-style listening."
+    },
+    {
+      "station": 53,
+      "nameJa": "大津",
+      "nameRomaji": "Ōtsu",
+      "keeperJa": "走井の関守",
+      "keeperEn": "Hashirii Keeper",
+      "belt": "black",
+      "level": "N1",
+      "date": "01/19",
+      "synopsis": "Great Cold: Lake Biwa steel-grey, the Hashirii spring unfrozen, Hashirii mochi as the food list's last line. s-53-1 in LITERARY register, the consolidation reading (≥ 1,000 chars): the last night before Kyoto gathers the year — the typhoon under the snow print, the equinox lilies, the last Fuji, the wet cat prints, Tanaka-san's unfinished walk, Seki's bells, the hour of not writing, the promised rain. Payoffs: the kindness tally counted aloud (forty-two once the spring's sweet-shop keeper 宮崎さん gives them mochi); the one-dish list read back whole; the cat on the diary and Ken's 'fine — same cat'; Ken's shop: one counter, one road dish a day. On 01/21 the three cross Ōsaka pass to Sanjō Ōhashi, Kyoto; Tanaka-san checks his watch: on time. s-53-2: casual dialogue on the Kyoto bridge: 'what time is it?' — 'exactly the right time'.",
+      "recapEn": "On the last night, by the Hashirii spring at Ōtsu, Hana gathered the whole year into one long entry. The kindness tally reached forty-two; the cat sat on the diary and Ken said 'fine, same cat'; his shop will serve one road dish a day. Next morning the three walked over the pass to Sanjō Ōhashi, Kyoto, on time.",
+      "locals": [
+        {
+          "nameJa": "{宮崎|みやざき}さん",
+          "nameEn": "Miyazaki-san",
+          "role": "sweet-shop woman who keeps the Hashirii spring"
+        }
+      ],
+      "threadBeats": [
+        "kindness-tally",
+        "borrowed-kitchens",
+        "same-cat",
+        "tanaka-walk",
+        "one-dish-per-station",
+        "the-diary"
+      ],
+      "hook": "Hana writes the last line standing on the bridge — 'Station fifty-three. Breakfast at seven. Clear. We walked.' — and closes the diary; it does not stay closed, because a blue-grey cat is sitting on it.",
+      "grammarFocus": "Consolidation of the Black set; 1,000+ character literary reading."
+    }
+  ],
+  "meta": {
+    "title": "旅日記 Tabi Nikki — shared outline for the 53 station writers",
+    "version": 1,
+    "howToUse": "Read cast + threads + your station's episode and the recapEn of the previous one or two episodes. Your s-NN-1 is the diary entry; s-NN-2 is the dialogue situation; s-NN-3 (stations 1–31) is the standalone piece. Keep to the date, weather and food given here so neighbouring episodes agree. New named people appear only in your episode and must be listed in names; use the ones given in locals. Dates are month/day in one walking year; no calendar year is ever written.",
+    "yearShape": "Spring departure from Nihonbashi on 03/28 under full cherry blossom; stations 1–6 in one spring week. PAUSE 1 (04/05–07/02): Ken takes a season's work at a whitebait (shirasu) shack by Enoshima, Hana commutes from Yokohama and fills kana notebooks; they resume on Tanabata. Summer, stations 7–24 (07/04–08/20): Hiratsuka to Kanaya in heat, mist, hot springs, one typhoon. PAUSE 2 (08/21–09/22): a month in Kanaya–Shimada tea country, Ken in a tea farmer's kitchen. Autumn, stations 25–41 (09/23 equinox to 11/04): Sayo-no-Nakayama to Atsuta in Nagoya. PAUSE 3 (11/05–12/09): five weeks in Nagoya while the leaves turn, Ken in a Nagoya kitchen. Winter, stations 42–53 (12/10–01/20): Kuwana to Ōtsu, New Year spent in the preserved post town of Seki, arrival at Sanjō Ōhashi, Kyoto on 01/21 (Great Cold).",
+    "reconciliations": [
+      "Station 15 Kanbara: the brief says 'unexpected snow'. In this year it is a late-July typhoon; the inn's wall carries the famous woodblock print of Kanbara in night snow, and the innkeeper jokes that it never snows here. Hana writes the hypothetical 'if it snowed here like in the picture' (〜たら) and the real 'if the rain keeps up we must stay'.",
+      "Station 17 Okitsu: fresh mikan are a winter crop; in late July they taste greenhouse mikan and mikan juice at a roadside stand.",
+      "Station 29 Hamamatsu: 'winter fields' = harvested, stubbled rice fields under the first cold wind in early October; Hana's monologue is about the winter to come.",
+      "Station 39 Chiryū: the Yatsuhashi iris garden is bare in late October; the essay is about what the garden is in May and what travellers carry when the famous thing is out of season.",
+      "Station 45 Shōno: the summer 'white rain' of the print becomes a December 時雨 (cold passing shower).",
+      "Station 49 Tsuchiyama: it is cold January rain; Hana calls it an early 春雨 as a joke and the local saying about Tsuchiyama rain is quoted.",
+      "Station 50 Minakuchi: kanpyō is dried in summer; in January the shop shows last summer's dried strips and photographs of the drying racks; they eat kanpyō-maki.",
+      "Station 42 Kuwana: there is no regular passenger ferry today; they cross the head of Ise Bay on a seasonal sightseeing boat (if the writer prefers, the train along the bay with the old ferry talked about)."
+    ]
+  }
+}

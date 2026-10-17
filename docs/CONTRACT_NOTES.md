@@ -141,7 +141,7 @@ Whole project: `tsc --noEmit` clean, 42 test files / 1855 tests pass (1 pre-exis
 
 **Deviations/additions**
 1. The linker (tokenIds) runs inside `content:assign`, since `content:all` indexes before `validate --strict`; strict/`--fix-tokenids` validate also writes (no-op afterwards).
-2. 120 KB cap applies to hand-written files only: cumulative `surfaces` makes late bundles ≈400 KB (loader owner note).
+2. 300 KB cap (raised from 120 KB on 2026-10-17 once the corpus measured 1.3–1.85 KB per vocab item) applies to hand-written files only: cumulative `surfaces` makes late bundles ≈400 KB (loader owner note).
 3. Kana files carry no `level` (guide §1) → manifest `level: null`.
 4. Components appear only via `componentIds`; `_meta/components.json` is listed in those stations' `files`.
 5. `--strict` = release: V34/V36 fail until Pass 3/quotas; V14 "≥2 examples" warns in strict.

@@ -116,13 +116,13 @@ describe('build-content-index', () => {
     expect(m.totals.station).toBe(52);
   });
 
-  it('fails when a content file exceeds 120 KB', () => {
+  it('fails when a content file exceeds 300 KB', () => {
     const root = corpus();
     const p = join(root, 'michikusa/michikusa-s04.json');
     const doc = JSON.parse(readFileSync(p, 'utf8')) as { items: { bodyEn: string }[] };
     doc.items[0]!.bodyEn = 'x'.repeat(MAX_FILE_BYTES + 1);
     writeFileSync(p, JSON.stringify(doc, null, 2) + '\n');
-    expect(() => buildIndex(root, '1.0.0', { generatedAt: AT })).toThrow(/over 122880 bytes/);
+    expect(() => buildIndex(root, '1.0.0', { generatedAt: AT })).toThrow(/over 307200 bytes/);
   });
 
   it('reads redirects from _meta/redirects.json sorted by key', () => {

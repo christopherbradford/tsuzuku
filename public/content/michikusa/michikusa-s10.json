@@ -1,0 +1,46 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s10",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-10-1",
+      "stationId": "st-10",
+      "kind": "road-history",
+      "titleEn": "Guns In, Women Out",
+      "bodyEn": "The Hakone checkpoint on Lake Ashi, set up by the shogunate in 1619, was the strictest on the Tōkaidō. Its watchword was 入り鉄砲に出女: guns smuggled toward Edo and women slipping out of it, since daimyō families lived in Edo as hostages. Travelers showed a paper permit. The barrier closed in 1869.",
+      "sourceNote": "Hakone sekisho (est. 1619, abolished 1869); Hiroshige, 'Hakone: Lake View' (湖水図)"
+    },
+    {
+      "id": "m-10-2",
+      "stationId": "st-10",
+      "kind": "proverb",
+      "titleEn": "Eight Ri Even a Horse Crosses",
+      "bodyEn": "A packhorse driver's song summed up the road's two great ordeals: Hakone's eight ri even a horse can cross, but the Ōi River cannot be crossed. The eight ri, about 32 km from Odawara to Mishima, was steep but passable; the bridgeless Ōi River far ahead could strand travelers for days when it ran high.",
+      "ja": "{箱根|はこね}{八里|はちり}は{馬|うま}でも{越|こ}すが、{越|こ}すに{越|こ}されぬ{大井川|おおいがわ}",
+      "kana": "はこねはちりはうまでもこすが、こすにこされぬおおいがわ",
+      "sourceNote": "Traditional Hakone mago-uta (packhorse driver's song), public domain"
+    },
+    {
+      "id": "m-10-3",
+      "stationId": "st-10",
+      "kind": "etymology",
+      "titleEn": "Why 書く Becomes 書いて",
+      "bodyEn": "In classical Japanese the て-form was regular: 書きて, 読みて, 言ひて. In Heian-period speech the consonants eroded, giving 書いて, 読んで, 言って. These sound changes, called 音便, are the reason Group 1 verbs need the て-form table you learn here. Group 2 verbs such as 食べて never changed.",
+      "ja": "{書|か}いて",
+      "kana": "かいて",
+      "sourceNote": "Nihon Kokugo Daijiten (Shōgakukan), entry 音便: イ音便・撥音便・促音便"
+    },
+    {
+      "id": "m-10-4",
+      "stationId": "st-10",
+      "kind": "kanji-origin",
+      "titleEn": "Calling Your Name at Dusk",
+      "bodyEn": "The kanji 名, name, joins 夕, evening, and 口, mouth. The old explanation in the Shuowen Jiezi: at dusk people could no longer see each other's faces, so each called out their own name to be known. Whether or not that is the true origin, it is how scholars have read the character for nearly two thousand years.",
+      "ja": "{名前|なまえ}",
+      "kana": "なまえ",
+      "sourceNote": "Shuowen Jiezi (説文解字, c. 100 CE), entry 名: 从口从夕, 夕者冥也"
+    }
+  ]
+}

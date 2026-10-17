@@ -1,0 +1,48 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "michikusa",
+  "writer": "michikusa-s53",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "m-53-1",
+      "stationId": "st-53",
+      "kind": "road-history",
+      "titleEn": "The Biggest Post Town",
+      "bodyEn": "Ōtsu, the 53rd and last station, was the largest on the road: the 1843 survey counts 14,892 residents and 3,650 houses. It doubled as Lake Biwa's port, where rice from the north landed and went on by ox cart over Ōsaka pass, three ri from Kyoto's Sanjō Bridge. Hiroshige's print shows those carts passing the spring-fed Hashirii teahouse.",
+      "ja": "{走井|はしりい}",
+      "kana": "はしりい",
+      "sourceNote": "東海道宿村大概帳 (1843) on Ōtsu-juku; Hiroshige, 'Ōtsu: Hashirii Teahouse' (走井茶店)"
+    },
+    {
+      "id": "m-53-2",
+      "stationId": "st-53",
+      "kind": "culture",
+      "titleEn": "Ōtsu-e: Pictures for Travelers",
+      "bodyEn": "From the 17th century, stalls at Ōiwake and Ōtani sold Ōtsu-e, quick brush paintings for travelers. They began as cheap Buddhist images and grew into a stock cast: a demon in monk's robes chanting the nenbutsu, a wisteria maiden, a catfish and a gourd. Bashō's 1691 New Year verse asks which Buddha the painter's first brushstroke will be.",
+      "ja": "{大津絵|おおつえ}の{筆|ふで}のはじめは{何仏|なにぼとけ}",
+      "kana": "おおつえのふでのはじめはなにぼとけ",
+      "sourceNote": "Bashō, hokku 大津絵の筆のはじめは何仏 (1691); Ōtsu-e folk painting, Edo period"
+    },
+    {
+      "id": "m-53-3",
+      "stationId": "st-53",
+      "kind": "etymology",
+      "titleEn": "きや: A Question Turned Around",
+      "bodyEn": "In 晴れると思いきや, the ending きや is pure classical Japanese: き, the old past-tense auxiliary, plus や, a particle that asks a question expecting the answer no. Literally 'did I think so?', meaning 'I thought so, but how wrong I was'. That is why the pattern always introduces a result the opposite of what was expected.",
+      "ja": "{晴|は}れると{思|おも}いきや",
+      "kana": "はれるとおもいきや",
+      "sourceNote": "Nihon Kokugo Daijiten / Daijisen, entry きや: 過去の助動詞「き」の終止形+係助詞「や」(反語)"
+    },
+    {
+      "id": "m-53-4",
+      "stationId": "st-53",
+      "kind": "pitch",
+      "titleEn": "Chopsticks Flip at Kyoto",
+      "bodyEn": "In Tokyo accent, 箸 chopsticks falls after the first mora, HA-shi; 橋 bridge rises and drops on the following particle, ha-SHI-ga; 端 edge stays flat. Cross into Kyoto and Osaka and the first two swap: 箸 is low-high, 橋 high-low. Having walked the whole road, you can now hear which end of it a speaker comes from.",
+      "ja": "{箸|はし}・{橋|はし}・{端|はし}",
+      "kana": "はし・はし・はし",
+      "sourceNote": "Standard Tokyo accent dictionaries; Keihan 箸/橋 reversal per dialectology"
+    }
+  ]
+}

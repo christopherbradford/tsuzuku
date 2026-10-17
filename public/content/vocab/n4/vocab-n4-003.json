@@ -1,0 +1,4028 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n4",
+  "writer": "vocab-n4-003",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n4-0261",
+      "word": "学ぶ",
+      "kana": "まなぶ",
+      "meanings": [
+        "to learn",
+        "to study"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "actions"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{失敗|しっぱい}から{学|まな}ぶことは{多|おお}い。",
+          "kana": "しっぱいからまなぶことはおおい。",
+          "en": "There is a lot to learn from failure."
+        },
+        {
+          "ja": "{子供|こども}は{遊|あそ}びながらたくさんのことを{学|まな}びます。",
+          "kana": "こどもはあそびながらたくさんのことをまなびます。",
+          "en": "Children learn a lot while they play."
+        }
+      ],
+      "notes": "More bookish than 勉強する or 習う; also learning from experience (経験から学ぶ).",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0262",
+      "word": "試験",
+      "kana": "しけん",
+      "meanings": [
+        "exam",
+        "test"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}{試験|しけん}があるから、{今日|きょう}は{早|はや}く{帰|かえ}る。",
+          "kana": "らいしゅうしけんがあるから、きょうははやくかえる。",
+          "en": "I have an exam next week, so I'm going home early today."
+        },
+        {
+          "ja": "{昨日|きのう}の{試験|しけん}はあまり{難|むずか}しくなかったです。",
+          "kana": "きのうのしけんはあまりむずかしくなかったです。",
+          "en": "Yesterday's exam wasn't very hard."
+        }
+      ],
+      "collocations": [
+        "試験を受ける",
+        "試験に受かる"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0263",
+      "word": "連絡",
+      "kana": "れんらく",
+      "meanings": [
+        "contact",
+        "getting in touch"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{着|つ}いたら{連絡|れんらく}してね。",
+          "kana": "ついたられんらくしてね。",
+          "en": "Let me know when you get there."
+        },
+        {
+          "ja": "{部長|ぶちょう}から{何|なに}か{連絡|れんらく}はありましたか。",
+          "kana": "ぶちょうからなにかれんらくはありましたか。",
+          "en": "Has there been any word from the department manager?"
+        }
+      ],
+      "collocations": [
+        "連絡を取る",
+        "連絡先"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0264",
+      "word": "返信",
+      "kana": "へんしん",
+      "meanings": [
+        "reply (to a message)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "メールを{読|よ}んだら、すぐに{返信|へんしん}してください。",
+          "kana": "メールをよんだら、すぐにへんしんしてください。",
+          "en": "Once you have read the email, please reply right away."
+        },
+        {
+          "ja": "メールを{送|おく}ったけど、まだ{返信|へんしん}が{来|こ}ない。",
+          "kana": "メールをおくったけど、まだへんしんがこない。",
+          "en": "I sent an email, but there's still no reply."
+        }
+      ],
+      "notes": "For email and chat messages; a spoken or general answer is 返事.",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0265",
+      "word": "携帯",
+      "kana": "けいたい",
+      "meanings": [
+        "cell phone",
+        "mobile phone"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{携帯|けいたい}を{家|いえ}に{忘|わす}れてきちゃった。",
+          "kana": "けいたいをいえにわすれてきちゃった。",
+          "en": "I left my phone at home."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}では{携帯|けいたい}で{話|はな}さないでください。",
+          "kana": "でんしゃのなかではけいたいではなさないでください。",
+          "en": "Please don't talk on your cell phone on the train."
+        }
+      ],
+      "altForms": [
+        "ケータイ",
+        "携帯電話"
+      ],
+      "notes": "Short for 携帯電話. As a suru-noun it also means to carry something on you (携帯する).",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0266",
+      "word": "ローマ字",
+      "kana": "ローマじ",
+      "meanings": [
+        "romaji",
+        "writing Japanese in Latin letters"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{名前|なまえ}をローマ{字|じ}で{書|か}いてください。",
+          "kana": "なまえをローマじでかいてください。",
+          "en": "Please write your name in Latin letters."
+        },
+        {
+          "ja": "{日本|にほん}の{駅|えき}の{名前|なまえ}はローマ{字|じ}でも{書|か}いてある。",
+          "kana": "にほんのえきのなまえはローマじでもかいてある。",
+          "en": "Station names in Japan are also written in Latin letters."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0267",
+      "word": "連絡先",
+      "kana": "れんらくさき",
+      "meanings": [
+        "contact information"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{何|なに}かあったときのために、{連絡先|れんらくさき}を{教|おし}えておくね。",
+          "kana": "なにかあったときのために、れんらくさきをおしえておくね。",
+          "en": "I will give you my contact info, just in case."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}したので、{連絡先|れんらくさき}が{変|か}わりました。",
+          "kana": "ひっこしたので、れんらくさきがかわりました。",
+          "en": "I moved, so my contact information has changed."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0268",
+      "word": "会話",
+      "kana": "かいわ",
+      "meanings": [
+        "conversation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本語|にほんご}で{会話|かいわ}の{練習|れんしゅう}をしています。",
+          "kana": "にほんごでかいわのれんしゅうをしています。",
+          "en": "I'm practicing conversation in Japanese."
+        },
+        {
+          "ja": "{昨日|きのう}、{初|はじ}めて{日本人|にほんじん}と{日本語|にほんご}で{会話|かいわ}ができた。",
+          "kana": "きのう、はじめてにほんじんとにほんごでかいわができた。",
+          "en": "Yesterday, for the first time, I managed a conversation in Japanese with a Japanese person."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0269",
+      "word": "歴史",
+      "kana": "れきし",
+      "meanings": [
+        "history"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "culture"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本|にほん}の{歴史|れきし}に{興味|きょうみ}がある。",
+          "kana": "にほんのれきしにきょうみがある。",
+          "en": "I'm interested in Japanese history."
+        },
+        {
+          "ja": "この{町|まち}には{長|なが}い{歴史|れきし}があります。",
+          "kana": "このまちにはながいれきしがあります。",
+          "en": "This town has a long history."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0270",
+      "word": "卒業",
+      "kana": "そつぎょう",
+      "meanings": [
+        "graduation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}の{三月|さんがつ}に{大学|だいがく}を{卒業|そつぎょう}します。",
+          "kana": "らいねんのさんがつにだいがくをそつぎょうします。",
+          "en": "I'll graduate from university next March."
+        },
+        {
+          "ja": "{兄|あに}は{去年|きょねん}{大学|だいがく}を{卒業|そつぎょう}して、{今|いま}は{会社員|かいしゃいん}だ。",
+          "kana": "あにはきょねんだいがくをそつぎょうして、いまはかいしゃいんだ。",
+          "en": "My older brother graduated from university last year and is now an office worker."
+        }
+      ],
+      "collocations": [
+        "大学を卒業する",
+        "卒業式"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0271",
+      "word": "入学",
+      "kana": "にゅうがく",
+      "meanings": [
+        "entering a school",
+        "enrollment"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{息子|むすこ}が{四月|しがつ}に{小学校|しょうがっこう}に{入学|にゅうがく}する。",
+          "kana": "むすこがしがつにしょうがっこうににゅうがくする。",
+          "en": "My son starts elementary school in April."
+        },
+        {
+          "ja": "{私|わたし}は{十八歳|じゅうはっさい}の{時|とき}にこの{大学|だいがく}に{入学|にゅうがく}しました。",
+          "kana": "わたしはじゅうはっさいのときにこのだいがくににゅうがくしました。",
+          "en": "I entered this university when I was eighteen."
+        }
+      ],
+      "collocations": [
+        "入学式",
+        "入学試験"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0272",
+      "word": "部長",
+      "kana": "ぶちょう",
+      "meanings": [
+        "department manager",
+        "division head"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{部長|ぶちょう}は{今|いま}、{会議中|かいぎちゅう}です。",
+          "kana": "ぶちょうはいま、かいぎちゅうです。",
+          "en": "The department manager is in a meeting right now."
+        },
+        {
+          "ja": "{新|あたら}しい{部長|ぶちょう}はどんな{人|ひと}？",
+          "kana": "あたらしいぶちょうはどんなひと？",
+          "en": "What's the new department manager like?"
+        }
+      ],
+      "notes": "Used as a title after a name (山田部長) or alone as a form of address, like a job-title honorific.",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0273",
+      "word": "課長",
+      "kana": "かちょう",
+      "meanings": [
+        "section chief",
+        "section manager"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{課長|かちょう}に{書類|しょるい}を{出|だ}した？",
+          "kana": "かちょうにしょるいをだした？",
+          "en": "Did you hand the documents in to the section chief?"
+        },
+        {
+          "ja": "{課長|かちょう}は{毎朝|まいあさ}{誰|だれ}よりも{早|はや}く{会社|かいしゃ}に{来|き}ます。",
+          "kana": "かちょうはまいあさだれよりもはやくかいしゃにきます。",
+          "en": "The section chief gets to the office earlier than anyone every morning."
+        }
+      ],
+      "notes": "One rank below 部長 in a typical Japanese company.",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0274",
+      "word": "社会人",
+      "kana": "しゃかいじん",
+      "meanings": [
+        "working adult",
+        "member of society"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "people",
+        "work",
+        "society"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{社会人|しゃかいじん}になってから、{朝|あさ}{早|はや}く{起|お}きるようになった。",
+          "kana": "しゃかいじんになってから、あさはやくおきるようになった。",
+          "en": "Since becoming a working adult, I have started getting up early."
+        },
+        {
+          "ja": "{来年|らいねん}の{四月|しがつ}から{社会人|しゃかいじん}になります。",
+          "kana": "らいねんのしがつからしゃかいじんになります。",
+          "en": "I'll become a working adult starting next April."
+        }
+      ],
+      "notes": "Someone who has finished school and works; contrasts with 学生.",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0275",
+      "word": "給料",
+      "kana": "きゅうりょう",
+      "meanings": [
+        "salary",
+        "pay"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "money"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{給料|きゅうりょう}が{出|で}たら、{新|あたら}しい{靴|くつ}を{買|か}おう。",
+          "kana": "きゅうりょうがでたら、あたらしいくつをかおう。",
+          "en": "When I get paid, I'll buy new shoes."
+        },
+        {
+          "ja": "{今|いま}の{仕事|しごと}は{給料|きゅうりょう}は{安|やす}いですが、{楽|たの}しいです。",
+          "kana": "いまのしごとはきゅうりょうはやすいですが、たのしいです。",
+          "en": "The pay at my current job is low, but it's fun."
+        }
+      ],
+      "collocations": [
+        "給料が出る",
+        "給料日"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0276",
+      "word": "残業",
+      "kana": "ざんぎょう",
+      "meanings": [
+        "overtime work"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}も{残業|ざんぎょう}で、{帰|かえ}りが{遅|おそ}くなりそうだ。",
+          "kana": "きょうもざんぎょうで、かえりがおそくなりそうだ。",
+          "en": "I have overtime again today, so I'll probably be home late."
+        },
+        {
+          "ja": "{先月|せんげつ}は{残業|ざんぎょう}が{多|おお}くて、とても{疲|つか}れました。",
+          "kana": "せんげつはざんぎょうがおおくて、とてもつかれました。",
+          "en": "Last month there was a lot of overtime, and I got really tired."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0277",
+      "word": "出張",
+      "kana": "しゅっちょう",
+      "meanings": [
+        "business trip"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来週|らいしゅう}から{三日間|みっかかん}、{出張|しゅっちょう}です。",
+          "kana": "らいしゅうからみっかかん、しゅっちょうです。",
+          "en": "I'm on a business trip for three days starting next week."
+        },
+        {
+          "ja": "{父|ちち}は{出張|しゅっちょう}が{多|おお}くて、あまり{家|いえ}にいない。",
+          "kana": "ちちはしゅっちょうがおおくて、あまりいえにいない。",
+          "en": "My father goes on a lot of business trips, so he's rarely at home."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0278",
+      "word": "書類",
+      "kana": "しょるい",
+      "meanings": [
+        "documents",
+        "papers"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{書類|しょるい}に{名前|なまえ}を{書|か}いてください。",
+          "kana": "このしょるいになまえをかいてください。",
+          "en": "Please write your name on these documents."
+        },
+        {
+          "ja": "この{書類|しょるい}は{課長|かちょう}に{渡|わた}しておいてね。",
+          "kana": "このしょるいはかちょうにわたしておいてね。",
+          "en": "Hand these documents to the section chief for me, okay?"
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0279",
+      "word": "コピー",
+      "kana": "コピー",
+      "meanings": [
+        "copy",
+        "photocopy"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{書類|しょるい}、{十枚|じゅうまい}コピーしておいて。",
+          "kana": "このしょるい、じゅうまいコピーしておいて。",
+          "en": "Make ten copies of this document, would you?"
+        },
+        {
+          "ja": "コンビニでコピーが{一枚|いちまい}{十円|じゅうえん}でできます。",
+          "kana": "コンビニでコピーがいちまいじゅうえんでできます。",
+          "en": "You can make copies at the convenience store for ten yen a page."
+        }
+      ],
+      "collocations": [
+        "コピーを取る",
+        "コピー機"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0280",
+      "word": "受付",
+      "kana": "うけつけ",
+      "meanings": [
+        "reception desk",
+        "receptionist"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{受付|うけつけ}で{名前|なまえ}を{言|い}ってください。",
+          "kana": "うけつけでなまえをいってください。",
+          "en": "Please give your name at the reception desk."
+        },
+        {
+          "ja": "{受付|うけつけ}の{人|ひと}に{聞|き}いたら、すぐ{教|おし}えてくれたよ。",
+          "kana": "うけつけのひとにきいたら、すぐおしえてくれたよ。",
+          "en": "When I asked the person at reception, they told me right away."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0281",
+      "word": "会場",
+      "kana": "かいじょう",
+      "meanings": [
+        "venue",
+        "event hall"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "places",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{会場|かいじょう}は{駅|えき}から{歩|ある}いて{五分|ごふん}だよ。",
+          "kana": "かいじょうはえきからあるいてごふんだよ。",
+          "en": "The venue is a five-minute walk from the station."
+        },
+        {
+          "ja": "{会場|かいじょう}には{二百人|にひゃくにん}ぐらい{集|あつ}まりました。",
+          "kana": "かいじょうにはにひゃくにんぐらいあつまりました。",
+          "en": "About two hundred people gathered at the venue."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0282",
+      "word": "工場",
+      "kana": "こうじょう",
+      "meanings": [
+        "factory",
+        "plant"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅|えき}の{近|ちか}くに{大|おお}きな{工場|こうじょう}が{建|た}った。",
+          "kana": "えきのちかくにおおきなこうじょうがたった。",
+          "en": "A big factory was built near the station."
+        },
+        {
+          "ja": "{父|ちち}は{三十年間|さんじゅうねんかん}、{車|くるま}の{工場|こうじょう}で{働|はたら}いています。",
+          "kana": "ちちはさんじゅうねんかん、くるまのこうじょうではたらいています。",
+          "en": "My father has worked at a car factory for thirty years."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0283",
+      "word": "事務所",
+      "kana": "じむしょ",
+      "meanings": [
+        "office"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "places"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{事務所|じむしょ}は{二階|にかい}にあります。",
+          "kana": "じむしょはにかいにあります。",
+          "en": "The office is on the second floor."
+        },
+        {
+          "ja": "{事務所|じむしょ}の{鍵|かぎ}、{誰|だれ}が{持|も}ってる？",
+          "kana": "じむしょのかぎ、だれがもってる？",
+          "en": "Who has the key to the office?"
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0284",
+      "word": "名刺",
+      "kana": "めいし",
+      "meanings": [
+        "business card"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "business"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{初|はじ}めてのお{客|きゃく}さんに{名刺|めいし}を{渡|わた}した。",
+          "kana": "はじめてのおきゃくさんにめいしをわたした。",
+          "en": "I handed my business card to a first-time customer."
+        },
+        {
+          "ja": "すみません、{名刺|めいし}を{忘|わす}れてしまいました。",
+          "kana": "すみません、めいしをわすれてしまいました。",
+          "en": "I'm sorry, I've forgotten my business cards."
+        }
+      ],
+      "collocations": [
+        "名刺を渡す",
+        "名刺交換"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0285",
+      "word": "上司",
+      "kana": "じょうし",
+      "meanings": [
+        "boss",
+        "superior (at work)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{上司|じょうし}に{仕事|しごと}のことで{相談|そうだん}しました。",
+          "kana": "じょうしにしごとのことでそうだんしました。",
+          "en": "I talked to my boss about a work matter."
+        },
+        {
+          "ja": "{上司|じょうし}に{怒|おこ}られて、{今日|きょう}は{元気|げんき}がない。",
+          "kana": "じょうしにおこられて、きょうはげんきがない。",
+          "en": "My boss got angry at me, so I'm feeling down today."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0286",
+      "word": "同僚",
+      "kana": "どうりょう",
+      "meanings": [
+        "colleague",
+        "coworker"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{同僚|どうりょう}と{一緒|いっしょ}に{昼|ひる}ご{飯|はん}を{食|た}べた。",
+          "kana": "どうりょうといっしょにひるごはんをたべた。",
+          "en": "I had lunch with a coworker."
+        },
+        {
+          "ja": "{同僚|どうりょう}はみんな{優|やさ}しくて、{仕事|しごと}が{楽|たの}しいです。",
+          "kana": "どうりょうはみんなやさしくて、しごとがたのしいです。",
+          "en": "My coworkers are all kind, so work is enjoyable."
+        }
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0287",
+      "word": "相談",
+      "kana": "そうだん",
+      "meanings": [
+        "consultation",
+        "talking something over"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{困|こま}ったことがあったら、いつでも{相談|そうだん}してね。",
+          "kana": "こまったことがあったら、いつでもそうだんしてね。",
+          "en": "If you're ever in trouble, come talk to me anytime."
+        },
+        {
+          "ja": "{一人|ひとり}で{決|き}めないで、{誰|だれ}かに{相談|そうだん}した{方|ほう}がいいですよ。",
+          "kana": "ひとりできめないで、だれかにそうだんしたほうがいいですよ。",
+          "en": "You should talk it over with someone instead of deciding on your own."
+        }
+      ],
+      "collocations": [
+        "相談に乗る",
+        "先生に相談する"
+      ],
+      "station": 19
+    },
+    {
+      "id": "v-n4-0288",
+      "word": "挨拶",
+      "kana": "あいさつ",
+      "meanings": [
+        "greeting"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "greetings"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{朝|あさ}、{会|あ}った{人|ひと}には{必|かなら}ず{挨拶|あいさつ}をします。",
+          "kana": "あさ、あったひとにはかならずあいさつをします。",
+          "en": "In the morning I always greet the people I meet."
+        },
+        {
+          "ja": "{隣|となり}に{引|ひ}っ{越|こ}してきた{人|ひと}が{挨拶|あいさつ}に{来|き}た。",
+          "kana": "となりにひっこしてきたひとがあいさつにきた。",
+          "en": "The person who moved in next door came by to say hello."
+        }
+      ],
+      "altForms": [
+        "あいさつ"
+      ],
+      "notes": "Often written in kana. Also covers short formal speeches (結婚式の挨拶).",
+      "station": 19
+    },
+    {
+      "id": "v-n4-0289",
+      "word": "番号",
+      "kana": "ばんごう",
+      "meanings": [
+        "number (assigned)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "numbers",
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{番号|ばんごう}を{呼|よ}ばれるまで、ここで{待|ま}っていてください。",
+          "kana": "ばんごうをよばれるまで、ここでまっていてください。",
+          "en": "Please wait here until your number is called."
+        },
+        {
+          "ja": "{病院|びょういん}の{受付|うけつけ}で{番号|ばんごう}が{書|か}いてある{紙|かみ}をもらった。",
+          "kana": "びょういんのうけつけでばんごうがかいてあるかみをもらった。",
+          "en": "At the hospital reception desk I was given a slip with a number on it."
+        }
+      ],
+      "notes": "A label number (phone, seat, ticket), not a quantity; for counting use 数.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0290",
+      "word": "インターネット",
+      "kana": "インターネット",
+      "meanings": [
+        "internet"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 5,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{分|わ}からないことはインターネットで{調|しら}べる。",
+          "kana": "わからないことはインターネットでしらべる。",
+          "en": "When I don't know something, I look it up on the internet."
+        },
+        {
+          "ja": "{祖父|そふ}はインターネットを{使|つか}ったことがありません。",
+          "kana": "そふはインターネットをつかったことがありません。",
+          "en": "My grandfather has never used the internet."
+        }
+      ],
+      "altForms": [
+        "ネット"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0291",
+      "word": "コンピューター",
+      "kana": "コンピューター",
+      "meanings": [
+        "computer"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}のコンピューターが{急|きゅう}に{動|うご}かなくなった。",
+          "kana": "かいしゃのコンピューターがきゅうにうごかなくなった。",
+          "en": "The computer at work suddenly stopped working."
+        },
+        {
+          "ja": "{図書館|としょかん}のコンピューターは{誰|だれ}でも{使|つか}えます。",
+          "kana": "としょかんのコンピューターはだれでもつかえます。",
+          "en": "Anyone can use the computers at the library."
+        }
+      ],
+      "altForms": [
+        "コンピュータ"
+      ],
+      "notes": "In everyday speech a personal computer is usually パソコン.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0292",
+      "word": "タブレット",
+      "kana": "タブレット",
+      "meanings": [
+        "tablet (computer)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{父|ちち}はタブレットで{毎朝|まいあさ}{新聞|しんぶん}を{読|よ}む。",
+          "kana": "ちちはタブレットでまいあさしんぶんをよむ。",
+          "en": "My father reads the newspaper on a tablet every morning."
+        },
+        {
+          "ja": "{子供|こども}にタブレットを{買|か}ってあげようと{思|おも}っています。",
+          "kana": "こどもにタブレットをかってあげようとおもっています。",
+          "en": "I'm thinking of buying my child a tablet."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0293",
+      "word": "画面",
+      "kana": "がめん",
+      "meanings": [
+        "screen"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{画面|がめん}が{暗|くら}くて、よく{見|み}えません。",
+          "kana": "がめんがくらくて、よくみえません。",
+          "en": "The screen is dark and I can't see it well."
+        },
+        {
+          "ja": "{画面|がめん}を{見|み}すぎて、{目|め}が{疲|つか}れた。",
+          "kana": "がめんをみすぎて、めがつかれた。",
+          "en": "I looked at the screen too much and my eyes got tired."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0294",
+      "word": "電気",
+      "kana": "でんき",
+      "meanings": [
+        "electricity",
+        "electric light"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "objects"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{出|で}かける{前|まえ}に{電気|でんき}を{消|け}してね。",
+          "kana": "でかけるまえにでんきをけしてね。",
+          "en": "Turn off the lights before you go out, okay?"
+        },
+        {
+          "ja": "{部屋|へや}が{暗|くら}いので、{電気|でんき}をつけてもいいですか。",
+          "kana": "へやがくらいので、でんきをつけてもいいですか。",
+          "en": "The room is dark, so may I turn on the light?"
+        }
+      ],
+      "collocations": [
+        "電気をつける",
+        "電気を消す",
+        "電気代"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0295",
+      "word": "機械",
+      "kana": "きかい",
+      "meanings": [
+        "machine"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{古|ふる}い{機械|きかい}だけど、まだちゃんと{動|うご}く。",
+          "kana": "ふるいきかいだけど、まだちゃんとうごく。",
+          "en": "It's an old machine, but it still works fine."
+        },
+        {
+          "ja": "{新|あたら}しい{機械|きかい}が{来|き}てから、{仕事|しごと}が{早|はや}くなりました。",
+          "kana": "あたらしいきかいがきてから、しごとがはやくなりました。",
+          "en": "Since the new machine arrived, the work has gotten faster."
+        }
+      ],
+      "notes": "Homophone of 機会 (opportunity); context and kanji tell them apart.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0296",
+      "word": "技術",
+      "kana": "ぎじゅつ",
+      "meanings": [
+        "technology",
+        "technique",
+        "skill"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "work"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本|にほん}の{技術|ぎじゅつ}は{世界|せかい}でも{有名|ゆうめい}だ。",
+          "kana": "にほんのぎじゅつはせかいでもゆうめいだ。",
+          "en": "Japanese technology is famous even around the world."
+        },
+        {
+          "ja": "{料理|りょうり}の{技術|ぎじゅつ}を{上|あ}げるために、{毎日|まいにち}{練習|れんしゅう}しています。",
+          "kana": "りょうりのぎじゅつをあげるために、まいにちれんしゅうしています。",
+          "en": "I practice every day to improve my cooking skills."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0297",
+      "word": "専門",
+      "kana": "せんもん",
+      "meanings": [
+        "specialty",
+        "major (field of study)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大学|だいがく}での{専門|せんもん}は{何|なん}でしたか。",
+          "kana": "だいがくでのせんもんはなんでしたか。",
+          "en": "What was your major at university?"
+        },
+        {
+          "ja": "{姉|あね}の{専門|せんもん}は{日本|にほん}の{歴史|れきし}だ。",
+          "kana": "あねのせんもんはにほんのれきしだ。",
+          "en": "My older sister's specialty is Japanese history."
+        }
+      ],
+      "collocations": [
+        "専門家",
+        "専門学校"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0298",
+      "word": "研究",
+      "kana": "けんきゅう",
+      "meanings": [
+        "research",
+        "study"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "science"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{兄|あに}は{大学|だいがく}で{魚|さかな}の{研究|けんきゅう}をしている。",
+          "kana": "あにはだいがくでさかなのけんきゅうをしている。",
+          "en": "My older brother does research on fish at university."
+        },
+        {
+          "ja": "{大学|だいがく}で{言葉|ことば}の{研究|けんきゅう}をしたいと{思|おも}っています。",
+          "kana": "だいがくでことばのけんきゅうをしたいとおもっています。",
+          "en": "I'm hoping to do research on language at university."
+        }
+      ],
+      "collocations": [
+        "研究室",
+        "研究者"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0299",
+      "word": "発表",
+      "kana": "はっぴょう",
+      "meanings": [
+        "presentation",
+        "announcement"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}、{授業|じゅぎょう}で{発表|はっぴょう}しなければなりません。",
+          "kana": "あした、じゅぎょうではっぴょうしなければなりません。",
+          "en": "I have to give a presentation in class tomorrow."
+        },
+        {
+          "ja": "{昨日|きのう}の{発表|はっぴょう}は{上手|じょうず}にできたと{思|おも}う。",
+          "kana": "きのうのはっぴょうはじょうずにできたとおもう。",
+          "en": "I think I did a good job on yesterday's presentation."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0300",
+      "word": "教育",
+      "kana": "きょういく",
+      "meanings": [
+        "education"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{子供|こども}の{教育|きょういく}にはお{金|かね}がかかる。",
+          "kana": "こどものきょういくにはおかねがかかる。",
+          "en": "Children's education costs money."
+        },
+        {
+          "ja": "{母|はは}は{長|なが}い{間|あいだ}、{教育|きょういく}の{仕事|しごと}をしていました。",
+          "kana": "はははながいあいだ、きょういくのしごとをしていました。",
+          "en": "My mother worked in education for a long time."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0301",
+      "word": "文法",
+      "kana": "ぶんぽう",
+      "meanings": [
+        "grammar"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本語|にほんご}の{文法|ぶんぽう}は{難|むずか}しいけど、{面白|おもしろ}い。",
+          "kana": "にほんごのぶんぽうはむずかしいけど、おもしろい。",
+          "en": "Japanese grammar is hard, but it's interesting."
+        },
+        {
+          "ja": "{今日|きょう}のクラスで{新|あたら}しい{文法|ぶんぽう}を{三|みっ}つ{習|なら}いました。",
+          "kana": "きょうのクラスであたらしいぶんぽうをみっつならいました。",
+          "en": "In today's class we learned three new grammar points."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0302",
+      "word": "発音",
+      "kana": "はつおん",
+      "meanings": [
+        "pronunciation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}に{発音|はつおん}を{直|なお}してもらった。",
+          "kana": "せんせいにはつおんをなおしてもらった。",
+          "en": "I had my teacher correct my pronunciation."
+        },
+        {
+          "ja": "{日本語|にほんご}の{発音|はつおん}は{英語|えいご}より{簡単|かんたん}だと{思|おも}います。",
+          "kana": "にほんごのはつおんはえいごよりかんたんだとおもいます。",
+          "en": "I think Japanese pronunciation is easier than English."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0303",
+      "word": "単語",
+      "kana": "たんご",
+      "meanings": [
+        "word",
+        "vocabulary item"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}{新|あたら}しい{単語|たんご}を{十個|じゅっこ}{覚|おぼ}えています。",
+          "kana": "まいにちあたらしいたんごをじゅっこおぼえています。",
+          "en": "I memorize ten new words every day."
+        },
+        {
+          "ja": "この{単語|たんご}の{意味|いみ}、{知|し}ってる？",
+          "kana": "このたんごのいみ、しってる？",
+          "en": "Do you know what this word means?"
+        }
+      ],
+      "collocations": [
+        "単語を覚える",
+        "単語帳"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0304",
+      "word": "電子辞書",
+      "kana": "でんしじしょ",
+      "meanings": [
+        "electronic dictionary"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "technology",
+        "objects"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{授業|じゅぎょう}で{電子辞書|でんしじしょ}を{使|つか}ってもいいですか。",
+          "kana": "じゅぎょうででんしじしょをつかってもいいですか。",
+          "en": "May I use an electronic dictionary in class?"
+        },
+        {
+          "ja": "{電子辞書|でんしじしょ}より、スマホで{調|しら}べる{方|ほう}が{速|はや}い。",
+          "kana": "でんしじしょより、スマホでしらべるほうがはやい。",
+          "en": "Looking things up on my phone is faster than using an electronic dictionary."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0305",
+      "word": "通じる",
+      "kana": "つうじる",
+      "meanings": [
+        "to be understood",
+        "to get through (phone)"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "examples": [
+        {
+          "ja": "{私|わたし}の{英語|えいご}は{外国|がいこく}でちゃんと{通|つう}じた。",
+          "kana": "わたしのえいごはがいこくでちゃんとつうじた。",
+          "en": "My English was understood just fine abroad."
+        },
+        {
+          "ja": "{田中|たなか}さんの{携帯|けいたい}に{電話|でんわ}しましたが、{通|つう}じませんでした。",
+          "kana": "たなかさんのけいたいにでんわしましたが、つうじませんでした。",
+          "en": "I called Tanaka-san's cell phone, but I couldn't get through."
+        }
+      ],
+      "notes": "話が通じる = get your point across; 電話が通じる = the call goes through.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0306",
+      "word": "教わる",
+      "kana": "おそわる",
+      "meanings": [
+        "to be taught",
+        "to learn (from someone)"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんに{日本|にほん}の{歌|うた}を{教|おそ}わりました。",
+          "kana": "たなかさんににほんのうたをおそわりました。",
+          "en": "I learned a Japanese song from Tanaka-san."
+        },
+        {
+          "ja": "{子供|こども}の{時|とき}、{父|ちち}にピアノを{教|おそ}わっていた。",
+          "kana": "こどものとき、ちちにピアノをおそわっていた。",
+          "en": "When I was a child, my father taught me piano."
+        }
+      ],
+      "notes": "The learner-side partner of 教える: 先生に教わる = be taught by the teacher.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0307",
+      "word": "翻訳",
+      "kana": "ほんやく",
+      "meanings": [
+        "translation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{手紙|てがみ}を{英語|えいご}に{翻訳|ほんやく}してもらえますか。",
+          "kana": "このてがみをえいごにほんやくしてもらえますか。",
+          "en": "Could you translate this letter into English?"
+        },
+        {
+          "ja": "この{本|ほん}は{二十|にじゅう}の{言葉|ことば}に{翻訳|ほんやく}されている。",
+          "kana": "このほんはにじゅうのことばにほんやくされている。",
+          "en": "This book has been translated into twenty languages."
+        }
+      ],
+      "notes": "Written translation; spoken interpreting is 通訳.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0308",
+      "word": "通訳",
+      "kana": "つうやく",
+      "meanings": [
+        "interpreting",
+        "interpreter"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "work"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{友達|ともだち}は{会社|かいしゃ}で{通訳|つうやく}の{仕事|しごと}をしている。",
+          "kana": "ともだちはかいしゃでつうやくのしごとをしている。",
+          "en": "My friend works as an interpreter at a company."
+        },
+        {
+          "ja": "{明日|あした}の{会議|かいぎ}で{通訳|つうやく}をすることになりました。",
+          "kana": "あしたのかいぎでつうやくをすることになりました。",
+          "en": "It's been decided that I will interpret at tomorrow's meeting."
+        }
+      ],
+      "notes": "Spoken interpreting (and the person who does it); written translation is 翻訳.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0309",
+      "word": "文学",
+      "kana": "ぶんがく",
+      "meanings": [
+        "literature"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "arts"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大学|だいがく}で{日本|にほん}の{文学|ぶんがく}を{勉強|べんきょう}しています。",
+          "kana": "だいがくでにほんのぶんがくをべんきょうしています。",
+          "en": "I'm studying Japanese literature at university."
+        },
+        {
+          "ja": "{古|ふる}い{文学|ぶんがく}は{言葉|ことば}が{難|むずか}しくて、なかなか{読|よ}めない。",
+          "kana": "ふるいぶんがくはことばがむずかしくて、なかなかよめない。",
+          "en": "The language in old literature is difficult, so I can hardly read it."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0310",
+      "word": "数学",
+      "kana": "すうがく",
+      "meanings": [
+        "mathematics"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "science"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{数学|すうがく}の{宿題|しゅくだい}が{多|おお}すぎる。",
+          "kana": "すうがくのしゅくだいがおおすぎる。",
+          "en": "There's way too much math homework."
+        },
+        {
+          "ja": "{高校|こうこう}の{時|とき}、{数学|すうがく}が{一番|いちばん}{苦手|にがて}でした。",
+          "kana": "こうこうのとき、すうがくがいちばんにがてでした。",
+          "en": "In high school, math was my weakest subject."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0311",
+      "word": "科学",
+      "kana": "かがく",
+      "meanings": [
+        "science"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "science",
+        "study"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{子供|こども}のころから{科学|かがく}が{好|す}きでした。",
+          "kana": "こどものころからかがくがすきでした。",
+          "en": "I've liked science since I was a child."
+        },
+        {
+          "ja": "{弟|おとうと}は{科学|かがく}の{本|ほん}が{大好|だいす}きで、{毎日|まいにち}{読|よ}んでいる。",
+          "kana": "おとうとはかがくのほんがだいすきで、まいにちよんでいる。",
+          "en": "My younger brother loves science books and reads them every day."
+        }
+      ],
+      "notes": "Homophone of 化学 (chemistry); speakers say ばけがく for 化学 to avoid confusion.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0312",
+      "word": "地理",
+      "kana": "ちり",
+      "meanings": [
+        "geography"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{地理|ちり}の{授業|じゅぎょう}で{日本|にほん}の{川|かわ}について{習|なら}った。",
+          "kana": "ちりのじゅぎょうでにほんのかわについてならった。",
+          "en": "We learned about Japan's rivers in geography class."
+        },
+        {
+          "ja": "{地理|ちり}が{得意|とくい}なので、{地図|ちず}を{見|み}るのが{好|す}きです。",
+          "kana": "ちりがとくいなので、ちずをみるのがすきです。",
+          "en": "I'm good at geography, so I like looking at maps."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0313",
+      "word": "成績",
+      "kana": "せいせき",
+      "meanings": [
+        "grades",
+        "results"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{試験|しけん}の{成績|せいせき}が{悪|わる}くて、{母|はは}に{怒|おこ}られた。",
+          "kana": "しけんのせいせきがわるくて、ははにおこられた。",
+          "en": "My exam grades were bad, and my mother got angry at me."
+        },
+        {
+          "ja": "{今年|ことし}は{去年|きょねん}より{成績|せいせき}が{上|あ}がりました。",
+          "kana": "ことしはきょねんよりせいせきがあがりました。",
+          "en": "My grades went up this year compared with last year."
+        }
+      ],
+      "collocations": [
+        "成績がいい",
+        "成績が上がる"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0314",
+      "word": "予習",
+      "kana": "よしゅう",
+      "meanings": [
+        "preparing for a lesson in advance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}の{授業|じゅぎょう}の{予習|よしゅう}をしておきます。",
+          "kana": "あしたのじゅぎょうのよしゅうをしておきます。",
+          "en": "I'll prepare for tomorrow's class in advance."
+        },
+        {
+          "ja": "{予習|よしゅう}をしないで{学校|がっこう}に{行|い}ったら、{全然|ぜんぜん}{分|わ}からなかった。",
+          "kana": "よしゅうをしないでがっこうにいったら、ぜんぜんわからなかった。",
+          "en": "When I went to school without preparing, I didn't understand a thing."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0315",
+      "word": "復習",
+      "kana": "ふくしゅう",
+      "meanings": [
+        "review (of what was learned)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{家|いえ}に{帰|かえ}ったら、すぐ{復習|ふくしゅう}するようにしている。",
+          "kana": "いえにかえったら、すぐふくしゅうするようにしている。",
+          "en": "I make a point of reviewing as soon as I get home."
+        },
+        {
+          "ja": "{試験|しけん}の{前|まえ}に、{習|なら}った{文法|ぶんぽう}を{全部|ぜんぶ}{復習|ふくしゅう}しました。",
+          "kana": "しけんのまえに、ならったぶんぽうをぜんぶふくしゅうしました。",
+          "en": "Before the exam, I reviewed all the grammar we had learned."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0316",
+      "word": "留学",
+      "kana": "りゅうがく",
+      "meanings": [
+        "studying abroad"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{日本|にほん}に{留学|りゅうがく}するつもりです。",
+          "kana": "らいねん、にほんにりゅうがくするつもりです。",
+          "en": "I plan to study abroad in Japan next year."
+        },
+        {
+          "ja": "{姉|あね}は{二年間|にねんかん}{外国|がいこく}に{留学|りゅうがく}していた。",
+          "kana": "あねはにねんかんがいこくにりゅうがくしていた。",
+          "en": "My older sister studied abroad for two years."
+        }
+      ],
+      "collocations": [
+        "留学生",
+        "留学する"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0317",
+      "word": "大学院",
+      "kana": "だいがくいん",
+      "meanings": [
+        "graduate school"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "pitch": 4,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{卒業|そつぎょう}したら、{大学院|だいがくいん}に{行|い}きたい。",
+          "kana": "そつぎょうしたら、だいがくいんにいきたい。",
+          "en": "After graduating, I want to go to graduate school."
+        },
+        {
+          "ja": "{大学院|だいがくいん}で{何|なに}を{研究|けんきゅう}していますか。",
+          "kana": "だいがくいんでなにをけんきゅうしていますか。",
+          "en": "What are you researching in graduate school?"
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0318",
+      "word": "講義",
+      "kana": "こうぎ",
+      "meanings": [
+        "lecture"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "study"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今日|きょう}の{講義|こうぎ}は{長|なが}くて、{眠|ねむ}くなった。",
+          "kana": "きょうのこうぎはながくて、ねむくなった。",
+          "en": "Today's lecture was long, and I got sleepy."
+        },
+        {
+          "ja": "{月曜日|げつようび}の{朝|あさ}は{経済|けいざい}の{講義|こうぎ}があります。",
+          "kana": "げつようびのあさはけいざいのこうぎがあります。",
+          "en": "On Monday mornings I have an economics lecture."
+        }
+      ],
+      "notes": "University-level lecture; a school lesson is 授業.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0319",
+      "word": "小学校",
+      "kana": "しょうがっこう",
+      "meanings": [
+        "elementary school"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{来年|らいねん}から{小学校|しょうがっこう}に{通|かよ}います。",
+          "kana": "むすめはらいねんからしょうがっこうにかよいます。",
+          "en": "My daughter will start going to elementary school next year."
+        },
+        {
+          "ja": "{小学校|しょうがっこう}の{時|とき}の{先生|せんせい}に{駅|えき}で{会|あ}った。",
+          "kana": "しょうがっこうのときのせんせいにえきであった。",
+          "en": "I ran into my elementary school teacher at the station."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0320",
+      "word": "中学校",
+      "kana": "ちゅうがっこう",
+      "meanings": [
+        "junior high school"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{中学校|ちゅうがっこう}のとき、{英語|えいご}が{一番|いちばん}{好|す}きだった。",
+          "kana": "ちゅうがっこうのとき、えいごがいちばんすきだった。",
+          "en": "In junior high, English was my favorite subject."
+        },
+        {
+          "ja": "{家|いえ}の{近|ちか}くに{新|あたら}しい{中学校|ちゅうがっこう}ができました。",
+          "kana": "いえのちかくにあたらしいちゅうがっこうができました。",
+          "en": "A new junior high school was built near my house."
+        }
+      ],
+      "altForms": [
+        "中学"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0321",
+      "word": "高校",
+      "kana": "こうこう",
+      "meanings": [
+        "high school"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{高校|こうこう}の{友達|ともだち}と{久|ひさ}しぶりに{会|あ}った。",
+          "kana": "こうこうのともだちとひさしぶりにあった。",
+          "en": "I met up with a friend from high school for the first time in a while."
+        },
+        {
+          "ja": "{息子|むすこ}は{来年|らいねん}{高校|こうこう}を{卒業|そつぎょう}します。",
+          "kana": "むすこはらいねんこうこうをそつぎょうします。",
+          "en": "My son graduates from high school next year."
+        }
+      ],
+      "altForms": [
+        "高等学校"
+      ],
+      "notes": "Short for 高等学校; the short form is the everyday word.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0322",
+      "word": "高校生",
+      "kana": "こうこうせい",
+      "meanings": [
+        "high school student"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{高校生|こうこうせい}のとき、{毎日|まいにち}サッカーをしていました。",
+          "kana": "こうこうせいのとき、まいにちサッカーをしていました。",
+          "en": "When I was in high school, I played soccer every day."
+        },
+        {
+          "ja": "{電車|でんしゃ}の{中|なか}で{高校生|こうこうせい}が{大|おお}きな{声|こえ}で{話|はな}していた。",
+          "kana": "でんしゃのなかでこうこうせいがおおきなこえではなしていた。",
+          "en": "Some high school students were talking loudly on the train."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0323",
+      "word": "大学生",
+      "kana": "だいがくせい",
+      "meanings": [
+        "university student"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "people"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大学生|だいがくせい}になったら、{一人|ひとり}で{住|す}みたい。",
+          "kana": "だいがくせいになったら、ひとりですみたい。",
+          "en": "Once I'm a university student, I want to live on my own."
+        },
+        {
+          "ja": "{大学生|だいがくせい}の{時|とき}、{毎晩|まいばん}アルバイトをしていました。",
+          "kana": "だいがくせいのとき、まいばんアルバイトをしていました。",
+          "en": "When I was a university student, I worked part-time every night."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0324",
+      "word": "生徒",
+      "kana": "せいと",
+      "meanings": [
+        "student (up to high school)",
+        "pupil"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{学校|がっこう}には{生徒|せいと}が{五百人|ごひゃくにん}います。",
+          "kana": "このがっこうにはせいとがごひゃくにんいます。",
+          "en": "This school has five hundred students."
+        },
+        {
+          "ja": "{先生|せんせい}は{生徒|せいと}の{名前|なまえ}を{全部|ぜんぶ}{覚|おぼ}えている。",
+          "kana": "せんせいはせいとのなまえをぜんぶおぼえている。",
+          "en": "The teacher remembers all the students' names."
+        }
+      ],
+      "notes": "Schoolchildren through high school; university students are 学生.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0325",
+      "word": "テキスト",
+      "kana": "テキスト",
+      "meanings": [
+        "textbook",
+        "text"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "テキストの{二十|にじゅう}ページを{見|み}てください。",
+          "kana": "テキストのにじゅうページをみてください。",
+          "en": "Please look at page twenty of the textbook."
+        },
+        {
+          "ja": "このテキストは{例文|れいぶん}が{多|おお}くて{分|わ}かりやすい。",
+          "kana": "このテキストはれいぶんがおおくてわかりやすい。",
+          "en": "This textbook has lots of example sentences and is easy to understand."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0326",
+      "word": "レポート",
+      "kana": "レポート",
+      "meanings": [
+        "report",
+        "paper (assignment)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "work",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{金曜日|きんようび}までにレポートを{出|だ}さなきゃ。",
+          "kana": "きんようびまでにレポートをださなきゃ。",
+          "en": "I have to turn in my paper by Friday."
+        },
+        {
+          "ja": "{先週|せんしゅう}{出|だ}したレポートが{先生|せんせい}に{褒|ほ}められました。",
+          "kana": "せんしゅうだしたレポートがせんせいにほめられました。",
+          "en": "The paper I handed in last week was praised by the teacher."
+        }
+      ],
+      "collocations": [
+        "レポートを書く",
+        "レポートを出す"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0327",
+      "word": "日記",
+      "kana": "にっき",
+      "meanings": [
+        "diary",
+        "journal"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "hobbies"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{日本語|にほんご}で{日記|にっき}を{書|か}くようにしています。",
+          "kana": "にほんごでにっきをかくようにしています。",
+          "en": "I make a point of writing my diary in Japanese."
+        },
+        {
+          "ja": "{昨日|きのう}は{疲|つか}れていて、{日記|にっき}を{書|か}かずに{寝|ね}てしまった。",
+          "kana": "きのうはつかれていて、にっきをかかずにねてしまった。",
+          "en": "I was tired yesterday and fell asleep without writing my diary."
+        }
+      ],
+      "collocations": [
+        "日記をつける"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0328",
+      "word": "作文",
+      "kana": "さくぶん",
+      "meanings": [
+        "composition",
+        "essay"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "「{私|わたし}の{町|まち}」について{作文|さくぶん}を{書|か}いた。",
+          "kana": "「わたしのまち」についてさくぶんをかいた。",
+          "en": "I wrote an essay about my town."
+        },
+        {
+          "ja": "{作文|さくぶん}の{宿題|しゅくだい}は{金曜日|きんようび}までに{出|だ}してください。",
+          "kana": "さくぶんのしゅくだいはきんようびまでにだしてください。",
+          "en": "Please hand in the essay homework by Friday."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0329",
+      "word": "点",
+      "kana": "てん",
+      "meanings": [
+        "point",
+        "score",
+        "dot"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{試験|しけん}で{百点|ひゃくてん}を{取|と}ったことがある？",
+          "kana": "しけんでひゃくてんをとったことがある？",
+          "en": "Have you ever gotten a perfect score on a test?"
+        },
+        {
+          "ja": "{昨日|きのう}の{英語|えいご}のテストは{八十点|はちじゅってん}でした。",
+          "kana": "きのうのえいごのテストははちじゅってんでした。",
+          "en": "I got eighty points on yesterday's English test."
+        }
+      ],
+      "notes": "Also a counter for scores and items (八十点, 三点). 百点 = full marks.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0330",
+      "word": "消しゴム",
+      "kana": "けしゴム",
+      "meanings": [
+        "eraser"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "objects"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{消|け}しゴムを{忘|わす}れたから、{貸|か}してくれない？",
+          "kana": "けしゴムをわすれたから、かしてくれない？",
+          "en": "I forgot my eraser, so could you lend me yours?"
+        },
+        {
+          "ja": "{鉛筆|えんぴつ}と{消|け}しゴムを{持|も}ってきてください。",
+          "kana": "えんぴつとけしゴムをもってきてください。",
+          "en": "Please bring a pencil and an eraser."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0331",
+      "word": "正解",
+      "kana": "せいかい",
+      "meanings": [
+        "correct answer"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{全部|ぜんぶ}{正解|せいかい}だったから、{先生|せんせい}に{褒|ほ}められた。",
+          "kana": "ぜんぶせいかいだったから、せんせいにほめられた。",
+          "en": "I got everything right, so the teacher praised me."
+        },
+        {
+          "ja": "この{質問|しつもん}の{正解|せいかい}は{一|ひと}つだけではありません。",
+          "kana": "このしつもんのせいかいはひとつだけではありません。",
+          "en": "There is more than one correct answer to this question."
+        }
+      ],
+      "notes": "Opposite 不正解. Also used for a right decision (正解だった = that was the right call).",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0332",
+      "word": "国語",
+      "kana": "こくご",
+      "meanings": [
+        "(school subject) Japanese",
+        "national language"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{国語|こくご}のテストで{漢字|かんじ}を{間違|まちが}えた。",
+          "kana": "こくごのテストでかんじをまちがえた。",
+          "en": "I got some kanji wrong on the Japanese test."
+        },
+        {
+          "ja": "{娘|むすめ}は{国語|こくご}が{得意|とくい}で、{本|ほん}をよく{読|よ}みます。",
+          "kana": "むすめはこくごがとくいで、ほんをよくよみます。",
+          "en": "My daughter is good at Japanese and reads a lot of books."
+        }
+      ],
+      "notes": "In Japanese schools 国語 is the Japanese-language class; learners’ courses are 日本語.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0333",
+      "word": "例文",
+      "kana": "れいぶん",
+      "meanings": [
+        "example sentence"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{単語|たんご}は{例文|れいぶん}と{一緒|いっしょ}に{覚|おぼ}えています。",
+          "kana": "あたらしいたんごはれいぶんといっしょにおぼえています。",
+          "en": "I memorize new words together with example sentences."
+        },
+        {
+          "ja": "この{文法|ぶんぽう}の{例文|れいぶん}をもう{一|ひと}つ{作|つく}ってみて。",
+          "kana": "このぶんぽうのれいぶんをもうひとつつくってみて。",
+          "en": "Try making one more example sentence with this grammar."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0334",
+      "word": "努力",
+      "kana": "どりょく",
+      "meanings": [
+        "effort"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "abstract",
+        "study",
+        "work"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎日|まいにち}の{努力|どりょく}が{大切|たいせつ}だと{先生|せんせい}は{言|い}った。",
+          "kana": "まいにちのどりょくがたいせつだとせんせいはいった。",
+          "en": "The teacher said that daily effort is what matters."
+        },
+        {
+          "ja": "{努力|どりょく}すれば、{日本語|にほんご}はきっと{上手|じょうず}になりますよ。",
+          "kana": "どりょくすれば、にほんごはきっとじょうずになりますよ。",
+          "en": "If you make the effort, your Japanese will surely get better."
+        }
+      ],
+      "collocations": [
+        "努力する",
+        "努力が実る"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0335",
+      "word": "計画",
+      "kana": "けいかく",
+      "meanings": [
+        "plan",
+        "project"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{夏休|なつやす}みの{計画|けいかく}はもう{立|た}てましたか。",
+          "kana": "なつやすみのけいかくはもうたてましたか。",
+          "en": "Have you made plans for summer vacation yet?"
+        },
+        {
+          "ja": "{何|なに}も{計画|けいかく}しないで{旅行|りょこう}に{行|い}ったら、{大変|たいへん}だった。",
+          "kana": "なにもけいかくしないでりょこうにいったら、たいへんだった。",
+          "en": "I went traveling without planning anything, and it was a real hassle."
+        }
+      ],
+      "collocations": [
+        "計画を立てる",
+        "計画通り"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0336",
+      "word": "出席",
+      "kana": "しゅっせき",
+      "meanings": [
+        "attendance"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{明日|あした}の{会議|かいぎ}に{出席|しゅっせき}できますか。",
+          "kana": "あしたのかいぎにしゅっせきできますか。",
+          "en": "Can you attend tomorrow’s meeting?"
+        },
+        {
+          "ja": "{来週|らいしゅう}のパーティー、{出席|しゅっせき}する？",
+          "kana": "らいしゅうのパーティー、しゅっせきする？",
+          "en": "Are you going to next week's party?"
+        }
+      ],
+      "confusables": [
+        "v-n4-0337"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0337",
+      "word": "欠席",
+      "kana": "けっせき",
+      "meanings": [
+        "absence (from class or an event)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "school"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{風邪|かぜ}で{今日|きょう}の{授業|じゅぎょう}を{欠席|けっせき}した。",
+          "kana": "かぜできょうのじゅぎょうをけっせきした。",
+          "en": "I missed today’s class because of a cold."
+        },
+        {
+          "ja": "{欠席|けっせき}する{時|とき}は、{前|まえ}の{日|ひ}までに{先生|せんせい}に{言|い}ってください。",
+          "kana": "けっせきするときは、まえのひまでにせんせいにいってください。",
+          "en": "If you are going to be absent, please tell the teacher by the day before."
+        }
+      ],
+      "confusables": [
+        "v-n4-0336"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0338",
+      "word": "休暇",
+      "kana": "きゅうか",
+      "meanings": [
+        "vacation",
+        "leave (from work)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}、{一週間|いっしゅうかん}の{休暇|きゅうか}を{取|と}るつもりです。",
+          "kana": "らいげつ、いっしゅうかんのきゅうかをとるつもりです。",
+          "en": "I am planning to take a week of leave next month."
+        },
+        {
+          "ja": "{夏|なつ}の{休暇|きゅうか}は{家族|かぞく}と{海|うみ}に{行|い}くつもり。",
+          "kana": "なつのきゅうかはかぞくとうみにいくつもり。",
+          "en": "For my summer vacation I plan to go to the beach with my family."
+        }
+      ],
+      "collocations": [
+        "休暇を取る",
+        "有給休暇"
+      ],
+      "notes": "Workplace word; in everyday talk people just say 休み.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0339",
+      "word": "昼休み",
+      "kana": "ひるやすみ",
+      "meanings": [
+        "lunch break"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "time"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昼休|ひるやす}みに{近|ちか}くの{公園|こうえん}を{散歩|さんぽ}する。",
+          "kana": "ひるやすみにちかくのこうえんをさんぽする。",
+          "en": "During my lunch break I take a walk in a nearby park."
+        },
+        {
+          "ja": "{昼休|ひるやす}みは{十二時|じゅうにじ}から{一時|いちじ}までです。",
+          "kana": "ひるやすみはじゅうにじからいちじまでです。",
+          "en": "Lunch break is from twelve to one."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0340",
+      "word": "打ち合わせ",
+      "kana": "うちあわせ",
+      "meanings": [
+        "meeting (to arrange details)",
+        "briefing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "business",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{午後|ごご}{三時|さんじ}から{打|う}ち{合|あ}わせがあるから、{忘|わす}れないでね。",
+          "kana": "ごごさんじからうちあわせがあるから、わすれないでね。",
+          "en": "We have a meeting at three this afternoon, so don’t forget."
+        },
+        {
+          "ja": "{昨日|きのう}の{打|う}ち{合|あ}わせで{新|あたら}しい{計画|けいかく}が{決|き}まりました。",
+          "kana": "きのうのうちあわせであたらしいけいかくがきまりました。",
+          "en": "A new plan was decided on at yesterday's meeting."
+        }
+      ],
+      "notes": "Smaller and more practical than a 会議; often between two teams or with a client.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0341",
+      "word": "会員",
+      "kana": "かいいん",
+      "meanings": [
+        "member (of a club or service)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "business",
+        "people"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{会員|かいいん}になると、{安|やす}く{買|か}えますよ。",
+          "kana": "かいいんになると、やすくかえますよ。",
+          "en": "If you become a member, you can buy things cheaper."
+        },
+        {
+          "ja": "{図書館|としょかん}の{会員|かいいん}になれば、{本|ほん}を{十冊|じゅっさつ}まで{借|か}りられる。",
+          "kana": "としょかんのかいいんになれば、ほんをじゅっさつまでかりられる。",
+          "en": "If you become a library member, you can borrow up to ten books."
+        }
+      ],
+      "collocations": [
+        "会員証",
+        "会員になる"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0342",
+      "word": "時給",
+      "kana": "じきゅう",
+      "meanings": [
+        "hourly wage"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "money",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}の{店|みせ}はアルバイトの{時給|じきゅう}が{高|たか}いそうです。",
+          "kana": "えきまえのみせはアルバイトのじきゅうがたかいそうです。",
+          "en": "I hear the shop in front of the station pays part-timers a high hourly wage."
+        },
+        {
+          "ja": "{時給|じきゅう}が{百円|ひゃくえん}{上|あ}がって、うれしい。",
+          "kana": "じきゅうがひゃくえんあがって、うれしい。",
+          "en": "My hourly wage went up by a hundred yen, and I'm happy."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0343",
+      "word": "用意",
+      "kana": "ようい",
+      "meanings": [
+        "preparation",
+        "getting ready"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "actions",
+        "work"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{出|で}かける{用意|ようい}ができたら、{呼|よ}んでください。",
+          "kana": "でかけるよういができたら、よんでください。",
+          "en": "When you’re ready to leave, call me."
+        },
+        {
+          "ja": "{明日|あした}の{旅行|りょこう}の{用意|ようい}はもうできた？",
+          "kana": "あしたのりょこうのよういはもうできた？",
+          "en": "Are you all ready for tomorrow's trip?"
+        }
+      ],
+      "notes": "Close to 準備; 用意 leans toward getting things ready on the spot, 準備 toward planning ahead.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0344",
+      "word": "手伝う",
+      "kana": "てつだう",
+      "meanings": [
+        "to help (with a task)"
+      ],
+      "pos": "v5",
+      "jlpt": 4,
+      "tags": [
+        "actions",
+        "work"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しを{手伝|てつだ}ってくれてありがとう。",
+          "kana": "ひっこしをてつだってくれてありがとう。",
+          "en": "Thanks for helping me move."
+        },
+        {
+          "ja": "{母|はは}は{毎日|まいにち}、{祖母|そぼ}の{買|か}い{物|もの}を{手伝|てつだ}っています。",
+          "kana": "はははまいにち、そぼのかいものをてつだっています。",
+          "en": "My mother helps my grandmother with her shopping every day."
+        }
+      ],
+      "notes": "Takes を for the task (仕事を手伝う). Rescuing someone is 助ける.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0345",
+      "word": "休日",
+      "kana": "きゅうじつ",
+      "meanings": [
+        "day off",
+        "holiday"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "time",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{休日|きゅうじつ}は{家|いえ}でゆっくり{休|やす}みたい。",
+          "kana": "きゅうじつはいえでゆっくりやすみたい。",
+          "en": "On my days off I want to relax at home."
+        },
+        {
+          "ja": "この{病院|びょういん}は{休日|きゅうじつ}も{開|あ}いています。",
+          "kana": "このびょういんはきゅうじつもあいています。",
+          "en": "This hospital is open on holidays too."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0346",
+      "word": "辞める",
+      "kana": "やめる",
+      "meanings": [
+        "to quit (a job)",
+        "to resign"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{仕事|しごと}を{辞|や}めて、{何|なに}をするつもり？",
+          "kana": "しごとをやめて、なにをするつもり？",
+          "en": "What are you planning to do after quitting your job?"
+        },
+        {
+          "ja": "{去年|きょねん}{会社|かいしゃ}を{辞|や}めて、{今|いま}は{自分|じぶん}の{店|みせ}を{持|も}っています。",
+          "kana": "きょねんかいしゃをやめて、いまはじぶんのみせをもっています。",
+          "en": "I quit my company last year, and now I have my own shop."
+        }
+      ],
+      "notes": "For leaving a job or school. Stopping an activity is 止める (also read やめる).",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0347",
+      "word": "ボーナス",
+      "kana": "ボーナス",
+      "meanings": [
+        "bonus (pay)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "money",
+        "work",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "ボーナスで{新|あたら}しいパソコンを{買|か}いました。",
+          "kana": "ボーナスであたらしいパソコンをかいました。",
+          "en": "I bought a new computer with my bonus."
+        },
+        {
+          "ja": "{今年|ことし}はボーナスが{出|で}ないかもしれない。",
+          "kana": "ことしはボーナスがでないかもしれない。",
+          "en": "There might not be a bonus this year."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0348",
+      "word": "電卓",
+      "kana": "でんたく",
+      "meanings": [
+        "calculator"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "objects",
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{電卓|でんたく}を{使|つか}って{計算|けいさん}してもいいですか。",
+          "kana": "でんたくをつかってけいさんしてもいいですか。",
+          "en": "May I use a calculator to do the math?"
+        },
+        {
+          "ja": "{電卓|でんたく}を{使|つか}えば、{難|むずか}しい{数学|すうがく}の{宿題|しゅくだい}も{早|はや}く{終|お}わる。",
+          "kana": "でんたくをつかえば、むずかしいすうがくのしゅくだいもはやくおわる。",
+          "en": "With a calculator, even hard math homework gets done quickly."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0349",
+      "word": "店長",
+      "kana": "てんちょう",
+      "meanings": [
+        "store manager"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "people"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "アルバイトの{店|みせ}の{店長|てんちょう}はとても{優|やさ}しい{人|ひと}だ。",
+          "kana": "アルバイトのみせのてんちょうはとてもやさしいひとだ。",
+          "en": "The manager at the shop where I work part-time is a really kind person."
+        },
+        {
+          "ja": "{店長|てんちょう}に{休|やす}みがほしいと{言|い}いました。",
+          "kana": "てんちょうにやすみがほしいといいました。",
+          "en": "I told the store manager I wanted some time off."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0350",
+      "word": "経済",
+      "kana": "けいざい",
+      "meanings": [
+        "economy",
+        "economics"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大学|だいがく}で{経済|けいざい}を{勉強|べんきょう}するつもりだ。",
+          "kana": "だいがくでけいざいをべんきょうするつもりだ。",
+          "en": "I’m planning to study economics at university."
+        },
+        {
+          "ja": "{経済|けいざい}のニュースをよく{見|み}るようになりました。",
+          "kana": "けいざいのニュースをよくみるようになりました。",
+          "en": "I've started watching the economic news a lot."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0351",
+      "word": "政治",
+      "kana": "せいじ",
+      "meanings": [
+        "politics"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "politics",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{若|わか}い{人|ひと}は{政治|せいじ}にあまり{興味|きょうみ}がないと{言|い}われている。",
+          "kana": "わかいひとはせいじにあまりきょうみがないといわれている。",
+          "en": "It’s said that young people aren’t very interested in politics."
+        },
+        {
+          "ja": "{父|ちち}はテレビで{政治|せいじ}の{番組|ばんぐみ}を{見|み}るのが{好|す}きです。",
+          "kana": "ちちはテレビでせいじのばんぐみをみるのがすきです。",
+          "en": "My father likes watching political programs on TV."
+        }
+      ],
+      "collocations": [
+        "政治家"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0352",
+      "word": "産業",
+      "kana": "さんぎょう",
+      "meanings": [
+        "industry"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "business",
+        "society"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{国|くに}の{大切|たいせつ}な{産業|さんぎょう}は{観光|かんこう}です。",
+          "kana": "このくにのたいせつなさんぎょうはかんこうです。",
+          "en": "Tourism is an important industry for this country."
+        },
+        {
+          "ja": "{新|あたら}しい{産業|さんぎょう}が{生|う}まれると、{仕事|しごと}も{増|ふ}える。",
+          "kana": "あたらしいさんぎょうがうまれると、しごともふえる。",
+          "en": "When a new industry is born, jobs increase too."
+        }
+      ],
+      "confusables": [
+        "v-n4-0353"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0353",
+      "word": "工業",
+      "kana": "こうぎょう",
+      "meanings": [
+        "manufacturing industry"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "business"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{町|まち}は{昔|むかし}から{工業|こうぎょう}が{盛|さか}んだ。",
+          "kana": "このまちはむかしからこうぎょうがさかんだ。",
+          "en": "This town has long been a manufacturing center."
+        },
+        {
+          "ja": "{兄|あに}は{工業|こうぎょう}{高校|こうこう}で{機械|きかい}について{勉強|べんきょう}しました。",
+          "kana": "あにはこうぎょうこうこうできかいについてべんきょうしました。",
+          "en": "My older brother studied machinery at a technical high school."
+        }
+      ],
+      "confusables": [
+        "v-n4-0352"
+      ],
+      "notes": "工業 is manufacturing specifically; 産業 is industry in general (tourism, farming, etc.).",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0354",
+      "word": "貿易",
+      "kana": "ぼうえき",
+      "meanings": [
+        "foreign trade"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "business"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{貿易|ぼうえき}の{仕事|しごと}で、{英語|えいご}を{毎日|まいにち}{使|つか}っています。",
+          "kana": "ぼうえきのしごとで、えいごをまいにちつかっています。",
+          "en": "In my trade job, I use English every day."
+        },
+        {
+          "ja": "この{町|まち}は{外国|がいこく}との{貿易|ぼうえき}で{大|おお}きくなった。",
+          "kana": "このまちはがいこくとのぼうえきでおおきくなった。",
+          "en": "This town grew through trade with foreign countries."
+        }
+      ],
+      "collocations": [
+        "貿易会社"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0355",
+      "word": "放送",
+      "kana": "ほうそう",
+      "meanings": [
+        "broadcast"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "media",
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今夜|こんや}{七時|しちじ}からサッカーがテレビで{放送|ほうそう}される。",
+          "kana": "こんやしちじからサッカーがテレビでほうそうされる。",
+          "en": "The soccer game will be broadcast on TV from seven tonight."
+        },
+        {
+          "ja": "{駅|えき}で{電車|でんしゃ}が{遅|おく}れているという{放送|ほうそう}がありました。",
+          "kana": "えきででんしゃがおくれているというほうそうがありました。",
+          "en": "At the station there was an announcement that the trains were delayed."
+        }
+      ],
+      "collocations": [
+        "生放送",
+        "放送局"
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0356",
+      "word": "番組",
+      "kana": "ばんぐみ",
+      "meanings": [
+        "program (TV or radio)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "media"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{好|す}きな{番組|ばんぐみ}が{始|はじ}まるから、テレビをつけて。",
+          "kana": "すきなばんぐみがはじまるから、テレビをつけて。",
+          "en": "My favorite show is starting, so turn on the TV."
+        },
+        {
+          "ja": "{子供|こども}の{時|とき}、どんな{番組|ばんぐみ}をよく{見|み}ていましたか。",
+          "kana": "こどものとき、どんなばんぐみをよくみていましたか。",
+          "en": "What kind of programs did you often watch as a child?"
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0357",
+      "word": "ドラマ",
+      "kana": "ドラマ",
+      "meanings": [
+        "drama series (TV)",
+        "drama"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "media",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{毎週|まいしゅう}{日曜日|にちようび}の{夜|よる}はドラマを{見|み}ています。",
+          "kana": "まいしゅうにちようびのよるはドラマをみています。",
+          "en": "Every Sunday night I watch a drama series."
+        },
+        {
+          "ja": "あのドラマ、{昨日|きのう}で{終|お}わっちゃったね。",
+          "kana": "あのドラマ、きのうでおわっちゃったね。",
+          "en": "That drama ended yesterday, didn't it?"
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0358",
+      "word": "新聞社",
+      "kana": "しんぶんしゃ",
+      "meanings": [
+        "newspaper company"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "media",
+        "work"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{姉|あね}は{新聞社|しんぶんしゃ}で{働|はたら}いている。",
+          "kana": "あねはしんぶんしゃではたらいている。",
+          "en": "My older sister works for a newspaper company."
+        },
+        {
+          "ja": "{新聞社|しんぶんしゃ}の{人|ひと}が{店|みせ}の{話|はなし}を{聞|き}きに{来|き}ました。",
+          "kana": "しんぶんしゃのひとがみせのはなしをききにきました。",
+          "en": "Someone from a newspaper company came to hear about the shop."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0359",
+      "word": "録音",
+      "kana": "ろくおん",
+      "meanings": [
+        "sound recording"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "media"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}の{話|はなし}を{録音|ろくおん}してもいいですか。",
+          "kana": "せんせいのはなしをろくおんしてもいいですか。",
+          "en": "May I record the teacher’s talk?"
+        },
+        {
+          "ja": "{自分|じぶん}の{発音|はつおん}を{録音|ろくおん}して{聞|き}いてみた。",
+          "kana": "じぶんのはつおんをろくおんしてきいてみた。",
+          "en": "I recorded my own pronunciation and listened to it."
+        }
+      ],
+      "notes": "Audio only; video recording is 録画.",
+      "station": 20
+    },
+    {
+      "id": "v-n4-0360",
+      "word": "ビデオ",
+      "kana": "ビデオ",
+      "meanings": [
+        "video"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "media",
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{子供|こども}のころのビデオを{家族|かぞく}で{見|み}た。",
+          "kana": "こどものころのビデオをかぞくでみた。",
+          "en": "We watched videos from when I was a kid as a family."
+        },
+        {
+          "ja": "{学校|がっこう}で{日本|にほん}の{料理|りょうり}のビデオを{見|み}ました。",
+          "kana": "がっこうでにほんのりょうりのビデオをみました。",
+          "en": "At school we watched a video about Japanese food."
+        }
+      ],
+      "station": 20
+    },
+    {
+      "id": "v-n4-0361",
+      "word": "マイク",
+      "kana": "マイク",
+      "meanings": [
+        "microphone"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大|おお}きな{声|こえ}で{話|はな}すから、マイクはいらないよ。",
+          "kana": "おおきなこえではなすから、マイクはいらないよ。",
+          "en": "I’ll talk loudly, so I don’t need a microphone."
+        },
+        {
+          "ja": "{声|こえ}が{小|ちい}さいので、マイクを{使|つか}っていただけますか。",
+          "kana": "こえがちいさいので、マイクをつかっていただけますか。",
+          "en": "Your voice is quiet, so could you use the microphone?"
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0362",
+      "word": "ソフト",
+      "kana": "ソフト",
+      "meanings": [
+        "software"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{新|あたら}しいソフトを{入|い}れたら、パソコンが{速|はや}くなった。",
+          "kana": "あたらしいソフトをいれたら、パソコンがはやくなった。",
+          "en": "After I installed new software, my computer got faster."
+        },
+        {
+          "ja": "{写真|しゃしん}をきれいにするソフトを{使|つか}っています。",
+          "kana": "しゃしんをきれいにするソフトをつかっています。",
+          "en": "I use software that touches up photos."
+        }
+      ],
+      "altForms": [
+        "ソフトウェア"
+      ],
+      "notes": "Also a な-adjective meaning soft or gentle (ソフトな話し方).",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0363",
+      "word": "ファイル",
+      "kana": "ファイル",
+      "meanings": [
+        "file",
+        "folder (binder)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "work",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{昨日|きのう}{送|おく}ったファイルは{届|とど}きましたか。",
+          "kana": "きのうおくったファイルはとどきましたか。",
+          "en": "Did the file I sent yesterday reach you?"
+        },
+        {
+          "ja": "{大事|だいじ}なファイルを{消|け}しちゃって、{部長|ぶちょう}に{怒|おこ}られた。",
+          "kana": "だいじなファイルをけしちゃって、ぶちょうにおこられた。",
+          "en": "I deleted an important file and got told off by the department manager."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0364",
+      "word": "印刷",
+      "kana": "いんさつ",
+      "meanings": [
+        "printing"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "work"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{地図|ちず}を{印刷|いんさつ}して{持|も}って{行|い}こう。",
+          "kana": "このちずをいんさつしてもっていこう。",
+          "en": "Let’s print this map and take it with us."
+        },
+        {
+          "ja": "レポートは{印刷|いんさつ}して{出|だ}してください。",
+          "kana": "レポートはいんさつしてだしてください。",
+          "en": "Please print your paper and hand it in."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0365",
+      "word": "プリンター",
+      "kana": "プリンター",
+      "meanings": [
+        "printer"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "プリンターの{紙|かみ}がなくなりました。",
+          "kana": "プリンターのかみがなくなりました。",
+          "en": "The printer is out of paper."
+        },
+        {
+          "ja": "プリンターが{壊|こわ}れて、レポートが{出|だ}せない。",
+          "kana": "プリンターがこわれて、レポートがだせない。",
+          "en": "The printer broke, so I can't turn in my paper."
+        }
+      ],
+      "altForms": [
+        "プリンタ"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0366",
+      "word": "キーボード",
+      "kana": "キーボード",
+      "meanings": [
+        "keyboard"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{新|あたら}しいキーボードは{小|ちい}さくて{使|つか}いやすい。",
+          "kana": "あたらしいキーボードはちいさくてつかいやすい。",
+          "en": "The new keyboard is small and easy to use."
+        },
+        {
+          "ja": "キーボードの{上|うえ}で{猫|ねこ}が{寝|ね}ています。",
+          "kana": "キーボードのうえでねこがねています。",
+          "en": "The cat is sleeping on the keyboard."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0367",
+      "word": "スイッチ",
+      "kana": "スイッチ",
+      "meanings": [
+        "switch"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{暗|くら}かったら、{壁|かべ}のスイッチを{押|お}してください。",
+          "kana": "くらかったら、かべのスイッチをおしてください。",
+          "en": "If it’s dark, press the switch on the wall."
+        },
+        {
+          "ja": "このスイッチを{押|お}すと、ドアが{開|あ}くよ。",
+          "kana": "このスイッチをおすと、ドアがあくよ。",
+          "en": "If you press this switch, the door opens."
+        }
+      ],
+      "collocations": [
+        "スイッチを入れる",
+        "スイッチを切る"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0368",
+      "word": "電池",
+      "kana": "でんち",
+      "meanings": [
+        "battery"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "objects"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{時計|とけい}の{電池|でんち}が{切|き}れたみたいだ。",
+          "kana": "とけいのでんちがきれたみたいだ。",
+          "en": "It looks like the clock’s battery has died."
+        },
+        {
+          "ja": "{電池|でんち}はコンビニでも{買|か}うことができます。",
+          "kana": "でんちはコンビニでもかうことができます。",
+          "en": "You can buy batteries at convenience stores too."
+        }
+      ],
+      "collocations": [
+        "電池が切れる",
+        "電池を替える"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0369",
+      "word": "アドレス",
+      "kana": "アドレス",
+      "meanings": [
+        "email address"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "アドレスが{変|か}わったので、お{知|し}らせします。",
+          "kana": "アドレスがかわったので、おしらせします。",
+          "en": "My email address has changed, so I’m letting you know."
+        },
+        {
+          "ja": "アドレスが{古|ふる}かったので、メールが{届|とど}かなかった。",
+          "kana": "アドレスがふるかったので、メールがとどかなかった。",
+          "en": "The email address was out of date, so the email didn't arrive."
+        }
+      ],
+      "notes": "In everyday use short for メールアドレス; a postal address is 住所.",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0370",
+      "word": "外国語",
+      "kana": "がいこくご",
+      "meanings": [
+        "foreign language"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "language",
+        "study"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{外国語|がいこくご}を{勉強|べんきょう}するのは{楽|たの}しいです。",
+          "kana": "がいこくごをべんきょうするのはたのしいです。",
+          "en": "Studying foreign languages is fun."
+        },
+        {
+          "ja": "{母|はは}は{外国語|がいこくご}が{三|みっ}つも{話|はな}せる。",
+          "kana": "はははがいこくごがみっつもはなせる。",
+          "en": "My mother can speak three foreign languages."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0371",
+      "word": "サイト",
+      "kana": "サイト",
+      "meanings": [
+        "website"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{店|みせ}のサイトに{地図|ちず}が{出|で}ていますよ。",
+          "kana": "みせのサイトにちずがでていますよ。",
+          "en": "There’s a map on the shop’s website."
+        },
+        {
+          "ja": "そのサイトで{安|やす}いホテルを{見|み}つけた。",
+          "kana": "そのサイトでやすいホテルをみつけた。",
+          "en": "I found a cheap hotel on that website."
+        }
+      ],
+      "altForms": [
+        "ウェブサイト"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0372",
+      "word": "ロボット",
+      "kana": "ロボット",
+      "meanings": [
+        "robot"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "science",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{工場|こうじょう}では、ロボットが{車|くるま}を{作|つく}っている。",
+          "kana": "こうじょうでは、ロボットがくるまをつくっている。",
+          "en": "In the factory, robots are building cars."
+        },
+        {
+          "ja": "ロボットが{家|いえ}の{仕事|しごと}を{手伝|てつだ}ってくれる{日|ひ}が{来|く}るでしょう。",
+          "kana": "ロボットがいえのしごとをてつだってくれるひがくるでしょう。",
+          "en": "The day will probably come when robots help us with housework."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0373",
+      "word": "知らせる",
+      "kana": "しらせる",
+      "meanings": [
+        "to inform",
+        "to let (someone) know"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{時間|じかん}が{決|き}まったら、{知|し}らせてください。",
+          "kana": "かいぎのじかんがきまったら、しらせてください。",
+          "en": "Please let me know once the meeting time is decided."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}したことを、まだ{友達|ともだち}に{知|し}らせていない。",
+          "kana": "ひっこしたことを、まだともだちにしらせていない。",
+          "en": "I haven't told my friends yet that I moved."
+        }
+      ],
+      "collocations": [
+        "お知らせ"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0374",
+      "word": "尋ねる",
+      "kana": "たずねる",
+      "meanings": [
+        "to ask",
+        "to inquire"
+      ],
+      "pos": "v1",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "trans": "vt",
+      "examples": [
+        {
+          "ja": "{駅|えき}で{駅員|えきいん}さんに{道|みち}を{尋|たず}ねた。",
+          "kana": "えきでえきいんさんにみちをたずねた。",
+          "en": "I asked a station attendant for directions at the station."
+        },
+        {
+          "ja": "{分|わ}からないことがあれば、{受付|うけつけ}で{尋|たず}ねてください。",
+          "kana": "わからないことがあれば、うけつけでたずねてください。",
+          "en": "If there is anything you don't understand, please ask at the reception desk."
+        }
+      ],
+      "notes": "Slightly formal; 聞く is the everyday verb. Homophone of 訪ねる (to visit).",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0375",
+      "word": "検索",
+      "kana": "けんさく",
+      "meanings": [
+        "search (online)",
+        "lookup"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{店|みせ}の{名前|なまえ}で{検索|けんさく}したら、すぐ{見|み}つかった。",
+          "kana": "みせのなまえでけんさくしたら、すぐみつかった。",
+          "en": "I searched for the shop by name and found it right away."
+        },
+        {
+          "ja": "{知|し}らない{言葉|ことば}はすぐにスマホで{検索|けんさく}します。",
+          "kana": "しらないことばはすぐにスマホでけんさくします。",
+          "en": "Whenever I come across a word I don't know, I search for it on my phone right away."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0376",
+      "word": "郵便",
+      "kana": "ゆうびん",
+      "meanings": [
+        "mail",
+        "postal service"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "この{荷物|にもつ}は{郵便|ゆうびん}で{送|おく}ってください。",
+          "kana": "このにもつはゆうびんでおくってください。",
+          "en": "Please send this package by mail."
+        },
+        {
+          "ja": "{郵便|ゆうびん}で{送|おく}ると、{三日|みっか}ぐらいかかるよ。",
+          "kana": "ゆうびんでおくると、みっかぐらいかかるよ。",
+          "en": "If you send it by mail, it takes about three days."
+        }
+      ],
+      "collocations": [
+        "郵便局",
+        "郵便番号"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0377",
+      "word": "動画",
+      "kana": "どうが",
+      "meanings": [
+        "video (clip)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "media",
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{料理|りょうり}の{動画|どうが}を{見|み}ながら、{晩|ばん}ご{飯|はん}を{作|つく}った。",
+          "kana": "りょうりのどうがをみながら、ばんごはんをつくった。",
+          "en": "I made dinner while watching a cooking video."
+        },
+        {
+          "ja": "{寝|ね}る{前|まえ}に{猫|ねこ}の{動画|どうが}を{見|み}るのが{好|す}きです。",
+          "kana": "ねるまえにねこのどうがをみるのがすきです。",
+          "en": "I like watching cat videos before bed."
+        }
+      ],
+      "notes": "Online or phone video clips; ビデオ is the older word for tapes and recordings.",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0378",
+      "word": "充電",
+      "kana": "じゅうでん",
+      "meanings": [
+        "charging (a battery)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "スマホの{充電|じゅうでん}が{切|き}れそうだ。",
+          "kana": "スマホのじゅうでんがきれそうだ。",
+          "en": "My phone is about to run out of battery."
+        },
+        {
+          "ja": "{寝|ね}る{前|まえ}に、いつもスマホを{充電|じゅうでん}しておきます。",
+          "kana": "ねるまえに、いつもスマホをじゅうでんしておきます。",
+          "en": "Before going to bed, I always charge my phone."
+        }
+      ],
+      "collocations": [
+        "充電が切れる",
+        "充電器"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0379",
+      "word": "電源",
+      "kana": "でんげん",
+      "meanings": [
+        "power (supply)",
+        "power switch"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}の{前|まえ}に、スマホの{電源|でんげん}を{切|き}っておきました。",
+          "kana": "かいぎのまえに、スマホのでんげんをきっておきました。",
+          "en": "I switched my phone off before the meeting."
+        },
+        {
+          "ja": "パソコンの{電源|でんげん}が{入|はい}らなくて、{仕事|しごと}ができなかった。",
+          "kana": "パソコンのでんげんがはいらなくて、しごとができなかった。",
+          "en": "My computer wouldn't power on, so I couldn't get any work done."
+        }
+      ],
+      "collocations": [
+        "電源を入れる",
+        "電源を切る"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0380",
+      "word": "時間割",
+      "kana": "じかんわり",
+      "meanings": [
+        "class timetable"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "time"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{時間割|じかんわり}を{見|み}て、{明日|あした}の{教科書|きょうかしょ}を{用意|ようい}した。",
+          "kana": "じかんわりをみて、あしたのきょうかしょをよういした。",
+          "en": "I checked the timetable and got tomorrow’s textbooks ready."
+        },
+        {
+          "ja": "{新|あたら}しい{学期|がっき}の{時間割|じかんわり}、もう{見|み}た？",
+          "kana": "あたらしいがっきのじかんわり、もうみた？",
+          "en": "Have you seen the timetable for the new term yet?"
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0381",
+      "word": "学期",
+      "kana": "がっき",
+      "meanings": [
+        "school term",
+        "semester"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "calendar"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{今|いま}の{学期|がっき}が{終|お}わったら、{国|くに}に{帰|かえ}ります。",
+          "kana": "いまのがっきがおわったら、くににかえります。",
+          "en": "When this term ends, I am going back to my country."
+        },
+        {
+          "ja": "{新|あたら}しい{学期|がっき}が{始|はじ}まって、クラスの{友達|ともだち}が{増|ふ}えた。",
+          "kana": "あたらしいがっきがはじまって、クラスのともだちがふえた。",
+          "en": "A new term started, and I made more friends in class."
+        }
+      ],
+      "notes": "Homophone of 楽器 (musical instrument).",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0382",
+      "word": "黒板",
+      "kana": "こくばん",
+      "meanings": [
+        "blackboard"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "school",
+        "objects"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{先生|せんせい}が{黒板|こくばん}に{書|か}いた{字|じ}が{小|ちい}さくて{読|よ}めない。",
+          "kana": "せんせいがこくばんにかいたじがちいさくてよめない。",
+          "en": "The writing the teacher put on the blackboard is too small to read."
+        },
+        {
+          "ja": "{黒板|こくばん}に{今日|きょう}の{宿題|しゅくだい}が{書|か}いてあります。",
+          "kana": "こくばんにきょうのしゅくだいがかいてあります。",
+          "en": "Today's homework is written on the blackboard."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0383",
+      "word": "手帳",
+      "kana": "てちょう",
+      "meanings": [
+        "pocket planner",
+        "small notebook"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "work",
+        "objects"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{約束|やくそく}を{忘|わす}れないように{手帳|てちょう}に{書|か}いておきます。",
+          "kana": "やくそくをわすれないようにてちょうにかいておきます。",
+          "en": "I write appointments in my planner so I don’t forget them."
+        },
+        {
+          "ja": "{手帳|てちょう}を{見|み}たら、{今日|きょう}は{会議|かいぎ}が{二|ふた}つもあった。",
+          "kana": "てちょうをみたら、きょうはかいぎがふたつもあった。",
+          "en": "When I looked at my planner, I saw I had two meetings today."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0384",
+      "word": "使い方",
+      "kana": "つかいかた",
+      "meanings": [
+        "how to use",
+        "way of using"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "technology",
+        "abstract"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "スマホの{使|つか}い{方|かた}を{祖母|そぼ}に{教|おし}えてあげた。",
+          "kana": "スマホのつかいかたをそぼにおしえてあげた。",
+          "en": "I showed my grandmother how to use her smartphone."
+        },
+        {
+          "ja": "この{機械|きかい}の{使|つか}い{方|かた}が{分|わ}からないので、{教|おし}えていただけませんか。",
+          "kana": "このきかいのつかいかたがわからないので、おしえていただけませんか。",
+          "en": "I don't know how to use this machine, so could you show me?"
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0385",
+      "word": "スピーチ",
+      "kana": "スピーチ",
+      "meanings": [
+        "speech"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "loanword"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{卒業|そつぎょう}パーティーでスピーチを{頼|たの}まれた。",
+          "kana": "そつぎょうパーティーでスピーチをたのまれた。",
+          "en": "I was asked to give a speech at the graduation party."
+        },
+        {
+          "ja": "{日本語|にほんご}でスピーチをするのは{初|はじ}めてです。",
+          "kana": "にほんごでスピーチをするのははじめてです。",
+          "en": "This is my first time giving a speech in Japanese."
+        }
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0386",
+      "word": "メモ",
+      "kana": "メモ",
+      "meanings": [
+        "memo",
+        "note"
+      ],
+      "pos": "n-suru",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "work",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{大事|だいじ}なことはメモを{取|と}る{習慣|しゅうかん}がある。",
+          "kana": "だいじなことはメモをとるしゅうかんがある。",
+          "en": "I am in the habit of taking notes on important things."
+        },
+        {
+          "ja": "{母|はは}からのメモがテーブルの{上|うえ}に{置|お}いてあった。",
+          "kana": "ははからのメモがテーブルのうえにおいてあった。",
+          "en": "There was a note from my mother left on the table."
+        }
+      ],
+      "collocations": [
+        "メモを取る"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0387",
+      "word": "留守",
+      "kana": "るす",
+      "meanings": [
+        "being away from home",
+        "absence"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "communication",
+        "states"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{田中|たなか}さんの{家|いえ}に{行|い}ったが、{留守|るす}だった。",
+          "kana": "たなかさんのいえにいったが、るすだった。",
+          "en": "I went to Tanaka-san’s house, but nobody was home."
+        },
+        {
+          "ja": "{旅行|りょこう}で{一週間|いっしゅうかん}{留守|るす}にしますので、よろしくお{願|ねが}いします。",
+          "kana": "りょこうでいっしゅうかんるすにしますので、よろしくおねがいします。",
+          "en": "I'll be away for a week on a trip, so I'd appreciate your help while I'm gone."
+        }
+      ],
+      "collocations": [
+        "留守番",
+        "留守番電話"
+      ],
+      "station": 21
+    },
+    {
+      "id": "v-n4-0388",
+      "word": "辞典",
+      "kana": "じてん",
+      "meanings": [
+        "dictionary"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "language"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{難|むずか}しい{言葉|ことば}は{辞典|じてん}で{調|しら}べてみよう。",
+          "kana": "むずかしいことばはじてんでしらべてみよう。",
+          "en": "Let’s try looking up difficult words in a dictionary."
+        },
+        {
+          "ja": "{父|ちち}の{部屋|へや}には{大|おお}きな{辞典|じてん}が{何冊|なんさつ}もあります。",
+          "kana": "ちちのへやにはおおきなじてんがなんさつもあります。",
+          "en": "There are several big dictionaries in my father's room."
+        }
+      ],
+      "confusables": [
+        "v-n4-0389"
+      ],
+      "notes": "A little more formal than 辞書; common in titles (国語辞典, 英和辞典).",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0389",
+      "word": "字引",
+      "kana": "じびき",
+      "meanings": [
+        "dictionary (dated word)"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "language"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{今|いま}でも{古|ふる}い{字引|じびき}を{使|つか}っている。",
+          "kana": "そふはいまでもふるいじびきをつかっている。",
+          "en": "My grandfather still uses an old dictionary."
+        },
+        {
+          "ja": "{字引|じびき}という{言葉|ことば}は{今|いま}はあまり{使|つか}われていません。",
+          "kana": "じびきということばはいまはあまりつかわれていません。",
+          "en": "The word jibiki isn't used much these days."
+        }
+      ],
+      "confusables": [
+        "v-n4-0388"
+      ],
+      "notes": "Old-fashioned; 辞書 is the usual modern word. Survives in 生き字引 (walking dictionary).",
+      "station": 21
+    },
+    {
+      "id": "v-n4-0390",
+      "word": "奨学金",
+      "kana": "しょうがくきん",
+      "meanings": [
+        "scholarship"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "study",
+        "money"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{奨学金|しょうがくきん}をもらって{大学院|だいがくいん}に{通|かよ}っています。",
+          "kana": "しょうがくきんをもらってだいがくいんにかよっています。",
+          "en": "I’m attending graduate school on a scholarship."
+        },
+        {
+          "ja": "{奨学金|しょうがくきん}がもらえなかったら、{留学|りゅうがく}は{無理|むり}かもしれない。",
+          "kana": "しょうがくきんがもらえなかったら、りゅうがくはむりかもしれない。",
+          "en": "If I can't get a scholarship, studying abroad might be impossible."
+        }
+      ],
+      "notes": "In Japan often a loan that must be repaid, unlike a typical English scholarship.",
+      "station": 21
+    }
+  ]
+}

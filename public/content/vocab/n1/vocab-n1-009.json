@@ -1,0 +1,5237 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n1",
+  "writer": "vocab-n1-009",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n1-1201",
+      "word": "プロセス",
+      "kana": "プロセス",
+      "meanings": [
+        "process"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "business",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{結果|けっか}だけでなく、そこに{至|いた}るまでのプロセスも{評価|ひょうか}されるべきだ。",
+          "kana": "けっかだけでなく、そこにいたるまでのプロセスもひょうかされるべきだ。",
+          "en": "Not only the result but also the process leading up to it should be evaluated."
+        },
+        {
+          "ja": "{新|あたら}しい{社員|しゃいん}には、まず{製品|せいひん}ができるまでのプロセスを{一通|ひととお}り{見|み}てもらいました。",
+          "kana": "あたらしいしゃいんには、まずせいひんができるまでのプロセスをひととおりみてもらいました。",
+          "en": "We first had the new employees see the whole process by which a product is made."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{結果|けっか}に{至|いた}るまでの{手順|てじゅん}や{過程|かてい}の{流|なが}れ。",
+        "kana": "けっかにいたるまでのてじゅんやかていのながれ。"
+      },
+      "frequencyRank": 6000,
+      "collocations": [
+        "製造プロセス",
+        "プロセスを踏む"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1202",
+      "word": "客観的",
+      "kana": "きゃっかんてき",
+      "meanings": [
+        "objective"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{感情|かんじょう}を{抜|ぬ}きにして、データをもとに{客観的|きゃっかんてき}に{判断|はんだん}する{必要|ひつよう}がある。",
+          "kana": "かんじょうをぬきにして、データをもとにきゃっかんてきにはんだんするひつようがある。",
+          "en": "We need to leave emotion aside and judge objectively based on data."
+        },
+        {
+          "ja": "{自分|じぶん}の{作品|さくひん}を{客観的|きゃっかんてき}に{見|み}るのは、{思|おも}った{以上|いじょう}に{難|むずか}しかった。",
+          "kana": "じぶんのさくひんをきゃっかんてきにみるのは、おもったいじょうにむずかしかった。",
+          "en": "Looking at my own work objectively was harder than I had expected."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{気持|きも}ちや{意見|いけん}を{入|い}れず、{事実|じじつ}をもとに{見|み}るさま。",
+        "kana": "じぶんのきもちやいけんをいれず、じじつをもとにみるさま。"
+      },
+      "frequencyRank": 6013,
+      "confusables": [
+        "v-n1-1208"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1203",
+      "word": "パフォーマンス",
+      "kana": "パフォーマンス",
+      "meanings": [
+        "performance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しいパソコンは{価格|かかく}の{割|わり}にパフォーマンスが{高|たか}い。",
+          "kana": "あたらしいパソコンはかかくのわりにパフォーマンスがたかい。",
+          "en": "The new computer performs well for its price."
+        },
+        {
+          "ja": "{駅前|えきまえ}の{広場|ひろば}で、{若者|わかもの}たちがダンスのパフォーマンスを{披露|ひろう}していました。",
+          "kana": "えきまえのひろばで、わかものたちがダンスのパフォーマンスをひろうしていました。",
+          "en": "In the square in front of the station, young people were putting on a dance performance."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{機械|きかい}や{人|ひと}が{出|だ}す{性能|せいのう}や{成果|せいか}。また、{人前|ひとまえ}で{見|み}せる{歌|うた}やダンスなど。",
+        "kana": "きかいやひとがだすせいのうやせいか。また、ひとまえでみせるうたやダンスなど。"
+      },
+      "frequencyRank": 6026,
+      "notes": "Covers a stage performance and the performance of a machine, athlete or worker alike; パフォーマンスが高い/低い.",
+      "collocations": [
+        "コストパフォーマンス",
+        "パフォーマンスを発揮する"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1204",
+      "word": "興味深い",
+      "kana": "きょうみぶかい",
+      "meanings": [
+        "fascinating",
+        "deeply interesting"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{昨日|きのう}の{講演|こうえん}は、{歴史|れきし}を{別|べつ}の{角度|かくど}から{見|み}る{興味深|きょうみぶか}い{内容|ないよう}だった。",
+          "kana": "きのうのこうえんは、れきしをべつのかくどからみるきょうみぶかいないようだった。",
+          "en": "Yesterday's lecture was a fascinating one that looked at history from a different angle."
+        },
+        {
+          "ja": "この{本|ほん}には、{言葉|ことば}の{起源|きげん}についての{興味深|きょうみぶか}い{説|せつ}がいくつも{紹介|しょうかい}されています。",
+          "kana": "このほんには、ことばのきげんについてのきょうみぶかいせつがいくつもしょうかいされています。",
+          "en": "This book introduces a number of fascinating theories about the origins of words."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}を{引|ひ}かれて、もっと{知|し}りたいと{感|かん}じるほど{面白|おもしろ}いさま。",
+        "kana": "こころをひかれて、もっとしりたいとかんじるほどおもしろいさま。"
+      },
+      "frequencyRank": 6039,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1205",
+      "word": "不可欠",
+      "kana": "ふかけつ",
+      "meanings": [
+        "indispensable",
+        "essential"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{地域|ちいき}の{協力|きょうりょく}は、この{祭|まつ}りを{続|つづ}けていくうえで{不可欠|ふかけつ}だ。",
+          "kana": "ちいきのきょうりょくは、このまつりをつづけていくうえでふかけつだ。",
+          "en": "The community's cooperation is indispensable to keeping this festival going."
+        },
+        {
+          "ja": "うちの{店|みせ}にとって、{常連|じょうれん}さんの{口|くち}コミは{不可欠|ふかけつ}な{宣伝|せんでん}なんだ。",
+          "kana": "うちのみせにとって、じょうれんさんのくちコミはふかけつなせんでんなんだ。",
+          "en": "For our shop, word of mouth from regulars is indispensable advertising."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それがないと{全体|ぜんたい}がうまくいかないほど、なくてはならないさま。",
+        "kana": "それがないとぜんたいがうまくいかないほど、なくてはならないさま。"
+      },
+      "frequencyRank": 6052,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1206",
+      "word": "多様",
+      "kana": "たよう",
+      "meanings": [
+        "diverse",
+        "varied"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{職場|しょくば}には{多様|たよう}な{背景|はいけい}を{持|も}つ{人|ひと}が{集|あつ}まり、{毎日|まいにち}が{発見|はっけん}の{連続|れんぞく}だ。",
+          "kana": "しょくばにはたようなはいけいをもつひとがあつまり、まいにちがはっけんのれんぞくだ。",
+          "en": "People of diverse backgrounds come together in my workplace, and every day is full of discoveries."
+        },
+        {
+          "ja": "このサービスは、{利用者|りようしゃ}の{多様|たよう}なニーズに{応|こた}えられるよう{設計|せっけい}されています。",
+          "kana": "このサービスは、りようしゃのたようなニーズにこたえられるようせっけいされています。",
+          "en": "This service is designed to meet the diverse needs of its users."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{種類|しゅるい}や{性質|せいしつ}がさまざまで、ひとつにまとめられないさま。",
+        "kana": "しゅるいやせいしつがさまざまで、ひとつにまとめられないさま。"
+      },
+      "frequencyRank": 6065,
+      "collocations": [
+        "多様性",
+        "多様な価値観"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1207",
+      "word": "カテゴリー",
+      "kana": "カテゴリー",
+      "meanings": [
+        "category"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{商品|しょうひん}をいくつかのカテゴリーに{分|わ}けて{表示|ひょうじ}しています。",
+          "kana": "しょうひんをいくつかのカテゴリーにわけてひょうじしています。",
+          "en": "The products are displayed divided into several categories."
+        },
+        {
+          "ja": "このブログは{記事|きじ}が{多|おお}すぎて、どのカテゴリーに{何|なに}があるのか{分|わ}からなくなっちゃった。",
+          "kana": "このブログはきじがおおすぎて、どのカテゴリーになにがあるのかわからなくなっちゃった。",
+          "en": "This blog has so many posts that I lost track of what is in which category."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{性質|せいしつ}の{近|ちか}いものをまとめて{分類|ぶんるい}した、ひとつひとつのグループ。",
+        "kana": "せいしつのちかいものをまとめてぶんるいした、ひとつひとつのグループ。"
+      },
+      "frequencyRank": 6078,
+      "altForms": [
+        "カテゴリ"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1208",
+      "word": "主観的",
+      "kana": "しゅかんてき",
+      "meanings": [
+        "subjective"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{味|あじ}の{評価|ひょうか}はどうしても{主観的|しゅかんてき}になるので、{複数|ふくすう}の{人|ひと}に{試食|ししょく}してもらった。",
+          "kana": "あじのひょうかはどうしてもしゅかんてきになるので、ふくすうのひとにししょくしてもらった。",
+          "en": "Judgments of taste inevitably become subjective, so I had several people sample it."
+        },
+        {
+          "ja": "あくまで{私|わたし}の{主観的|しゅかんてき}な{感想|かんそう}ですが、この{色|いろ}のほうがお{似合|にあ}いだと{思|おも}います。",
+          "kana": "あくまでわたしのしゅかんてきなかんそうですが、このいろのほうがおにあいだとおもいます。",
+          "en": "This is just my subjective impression, but I think this color suits you better."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}だけの{感|かん}じ{方|かた}や{考|かんが}えをもとにして、ものを{見|み}るさま。",
+        "kana": "じぶんだけのかんじかたやかんがえをもとにして、ものをみるさま。"
+      },
+      "frequencyRank": 6091,
+      "confusables": [
+        "v-n1-1202"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1209",
+      "word": "ニュアンス",
+      "kana": "ニュアンス",
+      "meanings": [
+        "nuance",
+        "shade of meaning"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "language",
+        "communication",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{二|ふた}つの{言葉|ことば}は{似|に}ているが、ニュアンスが{微妙|びみょう}に{違|ちが}う。",
+          "kana": "このふたつのことばはにているが、ニュアンスがびみょうにちがう。",
+          "en": "These two words are similar, but their nuances are subtly different."
+        },
+        {
+          "ja": "{翻訳|ほんやく}するときは、{原文|げんぶん}のニュアンスをできるだけ{残|のこ}すようにしてください。",
+          "kana": "ほんやくするときは、げんぶんのニュアンスをできるだけのこすようにしてください。",
+          "en": "When translating, please try to keep as much of the original text's nuance as possible."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}や{色|いろ}などが{持|も}つ、{細|こま}かくて{微妙|びみょう}な{意味|いみ}や{感|かん}じの{違|ちが}い。",
+        "kana": "ことばやいろなどがもつ、こまかくてびみょうないみやかんじのちがい。"
+      },
+      "frequencyRank": 6104,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1210",
+      "word": "密接",
+      "kana": "みっせつ",
+      "meanings": [
+        "close (relationship)",
+        "intimate (connection)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{睡眠|すいみん}と{集中力|しゅうちゅうりょく}には{密接|みっせつ}な{関係|かんけい}があることが{分|わ}かっている。",
+          "kana": "すいみんとしゅうちゅうりょくにはみっせつなかんけいがあることがわかっている。",
+          "en": "It is known that there is a close relationship between sleep and concentration."
+        },
+        {
+          "ja": "{食生活|しょくせいかつ}と{肌|はだ}の{状態|じょうたい}は{密接|みっせつ}に{関係|かんけい}していると、{医師|いし}から{説明|せつめい}を{受|う}けました。",
+          "kana": "しょくせいかつとはだのじょうたいはみっせつにかんけいしていると、いしからせつめいをうけました。",
+          "en": "The doctor explained to me that diet and skin condition are closely related."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{関係|かんけい}がとても{深|ふか}く、{離|はな}れられないほど{近|ちか}いさま。",
+        "kana": "かんけいがとてもふかく、はなれられないほどちかいさま。"
+      },
+      "frequencyRank": 6117,
+      "collocations": [
+        "密接に関わる",
+        "密接な関係"
+      ],
+      "confusables": [
+        "v-n1-1223",
+        "v-n1-1285"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1211",
+      "word": "任意",
+      "kana": "にんい",
+      "meanings": [
+        "optional",
+        "voluntary",
+        "arbitrary"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "アンケートへの{回答|かいとう}は{任意|にんい}ですので、{答|こた}えたくない{質問|しつもん}は{飛|と}ばしてください。",
+          "kana": "アンケートへのかいとうはにんいですので、こたえたくないしつもんはとばしてください。",
+          "en": "Answering the survey is optional, so please skip any question you do not want to answer."
+        },
+        {
+          "ja": "このアプリでは、{通知|つうち}を{受|う}け{取|と}る{時間帯|じかんたい}を{任意|にんい}に{設定|せってい}できる。",
+          "kana": "このアプリでは、つうちをうけとるじかんたいをにんいにせっていできる。",
+          "en": "In this app, you can set the time slot for receiving notifications as you like."
+        }
+      ],
+      "definitionJa": {
+        "ja": "するかどうかを{無理|むり}に{決|き}めず、{本人|ほんにん}の{自由|じゆう}な{判断|はんだん}に{任|まか}せること。",
+        "kana": "するかどうかをむりにきめず、ほんにんのじゆうなはんだんにまかせること。"
+      },
+      "frequencyRank": 6130,
+      "notes": "Also \"arbitrary, any\" in math and IT (任意の値) and 任意同行 \"voluntary accompaniment\" in police contexts.",
+      "station": 50
+    },
+    {
+      "id": "v-n1-1212",
+      "word": "アイデンティティ",
+      "kana": "アイデンティティ",
+      "meanings": [
+        "identity",
+        "sense of self"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "people",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{海外|かいがい}で{暮|く}らすうちに、{自分|じぶん}のアイデンティティについて{深|ふか}く{考|かんが}えるようになった。",
+          "kana": "かいがいでくらすうちに、じぶんのアイデンティティについてふかくかんがえるようになった。",
+          "en": "While living abroad, I came to think deeply about my own identity."
+        },
+        {
+          "ja": "この{祭|まつ}りは、{町|まち}の{人々|ひとびと}にとってアイデンティティそのものだと{言|い}えるだろう。",
+          "kana": "このまつりは、まちのひとびとにとってアイデンティティそのものだといえるだろう。",
+          "en": "For the people of the town, this festival could be called their very identity."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}が{誰|だれ}であり、{何|なに}を{大切|たいせつ}にしているかという、{自分|じぶん}らしさの{意識|いしき}。",
+        "kana": "じぶんがだれであり、なにをたいせつにしているかという、じぶんらしさのいしき。"
+      },
+      "frequencyRank": 6143,
+      "altForms": [
+        "アイデンティティー"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1213",
+      "word": "総合的",
+      "kana": "そうごうてき",
+      "meanings": [
+        "comprehensive",
+        "overall"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{価格|かかく}だけでなく、{品質|ひんしつ}や{保証|ほしょう}も{含|ふく}めて{総合的|そうごうてき}に{判断|はんだん}した。",
+          "kana": "かかくだけでなく、ひんしつやほしょうもふくめてそうごうてきにはんだんした。",
+          "en": "I judged comprehensively, taking into account not only the price but also quality and warranty."
+        },
+        {
+          "ja": "{面接|めんせつ}では、{学力|がくりょく}だけでなく{人柄|ひとがら}や{意欲|いよく}も{含|ふく}めて{総合的|そうごうてき}に{評価|ひょうか}します。",
+          "kana": "めんせつでは、がくりょくだけでなくひとがらやいよくもふくめてそうごうてきにひょうかします。",
+          "en": "In the interview, we evaluate candidates comprehensively, including not only academic ability but also character and motivation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ひとつひとつの{要素|ようそ}を{全部|ぜんぶ}まとめて、{全体|ぜんたい}として{見|み}るさま。",
+        "kana": "ひとつひとつのようそをぜんぶまとめて、ぜんたいとしてみるさま。"
+      },
+      "frequencyRank": 6156,
+      "confusables": [
+        "v-n1-1247"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1214",
+      "word": "奥深い",
+      "kana": "おくぶかい",
+      "meanings": [
+        "profound",
+        "deep (subject)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{将棋|しょうぎ}は{始|はじ}めて{十年|じゅうねん}になるが、{知|し}れば{知|し}るほど{奥深|おくぶか}い。",
+          "kana": "しょうぎははじめてじゅうねんになるが、しればしるほどおくぶかい。",
+          "en": "It has been ten years since I took up shogi, and the more I learn, the deeper it gets."
+        },
+        {
+          "ja": "この{小説|しょうせつ}は{読|よ}むたびに{新|あたら}しい{発見|はっけん}があって、{本当|ほんとう}に{奥深|おくぶか}いですね。",
+          "kana": "このしょうせつはよむたびにあたらしいはっけんがあって、ほんとうにおくぶかいですね。",
+          "en": "This novel offers a new discovery every time I read it; it really is profound."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{意味|いみ}や{内容|ないよう}が{深|ふか}くて、{簡単|かんたん}には{全部|ぜんぶ}{理解|りかい}できないさま。",
+        "kana": "いみやないようがふかくて、かんたんにはぜんぶりかいできないさま。"
+      },
+      "frequencyRank": 6169,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1215",
+      "word": "イノベーション",
+      "kana": "イノベーション",
+      "meanings": [
+        "innovation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{小|ちい}さな{企業|きぎょう}からイノベーションが{生|う}まれることも{少|すく}なくない。",
+          "kana": "ちいさなきぎょうからイノベーションがうまれることもすくなくない。",
+          "en": "It is not unusual for innovation to come from small companies."
+        },
+        {
+          "ja": "この{賞|しょう}は、{医療|いりょう}の{分野|ぶんや}で{画期的|かっきてき}なイノベーションを{起|お}こした{研究者|けんきゅうしゃ}に{贈|おく}られます。",
+          "kana": "このしょうは、いりょうのぶんやでかっきてきなイノベーションをおこしたけんきゅうしゃにおくられます。",
+          "en": "This prize is awarded to researchers who have brought about groundbreaking innovation in the medical field."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{技術|ぎじゅつ}や{考|かんが}えによって、{社会|しゃかい}や{産業|さんぎょう}を{大|おお}きく{変|か}えること。",
+        "kana": "あたらしいぎじゅつやかんがえによって、しゃかいやさんぎょうをおおきくかえること。"
+      },
+      "frequencyRank": 6182,
+      "station": 50
+    },
+    {
+      "id": "v-n1-1216",
+      "word": "絶対的",
+      "kana": "ぜったいてき",
+      "meanings": [
+        "absolute"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{監督|かんとく}は{選手|せんしゅ}たちから{絶対的|ぜったいてき}な{信頼|しんらい}を{得|え}ている。",
+          "kana": "かんとくはせんしゅたちからぜったいてきなしんらいをえている。",
+          "en": "The coach has the players' absolute trust."
+        },
+        {
+          "ja": "かつて{王|おう}は{絶対的|ぜったいてき}な{権力|けんりょく}を{握|にぎ}り、{誰|だれ}も{逆|さか}らうことができなかった。",
+          "kana": "かつておうはぜったいてきなけんりょくをにぎり、だれもさからうことができなかった。",
+          "en": "The king once held absolute power, and no one could defy him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかのものと{比|くら}べるまでもなく、それだけで{価値|かち}や{力|ちから}が{決|き}まっているさま。",
+        "kana": "ほかのものとくらべるまでもなく、それだけでかちやちからがきまっているさま。"
+      },
+      "frequencyRank": 6195,
+      "confusables": [
+        "v-n1-1217"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1217",
+      "word": "相対的",
+      "kana": "そうたいてき",
+      "meanings": [
+        "relative"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{物価|ぶっか}が{上|あ}がれば、{給料|きゅうりょう}が{同|おな}じでも{相対的|そうたいてき}に{貧|まず}しくなる。",
+          "kana": "ぶっかがあがれば、きゅうりょうがおなじでもそうたいてきにまずしくなる。",
+          "en": "If prices rise, you become relatively poorer even if your salary stays the same."
+        },
+        {
+          "ja": "{他|ほか}の{地域|ちいき}と{比|くら}べると、この{町|まち}の{家賃|やちん}は{相対的|そうたいてき}に{安|やす}いと{言|い}えます。",
+          "kana": "ほかのちいきとくらべると、このまちのやちんはそうたいてきにやすいといえます。",
+          "en": "Compared with other areas, rents in this town can be said to be relatively low."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほかのものと{比|くら}べることで、はじめて{価値|かち}や{評価|ひょうか}が{決|き}まるさま。",
+        "kana": "ほかのものとくらべることで、はじめてかちやひょうかがきまるさま。"
+      },
+      "frequencyRank": 6208,
+      "confusables": [
+        "v-n1-1216"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1218",
+      "word": "ベンチャー",
+      "kana": "ベンチャー",
+      "meanings": [
+        "venture business",
+        "startup"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{大学|だいがく}の{研究|けんきゅう}をもとに、{友人|ゆうじん}がベンチャーを{立|た}ち{上|あ}げた。",
+          "kana": "だいがくのけんきゅうをもとに、ゆうじんがベンチャーをたちあげた。",
+          "en": "A friend of mine launched a venture based on university research."
+        },
+        {
+          "ja": "{卒業後|そつぎょうご}は{大企業|だいきぎょう}に{入|はい}らず、ベンチャーで{経験|けいけん}を{積|つ}みたいと{考|かんが}えています。",
+          "kana": "そつぎょうごはだいきぎょうにはいらず、ベンチャーでけいけんをつみたいとかんがえています。",
+          "en": "After graduating, I am thinking of gaining experience at a venture rather than joining a big corporation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{技術|ぎじゅつ}やアイデアをもとに{事業|じぎょう}を{始|はじ}めたばかりの、{小|ちい}さな{会社|かいしゃ}。",
+        "kana": "あたらしいぎじゅつやアイデアをもとにじぎょうをはじめたばかりの、ちいさなかいしゃ。"
+      },
+      "frequencyRank": 6221,
+      "collocations": [
+        "ベンチャー企業",
+        "ベンチャー投資"
+      ],
+      "station": 50
+    },
+    {
+      "id": "v-n1-1219",
+      "word": "薄暗い",
+      "kana": "うすぐらい",
+      "meanings": [
+        "dim",
+        "gloomy"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{薄暗|うすぐら}い{部屋|へや}で{本|ほん}を{読|よ}んでいたら、{目|め}が{疲|つか}れてしまった。",
+          "kana": "うすぐらいへやでほんをよんでいたら、めがつかれてしまった。",
+          "en": "Reading in a dim room left my eyes tired."
+        },
+        {
+          "ja": "{夕方|ゆうがた}になると{廊下|ろうか}が{薄暗|うすぐら}くなるので、{早|はや}めに{電気|でんき}をつけました。",
+          "kana": "ゆうがたになるとろうかがうすぐらくなるので、はやめにでんきをつけました。",
+          "en": "The hallway gets dim toward evening, so I turned the lights on early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{光|ひかり}が{弱|よわ}く、ものがはっきり{見|み}えないくらい{少|すこ}し{暗|くら}いさま。",
+        "kana": "ひかりがよわく、ものがはっきりみえないくらいすこしくらいさま。"
+      },
+      "frequencyRank": 6234,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1220",
+      "word": "普遍的",
+      "kana": "ふへんてき",
+      "meanings": [
+        "universal"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{親|おや}が{子|こ}を{思|おも}う{気持|きも}ちは、{時代|じだい}や{文化|ぶんか}を{超|こ}えた{普遍的|ふへんてき}なものだ。",
+          "kana": "おやがこをおもうきもちは、じだいやぶんかをこえたふへんてきなものだ。",
+          "en": "A parent's love for a child is something universal that transcends era and culture."
+        },
+        {
+          "ja": "{音楽|おんがく}には、{国|くに}や{言葉|ことば}の{壁|かべ}を{越|こ}えて{人|ひと}を{動|うご}かす{普遍的|ふへんてき}な{力|ちから}がある。",
+          "kana": "おんがくには、くにやことばのかべをこえてひとをうごかすふへんてきなちからがある。",
+          "en": "Music has a universal power to move people across the barriers of nation and language."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{時代|じだい}や{文化|ぶんか}に{関係|かんけい}なく、どこでも{誰|だれ}にでも{当|あ}てはまるさま。",
+        "kana": "じだいやぶんかにかんけいなく、どこでもだれにでもあてはまるさま。"
+      },
+      "frequencyRank": 6247,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1221",
+      "word": "コンプレックス",
+      "kana": "コンプレックス",
+      "meanings": [
+        "inferiority complex",
+        "hang-up"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "personality",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どものころ、{背|せ}が{低|ひく}いことにコンプレックスを{持|も}っていた。",
+          "kana": "こどものころ、せがひくいことにコンプレックスをもっていた。",
+          "en": "As a child, I had a complex about being short."
+        },
+        {
+          "ja": "{人前|ひとまえ}で{話|はな}すのが{苦手|にがて}だというコンプレックスを、{少|すこ}しずつ{克服|こくふく}していきたいです。",
+          "kana": "ひとまえではなすのがにがてだというコンプレックスを、すこしずつこくふくしていきたいです。",
+          "en": "I want to gradually overcome my complex about being bad at speaking in front of people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{欠点|けってん}を{強|つよ}く{気|き}にして、{人|ひと}より{下|した}だと{思|おも}い{込|こ}む{気持|きも}ち。",
+        "kana": "じぶんのけってんをつよくきにして、ひとよりしただとおもいこむきもち。"
+      },
+      "frequencyRank": 6260,
+      "notes": "In Japanese almost always an inferiority complex (劣等感) about one's looks or ability, not the general English sense of \"complex\".",
+      "station": 51
+    },
+    {
+      "id": "v-n1-1222",
+      "word": "頼りない",
+      "kana": "たよりない",
+      "meanings": [
+        "unreliable",
+        "flimsy",
+        "helpless"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{新人|しんじん}のころは{頼|たよ}りないと{言|い}われたが、{今|いま}では{後輩|こうはい}を{指導|しどう}する{立場|たちば}だ。",
+          "kana": "しんじんのころはたよりないといわれたが、いまではこうはいをしどうするたちばだ。",
+          "en": "As a new employee I was told I was unreliable, but now I am in a position to guide juniors."
+        },
+        {
+          "ja": "あの{傘|かさ}、{骨|ほね}が{細|ほそ}くて{頼|たよ}りないから、{風|かぜ}の{強|つよ}い{日|ひ}は{使|つか}わないほうがいいよ。",
+          "kana": "あのかさ、ほねがほそくてたよりないから、かぜのつよいひはつかわないほうがいいよ。",
+          "en": "That umbrella has thin ribs and is flimsy, so you had better not use it on windy days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{力|ちから}や{経験|けいけん}が{十分|じゅうぶん}でなく、{安心|あんしん}して{任|まか}せられないさま。",
+        "kana": "ちからやけいけんがじゅうぶんでなく、あんしんしてまかせられないさま。"
+      },
+      "frequencyRank": 6273,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1223",
+      "word": "親密",
+      "kana": "しんみつ",
+      "meanings": [
+        "intimate",
+        "close (people)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{二人|ふたり}は{留学先|りゅうがくさき}で{出会|であ}い、{帰国後|きこくご}も{親密|しんみつ}な{関係|かんけい}を{続|つづ}けている。",
+          "kana": "ふたりはりゅうがくさきでであい、きこくごもしんみつなかんけいをつづけている。",
+          "en": "The two met while studying abroad and have kept up a close relationship since returning home."
+        },
+        {
+          "ja": "{両社|りょうしゃ}は{長年|ながねん}にわたって{親密|しんみつ}な{協力関係|きょうりょくかんけい}を{築|きず}いてきました。",
+          "kana": "りょうしゃはながねんにわたってしんみつなきょうりょくかんけいをきずいてきました。",
+          "en": "The two companies have built a close cooperative relationship over many years."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{互|たが}いの{心|こころ}の{距離|きょり}が{近|ちか}く、とても{仲|なか}がいいさま。",
+        "kana": "たがいのこころのきょりがちかく、とてもなかがいいさま。"
+      },
+      "frequencyRank": 6286,
+      "notes": "親密 is for people and their bonds; 密接 is for things that are closely linked.",
+      "confusables": [
+        "v-n1-1210"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1224",
+      "word": "ハラスメント",
+      "kana": "ハラスメント",
+      "meanings": [
+        "harassment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "work",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{社内|しゃない}のハラスメントを{防|ふせ}ぐため、{全社員|ぜんしゃいん}に{研修|けんしゅう}が{義務付|ぎむづ}けられた。",
+          "kana": "しゃないのハラスメントをふせぐため、ぜんしゃいんにけんしゅうがぎむづけられた。",
+          "en": "To prevent harassment in the company, training was made mandatory for all employees."
+        },
+        {
+          "ja": "それ、{冗談|じょうだん}のつもりでもハラスメントになりかねないから、やめたほうがいいよ。",
+          "kana": "それ、じょうだんのつもりでもハラスメントになりかねないから、やめたほうがいいよ。",
+          "en": "Even if you mean it as a joke, that could count as harassment, so you had better stop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{立場|たちば}や{力|ちから}の{差|さ}を{利用|りよう}して、{相手|あいて}を{苦|くる}しめる{言葉|ことば}や{行動|こうどう}。",
+        "kana": "たちばやちからのさをりようして、あいてをくるしめることばやこうどう。"
+      },
+      "frequencyRank": 6299,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1225",
+      "word": "必然的",
+      "kana": "ひつぜんてき",
+      "meanings": [
+        "inevitable",
+        "necessary (by logic)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{人口|じんこう}が{減|へ}れば、{必然的|ひつぜんてき}に{空|あ}き{家|や}も{増|ふ}える。",
+          "kana": "じんこうがへれば、ひつぜんてきにあきやもふえる。",
+          "en": "If the population falls, vacant houses will inevitably increase too."
+        },
+        {
+          "ja": "{練習量|れんしゅうりょう}が{違|ちが}えば、{結果|けっか}に{差|さ}が{出|で}るのは{必然的|ひつぜんてき}なことだと{思|おも}います。",
+          "kana": "れんしゅうりょうがちがえば、けっかにさがでるのはひつぜんてきなことだとおもいます。",
+          "en": "If the amount of practice differs, I think it is inevitable that the results will differ too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そうなるのが{当然|とうぜん}で、ほかの{結果|けっか}にはなりようがないさま。",
+        "kana": "そうなるのがとうぜんで、ほかのけっかにはなりようがないさま。"
+      },
+      "frequencyRank": 6312,
+      "confusables": [
+        "v-n1-1257"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1226",
+      "word": "モラル",
+      "kana": "モラル",
+      "meanings": [
+        "morals",
+        "ethics"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{法律|ほうりつ}に{違反|いはん}していなくても、モラルに{反|はん}する{行為|こうい}は{批判|ひはん}される。",
+          "kana": "ほうりつにいはんしていなくても、モラルにはんするこういはひはんされる。",
+          "en": "Even if it does not break the law, conduct that goes against morals is criticized."
+        },
+        {
+          "ja": "ごみを{持|も}ち{帰|かえ}るのは、{登山者|とざんしゃ}としての{最低限|さいていげん}のモラルです。",
+          "kana": "ごみをもちかえるのは、とざんしゃとしてのさいていげんのモラルです。",
+          "en": "Taking your trash home with you is the most basic of ethics for a mountain climber."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}として{守|まも}るべき、{正|ただ}しい{行動|こうどう}の{基準|きじゅん}。{道徳|どうとく}。",
+        "kana": "ひととしてまもるべき、ただしいこうどうのきじゅん。どうとく。"
+      },
+      "frequencyRank": 6325,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1227",
+      "word": "肌寒い",
+      "kana": "はだざむい",
+      "meanings": [
+        "chilly"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "weather",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{日|ひ}が{暮|く}れると{急|きゅう}に{肌寒|はだざむ}くなるので、{上着|うわぎ}を{一枚|いちまい}{持|も}っていったほうがいい。",
+          "kana": "ひがくれるときゅうにはだざむくなるので、うわぎをいちまいもっていったほうがいい。",
+          "en": "It gets chilly all of a sudden after sunset, so you had better take a jacket."
+        },
+        {
+          "ja": "{今朝|けさ}は{肌寒|はだざむ}かったから、しまったばかりのセーターをまた{出|だ}したよ。",
+          "kana": "けさははだざむかったから、しまったばかりのセーターをまただしたよ。",
+          "en": "It was chilly this morning, so I got out the sweater I had only just put away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{体|からだ}に{冷|つめ}たさを{感|かん}じるくらい、{少|すこ}し{寒|さむ}いさま。",
+        "kana": "からだにつめたさをかんじるくらい、すこしさむいさま。"
+      },
+      "frequencyRank": 6338,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1228",
+      "word": "巧妙",
+      "kana": "こうみょう",
+      "meanings": [
+        "clever",
+        "skillful",
+        "cunning"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}の{詐欺|さぎ}の{手口|てぐち}は{巧妙|こうみょう}で、{慎重|しんちょう}な{人|ひと}でもだまされることがある。",
+          "kana": "さいきんのさぎのてぐちはこうみょうで、しんちょうなひとでもだまされることがある。",
+          "en": "Recent fraud techniques are so clever that even careful people sometimes get taken in."
+        },
+        {
+          "ja": "{犯人|はんにん}は{防犯|ぼうはん}カメラに{映|うつ}らないよう、{巧妙|こうみょう}に{経路|けいろ}を{選|えら}んでいたそうです。",
+          "kana": "はんにんはぼうはんカメラにうつらないよう、こうみょうにけいろをえらんでいたそうです。",
+          "en": "The culprit apparently chose the route cleverly so as not to be caught on security cameras."
+        }
+      ],
+      "definitionJa": {
+        "ja": "やり{方|かた}がとても{上手|じょうず}で、{簡単|かんたん}には{気|き}づかれないほど{細|こま}かいさま。",
+        "kana": "やりかたがとてもじょうずで、かんたんにはきづかれないほどこまかいさま。"
+      },
+      "frequencyRank": 6351,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1229",
+      "word": "メカニズム",
+      "kana": "メカニズム",
+      "meanings": [
+        "mechanism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "science",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{病気|びょうき}が{起|お}こるメカニズムは、まだ{完全|かんぜん}には{解明|かいめい}されていない。",
+          "kana": "びょうきがおこるメカニズムは、まだかんぜんにはかいめいされていない。",
+          "en": "The mechanism by which the disease occurs has not yet been fully explained."
+        },
+        {
+          "ja": "なぜ{笑|わら}うと{気分|きぶん}が{晴|は}れるのか、そのメカニズムを{脳|のう}の{研究者|けんきゅうしゃ}が{説明|せつめい}していた。",
+          "kana": "なぜわらうときぶんがはれるのか、そのメカニズムをのうのけんきゅうしゃがせつめいしていた。",
+          "en": "A brain researcher was explaining the mechanism behind why laughing lifts your mood."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{現象|げんしょう}が{起|お}こったり、{機械|きかい}が{動|うご}いたりする{仕組|しく}み。",
+        "kana": "あるげんしょうがおこったり、きかいがうごいたりするしくみ。"
+      },
+      "frequencyRank": 6364,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1230",
+      "word": "多彩",
+      "kana": "たさい",
+      "meanings": [
+        "varied",
+        "colorful",
+        "multitalented"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{文化祭|ぶんかさい}は、{演劇|えんげき}から{料理|りょうり}まで{多彩|たさい}な{企画|きかく}が{用意|ようい}されている。",
+          "kana": "ことしのぶんかさいは、えんげきからりょうりまでたさいなきかくがよういされている。",
+          "en": "This year's culture festival has a varied lineup of events, from theater to cooking."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{歌|うた}も{踊|おど}りも{演技|えんぎ}もこなす、{多彩|たさい}な{才能|さいのう}の{持|も}ち{主|ぬし}です。",
+          "kana": "かのじょはうたもおどりもえんぎもこなす、たさいなさいのうのもちぬしです。",
+          "en": "She is a multitalented performer who can sing, dance and act."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{種類|しゅるい}や{色|いろ}が{多|おお}くて、{変化|へんか}があり{華|はな}やかなさま。",
+        "kana": "しゅるいやいろがおおくて、へんかがありはなやかなさま。"
+      },
+      "frequencyRank": 6377,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1231",
+      "word": "ロジック",
+      "kana": "ロジック",
+      "meanings": [
+        "logic",
+        "reasoning"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}の{説明|せつめい}はロジックがはっきりしていて、{非常|ひじょう}に{分|わ}かりやすかった。",
+          "kana": "かれのせつめいはロジックがはっきりしていて、ひじょうにわかりやすかった。",
+          "en": "His explanation had clear logic and was very easy to follow."
+        },
+        {
+          "ja": "{感情|かんじょう}ではなくロジックで{相手|あいて}を{説得|せっとく}するのが、{交渉|こうしょう}の{基本|きほん}だと{教|おそ}わりました。",
+          "kana": "かんじょうではなくロジックであいてをせっとくするのが、こうしょうのきほんだとおそわりました。",
+          "en": "I was taught that persuading the other side with logic rather than emotion is the basis of negotiation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{結論|けつろん}に{至|いた}るまでの、{考|かんが}えの{正|ただ}しい{進|すす}め{方|かた}。{論理|ろんり}。",
+        "kana": "けつろんにいたるまでの、かんがえのただしいすすめかた。ろんり。"
+      },
+      "frequencyRank": 6390,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1232",
+      "word": "体系的",
+      "kana": "たいけいてき",
+      "meanings": [
+        "systematic"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "{独学|どくがく}では{知識|ちしき}が{断片的|だんぺんてき}になりがちなので、{一度|いちど}{体系的|たいけいてき}に{学|まな}び{直|なお}したい。",
+          "kana": "どくがくではちしきがだんぺんてきになりがちなので、いちどたいけいてきにまなびなおしたい。",
+          "en": "Self-study tends to leave your knowledge fragmentary, so I want to relearn it systematically."
+        },
+        {
+          "ja": "この{講座|こうざ}では、{日本|にほん}の{近代史|きんだいし}を{体系的|たいけいてき}に{学|まな}ぶことができます。",
+          "kana": "このこうざでは、にほんのきんだいしをたいけいてきにまなぶことができます。",
+          "en": "In this course, you can study modern Japanese history systematically."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ひとつひとつの{知識|ちしき}が、{全体|ぜんたい}として{順序|じゅんじょ}よく{整理|せいり}されているさま。",
+        "kana": "ひとつひとつのちしきが、ぜんたいとしてじゅんじょよくせいりされているさま。"
+      },
+      "frequencyRank": 6403,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1233",
+      "word": "シミュレーション",
+      "kana": "シミュレーション",
+      "meanings": [
+        "simulation"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "science",
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{地震|じしん}が{起|お}きた{場合|ばあい}の{被害|ひがい}をコンピューターでシミュレーションした。",
+          "kana": "じしんがおきたばあいのひがいをコンピューターでシミュレーションした。",
+          "en": "We ran a computer simulation of the damage in case an earthquake occurs."
+        },
+        {
+          "ja": "{面接|めんせつ}の{前|まえ}に、{友達|ともだち}に{面接官|めんせつかん}の{役|やく}を{頼|たの}んで{何度|なんど}もシミュレーションをした。",
+          "kana": "めんせつのまえに、ともだちにめんせつかんのやくをたのんでなんどもシミュレーションをした。",
+          "en": "Before the interview, I asked a friend to play the interviewer and ran through it many times."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{実際|じっさい}の{状況|じょうきょう}を{計算|けいさん}や{練習|れんしゅう}でまねて、{結果|けっか}を{予測|よそく}すること。",
+        "kana": "じっさいのじょうきょうをけいさんやれんしゅうでまねて、けっかをよそくすること。"
+      },
+      "frequencyRank": 6416,
+      "notes": "Often misspoken as シュミレーション; the standard form is シミュレーション.",
+      "station": 51
+    },
+    {
+      "id": "v-n1-1234",
+      "word": "一律",
+      "kana": "いちりつ",
+      "meanings": [
+        "uniform",
+        "across the board",
+        "flat (rate)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{年齢|ねんれい}に{関係|かんけい}なく、{参加費|さんかひ}は{一律|いちりつ}{千円|せんえん}です。",
+          "kana": "ねんれいにかんけいなく、さんかひはいちりつせんえんです。",
+          "en": "Regardless of age, the participation fee is a flat 1,000 yen."
+        },
+        {
+          "ja": "{配送料|はいそうりょう}は{全国|ぜんこく}{一律|いちりつ}{五百円|ごひゃくえん}で、{商品|しょうひん}の{重|おも}さによる{違|ちが}いはありません。",
+          "kana": "はいそうりょうはぜんこくいちりつごひゃくえんで、しょうひんのおもさによるちがいはありません。",
+          "en": "Shipping is a flat five hundred yen nationwide, with no difference based on the weight of the item."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{条件|じょうけん}の{違|ちが}いに{関係|かんけい}なく、すべてを{等|ひと}しく{扱|あつか}うこと。",
+        "kana": "じょうけんのちがいにかんけいなく、すべてをひとしくあつかうこと。"
+      },
+      "frequencyRank": 6429,
+      "collocations": [
+        "一律に",
+        "一律料金"
+      ],
+      "confusables": [
+        "v-n1-1241"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1235",
+      "word": "名高い",
+      "kana": "なだかい",
+      "meanings": [
+        "famous",
+        "renowned"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "culture",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "この{寺|てら}は{紅葉|こうよう}の{名所|めいしょ}として{名高|なだか}く、{秋|あき}には{多|おお}くの{観光客|かんこうきゃく}が{訪|おとず}れる。",
+          "kana": "このてらはこうようのめいしょとしてなだかく、あきにはおおくのかんこうきゃくがおとずれる。",
+          "en": "This temple is renowned as a spot for autumn leaves, and many tourists visit in the fall."
+        },
+        {
+          "ja": "この{酒蔵|さかぐら}は{江戸時代|えどじだい}から{続|つづ}く{老舗|しにせ}として{名高|なだか}く、{見学|けんがく}の{予約|よやく}がなかなか{取|と}れません。",
+          "kana": "このさかぐらはえどじだいからつづくしにせとしてなだかく、けんがくのよやくがなかなかとれません。",
+          "en": "This brewery is renowned as a long-established business dating back to the Edo period, and tours are hard to book."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{多|おお}くの{人|ひと}に{知|し}られていて、{評判|ひょうばん}が{高|たか}いさま。",
+        "kana": "おおくのひとにしられていて、ひょうばんがたかいさま。"
+      },
+      "frequencyRank": 6442,
+      "confusables": [
+        "v-n1-1339"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1236",
+      "word": "インターフェース",
+      "kana": "インターフェース",
+      "meanings": [
+        "interface"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "このアプリはインターフェースが{直感的|ちょっかんてき}で、{初|はじ}めてでも{迷|まよ}わず{使|つか}える。",
+          "kana": "このアプリはインターフェースがちょっかんてきで、はじめてでもまよわずつかえる。",
+          "en": "This app's interface is intuitive, so you can use it without getting lost even the first time."
+        },
+        {
+          "ja": "{新|あたら}しいバージョンでインターフェースが{変|か}わったから、ボタンの{場所|ばしょ}に{慣|な}れるまで{時間|じかん}がかかりそう。",
+          "kana": "あたらしいバージョンでインターフェースがかわったから、ボタンのばしょになれるまでじかんがかかりそう。",
+          "en": "The interface changed in the new version, so it looks like it will take a while to get used to where the buttons are."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}と{機械|きかい}、または{機械|きかい}と{機械|きかい}をつなぐ{部分|ぶぶん}や{画面|がめん}。",
+        "kana": "ひとときかい、またはきかいときかいをつなぐぶぶんやがめん。"
+      },
+      "frequencyRank": 6455,
+      "altForms": [
+        "インターフェイス",
+        "インタフェース"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1237",
+      "word": "多岐",
+      "kana": "たき",
+      "meanings": [
+        "wide range",
+        "many branches"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}の{研究|けんきゅう}は{言語学|げんごがく}から{脳科学|のうかがく}まで{多岐|たき}にわたっている。",
+          "kana": "かのじょのけんきゅうはげんごがくからのうかがくまでたきにわたっている。",
+          "en": "Her research spans a wide range of fields, from linguistics to neuroscience."
+        },
+        {
+          "ja": "ご{相談|そうだん}の{内容|ないよう}が{多岐|たき}にわたるため、{担当者|たんとうしゃ}を{分|わ}けてご{案内|あんない}いたします。",
+          "kana": "ごそうだんのないようがたきにわたるため、たんとうしゃをわけてごあんないいたします。",
+          "en": "As the matters you wish to discuss cover a wide range, we will assign separate staff to guide you."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道|みち}や{分野|ぶんや}が、{多|おお}くの{方向|ほうこう}に{分|わ}かれていること。",
+        "kana": "みちやぶんやが、おおくのほうこうにわかれていること。"
+      },
+      "frequencyRank": 6468,
+      "notes": "Almost always in the set phrase 多岐にわたる \"to cover a wide range\".",
+      "collocations": [
+        "多岐にわたる"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1238",
+      "word": "スペック",
+      "kana": "スペック",
+      "meanings": [
+        "specifications",
+        "specs"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{値段|ねだん}なら、スペックの{高|たか}いほうを{選|えら}ぶのが{普通|ふつう}だろう。",
+          "kana": "おなじねだんなら、スペックのたかいほうをえらぶのがふつうだろう。",
+          "en": "At the same price, it is natural to choose the one with higher specs."
+        },
+        {
+          "ja": "{予算内|よさんない}で{一番|いちばん}スペックの{高|たか}いノートパソコンを{探|さが}しているんですが、おすすめはありますか。",
+          "kana": "よさんないでいちばんスペックのたかいノートパソコンをさがしているんですが、おすすめはありますか。",
+          "en": "I am looking for the laptop with the highest specs within my budget; do you have any recommendations?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{機械|きかい}や{製品|せいひん}の{性能|せいのう}や{機能|きのう}を、{数値|すうち}などで{表|あらわ}したもの。",
+        "kana": "きかいやせいひんのせいのうやきのうを、すうちなどであらわしたもの。"
+      },
+      "frequencyRank": 6481,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1239",
+      "word": "手厚い",
+      "kana": "てあつい",
+      "meanings": [
+        "generous",
+        "attentive (care, support)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "この{会社|かいしゃ}は{育児中|いくじちゅう}の{社員|しゃいん}への{支援|しえん}が{手厚|てあつ}いことで{知|し}られている。",
+          "kana": "このかいしゃはいくじちゅうのしゃいんへのしえんがてあついことでしられている。",
+          "en": "This company is known for its generous support of employees raising children."
+        },
+        {
+          "ja": "{旅先|たびさき}で{熱|ねつ}を{出|だ}したとき、{宿|やど}の{人|ひと}が{手厚|てあつ}く{看病|かんびょう}してくれて{本当|ほんとう}に{助|たす}かった。",
+          "kana": "たびさきでねつをだしたとき、やどのひとがてあつくかんびょうしてくれてほんとうにたすかった。",
+          "en": "When I came down with a fever on my trip, the innkeeper nursed me so attentively that it was a real help."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{世話|せわ}や{援助|えんじょ}が{十分|じゅうぶん}で、{心|こころ}がこもっているさま。",
+        "kana": "せわやえんじょがじゅうぶんで、こころがこもっているさま。"
+      },
+      "frequencyRank": 6494,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1240",
+      "word": "テンポ",
+      "kana": "テンポ",
+      "meanings": [
+        "tempo",
+        "pace"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "time",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{曲|きょく}はテンポが{速|はや}くて、{最初|さいしょ}はなかなか{弾|ひ}けなかった。",
+          "kana": "このきょくはテンポがはやくて、さいしょはなかなかひけなかった。",
+          "en": "This piece has a fast tempo, and at first I just could not play it."
+        },
+        {
+          "ja": "{会話|かいわ}のテンポが{速|はや}すぎると、{聞|き}き{手|て}は{内容|ないよう}を{追|お}えなくなってしまいます。",
+          "kana": "かいわのテンポがはやすぎると、ききてはないようをおえなくなってしまいます。",
+          "en": "If the tempo of a conversation is too fast, the listener can no longer follow what is being said."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{音楽|おんがく}を{演奏|えんそう}する{速度|そくど}。また、{話|はなし}や{作業|さぎょう}が{進|すす}む{速|はや}さや{調子|ちょうし}。",
+        "kana": "おんがくをえんそうするそくど。また、はなしやさぎょうがすすむはやさやちょうし。"
+      },
+      "frequencyRank": 6507,
+      "collocations": [
+        "テンポが速い",
+        "テンポよく"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1241",
+      "word": "一様",
+      "kana": "いちよう",
+      "meanings": [
+        "uniform",
+        "all alike"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{発表|はっぴょう}を{聞|き}いた{社員|しゃいん}たちは、{一様|いちよう}に{驚|おどろ}いた{表情|ひょうじょう}を{浮|う}かべた。",
+          "kana": "はっぴょうをきいたしゃいんたちは、いちようにおどろいたひょうじょうをうかべた。",
+          "en": "The employees who heard the announcement all wore the same look of surprise."
+        },
+        {
+          "ja": "{同|おな}じ{指導|しどう}を{受|う}けても、{生徒|せいと}の{成長|せいちょう}の{速|はや}さは{一様|いちよう}ではない。",
+          "kana": "おなじしどうをうけても、せいとのせいちょうのはやさはいちようではない。",
+          "en": "Even with the same instruction, students do not all grow at the same speed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どれも{違|ちが}いがなく、{全部|ぜんぶ}そろっているさま。",
+        "kana": "どれもちがいがなく、ぜんぶそろっているさま。"
+      },
+      "frequencyRank": 6520,
+      "notes": "一様に \"all alike, without exception\"; 一律 is about applying the same rule or rate to everyone.",
+      "confusables": [
+        "v-n1-1234"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1242",
+      "word": "コントラスト",
+      "kana": "コントラスト",
+      "meanings": [
+        "contrast"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "colors",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{白|しろ}い{壁|かべ}と{黒|くろ}い{家具|かぐ}のコントラストが{美|うつく}しい{部屋|へや}だった。",
+          "kana": "しろいかべとくろいかぐのコントラストがうつくしいへやだった。",
+          "en": "It was a room with a beautiful contrast between the white walls and the black furniture."
+        },
+        {
+          "ja": "{写真|しゃしん}のコントラストを{少|すこ}し{強|つよ}くすると、{人物|じんぶつ}がはっきり{浮|う}かび{上|あ}がります。",
+          "kana": "しゃしんのコントラストをすこしつよくすると、じんぶつがはっきりうかびあがります。",
+          "en": "If you make the contrast of the photo a little stronger, the figure stands out clearly."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{明|あか}るさや{色|いろ}などの{違|ちが}いを、はっきり{対比|たいひ}させること。また、その{違|ちが}い。",
+        "kana": "あかるさやいろなどのちがいを、はっきりたいひさせること。また、そのちがい。"
+      },
+      "frequencyRank": 6533,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1243",
+      "word": "手堅い",
+      "kana": "てがたい",
+      "meanings": [
+        "steady",
+        "safe (choice)",
+        "solid"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{大|おお}きな{利益|りえき}は{望|のぞ}めないが、{手堅|てがた}い{投資|とうし}を{続|つづ}けるつもりだ。",
+          "kana": "おおきなりえきはのぞめないが、てがたいとうしをつづけるつもりだ。",
+          "en": "I cannot hope for big profits, but I intend to keep making safe, steady investments."
+        },
+        {
+          "ja": "{無理|むり}な{拡大|かくだい}はせず、{手堅|てがた}い{経営|けいえい}を{続|つづ}けてきたことが、この{会社|かいしゃ}の{強|つよ}みです。",
+          "kana": "むりなかくだいはせず、てがたいけいえいをつづけてきたことが、このかいしゃのつよみです。",
+          "en": "Steady management without reckless expansion is what has made this company strong."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{危険|きけん}を{避|さ}けて、{確実|かくじつ}な{方法|ほうほう}を{選|えら}ぶさま。",
+        "kana": "きけんをさけて、かくじつなほうほうをえらぶさま。"
+      },
+      "frequencyRank": 6546,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1244",
+      "word": "バイアス",
+      "kana": "バイアス",
+      "meanings": [
+        "bias"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "science",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "データを{見|み}るときは、{自分|じぶん}の{中|なか}にあるバイアスに{気|き}づくことが{大切|たいせつ}だ。",
+          "kana": "データをみるときは、じぶんのなかにあるバイアスにきづくことがたいせつだ。",
+          "en": "When looking at data, it is important to be aware of the biases within yourself."
+        },
+        {
+          "ja": "{調査結果|ちょうさけっか}にバイアスがかからないよう、{質問|しつもん}の{順番|じゅんばん}にも{気|き}を{配|くば}りました。",
+          "kana": "ちょうさけっかにバイアスがかからないよう、しつもんのじゅんばんにもきをくばりました。",
+          "en": "So that the survey results would not be biased, we were careful even about the order of the questions."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{判断|はんだん}やものの{見方|みかた}をゆがめる、かたよった{考|かんが}えや{傾向|けいこう}。",
+        "kana": "はんだんやもののみかたをゆがめる、かたよったかんがえやけいこう。"
+      },
+      "frequencyRank": 6559,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1245",
+      "word": "清々しい",
+      "kana": "すがすがしい",
+      "meanings": [
+        "refreshing",
+        "bracing"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "emotions",
+        "weather"
+      ],
+      "examples": [
+        {
+          "ja": "{早朝|そうちょう}の{山|やま}の{空気|くうき}は{清々|すがすが}しく、{昨日|きのう}までの{疲|つか}れが{消|き}えていくようだった。",
+          "kana": "そうちょうのやまのくうきはすがすがしく、きのうまでのつかれがきえていくようだった。",
+          "en": "The early-morning mountain air was so refreshing that the fatigue of the past days seemed to melt away."
+        },
+        {
+          "ja": "{試合|しあい}には{負|ま}けたけど、{全力|ぜんりょく}を{出|だ}し{切|き}ったから{気分|きぶん}は{清々|すがすが}しいよ。",
+          "kana": "しあいにはまけたけど、ぜんりょくをだしきったからきぶんはすがすがしいよ。",
+          "en": "We lost the match, but I gave it everything I had, so I feel refreshed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{空気|くうき}や{気分|きぶん}がさわやかで、{気持|きも}ちがよいさま。",
+        "kana": "くうきやきぶんがさわやかで、きもちがよいさま。"
+      },
+      "frequencyRank": 6572,
+      "altForms": [
+        "すがすがしい"
+      ],
+      "station": 51
+    },
+    {
+      "id": "v-n1-1246",
+      "word": "トラウマ",
+      "kana": "トラウマ",
+      "meanings": [
+        "trauma",
+        "psychological scar"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "health",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{幼|おさな}いころ{犬|いぬ}にかまれたことがトラウマになり、{今|いま}でも{犬|いぬ}が{苦手|にがて}だ。",
+          "kana": "おさないころいぬにかまれたことがトラウマになり、いまでもいぬがにがてだ。",
+          "en": "Being bitten by a dog as a small child left me with a trauma, and I still cannot deal with dogs."
+        },
+        {
+          "ja": "{震災|しんさい}のトラウマを{抱|かか}える{子|こ}どもたちに、{専門家|せんもんか}が{長期的|ちょうきてき}な{支援|しえん}を{続|つづ}けています。",
+          "kana": "しんさいのトラウマをかかえるこどもたちに、せんもんかがちょうきてきなしえんをつづけています。",
+          "en": "Specialists are providing long-term support to children who carry the trauma of the earthquake disaster."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過去|かこ}の{強|つよ}い{恐怖|きょうふ}やショックが{心|こころ}に{残|のこ}した、{深|ふか}い{傷|きず}。",
+        "kana": "かこのつよいきょうふやショックがこころにのこした、ふかいきず。"
+      },
+      "frequencyRank": 6585,
+      "station": 51
+    },
+    {
+      "id": "v-n1-1247",
+      "word": "包括的",
+      "kana": "ほうかつてき",
+      "meanings": [
+        "comprehensive",
+        "inclusive"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{政府|せいふ}は{子育|こそだ}て{支援|しえん}について、{包括的|ほうかつてき}な{対策|たいさく}をまとめた。",
+          "kana": "せいふはこそだてしえんについて、ほうかつてきなたいさくをまとめた。",
+          "en": "The government put together a comprehensive package of measures on child-rearing support."
+        },
+        {
+          "ja": "{両国|りょうこく}は、{貿易|ぼうえき}から{文化交流|ぶんかこうりゅう}までを{含|ふく}む{包括的|ほうかつてき}な{協定|きょうてい}を{結|むす}んだ。",
+          "kana": "りょうこくは、ぼうえきからぶんかこうりゅうまでをふくむほうかつてきなきょうていをむすんだ。",
+          "en": "The two countries concluded a comprehensive agreement covering everything from trade to cultural exchange."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{関係|かんけい}するものをすべて{含|ふく}めて、{全体|ぜんたい}をひとまとめに{扱|あつか}うさま。",
+        "kana": "かんけいするものをすべてふくめて、ぜんたいをひとまとめにあつかうさま。"
+      },
+      "frequencyRank": 6598,
+      "confusables": [
+        "v-n1-1213",
+        "v-n1-1301"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1248",
+      "word": "手強い",
+      "kana": "てごわい",
+      "meanings": [
+        "formidable",
+        "tough (opponent)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "sports"
+      ],
+      "examples": [
+        {
+          "ja": "{決勝|けっしょう}の{相手|あいて}は{去年|きょねん}の{優勝校|ゆうしょうこう}で、かなり{手強|てごわ}い。",
+          "kana": "けっしょうのあいてはきょねんのゆうしょうこうで、かなりてごわい。",
+          "en": "Our opponent in the final is last year's champion school, and they are pretty formidable."
+        },
+        {
+          "ja": "{今回|こんかい}の{交渉相手|こうしょうあいて}はなかなか{手強|てごわ}く、こちらの{条件|じょうけん}を{簡単|かんたん}には{受|う}け{入|い}れてくれませんでした。",
+          "kana": "こんかいのこうしょうあいてはなかなかてごわく、こちらのじょうけんをかんたんにはうけいれてくれませんでした。",
+          "en": "The other side in this negotiation was quite formidable and would not easily accept our terms."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}として{力|ちから}があり、{簡単|かんたん}には{倒|たお}せないさま。",
+        "kana": "あいてとしてちからがあり、かんたんにはたおせないさま。"
+      },
+      "frequencyRank": 6611,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1249",
+      "word": "主体的",
+      "kana": "しゅたいてき",
+      "meanings": [
+        "proactive",
+        "on one's own initiative"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{指示|しじ}を{待|ま}つのではなく、{主体的|しゅたいてき}に{課題|かだい}を{見|み}つけて{動|うご}ける{人材|じんざい}を{求|もと}めています。",
+          "kana": "しじをまつのではなく、しゅたいてきにかだいをみつけてうごけるじんざいをもとめています。",
+          "en": "We are looking for people who do not wait for instructions but find issues and act on their own initiative."
+        },
+        {
+          "ja": "{言|い}われたことをやるだけじゃなくて、もっと{主体的|しゅたいてき}に{動|うご}いてほしいんだよね。",
+          "kana": "いわれたことをやるだけじゃなくて、もっとしゅたいてきにうごいてほしいんだよね。",
+          "en": "I want you to act more on your own initiative, rather than just doing what you are told."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}に{言|い}われるのではなく、{自分|じぶん}の{意志|いし}で{考|かんが}え、{行動|こうどう}するさま。",
+        "kana": "ひとにいわれるのではなく、じぶんのいしでかんがえ、こうどうするさま。"
+      },
+      "frequencyRank": 6624,
+      "confusables": [
+        "v-n1-1254"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1250",
+      "word": "おろそか",
+      "kana": "おろそか",
+      "meanings": [
+        "negligent",
+        "neglected"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "actions",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{仕事|しごと}が{忙|いそが}しいからといって、{健康管理|けんこうかんり}をおろそかにしてはいけない。",
+          "kana": "しごとがいそがしいからといって、けんこうかんりをおろそかにしてはいけない。",
+          "en": "However busy work gets, you must not neglect looking after your health."
+        },
+        {
+          "ja": "{準備|じゅんび}をおろそかにしたせいで、{発表|はっぴょう}は{散々|さんざん}な{結果|けっか}に{終|お}わりました。",
+          "kana": "じゅんびをおろそかにしたせいで、はっぴょうはさんざんなけっかにおわりました。",
+          "en": "Because I neglected my preparation, the presentation ended in a disastrous result."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{必要|ひつよう}なことを、いいかげんにしたまま{放置|ほうち}するさま。",
+        "kana": "ひつようなことを、いいかげんにしたままほうちするさま。"
+      },
+      "frequencyRank": 6637,
+      "altForms": [
+        "疎か"
+      ],
+      "collocations": [
+        "おろそかにする"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1251",
+      "word": "パラドックス",
+      "kana": "パラドックス",
+      "meanings": [
+        "paradox"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{便利|べんり}になるほど{忙|いそが}しくなるというのは、{現代|げんだい}のパラドックスかもしれない。",
+          "kana": "べんりになるほどいそがしくなるというのは、げんだいのパラドックスかもしれない。",
+          "en": "That we get busier the more convenient things become may be the paradox of modern life."
+        },
+        {
+          "ja": "{選択肢|せんたくし}が{増|ふ}えるほど{満足度|まんぞくど}が{下|さ}がるというパラドックスは、{心理学|しんりがく}でもよく{知|し}られています。",
+          "kana": "せんたくしがふえるほどまんぞくどがさがるというパラドックスは、しんりがくでもよくしられています。",
+          "en": "The paradox that satisfaction falls as the number of choices grows is well known in psychology too."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一見|いっけん}{正|ただ}しそうなのに、よく{考|かんが}えると{矛盾|むじゅん}を{含|ふく}んでいる{考|かんが}えや{現象|げんしょう}。",
+        "kana": "いっけんただしそうなのに、よくかんがえるとむじゅんをふくんでいるかんがえやげんしょう。"
+      },
+      "frequencyRank": 6650,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1252",
+      "word": "生々しい",
+      "kana": "なまなましい",
+      "meanings": [
+        "vivid",
+        "raw",
+        "fresh (memory, wound)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{事故|じこ}の{記憶|きおく}はまだ{生々|なまなま}しく、{現場|げんば}の{近|ちか}くを{通|とお}るだけで{手|て}が{震|ふる}える。",
+          "kana": "じこのきおくはまだなまなましく、げんばのちかくをとおるだけでてがふるえる。",
+          "en": "The memory of the accident is still raw, and my hands shake just passing near the site."
+        },
+        {
+          "ja": "{被災者|ひさいしゃ}の{生々|なまなま}しい{証言|しょうげん}を{聞|き}いて、{会場|かいじょう}は{静|しず}まり{返|かえ}りました。",
+          "kana": "ひさいしゃのなまなましいしょうげんをきいて、かいじょうはしずまりかえりました。",
+          "en": "Hearing the disaster victims' vivid testimony, the hall fell completely silent."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}{起|お}こったことのように、はっきりと{記憶|きおく}や{印象|いんしょう}に{残|のこ}っているさま。",
+        "kana": "いまおこったことのように、はっきりときおくやいんしょうにのこっているさま。"
+      },
+      "frequencyRank": 6663,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1253",
+      "word": "イデオロギー",
+      "kana": "イデオロギー",
+      "meanings": [
+        "ideology"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "イデオロギーの{対立|たいりつ}を{超|こ}えて、{両国|りょうこく}は{協力|きょうりょく}の{道|みち}を{探|さぐ}っている。",
+          "kana": "イデオロギーのたいりつをこえて、りょうこくはきょうりょくのみちをさぐっている。",
+          "en": "Going beyond their ideological conflict, the two countries are searching for a way to cooperate."
+        },
+        {
+          "ja": "{若|わか}い{世代|せだい}は、{特定|とくてい}のイデオロギーよりも{目|め}の{前|まえ}の{課題|かだい}に{関心|かんしん}を{持|も}っているようだ。",
+          "kana": "わかいせだいは、とくていのイデオロギーよりもめのまえのかだいにかんしんをもっているようだ。",
+          "en": "The younger generation seems more interested in the issues in front of them than in any particular ideology."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{政治|せいじ}や{社会|しゃかい}についての、まとまった{考|かんが}え{方|かた}や{思想|しそう}。",
+        "kana": "せいじやしゃかいについての、まとまったかんがえかたやしそう。"
+      },
+      "frequencyRank": 6676,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1254",
+      "word": "自発的",
+      "kana": "じはつてき",
+      "meanings": [
+        "voluntary",
+        "spontaneous"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{誰|だれ}に{頼|たの}まれたわけでもなく、{住民|じゅうみん}たちは{自発的|じはつてき}に{公園|こうえん}の{掃除|そうじ}を{始|はじ}めた。",
+          "kana": "だれにたのまれたわけでもなく、じゅうみんたちはじはつてきにこうえんのそうじをはじめた。",
+          "en": "Without anyone asking them, the residents began cleaning the park of their own accord."
+        },
+        {
+          "ja": "{参加|さんか}はあくまで{自発的|じはつてき}なものであって、{会社|かいしゃ}が{強制|きょうせい}することはありません。",
+          "kana": "さんかはあくまでじはつてきなものであって、かいしゃがきょうせいすることはありません。",
+          "en": "Participation is strictly voluntary; the company does not compel anyone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}に{言|い}われたからではなく、{自分|じぶん}から{進|すす}んで{行|おこな}うさま。",
+        "kana": "ひとにいわれたからではなく、じぶんからすすんでおこなうさま。"
+      },
+      "frequencyRank": 6689,
+      "confusables": [
+        "v-n1-1249"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1255",
+      "word": "心許ない",
+      "kana": "こころもとない",
+      "meanings": [
+        "uneasy",
+        "unreliable",
+        "insufficient"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{初|はじ}めての{海外出張|かいがいしゅっちょう}で、{英語力|えいごりょく}に{自信|じしん}がなく{心許|こころもと}ない。",
+          "kana": "はじめてのかいがいしゅっちょうで、えいごりょくにじしんがなくこころもとない。",
+          "en": "It is my first overseas business trip, and I feel uneasy with my shaky English."
+        },
+        {
+          "ja": "{財布|さいふ}の{中身|なかみ}が{残|のこ}り{二千円|にせんえん}じゃ、{週末|しゅうまつ}まで{持|も}たせるのはさすがに{心許|こころもと}ないなあ。",
+          "kana": "さいふのなかみがのこりにせんえんじゃ、しゅうまつまでもたせるのはさすがにこころもとないなあ。",
+          "en": "With only two thousand yen left in my wallet, making it last until the weekend feels pretty precarious."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{頼|たよ}りにならなくて、{不安|ふあん}で{落|お}ち{着|つ}かないさま。",
+        "kana": "たよりにならなくて、ふあんでおちつかないさま。"
+      },
+      "frequencyRank": 6702,
+      "notes": "Often of money or ability: 残高が心許ない \"the balance is uncomfortably low\".",
+      "altForms": [
+        "心もとない"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1256",
+      "word": "パラダイム",
+      "kana": "パラダイム",
+      "meanings": [
+        "paradigm"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "science",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "インターネットの{普及|ふきゅう}は、{情報|じょうほう}のパラダイムを{根本|こんぽん}から{変|か}えた。",
+          "kana": "インターネットのふきゅうは、じょうほうのパラダイムをこんぽんからかえた。",
+          "en": "The spread of the internet fundamentally changed the paradigm of information."
+        },
+        {
+          "ja": "{電気自動車|でんきじどうしゃ}の{普及|ふきゅう}は、{自動車産業|じどうしゃさんぎょう}のパラダイムを{変|か}えつつあると{言|い}われています。",
+          "kana": "でんきじどうしゃのふきゅうは、じどうしゃさんぎょうのパラダイムをかえつつあるといわれています。",
+          "en": "The spread of electric cars is said to be changing the paradigm of the automobile industry."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{時代|じだい}の{人々|ひとびと}の{考|かんが}え{方|かた}を{支|ささ}える、{基本的|きほんてき}なものの{見方|みかた}。",
+        "kana": "あるじだいのひとびとのかんがえかたをささえる、きほんてきなもののみかた。"
+      },
+      "frequencyRank": 6715,
+      "collocations": [
+        "パラダイムシフト"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1257",
+      "word": "不可避",
+      "kana": "ふかひ",
+      "meanings": [
+        "unavoidable",
+        "inevitable"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{高齢化|こうれいか}が{進|すす}む{以上|いじょう}、{医療費|いりょうひ}の{増加|ぞうか}は{不可避|ふかひ}だと{専門家|せんもんか}は{指摘|してき}する。",
+          "kana": "こうれいかがすすむいじょう、いりょうひのぞうかはふかひだとせんもんかはしてきする。",
+          "en": "Experts point out that as the population ages, an increase in medical costs is unavoidable."
+        },
+        {
+          "ja": "{老朽化|ろうきゅうか}した{橋|はし}の{架|か}け{替|か}えは、{安全|あんぜん}のために{不可避|ふかひ}だと{市|し}は{説明|せつめい}しています。",
+          "kana": "ろうきゅうかしたはしのかけかえは、あんぜんのためにふかひだとしはせつめいしています。",
+          "en": "The city explains that rebuilding the aging bridge is unavoidable for safety reasons."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どんなに{避|さ}けようとしても、{避|さ}けることができないさま。",
+        "kana": "どんなにさけようとしても、さけることができないさま。"
+      },
+      "frequencyRank": 6728,
+      "confusables": [
+        "v-n1-1225"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1258",
+      "word": "香ばしい",
+      "kana": "こうばしい",
+      "meanings": [
+        "fragrant (toasted, roasted)",
+        "savory-smelling"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "food",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "パン{屋|や}の{前|まえ}を{通|とお}ると、{焼|や}きたてのパンの{香|こう}ばしい{匂|にお}いが{漂|ただよ}ってきた。",
+          "kana": "パンやのまえをとおると、やきたてのパンのこうばしいにおいがただよってきた。",
+          "en": "Passing the bakery, the toasty smell of freshly baked bread wafted over."
+        },
+        {
+          "ja": "ごまを{軽|かる}く{炒|い}ると、{香|こう}ばしい{匂|にお}いが{台所|だいどころ}いっぱいに{広|ひろ}がるよ。",
+          "kana": "ごまをかるくいると、こうばしいにおいがだいどころいっぱいにひろがるよ。",
+          "en": "Lightly toast the sesame seeds and a savory aroma fills the whole kitchen."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{焼|や}いたり{炒|いた}めたりしたときに{出|で}る、{食欲|しょくよく}をさそうよい{香|かお}りがするさま。",
+        "kana": "やいたりいためたりしたときにでる、しょくよくをさそうよいかおりがするさま。"
+      },
+      "frequencyRank": 6741,
+      "confusables": [
+        "v-n1-1326"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1259",
+      "word": "コンセンサス",
+      "kana": "コンセンサス",
+      "meanings": [
+        "consensus"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "communication",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{会議|かいぎ}では、{全員|ぜんいん}のコンセンサスを{得|え}るまで{何度|なんど}も{話|はな}し{合|あ}いが{行|おこな}われた。",
+          "kana": "かいぎでは、ぜんいんのコンセンサスをえるまでなんどもはなしあいがおこなわれた。",
+          "en": "In the meeting, discussions were held again and again until everyone's consensus was obtained."
+        },
+        {
+          "ja": "{新|あたら}しいロゴについては、まだチーム{内|ない}でコンセンサスが{取|と}れていないんだ。",
+          "kana": "あたらしいロゴについては、まだチームないでコンセンサスがとれていないんだ。",
+          "en": "We have not yet reached a consensus within the team about the new logo."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{関係|かんけい}する{人|ひと}たち{全員|ぜんいん}の{意見|いけん}が{一致|いっち}すること。",
+        "kana": "かんけいするひとたちぜんいんのいけんがいっちすること。"
+      },
+      "frequencyRank": 6754,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1260",
+      "word": "疎い",
+      "kana": "うとい",
+      "meanings": [
+        "ill-informed about",
+        "out of touch with"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{恥|は}ずかしながら{流行|りゅうこう}には{疎|うと}くて、{最近|さいきん}の{歌手|かしゅ}の{名前|なまえ}が{全|まった}く{分|わ}からない。",
+          "kana": "はずかしながらりゅうこうにはうとくて、さいきんのかしゅのなまえがまったくわからない。",
+          "en": "I am embarrassed to say I am out of touch with trends and do not know any of the recent singers' names."
+        },
+        {
+          "ja": "{祖父|そふ}は{機械|きかい}に{疎|うと}いので、スマートフォンの{設定|せってい}は{私|わたし}が{代|か}わりにしています。",
+          "kana": "そふはきかいにうといので、スマートフォンのせっていはわたしがかわりにしています。",
+          "en": "My grandfather is not good with machines, so I set up his smartphone for him."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{分野|ぶんや}についての{知識|ちしき}が{少|すく}なく、{事情|じじょう}をよく{知|し}らないさま。",
+        "kana": "あるぶんやについてのちしきがすくなく、じじょうをよくしらないさま。"
+      },
+      "frequencyRank": 6767,
+      "collocations": [
+        "世事に疎い",
+        "機械に疎い"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1261",
+      "word": "ガバナンス",
+      "kana": "ガバナンス",
+      "meanings": [
+        "governance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "politics",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{不祥事|ふしょうじ}を{受|う}けて、{企業|きぎょう}のガバナンスの{強化|きょうか}が{求|もと}められている。",
+          "kana": "ふしょうじをうけて、きぎょうのガバナンスのきょうかがもとめられている。",
+          "en": "In the wake of the scandal, companies are being asked to strengthen their governance."
+        },
+        {
+          "ja": "ガバナンスが{機能|きのう}していない{組織|そしき}では、{小|ちい}さな{不正|ふせい}が{見過|みす}ごされやすい。",
+          "kana": "ガバナンスがきのうしていないそしきでは、ちいさなふせいがみすごされやすい。",
+          "en": "In an organization where governance is not functioning, small wrongdoings are easily overlooked."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{組織|そしき}が{正|ただ}しく{運営|うんえい}されるように、{管理|かんり}し{監督|かんとく}する{仕組|しく}み。",
+        "kana": "そしきがただしくうんえいされるように、かんりしかんとくするしくみ。"
+      },
+      "frequencyRank": 6780,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1262",
+      "word": "断片的",
+      "kana": "だんぺんてき",
+      "meanings": [
+        "fragmentary"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{事件|じけん}について{断片的|だんぺんてき}な{情報|じょうほう}しか{入|はい}ってこず、{全体像|ぜんたいぞう}がまだつかめない。",
+          "kana": "じけんについてだんぺんてきなじょうほうしかはいってこず、ぜんたいぞうがまだつかめない。",
+          "en": "Only fragmentary information about the incident has come in, and the full picture is still unclear."
+        },
+        {
+          "ja": "{子|こ}どものころの{記憶|きおく}は{断片的|だんぺんてき}にしか{残|のこ}っていませんが、{祖母|そぼ}の{家|いえ}の{匂|にお}いだけははっきり{覚|おぼ}えています。",
+          "kana": "こどものころのきおくはだんぺんてきにしかのこっていませんが、そぼのいえのにおいだけははっきりおぼえています。",
+          "en": "I have only fragmentary memories of my childhood, but I clearly remember the smell of my grandmother's house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}の{一部|いちぶ}だけがばらばらにあって、まとまりがないさま。",
+        "kana": "ぜんたいのいちぶだけがばらばらにあって、まとまりがないさま。"
+      },
+      "frequencyRank": 6793,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1263",
+      "word": "コンプライアンス",
+      "kana": "コンプライアンス",
+      "meanings": [
+        "compliance",
+        "regulatory compliance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "law",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "コンプライアンスを{軽視|けいし}した{経営|けいえい}は、{長|なが}い{目|め}で{見|み}れば{必|かなら}ず{会社|かいしゃ}を{傷|きず}つける。",
+          "kana": "コンプライアンスをけいししたけいえいは、ながいめでみればかならずかいしゃをきずつける。",
+          "en": "Management that disregards compliance will, in the long run, inevitably hurt the company."
+        },
+        {
+          "ja": "{来月|らいげつ}、{全社員|ぜんしゃいん}を{対象|たいしょう}にコンプライアンスの{研修|けんしゅう}を{実施|じっし}します。",
+          "kana": "らいげつ、ぜんしゃいんをたいしょうにコンプライアンスのけんしゅうをじっしします。",
+          "en": "Next month we will hold compliance training for all employees."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{企業|きぎょう}などが、{法律|ほうりつ}や{規則|きそく}、{社会|しゃかい}のルールをきちんと{守|まも}ること。",
+        "kana": "きぎょうなどが、ほうりつやきそく、しゃかいのルールをきちんとまもること。"
+      },
+      "frequencyRank": 6806,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1264",
+      "word": "瑞々しい",
+      "kana": "みずみずしい",
+      "meanings": [
+        "fresh",
+        "juicy",
+        "youthful"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "food",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{朝|あさ}{採|と}れたばかりの{瑞々|みずみず}しいトマトを、{塩|しお}だけで{味|あじ}わった。",
+          "kana": "あさとれたばかりのみずみずしいトマトを、しおだけであじわった。",
+          "en": "I ate the fresh, juicy tomatoes picked that morning with nothing but salt."
+        },
+        {
+          "ja": "{新人|しんじん}の{書|か}いた{脚本|きゃくほん}は、{技術|ぎじゅつ}は{未熟|みじゅく}でも{瑞々|みずみず}しい{感性|かんせい}にあふれていた。",
+          "kana": "しんじんのかいたきゃくほんは、ぎじゅつはみじゅくでもみずみずしいかんせいにあふれていた。",
+          "en": "The newcomer's script was technically immature, but brimming with fresh, youthful sensibility."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新鮮|しんせん}で{水|みず}を{多|おお}く{含|ふく}み、{生|い}き{生|い}きとして{見|み}えるさま。",
+        "kana": "しんせんでみずをおおくふくみ、いきいきとしてみえるさま。"
+      },
+      "frequencyRank": 6819,
+      "altForms": [
+        "みずみずしい"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1265",
+      "word": "スタートアップ",
+      "kana": "スタートアップ",
+      "meanings": [
+        "startup company"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{彼女|かのじょ}は{大手企業|おおてきぎょう}を{辞|や}め、{仲間|なかま}とスタートアップを{始|はじ}めた。",
+          "kana": "かのじょはおおてきぎょうをやめ、なかまとスタートアップをはじめた。",
+          "en": "She quit a major company and started a startup with friends."
+        },
+        {
+          "ja": "{市|し}は{若|わか}い{起業家|きぎょうか}を{支援|しえん}するため、スタートアップ{向|む}けの{補助金|ほじょきん}を{新設|しんせつ}しました。",
+          "kana": "しはわかいきぎょうかをしえんするため、スタートアップむけのほじょきんをしんせつしました。",
+          "en": "To support young entrepreneurs, the city has created a new subsidy aimed at startups."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{設立|せつりつ}されたばかりで、{新|あたら}しい{事業|じぎょう}で{急速|きゅうそく}な{成長|せいちょう}を{目指|めざ}す{企業|きぎょう}。",
+        "kana": "せつりつされたばかりで、あたらしいじぎょうできゅうそくなせいちょうをめざすきぎょう。"
+      },
+      "frequencyRank": 6832,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1266",
+      "word": "突発的",
+      "kana": "とっぱつてき",
+      "meanings": [
+        "sudden",
+        "unexpected"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{突発的|とっぱつてき}なトラブルに{備|そな}えて、{予定|よてい}には{常|つね}に{余裕|よゆう}を{持|も}たせている。",
+          "kana": "とっぱつてきなトラブルにそなえて、よていにはつねによゆうをもたせている。",
+          "en": "I always build slack into my schedule to prepare for sudden trouble."
+        },
+        {
+          "ja": "{突発的|とっぱつてき}な{停電|ていでん}に{備|そな}えて、{懐中電灯|かいちゅうでんとう}は{決|き}まった{場所|ばしょ}に{置|お}いておきましょう。",
+          "kana": "とっぱつてきなていでんにそなえて、かいちゅうでんとうはきまったばしょにおいておきましょう。",
+          "en": "Let's keep the flashlight in a fixed place in case of a sudden power outage."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{予想|よそう}もしていないときに、{突然|とつぜん}{起|お}こるさま。",
+        "kana": "よそうもしていないときに、とつぜんおこるさま。"
+      },
+      "frequencyRank": 6845,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1267",
+      "word": "アルゴリズム",
+      "kana": "アルゴリズム",
+      "meanings": [
+        "algorithm"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "science",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{動画|どうが}サイトのアルゴリズムが、{私|わたし}の{好|この}みに{合|あ}った{作品|さくひん}を{次々|つぎつぎ}と{勧|すす}めてくる。",
+          "kana": "どうがサイトのアルゴリズムが、わたしのこのみにあったさくひんをつぎつぎとすすめてくる。",
+          "en": "The video site's algorithm keeps recommending works that match my tastes one after another."
+        },
+        {
+          "ja": "{授業|じゅぎょう}では、{数字|すうじ}を{小|ちい}さい{順|じゅん}に{並|なら}べ{替|か}える{基本的|きほんてき}なアルゴリズムを{学|まな}びました。",
+          "kana": "じゅぎょうでは、すうじをちいさいじゅんにならべかえるきほんてきなアルゴリズムをまなびました。",
+          "en": "In class, we learned a basic algorithm for sorting numbers from smallest to largest."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{問題|もんだい}を{解|と}くための、{決|き}まった{計算|けいさん}や{処理|しょり}の{手順|てじゅん}。",
+        "kana": "もんだいをとくための、きまったけいさんやしょりのてじゅん。"
+      },
+      "frequencyRank": 6858,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1268",
+      "word": "素っ気ない",
+      "kana": "そっけない",
+      "meanings": [
+        "curt",
+        "cold (reply)",
+        "brusque"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "communication"
+      ],
+      "examples": [
+        {
+          "ja": "メッセージを{送|おく}ったら、「{了解|りょうかい}」とだけ{素|そ}っ{気|け}ない{返事|へんじ}が{返|かえ}ってきた。",
+          "kana": "メッセージをおくったら、「りょうかい」とだけそっけないへんじがかえってきた。",
+          "en": "When I sent a message, all I got back was a curt one-word reply saying it was understood."
+        },
+        {
+          "ja": "せっかく{話|はな}しかけたのに、{素|そ}っ{気|け}ない{態度|たいど}を{取|と}られて{少|すこ}し{傷|きず}つきました。",
+          "kana": "せっかくはなしかけたのに、そっけないたいどをとられてすこしきずつきました。",
+          "en": "I made the effort to start a conversation, only to be met with a curt attitude, which hurt a little."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}への{思|おも}いやりや{愛想|あいそう}がなく、{冷|つめ}たく{感|かん}じられるさま。",
+        "kana": "あいてへのおもいやりやあいそうがなく、つめたくかんじられるさま。"
+      },
+      "frequencyRank": 6871,
+      "altForms": [
+        "そっけない"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1269",
+      "word": "疎遠",
+      "kana": "そえん",
+      "meanings": [
+        "estranged",
+        "out of touch"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "people",
+        "family"
+      ],
+      "examples": [
+        {
+          "ja": "{卒業後|そつぎょうご}は{疎遠|そえん}になっていた{同級生|どうきゅうせい}から、{突然|とつぜん}{結婚式|けっこんしき}の{招待状|しょうたいじょう}が{届|とど}いた。",
+          "kana": "そつぎょうごはそえんになっていたどうきゅうせいから、とつぜんけっこんしきのしょうたいじょうがとどいた。",
+          "en": "Out of the blue, I received a wedding invitation from a classmate I had lost touch with after graduation."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}してから{地元|じもと}の{友達|ともだち}とは{疎遠|そえん}になりがちだけど、{年|ねん}に{一度|いちど}は{集|あつ}まってる。",
+          "kana": "ひっこしてからじもとのともだちとはそえんになりがちだけど、ねんにいちどはあつまってる。",
+          "en": "Since I moved, I have tended to lose touch with my hometown friends, but we still get together once a year."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{連絡|れんらく}や{交流|こうりゅう}がなくなり、{関係|かんけい}が{遠|とお}くなっているさま。",
+        "kana": "れんらくやこうりゅうがなくなり、かんけいがとおくなっているさま。"
+      },
+      "frequencyRank": 6884,
+      "collocations": [
+        "疎遠になる"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1270",
+      "word": "プロトコル",
+      "kana": "プロトコル",
+      "meanings": [
+        "protocol"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "science",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{異|こと}なるメーカーの{機器|きき}でも、{同|おな}じプロトコルを{使|つか}えば{通信|つうしん}できる。",
+          "kana": "ことなるメーカーのききでも、おなじプロトコルをつかえばつうしんできる。",
+          "en": "Even devices from different manufacturers can communicate if they use the same protocol."
+        },
+        {
+          "ja": "この{装置|そうち}は{古|ふる}いプロトコルにしか{対応|たいおう}していないため、{最新|さいしん}の{機器|きき}とは{接続|せつぞく}できません。",
+          "kana": "このそうちはふるいプロトコルにしかたいおうしていないため、さいしんのききとはせつぞくできません。",
+          "en": "This device supports only an old protocol, so it cannot connect to the latest equipment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{通信|つうしん}などを{行|おこな}うときに{従|したが}うべき、{決|き}められた{手順|てじゅん}や{規則|きそく}。",
+        "kana": "つうしんなどをおこなうときにしたがうべき、きめられたてじゅんやきそく。"
+      },
+      "frequencyRank": 6897,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1271",
+      "word": "不可解",
+      "kana": "ふかかい",
+      "meanings": [
+        "baffling",
+        "inexplicable"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}がなぜ{突然|とつぜん}{会社|かいしゃ}を{辞|や}めたのか、{周囲|しゅうい}には{不可解|ふかかい}なままだ。",
+          "kana": "かれがなぜとつぜんかいしゃをやめたのか、しゅういにはふかかいなままだ。",
+          "en": "Why he suddenly quit the company remains a mystery to those around him."
+        },
+        {
+          "ja": "{一度|いちど}も{会|あ}ったことのない{人|ひと}から{毎年|まいとし}{年賀状|ねんがじょう}が{届|とど}くのは、どうにも{不可解|ふかかい}だ。",
+          "kana": "いちどもあったことのないひとからまいとしねんがじょうがとどくのは、どうにもふかかいだ。",
+          "en": "Getting a New Year's card every year from someone I have never met is baffling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "どう{考|かんが}えても{理由|りゆう}が{分|わ}からず、{理解|りかい}できないさま。",
+        "kana": "どうかんがえてもりゆうがわからず、りかいできないさま。"
+      },
+      "frequencyRank": 6910,
+      "confusables": [
+        "v-n1-1332"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1272",
+      "word": "アーキテクチャ",
+      "kana": "アーキテクチャ",
+      "meanings": [
+        "architecture (of a system)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "システム{全体|ぜんたい}のアーキテクチャを{見直|みなお}さないと、これ{以上|いじょう}の{拡張|かくちょう}は{難|むずか}しい。",
+          "kana": "システムぜんたいのアーキテクチャをみなおさないと、これいじょうのかくちょうはむずかしい。",
+          "en": "Unless we rethink the architecture of the whole system, further expansion will be difficult."
+        },
+        {
+          "ja": "{新|あたら}しいサービスのアーキテクチャについて、{来週|らいしゅう}の{会議|かいぎ}で{技術|ぎじゅつ}チームが{説明|せつめい}します。",
+          "kana": "あたらしいサービスのアーキテクチャについて、らいしゅうのかいぎでぎじゅつチームがせつめいします。",
+          "en": "The technical team will explain the architecture of the new service at next week's meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "コンピューターなどの{仕組|しく}み{全体|ぜんたい}の、{基本|きほん}となる{設計|せっけい}や{構造|こうぞう}。",
+        "kana": "コンピューターなどのしくみぜんたいの、きほんとなるせっけいやこうぞう。"
+      },
+      "frequencyRank": 6923,
+      "notes": "In IT the overall structure of a system or chip; buildings are 建築.",
+      "altForms": [
+        "アーキテクチャー"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1273",
+      "word": "味気ない",
+      "kana": "あじけない",
+      "meanings": [
+        "dull",
+        "dreary",
+        "insipid"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "emotions"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}で{食|た}べる{夕食|ゆうしょく}は、どんなにおいしくてもどこか{味気|あじけ}ない。",
+          "kana": "ひとりでたべるゆうしょくは、どんなにおいしくてもどこかあじけない。",
+          "en": "Dinner eaten alone is somehow dreary, no matter how good the food is."
+        },
+        {
+          "ja": "{毎日|まいにち}{同|おな}じ{道|みち}を{往復|おうふく}するだけの{生活|せいかつ}は、どこか{味気|あじけ}なく{感|かん}じられます。",
+          "kana": "まいにちおなじみちをおうふくするだけのせいかつは、どこかあじけなくかんじられます。",
+          "en": "A life of nothing but going back and forth along the same road every day feels somehow dreary."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{面白|おもしろ}みや{楽|たの}しさがなく、つまらなく{感|かん}じられるさま。",
+        "kana": "おもしろみやたのしさがなく、つまらなくかんじられるさま。"
+      },
+      "frequencyRank": 6936,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1274",
+      "word": "パラメータ",
+      "kana": "パラメータ",
+      "meanings": [
+        "parameter"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "science",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "いくつかのパラメータを{調整|ちょうせい}するだけで、{結果|けっか}は{大|おお}きく{変|か}わった。",
+          "kana": "いくつかのパラメータをちょうせいするだけで、けっかはおおきくかわった。",
+          "en": "Just adjusting a few parameters changed the results dramatically."
+        },
+        {
+          "ja": "{温度|おんど}や{湿度|しつど}などのパラメータを{変|か}えながら、{最適|さいてき}な{保存条件|ほぞんじょうけん}を{探|さが}しました。",
+          "kana": "おんどやしつどなどのパラメータをかえながら、さいてきなほぞんじょうけんをさがしました。",
+          "en": "We searched for the optimal storage conditions by varying parameters such as temperature and humidity."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{結果|けっか}を{左右|さゆう}する、{自由|じゆう}に{調整|ちょうせい}できる{数値|すうち}や{条件|じょうけん}。",
+        "kana": "けっかをさゆうする、じゆうにちょうせいできるすうちやじょうけん。"
+      },
+      "frequencyRank": 6949,
+      "altForms": [
+        "パラメーター"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1275",
+      "word": "閑静",
+      "kana": "かんせい",
+      "meanings": [
+        "quiet (neighborhood)",
+        "peaceful"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}から{少|すこ}し{離|はな}れているが、{閑静|かんせい}な{住宅街|じゅうたくがい}で{暮|く}らしやすい。",
+          "kana": "えきからすこしはなれているが、かんせいなじゅうたくがいでくらしやすい。",
+          "en": "It is a little way from the station, but it is a quiet residential area and easy to live in."
+        },
+        {
+          "ja": "あの{辺|あた}りは{閑静|かんせい}で{住|す}みやすそうだけど、{夜|よる}はコンビニまで{遠|とお}くてちょっと{不便|ふべん}かも。",
+          "kana": "あのあたりはかんせいですみやすそうだけど、よるはコンビニまでとおくてちょっとふべんかも。",
+          "en": "That area seems quiet and nice to live in, but at night the convenience store is a long way off, which might be a bit inconvenient."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}や{車|くるま}の{行|い}き{来|き}が{少|すく}なく、{静|しず}かで{落|お}ち{着|つ}いているさま。",
+        "kana": "ひとやくるまのいききがすくなく、しずかでおちついているさま。"
+      },
+      "frequencyRank": 6962,
+      "collocations": [
+        "閑静な住宅街"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1276",
+      "word": "ベンチマーク",
+      "kana": "ベンチマーク",
+      "meanings": [
+        "benchmark"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "business",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{新製品|しんせいひん}の{性能|せいのう}を、{他社製品|たしゃせいひん}をベンチマークとして{比較|ひかく}した。",
+          "kana": "しんせいひんのせいのうを、たしゃせいひんをベンチマークとしてひかくした。",
+          "en": "We compared the new product's performance using competitors' products as a benchmark."
+        },
+        {
+          "ja": "{業界平均|ぎょうかいへいきん}をベンチマークにして、{自社|じしゃ}の{離職率|りしょくりつ}がどの{位置|いち}にあるかを{確認|かくにん}しました。",
+          "kana": "ぎょうかいへいきんをベンチマークにして、じしゃのりしょくりつがどのいちにあるかをかくにんしました。",
+          "en": "Using the industry average as a benchmark, we checked where our company's turnover rate stands."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{性能|せいのう}や{成績|せいせき}などを{比|くら}べるときに、{基準|きじゅん}として{使|つか}うもの。",
+        "kana": "せいのうやせいせきなどをくらべるときに、きじゅんとしてつかうもの。"
+      },
+      "frequencyRank": 6975,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1277",
+      "word": "荒っぽい",
+      "kana": "あらっぽい",
+      "meanings": [
+        "rough",
+        "crude",
+        "violent"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "actions"
+      ],
+      "examples": [
+        {
+          "ja": "{運転|うんてん}が{荒|あら}っぽいタクシーに{乗|の}ってしまい、{着|つ}くまでずっと{落|お}ち{着|つ}かなかった。",
+          "kana": "うんてんがあらっぽいタクシーにのってしまい、つくまでずっとおちつかなかった。",
+          "en": "I got into a taxi that was driven roughly and could not relax until we arrived."
+        },
+        {
+          "ja": "{配達|はいたつ}の{途中|とちゅう}で{荷物|にもつ}を{荒|あら}っぽく{扱|あつか}われたらしく、{中|なか}のグラスが{割|わ}れていました。",
+          "kana": "はいたつのとちゅうでにもつをあらっぽくあつかわれたらしく、なかのグラスがわれていました。",
+          "en": "The package was apparently handled roughly during delivery, and the glass inside was broken."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{動作|どうさ}や{言葉|ことば}が{乱暴|らんぼう}で、{丁寧|ていねい}さがないさま。",
+        "kana": "どうさやことばがらんぼうで、ていねいさがないさま。"
+      },
+      "frequencyRank": 6988,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1278",
+      "word": "フレームワーク",
+      "kana": "フレームワーク",
+      "meanings": [
+        "framework"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じフレームワークを{使|つか}えば、{開発|かいはつ}にかかる{時間|じかん}をかなり{短縮|たんしゅく}できる。",
+          "kana": "おなじフレームワークをつかえば、かいはつにかかるじかんをかなりたんしゅくできる。",
+          "en": "If we use the same framework, we can considerably shorten the time development takes."
+        },
+        {
+          "ja": "{新|あたら}しい{教育|きょういく}プログラムは、{国|くに}が{示|しめ}した{評価|ひょうか}のフレームワークに{沿|そ}って{作|つく}られています。",
+          "kana": "あたらしいきょういくプログラムは、くにがしめしたひょうかのフレームワークにそってつくられています。",
+          "en": "The new education program has been built in line with the evaluation framework set out by the government."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{考|かんが}え{方|かた}や{開発|かいはつ}の{土台|どだい}となる、{基本的|きほんてき}な{構造|こうぞう}や{決|き}まり。",
+        "kana": "かんがえかたやかいはつのどだいとなる、きほんてきなこうぞうやきまり。"
+      },
+      "frequencyRank": 7001,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1279",
+      "word": "劣悪",
+      "kana": "れつあく",
+      "meanings": [
+        "inferior",
+        "appalling (conditions)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{労働者|ろうどうしゃ}たちは{劣悪|れつあく}な{環境|かんきょう}で{働|はたら}かされていたことを{告発|こくはつ}した。",
+          "kana": "ろうどうしゃたちはれつあくなかんきょうではたらかされていたことをこくはつした。",
+          "en": "The workers reported that they had been made to work in appalling conditions."
+        },
+        {
+          "ja": "{劣悪|れつあく}な{衛生状態|えいせいじょうたい}の{中|なか}で、{医師|いし}たちは{限|かぎ}られた{薬|くすり}で{治療|ちりょう}を{続|つづ}けた。",
+          "kana": "れつあくなえいせいじょうたいのなかで、いしたちはかぎられたくすりでちりょうをつづけた。",
+          "en": "Amid appalling sanitary conditions, the doctors kept treating patients with the limited medicine they had."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{質|しつ}や{環境|かんきょう}などが、ひどく{悪|わる}いさま。",
+        "kana": "しつやかんきょうなどが、ひどくわるいさま。"
+      },
+      "frequencyRank": 7014,
+      "collocations": [
+        "劣悪な環境",
+        "劣悪な労働条件"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1280",
+      "word": "ライブラリ",
+      "kana": "ライブラリ",
+      "meanings": [
+        "library (of code)",
+        "collection"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{画像処理|がぞうしょり}には、{無料|むりょう}で{公開|こうかい}されているライブラリを{利用|りよう}した。",
+          "kana": "がぞうしょりには、むりょうでこうかいされているライブラリをりようした。",
+          "en": "For the image processing, I used a library that is published free of charge."
+        },
+        {
+          "ja": "{同|おな}じ{処理|しょり}を{何度|なんど}も{書|か}くより、{既存|きそん}のライブラリを{使|つか}ったほうが{早|はや}いよ。",
+          "kana": "おなじしょりをなんどもかくより、きそんのライブラリをつかったほうがはやいよ。",
+          "en": "Rather than writing the same routine over and over, it is quicker to use an existing library."
+        }
+      ],
+      "definitionJa": {
+        "ja": "よく{使|つか}う{機能|きのう}をまとめて、{繰|く}り{返|かえ}し{使|つか}えるようにしたもの。",
+        "kana": "よくつかうきのうをまとめて、くりかえしつかえるようにしたもの。"
+      },
+      "frequencyRank": 7027,
+      "notes": "In IT a reusable collection of code; the building is 図書館. ライブラリー also means a media collection.",
+      "altForms": [
+        "ライブラリー"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1281",
+      "word": "痛々しい",
+      "kana": "いたいたしい",
+      "meanings": [
+        "pitiful",
+        "painful to see"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{包帯|ほうたい}だらけの{痛々|いたいた}しい{姿|すがた}を{見|み}て、{何|なに}も{言|い}えなくなった。",
+          "kana": "ほうたいだらけのいたいたしいすがたをみて、なにもいえなくなった。",
+          "en": "Seeing him covered in bandages, a painful sight, I could not say a word."
+        },
+        {
+          "ja": "あの{選手|せんしゅ}、けがを{押|お}して{出場|しゅつじょう}してるけど、{正直|しょうじき}{見|み}ていて{痛々|いたいた}しいよ。",
+          "kana": "あのせんしゅ、けがをおしてしゅつじょうしてるけど、しょうじきみていていたいたしいよ。",
+          "en": "That player is competing despite an injury, and honestly it is painful to watch."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{見|み}ているほうがつらくなるほど、かわいそうなさま。",
+        "kana": "みているほうがつらくなるほど、かわいそうなさま。"
+      },
+      "frequencyRank": 7040,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1282",
+      "word": "モジュール",
+      "kana": "モジュール",
+      "meanings": [
+        "module"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{機能|きのう}ごとにモジュールを{分|わ}けておくと、{後|あと}から{修正|しゅうせい}しやすい。",
+          "kana": "きのうごとにモジュールをわけておくと、あとからしゅうせいしやすい。",
+          "en": "If you split the modules by function, it is easier to make changes later."
+        },
+        {
+          "ja": "この{家具|かぐ}はモジュール{式|しき}なので、{部屋|へや}の{広|ひろ}さに{合|あ}わせて{自由|じゆう}に{組|く}み{合|あ}わせられます。",
+          "kana": "このかぐはモジュールしきなので、へやのひろさにあわせてじゆうにくみあわせられます。",
+          "en": "This furniture is modular, so you can combine it freely to fit the size of your room."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}を{組|く}み{立|た}てるための、まとまった{機能|きのう}を{持|も}つ{部品|ぶひん}。",
+        "kana": "ぜんたいをくみたてるための、まとまったきのうをもつぶひん。"
+      },
+      "frequencyRank": 7053,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1283",
+      "word": "根深い",
+      "kana": "ねぶかい",
+      "meanings": [
+        "deep-rooted"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{両者|りょうしゃ}の{対立|たいりつ}は{根深|ねぶか}く、{一度|いちど}の{話|はな}し{合|あ}いで{解決|かいけつ}できる{問題|もんだい}ではない。",
+          "kana": "りょうしゃのたいりつはねぶかく、いちどのはなしあいでかいけつできるもんだいではない。",
+          "en": "The conflict between the two sides is deep-rooted and not a problem that one round of talks can solve."
+        },
+        {
+          "ja": "この{地域|ちいき}の{水不足|みずぶそく}は{根深|ねぶか}い{問題|もんだい}で、ダムを{一|ひと}つ{造|つく}っただけでは{解決|かいけつ}しません。",
+          "kana": "このちいきのみずぶそくはねぶかいもんだいで、ダムをひとつつくっただけではかいけつしません。",
+          "en": "Water shortage in this region is a deep-rooted problem that building a single dam will not solve."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{原因|げんいん}が{深|ふか}いところにあって、{簡単|かんたん}には{解決|かいけつ}できないさま。",
+        "kana": "げんいんがふかいところにあって、かんたんにはかいけつできないさま。"
+      },
+      "frequencyRank": 7066,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1284",
+      "word": "コンポーネント",
+      "kana": "コンポーネント",
+      "meanings": [
+        "component"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{画面|がめん}は、{再利用|さいりよう}できる{小|ちい}さなコンポーネントの{組|く}み{合|あ}わせでできている。",
+          "kana": "このがめんは、さいりようできるちいさなコンポーネントのくみあわせでできている。",
+          "en": "This screen is made up of a combination of small reusable components."
+        },
+        {
+          "ja": "{故障|こしょう}したコンポーネントだけを{交換|こうかん}すれば、{本体|ほんたい}を{買|か}い{替|か}える{必要|ひつよう}はありません。",
+          "kana": "こしょうしたコンポーネントだけをこうかんすれば、ほんたいをかいかえるひつようはありません。",
+          "en": "If you replace only the faulty component, there is no need to buy a whole new unit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}を{組|く}み{立|た}てている、ひとつひとつの{部品|ぶひん}や{要素|ようそ}。",
+        "kana": "ぜんたいをくみたてている、ひとつひとつのぶひんやようそ。"
+      },
+      "frequencyRank": 7079,
+      "station": 52
+    },
+    {
+      "id": "v-n1-1285",
+      "word": "緊密",
+      "kana": "きんみつ",
+      "meanings": [
+        "close (cooperation)",
+        "tight"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{両社|りょうしゃ}は{緊密|きんみつ}に{連携|れんけい}しながら、{新|あたら}しいサービスの{開発|かいはつ}を{進|すす}めている。",
+          "kana": "りょうしゃはきんみつにれんけいしながら、あたらしいサービスのかいはつをすすめている。",
+          "en": "The two companies are developing the new service in close coordination."
+        },
+        {
+          "ja": "{災害時|さいがいじ}には、{自治体|じちたい}と{病院|びょういん}が{緊密|きんみつ}に{情報|じょうほう}を{共有|きょうゆう}することが{欠|か}かせません。",
+          "kana": "さいがいじには、じちたいとびょういんがきんみつにじょうほうをきょうゆうすることがかかせません。",
+          "en": "In a disaster, it is essential that local governments and hospitals share information closely."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{関係|かんけい}や{協力|きょうりょく}の{結|むす}びつきが、とても{強|つよ}くて{深|ふか}いさま。",
+        "kana": "かんけいやきょうりょくのむすびつきが、とてもつよくてふかいさま。"
+      },
+      "frequencyRank": 7092,
+      "collocations": [
+        "緊密な連携"
+      ],
+      "confusables": [
+        "v-n1-1210"
+      ],
+      "station": 52
+    },
+    {
+      "id": "v-n1-1286",
+      "word": "スキーム",
+      "kana": "スキーム",
+      "meanings": [
+        "scheme",
+        "framework (of a plan)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "business",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{事業|じぎょう}のために、{資金|しきん}を{集|あつ}めるスキームを{検討|けんとう}している。",
+          "kana": "あたらしいじぎょうのために、しきんをあつめるスキームをけんとうしている。",
+          "en": "We are considering a scheme for raising funds for the new business."
+        },
+        {
+          "ja": "{補助金|ほじょきん}を{受|う}け{取|と}るには、{国|くに}が{定|さだ}めたスキームに{沿|そ}って{申請|しんせい}する{必要|ひつよう}がある。",
+          "kana": "ほじょきんをうけとるには、くにがさだめたスキームにそってしんせいするひつようがある。",
+          "en": "To receive the subsidy, you need to apply according to the scheme laid down by the government."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{目的|もくてき}を{実現|じつげん}するために{作|つく}られた、{計画|けいかく}や{仕組|しく}みの{全体|ぜんたい}。",
+        "kana": "もくてきをじつげんするためにつくられた、けいかくやしくみのぜんたい。"
+      },
+      "frequencyRank": 7105,
+      "notes": "Neutral in Japanese (a plan or structure); it lacks the English overtone of a shady plot.",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1287",
+      "word": "用心深い",
+      "kana": "ようじんぶかい",
+      "meanings": [
+        "cautious",
+        "wary"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{祖母|そぼ}は{用心深|ようじんぶか}い{性格|せいかく}で、{知|し}らない{番号|ばんごう}からの{電話|でんわ}には{決|けっ}して{出|で}ない。",
+          "kana": "そぼはようじんぶかいせいかくで、しらないばんごうからのでんわにはけっしてでない。",
+          "en": "My grandmother is cautious by nature and never answers calls from unknown numbers."
+        },
+        {
+          "ja": "あいつは{用心深|ようじんぶか}いから、{知|し}らないサイトには{絶対|ぜったい}にカード{番号|ばんごう}を{入|い}れないんだ。",
+          "kana": "あいつはようじんぶかいから、しらないサイトにはぜったいにカードばんごうをいれないんだ。",
+          "en": "He is cautious, so he never enters his card number on a site he does not know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{危険|きけん}や{失敗|しっぱい}を{避|さ}けるために、いつも{注意|ちゅうい}して{慎重|しんちょう}に{行動|こうどう}するさま。",
+        "kana": "きけんやしっぱいをさけるために、いつもちゅういしてしんちょうにこうどうするさま。"
+      },
+      "frequencyRank": 7118,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1288",
+      "word": "コンテクスト",
+      "kana": "コンテクスト",
+      "meanings": [
+        "context"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "language",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{同|おな}じ{言葉|ことば}でも、コンテクストによって{意味|いみ}が{全|まった}く{変|か}わることがある。",
+          "kana": "おなじことばでも、コンテクストによっていみがまったくかわることがある。",
+          "en": "Even the same word can completely change meaning depending on the context."
+        },
+        {
+          "ja": "この{発言|はつげん}は、{当時|とうじ}の{社会的|しゃかいてき}なコンテクストを{抜|ぬ}きにしては{正|ただ}しく{理解|りかい}できません。",
+          "kana": "このはつげんは、とうじのしゃかいてきなコンテクストをぬきにしてはただしくりかいできません。",
+          "en": "This remark cannot be properly understood apart from the social context of the time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}の{意味|いみ}を{決|き}める、{前後|ぜんご}のつながりや{状況|じょうきょう}。{文脈|ぶんみゃく}。",
+        "kana": "ことばのいみをきめる、ぜんごのつながりやじょうきょう。ぶんみゃく。"
+      },
+      "frequencyRank": 7131,
+      "notes": "文脈 is the everyday word; コンテクスト appears in academic and design writing, コンテキスト mostly in IT.",
+      "altForms": [
+        "コンテキスト"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1289",
+      "word": "静寂",
+      "kana": "せいじゃく",
+      "meanings": [
+        "silence",
+        "stillness"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "nature",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{雪|ゆき}が{降|ふ}り{積|つ}もった{朝|あさ}、{町|まち}は{不思議|ふしぎ}なほどの{静寂|せいじゃく}に{包|つつ}まれていた。",
+          "kana": "ゆきがふりつもったあさ、まちはふしぎなほどのせいじゃくにつつまれていた。",
+          "en": "On the morning after the snowfall, the town was wrapped in an almost uncanny silence."
+        },
+        {
+          "ja": "{演奏|えんそう}が{終|お}わっても{拍手|はくしゅ}はすぐには{起|お}こらず、{会場|かいじょう}はしばらく{静寂|せいじゃく}に{支配|しはい}されていた。",
+          "kana": "えんそうがおわってもはくしゅはすぐにはおこらず、かいじょうはしばらくせいじゃくにしはいされていた。",
+          "en": "Even after the performance ended, applause did not come right away; for a while the hall was held in silence."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{何|なに}も{聞|き}こえないほど、{静|しず}かでしんとしていること。",
+        "kana": "なにもきこえないほど、しずかでしんとしていること。"
+      },
+      "frequencyRank": 7144,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1290",
+      "word": "メタファー",
+      "kana": "メタファー",
+      "meanings": [
+        "metaphor"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "language",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{詩|し}では、{冬|ふゆ}の{海|うみ}が{孤独|こどく}のメタファーとして{使|つか}われている。",
+          "kana": "このしでは、ふゆのうみがこどくのメタファーとしてつかわれている。",
+          "en": "In this poem, the winter sea is used as a metaphor for loneliness."
+        },
+        {
+          "ja": "「{時|とき}は{金|かね}なり」は、{時間|じかん}の{価値|かち}をお{金|かね}にたとえた{有名|ゆうめい}なメタファーです。",
+          "kana": "「ときはかねなり」は、じかんのかちをおかねにたとえたゆうめいなメタファーです。",
+          "en": "\"Time is money\" is a famous metaphor that likens the value of time to money."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるものを、{性質|せいしつ}の{近|ちか}い{別|べつ}のものにたとえて{表|あらわ}す{表現|ひょうげん}。",
+        "kana": "あるものを、せいしつのちかいべつのものにたとえてあらわすひょうげん。"
+      },
+      "frequencyRank": 7157,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1291",
+      "word": "手厳しい",
+      "kana": "てきびしい",
+      "meanings": [
+        "harsh",
+        "severe (criticism)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "communication",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{提出|ていしゅつ}した{企画書|きかくしょ}は、{部長|ぶちょう}から{手厳|てきび}しい{指摘|してき}を{受|う}けた。",
+          "kana": "ていしゅつしたきかくしょは、ぶちょうからてきびしいしてきをうけた。",
+          "en": "The proposal I submitted received harsh criticism from the department head."
+        },
+        {
+          "ja": "{師匠|ししょう}は{手厳|てきび}しい{人|ひと}だけど、{褒|ほ}めるときは{本気|ほんき}で{褒|ほ}めてくれるんだ。",
+          "kana": "ししょうはてきびしいひとだけど、ほめるときはほんきでほめてくれるんだ。",
+          "en": "My master is a harsh man, but when he praises you, he really means it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{相手|あいて}への{批判|ひはん}や{指導|しどう}が、{遠慮|えんりょ}なくとても{厳|きび}しいさま。",
+        "kana": "あいてへのひはんやしどうが、えんりょなくとてもきびしいさま。"
+      },
+      "frequencyRank": 7170,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1292",
+      "word": "レトリック",
+      "kana": "レトリック",
+      "meanings": [
+        "rhetoric",
+        "figure of speech"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "language",
+        "communication",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{政治家|せいじか}の{中身|なかみ}のないレトリックに、{有権者|ゆうけんしゃ}はもううんざりしている。",
+          "kana": "せいじかのなかみのないレトリックに、ゆうけんしゃはもううんざりしている。",
+          "en": "Voters are fed up with politicians' empty rhetoric."
+        },
+        {
+          "ja": "{巧|たく}みなレトリックで{聴衆|ちょうしゅう}を{引|ひ}きつける{演説|えんぜつ}だったが、{具体的|ぐたいてき}な{政策|せいさく}はほとんど{語|かた}られなかった。",
+          "kana": "たくみなレトリックでちょうしゅうをひきつけるえんぜつだったが、ぐたいてきなせいさくはほとんどかたられなかった。",
+          "en": "It was a speech that drew in the audience with skillful rhetoric, but it said almost nothing about concrete policies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{言葉|ことば}を{上手|じょうず}に{使|つか}って、{相手|あいて}を{説得|せっとく}したり{表現|ひょうげん}を{飾|かざ}ったりする{技術|ぎじゅつ}。",
+        "kana": "ことばをじょうずにつかって、あいてをせっとくしたりひょうげんをかざったりするぎじゅつ。"
+      },
+      "frequencyRank": 7183,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1293",
+      "word": "過疎",
+      "kana": "かそ",
+      "meanings": [
+        "depopulation",
+        "underpopulation"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{過疎|かそ}が{進|すす}む{村|むら}では、{小学校|しょうがっこう}の{全校生徒|ぜんこうせいと}がわずか{五人|ごにん}になった。",
+          "kana": "かそがすすむむらでは、しょうがっこうのぜんこうせいとがわずかごにんになった。",
+          "en": "In the depopulating village, the elementary school is down to just five pupils in total."
+        },
+        {
+          "ja": "{過疎対策|かそたいさく}として、{町|まち}は{移住者|いじゅうしゃ}に{空|あ}き{家|や}を{無料|むりょう}で{貸|か}し{出|だ}す{制度|せいど}を{始|はじ}めました。",
+          "kana": "かそたいさくとして、まちはいじゅうしゃにあきやをむりょうでかしだすせいどをはじめました。",
+          "en": "As a measure against depopulation, the town has started a program that lends vacant houses to newcomers for free."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{地域|ちいき}の{人口|じんこう}が{減|へ}りすぎて、{学校|がっこう}や{店|みせ}などが{維持|いじ}できなくなること。",
+        "kana": "あるちいきのじんこうがへりすぎて、がっこうやみせなどがいじできなくなること。"
+      },
+      "frequencyRank": 7196,
+      "collocations": [
+        "過疎化",
+        "過疎地域"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1294",
+      "word": "ヒエラルキー",
+      "kana": "ヒエラルキー",
+      "meanings": [
+        "hierarchy"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "work",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "その{会社|かいしゃ}はヒエラルキーが{厳|きび}しく、{若手|わかて}の{意見|いけん}はなかなか{上|うえ}に{届|とど}かない。",
+          "kana": "そのかいしゃはヒエラルキーがきびしく、わかてのいけんはなかなかうえにとどかない。",
+          "en": "That company has a strict hierarchy, and young employees' opinions rarely reach the top."
+        },
+        {
+          "ja": "うちの{会社|かいしゃ}はヒエラルキーがほとんどなくて、{社長|しゃちょう}にも{気軽|きがる}に{意見|いけん}を{言|い}えるんだ。",
+          "kana": "うちのかいしゃはヒエラルキーがほとんどなくて、しゃちょうにもきがるにいけんをいえるんだ。",
+          "en": "My company has almost no hierarchy, so you can even give your opinion to the president freely."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{上|うえ}の{人|ひと}と{下|した}の{人|ひと}の{関係|かんけい}が、はっきり{決|き}まった{組織|そしき}の{形|かたち}。",
+        "kana": "うえのひととしたのひとのかんけいが、はっきりきまったそしきのかたち。"
+      },
+      "frequencyRank": 7209,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1295",
+      "word": "おぼつかない",
+      "kana": "おぼつかない",
+      "meanings": [
+        "unsteady",
+        "uncertain",
+        "shaky"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{祖父|そふ}は{退院|たいいん}したばかりで、まだ{足取|あしど}りがおぼつかない。",
+          "kana": "そふはたいいんしたばかりで、まだあしどりがおぼつかない。",
+          "en": "My grandfather has only just left the hospital and is still unsteady on his feet."
+        },
+        {
+          "ja": "{英語|えいご}はまだおぼつかないので、{大事|だいじ}な{交渉|こうしょう}には{通訳|つうやく}をお{願|ねが}いしています。",
+          "kana": "えいごはまだおぼつかないので、だいじなこうしょうにはつうやくをおねがいしています。",
+          "en": "My English is still shaky, so for important negotiations I ask for an interpreter."
+        }
+      ],
+      "definitionJa": {
+        "ja": "しっかりしていなくて、うまくいくかどうか{不安|ふあん}なさま。",
+        "kana": "しっかりしていなくて、うまくいくかどうかふあんなさま。"
+      },
+      "frequencyRank": 7222,
+      "notes": "Also of memory or prospects: 記憶がおぼつかない, 合格はおぼつかない.",
+      "altForms": [
+        "覚束ない"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1296",
+      "word": "サステナビリティ",
+      "kana": "サステナビリティ",
+      "meanings": [
+        "sustainability"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "nature",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{多|おお}くの{企業|きぎょう}が、サステナビリティを{経営|けいえい}の{柱|はしら}の{一|ひと}つに{掲|かか}げている。",
+          "kana": "おおくのきぎょうが、サステナビリティをけいえいのはしらのひとつにかかげている。",
+          "en": "Many companies hold up sustainability as one of the pillars of their management."
+        },
+        {
+          "ja": "このブランド、デザインだけじゃなくてサステナビリティにも{力|ちから}を{入|い}れてるんだって。",
+          "kana": "このブランド、デザインだけじゃなくてサステナビリティにもちからをいれてるんだって。",
+          "en": "I hear this brand puts effort into sustainability, not just design."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{環境|かんきょう}や{社会|しゃかい}が、{将来|しょうらい}にわたって{続|つづ}いていけること。",
+        "kana": "かんきょうやしゃかいが、しょうらいにわたってつづいていけること。"
+      },
+      "frequencyRank": 7235,
+      "altForms": [
+        "サステナビリティー",
+        "サスティナビリティ"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1297",
+      "word": "稚拙",
+      "kana": "ちせつ",
+      "meanings": [
+        "unskillful",
+        "clumsy",
+        "childish (work)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "arts"
+      ],
+      "examples": [
+        {
+          "ja": "{十年前|じゅうねんまえ}に{書|か}いた{小説|しょうせつ}を{読|よ}み{返|かえ}すと、{稚拙|ちせつ}な{文章|ぶんしょう}に{顔|かお}が{赤|あか}くなる。",
+          "kana": "じゅうねんまえにかいたしょうせつをよみかえすと、ちせつなぶんしょうにかおがあかくなる。",
+          "en": "Rereading the novel I wrote ten years ago, the clumsy writing makes me blush."
+        },
+        {
+          "ja": "{稚拙|ちせつ}な{文章|ぶんしょう}で{恐縮|きょうしゅく}ですが、ご{一読|いちどく}いただければ{幸|さいわ}いです。",
+          "kana": "ちせつなぶんしょうできょうしゅくですが、ごいちどくいただければさいわいです。",
+          "en": "I am afraid my writing is clumsy, but I would be grateful if you could read it through."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{技術|ぎじゅつ}や{表現|ひょうげん}が{下手|へた}で、{子|こ}どもっぽく{見|み}えるさま。",
+        "kana": "ぎじゅつやひょうげんがへたで、こどもっぽくみえるさま。"
+      },
+      "frequencyRank": 7248,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1298",
+      "word": "ノスタルジア",
+      "kana": "ノスタルジア",
+      "meanings": [
+        "nostalgia"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{商店街|しょうてんがい}を{歩|ある}いていると、{子|こ}どものころへのノスタルジアを{感|かん}じる。",
+          "kana": "ふるいしょうてんがいをあるいていると、こどものころへのノスタルジアをかんじる。",
+          "en": "Walking through the old shopping street, I feel a nostalgia for my childhood."
+        },
+        {
+          "ja": "{久|ひさ}しぶりに{聞|き}いた{学生時代|がくせいじだい}の{曲|きょく}が、{甘|あま}いノスタルジアを{呼|よ}び{起|お}こした。",
+          "kana": "ひさしぶりにきいたがくせいじだいのきょくが、あまいノスタルジアをよびおこした。",
+          "en": "A song from my student days that I heard for the first time in ages stirred up a sweet nostalgia."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過|す}ぎた{昔|むかし}やふるさとを{懐|なつ}かしむ、{甘|あま}くて{少|すこ}しさびしい{気持|きも}ち。",
+        "kana": "すぎたむかしやふるさとをなつかしむ、あまくてすこしさびしいきもち。"
+      },
+      "frequencyRank": 7261,
+      "altForms": [
+        "ノスタルジー"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1299",
+      "word": "儚い",
+      "kana": "はかない",
+      "meanings": [
+        "fleeting",
+        "ephemeral",
+        "transient"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "emotions",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{桜|さくら}は{一週間|いっしゅうかん}ほどで{散|ち}ってしまうからこそ、その{儚|はかな}さが{人|ひと}の{心|こころ}を{打|う}つのだろう。",
+          "kana": "さくらはいっしゅうかんほどでちってしまうからこそ、そのはかなさがひとのこころをうつのだろう。",
+          "en": "Cherry blossoms fall in about a week, and it is precisely that fleetingness that moves people's hearts."
+        },
+        {
+          "ja": "{花火|はなび}って、{一瞬|いっしゅん}で{消|き}えてしまうからこそ{儚|はかな}くてきれいなんだよね。",
+          "kana": "はなびって、いっしゅんできえてしまうからこそはかなくてきれいなんだよね。",
+          "en": "Fireworks are beautiful precisely because they are fleeting, vanishing in an instant."
+        }
+      ],
+      "definitionJa": {
+        "ja": "すぐに{消|き}えてしまって、{長|なが}くは{続|つづ}かないさま。",
+        "kana": "すぐにきえてしまって、ながくはつづかないさま。"
+      },
+      "frequencyRank": 7274,
+      "altForms": [
+        "はかない"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1300",
+      "word": "モダニズム",
+      "kana": "モダニズム",
+      "meanings": [
+        "modernism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "culture",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{建物|たてもの}は{昭和初期|しょうわしょき}のモダニズム{建築|けんちく}の{代表作|だいひょうさく}として{知|し}られている。",
+          "kana": "このたてものはしょうわしょきのモダニズムけんちくのだいひょうさくとしてしられている。",
+          "en": "This building is known as a representative work of early-Showa modernist architecture."
+        },
+        {
+          "ja": "この{美術館|びじゅつかん}では、{二十世紀前半|にじっせいきぜんはん}のモダニズムの{絵画|かいが}を{中心|ちゅうしん}に{展示|てんじ}しています。",
+          "kana": "このびじゅつかんでは、にじっせいきぜんはんのモダニズムのかいがをちゅうしんにてんじしています。",
+          "en": "This museum's exhibits center on modernist paintings from the first half of the twentieth century."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{伝統|でんとう}から{離|はな}れ、{新|あたら}しい{時代|じだい}にふさわしい{表現|ひょうげん}を{目指|めざ}した{芸術|げいじゅつ}の{流|なが}れ。",
+        "kana": "でんとうからはなれ、あたらしいじだいにふさわしいひょうげんをめざしたげいじゅつのながれ。"
+      },
+      "frequencyRank": 7287,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1301",
+      "word": "網羅的",
+      "kana": "もうらてき",
+      "meanings": [
+        "exhaustive",
+        "comprehensive (covering all)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "study"
+      ],
+      "examples": [
+        {
+          "ja": "この{辞書|じしょ}は{方言|ほうげん}まで{網羅的|もうらてき}に{収録|しゅうろく}している{点|てん}が{高|たか}く{評価|ひょうか}されている。",
+          "kana": "このじしょはほうげんまでもうらてきにしゅうろくしているてんがたかくひょうかされている。",
+          "en": "This dictionary is highly regarded for its exhaustive coverage, even of dialects."
+        },
+        {
+          "ja": "{試験範囲|しけんはんい}を{網羅的|もうらてき}に{復習|ふくしゅう}するには、{残|のこ}り{一週間|いっしゅうかん}ではとても{足|た}りない。",
+          "kana": "しけんはんいをもうらてきにふくしゅうするには、のこりいっしゅうかんではとてもたりない。",
+          "en": "One week is nowhere near enough to review the whole exam range exhaustively."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{関係|かんけい}するものを、ひとつ{残|のこ}らず{全部|ぜんぶ}{集|あつ}めて{取|と}り{上|あ}げるさま。",
+        "kana": "かんけいするものを、ひとつのこらずぜんぶあつめてとりあげるさま。"
+      },
+      "frequencyRank": 7300,
+      "confusables": [
+        "v-n1-1247"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1302",
+      "word": "ポストモダン",
+      "kana": "ポストモダン",
+      "meanings": [
+        "postmodern",
+        "postmodernism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "culture",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{建築|けんちく}や{思想|しそう}の{分野|ぶんや}で、ポストモダンという{言葉|ことば}が{盛|さか}んに{使|つか}われた{時代|じだい}があった。",
+          "kana": "けんちくやしそうのぶんやで、ポストモダンということばがさかんにつかわれたじだいがあった。",
+          "en": "There was a time when the word postmodern was used widely in architecture and philosophy."
+        },
+        {
+          "ja": "この{建物|たてもの}は、{過去|かこ}の{様式|ようしき}を{自由|じゆう}に{引用|いんよう}したポストモダンの{代表例|だいひょうれい}とされています。",
+          "kana": "このたてものは、かこのようしきをじゆうにいんようしたポストモダンのだいひょうれいとされています。",
+          "en": "This building is regarded as a representative example of postmodernism, freely quoting styles of the past."
+        }
+      ],
+      "definitionJa": {
+        "ja": "モダニズムの{後|あと}に{現|あらわ}れ、それまでの{考|かんが}え{方|かた}を{疑|うたが}う{芸術|げいじゅつ}や{思想|しそう}の{流|なが}れ。",
+        "kana": "モダニズムのあとにあらわれ、それまでのかんがえかたをうたがうげいじゅつやしそうのながれ。"
+      },
+      "frequencyRank": 7313,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1303",
+      "word": "大人気ない",
+      "kana": "おとなげない",
+      "meanings": [
+        "childish",
+        "immature (for an adult)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "casual"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}ども{相手|あいて}にゲームで{本気|ほんき}になるなんて、{大人気|おとなげ}ないよ。",
+          "kana": "こどもあいてにゲームでほんきになるなんて、おとなげないよ。",
+          "en": "Getting serious about a game against a child is so childish of you."
+        },
+        {
+          "ja": "{後輩|こうはい}の{前|まえ}で{部長|ぶちょう}と{言|い}い{合|あ}いになったのは、{我|われ}ながら{大人気|おとなげ}なかったと{反省|はんせい}している。",
+          "kana": "こうはいのまえでぶちょうといいあいになったのは、われながらおとなげなかったとはんせいしている。",
+          "en": "Getting into an argument with the department head in front of my juniors was childish of me, I admit, and I regret it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大人|おとな}らしい{落|お}ち{着|つ}きや{広|ひろ}い{心|こころ}がなく、{子|こ}どもっぽいさま。",
+        "kana": "おとならしいおちつきやひろいこころがなく、こどもっぽいさま。"
+      },
+      "frequencyRank": 7326,
+      "notes": "Read おとなげない, never だいにんき; the spelling 大人げない is more common today.",
+      "altForms": [
+        "大人げない"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1304",
+      "word": "ルネサンス",
+      "kana": "ルネサンス",
+      "meanings": [
+        "Renaissance"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "ルネサンスの{時代|じだい}、{芸術家|げいじゅつか}たちは{人間|にんげん}そのものを{描|えが}こうとした。",
+          "kana": "ルネサンスのじだい、げいじゅつかたちはにんげんそのものをえがこうとした。",
+          "en": "In the Renaissance, artists tried to depict human beings themselves."
+        },
+        {
+          "ja": "ルネサンス{期|き}の{画家|がか}たちは、{人体|じんたい}の{構造|こうぞう}を{学|まな}ぶために{解剖|かいぼう}にも{立|た}ち{会|あ}ったそうです。",
+          "kana": "ルネサンスきのがかたちは、じんたいのこうぞうをまなぶためにかいぼうにもたちあったそうです。",
+          "en": "Painters of the Renaissance period reportedly even attended dissections to learn the structure of the human body."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{古|ふる}い{時代|じだい}の{文化|ぶんか}を{学|まな}び{直|なお}し、{芸術|げいじゅつ}や{学問|がくもん}を{新|あたら}しくした{運動|うんどう}。",
+        "kana": "ふるいじだいのぶんかをまなびなおし、げいじゅつやがくもんをあたらしくしたうんどう。"
+      },
+      "frequencyRank": 7339,
+      "altForms": [
+        "ルネッサンス"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1305",
+      "word": "殺風景",
+      "kana": "さっぷうけい",
+      "meanings": [
+        "bleak",
+        "drab",
+        "cheerless (room, scenery)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "places",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}したばかりの{部屋|へや}は{殺風景|さっぷうけい}なので、{観葉植物|かんようしょくぶつ}でも{置|お}こうと{思|おも}う。",
+          "kana": "ひっこしたばかりのへやはさっぷうけいなので、かんようしょくぶつでもおこうとおもう。",
+          "en": "The room I just moved into is drab, so I am thinking of putting a houseplant or something in it."
+        },
+        {
+          "ja": "{駅前|えきまえ}は{再開発|さいかいはつ}で{古|ふる}い{商店|しょうてん}が{消|き}え、ビルばかりの{殺風景|さっぷうけい}な{眺|なが}めになってしまった。",
+          "kana": "えきまえはさいかいはつでふるいしょうてんがきえ、ビルばかりのさっぷうけいなながめになってしまった。",
+          "en": "Redevelopment wiped out the old shops in front of the station, leaving a bleak view of nothing but office buildings."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景色|けしき}や{部屋|へや}に{飾|かざ}りや{趣|おもむき}がなく、さびしい{感|かん}じがするさま。",
+        "kana": "けしきやへやにかざりやおもむきがなく、さびしいかんじがするさま。"
+      },
+      "frequencyRank": 7352,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1306",
+      "word": "リアリズム",
+      "kana": "リアリズム",
+      "meanings": [
+        "realism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "その{映画|えいが}は{徹底|てってい}したリアリズムで{描|えが}かれ、まるで{記録映像|きろくえいぞう}のようだった。",
+          "kana": "そのえいがはてっていしたリアリズムでえがかれ、まるできろくえいぞうのようだった。",
+          "en": "The film was shot with thorough realism and looked almost like documentary footage."
+        },
+        {
+          "ja": "この{作家|さっか}は、{庶民|しょみん}の{暮|く}らしを{飾|かざ}らずに{描|えが}くリアリズムの{手法|しゅほう}で{知|し}られています。",
+          "kana": "このさっかは、しょみんのくらしをかざらずにえがくリアリズムのしゅほうでしられています。",
+          "en": "This author is known for a realist technique that depicts ordinary people's lives without embellishment."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{現実|げんじつ}をあるがままに{表|あらわ}そうとする、{芸術|げいじゅつ}や{文学|ぶんがく}の{立場|たちば}。",
+        "kana": "げんじつをあるがままにあらわそうとする、げいじゅつやぶんがくのたちば。"
+      },
+      "frequencyRank": 7365,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1307",
+      "word": "甲高い",
+      "kana": "かんだかい",
+      "meanings": [
+        "high-pitched",
+        "shrill"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "body"
+      ],
+      "examples": [
+        {
+          "ja": "{隣|となり}の{部屋|へや}から{甲高|かんだか}い{笑|わら}い{声|ごえ}が{聞|き}こえてきて、なかなか{眠|ねむ}れなかった。",
+          "kana": "となりのへやからかんだかいわらいごえがきこえてきて、なかなかねむれなかった。",
+          "en": "Shrill laughter came from the next room, and I could not get to sleep for a long time."
+        },
+        {
+          "ja": "{急|きゅう}ブレーキの{甲高|かんだか}い{音|おと}が{響|ひび}き、{乗客|じょうきゃく}は{一斉|いっせい}に{前|まえ}を{向|む}いた。",
+          "kana": "きゅうブレーキのかんだかいおとがひびき、じょうきゃくはいっせいにまえをむいた。",
+          "en": "The shrill screech of sudden braking rang out, and the passengers all looked ahead at once."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{声|こえ}などが{高|たか}くて{鋭|するど}く、{耳|みみ}に{強|つよ}く{残|のこ}るさま。",
+        "kana": "こえなどがたかくてするどく、みみにつよくのこるさま。"
+      },
+      "frequencyRank": 7378,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1308",
+      "word": "ミニマリズム",
+      "kana": "ミニマリズム",
+      "meanings": [
+        "minimalism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "culture",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{物|もの}を{減|へ}らして{暮|く}らすミニマリズムが、{若|わか}い{世代|せだい}の{間|あいだ}で{支持|しじ}を{集|あつ}めている。",
+          "kana": "ものをへらしてくらすミニマリズムが、わかいせだいのあいだでしじをあつめている。",
+          "en": "Minimalism, living with fewer things, is gaining support among the younger generation."
+        },
+        {
+          "ja": "{彼女|かのじょ}の{部屋|へや}はミニマリズムを{徹底|てってい}していて、{机|つくえ}と{椅子|いす}のほかには{何|なに}もありません。",
+          "kana": "かのじょのへやはミニマリズムをてっていしていて、つくえといすのほかにはなにもありません。",
+          "en": "Her room is thoroughly minimalist; apart from a desk and a chair, there is nothing in it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{必要|ひつよう}なものだけを{残|のこ}し、いらないものをできるだけ{減|へ}らそうとする{考|かんが}え{方|かた}。",
+        "kana": "ひつようなものだけをのこし、いらないものをできるだけへらそうとするかんがえかた。"
+      },
+      "frequencyRank": 7391,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1309",
+      "word": "無造作",
+      "kana": "むぞうさ",
+      "meanings": [
+        "careless",
+        "casual",
+        "offhand"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{読|よ}み{終|お}わった{新聞|しんぶん}を{無造作|むぞうさ}にテーブルの{上|うえ}に{放|ほう}り{投|な}げた。",
+          "kana": "かれはよみおわったしんぶんをむぞうさにテーブルのうえにほうりなげた。",
+          "en": "He tossed the newspaper he had finished reading carelessly onto the table."
+        },
+        {
+          "ja": "{髪|かみ}を{無造作|むぞうさ}にまとめただけなのに、なんでそんなにおしゃれに{見|み}えるの。",
+          "kana": "かみをむぞうさにまとめただけなのに、なんでそんなにおしゃれにみえるの。",
+          "en": "You just threw your hair up casually, so how come it looks so stylish?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{特|とく}に{注意|ちゅうい}や{工夫|くふう}をせず、{気軽|きがる}に{簡単|かんたん}に{行|おこな}うさま。",
+        "kana": "とくにちゅういやくふうをせず、きがるにかんたんにおこなうさま。"
+      },
+      "frequencyRank": 7404,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1310",
+      "word": "弱々しい",
+      "kana": "よわよわしい",
+      "meanings": [
+        "feeble",
+        "frail"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "body"
+      ],
+      "examples": [
+        {
+          "ja": "{電話|でんわ}の{向|む}こうの{祖母|そぼ}の{声|こえ}は{弱々|よわよわ}しく、{思|おも}わず{帰省|きせい}を{決|き}めた。",
+          "kana": "でんわのむこうのそぼのこえはよわよわしく、おもわずきせいをきめた。",
+          "en": "My grandmother's voice on the phone was so feeble that I decided on the spot to go home and visit."
+        },
+        {
+          "ja": "{生|う}まれたばかりの{子猫|こねこ}は{弱々|よわよわ}しく{鳴|な}くばかりで、{自分|じぶん}では{乳|ちち}を{飲|の}めませんでした。",
+          "kana": "うまれたばかりのこねこはよわよわしくなくばかりで、じぶんではちちをのめませんでした。",
+          "en": "The newborn kitten could only mew feebly and could not drink milk on its own."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いかにも{力|ちから}がなくて、{今|いま}にも{倒|たお}れそうに{見|み}えるさま。",
+        "kana": "いかにもちからがなくて、いまにもたおれそうにみえるさま。"
+      },
+      "frequencyRank": 7417,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1311",
+      "word": "キュレーター",
+      "kana": "キュレーター",
+      "meanings": [
+        "curator"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "work",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "キュレーターの{解説|かいせつ}を{聞|き}いてから{見|み}ると、{作品|さくひん}の{印象|いんしょう}がまるで{違|ちが}った。",
+          "kana": "キュレーターのかいせつをきいてからみると、さくひんのいんしょうがまるでちがった。",
+          "en": "Seeing the works after hearing the curator's explanation, I got a completely different impression of them."
+        },
+        {
+          "ja": "キュレーターになるには、{学芸員|がくげいいん}の{資格|しかく}に{加|くわ}えて{語学力|ごがくりょく}も{求|もと}められます。",
+          "kana": "キュレーターになるには、がくげいいんのしかくにくわえてごがくりょくももとめられます。",
+          "en": "To become a curator, you need language skills in addition to a museum curator's certification."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{美術館|びじゅつかん}などで、{展示|てんじ}の{企画|きかく}や{作品|さくひん}の{管理|かんり}をする{専門家|せんもんか}。",
+        "kana": "びじゅつかんなどで、てんじのきかくやさくひんのかんりをするせんもんか。"
+      },
+      "frequencyRank": 7430,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1312",
+      "word": "能動的",
+      "kana": "のうどうてき",
+      "meanings": [
+        "active (not passive)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{授業|じゅぎょう}をただ{聞|き}くのではなく、{質問|しつもん}をしながら{能動的|のうどうてき}に{学|まな}ぶほうが{身|み}につく。",
+          "kana": "じゅぎょうをただきくのではなく、しつもんをしながらのうどうてきにまなぶほうがみにつく。",
+          "en": "You retain more by learning actively, asking questions, rather than just listening to the lesson."
+        },
+        {
+          "ja": "{情報|じょうほう}をただ{待|ま}つのではなく、{能動的|のうどうてき}に{取|と}りに{行|い}く{姿勢|しせい}が{今|いま}の{時代|じだい}には{求|もと}められる。",
+          "kana": "じょうほうをただまつのではなく、のうどうてきにとりにいくしせいがいまのじだいにはもとめられる。",
+          "en": "What today's world demands is an attitude of actively going after information rather than just waiting for it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}から{積極的|せっきょくてき}に{動|うご}いて、{相手|あいて}や{周|まわ}りに{働|はたら}きかけるさま。",
+        "kana": "じぶんからせっきょくてきにうごいて、あいてやまわりにはたらきかけるさま。"
+      },
+      "frequencyRank": 7443,
+      "confusables": [
+        "v-n1-1314"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1313",
+      "word": "アーカイブ",
+      "kana": "アーカイブ",
+      "meanings": [
+        "archive"
+      ],
+      "pos": "n-suru",
+      "jlpt": 1,
+      "tags": [
+        "media",
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{過去|かこ}の{放送|ほうそう}はすべてアーカイブされ、いつでも{見|み}られるようになっている。",
+          "kana": "かこのほうそうはすべてアーカイブされ、いつでもみられるようになっている。",
+          "en": "All past broadcasts are archived so they can be viewed at any time."
+        },
+        {
+          "ja": "{研究室|けんきゅうしつ}では、{古|ふる}い{実験|じっけん}ノートをスキャンしてアーカイブする{作業|さぎょう}を{進|すす}めています。",
+          "kana": "けんきゅうしつでは、ふるいじっけんノートをスキャンしてアーカイブするさぎょうをすすめています。",
+          "en": "In the lab, we are working on scanning and archiving the old experiment notebooks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{記録|きろく}や{資料|しりょう}を、{後|あと}で{使|つか}えるように{整理|せいり}して{保存|ほぞん}すること。",
+        "kana": "きろくやしりょうを、あとでつかえるようにせいりしてほぞんすること。"
+      },
+      "frequencyRank": 7456,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1314",
+      "word": "受動的",
+      "kana": "じゅどうてき",
+      "meanings": [
+        "passive"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "テレビを{見|み}るだけの{受動的|じゅどうてき}な{過|す}ごし{方|かた}では、{休日|きゅうじつ}があっという{間|ま}に{終|お}わってしまう。",
+          "kana": "テレビをみるだけのじゅどうてきなすごしかたでは、きゅうじつがあっというまにおわってしまう。",
+          "en": "Spend your day off passively just watching TV and it will be over before you know it."
+        },
+        {
+          "ja": "{受動的|じゅどうてき}に{講義|こうぎ}を{聞|き}いているだけでは、{知識|ちしき}はなかなか{定着|ていちゃく}しません。",
+          "kana": "じゅどうてきにこうぎをきいているだけでは、ちしきはなかなかていちゃくしません。",
+          "en": "If you only listen to lectures passively, the knowledge does not really stick."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}からは{動|うご}かず、ほかからの{働|はたら}きかけを{受|う}けるだけのさま。",
+        "kana": "じぶんからはうごかず、ほかからのはたらきかけをうけるだけのさま。"
+      },
+      "frequencyRank": 7469,
+      "confusables": [
+        "v-n1-1312"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1315",
+      "word": "レパートリー",
+      "kana": "レパートリー",
+      "meanings": [
+        "repertoire"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "cooking",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{料理|りょうり}のレパートリーを{増|ふ}やそうと、{週末|しゅうまつ}ごとに{新|あたら}しいメニューに{挑戦|ちょうせん}している。",
+          "kana": "りょうりのレパートリーをふやそうと、しゅうまつごとにあたらしいメニューにちょうせんしている。",
+          "en": "Trying to expand my cooking repertoire, I take on a new dish every weekend."
+        },
+        {
+          "ja": "あのピアニスト、クラシックだけじゃなくてジャズもレパートリーに{入|はい}ってるんだよ。",
+          "kana": "あのピアニスト、クラシックだけじゃなくてジャズもレパートリーにはいってるんだよ。",
+          "en": "That pianist has jazz in her repertoire too, not just classical."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{演奏|えんそう}したり{作|つく}ったりできる、{音楽|おんがく}や{料理|りょうり}などの{種類|しゅるい}の{範囲|はんい}。",
+        "kana": "えんそうしたりつくったりできる、おんがくやりょうりなどのしゅるいのはんい。"
+      },
+      "frequencyRank": 7482,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1316",
+      "word": "手早い",
+      "kana": "てばやい",
+      "meanings": [
+        "quick",
+        "deft"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "actions",
+        "states"
+      ],
+      "examples": [
+        {
+          "ja": "{母|はは}は{冷蔵庫|れいぞうこ}の{残|のこ}り{物|もの}で、{手早|てばや}く{三品|さんしな}も{作|つく}ってしまった。",
+          "kana": "はははれいぞうこののこりもので、てばやくさんしなもつくってしまった。",
+          "en": "My mother whipped up three dishes in no time from leftovers in the fridge."
+        },
+        {
+          "ja": "{看護師|かんごし}は{手早|てばや}く{包帯|ほうたい}を{巻|ま}き{直|なお}すと、{次|つぎ}の{患者|かんじゃ}のもとへ{向|む}かいました。",
+          "kana": "かんごしはてばやくほうたいをまきなおすと、つぎのかんじゃのもとへむかいました。",
+          "en": "The nurse deftly rewrapped the bandage and headed off to the next patient."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{仕事|しごと}などのやり{方|かた}が{速|はや}くて、{時間|じかん}をかけないさま。",
+        "kana": "しごとなどのやりかたがはやくて、じかんをかけないさま。"
+      },
+      "frequencyRank": 7495,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1317",
+      "word": "アンサンブル",
+      "kana": "アンサンブル",
+      "meanings": [
+        "ensemble"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{弦楽器|げんがっき}だけのアンサンブルが、{静|しず}かな{教会|きょうかい}に{美|うつく}しく{響|ひび}いた。",
+          "kana": "げんがっきだけのアンサンブルが、しずかなきょうかいにうつくしくひびいた。",
+          "en": "An ensemble of string instruments alone echoed beautifully through the quiet church."
+        },
+        {
+          "ja": "{文化祭|ぶんかさい}で{友達|ともだち}とアンサンブルを{組|く}んで、{三曲|さんきょく}{演奏|えんそう}することになった。",
+          "kana": "ぶんかさいでともだちとアンサンブルをくんで、さんきょくえんそうすることになった。",
+          "en": "I ended up forming an ensemble with friends and performing three pieces at the culture festival."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{複数|ふくすう}の{人|ひと}がいっしょに{演奏|えんそう}したり{歌|うた}ったりすること。また、その{集|あつ}まり。",
+        "kana": "ふくすうのひとがいっしょにえんそうしたりうたったりすること。また、そのあつまり。"
+      },
+      "frequencyRank": 7508,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1318",
+      "word": "眩い",
+      "kana": "まばゆい",
+      "meanings": [
+        "dazzling",
+        "glaring"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "トンネルを{抜|ぬ}けた{瞬間|しゅんかん}、{眩|まばゆ}い{光|ひかり}に{思|おも}わず{目|め}を{閉|と}じた。",
+          "kana": "トンネルをぬけたしゅんかん、まばゆいひかりにおもわずめをとじた。",
+          "en": "The instant we came out of the tunnel, I shut my eyes against the dazzling light."
+        },
+        {
+          "ja": "{雪|ゆき}に{反射|はんしゃ}した{朝日|あさひ}が{眩|まばゆ}くて、サングラスなしでは{目|め}を{開|あ}けていられませんでした。",
+          "kana": "ゆきにはんしゃしたあさひがまばゆくて、サングラスなしではめをあけていられませんでした。",
+          "en": "The morning sun reflecting off the snow was so dazzling that I could not keep my eyes open without sunglasses."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{光|ひかり}が{強|つよ}すぎて、まともに{目|め}を{開|あ}けていられないさま。",
+        "kana": "ひかりがつよすぎて、まともにめをあけていられないさま。"
+      },
+      "frequencyRank": 7521,
+      "altForms": [
+        "目映い",
+        "まばゆい"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1319",
+      "word": "シンフォニー",
+      "kana": "シンフォニー",
+      "meanings": [
+        "symphony"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{初|はじ}めて{生|なま}で{聞|き}いたシンフォニーの{迫力|はくりょく}に、{言葉|ことば}を{失|うしな}った。",
+          "kana": "はじめてなまできいたシンフォニーのはくりょくに、ことばをうしなった。",
+          "en": "The power of the first symphony I heard live left me speechless."
+        },
+        {
+          "ja": "{市民|しみん}オーケストラが{一年|いちねん}かけて{練習|れんしゅう}してきたシンフォニーを、ついに{本番|ほんばん}で{披露|ひろう}した。",
+          "kana": "しみんオーケストラがいちねんかけてれんしゅうしてきたシンフォニーを、ついにほんばんでひろうした。",
+          "en": "The community orchestra finally performed, in concert, the symphony it had spent a year rehearsing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{多|おお}くの{楽器|がっき}で{演奏|えんそう}するために{作|つく}られた、{大|おお}きな{音楽|おんがく}の{作品|さくひん}。",
+        "kana": "おおくのがっきでえんそうするためにつくられた、おおきなおんがくのさくひん。"
+      },
+      "frequencyRank": 7534,
+      "notes": "交響曲 is the standard term; シンフォニー appears in titles, concert names and casual speech.",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1320",
+      "word": "画一的",
+      "kana": "かくいつてき",
+      "meanings": [
+        "uniform",
+        "standardized",
+        "cookie-cutter"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{全国|ぜんこく}どこへ{行|い}っても{同|おな}じような{画一的|かくいつてき}な{駅前|えきまえ}の{風景|ふうけい}に、{少|すこ}し{寂|さび}しさを{感|かん}じる。",
+          "kana": "ぜんこくどこへいってもおなじようなかくいつてきなえきまえのふうけいに、すこしさびしさをかんじる。",
+          "en": "The cookie-cutter station fronts that look the same wherever you go in the country make me a little sad."
+        },
+        {
+          "ja": "{画一的|かくいつてき}な{教育|きょういく}ではなく、{一人一人|ひとりひとり}の{個性|こせい}に{合|あ}わせた{指導|しどう}が{求|もと}められています。",
+          "kana": "かくいつてきなきょういくではなく、ひとりひとりのこせいにあわせたしどうがもとめられています。",
+          "en": "What is needed is instruction tailored to each individual's personality, not one-size-fits-all education."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{個性|こせい}や{違|ちが}いを{認|みと}めず、{全部|ぜんぶ}を{一様|いちよう}にそろえてしまうさま。",
+        "kana": "こせいやちがいをみとめず、ぜんぶをいちようにそろえてしまうさま。"
+      },
+      "frequencyRank": 7547,
+      "notes": "Usually critical: sameness that ignores individuality or local character.",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1321",
+      "word": "オペラ",
+      "kana": "オペラ",
+      "meanings": [
+        "opera"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "music",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "オペラは{言葉|ことば}が{分|わ}からなくても、{歌声|うたごえ}と{音楽|おんがく}だけで{十分|じゅうぶん}に{楽|たの}しめる。",
+          "kana": "オペラはことばがわからなくても、うたごえとおんがくだけでじゅうぶんにたのしめる。",
+          "en": "Even without understanding the words, you can fully enjoy opera through the singing and the music alone."
+        },
+        {
+          "ja": "{生|う}まれて{初|はじ}めてオペラを{見|み}に{行|い}ったのですが、{歌手|かしゅ}の{声量|せいりょう}に{圧倒|あっとう}されました。",
+          "kana": "うまれてはじめてオペラをみにいったのですが、かしゅのせいりょうにあっとうされました。",
+          "en": "I went to see an opera for the first time in my life and was overwhelmed by the singers' powerful voices."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{歌|うた}と{音楽|おんがく}を{中心|ちゅうしん}にして、{物語|ものがたり}を{舞台|ぶたい}で{見|み}せる{芸術|げいじゅつ}。",
+        "kana": "うたとおんがくをちゅうしんにして、ものがたりをぶたいでみせるげいじゅつ。"
+      },
+      "frequencyRank": 7560,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1322",
+      "word": "荒々しい",
+      "kana": "あらあらしい",
+      "meanings": [
+        "rough",
+        "wild",
+        "violent"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "nature"
+      ],
+      "examples": [
+        {
+          "ja": "{台風|たいふう}の{夜|よる}、{荒々|あらあら}しい{波|なみ}の{音|おと}が{一晩中|ひとばんじゅう}{聞|き}こえていた。",
+          "kana": "たいふうのよる、あらあらしいなみのおとがひとばんじゅうきこえていた。",
+          "en": "On the night of the typhoon, the sound of wild waves could be heard all night long."
+        },
+        {
+          "ja": "ドアを{荒々|あらあら}しく{閉|し}める{音|おと}で、{兄|あに}が{怒|おこ}っているのがすぐに{分|わ}かった。",
+          "kana": "ドアをあらあらしくしめるおとで、あにがおこっているのがすぐにわかった。",
+          "en": "From the violent way the door was slammed, I knew at once that my brother was angry."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{動|うご}きや{自然|しぜん}の{様子|ようす}が{激|はげ}しくて、{乱暴|らんぼう}に{感|かん}じられるさま。",
+        "kana": "うごきやしぜんのようすがはげしくて、らんぼうにかんじられるさま。"
+      },
+      "frequencyRank": 7573,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1323",
+      "word": "バレエ",
+      "kana": "バレエ",
+      "meanings": [
+        "ballet"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "hobbies",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{娘|むすめ}は{三歳|さんさい}からバレエを{習|なら}っていて、{来月|らいげつ}{初|はじ}めて{舞台|ぶたい}に{立|た}つ。",
+          "kana": "むすめはさんさいからバレエをならっていて、らいげつはじめてぶたいにたつ。",
+          "en": "My daughter has been taking ballet since she was three and will be on stage for the first time next month."
+        },
+        {
+          "ja": "バレエのダンサーは、{舞台|ぶたい}で{軽|かろ}やかに{見|み}せるために{毎日|まいにち}{何時間|なんじかん}も{練習|れんしゅう}しています。",
+          "kana": "バレエのダンサーは、ぶたいでかろやかにみせるためにまいにちなんじかんもれんしゅうしています。",
+          "en": "Ballet dancers practice for hours every day in order to look effortless on stage."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{音楽|おんがく}とともに、{言葉|ことば}を{使|つか}わず{体|からだ}の{動|うご}きだけで{表現|ひょうげん}する{舞台|ぶたい}のダンス。",
+        "kana": "おんがくとともに、ことばをつかわずからだのうごきだけでひょうげんするぶたいのダンス。"
+      },
+      "frequencyRank": 7586,
+      "notes": "バレエ is ballet; バレー (short for バレーボール) is volleyball. Only the final kana differs.",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1324",
+      "word": "煙たい",
+      "kana": "けむたい",
+      "meanings": [
+        "smoky",
+        "hard to be around (person)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{若|わか}いころは、{何|なに}かと{注意|ちゅうい}してくる{親戚|しんせき}のおじさんが{煙|けむ}たかった。",
+          "kana": "わかいころは、なにかとちゅういしてくるしんせきのおじさんがけむたかった。",
+          "en": "When I was young, I found the uncle who was always telling me off hard to be around."
+        },
+        {
+          "ja": "{焼|や}き{肉屋|にくや}の{煙|けむ}たい{店内|てんない}で{二時間|にじかん}も{過|す}ごしたら、{服|ふく}に{匂|にお}いが{染|し}みついちゃった。",
+          "kana": "やきにくやのけむたいてんないでにじかんもすごしたら、ふくににおいがしみついちゃった。",
+          "en": "After two hours in the smoky yakiniku restaurant, the smell got into my clothes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{煙|けむり}が{目|め}や{鼻|はな}に{入|はい}って{苦|くる}しいさま。また、{相手|あいて}が{偉|えら}くて{近|ちか}づきにくいさま。",
+        "kana": "けむりがめやはなにはいってくるしいさま。また、あいてがえらくてちかづきにくいさま。"
+      },
+      "frequencyRank": 7599,
+      "notes": "Literally \"smoky\"; figuratively a person whose presence makes you uncomfortable. 煙たがる \"to keep at arm's length\".",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1325",
+      "word": "ミュージカル",
+      "kana": "ミュージカル",
+      "meanings": [
+        "musical (theater)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "music",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{出張|しゅっちょう}のついでに、{前|まえ}から{見|み}たかったミュージカルのチケットを{取|と}った。",
+          "kana": "しゅっちょうのついでに、まえからみたかったミュージカルのチケットをとった。",
+          "en": "While on a business trip, I got tickets for a musical I had wanted to see for a long time."
+        },
+        {
+          "ja": "ミュージカルって、せりふが{急|きゅう}に{歌|うた}に{変|か}わるのが{最初|さいしょ}は{不思議|ふしぎ}だったけど、{今|いま}はそこが{好|す}きなんだ。",
+          "kana": "ミュージカルって、せりふがきゅうにうたにかわるのがさいしょはふしぎだったけど、いまはそこがすきなんだ。",
+          "en": "In musicals, the way the lines suddenly turn into song felt strange to me at first, but now that is the part I love."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{歌|うた}とダンスとせりふで{物語|ものがたり}を{進|すす}める、{舞台|ぶたい}の{形式|けいしき}のひとつ。",
+        "kana": "うたとダンスとせりふでものがたりをすすめる、ぶたいのけいしきのひとつ。"
+      },
+      "frequencyRank": 7612,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1326",
+      "word": "芳しい",
+      "kana": "かんばしい",
+      "meanings": [
+        "favorable",
+        "satisfactory",
+        "fragrant"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "written"
+      ],
+      "examples": [
+        {
+          "ja": "{新商品|しんしょうひん}の{売|う}れ{行|ゆ}きは、{残念|ざんねん}ながら{芳|かんば}しくない。",
+          "kana": "しんしょうひんのうれゆきは、ざんねんながらかんばしくない。",
+          "en": "Unfortunately, sales of the new product are not encouraging."
+        },
+        {
+          "ja": "{体調|たいちょう}が{芳|かんば}しくないので、{今日|きょう}の{会議|かいぎ}は{欠席|けっせき}させていただきます。",
+          "kana": "たいちょうがかんばしくないので、きょうのかいぎはけっせきさせていただきます。",
+          "en": "I am not feeling well, so please allow me to miss today's meeting."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{結果|けっか}や{評判|ひょうばん}などがよくて、{満足|まんぞく}できるさま。また、よい{香|かお}りがするさま。",
+        "kana": "けっかやひょうばんなどがよくて、まんぞくできるさま。また、よいかおりがするさま。"
+      },
+      "frequencyRank": 7625,
+      "notes": "In modern use almost always negative: 芳しくない \"unsatisfactory\". The literal \"sweet-smelling\" is literary. Not 香ばしい (toasty smell).",
+      "confusables": [
+        "v-n1-1258"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1327",
+      "word": "レトロ",
+      "kana": "レトロ",
+      "meanings": [
+        "retro",
+        "old-fashioned (in a charming way)"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}に、レトロな{雰囲気|ふんいき}の{喫茶店|きっさてん}が{新|あたら}しくオープンした。",
+          "kana": "えきまえに、レトロなふんいきのきっさてんがあたらしくオープンした。",
+          "en": "A cafe with a retro atmosphere newly opened in front of the station."
+        },
+        {
+          "ja": "このカメラ、{見|み}た{目|め}はレトロだけど{中身|なかみ}は{最新|さいしん}のデジタルなんだよ。",
+          "kana": "このカメラ、みためはレトロだけどなかみはさいしんのデジタルなんだよ。",
+          "en": "This camera looks retro, but inside it is the latest digital technology."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{古|ふる}い{時代|じだい}の{感|かん}じがして、{懐|なつ}かしく{心|こころ}を{引|ひ}かれるさま。",
+        "kana": "ふるいじだいのかんじがして、なつかしくこころをひかれるさま。"
+      },
+      "frequencyRank": 7638,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1328",
+      "word": "初々しい",
+      "kana": "ういういしい",
+      "meanings": [
+        "fresh and innocent",
+        "charmingly naive"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{入社式|にゅうしゃしき}で{初々|ういうい}しいスーツ{姿|すがた}の{新人|しんじん}たちを{見|み}て、{自分|じぶん}の{十年前|じゅうねんまえ}を{思|おも}い{出|だ}した。",
+          "kana": "にゅうしゃしきでういういしいスーツすがたのしんじんたちをみて、じぶんのじゅうねんまえをおもいだした。",
+          "en": "Seeing the fresh-faced new hires in their suits at the entrance ceremony, I remembered myself ten years ago."
+        },
+        {
+          "ja": "{結婚式|けっこんしき}の{二人|ふたり}、{緊張|きんちょう}しながら{手|て}をつないでいて{初々|ういうい}しかったね。",
+          "kana": "けっこんしきのふたり、きんちょうしながらてをつないでいてういういしかったね。",
+          "en": "The couple at the wedding, nervously holding hands, were so sweetly innocent, weren't they?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{経験|けいけん}が{浅|あさ}くて、{純粋|じゅんすい}で{新鮮|しんせん}な{感|かん}じがするさま。",
+        "kana": "けいけんがあさくて、じゅんすいでしんせんなかんじがするさま。"
+      },
+      "frequencyRank": 7651,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1329",
+      "word": "ヴィンテージ",
+      "kana": "ヴィンテージ",
+      "meanings": [
+        "vintage"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "clothing",
+        "shopping",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{古着屋|ふるぎや}で{見|み}つけたヴィンテージのジーンズは、{新品|しんぴん}より{高|たか}かった。",
+          "kana": "ふるぎやでみつけたヴィンテージのジーンズは、しんぴんよりたかかった。",
+          "en": "The vintage jeans I found at a secondhand clothing shop were more expensive than new ones."
+        },
+        {
+          "ja": "この{店|みせ}では、{七十年代|ななじゅうねんだい}のヴィンテージの{家具|かぐ}を{修理|しゅうり}して{販売|はんばい}しています。",
+          "kana": "このみせでは、ななじゅうねんだいのヴィンテージのかぐをしゅうりしてはんばいしています。",
+          "en": "This shop repairs and sells vintage furniture from the seventies."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{作|つく}られてから{長|なが}い{時間|じかん}がたって、かえって{価値|かち}が{高|たか}まった{古|ふる}い{品物|しなもの}。",
+        "kana": "つくられてからながいじかんがたって、かえってかちがたかまったふるいしなもの。"
+      },
+      "frequencyRank": 7664,
+      "altForms": [
+        "ビンテージ"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1330",
+      "word": "図太い",
+      "kana": "ずぶとい",
+      "meanings": [
+        "thick-skinned",
+        "brazen",
+        "bold"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality"
+      ],
+      "examples": [
+        {
+          "ja": "{何|なん}と{言|い}われても{気|き}にしない{図太|ずぶと}い{神経|しんけい}が、{営業|えいぎょう}の{仕事|しごと}では{役|やく}に{立|た}った。",
+          "kana": "なんといわれてもきにしないずぶといしんけいが、えいぎょうのしごとではやくにたった。",
+          "en": "A thick skin that does not care what anyone says proved useful in sales."
+        },
+        {
+          "ja": "{初出場|はつしゅつじょう}なのに{観客|かんきゃく}の{前|まえ}で{堂々|どうどう}と{歌|うた}えるなんて、{見|み}かけによらず{図太|ずぶと}いですね。",
+          "kana": "はつしゅつじょうなのにかんきゃくのまえでどうどうとうたえるなんて、みかけによらずずぶといですね。",
+          "en": "Singing so confidently in front of an audience on your very first appearance, you are bolder than you look."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{少|すこ}しのことでは{動揺|どうよう}しない、{神経|しんけい}が{太|ふと}くて{平気|へいき}なさま。",
+        "kana": "すこしのことではどうようしない、しんけいがふとくてへいきなさま。"
+      },
+      "frequencyRank": 7677,
+      "collocations": [
+        "図太い神経"
+      ],
+      "confusables": [
+        "v-n1-1341"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1331",
+      "word": "クラフト",
+      "kana": "クラフト",
+      "meanings": [
+        "craft",
+        "handmade goods"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "hobbies",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{週末|しゅうまつ}の{公園|こうえん}では、{手作|てづく}りのクラフトを{売|う}る{市|いち}が{開|ひら}かれていた。",
+          "kana": "しゅうまつのこうえんでは、てづくりのクラフトをうるいちがひらかれていた。",
+          "en": "At the park on the weekend, a market selling handmade crafts was being held."
+        },
+        {
+          "ja": "{地元|じもと}の{木|き}を{使|つか}ったクラフトの{体験教室|たいけんきょうしつ}が、{今度|こんど}の{週末|しゅうまつ}に{開|ひら}かれます。",
+          "kana": "じもとのきをつかったクラフトのたいけんきょうしつが、こんどのしゅうまつにひらかれます。",
+          "en": "A hands-on craft workshop using local wood will be held this coming weekend."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{機械|きかい}ではなく{手|て}で{作|つく}る{工芸|こうげい}。また、そうして{作|つく}られた{作品|さくひん}。",
+        "kana": "きかいではなくてでつくるこうげい。また、そうしてつくられたさくひん。"
+      },
+      "frequencyRank": 7690,
+      "collocations": [
+        "クラフトビール",
+        "クラフト市"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1332",
+      "word": "不可思議",
+      "kana": "ふかしぎ",
+      "meanings": [
+        "mysterious",
+        "wondrous",
+        "inexplicable"
+      ],
+      "pos": "adj-na",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "culture",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{村|むら}には、{夜|よる}になると{山|やま}から{太鼓|たいこ}の{音|おと}が{聞|き}こえるという{不可思議|ふかしぎ}な{言|い}い{伝|つた}えがある。",
+          "kana": "むらには、よるになるとやまからたいこのおとがきこえるというふかしぎないいつたえがある。",
+          "en": "The village has a mysterious legend that at night the sound of drums can be heard from the mountain."
+        },
+        {
+          "ja": "{夢|ゆめ}の{中|なか}で{見|み}た{町|まち}に{旅先|たびさき}で{実際|じっさい}にたどり{着|つ}くなんて、{不可思議|ふかしぎ}な{体験|たいけん}だった。",
+          "kana": "ゆめのなかでみたまちにたびさきでじっさいにたどりつくなんて、ふかしぎなたいけんだった。",
+          "en": "Actually arriving, on my travels, at a town I had seen in a dream was a truly mysterious experience."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{普通|ふつう}では{考|かんが}えられず、{理由|りゆう}が{説明|せつめい}できないほど{不思議|ふしぎ}なさま。",
+        "kana": "ふつうではかんがえられず、りゆうがせつめいできないほどふしぎなさま。"
+      },
+      "frequencyRank": 7703,
+      "notes": "More literary and wondrous than 不可解 (simply baffling); 不思議 is the everyday word.",
+      "confusables": [
+        "v-n1-1271"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1333",
+      "word": "サブカルチャー",
+      "kana": "サブカルチャー",
+      "meanings": [
+        "subculture"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "culture",
+        "society",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{漫画|まんが}やゲームは、かつてサブカルチャーと{呼|よ}ばれていたが、{今|いま}や{主要|しゅよう}な{産業|さんぎょう}だ。",
+          "kana": "まんがやゲームは、かつてサブカルチャーとよばれていたが、いまやしゅようなさんぎょうだ。",
+          "en": "Manga and games were once called subculture, but are now a major industry."
+        },
+        {
+          "ja": "{卒業論文|そつぎょうろんぶん}では、{八十年代|はちじゅうねんだい}の{若者|わかもの}のサブカルチャーについて{調|しら}べました。",
+          "kana": "そつぎょうろんぶんでは、はちじゅうねんだいのわかもののサブカルチャーについてしらべました。",
+          "en": "For my graduation thesis, I researched the youth subculture of the eighties."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{中心|ちゅうしん}にある{文化|ぶんか}とは{別|べつ}に、{一部|いちぶ}の{人々|ひとびと}の{間|あいだ}で{生|う}まれた{文化|ぶんか}。",
+        "kana": "しゃかいのちゅうしんにあるぶんかとはべつに、いちぶのひとびとのあいだでうまれたぶんか。"
+      },
+      "frequencyRank": 7716,
+      "altForms": [
+        "サブカル"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1334",
+      "word": "くすぐったい",
+      "kana": "くすぐったい",
+      "meanings": [
+        "ticklish",
+        "embarrassing (praise)"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "body",
+        "emotions",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{人前|ひとまえ}でそんなに{褒|ほ}められると、{何|なん}だかくすぐったい{気持|きも}ちになる。",
+          "kana": "ひとまえでそんなにほめられると、なんだかくすぐったいきもちになる。",
+          "en": "Being praised like that in front of people makes me feel a little embarrassed."
+        },
+        {
+          "ja": "{足|あし}の{裏|うら}を{触|さわ}られると、くすぐったくて{笑|わら}いが{止|と}まらなくなる。",
+          "kana": "あしのうらをさわられると、くすぐったくてわらいがとまらなくなる。",
+          "en": "When someone touches the soles of my feet, it tickles so much I cannot stop laughing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{体|からだ}を{軽|かる}く{触|さわ}られて、むずむずして{笑|わら}いたくなるさま。また、{褒|ほ}められて{照|て}れくさいさま。",
+        "kana": "からだをかるくさわられて、むずむずしてわらいたくなるさま。また、ほめられててれくさいさま。"
+      },
+      "frequencyRank": 7729,
+      "altForms": [
+        "擽ったい"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1335",
+      "word": "ポピュリズム",
+      "kana": "ポピュリズム",
+      "meanings": [
+        "populism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{選挙|せんきょ}のたびに、{耳|みみ}に{心地|ここち}よい{約束|やくそく}ばかりを{並|なら}べるポピュリズムが{批判|ひはん}される。",
+          "kana": "せんきょのたびに、みみにここちよいやくそくばかりをならべるポピュリズムがひはんされる。",
+          "en": "At every election, populism that lines up nothing but pleasant-sounding promises comes under criticism."
+        },
+        {
+          "ja": "{経済|けいざい}が{行|い}き{詰|づ}まると、ポピュリズムが{支持|しじ}を{広|ひろ}げやすいことを{歴史|れきし}は{示|しめ}している。",
+          "kana": "けいざいがいきづまると、ポピュリズムがしじをひろげやすいことをれきしはしめしている。",
+          "en": "History shows that when the economy stalls, populism tends to spread its support."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国民|こくみん}の{不満|ふまん}に{訴|うった}え、{人気|にんき}を{集|あつ}めることをいちばん{大事|だいじ}にする{政治|せいじ}のやり{方|かた}。",
+        "kana": "こくみんのふまんにうったえ、にんきをあつめることをいちばんだいじにするせいじのやりかた。"
+      },
+      "frequencyRank": 7742,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1336",
+      "word": "たわいない",
+      "kana": "たわいない",
+      "meanings": [
+        "trivial",
+        "silly",
+        "innocent"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "abstract",
+        "communication",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{久|ひさ}しぶりに{会|あ}った{友人|ゆうじん}と、たわいない{話|はなし}で{三時間|さんじかん}も{笑|わら}い{続|つづ}けた。",
+          "kana": "ひさしぶりにあったゆうじんと、たわいないはなしでさんじかんもわらいつづけた。",
+          "en": "With a friend I had not seen in ages, I laughed for three solid hours over trivial chatter."
+        },
+        {
+          "ja": "{子|こ}どもたちのたわいないけんかは、{五分|ごふん}もすればいつの{間|ま}にか{終|お}わっています。",
+          "kana": "こどもたちのたわいないけんかは、ごふんもすればいつのまにかおわっています。",
+          "en": "The children's silly little quarrels are over before you know it, within five minutes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{内容|ないよう}が{軽|かる}くて、まじめに{取|と}り{上|あ}げるほどのことでもないさま。",
+        "kana": "ないようがかるくて、まじめにとりあげるほどのことでもないさま。"
+      },
+      "frequencyRank": 7755,
+      "altForms": [
+        "他愛ない",
+        "たあいない"
+      ],
+      "collocations": [
+        "たわいない話",
+        "たわいなく眠る"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1337",
+      "word": "ナショナリズム",
+      "kana": "ナショナリズム",
+      "meanings": [
+        "nationalism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{経済|けいざい}が{不安定|ふあんてい}になると、ナショナリズムが{強|つよ}まる{傾向|けいこう}があると{言|い}われる。",
+          "kana": "けいざいがふあんていになると、ナショナリズムがつよまるけいこうがあるといわれる。",
+          "en": "It is said that nationalism tends to grow stronger when the economy becomes unstable."
+        },
+        {
+          "ja": "スポーツの{国際大会|こくさいたいかい}での{応援|おうえん}は、{健全|けんぜん}なナショナリズムの{表|あらわ}れだと{言|い}う{人|ひと}もいます。",
+          "kana": "スポーツのこくさいたいかいでのおうえんは、けんぜんなナショナリズムのあらわれだというひともいます。",
+          "en": "Some people say that cheering at international sporting events is an expression of healthy nationalism."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}の{国|くに}や{民族|みんぞく}を{何|なに}より{大切|たいせつ}にし、その{利益|りえき}をいちばんに{置|お}く{考|かんが}え{方|かた}。",
+        "kana": "じぶんのくにやみんぞくをなによりたいせつにし、そのりえきをいちばんにおくかんがえかた。"
+      },
+      "frequencyRank": 7768,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1338",
+      "word": "グローバリズム",
+      "kana": "グローバリズム",
+      "meanings": [
+        "globalism"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "politics",
+        "society",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "グローバリズムの{進展|しんてん}によって、{地方|ちほう}の{小|ちい}さな{工場|こうじょう}も{国際競争|こくさいきょうそう}にさらされている。",
+          "kana": "グローバリズムのしんてんによって、ちほうのちいさなこうじょうもこくさいきょうそうにさらされている。",
+          "en": "With the advance of globalism, even small factories in rural areas are exposed to international competition."
+        },
+        {
+          "ja": "グローバリズムのおかげで、{地方|ちほう}の{小|ちい}さな{町|まち}でも{世界中|せかいじゅう}の{食材|しょくざい}が{手|て}に{入|はい}るようになったよね。",
+          "kana": "グローバリズムのおかげで、ちほうのちいさなまちでもせかいじゅうのしょくざいがてにはいるようになったよね。",
+          "en": "Thanks to globalism, even small towns in the countryside can now get ingredients from all over the world."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国境|こっきょう}をこえて、{経済|けいざい}や{文化|ぶんか}が{世界|せかい}でひとつにつながることを{目指|めざ}す{考|かんが}え{方|かた}。",
+        "kana": "こっきょうをこえて、けいざいやぶんかがせかいでひとつにつながることをめざすかんがえかた。"
+      },
+      "frequencyRank": 7781,
+      "notes": "グローバル化 is the everyday word for globalization as a process; グローバリズム names the ideology behind it.",
+      "confusables": [
+        "v-n1-1337"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1339",
+      "word": "悪名高い",
+      "kana": "あくみょうだかい",
+      "meanings": [
+        "notorious",
+        "infamous"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "states",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "その{道路|どうろ}は{渋滞|じゅうたい}の{多|おお}さで{悪名高|あくみょうだか}く、{地元|じもと}の{人|ひと}は{通勤|つうきん}に{使|つか}わない。",
+          "kana": "そのどうろはじゅうたいのおおさであくみょうだかく、じもとのひとはつうきんにつかわない。",
+          "en": "That road is notorious for its traffic jams, and locals do not use it for commuting."
+        },
+        {
+          "ja": "あの{経営者|けいえいしゃ}は、{社員|しゃいん}を{使|つか}い{捨|す}てにすることで{悪名高|あくみょうだか}い{人物|じんぶつ}でした。",
+          "kana": "あのけいえいしゃは、しゃいんをつかいすてにすることであくみょうだかいじんぶつでした。",
+          "en": "That executive was a figure notorious for treating employees as disposable."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悪|わる}い{評判|ひょうばん}が、{広|ひろ}く{世間|せけん}に{知|し}られているさま。",
+        "kana": "わるいひょうばんが、ひろくせけんにしられているさま。"
+      },
+      "frequencyRank": 7794,
+      "confusables": [
+        "v-n1-1235"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1340",
+      "word": "マイノリティ",
+      "kana": "マイノリティ",
+      "meanings": [
+        "minority"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "people",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "マイノリティの{声|こえ}が{政策|せいさく}に{反映|はんえい}される{仕組|しく}みが{必要|ひつよう}だ。",
+          "kana": "マイノリティのこえがせいさくにはんえいされるしくみがひつようだ。",
+          "en": "We need a system by which the voices of minorities are reflected in policy."
+        },
+        {
+          "ja": "{左利|ひだりき}きは{今|いま}でもマイノリティだから、はさみ{一|ひと}つ{選|えら}ぶのにも{苦労|くろう}するんだ。",
+          "kana": "ひだりききはいまでもマイノリティだから、はさみひとつえらぶのにもくろうするんだ。",
+          "en": "Left-handed people are still a minority, so even choosing a pair of scissors is a struggle."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{中|なか}で、{人数|にんずう}が{少|すく}ないほうの{集団|しゅうだん}。{少数派|しょうすうは}。",
+        "kana": "しゃかいのなかで、にんずうがすくないほうのしゅうだん。しょうすうは。"
+      },
+      "frequencyRank": 7807,
+      "altForms": [
+        "マイノリティー"
+      ],
+      "confusables": [
+        "v-n1-1342"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1341",
+      "word": "ふてぶてしい",
+      "kana": "ふてぶてしい",
+      "meanings": [
+        "brazen",
+        "impudent",
+        "shameless"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "usually-kana"
+      ],
+      "examples": [
+        {
+          "ja": "{証拠|しょうこ}を{突|つ}きつけられても{謝|あやま}ろうとしない、ふてぶてしい{態度|たいど}に{皆|みな}があきれた。",
+          "kana": "しょうこをつきつけられてもあやまろうとしない、ふてぶてしいたいどにみながあきれた。",
+          "en": "Everyone was appalled by his brazen attitude, refusing to apologize even when confronted with the evidence."
+        },
+        {
+          "ja": "{遅刻|ちこく}しておいて{謝|あやま}りもせずにコーヒーを{頼|たの}むなんて、ふてぶてしいやつだな。",
+          "kana": "ちこくしておいてあやまりもせずにコーヒーをたのむなんて、ふてぶてしいやつだな。",
+          "en": "Showing up late and ordering a coffee without so much as an apology, what a brazen guy."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{遠慮|えんりょ}も{恥|はじ}も{知|し}らず、{態度|たいど}が{大|おお}きくて{平気|へいき}な{顔|かお}をしているさま。",
+        "kana": "えんりょもはじもしらず、たいどがおおきくてへいきなかおをしているさま。"
+      },
+      "frequencyRank": 7820,
+      "altForms": [
+        "太々しい"
+      ],
+      "confusables": [
+        "v-n1-1330"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1342",
+      "word": "マジョリティ",
+      "kana": "マジョリティ",
+      "meanings": [
+        "majority"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "people",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "マジョリティの{意見|いけん}が{常|つね}に{正|ただ}しいとは{限|かぎ}らない。",
+          "kana": "マジョリティのいけんがつねにただしいとはかぎらない。",
+          "en": "The majority's opinion is not always right."
+        },
+        {
+          "ja": "{調査|ちょうさ}では、{在宅勤務|ざいたくきんむ}を{続|つづ}けたいと{答|こた}えた{人|ひと}がマジョリティを{占|し}めました。",
+          "kana": "ちょうさでは、ざいたくきんむをつづけたいとこたえたひとがマジョリティをしめました。",
+          "en": "In the survey, people who said they wanted to keep working from home made up the majority."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{中|なか}で、{人数|にんずう}が{多|おお}いほうの{集団|しゅうだん}。{多数派|たすうは}。",
+        "kana": "しゃかいのなかで、にんずうがおおいほうのしゅうだん。たすうは。"
+      },
+      "frequencyRank": 7833,
+      "altForms": [
+        "マジョリティー"
+      ],
+      "confusables": [
+        "v-n1-1340"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1343",
+      "word": "気高い",
+      "kana": "けだかい",
+      "meanings": [
+        "noble",
+        "lofty",
+        "dignified"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "personality",
+        "states",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{雪|ゆき}の{山頂|さんちょう}に{立|た}つ{一頭|いっとう}の{鹿|しか}の{姿|すがた}は、どこか{気高|けだか}く{見|み}えた。",
+          "kana": "ゆきのさんちょうにたついっとうのしかのすがたは、どこかけだかくみえた。",
+          "en": "The figure of a lone deer standing on the snowy summit looked somehow noble."
+        },
+        {
+          "ja": "{彼女|かのじょ}は{貧|まず}しい{暮|く}らしの{中|なか}でも{気高|けだか}さを{失|うしな}わず、{常|つね}に{人|ひと}のために{尽|つ}くしました。",
+          "kana": "かのじょはまずしいくらしのなかでもけだかさをうしなわず、つねにひとのためにつくしました。",
+          "en": "Even in poverty she never lost her nobility of spirit, and she always devoted herself to others."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{心|こころ}や{様子|ようす}に{上品|じょうひん}さがあって、{簡単|かんたん}には{近|ちか}づけないほど{立派|りっぱ}なさま。",
+        "kana": "こころやようすにじょうひんさがあって、かんたんにはちかづけないほどりっぱなさま。"
+      },
+      "frequencyRank": 7846,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1344",
+      "word": "モラトリアム",
+      "kana": "モラトリアム",
+      "meanings": [
+        "moratorium",
+        "period of deferment"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "society",
+        "abstract",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{就職|しゅうしょく}を{決|き}められず、{大学院|だいがくいん}をモラトリアムの{期間|きかん}として{選|えら}ぶ{学生|がくせい}もいる。",
+          "kana": "しゅうしょくをきめられず、だいがくいんをモラトリアムのきかんとしてえらぶがくせいもいる。",
+          "en": "Some students, unable to decide on a job, choose graduate school as a moratorium period."
+        },
+        {
+          "ja": "{卒業後|そつぎょうご}の{一年間|いちねんかん}は、{自分|じぶん}にとって{必要|ひつよう}なモラトリアムだったと{今|いま}では{思|おも}います。",
+          "kana": "そつぎょうごのいちねんかんは、じぶんにとってひつようなモラトリアムだったといまではおもいます。",
+          "en": "Looking back now, I think the year after graduation was a moratorium I needed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大人|おとな}としての{責任|せきにん}を{引|ひ}き{受|う}けるのを、しばらく{延期|えんき}している{期間|きかん}。",
+        "kana": "おとなとしてのせきにんをひきうけるのを、しばらくえんきしているきかん。"
+      },
+      "frequencyRank": 7859,
+      "notes": "Mostly the psychological sense: a young adult postponing full adult responsibility. Also a payment or policy moratorium.",
+      "station": 53
+    },
+    {
+      "id": "v-n1-1345",
+      "word": "忌まわしい",
+      "kana": "いまわしい",
+      "meanings": [
+        "abominable",
+        "loathsome",
+        "ill-omened"
+      ],
+      "pos": "adj-i",
+      "jlpt": 1,
+      "tags": [
+        "emotions",
+        "states",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{町|まち}の{人々|ひとびと}は、{百年前|ひゃくねんまえ}の{忌|い}まわしい{事件|じけん}について{今|いま}も{語|かた}りたがらない。",
+          "kana": "まちのひとびとは、ひゃくねんまえのいまわしいじけんについていまもかたりたがらない。",
+          "en": "Even now, the townspeople are reluctant to talk about the abominable incident of a hundred years ago."
+        },
+        {
+          "ja": "その{屋敷|やしき}には{忌|い}まわしい{過去|かこ}があるのだと、{村人|むらびと}たちは{口|くち}をそろえて{言|い}った。",
+          "kana": "そのやしきにはいまわしいかこがあるのだと、むらびとたちはくちをそろえていった。",
+          "en": "The villagers said with one voice that the mansion had an abominable past."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{思|おも}い{出|だ}すのも{嫌|いや}なほど{不吉|ふきつ}で、{憎|にく}らしいさま。",
+        "kana": "おもいだすのもいやなほどふきつで、にくらしいさま。"
+      },
+      "frequencyRank": 7872,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1346",
+      "word": "モチーフ",
+      "kana": "モチーフ",
+      "meanings": [
+        "motif"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "この{作家|さっか}の{作品|さくひん}には、{波|なみ}をモチーフにした{模様|もよう}がよく{登場|とうじょう}する。",
+          "kana": "このさっかのさくひんには、なみをモチーフにしたもようがよくとうじょうする。",
+          "en": "Patterns with a wave motif often appear in this artist's works."
+        },
+        {
+          "ja": "このブローチは、{桜|さくら}の{花|はな}をモチーフにしてデザインされています。",
+          "kana": "このブローチは、さくらのはなをモチーフにしてデザインされています。",
+          "en": "This brooch is designed with a cherry blossom motif."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{作品|さくひん}の{中|なか}で{繰|く}り{返|かえ}し{使|つか}われる、{中心|ちゅうしん}となるテーマや{形|かたち}。",
+        "kana": "さくひんのなかでくりかえしつかわれる、ちゅうしんとなるテーマやかたち。"
+      },
+      "frequencyRank": 7885,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1347",
+      "word": "アヴァンギャルド",
+      "kana": "アヴァンギャルド",
+      "meanings": [
+        "avant-garde"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{当時|とうじ}の{日本|にほん}の{美術界|びじゅつかい}では、ヨーロッパから{伝|つた}わったアヴァンギャルドが{若|わか}い{画家|がか}たちを{引|ひ}きつけた。",
+          "kana": "とうじのにほんのびじゅつかいでは、ヨーロッパからつたわったアヴァンギャルドがわかいがかたちをひきつけた。",
+          "en": "In the Japanese art world of the time, the avant-garde that had arrived from Europe attracted young painters."
+        },
+        {
+          "ja": "あの{劇団|げきだん}の{新作|しんさく}はかなりアヴァンギャルドで、{正直|しょうじき}どう{受|う}け{止|と}めればいいのか{分|わ}からなかった。",
+          "kana": "あのげきだんのしんさくはかなりアヴァンギャルドで、しょうじきどううけとめればいいのかわからなかった。",
+          "en": "That theater company's new piece was quite avant-garde; honestly, I did not know how to take it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{伝統|でんとう}を{否定|ひてい}し、{誰|だれ}よりも{早|はや}く{新|あたら}しい{表現|ひょうげん}を{目指|めざ}す{芸術|げいじゅつ}の{立場|たちば}。",
+        "kana": "でんとうをひていし、だれよりもはやくあたらしいひょうげんをめざすげいじゅつのたちば。"
+      },
+      "frequencyRank": 7898,
+      "altForms": [
+        "アバンギャルド"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1348",
+      "word": "テクスチャ",
+      "kana": "テクスチャ",
+      "meanings": [
+        "texture"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "arts",
+        "technology",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{布|ぬの}のテクスチャまでリアルに{表現|ひょうげん}できるのが、この{画材|がざい}の{魅力|みりょく}だ。",
+          "kana": "ぬののテクスチャまでリアルにひょうげんできるのが、このがざいのみりょくだ。",
+          "en": "The appeal of this art material is that it can realistically render even the texture of cloth."
+        },
+        {
+          "ja": "この{壁紙|かべがみ}は{木|き}のテクスチャを{再現|さいげん}していて、{触|さわ}っても{本物|ほんもの}のようです。",
+          "kana": "このかべがみはきのテクスチャをさいげんしていて、さわってもほんもののようです。",
+          "en": "This wallpaper reproduces the texture of wood, and even to the touch it feels like the real thing."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{表面|ひょうめん}の{手触|てざわ}りや、{見|み}た{目|め}の{感|かん}じ。",
+        "kana": "もののひょうめんのてざわりや、みためのかんじ。"
+      },
+      "frequencyRank": 7911,
+      "altForms": [
+        "テクスチャー"
+      ],
+      "station": 53
+    },
+    {
+      "id": "v-n1-1349",
+      "word": "グラデーション",
+      "kana": "グラデーション",
+      "meanings": [
+        "gradation",
+        "gradient (of color)"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "colors",
+        "arts",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{夕方|ゆうがた}の{空|そら}が、オレンジから{紫|むらさき}へと{美|うつく}しいグラデーションを{描|えが}いていた。",
+          "kana": "ゆうがたのそらが、オレンジからむらさきへとうつくしいグラデーションをえがいていた。",
+          "en": "The evening sky formed a beautiful gradation from orange to purple."
+        },
+        {
+          "ja": "{髪|かみ}の{毛先|けさき}だけを{明|あか}るくして、{自然|しぜん}なグラデーションにしてもらったんだ。",
+          "kana": "かみのけさきだけをあかるくして、しぜんなグラデーションにしてもらったんだ。",
+          "en": "I had just the ends of my hair lightened to make a natural gradation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{色|いろ}や{明|あか}るさが{少|すこ}しずつ{変|か}わっていく、なめらかな{変化|へんか}。",
+        "kana": "いろやあかるさがすこしずつかわっていく、なめらかなへんか。"
+      },
+      "frequencyRank": 7924,
+      "station": 53
+    },
+    {
+      "id": "v-n1-1350",
+      "word": "シルエット",
+      "kana": "シルエット",
+      "meanings": [
+        "silhouette",
+        "outline"
+      ],
+      "pos": "n",
+      "jlpt": 1,
+      "tags": [
+        "shapes",
+        "clothing",
+        "loanword"
+      ],
+      "examples": [
+        {
+          "ja": "{夕日|ゆうひ}を{背|せ}に、{富士山|ふじさん}のシルエットがくっきりと{浮|う}かび{上|あ}がった。",
+          "kana": "ゆうひをせに、ふじさんのシルエットがくっきりとうかびあがった。",
+          "en": "Against the setting sun, the silhouette of Mount Fuji stood out sharply."
+        },
+        {
+          "ja": "このコートは{体|からだ}の{線|せん}を{拾|ひろ}わないゆったりしたシルエットで、どんな{服|ふく}にも{合|あ}わせやすいです。",
+          "kana": "このコートはからだのせんをひろわないゆったりしたシルエットで、どんなふくにもあわせやすいです。",
+          "en": "This coat has a relaxed silhouette that does not cling to the body, so it goes easily with any outfit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{光|ひかり}を{背|せ}にして{黒|くろ}く{浮|う}かび{上|あ}がる、ものの{外側|そとがわ}の{形|かたち}。",
+        "kana": "ひかりをせにしてくろくうかびあがる、もののそとがわのかたち。"
+      },
+      "frequencyRank": 7937,
+      "station": 53
+    }
+  ]
+}

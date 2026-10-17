@@ -1,0 +1,5266 @@
+{
+  "schema": "tsuzuku.content/1",
+  "type": "vocab",
+  "level": "n3",
+  "writer": "vocab-n3-006",
+  "generatedAt": "2026-10-17T00:00:00Z",
+  "items": [
+    {
+      "id": "v-n3-0710",
+      "word": "現在",
+      "kana": "げんざい",
+      "meanings": [
+        "the present",
+        "currently"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{現在|げんざい}、{新|あたら}しい{仕事|しごと}を{探|さが}しています。",
+          "kana": "げんざい、あたらしいしごとをさがしています。",
+          "en": "I am currently looking for a new job."
+        },
+        {
+          "ja": "{彼|かれ}は{現在|げんざい}、{両親|りょうしん}と{一緒|いっしょ}に{住|す}んでいる。",
+          "kana": "かれはげんざい、りょうしんといっしょにすんでいる。",
+          "en": "He currently lives with his parents."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{過去|かこ}でも{未来|みらい}でもない、{今|いま}のこと。",
+        "kana": "かこでもみらいでもない、いまのこと。"
+      },
+      "notes": "Formal-neutral word for \"now\"; 今 is the everyday equivalent. Often opens a sentence as 現在、 followed by a comma.",
+      "confusables": [
+        "v-n3-0717",
+        "v-n3-0724"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0711",
+      "word": "以上",
+      "kana": "いじょう",
+      "meanings": [
+        "or more",
+        "not less than",
+        "that is all"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{二十歳|はたち}{以上|いじょう}の{人|ひと}だけがお{酒|さけ}を{買|か}える。",
+          "kana": "はたちいじょうのひとだけがおさけをかえる。",
+          "en": "Only people twenty or older can buy alcohol."
+        },
+        {
+          "ja": "{説明|せつめい}は{以上|いじょう}です。{何|なに}か{質問|しつもん}はありますか。",
+          "kana": "せつめいはいじょうです。なにかしつもんはありますか。",
+          "en": "That is all for the explanation. Are there any questions?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{量|りょう}を{入|い}れて、それより{多|おお}いこと。",
+        "kana": "あるりょうをいれて、それよりおおいこと。"
+      },
+      "notes": "Includes the number it follows (二十歳以上 = 20 and up). 以上です closes a speech or an order.",
+      "collocations": [
+        "十八歳以上",
+        "以上です"
+      ],
+      "confusables": [
+        "v-n3-0715",
+        "v-n3-0730"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0712",
+      "word": "中心",
+      "kana": "ちゅうしん",
+      "meanings": [
+        "center",
+        "core",
+        "focus"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}は{町|まち}の{中心|ちゅうしん}にあります。",
+          "kana": "えきはまちのちゅうしんにあります。",
+          "en": "The station is in the center of town."
+        },
+        {
+          "ja": "{彼女|かのじょ}はいつもクラスの{中心|ちゅうしん}にいる{人|ひと}だった。",
+          "kana": "かのじょはいつもクラスのちゅうしんにいるひとだった。",
+          "en": "She was always the kind of person at the center of the class."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{真|ま}ん{中|なか}。{一番|いちばん}{大切|たいせつ}なところ。",
+        "kana": "もののまんなか。いちばんたいせつなところ。"
+      },
+      "notes": "Abstract or geographic center (町の中心, 話の中心). For the physical middle of a room or page use 中央 or 真ん中.",
+      "collocations": [
+        "町の中心",
+        "中心になる"
+      ],
+      "confusables": [
+        "v-n3-0725"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0713",
+      "word": "時代",
+      "kana": "じだい",
+      "meanings": [
+        "era",
+        "period",
+        "times"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{学生|がくせい}{時代|じだい}はよく{旅行|りょこう}に{行|い}った。",
+          "kana": "がくせいじだいはよくりょこうにいった。",
+          "en": "In my student days I traveled a lot."
+        },
+        {
+          "ja": "{今|いま}は{誰|だれ}でもスマホを{持|も}っている{時代|じだい}です。",
+          "kana": "いまはだれでもスマホをもっているじだいです。",
+          "en": "We live in an age when everyone has a smartphone."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{歴史|れきし}の{中|なか}の、ある{長|なが}い{期間|きかん}。",
+        "kana": "れきしのなかの、あるながいきかん。"
+      },
+      "collocations": [
+        "学生時代",
+        "江戸時代",
+        "時代が変わる"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0714",
+      "word": "地方",
+      "kana": "ちほう",
+      "meanings": [
+        "region",
+        "the provinces"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{地方|ちほう}によって{言葉|ことば}が{少|すこ}し{違|ちが}います。",
+          "kana": "ちほうによってことばがすこしちがいます。",
+          "en": "The words people use differ a little from region to region."
+        },
+        {
+          "ja": "{地方|ちほう}の{小|ちい}さな{町|まち}で{生|う}まれ{育|そだ}った。",
+          "kana": "ちほうのちいさなまちでうまれそだった。",
+          "en": "I was born and raised in a small town in the provinces."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{都会|とかい}から{離|はな}れた{地域|ちいき}。{国|くに}の{中|なか}のある{地域|ちいき}。",
+        "kana": "とかいからはなれたちいき。くにのなかのあるちいき。"
+      },
+      "notes": "Either a named region (関東地方) or \"the regions\" as opposed to the capital.",
+      "collocations": [
+        "地方に住む",
+        "地方出身"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0715",
+      "word": "以下",
+      "kana": "いか",
+      "meanings": [
+        "or less",
+        "not more than",
+        "the following"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{十二歳|じゅうにさい}{以下|いか}のお{子|こ}さんは{無料|むりょう}です。",
+          "kana": "じゅうにさいいかのおこさんはむりょうです。",
+          "en": "Children twelve and under are free."
+        },
+        {
+          "ja": "テストの{点|てん}が{平均|へいきん}{以下|いか}で、がっかりした。",
+          "kana": "テストのてんがへいきんいかで、がっかりした。",
+          "en": "My test score was below average, and I was disappointed."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{量|りょう}を{入|い}れて、それより{少|すく}ないこと。",
+        "kana": "あるりょうをいれて、それよりすくないこと。"
+      },
+      "notes": "Includes the number (十二歳以下 = 12 and under); 未満 excludes it. 以下のとおり = as follows.",
+      "collocations": [
+        "以下のとおり",
+        "十歳以下"
+      ],
+      "confusables": [
+        "v-n3-0793",
+        "v-n3-0711"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0716",
+      "word": "途中",
+      "kana": "とちゅう",
+      "meanings": [
+        "on the way",
+        "midway",
+        "partway through"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{会社|かいしゃ}に{行|い}く{途中|とちゅう}で{雨|あめ}に{降|ふ}られた。",
+          "kana": "かいしゃにいくとちゅうであめにふられた。",
+          "en": "I got caught in the rain on the way to work."
+        },
+        {
+          "ja": "{映画|えいが}の{途中|とちゅう}で{寝|ね}てしまいました。",
+          "kana": "えいがのとちゅうでねてしまいました。",
+          "en": "I fell asleep partway through the movie."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{出発|しゅっぱつ}してから{着|つ}くまでの{間|あいだ}。{始|はじ}めてから{終|お}わるまで。",
+        "kana": "しゅっぱつしてからつくまでのあいだ。はじめてからおわるまで。"
+      },
+      "collocations": [
+        "途中で",
+        "話の途中",
+        "帰る途中"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0717",
+      "word": "過去",
+      "kana": "かこ",
+      "meanings": [
+        "the past",
+        "past"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{過去|かこ}のことはもう{気|き}にしていないよ。",
+          "kana": "かこのことはもうきにしていないよ。",
+          "en": "I am not bothered about the past anymore."
+        },
+        {
+          "ja": "{過去|かこ}に{一度|いちど}、この{町|まち}に{住|す}んでいたことがあります。",
+          "kana": "かこにいちど、このまちにすんでいたことがあります。",
+          "en": "I lived in this town once in the past."
+        }
+      ],
+      "definitionJa": {
+        "ja": "もう{過|す}ぎてしまった{時間|じかん}。{昔|むかし}のこと。",
+        "kana": "もうすぎてしまったじかん。むかしのこと。"
+      },
+      "collocations": [
+        "過去の経験",
+        "過去形"
+      ],
+      "confusables": [
+        "v-n3-0710",
+        "v-n3-0724"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0718",
+      "word": "都市",
+      "kana": "とし",
+      "meanings": [
+        "city",
+        "urban area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{大|おお}きな{都市|とし}には{仕事|しごと}を{探|さが}す{人|ひと}が{集|あつ}まる。",
+          "kana": "おおきなとしにはしごとをさがすひとがあつまる。",
+          "en": "People looking for work gather in big cities."
+        },
+        {
+          "ja": "{大都市|だいとし}では{家賃|やちん}がとても{高|たか}いです。",
+          "kana": "だいとしではやちんがとてもたかいです。",
+          "en": "In big cities, rent is very expensive."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}がたくさん{住|す}んでいて、{店|みせ}や{会社|かいしゃ}が{多|おお}い{大|おお}きな{町|まち}。",
+        "kana": "ひとがたくさんすんでいて、みせやかいしゃがおおいおおきなまち。"
+      },
+      "notes": "More formal and larger-scale than 町 or 市; common in compounds (大都市, 都市部).",
+      "collocations": [
+        "大都市",
+        "都市部"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0719",
+      "word": "以外",
+      "kana": "いがい",
+      "meanings": [
+        "except",
+        "other than",
+        "besides"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "abstract",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}{以外|いがい}は{毎日|まいにち}{開|あ}いています。",
+          "kana": "にちようびいがいはまいにちあいています。",
+          "en": "It is open every day except Sunday."
+        },
+        {
+          "ja": "{肉|にく}{以外|いがい}なら{何|なん}でも{食|た}べられるよ。",
+          "kana": "にくいがいならなんでもたべられるよ。",
+          "en": "I can eat anything except meat."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それを{除|のぞ}いた、ほかのもの。",
+        "kana": "それをのぞいた、ほかのもの。"
+      },
+      "notes": "Do not confuse with 意外 (いがい, unexpected).",
+      "collocations": [
+        "それ以外",
+        "〜以外に"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0720",
+      "word": "期間",
+      "kana": "きかん",
+      "meanings": [
+        "period",
+        "term"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "セールの{期間|きかん}は{今週|こんしゅう}の{金曜日|きんようび}までです。",
+          "kana": "セールのきかんはこんしゅうのきんようびまでです。",
+          "en": "The sale period runs until this Friday."
+        },
+        {
+          "ja": "{試験|しけん}{期間|きかん}{中|ちゅう}は{図書館|としょかん}が{夜|よる}{遅|おそ}くまで{開|あ}いている。",
+          "kana": "しけんきかんちゅうはとしょかんがよるおそくまであいている。",
+          "en": "During the exam period, the library stays open until late at night."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつからいつまでと{決|き}まっている、{時間|じかん}の{長|なが}さ。",
+        "kana": "いつからいつまでときまっている、じかんのながさ。"
+      },
+      "collocations": [
+        "期間限定",
+        "長い期間"
+      ],
+      "confusables": [
+        "v-n3-0749"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0721",
+      "word": "半分",
+      "kana": "はんぶん",
+      "meanings": [
+        "half"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "ケーキを{半分|はんぶん}に{切|き}って{二人|ふたり}で{食|た}べた。",
+          "kana": "ケーキをはんぶんにきってふたりでたべた。",
+          "en": "We cut the cake in half and ate it between the two of us."
+        },
+        {
+          "ja": "{給料|きゅうりょう}の{半分|はんぶん}を{貯金|ちょきん}しています。",
+          "kana": "きゅうりょうのはんぶんをちょきんしています。",
+          "en": "I save half of my salary."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}をちょうど{真|ま}ん{中|なか}で{二|ふた}つにしたうちの{一|ひと}つ。",
+        "kana": "ぜんたいをちょうどまんなかでふたつにしたうちのひとつ。"
+      },
+      "collocations": [
+        "半分に切る",
+        "半分ずつ"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0722",
+      "word": "周り",
+      "kana": "まわり",
+      "meanings": [
+        "surroundings",
+        "around",
+        "circumference"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{周|まわ}りにはコンビニが{三|みっ}つもある。",
+          "kana": "えきのまわりにはコンビニがみっつもある。",
+          "en": "There are three convenience stores around the station."
+        },
+        {
+          "ja": "{周|まわ}りの{人|ひと}に{迷惑|めいわく}をかけないようにしましょう。",
+          "kana": "まわりのひとにめいわくをかけないようにしましょう。",
+          "en": "Let's try not to bother the people around us."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるものの{近|ちか}くや、その{外|そと}にあるところ。",
+        "kana": "あるもののちかくや、そのそとにあるところ。"
+      },
+      "notes": "周り for surroundings and people around you (周りの人). 回り is used for rotation and detours (遠回り).",
+      "altForms": [
+        "回り"
+      ],
+      "collocations": [
+        "周りの人",
+        "家の周り"
+      ],
+      "confusables": [
+        "v-n3-0727"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0723",
+      "word": "当時",
+      "kana": "とうじ",
+      "meanings": [
+        "at that time",
+        "in those days"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{当時|とうじ}はまだスマホがなかった。",
+          "kana": "とうじはまだスマホがなかった。",
+          "en": "Back then there were no smartphones yet."
+        },
+        {
+          "ja": "{当時|とうじ}の{写真|しゃしん}を{見|み}ると、{懐|なつ}かしくなります。",
+          "kana": "とうじのしゃしんをみると、なつかしくなります。",
+          "en": "When I look at photos from those days, I feel nostalgic."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}の、{話|はなし}に{出|で}ているそのころ。",
+        "kana": "むかしの、はなしにでているそのころ。"
+      },
+      "collocations": [
+        "当時の写真",
+        "その当時"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0724",
+      "word": "未来",
+      "kana": "みらい",
+      "meanings": [
+        "future"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもたちの{未来|みらい}のために{何|なに}ができるでしょうか。",
+          "kana": "こどもたちのみらいのためになにができるでしょうか。",
+          "en": "What can we do for our children’s future?"
+        },
+        {
+          "ja": "{未来|みらい}のことは{誰|だれ}にも{分|わ}からない。",
+          "kana": "みらいのことはだれにもわからない。",
+          "en": "Nobody knows what the future holds."
+        }
+      ],
+      "definitionJa": {
+        "ja": "これから{来|く}る{時間|じかん}。まだ{来|き}ていない{時代|じだい}。",
+        "kana": "これからくるじかん。まだきていないじだい。"
+      },
+      "notes": "The distant or imagined future. For your own plans use 将来 (将来の夢).",
+      "confusables": [
+        "v-n3-0717",
+        "v-n3-0710"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0725",
+      "word": "中央",
+      "kana": "ちゅうおう",
+      "meanings": [
+        "center",
+        "middle"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{部屋|へや}の{中央|ちゅうおう}に{大|おお}きなテーブルが{置|お}いてあります。",
+          "kana": "へやのちゅうおうにおおきなテーブルがおいてあります。",
+          "en": "A big table is set in the middle of the room."
+        },
+        {
+          "ja": "{広場|ひろば}の{中央|ちゅうおう}に{大|おお}きな{木|き}が{立|た}っている。",
+          "kana": "ひろばのちゅうおうにおおきなきがたっている。",
+          "en": "A big tree stands in the center of the square."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{真|ま}ん{中|なか}。{中心|ちゅうしん}になっているところ。",
+        "kana": "もののまんなか。ちゅうしんになっているところ。"
+      },
+      "notes": "The physical middle of a space or page; also \"central\" in names (中央駅, 中央線).",
+      "collocations": [
+        "部屋の中央",
+        "中央に置く"
+      ],
+      "confusables": [
+        "v-n3-0712"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0726",
+      "word": "地下",
+      "kana": "ちか",
+      "meanings": [
+        "underground",
+        "basement"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "デパートの{地下|ちか}でお{弁当|べんとう}を{買|か}った。",
+          "kana": "デパートのちかでおべんとうをかった。",
+          "en": "I bought a boxed lunch in the department store basement."
+        },
+        {
+          "ja": "この{駅|えき}は{地下|ちか}にホームがあります。",
+          "kana": "このえきはちかにホームがあります。",
+          "en": "This station has its platforms underground."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{地面|じめん}より{下|した}。{建物|たてもの}の{地面|じめん}より{下|した}の{部分|ぶぶん}。",
+        "kana": "じめんよりした。たてもののじめんよりしたのぶぶん。"
+      },
+      "collocations": [
+        "地下鉄",
+        "地下一階",
+        "地下街"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-0727",
+      "word": "周辺",
+      "kana": "しゅうへん",
+      "meanings": [
+        "vicinity",
+        "surrounding area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}{周辺|しゅうへん}にはホテルがたくさんあります。",
+          "kana": "えきしゅうへんにはホテルがたくさんあります。",
+          "en": "There are many hotels around the station."
+        },
+        {
+          "ja": "{空港|くうこう}{周辺|しゅうへん}はいつも{車|くるま}が{多|おお}い。",
+          "kana": "くうこうしゅうへんはいつもくるまがおおい。",
+          "en": "There are always a lot of cars around the airport."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるところの{周|まわ}り。{近|ちか}くの{地域|ちいき}。",
+        "kana": "あるところのまわり。ちかくのちいき。"
+      },
+      "notes": "More formal than 周り; typical of maps, notices and news (駅周辺, 周辺地域).",
+      "collocations": [
+        "駅周辺",
+        "周辺の店"
+      ],
+      "confusables": [
+        "v-n3-0722"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0728",
+      "word": "平均",
+      "kana": "へいきん",
+      "meanings": [
+        "average",
+        "mean"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "numbers"
+      ],
+      "examples": [
+        {
+          "ja": "このクラスの{平均|へいきん}{点|てん}は{七十点|ななじゅってん}でした。",
+          "kana": "このクラスのへいきんてんはななじゅってんでした。",
+          "en": "This class’s average score was seventy."
+        },
+        {
+          "ja": "{一日|いちにち}に{平均|へいきん}して{二時間|にじかん}ぐらい{勉強|べんきょう}している。",
+          "kana": "いちにちにへいきんしてにじかんぐらいべんきょうしている。",
+          "en": "I study about two hours a day on average."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いくつかの{量|りょう}から{計算|けいさん}して{出|だ}す、{真|ま}ん{中|なか}ぐらいの{量|りょう}。",
+        "kana": "いくつかのりょうからけいさんしてだす、まんなかぐらいのりょう。"
+      },
+      "collocations": [
+        "平均点",
+        "平均して",
+        "平均より高い"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0729",
+      "word": "合計",
+      "kana": "ごうけい",
+      "meanings": [
+        "total",
+        "sum"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{合計|ごうけい}で{三千円|さんぜんえん}になります。",
+          "kana": "ごうけいでさんぜんえんになります。",
+          "en": "That comes to three thousand yen in total."
+        },
+        {
+          "ja": "{今月|こんげつ}{使|つか}ったお{金|かね}を{合計|ごうけい}してみたら、びっくりした。",
+          "kana": "こんげつつかったおかねをごうけいしてみたら、びっくりした。",
+          "en": "When I added up the money I spent this month, I was shocked."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全部|ぜんぶ}でいくつになるかを{計算|けいさん}したもの。",
+        "kana": "ぜんぶでいくつになるかをけいさんしたもの。"
+      },
+      "collocations": [
+        "合計金額",
+        "合計する"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0730",
+      "word": "以内",
+      "kana": "いない",
+      "meanings": [
+        "within",
+        "not exceeding"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}から{徒歩|とほ}{五分|ごふん}{以内|いない}のアパートを{探|さが}しています。",
+          "kana": "えきからとほごふんいないのアパートをさがしています。",
+          "en": "I am looking for an apartment within a five-minute walk of the station."
+        },
+        {
+          "ja": "{三日|みっか}{以内|いない}に{返事|へんじ}をくれると{助|たす}かる。",
+          "kana": "みっかいないにへんじをくれるとたすかる。",
+          "en": "It would help if you could reply within three days."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}められた{範囲|はんい}や{量|りょう}の{中|なか}に{入|はい}っていること。",
+        "kana": "きめられたはんいやりょうのなかにはいっていること。"
+      },
+      "collocations": [
+        "一週間以内",
+        "予算以内"
+      ],
+      "confusables": [
+        "v-n3-0711",
+        "v-n3-0715"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0731",
+      "word": "全国",
+      "kana": "ぜんこく",
+      "meanings": [
+        "nationwide",
+        "the whole country"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{全国|ぜんこく}から{人|ひと}が{集|あつ}まる{大|おお}きなお{祭|まつ}りだ。",
+          "kana": "ぜんこくからひとがあつまるおおきなおまつりだ。",
+          "en": "It is a big festival that draws people from all over the country."
+        },
+        {
+          "ja": "この{番組|ばんぐみ}は{全国|ぜんこく}で{放送|ほうそう}されています。",
+          "kana": "このばんぐみはぜんこくでほうそうされています。",
+          "en": "This program is broadcast nationwide."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{中|なか}の{全部|ぜんぶ}。{日本|にほん}{中|じゅう}。",
+        "kana": "くにのなかのぜんぶ。にほんじゅう。"
+      },
+      "collocations": [
+        "全国大会",
+        "全国的に"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0732",
+      "word": "最大",
+      "kana": "さいだい",
+      "meanings": [
+        "largest",
+        "maximum"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "このホールは{最大|さいだい}で{千人|せんにん}{入|はい}ることができます。",
+          "kana": "このホールはさいだいでせんにんはいることができます。",
+          "en": "This hall can hold a maximum of a thousand people."
+        },
+        {
+          "ja": "{今年|ことし}{最大|さいだい}の{台風|たいふう}が{近|ちか}づいている。",
+          "kana": "ことしさいだいのたいふうがちかづいている。",
+          "en": "The biggest typhoon of the year is approaching."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一番|いちばん}{大|おお}きいこと。これより{大|おお}きいものはないこと。",
+        "kana": "いちばんおおきいこと。これよりおおきいものはないこと。"
+      },
+      "collocations": [
+        "最大で",
+        "日本最大"
+      ],
+      "confusables": [
+        "v-n3-0786"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0733",
+      "word": "表",
+      "kana": "おもて",
+      "meanings": [
+        "front",
+        "surface",
+        "outside"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{封筒|ふうとう}の{表|おもて}に{住所|じゅうしょ}を{書|か}いてください。",
+          "kana": "ふうとうのおもてにじゅうしょをかいてください。",
+          "en": "Please write the address on the front of the envelope."
+        },
+        {
+          "ja": "コインを{投|な}げて、{表|おもて}が{出|で}たら{君|きみ}の{勝|か}ちだ。",
+          "kana": "コインをなげて、おもてがでたらきみのかちだ。",
+          "en": "Flip the coin, and if it lands heads, you win."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{外|そと}から{見|み}える{方|ほう}。{前|まえ}の{方|ほう}。",
+        "kana": "もののそとからみえるほう。まえのほう。"
+      },
+      "notes": "Read ひょう, the same kanji means a table or chart. 表 (おもて) also means the street side of a house (表に出る).",
+      "collocations": [
+        "表と裏",
+        "表に出る"
+      ],
+      "confusables": [
+        "v-n3-0734"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0734",
+      "word": "裏",
+      "kana": "うら",
+      "meanings": [
+        "back",
+        "reverse side",
+        "behind"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{紙|かみ}の{裏|うら}にも{名前|なまえ}を{書|か}いてね。",
+          "kana": "かみのうらにもなまえをかいてね。",
+          "en": "Write your name on the back of the paper too."
+        },
+        {
+          "ja": "{家|いえ}の{裏|うら}に{小|ちい}さな{畑|はたけ}があります。",
+          "kana": "いえのうらにちいさなはたけがあります。",
+          "en": "There is a small vegetable field behind my house."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{表|おもて}ではない{方|ほう}。{外|そと}から{見|み}えない{後|うし}ろの{方|ほう}。",
+        "kana": "おもてではないほう。そとからみえないうしろのほう。"
+      },
+      "collocations": [
+        "裏側",
+        "家の裏",
+        "裏口"
+      ],
+      "confusables": [
+        "v-n3-0733"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0735",
+      "word": "奥",
+      "kana": "おく",
+      "meanings": [
+        "back",
+        "interior",
+        "depths"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}の{奥|おく}に{静|しず}かな{席|せき}があるよ。",
+          "kana": "みせのおくにしずかなせきがあるよ。",
+          "en": "There is a quiet seat at the back of the shop."
+        },
+        {
+          "ja": "トイレは{店|みせ}の{奥|おく}にございます。",
+          "kana": "トイレはみせのおくにございます。",
+          "en": "The restroom is at the back of the shop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{入|い}り{口|ぐち}から{遠|とお}い、{中|なか}の{深|ふか}いところ。",
+        "kana": "いりぐちからとおい、なかのふかいところ。"
+      },
+      "notes": "The far interior as seen from the entrance: 奥の部屋, 山の奥. 奥さん (wife) is a different word.",
+      "collocations": [
+        "店の奥",
+        "奥の部屋",
+        "奥へ進む"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0736",
+      "word": "本日",
+      "kana": "ほんじつ",
+      "meanings": [
+        "today"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{本日|ほんじつ}の{会議|かいぎ}は{三時|さんじ}からです。",
+          "kana": "ほんじつのかいぎはさんじからです。",
+          "en": "Today’s meeting starts at three."
+        },
+        {
+          "ja": "{本日|ほんじつ}は{雨|あめ}のため、{試合|しあい}は{中止|ちゅうし}になりました。",
+          "kana": "ほんじつはあめのため、しあいはちゅうしになりました。",
+          "en": "Because of rain today, the match has been canceled."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今日|きょう}のこと。{手紙|てがみ}や{店|みせ}などで{使|つか}う{丁寧|ていねい}な{言葉|ことば}。",
+        "kana": "きょうのこと。てがみやみせなどでつかうていねいなことば。"
+      },
+      "notes": "Formal equivalent of 今日, used in announcements, shops and business e-mail.",
+      "collocations": [
+        "本日中に",
+        "本日休業"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0737",
+      "word": "当日",
+      "kana": "とうじつ",
+      "meanings": [
+        "that day",
+        "the day of"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "チケットは{当日|とうじつ}も{買|か}えますか。",
+          "kana": "チケットはとうじつもかえますか。",
+          "en": "Can tickets be bought on the day as well?"
+        },
+        {
+          "ja": "{試験|しけん}の{当日|とうじつ}は、{朝|あさ}{早|はや}く{起|お}きて{会場|かいじょう}に{向|む}かった。",
+          "kana": "しけんのとうじつは、あさはやくおきてかいじょうにむかった。",
+          "en": "On the day of the exam, I got up early and headed to the venue."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そのことが{行|おこな}われる、ちょうどそのとき。",
+        "kana": "そのことがおこなわれる、ちょうどそのとき。"
+      },
+      "collocations": [
+        "当日券",
+        "試験当日"
+      ],
+      "confusables": [
+        "v-n3-0768"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0738",
+      "word": "深夜",
+      "kana": "しんや",
+      "meanings": [
+        "late at night",
+        "the small hours"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{深夜|しんや}まで{起|お}きていたから、{眠|ねむ}い。",
+          "kana": "しんやまでおきていたから、ねむい。",
+          "en": "I was up until late at night, so I am sleepy."
+        },
+        {
+          "ja": "{深夜|しんや}のコンビニは{意外|いがい}と{人|ひと}が{多|おお}いです。",
+          "kana": "しんやのコンビニはいがいとひとがおおいです。",
+          "en": "Convenience stores late at night have surprisingly many people in them."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{夜|よる}がとても{遅|おそ}くなってからの{時間|じかん}。",
+        "kana": "よるがとてもおそくなってからのじかん。"
+      },
+      "collocations": [
+        "深夜まで",
+        "深夜番組",
+        "深夜料金"
+      ],
+      "confusables": [
+        "v-n3-0739"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0739",
+      "word": "早朝",
+      "kana": "そうちょう",
+      "meanings": [
+        "early morning"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{早朝|そうちょう}の{電車|でんしゃ}は{空|す}いていて{気持|きも}ちがいいです。",
+          "kana": "そうちょうのでんしゃはすいていてきもちがいいです。",
+          "en": "The early-morning trains are empty and feel nice."
+        },
+        {
+          "ja": "{早朝|そうちょう}から{釣|つ}りに{出|で}かけた。",
+          "kana": "そうちょうからつりにでかけた。",
+          "en": "I went out fishing from early in the morning."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{朝|あさ}のとても{早|はや}い{時間|じかん}。",
+        "kana": "あさのとてもはやいじかん。"
+      },
+      "collocations": [
+        "早朝から",
+        "早朝の散歩"
+      ],
+      "confusables": [
+        "v-n3-0738"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0740",
+      "word": "両側",
+      "kana": "りょうがわ",
+      "meanings": [
+        "both sides"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{道|みち}の{両側|りょうがわ}に{桜|さくら}の{木|き}が{並|なら}んでいる。",
+          "kana": "みちのりょうがわにさくらのきがならんでいる。",
+          "en": "Cherry trees line both sides of the street."
+        },
+        {
+          "ja": "{紙|かみ}の{両側|りょうがわ}に{文字|もじ}が{印刷|いんさつ}されています。",
+          "kana": "かみのりょうがわにもじがいんさつされています。",
+          "en": "Characters are printed on both sides of the paper."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あるものの{右|みぎ}と{左|ひだり}、{両方|りょうほう}の{方|ほう}。",
+        "kana": "あるもののみぎとひだり、りょうほうのほう。"
+      },
+      "notes": "Opposite of 片側 (one side). 両側から = from both sides.",
+      "collocations": [
+        "道の両側",
+        "両側から"
+      ],
+      "confusables": [
+        "v-n3-0784"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0741",
+      "word": "地元",
+      "kana": "じもと",
+      "meanings": [
+        "hometown",
+        "local area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{地元|じもと}の{友達|ともだち}と{久|ひさ}しぶりに{会|あ}った。",
+          "kana": "じもとのともだちとひさしぶりにあった。",
+          "en": "I met up with friends from my hometown for the first time in ages."
+        },
+        {
+          "ja": "{地元|じもと}の{野菜|やさい}を{使|つか}った{料理|りょうり}が{人気|にんき}です。",
+          "kana": "じもとのやさいをつかったりょうりがにんきです。",
+          "en": "Dishes made with local vegetables are popular."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}が{住|す}んでいるところ。{生|う}まれ{育|そだ}ったところ。",
+        "kana": "じぶんがすんでいるところ。うまれそだったところ。"
+      },
+      "collocations": [
+        "地元の人",
+        "地元に帰る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0742",
+      "word": "付近",
+      "kana": "ふきん",
+      "meanings": [
+        "vicinity",
+        "neighborhood",
+        "nearby"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "この{付近|ふきん}に{郵便局|ゆうびんきょく}はありますか。",
+          "kana": "このふきんにゆうびんきょくはありますか。",
+          "en": "Is there a post office around here?"
+        },
+        {
+          "ja": "{事故|じこ}があったのは{駅|えき}の{付近|ふきん}らしい。",
+          "kana": "じこがあったのはえきのふきんらしい。",
+          "en": "Apparently the accident happened near the station."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そのところの{近|ちか}く。{周|まわ}り。",
+        "kana": "そのところのちかく。まわり。"
+      },
+      "notes": "Formal-neutral; used in directions, maps and news (駅付近, 現場付近). In speech この辺 is more common.",
+      "collocations": [
+        "駅付近",
+        "この付近"
+      ],
+      "confusables": [
+        "v-n3-0727"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0743",
+      "word": "大半",
+      "kana": "たいはん",
+      "meanings": [
+        "majority",
+        "most"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "クラスの{大半|たいはん}が{同|おな}じ{大学|だいがく}に{進|すす}んだ。",
+          "kana": "クラスのたいはんがおなじだいがくにすすんだ。",
+          "en": "Most of the class went on to the same university."
+        },
+        {
+          "ja": "{参加者|さんかしゃ}の{大半|たいはん}は{二十代|にじゅうだい}の{若|わか}い{人|ひと}でした。",
+          "kana": "さんかしゃのたいはんはにじゅうだいのわかいひとでした。",
+          "en": "Most of the participants were young people in their twenties."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}の{半分|はんぶん}より{多|おお}くの{部分|ぶぶん}。ほとんど。",
+        "kana": "ぜんたいのはんぶんよりおおくのぶぶん。ほとんど。"
+      },
+      "confusables": [
+        "v-n3-0745"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0744",
+      "word": "大勢",
+      "kana": "おおぜい",
+      "meanings": [
+        "many people",
+        "a crowd"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}に{大勢|おおぜい}の{人|ひと}が{集|あつ}まっていた。",
+          "kana": "えきまえにおおぜいのひとがあつまっていた。",
+          "en": "A big crowd of people had gathered in front of the station."
+        },
+        {
+          "ja": "{大勢|おおぜい}の{前|まえ}で{話|はな}すのは{緊張|きんちょう}します。",
+          "kana": "おおぜいのまえではなすのはきんちょうします。",
+          "en": "Speaking in front of a crowd makes me nervous."
+        }
+      ],
+      "definitionJa": {
+        "ja": "たくさんの{人|ひと}。{人|ひと}が{多|おお}いこと。",
+        "kana": "たくさんのひと。ひとがおおいこと。"
+      },
+      "notes": "Only for people, never for things. Often adverbial: 大勢で行く.",
+      "collocations": [
+        "大勢の人",
+        "大勢で"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0745",
+      "word": "多数",
+      "kana": "たすう",
+      "meanings": [
+        "large number",
+        "majority"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{多数|たすう}の{意見|いけん}で{会議|かいぎ}の{日|ひ}が{決|き}まりました。",
+          "kana": "たすうのいけんでかいぎのひがきまりました。",
+          "en": "The meeting date was decided by majority opinion."
+        },
+        {
+          "ja": "{多数|たすう}の{人|ひと}が{反対|はんたい}したので、{計画|けいかく}は{中止|ちゅうし}になった。",
+          "kana": "たすうのひとがはんたいしたので、けいかくはちゅうしになった。",
+          "en": "Since a large number of people objected, the plan was called off."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{多|おお}くの{人|ひと}やもの。たくさんあること。",
+        "kana": "おおくのひとやもの。たくさんあること。"
+      },
+      "collocations": [
+        "多数決",
+        "多数の人"
+      ],
+      "confusables": [
+        "v-n3-0785",
+        "v-n3-0743"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0746",
+      "word": "倍",
+      "kana": "ばい",
+      "meanings": [
+        "double",
+        "times (multiple)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "numbers"
+      ],
+      "examples": [
+        {
+          "ja": "{今年|ことし}の{売|う}り{上|あ}げは{去年|きょねん}の{倍|ばい}になった。",
+          "kana": "ことしのうりあげはきょねんのばいになった。",
+          "en": "This year’s sales doubled compared with last year."
+        },
+        {
+          "ja": "この{部屋|へや}は{前|まえ}の{部屋|へや}の{倍|ばい}の{広|ひろ}さがあります。",
+          "kana": "このへやはまえのへやのばいのひろさがあります。",
+          "en": "This room is twice as big as my previous one."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{量|りょう}が{二|ふた}つ{集|あつ}まった{大|おお}きさ。また、{何回|なんかい}か{集|あつ}めた{大|おお}きさ。",
+        "kana": "あるりょうがふたつあつまったおおきさ。また、なんかいかあつめたおおきさ。"
+      },
+      "notes": "Alone it means \"double\"; after a number it is a multiplier (三倍 = three times).",
+      "collocations": [
+        "倍になる",
+        "二倍"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0747",
+      "word": "割",
+      "kana": "わり",
+      "meanings": [
+        "ten percent",
+        "proportion",
+        "rate"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "numbers"
+      ],
+      "examples": [
+        {
+          "ja": "{今日|きょう}は{全部|ぜんぶ}の{商品|しょうひん}が{二割引|にわりび}きだって。",
+          "kana": "きょうはぜんぶのしょうひんがにわりびきだって。",
+          "en": "Apparently everything is twenty percent off today."
+        },
+        {
+          "ja": "{日本人|にほんじん}の{約|やく}{三割|さんわり}がこの{意見|いけん}に{賛成|さんせい}しています。",
+          "kana": "にほんじんのやくさんわりがこのいけんにさんせいしています。",
+          "en": "About thirty percent of Japanese people agree with this opinion."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}を{十|じゅう}としたときの{一|ひと}つの{大|おお}きさ。{十分|じゅうぶん}の{一|いち}。",
+        "kana": "ぜんたいをじゅうとしたときのひとつのおおきさ。じゅうぶんのいち。"
+      },
+      "notes": "One 割 is one tenth: 三割 = 30 %. Also \"relative to\" in 割に (値段の割においしい).",
+      "collocations": [
+        "二割引き",
+        "〜の割に"
+      ],
+      "confusables": [
+        "v-n3-0748"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0748",
+      "word": "率",
+      "kana": "りつ",
+      "meanings": [
+        "rate",
+        "ratio"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "numbers"
+      ],
+      "examples": [
+        {
+          "ja": "{出席|しゅっせき}{率|りつ}が{低|ひく}いと、{単位|たんい}がもらえません。",
+          "kana": "しゅっせきりつがひくいと、たんいがもらえません。",
+          "en": "If your attendance rate is low, you will not get the credit."
+        },
+        {
+          "ja": "この{大学|だいがく}は{卒業後|そつぎょうご}の{就職|しゅうしょく}{率|りつ}が{高|たか}いらしい。",
+          "kana": "このだいがくはそつぎょうごのしゅうしょくりつがたかいらしい。",
+          "en": "I hear this university has a high employment rate after graduation."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{全体|ぜんたい}の{中|なか}で、あるものがどれくらいあるかの{割合|わりあい}。",
+        "kana": "ぜんたいのなかで、あるものがどれくらいあるかのわりあい。"
+      },
+      "notes": "Almost always a suffix: 出席率, 成功率, 確率.",
+      "collocations": [
+        "出席率",
+        "成功率"
+      ],
+      "confusables": [
+        "v-n3-0747"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0749",
+      "word": "期限",
+      "kana": "きげん",
+      "meanings": [
+        "deadline",
+        "time limit",
+        "expiry date"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "レポートの{期限|きげん}は{来週|らいしゅう}の{月曜日|げつようび}だよ。",
+          "kana": "レポートのきげんはらいしゅうのげつようびだよ。",
+          "en": "The deadline for the report is next Monday."
+        },
+        {
+          "ja": "この{牛乳|ぎゅうにゅう}は{期限|きげん}が{切|き}れているので、{捨|す}ててください。",
+          "kana": "このぎゅうにゅうはきげんがきれているので、すててください。",
+          "en": "This milk is past its expiration date, so please throw it away."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつまでと{決|き}められた{最後|さいご}のとき。それを{過|す}ぎてはいけない。",
+        "kana": "いつまでときめられたさいごのとき。それをすぎてはいけない。"
+      },
+      "collocations": [
+        "期限が切れる",
+        "期限を守る",
+        "賞味期限"
+      ],
+      "confusables": [
+        "v-n3-0720",
+        "v-n3-0773"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0750",
+      "word": "瞬間",
+      "kana": "しゅんかん",
+      "meanings": [
+        "moment",
+        "instant"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "ドアを{開|あ}けた{瞬間|しゅんかん}、{猫|ねこ}が{飛|と}び{出|だ}した。",
+          "kana": "ドアをあけたしゅんかん、ねこがとびだした。",
+          "en": "The moment I opened the door, the cat shot out."
+        },
+        {
+          "ja": "{彼女|かのじょ}の{顔|かお}を{見|み}た{瞬間|しゅんかん}、{全部|ぜんぶ}{思|おも}い{出|だ}しました。",
+          "kana": "かのじょのかおをみたしゅんかん、ぜんぶおもいだしました。",
+          "en": "The moment I saw her face, I remembered everything."
+        }
+      ],
+      "definitionJa": {
+        "ja": "とても{短|みじか}い{時間|じかん}。{何|なに}かが{起|お}きたちょうどそのとき。",
+        "kana": "とてもみじかいじかん。なにかがおきたちょうどそのとき。"
+      },
+      "collocations": [
+        "その瞬間",
+        "〜た瞬間"
+      ],
+      "confusables": [
+        "v-n3-0751"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0751",
+      "word": "一瞬",
+      "kana": "いっしゅん",
+      "meanings": [
+        "a moment",
+        "an instant"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{一瞬|いっしゅん}、{何|なに}が{起|お}きたのか{分|わ}からなかった。",
+          "kana": "いっしゅん、なにがおきたのかわからなかった。",
+          "en": "For a moment I did not understand what had happened."
+        },
+        {
+          "ja": "{一瞬|いっしゅん}ですが、{富士山|ふじさん}が{雲|くも}の{間|あいだ}から{見|み}えました。",
+          "kana": "いっしゅんですが、ふじさんがくものあいだからみえました。",
+          "en": "Just for an instant, Mount Fuji appeared between the clouds."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ほんの{少|すこ}しの、とても{短|みじか}い{時間|じかん}。",
+        "kana": "ほんのすこしの、とてもみじかいじかん。"
+      },
+      "collocations": [
+        "一瞬で",
+        "一瞬だけ"
+      ],
+      "confusables": [
+        "v-n3-0750"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0752",
+      "word": "永遠",
+      "kana": "えいえん",
+      "meanings": [
+        "eternity",
+        "permanence"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "abstract"
+      ],
+      "examples": [
+        {
+          "ja": "この{時間|じかん}が{永遠|えいえん}に{続|つづ}けばいいのに。",
+          "kana": "このじかんがえいえんにつづけばいいのに。",
+          "en": "I wish this moment could last forever."
+        },
+        {
+          "ja": "この{景色|けしき}を{永遠|えいえん}に{忘|わす}れないでしょう。",
+          "kana": "このけしきをえいえんにわすれないでしょう。",
+          "en": "I will remember this view forever."
+        }
+      ],
+      "definitionJa": {
+        "ja": "いつまでも{終|お}わらずに、ずっと{続|つづ}くこと。",
+        "kana": "いつまでもおわらずに、ずっとつづくこと。"
+      },
+      "notes": "Usually adverbial 永遠に (forever) or as a な-adjective 永遠の (eternal).",
+      "collocations": [
+        "永遠に",
+        "永遠の"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0753",
+      "word": "前回",
+      "kana": "ぜんかい",
+      "meanings": [
+        "last time",
+        "previous time"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{前回|ぜんかい}の{会議|かいぎ}で{決|き}まったことを{確認|かくにん}しましょう。",
+          "kana": "ぜんかいのかいぎできまったことをかくにんしましょう。",
+          "en": "Let’s go over what was decided at the last meeting."
+        },
+        {
+          "ja": "{前回|ぜんかい}より{十分|じゅっぷん}も{早|はや}く{走|はし}れた。",
+          "kana": "ぜんかいよりじゅっぷんもはやくはしれた。",
+          "en": "I ran it ten whole minutes faster than last time."
+        }
+      ],
+      "definitionJa": {
+        "ja": "この{前|まえ}のとき。{今|いま}より{一|ひと}つ{前|まえ}にあったとき。",
+        "kana": "このまえのとき。いまよりひとつまえにあったとき。"
+      },
+      "confusables": [
+        "v-n3-0754"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0754",
+      "word": "次回",
+      "kana": "じかい",
+      "meanings": [
+        "next time"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{次回|じかい}の{練習|れんしゅう}は{土曜日|どようび}の{午後|ごご}です。",
+          "kana": "じかいのれんしゅうはどようびのごごです。",
+          "en": "The next practice is on Saturday afternoon."
+        },
+        {
+          "ja": "{次回|じかい}は{私|わたし}が{夕飯|ゆうはん}を{作|つく}るよ。",
+          "kana": "じかいはわたしがゆうはんをつくるよ。",
+          "en": "Next time I'll make dinner."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{今|いま}のあとにもう{一度|いちど}あるとき。このあとのとき。",
+        "kana": "いまのあとにもういちどあるとき。このあとのとき。"
+      },
+      "confusables": [
+        "v-n3-0753"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0755",
+      "word": "先日",
+      "kana": "せんじつ",
+      "meanings": [
+        "the other day",
+        "recently"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "polite"
+      ],
+      "examples": [
+        {
+          "ja": "{先日|せんじつ}はごちそうさまでした。",
+          "kana": "せんじつはごちそうさまでした。",
+          "en": "Thank you for the meal the other day."
+        },
+        {
+          "ja": "{先日|せんじつ}お{送|おく}りした{書類|しょるい}は{届|とど}きましたか。",
+          "kana": "せんじつおおくりしたしょるいはとどきましたか。",
+          "en": "Did the documents I sent the other day arrive?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "この{間|あいだ}。{少|すこ}し{前|まえ}のあるとき。",
+        "kana": "このあいだ。すこしまえのあるとき。"
+      },
+      "notes": "Slightly formal; the standard opener for thanking someone for something recent (先日はありがとうございました).",
+      "station": 31
+    },
+    {
+      "id": "v-n3-0756",
+      "word": "都心",
+      "kana": "としん",
+      "meanings": [
+        "city center",
+        "downtown"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{都心|としん}までは{電車|でんしゃ}で{三十分|さんじゅっぷん}ぐらいです。",
+          "kana": "としんまではでんしゃでさんじゅっぷんぐらいです。",
+          "en": "It is about thirty minutes by train to the city center."
+        },
+        {
+          "ja": "{都心|としん}に{住|す}むのは{便利|べんり}だけど、{家賃|やちん}が{高|たか}い。",
+          "kana": "としんにすむのはべんりだけど、やちんがたかい。",
+          "en": "Living downtown is convenient, but the rent is high."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{都市|とし}の{真|ま}ん{中|なか}の{地域|ちいき}。",
+        "kana": "おおきなとしのまんなかのちいき。"
+      },
+      "notes": "Usually refers to the heart of a big city; 都心に住む, 都心から離れる.",
+      "station": 31
+    },
+    {
+      "id": "v-n3-0757",
+      "word": "区",
+      "kana": "く",
+      "meanings": [
+        "ward",
+        "district"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}して、{住|す}んでいる{区|く}が{変|か}わりました。",
+          "kana": "ひっこして、すんでいるくがかわりました。",
+          "en": "I moved, so the ward I live in has changed."
+        },
+        {
+          "ja": "この{区|く}には{大|おお}きな{公園|こうえん}が{三|みっ}つもある。",
+          "kana": "このくにはおおきなこうえんがみっつもある。",
+          "en": "This ward has as many as three big parks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{大|おお}きな{都市|とし}の{中|なか}にある、{決|き}められた{地域|ちいき}の{一|ひと}つ。",
+        "kana": "おおきなとしのなかにある、きめられたちいきのひとつ。"
+      },
+      "notes": "The administrative ward of a large city, written after the name (港区). 区役所 = ward office.",
+      "collocations": [
+        "区役所",
+        "区民"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0758",
+      "word": "公共",
+      "kana": "こうきょう",
+      "meanings": [
+        "public",
+        "communal"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "society",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{公共|こうきょう}の{場所|ばしょ}では{静|しず}かにしましょう。",
+          "kana": "こうきょうのばしょではしずかにしましょう。",
+          "en": "Let’s keep quiet in public places."
+        },
+        {
+          "ja": "{公共|こうきょう}の{場|ば}でたばこを{吸|す}う{人|ひと}が{減|へ}った。",
+          "kana": "こうきょうのばでたばこをすうひとがへった。",
+          "en": "Fewer people smoke in public places now."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{社会|しゃかい}の{皆|みんな}のためのものであること。",
+        "kana": "しゃかいのみんなのためのものであること。"
+      },
+      "collocations": [
+        "公共の場所",
+        "公共交通機関",
+        "公共料金"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0759",
+      "word": "首都",
+      "kana": "しゅと",
+      "meanings": [
+        "capital city"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "politics"
+      ],
+      "examples": [
+        {
+          "ja": "{首都|しゅと}には{国|くに}の{大切|たいせつ}な{建物|たてもの}が{集|あつ}まっています。",
+          "kana": "しゅとにはくにのたいせつなたてものがあつまっています。",
+          "en": "The nation’s important buildings are concentrated in the capital."
+        },
+        {
+          "ja": "この{国|くに}の{首都|しゅと}はどこか{知|し}ってる？",
+          "kana": "このくにのしゅとはどこかしってる？",
+          "en": "Do you know what the capital of this country is?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}の{政府|せいふ}があって、その{国|くに}の{中心|ちゅうしん}になる{都市|とし}。",
+        "kana": "くにのせいふがあって、そのくにのちゅうしんになるとし。"
+      },
+      "collocations": [
+        "首都圏",
+        "一国の首都"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0760",
+      "word": "年末",
+      "kana": "ねんまつ",
+      "meanings": [
+        "year-end",
+        "end of the year"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}は{毎年|まいとし}{実家|じっか}に{帰|かえ}っている。",
+          "kana": "ねんまつはまいとしじっかにかえっている。",
+          "en": "I go back to my parents’ house every year at year-end."
+        },
+        {
+          "ja": "{年末|ねんまつ}は{仕事|しごと}が{忙|いそが}しくて、{休|やす}む{暇|ひま}がありません。",
+          "kana": "ねんまつはしごとがいそがしくて、やすむひまがありません。",
+          "en": "At the end of the year, work is so busy that I have no time to rest."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}の{終|お}わりのころ。{十二月|じゅうにがつ}の{終|お}わり。",
+        "kana": "いちねんのおわりのころ。じゅうにがつのおわり。"
+      },
+      "collocations": [
+        "年末年始",
+        "年末の大掃除"
+      ],
+      "confusables": [
+        "v-n3-0761",
+        "v-n3-0766"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0761",
+      "word": "年始",
+      "kana": "ねんし",
+      "meanings": [
+        "beginning of the year",
+        "new year season"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{年末|ねんまつ}{年始|ねんし}は{休|やす}みをいただきます。",
+          "kana": "ねんまつねんしはやすみをいただきます。",
+          "en": "We will be closed over the New Year holidays."
+        },
+        {
+          "ja": "{年始|ねんし}はいつも{家族|かぞく}で{神社|じんじゃ}に{行|い}く。",
+          "kana": "ねんしはいつもかぞくでじんじゃにいく。",
+          "en": "At New Year's, my family always goes to a shrine."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{新|あたら}しい{年|とし}が{始|はじ}まったばかりのころ。",
+        "kana": "あたらしいとしがはじまったばかりのころ。"
+      },
+      "notes": "Almost always in the pair 年末年始 or in 年始の挨拶 (New Year greetings).",
+      "collocations": [
+        "年末年始",
+        "年始の挨拶"
+      ],
+      "confusables": [
+        "v-n3-0760"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0762",
+      "word": "年度",
+      "kana": "ねんど",
+      "meanings": [
+        "fiscal year",
+        "academic year"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{日本|にほん}では{四月|しがつ}に{新|あたら}しい{年度|ねんど}が{始|はじ}まります。",
+          "kana": "にほんではしがつにあたらしいねんどがはじまります。",
+          "en": "In Japan the new fiscal year starts in April."
+        },
+        {
+          "ja": "{来年度|らいねんど}の{予算|よさん}はまだ{決|き}まっていない。",
+          "kana": "らいねんどのよさんはまだきまっていない。",
+          "en": "Next fiscal year's budget hasn't been decided yet."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{会社|かいしゃ}や{学校|がっこう}で{決|き}めている{一年|いちねん}の{期間|きかん}。{日本|にほん}では{四月|しがつ}から。",
+        "kana": "かいしゃやがっこうできめているいちねんのきかん。にほんではしがつから。"
+      },
+      "notes": "Runs April to March for schools, companies and government; 今年度 = this fiscal year.",
+      "collocations": [
+        "今年度",
+        "来年度",
+        "年度末"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0763",
+      "word": "上旬",
+      "kana": "じょうじゅん",
+      "meanings": [
+        "first ten days of a month",
+        "early in the month"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}の{上旬|じょうじゅん}に{引|ひ}っ{越|こ}す{予定|よてい}です。",
+          "kana": "らいげつのじょうじゅんにひっこすよていです。",
+          "en": "I plan to move early next month."
+        },
+        {
+          "ja": "{五月|ごがつ}{上旬|じょうじゅん}に{新|あたら}しい{店|みせ}がオープンするらしい。",
+          "kana": "ごがつじょうじゅんにあたらしいみせがオープンするらしい。",
+          "en": "A new shop is apparently opening in early May."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|いっ}か{月|げつ}を{三|みっ}つにしたうちの、{最初|さいしょ}の{期間|きかん}。",
+        "kana": "いっかげつをみっつにしたうちの、さいしょのきかん。"
+      },
+      "confusables": [
+        "v-n3-0764",
+        "v-n3-0765"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0764",
+      "word": "中旬",
+      "kana": "ちゅうじゅん",
+      "meanings": [
+        "middle of the month"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{三月|さんがつ}の{中旬|ちゅうじゅん}には{桜|さくら}が{咲|さ}き{始|はじ}める。",
+          "kana": "さんがつのちゅうじゅんにはさくらがさきはじめる。",
+          "en": "The cherry blossoms start blooming in mid-March."
+        },
+        {
+          "ja": "{来月|らいげつ}の{中旬|ちゅうじゅん}にそちらへ{伺|うかが}う{予定|よてい}です。",
+          "kana": "らいげつのちゅうじゅんにそちらへうかがうよていです。",
+          "en": "I plan to visit you in the middle of next month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|いっ}か{月|げつ}を{三|みっ}つにしたうちの、{真|ま}ん{中|なか}の{期間|きかん}。",
+        "kana": "いっかげつをみっつにしたうちの、まんなかのきかん。"
+      },
+      "confusables": [
+        "v-n3-0763",
+        "v-n3-0765"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0765",
+      "word": "下旬",
+      "kana": "げじゅん",
+      "meanings": [
+        "last ten days of a month",
+        "late in the month"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{新|あたら}しい{商品|しょうひん}は{今月|こんげつ}{下旬|げじゅん}に{発売|はつばい}されます。",
+          "kana": "あたらしいしょうひんはこんげつげじゅんにはつばいされます。",
+          "en": "The new product goes on sale late this month."
+        },
+        {
+          "ja": "{八月|はちがつ}{下旬|げじゅん}になると、{朝|あさ}と{夜|よる}は{少|すこ}し{涼|すず}しくなる。",
+          "kana": "はちがつげじゅんになると、あさとよるはすこしすずしくなる。",
+          "en": "By late August, mornings and nights get a little cooler."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|いっ}か{月|げつ}を{三|みっ}つにしたうちの、{最後|さいご}の{期間|きかん}。",
+        "kana": "いっかげつをみっつにしたうちの、さいごのきかん。"
+      },
+      "confusables": [
+        "v-n3-0763",
+        "v-n3-0764"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0766",
+      "word": "月末",
+      "kana": "げつまつ",
+      "meanings": [
+        "end of the month"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "calendar",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{月末|げつまつ}はいつもお{金|かね}が{足|た}りなくなる。",
+          "kana": "げつまつはいつもおかねがたりなくなる。",
+          "en": "I always run short of money at the end of the month."
+        },
+        {
+          "ja": "{家賃|やちん}は{月末|げつまつ}までに{払|はら}ってください。",
+          "kana": "やちんはげつまつまでにはらってください。",
+          "en": "Please pay the rent by the end of the month."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|いっ}か{月|げつ}の{終|お}わりのころ。",
+        "kana": "いっかげつのおわりのころ。"
+      },
+      "collocations": [
+        "月末までに",
+        "月末の支払い"
+      ],
+      "confusables": [
+        "v-n3-0767",
+        "v-n3-0760"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0767",
+      "word": "月初め",
+      "kana": "つきはじめ",
+      "meanings": [
+        "beginning of the month"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{家賃|やちん}は{月初|つきはじ}めに{払|はら}っています。",
+          "kana": "やちんはつきはじめにはらっています。",
+          "en": "I pay the rent at the beginning of the month."
+        },
+        {
+          "ja": "{月初|つきはじ}めは{会社|かいしゃ}の{会議|かいぎ}が{多|おお}くて{疲|つか}れる。",
+          "kana": "つきはじめはかいしゃのかいぎがおおくてつかれる。",
+          "en": "The beginning of the month is tiring because there are so many meetings at work."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一|いっ}か{月|げつ}が{始|はじ}まったばかりのころ。",
+        "kana": "いっかげつがはじまったばかりのころ。"
+      },
+      "notes": "Everyday word; the formal counterpart is 月初 (げっしょ).",
+      "confusables": [
+        "v-n3-0766"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0768",
+      "word": "前日",
+      "kana": "ぜんじつ",
+      "meanings": [
+        "the day before",
+        "previous day"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{旅行|りょこう}の{前日|ぜんじつ}は{早|はや}く{寝|ね}るようにしています。",
+          "kana": "りょこうのぜんじつははやくねるようにしています。",
+          "en": "I try to go to bed early the day before a trip."
+        },
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{前日|ぜんじつ}まで{荷物|にもつ}をまとめるのを{忘|わす}れてた。",
+          "kana": "ひっこしのぜんじつまでにもつをまとめるのをわすれてた。",
+          "en": "I forgot to pack up my things until the day before the move."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そのことがある{一日|いちにち}{前|まえ}のこと。",
+        "kana": "そのことがあるいちにちまえのこと。"
+      },
+      "collocations": [
+        "試験の前日",
+        "前日までに"
+      ],
+      "confusables": [
+        "v-n3-0737"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0769",
+      "word": "昨夜",
+      "kana": "さくや",
+      "meanings": [
+        "last night"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{昨夜|さくや}は{遅|おそ}くまで{仕事|しごと}をしていました。",
+          "kana": "さくやはおそくまでしごとをしていました。",
+          "en": "I was working until late last night."
+        },
+        {
+          "ja": "{昨夜|さくや}の{地震|じしん}で{被害|ひがい}はありませんでしたか。",
+          "kana": "さくやのじしんでひがいはありませんでしたか。",
+          "en": "Was there any damage from last night's earthquake?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昨日|きのう}の{夜|よる}のこと。{少|すこ}し{丁寧|ていねい}な{言葉|ことば}。",
+        "kana": "きのうのよるのこと。すこしていねいなことば。"
+      },
+      "notes": "Formal or written; in conversation ゆうべ or 昨日の夜 is more common.",
+      "station": 31
+    },
+    {
+      "id": "v-n3-0770",
+      "word": "明朝",
+      "kana": "みょうちょう",
+      "meanings": [
+        "tomorrow morning"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{明朝|みょうちょう}{八時|はちじ}にロビーに{集|あつ}まってください。",
+          "kana": "みょうちょうはちじにロビーにあつまってください。",
+          "en": "Please gather in the lobby at eight tomorrow morning."
+        },
+        {
+          "ja": "{明朝|みょうちょう}までにご{返事|へんじ}をいただけますでしょうか。",
+          "kana": "みょうちょうまでにごへんじをいただけますでしょうか。",
+          "en": "Could I have your reply by tomorrow morning?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{明日|あした}の{朝|あさ}のこと。{少|すこ}し{丁寧|ていねい}な{言葉|ことば}。",
+        "kana": "あしたのあさのこと。すこしていねいなことば。"
+      },
+      "notes": "Formal; everyday speech uses 明日の朝. Pairs with 明日 (みょうにち) and 明晩.",
+      "station": 31
+    },
+    {
+      "id": "v-n3-0771",
+      "word": "日中",
+      "kana": "にっちゅう",
+      "meanings": [
+        "daytime",
+        "during the day"
+      ],
+      "pos": "n-adv",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{日中|にっちゅう}は{暑|あつ}いけど、{夜|よる}は{涼|すず}しい。",
+          "kana": "にっちゅうはあついけど、よるはすずしい。",
+          "en": "It is hot during the day, but cool at night."
+        },
+        {
+          "ja": "{日中|にっちゅう}は{仕事|しごと}で{家|いえ}にいませんので、{夜|よる}に{電話|でんわ}をください。",
+          "kana": "にっちゅうはしごとでいえにいませんので、よるにでんわをください。",
+          "en": "I'm not home during the day because of work, so please call in the evening."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{朝|あさ}から{夕方|ゆうがた}までの、{明|あか}るい{時間|じかん}。{昼間|ひるま}。",
+        "kana": "あさからゆうがたまでの、あかるいじかん。ひるま。"
+      },
+      "notes": "Read にちちゅう, the same kanji mean \"Japan and China\".",
+      "collocations": [
+        "日中は",
+        "日中の気温"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0772",
+      "word": "四半期",
+      "kana": "しはんき",
+      "meanings": [
+        "quarter (of a year)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar",
+        "business"
+      ],
+      "examples": [
+        {
+          "ja": "{第一|だいいち}{四半期|しはんき}の{売|う}り{上|あ}げは{去年|きょねん}より{増|ふ}えました。",
+          "kana": "だいいちしはんきのうりあげはきょねんよりふえました。",
+          "en": "First-quarter sales rose compared with last year."
+        },
+        {
+          "ja": "{次|つぎ}の{四半期|しはんき}の{目標|もくひょう}を{今日中|きょうじゅう}に{決|き}めなきゃ。",
+          "kana": "つぎのしはんきのもくひょうをきょうじゅうにきめなきゃ。",
+          "en": "I have to decide next quarter's targets by the end of today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一年|いちねん}を{四|よっ}つにした、{三|さん}か{月|げつ}ずつの{期間|きかん}。",
+        "kana": "いちねんをよっつにした、さんかげつずつのきかん。"
+      },
+      "collocations": [
+        "第一四半期",
+        "四半期ごと"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0773",
+      "word": "締め切り",
+      "kana": "しめきり",
+      "meanings": [
+        "deadline",
+        "closing date"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{締|し}め{切|き}りまであと{三日|みっか}しかない。",
+          "kana": "しめきりまであとみっかしかない。",
+          "en": "There are only three days left until the deadline."
+        },
+        {
+          "ja": "{締|し}め{切|き}りを{過|す}ぎた{申|もう}し{込|こ}みは{受|う}け{付|つ}けられません。",
+          "kana": "しめきりをすぎたもうしこみはうけつけられません。",
+          "en": "Applications submitted after the deadline cannot be accepted."
+        }
+      ],
+      "definitionJa": {
+        "ja": "それまでに{出|だ}さなければならない、{決|き}められた{最後|さいご}のとき。",
+        "kana": "それまでにださなければならない、きめられたさいごのとき。"
+      },
+      "notes": "Everyday word for a deadline; 期限 is the formal one. Often written 締切 on forms.",
+      "altForms": [
+        "締切",
+        "〆切"
+      ],
+      "collocations": [
+        "締め切りに間に合う",
+        "締め切りを守る"
+      ],
+      "confusables": [
+        "v-n3-0749"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0774",
+      "word": "日付",
+      "kana": "ひづけ",
+      "meanings": [
+        "date (on a document)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "calendar"
+      ],
+      "examples": [
+        {
+          "ja": "{書類|しょるい}に{今日|きょう}の{日付|ひづけ}を{書|か}いてください。",
+          "kana": "しょるいにきょうのひづけをかいてください。",
+          "en": "Please write today’s date on the document."
+        },
+        {
+          "ja": "この{写真|しゃしん}、{日付|ひづけ}が{入|はい}ってないから、いつのか{分|わ}からない。",
+          "kana": "このしゃしん、ひづけがはいってないから、いつのかわからない。",
+          "en": "This photo doesn't have a date on it, so I can't tell when it's from."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{手紙|てがみ}や{書類|しょるい}に{書|か}く、{何年|なんねん}{何月|なんがつ}のいつかということ。",
+        "kana": "てがみやしょるいにかく、なんねんなんがつのいつかということ。"
+      },
+      "collocations": [
+        "日付を書く",
+        "日付が変わる"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0775",
+      "word": "時刻",
+      "kana": "じこく",
+      "meanings": [
+        "time (of day)",
+        "point in time"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}の{出発|しゅっぱつ}{時刻|じこく}を{確認|かくにん}しておきます。",
+          "kana": "でんしゃのしゅっぱつじこくをかくにんしておきます。",
+          "en": "I will check the train’s departure time."
+        },
+        {
+          "ja": "{待|ま}ち{合|あ}わせの{時刻|じこく}を{間違|まちが}えて、{三十分|さんじゅっぷん}も{早|はや}く{着|つ}いちゃった。",
+          "kana": "まちあわせのじこくをまちがえて、さんじゅっぷんもはやくついちゃった。",
+          "en": "I got the meeting time wrong and arrived a whole thirty minutes early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}が{出|で}る{時間|じかん}など、{時計|とけい}で{表|あらわ}す{決|き}まった{時間|じかん}。",
+        "kana": "でんしゃがでるじかんなど、とけいであらわすきまったじかん。"
+      },
+      "notes": "A point on the clock (出発時刻), not a duration; 時間 covers both.",
+      "collocations": [
+        "出発時刻",
+        "到着時刻"
+      ],
+      "confusables": [
+        "v-n3-0801"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0776",
+      "word": "手前",
+      "kana": "てまえ",
+      "meanings": [
+        "this side",
+        "just before",
+        "in front of"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{銀行|ぎんこう}の{手前|てまえ}を{左|ひだり}に{曲|ま}がってください。",
+          "kana": "ぎんこうのてまえをひだりにまがってください。",
+          "en": "Turn left just before the bank."
+        },
+        {
+          "ja": "テーブルの{手前|てまえ}にある{醤油|しょうゆ}を{取|と}ってくれる？",
+          "kana": "テーブルのてまえにあるしょうゆをとってくれる？",
+          "en": "Can you pass me the soy sauce on this side of the table?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}に{近|ちか}い{方|ほう}。あるものの{少|すこ}し{前|まえ}。",
+        "kana": "じぶんにちかいほう。あるもののすこしまえ。"
+      },
+      "notes": "The side nearer the speaker. Also \"for appearance’s sake\" in 手前がある, and a humble \"I\" in old speech.",
+      "collocations": [
+        "駅の手前",
+        "手前の席"
+      ],
+      "confusables": [
+        "v-n3-0777",
+        "v-n3-0735"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0777",
+      "word": "向かい",
+      "kana": "むかい",
+      "meanings": [
+        "opposite side",
+        "across from"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{向|む}かいに{新|あたら}しいカフェができた。",
+          "kana": "えきのむかいにあたらしいカフェができた。",
+          "en": "A new café opened across from the station."
+        },
+        {
+          "ja": "{向|む}かいの{席|せき}に{座|すわ}ってもよろしいですか。",
+          "kana": "むかいのせきにすわってもよろしいですか。",
+          "en": "May I sit in the seat across from you?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道|みち}などをはさんで、ちょうど{正面|しょうめん}にあるところ。",
+        "kana": "みちなどをはさんで、ちょうどしょうめんにあるところ。"
+      },
+      "collocations": [
+        "向かいの家",
+        "向かい側"
+      ],
+      "confusables": [
+        "v-n3-0778",
+        "v-n3-0776"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0778",
+      "word": "正面",
+      "kana": "しょうめん",
+      "meanings": [
+        "front",
+        "facade",
+        "straight ahead"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{建物|たてもの}の{正面|しょうめん}に{大|おお}きな{時計|とけい}があります。",
+          "kana": "たてもののしょうめんにおおきなとけいがあります。",
+          "en": "There is a big clock on the front of the building."
+        },
+        {
+          "ja": "{正面|しょうめん}から{見|み}ると、この{建物|たてもの}は{船|ふね}みたいだ。",
+          "kana": "しょうめんからみると、このたてものはふねみたいだ。",
+          "en": "Seen from the front, this building looks like a ship."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}やものの、{前|まえ}になる{方|ほう}。まっすぐ{前|まえ}の{方|ほう}。",
+        "kana": "たてものやものの、まえになるほう。まっすぐまえのほう。"
+      },
+      "collocations": [
+        "正面玄関",
+        "正面から"
+      ],
+      "confusables": [
+        "v-n3-0777"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0779",
+      "word": "端",
+      "kana": "はし",
+      "meanings": [
+        "edge",
+        "end",
+        "tip"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{危|あぶ}ないので、{道|みち}の{端|はし}を{歩|ある}いてください。",
+          "kana": "あぶないので、みちのはしをあるいてください。",
+          "en": "It is dangerous, so please walk along the edge of the road."
+        },
+        {
+          "ja": "テーブルの{端|はし}にコップを{置|お}くと{落|お}ちるよ。",
+          "kana": "テーブルのはしにコップをおくとおちるよ。",
+          "en": "If you put the cup on the edge of the table, it'll fall."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{一番|いちばん}{外|そと}の{部分|ぶぶん}。{真|ま}ん{中|なか}から{遠|とお}いところ。",
+        "kana": "もののいちばんそとのぶぶん。まんなかからとおいところ。"
+      },
+      "notes": "Not 橋 (はし, bridge) or 箸 (はし, chopsticks); pitch differs. 端から端まで = from end to end.",
+      "collocations": [
+        "道の端",
+        "端から端まで"
+      ],
+      "confusables": [
+        "v-n3-0780"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0780",
+      "word": "隅",
+      "kana": "すみ",
+      "meanings": [
+        "corner (inside)",
+        "nook"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{部屋|へや}の{隅|すみ}に{荷物|にもつ}を{置|お}いておいた。",
+          "kana": "へやのすみににもつをおいておいた。",
+          "en": "I left the luggage in the corner of the room."
+        },
+        {
+          "ja": "{部屋|へや}の{隅|すみ}まできれいに{掃除|そうじ}しました。",
+          "kana": "へやのすみまできれいにそうじしました。",
+          "en": "I cleaned the room thoroughly, right into the corners."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{部屋|へや}などの{中|なか}で、{壁|かべ}と{壁|かべ}がつくる{角|かど}のところ。",
+        "kana": "へやなどのなかで、かべとかべがつくるかどのところ。"
+      },
+      "notes": "An inside corner (of a room or page). The outside corner of a street or table is 角 (かど).",
+      "collocations": [
+        "部屋の隅",
+        "隅々まで"
+      ],
+      "confusables": [
+        "v-n3-0779"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0781",
+      "word": "内側",
+      "kana": "うちがわ",
+      "meanings": [
+        "inside",
+        "inner side"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{黄色|きいろ}い{線|せん}の{内側|うちがわ}でお{待|ま}ちください。",
+          "kana": "きいろいせんのうちがわでおまちください。",
+          "en": "Please wait behind the yellow line."
+        },
+        {
+          "ja": "コートの{内側|うちがわ}にポケットが{付|つ}いている。",
+          "kana": "コートのうちがわにポケットがついている。",
+          "en": "The coat has a pocket on the inside."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{中|なか}の{方|ほう}。{外|そと}ではない{方|ほう}。",
+        "kana": "もののなかのほう。そとではないほう。"
+      },
+      "confusables": [
+        "v-n3-0782"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0782",
+      "word": "外側",
+      "kana": "そとがわ",
+      "meanings": [
+        "outside",
+        "outer side"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{窓|まど}の{外側|そとがわ}が{汚|よご}れている。",
+          "kana": "まどのそとがわがよごれている。",
+          "en": "The outside of the window is dirty."
+        },
+        {
+          "ja": "カーテンの{外側|そとがわ}は{日|ひ}に{焼|や}けて{色|いろ}が{変|か}わっています。",
+          "kana": "カーテンのそとがわはひにやけていろがかわっています。",
+          "en": "The outside of the curtain has faded in the sun."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ものの{外|そと}の{方|ほう}。{内側|うちがわ}ではない{方|ほう}。",
+        "kana": "もののそとのほう。うちがわではないほう。"
+      },
+      "confusables": [
+        "v-n3-0781"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0783",
+      "word": "前後",
+      "kana": "ぜんご",
+      "meanings": [
+        "before and after",
+        "front and back",
+        "approximately"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{参加者|さんかしゃ}は{五十人|ごじゅうにん}{前後|ぜんご}の{予定|よてい}です。",
+          "kana": "さんかしゃはごじゅうにんぜんごのよていです。",
+          "en": "Around fifty participants are expected."
+        },
+        {
+          "ja": "{料理|りょうり}ができるまで、{三十分|さんじゅっぷん}{前後|ぜんご}かかると{思|おも}う。",
+          "kana": "りょうりができるまで、さんじゅっぷんぜんごかかるとおもう。",
+          "en": "I think it'll take around thirty minutes until the food is ready."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{前|まえ}と{後|うし}ろ。また、ある{量|りょう}のだいたい{近|ちか}くという{意味|いみ}。",
+        "kana": "まえとうしろ。また、あるりょうのだいたいちかくといういみ。"
+      },
+      "notes": "After a number it means \"about\" (五十人前後). 前後する = to be out of order.",
+      "collocations": [
+        "五十人前後",
+        "前後の文"
+      ],
+      "confusables": [
+        "v-n3-0784"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0784",
+      "word": "左右",
+      "kana": "さゆう",
+      "meanings": [
+        "left and right",
+        "both sides"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{道|みち}を{渡|わた}る{前|まえ}に{左右|さゆう}をよく{見|み}ましょう。",
+          "kana": "みちをわたるまえにさゆうをよくみましょう。",
+          "en": "Look left and right carefully before crossing the street."
+        },
+        {
+          "ja": "この{地図|ちず}、{左右|さゆう}が{逆|ぎゃく}になってない？",
+          "kana": "このちず、さゆうがぎゃくになってない？",
+          "en": "Isn't this map flipped left to right?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{左|ひだり}と{右|みぎ}。{左|ひだり}と{右|みぎ}の{両方|りょうほう}。",
+        "kana": "ひだりとみぎ。ひだりとみぎのりょうほう。"
+      },
+      "notes": "As a verb, 左右する means to influence or decide (結果を左右する).",
+      "collocations": [
+        "左右を見る",
+        "結果を左右する"
+      ],
+      "confusables": [
+        "v-n3-0783"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0785",
+      "word": "少数",
+      "kana": "しょうすう",
+      "meanings": [
+        "small number",
+        "minority"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{少数|しょうすう}の{意見|いけん}も{大切|たいせつ}にしなければなりません。",
+          "kana": "しょうすうのいけんもたいせつにしなければなりません。",
+          "en": "Minority opinions must be valued too."
+        },
+        {
+          "ja": "{少数|しょうすう}の{人|ひと}しか{知|し}らない{秘密|ひみつ}なんだ。",
+          "kana": "しょうすうのひとしかしらないひみつなんだ。",
+          "en": "It's a secret that only a few people know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{量|りょう}や{人|ひと}が{少|すく}ないこと。{多数|たすう}ではない{方|ほう}。",
+        "kana": "りょうやひとがすくないこと。たすうではないほう。"
+      },
+      "collocations": [
+        "少数意見",
+        "少数派"
+      ],
+      "confusables": [
+        "v-n3-0745"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0786",
+      "word": "最小",
+      "kana": "さいしょう",
+      "meanings": [
+        "smallest",
+        "minimum"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "サイズは{最小|さいしょう}から{最大|さいだい}まで{五種類|ごしゅるい}あります。",
+          "kana": "サイズはさいしょうからさいだいまでごしゅるいあります。",
+          "en": "Sizes come in five types, from the smallest to the largest."
+        },
+        {
+          "ja": "{費用|ひよう}を{最小|さいしょう}にする{方法|ほうほう}を{考|かんが}えている。",
+          "kana": "ひようをさいしょうにするほうほうをかんがえている。",
+          "en": "I'm thinking of a way to keep the costs to a minimum."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{一番|いちばん}{小|ちい}さいこと。これより{小|ちい}さいものはないこと。",
+        "kana": "いちばんちいさいこと。これよりちいさいものはないこと。"
+      },
+      "notes": "Opposite of 最大. For \"lowest\" of a scale (price, temperature) use 最低.",
+      "collocations": [
+        "最小限",
+        "最小サイズ"
+      ],
+      "confusables": [
+        "v-n3-0732"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0787",
+      "word": "多少",
+      "kana": "たしょう",
+      "meanings": [
+        "a little",
+        "somewhat",
+        "more or less"
+      ],
+      "pos": "adv",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{多少|たしょう}{高|たか}くても、いい{物|もの}を{買|か}いたい。",
+          "kana": "たしょうたかくても、いいものをかいたい。",
+          "en": "Even if it is a little expensive, I want to buy good things."
+        },
+        {
+          "ja": "{多少|たしょう}の{間違|まちが}いは{気|き}にしなくていいですよ。",
+          "kana": "たしょうのまちがいはきにしなくていいですよ。",
+          "en": "You don't need to worry about a few small mistakes."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{少|すこ}し。いくらか。{多|おお}いか{少|すく}ないかの{量|りょう}。",
+        "kana": "すこし。いくらか。おおいかすくないかのりょう。"
+      },
+      "notes": "Softer and slightly more formal than ちょっと or 少し; also a noun meaning \"amount\" (多少にかかわらず).",
+      "confusables": [
+        "v-n3-0788"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0788",
+      "word": "若干",
+      "kana": "じゃっかん",
+      "meanings": [
+        "some",
+        "a few",
+        "slightly"
+      ],
+      "pos": "adv",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "formal"
+      ],
+      "examples": [
+        {
+          "ja": "{予定|よてい}より{若干|じゃっかん}{遅|おく}れています。",
+          "kana": "よていよりじゃっかんおくれています。",
+          "en": "We are running slightly behind schedule."
+        },
+        {
+          "ja": "{若干|じゃっかん}の{空席|くうせき}がございますので、お{早|はや}めにお{申|もう}し{込|こ}みください。",
+          "kana": "じゃっかんのくうせきがございますので、おはやめにおもうしこみください。",
+          "en": "There are still a few seats available, so please apply early."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{少|すこ}し。いくらか。{書|か}き{言葉|ことば}や{丁寧|ていねい}な{話|はなし}で{使|つか}う。",
+        "kana": "すこし。いくらか。かきことばやていねいなはなしでつかう。"
+      },
+      "notes": "Formal; common in business and notices (若干名募集). Spoken equivalent: 少し.",
+      "collocations": [
+        "若干名",
+        "若干遅れる"
+      ],
+      "confusables": [
+        "v-n3-0787"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0789",
+      "word": "大量",
+      "kana": "たいりょう",
+      "meanings": [
+        "large quantity",
+        "mass"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "セールで{大量|たいりょう}に{買|か}いすぎてしまった。",
+          "kana": "セールでたいりょうにかいすぎてしまった。",
+          "en": "I bought way too much at the sale."
+        },
+        {
+          "ja": "{工場|こうじょう}では{毎日|まいにち}{大量|たいりょう}の{製品|せいひん}が{作|つく}られています。",
+          "kana": "こうじょうではまいにちたいりょうのせいひんがつくられています。",
+          "en": "At the factory, huge quantities of products are made every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{量|りょう}がとても{多|おお}いこと。たくさん。",
+        "kana": "りょうがとてもおおいこと。たくさん。"
+      },
+      "notes": "For things and amounts (大量の水, 大量生産). For people use 大勢.",
+      "collocations": [
+        "大量に",
+        "大量生産"
+      ],
+      "confusables": [
+        "v-n3-0744"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0790",
+      "word": "複数",
+      "kana": "ふくすう",
+      "meanings": [
+        "plural",
+        "multiple",
+        "several"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "language"
+      ],
+      "examples": [
+        {
+          "ja": "{複数|ふくすう}の{店|みせ}で{値段|ねだん}を{比|くら}べてから{買|か}います。",
+          "kana": "ふくすうのみせでねだんをくらべてからかいます。",
+          "en": "I compare prices at several stores before buying."
+        },
+        {
+          "ja": "{複数|ふくすう}の{人|ひと}から{同|おな}じ{話|はなし}を{聞|き}いた。",
+          "kana": "ふくすうのひとからおなじはなしをきいた。",
+          "en": "I heard the same story from several people."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{二|ふた}つ{以上|いじょう}であること。{一|ひと}つではないこと。",
+        "kana": "ふたついじょうであること。ひとつではないこと。"
+      },
+      "collocations": [
+        "複数の人",
+        "複数形"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0791",
+      "word": "人数",
+      "kana": "にんずう",
+      "meanings": [
+        "number of people"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{参加|さんか}する{人数|にんずう}を{金曜日|きんようび}までに{教|おし}えてください。",
+          "kana": "さんかするにんずうをきんようびまでにおしえてください。",
+          "en": "Please let me know the number of participants by Friday."
+        },
+        {
+          "ja": "{人数|にんずう}が{多|おお}いから、{二台|にだい}の{車|くるま}に{分|わ}かれて{行|い}こう。",
+          "kana": "にんずうがおおいから、にだいのくるまにわかれていこう。",
+          "en": "There are a lot of us, so let's split into two cars."
+        }
+      ],
+      "definitionJa": {
+        "ja": "そこにいる{人|ひと}が{何人|なんにん}かということ。",
+        "kana": "そこにいるひとがなんにんかということ。"
+      },
+      "collocations": [
+        "人数を数える",
+        "大人数"
+      ],
+      "confusables": [
+        "v-n3-0792"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0792",
+      "word": "回数",
+      "kana": "かいすう",
+      "meanings": [
+        "number of times",
+        "frequency"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{最近|さいきん}、{外食|がいしょく}の{回数|かいすう}が{増|ふ}えた。",
+          "kana": "さいきん、がいしょくのかいすうがふえた。",
+          "en": "Lately I have been eating out more often."
+        },
+        {
+          "ja": "ジムに{通|かよ}う{回数|かいすう}を{週|しゅう}{三回|さんかい}に{増|ふ}やしました。",
+          "kana": "ジムにかようかいすうをしゅうさんかいにふやしました。",
+          "en": "I increased the number of times I go to the gym to three a week."
+        }
+      ],
+      "definitionJa": {
+        "ja": "あることが{何回|なんかい}{起|お}きたかという{量|りょう}。",
+        "kana": "あることがなんかいおきたかというりょう。"
+      },
+      "collocations": [
+        "回数が多い",
+        "回数券"
+      ],
+      "confusables": [
+        "v-n3-0791"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0793",
+      "word": "未満",
+      "kana": "みまん",
+      "meanings": [
+        "less than",
+        "under"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "quantity"
+      ],
+      "examples": [
+        {
+          "ja": "{六歳|ろくさい}{未満|みまん}のお{子|こ}さんは{入場|にゅうじょう}できません。",
+          "kana": "ろくさいみまんのおこさんはにゅうじょうできません。",
+          "en": "Children under six cannot enter."
+        },
+        {
+          "ja": "{身長|しんちょう}が{百二十|ひゃくにじゅう}センチ{未満|みまん}の{子|こ}は{乗|の}れないんだって。",
+          "kana": "しんちょうがひゃくにじゅうセンチみまんのこはのれないんだって。",
+          "en": "I hear kids under 120 centimeters tall can't ride it."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{量|りょう}を{入|い}れずに、それより{少|すく}ないこと。",
+        "kana": "あるりょうをいれずに、それよりすくないこと。"
+      },
+      "notes": "Excludes the number (六歳未満 = up to five); 以下 includes it. Always a suffix.",
+      "collocations": [
+        "十八歳未満",
+        "千円未満"
+      ],
+      "confusables": [
+        "v-n3-0715"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0794",
+      "word": "改札",
+      "kana": "かいさつ",
+      "meanings": [
+        "ticket gate",
+        "ticket barrier"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{改札|かいさつ}の{前|まえ}で{待|ま}ってるね。",
+          "kana": "かいさつのまえでまってるね。",
+          "en": "I will be waiting in front of the ticket gate."
+        },
+        {
+          "ja": "{改札|かいさつ}を{出|で}て{右|みぎ}に{行|い}くと、バス{乗|の}り{場|ば}があります。",
+          "kana": "かいさつをでてみぎにいくと、バスのりばがあります。",
+          "en": "If you go out the ticket gate and turn right, there's the bus stop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{駅|えき}で{切符|きっぷ}や{定期券|ていきけん}を{調|しら}べるところ。",
+        "kana": "えきできっぷやていきけんをしらべるところ。"
+      },
+      "collocations": [
+        "改札口",
+        "改札を出る",
+        "改札を通る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0795",
+      "word": "乗り場",
+      "kana": "のりば",
+      "meanings": [
+        "boarding point",
+        "stop",
+        "stand"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "タクシー{乗|の}り{場|ば}は{東口|ひがしぐち}にあります。",
+          "kana": "タクシーのりばはひがしぐちにあります。",
+          "en": "The taxi stand is at the east exit."
+        },
+        {
+          "ja": "バス{乗|の}り{場|ば}はどこか、{駅員|えきいん}さんに{聞|き}いてみよう。",
+          "kana": "バスのりばはどこか、えきいんさんにきいてみよう。",
+          "en": "Let's ask the station staff where the bus stop is."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバス、タクシーなどに{乗|の}るところ。",
+        "kana": "でんしゃやバス、タクシーなどにのるところ。"
+      },
+      "collocations": [
+        "タクシー乗り場",
+        "バス乗り場"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0796",
+      "word": "終点",
+      "kana": "しゅうてん",
+      "meanings": [
+        "last stop",
+        "terminus"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{寝|ね}ていたら{終点|しゅうてん}まで{来|き}てしまった。",
+          "kana": "ねていたらしゅうてんまできてしまった。",
+          "en": "I fell asleep and ended up at the last stop."
+        },
+        {
+          "ja": "このバスの{終点|しゅうてん}は{病院前|びょういんまえ}です。",
+          "kana": "このバスのしゅうてんはびょういんまえです。",
+          "en": "This bus's last stop is in front of the hospital."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスが{最後|さいご}に{着|つ}く{駅|えき}。",
+        "kana": "でんしゃやバスがさいごにつくえき。"
+      },
+      "collocations": [
+        "終点まで乗る",
+        "終点で降りる"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0797",
+      "word": "線路",
+      "kana": "せんろ",
+      "meanings": [
+        "railway track"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{線路|せんろ}に{物|もの}を{落|お}としたら、{駅員|えきいん}に{知|し}らせてください。",
+          "kana": "せんろにものをおとしたら、えきいんにしらせてください。",
+          "en": "If you drop something on the tracks, please tell a station attendant."
+        },
+        {
+          "ja": "{線路|せんろ}{沿|ぞ}いの{道|みち}を{歩|ある}いて{学校|がっこう}へ{通|かよ}っていた。",
+          "kana": "せんろぞいのみちをあるいてがっこうへかよっていた。",
+          "en": "I used to walk to school along the road beside the tracks."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}や{列車|れっしゃ}が{走|はし}る、{鉄|てつ}でできた{道|みち}。",
+        "kana": "でんしゃやれっしゃがはしる、てつでできたみち。"
+      },
+      "collocations": [
+        "線路沿い",
+        "線路を渡る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0798",
+      "word": "踏切",
+      "kana": "ふみきり",
+      "meanings": [
+        "railroad crossing"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{踏切|ふみきり}が{開|あ}くのを{五分|ごふん}も{待|ま}った。",
+          "kana": "ふみきりがあくのをごふんもまった。",
+          "en": "I waited a whole five minutes for the crossing to open."
+        },
+        {
+          "ja": "{踏切|ふみきり}の{音|おと}が{聞|き}こえたら、{止|と}まってください。",
+          "kana": "ふみきりのおとがきこえたら、とまってください。",
+          "en": "When you hear the crossing bell, please stop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道路|どうろ}が{線路|せんろ}を{渡|わた}るところ。{電車|でんしゃ}が{来|く}ると{閉|し}まる。",
+        "kana": "どうろがせんろをわたるところ。でんしゃがくるとしまる。"
+      },
+      "altForms": [
+        "踏み切り"
+      ],
+      "collocations": [
+        "踏切を渡る",
+        "踏切が閉まる"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0799",
+      "word": "運賃",
+      "kana": "うんちん",
+      "meanings": [
+        "fare"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{来月|らいげつ}からバスの{運賃|うんちん}が{上|あ}がるそうです。",
+          "kana": "らいげつからバスのうんちんがあがるそうです。",
+          "en": "I hear bus fares are going up from next month."
+        },
+        {
+          "ja": "{子|こ}どもの{運賃|うんちん}は{大人|おとな}の{半額|はんがく}だよ。",
+          "kana": "こどものうんちんはおとなのはんがくだよ。",
+          "en": "The fare for kids is half the adult price."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどに{乗|の}るときに{払|はら}うお{金|かね}。",
+        "kana": "でんしゃやバスなどにのるときにはらうおかね。"
+      },
+      "collocations": [
+        "運賃が上がる",
+        "運賃表"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0800",
+      "word": "定期券",
+      "kana": "ていきけん",
+      "meanings": [
+        "commuter pass"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "money"
+      ],
+      "examples": [
+        {
+          "ja": "{定期券|ていきけん}をなくして、{本当|ほんとう}に{困|こま}った。",
+          "kana": "ていきけんをなくして、ほんとうにこまった。",
+          "en": "I lost my commuter pass and was really stuck."
+        },
+        {
+          "ja": "{定期券|ていきけん}を{買|か}うと、{毎日|まいにち}{乗|の}る{人|ひと}は{得|とく}です。",
+          "kana": "ていきけんをかうと、まいにちのるひとはとくです。",
+          "en": "If you buy a commuter pass, it pays off for people who ride every day."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}められた{期間|きかん}の{間|あいだ}、いつでも{使|つか}える{電車|でんしゃ}やバスの{切符|きっぷ}。",
+        "kana": "きめられたきかんのあいだ、いつでもつかえるでんしゃやバスのきっぷ。"
+      },
+      "notes": "Often shortened to 定期 (定期を買う).",
+      "collocations": [
+        "定期券を買う",
+        "定期券が切れる"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0801",
+      "word": "時刻表",
+      "kana": "じこくひょう",
+      "meanings": [
+        "timetable"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "time"
+      ],
+      "examples": [
+        {
+          "ja": "{時刻表|じこくひょう}を{見|み}たら、{次|つぎ}のバスは{一時間後|いちじかんご}だった。",
+          "kana": "じこくひょうをみたら、つぎのバスはいちじかんごだった。",
+          "en": "When I checked the timetable, the next bus was an hour later."
+        },
+        {
+          "ja": "{時刻表|じこくひょう}はホームの{入|い}り{口|ぐち}に{貼|は}ってあります。",
+          "kana": "じこくひょうはホームのいりぐちにはってあります。",
+          "en": "The timetable is posted at the entrance to the platform."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスが{出|で}る{時刻|じこく}を{全部|ぜんぶ}まとめて{書|か}いたもの。",
+        "kana": "でんしゃやバスがでるじこくをぜんぶまとめてかいたもの。"
+      },
+      "collocations": [
+        "時刻表を見る",
+        "バスの時刻表"
+      ],
+      "confusables": [
+        "v-n3-0775"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0802",
+      "word": "乗車",
+      "kana": "じょうしゃ",
+      "meanings": [
+        "boarding",
+        "getting on (a vehicle)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{前|まえ}のドアから{乗車|じょうしゃ}してください。",
+          "kana": "まえのドアからじょうしゃしてください。",
+          "en": "Please board through the front door."
+        },
+        {
+          "ja": "{乗車|じょうしゃ}する{前|まえ}に{切符|きっぷ}を{買|か}っておいてね。",
+          "kana": "じょうしゃするまえにきっぷをかっておいてね。",
+          "en": "Buy your ticket before you get on, okay?"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどの{乗|の}り{物|もの}に{乗|の}ること。",
+        "kana": "でんしゃやバスなどののりものにのること。"
+      },
+      "collocations": [
+        "乗車券",
+        "乗車する"
+      ],
+      "confusables": [
+        "v-n3-0803"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0803",
+      "word": "下車",
+      "kana": "げしゃ",
+      "meanings": [
+        "getting off (a vehicle)",
+        "alighting"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{次|つぎ}の{駅|えき}で{下車|げしゃ}して、バスに{乗|の}り{換|か}えます。",
+          "kana": "つぎのえきでげしゃして、バスにのりかえます。",
+          "en": "Get off at the next station and transfer to a bus."
+        },
+        {
+          "ja": "{途中|とちゅう}{下車|げしゃ}して、{有名|ゆうめい}なお{寺|てら}を{見|み}てきた。",
+          "kana": "とちゅうげしゃして、ゆうめいなおてらをみてきた。",
+          "en": "I got off along the way and went to see a famous temple."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどから{降|お}りること。",
+        "kana": "でんしゃやバスなどからおりること。"
+      },
+      "collocations": [
+        "途中下車",
+        "下車する"
+      ],
+      "confusables": [
+        "v-n3-0802"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0804",
+      "word": "発車",
+      "kana": "はっしゃ",
+      "meanings": [
+        "departure (of a train or bus)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{電車|でんしゃ}はまもなく{発車|はっしゃ}します。",
+          "kana": "でんしゃはまもなくはっしゃします。",
+          "en": "The train will depart shortly."
+        },
+        {
+          "ja": "{発車|はっしゃ}のベルが{鳴|な}っているから、{走|はし}ろう！",
+          "kana": "はっしゃのベルがなっているから、はしろう！",
+          "en": "The departure bell is ringing, so let's run!"
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどが{出発|しゅっぱつ}すること。",
+        "kana": "でんしゃやバスなどがしゅっぱつすること。"
+      },
+      "notes": "For vehicles only; people and planes 出発する.",
+      "collocations": [
+        "発車時刻",
+        "発車する"
+      ],
+      "confusables": [
+        "v-n3-0805"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0805",
+      "word": "停車",
+      "kana": "ていしゃ",
+      "meanings": [
+        "stopping (of a train or bus)"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "この{電車|でんしゃ}は{次|つぎ}の{駅|えき}には{停車|ていしゃ}しません。",
+          "kana": "このでんしゃはつぎのえきにはていしゃしません。",
+          "en": "This train does not stop at the next station."
+        },
+        {
+          "ja": "{急|きゅう}に{停車|ていしゃ}したので、{転|ころ}びそうになった。",
+          "kana": "きゅうにていしゃしたので、ころびそうになった。",
+          "en": "It stopped suddenly, so I almost fell over."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどが{止|と}まること。",
+        "kana": "でんしゃやバスなどがとまること。"
+      },
+      "collocations": [
+        "各駅停車",
+        "停車駅"
+      ],
+      "confusables": [
+        "v-n3-0804"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0806",
+      "word": "列車",
+      "kana": "れっしゃ",
+      "meanings": [
+        "train"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{夜|よる}の{列車|れっしゃ}で{浜松|はままつ}へ{向|む}かった。",
+          "kana": "よるのれっしゃではままつへむかった。",
+          "en": "I headed for Hamamatsu on a night train."
+        },
+        {
+          "ja": "この{列車|れっしゃ}は{全部|ぜんぶ}{指定席|していせき}です。",
+          "kana": "このれっしゃはぜんぶしていせきです。",
+          "en": "All seats on this train are reserved."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{線路|せんろ}の{上|うえ}を{走|はし}る{電車|でんしゃ}などの{乗|の}り{物|もの}。",
+        "kana": "せんろのうえをはしるでんしゃなどののりもの。"
+      },
+      "notes": "Formal or long-distance flavor (announcements, timetables); the everyday word is 電車.",
+      "collocations": [
+        "夜行列車",
+        "列車に乗る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0807",
+      "word": "鉄道",
+      "kana": "てつどう",
+      "meanings": [
+        "railway"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}には{鉄道|てつどう}が{通|とお}っていません。",
+          "kana": "このまちにはてつどうがとおっていません。",
+          "en": "There is no railway running through this town."
+        },
+        {
+          "ja": "{子|こ}どものころから{鉄道|てつどう}が{大好|だいす}きだった。",
+          "kana": "こどものころからてつどうがだいすきだった。",
+          "en": "I've loved railways ever since I was a kid."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{線路|せんろ}の{上|うえ}を{列車|れっしゃ}が{走|はし}り、{人|ひと}や{荷物|にもつ}を{運|はこ}ぶ{乗|の}り{物|もの}のこと。",
+        "kana": "せんろのうえをれっしゃがはしり、ひとやにもつをはこぶのりもののこと。"
+      },
+      "collocations": [
+        "鉄道会社",
+        "鉄道が通る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0808",
+      "word": "車両",
+      "kana": "しゃりょう",
+      "meanings": [
+        "railway car",
+        "vehicle"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{一番|いちばん}{前|まえ}の{車両|しゃりょう}は{空|す}いていることが{多|おお}い。",
+          "kana": "いちばんまえのしゃりょうはすいていることがおおい。",
+          "en": "The front car is often fairly empty."
+        },
+        {
+          "ja": "{女性|じょせい}{専用|せんよう}{車両|しゃりょう}は{一番|いちばん}{後|うし}ろです。",
+          "kana": "じょせいせんようしゃりょうはいちばんうしろです。",
+          "en": "The women-only car is at the very back."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}や{列車|れっしゃ}の、{一|ひと}つ{一|ひと}つの{車|くるま}。",
+        "kana": "でんしゃやれっしゃの、ひとつひとつのくるま。"
+      },
+      "collocations": [
+        "女性専用車両",
+        "先頭車両"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0809",
+      "word": "座席",
+      "kana": "ざせき",
+      "meanings": [
+        "seat"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "objects"
+      ],
+      "examples": [
+        {
+          "ja": "{座席|ざせき}の{番号|ばんごう}を{確認|かくにん}してからお{座|すわ}りください。",
+          "kana": "ざせきのばんごうをかくにんしてからおすわりください。",
+          "en": "Please check your seat number before sitting down."
+        },
+        {
+          "ja": "{飛行機|ひこうき}の{座席|ざせき}は{窓側|まどがわ}がいいな。",
+          "kana": "ひこうきのざせきはまどがわがいいな。",
+          "en": "I'd like a window seat on the plane."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}や{映画館|えいがかん}などで、{人|ひと}が{座|すわ}るための{席|せき}。",
+        "kana": "でんしゃやえいがかんなどで、ひとがすわるためのせき。"
+      },
+      "notes": "Formal word for a seat in a vehicle, theater or hall; 席 is the everyday word.",
+      "collocations": [
+        "座席番号",
+        "座席を予約する"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0810",
+      "word": "指定席",
+      "kana": "していせき",
+      "meanings": [
+        "reserved seat"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{混|こ}むと{思|おも}って{指定席|していせき}を{取|と}っておいた。",
+          "kana": "こむとおもってしていせきをとっておいた。",
+          "en": "I figured it would be crowded, so I reserved a seat."
+        },
+        {
+          "ja": "{指定席|していせき}の{料金|りょうきん}は{別|べつ}にかかります。",
+          "kana": "していせきのりょうきんはべつにかかります。",
+          "en": "There is a separate charge for a reserved seat."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{番号|ばんごう}が{決|き}まっていて、その{人|ひと}だけが{座|すわ}れる{席|せき}。",
+        "kana": "ばんごうがきまっていて、そのひとだけがすわれるせき。"
+      },
+      "confusables": [
+        "v-n3-0811"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0811",
+      "word": "自由席",
+      "kana": "じゆうせき",
+      "meanings": [
+        "non-reserved seat"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{自由席|じゆうせき}の{方|ほう}が{五百円|ごひゃくえん}{安|やす}いです。",
+          "kana": "じゆうせきのほうがごひゃくえんやすいです。",
+          "en": "Non-reserved seats are five hundred yen cheaper."
+        },
+        {
+          "ja": "{自由席|じゆうせき}なら、{早|はや}く{行|い}って{並|なら}んだ{方|ほう}がいいよ。",
+          "kana": "じゆうせきなら、はやくいってならんだほうがいいよ。",
+          "en": "If it's non-reserved seating, you'd better go early and line up."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{決|き}まった{番号|ばんごう}がなく、{空|あ}いていればだれでも{座|すわ}れる{席|せき}。",
+        "kana": "きまったばんごうがなく、あいていればだれでもすわれるせき。"
+      },
+      "confusables": [
+        "v-n3-0810"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0812",
+      "word": "満席",
+      "kana": "まんせき",
+      "meanings": [
+        "full (no seats left)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{人気|にんき}の{店|みせ}だから、{土曜|どよう}の{夜|よる}はいつも{満席|まんせき}だ。",
+          "kana": "にんきのみせだから、どようのよるはいつもまんせきだ。",
+          "en": "It is a popular restaurant, so Saturday nights are always full."
+        },
+        {
+          "ja": "{申|もう}し{訳|わけ}ございません、{本日|ほんじつ}は{満席|まんせき}でございます。",
+          "kana": "もうしわけございません、ほんじつはまんせきでございます。",
+          "en": "I'm very sorry, but we are fully booked today."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{席|せき}が{全部|ぜんぶ}いっぱいで、{空|あ}いている{席|せき}がないこと。",
+        "kana": "せきがぜんぶいっぱいで、あいているせきがないこと。"
+      },
+      "notes": "For seats (trains, planes, restaurants). A full hotel is 満室, a full parking lot is 満車.",
+      "confusables": [
+        "v-n3-0813"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0813",
+      "word": "空席",
+      "kana": "くうせき",
+      "meanings": [
+        "vacant seat",
+        "vacancy"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{窓側|まどがわ}の{空席|くうせき}はまだありますか。",
+          "kana": "まどがわのくうせきはまだありますか。",
+          "en": "Are there still any empty seats by the window?"
+        },
+        {
+          "ja": "{映画館|えいがかん}はがらがらで、{空席|くうせき}だらけだった。",
+          "kana": "えいがかんはがらがらで、くうせきだらけだった。",
+          "en": "The movie theater was nearly empty, full of vacant seats."
+        }
+      ],
+      "definitionJa": {
+        "ja": "だれも{座|すわ}っていない、{空|あ}いている{席|せき}。",
+        "kana": "だれもすわっていない、あいているせき。"
+      },
+      "collocations": [
+        "空席がある",
+        "空席状況"
+      ],
+      "confusables": [
+        "v-n3-0812"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0814",
+      "word": "通路",
+      "kana": "つうろ",
+      "meanings": [
+        "aisle",
+        "passage",
+        "walkway"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{通路|つうろ}に{荷物|にもつ}を{置|お}かないでください。",
+          "kana": "つうろににもつをおかないでください。",
+          "en": "Please do not leave luggage in the aisle."
+        },
+        {
+          "ja": "{通路側|つうろがわ}の{席|せき}の{方|ほう}が、トイレに{行|い}きやすい。",
+          "kana": "つうろがわのせきのほうが、トイレにいきやすい。",
+          "en": "An aisle seat makes it easier to get to the restroom."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}や{乗|の}り{物|もの}の{中|なか}で、{人|ひと}が{歩|ある}いて{通|とお}るところ。",
+        "kana": "たてものやのりもののなかで、ひとがあるいてとおるところ。"
+      },
+      "collocations": [
+        "通路側",
+        "通路をふさぐ"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0815",
+      "word": "非常口",
+      "kana": "ひじょうぐち",
+      "meanings": [
+        "emergency exit"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{非常口|ひじょうぐち}は{廊下|ろうか}の{突|つ}き{当|あ}たりにあります。",
+          "kana": "ひじょうぐちはろうかのつきあたりにあります。",
+          "en": "The emergency exit is at the end of the corridor."
+        },
+        {
+          "ja": "{非常口|ひじょうぐち}の{前|まえ}に{物|もの}を{置|お}いちゃだめだよ。",
+          "kana": "ひじょうぐちのまえにものをおいちゃだめだよ。",
+          "en": "You mustn't put things in front of the emergency exit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{火事|かじ}や{地震|じしん}などのときに、{外|そと}へ{逃|に}げるための{出口|でぐち}。",
+        "kana": "かじやじしんなどのときに、そとへにげるためのでぐち。"
+      },
+      "collocations": [
+        "非常口の案内",
+        "非常階段"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0816",
+      "word": "乗客",
+      "kana": "じょうきゃく",
+      "meanings": [
+        "passenger"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{朝|あさ}の{電車|でんしゃ}は{乗客|じょうきゃく}が{多|おお}くて{座|すわ}れない。",
+          "kana": "あさのでんしゃはじょうきゃくがおおくてすわれない。",
+          "en": "The morning trains have so many passengers that I cannot sit down."
+        },
+        {
+          "ja": "{乗客|じょうきゃく}の{皆様|みなさま}、まもなく{終点|しゅうてん}に{到着|とうちゃく}いたします。",
+          "kana": "じょうきゃくのみなさま、まもなくしゅうてんにとうちゃくいたします。",
+          "en": "Attention passengers, we will soon be arriving at the last stop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{電車|でんしゃ}やバスなどに{乗|の}っている{客|きゃく}。",
+        "kana": "でんしゃやバスなどにのっているきゃく。"
+      },
+      "collocations": [
+        "乗客が多い",
+        "乗客の皆様"
+      ],
+      "confusables": [
+        "v-n3-0817"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0817",
+      "word": "観光客",
+      "kana": "かんこうきゃく",
+      "meanings": [
+        "tourist",
+        "sightseer"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "people"
+      ],
+      "examples": [
+        {
+          "ja": "{春|はる}は{観光客|かんこうきゃく}が{多|おお}くて、{道|みち}が{混|こ}んでいる。",
+          "kana": "はるはかんこうきゃくがおおくて、みちがこんでいる。",
+          "en": "In spring there are a lot of tourists and the streets are crowded."
+        },
+        {
+          "ja": "{外国人|がいこくじん}{観光客|かんこうきゃく}{向|む}けの{案内所|あんないじょ}ができました。",
+          "kana": "がいこくじんかんこうきゃくむけのあんないじょができました。",
+          "en": "An information center for foreign tourists has opened."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{観光|かんこう}のために{旅行|りょこう}している{人|ひと}。",
+        "kana": "かんこうのためにりょこうしているひと。"
+      },
+      "collocations": [
+        "外国人観光客",
+        "観光客が増える"
+      ],
+      "confusables": [
+        "v-n3-0816"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0818",
+      "word": "観光地",
+      "kana": "かんこうち",
+      "meanings": [
+        "tourist spot",
+        "sightseeing area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "ここは{有名|ゆうめい}な{観光地|かんこうち}なので、{週末|しゅうまつ}はとても{混|こ}みます。",
+          "kana": "ここはゆうめいなかんこうちなので、しゅうまつはとてもこみます。",
+          "en": "This is a famous tourist spot, so weekends get very crowded."
+        },
+        {
+          "ja": "{有名|ゆうめい}な{観光地|かんこうち}より、{静|しず}かな{町|まち}の{方|ほう}が{好|す}きだな。",
+          "kana": "ゆうめいなかんこうちより、しずかなまちのほうがすきだな。",
+          "en": "I prefer quiet towns to famous tourist spots."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{観光|かんこう}に{来|く}る{人|ひと}が{多|おお}い、{有名|ゆうめい}なところ。",
+        "kana": "かんこうにくるひとがおおい、ゆうめいなところ。"
+      },
+      "collocations": [
+        "有名な観光地",
+        "観光地をまわる"
+      ],
+      "confusables": [
+        "v-n3-0819"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0819",
+      "word": "名所",
+      "kana": "めいしょ",
+      "meanings": [
+        "famous place",
+        "sight"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "この{町|まち}には{桜|さくら}の{名所|めいしょ}がいくつかある。",
+          "kana": "このまちにはさくらのめいしょがいくつかある。",
+          "en": "This town has several famous cherry-blossom spots."
+        },
+        {
+          "ja": "ここは{紅葉|こうよう}の{名所|めいしょ}として{知|し}られています。",
+          "kana": "ここはこうようのめいしょとしてしられています。",
+          "en": "This place is known as a famous spot for autumn leaves."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{景色|けしき}や{建物|たてもの}などで{有名|ゆうめい}なところ。",
+        "kana": "けしきやたてものなどでゆうめいなところ。"
+      },
+      "collocations": [
+        "桜の名所",
+        "名所を見て回る"
+      ],
+      "confusables": [
+        "v-n3-0818"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0820",
+      "word": "宿泊",
+      "kana": "しゅくはく",
+      "meanings": [
+        "lodging",
+        "staying overnight"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{宿泊|しゅくはく}の{予約|よやく}はインターネットでできます。",
+          "kana": "しゅくはくのよやくはインターネットでできます。",
+          "en": "Reservations for lodging can be made online."
+        },
+        {
+          "ja": "この{旅館|りょかん}に{二泊|にはく}、{宿泊|しゅくはく}する{予定|よてい}だ。",
+          "kana": "このりょかんににはく、しゅくはくするよていだ。",
+          "en": "I plan to stay at this inn for two nights."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ホテルや{旅館|りょかん}などに{泊|と}まること。",
+        "kana": "ホテルやりょかんなどにとまること。"
+      },
+      "notes": "Formal word used by hotels and travel sites; in conversation 泊まる.",
+      "collocations": [
+        "宿泊料金",
+        "宿泊する",
+        "宿泊先"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0821",
+      "word": "日帰り",
+      "kana": "ひがえり",
+      "meanings": [
+        "day trip",
+        "going and returning the same day"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{箱根|はこね}なら{日帰|ひがえ}りでも{行|い}けるよ。",
+          "kana": "はこねならひがえりでもいけるよ。",
+          "en": "You can do Hakone as a day trip."
+        },
+        {
+          "ja": "{日帰|ひがえ}りで{京都|きょうと}まで{行|い}ってきました。",
+          "kana": "ひがえりできょうとまでいってきました。",
+          "en": "I made a day trip to Kyoto."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{泊|と}まらないで、{朝|あさ}{出|で}かけて{夜|よる}までに{帰|かえ}ること。",
+        "kana": "とまらないで、あさでかけてよるまでにかえること。"
+      },
+      "collocations": [
+        "日帰り旅行",
+        "日帰りで行く"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0822",
+      "word": "旅",
+      "kana": "たび",
+      "meanings": [
+        "journey",
+        "trip"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{一人|ひとり}で{旅|たび}に{出|で}るのが{好|す}きだ。",
+          "kana": "ひとりでたびにでるのがすきだ。",
+          "en": "I like setting off on trips by myself."
+        },
+        {
+          "ja": "{旅|たび}の{思|おも}い{出|で}を{写真|しゃしん}に{残|のこ}しています。",
+          "kana": "たびのおもいでをしゃしんにのこしています。",
+          "en": "I keep memories of my journeys in photographs."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{家|いえ}を{出|で}て、{遠|とお}いところへ{行|い}くこと。",
+        "kana": "いえをでて、とおいところへいくこと。"
+      },
+      "notes": "More personal and literary than 旅行; 旅に出る = to set out on a journey. 一人旅 = solo travel.",
+      "collocations": [
+        "旅に出る",
+        "一人旅"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0823",
+      "word": "宿",
+      "kana": "やど",
+      "meanings": [
+        "inn",
+        "lodging"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{今夜|こんや}の{宿|やど}はまだ{決|き}めていない。",
+          "kana": "こんやのやどはまだきめていない。",
+          "en": "I have not decided on tonight’s lodging yet."
+        },
+        {
+          "ja": "{山|やま}の{中|なか}の{小|ちい}さな{宿|やど}に{泊|と}まりました。",
+          "kana": "やまのなかのちいさなやどにとまりました。",
+          "en": "I stayed at a small inn in the mountains."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}のときに{泊|と}まるところ。{旅館|りょかん}やホテルなど。",
+        "kana": "りょこうのときにとまるところ。りょかんやホテルなど。"
+      },
+      "notes": "Any place you stay the night, from a ryokan to a hostel; slightly old-fashioned, warm tone.",
+      "collocations": [
+        "宿を取る",
+        "宿を探す"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0824",
+      "word": "旅先",
+      "kana": "たびさき",
+      "meanings": [
+        "travel destination",
+        "place one is visiting"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{旅先|たびさき}で{財布|さいふ}をなくしてしまいました。",
+          "kana": "たびさきでさいふをなくしてしまいました。",
+          "en": "I lost my wallet while I was away traveling."
+        },
+        {
+          "ja": "{旅先|たびさき}で{出会|であ}った{人|ひと}と{今|いま}でも{連絡|れんらく}を{取|と}っている。",
+          "kana": "たびさきでであったひとといまでもれんらくをとっている。",
+          "en": "I'm still in touch with someone I met while traveling."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{旅行|りょこう}に{出|で}かけて、{今|いま}いるところ。",
+        "kana": "りょこうにでかけて、いまいるところ。"
+      },
+      "notes": "Where you are during a trip, rather than the goal of the trip (目的地).",
+      "collocations": [
+        "旅先で",
+        "旅先から"
+      ],
+      "confusables": [
+        "v-n3-0825"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0825",
+      "word": "行き先",
+      "kana": "いきさき",
+      "meanings": [
+        "destination"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "バスに{乗|の}る{前|まえ}に{行|い}き{先|さき}をよく{確認|かくにん}してください。",
+          "kana": "バスにのるまえにいきさきをよくかくにんしてください。",
+          "en": "Please check the destination carefully before boarding the bus."
+        },
+        {
+          "ja": "バスの{行|い}き{先|さき}を{間違|まちが}えて、{知|し}らない{町|まち}に{着|つ}いちゃった。",
+          "kana": "バスのいきさきをまちがえて、しらないまちについちゃった。",
+          "en": "I got the bus destination wrong and ended up in a town I didn't know."
+        }
+      ],
+      "definitionJa": {
+        "ja": "これから{行|い}こうとしているところ。",
+        "kana": "これからいこうとしているところ。"
+      },
+      "notes": "Also read ゆきさき. Used of buses and trains (bus 行き先 sign) and of where someone has gone.",
+      "collocations": [
+        "行き先を確認する",
+        "行き先表示"
+      ],
+      "confusables": [
+        "v-n3-0826"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0826",
+      "word": "目的地",
+      "kana": "もくてきち",
+      "meanings": [
+        "destination",
+        "goal of a trip"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "travel",
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{目的地|もくてきち}まであと{十分|じゅっぷん}ぐらいだ。",
+          "kana": "もくてきちまであとじゅっぷんぐらいだ。",
+          "en": "It is about ten more minutes to our destination."
+        },
+        {
+          "ja": "{目的地|もくてきち}に{着|つ}いたら、{電話|でんわ}をください。",
+          "kana": "もくてきちについたら、でんわをください。",
+          "en": "Please call me when you reach your destination."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{行|い}こうとしている{最後|さいご}のところ。{目的|もくてき}のところ。",
+        "kana": "いこうとしているさいごのところ。もくてきのところ。"
+      },
+      "collocations": [
+        "目的地に着く",
+        "目的地まで"
+      ],
+      "confusables": [
+        "v-n3-0825"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0827",
+      "word": "方面",
+      "kana": "ほうめん",
+      "meanings": [
+        "direction",
+        "area",
+        "field"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{浜松|はままつ}{方面|ほうめん}の{電車|でんしゃ}は{二番線|にばんせん}から{出|で}ます。",
+          "kana": "はままつほうめんのでんしゃはにばんせんからでます。",
+          "en": "Trains toward Hamamatsu leave from platform two."
+        },
+        {
+          "ja": "{京都|きょうと}{方面|ほうめん}へ{行|い}くなら、この{電車|でんしゃ}だよ。",
+          "kana": "きょうとほうめんへいくなら、このでんしゃだよ。",
+          "en": "If you're going toward Kyoto, this is the train."
+        }
+      ],
+      "definitionJa": {
+        "ja": "ある{方向|ほうこう}や、その{方向|ほうこう}にある{地域|ちいき}。",
+        "kana": "あるほうこうや、そのほうこうにあるちいき。"
+      },
+      "notes": "A general direction or district (東京方面); also a field of activity (その方面に詳しい).",
+      "collocations": [
+        "〜方面行き",
+        "東京方面"
+      ],
+      "confusables": [
+        "v-n3-0828"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0828",
+      "word": "方角",
+      "kana": "ほうがく",
+      "meanings": [
+        "direction (compass)",
+        "bearing"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}がどっちの{方角|ほうがく}か、{分|わ}からなくなった。",
+          "kana": "えきがどっちのほうがくか、わからなくなった。",
+          "en": "I lost track of which direction the station was in."
+        },
+        {
+          "ja": "{太陽|たいよう}が{出|で}る{方角|ほうがく}が{東|ひがし}です。",
+          "kana": "たいようがでるほうがくがひがしです。",
+          "en": "The direction the sun rises in is east."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{東西南北|とうざいなんぼく}などの{言葉|ことば}で{表|あらわ}す{方向|ほうこう}。",
+        "kana": "とうざいなんぼくなどのことばであらわすほうこう。"
+      },
+      "notes": "Compass direction (north, south). 方向 is direction of movement; 方面 is a district.",
+      "collocations": [
+        "方角が分からない",
+        "北の方角"
+      ],
+      "confusables": [
+        "v-n3-0827"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0829",
+      "word": "目印",
+      "kana": "めじるし",
+      "meanings": [
+        "landmark",
+        "mark",
+        "sign"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{赤|あか}い{屋根|やね}の{家|いえ}を{目印|めじるし}にして{来|き}て。",
+          "kana": "あかいやねのいえをめじるしにしてきて。",
+          "en": "Use the house with the red roof as a landmark when you come."
+        },
+        {
+          "ja": "{鞄|かばん}に{目印|めじるし}としてリボンを{付|つ}けておきました。",
+          "kana": "かばんにめじるしとしてリボンをつけておきました。",
+          "en": "I tied a ribbon on my bag as a marker."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{行|い}きたいところを{見|み}つけるための、{分|わ}かりやすいもの。",
+        "kana": "いきたいところをみつけるための、わかりやすいもの。"
+      },
+      "collocations": [
+        "目印にする",
+        "目印をつける"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0830",
+      "word": "近道",
+      "kana": "ちかみち",
+      "meanings": [
+        "shortcut"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "position",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{公園|こうえん}を{通|とお}ると{駅|えき}まで{近道|ちかみち}になる。",
+          "kana": "こうえんをとおるとえきまでちかみちになる。",
+          "en": "Going through the park is a shortcut to the station."
+        },
+        {
+          "ja": "{急|いそ}いでいたので、{細|ほそ}い{道|みち}を{近道|ちかみち}して{帰|かえ}りました。",
+          "kana": "いそいでいたので、ほそいみちをちかみちしてかえりました。",
+          "en": "I was in a hurry, so I took a shortcut home down a narrow street."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{普通|ふつう}の{道|みち}より{早|はや}く{着|つ}ける、{短|みじか}い{道|みち}。",
+        "kana": "ふつうのみちよりはやくつける、みじかいみち。"
+      },
+      "notes": "Also figurative: 成功への近道. 近道する = to take a shortcut.",
+      "collocations": [
+        "近道をする",
+        "成功への近道"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0831",
+      "word": "迷子",
+      "kana": "まいご",
+      "meanings": [
+        "lost child",
+        "getting lost"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "people",
+        "travel"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもの{頃|ころ}、デパートで{迷子|まいご}になったことがある。",
+          "kana": "こどものころ、デパートでまいごになったことがある。",
+          "en": "When I was a kid, I once got lost in a department store."
+        },
+        {
+          "ja": "{迷子|まいご}のお{子|こ}さんをお{預|あず}かりしております。",
+          "kana": "まいごのおこさんをおあずかりしております。",
+          "en": "We are looking after a lost child."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道|みち}が{分|わ}からなくなった{子|こ}ども。{道|みち}に{迷|まよ}うこと。",
+        "kana": "みちがわからなくなったこども。みちにまようこと。"
+      },
+      "notes": "Mainly 迷子になる (to get lost), used of adults too, jokingly.",
+      "collocations": [
+        "迷子になる",
+        "迷子の案内"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0832",
+      "word": "徒歩",
+      "kana": "とほ",
+      "meanings": [
+        "on foot",
+        "walking"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "position"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}から{会社|かいしゃ}までは{徒歩|とほ}で{十分|じゅっぷん}ぐらいです。",
+          "kana": "えきからかいしゃまではとほでじゅっぷんぐらいです。",
+          "en": "From the station to the office is about ten minutes on foot."
+        },
+        {
+          "ja": "{徒歩|とほ}で{通|かよ}える{距離|きょり}に{引|ひ}っ{越|こ}したい。",
+          "kana": "とほでかよえるきょりにひっこしたい。",
+          "en": "I want to move to somewhere I can commute from on foot."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{乗|の}り{物|もの}を{使|つか}わずに、{歩|ある}いて{行|い}くこと。",
+        "kana": "のりものをつかわずに、あるいていくこと。"
+      },
+      "notes": "Written and formal (駅から徒歩五分 in property ads); in speech 歩いて.",
+      "collocations": [
+        "徒歩五分",
+        "徒歩で行く"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0833",
+      "word": "車道",
+      "kana": "しゃどう",
+      "meanings": [
+        "roadway",
+        "carriageway"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{子|こ}どもが{車道|しゃどう}に{飛|と}び{出|だ}さないように{注意|ちゅうい}してください。",
+          "kana": "こどもがしゃどうにとびださないようにちゅういしてください。",
+          "en": "Please make sure the children do not run out into the road."
+        },
+        {
+          "ja": "{車道|しゃどう}と{歩道|ほどう}の{間|あいだ}に{木|き}が{植|う}えてある。",
+          "kana": "しゃどうとほどうのあいだにきがうえてある。",
+          "en": "Trees are planted between the roadway and the sidewalk."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道路|どうろ}の{中|なか}で、{車|くるま}が{通|とお}るところ。",
+        "kana": "どうろのなかで、くるまがとおるところ。"
+      },
+      "notes": "The part of the street for vehicles, as opposed to 歩道 (sidewalk).",
+      "collocations": [
+        "車道を走る",
+        "車道に出る"
+      ],
+      "confusables": [
+        "v-n3-0838"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0834",
+      "word": "通学",
+      "kana": "つうがく",
+      "meanings": [
+        "commuting to school"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "school",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{妹|いもうと}はバスで{通学|つうがく}しています。",
+          "kana": "いもうとはバスでつうがくしています。",
+          "en": "My little sister takes the bus to school."
+        },
+        {
+          "ja": "{通学|つうがく}に{片道|かたみち}{一時間|いちじかん}もかかるのは{大変|たいへん}だ。",
+          "kana": "つうがくにかたみちいちじかんもかかるのはたいへんだ。",
+          "en": "Spending a whole hour each way commuting to school is tough."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{学生|がくせい}が{家|いえ}から{学校|がっこう}に{通|かよ}うこと。",
+        "kana": "がくせいがいえからがっこうにかようこと。"
+      },
+      "collocations": [
+        "通学路",
+        "通学時間",
+        "通学する"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0835",
+      "word": "混雑",
+      "kana": "こんざつ",
+      "meanings": [
+        "congestion",
+        "crowding"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{連休中|れんきゅうちゅう}は{道路|どうろ}の{混雑|こんざつ}が{予想|よそう}されます。",
+          "kana": "れんきゅうちゅうはどうろのこんざつがよそうされます。",
+          "en": "Road congestion is expected during the holiday period."
+        },
+        {
+          "ja": "{朝|あさ}の{電車|でんしゃ}の{混雑|こんざつ}には、まだ{慣|な}れない。",
+          "kana": "あさのでんしゃのこんざつには、まだなれない。",
+          "en": "I still can't get used to how crowded the morning trains are."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}や{車|くるま}が{多|おお}くて、いっぱいになること。",
+        "kana": "ひとやくるまがおおくて、いっぱいになること。"
+      },
+      "notes": "Formal word of notices and news; in conversation 混んでいる.",
+      "collocations": [
+        "混雑する",
+        "混雑を避ける"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0836",
+      "word": "駐車",
+      "kana": "ちゅうしゃ",
+      "meanings": [
+        "parking"
+      ],
+      "pos": "n-suru",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "この{道|みち}は{駐車|ちゅうしゃ}{禁止|きんし}なので、{気|き}をつけてください。",
+          "kana": "このみちはちゅうしゃきんしなので、きをつけてください。",
+          "en": "Parking is prohibited on this street, so please be careful."
+        },
+        {
+          "ja": "{店|みせ}の{前|まえ}に{駐車|ちゅうしゃ}できるスペースがあるか{調|しら}べておいて。",
+          "kana": "みせのまえにちゅうしゃできるスペースがあるかしらべておいて。",
+          "en": "Check whether there's space to park in front of the shop."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{車|くるま}を{決|き}められたところに{止|と}めておくこと。",
+        "kana": "くるまをきめられたところにとめておくこと。"
+      },
+      "collocations": [
+        "駐車禁止",
+        "駐車する",
+        "駐車料金"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0837",
+      "word": "駐輪場",
+      "kana": "ちゅうりんじょう",
+      "meanings": [
+        "bicycle parking area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "transport",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}の{駐輪場|ちゅうりんじょう}はいつもいっぱいだ。",
+          "kana": "えきまえのちゅうりんじょうはいつもいっぱいだ。",
+          "en": "The bicycle parking in front of the station is always full."
+        },
+        {
+          "ja": "{駅|えき}の{東口|ひがしぐち}に{新|あたら}しい{駐輪場|ちゅうりんじょう}ができました。",
+          "kana": "えきのひがしぐちにあたらしいちゅうりんじょうができました。",
+          "en": "A new bicycle parking area has opened at the station's east exit."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自転車|じてんしゃ}を{止|と}めておくためのところ。",
+        "kana": "じてんしゃをとめておくためのところ。"
+      },
+      "collocations": [
+        "駐輪場に止める"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0838",
+      "word": "歩道",
+      "kana": "ほどう",
+      "meanings": [
+        "sidewalk",
+        "footpath"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{自転車|じてんしゃ}は{歩道|ほどう}を{走|はし}らないでください。",
+          "kana": "じてんしゃはほどうをはしらないでください。",
+          "en": "Please do not ride bicycles on the sidewalk."
+        },
+        {
+          "ja": "{歩道|ほどう}が{狭|せま}いから、{一列|いちれつ}で{歩|ある}こう。",
+          "kana": "ほどうがせまいから、いちれつであるこう。",
+          "en": "The sidewalk is narrow, so let's walk in single file."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道路|どうろ}の{中|なか}で、{人|ひと}が{歩|ある}くためのところ。",
+        "kana": "どうろのなかで、ひとがあるくためのところ。"
+      },
+      "collocations": [
+        "歩道を歩く",
+        "歩道橋"
+      ],
+      "confusables": [
+        "v-n3-0839",
+        "v-n3-0833"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0839",
+      "word": "横断歩道",
+      "kana": "おうだんほどう",
+      "meanings": [
+        "pedestrian crossing",
+        "crosswalk"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "{横断歩道|おうだんほどう}を{渡|わた}るときは{車|くるま}に{気|き}をつけて。",
+          "kana": "おうだんほどうをわたるときはくるまにきをつけて。",
+          "en": "Watch out for cars when you cross at the crosswalk."
+        },
+        {
+          "ja": "{横断歩道|おうだんほどう}では{歩|ある}いている{人|ひと}が{優先|ゆうせん}です。",
+          "kana": "おうだんほどうではあるいているひとがゆうせんです。",
+          "en": "At pedestrian crossings, people on foot have priority."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{人|ひと}が{道路|どうろ}を{安全|あんぜん}に{渡|わた}るために{決|き}められたところ。",
+        "kana": "ひとがどうろをあんぜんにわたるためにきめられたところ。"
+      },
+      "collocations": [
+        "横断歩道を渡る"
+      ],
+      "confusables": [
+        "v-n3-0838"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0840",
+      "word": "標識",
+      "kana": "ひょうしき",
+      "meanings": [
+        "sign",
+        "signpost"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "transport"
+      ],
+      "examples": [
+        {
+          "ja": "この{標識|ひょうしき}がどういう{意味|いみ}か、{調|しら}べてみた。",
+          "kana": "このひょうしきがどういういみか、しらべてみた。",
+          "en": "I looked up what this sign means."
+        },
+        {
+          "ja": "この{先|さき}の{道|みち}は{工事中|こうじちゅう}だと{標識|ひょうしき}に{書|か}いてあります。",
+          "kana": "このさきのみちはこうじちゅうだとひょうしきにかいてあります。",
+          "en": "The sign says the road ahead is under construction."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{道路|どうろ}などで、{注意|ちゅうい}や{規則|きそく}を{絵|え}や{文字|もじ}で{知|し}らせるもの。",
+        "kana": "どうろなどで、ちゅういやきそくをえやもじでしらせるもの。"
+      },
+      "notes": "Official road or trail signs; a shop sign is 看板.",
+      "collocations": [
+        "道路標識",
+        "標識を見る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0841",
+      "word": "大通り",
+      "kana": "おおどおり",
+      "meanings": [
+        "main street",
+        "avenue"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{大通|おおどお}りをまっすぐ{行|い}くと、{右側|みぎがわ}に{郵便局|ゆうびんきょく}があります。",
+          "kana": "おおどおりをまっすぐいくと、みぎがわにゆうびんきょくがあります。",
+          "en": "Go straight along the main street and the post office is on your right."
+        },
+        {
+          "ja": "{大通|おおどお}りはうるさいから、{裏|うら}の{道|みち}を{通|とお}って{帰|かえ}ろう。",
+          "kana": "おおどおりはうるさいから、うらのみちをとおってかえろう。",
+          "en": "The main street is noisy, so let's go home by the back road."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{町|まち}の{中|なか}の、{広|ひろ}くて{大|おお}きな{道|みち}。",
+        "kana": "まちのなかの、ひろくておおきなみち。"
+      },
+      "collocations": [
+        "大通りに出る",
+        "大通り沿い"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0842",
+      "word": "高層",
+      "kana": "こうそう",
+      "meanings": [
+        "high-rise",
+        "multistory"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}の{近|ちか}くに{高層|こうそう}マンションが{建|た}った。",
+          "kana": "えきのちかくにこうそうマンションがたった。",
+          "en": "A high-rise apartment building went up near the station."
+        },
+        {
+          "ja": "{都心|としん}には{高層|こうそう}ビルがたくさん{建|た}っています。",
+          "kana": "としんにはこうそうビルがたくさんたっています。",
+          "en": "There are many high-rise buildings in the city center."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{建物|たてもの}がとても{高|たか}くて、{部屋|へや}が{上|うえ}へいくつも{重|かさ}なっていること。",
+        "kana": "たてものがとてもたかくて、へやがうえへいくつもかさなっていること。"
+      },
+      "notes": "Almost always a prefix: 高層ビル, 高層マンション, 高層階.",
+      "collocations": [
+        "高層ビル",
+        "高層マンション"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0843",
+      "word": "町内",
+      "kana": "ちょうない",
+      "meanings": [
+        "neighborhood",
+        "within the town"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{日曜日|にちようび}は{町内|ちょうない}の{掃除|そうじ}に{参加|さんか}した。",
+          "kana": "にちようびはちょうないのそうじにさんかした。",
+          "en": "On Sunday I took part in the neighborhood clean-up."
+        },
+        {
+          "ja": "{町内|ちょうない}のお{祭|まつ}りで{太鼓|たいこ}をたたきました。",
+          "kana": "ちょうないのおまつりでたいこをたたきました。",
+          "en": "I played the drums at the neighborhood festival."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{自分|じぶん}が{住|す}んでいる{町|まち}の{中|なか}。その{町|まち}の{人|ひと}たち。",
+        "kana": "じぶんがすんでいるまちのなか。そのまちのひとたち。"
+      },
+      "notes": "町内会 is the local residents’ association that organizes festivals, cleaning and notices.",
+      "collocations": [
+        "町内会",
+        "町内の人"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0844",
+      "word": "役所",
+      "kana": "やくしょ",
+      "meanings": [
+        "government office"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{引|ひ}っ{越|こ}しの{手続|てつづ}きは{役所|やくしょ}でします。",
+          "kana": "ひっこしのてつづきはやくしょでします。",
+          "en": "You do the paperwork for moving house at the government office."
+        },
+        {
+          "ja": "{役所|やくしょ}は{土日|どにち}は{休|やす}みだから、{平日|へいじつ}に{行|い}かないと。",
+          "kana": "やくしょはどにちはやすみだから、へいじつにいかないと。",
+          "en": "The government office is closed on weekends, so I have to go on a weekday."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{国|くに}や{市|し}が、そこに{住|す}む{人|ひと}のための{仕事|しごと}をするところ。",
+        "kana": "くにやしが、そこにすむひとのためのしごとをするところ。"
+      },
+      "collocations": [
+        "役所に行く",
+        "役所の手続き"
+      ],
+      "confusables": [
+        "v-n3-0845"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0845",
+      "word": "市役所",
+      "kana": "しやくしょ",
+      "meanings": [
+        "city hall",
+        "city office"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{市役所|しやくしょ}は{平日|へいじつ}の{五時|ごじ}までしか{開|あ}いていない。",
+          "kana": "しやくしょはへいじつのごじまでしかあいていない。",
+          "en": "City hall is only open until five on weekdays."
+        },
+        {
+          "ja": "{市役所|しやくしょ}の{前|まえ}でバスを{降|お}りてください。",
+          "kana": "しやくしょのまえでバスをおりてください。",
+          "en": "Please get off the bus in front of city hall."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{市|し}の{仕事|しごと}をする{役所|やくしょ}。{市|し}に{住|す}む{人|ひと}のための{仕事|しごと}をする。",
+        "kana": "しのしごとをするやくしょ。しにすむひとのためのしごとをする。"
+      },
+      "confusables": [
+        "v-n3-0844"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0846",
+      "word": "消防署",
+      "kana": "しょうぼうしょ",
+      "meanings": [
+        "fire station"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "society"
+      ],
+      "examples": [
+        {
+          "ja": "{家|いえ}の{近|ちか}くに{消防署|しょうぼうしょ}があるから、{安心|あんしん}だ。",
+          "kana": "いえのちかくにしょうぼうしょがあるから、あんしんだ。",
+          "en": "There is a fire station near my house, so I feel safe."
+        },
+        {
+          "ja": "{消防署|しょうぼうしょ}の{見学|けんがく}に{子|こ}どもたちを{連|つ}れて{行|い}きました。",
+          "kana": "しょうぼうしょのけんがくにこどもたちをつれていきました。",
+          "en": "I took the children on a tour of the fire station."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{火事|かじ}を{消|け}す{仕事|しごと}をする{人|ひと}たちがいるところ。",
+        "kana": "かじをけすしごとをするひとたちがいるところ。"
+      },
+      "collocations": [
+        "消防署に電話する",
+        "消防車"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0847",
+      "word": "刑務所",
+      "kana": "けいむしょ",
+      "meanings": [
+        "prison"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "law"
+      ],
+      "examples": [
+        {
+          "ja": "{彼|かれ}は{十年間|じゅうねんかん}{刑務所|けいむしょ}に{入|はい}っていました。",
+          "kana": "かれはじゅうねんかんけいむしょにはいっていました。",
+          "en": "He was in prison for ten years."
+        },
+        {
+          "ja": "{刑務所|けいむしょ}を{出|で}た{後|あと}、{彼|かれ}は{仕事|しごと}を{探|さが}すのに{苦労|くろう}したらしい。",
+          "kana": "けいむしょをでたあと、かれはしごとをさがすのにくろうしたらしい。",
+          "en": "After he got out of prison, he apparently had a hard time finding a job."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{悪|わる}いことをして{罪|つみ}になった{人|ひと}が、{罰|ばつ}として{入|い}れられるところ。",
+        "kana": "わるいことをしてつみになったひとが、ばつとしていれられるところ。"
+      },
+      "collocations": [
+        "刑務所に入る",
+        "刑務所を出る"
+      ],
+      "station": 31
+    },
+    {
+      "id": "v-n3-0848",
+      "word": "倉庫",
+      "kana": "そうこ",
+      "meanings": [
+        "warehouse",
+        "storehouse"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "work"
+      ],
+      "examples": [
+        {
+          "ja": "{使|つか}わない{物|もの}は{倉庫|そうこ}にしまってあります。",
+          "kana": "つかわないものはそうこにしまってあります。",
+          "en": "Things we do not use are put away in the warehouse."
+        },
+        {
+          "ja": "{倉庫|そうこ}で{荷物|にもつ}を{運|はこ}ぶアルバイトをしている。",
+          "kana": "そうこでにもつをはこぶアルバイトをしている。",
+          "en": "I have a part-time job moving packages in a warehouse."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{品物|しなもの}や{荷物|にもつ}を{置|お}いておくための{建物|たてもの}。",
+        "kana": "しなものやにもつをおいておくためのたてもの。"
+      },
+      "collocations": [
+        "倉庫に入れる",
+        "倉庫で働く"
+      ],
+      "station": 32
+    },
+    {
+      "id": "v-n3-0849",
+      "word": "広場",
+      "kana": "ひろば",
+      "meanings": [
+        "plaza",
+        "open square"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "city"
+      ],
+      "examples": [
+        {
+          "ja": "{駅前|えきまえ}の{広場|ひろば}で{友達|ともだち}と{待|ま}ち{合|あ}わせた。",
+          "kana": "えきまえのひろばでともだちとまちあわせた。",
+          "en": "I met up with a friend in the square in front of the station."
+        },
+        {
+          "ja": "{広場|ひろば}でコンサートが{開|ひら}かれます。",
+          "kana": "ひろばでコンサートがひらかれます。",
+          "en": "A concert will be held in the plaza."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{町|まち}の{中|なか}にある、{広|ひろ}くて{何|なに}も{建|た}っていないところ。",
+        "kana": "まちのなかにある、ひろくてなにもたっていないところ。"
+      },
+      "collocations": [
+        "駅前広場",
+        "広場に集まる"
+      ],
+      "station": 32
+    },
+    {
+      "id": "v-n3-0850",
+      "word": "地区",
+      "kana": "ちく",
+      "meanings": [
+        "district",
+        "area"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "city",
+        "places"
+      ],
+      "examples": [
+        {
+          "ja": "この{地区|ちく}ではごみは{火曜日|かようび}に{出|だ}します。",
+          "kana": "このちくではごみはかようびにだします。",
+          "en": "In this district, garbage goes out on Tuesdays."
+        },
+        {
+          "ja": "この{地区|ちく}は{昔|むかし}から{商店街|しょうてんがい}で{有名|ゆうめい}だ。",
+          "kana": "このちくはむかしからしょうてんがいでゆうめいだ。",
+          "en": "This district has long been famous for its shopping street."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{町|まち}や{市|し}の{中|なか}の、ある{決|き}まった{範囲|はんい}の{地域|ちいき}。",
+        "kana": "まちやしのなかの、あるきまったはんいのちいき。"
+      },
+      "notes": "An administratively or practically defined area (住宅地区, 地区大会); 地域 is broader and vaguer.",
+      "collocations": [
+        "地区大会",
+        "住宅地区"
+      ],
+      "station": 32
+    }
+  ]
+}
