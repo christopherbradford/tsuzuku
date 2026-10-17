@@ -11,27 +11,48 @@
  * `fillMeta` is type-aware against `freshSave()` as the template: a field
  * whose runtime kind differs from the default (a string where a number
  * belongs, `null`, `Infinity`, an object for an array…) falls back to the
- * default, recursively through nested objects; `profile.belt` must be a
- * known belt and `profile.tz` a zone the host resolves (`shared/time.safeTz`,
- * else `'UTC'`). Keys the template lacks (optional fields, record entries) pass
- * through untouched. `migrateMetaChecked` also reports the repaired paths
- * so an import can warn. A save that finished onboarding (goals set, or any
- * training recorded) while `progress.station` is still 0 is lifted to the
- * first station past its cleared gates (Nihonbashi is onboarding only).
+ * default, recursively through nested objects. Beyond kinds it checks
+ * values: the closed unions of `settings` (intensity, feel, theme, furigana,
+ * speaking, speedTier 1–5, retention, restDay 0–6, sound 0–1), `profile.belt`
+ * a known belt, `profile.tz` a zone the host resolves (`shared/time.safeTz`,
+ * else `'UTC'`); array elements by slice (`ELEMENT_GUARDS`: card keys in
+ * `grudge`, belts in `shinsaPassed`, stations 0–53, ledger/kage tuples,
+ * capped strings elsewhere); record values by shape (`RECORD_GUARDS`: daily
+ * rows, stamps, badges, wallpapers, gate attempts, medians, perapera months);
+ * and the header strings (`seed` ≤ 64 chars, name/nameKana ≤ `NAME_MAX_GLYPHS`
+ * (24) code points — the same cap onboarding types against, so an imported or
+ * hand-edited save never lays out more than the wallpapers' safe zone holds —
+ * `chosenKanji` exactly one glyph). Other keys the template lacks (optional
+ * fields) pass through untouched. `migrateMetaChecked` also reports the
+ * repaired paths so an import can warn. A save that finished onboarding
+ * (goals set, or any training recorded) while `progress.station` is still 0
+ * is lifted to the first station past its cleared gates (Nihonbashi is
+ * onboarding only).
  *
  * `applyRedirects` is the id-rename pass driven by `ContentManifest.redirects`.
  */
-import { BELT_IDS, FACETS, type CardKey } from '../content/types';
+import { BELT_IDS, FACETS, LEVELS, type CardKey } from '../content/types';
 import {
   CARDS_SCHEMA,
+  LEDGER_KINDS,
+  LEDGER_SOURCES,
   LOG_SCHEMA,
+  NAME_MAX_GLYPHS,
   SAVE_SCHEMA,
   SHARD_KINDS,
   SLICE_KEYS,
   type CardShard,
   type CardTuple,
+  type Feel,
+  type FuriganaMode,
+  type Intensity,
   type LogEntry,
+  type Profile,
+  type Retention,
   type SaveMeta,
+  type Settings,
+  type SpeakingMode,
+  type Theme,
 } from '../shared/store-types';
 import { safeTz } from '../shared/time';
 import { freshSave } from './defaults';
@@ -94,16 +115,99 @@ function num(x: unknown, fallback: number): number {
 }
 
 const BELT_SET: ReadonlySet<string> = new Set(BELT_IDS);
+const FACET_SET: ReadonlySet<string> = new Set(FACETS);
+
+function isCardKeyString(k: unknown): k is CardKey {
+  if (typeof k !== 'string') return false;
+  const i = k.lastIndexOf('#');
+  return i > 0 && FACET_SET.has(k.slice(i + 1));
+}
+
+function isFinite_(x: unknown): x is number {
+  return typeof x === 'number' && Number.isFinite(x);
+}
+
+function isInt(x: unknown, lo: number, hi: number): x is number {
+  return typeof x === 'number' && Number.isInteger(x) && x >= lo && x <= hi;
+}
+
+/** Glyph-capped string; `undefined` for a non-string. Returns the input itself when already within the cap. */
+function cappedString(x: unknown, max: number): string | undefined {
+  if (typeof x !== 'string') return undefined;
+  const glyphs = Array.from(x);
+  return glyphs.length <= max ? x : glyphs.slice(0, max).join('');
+}
+
+/** Longest free-text field (bookmarks, dictated sentence). */
+const TEXT_MAX = 500;
+/** Content ids, quest ids, goals. */
+const ID_MAX = 64;
+/** `profile.name` / `profile.nameKana` cap (shared with onboarding and the art tier). */
+const NAME_MAX = NAME_MAX_GLYPHS;
+const SEED_MAX = 64;
+
+/** An element guard returns the (possibly repaired) element, or `undefined` to drop it. */
+type Guard = (x: unknown) => unknown;
+
+const str = (max: number): Guard => (x) => cappedString(x, max);
+const station: Guard = (x) => (isInt(x, 0, 53) ? x : undefined);
+
+function ledgerEntry(x: unknown): unknown {
+  if (!Array.isArray(x) || x.length < 4 || x.length > 5) return undefined;
+  const [day, minutes, kind, source, note] = x as unknown[];
+  if (!isFinite_(day) || !isFinite_(minutes) || minutes < 0) return undefined;
+  if (!isInt(kind, 0, LEDGER_KINDS.length - 1) || !isInt(source, 0, LEDGER_SOURCES.length - 1)) return undefined;
+  if (note === undefined) return x.length === 4 ? x : [day, minutes, kind, source];
+  const n = cappedString(note, TEXT_MAX);
+  return n === undefined ? [day, minutes, kind, source] : n === note ? x : [day, minutes, kind, source, n];
+}
+
+/** Per-array element guards keyed by template path; arrays not listed only drop `null`/`undefined`. */
+const ELEMENT_GUARDS: Record<string, Guard> = {
+  'profile.goals': str(ID_MAX),
+  'profile.kanaKnown': str(ID_MAX),
+  'progress.stationsCleared': station,
+  'progress.assisted': station,
+  'progress.grudge': (x) => (isCardKeyString(x) ? x : undefined),
+  'progress.shinsaPassed': (x) => (typeof x === 'string' && BELT_SET.has(x) ? x : undefined),
+  'progress.storiesRead': str(ID_MAX),
+  'quests.ids': str(ID_MAX),
+  'quests.done': str(ID_MAX),
+  'collections.michikusa': str(ID_MAX),
+  'kage.best4': (x) => (isFinite_(x) ? x : undefined),
+  'kage.history': (x) => (Array.isArray(x) && x.length === 2 && isFinite_(x[0]) && isFinite_(x[1]) ? x : undefined),
+  'ledger.entries': ledgerEntry,
+  'ledger.missions': (x) => (isObject(x) && isFinite_(x.day) && isInt(x.tier, 1, 5) && typeof x.conversation === 'boolean' ? x : undefined),
+  captured: str(ID_MAX),
+  bookmarks: str(TEXT_MAX),
+};
+
+const DAILY_FIELDS = ['reps', 'ok', 'minutes', 'xp', 'input'] as const;
+
+/** Per-record value guards keyed by template path (records are `{}` in `freshSave`, so their entries need their own check). */
+const RECORD_GUARDS: Record<string, Guard> = {
+  'progress.gateAttempts': (v) => (isFinite_(v) ? v : undefined),
+  'progress.gateAttemptDay': (v) => (isFinite_(v) ? v : undefined),
+  'progress.gateAttemptAt': (v) => (isFinite_(v) ? v : undefined),
+  'collections.badges': (v) => (isFinite_(v) ? v : undefined),
+  'collections.wallpapers': (v) => (isObject(v) && isFinite_(v.at) && isFinite_(v.reforges) && isInt(v.revealed, 0, 4) ? v : undefined),
+  'collections.stamps': (v) => (isObject(v) && isFinite_(v.at) && typeof v.perfect === 'boolean' && typeof v.assisted === 'boolean' ? v : undefined),
+  'ledger.monthly': (v) => (isFinite_(v) ? v : undefined),
+  medianMs: (v) => (isFinite_(v) ? v : undefined),
+  'perapera.months': (v) => (Array.isArray(v) && v.length === 5 && v.every(isFinite_) ? v : undefined),
+  daily: (v) => (isObject(v) && DAILY_FIELDS.every((f) => isFinite_(v[f])) ? v : undefined),
+};
 
 /**
  * `have` if its runtime kind matches `def`, else `def`; objects recurse key
- * by key (keys absent from `def` pass through), arrays drop `null`/`undefined`
- * entries. Repaired paths are appended to `coerced`.
+ * by key (keys absent from `def` pass through, record values through
+ * `RECORD_GUARDS`), arrays drop `null`/`undefined` entries and whatever the
+ * path's `ELEMENT_GUARDS` entry rejects. Repaired paths are appended to `coerced`.
  */
 function coerce(def: unknown, have: unknown, path: string, coerced: string[]): unknown {
   if (have === undefined) return def;
   if (def === null) {
-    if (have === null || (typeof have === 'number' && Number.isFinite(have))) return have;
+    if (have === null || isFinite_(have)) return have;
     coerced.push(path);
     return def;
   }
@@ -112,8 +216,18 @@ function coerce(def: unknown, have: unknown, path: string, coerced: string[]): u
       coerced.push(path);
       return def;
     }
-    const clean = have.filter((x) => x !== null && x !== undefined);
-    if (clean.length !== have.length) coerced.push(path);
+    const guard = ELEMENT_GUARDS[path];
+    const clean: unknown[] = [];
+    let changed = false;
+    for (const x of have) {
+      const y = x === null || x === undefined ? undefined : guard ? guard(x) : x;
+      if (y === undefined) changed = true;
+      else {
+        if (y !== x) changed = true;
+        clean.push(y);
+      }
+    }
+    if (changed) coerced.push(path);
     return clean;
   }
   if (isObject(def)) {
@@ -123,6 +237,19 @@ function coerce(def: unknown, have: unknown, path: string, coerced: string[]): u
     }
     const out: Raw = { ...have };
     for (const [k, dv] of Object.entries(def)) out[k] = coerce(dv, have[k], `${path}.${k}`, coerced);
+    const guard = RECORD_GUARDS[path];
+    if (guard) {
+      let changed = false;
+      for (const [k, v] of Object.entries(have)) {
+        if (k in def) continue;
+        const y = guard(v);
+        if (y === undefined) {
+          delete out[k];
+          changed = true;
+        } else out[k] = y;
+      }
+      if (changed) coerced.push(path);
+    }
     return out;
   }
   const kind = typeof def;
@@ -131,36 +258,100 @@ function coerce(def: unknown, have: unknown, path: string, coerced: string[]): u
   return def;
 }
 
+const INTENSITIES: ReadonlySet<string> = new Set<Intensity>(['casual', 'standard', 'intense', 'custom']);
+const FEELS: ReadonlySet<string> = new Set<Feel>(['zen', 'dojo', 'arcade']);
+const THEMES: ReadonlySet<string> = new Set<Theme>(['auto', 'light', 'dark']);
+const FURIGANA: ReadonlySet<string> = new Set<FuriganaMode>(['always', 'fog', 'tap', 'off']);
+const SPEAKING: ReadonlySet<string> = new Set<SpeakingMode>(['auto', 'recognition', 'self', 'off']);
+const RETENTIONS: ReadonlySet<number> = new Set<Retention>([0.85, 0.9, 0.95]);
+
+/** Closed unions and ranges of `settings` (kinds alone let `intensity: 'bogus'` NaN the new-item budget). */
+function checkSettings(st: Settings, d: Settings, coerced: string[]): Settings {
+  const out = { ...st };
+  const fix = <K extends keyof Settings>(k: K, ok: boolean): void => {
+    if (ok) return;
+    out[k] = d[k];
+    coerced.push(`settings.${k}`);
+  };
+  fix('intensity', INTENSITIES.has(st.intensity));
+  fix('feel', FEELS.has(st.feel));
+  fix('theme', THEMES.has(st.theme));
+  fix('furigana', FURIGANA.has(st.furigana));
+  fix('speaking', SPEAKING.has(st.speaking));
+  fix('speedTier', isInt(st.speedTier, 1, 5));
+  fix('retention', RETENTIONS.has(st.retention));
+  fix('restDay', st.restDay === null || isInt(st.restDay, 0, 6));
+  if (st.sound < 0 || st.sound > 1) {
+    out.sound = Math.min(1, Math.max(0, st.sound));
+    coerced.push('settings.sound');
+  }
+  return out;
+}
+
+/** Header strings: belt, zone, lengths, the optional one-glyph `chosenKanji`. */
+function checkProfile(pr: Profile, d: Profile, tz: string, coerced: string[]): Profile {
+  const out = { ...pr };
+  if (!BELT_SET.has(pr.belt)) {
+    coerced.push('profile.belt');
+    out.belt = d.belt;
+  }
+  // An unresolvable or unsafe zone id would throw in `Intl` day math and could leak into an ICS line.
+  if (pr.tz !== tz) {
+    coerced.push('profile.tz');
+    out.tz = tz;
+  }
+  for (const k of ['name', 'nameKana'] as const) {
+    const v = cappedString(pr[k], NAME_MAX) as string;
+    if (v !== pr[k]) {
+      coerced.push(`profile.${k}`);
+      out[k] = v;
+    }
+  }
+  if (pr.chosenKanji !== undefined && !(typeof pr.chosenKanji === 'string' && Array.from(pr.chosenKanji).length === 1)) {
+    coerced.push('profile.chosenKanji');
+    delete out.chosenKanji;
+  }
+  if (pr.dictatedSentence !== undefined) {
+    const v = cappedString(pr.dictatedSentence, TEXT_MAX);
+    if (v !== pr.dictatedSentence) {
+      coerced.push('profile.dictatedSentence');
+      if (v === undefined) delete out.dictatedSentence;
+      else out.dictatedSentence = v;
+    }
+  }
+  if (pr.onboardedAt !== undefined && !isFinite_(pr.onboardedAt)) {
+    coerced.push('profile.onboardedAt');
+    delete out.onboardedAt;
+  }
+  return out;
+}
+
 /**
  * Fill every slice with defaults for keys the document lacks (additive fields
- * of newer builds) and repair fields of the wrong type (see the module header).
+ * of newer builds) and repair fields of the wrong type or value (see the module header).
  */
 function fillMeta(raw: Raw, coerced: string[]): SaveMeta {
   const tz = safeTz(isObject(raw.profile) && typeof raw.profile.tz === 'string' ? raw.profile.tz : 'UTC');
   const d = freshSave(num(raw.createdAt, 0), tz);
   const out = {} as Record<string, unknown>;
   out.schema = SAVE_SCHEMA;
-  out.seed = typeof raw.seed === 'string' && raw.seed.length > 0 ? raw.seed : d.seed;
+  if (typeof raw.seed === 'string' && raw.seed.length > 0 && raw.seed.length <= SEED_MAX) out.seed = raw.seed;
+  else {
+    if (raw.seed !== undefined) coerced.push('seed');
+    out.seed = d.seed;
+  }
   out.createdAt = num(raw.createdAt, d.createdAt);
   out.updatedAt = num(raw.updatedAt, out.createdAt as number);
   out.contentVersion = typeof raw.contentVersion === 'string' ? raw.contentVersion : '';
   for (const k of SLICE_KEYS) out[k] = coerce(d[k], raw[k], k, coerced);
   const meta = out as unknown as SaveMeta;
-  if (!BELT_SET.has(meta.profile.belt)) {
-    coerced.push('profile.belt');
-    meta.profile = { ...meta.profile, belt: d.profile.belt };
-  }
-  // An unresolvable or unsafe zone id would throw in `Intl` day math and could leak into an ICS line.
-  if (meta.profile.tz !== tz) {
-    coerced.push('profile.tz');
-    meta.profile = { ...meta.profile, tz };
-  }
+  meta.profile = checkProfile(meta.profile, d.profile, tz, coerced);
+  meta.settings = checkSettings(meta.settings, d.settings, coerced);
   // Onboarding done at station 0 (Nihonbashi is onboarding only): lift to the first uncleared station.
   const pr = meta.progress;
   const trained = meta.profile.goals.length > 0 || meta.stats.sessions > 0 || meta.streak.totalDays > 0;
   if (pr.station === 0 && trained) {
-    const cleared = pr.stationsCleared.filter((n): n is number => typeof n === 'number' && Number.isFinite(n));
-    meta.progress = { ...pr, station: Math.min(53, Math.max(1, ...cleared.map((n) => n + 1))) };
+    meta.progress = { ...pr, station: Math.min(53, Math.max(1, ...pr.stationsCleared.map((n) => n + 1))) };
   }
   return meta;
 }
@@ -188,8 +379,6 @@ const CARD_STEPS: Record<number, Step> = {
   0: (raw) => ({ ...raw, schema: CARDS_SCHEMA }),
 };
 
-const FACET_SET: ReadonlySet<string> = new Set(FACETS);
-
 export function isCardTuple(x: unknown): x is CardTuple {
   if (!Array.isArray(x) || x.length !== 8) return false;
   for (let i = 0; i < 8; i++) {
@@ -200,17 +389,13 @@ export function isCardTuple(x: unknown): x is CardTuple {
   return state === 0 || state === 1 || state === 2 || state === 3;
 }
 
-function isCardKeyString(k: string): k is CardKey {
-  const i = k.lastIndexOf('#');
-  return i > 0 && FACET_SET.has(k.slice(i + 1));
-}
-
 export function migrateShard(raw: unknown): CardShard {
   if (!isObject(raw)) throw new MigrationError('cards', 'document is not an object');
   const r = runChain('cards', raw, CARD_STEPS, CURRENT.cards);
   const kind = typeof r.kind === 'string' && (SHARD_KINDS as readonly string[]).includes(r.kind) ? r.kind : null;
-  const level = typeof r.level === 'string' ? r.level : null;
-  if (!kind || !level) throw new MigrationError('cards', 'shard lacks kind/level');
+  // A level outside the curriculum would ride into `applyImport` as a placement hint; refuse the shard here instead.
+  const level = typeof r.level === 'string' && (LEVELS as readonly string[]).includes(r.level) ? r.level : null;
+  if (!kind || !level) throw new MigrationError('cards', 'shard lacks a known kind/level');
   const cards: Record<CardKey, CardTuple> = {};
   if (isObject(r.cards)) {
     for (const [k, t] of Object.entries(r.cards)) {

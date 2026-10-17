@@ -25,19 +25,42 @@
  * resumes. A host that teaches itself (`<ScrollView>`) passes `teach={false}`.
  *
  * Leaving mid-session keeps the snapshot (the runner saves after every submit
- * and step), so the Dojo offers "Resume (n reps left)" next time.
+ * and step), so the Dojo offers "Resume (n reps left)" next time. The Leave
+ * dialog is managed by `useDialogFocus` (shared/ui): Stay is focused first,
+ * Tab wraps inside it and focus returns to the Leave button when it closes.
+ * Escape = Stay: `<ExerciseFrame>` consumes Escape on the window in the
+ * capture phase (its pause), before any listener inside the view can see it,
+ * so the view registers its own capture listener ahead of the frame
+ * (`useEarlyKeydown`, during the first render: child effects run first) and
+ * closes the dialog there; the frame then bails on `defaultPrevented`.
+ *
+ * Speed ring: the ring is on screen exactly when `ringShown(timer, feel)`
+ * (runner.ts) — the predicate the runner also hands the writer — so grading
+ * and display cannot drift. The contract frame now gates the ring on the
+ * `timer` alone and reads `step.timed` only to decide whether its expiry is a
+ * hard timeout, so the real step goes to the frame as is; `runner.timeout()`
+ * still ignores an untimed one, so an expired soft ring never fails a rep.
+ *
+ * Shinsa: furigana is off from the Orange exam up (`examFurigana`, design 04
+ * §12); the drills receive `furigana: 'off'` in place of the learner's setting.
+ *
+ * Focus: the Judge Card takes focus when it opens (its dialog, so the 目付
+ * title and prompt are read before the options) and the exercise root gets it
+ * back after the pick; "Begin the checks" is focused imperatively
+ * (`useAutoFocus`), since a dynamic `autofocus` attribute is ignored.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { content as appContent, type ContentLoader } from '../content/loader';
-import type { ContentItem } from '../content/types';
+import { BELT_IDS, type ContentItem } from '../content/types';
 import { speak } from '../shared/audio';
 import { resolveExercise, type AttemptResult, type JudgeRequest } from '../shared/exercise-types';
 import { rngFor } from '../shared/hash';
-import type { JikaiYokoku, SessionResult } from '../shared/session-types';
+import type { JikaiYokoku, SessionPlan, SessionResult } from '../shared/session-types';
 import type { LogEntry } from '../shared/store-types';
 import { ExerciseFrame } from '../shared/ui/ExerciseFrame';
 import { JudgeCard, type JudgeShape } from '../shared/ui/JudgeCard';
+import { useDialogFocus } from '../shared/ui/use-dialog-focus';
 import { store } from '../store';
 import { beltOfStation } from '../store/derived';
 import { EXPECTED_MAX_MINUTES } from '../learn';
@@ -51,6 +74,7 @@ import { MichikusaStep } from './MichikusaStep';
 import type { SessionRunner } from './runner';
 import { isIntroCheck, teachModel, type TeachModel } from './scroll';
 import { TeachCard } from './TeachCard';
+import { useAutoFocus } from './use-auto-focus';
 import { S as PS } from './pages/strings';
 import { S } from './strings';
 import './SessionView.css';
@@ -86,6 +110,58 @@ interface PendingJudge {
 }
 
 export const SESSION_GAP_MS = 10 * 60_000;
+
+/** Does this plan run with furigana off? A Shinsa from the Orange exam up (design 04 §12 "no furigana (from Orange)"). */
+export function examFurigana(plan: Pick<SessionPlan, 'mode' | 'station'>): boolean {
+  return plan.mode === 'shinsa' && BELT_IDS.indexOf(beltOfStation(Math.max(1, plan.station))) >= BELT_IDS.indexOf('orange');
+}
+
+/**
+ * A window-capture keydown listener that precedes `<ExerciseFrame>`'s. The
+ * frame registers its own in an effect, and child effects run before the
+ * parent's, so this one is bound during the view's first render (once, by
+ * ref) and removed on unmount. `handler` is read at call time.
+ */
+function useEarlyKeydown(handler: (e: KeyboardEvent) => void): void {
+  const current = useRef(handler);
+  current.current = handler;
+  const bound = useRef<((e: KeyboardEvent) => void) | null>(null);
+  if (!bound.current && typeof window !== 'undefined') {
+    bound.current = (e) => current.current(e);
+    window.addEventListener('keydown', bound.current, true);
+  }
+  useEffect(
+    () => () => {
+      if (bound.current) window.removeEventListener('keydown', bound.current, true);
+      bound.current = null;
+    },
+    [],
+  );
+}
+
+/** The Leave confirm: a small modal with the shared focus management (initial focus on Stay, Tab trap, opener restore; Escape arrives through `useEarlyKeydown`). */
+function LeaveDialog(p: { onStay(): void; onLeave(): void }): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
+  useDialogFocus(ref, { onClose: p.onStay, initial: '[data-stay]' });
+  return (
+    <div class="session__dialog-backdrop">
+      <div ref={ref} tabIndex={-1} class="session__dialog status-window" role="dialog" aria-modal="true" aria-labelledby="session-leave-title">
+        <h2 id="session-leave-title" class="session__dialog-title">
+          {S.leaveTitle}
+        </h2>
+        <p class="session__dialog-body">{S.leaveBody}</p>
+        <div class="session__dialog-actions">
+          <button type="button" class="btn session__leave-keep" onClick={p.onLeave}>
+            {S.leaveKeep}
+          </button>
+          <button type="button" class="hanko session__leave-stay" data-stay onClick={p.onStay}>
+            {S.leaveStay}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /**
  * Error rate of the log session that ended before `before` (entries split on a
@@ -144,6 +220,15 @@ export function SessionView(p: SessionViewProps): JSX.Element {
   /** The verdict that rode on the current step's submit (for the feedback line). */
   const submitted = useRef<'pass' | 'fail' | undefined>(undefined);
   const [leaving, setLeaving] = useState(false);
+  const leavingRef = useRef(false);
+  leavingRef.current = leaving;
+  // Escape while the Leave dialog is open means Stay, and must not pause the frame (see the header).
+  useEarlyKeydown((e) => {
+    if (!leavingRef.current || e.key !== 'Escape' || e.defaultPrevented || e.repeat) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setLeaving(false);
+  });
   const [yokoku, setYokoku] = useState<JikaiYokoku | null>(null);
   const [notes, setNotes] = useState<string[] | null>(null);
   const judgeReplay = useRef<(() => void) | null>(null);
@@ -152,6 +237,25 @@ export function SessionView(p: SessionViewProps): JSX.Element {
   const [teaching, setTeaching] = useState<{ scrollId: string; itemIds: string[] } | null>(null);
   const [known, setKnown] = useState<ReadonlySet<string>>(new Set());
   const teachOn = p.teach !== false;
+  const teachBegin = useRef<HTMLButtonElement>(null);
+  useAutoFocus(teachBegin, [teaching?.scrollId ?? null]);
+  const judgeBox = useRef<HTMLDivElement>(null);
+  const exerciseBox = useRef<HTMLDivElement>(null);
+  const judgeWasOpen = useRef(false);
+  // The Judge Card opens silently otherwise: the answer input keeps focus inside the now aria-hidden exercise.
+  useEffect(() => {
+    if (judge) {
+      judgeWasOpen.current = true;
+      const box = judgeBox.current;
+      const dialog = box?.querySelector<HTMLElement>('[role="dialog"]') ?? box;
+      if (!dialog) return;
+      if (!dialog.hasAttribute('tabindex')) dialog.tabIndex = -1;
+      dialog.focus();
+    } else if (judgeWasOpen.current) {
+      judgeWasOpen.current = false;
+      exerciseBox.current?.focus();
+    }
+  }, [judge]);
 
   const openJudge = (j: PendingJudge | null): void => {
     judgeRef.current = j;
@@ -236,29 +340,13 @@ export function SessionView(p: SessionViewProps): JSX.Element {
   );
 
   const leaveDialog = leaving ? (
-    <div class="session__dialog-backdrop">
-      <div class="session__dialog status-window" role="dialog" aria-modal="true" aria-labelledby="session-leave-title">
-        <h2 id="session-leave-title" class="session__dialog-title">
-          {S.leaveTitle}
-        </h2>
-        <p class="session__dialog-body">{S.leaveBody}</p>
-        <div class="session__dialog-actions">
-          <button
-            type="button"
-            class="btn session__leave-keep"
-            onClick={() => {
-              setLeaving(false);
-              p.onExit();
-            }}
-          >
-            {S.leaveKeep}
-          </button>
-          <button type="button" class="hanko session__leave-stay" onClick={() => setLeaving(false)} autoFocus>
-            {S.leaveStay}
-          </button>
-        </div>
-      </div>
-    </div>
+    <LeaveDialog
+      onStay={() => setLeaving(false)}
+      onLeave={() => {
+        setLeaving(false);
+        p.onExit();
+      }}
+    />
   ) : null;
 
   const hud = <Hud plan={livePlan} index={index} feel={feel} backlog={runner.plan.meta.backlog} />;
@@ -302,7 +390,7 @@ export function SessionView(p: SessionViewProps): JSX.Element {
             )}
           </div>
           <div class="session__teach-actions">
-            <button type="button" class="hanko session__teach-begin" onClick={beginChecks} autoFocus>
+            <button type="button" class="hanko session__teach-begin" onClick={beginChecks} ref={teachBegin}>
               {PS.beginChecks}
             </button>
           </div>
@@ -373,6 +461,7 @@ export function SessionView(p: SessionViewProps): JSX.Element {
     pending.resolve(pass);
   };
 
+  const furigana = examFurigana(runner.plan) ? 'off' : settings.furigana;
   const frameProps = {
     step,
     index,
@@ -426,13 +515,13 @@ export function SessionView(p: SessionViewProps): JSX.Element {
       {leaveBar}
       {hud}
       <ExerciseFrame {...frameProps}>
-        <div class="session__exercise" aria-hidden={judge ? 'true' : undefined}>
+        <div class="session__exercise" ref={exerciseBox} tabIndex={-1} aria-hidden={judge ? 'true' : undefined}>
           <Component
             key={step.id}
             step={step}
             item={item}
             feel={feel}
-            furigana={settings.furigana}
+            furigana={furigana}
             jj={jj}
             speedTier={settings.speedTier}
             exposures={step.exposures}
@@ -443,7 +532,7 @@ export function SessionView(p: SessionViewProps): JSX.Element {
           />
         </div>
         {judge ? (
-          <div class="session__judge">
+          <div class="session__judge" ref={judgeBox}>
             <JudgeCard {...judge.shape} rng={judgeRng} onPick={onJudgePick} onReplay={judgeReplay.current ? () => judgeReplay.current?.() : undefined} />
           </div>
         ) : null}

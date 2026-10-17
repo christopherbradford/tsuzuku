@@ -255,4 +255,10 @@ describe('forgePrompt', () => {
     expect(forgePrompt(MIZU, { sentence: '水をください。', blank: [9, 3] }).blank).toEqual([0, 1]);
     expect(forgePrompt(MIZU, { sentence: 'パンをください。' }).blank).toEqual([0, 0]);
   });
+
+  it('re-locates a missing blank with findBlank: conjugated stems and 〜-affixed words inside their host word (planner rule)', () => {
+    expect(forgePrompt(NOMU, { sentence: '毎朝コーヒーを飲みます。' }).blank).toEqual([7, 8]);
+    const NIN = { ...MIZU, word: '〜人', kana: 'にん', pos: 'counter', altForms: undefined } as VocabItem;
+    expect(forgePrompt(NIN, { sentence: '友人が三人来た。' }).blank).toEqual([4, 5]);
+  });
 });

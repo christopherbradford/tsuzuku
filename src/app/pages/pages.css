@@ -116,13 +116,14 @@
   font-family: var(--font-pixel);
   font-size: var(--fs-3);
 }
+/* No opacity on hanko text: --bg on --shu sits at ~4.6:1, so any alpha drops below AA (01 §7). */
 .dojo__session-desc {
   font-size: var(--fs-2);
-  opacity: 0.9;
+  font-weight: 400;
 }
 .dojo__session-count {
-  font-size: var(--fs-1);
-  opacity: 0.85;
+  font-size: var(--fs-2);
+  font-weight: 400;
 }
 .dojo__resume {
   display: flex;
@@ -572,17 +573,30 @@
 .about__rule p {
   margin: 0;
 }
+/* Stacked on phones: a long <dt> ("Metsuke, the inspector") would otherwise squeeze every <dd> into a 3–4-word column. */
 .about__dl {
   margin: 0;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   gap: var(--sp-1) var(--sp-3);
 }
 .about__dl dt {
   color: var(--fg-muted);
+  margin-top: var(--sp-2);
+}
+.about__dl dt:first-child {
+  margin-top: 0;
 }
 .about__dl dd {
   margin: 0;
+}
+@media (min-width: 560px) {
+  .about__dl {
+    grid-template-columns: auto 1fr;
+  }
+  .about__dl dt {
+    margin-top: 0;
+  }
 }
 .about__events {
   margin: 0;

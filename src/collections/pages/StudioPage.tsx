@@ -4,9 +4,12 @@
  *
  * Live preview of one kakejiku at desktop or phone orientation, drawn from
  * the learner's own data; personalisation (a Mastered sentence of choice, the
- * seal kanji); Reforge (one new brush per day per piece, cosmetic: the
+ * seal kanji, typed sentences capped at `MAX_CUSTOM_SENTENCE` glyphs so the
+ * waveform/okaeri captions stay inside their safe zones); Reforge (one new
+ * brush per day per piece, cosmetic: the
  * reforge counter in `collections.wallpapers[id]` changes the seed); a
- * resolution picker (4K gated to capable desktops); PNG export through
+ * resolution picker (4K gated to capable desktops, hint copy matching
+ * `canRender4k`); PNG export through
  * `art/png.ts` with a progress ring, a download link and copy-to-clipboard
  * where the browser supports image clipboard writes. A locked piece shows its
  * silhouette, the unlock condition and the quadrant progress instead of the
@@ -49,6 +52,8 @@ export interface StudioPageProps {
 
 export const CUSTOM_SENTENCE = '__custom__';
 export const MAX_SENTENCE_CANDIDATES = 40;
+/** Glyph cap for a typed sentence of choice (`maxlength` on the input and clamped again in `personalize`). */
+export const MAX_CUSTOM_SENTENCE = 48;
 
 const EFFECT_LABEL: Record<PostPass, string> = { none: S.effectNone, dither: S.effectDither, scanlines: S.effectScanlines, grain: S.effectGrain };
 
@@ -98,8 +103,13 @@ export interface Personal {
   kanji: string;
 }
 
+/** Trim and cap a typed sentence at `MAX_CUSTOM_SENTENCE` glyphs (code points, so a surrogate pair is never split). */
+export function clampSentence(s: string, max = MAX_CUSTOM_SENTENCE): string {
+  return Array.from(s.trim()).slice(0, max).join('').trim();
+}
+
 export function personalize(base: WallpaperData, p: Personal): WallpaperData {
-  const sentence = p.sentence === CUSTOM_SENTENCE ? p.custom.trim() : p.sentence;
+  const sentence = p.sentence === CUSTOM_SENTENCE ? clampSentence(p.custom) : p.sentence;
   return normalizeData({ ...base, sentenceOfChoice: sentence || undefined, chosenKanji: p.kanji || undefined });
 }
 
@@ -405,7 +415,7 @@ export default function StudioPage(p: StudioPageProps): JSX.Element {
                 <label class="field__label" for="studio-custom">
                   {S.sentenceInputLabel}
                 </label>
-                <input id="studio-custom" class="input" type="text" lang="ja" placeholder={S.sentencePlaceholder} value={personal.custom} onInput={(e) => setPersonal({ ...personal, custom: (e.currentTarget as HTMLInputElement).value })} />
+                <input id="studio-custom" class="input" type="text" lang="ja" maxLength={MAX_CUSTOM_SENTENCE} placeholder={S.sentencePlaceholder} value={personal.custom} onInput={(e) => setPersonal({ ...personal, custom: (e.currentTarget as HTMLInputElement).value })} />
               </div>
             ) : null}
             <div class="field">

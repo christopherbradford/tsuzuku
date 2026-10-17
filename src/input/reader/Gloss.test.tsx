@@ -186,10 +186,10 @@ describe('<Gloss>', () => {
     expect(spoken).toEqual([['三人', { kana: 'さんにん' }]]);
   });
 
-  it('closes on Escape, the close button and the backdrop', () => {
+  it('closes on Escape, the close button and the backdrop; Close takes focus on open', () => {
     const { onClose } = mount();
     const dialog = q('[role="dialog"]') as HTMLElement;
-    expect(document.activeElement).toBe(dialog);
+    expect(document.activeElement).toBe(q('[data-action="close"]'));
     act(() => {
       dialog.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
     });
@@ -198,6 +198,37 @@ describe('<Gloss>', () => {
     expect(onClose).toHaveBeenCalledTimes(2);
     act(() => (q('[data-testid="gloss-backdrop"]') as HTMLElement).click());
     expect(onClose).toHaveBeenCalledTimes(3);
+  });
+
+  it('traps Tab inside the sheet and returns focus to the opener on close (01 §7)', () => {
+    const opener = document.createElement('button');
+    opener.textContent = 'token';
+    document.body.appendChild(opener);
+    opener.focus();
+    expect(document.activeElement).toBe(opener);
+    mount({ item: MIZU, token: '水', capture: 'capture' });
+    const dialog = q('[role="dialog"]') as HTMLElement;
+    const capture = q('[data-action="capture"]') as HTMLButtonElement;
+    const speak = q('[data-action="speak"]') as HTMLButtonElement;
+    // Tab past the last button wraps to the first (Speak)
+    capture.focus();
+    const tab = new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true });
+    act(() => {
+      dialog.dispatchEvent(tab);
+    });
+    expect(tab.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(speak);
+    // Shift+Tab from the first wraps to the last (Capture)
+    const back = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true, cancelable: true });
+    act(() => {
+      dialog.dispatchEvent(back);
+    });
+    expect(back.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(capture);
+    // closing (unmount) hands focus back to the element that opened it
+    act(() => render(null, root));
+    expect(document.activeElement).toBe(opener);
+    opener.remove();
   });
 
   it('resets the English reveal when the item changes', () => {

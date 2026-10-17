@@ -14,9 +14,17 @@
  *                 prop sets the initial mode (and re-syncs when it changes).
  *  · Native IME composition is passed through untouched; the converter is
  *                 idempotent on kana, so composed text is never double-converted.
+ *  · `maxLength` caps the RESOLVED kana at that many code points in the IME
+ *                 path — typed, pasted and natively composed text alike, and
+ *                 the Enter finalisation. Pending romaji may run past the cap
+ *                 while a syllable is being spelled (the glyph it resolves to
+ *                 is then dropped), which is why the native `maxlength`
+ *                 attribute is deliberately NOT set: it counts UTF-16 units of
+ *                 kana + pending letters and would block `shi` at the boundary.
  */
 import type { JSX } from 'preact';
 import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
+import { clampGlyphs } from '../jp';
 import { finalizeIme, imeStep } from '../kana-ime';
 import { S } from './strings';
 import './ui.css';
@@ -36,6 +44,8 @@ export interface KanaInputProps {
   /** Accessible name; default "Answer". */
   label?: string;
   id?: string;
+  /** Cap on the resolved value in code points, applied in the IME path (composition and paste bypass a native attribute). */
+  maxLength?: number;
 }
 
 function isComposingEvent(e: KeyboardEvent): boolean {
@@ -72,15 +82,26 @@ export function KanaInput(p: KanaInputProps): JSX.Element {
     if (p.autoFocus) ref.current?.focus();
   }, [p.autoFocus]);
 
+  const max = p.maxLength !== undefined && p.maxLength >= 0 ? Math.floor(p.maxLength) : undefined;
+  const cap = (s: string): string => (max === undefined ? s : clampGlyphs(s, max));
+
   const emit = (display: string, pend: string): void => {
     lastDisplay.current = display;
     setPending(pend);
     if (display !== p.value) p.onChange(display);
+    // Same value as before (a paste cut back to the cap): the parent will not re-render, so pull the DOM back ourselves.
+    else if (ref.current && ref.current.value !== display) ref.current.value = display;
   };
 
   const convert = (buffer: string, katakana: boolean): void => {
+    let st = imeStep(buffer, { katakana });
+    if (max !== undefined && Array.from(st.text).length > max) {
+      // Over the cap: keep the first `max` resolved glyphs and drop the overflow with any pending romaji
+      // (the converter is idempotent on kana, so re-basing the buffer on the cut text is stable).
+      buffer = clampGlyphs(st.text, max);
+      st = imeStep(buffer, { katakana });
+    }
     raw.current = buffer;
-    const st = imeStep(buffer, { katakana });
     emit(st.text + st.pending, st.pending);
   };
 
@@ -95,6 +116,7 @@ export function KanaInput(p: KanaInputProps): JSX.Element {
     const v = e.currentTarget.value;
     cycle.current = null;
     if (composing.current) {
+      // Mid-composition text is the IME's; it is capped once `compositionend` hands it over.
       raw.current = v;
       emit(v, '');
       return;
@@ -144,7 +166,7 @@ export function KanaInput(p: KanaInputProps): JSX.Element {
       c = { base: current, idx: -1 };
     }
     const nextIdx = c.idx + 1;
-    const next = nextIdx >= cands.length ? c.base : (cands[nextIdx] as string);
+    const next = cap(nextIdx >= cands.length ? c.base : (cands[nextIdx] as string));
     cycle.current = nextIdx >= cands.length ? null : { base: c.base, idx: nextIdx };
     raw.current = next;
     emit(next, '');
@@ -166,7 +188,7 @@ export function KanaInput(p: KanaInputProps): JSX.Element {
       if (e.shiftKey) return; // Guard belongs to the frame
       e.preventDefault();
       e.stopPropagation();
-      const final = finalizeIme(raw.current, { katakana: kataRef.current });
+      const final = cap(finalizeIme(raw.current, { katakana: kataRef.current }));
       if (final !== lastDisplay.current) {
         raw.current = final;
         emit(final, '');

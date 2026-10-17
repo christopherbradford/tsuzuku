@@ -9,7 +9,10 @@
  * word, kana, altForms). Kana-only is Good through Orange; from Green it is
  * Hard once the word's kanji `read` cards are ≥ 7 d (`params.kanaOnlyPolicy`,
  * else computed here with `kanaOnlyPolicyFor`). A particle slip is a Block
- * tagged `particle`, never a fail. 「Show the first kana」 is a hint.
+ * tagged `particle`, never a fail. 「Show the first kana」 is a hint. A
+ * missing or broken `params.blank` is re-located with `findBlank` from
+ * `@/learn` (the planner's rule: 〜-affixed words inside their host word,
+ * conjugated stems), so the drill and the planner agree on the blank.
  */
 import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
@@ -18,6 +21,7 @@ import type { VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { moraSplit } from '@/shared/jp';
 import type { StepParams } from '@/shared/session-types';
+import { findBlank } from '@/learn';
 import { store } from '@/store';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
 import { acceptForms, attempt, kanaOnlyPolicyFor } from '../check';
@@ -50,16 +54,12 @@ export interface ForgePrompt {
   blank: [number, number];
 }
 
-/** The gloss line and the context sentence with its blank, from params or the item's first example. */
+/** The gloss line and the context sentence with its blank, from params or the item's first example; a missing or broken blank is re-located with `findBlank`. */
 export function forgePrompt(item: VocabItem, params: StepParams): ForgePrompt {
   const ex = item.examples[0];
   const sentence = params.sentence ?? (ex ? toPlain(ex.ja) : item.word);
   let blank = params.blank;
-  if (!blank || blank[1] <= blank[0] || blank[1] > sentence.length) {
-    const surface = [item.word, ...(item.altForms ?? []), item.kana].find((s) => s.length > 0 && sentence.includes(s));
-    const at = surface ? sentence.indexOf(surface) : -1;
-    blank = at >= 0 && surface ? [at, at + surface.length] : [0, 0];
-  }
+  if (!blank || blank[1] <= blank[0] || blank[1] > sentence.length) blank = findBlank(sentence, item);
   const en = params.promptEn ?? (ex ? `${item.meanings[0] ?? ''} — ${ex.en}` : (item.meanings[0] ?? ''));
   return { en, sentence, blank };
 }

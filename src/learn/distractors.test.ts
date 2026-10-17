@@ -165,6 +165,35 @@ describe('kanaGrid', () => {
   it('deterministic', () => {
     expect(kanaGrid(ALL[0]!, ALL, mulberry32(8))).toEqual(kanaGrid(ALL[0]!, ALL, mulberry32(8)));
   });
+  it('never seats a homophone of the target (を/お, づ/ず, ぢ/じ, ヲ/オ), from the pool or the gojūon padding', () => {
+    // Real-corpus shape: を and お both carry romaji "o"; づ/ず and ぢ/じ differ only in spelling.
+    const WO = kana('k-h-o', 'を', 'hiragana', 'w');
+    const O = kana('k-h-o', 'お', 'hiragana', 'a', 'basic', { lookalikes: ['k-h-a'] });
+    const DU = kana('k-h-zu', 'づ', 'hiragana', 'd', 'dakuten');
+    const ZU = kana('k-h-zu', 'ず', 'hiragana', 'z', 'dakuten');
+    const DI = kana('k-h-ji', 'ぢ', 'hiragana', 'd', 'dakuten');
+    const JI = kana('k-h-ji', 'じ', 'hiragana', 'z', 'dakuten');
+    const KWO = kana('k-k-o', 'ヲ', 'katakana', 'w', 'basic', { lookalikes: ['k-k-o'] });
+    const KO = kana('k-k-o', 'オ', 'katakana', 'a');
+    // Distinct ids as in the corpus (romaji stays the same).
+    WO.id = 'k-h-wo'; DU.id = 'k-h-du'; DI.id = 'k-h-di'; KWO.id = 'k-k-wo';
+    const pool = [...ALL.filter((k) => k.kana !== 'お'), WO, O, DU, ZU, DI, JI, KWO, KO];
+    const cases: [KanaItem, string][] = [[WO, 'お'], [O, 'を'], [DU, 'ず'], [ZU, 'づ'], [DI, 'じ'], [JI, 'ぢ'], [KWO, 'オ'], [KO, 'ヲ']];
+    for (const [target, twin] of cases) {
+      for (let seed = 0; seed < 50; seed++) {
+        const g = kanaGrid(target, pool, mulberry32(seed));
+        expect(g).toHaveLength(9);
+        expect(new Set(g).size).toBe(9);
+        expect(g).toContain(target.kana);
+        expect(g).not.toContain(twin);
+        // A tiny pool pads from the gojūon, which also holds the twin.
+        const padded = kanaGrid(target, [target], mulberry32(seed));
+        expect(padded).toHaveLength(9);
+        expect(padded).toContain(target.kana);
+        expect(padded).not.toContain(twin);
+      }
+    }
+  });
 });
 
 describe('kanjiLookalikes', () => {

@@ -2,7 +2,10 @@
  * TSUZUKU — counters (design 06 §2 badge inputs, 05 §11 Perapera inputs).
  *
  *  stats     flat lifetime counters (`STAT_KEYS`); arcade reps (Rapid Fire,
- *            Gojūon Fighter) never touch `reviews` or `bestCombo`.
+ *            Gojūon Fighter) never touch `reviews` or `bestCombo`. Session
+ *            `minutes` are the runner's `tally.minutes` (active time, pauses
+ *            and a night between resumed segments excluded), never
+ *            `endedAt − startedAt`.
  *  daily     one row per EpochDay {reps, ok, minutes, xp, input}; created on
  *            the first rep of the day. `input` minutes arrive through the
  *            ledger (`ledger:entry`), so in-app story/listening minutes and
@@ -143,7 +146,8 @@ export function startStats(store: Store, o: StatsOptions = {}): () => void {
       daily((r) => r);
     }),
     bus.on('session:finished', (p) => {
-      const minutes = Math.max(0, Math.round((p.endedAt - p.startedAt) / 60_000));
+      // Active minutes from the tally (E owns the clock: pauses and a resumed run's night are excluded there).
+      const minutes = Math.max(0, Math.round(Number.isFinite(p.tally.minutes) ? p.tally.minutes : 0));
       const delta: Partial<Record<StatKey, number>> = { sessions: 1, minutes };
       if (p.zen) delta.zenSessions = 1;
       const arcade = p.mode === 'rapid' || p.mode === 'gojuon';

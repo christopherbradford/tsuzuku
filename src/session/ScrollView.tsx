@@ -307,7 +307,9 @@ export function ScrollView(p: ScrollViewProps): JSX.Element {
     setKnown((prev) => new Set([...prev, id]));
   };
 
-  const title = fill(S.scrollTitle, { id: p.scrollId });
+  // The heading shows the scroll's ordinal within its station (the Station page's "Scroll n"), never the raw `<station>-<n>` id.
+  const ref = parseScrollId(p.scrollId);
+  const title = ref?.index === 'cap' ? S.scrollCapturedTitle : fill(S.scrollTitle, { n: ref?.index ?? p.scrollId });
 
   if (phase === 'loading') {
     return (

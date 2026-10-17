@@ -6,7 +6,7 @@ import { bus } from '@/shared/events';
 import { route, syncRouteFromLocation } from '@/shared/routes';
 import type { Settings } from '@/shared/store-types';
 import { INTENSITY_PRESETS, newPerDayFor, resetStoreForTests, store } from '@/store';
-import { makeTestStore, card } from '@/store/testing';
+import { DEFAULT_TEST_NOW, makeTestStore, card } from '@/store/testing';
 import SettingsPage, { applyFeel, japaneseVoices, kbOf, parseTime, resetSave } from './SettingsPage';
 import { S, fmt } from './strings';
 
@@ -184,10 +184,60 @@ describe('<SettingsPage>', () => {
     mount();
     radio('intensity', 'intense');
     act(() => {
-      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      q('[data-confirm="intense"]').dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
     });
     expect(root.querySelector('[data-confirm="intense"]')).toBeNull();
     expect(settings().intensity).toBe('standard');
+  });
+
+  it('the Intense confirm manages focus: Cancel first, Tab wraps, Escape returns focus to the opener radio', async () => {
+    await makeTestStore();
+    mount();
+    const opener = q<HTMLInputElement>('input[data-setting="intensity"][value="intense"]');
+    act(() => opener.focus());
+    radio('intensity', 'intense');
+    const dialog = q('[data-confirm="intense"]');
+    const yes = q<HTMLButtonElement>('[data-confirm-yes]');
+    const no = q<HTMLButtonElement>('[data-confirm-no]');
+    expect(dialog.getAttribute('tabindex')).toBe('-1');
+    expect(document.activeElement).toBe(no);
+    act(() => {
+      no.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true }));
+    });
+    expect(document.activeElement).toBe(yes);
+    act(() => {
+      yes.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true, cancelable: true }));
+    });
+    expect(document.activeElement).toBe(no);
+    act(() => {
+      no.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    });
+    expect(root.querySelector('[data-confirm="intense"]')).toBeNull();
+    expect(settings().intensity).toBe('standard');
+    expect(document.activeElement).toBe(opener);
+  });
+
+  it('the Reset confirm opens with focus on Cancel and hands focus back to the Reset button when cancelled', async () => {
+    await makeTestStore();
+    mount();
+    const input = q<HTMLInputElement>('.set__danger .kana-input__field');
+    for (const ch of 'tsuduku') {
+      act(() => {
+        input.value = input.value + ch;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    }
+    const button = q<HTMLButtonElement>('[data-reset]');
+    act(() => button.focus());
+    act(() => button.click());
+    const dialog = q('[data-confirm="reset"]');
+    expect(document.activeElement).toBe(q('[data-confirm-no]'));
+    act(() => {
+      dialog.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    });
+    expect(root.querySelector('[data-confirm="reset"]')).toBeNull();
+    expect(store.profile.value.xp).toBe(0);
+    expect(document.activeElement).toBe(q('[data-reset]'));
   });
 
   it('storage meter shows bytes and level', async () => {
@@ -355,11 +405,23 @@ describe('<SettingsPage>', () => {
     expect(route.value.name).toBe('onboarding');
   });
 
-  it('resetSave keeps the time zone and clears cards', async () => {
-    await makeTestStore({ save: { profile: { tz: 'Europe/Paris', xp: 5 } }, cards: { 'k-h-a#rec': card({ due: 1 }) } });
+  it('resetSave keeps the time zone and clears cards, the log ring and the seed/createdAt header', async () => {
+    let t = DEFAULT_TEST_NOW;
+    await makeTestStore({ now: () => t, save: { profile: { tz: 'Europe/Paris', xp: 5 } }, cards: { 'k-h-a#rec': card({ due: 1 }) } });
+    store.log.push([1000, 'k-h-a#rec', 3, 900, 0, 0]);
+    const oldSeed = store.seed();
+    const oldCreated = store.meta().createdAt;
+    expect(store.log.recent(10).length).toBe(1);
+    t += 60_000;
     resetSave();
     expect(store.profile.value.tz).toBe('Europe/Paris');
     expect(store.profile.value.xp).toBe(0);
     expect(store.cards.count()).toBe(0);
+    expect(store.log.recent(10)).toEqual([]);
+    // A fresh save is a different learner: seeded art must not reproduce the previous one.
+    expect(store.seed()).not.toBe(oldSeed);
+    expect(store.seed()).toMatch(/^[0-9a-f]{16}$/);
+    expect(store.meta().createdAt).toBe(t);
+    expect(store.meta().createdAt).not.toBe(oldCreated);
   });
 });

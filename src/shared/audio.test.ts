@@ -1,4 +1,5 @@
-import { installServices, nullAudio, nullStt, resetServices, services, sfx, speak, SPEED_TIER_RATES, type AudioService } from './audio';
+import { signal } from '@preact/signals';
+import { installServices, nullAudio, nullStt, resetServices, services, sfx, speak, SPEED_TIER_RATES, voiceAudible, type AudioService } from './audio';
 
 afterEach(() => resetServices());
 
@@ -25,5 +26,11 @@ describe('audio slot', () => {
     expect(services.stt).toBe(nullStt);
     resetServices();
     expect(services.audio).toBe(nullAudio);
+  });
+  it('voiceAudible reads canSpeak when the service exposes it, else hasJaVoice (doubles stay audible)', () => {
+    expect(voiceAudible(nullAudio)).toBe(false);
+    expect(voiceAudible({ ...nullAudio, hasJaVoice: signal(true) })).toBe(true);
+    expect(voiceAudible({ ...nullAudio, hasJaVoice: signal(true), canSpeak: signal(false) })).toBe(false);
+    expect(voiceAudible({ ...nullAudio, hasJaVoice: signal(false), canSpeak: signal(true) })).toBe(true);
   });
 });

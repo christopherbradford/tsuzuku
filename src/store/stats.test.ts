@@ -114,6 +114,19 @@ describe('startStats reducer', () => {
     expect(store.daily.value[TODAY].minutes).toBe(20);
   });
 
+  it('session minutes come from the tally (active time), not the wall clock between startedAt and endedAt', async () => {
+    await makeTestStore();
+    stop = startStats(store);
+    // A run resumed the next morning: ~1,440 wall-clock minutes, 12 active.
+    bus.emit('session:finished', finished({ startedAt: DEFAULT_TEST_NOW - 1_440 * 60_000, endedAt: DEFAULT_TEST_NOW, resumed: true, tally: { ...finished().tally, minutes: 12.4 } }));
+    expect(store.stats.value.minutes).toBe(12);
+    expect(store.daily.value[TODAY].minutes).toBe(12);
+    // A zero-minute tally adds nothing (no daily row is created by minutes alone).
+    bus.emit('session:finished', finished({ tally: { ...finished().tally, minutes: 0 } }));
+    expect(store.stats.value.minutes).toBe(12);
+    expect(store.stats.value.sessions).toBe(2);
+  });
+
   it('medianMs per drill, honesty window over Judge checks', async () => {
     await makeTestStore();
     stop = startStats(store);

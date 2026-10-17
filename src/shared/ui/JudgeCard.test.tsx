@@ -21,6 +21,22 @@ function optionTexts(): string[] {
   return Array.from(root.querySelectorAll('.judge-card__option span')).map((s) => s.textContent ?? '');
 }
 
+describe('<JudgeCard> focus', () => {
+  it('is a tabIndex -1 dialog that takes focus on mount, so the 目付 title is read before the options', () => {
+    const outside = document.createElement('button');
+    document.body.appendChild(outside);
+    outside.focus();
+    act(() => render(<JudgeCard {...MEANING} rng={mulberry32(1)} onPick={vi.fn()} />, root));
+    const card = root.querySelector('.judge-card') as HTMLElement;
+    expect(card.getAttribute('tabindex')).toBe('-1');
+    expect(card.getAttribute('role')).toBe('dialog');
+    expect(document.activeElement).toBe(card);
+    act(() => render(<JudgeCard rubric="〜ている" regex="ている" answer="食べている" rng={mulberry32(1)} onPick={vi.fn()} />, root));
+    expect(document.activeElement).toBe(root.querySelector('.judge-card[data-shape="rubric"]'));
+    outside.remove();
+  });
+});
+
 describe('<JudgeCard> meaning', () => {
   it('option order is seeded by rng and stable across re-renders', () => {
     const onPick = vi.fn();

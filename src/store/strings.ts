@@ -93,6 +93,7 @@ export const S = {
   importNotBackup: 'That file does not look like a TSUZUKU save.',
   importNewer: 'That backup comes from a newer version of TSUZUKU. Update first, then import.',
   importCompressed: 'That is a compressed backup. Choose the file itself, not its text.',
+  importTooLarge: 'That file is far larger than any TSUZUKU backup. Choose the backup file itself.',
   importNoShard: 'A card shard in the backup could not be read and was skipped.',
   importNoLog: 'The review log in the backup could not be read and was skipped.',
   importRepaired: 'Some fields in that backup were not readable and will start from their defaults.',

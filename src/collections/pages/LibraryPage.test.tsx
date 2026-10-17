@@ -130,6 +130,12 @@ describe('<LibraryPage> items', () => {
     expect(dialog.textContent).toContain('Brown belt');
     expect(dialog.querySelector('ruby')).not.toBeNull();
     expect(dialog.textContent).toContain('S 40 d');
+    // facets read as learner words, never the internal keys
+    const facetText = dialog.querySelector('.library-detail__facets')!.textContent!;
+    expect(facetText).toContain('meaning');
+    expect(facetText).toContain('production');
+    expect(facetText).not.toMatch(/\b(rec|prod)\b/);
+    expect(document.activeElement).toBe(dialog.querySelector('[data-action="close"]'));
 
     act(() => dialog.querySelector<HTMLButtonElement>('[data-action="listen"]')!.click());
     expect(speakSpy).toHaveBeenCalledWith('私', { kana: 'わたし' });
@@ -144,7 +150,7 @@ describe('<LibraryPage> items', () => {
     expect(hasFlag(store.cards.get('v-n5-0001#rec')![7], CardFlag.archived)).toBe(false);
 
     act(() => {
-      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      document.activeElement!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
     });
     expect(root.querySelector('[role="dialog"]')).toBeNull();
     expect(document.activeElement).toBe(q('.library__item[data-id="v-n5-0001"]'));
@@ -156,6 +162,28 @@ describe('<LibraryPage> items', () => {
     expect(rec[1]).toBeGreaterThan(0);
     expect(rec[5]).toBe(2);
     expect(q<HTMLElement>('[role="dialog"]').textContent).toContain('Marked as known');
+  });
+
+  it('the detail sheet traps Tab: past Close wraps to the first action, Shift+Tab from it wraps back', async () => {
+    await mount();
+    act(() => q<HTMLButtonElement>('.library__station[data-station="1"] .library__station-head').click());
+    act(() => q<HTMLButtonElement>('.library__item[data-id="v-n5-0001"]').click());
+    const dialog = q<HTMLElement>('[role="dialog"]');
+    const close = dialog.querySelector<HTMLButtonElement>('[data-action="close"]')!;
+    const first = dialog.querySelector<HTMLButtonElement>('[data-action="listen"]')!;
+    expect(document.activeElement).toBe(close);
+    act(() => {
+      close.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }));
+    });
+    expect(document.activeElement).toBe(first);
+    act(() => {
+      first.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true }));
+    });
+    expect(document.activeElement).toBe(close);
+    // the backdrop still closes on click and hands focus back to the row
+    act(() => q<HTMLElement>('.library-detail').click());
+    expect(root.querySelector('[role="dialog"]')).toBeNull();
+    expect(document.activeElement).toBe(q('.library__item[data-id="v-n5-0001"]'));
   });
 
   it('shows the empty state when nothing has been introduced', async () => {
@@ -187,7 +215,8 @@ describe('<LibraryPage> michikusa', () => {
     expect(st1.querySelector('[data-more]')).toBeNull();
     const shelf = q<HTMLElement>('.library__shelf--empty');
     expect(shelf.textContent).toContain('四字熟語');
-    expect(shelf.textContent).toContain('五段 content pack');
+    expect(shelf.textContent).toContain('One hundred four-character idioms');
+    expect(shelf.textContent).not.toContain('content pack');
     act(() => q<HTMLButtonElement>('#library-view-items').click());
     expect(q<HTMLElement>('.library').dataset.view).toBe('items');
   });

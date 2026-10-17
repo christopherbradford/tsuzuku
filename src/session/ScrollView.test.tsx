@@ -119,6 +119,17 @@ describe('loadScroll / buildScrollPlan', () => {
   });
 });
 
+describe('<ScrollView> captured-words scroll', () => {
+  it('the -cap scroll is headed "Captured words", not its id', async () => {
+    await makeTestStore({ save: { progress: { station: 4 }, captured: [V.パン, V.コーヒー] } });
+    captured.runner = null;
+    act(() => render(<ScrollView scrollId="4-cap" onDone={vi.fn()} loader={loader} available={all} view={Stub} />, root));
+    await settle();
+    expect(root.querySelector('.scroll-view')?.getAttribute('data-phase')).not.toBe('missing');
+    expect(root.querySelector('.scroll-card__title')?.textContent).toBe('巻物 Captured words');
+  });
+});
+
 describe('<TeachCard>', () => {
   it('shows the word, kana, meaning, pitch, examples with Listen, collocations and the contrast item', async () => {
     await makeTestStore();
@@ -149,6 +160,9 @@ describe('<ScrollView>', () => {
     await settle();
     // pretest first (Chikaradameshi), hosted in the session view
     expect(root.querySelector('.scroll-view')?.getAttribute('data-phase')).toBe('pretest');
+    // the heading shows the Station page's ordinal, never the raw `<station>-<n>` id
+    expect(root.querySelector('.scroll-card__title')?.textContent).toBe(`巻物 Scroll ${parseScrollId(scroll.id)!.index}`);
+    expect(root.querySelector('.scroll-card__title')?.textContent).not.toContain('4-');
     expect(root.querySelector('[data-stub="view"]')).not.toBeNull();
     expect(root.textContent).toContain('力試し');
     const r = current();

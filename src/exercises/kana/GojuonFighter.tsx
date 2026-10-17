@@ -1,8 +1,9 @@
 /**
  * TSUZUKU — 五十音ファイター Gojūon Fighter (design 04 §1, 05 §4): the kana
  * arcade round. 46 kana glide in from the right, one at a time; type the
- * romaji before each one lands. The deadline tightens from 3.5 s to 1.5 s
- * over the round. Rows are the "opponents" (か行 …); the rival's lantern dims
+ * romaji before each one lands — the IME spelling or the display romaji the
+ * corpus teaches (`isDisplayRomaji`: o for を, as Kana Flash accepts it). The
+ * deadline tightens from 3.5 s to 1.5 s over the round. Rows are the "opponents" (か行 …); the rival's lantern dims
  * per miss (no health bars).
  *
  * Fluency mode, nothing is graded here (`learn/grading` treats the drill as
@@ -34,7 +35,7 @@ import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { attempt } from '../check';
 import { S as X } from '../strings';
-import { isKanaItem, kanaFromId } from './KanaFlash';
+import { isDisplayRomaji, isKanaItem, kanaFromId } from './KanaFlash';
 import { ROW_JA, S, fill } from './strings';
 import './kana.css';
 
@@ -282,6 +283,10 @@ function GojuonFighterBody(p: GojuonFighterProps): JSX.Element {
   const judge = (raw: string): void => {
     const k = round[idxRef.current];
     if (!k) return;
+    if (isDisplayRomaji(raw, k.romaji, k.glyph)) {
+      advance(true);
+      return;
+    }
     const st = imeStep(raw);
     if (st.pending !== '' || st.text.length === 0) return;
     if (equivalentJa(st.text, k.glyph)) {
@@ -306,8 +311,13 @@ function GojuonFighterBody(p: GojuonFighterProps): JSX.Element {
     }
     if (phaseRef.current !== 'play') return;
     const k = round[idxRef.current];
+    if (!k) return;
+    if (isDisplayRomaji(value, k.romaji, k.glyph)) {
+      advance(true);
+      return;
+    }
     const final = finalizeIme(value.trim());
-    if (!k || final.length === 0) return;
+    if (final.length === 0) return;
     advance(equivalentJa(final, k.glyph));
   };
 

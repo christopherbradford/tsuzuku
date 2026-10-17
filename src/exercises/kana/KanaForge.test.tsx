@@ -190,6 +190,14 @@ describe('<KanaForge>', () => {
     expect(result(t)).toMatchObject({ correct: true, answer: 'ティ' });
   });
 
+  it('a voice that cannot be heard (canSpeak false) is treated as no voice: the romaji is the prompt', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true), canSpeak: signal(false) } });
+    const p = props(NE);
+    mount(p, true);
+    expect(q('.kana-forge__romaji')?.textContent).toBe('ne');
+    expect(root.textContent).not.toContain('Show romaji');
+  });
+
   it('with a voice the romaji hides behind a hint button that counts as a hint', () => {
     installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true) } });
     const p = props(NE);
@@ -204,6 +212,35 @@ describe('<KanaForge>', () => {
     type(input, 'ne');
     key(input, 'Enter');
     expect(result(p)).toMatchObject({ correct: true, hintUsed: true });
+  });
+
+  it('を with a voice: the romaji (wo) is shown up front at no hint cost because TTS says it like お; audio still plays; o is wrong', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true) } });
+    const WO: KanaItem = { ...NE, id: 'k-h-wo', kana: 'を', romaji: 'o', row: 'w', exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };
+    const p = props(WO);
+    const input = mount(p);
+    expect(q('.kana-forge__romaji')?.textContent).toBe('wo');
+    expect(root.textContent).not.toContain('Show romaji');
+    expect(q('.kana-ear__speaker')).not.toBeNull();
+    expect(speak).toHaveBeenCalledWith('を', { kana: 'を' });
+    expect(p.onHint).not.toHaveBeenCalled();
+    type(input, 'o');
+    key(input, 'Enter');
+    expect(result(p)).toMatchObject({ correct: false, hintUsed: false });
+
+    act(() => render(null, root));
+    const p2 = props(WO);
+    const input2 = mount(p2);
+    type(input2, 'wo');
+    key(input2, 'Enter');
+    expect(result(p2)).toMatchObject({ correct: true, hintUsed: false, answer: 'を' });
+    expect(p2.onHint).not.toHaveBeenCalled();
+
+    // ordinary kana keep the hint button
+    act(() => render(null, root));
+    mount(props(NE));
+    expect(q('.kana-forge__romaji')).toBeNull();
+    expect(root.textContent).toContain('Show romaji');
   });
 
   it('speaks the kana on mount; Space replays through the frame and is counted; Enter outside the field submits', () => {

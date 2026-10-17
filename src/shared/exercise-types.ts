@@ -69,7 +69,12 @@ export interface ExerciseFrameProps {
   feel: Settings['feel'];
   feedback: FeedbackState | null;
   onGuard(): void;
-  onHint(): void;
+  /**
+   * Legacy, no longer called by the frame: hints are the drill's own
+   * (`ExerciseProps.onHint` counts them in the host); the frame's `?` key and
+   * Hint button reach the drill through `useExerciseKeys({ onHint })`.
+   */
+  onHint?(): void;
   onPause(): void;
   onContinue(): void;
   /** Space replay, forwarded to the exercise's `onReplay` by the runner. */

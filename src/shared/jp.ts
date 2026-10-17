@@ -317,3 +317,9 @@ export function diffChars(given: string, expected: string): [string, 0 | 1 | 2][
   while (j < m) out.push([b[j++] as string, 2]);
   return out;
 }
+
+/** `s` cut to at most `max` Unicode code points (surrogate pairs never split); the input itself when already within the cap. */
+export function clampGlyphs(s: string, max: number): string {
+  const glyphs = Array.from(s);
+  return glyphs.length > max ? glyphs.slice(0, max).join('') : s;
+}

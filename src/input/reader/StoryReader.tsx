@@ -6,12 +6,15 @@
  * result through `onDone`). Lines reveal one at a time; each line has TTS
  * (`speak(toPlain(ja), {kana})`, dialogue speakers alternate voice slots),
  * furigana fog from `fog.ts` (a reveal is a hint), tap-gloss on every token
- * (item via `tokenIds` → `loader.get` / `getAsync` → `<Gloss>`), the English
+ * (item via `tokenIds` → `loader.get` / `getAsync` → `<Gloss>`; its backdrop
+ * covers the page, so closing always returns focus to the tapped token), the English
  * line once the line is behind you, i+1 words marked, vertical text from Blue.
  * A silent `createReadingTimer` measures cpm (paused while hidden). Then
  * `<Comprehension>`; ≥ 2/3 is full credit. On finish:
  *   - a gloss tap on an introduced word graded Hard through `capture.onGlossTap`
  *     only when the card is due today and this is not the first read (05 §4);
+ *     "first read" = the episode is absent from `progress.storiesRead` (B's
+ *     `story:read` reducer appends it), unless the host passes `firstRead`;
  *   - 「捕まえる」Capture / Bookmark on the gloss writes `store.captured` / `bookmarks`
  *     (vocab only: grammar / kanji tokens show "comes with its station Scroll",
  *     since `intro-policy` routes only `v-` captures into Scrolls);
@@ -99,7 +102,11 @@ export interface StoryReaderProps {
   loader?: ContentLoader;
   /** Logged on implicit grades; default `story:<id>`. */
   sessionId?: string;
-  /** First read of this episode: gloss taps never grade Hard. Defaults to `true` (the save keeps no read record, so the reader stays lenient). */
+  /**
+   * First read of this episode: gloss taps never grade Hard. Defaults to
+   * "not yet in `progress.storiesRead`" (B appends the id on `story:read`),
+   * read once at mount so finishing the episode does not flip it mid-read.
+   */
   firstRead?: boolean;
   feel?: Feel;
   furigana?: FuriganaMode;
@@ -123,6 +130,11 @@ export function isExerciseProps<T extends object>(p: T | ExerciseProps): p is Ex
 export function storyStation(id: string): number | undefined {
   const m = /^s-(\d{2})-/.exec(id);
   return m ? Number(m[1]) : undefined;
+}
+
+/** The save records this episode as read (`progress.storiesRead`, written by B's `story:read` reducer). */
+export function isStoryRead(storyId: string): boolean {
+  return store.progress.peek().storiesRead?.includes(storyId) ?? false;
 }
 
 export function isDictionaryFree(chars: number, correct: number, total: number, glossTaps: number): boolean {
@@ -237,7 +249,9 @@ export function StoryReaderView(p: StoryReaderProps): JSX.Element {
   const learnerStation = p.station ?? store.progress.value.station;
   const furigana = p.furigana ?? settings.furigana;
   const jj = p.jj ?? (settings.jj || learnerStation >= JJ_FROM_STATION);
-  const firstRead = p.firstRead ?? true;
+  // Read once per episode: finishing emits `story:read`, which must not flip the gloss rule mid-read.
+  const recorded = useMemo(() => isStoryRead(p.storyId), [p.storyId]);
+  const firstRead = p.firstRead ?? !recorded;
   const sessionId = p.sessionId ?? `story:${p.storyId}`;
 
   const [fetched, setFetched] = useState<StoryItem | null | 'missing'>(() => {

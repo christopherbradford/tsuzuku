@@ -7,7 +7,9 @@
  * file picker → `previewImportBlob()` → a diff summary (streak max, XP max,
  * collections union, cards newer-wins, ledger union) → Merge, or Replace
  * after a confirm → `applyImport()` → reload hint. An unreadable file shows
- * one calm line and changes nothing. The storage meter mirrors `store.storage`.
+ * one calm line and changes nothing; so does an import that throws while
+ * applying (the page returns to idle with Export and Choose-file enabled
+ * instead of staying inert). The storage meter mirrors `store.storage`.
  */
 import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
@@ -216,7 +218,12 @@ export default function BackupPage(p: BackupPageProps): JSX.Element {
     if (phase.kind !== 'preview') return;
     setReplaceAsk(false);
     setPhase({ kind: 'applying' });
-    const ok = applyImport(phase.preview, mode);
+    let ok = false;
+    try {
+      ok = applyImport(phase.preview, mode);
+    } catch (err) {
+      console.warn('[backup] apply failed', err);
+    }
     if (ok) {
       setStatus(S.bakApplied);
       setPhase({ kind: 'applied' });

@@ -18,8 +18,10 @@
  *     `store.captured` through `capture.ts`), "In training" for one with cards;
  *     grammar and kanji are never captured (`intro-policy` routes only vocab
  *     captures into Scrolls): they get the `station` line instead.
- * Esc, the backdrop and the close button all close it. Focus moves into the
- * dialog on open. Copy lives in `./strings.ts`.
+ * Esc, the backdrop and the close button all close it. Focus management is
+ * `useDialogFocus` (01 §7): Close takes focus on open, Tab / Shift+Tab wrap
+ * inside the sheet, Escape is consumed, and focus returns to the tapped token
+ * when the sheet unmounts. Copy lives in `./strings.ts`.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -28,6 +30,7 @@ import type { ContentItem, GrammarItem, KanjiItem, VocabItem } from '@/content/t
 import { speak } from '@/shared/audio';
 import { moraSplit } from '@/shared/jp';
 import { Ruby } from '@/shared/ui/Ruby';
+import { useDialogFocus } from '@/shared/ui/use-dialog-focus';
 import { S } from './strings';
 import './reader.css';
 
@@ -99,20 +102,10 @@ export function Gloss(p: GlossProps): JSX.Element {
   const ref = useRef<HTMLElement>(null);
   const [enShown, setEnShown] = useState(false);
 
-  useEffect(() => {
-    ref.current?.focus();
-  }, []);
+  useDialogFocus(ref, { onClose: p.onClose, initial: '[data-action="close"]' });
   useEffect(() => {
     setEnShown(false);
   }, [p.item, p.token]);
-
-  const onKey = (e: KeyboardEvent): void => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      e.stopPropagation();
-      p.onClose();
-    }
-  };
 
   const capture = p.capture ?? defaultCapture(p.item);
   const vocab = isVocabItem(p.item) ? p.item : null;
@@ -165,7 +158,7 @@ export function Gloss(p: GlossProps): JSX.Element {
   return (
     <>
       <div class="gloss-backdrop" data-testid="gloss-backdrop" onClick={() => p.onClose()} />
-      <section ref={ref} class="gloss" role="dialog" aria-modal="true" aria-label={S.glossTitle} tabIndex={-1} onKeyDown={onKey} data-capture={capture}>
+      <section ref={ref} class="gloss" role="dialog" aria-modal="true" aria-label={S.glossTitle} tabIndex={-1} data-capture={capture}>
         <header class="gloss__head">
           <div>
             <p class="gloss__word" lang="ja">

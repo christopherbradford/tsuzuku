@@ -2,17 +2,28 @@
  * TSUZUKU — shell chrome (group A, design 01 §4, 03 §7).
  *
  * Skip link · header (belt chip, Tsuzuku Flame, "412 days trained · 3-day
- * streak" in one type size, Lv / XP) · <main id="main"> · bottom nav (Dojo,
- * Road, Library, Collections, Records, Settings) with the active route ·
- * ARIA live regions (#live polite, #live-alert assertive) fed by `announce()`
- * and by bus events · storage-warning and Monday backup-reminder lines ·
- * service-worker update toast. Safe-area insets are handled in Layout.css.
+ * streak" in one type size, Lv / XP, with a visually-hidden "Level 7, 80 XP
+ * to the next level" instead of an aria-label on a generic span) · notices ·
+ * nav (Dojo, Road, Library, Collections, Records, Settings) with the active
+ * route · <main id="main"> · ARIA live regions (#live polite, #live-alert
+ * assertive) fed by `announce()` and by bus events · storage-warning and
+ * Monday backup-reminder lines · service-worker update toast. The nav sits
+ * BEFORE <main> in the DOM: on phones it is position:fixed at the bottom
+ * (order irrelevant), from 900 px it is a sticky strip that must follow the
+ * header in flow, not trail the page. Safe-area insets live in Layout.css.
+ *
+ * Storage notice: Dismiss hides it for the level it was shown at; a change
+ * of level brings it back. At `ceiling` (the store also reports this while
+ * a write keeps failing, so progress may not be saving) the dismissal lasts
+ * only until the next `store.storage` update, so a repeated failure is never
+ * silent.
  */
 import type { ComponentChildren, JSX } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { BELTS } from '@/content/types';
 import { bus } from '@/shared/events';
 import { href, route, type Route, type RouteName } from '@/shared/routes';
+import type { StorageState } from '@/shared/store-types';
 import { weekdayOf } from '@/shared/time';
 import { BADGE_DEFS, WALLPAPER_DEFS, store } from '@/store';
 import { streakState, xpToNextLevel, type FlameState } from '@/store/derived';
@@ -130,6 +141,16 @@ function wireAnnouncements(): () => void {
   return () => offs.forEach((off) => off());
 }
 
+/**
+ * Whether a storage notice dismissed at `dismissed` still hides the notice for
+ * `current`: same level, and at `ceiling` the very same state (each store
+ * update at the ceiling re-shows it).
+ */
+export function storageNoticeDismissed(current: StorageState, dismissed: StorageState | null): boolean {
+  if (dismissed === null || dismissed.level !== current.level) return false;
+  return current.level !== 'ceiling' || dismissed === current;
+}
+
 /* ── component ───────────────────────────────────────────────────────── */
 
 export function Layout(p: { children: ComponentChildren }): JSX.Element {
@@ -144,7 +165,7 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
   const active = navTargetFor(r);
   const updateReady = swUpdate.value;
 
-  const [storageDismissed, setStorageDismissed] = useState(false);
+  const [storageDismissed, setStorageDismissed] = useState<StorageState | null>(null);
   const [reminderDismissed, setReminderDismissed] = useState(false);
 
   useEffect(() => wireAnnouncements(), []);
@@ -153,7 +174,7 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
     if (updateReady) announce(S.swUpdateReady);
   }, [updateReady]);
 
-  const showStorage = storage.level !== 'ok' && !storageDismissed && r.name !== 'backup';
+  const showStorage = storage.level !== 'ok' && !storageNoticeDismissed(storage, storageDismissed) && r.name !== 'backup';
   const showReminder =
     !reminderDismissed &&
     r.name !== 'backup' &&
@@ -199,9 +220,12 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
 
           <span class="layout__days">{daysLine(streak.totalDays, streak.current)}</span>
 
-          <span class="layout__level pixel" aria-label={`${fmt(S.levelLong, { n: profile.level })}, ${fmt(S.xpToNext, { n: xp.remaining })}`}>
+          <span class="layout__level pixel">
             <span aria-hidden="true">
               {S.level} {profile.level}
+            </span>
+            <span class="visually-hidden">
+              {fmt(S.levelLong, { n: profile.level })}, {fmt(S.xpToNext, { n: xp.remaining })}
             </span>
             <span
               class="progress layout__xp"
@@ -223,7 +247,7 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
           <a class="btn btn--sm" href={href({ name: 'backup' })}>
             {S.backupLink}
           </a>
-          <button type="button" class="btn btn--ghost btn--sm" onClick={() => setStorageDismissed(true)} aria-label={S.dismissReminder}>
+          <button type="button" class="btn btn--ghost btn--sm" onClick={() => setStorageDismissed(storage)} aria-label={S.dismissReminder}>
             {S.dismiss}
           </button>
         </div>
@@ -241,10 +265,6 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
         </div>
       ) : null}
 
-      <main id="main" class="layout__main container" tabIndex={-1}>
-        {p.children}
-      </main>
-
       <nav class="nav layout__nav" aria-label={S.navLabel}>
         {NAV_ITEMS.map((item) => (
           <a key={item.key} class="nav__item" href={href(item.route)} aria-current={active === item.key ? 'page' : undefined} data-nav={item.key}>
@@ -255,6 +275,10 @@ export function Layout(p: { children: ComponentChildren }): JSX.Element {
           </a>
         ))}
       </nav>
+
+      <main id="main" class="layout__main container" tabIndex={-1}>
+        {p.children}
+      </main>
 
       {updateReady ? (
         <div class="toast layout__toast" role="status">

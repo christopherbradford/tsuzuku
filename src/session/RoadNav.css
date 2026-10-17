@@ -15,9 +15,13 @@
 }
 
 .tokaido__hint {
-  margin: 0 0 var(--sp-3);
+  margin: 0 0 var(--sp-2);
   font-size: var(--fs-1);
   color: var(--fg-muted);
+}
+
+.tokaido__jump {
+  margin: 0 0 var(--sp-3);
 }
 
 .tokaido__list {

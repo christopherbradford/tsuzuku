@@ -1,4 +1,5 @@
 import { render } from 'preact';
+import { useState } from 'preact/hooks';
 import { act } from 'preact/test-utils';
 import type { FeedbackState } from '../exercise-types';
 import type { Step } from '../session-types';
@@ -93,14 +94,28 @@ function press(key: string, init: KeyboardEventInit = {}, target: EventTarget = 
   return e;
 }
 
+/** A drill with its own hint, registered the way every drill should (`useExerciseKeys({ onHint })`). */
+function HintChild(p: { hint: () => void }) {
+  useExerciseKeys({ onHint: p.hint });
+  return <div class="exercise">drill</div>;
+}
+
+const hintButton = (): HTMLButtonElement | null => root.querySelector<HTMLButtonElement>('.exercise-frame__hint');
+const isInert = (el: Element | null): boolean => !!el && (el.hasAttribute('inert') || (el as HTMLElement & { inert?: boolean }).inert === true);
+
 describe('<ExerciseFrame> keys', () => {
-  it('Shift+Enter → onGuard, ? → onHint, Esc → onPause (overlay) and Esc again resumes', () => {
+  it("Shift+Enter → onGuard, ? → the drill's registered hint (never the legacy prop), Esc → onPause (overlay) and Esc again resumes", () => {
     const s = spies();
-    mount(props(s));
+    const hint = vi.fn();
+    mount(props(s, { children: <HintChild hint={hint} /> }));
     press('Enter', { shiftKey: true });
     expect(s.onGuard).toHaveBeenCalledTimes(1);
-    press('?', { shiftKey: true });
-    expect(s.onHint).toHaveBeenCalledTimes(1);
+    const q = press('?', { shiftKey: true });
+    expect(hint).toHaveBeenCalledTimes(1);
+    expect(q.defaultPrevented).toBe(true);
+    expect(s.onHint).not.toHaveBeenCalled();
+    hintButton()!.click();
+    expect(hint).toHaveBeenCalledTimes(2);
 
     press('Escape');
     expect(s.onPause).toHaveBeenCalledTimes(1);
@@ -108,11 +123,84 @@ describe('<ExerciseFrame> keys', () => {
     expect(root.querySelector('.exercise-frame')?.getAttribute('data-paused')).toBe('true');
     // other keys are swallowed while paused
     press('?');
-    expect(s.onHint).toHaveBeenCalledTimes(1);
+    expect(hint).toHaveBeenCalledTimes(2);
     press('Escape');
     expect(root.querySelector('.pause-overlay')).toBeNull();
     expect(s.onResume).toHaveBeenCalledTimes(1);
     expect(s.onPause).toHaveBeenCalledTimes(1);
+  });
+
+  it('? is inert and the footer shows no Hint button while no drill offers a hint (nothing is charged)', () => {
+    const s = spies();
+    mount(props(s));
+    const e = press('?');
+    expect(e.defaultPrevented).toBe(false);
+    expect(s.onHint).not.toHaveBeenCalled();
+    expect(hintButton()).toBeNull();
+  });
+
+  it("a hint-only set never shadows a child's keys; a later keyed set without a hint (a Judge Card) hides the hint", () => {
+    const s = spies();
+    const picked = vi.fn();
+    const hint = vi.fn();
+    const judgePick = vi.fn();
+    function Grid() {
+      useExerciseKeys({ onChoice: picked });
+      return <div>grid</div>;
+    }
+    function Drill() {
+      // the parent registers after its child, with a hint alone
+      useExerciseKeys({ onHint: hint });
+      return <Grid />;
+    }
+    function Judge() {
+      useExerciseKeys({ onChoice: judgePick, onReplay: () => undefined });
+      return null;
+    }
+    mount(props(s, { children: <Drill /> }));
+    press('3');
+    expect(picked).toHaveBeenCalledWith(2);
+    press('?');
+    expect(hint).toHaveBeenCalledTimes(1);
+    expect(hintButton()).not.toBeNull();
+
+    mount(
+      props(s, {
+        children: (
+          <>
+            <Drill />
+            <Judge />
+          </>
+        ),
+      }),
+    );
+    expect(hintButton()).toBeNull();
+    expect(press('?').defaultPrevented).toBe(false);
+    expect(hint).toHaveBeenCalledTimes(1);
+    press('2');
+    expect(judgePick).toHaveBeenCalledWith(1);
+    expect(picked).toHaveBeenCalledTimes(1);
+  });
+
+  it('the Hint button follows the drill: gone once its onHint is withdrawn (hint used), back when offered again', () => {
+    const s = spies();
+    function Drill() {
+      const [used, setUsed] = useState(false);
+      useExerciseKeys({ onHint: used ? undefined : () => setUsed(true) });
+      return (
+        <button type="button" class="reset" onClick={() => setUsed(false)}>
+          {used ? 'used' : 'fresh'}
+        </button>
+      );
+    }
+    mount(props(s, { children: <Drill /> }));
+    expect(hintButton()).not.toBeNull();
+    press('?');
+    expect(root.querySelector('.reset')?.textContent).toBe('used');
+    expect(hintButton()).toBeNull();
+    expect(press('?').defaultPrevented).toBe(false);
+    act(() => root.querySelector<HTMLButtonElement>('.reset')!.click());
+    expect(hintButton()).not.toBeNull();
   });
 
   it('digits pick a choice through the context handler (0-based), falling back to the onChoice prop', () => {
@@ -157,14 +245,16 @@ describe('<ExerciseFrame> keys', () => {
 
   it('feedback shown: Enter/Space → onContinue (even from an input), digits/hint/guard inert', () => {
     const s = spies();
-    mount(props(s, { feedback: feedback() }));
+    const hint = vi.fn();
+    mount(props(s, { feedback: feedback(), children: <HintChild hint={hint} /> }));
     expect(root.querySelector('.feedback')).not.toBeNull();
     expect(root.querySelector('.hanko')?.textContent).toContain('Continue');
+    expect(hintButton()).toBeNull();
     press('1');
     press('?');
     press('Enter', { shiftKey: true });
     expect(s.onChoice).not.toHaveBeenCalled();
-    expect(s.onHint).not.toHaveBeenCalled();
+    expect(hint).not.toHaveBeenCalled();
     expect(s.onGuard).not.toHaveBeenCalled();
 
     const e = press('Enter');
@@ -231,23 +321,30 @@ describe('<ExerciseFrame> keys', () => {
 
   it('ignores modifier combos and key repeat', () => {
     const s = spies();
-    mount(props(s));
+    const hint = vi.fn();
+    mount(props(s, { children: <HintChild hint={hint} /> }));
     press('?', { metaKey: true });
     press('?', { repeat: true });
-    expect(s.onHint).not.toHaveBeenCalled();
+    expect(hint).not.toHaveBeenCalled();
   });
 });
 
 describe('<ExerciseFrame> HUD', () => {
-  it('Dojo shows ki bar, combo with tier and the speed ring for a timed step', () => {
+  it('Dojo shows ki bar, combo with tier and the speed ring for a timed step; progress/combo carry no aria-label on a generic span', () => {
     const s = spies();
     mount(props(s));
     expect(root.querySelector('.ki-bar')?.getAttribute('aria-valuenow')).toBe('40');
     const combo = root.querySelector('.combo');
     expect(combo?.getAttribute('data-tier')).toBe('1');
     expect(combo?.textContent).toContain('12');
+    expect(combo?.hasAttribute('aria-label')).toBe(false);
     expect(root.querySelector('.speed-ring')).not.toBeNull();
-    expect(root.querySelector('.exercise-frame__progress')?.textContent).toContain('3 / 20');
+    expect(root.querySelector('.speed-ring')?.getAttribute('data-soft')).toBeNull();
+    const progress = root.querySelector('.exercise-frame__progress');
+    expect(progress?.textContent).toContain('3 / 20');
+    expect(progress?.hasAttribute('aria-label')).toBe(false);
+    expect(progress?.querySelector('.sr-only')?.textContent).toBe('Step 3 of 20');
+    expect(progress?.querySelector('[aria-hidden="true"]')?.textContent).toContain('3 / 20');
   });
 
   it('Zen hides ki, combo and timer', () => {
@@ -259,22 +356,37 @@ describe('<ExerciseFrame> HUD', () => {
     expect(root.querySelector('.exercise-frame')?.getAttribute('data-feel')).toBe('zen');
   });
 
-  it('timer ring only when step.timed and a timer is given; combo hidden at 0', () => {
+  it('the ring follows the timer alone: soft for an untimed step, absent without a timer; combo hidden at 0', () => {
     const s = spies();
     mount(props(s, { step: step({ timed: false }), combo: 0, comboTier: 0 }));
-    expect(root.querySelector('.speed-ring')).toBeNull();
+    const ring = root.querySelector('.speed-ring');
+    expect(ring).not.toBeNull();
+    expect(ring?.getAttribute('data-soft')).toBe('true');
     expect(root.querySelector('.combo')).toBeNull();
     mount(props(s, { timer: null }));
     expect(root.querySelector('.speed-ring')).toBeNull();
+    mount(props(s, { timer: null, step: step({ timed: false }) }));
+    expect(root.querySelector('.speed-ring')).toBeNull();
   });
 
-  it('the ring follows the injected clock and reports onTimeout once', () => {
+  it('a soft ring runs out without onTimeout or data-timed-out; a timed step reports onTimeout once', () => {
     vi.useFakeTimers();
     try {
       let t = 0;
       const s = spies();
       const onTimeout = vi.fn();
-      mount(props(s, { now: () => t, timer: { ms: 1000, startedAt: 0 }, onTimeout }));
+      mount(props(s, { now: () => t, timer: { ms: 1000, startedAt: 0 }, onTimeout, step: step({ timed: false }) }));
+      t = 1200;
+      act(() => {
+        vi.advanceTimersByTime(1200);
+      });
+      const soft = root.querySelector('.speed-ring');
+      expect(soft?.getAttribute('data-expired')).toBe('true');
+      expect(soft?.getAttribute('data-timed-out')).toBeNull();
+      expect(onTimeout).not.toHaveBeenCalled();
+
+      t = 0;
+      mount(props(s, { now: () => t, timer: { ms: 1000, startedAt: 0 }, onTimeout, step: step({ id: 's2' }) }));
       t = 600;
       act(() => {
         vi.advanceTimersByTime(600);
@@ -285,15 +397,16 @@ describe('<ExerciseFrame> HUD', () => {
         vi.advanceTimersByTime(600);
       });
       expect(root.querySelector('.speed-ring')?.getAttribute('data-timed-out')).toBe('true');
+      expect(root.querySelector('.speed-ring')?.getAttribute('data-expired')).toBe('true');
       expect(onTimeout).toHaveBeenCalledTimes(1);
     } finally {
       vi.useRealTimers();
     }
   });
 
-  it('controls swap: Guard/Hint before feedback, Continue after; live region announces', () => {
+  it('controls swap: Guard (and Hint, when the drill offers one) before feedback, Continue after; live region announces', () => {
     const s = spies();
-    mount(props(s));
+    mount(props(s, { children: <HintChild hint={vi.fn()} /> }));
     const labels = Array.from(root.querySelectorAll('.exercise-frame__controls button')).map((b) => b.textContent ?? '');
     expect(labels.some((l) => l.includes("Don't know"))).toBe(true);
     expect(labels.some((l) => l.includes('Hint'))).toBe(true);
@@ -301,7 +414,7 @@ describe('<ExerciseFrame> HUD', () => {
     (root.querySelector('.exercise-frame__controls button') as HTMLButtonElement).click();
     expect(s.onGuard).toHaveBeenCalledTimes(1);
 
-    mount(props(s, { feedback: feedback({ kind: 'wrong', given: 'ねご', promotion: 'green' }) }));
+    mount(props(s, { feedback: feedback({ kind: 'wrong', given: 'ねご', promotion: 'green' }), children: <HintChild hint={vi.fn()} /> }));
     const after = Array.from(root.querySelectorAll('.exercise-frame__controls button')).map((b) => b.textContent ?? '');
     expect(after.some((l) => l.includes('Continue'))).toBe(true);
     expect(after.some((l) => l.includes('Hint'))).toBe(false);
@@ -315,5 +428,66 @@ describe('<ExerciseFrame> HUD', () => {
     mount(props(s, { step: step({ isNew: true, stepTag: 'recovery' }) }));
     const chips = Array.from(root.querySelectorAll('.exercise-frame__tag')).map((c) => c.textContent);
     expect(chips).toEqual(['New', 'Recovery']);
+  });
+});
+
+describe('<ExerciseFrame> pause overlay', () => {
+  it('Escape moves focus to Resume, Tab wraps inside the overlay, the rest of the frame is hidden and inert, and the opener gets focus back on resume', () => {
+    const s = spies();
+    mount(props(s));
+    const guard = root.querySelector('.exercise-frame__controls button') as HTMLButtonElement;
+    guard.focus();
+    expect(document.activeElement).toBe(guard);
+
+    press('Escape');
+    const overlay = root.querySelector('.pause-overlay') as HTMLElement;
+    const resumeBtn = overlay.querySelector('.hanko') as HTMLButtonElement;
+    expect(overlay.getAttribute('tabindex')).toBe('-1');
+    expect(document.activeElement).toBe(resumeBtn);
+
+    const tab = press('Tab', {}, resumeBtn);
+    expect(tab.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(resumeBtn);
+    const back = press('Tab', { shiftKey: true }, resumeBtn);
+    expect(back.defaultPrevented).toBe(true);
+    expect(overlay.contains(document.activeElement)).toBe(true);
+
+    for (const sel of ['.exercise-frame__head', '.exercise-frame__body', '.exercise-frame__controls']) {
+      const el = root.querySelector(sel);
+      expect(el?.getAttribute('aria-hidden'), sel).toBe('true');
+      expect(isInert(el), sel).toBe(true);
+    }
+    expect(guard.closest('[aria-hidden="true"]')).not.toBeNull();
+
+    act(() => {
+      resumeBtn.click();
+    });
+    expect(root.querySelector('.pause-overlay')).toBeNull();
+    expect(s.onResume).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).toBe(guard);
+    for (const sel of ['.exercise-frame__head', '.exercise-frame__body', '.exercise-frame__controls']) {
+      const el = root.querySelector(sel);
+      expect(el?.hasAttribute('aria-hidden'), sel).toBe(false);
+      expect(isInert(el), sel).toBe(false);
+    }
+  });
+
+  it('the Pause button opens the same overlay and Enter on the focused Resume falls through to its click', () => {
+    const s = spies();
+    mount(props(s));
+    const pauseBtn = Array.from(root.querySelectorAll<HTMLButtonElement>('.exercise-frame__controls button')).find((b) => b.textContent?.includes('Pause'))!;
+    pauseBtn.focus();
+    act(() => {
+      pauseBtn.click();
+    });
+    const resumeBtn = root.querySelector('.pause-overlay .hanko') as HTMLButtonElement;
+    expect(document.activeElement).toBe(resumeBtn);
+    const e = press('Enter', {}, resumeBtn);
+    expect(e.defaultPrevented).toBe(false); // native click resumes
+    act(() => {
+      resumeBtn.click();
+    });
+    expect(root.querySelector('.pause-overlay')).toBeNull();
+    expect(document.activeElement).toBe(pauseBtn);
   });
 });

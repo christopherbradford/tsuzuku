@@ -10,7 +10,7 @@
 import type { GrammarItem, KanaItem, KanjiItem, SentenceExample, StoryLine, VocabItem } from '../content/types';
 import { toPlain } from '../content/ruby';
 import { shuffle, type Rng } from '../shared/hash';
-import { levenshtein, moraSplit, normalizeAnswer, normalizeEn, normalizeJa, toHiragana } from '../shared/jp';
+import { equivalentJa, levenshtein, moraSplit, normalizeAnswer, normalizeEn, normalizeJa, toHiragana } from '../shared/jp';
 
 /** Particle keys of Particle Duel (design 04 §4). */
 export const PARTICLES: readonly string[] = ['は', 'が', 'を', 'に', 'で', 'と', 'へ', 'から', 'まで', 'より', 'の'];
@@ -23,6 +23,19 @@ export const FALLBACK_TILES: readonly string[] = ['て', 'た', 'ない', 'ま�
 
 const HIRAGANA_46 = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん';
 const KATAKANA_46 = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+
+/**
+ * Kana that sound identical to another kana of the gojūon, so an audio-only
+ * prompt cannot tell them apart. ぢ/じ and づ/ず are already covered by
+ * `equivalentJa`; を/お (and ヲ/オ) are not, hence this static map, which also
+ * covers the case where the pool lacks the partner but the gojūon padding has it.
+ */
+const KANA_HOMOPHONES: Record<string, string> = { を: 'お', お: 'を', ヲ: 'オ', オ: 'ヲ' };
+
+/** True when `kana` would sound the same as `target` to a learner (never a fair Kana Ear distractor). */
+function soundsLike(target: KanaItem, kana: string, romaji?: string): boolean {
+  return kana === target.kana || romaji === target.romaji || equivalentJa(kana, target.kana) || KANA_HOMOPHONES[target.kana] === kana;
+}
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Generic tiered filling                                                     */
@@ -191,10 +204,13 @@ export function meaningChoices(target: VocabItem, pool: VocabItem[], rng: Rng): 
 /**
  * 3×3 Kana Ear grid: nine distinct cells containing `target.kana`, filled from
  * `lookalikes`, then the same row, same script + type, same script, any kana,
- * and finally the built-in gojūon of the target's script.
+ * and finally the built-in gojūon of the target's script. A homophone of the
+ * target (same romaji, `equivalentJa`, or を/お · ヲ/オ) is never a cell, in any
+ * tier or in the padding: the prompt is audio-only, so ず beside づ or お beside
+ * を would be a coin flip and the grid grades by index.
  */
 export function kanaGrid(target: KanaItem, all: KanaItem[], rng: Rng): string[] {
-  const others = all.filter((k) => k.id !== target.id && k.kana !== target.kana);
+  const others = all.filter((k) => k.id !== target.id && !soundsLike(target, k.kana, k.romaji));
   const byId = new Map(others.map((k) => [k.id, k] as const));
   const key = (k: KanaItem) => k.kana;
   const lookalikes = (target.lookalikes ?? []).map((id) => byId.get(id)).filter((k): k is KanaItem => !!k);
@@ -207,7 +223,7 @@ export function kanaGrid(target: KanaItem, all: KanaItem[], rng: Rng): string[] 
     const have = new Set([target.kana, ...picked]);
     for (const ch of shuffle(rng, Array.from(alphabet))) {
       if (picked.length >= 8) break;
-      if (!have.has(ch)) {
+      if (!have.has(ch) && !soundsLike(target, ch)) {
         have.add(ch);
         picked.push(ch);
       }

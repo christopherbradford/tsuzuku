@@ -1,9 +1,15 @@
 /*
- * TSUZUKU — shell layout (group A). Header, main, bottom nav, notices.
+ * TSUZUKU — shell layout (group A). Header, notices, nav, main (that DOM
+ * order: the nav is fixed to the bottom on phones and a sticky strip under
+ * the header from 900 px, so it must precede main in flow).
  * Mobile-first (works at 320 px), safe-area aware, tokens only.
  * The header is sticky only from 900 px up (phones already have the fixed
  * bottom nav, so it scrolls away with the page) and collapses to the brand
  * row during drills (train / gate / shinsa) so the exercise has the viewport.
+ * Bottom inset: `.layout__nav` carries `--safe-bottom` on ordinary pages;
+ * during drills the sticky `.exercise-frame__controls` (shared/ui) carries it,
+ * so the drill `.layout__main` adds none (otherwise the home indicator is
+ * padded twice at rest). Onboarding has neither and keeps its own inset.
  */
 .layout {
   --nav-height: 60px;
@@ -123,6 +129,8 @@
 .layout[data-route="gate"] .layout__main,
 .layout[data-route="shinsa"] .layout__main {
   padding-top: var(--sp-2);
+  /* no --safe-bottom here: the sticky .exercise-frame__controls carry it */
+  padding-bottom: var(--sp-5);
 }
 
 /* ── bottom nav ─────────────────────────────────────────────────────── */
@@ -143,9 +151,6 @@
 .layout[data-route="onboarding"] .layout__nav {
   display: none;
 }
-.layout[data-route="train"] .layout__main,
-.layout[data-route="gate"] .layout__main,
-.layout[data-route="shinsa"] .layout__main,
 .layout[data-route="onboarding"] .layout__main {
   padding-bottom: calc(var(--safe-bottom) + var(--sp-5));
 }

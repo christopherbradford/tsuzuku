@@ -7,7 +7,7 @@ import { href, navigate, syncRouteFromLocation } from '@/shared/routes';
 import { resetStoreForTests, store } from '@/store';
 import { DEFAULT_TEST_NOW, makeTestStore } from '@/store/testing';
 import { S, fmt } from '@/i18n/strings';
-import { Layout, NAV_ITEMS, announce, daysLine, navTargetFor } from './Layout';
+import { Layout, NAV_ITEMS, announce, daysLine, navTargetFor, storageNoticeDismissed } from './Layout';
 import { resetSwForTests, swUpdate } from './sw-register';
 
 /** 2026-01-12T12:00Z: a Monday. */
@@ -119,6 +119,51 @@ describe('<Layout>', () => {
     expect(root.querySelector('.layout__notice')).toBeNull();
   });
 
+  it('a dismissed storage notice returns when the level changes, and at the ceiling on every store update', async () => {
+    await makeTestStore();
+    mount();
+    act(() => {
+      store.storage.value = { bytes: 3_600_000, level: 'warn' };
+    });
+    act(() => {
+      root.querySelector<HTMLButtonElement>('.layout__notice button')?.click();
+    });
+    // warn: stays dismissed while the level holds, even as bytes move
+    act(() => {
+      store.storage.value = { bytes: 3_700_000, level: 'warn' };
+    });
+    expect(root.querySelector('.layout__notice')).toBeNull();
+    // escalation to ceiling un-dismisses
+    act(() => {
+      store.storage.value = { bytes: 4_600_000, level: 'ceiling' };
+    });
+    expect(root.querySelector('.layout__notice')?.textContent).toContain(S.storageCeiling);
+    act(() => {
+      root.querySelector<HTMLButtonElement>('.layout__notice button')?.click();
+    });
+    expect(root.querySelector('.layout__notice')).toBeNull();
+    // a failing write keeps re-reporting the ceiling: the notice comes back
+    act(() => {
+      store.storage.value = { bytes: 4_600_000, level: 'ceiling' };
+    });
+    expect(root.querySelector('.layout__notice')?.textContent).toContain(S.storageCeiling);
+    // back to ok: nothing shown
+    act(() => {
+      store.storage.value = { bytes: 1_000, level: 'ok' };
+    });
+    expect(root.querySelector('.layout__notice')).toBeNull();
+  });
+
+  it('storageNoticeDismissed: level-scoped for warn, state-scoped for ceiling', () => {
+    const warn = { bytes: 1, level: 'warn' } as const;
+    const ceiling = { bytes: 2, level: 'ceiling' } as const;
+    expect(storageNoticeDismissed(warn, null)).toBe(false);
+    expect(storageNoticeDismissed(warn, { bytes: 9, level: 'warn' })).toBe(true);
+    expect(storageNoticeDismissed(ceiling, warn)).toBe(false);
+    expect(storageNoticeDismissed(ceiling, ceiling)).toBe(true);
+    expect(storageNoticeDismissed(ceiling, { ...ceiling })).toBe(false);
+  });
+
   it('shows the weekly backup reminder on Mondays for an established learner and hides it after an export', async () => {
     await makeTestStore({ now: MONDAY, save: { streak: { totalDays: 30, current: 2 }, stats: { sessions: 12 } } });
     mount();
@@ -145,6 +190,27 @@ describe('<Layout>', () => {
     expect(root.querySelector('.flame')?.getAttribute('data-state')).toBe('broken');
     expect(root.querySelector('.layout__level')?.textContent).toContain('7');
     expect(root.querySelector('[role="progressbar"]')).not.toBeNull();
+  });
+
+  it('the level is named by visually-hidden text, not by an aria-label on a generic span (prohibited on role=generic)', async () => {
+    await makeTestStore({ save: { profile: { belt: 'green', level: 7, xp: 0 } } });
+    mount();
+    const level = root.querySelector('.layout__level');
+    expect(level?.hasAttribute('aria-label')).toBe(false);
+    const hidden = level?.querySelector('.visually-hidden')?.textContent ?? '';
+    expect(hidden).toContain(fmt(S.levelLong, { n: 7 }));
+    expect(hidden).toMatch(/XP to the next level/);
+    expect(level?.querySelector('[aria-hidden="true"]')?.textContent).toContain('7');
+  });
+
+  it('the nav precedes <main> in the DOM, so the ≥900 px sticky strip sits under the header instead of at the page end', async () => {
+    await makeTestStore();
+    mount();
+    const nav = root.querySelector('nav.layout__nav')!;
+    const main = root.querySelector('main#main')!;
+    const header = root.querySelector('header.layout__header')!;
+    expect(nav.compareDocumentPosition(main) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(header.compareDocumentPosition(nav) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
   it('a waiting service worker shows the update toast and announces it', async () => {
@@ -196,6 +262,14 @@ describe('Layout.css', () => {
       expect(css, r).toMatch(re);
     }
     expect(css).not.toMatch(/\.layout\[data-route="dojo"\] \.layout__status/);
+  });
+
+  it('drills leave the home-indicator inset to the sticky exercise controls; onboarding keeps its own', () => {
+    const drill = /\.layout\[data-route="train"\] \.layout__main,\s*\.layout\[data-route="gate"\] \.layout__main,\s*\.layout\[data-route="shinsa"\] \.layout__main \{([^}]*)\}/.exec(css);
+    expect(drill, 'drill main rule').not.toBeNull();
+    expect(drill![1]).toMatch(/padding-bottom:\s*var\(--sp-5\)/);
+    expect(drill![1]).not.toMatch(/--safe-bottom/);
+    expect(block('.layout[data-route="onboarding"] .layout__main {')).toMatch(/padding-bottom:\s*calc\(var\(--safe-bottom\)/);
   });
 
   it('the Dan label uses the text-safe gold and the header height tracks the brand row', () => {

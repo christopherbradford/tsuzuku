@@ -4,8 +4,11 @@
  * `freshSave(now, tz)` is the SaveMeta a brand-new learner starts from
  * (schema `tsuzuku.save/1`). `INTENSITY_PRESETS` is the design 03 §4 table;
  * `newPerDayFor(belt, intensity)` applies the Standard rates of design 02 §6.1
- * scaled by the preset. Pure: `now` and `tz` are injected; the only entropy is
- * `randomSeed()` (shared/hash.ts), used once for `seed`.
+ * scaled by the preset; `effectiveNewPerDay(settings, belt)` is the one rule
+ * for the mix a learner actually gets (own numbers when `custom`, else the
+ * belt table) — the forecast, the projection, the Road page and the session
+ * pickers all read it from here. Pure: `now` and `tz` are injected; the only
+ * entropy is `randomSeed()` (shared/hash.ts), used once for `seed`.
  */
 import { BELTS, ERROR_TAGS, type Belt } from '../content/types';
 import { randomSeed } from '../shared/hash';
@@ -73,6 +76,17 @@ export function newPerDayFor(belt: Belt, intensity: Intensity): NewPerDay {
   const base = STANDARD_NEW_PER_DAY[belt];
   const k = intensity === 'custom' ? 1 : INTENSITY_SCALE[intensity];
   return { vocab: round2(base.vocab * k), kanji: round2(base.kanji * k), grammar: round2(base.grammar * k) };
+}
+
+/**
+ * The new-item mix a learner actually gets at `belt`: `settings.newPerDay`
+ * when the intensity is `'custom'` (the learner's own numbers), else the belt
+ * table at the preset (`newPerDayFor`). Every preset follows the belt, so the
+ * White mix frozen into `settings.newPerDay` at onboarding never leaks into
+ * later belts.
+ */
+export function effectiveNewPerDay(settings: Pick<Settings, 'intensity' | 'newPerDay'>, belt: Belt): NewPerDay {
+  return settings.intensity === 'custom' ? settings.newPerDay : newPerDayFor(belt, settings.intensity);
 }
 
 /** Total new items/day (vocab + kanji + grammar) for a belt at a preset. */

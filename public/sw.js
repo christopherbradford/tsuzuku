@@ -1,15 +1,24 @@
 /*
  * TSUZUKU — service worker (group A, design 07 §10). Plain JS, no build step
- * beyond one stamp: `vite build` replaces the CACHE_VERSION placeholder with
- * `<pkg.version>-<hash of the built shell>` (vite.config.ts), so the worker's
- * bytes change with every release, a new worker installs, the Layout update
- * toast fires, and `cleanOldCaches` drops the previous release's shell and
- * hashed assets. Fonts live in their own stable cache that no release clears.
+ * beyond two stamps: `vite build` replaces the CACHE_VERSION placeholder with
+ * `<pkg.version>-<hash of the built shell>` and the SHELL_ASSETS placeholder
+ * with the comma-joined `assets/<hashed name>` list of the build
+ * (vite.config.ts), so the worker's bytes change with every release, a new
+ * worker installs, the Layout update toast fires, and `cleanOldCaches` drops
+ * the previous release's shell and hashed assets. Fonts live in their own
+ * stable cache that no release clears.
+ *
+ * Why the assets are precached: on the first visit the page requests its own
+ * entry JS/CSS before the worker controls it, so a runtime cache filled only
+ * by `fetch` events stays empty until the second online load. Precaching the
+ * whole `assets/` list (entry + lazy route/exercise chunks) at install makes
+ * one visit enough for the shell AND every room to open offline.
  *
  * Scope is wherever this file is served from, so it works at
  * https://<user>.github.io/<repo>/ and at a custom root alike.
  *
- *   install   precache the shell (./, index.html, manifest, favicon)
+ *   install   precache the shell (./, index.html, manifest, favicon) into the
+ *             shell cache and the build's assets/** into the runtime cache
  *   activate  drop our shell/runtime caches from other builds, claim clients
  *   fetch     navigations / index.html     → network-first; only an HTML
  *                                            response is stored as the shell
@@ -19,6 +28,7 @@
  *                                            single offline store and is pruned per manifest
  *             assets/**                    → cache-first (hashed, immutable per release)
  *             fonts/**                     → cache-first in the stable fonts cache
+ *             (a cache-first miss while offline answers 504, never a rejected promise)
  *             manifest / favicon / sw.js   → stale-while-revalidate
  *   message   {type:'SKIP_WAITING'} → skipWaiting (the page asks after the learner taps Reload)
  *
@@ -36,6 +46,15 @@ const SHELL_URLS = ['./', './index.html', './manifest.webmanifest', './favicon.s
   return new URL(p, BASE).href;
 });
 const INDEX_URL = new URL('./index.html', BASE).href;
+// Stamped by vite.config.ts; the unstamped placeholder yields an empty list (dev, tests).
+const SHELL_ASSETS = '__TSUZUKU_SHELL_ASSETS__'
+  .split(',')
+  .filter(function (p) {
+    return p.length > 0 && p.indexOf('__TSUZUKU_') !== 0;
+  })
+  .map(function (p) {
+    return new URL('./' + p, BASE).href;
+  });
 
 function relativePath(url) {
   return url.href.startsWith(BASE.href) ? url.href.slice(BASE.href.length).split('?')[0].split('#')[0] : null;
@@ -46,18 +65,23 @@ function isHtml(response) {
   return type.toLowerCase().startsWith('text/html');
 }
 
-async function precacheShell() {
-  const cache = await caches.open(SHELL_CACHE);
+async function precacheInto(cacheName, urls) {
+  const cache = await caches.open(cacheName);
   await Promise.all(
-    SHELL_URLS.map(async function (url) {
+    urls.map(async function (url) {
       try {
         const res = await fetch(url, { cache: 'no-cache' });
         if (res && res.ok) await cache.put(url, res);
       } catch (_) {
-        /* offline during install: the next activation retries */
+        /* offline during install: the fetch handler fills the gap online, the next install retries */
       }
     }),
   );
+}
+
+async function precacheShell() {
+  await precacheInto(SHELL_CACHE, SHELL_URLS);
+  if (SHELL_ASSETS.length > 0) await precacheInto(RUNTIME_CACHE, SHELL_ASSETS);
 }
 
 async function cleanOldCaches() {
@@ -89,8 +113,14 @@ async function putIfOk(cacheName, request, response) {
 async function cacheFirst(request, cacheName) {
   const cached = await caches.match(request);
   if (cached) return cached;
-  const res = await fetch(request);
-  return putIfOk(cacheName, request, res);
+  try {
+    const res = await fetch(request);
+    return await putIfOk(cacheName, request, res);
+  } catch (_) {
+    // Offline and not cached: a plain 504, so the page sees a failed load
+    // instead of the worker surfacing an unhandled rejection.
+    return new Response('', { status: 504, statusText: 'offline' });
+  }
 }
 
 async function staleWhileRevalidate(request, cacheName) {

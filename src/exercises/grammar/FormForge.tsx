@@ -12,9 +12,10 @@
  * ceiling). A form the word lacks (ある → potential) is shown, not tested.
  *
  * On a grammar `prod` card the item is the GrammarItem and the verb the
- * planner picked travels in `params.sentence` (its dictionary form) and
- * `params.promptEn` (its gloss + the form); those stand in for the head word
- * when the item is not a conjugable vocab item.
+ * planner picked travels in `params.sentence` (its dictionary form),
+ * `params.kana` (its reading) and `params.promptEn` (its gloss + the form);
+ * those stand in for the head word when the item is not a conjugable vocab
+ * item.
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
@@ -115,7 +116,7 @@ export function FormForge(p: ExerciseProps): JSX.Element {
   const label = form ? FORM_LABEL[form] : null;
   const fromStep = (p.step.params.sentence ?? '').trim();
   const dictionary = head?.word ?? vocab?.word ?? (fromStep.length > 0 ? fromStep : null);
-  const dictionaryKana = head?.kana ?? vocab?.kana ?? null;
+  const dictionaryKana = head?.kana ?? vocab?.kana ?? ((p.step.params.kana ?? '').trim() || null);
   const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
 
   if (!built || !form || !label || built.accept.length === 0) {
@@ -127,6 +128,14 @@ export function FormForge(p: ExerciseProps): JSX.Element {
           {dictionary ? (
             <p>
               <span class="gr__label">{S.forgeDictionary}</span> <span lang="ja">{dictionary}</span>
+              {dictionaryKana && dictionaryKana !== dictionary ? (
+                <>
+                  {' '}
+                  <span class="gr__word-kana" lang="ja">
+                    {dictionaryKana}
+                  </span>
+                </>
+              ) : null}
               {label ? (
                 <>
                   {' '}

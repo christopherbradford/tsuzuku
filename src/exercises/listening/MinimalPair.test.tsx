@@ -189,6 +189,12 @@ describe('<MinimalPair>', () => {
     expect(onResult).toHaveBeenCalledTimes(1);
   });
 
+  it('a voice that cannot be heard (canSpeak false) shows the spoken word too', async () => {
+    installServices({ audio: { ...fakeAudio(), canSpeak: signal(false) } });
+    await mount(step());
+    expect(root.querySelector('.pair__novoice .pair__shown')?.textContent).toBe('おばあさん');
+  });
+
   it('without a Japanese voice the spoken word is shown; without a pair the step offers Continue', async () => {
     installServices({ audio: nullAudio });
     await mount(step());

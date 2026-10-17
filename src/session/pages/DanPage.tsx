@@ -17,6 +17,7 @@ import { hashSeed } from '../../shared/hash';
 import { href, type Route } from '../../shared/routes';
 import type { SessionPlan } from '../../shared/session-types';
 import { store } from '../../store';
+import { STRAND_SHARES } from '../blocks';
 import { fill } from '../engine-strings';
 import { MAX_DAN, buildGauntlet, danProgress, danTitle, nextDanReady, promoteDan, type DanProgress } from '../dan';
 import { SessionRunner } from '../runner';
@@ -195,7 +196,7 @@ export default function DanPage(p: DanPageProps): JSX.Element {
           <DanModuleCard key={m.dan} module={m} current={m.dan === next} open={m.dan === next} />
         ))}
         <p class="page__muted">{S.danStandIn}</p>
-        <p class="page__muted">{S.danShares}</p>
+        <p class="page__muted">{fill(S.danShares, { form: Math.round(STRAND_SHARES.dan.form * 100), input: Math.round(STRAND_SHARES.dan.input * 100), output: Math.round(STRAND_SHARES.dan.output * 100) })}</p>
       </section>
 
       <div class="page__actions">

@@ -120,6 +120,8 @@ describe('<DanPage>', () => {
     // later modules are collapsed
     expect(root.querySelector('.dan-module[data-dan="3"] .dan-criterion')).toBeNull();
     expect(text()).toContain('nearest honest counter stands in');
+    // the strand-share line is filled from blocks.STRAND_SHARES.dan (design 03 §5), as percentages
+    expect(text()).toContain('Strand shares on the Dan road: 15 % form · 50 % input · 35 % output.');
     // no promotion offered yet
     expect(Array.from(root.querySelectorAll('button')).some((b) => b.textContent === 'Take the rank')).toBe(false);
   });

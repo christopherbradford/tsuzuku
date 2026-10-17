@@ -126,6 +126,14 @@ describe('<AudioFlash>', () => {
     expect(q('.vocab__meaning-en')?.textContent).toContain('to drink');
   });
 
+  it('a voice that cannot be heard (canSpeak false) takes the no-voice path too', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true), canSpeak: signal(false) } });
+    const p = props();
+    mount(p, true);
+    expect(q('.audio-flash')?.getAttribute('data-voice')).toBe('false');
+    expect(q('.audio-flash__novoice')).not.toBeNull();
+  });
+
   it('without a Japanese voice the word and kana are shown up front with a note, no Speaker, and a miss is tagged word-choice', () => {
     installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(false) } });
     store.patch('progress', (pr) => ({ ...pr, station: 16 })); // Green: a collocation would otherwise be "heard"

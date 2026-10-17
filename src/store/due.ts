@@ -6,7 +6,8 @@
  * served is not a review), and it is neither archived nor Kaiden. This mirrors
  * the session builder / `learn/queue.dueCards`, so the Dojo forecast, the end
  * card and the `clear-due` quest count the same reviews the session will show.
- * `CardsApi.dueOn()` stays the raw store primitive (due + flags only).
+ * `store.cards.dueOn(day)` applies the same predicate (state-0, archived and
+ * Kaiden cards are opt-in through its `DueOptions`).
  */
 import { CardFlag, hasFlag, type CardTuple, type EpochDay } from '../shared/store-types';
 

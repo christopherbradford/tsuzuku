@@ -211,6 +211,8 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
   };
 
   const beltName = BELT_NAME[belt];
+  // Furigana is switched off from Orange (design 04 §12; `<SessionView>` applies it); the first exam keeps it, and says so.
+  const sectionsLine = belt === 'yellow' ? S.sectionsLineYellow : S.sectionsLine;
   const header = (
     <header class="shinsa-view__head">
       <h2 class="shinsa-view__title">
@@ -310,7 +312,7 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
           </section>
         ) : null}
         <h3 class="shinsa-view__label">{S.sectionsTitle}</h3>
-        <p class="shinsa-view__line">{S.sectionsLine}</p>
+        <p class="shinsa-view__line">{sectionsLine}</p>
         <ol class="shinsa-view__sections">
           {SHINSA_SECTIONS.map((sec) => (
             <li key={sec}>
@@ -357,7 +359,7 @@ export function ShinsaView(p: ShinsaViewProps): JSX.Element {
               {block?.label ?? ''}
             </p>
             <p class="shinsa-section__line">{sec ? S.sectionLine[sec] : ''}</p>
-            <p class="shinsa-view__line">{S.sectionsLine}</p>
+            <p class="shinsa-view__line">{sectionsLine}</p>
             <div class="shinsa-view__actions">
               <button
                 type="button"

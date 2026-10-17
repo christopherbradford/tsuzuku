@@ -89,6 +89,16 @@ describe('duel chain', () => {
     expect(duelsReady(TODAY)).toEqual([]);
   });
 
+  it('a duel over a conjugated verb blanks the stem the sentence shows (findBlank), not [0, 0]', async () => {
+    // 食べる never appears as its dictionary form in 「パンを食べます」; the shared blank finder lands on the stem 食べ.
+    await makeTestStore({ cards: { [`${V.食べる}#prod`]: nemesisCard(20), [`${V.食べる}#rec`]: plain() } });
+    const [s] = nemesisSteps(V.食べる, TODAY, { loader });
+    expect(s!.cardKey).toBe(`${V.食べる}#prod`);
+    expect(s!.params.sentence).toBe('パンを食べます。');
+    expect(s!.params.blank).toEqual([3, 5]);
+    expect(s!.params.answer).toBe('食べる');
+  });
+
   it('the async variant resolves full params through the builder', async () => {
     await makeTestStore({ save: { progress: { station: 4 } }, cards: { [`${V.飲む}#prod`]: nemesisCard(20), [`${V.飲む}#rec`]: plain() } });
     const [s] = await nemesisStepsAsync(V.飲む, TODAY, loader);

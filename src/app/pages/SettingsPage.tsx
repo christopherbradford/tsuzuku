@@ -7,19 +7,22 @@
  * volume, speaking mode with the network notice), reminders and rest (rest
  * day, neutral `.ics`), privacy and data (storage meter, slot, backup and
  * the dojo's rules) and the danger zone (reset after typing つづく). Every
- * change is `store.patch` immediately; Intense asks first (03 §4).
+ * change is `store.patch` immediately; Intense asks first (03 §4). Both
+ * confirms share `useDialogFocus` (initial focus, Escape, Tab trap, opener
+ * restore), like the Backup page's Replace dialog.
  */
 import type { JSX } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { useRef, useState } from 'preact/hooks';
 import type { CardKey } from '@/content/types';
 import { services, speak, type VoiceInfo } from '@/shared/audio';
 import { equivalentJa } from '@/shared/jp';
 import { href, navigate, type Route } from '@/shared/routes';
 import { SLICE_KEYS, type Feel, type FuriganaMode, type Intensity, type Retention, type Settings, type SpeakingMode, type SpeedTier, type Theme } from '@/shared/store-types';
 import { KanaInput } from '@/shared/ui/KanaInput';
-import { CEILING_BYTES, INTENSITY_PRESETS, freshSave, newPerDayFor, store } from '@/store';
+import { CEILING_BYTES, INTENSITY_PRESETS, freshSave, newPerDayFor, replaceHeader, replaceLog, store } from '@/store';
 import { currentBelt } from '@/store/derived';
 import { ICS_FILENAME, buildIcs, downloadIcs } from '../ics';
+import { useDialogFocus } from '../use-dialog-focus';
 import { steadyReviewsInAYear } from './OnboardingPage';
 import { S, WEEKDAYS, fmt, num } from './strings';
 import './pages.css';
@@ -86,10 +89,17 @@ export function applyFeel(feel: Feel): void {
   patchSettings((s) => (s.feel === feel ? s : { ...s, feel, speedGrading: feel !== 'zen' }));
 }
 
-/** Replace this browser's save with a fresh one: slices, cards, session. The log ring is left to the store. */
+/**
+ * Replace this browser's save with a fresh one: header (a new seed, so the
+ * next learner's Mon, stamps and wallpapers are their own, and a new
+ * createdAt), every slice, the cards, the review-log ring and the session.
+ * Only the time zone survives.
+ */
 export function resetSave(): void {
   const fresh = freshSave(store.now(), store.profile.value.tz);
+  replaceHeader({ seed: fresh.seed, createdAt: fresh.createdAt, contentVersion: fresh.contentVersion });
   for (const k of SLICE_KEYS) store.patch(k, () => fresh[k] as never);
+  replaceLog([]);
   const keys: CardKey[] = [];
   store.cards.forEach((k) => keys.push(k));
   for (const k of keys) store.cards.delete(k);
@@ -145,16 +155,12 @@ function Switch(p: { id: keyof Settings; checked: boolean; label: string; hint?:
   );
 }
 
+/** Confirm dialog (Intense, Reset): focus lands on Cancel, Escape closes, Tab stays inside, focus returns to the opener. */
 function Confirm(p: { text: string; yes: string; no: string; onYes(): void; onNo(): void; testId: string }): JSX.Element {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') p.onNo();
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [p]);
+  const ref = useRef<HTMLDivElement>(null);
+  useDialogFocus(ref, { onClose: p.onNo, initial: '[data-confirm-no]' });
   return (
-    <div class="modal" role="dialog" aria-modal="true" aria-label={p.text} data-confirm={p.testId}>
+    <div class="modal" role="dialog" aria-modal="true" aria-label={p.text} data-confirm={p.testId} ref={ref} tabIndex={-1}>
       <div class="modal__card">
         <p class="page__modal-text">{p.text}</p>
         <div class="modal__actions page__actions">

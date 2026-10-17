@@ -16,6 +16,7 @@ import type { DojoFeed, SessionMode, SessionSnapshot } from '@/shared/session-ty
 import { QUESTS, questProgress, store, type QuestProgress } from '@/store';
 import { forecastCounts, streakState, type FlameState } from '@/store/derived';
 import type { DojoFeedFull } from '@/session/dojo-feed';
+import { isFirstRun } from '../first-run';
 import { BELT_NAME, S, fmt, num } from './strings';
 import './pages.css';
 
@@ -55,19 +56,8 @@ export const FLAME_TEXT: Record<FlameState, string> = {
 /* Pure helpers (exported for tests)                                          */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-/** A save with no trace of a learner (mirrors `main.tsx isFirstRun`). */
-export function isFreshSave(): boolean {
-  const profile = store.profile.value;
-  if (profile.name.trim() === '') return true;
-  return (
-    store.stats.value.sessions === 0 &&
-    store.streak.value.totalDays === 0 &&
-    profile.xp === 0 &&
-    profile.kanaKnown.length === 0 &&
-    profile.goals.length === 0 &&
-    store.cards.count() === 0
-  );
-}
+/** A save with no trace of a learner: the shell's `isFirstRun` under the Dojo's name. */
+export const isFreshSave = isFirstRun;
 
 export function dueLine(due: number): string {
   if (due <= 0) return S.dojoNoDue;

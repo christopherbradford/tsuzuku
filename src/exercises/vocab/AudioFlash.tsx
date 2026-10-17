@@ -11,7 +11,7 @@
  * `keys` is `text` so the slow rule never grades the typed half (it needs a
  * mature card, which a choices-mode card — exposures < 2 — can never be).
  *
- * Without a Japanese voice (`services.audio.hasJaVoice`, read at render) the
+ * Without an audible Japanese voice (`voiceAudible(services.audio)`, read at render) the
  * word and its kana are shown up front with a no-voice note instead of the
  * Speaker, and a miss is tagged `word-choice` rather than `listening` — the
  * card is then a meaning card, not a listening card.
@@ -22,6 +22,7 @@ import { BELT_IDS, type ErrorTag } from '@/content/types';
 import { services } from '@/shared/audio';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { ChoiceGrid } from '../ChoiceGrid';
+import { voiceAudible } from '../voice';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
 import { gradeChoice, gradeEn } from '../check';
 import { S as X } from '../strings';
@@ -60,7 +61,7 @@ function AudioFlashBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const fired = useRef(false);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
   const missTags: ErrorTag[] = hasVoice ? ['listening'] : ['word-choice'];
   const text = useMemo(() => (item ? spokenText(item, beltNow()) : ''), [item]);
   const choices = p.step.params.choices ?? [];

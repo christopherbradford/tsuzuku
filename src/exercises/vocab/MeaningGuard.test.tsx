@@ -223,4 +223,12 @@ describe('helpers', () => {
     expect(correctChoice(['a', 'b'], MIZU, { answer: 'b' })).toBe(1);
     expect(correctChoice(['a', 'b'], MIZU, {})).toBe(-1);
   });
+
+  it('correctChoice prefers params.answer, then the primary gloss, over a secondary meaning that is also a choice', () => {
+    const OISHII = FIXTURE.items[V.おいしい] as VocabItem; // meanings: delicious | tasty
+    expect(correctChoice(['tasty', 'delicious', 'bitter', 'cold'], OISHII, {})).toBe(1);
+    expect(correctChoice(['tasty', 'bitter'], OISHII, {})).toBe(0);
+    expect(correctChoice(['tasty', 'delicious'], OISHII, { answer: 'tasty' })).toBe(0);
+    expect(correctChoice(['Tasty', 'delicious'], OISHII, { accept: ['tasty'] })).toBe(1);
+  });
 });

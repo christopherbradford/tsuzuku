@@ -1,6 +1,6 @@
 import { civilToDay } from '../shared/time';
 import { FONTS, type TextLayer } from './jtext';
-import { applyPostPass, canRender4k, defaultEnv, download, drawTexts, EXPORT_SIZES, exportPng, exportSizes, filenameFor, fontsOf, isIos, type CanvasLike, type Ctx2D, type RasterEnv } from './png';
+import { applyPostPass, canRender4k, defaultEnv, download, drawTexts, EXPORT_SIZES, exportPng, exportSizes, filenameFor, fontsOf, isIos, REVOKE_DELAY_MS, type CanvasLike, type Ctx2D, type RasterEnv } from './png';
 import { svgDoc } from './svg';
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -242,40 +242,62 @@ describe('applyPostPass', () => {
 });
 
 describe('download / gating / filenames', () => {
-  it('download clicks an anchor with the filename; unavailable without object URLs', () => {
+  it('download clicks an anchor with the filename and revokes the URL after the delay; unavailable without object URLs', () => {
     const blob = new Blob(['x'], { type: 'image/png' });
     expect(download(blob, 'a.png')).toBe('unavailable');
     const u = URL as unknown as { createObjectURL?: (b: Blob) => string; revokeObjectURL?: (u: string) => void };
     u.createObjectURL = () => 'blob:fake';
-    u.revokeObjectURL = () => undefined;
+    const revoked: string[] = [];
+    u.revokeObjectURL = (h) => void revoked.push(h);
     const clicks: string[] = [];
     const spy = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
       clicks.push(`${this.getAttribute('download')}|${this.href}`);
     });
+    vi.useFakeTimers();
     try {
       expect(download(blob, 'tsuzuku-x.png')).toBe('download');
       expect(clicks).toEqual(['tsuzuku-x.png|blob:fake']);
       expect(document.querySelector('a[download]')).toBeNull();
+      vi.advanceTimersByTime(REVOKE_DELAY_MS.download - 1);
+      expect(revoked).toEqual([]);
+      vi.advanceTimersByTime(1);
+      expect(revoked).toEqual(['blob:fake']);
     } finally {
+      vi.useRealTimers();
       spy.mockRestore();
       delete u.createObjectURL;
       delete u.revokeObjectURL;
     }
   });
-  it('iOS opens a tab instead', () => {
+  it('iOS opens a tab instead: one anchor click, no window.open, and the URL is still revoked', () => {
     const blob = new Blob(['x'], { type: 'image/png' });
     const u = URL as unknown as { createObjectURL?: (b: Blob) => string; revokeObjectURL?: (u: string) => void };
     u.createObjectURL = () => 'blob:fake';
+    const revoked: string[] = [];
+    u.revokeObjectURL = (h) => void revoked.push(h);
     const ua = vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)');
-    const open = vi.spyOn(window, 'open').mockReturnValue({} as Window);
+    const open = vi.spyOn(window, 'open').mockReturnValue(null);
+    const clicks: string[] = [];
+    const spy = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
+      clicks.push(`${this.target}|${this.hasAttribute('download')}|${this.href}`);
+    });
+    vi.useFakeTimers();
     try {
       expect(isIos()).toBe(true);
       expect(download(blob, 'x.png')).toBe('opened');
-      expect(open).toHaveBeenCalledWith('blob:fake', '_blank', 'noopener');
+      expect(open).not.toHaveBeenCalled();
+      expect(clicks).toEqual(['_blank|false|blob:fake']);
+      vi.advanceTimersByTime(REVOKE_DELAY_MS.opened - 1);
+      expect(revoked).toEqual([]);
+      vi.advanceTimersByTime(1);
+      expect(revoked).toEqual(['blob:fake']);
     } finally {
+      vi.useRealTimers();
       ua.mockRestore();
       open.mockRestore();
+      spy.mockRestore();
       delete u.createObjectURL;
+      delete u.revokeObjectURL;
     }
     expect(isIos({ userAgent: 'Mozilla/5.0 (Macintosh)', platform: 'MacIntel', maxTouchPoints: 5 })).toBe(true);
     expect(isIos({ userAgent: 'Mozilla/5.0 (Macintosh)', platform: 'MacIntel', maxTouchPoints: 0 })).toBe(false);

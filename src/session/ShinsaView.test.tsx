@@ -149,6 +149,9 @@ describe('<ShinsaView> eligibility', () => {
     expect(text()).toContain('Every Gatekeeper of the belt passed.');
     expect(root.querySelectorAll('.shinsa-cov[data-met="true"]')).toHaveLength(2);
     expect(hanko()?.textContent).toBe('Begin the exam');
+    // the first exam keeps furigana (off from Orange, design 04 §12) and says so instead of promising "no furigana"
+    expect(text()).toContain('Furigana stays on for this first exam.');
+    expect(text()).not.toContain('no furigana');
   });
 });
 

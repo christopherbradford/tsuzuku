@@ -7,7 +7,7 @@
  * loaded, seeded by `store.seed() + today + step.id`. A miss is tagged
  * `voicing` when the picked kana differs only by a dakuten.
  *
- * Without a Japanese voice (`services.audio.hasJaVoice`, read at render) the
+ * Without an audible Japanese voice (`voiceAudible(services.audio)`, read at render) the
  * drill is honest: the prompt names the romaji (display spelling, plus the
  * IME spelling when they differ) with a no-voice note, the Listen button is
  * not shown and Space does nothing, so the first prod cards stay answerable.
@@ -23,6 +23,7 @@ import { equivalentJa } from '@/shared/jp';
 import { kanaGrid } from '@/learn';
 import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
+import { voiceAudible } from '../voice';
 import { checkJa, gradeChoice } from '../check';
 import { S as X } from '../strings';
 import { MissingItem, isKanaItem, missingResult, romajiLabel, useDrillKeys, useLatency } from './KanaFlash';
@@ -52,7 +53,7 @@ function KanaEarBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const fired = useRef(false);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
 
   const choices = useMemo<string[]>(() => {
     if (!item) return [];

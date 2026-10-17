@@ -6,7 +6,7 @@
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { SW_STAMP_PLACEHOLDER, buildStamp, stampSw } from '../../vite.config';
+import { SW_ASSETS_PLACEHOLDER, SW_STAMP_PLACEHOLDER, buildStamp, stampSw } from '../../vite.config';
 
 const code = readFileSync(resolve(process.cwd(), 'public/sw.js'), 'utf8');
 const VERSION = /const CACHE_VERSION = '([^']+)'/.exec(code)![1]!;
@@ -73,7 +73,7 @@ interface Scope {
   dispatch(type: string, ev: unknown): void;
 }
 
-function load(fetchImpl: (req: RequestLike | string) => Promise<Response>): Scope {
+function load(fetchImpl: (req: RequestLike | string) => Promise<Response>, source: string = code): Scope {
   const listeners = new Map<string, Listener[]>();
   const self: Scope['self'] = {
     location: { href: `${BASE}sw.js` },
@@ -87,7 +87,7 @@ function load(fetchImpl: (req: RequestLike | string) => Promise<Response>): Scop
   };
   const caches = new FakeCacheStorage();
   const fetch = vi.fn(fetchImpl);
-  const run = new Function('self', 'caches', 'fetch', 'Response', 'URL', code) as (...a: unknown[]) => void;
+  const run = new Function('self', 'caches', 'fetch', 'Response', 'URL', source) as (...a: unknown[]) => void;
   run(self, caches, fetch, Response, URL);
   return {
     listeners,
@@ -136,16 +136,71 @@ describe('public/sw.js', () => {
   it('CACHE_VERSION is the build placeholder, and the build stamp changes the worker bytes per release', () => {
     expect(VERSION).toBe(SW_STAMP_PLACEHOLDER);
     expect(code.split(SW_STAMP_PLACEHOLDER).length - 1).toBe(1);
+    expect(code.split(SW_ASSETS_PLACEHOLDER).length - 1).toBe(1);
     const a = buildStamp('0.1.0', ['<html>a</html>', 'index-aaa.js']);
     const b = buildStamp('0.1.0', ['<html>a</html>', 'index-bbb.js']);
     expect(a).toMatch(/^0\.1\.0-[0-9a-f]{8}$/);
     expect(a).not.toBe(b);
     expect(buildStamp('0.1.0', ['<html>a</html>', 'index-aaa.js'])).toBe(a);
-    const stamped = stampSw(code, a);
+    const stamped = stampSw(code, a, ['assets/index-aaa.js', 'assets/index-bbb.css']);
     expect(stamped).not.toContain(SW_STAMP_PLACEHOLDER);
+    expect(stamped).not.toContain(SW_ASSETS_PLACEHOLDER);
     expect(stamped).toContain(`const CACHE_VERSION = '${a}'`);
+    expect(stamped).toContain("'assets/index-aaa.js,assets/index-bbb.css'");
     expect(stamped).not.toBe(code);
     expect(() => stampSw(stamped, b)).toThrow(/placeholder/);
+    // An unstamped worker (dev, tests) precaches no assets; a name that would break the string literal is dropped.
+    expect(stampSw(code, a)).toContain("'';");
+    expect(stampSw(code, a, ["assets/x'y.js", 'assets/ok.js'])).toContain("'assets/ok.js'");
+  });
+
+  it('install precaches every stamped asset into the runtime cache, so one online visit makes the app work offline', async () => {
+    const stamped = stampSw(code, '0.1.0-cafe0000', ['assets/index-E2lYAAt2.js', 'assets/index-BJTiF_er.css', 'assets/RoadPage-abc.js']);
+    const sw = load(async (req) => (urlOf(req).includes('/assets/') ? ok('bytes', 'application/javascript') : ok('<!doctype html>', 'text/html')), stamped);
+    const ev = extendable();
+    sw.dispatch('install', ev);
+    await ev.done;
+    const runtime = sw.caches.caches.get('tsuzuku-runtime-0.1.0-cafe0000')!;
+    expect(runtime, 'runtime cache').toBeDefined();
+    for (const a of ['index-E2lYAAt2.js', 'index-BJTiF_er.css', 'RoadPage-abc.js']) expect(runtime.store.has(`${BASE}assets/${a}`)).toBe(true);
+    expect(sw.caches.caches.get('tsuzuku-shell-0.1.0-cafe0000')!.store.has(`${BASE}index.html`)).toBe(true);
+    // Offline now: the entry bundle is served from the cache without a network call.
+    sw.fetch.mockImplementation(async () => {
+      throw new TypeError('offline');
+    });
+    const js = fetchEvent({ url: `${BASE}assets/index-E2lYAAt2.js`, method: 'GET' });
+    sw.dispatch('fetch', js);
+    expect((await js.response!).status).toBe(200);
+  });
+
+  it('the unstamped worker precaches only the shell (no asset list), and install still succeeds when one asset 404s', async () => {
+    const sw = load(async (req) => (urlOf(req).endsWith('.css') ? new Response('', { status: 404 }) : ok('x', 'text/html')));
+    const ev = extendable();
+    sw.dispatch('install', ev);
+    await ev.done;
+    expect(await sw.caches.keys()).toEqual([SHELL]);
+    const stamped = stampSw(code, 'v', ['assets/a.js', 'assets/b.css']);
+    const sw2 = load(async (req) => (urlOf(req).endsWith('.css') ? new Response('', { status: 404 }) : ok('x', 'text/html')), stamped);
+    const ev2 = extendable();
+    sw2.dispatch('install', ev2);
+    await expect(ev2.done).resolves.toBeUndefined();
+    const runtime = sw2.caches.caches.get('tsuzuku-runtime-v')!;
+    expect(runtime.store.has(`${BASE}assets/a.js`)).toBe(true);
+    expect(runtime.store.has(`${BASE}assets/b.css`)).toBe(false);
+  });
+
+  it('an uncached asset or font requested offline answers 504 instead of a rejected promise', async () => {
+    const sw = load(async () => {
+      throw new TypeError('offline');
+    });
+    const js = fetchEvent({ url: `${BASE}assets/Lazy-xyz.js`, method: 'GET' });
+    sw.dispatch('fetch', js);
+    const res = await js.response!;
+    expect(res.status).toBe(504);
+    const font = fetchEvent({ url: `${BASE}fonts/YujiSyuku-n5.woff2`, method: 'GET' });
+    sw.dispatch('fetch', font);
+    expect((await font.response!).status).toBe(504);
+    expect(sw.caches.caches.has(RUNTIME)).toBe(false);
   });
 
   it('install precaches the shell (index.html + manifest) under the versioned cache', async () => {

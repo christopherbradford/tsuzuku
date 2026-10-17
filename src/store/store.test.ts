@@ -3,7 +3,8 @@ import { SESSION_SCHEMA, type SessionSnapshot } from '../shared/session-types';
 import { epochDay } from '../shared/time';
 import { CardFlag, type CardShard, type LogEntry, type ReviewLog, type SaveMeta } from '../shared/store-types';
 import { CEILING_BYTES, GZIP_PREFIX, LOG_RING, hasCompression } from './persist';
-import { initStore, registerReducer, replaceHeader, replaceLog, resetStoreForTests, shardOfKey, shardSizes, store, storeCards } from './store';
+import { effect } from '@preact/signals';
+import { initStore, registerReducer, replaceHeader, replaceLog, resetSave, resetStoreForTests, shardOfKey, shardSizes, store, storeCards } from './store';
 import { MemoryStorage, card } from './testing';
 
 const NOW = Date.UTC(2026, 0, 15, 12);
@@ -93,6 +94,74 @@ describe('initStore', () => {
     expect(JSON.parse(s.getItem('tsuzuku.cards.v1.vocab.n3') as string).cards).toEqual({ 'v-n3-0009#rec': card() });
     expect(JSON.parse(s.getItem('tsuzuku.cards.v1.vocab.n3.bak') as string).cards['v-n3-0001#rec']).toEqual(card({ reps: 9 }));
     expect(s.getItem('tsuzuku.cards.v1.vocab.n4.bak')).toBe(truncated);
+  });
+
+  it('an unreadable review log (newer schema or truncated text) is stashed as .bak like meta and the shards', async () => {
+    const s = new MemoryStorage();
+    const future = JSON.stringify({ schema: 'tsuzuku.log/2', entries: [[1, 'v-n5-0001#rec', 3, 100, 0, 0]] });
+    s.setItem('tsuzuku.log.v1', future);
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    expect(store.log.recent(10)).toEqual([]);
+    store.log.push([NOW, 'v-n5-0002#rec', 3, 1, 0, 0]);
+    await store.flush();
+    expect(s.getItem('tsuzuku.log.v1.bak')).toBe(future);
+    expect((JSON.parse(s.getItem('tsuzuku.log.v1') as string) as ReviewLog).entries).toEqual([[NOW, 'v-n5-0002#rec', 3, 1, 0, 0]]);
+
+    const s2 = new MemoryStorage();
+    const truncated = '{"schema":"tsuzuku.log/1","entries":[[1,"v-n5-00';
+    s2.setItem('tsuzuku.log.v1', truncated);
+    await initStore({ storage: s2, now: () => NOW, reducers: false });
+    store.log.push([NOW, 'v-n5-0002#rec', 3, 1, 0, 0]);
+    await store.flush();
+    expect(s2.getItem('tsuzuku.log.v1.bak')).toBe(truncated);
+    expect(s2.getItem('tsuzuku.log.v1')).not.toBe(truncated);
+    warn.mockRestore();
+  });
+
+  it('a stash that hits the quota keeps the unreadable text in place: the key is frozen and the level reads ceiling', async () => {
+    const s = new MemoryStorage();
+    const big = { schema: 'tsuzuku.save/1', profile: { name: 'x'.repeat(60_000) } };
+    const corrupt = JSON.stringify(big) + '{{corrupt';
+    s.setItem('tsuzuku.meta.v1', corrupt);
+    s.setItem('tsuzuku.session.v1', '{"schema":"tsuzuku.session/1"}');
+    s.quota = s.bytes() + 2000;
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const error = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    expect(error).toHaveBeenCalledTimes(1);
+    expect(String(error.mock.calls[0][0])).toMatch(/left untouched/);
+    expect(store.profile.value.name).toBe('無名');
+    expect(store.storage.value.level).toBe('ceiling');
+    // The disposable session key was freed in the attempt; the .bak still did not fit.
+    expect(s.getItem('tsuzuku.session.v1')).toBeNull();
+    expect(s.getItem('tsuzuku.meta.v1.bak')).toBeNull();
+    store.patch('profile', (p) => ({ ...p, name: 'fresh' }));
+    await store.flush();
+    expect(s.getItem('tsuzuku.meta.v1')).toBe(corrupt);
+    expect(store.storage.value.level).toBe('ceiling');
+    // Cards still persist: only the unreadable key is frozen.
+    s.quota = undefined;
+    store.cards.set('v-n5-0001#rec', card());
+    await store.flush();
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n5')).not.toBeNull();
+    expect(s.getItem('tsuzuku.meta.v1')).toBe(corrupt);
+    warn.mockRestore();
+    error.mockRestore();
+  });
+
+  it('a stash that hits the quota succeeds after freeing the session key', async () => {
+    const s = new MemoryStorage();
+    const corrupt = '{"schema":"tsuzuku.save/1","profile":{"name":"' + 'y'.repeat(5000) + '"}}{{';
+    s.setItem('tsuzuku.meta.v1', corrupt);
+    s.setItem('tsuzuku.session.v1', '{"schema":"tsuzuku.session/1","pad":"' + 'z'.repeat(20_000) + '"}');
+    s.quota = s.bytes() + 2000;
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    expect(s.getItem('tsuzuku.meta.v1.bak')).toBe(corrupt);
+    expect(s.getItem('tsuzuku.session.v1')).toBeNull();
+    expect(store.storage.value.level).toBe('ok');
+    warn.mockRestore();
   });
 
   it('re-initialising flushes the outgoing slot\'s debounced writes first', async () => {
@@ -217,18 +286,23 @@ describe('cards', () => {
     );
   });
 
-  it('dueOn returns due keys excluding archived and kaiden unless asked', async () => {
+  it('dueOn returns due reviews: archived, kaiden and never-reviewed (state 0) cards only when asked', async () => {
     await initStore({ storage: new MemoryStorage(), now: () => NOW, reducers: false });
-    store.cards.set('v-n5-0001#rec', card({ due: TODAY - 3 }));
-    store.cards.set('v-n5-0002#rec', card({ due: TODAY }));
-    store.cards.set('v-n5-0003#rec', card({ due: TODAY + 1 }));
-    store.cards.set('v-n5-0004#rec', card({ due: TODAY, flags: CardFlag.archived }));
-    store.cards.set('v-n5-0005#rec', card({ due: TODAY, flags: CardFlag.kaiden }));
-    store.cards.set('v-n5-0006#rec', card({ due: TODAY, flags: CardFlag.nemesis }));
+    store.cards.set('v-n5-0001#rec', card({ due: TODAY - 3, state: 2 }));
+    store.cards.set('v-n5-0002#rec', card({ due: TODAY, state: 2 }));
+    store.cards.set('v-n5-0003#rec', card({ due: TODAY + 1, state: 2 }));
+    store.cards.set('v-n5-0004#rec', card({ due: TODAY, state: 2, flags: CardFlag.archived }));
+    store.cards.set('v-n5-0005#rec', card({ due: TODAY, state: 2, flags: CardFlag.kaiden }));
+    store.cards.set('v-n5-0006#rec', card({ due: TODAY, state: 3, flags: CardFlag.nemesis }));
+    // Created at introduction, never served: a kana prod card and a vocab card with a past due day.
+    store.cards.set('k-h-a#prod', card({ due: TODAY, state: 0 }));
+    store.cards.set('v-n5-0007#rec', card({ due: TODAY - 5, state: 0 }));
     expect(store.cards.dueOn(TODAY).sort()).toEqual(['v-n5-0001#rec', 'v-n5-0002#rec', 'v-n5-0006#rec']);
     expect(store.cards.dueOn(TODAY - 1)).toEqual(['v-n5-0001#rec']);
     expect(storeCards.dueOn(TODAY, { includeKaiden: true }).sort()).toEqual(['v-n5-0001#rec', 'v-n5-0002#rec', 'v-n5-0005#rec', 'v-n5-0006#rec']);
     expect(storeCards.dueOn(TODAY, { includeArchived: true, includeKaiden: true })).toHaveLength(5);
+    expect(storeCards.dueOn(TODAY, { includeNew: true }).sort()).toEqual(['k-h-a#prod', 'v-n5-0001#rec', 'v-n5-0002#rec', 'v-n5-0006#rec', 'v-n5-0007#rec']);
+    expect(storeCards.dueOn(TODAY, { includeNew: true, includeArchived: true, includeKaiden: true })).toHaveLength(7);
   });
 
   it('byItem, forEach, count and delete', async () => {
@@ -282,6 +356,48 @@ describe('backup extras: replaceHeader / replaceLog', () => {
     await initStore({ storage: s, now: () => NOW, reducers: false });
     expect(store.seed()).toBe('feedfacefeedface');
     expect(store.meta().createdAt).toBe(5);
+  });
+
+  it('resetSave returns header, every slice, the cards, the log and the session to a fresh save in one batch; only the zone survives', async () => {
+    const s = new MemoryStorage();
+    await initStore({ storage: s, now: () => NOW, reducers: false });
+    store.patch('profile', (p) => ({ ...p, name: 'ハナ', nameKana: 'はな', xp: 500, tz: 'Asia/Tokyo' }));
+    store.patch('stats', (st) => ({ ...st, reviews: 42 }));
+    store.cards.set('v-n5-0001#rec', card({ due: TODAY, s: 5, reps: 3, state: 2, last: TODAY - 1 }));
+    store.cards.set('k-h-a#rec', card({ due: TODAY, s: 5, reps: 3, state: 2, last: TODAY - 1 }));
+    store.log.push([NOW, 'v-n5-0001#rec', 3, 1200, 0, 0]);
+    store.session.save(snapshot(1));
+    await store.flush();
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n5')).not.toBeNull();
+    const seedBefore = store.seed();
+    let runs = 0;
+    const stop = effect(() => {
+      store.cards.version.value;
+      store.profile.value;
+      store.stats.value;
+      runs++;
+    });
+    resetSave();
+    expect(runs).toBe(2); // the initial run + one for the whole reset
+    expect(store.profile.value).toMatchObject({ name: '無名', xp: 0, tz: 'Asia/Tokyo' });
+    expect(store.stats.value.reviews).toBe(0);
+    expect(store.seed()).not.toBe(seedBefore);
+    expect(store.meta().createdAt).toBe(NOW);
+    expect(store.cards.count()).toBe(0);
+    expect(store.cards.get('v-n5-0001#rec')).toBeUndefined();
+    expect(store.log.recent(10)).toEqual([]);
+    expect(store.session.load()).toBeNull();
+    await store.flush();
+    expect(s.getItem('tsuzuku.cards.v1.vocab.n5')).toBeNull();
+    expect(s.getItem('tsuzuku.cards.v1.kana.kana')).toBeNull();
+    expect(s.getItem('tsuzuku.session.v1')).toBeNull();
+    expect(JSON.parse(s.getItem('tsuzuku.meta.v1') as string).profile.name).toBe('無名');
+    expect(JSON.parse(s.getItem('tsuzuku.log.v1') as string).entries).toEqual([]);
+    // the store keeps working: a new card lands in a fresh shard
+    store.cards.set('v-n5-0002#rec', card({ due: TODAY, s: 5, reps: 1, state: 1, last: TODAY }));
+    await store.flush();
+    expect(JSON.parse(s.getItem('tsuzuku.cards.v1.vocab.n5') as string).cards['v-n5-0002#rec']).toBeDefined();
+    stop();
   });
 
   it('replaceLog assigns the ring wholesale, keeping the last 5,000 as given', async () => {

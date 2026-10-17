@@ -11,6 +11,8 @@
  *
  * This file also hosts the helpers the vocab drills share: `isVocabItem`,
  * `wordRuby`, `fogFor`, `vocabPoolFrom`, `speakWord`, `beltNow`,
+ * `correctChoice` (`params.answer`, then the primary gloss, before any
+ * secondary meaning — so the choice the planner placed is the graded one),
  * `<WordHead>`, `<VocabAfter>`, `<Speaker>`.
  */
 import type { JSX } from 'preact';
@@ -200,10 +202,22 @@ export function VocabAfter(p: VocabAfterProps): JSX.Element {
   );
 }
 
-/** Index of the choice that is one of the item's meanings (or `params.answer` / `params.accept`). */
+/**
+ * Index of the correct choice, in tiers so a secondary gloss that also sits
+ * among the choices never outranks the one the planner placed (風情: taste |
+ * charm — the grid holds `meanings[0]`): `params.answer`, then the primary
+ * gloss (`meanings[0]`), then `params.accept`, then the other meanings, each
+ * through `normalizeEn`; `-1` when none matches.
+ */
 export function correctChoice(choices: readonly string[], item: VocabItem, params: StepParams): number {
-  const ok = new Set([params.answer ?? '', ...(params.accept ?? []), ...item.meanings].filter((m) => m.length > 0).map(normalizeEn));
-  return choices.findIndex((c) => ok.has(normalizeEn(c)));
+  const tiers: readonly (readonly string[])[] = [[params.answer ?? ''], [item.meanings[0] ?? ''], params.accept ?? [], item.meanings.slice(1)];
+  for (const tier of tiers) {
+    const ok = new Set(tier.filter((m) => m.length > 0).map(normalizeEn));
+    if (ok.size === 0) continue;
+    const i = choices.findIndex((c) => ok.has(normalizeEn(c)));
+    if (i >= 0) return i;
+  }
+  return -1;
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */

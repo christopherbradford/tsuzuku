@@ -67,7 +67,7 @@ const PAGE = {
   dojoRoadJa: '東海道',
   dojoStationLink: 'Station {n}, {name}',
   dojoBeltStatus: '{belt} belt · Station {n}',
-  dojoArcadeHint: 'Free play. Arcade reps never change your schedule.',
+  dojoArcadeHint: 'Free play. Nothing is marked Again here; a miss just comes back untimed next session.',
 
   /* ── onboarding (日本橋) ───────────────────────────────────────────── */
   onbNamePlaceholder: 'むめい',
@@ -124,7 +124,7 @@ const PAGE = {
   setReminderFailed: 'Download is not available here. Copy the text below into a calendar.',
   setStorageLevelOk: 'Plenty of room.',
   setStorageLevelWarn: 'Getting large. Export a backup soon.',
-  setStorageLevelCeiling: 'Near the limit. Export a backup now; old rows are being compacted.',
+  setStorageLevelCeiling: 'At the limit. New progress may not be saving; export a backup now.',
   setStorageOf: '{kb} KB of {mb} MB',
   setResetTitle: 'Start over',
   setResetBody: 'This browser’s save is replaced by a fresh one: cards, settings, collections, streak. Export a backup first if you might want it back.',

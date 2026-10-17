@@ -13,16 +13,31 @@
  *  previewImportBlob() the file itself (gzip bytes or text) → previewImport.
  *                      Fields of the wrong type are repaired to defaults by
  *                      the migration layer and reported as one warning.
+ *                      Anything over `IMPORT_MAX_BYTES` (file, text, or the
+ *                      gunzip output, which is inflated no further) is
+ *                      refused before it is parsed: a real save is < 4.5 MB.
  *  applyImport(p,mode) `merge` (streak max, XP max, collections union, cards
- *                      newer-wins, ledger union) or `replace` (the backup as
+ *                      newer-wins, ledger union; identity — name, kana, zone,
+ *                      dictated sentence — stays this browser's unless this
+ *                      browser holds no learner trace yet, as on a new phone,
+ *                      when the backup's is taken) or `replace` (the backup as
  *                      is; cards included, and the backup's seed/createdAt/
  *                      contentVersion header, so art renders as on the
  *                      original device). The review log is unioned in both
  *                      modes: deduped on `t|cardKey`, sorted by time, the
  *                      ring keeps the newest 5,000 by time (never by push
- *                      order). Flushes; the caller shows the reload hint.
+ *                      order). Runs inside one signals `batch` so the
+ *                      unlock evaluator sees one change, not one per card;
+ *                      drops the in-progress session snapshot (it was
+ *                      planned against the old cards). Atomic: should any
+ *                      write throw mid-way, the previous meta, cards, log
+ *                      and session are put back before the error is
+ *                      rethrown, so a page-level catch never sees a save
+ *                      with its meta replaced and its cards half-written.
+ *                      Flushes; the caller shows the reload hint.
  */
-import { BELT_IDS, type Belt, type CardKey } from '../content/types';
+import { batch } from '@preact/signals';
+import { BELT_IDS, type Belt, type CardKey, type Level } from '../content/types';
 import { bus } from '../shared/events';
 import { isoDate } from '../shared/time';
 import {
@@ -45,13 +60,15 @@ import {
   type WeakPoints,
 } from '../shared/store-types';
 import { MigrationError, migrateLog, migrateMetaChecked, migrateShard, newerCard } from './migrations';
-import { LOG_RING, gunzipText, hasCompression, isCompressed, parseShardId, type ShardId } from './persist';
+import { InflateLimitError, LOG_RING, gunzipText, hasCompression, isCompressed, parseShardId, pump, type ShardId } from './persist';
 import { replaceHeader, replaceLog, shardOfKey, store, storeCards } from './store';
 import { S } from './strings';
 import { levelFor } from './xp';
 
 export const BACKUP_SCHEMA = 'tsuzuku.backup/1' as const;
 export const BACKUP_VERSION = 1;
+/** Largest file / text / inflated size an import will look at (a full save is < 4.5 MB, design 07 §4). */
+export const IMPORT_MAX_BYTES = 32 * 1024 * 1024;
 
 export interface BackupDocument {
   schema: typeof BACKUP_SCHEMA;
@@ -98,27 +115,6 @@ export function buildBackup(): BackupDocument {
 
 type Bytes = Uint8Array<ArrayBuffer>;
 
-async function pump(stream: ReadableStream<Bytes>): Promise<Bytes> {
-  const reader = stream.getReader();
-  const chunks: Bytes[] = [];
-  let total = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    if (value) {
-      chunks.push(value);
-      total += value.length;
-    }
-  }
-  const out: Bytes = new Uint8Array(total);
-  let o = 0;
-  for (const c of chunks) {
-    out.set(c, o);
-    o += c.length;
-  }
-  return out;
-}
-
 function fromBytes(bytes: Bytes): ReadableStream<Bytes> {
   return new ReadableStream<Bytes>({
     start(c) {
@@ -133,8 +129,9 @@ async function gzipBytes(text: string): Promise<Bytes> {
   return pump(fromBytes(input).pipeThrough(new CompressionStream('gzip') as ReadableWritablePair<Bytes, Bytes>));
 }
 
+/** Inflate gzip bytes, never past `IMPORT_MAX_BYTES` (`InflateLimitError`). */
 async function gunzipBytes(bytes: Bytes): Promise<string> {
-  const out = await pump(fromBytes(bytes).pipeThrough(new DecompressionStream('gzip') as ReadableWritablePair<Bytes, Bytes>));
+  const out = await pump(fromBytes(bytes).pipeThrough(new DecompressionStream('gzip') as ReadableWritablePair<Bytes, Bytes>), IMPORT_MAX_BYTES);
   return new TextDecoder().decode(out);
 }
 
@@ -197,6 +194,8 @@ export interface ImportSummary {
   cardsGained: number;
   /** Cards this browser has that the backup lacks (lost on `replace`, kept on `merge`). */
   cardsLost: number;
+  /** Learner name [current, incoming] — so a merge preview shows an identity change. */
+  name: [string, string];
 }
 
 export interface ImportPreview {
@@ -224,6 +223,7 @@ function emptySummary(): ImportSummary {
     days: [m.streak.totalDays, 0],
     cardsGained: 0,
     cardsLost: c,
+    name: [m.profile.name, ''],
   };
 }
 
@@ -238,6 +238,7 @@ function looksBinary(text: string): boolean {
 }
 
 export function previewImport(json: string): ImportPreview {
+  if (json.length > IMPORT_MAX_BYTES) return invalid([S.importTooLarge]);
   const text = json.trim();
   if (text.length === 0) return invalid([S.importNotJson]);
   if (isCompressed(text) || looksBinary(text)) return invalid([S.importCompressed]);
@@ -327,6 +328,7 @@ export function previewImport(json: string): ImportPreview {
       days: [cur.streak.totalDays, meta.streak.totalDays],
       cardsGained: gained,
       cardsLost: lost,
+      name: [cur.profile.name, meta.profile.name],
     },
     exportedAt: typeof parsed.exportedAt === 'number' ? parsed.exportedAt : undefined,
     contentVersion: meta.contentVersion,
@@ -334,29 +336,33 @@ export function previewImport(json: string): ImportPreview {
   };
 }
 
-/** The file itself: gzip bytes, `gz1:` base64 text, or plain JSON text. */
+/** The file itself: gzip bytes, `gz1:` base64 text, or plain JSON text. Over `IMPORT_MAX_BYTES` is refused unread. */
 export async function previewImportBlob(src: Blob | ArrayBuffer | Uint8Array | string): Promise<ImportPreview> {
   if (typeof src === 'string') {
+    if (src.length > IMPORT_MAX_BYTES) return invalid([S.importTooLarge]);
     if (isCompressed(src)) {
       if (!hasCompression()) return invalid([S.importCompressed]);
       try {
-        return previewImport(await gunzipText(src));
-      } catch {
-        return invalid([S.importNotJson]);
+        return previewImport(await gunzipText(src, IMPORT_MAX_BYTES));
+      } catch (e) {
+        return invalid([e instanceof InflateLimitError ? S.importTooLarge : S.importNotJson]);
       }
     }
     return previewImport(src);
   }
+  const size = src instanceof Uint8Array ? src.byteLength : src instanceof ArrayBuffer ? src.byteLength : (src as { size?: unknown }).size;
+  if (typeof size === 'number' && size > IMPORT_MAX_BYTES) return invalid([S.importTooLarge]);
   let bytes: Bytes;
   if (src instanceof Uint8Array) bytes = new Uint8Array(src) as Bytes;
   else if (src instanceof ArrayBuffer) bytes = new Uint8Array(src) as Bytes;
   else bytes = await readBlobBytes(src);
+  if (bytes.length > IMPORT_MAX_BYTES) return invalid([S.importTooLarge]);
   if (bytes.length >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b) {
     if (!hasCompression()) return invalid([S.importCompressed]);
     try {
       return previewImport(await gunzipBytes(bytes));
-    } catch {
-      return invalid([S.importNotJson]);
+    } catch (e) {
+      return invalid([e instanceof InflateLimitError ? S.importTooLarge : S.importNotJson]);
     }
   }
   return previewImportBlob(new TextDecoder().decode(bytes));
@@ -462,7 +468,12 @@ function mergeCollections(a: Collections, b: Collections): Collections {
 
 function mergeKage(a: KageState, b: KageState): KageState {
   const byWeek = new Map<number, number>();
-  for (const [w, s] of [...a.history, ...b.history]) byWeek.set(w, Math.max(byWeek.get(w) ?? 0, s));
+  // `fillMeta` already drops malformed rows; the shape check here keeps a hand-edited live save from throwing.
+  for (const row of [...a.history, ...b.history]) {
+    if (!Array.isArray(row) || row.length !== 2) continue;
+    const [w, s] = row;
+    byWeek.set(w, Math.max(byWeek.get(w) ?? 0, s));
+  }
   const history = Array.from(byWeek.entries()).sort((x, y) => x[0] - y[0]) as [number, number][];
   const out: KageState = {
     week: Math.max(a.week, b.week),
@@ -489,6 +500,7 @@ function mergeLedger(a: Ledger, b: Ledger): Ledger {
   const seen = new Set<string>();
   const entries: LedgerEntry[] = [];
   for (const e of [...a.entries, ...b.entries]) {
+    if (!Array.isArray(e)) continue; // see mergeKage
     const key = e.join('|');
     if (seen.has(key)) continue;
     seen.add(key);
@@ -519,14 +531,28 @@ function mergeDaily(a: Record<EpochDay, DailyRow>, b: Record<EpochDay, DailyRow>
   return out;
 }
 
-/** Design 07 §5 merge: streak max, XP max, collections union, ledger union; settings stay this browser's. */
+/** No session, day, XP, goal or known kana yet: the browser has never met a learner (the shell's first-run rule). */
+export function hasNoLearnerTrace(m: SaveMeta): boolean {
+  return m.stats.sessions === 0 && m.streak.totalDays === 0 && m.profile.xp === 0 && m.profile.goals.length === 0 && m.profile.kanaKnown.length === 0;
+}
+
+/**
+ * Design 07 §5 merge: streak max, XP max, collections union, ledger union;
+ * settings stay this browser's. Identity (name, nameKana, tz, onboardedAt,
+ * dictatedSentence) stays this browser's too — unless this browser holds no
+ * learner trace (a fresh install restoring a backup), when the backup's is taken.
+ */
 export function mergeSaves(cur: SaveMeta, inc: SaveMeta, now: number): SaveMeta {
   const xp = Math.max(cur.profile.xp, inc.profile.xp);
   const stats = { ...cur.stats };
   for (const k of Object.keys(inc.stats) as (keyof SaveMeta['stats'])[]) stats[k] = Math.max(cur.stats[k] ?? 0, inc.stats[k] ?? 0);
   const medianMs = { ...inc.medianMs, ...cur.medianMs };
+  const identity = hasNoLearnerTrace(cur) ? inc.profile : cur.profile;
   const profile: SaveMeta['profile'] = {
     ...cur.profile,
+    name: identity.name,
+    nameKana: identity.nameKana,
+    tz: identity.tz,
     xp,
     level: levelFor(xp),
     belt: beltRank(inc.profile.belt) > beltRank(cur.profile.belt) ? inc.profile.belt : cur.profile.belt,
@@ -537,6 +563,12 @@ export function mergeSaves(cur: SaveMeta, inc: SaveMeta, now: number): SaveMeta 
   };
   const chosen = cur.profile.chosenKanji ?? inc.profile.chosenKanji;
   if (chosen !== undefined) profile.chosenKanji = chosen;
+  const dictated = identity.dictatedSentence ?? cur.profile.dictatedSentence ?? inc.profile.dictatedSentence;
+  if (dictated !== undefined) profile.dictatedSentence = dictated;
+  else delete profile.dictatedSentence;
+  const onboarded = identity.onboardedAt ?? cur.profile.onboardedAt ?? inc.profile.onboardedAt;
+  if (onboarded !== undefined) profile.onboardedAt = onboarded;
+  else delete profile.onboardedAt;
   return {
     schema: SAVE_SCHEMA,
     seed: cur.seed,
@@ -576,6 +608,7 @@ export function unionLogs(current: LogEntry[], incoming: LogEntry[]): LogEntry[]
   const seen = new Set<string>();
   const merged: LogEntry[] = [];
   for (const e of [...current, ...incoming]) {
+    if (!Array.isArray(e)) continue;
     const k = `${e[0]}|${e[1]}`;
     if (seen.has(k)) continue;
     seen.add(k);
@@ -598,31 +631,63 @@ function unionLog(incoming: LogEntry[]): void {
 export function applyImport(p: ImportPreview, mode: 'merge' | 'replace'): boolean {
   if (!p.valid || !p.data) return false;
   const { meta, cards, shardOf, log } = p.data;
+  // The pure half first: a throw here changes nothing.
   const cur = store.meta();
   const next = mode === 'replace' ? { ...meta, seed: meta.seed || cur.seed, updatedAt: store.now() } : mergeSaves(cur, meta, store.now());
   next.stats = { ...next.stats, imports: (next.stats.imports ?? 0) + 1 };
-  applyMeta(next);
-
-  if (mode === 'replace') {
-    const keep = new Set(Object.keys(cards));
-    const drop: CardKey[] = [];
-    storeCards.forEach((k) => {
-      if (!keep.has(k)) drop.push(k);
+  // Everything the write half touches, so a throw mid-way can be undone instead of leaving the meta
+  // replaced and the cards half-written (a page-level catch could not put either back).
+  const prevCards = new Map<CardKey, { t: CardTuple; level: Level }>();
+  storeCards.forEach((k, t) => prevCards.set(k, { t, level: parseShardId(shardOfKey(k)).level }));
+  const prevLog = store.log.recent(LOG_RING);
+  const prevSession = store.session.load();
+  try {
+    writeImport(next, mode, cards, shardOf, log);
+  } catch (e) {
+    batch(() => {
+      applyMeta(cur);
+      const added: CardKey[] = [];
+      storeCards.forEach((k) => {
+        if (!prevCards.has(k)) added.push(k);
+      });
+      for (const k of added) storeCards.delete(k);
+      for (const [k, { t, level }] of prevCards) if (storeCards.get(k) !== t) storeCards.set(k, t, { level });
+      replaceLog(prevLog);
+      if (prevSession) store.session.save(prevSession);
     });
-    for (const k of drop) storeCards.delete(k);
-    for (const [k, t] of Object.entries(cards) as [CardKey, CardTuple][]) {
-      const id = shardOf[k];
-      storeCards.set(k, t, id ? { level: parseShardId(id).level } : undefined);
-    }
-  } else {
-    for (const [k, t] of Object.entries(cards) as [CardKey, CardTuple][]) {
-      const prev = storeCards.get(k);
-      const id = shardOf[k];
-      if (!prev) storeCards.set(k, t, id ? { level: parseShardId(id).level } : undefined);
-      else if (newerCard(prev, t) !== prev) storeCards.set(k, t);
-    }
+    throw e;
   }
-  unionLog(log);
   void store.flush();
   return true;
+}
+
+function writeImport(next: SaveMeta, mode: 'merge' | 'replace', cards: Record<CardKey, CardTuple>, shardOf: Record<CardKey, ShardId>, log: LogEntry[]): void {
+  // One batch: every slice patch and card write lands before the unlock effect (and any other
+  // `cards.version` reader) runs, so a 20,000-card save costs one evaluation, not 20,000.
+  batch(() => {
+    applyMeta(next);
+
+    if (mode === 'replace') {
+      const keep = new Set(Object.keys(cards));
+      const drop: CardKey[] = [];
+      storeCards.forEach((k) => {
+        if (!keep.has(k)) drop.push(k);
+      });
+      for (const k of drop) storeCards.delete(k);
+      for (const [k, t] of Object.entries(cards) as [CardKey, CardTuple][]) {
+        const id = shardOf[k];
+        storeCards.set(k, t, id ? { level: parseShardId(id).level } : undefined);
+      }
+    } else {
+      for (const [k, t] of Object.entries(cards) as [CardKey, CardTuple][]) {
+        const prev = storeCards.get(k);
+        const id = shardOf[k];
+        if (!prev) storeCards.set(k, t, id ? { level: parseShardId(id).level } : undefined);
+        else if (newerCard(prev, t) !== prev) storeCards.set(k, t);
+      }
+    }
+    unionLog(log);
+    // A half-finished session was planned against the cards this browser had a moment ago.
+    store.session.clear();
+  });
 }

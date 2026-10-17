@@ -13,9 +13,13 @@ import pkg from './package.json';
  * below; after the bundle is written we replace it with
  * `<pkg.version>-<sha256 of index.html + the hashed asset names>`, so every
  * release that changes the shell ships a new worker (update toast, old caches
- * dropped) while a byte-identical rebuild stays quiet.
+ * dropped) while a byte-identical rebuild stays quiet. The second placeholder
+ * receives the comma-joined `assets/<hashed name>` list so the worker can
+ * precache the entry bundle and the lazy chunks at install (one online visit
+ * makes the whole app available offline; see public/sw.js).
  */
 export const SW_STAMP_PLACEHOLDER = '__TSUZUKU_BUILD__';
+export const SW_ASSETS_PLACEHOLDER = '__TSUZUKU_SHELL_ASSETS__';
 
 /** `<version>-<8 hex>` over the given build inputs (deterministic). */
 export function buildStamp(version: string, inputs: readonly string[]): string {
@@ -24,10 +28,17 @@ export function buildStamp(version: string, inputs: readonly string[]): string {
   return `${version}-${h.digest('hex').slice(0, 8)}`;
 }
 
-/** Replaces every placeholder in the worker source; throws when the placeholder is gone. */
-export function stampSw(code: string, stamp: string): string {
-  if (!code.includes(SW_STAMP_PLACEHOLDER)) throw new Error(`sw.js: missing ${SW_STAMP_PLACEHOLDER} placeholder`);
-  return code.split(SW_STAMP_PLACEHOLDER).join(stamp);
+/**
+ * Replaces both placeholders in the worker source (`stamp` for the cache
+ * version, `assets` as the comma-joined precache list, e.g. `assets/index-abc.js`);
+ * throws when either placeholder is gone, so a stamped worker is never re-stamped.
+ */
+export function stampSw(code: string, stamp: string, assets: readonly string[] = []): string {
+  for (const ph of [SW_STAMP_PLACEHOLDER, SW_ASSETS_PLACEHOLDER]) {
+    if (!code.includes(ph)) throw new Error(`sw.js: missing ${ph} placeholder`);
+  }
+  const list = assets.filter((a) => a.length > 0 && !/[,'\\\n]/.test(a)).join(',');
+  return code.split(SW_STAMP_PLACEHOLDER).join(stamp).split(SW_ASSETS_PLACEHOLDER).join(list);
 }
 
 function swStampPlugin(): Plugin {
@@ -45,7 +56,9 @@ function swStampPlugin(): Plugin {
       const assetsDir = resolve(outDir, 'assets');
       const assets = existsSync(assetsDir) ? readdirSync(assetsDir).sort() : [];
       const stamp = buildStamp(pkg.version, [readFileSync(indexPath, 'utf8'), ...assets]);
-      writeFileSync(swPath, stampSw(readFileSync(swPath, 'utf8'), stamp));
+      // Every emitted asset (entry + lazy chunks + CSS): ~1.4 MB, cached once per release.
+      const precache = assets.filter((name) => /\.(?:js|css|woff2?|svg|png|webp)$/i.test(name)).map((name) => `assets/${name}`);
+      writeFileSync(swPath, stampSw(readFileSync(swPath, 'utf8'), stamp, precache));
     },
   };
 }

@@ -13,7 +13,8 @@ import { DEFAULT_TEST_NOW, card, makeTestStore } from '../store/testing';
 import { kiaiInit } from '../learn';
 import { S } from './engine-strings';
 import { loadPlanContext } from './builder';
-import { dojoFeed, forecastLine, resumeInfo, sentenceOfDay, welcomeState } from './dojo-feed';
+import { forecastCounts } from '../store/derived';
+import { SCROLL_BLOCK_MINUTES, dojoFeed, forecastLine, gateForecast, resumeInfo, sentenceOfDay, welcomeState } from './dojo-feed';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const loader = createFakeLoader();
@@ -129,6 +130,35 @@ describe('dojoFeed', () => {
     expect(S.omikuji).toContain(feed.proverb);
     expect(feed.episodes).toBe(0);
     expect(feed.resume).toBeUndefined();
+  });
+
+  it('with no Scroll to teach, the new-item count is 0 and the Scroll block minutes come off the Kumite / Shugyō estimate', async () => {
+    const fc = { due: 3, newItems: 4, minutes: { kata: 1, kumite: 9, shugyo: 21 } };
+    expect(gateForecast(fc, 1)).toEqual({ newItems: 4, minutes: fc.minutes });
+    expect(gateForecast(fc, 0)).toEqual({ newItems: 0, minutes: { kata: 1, kumite: 9 - SCROLL_BLOCK_MINUTES.kumite, shugyo: 21 - SCROLL_BLOCK_MINUTES.shugyo } });
+    expect(gateForecast({ ...fc, newItems: 0 }, 0)).toEqual({ newItems: 0, minutes: fc.minutes });
+
+    // every station-4 item (components too) introduced: nothing left to teach today
+    const cards = brownVocab();
+    for (const id of STATION_4.componentIds) cards[`${id}#rec`] = live(8, TODAY + 5);
+    await makeTestStore({ save: { progress: { station: 4 } }, cards });
+    const raw = forecastCounts();
+    expect(raw.newItems).toBeGreaterThan(0);
+    const feed = await dojoFeed({ loader, teaser: false });
+    expect(feed.scrolls).toBe(0);
+    expect(feed.newItems).toBe(0);
+    expect(feed.minutes.kumite).toBe(raw.minutes.kumite - SCROLL_BLOCK_MINUTES.kumite);
+    expect(feed.minutes.shugyo).toBe(raw.minutes.shugyo - SCROLL_BLOCK_MINUTES.shugyo);
+    expect(feed.minutes.kata).toBe(raw.minutes.kata);
+    expect(feed.forecastLine).toBe(S.forecastRest); // nothing due, no scroll, no episode
+
+    // a Scroll available: the forecast stands and the budget shows
+    resetStoreForTests();
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: brownVocab() });
+    const withScroll = await dojoFeed({ loader, teaser: false });
+    expect(withScroll.scrolls).toBeGreaterThan(0);
+    expect(withScroll.newItems).toBeGreaterThan(0);
+    expect(withScroll.minutes).toEqual(forecastCounts().minutes);
   });
 
   it('a Nemesis duel ready today is called out; a backlog day carries the honest line', async () => {

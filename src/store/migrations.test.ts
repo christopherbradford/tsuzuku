@@ -1,4 +1,4 @@
-import { CARDS_SCHEMA, LOG_SCHEMA, type CardShard, type CardTuple, type LogEntry } from '../shared/store-types';
+import { CARDS_SCHEMA, LOG_SCHEMA, NAME_MAX_GLYPHS, type CardShard, type CardTuple, type LogEntry } from '../shared/store-types';
 import { freshSave, freshWeakPoints } from './defaults';
 import {
   CURRENT,
@@ -86,6 +86,96 @@ describe('migrateMeta', () => {
     // Idempotent: a repaired save needs no further repair.
     expect(migrateMetaChecked(meta)).toEqual({ meta, coerced: [] });
     expect(migrateMetaChecked(freshSave(NOW, 'UTC')).coerced).toEqual([]);
+  });
+
+  it('repairs out-of-union settings values to defaults and reports the paths', () => {
+    const s = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    Object.assign(s.settings, { intensity: 'bogus', feel: 'bogus', theme: 'sepia', furigana: 'maybe', speaking: 'loud', speedTier: 9, retention: 0.5, restDay: 12, sound: 7 });
+    const { meta, coerced } = migrateMetaChecked(s);
+    const d = freshSave(0, 'UTC').settings;
+    expect(meta.settings).toMatchObject({ intensity: d.intensity, feel: d.feel, theme: d.theme, furigana: d.furigana, speaking: d.speaking, speedTier: d.speedTier, retention: d.retention, restDay: null, sound: 1 });
+    expect(coerced.sort()).toEqual(['settings.feel', 'settings.furigana', 'settings.intensity', 'settings.restDay', 'settings.retention', 'settings.sound', 'settings.speaking', 'settings.speedTier', 'settings.theme']);
+    expect(migrateMetaChecked(meta).coerced).toEqual([]);
+    const ok = freshSave(NOW, 'UTC');
+    ok.settings = { ...ok.settings, intensity: 'custom', feel: 'arcade', speedTier: 5, retention: 0.95, restDay: 6, sound: 0 };
+    expect(migrateMetaChecked(ok)).toEqual({ meta: ok, coerced: [] });
+  });
+
+  it('drops array elements of the wrong shape: card keys, belts, stations, ledger and kage tuples, capped strings', () => {
+    const s = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    s.progress.grudge = [42, 'noFacet', 'v-n5-0001#rec', 'x#bogus'];
+    s.progress.stationsCleared = ['3', 1, 99, -1, 2.5, 7];
+    s.progress.assisted = [1, 'two'];
+    s.progress.shinsaPassed = ['white', 'rainbow', 3];
+    s.profile.kanaKnown = [1, 2, 'k-h-a'];
+    s.profile.goals = [1, { a: 1 }, 'road:sanjo-ohashi'];
+    s.ledger = { entries: [5, 'x', [1, 2], [20000, 10, 0, 1], [20001, 5, 9, 0], [20002, -5, 0, 0], [20003, 7, 1, 1, 'anime']], monthly: { '2025-01': 10, '2025-02': 'x' }, missions: [{ day: 1, tier: 3, conversation: true }, { day: 'x' }, 7] };
+    s.kage = { week: 1, best4: [3, 'x'], wins: 0, history: [[1, 3], [2], 'x'] };
+    (s as Record<string, unknown>).bookmarks = [{ evil: true }, 42, 'ok', 'long '.repeat(200)];
+    (s as Record<string, unknown>).captured = [null, 7, 'v-n5-0003'];
+    const { meta, coerced } = migrateMetaChecked(s);
+    expect(meta.progress.grudge).toEqual(['v-n5-0001#rec']);
+    expect(meta.progress.stationsCleared).toEqual([1, 7]);
+    expect(meta.progress.assisted).toEqual([1]);
+    expect(meta.progress.shinsaPassed).toEqual(['white']);
+    expect(meta.profile.kanaKnown).toEqual(['k-h-a']);
+    expect(meta.profile.goals).toEqual(['road:sanjo-ohashi']);
+    expect(meta.ledger.entries).toEqual([[20000, 10, 0, 1], [20003, 7, 1, 1, 'anime']]);
+    expect(meta.ledger.monthly).toEqual({ '2025-01': 10 });
+    expect(meta.ledger.missions).toEqual([{ day: 1, tier: 3, conversation: true }]);
+    expect(meta.kage.best4).toEqual([3]);
+    expect(meta.kage.history).toEqual([[1, 3]]);
+    expect(meta.bookmarks).toHaveLength(2);
+    expect(meta.bookmarks[0]).toBe('ok');
+    expect(Array.from(meta.bookmarks[1]).length).toBe(500);
+    expect(meta.captured).toEqual(['v-n5-0003']);
+    expect(coerced).toEqual(expect.arrayContaining(['progress.grudge', 'progress.stationsCleared', 'progress.assisted', 'progress.shinsaPassed', 'profile.kanaKnown', 'profile.goals', 'ledger.entries', 'ledger.monthly', 'ledger.missions', 'kage.best4', 'kage.history', 'bookmarks', 'captured']));
+    expect(migrateMetaChecked(meta).coerced).toEqual([]);
+  });
+
+  it('drops record entries of the wrong shape (daily rows, stamps, badges, wallpapers, medians, gate attempts, perapera)', () => {
+    const s = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    s.daily = { 20000: { reps: 1, ok: 1, minutes: 1, xp: 1, input: 0 }, 20001: 5, 20002: { reps: 'x' } };
+    s.collections = { badges: { 'first-step': 20000, seven: 'x' }, wallpapers: { a: { at: 1, reforges: 0, revealed: 2 }, b: { at: 1, reforges: 0, revealed: 9 }, c: 'x' }, stamps: { 3: { at: 1, perfect: true, assisted: false }, 4: 'x' }, michikusa: [] };
+    s.medianMs = { 'kana-flash': 800, 'audio-flash': 'x' };
+    s.progress.gateAttempts = { 1: 2, 2: 'x' };
+    s.perapera = { months: { '2026-01': [1, 2, 3, 4, 5], '2026-02': [1, 2], '2026-03': 'x' } };
+    const { meta, coerced } = migrateMetaChecked(s);
+    expect(meta.daily).toEqual({ 20000: { reps: 1, ok: 1, minutes: 1, xp: 1, input: 0 } });
+    expect(meta.collections.badges).toEqual({ 'first-step': 20000 });
+    expect(Object.keys(meta.collections.wallpapers)).toEqual(['a']);
+    expect(meta.collections.stamps).toEqual({ 3: { at: 1, perfect: true, assisted: false } });
+    expect(meta.medianMs).toEqual({ 'kana-flash': 800 });
+    expect(meta.progress.gateAttempts).toEqual({ 1: 2 });
+    expect(meta.perapera.months).toEqual({ '2026-01': [1, 2, 3, 4, 5] });
+    expect(coerced).toEqual(expect.arrayContaining(['daily', 'collections.badges', 'collections.wallpapers', 'collections.stamps', 'medianMs', 'progress.gateAttempts', 'perapera.months']));
+    expect(migrateMetaChecked(meta).coerced).toEqual([]);
+  });
+
+  it('caps header strings: seed ≤ 64 chars, name/nameKana ≤ NAME_MAX_GLYPHS (24) code points, chosenKanji exactly one glyph, dictatedSentence ≤ 500', () => {
+    expect(NAME_MAX_GLYPHS).toBe(24);
+    const s = freshSave(NOW, 'UTC') as unknown as Record<string, Record<string, unknown>>;
+    (s as Record<string, unknown>).seed = 'a'.repeat(1_000_000);
+    s.profile.name = '花'.repeat(200);
+    s.profile.nameKana = 'は'.repeat(50);
+    s.profile.chosenKanji = '食'.repeat(3000);
+    s.profile.dictatedSentence = 'x'.repeat(2000);
+    s.profile.onboardedAt = 'yesterday';
+    const { meta, coerced } = migrateMetaChecked(s);
+    expect(meta.seed).toMatch(/^[0-9a-f]{16}$/);
+    expect(Array.from(meta.profile.name).length).toBe(NAME_MAX_GLYPHS);
+    expect(Array.from(meta.profile.nameKana).length).toBe(NAME_MAX_GLYPHS);
+    expect(meta.profile.nameKana).toBe('は'.repeat(NAME_MAX_GLYPHS));
+    expect(meta.profile.chosenKanji).toBeUndefined();
+    expect(Array.from(meta.profile.dictatedSentence as string).length).toBe(500);
+    expect(meta.profile.onboardedAt).toBeUndefined();
+    expect(coerced.sort()).toEqual(['profile.chosenKanji', 'profile.dictatedSentence', 'profile.name', 'profile.nameKana', 'profile.onboardedAt', 'seed']);
+    expect(migrateMetaChecked(meta).coerced).toEqual([]);
+    const ok = freshSave(NOW, 'UTC');
+    ok.profile.chosenKanji = '食';
+    ok.profile.dictatedSentence = 'これはペンです。';
+    ok.profile.name = '😀'.repeat(NAME_MAX_GLYPHS); // astral glyphs count once
+    expect(migrateMetaChecked(ok)).toEqual({ meta: ok, coerced: [] });
   });
 
   it('repairs an unresolvable or unsafe profile.tz to UTC and reports the path; valid zones pass', () => {
@@ -185,10 +275,13 @@ describe('migrateShard', () => {
     expect(out.cards['k-h-a#rec']).toEqual(good);
   });
 
-  it('throws on unknown schema or missing kind/level', () => {
+  it('throws on unknown schema or missing/unknown kind/level', () => {
     expect(() => migrateShard({ schema: 'tsuzuku.cards/9', kind: 'vocab', level: 'n5', cards: {} })).toThrow(MigrationError);
     expect(() => migrateShard({ schema: CARDS_SCHEMA, cards: {} })).toThrow(/kind/);
     expect(() => migrateShard({ schema: CARDS_SCHEMA, kind: 'bogus', level: 'n5', cards: {} })).toThrow(MigrationError);
+    // a level outside the curriculum must not ride into the import as a placement hint
+    expect(() => migrateShard({ schema: CARDS_SCHEMA, kind: 'vocab', level: 'n9', cards: {} })).toThrow(/level/);
+    expect(() => migrateShard({ schema: CARDS_SCHEMA, kind: 'vocab', level: 7, cards: {} })).toThrow(/level/);
     expect(() => migrateShard(7)).toThrow(MigrationError);
   });
 });

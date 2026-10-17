@@ -10,7 +10,9 @@
  * stale snapshot of such a fight (boss rooms never resume) is abandoned on the
  * way so the Dojo stops offering it. Leaving keeps the snapshot (the runner
  * saves after every rep); "Another Kata?" on the end card starts a fresh Kata
- * at once. Mode titles render the Japanese half under `lang="ja"`.
+ * at once. Mode titles render the Japanese half under `lang="ja"`. The
+ * Begin / Resume buttons take focus imperatively (`useAutoFocus`): a dynamic
+ * `autofocus` attribute is ignored once anything on the page has been focused.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -26,6 +28,7 @@ import { buildKage, finishKage, hiScoreTable, kageResultLine, kageStanding, scor
 import { SessionRunner } from '../runner';
 import { SessionView } from '../SessionView';
 import { S, fill } from '../strings';
+import { useAutoFocus } from '../use-auto-focus';
 import './TrainPage.css';
 
 export interface TrainPageProps {
@@ -85,6 +88,9 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
   const [kageNotes, setKageNotes] = useState<string[]>([]);
   const alive = useRef(true);
   const kageDone = useRef<string | null>(null);
+  // The one primary button of the resume / pre-roll screens (rendered after load, so `autofocus` would be ignored).
+  const primary = useRef<HTMLButtonElement>(null);
+  useAutoFocus(primary, [phase.kind]);
 
   const build = async (m: SessionMode, autoStart: boolean): Promise<void> => {
     setPhase({ kind: 'building' });
@@ -219,7 +225,7 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
           </p>
           <p class="train__body muted">{S.resumeBody}</p>
           <div class="train__actions">
-            <button type="button" class="hanko train__resume-btn" onClick={() => resume(phase.snap)} autoFocus>
+            <button type="button" class="hanko train__resume-btn" onClick={() => resume(phase.snap)} ref={primary}>
               {fill(S.resumeLine, { n: left })}
             </button>
             <button type="button" class="btn train__fresh-btn" onClick={() => startFresh(phase.snap)}>
@@ -289,7 +295,7 @@ export default function TrainPage(p: TrainPageProps): JSX.Element {
             </section>
           ) : null}
           <div class="train__actions">
-            <button type="button" class="hanko hanko--lg train__begin" onClick={() => begin(plan)} autoFocus>
+            <button type="button" class="hanko hanko--lg train__begin" onClick={() => begin(plan)} ref={primary}>
               {S.begin}
             </button>
             {back}

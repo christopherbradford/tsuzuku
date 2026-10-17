@@ -185,6 +185,15 @@ describe('estimateMs / textToSpeak', () => {
     expect(textToSpeak('飲む')).toBe('飲む');
     expect(textToSpeak('あ', 'あ')).toBe('あ');
   });
+
+  it('a short collocation with no kana speaks its plain surface, not the bare word (MeaningGuard speakWord passes no kana for collocations)', () => {
+    expect(textToSpeak('朝ご飯を食べる')).toBe('朝ご飯を食べる');
+    expect(textToSpeak('{朝|あさ}ご{飯|はん}を{食|た}べる')).toBe('朝ご飯を食べる');
+    expect(textToSpeak('日が暮れる')).toBe('日が暮れる');
+    // Why the caller must not forward the word's kana: a collocation this short counts as a word
+    // and the engine would say the bare word instead of the phrase it claims to have played.
+    expect(textToSpeak('朝ご飯を食べる', 'あさごはん')).toBe('あさごはん');
+  });
 });
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -374,6 +383,9 @@ describe('speak', () => {
     expect(synth.spoken[0]?.text).toBe('ひ');
     void svc.speak('{今日|きょう}はいい{日|ひ}ですね。', { kana: 'きょうはいいひですね。' });
     expect(synth.spoken[1]?.text).toBe('今日はいい日ですね。');
+    // a short collocation without kana goes to the engine as written
+    void svc.speak('日が暮れる');
+    expect(synth.spoken[2]?.text).toBe('日が暮れる');
   });
 
   it('a synth that throws on speak() still resolves', async () => {

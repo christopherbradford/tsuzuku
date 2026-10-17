@@ -5,11 +5,18 @@
  * confirmation for "I read all kana", or none) → pace with the honest road
  * (months at 100 % / 70 %, in-app hours COMPUTED from the preset, the
  * ≈ 1,200 external hours, TTS notice) → voice test + speech-recognition
- * notice + theme → one write to the store and the Dojo.
+ * notice + theme → one write to the store and the Dojo. `finish()` also
+ * moves `progress.station` from 0 (Nihonbashi is onboarding only) to 1, so
+ * the daily quests and the builder draw from Shinagawa at once.
  *
  * `markKnown` runs only for the kana the learner actually read; the rest are
  * taught at Shinagawa. `settings.speaking` stays `'self'` unless the learner
  * opts into recognition after the network notice.
+ *
+ * The name is capped at `NAME_MAX_GLYPHS` code points both as it is typed
+ * (`clampName`, since IME composition and paste bypass a native maxlength)
+ * and once more in `finish()`: every piece of art lays the name out glyph by
+ * glyph inside a fixed plate (06 §3 safe zones).
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useState } from 'preact/hooks';
@@ -54,6 +61,14 @@ export const BASIC_HIRAGANA: readonly KanaCard[] = [
 
 export const KANA_TOTAL = BASIC_HIRAGANA.length;
 export const TILE_COUNT = 12;
+/** Longest learner name, in code points (the art plates fit ~24 brush glyphs; 06 §3). */
+export const NAME_MAX_GLYPHS = 24;
+
+/** The typed name cut to `NAME_MAX_GLYPHS` code points (grapheme-safe for kana and kanji). */
+export function clampName(v: string): string {
+  const glyphs = Array.from(v);
+  return glyphs.length > NAME_MAX_GLYPHS ? glyphs.slice(0, NAME_MAX_GLYPHS).join('') : v;
+}
 
 /** Typed romaji (any Hepburn / kunrei spelling) or kana matches the glyph. */
 export function kanaMatches(typed: string, kana: string): boolean {
@@ -262,7 +277,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
   const finish = (): void => {
     if (saving) return;
     setSaving(true);
-    const finalName = finalizeIme(name).trim();
+    const finalName = clampName(finalizeIme(name).trim());
     const nameKana = finalName.length > 0 ? finalName : S.onbNamePlaceholder;
     const display = finalName.length > 0 ? finalName : S.onbNameDefault;
     const preset = INTENSITY_PRESETS[pace];
@@ -277,6 +292,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
       speaking: speakingMode,
     }));
     for (const id of known) markKnown(id, 'kana');
+    store.patch('progress', (p) => ({ ...p, station: Math.max(1, p.station) }));
     void store.flush();
     navigate({ name: 'dojo' }, { replace: true });
   };
@@ -311,7 +327,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
             <p class="page__lead">{S.onbIntro}</p>
             <label class="field">
               <span class="field__label">{S.onbNameKanaLabel}</span>
-              <KanaInput value={name} onChange={setName} onSubmit={() => next()} placeholder={S.onbNamePlaceholder} label={S.onbNameKanaLabel} autoFocus />
+              <KanaInput value={name} onChange={(v) => setName(clampName(v))} onSubmit={() => next()} placeholder={S.onbNamePlaceholder} label={S.onbNameKanaLabel} autoFocus />
               <span class="field__hint">{S.onbNameHint}</span>
             </label>
           </>
@@ -505,7 +521,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
           <>
             <h2>{S.onbSummaryTitle}</h2>
             <ul class="onb__summary">
-              <li>{fmt(S.onbNameSummary, { name: finalizeIme(name).trim() || S.onbNameDefault })}</li>
+              <li>{fmt(S.onbNameSummary, { name: clampName(finalizeIme(name).trim()) || S.onbNameDefault })}</li>
               <li>{fmt(S.onbSummaryPace, { pace: PACE_COPY[pace].name })}</li>
               <li>{fmt(S.onbSummaryKana, { n: known.size })}</li>
               <li>{fmt(S.onbSummaryTheme, { theme: THEME_COPY[theme] })}</li>

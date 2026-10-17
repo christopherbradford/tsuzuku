@@ -6,18 +6,25 @@
  *  example · grammar: pattern / formation / explanation / examples / contrast ·
  *  kanji: components / mnemonic / reading / words · kana: glyph / mnemonic /
  *  example word · component: glyph / name / hint) → one immediate check per
- *  item (`stepTag: 'intro'`; the runner calls `introduceItem` on it) →
- *  noticing: the station episode's lines that contain the new items.
+ *  item on its base facet (`stepTag: 'intro'`; the runner calls
+ *  `introduceItem` on it), then a second immediate check for every other
+ *  facet an item is born with (`initialFacets`: kana `prod` → Kana Ear, Kana
+ *  Forge as fallback) → noticing: the station episode's lines that contain
+ *  the new items. The second check exists because a card created at
+ *  introduction but never served stays in state 0, no unlock rule reaches a
+ *  born facet and the due queue never serves a state-0 card: without it a
+ *  kana's `prod` card would never run and kana could never reach Brown.
  *
  * Step ids are stable and self-describing so the runner and the end card can
  * find them without the Scroll object:
- *   `scroll:<scrollId>:pre:<itemId>`   pretest
- *   `scroll:<scrollId>:check:<itemId>` immediate check (intro)
+ *   `scroll:<scrollId>:pre:<itemId>`            pretest
+ *   `scroll:<scrollId>:check:<itemId>`          immediate check (intro, base facet)
+ *   `scroll:<scrollId>:check:<itemId>#<facet>`  immediate check of another born facet
  *
  * `completeScroll` emits `scroll:completed` exactly once per scroll id
  * (flawless = every immediate check correct; the pretest is excluded).
  */
-import type { ContentItem, DrillId, GrammarItem, KanaItem, KanjiItem, StoryItem, VocabItem, ComponentDef } from '../content/types';
+import type { ContentItem, DrillId, Facet, GrammarItem, KanaItem, KanjiItem, StoryItem, VocabItem, ComponentDef } from '../content/types';
 import { isChunk } from '../content/loader';
 import { toPlain } from '../content/ruby';
 import { bus } from '../shared/events';
@@ -25,7 +32,7 @@ import { cardKey as makeKey, tryKindOfId } from '../shared/ids';
 import type { Rng } from '../shared/hash';
 import type { Step, StepParams, StepResult } from '../shared/session-types';
 import type { ItemKind, Settings } from '../shared/store-types';
-import { baseFacet, exerciseFor, type QueueCard, type Scroll } from '../learn';
+import { baseFacet, exerciseFor, initialFacets, type QueueCard, type Scroll } from '../learn';
 import { S } from './engine-strings';
 
 export const PRETEST_PREFIX = 'pre';
@@ -82,8 +89,8 @@ export function scrollItemKind(itemId: string, item: ContentItem | undefined): I
 export function pretestStepId(scrollId: string, itemId: string): string {
   return `scroll:${scrollId}:${PRETEST_PREFIX}:${itemId}`;
 }
-export function checkStepId(scrollId: string, itemId: string): string {
-  return `scroll:${scrollId}:${CHECK_PREFIX}:${itemId}`;
+export function checkStepId(scrollId: string, itemId: string, facet?: Facet): string {
+  return `scroll:${scrollId}:${CHECK_PREFIX}:${itemId}${facet ? `#${facet}` : ''}`;
 }
 
 /** A Chikaradameshi pretest step: carries `scrollId`, `isNew`, no `stepTag`. */
@@ -128,6 +135,9 @@ function minimalParams(exercise: DrillId, item: ContentItem, peers: ContentItem[
     if (exercise === 'kana-flash') {
       const others = peers.filter(isKana).filter((k) => k.id !== item.id).map((k) => k.romaji);
       p.choices = shuffleLocal([item.romaji, ...Array.from(new Set(others)).slice(0, 3)]);
+    } else if (exercise === 'kana-ear') {
+      const others = peers.filter(isKana).filter((k) => k.id !== item.id).map((k) => k.kana);
+      p.choices = shuffleLocal([item.kana, ...Array.from(new Set(others)).slice(0, 3)]);
     }
   } else if (isKanji(item)) {
     // Component Assembly builds its tiles from the component definitions; the params carry the answer and the frame only.
@@ -156,8 +166,7 @@ function minimalParams(exercise: DrillId, item: ContentItem, peers: ContentItem[
   return p;
 }
 
-function freshCard(itemId: string, kind: ItemKind): QueueCard {
-  const facet = baseFacet(kind);
+function freshCard(itemId: string, kind: ItemKind, facet: Facet = baseFacet(kind)): QueueCard {
   return { cardKey: makeKey(itemId, facet), itemId, kind, facet, r: 0, mature: false, exposures: 0 };
 }
 
@@ -280,8 +289,10 @@ export function noticingFor(station: number, itemIds: readonly string[], get: (i
 
 /**
  * The Scroll's steps. `pretest` ≤ 3 steps over `s.pretestIds`, `checks` one
- * per item (`stepTag: 'intro'`, `isNew`, `exposures: 0`). Items whose content
- * is not in memory, or whose drill (and fallback) is unavailable, are skipped.
+ * per item on its base facet (`stepTag: 'intro'`, `isNew`, `exposures: 0`)
+ * followed by one per extra born facet (kana `prod`), in item order. Items
+ * whose content is not in memory, or whose drill (and fallback) is
+ * unavailable, are skipped.
  */
 export function scrollSteps(s: Scroll, get: (id: string) => ContentItem | undefined, rng: Rng, o: ScrollStepOptions = {}): ScrollStepsResult {
   const station = o.station ?? s.station;
@@ -304,12 +315,12 @@ export function scrollSteps(s: Scroll, get: (id: string) => ContentItem | undefi
     return null;
   };
 
-  const make = (itemId: string, id: string, tag: 'intro' | null): Step | null => {
+  const make = (itemId: string, id: string, tag: 'intro' | null, facet?: Facet): Step | null => {
     const item = get(itemId);
     if (!item) return null;
     const kind = scrollItemKind(itemId, item);
     if (!kind) return null;
-    const qc = freshCard(itemId, kind);
+    const qc = freshCard(itemId, kind, facet);
     const exercise = drillFor(kind, qc);
     if (!exercise) return null;
     const params: StepParams = { ...(o.resolve ? o.resolve(exercise, item, qc) : minimalParams(exercise, item, peers, rng)), scrollId: s.id };
@@ -337,6 +348,19 @@ export function scrollSteps(s: Scroll, get: (id: string) => ContentItem | undefi
   for (const id of s.itemIds) {
     const st = make(id, checkStepId(s.id, id), 'intro');
     if (st) checks.push(st);
+  }
+  // Second immediate check for every other facet an item is born with (kana `prod`): after all base checks, so the
+  // two reps of one item are spaced. The step is an intro check too (`introduceItem` is idempotent), and its result
+  // is the born card's first rep, which takes it out of state 0 and into the due queue.
+  for (const id of s.itemIds) {
+    const item = get(id);
+    const kind = item ? scrollItemKind(id, item) : null;
+    if (!kind) continue;
+    for (const f of initialFacets(kind)) {
+      if (f === baseFacet(kind)) continue;
+      const st = make(id, checkStepId(s.id, id, f), 'intro', f);
+      if (st) checks.push(st);
+    }
   }
   const noticing = noticingFor(s.station, s.itemIds, get);
   const out: ScrollStepsResult = { pretest, teach: s.itemIds.slice(), checks };

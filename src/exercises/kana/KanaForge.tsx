@@ -7,18 +7,28 @@
  * slip is a Block tagged by kind. The romaji shown is the IME spelling
  * (`imeRomaji`: を → wo, ティ → thi) so what is read can be typed. With a
  * voice available the romaji sits behind 「Show romaji」, which counts as a
- * hint (`onHint`, Hard ceiling). Space replays; replays are counted.
+ * hint (`onHint`, Hard ceiling) — except for を/ヲ (`SPOKEN_HOMOPHONES`),
+ * which the voice pronounces exactly like お/オ: their romaji is shown up
+ * front at no cost, with the audio still playing. Space replays; replays are
+ * counted.
  */
 import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { services, speak } from '@/shared/audio';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
+import { voiceAudible } from '../voice';
 import { acceptForms, attempt } from '../check';
 import { S as X } from '../strings';
 import { MissingItem, imeRomaji, isKanaItem, missingResult, romajiLabel, useDrillKeys, useLatency } from './KanaFlash';
 import { S } from './strings';
 import './kana.css';
+
+/** Kana whose spoken form is shared with another kana (を ≡ お, ヲ ≡ オ): TTS cannot distinguish them. */
+export const SPOKEN_HOMOPHONES: ReadonlySet<string> = new Set(['を', 'ヲ']);
+export function isSpokenHomophone(kana: string): boolean {
+  return SPOKEN_HOMOPHONES.has(kana);
+}
 
 export const meta: ExerciseMeta = {
   id: 'kana-forge',
@@ -44,9 +54,12 @@ function KanaForgeBody(p: ExerciseProps): JSX.Element {
   const [replays, setReplays] = useState(0);
   const replaysRef = useRef(0);
   const fired = useRef(false);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
   const romaji = item ? imeRomaji(item) : (p.step.params.promptEn ?? '');
-  const showRomaji = !hasVoice || romajiShown;
+  // を/ヲ are spoken exactly like お/オ: the voice alone cannot name them, so
+  // their IME romaji (wo) is shown up front at no hint cost (audio still plays).
+  const spokenHomophone = item ? isSpokenHomophone(item.kana) : false;
+  const showRomaji = !hasVoice || romajiShown || spokenHomophone;
   const hintUsed = hasVoice && romajiShown;
   const accept = acceptForms(item, p.step.params);
 

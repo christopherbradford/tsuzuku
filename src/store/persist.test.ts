@@ -7,6 +7,7 @@ import {
   CEILING_BYTES,
   DEBOUNCE_MS,
   GZIP_PREFIX,
+  InflateLimitError,
   LOG_KEY,
   LOG_RING_COMPACT,
   META_KEY,
@@ -317,6 +318,39 @@ describe('quota', () => {
     p.dispose();
   });
 
+  it('freeze(key) makes schedule/write/writeRaw no-ops for that key, pins the level at ceiling and lists it as failing', async () => {
+    const s = new MemoryStorage();
+    s.setItem('doc', '{broken');
+    const states: StorageState[] = [];
+    const p = createPersist(s, 0, { hooks: null, onState: (st) => states.push(st) });
+    p.freeze('doc');
+    expect(p.level()).toBe('ceiling');
+    expect(p.frozen()).toEqual(['doc']);
+    expect(p.failing()).toEqual(['doc']);
+    expect(states.at(-1)?.level).toBe('ceiling');
+    p.schedule('doc', () => ({ fresh: true }));
+    expect(p.pending()).toEqual([]);
+    await p.flush();
+    expect(p.write('doc', { fresh: true })).toBe(false);
+    expect(p.writeRaw('doc', 'x')).toBe(false);
+    expect(s.getItem('doc')).toBe('{broken');
+    // Other keys keep working.
+    expect(p.write('other', 1)).toBe(true);
+    expect(p.level()).toBe('ceiling');
+    p.dispose();
+  });
+
+  it('an untracked write that hits the quota is logged, never silent', () => {
+    const s = new MemoryStorage(40);
+    const p = createPersist(s, 0, { hooks: null });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    expect(p.writeRaw('k', 'z'.repeat(100))).toBe(false);
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(String(warn.mock.calls[0][0])).toMatch(/quota/);
+    warn.mockRestore();
+    p.dispose();
+  });
+
   it('recognises browser quota errors', () => {
     expect(isQuotaError(new DOMException('x', 'QuotaExceededError'))).toBe(true);
     expect(isQuotaError({ code: 22 })).toBe(true);
@@ -404,6 +438,13 @@ describe.skipIf(!hasCompression())('gzip rung', () => {
     expect(packed.length).toBeLessThan(text.length);
     expect(await gunzipText(packed)).toBe(text);
     expect(await gunzipText(packed.slice(GZIP_PREFIX.length))).toBe(text);
+  });
+
+  it('gunzipText stops inflating past its limit with InflateLimitError', async () => {
+    const text = '0,'.repeat(200_000);
+    const packed = await gzipText(text);
+    await expect(gunzipText(packed, 10_000)).rejects.toBeInstanceOf(InflateLimitError);
+    expect(await gunzipText(packed, text.length)).toBe(text);
   });
 
   it('compressLargest gzips the biggest card shard; read decodes it; later writes stay compressed', async () => {

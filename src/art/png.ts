@@ -13,7 +13,9 @@
  * used when present; `canRender4k()` gates 3840×2160 to desktops (fine
  * pointer, ≥ 1024 px, not iOS) and refuses only when the browser reports
  * `deviceMemory` below 4 GB — Firefox and Safari never report it, so an
- * unknown value is not a reason to withhold 4K.
+ * unknown value is not a reason to withhold 4K. `download()` is one anchor
+ * click on every platform (a new tab on iOS, `<a download>` elsewhere) and
+ * revokes its object URL after `REVOKE_DELAY_MS` on both paths.
  *
  * `drawTexts` honours `TextLayer.letterSpacing` through the canvas
  * `letterSpacing` property where the engine has it (Chrome 99+, Safari 17+,
@@ -344,36 +346,31 @@ export function isIos(nav: Pick<Navigator, 'userAgent' | 'platform' | 'maxTouchP
   return nav.platform === 'MacIntel' && (nav.maxTouchPoints ?? 0) > 1;
 }
 
+/** How long the object URL stays alive after the click: the download has started, or the new tab has fetched it, by then. */
+export const REVOKE_DELAY_MS = { download: 30_000, opened: 60_000 } as const;
+
 /**
  * Save the blob: an `<a download>` click, or on iOS a new tab (`'opened'`, show
- * `S.iosHint`). `'unavailable'` when the host has no object URLs.
+ * `S.iosHint`). `'unavailable'` when the host has no object URLs. Both paths
+ * are a single anchor click (`window.open(…, 'noopener')` returns null by
+ * spec, so a fallback keyed on it would open the image twice), and both
+ * revoke the one object URL they mint after `REVOKE_DELAY_MS`.
  */
 export function download(blob: Blob, filename: string): DownloadOutcome {
   if (typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function' || typeof document === 'undefined') return 'unavailable';
   const href = URL.createObjectURL(blob);
-  if (isIos()) {
-    const w = typeof window !== 'undefined' ? window.open(href, '_blank', 'noopener') : null;
-    if (!w) {
-      // pop-up blocked: fall back to navigating an anchor, which Safari shows inline
-      const a = document.createElement('a');
-      a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
-    return 'opened';
-  }
+  const ios = isIos();
   const a = document.createElement('a');
   a.href = href;
-  a.download = filename;
   a.rel = 'noopener';
+  if (ios) a.target = '_blank';
+  else a.download = filename;
   document.body.appendChild(a);
   a.click();
   a.remove();
-  setTimeout(() => URL.revokeObjectURL(href), 30_000);
-  return 'download';
+  const outcome: DownloadOutcome = ios ? 'opened' : 'download';
+  setTimeout(() => URL.revokeObjectURL(href), REVOKE_DELAY_MS[outcome]);
+  return outcome;
 }
 
 /**

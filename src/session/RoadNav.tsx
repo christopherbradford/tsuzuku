@@ -10,8 +10,10 @@
  *    milestone with the name still readable. Each station carries a seeded
  *    vignette (hill / pine / torii / wave) drawn from `rngFor('road', id)`.
  *  - Every station is a real link (`href()`), one roving tab stop; arrow keys
- *    walk the road, Home/End jump, Enter/Space open. The current station
- *    scrolls into view on mount.
+ *    walk the road, Home/End jump, Enter/Space open. Mounting never scrolls
+ *    the window (the router's restored position and the page heading stay
+ *    where they are); a "Go to your station" button brings the current
+ *    station into view on demand.
  *  - A "where am I" line summarises the position for screen readers and eyes.
  */
 import type { JSX } from 'preact';
@@ -118,9 +120,15 @@ export function RoadNav(p: RoadNavProps): JSX.Element {
 
   useEffect(() => {
     setFocusN(focusStation);
-    const el = links.current.get(focusStation);
-    if (el && typeof el.scrollIntoView === 'function') el.scrollIntoView({ block: 'center' });
   }, [focusStation]);
+
+  const jump = (): void => {
+    const el = links.current.get(focusStation);
+    if (!el) return;
+    setFocusN(focusStation);
+    el.focus({ preventScroll: true });
+    if (typeof el.scrollIntoView === 'function') el.scrollIntoView({ block: 'center' });
+  };
 
   const clearedCount = STATIONS.filter((st) => p.cleared.includes(st.number)).length;
   const currentDef = STATIONS.find((st) => st.number === current);
@@ -239,6 +247,9 @@ export function RoadNav(p: RoadNavProps): JSX.Element {
         {where}
       </p>
       <p class="tokaido__hint">{S.keyboardHint}</p>
+      <button type="button" class="btn btn--ghost btn--sm tokaido__jump" onClick={jump}>
+        {S.jumpToCurrent}
+      </button>
       <div class="tokaido__node tokaido__node--start" data-belt="white">
         <span class="seal seal--round" lang="ja" aria-hidden="true">
           橋

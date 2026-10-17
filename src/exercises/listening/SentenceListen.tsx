@@ -18,7 +18,11 @@
  *    listen cards on a clean dictation, Again for a content word the learner
  *    mis-transcribed (word found in the sentence, absent from the answer).
  *  · Emits `line:scored {kind:'dictation'}` for B's stats.
- * Without a Japanese voice the sentence is shown (honest degrade). Facet
+ * Without an audible Japanese voice (`voiceAudible(services.audio)`: a voice
+ * exists AND the master volume is above 0) the sentence is shown (honest
+ * degrade). In typed mode the frame's Enter (focus outside the field)
+ * finalizes the IME buffer before grading, as the field's own Enter does
+ * (hon → ほん), so a pending romaji tail never counts as a slip. Facet
  * `null`; keys `kana`; `needsTts`.
  */
 import type { JSX } from 'preact';
@@ -31,6 +35,7 @@ import { services, speak } from '@/shared/audio';
 import { bus } from '@/shared/events';
 import type { ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { parseCardKey } from '@/shared/ids';
+import { finalizeIme } from '@/shared/kana-ime';
 import { moraSplit, nearMissKind, normalizeAnswer, normalizeEn, normalizeJa } from '@/shared/jp';
 import type { AttemptResult, StepParams } from '@/shared/session-types';
 import type { Rating } from '@/shared/store-types';
@@ -39,6 +44,7 @@ import { KanaInput } from '@/shared/ui/KanaInput';
 import { Ruby } from '@/shared/ui/Ruby';
 import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
+import { voiceAudible } from '../voice';
 import { SLIP_PARTICLES, gradeChoice, gradeScored, moraScore, voicingSlip } from '../check';
 import { S, TAG_LABEL, fill } from './strings';
 import './SentenceListen.css';
@@ -257,7 +263,7 @@ export function SentenceListen(p: ExerciseProps<SentenceListenParams>): JSX.Elem
   const kana = sentenceKana(sentence);
   const choiceMode = (params.choices?.length ?? 0) >= 2;
   const rate = params.rate ?? services.audio.rateForTier(p.speedTier);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
 
   const [playing, setPlaying] = useState(false);
   const [plays, setPlays] = useState(0);
@@ -351,7 +357,14 @@ export function SentenceListen(p: ExerciseProps<SentenceListenParams>): JSX.Elem
     p.onResult(r);
   };
 
-  useExerciseKeys(choiceMode ? { onReplay: replay, onChoice: pick } : { onReplay: replay, onSubmit: () => submit(live.current.value) });
+  /** The frame's Enter (focus outside the field): finalize the IME buffer first, as `KanaInput` does on its own Enter. */
+  const submitLive = (): void => {
+    const final = finalizeIme(live.current.value);
+    if (final !== live.current.value) setValue(final);
+    submit(final);
+  };
+
+  useExerciseKeys(choiceMode ? { onReplay: replay, onChoice: pick } : { onReplay: replay, onSubmit: submitLive });
 
   const replaysLeft = MAX_REPLAYS - replays;
   const bandLine = done ? (done.result.correct ? S.bandGood : done.result.nearMiss ? S.bandHard : S.bandAgain) : '';

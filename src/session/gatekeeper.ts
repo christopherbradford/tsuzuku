@@ -13,13 +13,16 @@
  *  Guard counts as a miss, Again in FSRS, no combo penalty (writer). No lives.
  *  Pass: overall ≥ 85 % and every phase ≥ 70 %. Misses feed the 遺恨帳 Grudge
  *  List; a same-day rematch needs ≥ 20 Grudge reps trained AFTER the lost
- *  fight (its own Again rows never count), a new day opens the rematch by
- *  itself (`progress.gateAttemptDay`); the third non-pass offers the Assisted
+ *  fight (its own Again rows never count; the fight's end is saved as
+ *  `progress.gateAttemptAt`, so the baseline survives a reload), a new day
+ *  opens the rematch by itself (`progress.gateAttemptDay`); the third non-pass offers the Assisted
  *  Gate (no timers, Final Form → 3 cloze, 80 %, provisional stamp); the
  *  Revenge Match is the full fight again. `rematchAllowed` is the one
  *  predicate every screen (intro, result, Station page) reads.
- *  `finishGate` writes `progress` (attempts, attempt day, cleared, perfect,
- *  assisted, grudge, station advance) and emits `gate:result`; B stamps.
+ *  `finishGate` writes `progress` (attempts, attempt day and time, cleared,
+ *  perfect, assisted, grudge, station advance — a pass at or past the current
+ *  station moves `progress.station` to n + 1, so a save still at station 0
+ *  advances too) and emits `gate:result`; B stamps.
  */
 import { ERROR_TAGS, type Belt, type CardKey, type DrillId, type ErrorTag, type GrammarItem, type StationBundle, type StoryItem } from '../content/types';
 import type { ContentLoader } from '../content/loader';
@@ -384,8 +387,10 @@ export function gateOutcome(score: GateScore, o: { assisted: boolean; revenge: b
 /**
  * The moment the last lost fight at a station ended (ms), kept for the page
  * lifetime so `rematchAllowed` counts only Grudge reps trained after it. The
- * save holds the day (`gateAttemptDay`); after a reload the day's reps count
- * from 04:00, which can only open a rematch earlier, never lock it.
+ * save holds the same moment (`progress.gateAttemptAt`, written by `finishGate`)
+ * and the day (`gateAttemptDay`), so a reload keeps the baseline; a save from
+ * before the field existed falls back to 04:00, which can only open a rematch
+ * earlier, never lock it.
  */
 const attemptEndedAt = new Map<number, number>();
 
@@ -398,29 +403,36 @@ export function resetGateAttemptsForTests(): void {
 export function finishGate(n: number, score: GateScore, o: { assisted: boolean; revenge: boolean }): void {
   const outcome = gateOutcome(score, o);
   const today = store.today();
+  const now = store.now();
   store.patch('progress', (p) => {
     const attempts = { ...p.gateAttempts, [n]: (p.gateAttempts[n] ?? 0) + 1 };
     if (!score.passed) {
       const grudge = p.grudge.slice();
       for (const k of score.misses) if (!grudge.includes(k)) grudge.push(k);
-      return { ...p, gateAttempts: attempts, gateAttemptDay: { ...(p.gateAttemptDay ?? {}), [n]: today }, grudge };
+      return { ...p, gateAttempts: attempts, gateAttemptDay: { ...(p.gateAttemptDay ?? {}), [n]: today }, gateAttemptAt: { ...(p.gateAttemptAt ?? {}), [n]: now }, grudge };
     }
     const cleared = p.stationsCleared.includes(n) ? p.stationsCleared : [...p.stationsCleared, n].sort((a, b) => a - b);
     let assisted = p.assisted;
     if (outcome === 'assisted' && !assisted.includes(n)) assisted = [...assisted, n];
     if (outcome === 'revenge' || outcome === 'perfect' || outcome === 'pass') assisted = assisted.filter((x) => x !== n);
+    // A pass closes the fight: its end time is no longer a rematch baseline.
+    const gateAttemptAt = { ...(p.gateAttemptAt ?? {}) };
+    delete gateAttemptAt[n];
     return {
       ...p,
       gateAttempts: attempts,
+      gateAttemptAt,
       stationsCleared: cleared,
       perfectGates: p.perfectGates + (outcome === 'perfect' ? 1 : 0),
       assisted,
       // A pass settles the Grudge List: the fight is won, the misses are information.
       grudge: [],
-      station: n === p.station ? Math.min(53, n + 1) : p.station,
+      // The road moves on from the station just cleared; a save still at station 0 (onboarding) advances as well,
+      // while replaying an earlier gate (Revenge Match) never moves it.
+      station: n >= p.station ? Math.min(53, n + 1) : p.station,
     };
   });
-  if (!score.passed) attemptEndedAt.set(n, store.now());
+  if (!score.passed) attemptEndedAt.set(n, now);
   else attemptEndedAt.delete(n);
   bus.emit('gate:result', { station: n, outcome, score: score.overall, phases: score.phases.slice() });
 }
@@ -454,7 +466,7 @@ export function rematchAllowed(n: number): { allowed: boolean; grudgeRepsNeeded:
   const lostDay = p.gateAttemptDay?.[n];
   if (attempts === 0 || lostDay === undefined || lostDay < store.today()) return { allowed: true, grudgeRepsNeeded: 0, offerAssisted };
   if (p.grudge.length === 0) return { allowed: true, grudgeRepsNeeded: 0, offerAssisted };
-  const done = grudgeRepsToday(attemptEndedAt.get(n) ?? 0);
+  const done = grudgeRepsToday(attemptEndedAt.get(n) ?? p.gateAttemptAt?.[n] ?? 0);
   const needed = Math.max(0, GRUDGE_REPS_FOR_REMATCH - done);
   return { allowed: needed === 0, grudgeRepsNeeded: needed, offerAssisted };
 }

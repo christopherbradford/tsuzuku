@@ -5,6 +5,7 @@ import {
   INTENSITY_SCALE,
   STANDARD_NEW_PER_DAY,
   beltForStation,
+  effectiveNewPerDay,
   freshSave,
   newPerDayFor,
   newPerDayTotal,
@@ -47,6 +48,16 @@ describe('newPerDayFor (design 02 §6.1)', () => {
 
   it('custom returns the Standard belt rates (caller uses settings.newPerDay)', () => {
     expect(newPerDayFor('blue', 'custom')).toEqual(STANDARD_NEW_PER_DAY.blue);
+  });
+
+  it('effectiveNewPerDay follows the belt table for presets and the learner for custom (one rule for forecast / projection / Road)', () => {
+    // The White mix frozen into settings at onboarding must not leak into later belts.
+    const onboarded = { intensity: 'standard' as const, newPerDay: newPerDayFor('white', 'standard') };
+    expect(effectiveNewPerDay(onboarded, 'white')).toEqual(STANDARD_NEW_PER_DAY.white);
+    expect(effectiveNewPerDay(onboarded, 'green')).toEqual(STANDARD_NEW_PER_DAY.green);
+    expect(effectiveNewPerDay({ ...onboarded, intensity: 'intense' }, 'green')).toEqual(newPerDayFor('green', 'intense'));
+    const own = { vocab: 2, kanji: 0.5, grammar: 0.25 };
+    expect(effectiveNewPerDay({ intensity: 'custom', newPerDay: own }, 'brown')).toBe(own);
   });
 
   it('beltForStation maps the road', () => {

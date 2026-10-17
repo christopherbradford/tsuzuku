@@ -12,7 +12,16 @@
  * that renders through `<Ruby>` (pattern-cloze, particle-duel, kanji-read,
  * lookalike-duel, transform, judgment-call, scramble, sentence-listen, shadow);
  * `blank` / `blanks` are offsets into `toPlain(sentence)`; `answer` / `accept`
- * are plain surfaces. Production Forge keeps a plain sentence.
+ * are plain surfaces. Production Forge keeps a plain sentence. Form Forge /
+ * Form Chain on a grammar prod card carry the picked verb in `sentence`
+ * (dictionary form) and `kana` (its reading), so the drills can conjugate it;
+ * the chain is always 5 links (`formChain`: the point's own forms, then forms
+ * of points already met, then any form the verb takes). Minimal Pair speaks
+ * either half of the pair (`answer` = the one played).
+ *
+ * `pickStories` serves unread episodes first (`progress.storiesRead`), then the
+ * best coverage, so the builder never re-serves the same episode while an
+ * unread one meets the target.
  */
 import {
   DRILL_IDS,
@@ -36,11 +45,11 @@ import { SPEED_TIER_RATES } from '../shared/audio';
 import { MISSIONS } from '../shared/catalog';
 import { hashSeed, sample, shuffle } from '../shared/hash';
 import { cardKey as makeKey, tryKindOfId } from '../shared/ids';
-import { moraCount } from '../shared/jp';
+import { isHiragana, moraCount } from '../shared/jp';
 import type { StepParams } from '../shared/session-types';
 import type { ItemKind } from '../shared/store-types';
 import { store } from '../store';
-import { clozeTiles, conjugate, gojuonPool, isConjugable, kanaGrid, kanjiLookalikes, meaningChoices, perceptionJudge, prodPrompt, rapidFirePool, scrambleTiles, type QueueCard } from '../learn';
+import { applicableForms, clozeTiles, conjugate, gojuonPool, isConjugable, kanaGrid, kanjiLookalikes, meaningChoices, perceptionJudge, prodPrompt, rapidFirePool, scrambleTiles, type QueueCard } from '../learn';
 import { S, fill } from './engine-strings';
 import type { PlanContext } from './builder';
 
@@ -95,8 +104,8 @@ export function hasParticleHint(item: ContentItem | null | undefined): boolean {
  * treats a match here as word-internal, so 「元気です」 never yields a lone 「す」.
  */
 export const PARTICLE_ATOMS: readonly string[] = ['です', 'でした', 'でしょう', 'でき', 'ではな', 'ではあ', 'ので', 'のに', 'のだ', 'のです', 'こと', 'もの', 'とても', 'という', 'として', 'とう', 'とか', 'について', 'ところ'];
-/** Compound particles that stay on one tile with their word (私には・それでは). */
-const COMPOUND_PARTICLES: readonly string[] = ['では', 'には', 'とは', 'へは'];
+/** Compound particles that stay on one tile with their word (私には・それでは・食べるのが). */
+export const COMPOUND_PARTICLES: readonly string[] = ['では', 'には', 'とは', 'へは', 'のは', 'のが', 'のを', 'からは', 'までは'];
 
 const ROMAJI_46 = ['a', 'i', 'u', 'e', 'o', 'ka', 'ki', 'ku', 'ke', 'ko', 'sa', 'shi', 'su', 'se', 'so', 'ta', 'chi', 'tsu', 'te', 'to', 'na', 'ni', 'nu', 'ne', 'no', 'ha', 'hi', 'fu', 'he', 'ho', 'ma', 'mi', 'mu', 'me', 'mo', 'ya', 'yu', 'yo', 'ra', 'ri', 'ru', 're', 'ro', 'wa', 'wo', 'n'];
 
@@ -192,14 +201,15 @@ export function storyCoverage(story: StoryItem, known: ReadonlySet<string>): num
   return total === 0 ? 1 : hit / total;
 }
 
-/** Stories of the loaded bundles that meet the live coverage target, best coverage first. */
+/** Stories of the loaded bundles that meet the live coverage target: unread first (`progress.storiesRead`), then best coverage. */
 export function pickStories(ctx: PlanContext, o: { kind?: StoryItem['kind']; station?: number } = {}): StoryItem[] {
   const st = o.station ?? ctx.station;
+  const read = new Set(store.progress.value.storiesRead ?? []);
   return ctx.stories
     .filter((s) => (o.kind ? s.kind === o.kind : true))
-    .map((s) => ({ s, c: storyCoverage(s, ctx.known) }))
+    .map((s) => ({ s, c: storyCoverage(s, ctx.known), unread: read.has(s.id) ? 0 : 1 }))
     .filter(({ s, c }) => c >= coverageTargetFor(st, s.bridge === true))
-    .sort((a, b) => b.c - a.c || (a.s.id < b.s.id ? -1 : 1))
+    .sort((a, b) => b.unread - a.unread || b.c - a.c || (a.s.id < b.s.id ? -1 : 1))
     .map(({ s }) => s);
 }
 
@@ -227,7 +237,11 @@ export function knownSentences(ctx: PlanContext, n: number): { sentence: string;
  * Bunsetsu-ish tiles for Scramble when no linked story line carries tokens:
  * a particle closes the tile it follows (particles attach to their word), a
  * punctuation mark is its own tile, and a `PARTICLE_ATOMS` run (です・ので・こと…)
- * is word-internal, never a boundary. Exported for tests.
+ * is word-internal, never a boundary. A particle cuts only when what follows
+ * is not hiragana (kanji, katakana, punctuation or the end): a hiragana
+ * continuation means the match sits inside a word (ありが|とう, なが|ら, と|き,
+ * べから|ず), and an under-split tile is still Japanese while a non-word tile
+ * is not. Exported for tests.
  */
 export function splitBunsetsu(plain: string): string[] {
   const particles = [...PARTICLES, ...COMPOUND_PARTICLES].sort((a, b) => b.length - a.length);
@@ -235,6 +249,10 @@ export function splitBunsetsu(plain: string): string[] {
   const tiles: string[] = [];
   let cur = '';
   let i = 0;
+  const continues = (at: number): boolean => {
+    const next = plain[at];
+    return next !== undefined && isHiragana(next);
+  };
   while (i < plain.length) {
     const ch = plain[i] as string;
     if ('、。！？'.includes(ch)) {
@@ -250,7 +268,7 @@ export function splitBunsetsu(plain: string): string[] {
       i += atom.length;
       continue;
     }
-    const p = particles.find((x) => plain.startsWith(x, i) && cur.length > 0);
+    const p = particles.find((x) => plain.startsWith(x, i) && cur.length > 0 && !continues(i + x.length));
     if (p) {
       tiles.push(cur + p);
       cur = '';
@@ -262,6 +280,30 @@ export function splitBunsetsu(plain: string): string[] {
   }
   if (cur) tiles.push(cur);
   return tiles;
+}
+
+/** Form Chain length (design 04 §4: "one verb, 5 target forms in sequence"). */
+export const FORM_CHAIN_LENGTH = 5;
+
+/**
+ * The 5 links of a Form Chain for `verb`: the point's own `unlocksForms` first,
+ * then forms unlocked by grammar points the learner has already met (known, or
+ * introduced at a station ≤ the current one), then any other form the verb
+ * takes — so a point that declares one form (た, ない, て…) still yields a
+ * chain instead of a single typed form. Padding order rotates with `rep`.
+ */
+function formChain(ctx: PlanContext, item: GrammarItem, verb: VocabItem, own: readonly ConjForm[], rep: number): ConjForm[] {
+  const can = (f: ConjForm): boolean => conjugate(verb.word, verb.kana, verb.pos as never, f) !== null;
+  const chain: ConjForm[] = own.slice(0, FORM_CHAIN_LENGTH);
+  const rotate = <T,>(xs: T[]): T[] => (xs.length === 0 ? xs : [...xs.slice(rep % xs.length), ...xs.slice(0, rep % xs.length)]);
+  const met = ctx.grammarPool.filter((g) => g.id !== item.id && (ctx.known.has(g.id) || (g.station !== undefined && g.station <= ctx.station)));
+  const unlocked = rotate(shuffle(ctx.rng, Array.from(new Set(met.flatMap((g) => g.unlocksForms ?? [])))));
+  const any = rotate(shuffle(ctx.rng, isConjugable(verb.pos) ? applicableForms(verb.pos) : []));
+  for (const f of [...unlocked, ...any]) {
+    if (chain.length >= FORM_CHAIN_LENGTH) break;
+    if (!chain.includes(f) && can(f)) chain.push(f);
+  }
+  return chain;
 }
 
 export interface ResolveOpts {
@@ -451,6 +493,8 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
       const forms = (item.unlocksForms ?? []).filter((f) => conjugate(verb.word, verb.kana, verb.pos as never, f) !== null);
       if (forms.length === 0) break;
       p.sentence = verb.word;
+      // The verb's reading rides along (StepParams.kana): the drills conjugate the kana form of every link from it.
+      p.kana = verb.kana;
       p.promptEn = verb.meanings[0] ?? '';
       if (exercise === 'form-forge') {
         const form = forms[((rep % forms.length) + forms.length) % forms.length] as ConjForm;
@@ -461,8 +505,8 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
         p.accept = dedupe([c.answer, c.answerKana, ...c.alt]);
         p.promptEn = fill(S.formForgePrompt, { word: verb.meanings[0] ?? verb.word, form: FORM_LABEL[form] });
       } else {
-        const chain = forms.slice(0, 5);
-        p.forms = chain;
+        p.forms = formChain(ctx, item, verb, forms, rep);
+        const chain = p.forms;
         p.answers = chain.map((f) => conjugate(verb.word, verb.kana, verb.pos as never, f)?.answer ?? '');
         p.accept = dedupe(chain.flatMap((f) => {
           const c = conjugate(verb.word, verb.kana, verb.pos as never, f);
@@ -539,8 +583,11 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
     }
     case 'minimal-pair': {
       if (!isVocab(item)) break;
+      // Either half is spoken (design 04 §5 "audio of one of two near words"); `answer` names the one played so the
+      // feedback line and the drill's target agree. Always speaking the item's own word made the pair solvable by
+      // recognising the familiar word.
       const pair = perceptionJudge(item, ctx.vocabPool).minimalPair;
-      p.answer = item.kana;
+      p.answer = rng() < 0.5 ? pair[0] : pair[1];
       p.choices = shuffle(rng, [pair[0], pair[1]]);
       p.rate = rateFor(ctx);
       break;

@@ -4,7 +4,8 @@
  *
  * Plain strings; `{slot}` placeholders are filled by the components with
  * `fill()` from `../strings`. Japanese appears only where the learner can
- * read it at that moment (station and belt names, つづく at Shodan).
+ * read it at that moment (station and belt names, つづく at Shodan). Mon and
+ * Kakejiku are glossed (crest, scroll) where the learner first meets them.
  */
 import type { Belt } from '../../content/types';
 
@@ -13,9 +14,9 @@ export const S = {
   dialogLabel: 'Ceremony',
   continue: 'Continue',
   skipHint: 'Tap, Enter or Esc to continue.',
-  announceBadge: 'Mon earned: {ja}, {en}. {describe}',
+  announceBadge: 'Mon crest earned: {ja}, {en}. {describe}',
   announceBelt: '{belt} belt. {title}. The gate was yours.',
-  announceWallpaper: 'Kakejiku unlocked: {ja}, {en}.',
+  announceWallpaper: 'Kakejiku scroll unlocked: {ja}, {en}.',
   announceReveal: 'A quarter more of {en} revealed, {q} of 4.',
   announceStamp: 'Goshuin for {station} pressed into the book.',
   announceLevel: 'Level {n}. Effort, counted.',
@@ -36,7 +37,7 @@ export const S = {
   openCollections: 'Open Collections',
 
   // Badge slam
-  badgeEarned: 'Mon earned',
+  badgeEarned: 'Mon · crest earned',
   badgeCrestAlt: '{ja} crest',
   tierBronze: 'Bronze',
   tierSilver: 'Silver',
@@ -89,7 +90,7 @@ export const S = {
   } as Record<Belt, string>,
 
   // Wallpaper unlock
-  wallpaperUnlocked: 'Kakejiku unlocked',
+  wallpaperUnlocked: 'Kakejiku · scroll unlocked',
   wallpaperRevealed: 'A quarter more revealed',
   revealCount: '{q} of 4',
   openStudio: 'Open in the Studio',

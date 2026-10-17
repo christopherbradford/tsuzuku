@@ -54,8 +54,8 @@ export interface AudioService {
   hasJaVoice: Signal<boolean>;
   /**
    * `speak()` will actually be heard: a Japanese voice exists AND the master
-   * volume is above 0. Set by the web service; `voiceAudible(audio)`
-   * (`@/audio`) falls back to `hasJaVoice` when it is absent. Deliberately
+   * volume is above 0. Set by the web service; `voiceAudible(audio)` (below;
+   * `@/audio` re-exports it) falls back to `hasJaVoice` when it is absent. Deliberately
    * NOT set on `nullAudio`, so a test double `{ ...nullAudio, hasJaVoice:
    * signal(true) }` stays audible. Text fallbacks gate on this, not on
    * `hasJaVoice` (which only reports voice availability).
@@ -94,6 +94,17 @@ export const nullStt: SttService = {
   recognize: () => Promise.resolve(null),
   abort() {},
 };
+
+/**
+ * Whether `speak()` on `a` will actually be heard: `canSpeak` when the service
+ * exposes it (the web service: a Japanese voice AND master volume > 0), else
+ * `hasJaVoice` (`nullAudio`, doubles such as `{ ...nullAudio, hasJaVoice:
+ * signal(true) }`). Text fallbacks gate on this, never on `hasJaVoice` alone.
+ * `@/audio` and `exercises/voice.ts` re-export it, so every group reads one body.
+ */
+export function voiceAudible(a: AudioService): boolean {
+  return a.canSpeak ? a.canSpeak.value : a.hasJaVoice.value;
+}
 
 export interface Services {
   audio: AudioService;

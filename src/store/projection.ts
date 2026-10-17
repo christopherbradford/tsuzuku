@@ -22,7 +22,7 @@ import { BELTS, BELT_IDS, STATIONS, type Belt, type Facet, type StationBundle } 
 import { parseCardKey } from '../shared/ids';
 import { epochDay } from '../shared/time';
 import type { CardTuple, CardsApi, EpochDay, LogEntry, SaveMeta, Settings } from '../shared/store-types';
-import { INTENSITY_SCALE, KANA_PER_DAY, STANDARD_NEW_PER_DAY, newPerDayFor, newPerDayTotal } from './defaults';
+import { INTENSITY_SCALE, KANA_PER_DAY, STANDARD_NEW_PER_DAY, effectiveNewPerDay, newPerDayTotal } from './defaults';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Constants                                                                  */
@@ -103,7 +103,7 @@ export function presetScale(settings: Settings): number {
 
 /** The setting's full new-item rate for a belt, kana included at White (items/day, ≥ 1). */
 export function fullRateFor(settings: Settings, belt: Belt): number {
-  const mix = settings.intensity === 'custom' ? settings.newPerDay : newPerDayFor(belt, settings.intensity);
+  const mix = effectiveNewPerDay(settings, belt);
   const kana = belt === 'white' ? KANA_PER_DAY * presetScale(settings) : 0;
   return Math.max(1, newPerDayTotal(mix) + kana);
 }
@@ -369,7 +369,7 @@ export function onboardingEstimate(settings: Settings, today: EpochDay, fromStat
       items.grammar += q.grammar;
       items.total += q.total;
     }
-    const mix = settings.intensity === 'custom' ? settings.newPerDay : newPerDayFor(b.id, settings.intensity);
+    const mix = effectiveNewPerDay(settings, b.id);
     const streams: [number, number][] = [
       [items.vocab, mix.vocab],
       [items.kanji, mix.kanji],

@@ -3,7 +3,9 @@
  */
 import { afterEach, describe, expect, it } from 'vitest';
 import type { CardKey } from '../content/types';
+import { DRILL_IDS } from '../content/types';
 import { FIXTURE_IDS, V, G, createFakeLoader } from '../content/fixtures';
+import { registerExercise, resetRegistryForTests } from '../shared/exercise-types';
 import { bus } from '../shared/events';
 import type { AttemptResult, SessionPlan, Step } from '../shared/session-types';
 import { epochDay } from '../shared/time';
@@ -11,7 +13,7 @@ import type { CardTuple } from '../shared/store-types';
 import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { KIAI_RULES } from '../learn';
-import { SessionRunner, correctFormOf, type RunnerSnapshot } from './runner';
+import { SessionRunner, correctFormOf, ringShown, type RunnerSnapshot } from './runner';
 import { toPlain } from '../content/ruby';
 import { checkStepId, pretestStepId, resetScrollCompletions } from './scroll';
 
@@ -386,6 +388,32 @@ describe('helpers', () => {
     r.submit(ok({ selfRating: 3 }), { judge: 'fail' });
     expect(r.results[0]?.rating).toBe(1);
     expect(r.feedback.value?.judge).toBe('fail');
+  });
+});
+
+describe('SessionRunner — speed grading follows the ring (design 04 §0)', () => {
+  afterEach(() => resetRegistryForTests());
+
+  it('a slow Good on a mature card is Hard only when the step carries a timer (the ring is shown) and the feel is not Zen', async () => {
+    await makeTestStore({ save: { progress: { station: 4 }, medianMs: { 'meaning-guard': 2000 } }, cards: vocabCards(20) });
+    registerExercise({ id: 'meaning-guard', facet: 'rec', needsTts: false, needsStt: false, selfGraded: false, timeable: true, keys: 'choices' }, () => null);
+    const idx = DRILL_IDS.indexOf('meaning-guard');
+    for (let i = 0; i < 50; i++) store.log.push([DEFAULT_TEST_NOW - 1000 * (i + 1), `${V.犬}#rec`, 3, 2000, idx, 0]);
+    const ids = FIXTURE_IDS.vocab.filter((id) => id !== V.おはよう && id !== V.はい);
+    const guard = (id: string, s: string, timerMs?: number): Step => step({ id: s, cardKey: `${id}#rec`, exercise: 'meaning-guard', params: { answer: 'x', choices: ['x', 'y', 'z', 'w'] }, ...(timerMs !== undefined ? { timerMs } : {}) });
+    const r = new SessionRunner(plan([guard(ids[0]!, 'ring', 6000), guard(ids[1]!, 'noring'), guard(ids[2]!, 'zen', 6000)]), { loader });
+    expect(ringShown(r.timer.value, 'dojo')).toBe(true);
+    r.submit(ok({ ms: 9000 }));
+    expect(r.results[0]?.rating).toBe(2);
+    r.next();
+    expect(r.timer.value).toBeNull();
+    r.submit(ok({ ms: 9000 }));
+    expect(r.results[1]?.rating).toBe(3);
+    r.next();
+    store.patch('settings', (s) => ({ ...s, feel: 'zen' }));
+    expect(ringShown(r.timer.value, 'zen')).toBe(false);
+    r.submit(ok({ ms: 9000 }));
+    expect(r.results[2]?.rating).toBe(3);
   });
 });
 

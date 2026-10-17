@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { freshSave, resetStoreForTests, store } from '@/store';
 import type { Settings } from '@/shared/store-types';
 import { makeTestStore } from '@/store/testing';
@@ -89,6 +91,28 @@ describe('applyTheme', () => {
     applyTheme(settings({ theme: 'light' }));
     expect(document.querySelectorAll('meta[name="theme-color"]').length).toBe(1);
     expect(meta()?.toUpperCase()).toBe('#F4EDE0');
+  });
+});
+
+describe('first-paint theme colour', () => {
+  const read = (rel: string): string => readFileSync(resolve(process.cwd(), rel), 'utf8');
+  const lightBg = (): string => {
+    const tokens = read('src/styles/tokens.css');
+    const root = tokens.slice(tokens.indexOf(':root {'), tokens.indexOf('}', tokens.indexOf(':root {')));
+    return /--bg:\s*(#[0-9a-fA-F]{6})/.exec(root)![1]!.toUpperCase();
+  };
+
+  it('index.html seeds <meta theme-color> with the light --bg token (the :root default), so the browser bar matches the first paint until the store is ready', () => {
+    const m = /<meta name="theme-color" content="([^"]+)"/.exec(read('index.html'));
+    expect(m, 'theme-color meta').not.toBeNull();
+    expect(m![1]!.toUpperCase()).toBe(lightBg());
+    expect(lightBg()).toBe('#F4EDE0');
+  });
+
+  it('the web manifest uses the same light colour for theme_color and background_color (consistent PWA splash)', () => {
+    const manifest = JSON.parse(read('public/manifest.webmanifest')) as { theme_color: string; background_color: string };
+    expect(manifest.theme_color.toUpperCase()).toBe(lightBg());
+    expect(manifest.background_color.toUpperCase()).toBe(lightBg());
   });
 });
 

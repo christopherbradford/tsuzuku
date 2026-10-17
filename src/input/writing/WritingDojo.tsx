@@ -17,9 +17,10 @@
  *    {kind:'writing', patternsHit, seconds}`; the result carries the
  *    findings' error tags (particle / conjugation / register) for Weak Points
  *    and `answer` = the text.
- *  · The finished sentences join `store.bookmarks` under `作文: ` so the
- *    Studio can gather `writingSentences` for the wall scrolls
- *    (`writingSentencesFrom`); SaveMeta has no dedicated slot (v1).
+ *  · The finished sentences join `store.bookmarks` under `作文: `
+ *    (`writingSentencesFrom` reads them back); the closing line says only
+ *    that ("Kept with your bookmarks") because `WallpaperData.writingSentences`
+ *    is not yet gathered from them (SaveMeta has no dedicated slot, v1).
  * Facet `null`; keys `none`.
  */
 import type { JSX } from 'preact';

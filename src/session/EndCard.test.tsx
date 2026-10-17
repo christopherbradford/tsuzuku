@@ -157,6 +157,14 @@ describe('<EndCard>', () => {
     expect(b.onRest).toHaveBeenCalledTimes(1);
   });
 
+  it('cards created at introduction but never served (state 0) are not reviews still due', async () => {
+    await makeTestStore({ cards: { [`${V.犬}#prod`]: card({ due: TODAY, s: 0, d: 0, reps: 0, lapses: 0, state: 0, last: TODAY }), [`${V.水}#rec`]: card({ due: TODAY, s: 5, reps: 4, state: 2, last: TODAY - 1, flags: 1 }) } });
+    mount();
+    expect(root.querySelector('.end-card__another')).toBeNull();
+    expect(root.querySelector('.end-card__due')).toBeNull();
+    expect(root.querySelector('.end-card__rest')?.textContent).toBe('Rest.');
+  });
+
   it('plays the つづく gliss once in Dojo and never in Zen; Zen hides combo and Ippon rows', async () => {
     await makeTestStore();
     const sfx = vi.fn();

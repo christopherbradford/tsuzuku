@@ -191,6 +191,15 @@ export function romajiMatches(romaji: string, kana: string): boolean {
   return converted.length > 0 && !/[a-z]/.test(converted) && equivalentJa(converted, kana);
 }
 
+/**
+ * True when `raw` is the corpus display romaji of a kana that the IME spells
+ * differently (o for を, ti for ティ): what Kana Flash taught must count as a
+ * hit in every typed kana drill, not only where it round-trips through the IME.
+ */
+export function isDisplayRomaji(raw: string, romaji: string, kana: string): boolean {
+  return !romajiMatches(romaji, kana) && raw.trim().toLowerCase() === romaji;
+}
+
 function fmtSeconds(ms: number): string {
   return (Math.round(ms / 100) / 10).toFixed(1);
 }
@@ -246,10 +255,10 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
   };
 
   /** Where the display romaji does not round-trip through the IME (を 'o', ティ 'ti'), typing it is right before any conversion. */
-  const isDisplayRomaji = (raw: string): boolean => item !== null && !romajiMatches(item.romaji, item.kana) && raw.trim().toLowerCase() === item.romaji;
+  const displayRomaji = (raw: string): boolean => item !== null && isDisplayRomaji(raw, item.romaji, item.kana);
 
   const judge = (raw: string): void => {
-    if (isDisplayRomaji(raw)) {
+    if (displayRomaji(raw)) {
       finish(attempt({ ms: ms(), correct: true, answer: raw.trim() }));
       return;
     }
@@ -273,7 +282,7 @@ function KanaFlashBody(p: ExerciseProps): JSX.Element {
 
   const submit = (): void => {
     if (fired.current) return;
-    if (isDisplayRomaji(value)) {
+    if (displayRomaji(value)) {
       finish(attempt({ ms: ms(), correct: true, answer: value.trim() }));
       return;
     }

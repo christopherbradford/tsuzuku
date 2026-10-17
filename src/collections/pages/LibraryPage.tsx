@@ -6,7 +6,8 @@
  * item belt, kind and archive state; filters by kind and belt; search by
  * kana, romaji or meaning; a detail sheet with Listen (`speak()`), "Already
  * know this" (`markKnown`) and Retire / Restore (`retireItem`) through
- * `@/learn/apply`. MICHIKUSA: the roadside fragments by station with the
+ * `@/learn/apply`; the sheet is a `useDialogFocus` dialog (Close focused
+ * first, Escape, Tab wrap, focus back to the row). MICHIKUSA: the roadside fragments by station with the
  * un-collected count ("3 more at Totsuka") and the reserved Yojijukugo shelf
  * (empty state until the 五段 pack). Items load per station on expand (or all
  * at once when a search starts), so a late-road save never fetches the whole
@@ -22,6 +23,7 @@ import type { Route } from '../../shared/routes';
 import type { ItemBelt, ItemKind } from '../../shared/store-types';
 import { formatEraDate } from '../../shared/time';
 import { Ruby } from '../../shared/ui/Ruby';
+import { useDialogFocus } from '../../shared/ui/use-dialog-focus';
 import { store } from '../../store';
 import {
   BELT_ORDER,
@@ -53,7 +55,7 @@ export interface LibraryPageProps {
 
 export type LibraryView = 'items' | 'michikusa';
 
-const FACET_JA: Record<Facet, string> = { rec: '認', listen: '聴', prod: '産', pitch: '拍', read: '読', comp: '部', cloze: '穴' };
+const FACET_JA: Record<Facet, string> = { rec: '認', listen: '聴', prod: '産', pitch: '高', read: '読', comp: '部', cloze: '穴' };
 
 function stationLabel(g: { station: number; def: StationGroup['def'] }): JSX.Element {
   if (g.station === UNPLACED || !g.def) return <span>{S.stationUnplaced}</span>;
@@ -70,21 +72,11 @@ function stationLabel(g: { station: number; def: StationGroup['def'] }): JSX.Ele
 /* ────────────────────────────────────────────────────────────────────────── */
 
 function ItemDetail(p: { item: LibraryItem; surface: Surface; onClose(): void; onChanged(): void }): JSX.Element {
-  const closeRef = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<string | null>(null);
   const furigana = store.settings.value.furigana;
   const { item, surface } = p;
-  useEffect(() => {
-    closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        p.onClose();
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [item.id]);
+  useDialogFocus(ref, { onClose: p.onClose, initial: '[data-action="close"]' });
 
   const listen = (): void => {
     if (!surface.speak) return;
@@ -106,7 +98,7 @@ function ItemDetail(p: { item: LibraryItem; surface: Surface; onClose(): void; o
   const facets = Object.entries(item.facets) as [Facet, NonNullable<LibraryItem['facets'][Facet]>][];
   return (
     <div class="modal library-detail" data-item={item.id} onClick={(e) => e.target === e.currentTarget && p.onClose()}>
-      <div class="modal__card library-detail__card" role="dialog" aria-modal="true" aria-labelledby="library-detail-title">
+      <div ref={ref} tabIndex={-1} class="modal__card library-detail__card" role="dialog" aria-modal="true" aria-labelledby="library-detail-title">
         <h3 id="library-detail-title" class="library-detail__title">
           <span lang="ja">{surface.text}</span>
           {surface.reading ? (
@@ -152,7 +144,10 @@ function ItemDetail(p: { item: LibraryItem; surface: Surface; onClose(): void; o
             <ul class="library-detail__facets">
               {facets.map(([f, t]) => (
                 <li key={f}>
-                  <span lang="ja">{FACET_JA[f]}</span> {f} · {fill(S.stabilityDays, { n: Math.round(t[1]) })} · {fill(S.dueOn, { date: formatEraDate(t[0]) })}
+                  <span lang="ja" aria-hidden="true">
+                    {FACET_JA[f]}
+                  </span>{' '}
+                  {S.facetLabel[f] ?? f} · {fill(S.stabilityDays, { n: Math.round(t[1]) })} · {fill(S.dueOn, { date: formatEraDate(t[0]) })}
                 </li>
               ))}
             </ul>
@@ -170,7 +165,7 @@ function ItemDetail(p: { item: LibraryItem; surface: Surface; onClose(): void; o
           <button type="button" class={item.archived ? 'btn' : 'btn btn--danger'} data-action="retire" onClick={toggleRetire}>
             {item.archived ? S.restore : S.retire}
           </button>
-          <button type="button" class="btn btn--ghost" ref={closeRef} onClick={p.onClose}>
+          <button type="button" class="btn btn--ghost" data-action="close" onClick={p.onClose}>
             {S.close}
           </button>
         </div>

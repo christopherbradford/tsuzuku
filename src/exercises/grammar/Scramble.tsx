@@ -4,8 +4,10 @@
  *
  *  · `params.tiles` are the pieces; the expected order is read from
  *    `params.answer` / `params.sentence` (`orderTiles`: a greedy walk over the
- *    plain sentence) and falls back to the given order. Trailing punctuation
- *    (。！？) never enters the bank: it is appended for display.
+ *    plain sentence) and falls back to the given order. Punctuation never enters
+ *    the bank: the trailing run (。！？) is appended for display, an interior
+ *    、 (its own tile from `splitBunsetsu`) is dropped — the correct sentence
+ *    is revealed through <Ruby> from `params.sentence` anyway.
  *  · The display order comes from `learn.scrambleTiles` seeded with
  *    `store.seed() + today + step.id`, unless the tiles already arrive
  *    shuffled (differ from the expected order), in which case they stay as given.
@@ -95,7 +97,9 @@ export interface ScrambleSetup {
 /** Everything the component needs from the params; `rng` seeds the shuffle. */
 export function scrambleSetup(params: StepParams, rng: () => number): ScrambleSetup {
   const tiles = (params.tiles ?? []).map((t) => t.trim()).filter((t) => t.length > 0);
-  const { pieces, tail } = splitTail(tiles);
+  const { pieces: ordered, tail } = splitTail(tiles);
+  // interior punctuation (、 mid-sentence) is never a piece: it has no expected slot and would render an empty tile
+  const pieces = ordered.filter((t) => !isPunct(t));
   const plain = params.answer ?? (params.sentence ? toPlain(params.sentence) : undefined);
   const expected = (plain ? orderTiles(pieces, plain) : null) ?? pieces.slice();
   const alreadyShuffled = pieces.some((t, i) => t !== expected[i]);

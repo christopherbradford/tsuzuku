@@ -12,10 +12,12 @@
  *   perception  minimal pair after TTS (`heard` = the index the host played);
  *               pick → pass iff it is the one heard. Space replays via the frame.
  * `onPick` fires once. The host supplies `answer` / `heard`, which the
- * `JudgeRequest` from the exercise does not carry.
+ * `JudgeRequest` from the exercise does not carry. The card is a
+ * `role="dialog"` with `tabIndex={-1}` and takes focus when it mounts, so the
+ * 目付 title and prompt are read before the options; hosts need not focus it.
  */
 import type { JSX } from 'preact';
-import { useId, useMemo, useRef } from 'preact/hooks';
+import { useEffect, useId, useMemo, useRef } from 'preact/hooks';
 import { shuffle } from '../hash';
 import { containsJapanese } from '../jp';
 import { useExerciseKeys } from './ExerciseFrame';
@@ -71,6 +73,11 @@ function highlight(answer: string, ranges: [number, number][]): JSX.Element[] {
 export function JudgeCard(p: JudgeCardProps): JSX.Element {
   const id = useId();
   const done = useRef(false);
+  const rootRef = useRef<HTMLElement>(null);
+  // Imperative: a dynamic `autofocus` is ignored once the document has focused anything.
+  useEffect(() => {
+    rootRef.current?.focus();
+  }, []);
   const pick = (pass: boolean): void => {
     if (done.current) return;
     done.current = true;
@@ -114,7 +121,7 @@ export function JudgeCard(p: JudgeCardProps): JSX.Element {
   if ('rubric' in p) {
     const m = rubricMatches(p.answer, p.regex);
     return (
-      <aside class="judge-card status-window" role="dialog" aria-labelledby={`${id}-t`} data-shape="rubric">
+      <aside ref={rootRef} tabIndex={-1} class="judge-card status-window" role="dialog" aria-labelledby={`${id}-t`} data-shape="rubric">
         {title}
         <p class="judge-card__line">{S.judgeLine}</p>
         <p class="judge-card__prompt">
@@ -140,6 +147,8 @@ export function JudgeCard(p: JudgeCardProps): JSX.Element {
   const perception = 'minimalPair' in p;
   return (
     <aside
+      ref={rootRef}
+      tabIndex={-1}
       class="judge-card status-window"
       role="dialog"
       aria-labelledby={`${id}-t`}

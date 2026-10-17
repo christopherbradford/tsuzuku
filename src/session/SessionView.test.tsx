@@ -9,6 +9,7 @@ import type { CardKey } from '../content/types';
 import { V, createFakeLoader } from '../content/fixtures';
 import { bus } from '../shared/events';
 import { registerExercise, resetRegistryForTests, type ExerciseProps } from '../shared/exercise-types';
+import { useExerciseKeys } from '../shared/ui/ExerciseFrame';
 import type { AttemptResult, SessionPlan, Step } from '../shared/session-types';
 import { epochDay } from '../shared/time';
 import type { CardTuple, LogEntry } from '../shared/store-types';
@@ -16,7 +17,7 @@ import { resetStoreForTests, store } from '../store';
 import { DEFAULT_TEST_NOW, captureEvents, card, makeTestStore } from '../store/testing';
 import { SessionRunner } from './runner';
 import { checkStepId, resetScrollCompletions } from './scroll';
-import { SessionView, comboTierOf, previousSessionErrorRate } from './SessionView';
+import { SessionView, comboTierOf, examFurigana, previousSessionErrorRate } from './SessionView';
 
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
 const loader = createFakeLoader();
@@ -44,8 +45,10 @@ afterEach(() => {
 const ok = (o: Partial<AttemptResult> = {}): AttemptResult => ({ correct: true, nearMiss: false, hintUsed: false, guard: false, timedOut: false, ms: 2500, errorTags: [], answer: 'x', ...o });
 
 function Stub(p: ExerciseProps): JSX.Element {
+  // A drill's own hint, reached by the frame's `?` / Hint button; it reports to the host like every drill.
+  useExerciseKeys({ onHint: () => p.onHint() });
   return (
-    <div class="stub" data-step={p.step.id} data-item={p.item ? 'yes' : 'no'} data-jj={p.jj ? 'true' : 'false'} data-tier={p.speedTier}>
+    <div class="stub" data-step={p.step.id} data-item={p.item ? 'yes' : 'no'} data-jj={p.jj ? 'true' : 'false'} data-tier={p.speedTier} data-furigana={p.furigana}>
       <button type="button" class="stub-answer" onClick={() => p.onResult(ok())}>
         answer
       </button>
@@ -248,9 +251,32 @@ describe('<SessionView>', () => {
     expect(store.session.load()?.cursor).toBe(1);
   });
 
-  it('Shift+Enter guards through the frame and ? counts a hint', async () => {
+  it('the Leave dialog manages focus: Stay is focused first, Escape stays without pausing the runner, focus returns to Leave', async () => {
+    const { runner, onExit } = await setup();
+    (root.querySelector('.session__leave') as HTMLButtonElement).focus();
+    click('.session__leave');
+    const stay = root.querySelector('.session__leave-stay') as HTMLButtonElement;
+    expect(document.activeElement).toBe(stay);
+    act(() => {
+      stay.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    });
+    expect(root.querySelector('[role="dialog"]')).toBeNull();
+    expect(onExit).not.toHaveBeenCalled();
+    expect(runner.paused.value).toBe(false);
+    expect(document.activeElement).toBe(root.querySelector('.session__leave'));
+    // Tab from the last button wraps to the first
+    click('.session__leave');
+    const dialog = root.querySelector('[role="dialog"]') as HTMLElement;
+    act(() => {
+      dialog.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true }));
+    });
+    expect(document.activeElement).toBe(root.querySelector('.session__leave-keep'));
+  });
+
+  it('Shift+Enter guards through the frame and ? opens the drill\'s registered hint, which counts', async () => {
     const { runner } = await setup();
     const cap = captureEvents();
+    expect(root.querySelector('.exercise-frame__hint')).not.toBeNull();
     press('?');
     press('Enter', { shiftKey: true });
     expect(runner.results[0]?.guard).toBe(true);
@@ -284,6 +310,8 @@ describe('<SessionView>', () => {
     expect(judge).not.toBeNull();
     expect(judge?.getAttribute('data-shape')).toBe('meaning');
     expect(root.querySelector('.session__exercise')?.getAttribute('aria-hidden')).toBe('true');
+    // the card takes focus when it opens (the dialog itself, so title and prompt are read first), never left inside the hidden exercise
+    expect(document.activeElement).toBe(judge);
     const options = Array.from(root.querySelectorAll('.judge-card__option'));
     expect(options).toHaveLength(4);
     const correct = options.find((b) => b.textContent?.includes('dog'))!;
@@ -292,6 +320,7 @@ describe('<SessionView>', () => {
     });
     await flush();
     expect(root.querySelector('.judge-card')).toBeNull();
+    expect(document.activeElement).toBe(root.querySelector('.session__exercise'));
     expect(runner.results).toHaveLength(1);
     const graded = cap.events.find((e) => e[0] === 'attempt:graded')![1] as { judge?: string; rating: number };
     expect(graded.judge).toBe('pass');
@@ -312,6 +341,37 @@ describe('<SessionView>', () => {
     await flush();
     expect(runner.results[0]?.rating).toBe(1);
     expect(root.querySelector('.feedback__judge')?.getAttribute('data-judge')).toBe('fail');
+  });
+
+  it('the soft speed ring shows for an untimed step that carries a timer (mature card in Dojo)', async () => {
+    const { runner } = await setup({ steps: [step({ id: 't0', cardKey: `${ITEMS[0]}#rec`, timerMs: 12000 }), step({ id: 't1', cardKey: `${ITEMS[1]}#rec` })] });
+    expect(runner.step.value?.timed).toBe(false);
+    expect(root.querySelector('.speed-ring')).not.toBeNull();
+    click('.stub-answer');
+    click('.exercise-frame__controls .hanko');
+    // no timer on the step → no ring
+    expect(root.querySelector('.speed-ring')).toBeNull();
+  });
+
+  it('Zen never shows the ring, even with a timer on the step', async () => {
+    await setup({ feel: 'zen', steps: [step({ id: 't0', cardKey: `${ITEMS[0]}#rec`, timerMs: 12000 })] });
+    expect(root.querySelector('.speed-ring')).toBeNull();
+  });
+
+  it('Shinsa from Orange runs with furigana off; Yellow keeps the learner’s setting (design 04 §12)', async () => {
+    expect(examFurigana({ mode: 'shinsa', station: 9 })).toBe(false);
+    expect(examFurigana({ mode: 'shinsa', station: 15 })).toBe(true);
+    expect(examFurigana({ mode: 'shinsa', station: 53 })).toBe(true);
+    expect(examFurigana({ mode: 'kata', station: 15 })).toBe(false);
+    await makeTestStore({ save: { progress: { station: 15 }, settings: { furigana: 'always' } }, cards: cards(ITEMS), now: () => clock });
+    registerStubs();
+    const runner = new SessionRunner({ ...plan([step({ id: 'r0', cardKey: `${ITEMS[0]}#rec` })], {}, 'shinsa'), station: 15 }, { loader, persist: false });
+    act(() => render(<SessionView runner={runner} onExit={vi.fn()} loader={loader} />, root));
+    expect(root.querySelector('.stub')?.getAttribute('data-furigana')).toBe('off');
+    render(null, root);
+    const yellow = new SessionRunner({ ...plan([step({ id: 'y0', cardKey: `${ITEMS[1]}#rec` })], {}, 'shinsa'), station: 9 }, { loader, persist: false });
+    act(() => render(<SessionView runner={yellow} onExit={vi.fn()} loader={loader} />, root));
+    expect(root.querySelector('.stub')?.getAttribute('data-furigana')).toBe('always');
   });
 
   it('Zen: no ki bar or combo in the frame, progress-only Hud, end card without combo rows', async () => {
@@ -376,6 +436,8 @@ describe('<SessionView> Scroll teach phase (design 03 §2.2)', () => {
     expect(root.querySelectorAll('.teach-card')).toHaveLength(2);
     expect(root.textContent).toContain('飲む');
     expect(root.querySelector('.stub')).toBeNull();
+    // "Begin the checks" is focused imperatively (a dynamic autofocus attribute is ignored by the browser)
+    expect(document.activeElement).toBe(root.querySelector('.session__teach-begin'));
     click('.session__teach-begin');
     expect(runner.paused.value).toBe(false);
     expect(root.querySelector('.session--teach')).toBeNull();

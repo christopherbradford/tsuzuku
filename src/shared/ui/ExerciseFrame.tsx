@@ -8,16 +8,37 @@
  *                `useExerciseKeys`, else the `onChoice` prop; index is 0-based)
  *   Enter        continue when feedback shows; else the registered `onSubmit`
  *   Space        continue when feedback shows; else replay (registered / prop)
- *   ?            hint · Shift+Enter guard · Esc pause / resume
+ *   ?            the registered `onHint` — the drill's own reveal, which calls
+ *                `ExerciseProps.onHint` so the host counts the hint; inert (and
+ *                the footer Hint button hidden) while the latest registered
+ *                set offers none. The frame never charges a hint by itself.
+ *   Shift+Enter  guard · Esc pause / resume
  * Keys typed into an input/textarea are left alone except Shift+Enter, Esc and
- * Enter-to-continue (captured before the input sees it). Zen hides ki, combo
- * and the speed ring; the ring also needs `step.timed` and a `timer`.
+ * Enter-to-continue (captured before the input sees it).
+ *
+ * Handler sets: 1–9 / Enter / Space go to the LAST registered set that names
+ * one of those handlers (a parent's `useExerciseKeys` registers after its
+ * children's, so the parent wins). A set registered with `onHint` alone is
+ * transparent to them, so a drill may add its hint beside a child `ChoiceGrid`
+ * / `TextAnswer` without shadowing their keys; `?` reads the last registered
+ * set of either kind, so an open `JudgeCard` (keyed, no hint) hides the hint.
+ *
+ * Speed ring: on screen whenever a `timer` is given and the feel is not Zen;
+ * `step.timed` only decides whether its expiry is a hard timeout
+ * (`onTimeout`, `data-timed-out`). An untimed step's ring is soft
+ * (`data-soft`): it runs out (`data-expired`) and nothing else happens. Zen
+ * hides ki, combo and the ring.
+ *
+ * Pause: the overlay is a focus-managed dialog (`useDialogFocus` — Resume
+ * takes focus imperatively, Tab wraps, the opener gets focus back on resume)
+ * and the head, body and controls are `inert` + `aria-hidden` while it is up.
  */
 import { createContext, type JSX } from 'preact';
 import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import type { ExerciseFrameProps as ContractProps } from '../exercise-types';
 import { Feedback, feedbackAnnouncement } from './Feedback';
 import { S, fill } from './strings';
+import { useDialogFocus } from './use-dialog-focus';
 import { useTimer } from './use-timer';
 import './ui.css';
 
@@ -30,16 +51,21 @@ export interface ExerciseKeyHandlers {
   onReplay?(): void;
   /** Enter outside an input (no feedback showing). */
   onSubmit?(): void;
+  /** `?` key and the footer Hint button (no feedback showing): open the drill's hint; it calls `ExerciseProps.onHint`. */
+  onHint?(): void;
 }
 
 export interface ExerciseFrameApi {
   register(h: ExerciseKeyHandlers): () => void;
+  /** Re-evaluates whether a hint is on offer (`useExerciseKeys` calls it when its `onHint` appears or goes). */
+  refresh(): void;
   /** False outside a frame (tests, previews). */
   readonly inFrame: boolean;
 }
 
 export const ExerciseFrameContext = createContext<ExerciseFrameApi>({
   register: () => () => undefined,
+  refresh: () => undefined,
   inFrame: false,
 });
 
@@ -47,20 +73,37 @@ export function useExerciseFrame(): ExerciseFrameApi {
   return useContext(ExerciseFrameContext);
 }
 
-/** Registers the exercise's key handlers with the enclosing frame (latest closures are used). */
+function isKeyed(h: ExerciseKeyHandlers): boolean {
+  return h.onChoice !== undefined || h.onReplay !== undefined || h.onSubmit !== undefined;
+}
+
+/**
+ * Registers the exercise's key handlers with the enclosing frame (latest
+ * closures are used). A set without `onChoice`/`onReplay`/`onSubmit` at mount
+ * registers as hint-only and never shadows a child's keys.
+ */
 export function useExerciseKeys(h: ExerciseKeyHandlers): void {
   const api = useContext(ExerciseFrameContext);
   const ref = useRef(h);
   ref.current = h;
-  useEffect(
-    () =>
-      api.register({
-        onChoice: (i) => ref.current.onChoice?.(i),
-        onReplay: () => ref.current.onReplay?.(),
-        onSubmit: () => ref.current.onSubmit?.(),
-      }),
-    [api],
-  );
+  const keyed = useRef(isKeyed(h));
+  const hasHint = h.onHint !== undefined;
+  useEffect(() => {
+    const reg: ExerciseKeyHandlers = {
+      get onHint() {
+        return ref.current.onHint ? (): void => ref.current.onHint?.() : undefined;
+      },
+    };
+    if (keyed.current) {
+      reg.onChoice = (i) => ref.current.onChoice?.(i);
+      reg.onReplay = () => ref.current.onReplay?.();
+      reg.onSubmit = () => ref.current.onSubmit?.();
+    }
+    return api.register(reg);
+  }, [api]);
+  useEffect(() => {
+    api.refresh();
+  }, [api, hasHint]);
 }
 
 /* ── props ──────────────────────────────────────────────────────────────── */
@@ -68,7 +111,7 @@ export function useExerciseKeys(h: ExerciseKeyHandlers): void {
 export interface ExerciseFrameProps extends ContractProps {
   /** Injected clock for the speed ring (`store.now`); `timer.startedAt` is read on this clock. */
   now?: () => number;
-  /** Soft deadline reached (ring empty). Never fails a rep by itself. */
+  /** Hard deadline reached on a `step.timed` step (ring empty). Not called for a soft ring. */
   onTimeout?(): void;
   /** 「もう一度」 on the feedback card; the button is hidden when absent. */
   onAgain?(): void;
@@ -99,35 +142,89 @@ const STEP_TAG_LABEL: Record<NonNullable<ContractProps['step']['stepTag']>, stri
   relearn: S.relearnStep,
 };
 
+/* ── pause overlay ──────────────────────────────────────────────────────── */
+
+/**
+ * Mounted while paused, unmounted on resume, so the mount-only `useDialogFocus`
+ * sees its root: Resume is focused imperatively (a dynamic `autofocus` is
+ * ignored once the document has focused anything), Tab wraps and the opener
+ * is focused again on unmount. Escape is consumed earlier by the frame's
+ * capture-phase listener (resume); the hook's own Escape path is a backstop.
+ */
+function PauseOverlay(p: { onResume(): void }): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
+  useDialogFocus(ref, { onClose: p.onResume, initial: '.hanko' });
+  return (
+    <div ref={ref} tabIndex={-1} class="pause-overlay" role="dialog" aria-modal="true" aria-label={S.paused}>
+      <div class="pause-overlay__card status-window">
+        <span class="pause-overlay__kanji" lang="ja">
+          休憩
+        </span>
+        <p>{S.paused}</p>
+        <button type="button" class="hanko" onClick={p.onResume}>
+          {S.resumeButton}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ── the frame ──────────────────────────────────────────────────────────── */
+
 export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
   const [paused, setPaused] = useState(false);
+  const [hasHint, setHasHint] = useState(false);
   const props = useRef(p);
   props.current = p;
   const pausedRef = useRef(paused);
   pausedRef.current = paused;
   const handlers = useRef<Set<ExerciseKeyHandlers>>(new Set());
 
-  const api = useMemo<ExerciseFrameApi>(
-    () => ({
+  // Latest registered KEYED set wins 1–9 / Enter / Space (the innermost exercise registers last).
+  const latest = (): ExerciseKeyHandlers | undefined => {
+    let last: ExerciseKeyHandlers | undefined;
+    for (const h of handlers.current) if (isKeyed(h)) last = h;
+    return last;
+  };
+  // `?` reads the last set of either kind: a keyed set without a hint (JudgeCard) hides it.
+  const latestHint = (): (() => void) | undefined => {
+    let last: ExerciseKeyHandlers | undefined;
+    for (const h of handlers.current) last = h;
+    return last?.onHint ? () => last?.onHint?.() : undefined;
+  };
+
+  const api = useMemo<ExerciseFrameApi>(() => {
+    const refresh = (): void => {
+      let last: ExerciseKeyHandlers | undefined;
+      for (const h of handlers.current) last = h;
+      setHasHint(last?.onHint !== undefined);
+    };
+    return {
       inFrame: true,
+      refresh,
       register(h) {
         handlers.current.add(h);
+        refresh();
         return () => {
           handlers.current.delete(h);
+          refresh();
         };
       },
-    }),
-    [],
-  );
+    };
+  }, []);
 
   const zen = p.feel === 'zen';
-  const showTimer = p.timer !== null && p.step.timed && !zen;
+  const showTimer = p.timer !== null && !zen;
+  const hard = p.step.timed;
   const timer = useTimer({
     deadlineMs: p.timer?.ms,
     running: showTimer && !paused && p.feedback === null,
     now: p.now,
     startedAt: p.timer?.startedAt,
-    onTimeout: () => props.current.onTimeout?.(),
+    onTimeout: () => {
+      // A soft ring (untimed step) merely runs out; only a timed step's expiry is a timeout.
+      if (props.current.step.timed) props.current.onTimeout?.();
+    },
   });
   const startedAt = p.timer?.startedAt;
   useEffect(() => {
@@ -143,13 +240,6 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
     if (!pausedRef.current) return;
     setPaused(false);
     props.current.onResume?.();
-  };
-
-  // Latest registered handler wins (the innermost exercise registers last).
-  const latest = (): ExerciseKeyHandlers | undefined => {
-    let last: ExerciseKeyHandlers | undefined;
-    for (const h of handlers.current) last = h;
-    return last;
   };
 
   useEffect(() => {
@@ -221,8 +311,11 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
         return;
       }
       if (e.key === '?' && !fb) {
-        consume();
-        cur.onHint();
+        const hint = latestHint();
+        if (hint) {
+          consume();
+          hint();
+        }
       }
     };
     window.addEventListener('keydown', onKey, true);
@@ -232,8 +325,11 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
   const fb = p.feedback;
   const announce = paused ? S.paused : fb ? feedbackAnnouncement(fb) : '';
   const progress = timer.progress.value;
+  const expired = timer.timedOut.value;
   const secondsLeft = Math.ceil(timer.remaining.value / 1000);
   const tag = p.step.stepTag;
+  const hidden = paused ? 'true' : undefined;
+  const inert = paused || undefined;
 
   return (
     <ExerciseFrameContext.Provider value={api}>
@@ -244,9 +340,12 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
         data-paused={paused ? 'true' : undefined}
         aria-label="Exercise"
       >
-        <header class="exercise-frame__head">
-          <span class="exercise-frame__progress" aria-label={fill(S.stepOf, { i: p.index + 1, n: p.total })}>
-            {p.index + 1} / {p.total}
+        <header class="exercise-frame__head" aria-hidden={hidden} inert={inert}>
+          <span class="exercise-frame__progress">
+            <span aria-hidden="true">
+              {p.index + 1} / {p.total}
+            </span>
+            <span class="sr-only">{fill(S.stepOf, { i: p.index + 1, n: p.total })}</span>
             {p.step.isNew ? <span class="chip exercise-frame__tag">{S.newItem}</span> : null}
             {tag ? (
               <span class="chip exercise-frame__tag" data-step-tag={tag}>
@@ -275,7 +374,7 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
             </div>
           )}
           {!zen && p.combo > 0 ? (
-            <span class="combo" data-tier={p.comboTier} aria-label={`${p.combo} ${S.combo}`}>
+            <span class="combo" data-tier={p.comboTier}>
               {p.combo}
               <small>{S.combo}</small>
             </span>
@@ -285,7 +384,9 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
               class="speed-ring"
               role="timer"
               aria-label={fill(S.secondsLeft, { n: secondsLeft })}
-              data-timed-out={timer.timedOut.value ? 'true' : undefined}
+              data-soft={hard ? undefined : 'true'}
+              data-expired={expired ? 'true' : undefined}
+              data-timed-out={hard && expired ? 'true' : undefined}
             >
               <svg viewBox="0 0 36 36" aria-hidden="true">
                 <circle class="speed-ring__track" cx="18" cy="18" r={RING_R} />
@@ -304,21 +405,21 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
           ) : null}
         </header>
 
-        <div class="exercise-frame__body" aria-hidden={paused ? 'true' : undefined}>
+        <div class="exercise-frame__body" aria-hidden={hidden} inert={inert}>
           {p.children}
         </div>
 
         {fb ? <Feedback state={fb} feel={p.feel} onAgain={p.onAgain} /> : null}
 
-        <footer class="exercise-frame__controls">
+        <footer class="exercise-frame__controls" aria-hidden={hidden} inert={inert}>
           {!fb ? (
             <button type="button" class="btn btn--ghost" onClick={() => p.onGuard()} aria-keyshortcuts="Shift+Enter">
               {S.guardButton}
               <kbd aria-hidden="true">⇧↵</kbd>
             </button>
           ) : null}
-          {!fb ? (
-            <button type="button" class="btn btn--ghost" onClick={() => p.onHint()} aria-keyshortcuts="?">
+          {!fb && hasHint ? (
+            <button type="button" class="btn btn--ghost exercise-frame__hint" onClick={() => latestHint()?.()} aria-keyshortcuts="?">
               {S.hintButton}
               <kbd aria-hidden="true">?</kbd>
             </button>
@@ -335,19 +436,7 @@ export function ExerciseFrame(p: ExerciseFrameProps): JSX.Element {
           ) : null}
         </footer>
 
-        {paused ? (
-          <div class="pause-overlay" role="dialog" aria-modal="true" aria-label={S.paused}>
-            <div class="pause-overlay__card status-window">
-              <span class="pause-overlay__kanji" lang="ja">
-                休憩
-              </span>
-              <p>{S.paused}</p>
-              <button type="button" class="hanko" onClick={resume} autoFocus>
-                {S.resumeButton}
-              </button>
-            </div>
-          </div>
-        ) : null}
+        {paused ? <PauseOverlay onResume={resume} /> : null}
 
         <div class="sr-only" role="status" aria-live="polite">
           {announce}

@@ -27,6 +27,7 @@ import type { AttemptResult, StepParams } from '@/shared/session-types';
 import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { ChoiceGrid } from '../ChoiceGrid';
+import { voiceAudible } from '../voice';
 import { gradeChoice, voicingSlip } from '../check';
 import { PAIR_WHY, S, fill } from './strings';
 import './MinimalPair.css';
@@ -103,7 +104,7 @@ export function pairFor(item: ContentItem | null, params: StepParams, lookup: (i
 export function MinimalPair(p: ExerciseProps): JSX.Element {
   const { step, item } = p;
   const pair = useMemo(() => pairFor(item, step.params, (id) => content.get(id), rngFor(store.seed(), store.today(), step.id, 'minimal-pair')), [item, step.id, step.params]);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
 
   const [playing, setPlaying] = useState(false);
   const [plays, setPlays] = useState(0);

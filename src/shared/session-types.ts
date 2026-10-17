@@ -4,7 +4,7 @@
  * `AttemptResult` is declared here and re-exported by `exercise-types.ts`.
  * Depends only on `content/types` and `store-types` (type-only; no cycles).
  */
-import type { CardKey, ConjForm, DrillId, ErrorTag, RegisterTag } from '../content/types';
+import type { CardKey, ConjForm, ConjugablePos, DrillId, ErrorTag, RegisterTag } from '../content/types';
 import type { EpochDay, ItemBelt, Rating } from './store-types';
 
 export const SESSION_MODES = [
@@ -57,6 +57,10 @@ export type StepParams = Partial<{
   candidates: string[];
   targetForm: ConjForm;
   forms: ConjForm[];
+  /** Part of speech of the head word (form-chain / form-forge), so the drill need not infer the verb group from `answers`. */
+  pos: ConjugablePos;
+  /** Per-form accepted surfaces parallel to `forms` (`[answer, answerKana, ...alt]` each); `answers[i]` stays the canonical one. */
+  accepts: string[][];
   /** Ruby markup (plain for production-forge); see the type comment. */
   sentence: string;
   /** Reading of the picked item (e.g. the verb's kana for grammar prod cards). */

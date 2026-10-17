@@ -17,7 +17,7 @@
  *    of a scroll is answered.
  *  - A snapshot (`store.session`) is saved after every submit, pause and
  *    re-queue, so a closed tab resumes at the next step with its kiai state;
- *    it also carries the active milliseconds so far (`RunnerSnapshot`), and
+ *    it also carries the active milliseconds so far (`SessionSnapshot.activeMs`), and
  *    the tally's minutes are that active time, never the wall clock across a
  *    night. Rooms that never resume (Gatekeeper, Shinsa, Kage) pass
  *    `persist: false` and leave the training snapshot alone.
@@ -29,9 +29,15 @@
  *    Scroll); session-level XP granted during `session:finished` is folded
  *    into `tally.xp`.
  *  - A Michikusa step has no result: the view calls `next()` when read.
+ *  - Speed grading (design 04 §0 "only when the speed ring is shown"): the
+ *    writer is told `speedRingShown` from `ringShown(timer, feel)`, the one
+ *    predicate the views use to draw the ring (a timer on the step, not Zen),
+ *    so a mature card is never rated Hard for slowness against a ring the
+ *    learner did not see (re-queued copies drop their timer, for instance).
  */
 import { signal, type Signal } from '@preact/signals';
 import type { CardKey, DrillId, ErrorTag } from '../content/types';
+import type { Settings } from '../shared/store-types';
 import { content as appContent, type ContentLoader } from '../content/loader';
 import { bus } from '../shared/events';
 import { resolveExercise, type FeedbackState } from '../shared/exercise-types';
@@ -67,13 +73,12 @@ export interface RunnerOptions {
 }
 
 /**
- * The stored snapshot, extended with the active time accumulated before the
- * current segment so a session resumed tomorrow earns tonight's minutes, not
- * the night's. Optional and additive: older snapshots load as `activeMs` 0.
+ * The stored snapshot. Its `activeMs` (active time accumulated before the
+ * current segment, so a session resumed tomorrow earns tonight's minutes, not
+ * the night's) is on the contract (`SessionSnapshot.activeMs`); the alias stays
+ * for callers. Older snapshots load as `activeMs` 0.
  */
-export interface RunnerSnapshot extends SessionSnapshot {
-  activeMs?: number;
-}
+export type RunnerSnapshot = SessionSnapshot;
 
 export interface SubmitOptions {
   /** Outcome of a Judge check shown for this self-rated Good. */
@@ -83,6 +88,11 @@ export interface SubmitOptions {
 export interface StepTimer {
   ms: number;
   startedAt: number;
+}
+
+/** Is the speed ring on screen for this step? The views draw it, and the writer grades speed, from this one predicate. */
+export function ringShown(timer: StepTimer | null, feel: Settings['feel']): boolean {
+  return timer !== null && feel !== 'zen';
 }
 
 function toStepResult(o: RecordAttemptOutcome): StepResult {
@@ -185,7 +195,7 @@ export class SessionRunner {
     this.results = snap ? snap.results.slice() : [];
     this.resumed = !!snap;
     this.startedAt = snap ? snap.plan.createdAt : store.now();
-    this.activeBaseMs = Math.max(0, (snap as RunnerSnapshot | undefined)?.activeMs ?? 0);
+    this.activeBaseMs = Math.max(0, snap?.activeMs ?? 0);
     this.segmentStartedAt = store.now();
     const cursor = snap ? Math.min(snap.cursor, this.queue.length) : 0;
     this.index = signal(cursor);
@@ -354,6 +364,7 @@ export class SessionRunner {
         repIndex: idx,
         rng: rngFor(store.seed(), this.plan.id, step.id, idx),
         boss: step.block === 'phase' && step.timed,
+        speedRingShown: ringShown(this.timer.value, store.settings.value.feel),
         pretest,
         ...(o.judge ? { judge: o.judge } : {}),
         ...(item ? { item } : {}),

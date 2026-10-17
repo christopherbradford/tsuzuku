@@ -2,14 +2,14 @@
  * scroll.ts — Scroll flow: pretest, teach, checks, noticing, completion.
  */
 import { afterEach, describe, expect, it } from 'vitest';
-import { FIXTURE_STORY_ID, G, STATION_4, V, createFakeLoader } from '../content/fixtures';
+import { FIXTURE_STORY_ID, G, STATION_1, STATION_4, V, createFakeLoader } from '../content/fixtures';
 import { bus } from '../shared/events';
 import { rngFor } from '../shared/hash';
 import type { StepResult } from '../shared/session-types';
-import { resetStoreForTests } from '../store';
+import { resetStoreForTests, store } from '../store';
 import { captureEvents, makeTestStore } from '../store/testing';
-import { scrollsForStation, type Scroll } from '../learn';
-import { recordAttempt } from '../learn/apply';
+import { dueCards, scrollsForStation, type Scroll } from '../learn';
+import { introduceItem, recordAttempt } from '../learn/apply';
 import {
   checkStepId,
   completeScroll,
@@ -33,6 +33,7 @@ const vocabScroll = scrolls.find((s) => s.kind === 'vocab')!;
 const grammarScroll = scrolls.find((s) => s.kind === 'grammar')!;
 const kanjiScroll = scrolls.find((s) => s.kind === 'kanji')!;
 const componentScroll = scrolls.find((s) => s.kind === 'component')!;
+const kanaScroll = scrollsForStation(STATION_1, get).find((s) => s.kind === 'kana')!;
 
 function res(stepId: string, o: Partial<StepResult> = {}): StepResult {
   return { stepId, cardKey: null, rating: 3, ki: 8, combo: 1, ippon: false, kiai: false, xpDelta: 0, correct: true, nearMiss: false, hintUsed: false, guard: false, timedOut: false, ms: 3000, errorTags: [], ...o };
@@ -75,6 +76,59 @@ describe('scrollSteps', () => {
     const c = scrollSteps(componentScroll, get, rng());
     expect(c.checks.every((s) => s.exercise === 'component-flash' && s.cardKey?.endsWith('#rec'))).toBe(true);
     expect(c.checks[0]!.params.choices).toHaveLength(4);
+  });
+
+  it('a kana Scroll checks both born facets: Kana Flash on rec, then Kana Ear on prod (Kana Forge as fallback), all intro checks', () => {
+    const r = scrollSteps(kanaScroll, get, rng());
+    const rec = r.checks.filter((s) => s.cardKey?.endsWith('#rec'));
+    const prod = r.checks.filter((s) => s.cardKey?.endsWith('#prod'));
+    expect(rec.map((s) => s.itemId)).toEqual(kanaScroll.itemIds);
+    expect(prod.map((s) => s.itemId)).toEqual(kanaScroll.itemIds);
+    expect(r.checks).toHaveLength(2 * kanaScroll.itemIds.length);
+    // the prod checks follow every rec check, so the two reps of one kana are spaced
+    expect(r.checks.indexOf(prod[0]!)).toBeGreaterThan(r.checks.indexOf(rec[rec.length - 1]!));
+    expect(rec.every((s) => s.exercise === 'kana-flash')).toBe(true);
+    expect(prod.every((s) => s.exercise === 'kana-ear' && isIntroCheck(s) && s.isNew && s.exposures === 0 && s.params.scrollId === kanaScroll.id)).toBe(true);
+    for (const s of prod) {
+      expect(s.id).toBe(checkStepId(kanaScroll.id, s.itemId!, 'prod'));
+      expect(s.params.answer).toBe((get(s.itemId!) as { kana: string }).kana);
+      expect(s.params.choices).toHaveLength(4);
+      expect(s.params.choices).toContain(s.params.answer);
+    }
+    expect(new Set(r.checks.map((s) => s.id)).size).toBe(r.checks.length);
+    // teach order and the vocab / kanji / grammar scrolls are unchanged: one check per item
+    expect(r.teach).toEqual(kanaScroll.itemIds);
+    expect(scrollSteps(vocabScroll, get, rng()).checks).toHaveLength(vocabScroll.itemIds.length);
+    // Kana Ear unavailable → Kana Forge; no kana prod drill at all → the prod check is skipped, the rec check stays
+    const forge = scrollSteps(kanaScroll, get, rng(), { available: (id) => id !== 'kana-ear' });
+    expect(forge.checks.filter((s) => s.cardKey?.endsWith('#prod')).every((s) => s.exercise === 'kana-forge' && s.params.accept?.[0] === s.params.answer)).toBe(true);
+    const none = scrollSteps(kanaScroll, get, rng(), { available: (id) => id !== 'kana-ear' && id !== 'kana-forge' });
+    expect(none.checks).toHaveLength(kanaScroll.itemIds.length);
+    expect(none.checks.every((s) => s.cardKey?.endsWith('#rec'))).toBe(true);
+  });
+
+  it('the prod check is the born card’s first rep: it leaves state 0 and reaches the due queue (kana can leave recognition)', async () => {
+    await makeTestStore({ save: { progress: { station: 1 } } });
+    const r = scrollSteps(kanaScroll, get, rng());
+    const id = kanaScroll.itemIds[0]!;
+    const rec = r.checks.find((s) => s.itemId === id && s.cardKey?.endsWith('#rec'))!;
+    const prod = r.checks.find((s) => s.itemId === id && s.cardKey?.endsWith('#prod'))!;
+    const okResult = { correct: true, nearMiss: false, hintUsed: false, guard: false, timedOut: false, ms: 2500, errorTags: [] };
+    // what the runner does on an intro check
+    introduceItem(id, 'kana', 1);
+    expect(store.cards.get(prod.cardKey!)![5]).toBe(0);
+    recordAttempt({ sessionId: 's', step: rec, result: okResult });
+    expect(store.cards.get(prod.cardKey!)![5]).toBe(0); // the rec rep alone never touches prod
+    introduceItem(id, 'kana', 1); // idempotent on the second intro check
+    const out = recordAttempt({ sessionId: 's', step: prod, result: okResult });
+    expect(out.cardKey).toBe(`${id}#prod`);
+    const t = store.cards.get(prod.cardKey!)!;
+    expect(t[5]).not.toBe(0);
+    expect(t[3]).toBe(1);
+    expect(out.stepOffsets.length).toBeGreaterThan(0);
+    // once due, the queue serves it (state-0 cards are never served)
+    const day = Math.max(t[0], store.today());
+    expect(dueCards({ cards: store.cards, today: day, limit: 50, backlog: false }).some((c) => c.cardKey === prod.cardKey)).toBe(true);
   });
 
   it('skips items whose drill is unavailable and items that are not in memory', () => {

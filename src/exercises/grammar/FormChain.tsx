@@ -12,9 +12,11 @@
  * Showing a form's rule first is a hint (Hard ceiling for the chain).
  *
  * On a grammar `prod` card the item is the GrammarItem and the verb the
- * planner picked travels in `params.sentence` (its dictionary form) and
- * `params.promptEn` (its gloss); those stand in for the head word's display
- * when the item is not a vocab item.
+ * planner picked travels in `params.sentence` (its dictionary form),
+ * `params.kana` (its reading) and `params.promptEn` (its gloss); those stand
+ * in for the head word's display when the item is not a vocab item, and
+ * `inferHeadWord` recovers its part of speech from `params.answers` so the
+ * engine's alternates are accepted there too.
  */
 import type { JSX } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
@@ -89,8 +91,39 @@ function attachFlatAccept(links: ChainLink[], flat: readonly string[] | undefine
   }
 }
 
-/** The chain: step forms + answers merged with the engine (or, without a head word, with the flat `params.accept`), else the first five applicable forms of the head word. */
+const CONJUGABLE_POS: readonly ConjugablePos[] = ['v1', 'v5', 'v-irr', 'adj-i', 'adj-na'];
+
+/**
+ * On a grammar prod card the planner sends the picked verb (`params.sentence`,
+ * its reading in `params.kana`) and its per-form `answers`, but not its part
+ * of speech. The pos is recovered as the one whose engine answers reproduce
+ * every given answer, so the engine's own kana and alternates (ら抜き
+ * potential, short causative, よ imperative) are accepted exactly as with a
+ * vocab head word. `null` when nothing matches (legacy steps → flat accept).
+ */
+export function inferHeadWord(params: ExerciseProps['step']['params']): HeadWord | null {
+  const word = (params.sentence ?? '').trim();
+  const kana = (params.kana ?? '').trim() || word;
+  const forms = params.forms ?? [];
+  const answers = (params.answers ?? []).map((a) => a.trim());
+  if (!word || forms.length === 0 || !answers.some((a) => a.length > 0)) return null;
+  for (const pos of CONJUGABLE_POS) {
+    const fits = forms.every((f, i) => {
+      const want = answers[i] ?? '';
+      return want.length === 0 || conjugate(word, kana, pos, f)?.answer === want;
+    });
+    if (fits) return { word, kana, pos };
+  }
+  return null;
+}
+
+/**
+ * The chain: step forms + answers merged with the engine — through the head
+ * word, or on a grammar prod card through `inferHeadWord` (falling back to the
+ * flat `params.accept`) — else the first five applicable forms of the head word.
+ */
 export function buildChain(head: HeadWord | null, params: ExerciseProps['step']['params']): ChainLink[] | null {
+  const engineHead = head ?? inferHeadWord(params);
   const forms: ConjForm[] =
     params.forms && params.forms.length > 0
       ? params.forms
@@ -107,8 +140,8 @@ export function buildChain(head: HeadWord | null, params: ExerciseProps['step'][
       if (t && !accept.includes(t)) accept.push(t);
     };
     push(params.answers?.[i]);
-    if (head) {
-      const c = conjugate(head.word, head.kana, head.pos, form);
+    if (engineHead) {
+      const c = conjugate(engineHead.word, engineHead.kana, engineHead.pos, form);
       if (c) {
         push(c.answer);
         push(c.answerKana);
@@ -194,7 +227,7 @@ export function FormChain(p: ExerciseProps): JSX.Element {
   };
 
   const fromStep = (p.step.params.sentence ?? '').trim();
-  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : fromStep.length > 0 ? { word: fromStep, kana: fromStep, pos: null } : null;
+  const display = vocab ? { word: vocab.word, kana: vocab.kana, pos: head?.pos ?? null } : fromStep.length > 0 ? { word: fromStep, kana: (p.step.params.kana ?? '').trim() || fromStep, pos: null } : null;
   const gloss = vocab ? (vocab.meanings.length > 0 ? vocab.meanings.join(' · ') : null) : ((p.step.params.promptEn ?? '').trim() || null);
 
   if (!chain || !display) {

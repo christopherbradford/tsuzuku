@@ -6,6 +6,19 @@ import { captureEvents, card, makeTestStore } from '@/store/testing';
 import BackupPage, { downloadBlob, hasCompressionStream, kbOf, storageLevelText } from './BackupPage';
 import { S, fmt } from './strings';
 
+/** Lets one test make `applyImport` throw mid-apply (a malformed slice the preview did not catch). */
+const applyHook = vi.hoisted(() => ({ throwing: false }));
+vi.mock('@/store', async (importOriginal) => {
+  const mod = await importOriginal<typeof import('@/store')>();
+  return {
+    ...mod,
+    applyImport: (...args: Parameters<typeof mod.applyImport>) => {
+      if (applyHook.throwing) throw new TypeError('e.join is not a function');
+      return mod.applyImport(...args);
+    },
+  };
+});
+
 const ROUTE = { name: 'backup' } as const;
 
 let root: HTMLDivElement;
@@ -18,6 +31,7 @@ afterEach(() => {
   root.remove();
   resetStoreForTests();
   bus.reset();
+  applyHook.throwing = false;
 });
 
 const tick = (): Promise<void> => new Promise((r) => setTimeout(r, 2));
@@ -227,6 +241,34 @@ describe('<BackupPage>', () => {
     await chooseFile(new File([JSON.stringify({ hello: 'world' })], 'other.json', { type: 'application/json' }));
     expect(q('[data-import-error]').textContent?.length).toBeGreaterThan(0);
     expect(store.profile.value.xp).toBe(5);
+  });
+
+  it('an import that throws while applying shows the calm error and re-enables Export and Choose-file (Merge and Replace alike)', async () => {
+    await makeTestStore({ save: { profile: { xp: 5 } } });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    try {
+      mount();
+      await chooseFile(otherBackup((doc) => void (doc.meta.profile.xp = 999)));
+      applyHook.throwing = true;
+      click('[data-merge]');
+      expect(q('[data-import-error]').textContent).toContain(S.bakInvalid);
+      expect(q<HTMLButtonElement>('[data-export]').disabled).toBe(false);
+      expect(q<HTMLButtonElement>('[data-choose-file]').disabled).toBe(false);
+      expect(root.querySelector('[data-import-applied]')).toBeNull();
+      expect(store.profile.value.xp).toBe(5);
+      expect(warn).toHaveBeenCalledWith('[backup] apply failed', expect.any(TypeError));
+
+      applyHook.throwing = false;
+      await chooseFile(otherBackup((doc) => void (doc.meta.profile.xp = 999)));
+      applyHook.throwing = true;
+      click('[data-replace]');
+      click('[data-confirm-yes]');
+      expect(q('[data-import-error]').textContent).toContain(S.bakInvalid);
+      expect(q<HTMLButtonElement>('[data-choose-file]').disabled).toBe(false);
+      expect(store.profile.value.xp).toBe(5);
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it('storage meter shows bytes and level and the advice', async () => {

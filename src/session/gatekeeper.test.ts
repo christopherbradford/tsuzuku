@@ -249,6 +249,12 @@ describe('finishGate and rematch', () => {
     expect(r.grudgeRepsNeeded).toBe(GRUDGE_REPS_FOR_REMATCH);
     expect(r.offerAssisted).toBe(false);
     expect(p.gateAttemptDay?.[4]).toBe(TODAY);
+    // the fight's end is saved too, so a reload (in-memory baseline gone) still ignores the fight's own rows
+    expect(p.gateAttemptAt?.[4]).toBe(DEFAULT_TEST_NOW);
+    resetGateAttemptsForTests();
+    r = rematchAllowed(4);
+    expect(r.allowed).toBe(false);
+    expect(r.grudgeRepsNeeded).toBe(GRUDGE_REPS_FOR_REMATCH);
     for (let i = 0; i < GRUDGE_REPS_FOR_REMATCH; i++) store.log.push([DEFAULT_TEST_NOW + 1000 * (i + 1), p.grudge[i % p.grudge.length]!, 3, 3000, 5, 0]);
     r = rematchAllowed(4);
     expect(r.allowed).toBe(true);
@@ -269,12 +275,28 @@ describe('finishGate and rematch', () => {
     const p = store.progress.value;
     expect(p.stationsCleared).toEqual([4]);
     expect(p.station).toBe(5);
+    expect(p.gateAttemptAt?.[4]).toBeUndefined();
     expect(p.perfectGates).toBe(1);
     expect(p.grudge).toEqual([]);
     expect(p.assisted).toEqual([]);
     expect(cap.events.filter((e) => e[0] === 'gate:result')[0]![1]).toMatchObject({ station: 4, outcome: 'perfect', score: 1 });
     cap.stop();
     expect(rematchAllowed(4)).toEqual({ allowed: false, grudgeRepsNeeded: 0, offerAssisted: false });
+  });
+
+  it('a pass advances a save whose station is still 0 (onboarding wrote none): the road moves to n + 1', async () => {
+    await makeTestStore({ save: { progress: { station: 1 } } });
+    store.patch('progress', (p) => ({ ...p, station: 0 }));
+    expect(store.progress.value.station).toBe(0);
+    const win = { overall: 1, phases: [1, 1, 1, 1], passed: true, perfect: true, misses: [], answered: 10, total: 10 };
+    finishGate(1, win, { assisted: false, revenge: false });
+    expect(store.progress.value.station).toBe(2);
+    expect(store.progress.value.stationsCleared).toEqual([1]);
+    // a loss at a later gate keeps the station where it is
+    store.patch('progress', (p) => ({ ...p, station: 2 }));
+    finishGate(2, { ...win, passed: false, perfect: false, overall: 0.5 }, { assisted: false, revenge: false });
+    expect(store.progress.value.station).toBe(2);
+    expect(store.progress.value.gateAttemptAt?.[2]).toBe(DEFAULT_TEST_NOW);
   });
 
   it('an assisted pass is provisional (grey corner) until the Revenge Match; replaying an old gate never moves the station', async () => {

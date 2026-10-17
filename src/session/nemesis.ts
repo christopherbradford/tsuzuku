@@ -22,7 +22,7 @@ import { epochDay } from '../shared/time';
 import type { EpochDay } from '../shared/store-types';
 import { store } from '../store';
 import { defeatNemesis } from '../learn/apply';
-import { duelProgress, isNemesis, nemesisPhase, type QueueCard } from '../learn';
+import { duelProgress, findBlank, isNemesis, nemesisPhase, type QueueCard } from '../learn';
 import { S } from './engine-strings';
 import { isGrammar, isKanji, isVocab, itemKindOf, linesWith, loadPlanContext, resolveParams } from './builder';
 
@@ -156,8 +156,8 @@ function minimalParams(drill: DrillId, item: ContentItem): StepParams {
       p.promptEn = `${v.meanings[0] ?? ''}${ex ? ` — ${ex.en}` : ''}`;
       p.answer = v.word;
       p.accept = Array.from(new Set([v.word, v.kana, ...(v.altForms ?? [])]));
-      const i = p.sentence.indexOf(v.word);
-      p.blank = i >= 0 ? [i, i + v.word.length] : [0, 0];
+      // The same blank finder as the prod prompt and Production Forge: alt forms, 〜-suffixes and conjugated stems.
+      p.blank = findBlank(p.sentence, v);
     } else {
       p.answer = v.meanings[0] ?? '';
       p.accept = v.meanings.slice();

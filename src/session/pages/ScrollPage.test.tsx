@@ -61,7 +61,9 @@ describe('<ScrollPage>', () => {
     const view = root.querySelector('.scroll-view');
     expect(view).not.toBeNull();
     expect(['pretest', 'teach']).toContain(view?.getAttribute('data-phase'));
-    expect(root.textContent).toContain(`Scroll ${id}`);
+    // the heading carries the scroll's ordinal (as the Station page names it), never the raw `<station>-<n>` id
+    expect(root.textContent).toContain(`Scroll ${id.split('-')[1]}`);
+    expect(root.textContent).not.toContain(`Scroll ${id}`);
   });
 
   it('a non-scroll route is a not-found too', async () => {

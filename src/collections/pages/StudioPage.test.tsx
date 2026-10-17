@@ -10,7 +10,7 @@ import { civilToDay, epochDay } from '../../shared/time';
 import { WALLPAPER_DEFS, store } from '../../store';
 import { resetStoreForTests } from '../../store/store';
 import { DEFAULT_TEST_NOW, card, makeTestStore } from '../../store/testing';
-import StudioPage, { CUSTOM_SENTENCE, kanjiCandidates, personalize, sentenceCandidates, wallpaperIdOf } from './StudioPage';
+import StudioPage, { CUSTOM_SENTENCE, MAX_CUSTOM_SENTENCE, clampSentence, kanjiCandidates, personalize, sentenceCandidates, wallpaperIdOf } from './StudioPage';
 
 const DAY = civilToDay({ year: 2026, month: 10, day: 17 });
 const TODAY = epochDay(DEFAULT_TEST_NOW, 'UTC');
@@ -118,6 +118,18 @@ describe('studio helpers', () => {
     expect(picked.sentenceOfChoice).toBe('雨の日は本を読む。');
   });
 
+  it('a typed sentence is capped at MAX_CUSTOM_SENTENCE glyphs without splitting a surrogate pair (#42)', () => {
+    expect(MAX_CUSTOM_SENTENCE).toBe(48);
+    const long = '続'.repeat(60);
+    expect(clampSentence(long)).toBe('続'.repeat(48));
+    const astral = '𠮷'.repeat(47) + '野家です';
+    expect(Array.from(clampSentence(astral)).length).toBe(48);
+    expect(clampSentence(astral).endsWith('𠮷野')).toBe(true);
+    const base = sampleData(1);
+    const custom = personalize(base, { sentence: CUSTOM_SENTENCE, custom: ` ${long} `, kanji: '' });
+    expect(custom.sentenceOfChoice).toBe('続'.repeat(48));
+  });
+
   it('sentenceCandidates lists plain example sentences of Mastered words from the loader', async () => {
     await makeTestStore({ cards: BROWN_CARDS });
     const c = sentenceCandidates(createFakeLoader());
@@ -156,7 +168,7 @@ describe('<StudioPage>', () => {
     expect(art().innerHTML).toContain('続');
     const labels = (): string[] => Array.from(root.querySelectorAll('.studio__res span')).map((s) => s.textContent ?? '');
     expect(labels()).toEqual(['1920 × 1080', '2560 × 1440']);
-    expect(root.textContent).toContain('4K needs a desktop');
+    expect(root.textContent).toContain('4K is for desktop browsers');
     act(() => q<HTMLButtonElement>('[data-size="phone"]').click());
     expect(q<HTMLElement>('.studio').dataset.size).toBe('phone');
     expect(labels()).toEqual(['1080 × 2340', '1170 × 2532', '1290 × 2796']);
@@ -244,6 +256,18 @@ describe('<StudioPage>', () => {
       sentence.value = CUSTOM_SENTENCE;
       sentence.dispatchEvent(new Event('change', { bubbles: true }));
     });
-    expect(root.querySelector('#studio-custom')).not.toBeNull();
+    const custom = q<HTMLInputElement>('#studio-custom');
+    expect(custom.maxLength).toBe(MAX_CUSTOM_SENTENCE);
+  });
+
+  it('the 4K hint explains the desktop gate without naming a memory figure (#41)', async () => {
+    const rec = recorder();
+    await mount('torii-dawn', rec, { cards: BROWN_CARDS });
+    expect(q<HTMLElement>('.studio').dataset.size).toBe('desktop');
+    const hints = Array.from(root.querySelectorAll<HTMLElement>('.studio__hint')).map((h) => h.textContent ?? '');
+    const gate = hints.find((t) => t.includes('4K'));
+    expect(gate).toBeDefined();
+    expect(gate).toContain('2560 × 1440');
+    expect(gate).not.toMatch(/GB/);
   });
 });

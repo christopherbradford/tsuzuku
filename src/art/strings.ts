@@ -14,7 +14,7 @@ export const S = {
   exportUnavailable: 'This browser cannot draw the image. Try a current desktop browser.',
   exportFailed: 'The brush slipped. Try the export again.',
   iosHint: 'Press and hold the image, then choose Save Image.',
-  fourKGated: '4K export is for desktop browsers with enough memory.',
+  fourKGated: '4K is for desktop browsers with room to spare. This one stops at 2560 × 1440.',
   sizeDesktop: 'Desktop 16:9',
   sizePhone: 'Phone 9:19.5',
   reforge: 'Reforge',

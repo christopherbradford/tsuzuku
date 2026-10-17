@@ -6,7 +6,7 @@ import { bus } from '@/shared/events';
 import { route, syncRouteFromLocation } from '@/shared/routes';
 import { INTENSITY_PRESETS, newPerDayFor, resetStoreForTests, store } from '@/store';
 import { makeTestStore } from '@/store/testing';
-import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, TILE_COUNT, beltAfterDays, hoursInApp, kanaMatches, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
+import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, NAME_MAX_GLYPHS, TILE_COUNT, beltAfterDays, clampName, hoursInApp, kanaMatches, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
 import { S, fmt } from './strings';
 
 const markKnownSpy = vi.fn();
@@ -117,8 +117,43 @@ describe('<OnboardingPage>', () => {
     expect(s.retention).toBe(INTENSITY_PRESETS.standard.retention);
     expect(s.speaking).toBe('self');
     expect(s.theme).toBe('dark');
+    expect(store.progress.value.station).toBe(1);
     expect(route.value.name).toBe('dojo');
     expect(markKnownSpy).not.toHaveBeenCalled();
+  });
+
+  it('finish() lifts progress.station to 1 (Nihonbashi is onboarding only) and never lowers it', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } } });
+    mount();
+    click('[data-next]');
+    click('[data-choice="kana-none"]');
+    click('[data-next]');
+    click('[data-next]');
+    click('[data-next]');
+    click('[data-finish]');
+    expect(store.progress.value.station).toBe(4);
+  });
+
+  it('a pasted 100-glyph name is cut to NAME_MAX_GLYPHS as typed and in the save', async () => {
+    await makeTestStore();
+    mount();
+    const long = 'あいうえおかきくけこ'.repeat(10);
+    expect(Array.from(long).length).toBe(100);
+    setInput(q<HTMLInputElement>('.kana-input__field'), long);
+    expect(Array.from(q<HTMLInputElement>('.kana-input__field').value).length).toBe(NAME_MAX_GLYPHS);
+    click('[data-next]');
+    click('[data-choice="kana-none"]');
+    click('[data-next]');
+    click('[data-next]');
+    click('[data-next]');
+    expect(root.textContent).toContain(fmt(S.onbNameSummary, { name: long.slice(0, NAME_MAX_GLYPHS) }));
+    click('[data-finish]');
+    expect(Array.from(store.profile.value.nameKana).length).toBe(NAME_MAX_GLYPHS);
+    expect(store.profile.value.nameKana).toBe(long.slice(0, NAME_MAX_GLYPHS));
+    expect(store.profile.value.name).toBe(long.slice(0, NAME_MAX_GLYPHS));
+    // Code points, not UTF-16 units: an astral glyph counts once.
+    expect(clampName('😀'.repeat(30))).toBe('😀'.repeat(NAME_MAX_GLYPHS));
+    expect(clampName('はな')).toBe('はな');
   });
 
   it('a blank name trains as 無名 / むめい', async () => {

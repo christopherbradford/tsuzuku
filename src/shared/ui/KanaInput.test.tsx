@@ -18,6 +18,7 @@ interface HarnessProps {
   candidates?: string[];
   katakana?: boolean;
   clearOnSubmit?: boolean;
+  maxLength?: number;
   onSubmit: (v: string) => void;
   log: string[];
 }
@@ -37,6 +38,7 @@ function Harness(p: HarnessProps) {
       }}
       candidates={p.candidates}
       katakana={p.katakana}
+      maxLength={p.maxLength}
     />
   );
 }
@@ -227,5 +229,60 @@ describe('<KanaInput>', () => {
     expect(input.getAttribute('lang')).toBe('ja');
     expect(input.getAttribute('aria-label')).toBe('Answer');
     expect(input.classList.contains('kana-input__field')).toBe(true);
+  });
+});
+
+describe('<KanaInput> maxLength', () => {
+  const paste = (input: HTMLInputElement, v: string): void => {
+    act(() => {
+      input.value = v;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+  };
+
+  it('caps the resolved kana at maxLength code points while letting a syllable finish at the boundary', () => {
+    const { input, log } = mount({ maxLength: 3 });
+    type(input, 'kakish'); // か き + pending "sh": the letters may run past the cap while a syllable is spelled
+    expect(input.value).toBe('かきsh');
+    type(input, 'i');
+    expect(input.value).toBe('かきし');
+    type(input, 'ta'); // the 4th glyph is dropped once it resolves
+    expect(input.value).toBe('かきし');
+    expect(log[log.length - 1]).toBe('かきし');
+    expect(root.querySelector('.kana-input')?.getAttribute('data-pending')).toBeNull();
+    // the native attribute is deliberately absent (it would count UTF-16 units of kana + pending romaji)
+    expect(input.hasAttribute('maxlength')).toBe(false);
+  });
+
+  it('caps a pasted value, a natively composed value and the Enter finalisation; astral glyphs count once', () => {
+    const { input, onSubmit } = mount({ maxLength: 3 });
+    paste(input, 'かきくけこ');
+    expect(input.value).toBe('かきく');
+    // a paste at the cap that changes nothing still leaves the DOM at the cap (no re-render comes from the parent)
+    paste(input, 'かきくけ');
+    expect(input.value).toBe('かきく');
+    act(() => {
+      input.dispatchEvent(new CompositionEvent('compositionstart', { bubbles: true }));
+    });
+    paste(input, 'さしすせそ');
+    act(() => {
+      input.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true, data: 'さしすせそ' }));
+    });
+    expect(input.value).toBe('さしす');
+    paste(input, '');
+    type(input, 'kakishin');
+    expect(input.value).toBe('かきしn');
+    key(input, 'Enter');
+    expect(onSubmit).toHaveBeenCalledWith('かきし');
+    expect(input.value).toBe('かきし');
+    paste(input, '');
+    paste(input, '😀😀😀😀');
+    expect(input.value).toBe('😀😀😀');
+  });
+
+  it('without maxLength nothing is cut', () => {
+    const { input } = mount();
+    type(input, 'kakikukeko');
+    expect(input.value).toBe('かきくけこ');
   });
 });

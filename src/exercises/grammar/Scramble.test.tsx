@@ -112,6 +112,14 @@ describe('scramble helpers', () => {
     const s = scrambleSetup({ tiles: ['人', 'も', '犬', 'も', '飲みます'], answer: '人も犬も飲みます' }, mulberry32(3));
     expect([...s.order].sort()).toEqual([0, 1, 2, 3, 4]);
   });
+
+  it('setup: an interior 、 tile (splitBunsetsu emits it on its own) never becomes a piece and leaves no -1 slot', () => {
+    const s = scrambleSetup({ tiles: ['三時です', '、', '今', '。'], sentence: '{今|いま}、{三時|さんじ}です。' }, mulberry32(5));
+    expect(s.expected).toEqual(['今', '三時です']);
+    expect(s.tail).toEqual(['。']);
+    expect([...s.order].sort()).toEqual([0, 1]);
+    expect(s.order.map((i) => s.expected[i])).toEqual(['三時です', '今']);
+  });
 });
 
 describe('<Scramble>', () => {
@@ -123,6 +131,19 @@ describe('<Scramble>', () => {
     expect(bank()[0]?.getAttribute('aria-keyshortcuts')).toBe('1');
     expect(root.querySelector('.scramble__tail')?.textContent).toBe('。');
     expect(check().disabled).toBe(true);
+  });
+
+  it('a sentence with a mid-sentence 、 renders only real tiles: no empty tile, no "undefined" label, and it grades Good in order', () => {
+    const s = step({ params: { tiles: ['三時です', '、', '今', '。'], sentence: '{今|いま}、{三時|さんじ}です。', promptEn: 'It is three o\'clock now.' } });
+    const { onResult } = mount(s);
+    expect(bank().length).toBe(2);
+    expect(bank().map((b) => b.getAttribute('aria-label'))).not.toContain(expect.stringContaining('undefined'));
+    expect(bank().every((b) => (b.querySelector('span[lang="ja"]')?.textContent ?? '').length > 0)).toBe(true);
+    expect(root.querySelector('.scramble__tail')?.textContent).toBe('。');
+    click(tileNamed('今'));
+    click(tileNamed('三時です'));
+    click(check());
+    expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [], answer: '今 三時です 。' });
   });
 
   it('first try in the right order → Good (correct, no near miss, no tags)', () => {

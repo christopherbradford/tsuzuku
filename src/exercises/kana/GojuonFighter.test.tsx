@@ -2,7 +2,7 @@ import { render } from 'preact';
 import { act } from 'preact/test-utils';
 import { toRomaji } from 'wanakana';
 import { FIXTURE } from '@/content/fixtures';
-import type { CardKey } from '@/content/types';
+import type { CardKey, KanaItem } from '@/content/types';
 import type { ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
 import { CardFlag, hasFlag } from '@/shared/store-types';
@@ -10,6 +10,15 @@ import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { store } from '@/store';
 import { captureEvents, card, makeTestStore } from '@/store/testing';
 import { GLIDE_END_MS, GLIDE_START_MS, GOJUON_ROUND_SIZE, GojuonFighter, buildRound, landMs, meta, rowOf, type GojuonRound } from './GojuonFighter';
+import { isDisplayRomaji } from './KanaFlash';
+
+// `content` is a singleton with an empty cache in tests; serve one loaded kana
+// item from it (を with the corpus display romaji o) and leave the rest to `kanaFromId`.
+const WO: KanaItem = { id: 'k-h-wo', kana: 'を', romaji: 'o', script: 'hiragana', type: 'basic', row: 'w', mnemonic: 'を: a man kicking a ball — the object marker.', exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };
+vi.mock('@/content/loader', async (importOriginal) => {
+  const orig = await importOriginal<typeof import('@/content/loader')>();
+  return { ...orig, content: { ...orig.content, get: (id: string) => (id === 'k-h-wo' ? WO : undefined) } };
+});
 
 let root: HTMLDivElement;
 let clock = 1_000_000;
@@ -267,6 +276,29 @@ describe('<GojuonFighter> round', () => {
     expect(r.reactions.find((x) => x.glyph === 'ん')?.hit).toBe(true);
     expect(p.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true });
     expect(root.textContent).toContain('Clean round');
+  });
+
+  it('the corpus display romaji is a hit: o lands を (as Kana Flash teaches it) instead of resolving to お and missing', () => {
+    expect(isDisplayRomaji('o', 'o', 'を')).toBe(true);
+    expect(isDisplayRomaji('o', 'o', 'お')).toBe(false);
+    expect(isDisplayRomaji('wo', 'o', 'を')).toBe(false);
+    const p = props({ step: step({ params: { pool: ['k-h-wo#rec' as CardKey] } }) as P['step'] });
+    mount(p, false);
+    act(() => (root.querySelector('.hanko') as HTMLButtonElement).click());
+    const round = buildRound(['k-h-wo#rec'], { seed: store.seed(), day: store.today(), stepId: 'g1', get: (id) => (id === 'k-h-wo' ? WO : undefined) });
+    expect(round.find((k) => k.id === 'k-h-wo')?.romaji).toBe('o');
+    for (let i = 0; i < round.length; i++) {
+      expect(glyph()).toBe(round[i]?.glyph);
+      if (glyph() === 'を') {
+        pass(100);
+        type('o');
+      } else hit(100);
+    }
+    expect(phase()).toBe('over');
+    const r = p.onRound.mock.calls[0]?.[0] as GojuonRound;
+    expect(r.misses).toBe(0);
+    expect(r.reactions.find((x) => x.glyph === 'を')?.hit).toBe(true);
+    expect(r.recheck).toEqual([]);
   });
 
   it('an empty pool is a practice round: playable, graded nothing, no flags', () => {

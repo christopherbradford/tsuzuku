@@ -8,6 +8,12 @@
  *  next milestone, the welcome state, resume info — and, additively, the Three
  *  Kata, the flame, the Kage standing, the Nemesis callout, the Gatekeeper and
  *  Shinsa availability, the governor notes and the 次回予告 teaser.
+ *
+ *  `forecastCounts` has no plan context: it adds the Scroll block's minutes
+ *  (5 Kumite / 10 Shugyō) and the belt's new-item budget whenever the budget
+ *  is positive. The feed knows whether a Scroll exists today, so `gateForecast`
+ *  takes those minutes and the new-item count off when nothing is left to
+ *  teach (everything introduced, or a backlog day).
  */
 import type { Belt } from '../content/types';
 import type { ContentLoader } from '../content/loader';
@@ -16,7 +22,7 @@ import type { QuestId } from '../shared/catalog';
 import { hashSeed } from '../shared/hash';
 import type { EpochDay } from '../shared/store-types';
 import { store } from '../store';
-import { SHINSA_STATIONS, beltOfStation, forecastCounts, itemBeltOf, stationProgress, streakState, type FlameState } from '../store/derived';
+import { SHINSA_STATIONS, beltOfStation, forecastCounts, itemBeltOf, stationProgress, streakState, type FlameState, type ForecastCounts } from '../store/derived';
 import { BELT_ORDER, type Scroll } from '../learn';
 import { S, fill, plural } from './engine-strings';
 import { isGrammar, isVocab, loadPlanContext, pickStories, scrollsForToday, type PlanContext } from './builder';
@@ -53,6 +59,22 @@ export interface DojoFeedOptions {
   loader?: ContentLoader;
   /** Additive: skip the 次回予告 teaser (cheaper). */
   teaser?: boolean;
+}
+
+/** The Scroll block minutes `derived.forecastCounts` adds when the new-item budget is positive (design 03 §2.2–2.3). */
+export const SCROLL_BLOCK_MINUTES = { kumite: 5, shugyo: 10 } as const;
+
+/**
+ * The forecast for today's actual plan: with no Scroll to teach, the new-item
+ * count is 0 and the Scroll block minutes come off the Kumite / Shugyō
+ * estimates (Kata has no Scroll block). With a Scroll, the forecast stands.
+ */
+export function gateForecast(fc: ForecastCounts, scrolls: number): Pick<ForecastCounts, 'newItems' | 'minutes'> {
+  if (scrolls > 0 || fc.newItems === 0) return { newItems: fc.newItems, minutes: fc.minutes };
+  return {
+    newItems: 0,
+    minutes: { kata: fc.minutes.kata, kumite: Math.max(0, fc.minutes.kumite - SCROLL_BLOCK_MINUTES.kumite), shugyo: Math.max(0, fc.minutes.shugyo - SCROLL_BLOCK_MINUTES.shugyo) },
+  };
 }
 
 /** `42 reviews · 1 scroll · 1 episode · ~18 min` (design 03 §3). */
@@ -98,8 +120,8 @@ export function resumeInfo(): { stepsLeft: number } | undefined {
 export async function dojoFeed(o: DojoFeedOptions = {}): Promise<DojoFeedFull> {
   const ctx = await loadPlanContext({ loader: o.loader, mode: 'dojo' });
   const today = ctx.today;
-  const fc = forecastCounts();
   const scrollsToday: Scroll[] = ctx.backlog ? [] : scrollsForToday(ctx, 4);
+  const fc = gateForecast(forecastCounts(), scrollsToday.length);
   const episodes = pickStories(ctx, { kind: 'story' }).length > 0 ? 1 : 0;
   const due = ctx.showDue;
   const quests = store.quests.value;
@@ -124,7 +146,7 @@ export async function dojoFeed(o: DojoFeedOptions = {}): Promise<DojoFeedFull> {
     nextMilestone: milestoneLine(ctx),
     welcome: welcomeState(),
     due,
-    newItems: ctx.newAllowed,
+    newItems: scrollsToday.length > 0 ? ctx.newAllowed : 0,
     scrolls: scrollsToday.length,
     episodes,
     quests: questList,

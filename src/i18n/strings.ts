@@ -87,7 +87,7 @@ export const S = {
 
   /* ── storage and backup lines ─────────────────────────────────────── */
   storageWarn: 'Your save is getting large. Export a backup soon.',
-  storageCeiling: 'Storage is near its limit. Export a backup now; old rows are being compacted.',
+  storageCeiling: 'Storage is at its limit and new progress may not be saving. Export a backup now.',
   storageMeter: 'Storage: {kb} KB used',
   backupReminder: 'A new week. A backup takes one tap.',
   backupLink: 'Export a backup',

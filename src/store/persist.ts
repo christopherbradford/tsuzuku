@@ -20,8 +20,14 @@
  * small key never masks a meta document that keeps failing), and `onState`
  * re-fires after every flush while something fails so the UI stays told.
  * `readRaw`/`writeRaw` move the stored text untouched (the `.bak` stash of a
- * document the store cannot read). Only this module (through `store.ts`)
- * touches storage; the `Storage` is injectable for tests.
+ * document the store cannot read). When that stash itself cannot be written
+ * (quota), `store.ts` calls `freeze(key)`: every later `schedule`/`write` for
+ * the key is a no-op, so the unreadable document stays in place, and the
+ * level reads `ceiling` while any key is frozen so the UI's export prompt
+ * shows. `gunzipText(payload, limit)` stops inflating past `limit` bytes
+ * (`InflateLimitError`), the guard behind the import size ceiling. Only this
+ * module (through `store.ts`) touches storage; the `Storage` is injectable
+ * for tests.
  */
 import { BELTS, type CardKey, type Level } from '../content/types';
 import { levelOfId, parseCardKey, tryKindOfId } from '../shared/ids';
@@ -198,7 +204,18 @@ function base64ToBytes(b64: string): Bytes {
 
 type Bytes = Uint8Array<ArrayBuffer>;
 
-async function pump(stream: ReadableStream<Bytes>): Promise<Bytes> {
+/** Thrown by `pump` when a stream yields more than its `limit` bytes (a gzip bomb or a wrong file). */
+export class InflateLimitError extends Error {
+  readonly limit: number;
+  constructor(limit: number) {
+    super(`stream exceeds ${limit} bytes`);
+    this.name = 'InflateLimitError';
+    this.limit = limit;
+  }
+}
+
+/** Drain a byte stream; past `limit` bytes the reader is cancelled and `InflateLimitError` thrown. */
+export async function pump(stream: ReadableStream<Bytes>, limit = Infinity): Promise<Bytes> {
   const reader = stream.getReader();
   const chunks: Bytes[] = [];
   let total = 0;
@@ -208,6 +225,10 @@ async function pump(stream: ReadableStream<Bytes>): Promise<Bytes> {
     if (value) {
       chunks.push(value);
       total += value.length;
+      if (total > limit) {
+        await reader.cancel().catch(() => undefined);
+        throw new InflateLimitError(limit);
+      }
     }
   }
   const out: Bytes = new Uint8Array(total);
@@ -235,10 +256,10 @@ export async function gzipText(text: string): Promise<string> {
   return GZIP_PREFIX + bytesToBase64(out);
 }
 
-/** Inverse of `gzipText`; accepts the value with or without the prefix. */
-export async function gunzipText(payload: string): Promise<string> {
+/** Inverse of `gzipText`; accepts the value with or without the prefix. `limit` bounds the inflated bytes. */
+export async function gunzipText(payload: string, limit = Infinity): Promise<string> {
   const b64 = payload.startsWith(GZIP_PREFIX) ? payload.slice(GZIP_PREFIX.length) : payload;
-  const out = await pump(fromBytes(base64ToBytes(b64)).pipeThrough(new DecompressionStream('gzip') as ReadableWritablePair<Bytes, Bytes>));
+  const out = await pump(fromBytes(base64ToBytes(b64)).pipeThrough(new DecompressionStream('gzip') as ReadableWritablePair<Bytes, Bytes>), limit);
   return new TextDecoder().decode(out);
 }
 
@@ -341,8 +362,16 @@ export interface Persist {
   schedule(key: string, getValue: () => unknown): void;
   /** Keys with a pending write. */
   pending(): string[];
-  /** Debounced keys whose last write failed (quota); the level is `ceiling` while non-empty. */
+  /** Debounced keys whose last write failed (quota) plus frozen keys; the level is `ceiling` while non-empty. */
   failing(): string[];
+  /**
+   * Stop persisting `key` for the life of this Persist: `schedule`, `write`
+   * and `writeRaw` for it become no-ops (the stored text is left as is) and
+   * the level reads `ceiling`. For a document the store could neither read
+   * nor stash as `.bak`.
+   */
+  freeze(key: string): void;
+  frozen(): string[];
   /** Write every pending key now. */
   flush(): Promise<void>;
   bytes(): number;
@@ -364,6 +393,8 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   const compression = opts.compression ?? hasCompression();
   /** Debounced keys whose last write threw; cleared per key on the next success. */
   const failed = new Set<string>();
+  /** Keys the store must never write (an unreadable document whose `.bak` stash failed). */
+  const frozenKeys = new Set<string>();
   let last: StorageState | null = null;
   let disposed = false;
 
@@ -413,7 +444,9 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
       return true;
     } catch (e) {
       if (track) failed.add(k);
+      // Debounced quota hits are reported through the level; an immediate write's is logged so it is never silent.
       if (!isQuotaError(e)) console.warn(`[persist] setItem(${k}) failed`, e);
+      else if (!track) console.warn(`[persist] setItem(${k}) hit the storage quota`);
       return false;
     }
   }
@@ -446,19 +479,21 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     return total;
   }
 
+  const pinned = (): boolean => failed.size > 0 || frozenKeys.size > 0;
+
   function level(): StorageLevel {
-    return failed.size > 0 ? 'ceiling' : levelForBytes(bytes());
+    return pinned() ? 'ceiling' : levelForBytes(bytes());
   }
 
   function state(): StorageState {
     const b = bytes();
-    return { bytes: b, level: failed.size > 0 ? 'ceiling' : levelForBytes(b) };
+    return { bytes: b, level: pinned() ? 'ceiling' : levelForBytes(b) };
   }
 
   /** Notify on a change — and on every flush while a key is still failing, so a repeated failure is never silent. */
   function settle(): void {
     const s = state();
-    if (failed.size === 0 && last && last.bytes === s.bytes && last.level === s.level) return;
+    if (!pinned() && last && last.bytes === s.bytes && last.level === s.level) return;
     last = s;
     opts.onState?.(s);
   }
@@ -488,7 +523,7 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   }
 
   function schedule(k: string, getValue: () => unknown): void {
-    if (disposed) return;
+    if (disposed || frozenKeys.has(k)) return;
     dirty.set(k, getValue);
     clearTimer(k);
     timers.set(
@@ -513,6 +548,7 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   }
 
   function write(k: string, value: unknown): boolean {
+    if (frozenKeys.has(k)) return false;
     clearTimer(k);
     dirty.delete(k);
     let str: string;
@@ -527,6 +563,7 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
   }
 
   function writeRaw(k: string, text: string): boolean {
+    if (frozenKeys.has(k)) return false;
     clearTimer(k);
     dirty.delete(k);
     const ok = setItem(k, String(text));
@@ -544,6 +581,13 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     } catch {
       /* ignore */
     }
+    settle();
+  }
+
+  function freeze(k: string): void {
+    frozenKeys.add(k);
+    clearTimer(k);
+    dirty.delete(k);
     settle();
   }
 
@@ -618,7 +662,9 @@ export function createPersist(storage: Storage, slot = 0, opts: PersistOptions =
     remove,
     schedule,
     pending: () => Array.from(dirty.keys()),
-    failing: () => Array.from(failed),
+    failing: () => Array.from(new Set([...failed, ...frozenKeys])),
+    freeze,
+    frozen: () => Array.from(frozenKeys),
     flush,
     bytes,
     level,

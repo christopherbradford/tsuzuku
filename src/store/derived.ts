@@ -22,7 +22,7 @@ import { BELT_ORDER, baseFacet, capFor, cardRetrievability, itemBelt, kindOfCard
 import { BELTS, type Belt, type Facet, type StationBundle } from '../content/types';
 import { tryKindOfId } from '../shared/ids';
 import type { CardTuple, CardsApi, EpochDay, ItemBelt, ItemKind, Streak } from '../shared/store-types';
-import { newPerDayFor, newPerDayTotal } from './defaults';
+import { effectiveNewPerDay, newPerDayTotal } from './defaults';
 import { isDueReview } from './due';
 import { store } from './store';
 import { peraperaNow, type PeraperaResult } from './perapera';
@@ -188,13 +188,12 @@ export interface ForecastCounts {
   minutes: { kata: number; kumite: number; shugyo: number };
 }
 
-/** Design 03 §2–§3: due counts × median latency + fixed block estimates. */
+/** Design 03 §2–§3: due counts × median latency + fixed block estimates (new-item mix via `defaults.effectiveNewPerDay`). */
 export function forecastCounts(): ForecastCounts {
   const due = dueCount();
   const s = store.settings.value;
   const belt = currentBelt();
-  const npd = s.intensity === 'custom' ? s.newPerDay : newPerDayFor(belt, s.intensity);
-  const newItems = Math.round(newPerDayTotal(npd));
+  const newItems = Math.round(newPerDayTotal(effectiveNewPerDay(s, belt)));
   const rep = medianRepSeconds();
   const cap = reviewCap();
   const inputMin = belt === 'white' || belt === 'yellow' || belt === 'orange' ? 5 : belt === 'green' ? 7 : belt === 'blue' || belt === 'purple' ? 9 : 12;

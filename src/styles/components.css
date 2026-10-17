@@ -87,6 +87,8 @@
 }
 
 /* ── Hanko Button: the one vermilion seal CTA ────────────────────────── */
+/* Text is --bg on --shu: ~4.6:1 in both themes, so no opacity / alpha is
+   allowed on hanko text (01 §7 asks ≥ 4.5:1); de-emphasise with weight only. */
 .hanko {
   --hanko-size: 56px;
   display: inline-flex;
@@ -145,8 +147,7 @@
 }
 .hanko--lg small {
   font-weight: 400;
-  font-size: var(--fs-1);
-  opacity: 0.85;
+  font-size: var(--fs-2);
 }
 .hanko--pressed,
 .hanko.is-pressed {

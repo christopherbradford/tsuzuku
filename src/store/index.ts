@@ -5,7 +5,7 @@
  * (`src/store/derived.ts`, which imports `@/learn`). This barrel must never
  * (transitively) import `src/learn`.
  */
-export { store, storeCards, initStore, resetStoreForTests, registerReducer, currentSlot, shardOfKey, shardSizes, replaceHeader, replaceLog } from './store';
+export { store, storeCards, initStore, resetStoreForTests, resetSave, registerReducer, currentSlot, shardOfKey, shardSizes, replaceHeader, replaceLog } from './store';
 export type { InitOptions, ReducerStarter, DueOptions, SetHint, StoreCardsApi, SaveHeader } from './store';
 export { isDueReview } from './due';
 export {
@@ -15,6 +15,7 @@ export {
   INTENSITY_SCALE,
   KANA_PER_DAY,
   newPerDayFor,
+  effectiveNewPerDay,
   newPerDayTotal,
   beltForStation,
 } from './defaults';
@@ -34,8 +35,9 @@ export {
 } from './persist';
 export type { ShardId, ShardSpec } from './persist';
 export type * from '../shared/store-types';
+export { NAME_MAX_GLYPHS } from '../shared/store-types';
 
-export { exportSave, previewImport, previewImportBlob, applyImport, mergeSaves, buildBackup, BACKUP_SCHEMA } from './backup';
+export { exportSave, previewImport, previewImportBlob, applyImport, mergeSaves, hasNoLearnerTrace, buildBackup, BACKUP_SCHEMA, IMPORT_MAX_BYTES } from './backup';
 export type { ImportPreview, ImportSummary, ImportData, BackupDocument } from './backup';
 export { XP_TABLE, COMBO_XP, MAX_LEVEL, levelFor, xpToNext, xpAtLevel, xpFor, repXp, comboXp } from './xp';
 export { QUESTS, QUEST_COUNT, NEEDS_FACET, pickQuests, pickDailyQuests, questProgress, questCounts, questDef, isFullDay, eligibleQuests, storeHasFacet } from './quests';

@@ -249,6 +249,16 @@ describe('<NemesisDossier> duel', () => {
     expect(q('.nemesis__line')?.textContent).toBe('The nemesis holds. Tomorrow again.');
   });
 
+  it('a listen duel without an audible voice (canSpeak false) shows the kana next to the player; an audible one does not', async () => {
+    installServices({ audio: { ...fakeAudio(), canSpeak: signal(false) } });
+    await setup({ [K_LISTEN]: nemesisCard(20) });
+    await mount(step({ cardKey: K_LISTEN }));
+    expect(q('.nemesis__novoice')?.textContent).toContain('たべる');
+    installServices({ audio: fakeAudio() });
+    await mount(step({ id: 'n-2', cardKey: K_LISTEN }));
+    expect(q('.nemesis__novoice')).toBeNull();
+  });
+
   it('a listen duel speaks the word on mount, replays on demand and forwards onReplay', async () => {
     await setup({ [K_LISTEN]: nemesisCard(20) });
     const { onReplay, onResult } = await mount(step({ cardKey: K_LISTEN }));

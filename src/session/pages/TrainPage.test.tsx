@@ -102,6 +102,8 @@ describe('<TrainPage>', () => {
     expect(root.querySelector('.train__totals')?.textContent).toMatch(/reps/);
     expect(root.querySelector('.train__totals')?.textContent).toContain('one Michikusa');
     expect(root.querySelector('.train__back')?.getAttribute('href')).toBe('#/');
+    // Begin has keyboard focus (focused imperatively: a dynamic autofocus attribute is ignored once anything was focused)
+    expect(document.activeElement).toBe(root.querySelector('.train__begin'));
 
     const cap = captureEvents();
     click('.train__begin');
@@ -121,6 +123,7 @@ describe('<TrainPage>', () => {
     expect(root.querySelector('.train')?.getAttribute('data-phase')).toBe('resume');
     expect(root.querySelector('.train__resume-btn')?.textContent).toBe('Resume (2 reps left)');
     expect(root.querySelector('.train__line')?.textContent).toBe('組手 Kumite');
+    expect(document.activeElement).toBe(root.querySelector('.train__resume-btn'));
 
     click('.train__resume-btn');
     expect(root.querySelector('.train')?.getAttribute('data-phase')).toBe('running');

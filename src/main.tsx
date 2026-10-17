@@ -15,7 +15,8 @@
  * ceremony overlay and the exercise registry load behind it (`pages.ts`
  * fills the registry per route, the Dojo included). Every optional barrel
  * degrades: no audio module → silent `nullAudio`; no art → no ceremonies;
- * the shell itself always renders.
+ * the shell itself always renders. First-run detection lives in
+ * `app/first-run.ts` (shared with the Dojo) and is re-exported here.
  */
 import { signal } from '@preact/signals';
 import { render } from 'preact';
@@ -29,6 +30,7 @@ import '@/styles/base.css';
 import '@/styles/components.css';
 import '@/styles/arcade.css';
 import { App } from './app/App';
+import { isFirstRun } from './app/first-run';
 import { startRouter } from './app/router';
 import { registerSw } from './app/sw-register';
 import type { FunctionComponent } from 'preact';
@@ -105,24 +107,7 @@ async function loadOverlays(): Promise<FunctionComponent[]> {
   return m && typeof m.CeremonyHost === 'function' ? [m.CeremonyHost as FunctionComponent] : [];
 }
 
-/**
- * A save with no trace of a learner: blank name, or no activity at all.
- * (A fresh save carries the default name 無名, so the name alone cannot tell.)
- */
-export function isFirstRun(): boolean {
-  const profile = store.profile.value;
-  if (profile.name.trim() === '') return true;
-  const stats = store.stats.value;
-  const streak = store.streak.value;
-  return (
-    stats.sessions === 0 &&
-    streak.totalDays === 0 &&
-    profile.xp === 0 &&
-    profile.kanaKnown.length === 0 &&
-    profile.goals.length === 0 &&
-    store.cards.count() === 0
-  );
-}
+export { isFirstRun };
 
 let stopRouter: (() => void) | null = null;
 let stopPerapera: (() => void) | null = null;

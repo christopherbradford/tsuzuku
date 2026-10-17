@@ -231,15 +231,8 @@ function defaultVibrate(): ((pattern: number | number[]) => unknown) | undefined
 
 const GESTURES = ['pointerdown', 'keydown', 'touchend'] as const;
 
-/**
- * Whether `speak()` on `audio` will actually be heard: `canSpeak` when the
- * service exposes it (the web service), else `hasJaVoice` (`nullAudio`, test
- * doubles). Drills that show text in place of audio gate on this.
- */
-export function voiceAudible(audio: AudioService): boolean {
-  const can = (audio as Partial<Pick<WebAudioService, 'canSpeak'>>).canSpeak;
-  return can ? can.value : audio.hasJaVoice.value;
-}
+/** Whether `speak()` on an audio service will actually be heard; the body lives in `shared/audio.ts` (ARCHITECTURE §3). */
+export { voiceAudible } from '../shared/audio';
 
 export function createWebAudio(o: WebAudioOptions = {}): WebAudioService {
   const synth = o.synth === undefined ? defaultSynth() : o.synth;

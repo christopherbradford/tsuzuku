@@ -7,7 +7,8 @@
  * estimates before 14 active days), the belt timeline, the Perapera radar,
  * the Weak Point map, Kage history, Kiai totals, reading and speaking, and
  * one honest "what to do next" line (the first line, before any session has
- * been trained, points at Nihonbashi rather than the ledger). Everything is
+ * been trained, points at Nihonbashi rather than the ledger; a due count is
+ * narrated as a Kata to take, never as a backlog to clear). Everything is
  * recomputed on open from
  * the live store; the current station's bundle is fetched once so the
  * projection counts real remaining items, and every other station is
@@ -72,10 +73,14 @@ export interface NextStepInput {
   sessions?: number;
 }
 
-/** One honest line: first session > backlog > due > weak point > ledger behind > rest. */
+/**
+ * One honest line: first session > backlog > due > weak point > ledger behind > rest.
+ * The due line names a Kata, never an imperative to clear the queue (design 01 §3).
+ */
 export function nextStepLine(i: NextStepInput): string {
   if (i.sessions === 0) return S.nextFirst;
   if (i.backlog) return fill(S.nextBacklog, { shown: i.shown, due: i.due });
+  if (i.due === 1) return S.nextDueOne;
   if (i.due > 0) return fill(S.nextDue, { n: i.due });
   if (i.weakTag) return fill(S.nextWeak, { tag: i.weakTag });
   if (i.weekTargetHours > 0 && i.weekMinutes < i.weekTargetHours * 60) {

@@ -25,7 +25,7 @@ import type { Step } from '@/shared/session-types';
 import { CardFlag } from '@/shared/store-types';
 import { store } from '@/store';
 import { captureEvents, card, makeTestStore } from '@/store/testing';
-import { StoryReader, StoryReaderView, captureStateFor, isDictionaryFree, kaidenEvidence, meta, speakerSlots, storyStation, toAttemptResult, type StoryReadResult } from './StoryReader';
+import { StoryReader, StoryReaderView, captureStateFor, isDictionaryFree, isStoryRead, kaidenEvidence, meta, speakerSlots, storyStation, toAttemptResult, type StoryReadResult } from './StoryReader';
 import { S } from './strings';
 
 const STORY = FIXTURE.items[FIXTURE_STORY_ID] as StoryItem;
@@ -183,6 +183,33 @@ describe('<StoryReaderView>', () => {
     expect(onDone.mock.calls[0]?.[0].glossTaps).toBe(1);
   });
 
+  it('closing the gloss (Close or Escape) returns focus to the token that opened it', async () => {
+    await makeStore();
+    mount();
+    click(q('[data-action="next"]'));
+    const first = tokenEl(1, '私') as HTMLElement;
+    first.focus();
+    click(first);
+    expect(q('[role="dialog"]')).not.toBeNull();
+    expect(document.activeElement).toBe(q('[data-action="close"]'));
+    click(q('[data-action="close"]'));
+    expect(q('[role="dialog"]')).toBeNull();
+    expect(document.activeElement).toBe(first);
+    // a second token, opened after the first closed, is the new opener
+    const line = STORY.lines[1] as StoryItem['lines'][number];
+    const otherIdx = line.tokens.findIndex((t, i) => i !== line.tokens.indexOf('私') && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(t));
+    const second = q(`li[data-line="1"] .ruby__token[data-token="${otherIdx}"]`) as HTMLElement;
+    second.focus();
+    click(second);
+    const dialog = q('[role="dialog"]') as HTMLElement;
+    expect(dialog).not.toBeNull();
+    act(() => {
+      dialog.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    });
+    expect(q('[role="dialog"]')).toBeNull();
+    expect(document.activeElement).toBe(second);
+  });
+
   it('punctuation tokens never open a gloss', async () => {
     await makeStore();
     mount();
@@ -284,6 +311,42 @@ describe('<StoryReaderView>', () => {
     const rows = store.log.forCard(`${V.私}#rec`);
     expect(rows.length).toBe(1);
     expect(rows[0]?.[2]).toBe(2);
+  });
+
+  it('without a firstRead prop the reader derives it from progress.storiesRead (store #7 part F / F #22)', async () => {
+    const setup = async (read: boolean): Promise<void> => {
+      await makeStore({ save: { progress: { station: 4, storiesRead: read ? [FIXTURE_STORY_ID] : [] } } });
+      const today = store.today();
+      store.cards.set(`${V.私}#rec`, card({ s: 5, d: 5, reps: 4, state: 2, due: today, last: today - 5 }));
+    };
+    // never read: lenient, the tap is not graded
+    await setup(false);
+    expect(isStoryRead(FIXTURE_STORY_ID)).toBe(false);
+    mount();
+    click(q('[data-action="next"]'));
+    click(tokenEl(1, '私'));
+    expect(store.log.forCard(`${V.私}#rec`).length).toBe(0);
+    render(null, root);
+
+    // recorded as read by B's story:read reducer: the same tap grades Hard
+    await setup(true);
+    expect(isStoryRead(FIXTURE_STORY_ID)).toBe(true);
+    mount();
+    click(q('[data-action="next"]'));
+    click(tokenEl(1, '私'));
+    const rows = store.log.forCard(`${V.私}#rec`);
+    expect(rows.length).toBe(1);
+    expect(rows[0]?.[2]).toBe(2);
+    render(null, root);
+
+    // the exercise-step path derives it the same way (no prop is passed)
+    await setup(true);
+    const onResult = vi.fn();
+    const step = { id: 'st-1', block: 'input', exercise: 'story-read', itemId: FIXTURE_STORY_ID, cardKey: null, params: { storyId: FIXTURE_STORY_ID }, timed: false, isNew: false, stepTag: null, exposures: 0, estMs: 0 } as Step;
+    act(() => render(<StoryReader step={step} item={null} feel="dojo" furigana="always" jj={false} speedTier={1} exposures={0} onResult={onResult} onHint={() => {}} onReplay={() => {}} requestJudge={() => Promise.resolve(true)} />, root));
+    click(q('[data-action="next"]'));
+    click(tokenEl(1, '私'));
+    expect(store.log.forCard(`${V.私}#rec`).length).toBe(1);
   });
 
   it('a gloss tap on an introduced word not due today never grades', async () => {

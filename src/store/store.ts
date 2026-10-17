@@ -3,21 +3,31 @@
  *
  * One `Signal` per SaveMeta slice, `patch()` for immutable updates, a card
  * map sharded by kind + level, the 5,000-entry review log ring, the opaque
- * session snapshot slot, the storage meter and `flush()`. `initStore()` reads
+ * session snapshot slot, the storage meter and `flush()`. `cards.dueOn(day)`
+ * lists due REVIEWS: a card created at introduction but never served
+ * (state 0) is not due — Scrolls introduce it — unless `includeNew` is set;
+ * archived and Kaiden cards are likewise opt-in (`./due.isDueReview`). `initStore()` reads
  * everything back through `persist.ts` (migrating on the way), then wires
  * the reducers registered in `REDUCERS` unless `reducers: false`. A document
  * the store cannot read (corrupt text, a newer schema) is stashed as
- * `<key>.bak` — meta AND every card shard — before a fresh one takes its
- * place; nothing is ever silently overwritten. Re-initialising flushes the
- * outgoing slot's pending writes first.
+ * `<key>.bak` — meta, every card shard AND the review log — before a fresh
+ * one takes its place; nothing is ever silently overwritten. When the stash
+ * itself fails (quota), the store frees the disposable session key, gzips the
+ * largest shard and retries once; if the `.bak` still cannot be written the
+ * key is frozen in `persist` (the fresh document lives in memory only, the
+ * unreadable text stays in place) and the storage level reads `ceiling` so
+ * the shell's export prompt shows. Re-initialising flushes the outgoing
+ * slot's pending writes first.
  *
  * B-internal extras for `backup.ts`: `replaceHeader` (seed/createdAt/
  * contentVersion on import) and `replaceLog` (bulk ring assignment).
+ * `resetSave()` (Settings 「初めから」) wipes header, slices, cards, log and
+ * session back to `freshSave()` in one signals batch; only the zone survives.
  *
  * `now()` is the one sanctioned `Date.now()` outside `shared/hash.ts`;
  * `today()` is the 04:00-boundary EpochDay in the profile's zone.
  */
-import { signal, type Signal } from '@preact/signals';
+import { batch, signal, type Signal } from '@preact/signals';
 import { FACETS, type CardKey, type Facet, type Level } from '../content/types';
 import type { SessionSnapshot } from '../shared/session-types';
 import { SESSION_SCHEMA } from '../shared/session-types';
@@ -247,6 +257,8 @@ function patch<K extends SliceKey>(k: K, fn: (prev: SaveMeta[K]) => SaveMeta[K])
 export interface DueOptions {
   includeArchived?: boolean;
   includeKaiden?: boolean;
+  /** Also list never-reviewed (state-0) cards whose due day has arrived. */
+  includeNew?: boolean;
 }
 
 /** Optional placement hint for a card's first write (kanji ids carry no level). */
@@ -311,6 +323,7 @@ export const storeCards: StoreCardsApi = {
     const out: CardKey[] = [];
     for (const [k, t] of cardMap) {
       if (t[0] > day) continue;
+      if (!o?.includeNew && t[5] === 0) continue;
       const flags = t[7];
       if (!o?.includeArchived && hasFlag(flags, CardFlag.archived)) continue;
       if (!o?.includeKaiden && hasFlag(flags, CardFlag.kaiden)) continue;
@@ -368,6 +381,39 @@ export function replaceHeader(h: SaveHeader): void {
 export function replaceLog(entries: LogEntry[]): void {
   logEntries = entries.length > LOG_RING ? entries.slice(entries.length - LOG_RING) : entries.slice();
   scheduleLog();
+}
+
+/**
+ * Wipe the save in place: a new header (seed, `createdAt` = now), every slice
+ * back to `freshSave()`, every card, the review-log ring and the session
+ * snapshot gone; only the profile's time zone survives. One signals `batch`,
+ * so the unlock evaluator and the other slice/`cards.version` effects run once,
+ * not once per card. Loaded shard keys are removed from storage (a frozen key
+ * is left alone), the meta and log writes are scheduled and the session key is
+ * removed; call `store.flush()` if the storage must be settled right away.
+ */
+export function resetSave(): void {
+  batch(() => {
+    const fresh = freshSave(nowFn(), sliceSignal('profile').value.tz);
+    applyMeta(fresh);
+    header.updatedAt = nowFn();
+    scheduleMeta();
+    if (persist) {
+      const frozen = new Set(persist.frozen());
+      for (const id of shards.keys()) {
+        const { kind, level } = parseShardId(id);
+        const key = persist.shardKey(kind, level);
+        if (!frozen.has(key)) persist.remove(key);
+      }
+    }
+    shards.clear();
+    cardMap.clear();
+    keyShard.clear();
+    version.value = version.peek() + 1;
+    logEntries = [];
+    scheduleLog();
+    session.clear();
+  });
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -494,11 +540,28 @@ export async function initStore(o: InitOptions = {}): Promise<void> {
   persist = p;
 
   // Never overwrite a save we cannot read: stash its text as `<key>.bak`, then start fresh.
-  function stash(key: string, why: unknown): void {
-    if (why instanceof MigrationError) console.warn('[store] ' + why.message);
-    else console.warn(`[store] ${key} is not readable; kept as ${key}.bak`);
+  // A stash that hits the quota frees room (session key, gzip the largest shard) and retries once;
+  // if it still fails the key is frozen so the unreadable document is never written over.
+  async function stash(key: string, why: unknown): Promise<void> {
+    const reason = why instanceof MigrationError ? why.message : `${key} is not readable`;
     const text = p.readRaw(key);
-    if (text !== null) p.writeRaw(`${key}.bak`, text);
+    if (text === null) {
+      console.warn(`[store] ${reason}`);
+      return;
+    }
+    const bak = `${key}.bak`;
+    let ok = p.writeRaw(bak, text);
+    if (!ok) {
+      p.remove(p.key(SESSION_KEY));
+      await p.compressLargest();
+      ok = p.writeRaw(bak, text);
+    }
+    if (ok) {
+      console.warn(`[store] ${reason}; kept as ${bak}`);
+      return;
+    }
+    p.freeze(key);
+    console.error(`[store] ${reason}; ${bak} could not be written (storage full), so ${key} is left untouched and not persisted this session`);
   }
 
   // meta
@@ -506,13 +569,13 @@ export async function initStore(o: InitOptions = {}): Promise<void> {
   const rawMeta = await p.read<unknown>(metaKey);
   let m: SaveMeta;
   if (rawMeta === null) {
-    if (p.readRaw(metaKey) !== null) stash(metaKey, null);
+    if (p.readRaw(metaKey) !== null) await stash(metaKey, null);
     m = freshSave(nowFn(), resolveTz());
   } else {
     try {
       m = migrateMeta(rawMeta);
     } catch (e) {
-      stash(metaKey, e);
+      await stash(metaKey, e);
       m = freshSave(nowFn(), resolveTz());
     }
   }
@@ -523,23 +586,27 @@ export async function initStore(o: InitOptions = {}): Promise<void> {
     const key = p.shardKey(spec.kind, spec.level);
     const raw = await p.read<unknown>(key);
     if (raw === null) {
-      if (p.readRaw(key) !== null) stash(key, null);
+      if (p.readRaw(key) !== null) await stash(key, null);
       continue;
     }
     try {
       ingestShard(shardIdOf(spec.kind, spec.level), migrateShard(raw));
     } catch (e) {
-      stash(key, e);
+      await stash(key, e);
     }
   }
 
-  // log
-  const rawLog = await p.read<unknown>(p.key(LOG_KEY));
-  if (rawLog !== null) {
+  // log — same stash rule as meta and the shards (a rolled-back schema bump must not drop the ring).
+  const logKey = p.key(LOG_KEY);
+  const rawLog = await p.read<unknown>(logKey);
+  if (rawLog === null) {
+    if (p.readRaw(logKey) !== null) await stash(logKey, null);
+  } else {
     try {
       logEntries = migrateLog(rawLog);
       if (logEntries.length > LOG_RING) logEntries = logEntries.slice(logEntries.length - LOG_RING);
-    } catch {
+    } catch (e) {
+      await stash(logKey, e);
       logEntries = [];
     }
   }

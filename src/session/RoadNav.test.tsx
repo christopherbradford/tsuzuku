@@ -73,6 +73,7 @@ describe('<RoadNav>', () => {
     expect(root.querySelector('.tokaido__where')?.textContent).toContain('Nihonbashi');
     expect(stations()[0]?.tabIndex).toBe(0);
     expect(root.querySelector('[aria-current="step"]')).toBeNull();
+    expect(root.querySelector('.tokaido__jump')?.textContent).toBe('Go to your station');
   });
 
   it('is keyboard navigable: one tab stop, arrows walk, Home/End jump, Enter picks', () => {
@@ -103,6 +104,26 @@ describe('<RoadNav>', () => {
       (links[0] as HTMLElement).click();
     });
     expect(onPick).toHaveBeenCalledWith(1);
+  });
+
+  it('mount never scrolls the window; "Go to your station" scrolls the current station into view and focuses it', () => {
+    const scroll = vi.fn();
+    const proto = Element.prototype as unknown as { scrollIntoView?: unknown };
+    const original = proto.scrollIntoView;
+    proto.scrollIntoView = scroll;
+    try {
+      mount({ current: 40, cleared: Array.from({ length: 39 }, (_, i) => i + 1) });
+      expect(scroll).not.toHaveBeenCalled();
+      act(() => {
+        (root.querySelector('.tokaido__jump') as HTMLButtonElement).click();
+      });
+      expect(scroll).toHaveBeenCalledTimes(1);
+      expect(document.activeElement).toBe(stations()[39]);
+      expect(stations()[39]?.tabIndex).toBe(0);
+    } finally {
+      if (original === undefined) delete proto.scrollIntoView;
+      else proto.scrollIntoView = original;
+    }
   });
 
   it('every station has an accessible label naming its belt and state', () => {

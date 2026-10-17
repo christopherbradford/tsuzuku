@@ -5,7 +5,7 @@ import type { ConjForm, GrammarItem, VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseProps } from '@/shared/exercise-types';
 import type { Step } from '@/shared/session-types';
 import { makeTestStore } from '@/store/testing';
-import { CHAIN_LENGTH, FormChain, buildChain, chainResult, headWordOf, meta, type LinkLog } from './FormChain';
+import { CHAIN_LENGTH, FormChain, buildChain, chainResult, headWordOf, inferHeadWord, meta, type LinkLog } from './FormChain';
 
 const TABERU = FIXTURE.items[V.食べる] as VocabItem; // v1
 const NOMU = FIXTURE.items[V.飲む] as VocabItem; // v5
@@ -163,16 +163,52 @@ describe('<FormChain>', () => {
   it('on a grammar prod card (item = GrammarItem) the verb comes from params.sentence / promptEn and the chain runs to Good', () => {
     const MASU = FIXTURE.items[G.ます] as GrammarItem;
     // what the session builder sets for form-chain on g-n5-003 with 飲む picked
-    const params = { forms: ['masu', 'masen', 'mashita'] as ConjForm[], answers: ['飲みます', '飲みません', '飲みました'], accept: ['飲みます', 'のみます', '飲みません', 'のみません', '飲みました', 'のみました'], sentence: '飲む', promptEn: 'to drink' };
+    const params = { forms: ['masu', 'masen', 'mashita'] as ConjForm[], answers: ['飲みます', '飲みません', '飲みました'], accept: ['飲みます', 'のみます', '飲みません', 'のみません', '飲みました', 'のみました'], sentence: '飲む', kana: 'のむ', promptEn: 'to drink' };
     const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
     mount(pr);
     expect(q('.gr-chain')?.getAttribute('data-state')).toBeNull();
     expect(q('[data-dictionary="true"]')?.textContent).toBe('飲む');
     expect(q('[data-gloss="true"]')?.textContent).toBe('to drink');
+    expect(q('.gr__word-kana')?.textContent).toBe('のむ');
     expect(root.textContent).toContain('One word, 3 forms.');
     for (const t of ['nomimasu', 'nomimasen', 'nomimashita']) answer(t);
     expect(pr.onResult).toHaveBeenCalledTimes(1);
     expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, errorTags: [], answer: 'のみます / のみません / のみました' });
+  });
+
+  it('inferHeadWord recovers the verb group from the planner answers; null without a word or answers', () => {
+    expect(inferHeadWord({ sentence: '食べる', kana: 'たべる', forms: ['masu', 'potential'], answers: ['食べます', '食べられる'] })).toEqual({ word: '食べる', kana: 'たべる', pos: 'v1' });
+    expect(inferHeadWord({ sentence: '飲む', kana: 'のむ', forms: ['masu'], answers: ['飲みます'] })).toEqual({ word: '飲む', kana: 'のむ', pos: 'v5' });
+    expect(inferHeadWord({ sentence: '飲む', kana: 'のむ', forms: ['masu'], answers: [''] })).toBeNull();
+    expect(inferHeadWord({ forms: ['masu'], answers: ['飲みます'] })).toBeNull();
+    expect(inferHeadWord({ sentence: '飲む', kana: 'のむ', forms: ['masu'], answers: ['食べます'] })).toBeNull();
+  });
+
+  it('on a grammar prod card the engine alternates (ら抜き potential) are right, not a Block; kana === word hides the reading span', () => {
+    const MASU = FIXTURE.items[G.ます] as GrammarItem;
+    // planner-shaped params for g-n5-003 with 食べる picked
+    const params = {
+      forms: ['masu', 'te', 'nai', 'ta', 'potential'] as ConjForm[],
+      answers: ['食べます', '食べて', '食べない', '食べた', '食べられる'],
+      accept: ['食べます', 'たべます', '食べて', 'たべて', '食べない', 'たべない', '食べた', 'たべた', '食べられる', 'たべられる', '食べれる', 'たべれる'],
+      sentence: '食べる',
+      kana: 'たべる',
+      promptEn: 'to eat',
+    };
+    const chain = buildChain(null, params);
+    expect(chain?.[4]?.accept).toEqual(expect.arrayContaining(['食べられる', 'たべられる', '食べれる', 'たべれる']));
+    const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    mount(pr);
+    expect(q('.gr__word-kana')?.textContent).toBe('たべる');
+    for (const t of TYPED_RIGHT.slice(0, 4)) answer(t);
+    answer('tabereru');
+    expect(states()).toEqual(['right', 'right', 'right', 'right', 'right']);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [] });
+
+    act(() => render(null, root));
+    mount(props({ item: MASU, step: step({ itemId: MASU.id, params: { forms: ['masu'] as ConjForm[], answers: ['あります'], accept: ['あります'], sentence: 'ある', kana: 'ある', promptEn: 'to exist' } }) }));
+    expect(q('[data-dictionary="true"]')?.textContent).toBe('ある');
+    expect(q('.gr__word-kana')).toBeNull();
   });
 
   it('4/5 → Hard: nearMiss with tag conjugation, the missed form shows given, expected and its rule', () => {

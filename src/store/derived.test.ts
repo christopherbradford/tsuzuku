@@ -49,7 +49,8 @@ describe('derived read-model', () => {
           'k-h-a#prod': card({ due: TODAY, state: 0 }),
         },
       });
-      expect(store.cards.dueOn(TODAY)).toHaveLength(4);
+      // The raw primitive and the read-model agree: state-0 cards are not due reviews.
+      expect(store.cards.dueOn(TODAY)).toHaveLength(2);
       expect(d.dueCount()).toBe(2);
       expect(d.forecastCounts().due).toBe(2);
       expect(d.dueCount(TODAY - 1)).toBe(1);

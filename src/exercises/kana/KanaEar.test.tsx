@@ -127,6 +127,13 @@ describe('<KanaEar>', () => {
     expect(root.querySelector('.drill__after')?.textContent).toContain('The kana');
   });
 
+  it('a voice that cannot be heard (canSpeak false) takes the no-voice path too', () => {
+    installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(true), canSpeak: signal(false) } });
+    mount(props(), true);
+    expect(root.querySelector('.kana-ear')?.getAttribute('data-voice')).toBe('false');
+    expect(root.querySelector('.kana-ear__novoice')).not.toBeNull();
+  });
+
   it('without a voice the romaji prompt for を carries the IME spelling too (o · wo)', () => {
     installServices({ audio: { ...nullAudio, speak, hasJaVoice: signal(false) } });
     const WO: KanaItem = { ...NE, id: 'k-h-wo', kana: 'を', romaji: 'o', row: 'w', lookalikes: [], exampleWord: { word: 'を', kana: 'を', en: 'object marker' } };

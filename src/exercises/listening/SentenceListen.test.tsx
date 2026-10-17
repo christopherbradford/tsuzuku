@@ -273,6 +273,25 @@ describe('<SentenceListen> dictation', () => {
     expect(root.querySelector('.listen__shown rt')?.textContent).toBe('いぬ');
   });
 
+  it('a voice that cannot be heard (canSpeak false: master volume 0) degrades the same way; a plain hasJaVoice double stays audible', async () => {
+    installServices({ audio: { ...fakeAudio(), canSpeak: signal(false) } });
+    await mount(step());
+    expect(root.querySelector('.listen__novoice')).not.toBeNull();
+    installServices({ audio: fakeAudio() });
+    await mount(step({ id: 'sl-2' }));
+    expect(root.querySelector('.listen__novoice')).toBeNull();
+  });
+
+  it("the frame's Enter (focus outside the field) finalizes a pending romaji tail before grading", async () => {
+    const { onResult, input } = await mount(step({ params: { sentence: 'にほん', rate: 1 } }), true);
+    type(input as HTMLInputElement, 'nihon');
+    expect((input as HTMLInputElement).value).toBe('にほn');
+    press('Enter');
+    expect(onResult).toHaveBeenCalledTimes(1);
+    expect(onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, answer: 'にほん' });
+    expect((input as HTMLInputElement).value).toBe('にほん');
+  });
+
   it('uses the speed-tier preset when params.rate is absent', async () => {
     await mount(step({ params: { sentence: SENTENCE } }));
     expect(calls[0]?.o?.rate).toBe(1);

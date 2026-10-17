@@ -32,6 +32,7 @@ import { useExerciseKeys } from '@/shared/ui/ExerciseFrame';
 import { Ruby } from '@/shared/ui/Ruby';
 import { store } from '@/store';
 import { acceptForms, attempt } from '../check';
+import { voiceAudible } from '../voice';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
 import { FACET_LABEL, S, fill } from './strings';
 import './NemesisDossier.css';
@@ -344,7 +345,7 @@ export function NemesisDossier(p: ExerciseProps): JSX.Element {
   useExerciseKeys(prompt?.speak ? { onReplay: replay } : {});
 
   const surface = surfaceOf(item);
-  const hasVoice = services.audio.hasJaVoice.value;
+  const hasVoice = voiceAudible(services.audio);
 
   /* ── duel rep ─────────────────────────────────────────────────────────── */
   if (duelRep && prompt && facet) {

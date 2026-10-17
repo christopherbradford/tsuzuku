@@ -123,17 +123,31 @@ describe('<FormForge>', () => {
   it('on a grammar prod card (item = GrammarItem) the verb comes from params.sentence / promptEn, and the drill is answerable', () => {
     const MASU = FIXTURE.items[G.ます] as GrammarItem;
     // what the session builder sets for form-forge on g-n5-003 with 飲む picked (rep 0)
-    const params = { targetForm: 'masu' as const, answer: '飲みます', accept: ['飲みます', 'のみます'], sentence: '飲む', promptEn: 'to drink: polite present (〜ます)' };
+    const params = { targetForm: 'masu' as const, answer: '飲みます', accept: ['飲みます', 'のみます'], sentence: '飲む', kana: 'のむ', promptEn: 'to drink: polite present (〜ます)' };
     const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
     const input = mount(pr);
     expect(q('.gr-forge')?.getAttribute('data-state')).toBeNull();
     expect(q('[data-dictionary="true"]')?.textContent).toBe('飲む');
     expect(root.textContent).not.toContain('—');
+    expect(q('.gr__word-kana')?.textContent).toBe('のむ');
     expect(q('[data-gloss="true"]')?.textContent).toBe('to drink: polite present (〜ます)');
     expect(q('[data-target-form="true"]')?.textContent).toBe('polite present (〜ます)');
     type(input, 'nomimasu');
     enter(input);
     expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [], answer: 'のみます' });
+  });
+
+  it('on a grammar prod card the reading span is absent when params.kana equals the word, and the unavailable branch still shows the reading', () => {
+    const MASU = FIXTURE.items[G.ます] as GrammarItem;
+    mount(props({ item: MASU, step: step({ itemId: MASU.id, params: { targetForm: 'masu', answer: 'あります', accept: ['あります'], sentence: 'ある', kana: 'ある', promptEn: 'to exist' } }) }));
+    expect(q('[data-dictionary="true"]')?.textContent).toBe('ある');
+    expect(q('.gr__word-kana')).toBeNull();
+
+    act(() => render(null, root));
+    mount(props({ item: MASU, step: step({ itemId: MASU.id, params: { targetForm: 'potential', sentence: '書く', kana: 'かく', promptEn: 'to write' } }) }));
+    expect(q('.gr-forge')?.getAttribute('data-state')).toBe('unavailable');
+    expect(root.textContent).toContain('書く');
+    expect(q('.gr__word-kana')?.textContent).toBe('かく');
   });
 
   it('the main form, its kana, and an alternate (ら-dropped) are all accepted', () => {

@@ -77,6 +77,15 @@ export type LogEntry = [t: number, cardKey: CardKey, rating: Rating, ms: number,
 /* Slices                                                                     */
 /* ────────────────────────────────────────────────────────────────────────── */
 
+/**
+ * Cap on `Profile.name` / `Profile.nameKana` in Unicode code points (the phone
+ * safe zone of the name-bearing wallpapers, design 06). Onboarding clamps as
+ * the learner types, `store/migrations.fillMeta` truncates imported or
+ * hand-edited saves to it, and the art tier lays out at most this many glyphs;
+ * `shared/jp.clampGlyphs` is the one cutter.
+ */
+export const NAME_MAX_GLYPHS = 24;
+
 export interface Profile {
   /** Default 無名 Mumei. */
   name: string;

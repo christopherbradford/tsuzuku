@@ -285,6 +285,18 @@ describe('helpers', () => {
     expect(storyCoverage(story as never, new Set())).toBe(0);
   });
 
+  it('pickStories serves unread episodes first (progress.storiesRead), then best coverage; a read story is kept, not dropped', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const [story, dialogue] = FIXTURE_IDS.story;
+    expect(pickStories(ctx).map((s) => s.id)).toEqual([story, dialogue]);
+    store.patch('progress', (p) => ({ ...p, storiesRead: [story!] }));
+    expect(pickStories(ctx).map((s) => s.id)).toEqual([dialogue, story]);
+    expect(pickStories(ctx, { kind: 'story' }).map((s) => s.id)).toEqual([story]);
+    store.patch('progress', (p) => ({ ...p, storiesRead: [story!, dialogue!] }));
+    expect(pickStories(ctx).map((s) => s.id)).toEqual([story, dialogue]);
+  });
+
   it('pitch patterns and production-forge params', async () => {
     await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
     const ctx = await loadPlanContext({ loader, station: 4 });
@@ -302,8 +314,10 @@ describe('helpers', () => {
     expect(ff.targetForm).toBe('masu');
     expect(ff.answer).toMatch(/ます$/);
     const chain = resolveParams(ctx, 'form-chain', loader.get(G.ます)!, { rep: 0 });
-    expect(chain.forms).toEqual(['masu', 'masen', 'mashita']);
-    expect(chain.answers).toHaveLength(3);
+    // the point's own forms lead; the chain is padded to 5 links (design 04 §4 "5 target forms")
+    expect(chain.forms!.slice(0, 3)).toEqual(['masu', 'masen', 'mashita']);
+    expect(chain.forms).toHaveLength(5);
+    expect(chain.answers).toHaveLength(5);
     const pd = resolveParams(ctx, 'particle-duel', loader.get(G.は)!, { rep: 0 });
     expect(pd.answers![0]).toBe('は');
     expect(pd.blanks!.length).toBeGreaterThanOrEqual(1);
@@ -503,6 +517,8 @@ describe('station entry stays light (design 07 §6, §9)', () => {
   });
 });
 
+const STATION_1_KANA_COUNT = 10;
+
 describe('first session after Nihonbashi (BUILD_STATUS first-run walk)', () => {
   it('Station 1 with no cards: Kata is honestly empty, Kumite is the two kana Scrolls', async () => {
     await makeTestStore({ save: { progress: { station: 1 }, profile: { onboardedAt: 1 } } });
@@ -512,7 +528,13 @@ describe('first session after Nihonbashi (BUILD_STATUS first-run walk)', () => {
     expect(k.steps.length).toBeGreaterThan(0);
     expect(k.blocks.map((b) => b.kind)).toEqual(['scroll']);
     expect(k.meta.scrollIds).toEqual(['1-1', '1-2']);
-    expect(k.steps.filter(isIntroCheck).length).toBe(k.meta.newCount);
+    // one intro check per item on its base facet, plus a second one on the kana `prod` facet (Kana Ear), so the
+    // prod card created at introduction is served and leaves state 0
+    const intros = k.steps.filter(isIntroCheck);
+    expect(intros.filter((s) => !s.id.includes('#')).length).toBe(k.meta.newCount); // base facet (rec; prod for the two chunks)
+    const prod = intros.filter((s) => s.id.endsWith('#prod'));
+    expect(prod.length).toBe(STATION_1_KANA_COUNT);
+    expect(prod.every((s) => s.itemId?.startsWith('k-') && (s.exercise === 'kana-ear' || s.exercise === 'kana-forge'))).toBe(true);
     expect(k.steps.every((s) => s.isNew && s.block === 'scroll')).toBe(true);
   });
 });

@@ -49,6 +49,7 @@ export const S = {
   startNode: '日本橋 Nihonbashi · the start',
   arrivalNode: '三条大橋 Sanjō Ōhashi · the Shodan Shinsa',
   keyboardHint: 'Arrow keys walk the road; Enter opens a station.',
+  jumpToCurrent: 'Go to your station',
   bandLabel: '{belt} belt · Stations {from} to {to} · {level}',
   gateGlyph: '関',
   stampGlyph: '印',
@@ -133,7 +134,8 @@ export const S = {
 
   // ── ScrollView ────────────────────────────────────────────────────────
   scrollAria: 'Scroll',
-  scrollTitle: '巻物 Scroll {id}',
+  scrollTitle: '巻物 Scroll {n}',
+  scrollCapturedTitle: '巻物 Captured words',
   scrollItems: '{n} items',
   scrollItem: '1 item',
   pretestTitle: '力試し Chikaradameshi',
@@ -171,7 +173,7 @@ export const S = {
   cardOf: 'Card {i} of {n}',
 
   // ── GateView ──────────────────────────────────────────────────────────
-  // aria-labels take no markup, so they carry the English half only (design 01 §7).
+  // aria-labels take no markup, so every *Aria key carries the English half only (design 01 §7; strings.test.ts enforces it).
   gateAria: 'Gatekeeper',
   gateIntroLine: 'Four phases. No retreat; misses are information, not damage.',
   gatePhases: 'Phases',
@@ -221,7 +223,7 @@ export const S = {
   timersNote: 'Timers only on mature cards. A timeout is a miss here and a Hard in the schedule.',
 
   // ── ShinsaView ────────────────────────────────────────────────────────
-  shinsaAria: '審査 Shinsa',
+  shinsaAria: 'Shinsa, the belt exam',
   shinsaHeading: '{belt} belt exam',
   eligibilityTitle: 'Eligibility',
   eligibleLine: 'Everything is in place. The examiner is ready when you are.',
@@ -239,6 +241,7 @@ export const S = {
   notesDone: 'Notes session done. The retake is open.',
   sectionsTitle: 'Five sections',
   sectionsLine: 'Pass is eighty percent in each. Twenty seconds per item, soft. No hints, no furigana.',
+  sectionsLineYellow: 'Pass is eighty percent in each. Twenty seconds per item, soft. No hints. Furigana stays on for this first exam.',
   beginExam: 'Begin the exam',
   sectionIntro: 'Section {n} of {total}',
   sectionLine: {
@@ -263,7 +266,7 @@ export const S = {
   whiteNoExam: ENGINE.shinsaReasonWhite,
 
   // ── KageView ──────────────────────────────────────────────────────────
-  kageAria: '影 Kage',
+  kageAria: 'Kage, versus your shadow',
   kageTitle: 'Versus your shadow',
   kageYou: ENGINE.kageYou,
   kageShadow: 'KAGE',
@@ -295,7 +298,7 @@ export const S = {
   kageDigitsAria: 'Score',
 
   // ── DanPage ───────────────────────────────────────────────────────────
-  danAria: '段 Dan road',
+  danAria: 'The Dan road',
   danTitle: '道場破り Dōjō Yaburi',
   danTitleEn: 'Dōjō Yaburi',
   danSub: 'The road past Kyoto. No stations, no gates; criteria you can read before you meet them.',
@@ -313,7 +316,8 @@ export const S = {
   danBuildFailed: 'The gauntlet could not be set up. The dojo is still here.',
   danEmptyPlan: 'Nothing to run yet: the gauntlet’s drills are not built.',
   danStandIn: 'Where the save cannot measure a criterion yet, the nearest honest counter stands in; the label says what is counted.',
-  danShares: 'Strand shares on the Dan road: 15 form · 50 input · 35 output.',
+  // Filled from `blocks.STRAND_SHARES.dan` (design 03 §5), so the copy cannot drift from the table.
+  danShares: 'Strand shares on the Dan road: {form} % form · {input} % input · {output} % output.',
   danGauntletDone: 'Gauntlet run. The criteria read from the ledger and the stats.',
   danModule: '{dan} · {name}',
   danLater: 'later',
