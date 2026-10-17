@@ -6,8 +6,9 @@ import { bus } from '@/shared/events';
 import { route, syncRouteFromLocation } from '@/shared/routes';
 import { INTENSITY_PRESETS, NAME_MAX_GLYPHS, newPerDayFor, resetStoreForTests, store } from '@/store';
 import { DEFAULT_TEST_NOW, makeTestStore } from '@/store/testing';
-import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, TILE_COUNT, beltAfterDays, hoursInApp, kanaMatches, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
-import { S, fmt } from './strings';
+import { onboardingEstimate } from '@/store/derived';
+import OnboardingPage, { BASIC_HIRAGANA, KANA_TOTAL, ROAD_DAYS, TILE_COUNT, beltAfterDays, hoursInApp, kanaMatches, roadDays, roadEstimateFor, roadMonths, steadyReviewsInAYear } from './OnboardingPage';
+import { S, fmt, num } from './strings';
 
 const markKnownSpy = vi.fn();
 vi.mock('@/learn/apply', async (importOriginal) => {
@@ -299,7 +300,7 @@ describe('<OnboardingPage>', () => {
     expect(root.querySelector('.onb__kana-verdict')?.getAttribute('data-ok')).toBe('true');
   });
 
-  it('in-app hours and months differ per preset and are shown', async () => {
+  it('without an estimate the ROAD_DAYS table is the fallback: hours and months differ per preset', () => {
     const casual = hoursInApp('casual');
     const standard = hoursInApp('standard');
     const intense = hoursInApp('intense');
@@ -315,16 +316,44 @@ describe('<OnboardingPage>', () => {
     expect(roadMonths('intense').full).toBeLessThan(roadMonths('standard').full);
     expect(beltAfterDays('intense', 365)).toBe('black');
     expect(steadyReviewsInAYear('intense')).toBe(400);
+    expect(roadDays('standard', null)).toEqual(ROAD_DAYS);
+    expect(roadDays('casual', undefined).white).toBeGreaterThan(ROAD_DAYS.white);
+  });
 
+  it('the road derives from the store estimate for every belt: the White duration follows it, not ROAD_DAYS.white', async () => {
     await makeTestStore();
+    const est = roadEstimateFor('standard');
+    expect(est).not.toBeNull();
+    // Same basis as the Records projection: the live settings with the preset's intensity and White mix.
+    const settings = { ...store.settings.value, intensity: 'standard' as const, newPerDay: newPerDayFor('white', 'standard') };
+    expect(est).toEqual(onboardingEstimate(settings, store.today(), 1));
+    const white = est!.byBelt.find((b) => b.belt === 'white')!;
+    expect(white.days).toBe(Math.ceil(80 / 4 + 3));
+    expect(white.days).not.toBe(ROAD_DAYS.white);
+    // Every belt's days come from the estimate.
+    const days = roadDays('standard', est);
+    for (const b of est!.byBelt) expect(days[b.belt]).toBe(b.days);
+    expect(beltAfterDays('standard', white.days - 1, est)).toBe('white');
+    expect(beltAfterDays('standard', white.days, est)).toBe('yellow');
+    // Months and hours are the estimate's, per preset.
+    expect(roadMonths('standard', est)).toEqual({ full: Math.round(est!.days100 / 30.44), partial: Math.round(est!.days70 / 30.44) });
+    expect(hoursInApp('standard', est)).toBe(est!.hoursInApp);
+    const casual = roadEstimateFor('casual')!;
+    const intense = roadEstimateFor('intense')!;
+    expect(roadMonths('casual', casual).full).toBeGreaterThan(roadMonths('standard', est).full);
+    expect(roadMonths('intense', intense).full).toBeLessThan(roadMonths('standard', est).full);
+    expect(roadDays('casual', casual).white).toBeGreaterThan(white.days);
+
     mount();
     click('[data-next]');
     click('[data-choice="kana-none"]');
     click('[data-next]');
-    expect(q('[data-hours]').textContent).toContain(String(standard));
+    expect(q('[data-hours]').textContent).toContain(String(est!.hoursInApp));
+    expect(q('[data-months]').textContent).toBe(fmt(S.onbMonthsValue, roadMonths('standard', est)));
     click('[data-choice="pace-casual"]');
-    expect(q('[data-hours]').textContent).toContain(String(casual));
-    expect(q('[data-months]').textContent).toContain(String(roadMonths('casual').full));
+    expect(q('[data-hours]').textContent).toContain(String(casual.hoursInApp));
+    expect(q('[data-months]').textContent).toBe(fmt(S.onbMonthsValue, roadMonths('casual', casual)));
+    expect(root.textContent).toContain(fmt(S.onbPaceReviews, { n: num(steadyReviewsInAYear('casual', casual)) }));
   });
 
   it('kanaMatches accepts Hepburn, kunrei, lone n, wo and typed kana', () => {

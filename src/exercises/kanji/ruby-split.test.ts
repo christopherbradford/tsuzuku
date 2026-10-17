@@ -1,5 +1,5 @@
 import { toPlain } from '@/content/ruby';
-import { splitAtPlainRange } from './ruby-split';
+import { alignedRange, spanReading, splitAtPlainRange } from './ruby-split';
 
 const SENTENCE = '{犬|いぬ}が{水|みず}を{飲|の}みます。'; // plain: 犬が水を飲みます。
 const FUTURE = '{未来|みらい}は{明|あか}るい。'; // plain: 未来は明るい。
@@ -39,5 +39,28 @@ describe('splitAtPlainRange', () => {
     expect(splitAtPlainRange('ねこがいる。', 4, 2)).toEqual({ pieces: ['ねこがい', '', 'る。'], reading: null });
     expect(splitAtPlainRange('ねこがいる。', -3, 99)).toEqual({ pieces: ['', 'ねこがいる。', ''], reading: 'ねこがいる。' });
     expect(splitAtPlainRange('', 0, 1)).toEqual({ pieces: ['', '', ''], reading: null });
+  });
+});
+
+describe('spanReading / alignedRange', () => {
+  const JA = '{日本|にほん}の{日|ひ}は{日曜日|にちようび}です。'; // plain: 日本の日は日曜日です。
+  it('spanReading reads a span by its ruby, plain text as is, and is null when a group is cut', () => {
+    expect(spanReading(JA, 3, 4)).toBe('ひ');
+    expect(spanReading(JA, 0, 2)).toBe('にほん');
+    expect(spanReading(JA, 2, 5)).toBe('のひは');
+    expect(spanReading(JA, 0, 1)).toBeNull();
+    expect(spanReading(JA, 7, 8)).toBeNull();
+    expect(spanReading(SENTENCE, 4, 8)).toBe('のみます');
+    expect(spanReading(FUTURE, 1, 3)).toBeNull();
+  });
+  it('alignedRange skips occurrences inside a ruby group and ones that read differently', () => {
+    expect(alignedRange(JA, '日', 'ひ')).toEqual([3, 4]);
+    expect(alignedRange(JA, '日')).toEqual([3, 4]);
+    expect(alignedRange(JA, '日', 'にち')).toBeNull();
+    expect(alignedRange(JA, '日曜日', 'にちようび')).toEqual([5, 8]);
+    expect(alignedRange(JA, '日本', 'ニホン')).toEqual([0, 2]);
+    expect(alignedRange(JA, '月')).toBeNull();
+    expect(alignedRange(JA, '')).toBeNull();
+    expect(alignedRange(SENTENCE, '飲みます', 'のみます')).toEqual([4, 8]);
   });
 });

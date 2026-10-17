@@ -986,24 +986,36 @@
  },
  {
   "path": "scripts/validate-content.ts",
-  "responsibility": "[P1] REAL from day 1 (replaces the console.log stub; 82 Pass-1 files depend on its fix loop): implements CONTENT_GUIDE §18 V01–V39 — V01–V19, V23–V26, V30–V33 in the first commit, V20–V22, V27, V34–V36 within the week, V37–V39 (information-only warnings) in review round 2 — over public/content/**; imports ID_PATTERNS, RUBY_RE, KANA_*_RE, STATIONS, COVERAGE_TARGETS/coverageTargetFor, SENTENCE_MAX_CHARS and the ruby helpers directly from src/content/types.ts and src/content/ruby.ts (run with node --experimental-strip-types); writes StoryLine.tokenIds from the V20 match (linker); exit code 1 on any F; JSON report {file,id,rule,message}[]; `npm run content:validate`.",
+  "responsibility": "[P1] REAL from day 1 (replaces the console.log stub; 82 Pass-1 files depend on its fix loop): implements CONTENT_GUIDE §18 V01–V40 — V01–V19, V23–V26, V30–V33 in the first commit, V20–V22, V27, V34–V36 within the week, V37–V39 (information-only warnings) in review round 2, V40 (unlocksForms with no conjugable word in the cumulative allowlist, W) in round 2c — over public/content/**; imports ID_PATTERNS, RUBY_RE, KANA_*_RE, STATIONS, COVERAGE_TARGETS/coverageTargetFor, SENTENCE_MAX_CHARS and the ruby helpers directly from src/content/types.ts and src/content/ruby.ts (run with node --experimental-strip-types); writes StoryLine.tokenIds from the V20 match through the shared scripts/linker.ts (inflected verb / copula forms link to their item; V20's missing-from-vocabIds warnings exempt auxiliary spellings); exit code 1 on any F; JSON report {file,id,rule,message}[]; `npm run content:validate`.",
   "api": "export function validate(root:string,o?:{components:ComponentDef[];denylist:string[];strict:boolean}):{failures:Finding[];warnings:Finding[];linked:number}; export interface Finding {file:string;id?:string;rule:string;message:string}; (CLI) node --experimental-strip-types scripts/validate-content.ts [--strict] [--json]",
   "depends_on": [
    "src/content/types.ts",
-   "src/content/ruby.ts"
+   "src/content/ruby.ts",
+   "scripts/linker.ts"
   ],
-  "tests": "scripts/validate-content.test.ts: fixture corpus passes; one fixture per rule fails with that rule id; tokenIds written parallel to tokens; `_meta/*` exempt from V02",
+  "tests": "scripts/validate-content.test.ts: fixture corpus passes; one fixture per rule fails with that rule id; tokenIds written parallel to tokens; inflected forms link through the fixture (飲んで → 飲む, いきます / いった → 行く) and auxiliary spellings need no vocabIds entry; V40 warns on a verb form with no verb in the allowlist; `_meta/*` exempt from V02",
   "owner_group": "C"
  },
  {
   "path": "scripts/assign-stations.ts",
-  "responsibility": "[P1] station-allocation §5: walks docs/content-plan.json files per level in corpus order (frequencyRank when present), kanji topological sort by components, components placed one station ahead of their first kanji (N5 set across Stations 2–3), fills STATIONS quotas (±10 %), kana by station, writes `station` onto items, emits stations/NN.json (StationBundle incl. componentIds and the cumulative `surfaces` map) and the cumulative allowlists for Pass 2/3 packets.",
+  "responsibility": "[P1] station-allocation §5: walks docs/content-plan.json files per level in corpus order (frequencyRank when present), kanji topological sort by components, components placed one station ahead of their first kanji (N5 set across Stations 2–3), fills STATIONS quotas (±10 %), kana by station, writes `station` onto items, emits stations/NN.json (StationBundle incl. componentIds and the cumulative `surfaces` map) and the cumulative allowlists for Pass 2/3 packets; runs the story linker (`linkStories`, writing StoryLine.tokenIds) with the matcher from scripts/linker.ts, which it re-exports for older imports.",
   "api": "export function assign(root:string,plan:PlanEntry[]):{bundles:StationBundle[];allowlists:Record<number,{vocab:string[];grammar:string[];kana:string[];names:string[]}>;report:string}; (CLI) node --experimental-strip-types scripts/assign-stations.ts",
   "depends_on": [
    "src/content/types.ts",
    "src/content/ruby.ts"
   ],
   "tests": "scripts/assign-stations.test.ts: fixture corpus fills quotas within ±10 %; no kanji before its components; every component one station ahead of its first kanji and never at Station 1; surfaces resolve every allowlisted word/kana/altForm",
+  "owner_group": "C"
+ },
+ {
+  "path": "scripts/linker.ts",
+  "responsibility": "[P1] (review round 2c) The story linker: token → item id per CONTENT_GUIDE §14.2 / V20, shared by assign-stations.ts (content:assign writes StoryLine.tokenIds) and validate-content.ts (V19 / V20 and the V36 segmentation) so the two never disagree. buildMatchPool turns a cumulative allowlist (+ a story's plusOne) into exact surfaces (word / kana / altForm, 〜 stripped), generated inflections (inflectedForms: する / 来る paradigms, godan polite / negative / ば / volitional / たい with onbin て / た and contracted てる / てた, ichidan forms, copula forms for an aux です item; only kana surfaces, one-kanji stems and する compounds inflect) and stem prefixes; matchToken consults exact → forms → function tokens / cast names / numerals → prefixes (stemApplies: a one-kanji stem only before okurigana or at token end), so a whole form is the longest match, an AUX_VERBS lexeme beats a content verb, a kana token known only as a kanji word's reading yields to a form, and a kanji homograph goes to the longest stem (resolveForm). Erasable TypeScript only (node --experimental-strip-types).",
+  "api": "export function buildMatchPool(vocab:Iterable<VocabItem>,grammar:Iterable<GrammarItem>,plusOne?:Iterable<VocabItem>):MatchPool; export function matchToken(pool:MatchPool,token:string,names?:ReadonlySet<string>):TokenMatch; export function inflectedForms(surface:string,pos:string):string[]; export function stemApplies(stem:string,token:string):boolean; export const FUNCTION_TOKENS:ReadonlySet<string>; export const AUX_VERBS:ReadonlySet<string>; export const CAST_NAMES:ReadonlySet<string>; export function allowlistStationFor(station:number):number; export function cumulativeIds(bundles:readonly StationBundle[],upTo:number,key:'kanaIds'|'vocabIds'|'grammarIds'):Set<string>; export interface MatchPool; export interface TokenMatch; export interface FormEntry",
+  "depends_on": [
+   "src/content/types.ts",
+   "src/content/ruby.ts"
+  ],
+  "tests": "scripts/linker.test.ts: inflectedForms per paradigm (する, 来る, godan onbin by final kana, godan rows, ichidan, copula); matchToken links forms to the verb (した beats the reading of 下, きた → 来る over 着る and 北, いって → 行く not 言う / 要る, auxiliary spellings to their lexeme, copula forms to the aux です item), a whole form beats a shorter stem (出して → 出す), a content verb's kana reading does not inflect (なった is not 鳴る), forms stay function tokens before the verb is introduced",
   "owner_group": "C"
  },
  {

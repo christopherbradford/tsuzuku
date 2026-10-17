@@ -10,8 +10,15 @@
  * group that straddles a cut is emitted as bare base characters in each piece
  * it touches (no duplication, no reading inside the blank), and the reading
  * of everything the target touches comes back separately as the clue.
+ *
+ * `spanReading` / `alignedRange` are the drill-side twins of the planner's
+ * `rubySpanReading` / `alignedOccurrence` (`session/params`): the reading of
+ * a span that cuts no ruby group, and the first occurrence of a word whose
+ * ruby aligns with it and reads as expected — so Kanji Read blanks the
+ * occurrence its ruby names, never 日 inside {日本|にほん}.
  */
-import { parseRuby } from '@/content/ruby';
+import { parseRuby, toPlain } from '@/content/ruby';
+import { equivalentJa } from '@/shared/jp';
 
 export interface PlainRangeSplit {
   /** `[before, target, after]`, each with its own ruby markup where a group fits inside. */
@@ -54,4 +61,43 @@ export function splitAtPlainRange(ja: string, start: number, end: number): Plain
     });
   }
   return { pieces, reading: b > a ? reading : null };
+}
+
+/**
+ * Reading of the plain span `[start, end)` of ruby'd `ja`: ruby groups by
+ * their reading, plain text as is; `null` when a ruby group straddles a span
+ * boundary (the span would cut a compound such as {二時間|にじかん}).
+ */
+export function spanReading(ja: string, start: number, end: number): string | null {
+  let off = 0;
+  let reading = '';
+  for (const seg of parseRuby(ja)) {
+    const s0 = off;
+    const s1 = off + seg.base.length;
+    off = s1;
+    if (s1 <= start || s0 >= end) continue;
+    if (seg.reading !== null) {
+      if (s0 < start || s1 > end) return null;
+      reading += seg.reading;
+    } else {
+      reading += seg.base.slice(Math.max(start, s0) - s0, Math.min(end, s1) - s0);
+    }
+  }
+  return reading;
+}
+
+/**
+ * Plain range of the first occurrence of `word` in `ja` whose ruby aligns
+ * with it (no group cut) and, when `kana` is given, reads as `kana`
+ * (`equivalentJa`); `null` when none does.
+ */
+export function alignedRange(ja: string, word: string, kana?: string): [number, number] | null {
+  if (!word) return null;
+  const plain = toPlain(ja);
+  for (let i = plain.indexOf(word); i >= 0; i = plain.indexOf(word, i + 1)) {
+    const reading = spanReading(ja, i, i + word.length);
+    if (reading === null) continue;
+    if (kana === undefined || equivalentJa(reading, kana)) return [i, i + word.length];
+  }
+  return null;
 }

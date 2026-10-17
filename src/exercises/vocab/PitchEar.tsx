@@ -5,13 +5,16 @@
  * `pitchConfidence` is `high` get a card; the pattern is drawn from the
  * dataset value and the copy never claims the TTS proves it. After the
  * answer the word's own pitch line is shown, and — minimal-pair rounds, 雨
- * or 飴 — a loaded homophone with a different pitch (via `params.distractorIds`
- * or the item's `confusables`) is drawn beside it as the contrast.
+ * or 飴 — a loaded homophone with a different pitch is drawn beside it as
+ * the contrast (`pitchPairPool`: the planner's `params.distractorIds` first,
+ * when it set them, then the item's own `confusables`, so a planner list that
+ * holds no pitch homophone still falls back to the item's own pairs).
  * `params.choices` may carry the four labels in the planner's order (kanji
  * names, as `session/builder.PITCH_PATTERNS`); `params.answer` is one of them.
  */
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { content } from '@/content/loader';
 import type { VocabItem } from '@/content/types';
 import type { AttemptResult, ExerciseMeta, ExerciseProps } from '@/shared/exercise-types';
 import { equivalentJa } from '@/shared/jp';
@@ -21,7 +24,7 @@ import { PITCH_TYPES, PitchGlyph, PitchLine, pitchType, type PitchType } from '.
 import { gradePitch } from '../check';
 import { PITCH_TYPE_LABEL, S as X } from '../strings';
 import { MissingItem, missingResult, useLatency } from '../kana/KanaFlash';
-import { Speaker, WordHead, isVocabItem, speakWord, vocabPoolFrom } from './MeaningGuard';
+import { Speaker, WordHead, isVocabItem, speakWord } from './MeaningGuard';
 import { S } from './strings';
 import './vocab.css';
 
@@ -52,6 +55,16 @@ export function pitchChoiceTypes(params: StepParams): PitchType[] {
   return [...PITCH_TYPES];
 }
 
+/**
+ * The loaded vocab the contrast is drawn from: the planner's
+ * `params.distractorIds` first (its homophone picks win), then the item's
+ * `confusables`; deduped, unloaded ids dropped.
+ */
+export function pitchPairPool(item: VocabItem, params: StepParams): VocabItem[] {
+  const ids = Array.from(new Set([...(params.distractorIds ?? []), ...(item.confusables ?? [])]));
+  return ids.map((id) => content.get(id)).filter(isVocabItem);
+}
+
 /** A homophone with a different, dataset-backed pitch — the 雨 / 飴 contrast. */
 export function minimalPairOf(item: VocabItem, pool: readonly VocabItem[]): VocabItem | null {
   return pool.find((v) => v.id !== item.id && v.pitch !== undefined && v.pitch !== item.pitch && equivalentJa(v.kana, item.kana)) ?? null;
@@ -74,7 +87,7 @@ function PitchEarBody(p: ExerciseProps): JSX.Element {
   const types = useMemo(() => pitchChoiceTypes(p.step.params), [p.step.params]);
   const correctType = item ? pitchType(item.kana, item.pitch ?? 0) : null;
   const correctIdx = correctType ? types.indexOf(correctType) : -1;
-  const pair = useMemo(() => (item ? minimalPairOf(item, vocabPoolFrom(item, p.step.params)) : null), [item, p.step.params]);
+  const pair = useMemo(() => (item ? minimalPairOf(item, pitchPairPool(item, p.step.params)) : null), [item, p.step.params]);
 
   const play = (): void => {
     if (item) void speakWord(item);

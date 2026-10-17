@@ -277,11 +277,12 @@ describe('validate — one failing fixture per rule', () => {
     });
     const r = validate(root);
     expect(r.failures.filter((f) => f.rule === 'V18').length).toBeGreaterThanOrEqual(3);
+    // `pitchConfidence: "high"` is what the pitch post-pass writes (review round 2b), so it is not a warning
     const root2 = copyFixture();
     mutate(root2, 'vocab/n5/vocab-n5-001.json', (d) => {
       item(d)['pitchConfidence'] = 'high';
     });
-    expect(rules(validate(root2).warnings)).toContain('V18');
+    expect(rules(validate(root2).warnings)).not.toContain('V18');
   });
 
   it('V19 token integrity and writer-supplied tokenIds', () => {
@@ -546,6 +547,34 @@ describe('validate — linker and options', () => {
     expect(r.linked).toBe(12);
   });
 
+  it('links inflected forms through the fixture: 飲んで → 飲む, いきます / いった → 行く, たべました → 食べる; auxiliary spellings need no vocabIds entry', () => {
+    const root = copyFixture();
+    mutate(root, 'stories/n5/stories-s04.json', (d) => {
+      const lines = item(d)['lines'] as Json[];
+      Object.assign(lines[2]!, { ja: '{水|みず}を{飲|の}んで、{学校|がっこう}へいきます。', kana: 'みずをのんで、がっこうへいきます。', tokens: ['水', 'を', '飲んで', '、', '学校', 'へ', 'いきます', '。'] });
+      Object.assign(lines[4]!, { ja: '{友達|ともだち}はパンをたべました。', kana: 'ともだちはパンをたべました。', tokens: ['友達', 'は', 'パン', 'を', 'たべました', '。'] });
+      Object.assign(lines[8]!, { ja: '{学校|がっこう}へいった。', kana: 'がっこうへいった。', tokens: ['学校', 'へ', 'いった', '。'] });
+      // the one kanji 行きます becomes the auxiliary spelling too, so 行く is used only as いきます / いった
+      const last = lines[11]!;
+      const swap = (t: string) => t.replace('行きます', 'いきます');
+      Object.assign(last, { ja: 'はい、{大|おお}きいです。{私|わたし}は{学校|がっこう}へいきます。', kana: swap(String(last['kana'])), tokens: (last['tokens'] as string[]).map(swap), mustInclude: ['学校', 'いきます'] });
+      last['options'] = (last['options'] as Json[]).map((o) => ({ ...o, text: swap(String(o['text'])), ...(o['recast'] ? { recast: swap(String(o['recast'])) } : {}) }));
+      last['accept'] = (last['accept'] as string[]).map(swap);
+      item(d)['vocabIds'] = (item(d)['vocabIds'] as string[]).filter((x) => x !== 'v-n5-0007' && x !== 'v-n5-0012');
+    });
+    pipeline(root);
+    const r = validate(root, { strict: true });
+    const story = JSON.parse(readFileSync(join(root, 'stories/n5/stories-s04.json'), 'utf8')) as Json;
+    const lines = item(story)['lines'] as Json[];
+    expect(lines[2]!['tokenIds']).toEqual(['v-n5-0008', null, 'v-n5-0007', null, 'v-n5-0013', null, 'v-n5-0012', null]);
+    expect(lines[4]!['tokenIds']).toEqual(['v-n5-0003', null, 'v-n5-0011', null, 'v-n5-0010', null]);
+    expect(lines[8]!['tokenIds']).toEqual(['v-n5-0013', null, 'v-n5-0012', null]);
+    expect(lines[5]!['tokenIds']).toEqual(['v-n5-0014', null, 'v-n5-0004', null, null, 'v-n5-0002', null, null]); // no copula item: ではありません stays a function token
+    // V20: 飲む (飲んで, a content use) is asked for in vocabIds; 行く is not, since いきます / いった are auxiliary spellings
+    const missing = r.warnings.filter((f) => f.rule === 'V20' && /missing from vocabIds/.test(f.message)).map((f) => /word (v-n5-\d{4})/.exec(f.message)?.[1]);
+    expect(missing).toEqual(['v-n5-0007']);
+  });
+
   it('--fix-tokenids rewrites stale tokenIds; without it they fail V19', () => {
     const root = copyFixture();
     pipeline(root);
@@ -758,6 +787,33 @@ describe('V38 repeated kanji component (W only)', () => {
     expect(w[0]!.message).toMatch(/repeats "tree" \(tree, one, tree\)/);
     const doc = JSON.parse(readFileSync(join(root, 'kanji/n5/kanji-n5-001.json'), 'utf8')) as Json;
     expect(item(doc, 3)['components']).toEqual(['tree', 'one', 'tree']);
+  });
+});
+
+describe('V40 unlocksForms with nothing to conjugate (W only)', () => {
+  it('warns when a station declares a verb form but its cumulative allowlist has no verb; silent on the good fixture and without bundles; never fails', () => {
+    expect(validate(copyFixture()).warnings.filter((f) => f.rule === 'V40')).toEqual([]);
+    const root = copyFixture();
+    pipeline(root);
+    expect(validate(root, { strict: true }).warnings.filter((f) => f.rule === 'V40')).toEqual([]);
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      for (const it of d['items'] as Json[]) if (it['pos'] === 'v1' || it['pos'] === 'v5') it['pos'] = 'n';
+    });
+    const r = validate(root, { strict: true });
+    const w = r.warnings.filter((f) => f.rule === 'V40');
+    expect(w.map((f) => f.id)).toEqual(['g-n5-003']);
+    expect(w[0]!.file).toBe('grammar/n5/grammar-n5-001.json');
+    expect(w[0]!.message).toMatch(/unlocksForms masu at Station 4, but the cumulative allowlist has no conjugable verb/);
+    expect(r.failures.filter((f) => f.rule === 'V40')).toEqual([]);
+    // an adjective form with no adjective in the allowlist is the other half
+    mutate(root, 'grammar/n5/grammar-n5-001.json', (d) => {
+      item(d, 2)['unlocksForms'] = ['adj-neg'];
+    });
+    mutate(root, 'vocab/n5/vocab-n5-001.json', (d) => {
+      for (const it of d['items'] as Json[]) if (it['pos'] === 'adj-i') it['pos'] = 'n';
+    });
+    const adj = validate(root).warnings.filter((f) => f.rule === 'V40');
+    expect(adj.map((f) => f.message)).toEqual([expect.stringMatching(/unlocksForms adj-neg at Station 4, but the cumulative allowlist has no adjective/)]);
   });
 });
 

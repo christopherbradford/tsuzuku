@@ -1,5 +1,5 @@
 /**
- * TSUZUKU — content validator (CONTENT_GUIDE §18, rules V01–V39).
+ * TSUZUKU — content validator (CONTENT_GUIDE §18, rules V01–V40).
  *
  *   node scripts/validate-content.ts [--strict] [--json] [--only <glob-or-path>] [--fix-tokenids] [--root <dir>]
  *
@@ -15,9 +15,15 @@
  *    `StoryLine.tokenIds` (also with `--fix-tokenids`). V20 also carries two
  *    always-WARN notes: an allowlisted word detected but not in `vocabIds`,
  *    and `vocabIds` covering < 60 % of the allowlisted words detected.
- *  - V37 (pos vs verb ending), V38 (repeated kanji component) and V39 (the same
- *    michikusa ja/kana collected at two stations): WARN only, informational;
- *    the content is kept as written.
+ *  - V37 (pos vs verb ending), V38 (repeated kanji component), V39 (the same
+ *    michikusa ja/kana collected at two stations) and V40 (a station's grammar
+ *    declares `unlocksForms` while its cumulative allowlist holds no verb /
+ *    adjective to conjugate; needs bundles): WARN only, informational; the
+ *    content is kept as written.
+ *  - The token → item matcher (V19 / V20 tokenIds, V36 segmentation) is
+ *    `scripts/linker.ts`, shared with `content:assign`; it links inflected
+ *    forms of allowlisted verbs and the copula (します, いった, ではない …), so
+ *    changing it makes every story's `tokenIds` stale until `--fix-tokenids`.
  *  - `_meta/components.json` is a ContentFile<ComponentDef> exempt from the
  *    150 cap; `_meta/denylist.json` is not a ContentFile (read by V30 only).
  *
@@ -68,8 +74,9 @@ import type {
 import { KANJI_RE, hasKanji, parseRuby, toKana, toPlain } from '../src/content/ruby.ts';
 import type { RubySegment } from '../src/content/ruby.ts';
 import { buildIndex, deriveContentVersion, isDerivedVersion, listContentFiles } from './build-content-index.ts';
-import { allowlistStationFor, buildMatchPool, bundlesFromCorpus, cumulativeIds, FUNCTION_TOKENS, matchToken, stemApplies, stringifyJson } from './assign-stations.ts';
-import type { MatchPool } from './assign-stations.ts';
+import { bundlesFromCorpus, stringifyJson } from './assign-stations.ts';
+import { allowlistStationFor, AUX_VERBS, buildMatchPool, cumulativeIds, FUNCTION_TOKENS, matchToken, stemApplies } from './linker.ts';
+import type { MatchPool } from './linker.ts';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Public API                                                                 */
@@ -547,6 +554,7 @@ export function validate(root: string, o: ValidateOptions = {}): ValidateResult 
   checkDedupe(ctx);
   checkKanaInventory(ctx);
   checkConjugationCoverage(ctx);
+  checkFormUnlocks(ctx);
   checkStories(ctx);
   checkQuotas(ctx);
   checkManifest(ctx);
@@ -1195,7 +1203,8 @@ function checkVocab(ctx: Ctx, f: LoadedFile, v: VocabItem): void {
   if (v.pitch !== undefined) {
     if (kana !== undefined && (!Number.isInteger(v.pitch) || v.pitch < 0 || v.pitch > moraCount(kana))) fail(ctx, file, 'V18', `pitch ${String(v.pitch)} outside [0, ${moraCount(kana)}] for "${kana}"`, id);
     if (v.pitchConfidence === undefined) fail(ctx, file, 'V18', `pitchConfidence is required when pitch is present`, id);
-    if (v.pitchConfidence === 'high') warn(ctx, file, 'V18', `writer-set pitchConfidence "high" (only the dataset post-pass may set it)`, id);
+    // `pitchConfidence: "high"` is set by the pitch post-pass (review round 2b, 2026-10-17: every N5/N4 item
+    // checked one by one against standard Tokyo accent and audited by the vocab lens), so it is no longer a warning.
   } else if (v.pitchConfidence !== undefined) fail(ctx, file, 'V18', `pitchConfidence present without pitch`, id);
   if (v.frequencyRank !== undefined && (!Number.isInteger(v.frequencyRank) || v.frequencyRank < 1)) fail(ctx, file, 'V18', `frequencyRank must be a positive integer`, id);
   // V06 references
@@ -1888,10 +1897,48 @@ export const DEFECTIVE_VERB_FORMS: Readonly<Record<string, ReadonlySet<string>>>
   '聞こえる': new Set(['potential', 'volitional', 'passive', 'causative', 'causative-passive', 'imperative', 'prohibitive', 'tai']),
 };
 
+/* ── V40 unlocksForms with nothing to conjugate ──────────────────────────── */
+
+/**
+ * V40 W (informational): a station's grammar declares `unlocksForms`, but the
+ * cumulative vocab allowlist at that station (Stations 1–3 share the White set)
+ * holds no verb for a verb form, or no adjective for an adj-* form, so Form
+ * Forge has no head word to drill there. Needs bundles; never fails.
+ */
+function checkFormUnlocks(ctx: Ctx): void {
+  if (ctx.bundles.size === 0) return;
+  const bundles = [...ctx.bundles.values()].sort((a, b) => a.number - b.number);
+  const counts = new Map<number, { verbs: number; adjectives: number }>();
+  let verbs = 0;
+  let adjectives = 0;
+  for (const b of bundles) {
+    for (const id of strs(b.vocabIds)) {
+      const pos = ctx.vocab.get(id)?.pos;
+      if (pos === 'v1' || pos === 'v5' || pos === 'v-irr') verbs++;
+      else if (pos === 'adj-i' || pos === 'adj-na') adjectives++;
+    }
+    counts.set(b.number, { verbs, adjectives });
+  }
+  for (const b of bundles) {
+    const c = counts.get(allowlistStationFor(b.number)) ?? counts.get(b.number);
+    if (!c) continue;
+    for (const id of strs(b.grammarIds)) {
+      const g = ctx.grammar.get(id);
+      const forms = strs(g?.unlocksForms);
+      if (!g || forms.length === 0) continue;
+      const file = ctx.ids.get(id) ?? `stations/${String(b.number).padStart(2, '0')}.json`;
+      const verbForms = forms.filter((fm) => VERB_FORMS.has(fm));
+      const adjForms = forms.filter((fm) => ADJ_FORMS.has(fm));
+      if (verbForms.length > 0 && c.verbs === 0) warn(ctx, file, 'V40', `unlocksForms ${verbForms.join('/')} at Station ${b.number}, but the cumulative allowlist has no conjugable verb (v1/v5/v-irr)`, id);
+      if (adjForms.length > 0 && c.adjectives === 0) warn(ctx, file, 'V40', `unlocksForms ${adjForms.join('/')} at Station ${b.number}, but the cumulative allowlist has no adjective (adj-i/adj-na)`, id);
+    }
+  }
+}
+
 /* ── V20 + linker ────────────────────────────────────────────────────────── */
 
 /** The validator's view of the shared linker pool: ids → items from the loaded corpus. */
-function buildPool(ctx: Ctx, vocabIds: Iterable<string>, grammarIds: Iterable<string>, plusOne: Iterable<string>): MatchPool {
+function buildPool(ctx: Ctx, vocabIds: Iterable<string>, grammarIds: Iterable<string>, plusOne: Iterable<string>, kanaStage = false): MatchPool {
   const pick = <T>(ids: Iterable<string>, m: Map<string, T>): T[] => {
     const out: T[] = [];
     for (const id of ids) {
@@ -1900,7 +1947,7 @@ function buildPool(ctx: Ctx, vocabIds: Iterable<string>, grammarIds: Iterable<st
     }
     return out;
   };
-  return buildMatchPool(pick(vocabIds, ctx.vocab), pick(grammarIds, ctx.grammar), pick(plusOne, ctx.vocab));
+  return buildMatchPool(pick(vocabIds, ctx.vocab), pick(grammarIds, ctx.grammar), pick(plusOne, ctx.vocab), { kanaStage });
 }
 
 function cum(ctx: Ctx, upTo: number, key: 'kanaIds' | 'vocabIds' | 'grammarIds'): Set<string> {
@@ -1909,6 +1956,18 @@ function cum(ctx: Ctx, upTo: number, key: 'kanaIds' | 'vocabIds' | 'grammarIds')
 
 /** V20 W: a story's `vocabIds` should name at least this share of the allowlisted words the linker detects in its text. */
 export const VOCAB_IDS_MIN_COVERAGE = 0.6;
+
+/**
+ * An auxiliary use of an allowlisted verb (います, しまった, きた …): the token is a
+ * function token, or a kana inflection of an `AUX_VERBS` lexeme. The linker links
+ * it, but V20 does not ask the story to list the verb in `vocabIds` for it.
+ */
+function isAuxiliaryUse(ctx: Ctx, token: string, id: string): boolean {
+  if (FUNCTION_TOKENS.has(token)) return true;
+  if (hasKanji(token)) return false;
+  const kana = str(ctx.vocab.get(id)?.kana);
+  return kana !== undefined && AUX_VERBS.has(kana.replace(/^〜/, '').replace(/〜$/, ''));
+}
 
 function checkStories(ctx: Ctx): void {
   const haveBundles = ctx.bundles.size > 0;
@@ -1936,7 +1995,7 @@ function checkStories(ctx: Ctx): void {
       if (plusOneAll.size > maxPlus) soft(ctx, f.rel, 'V20', `${plusOneAll.size} plusOne words > ${maxPlus}`, s.id);
       for (const p of plusOneAll) if (vocabAllow.has(p)) soft(ctx, f.rel, 'V20', `plusOne "${p}" is already in the allowlist`, s.id);
       const names = new Set(strs(s.names));
-      const pool = buildPool(ctx, vocabAllow, grammarAllow, plusOneAll);
+      const pool = buildPool(ctx, vocabAllow, grammarAllow, plusOneAll, allowStation <= 3);
       const detected = new Set<string>();
       const plusSeen = new Set<string>();
       let known = 0;
@@ -1958,7 +2017,7 @@ function checkStories(ctx: Ctx): void {
             plusHits++;
             plusSeen.add(m.id);
             if (!linePlus.includes(m.id)) soft(ctx, f.rel, 'V20', `lines[${i}] uses plusOne word ${m.id} without listing it in plusOne`, s.id);
-          } else if (m.id) detected.add(m.id);
+          } else if (m.id && !isAuxiliaryUse(ctx, t, m.id)) detected.add(m.id);
           ids.push(m.id);
         }
         if (plusHits > 1) soft(ctx, f.rel, 'V20', `lines[${i}] contains ${plusHits} plusOne words (≤ 1 per line)`, s.id);
@@ -2179,14 +2238,14 @@ function checkDefinitions(ctx: Ctx): void {
   }
 }
 
-/** Every surface the pool can match (exact, stems, hints, function tokens), bucketed by first code unit, longest first. */
+/** Every surface the pool can match (exact, inflected forms, stems, hints, function tokens), bucketed by first code unit, longest first. */
 const surfaceIndexCache = new WeakMap<MatchPool, Map<string, string[]>>();
 const oneCharStemCache = new WeakMap<MatchPool, Set<string>>();
 function surfaceIndex(pool: MatchPool): Map<string, string[]> {
   let idx = surfaceIndexCache.get(pool);
   if (idx) return idx;
   idx = new Map();
-  const all = new Set<string>([...pool.exact.keys(), ...pool.prefixes.map((p) => p.s), ...pool.hints.map((h) => h.h), ...FUNCTION_TOKENS]);
+  const all = new Set<string>([...pool.exact.keys(), ...pool.forms.keys(), ...pool.prefixes.map((p) => p.s), ...pool.hints.map((h) => h.h), ...FUNCTION_TOKENS]);
   // Single-kanji stems (有 ← 有る) are kept apart: they resolve only before okurigana (`stemApplies`).
   const stems = new Set<string>();
   for (const p of pool.prefixes) if (p.s.length === 1 && !pool.exact.has(p.s)) stems.add(p.s);

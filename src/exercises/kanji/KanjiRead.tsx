@@ -5,10 +5,15 @@
  * highlighted and stripped of furigana (the rest of the sentence follows the
  * learner's furigana setting) → type the word's reading. `params.sentence`
  * carries ruby markup, `params.blank` the target's `[start, end]` in plain
- * coordinates (else the first example word found in the sentence is used),
- * `params.answer` the kana reading (else the example's kana). A blank that
- * cuts through a ruby group leaves bare kanji on each side (`ruby-split`),
- * never a duplicated base. Without a sentence the drill rotates through
+ * coordinates, `params.answer` the kana reading (else the example's kana).
+ * The blank is the occurrence the ruby names: a given blank whose reading
+ * contradicts the answer (cut through a compound, a homograph's other
+ * reading) is re-located to the occurrence of the same word that reads as
+ * the answer (`ruby-split.alignedRange`) when there is one; without a blank
+ * the first example word with a ruby-aligned occurrence reading as its kana
+ * is used, else the first plain occurrence. A blank that still cuts through
+ * a ruby group leaves bare kanji on each side (`ruby-split`), never a
+ * duplicated base. Without a sentence the drill rotates through
  * `examples` by exposure count, so on and kun readings are learned in words. Graded with `checkJa` through
  * `<TextAnswer mode="ja">` with no particle tolerance: exact or canonical
  * equivalent → Good, a slip → Block, a miss → Again tagged `kanji-reading`.
@@ -27,7 +32,7 @@ import { store } from '@/store';
 import { attempt } from '../check';
 import { S as SD } from '../strings';
 import { TextAnswer, type TextAnswerResult } from '../TextAnswer';
-import { splitAtPlainRange } from './ruby-split';
+import { alignedRange, spanReading, splitAtPlainRange } from './ruby-split';
 import { S } from './strings';
 import './kanji.css';
 
@@ -73,14 +78,32 @@ export function buildReadPrompt(kanji: KanjiItem | null, params: ExerciseProps['
     if (blank && blank[0] >= 0 && blank[1] > blank[0] && blank[1] <= plain.length) {
       range = [blank[0], blank[1]];
       word = plain.slice(blank[0], blank[1]);
+      // A blank whose ruby contradicts the answer (cut through a compound, a homograph's other reading)
+      // moves to the occurrence of the same word that reads as the answer, when the sentence has one.
+      const want = params.answer ?? examples.find((e) => e.word === word)?.kana;
+      if (want) {
+        const reading = spanReading(params.sentence, range[0], range[1]);
+        if (reading === null || !equivalentJa(reading, want)) range = alignedRange(params.sentence, word, want) ?? range;
+      }
     } else {
       const ordered = byAnswer ? [byAnswer, ...examples.filter((e) => e !== byAnswer)] : examples;
+      // The first example with an occurrence whose ruby aligns and reads as the example does; else the first plain hit.
       for (const e of ordered) {
-        const i = plain.indexOf(e.word);
-        if (i >= 0) {
-          range = [i, i + e.word.length];
+        const at = alignedRange(params.sentence, e.word, e.kana);
+        if (at) {
+          range = at;
           word = e.word;
           break;
+        }
+      }
+      if (!range) {
+        for (const e of ordered) {
+          const i = plain.indexOf(e.word);
+          if (i >= 0) {
+            range = [i, i + e.word.length];
+            word = e.word;
+            break;
+          }
         }
       }
     }

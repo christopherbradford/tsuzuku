@@ -20,7 +20,13 @@
  * infer the head word from the answers; the chain is always 5 links
  * (`formChain`: the point's own forms, then forms of points already met, then
  * any form the verb takes). Minimal Pair speaks either half of the pair
- * (`answer` = the one played).
+ * (`answer` = the one played). Pitch Ear carries the item's loaded homophones
+ * with a different pitch in `distractorIds` (`pitchHomophones`: `pairId` when
+ * it is one, else `confusables`, else a kana-equal lookup over the loaded
+ * vocab with `pitchConfidence` 'high') so the drill contrasts はし[1] chopsticks /
+ * はし[2] bridge;
+ * with no homophone the field stays unset and the drill falls back to the
+ * item's own `confusables`.
  *
  * `pickStories` serves unread episodes first (`progress.storiesRead`), then the
  * best coverage, so the builder never re-serves the same episode while an
@@ -169,6 +175,29 @@ export function pitchPattern(pitch: number, kana: string): string {
   return '中高';
 }
 export const PITCH_PATTERNS = ['平板', '頭高', '中高', '尾高'] as const;
+
+/**
+ * Loaded homophones of `item` with a different, dataset-backed pitch — the
+ * Pitch Ear's minimal-pair contrast (あめ[1] rain / あめ[0] candy, はし[1] chopsticks /
+ * はし[2] bridge, かみ[1] god / かみ[2] paper). Examples are in kana on purpose: the font
+ * build (scripts/fonts/build-fonts.py) scans src/** for the shell's glyph inventory, so a
+ * kanji written only in a comment would be shipped in every family's `base` face.
+ * `pairId` wins when it names such a homophone, then the `confusables` that
+ * are, else every loaded vocab item with the same kana and `pitchConfidence`
+ * 'high'. Empty when the word has no contrast; ids only, so the drill resolves
+ * them through the loader (`vocabPoolFrom`).
+ */
+export function pitchHomophones(ctx: PlanContext, item: VocabItem): string[] {
+  if (item.pitch === undefined) return [];
+  const contrasts = (v: ContentItem | undefined): v is VocabItem =>
+    isVocab(v) && v.id !== item.id && v.pitch !== undefined && v.pitch !== item.pitch && equivalentJa(v.kana, item.kana);
+  const lookup = (id: string): ContentItem | undefined => ctx.vocabPool.find((v) => v.id === id) ?? ctx.loader.get(id);
+  const pair = item.pairId ? lookup(item.pairId) : undefined;
+  if (contrasts(pair)) return [pair.id];
+  const conf = (item.confusables ?? []).map(lookup).filter(contrasts).map((v) => v.id);
+  if (conf.length > 0) return dedupe(conf);
+  return dedupe(ctx.vocabPool.filter((v) => contrasts(v) && v.pitchConfidence === 'high').map((v) => v.id));
+}
 
 /** Rate preset for the learner's speed tier (design 04 §5). */
 export function rateFor(ctx: PlanContext): number {
@@ -377,6 +406,9 @@ export function resolveParams(ctx: PlanContext, exercise: DrillId, item: Content
       if (!isVocab(item) || item.pitch === undefined) break;
       p.answer = pitchPattern(item.pitch, item.kana);
       p.choices = [...PITCH_PATTERNS];
+      // Minimal-pair rounds: the loaded homophones with a different pitch are the drill's contrast (design 04 §2).
+      const homophones = pitchHomophones(ctx, item);
+      if (homophones.length > 0) p.distractorIds = homophones;
       break;
     }
     case 'component-flash': {

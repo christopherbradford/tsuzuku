@@ -90,6 +90,7 @@ export {
   movableTiles,
   particleHints,
   pickStories,
+  pitchHomophones,
   pitchPattern,
   rateFor,
   resolveParams,

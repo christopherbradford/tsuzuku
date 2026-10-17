@@ -5,6 +5,14 @@
  * confirmation for "I read all kana", or none) → pace with the honest road
  * (months at 100 % / 70 %, in-app hours COMPUTED from the preset, the
  * ≈ 1,200 external hours, TTS notice) → voice test + speech-recognition
+ *
+ * The road numbers come from the store's pacing estimate
+ * (`store/derived.onboardingEstimate`: station quotas ÷ the preset's rates,
+ * one day per Gatekeeper, two per Shinsa — the same basis as the Records
+ * projection and the Road page), evaluated per preset with the live settings
+ * (`roadEstimateFor`). The design-table `ROAD_DAYS` is only the fallback
+ * when no estimate can be computed; every helper below takes the estimate
+ * as an optional second argument and falls back to the table without it.
  * notice + theme → one write to the store and the Dojo. `finish()` also
  * stamps `profile.onboardedAt = store.now()` and moves `progress.station`
  * from 0 (Nihonbashi is onboarding only) to 1, so the daily quests and the
@@ -34,6 +42,7 @@ import { navigate, type Route } from '@/shared/routes';
 import type { Intensity, SpeakingMode, Theme } from '@/shared/store-types';
 import { KanaInput } from '@/shared/ui/KanaInput';
 import { INTENSITY_PRESETS, INTENSITY_SCALE, NAME_MAX_GLYPHS, newPerDayFor, store } from '@/store';
+import { onboardingEstimate, type OnboardingEstimate } from '@/store/derived';
 import { S, fmt, num } from './strings';
 import './pages.css';
 
@@ -80,7 +89,7 @@ export function kanaMatches(typed: string, kana: string): boolean {
 export type Preset = Exclude<Intensity, 'custom'>;
 export const PRESETS: readonly Preset[] = ['casual', 'standard', 'intense'];
 
-/** Study days per belt at Standard, 100 % adherence (02 §6.1; Yellow+Orange 120, Blue+Purple 142 split evenly). */
+/** Study days per belt at Standard, 100 % adherence (02 §6.1; Yellow+Orange 120, Blue+Purple 142 split evenly). FALLBACK only — see `roadEstimateFor`. */
 export const ROAD_DAYS: Record<Belt, number> = { white: 15, yellow: 60, orange: 60, green: 90, blue: 71, purple: 71, brown: 121, black: 107 };
 /** Steady-state reviews/day per belt at Standard (02 §6.1). */
 export const STEADY_REVIEWS: Record<Belt, number> = { white: 60, yellow: 130, orange: 130, green: 180, blue: 220, purple: 220, brown: 290, black: 270 };
@@ -94,6 +103,34 @@ const DAYS_PER_MONTH = 30.44;
 /** Design 01 §2: what remains outside the app. */
 export const EXTERNAL_HOURS = 1200;
 
+/**
+ * The store's pacing estimate for `preset` from Station 1 (the whole road),
+ * over the live settings with the preset's intensity and White mix swapped
+ * in — exactly what `finish()` writes. Null when the estimate cannot be
+ * computed (the callers then fall back to the `ROAD_DAYS` table).
+ */
+export function roadEstimateFor(preset: Preset): OnboardingEstimate | null {
+  try {
+    const s = store.settings.value;
+    return onboardingEstimate({ ...s, intensity: preset, newPerDay: newPerDayFor('white', preset) }, store.today(), 1);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Days per belt at 100 % adherence for `preset`: the estimate's own days
+ * (gates and Shinsa included), or the design table scaled by the preset.
+ */
+export function roadDays(preset: Preset, est?: OnboardingEstimate | null): Record<Belt, number> {
+  const out = {} as Record<Belt, number>;
+  for (const b of BELT_IDS) {
+    const fromEst = est?.byBelt.find((e) => e.belt === b)?.days;
+    out[b] = fromEst ?? ROAD_DAYS[b] / INTENSITY_SCALE[preset];
+  }
+  return out;
+}
+
 /** Reviews scale with the preset's new-item rate; the Scroll/input/output blocks do not. */
 export function expectedMinutes(belt: Belt, preset: Preset): number {
   const reviewMin = (STEADY_REVIEWS[belt] * REP_SECONDS) / 60;
@@ -101,15 +138,17 @@ export function expectedMinutes(belt: Belt, preset: Preset): number {
   return reviewMin * INTENSITY_SCALE[preset] + fixed;
 }
 
-/** `Σ_belt expectedMinutes(belt, preset) × days(belt) / 60` (design 01 §2). */
-export function hoursInApp(preset: Preset): number {
+/** The estimate's in-app hours, else `Σ_belt expectedMinutes(belt, preset) × days(belt) / 60` (design 01 §2). */
+export function hoursInApp(preset: Preset, est?: OnboardingEstimate | null): number {
+  if (est) return est.hoursInApp;
   let minutes = 0;
   for (const b of BELT_IDS) minutes += expectedMinutes(b, preset) * ROAD_DAYS[b];
   return Math.round(minutes / 60);
 }
 
-/** Months to Sanjō Ōhashi at 100 % and at 70 % adherence. */
-export function roadMonths(preset: Preset): { full: number; partial: number } {
+/** Months to Sanjō Ōhashi at 100 % and at 70 % adherence (the estimate's `days100` / `days70`, else the table + `EXAM_DAYS`). */
+export function roadMonths(preset: Preset, est?: OnboardingEstimate | null): { full: number; partial: number } {
+  if (est) return { full: Math.round(est.days100 / DAYS_PER_MONTH), partial: Math.round(est.days70 / DAYS_PER_MONTH) };
   let study = 0;
   for (const b of BELT_IDS) study += ROAD_DAYS[b];
   const days = study / INTENSITY_SCALE[preset] + EXAM_DAYS;
@@ -117,18 +156,19 @@ export function roadMonths(preset: Preset): { full: number; partial: number } {
 }
 
 /** The belt a learner at `preset` is training after `days` of daily practice. */
-export function beltAfterDays(preset: Preset, days: number): Belt {
+export function beltAfterDays(preset: Preset, days: number, est?: OnboardingEstimate | null): Belt {
+  const per = roadDays(preset, est);
   let cum = 0;
   for (const b of BELT_IDS) {
-    cum += ROAD_DAYS[b] / INTENSITY_SCALE[preset];
+    cum += per[b];
     if (days < cum) return b;
   }
   return 'black';
 }
 
 /** "≈ N reviews/day in a year" for the Intense warning (03 §4), rounded to tens. */
-export function steadyReviewsInAYear(preset: Preset): number {
-  const belt = beltAfterDays(preset, 365);
+export function steadyReviewsInAYear(preset: Preset, est?: OnboardingEstimate | null): number {
+  const belt = beltAfterDays(preset, 365, est);
   return Math.round(steadyStateReviews(presetRate(preset, belt), PRESET_RETENTION[preset]) / 10) * 10;
 }
 
@@ -187,9 +227,10 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
   const [verdict, setVerdict] = useState<'ok' | 'miss' | null>(null);
   const shuffled = useMemo(() => shuffle(rngFor(store.seed(), 'onboarding', 'kana'), BASIC_HIRAGANA), []);
 
-  // pace
+  // pace — one store estimate per preset (the preset is all that changes the road)
   const [pace, setPace] = useState<Preset>('standard');
   const [intenseAsk, setIntenseAsk] = useState(false);
+  const estimates = useMemo(() => ({ casual: roadEstimateFor('casual'), standard: roadEstimateFor('standard'), intense: roadEstimateFor('intense') }), []);
 
   // voice, speech, theme
   const [voiceState, setVoiceState] = useState<'idle' | 'speaking' | 'done'>('idle');
@@ -294,8 +335,8 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
     navigate({ name: 'dojo' }, { replace: true });
   };
 
-  const months = roadMonths(pace);
-  const hours = hoursInApp(pace);
+  const months = roadMonths(pace, estimates[pace]);
+  const hours = hoursInApp(pace, estimates[pace]);
   const current = queue[idx];
   const sentBack = missed.map((c) => c.kana).join('・');
 
@@ -415,7 +456,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
             </div>
             {intenseAsk ? (
               <div class="notice notice--warn page__section" role="alertdialog" aria-label={S.onbPaceIntense} data-intense-warning>
-                <p class="page__modal-text">{fmt(S.onbPaceIntenseWarn, { n: num(steadyReviewsInAYear('intense')) })}</p>
+                <p class="page__modal-text">{fmt(S.onbPaceIntenseWarn, { n: num(steadyReviewsInAYear('intense', estimates.intense)) })}</p>
                 <div class="page__actions">
                   <button
                     type="button"
@@ -460,7 +501,7 @@ export default function OnboardingPage(_p: { route: Route }): JSX.Element {
               </div>
               <p>{fmt(S.onbTimelineBody, { full: months.full, partial: months.partial })}</p>
               <p>{fmt(S.onbHoursBody, { hours: num(hours) })}</p>
-              <p class="muted">{fmt(S.onbPaceReviews, { n: num(steadyReviewsInAYear(pace)) })}</p>
+              <p class="muted">{fmt(S.onbPaceReviews, { n: num(steadyReviewsInAYear(pace, estimates[pace])) })}</p>
               <p class="muted">{S.onbTtsNotice}</p>
               <p class="muted">{S.onbLedgerGoal}</p>
             </section>

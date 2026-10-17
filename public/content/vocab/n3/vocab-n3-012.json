@@ -575,7 +575,7 @@
         "kana": "なにかをはじめるときや、うまくいったときにいうことば。"
       },
       "notes": "Said to oneself or a group when deciding or starting. Variants よっし, よしよし (soothing).",
-      "station": 37
+      "station": 38
     },
     {
       "id": "v-n3-1577",
@@ -607,7 +607,7 @@
         "kana": "はなしをかえるときや、なにかをはじめるときにいうことば。"
       },
       "notes": "Shifts to a new topic or action; also さてと to oneself.",
-      "station": 37
+      "station": 38
     },
     {
       "id": "v-n3-1578",
@@ -644,7 +644,7 @@
       "confusables": [
         "v-n3-1579"
       ],
-      "station": 37
+      "station": 38
     },
     {
       "id": "v-n3-1579",
@@ -5047,6 +5047,117 @@
       "collocations": [
         "くっきり見える",
         "くっきり浮かぶ"
+      ],
+      "station": 38
+    },
+    {
+      "id": "v-n3-1705",
+      "word": "城",
+      "kana": "しろ",
+      "meanings": [
+        "castle"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "places",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{駅|えき}から{城|しろ}まで、{歩|ある}いて{十五分|じゅうごふん}ぐらいです。",
+          "kana": "えきからしろまで、あるいてじゅうごふんぐらいです。",
+          "en": "It is about a fifteen-minute walk from the station to the castle."
+        },
+        {
+          "ja": "あの{町|まち}は{昔|むかし}、{城|しろ}を{中心|ちゅうしん}に{広|ひろ}がった。",
+          "kana": "あのまちはむかし、しろをちゅうしんにひろがった。",
+          "en": "That town grew up around its castle long ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{昔|むかし}、その{町|まち}で{一番|いちばん}{偉|えら}い{人|ひと}が{住|す}み、{戦|たたか}いのときに{守|まも}りの{中心|ちゅうしん}になった{大|おお}きな{建物|たてもの}。",
+        "kana": "むかし、そのまちでいちばんえらいひとがすみ、たたかいのときにまもりのちゅうしんになったおおきなたてもの。"
+      },
+      "notes": "Read しろ alone and じょう in compounds: 大阪城, 城下町 (castle town).",
+      "collocations": [
+        "城を建てる",
+        "城下町"
+      ],
+      "station": 38
+    },
+    {
+      "id": "v-n3-1706",
+      "word": "息",
+      "kana": "いき",
+      "meanings": [
+        "breath",
+        "breathing"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "body",
+        "health"
+      ],
+      "examples": [
+        {
+          "ja": "{寒|さむ}い{朝|あさ}は、{息|いき}が{白|しろ}くなります。",
+          "kana": "さむいあさは、いきがしろくなります。",
+          "en": "On cold mornings, my breath turns white."
+        },
+        {
+          "ja": "{階段|かいだん}を{走|はし}って{上|のぼ}ったら、{息|いき}が{切|き}れた。",
+          "kana": "かいだんをはしってのぼったら、いきがきれた。",
+          "en": "I ran up the stairs and got out of breath."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{口|くち}や{鼻|はな}から{空気|くうき}を{吸|す}ったり{吐|は}いたりすること。また、その{空気|くうき}。",
+        "kana": "くちやはなからくうきをすったりはいたりすること。また、そのくうき。"
+      },
+      "notes": "息をする = to breathe; 息が切れる = to be out of breath; 息が合う = to be in sync with someone.",
+      "collocations": [
+        "息を吸う",
+        "息を止める",
+        "息が切れる"
+      ],
+      "station": 38
+    },
+    {
+      "id": "v-n3-1707",
+      "word": "板",
+      "kana": "いた",
+      "meanings": [
+        "board",
+        "plank"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "objects",
+        "home"
+      ],
+      "examples": [
+        {
+          "ja": "{古|ふる}い{板|いた}に{店|みせ}の{名前|なまえ}が{書|か}いてあります。",
+          "kana": "ふるいいたにみせのなまえがかいてあります。",
+          "en": "The shop's name is written on an old board."
+        },
+        {
+          "ja": "{父|ちち}は{板|いた}を{切|き}って、{本棚|ほんだな}を{作|つく}った。",
+          "kana": "ちちはいたをきって、ほんだなをつくった。",
+          "en": "My father cut some boards and built a bookshelf."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{木|き}などを{薄|うす}く{広|ひろ}く{切|き}ったもの。{建物|たてもの}や{家具|かぐ}を{作|つく}るのに{使|つか}う。",
+        "kana": "きなどをうすくひろくきったもの。たてものやかぐをつくるのにつかう。"
+      },
+      "notes": "A flat piece of wood; also thin sheets of other materials: 鉄板 (iron plate), ガラス板. まな板 is a cutting board.",
+      "collocations": [
+        "まな板",
+        "板の間"
       ],
       "station": 38
     }

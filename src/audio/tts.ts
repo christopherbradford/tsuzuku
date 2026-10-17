@@ -5,7 +5,14 @@
  *    (iOS Safari does not fire the event reliably); ranked by `voices.ts`.
  *  - `speak(text, {kana?})`: the PLAIN surface for sentences (kana-only text
  *    segments and accents badly); the kana reading only for an isolated word
- *    when the caller supplies it. Utterances split at ≤ 180 chars on
+ *    when the caller supplies it. Display-only marks never reach the engine
+ *    (`stripDisplayMarks`, inside `textToSpeak`): leading / trailing 〜 ～ ~
+ *    (〜てはいけない → てはいけない), an interior 〜 slot and … ‥ runs become a
+ *    pause (、), 「」 around a bare pattern are unwrapped, a parenthetical is
+ *    unwrapped when it is a 1–2 kana optional piece (〜なくして(は) → なくしては,
+ *    (ら)れる → られる) and dropped otherwise ((N), (V), (imperative)), and a
+ *    spaced / or ／ between alternatives becomes a pause. Ruby stripping and
+ *    real sentence text are untouched. Utterances split at ≤ 180 chars on
  *    punctuation (Chromium's ~15 s cutoff). Resolves on `onend` OR `onerror`
  *    OR a timeout of the estimated duration + 2 s, so an awaited `speak()`
  *    can never hang a session.
@@ -183,16 +190,64 @@ export function estimateMs(text: string, rate: number): number {
   return Math.round(base / Math.max(0.25, rate));
 }
 
+/** 〜 ～ ~ at either edge of the text (with any whitespace around them). */
+const EDGE_TILDE_RE = /^[\s　]*[〜～~]+[\s　]*|[\s　]*[〜～~]+[\s　]*$/g;
+/** An interior 〜 slot (〜より〜のほうが); a 〜 between digits (10〜20) is a real range and stays. */
+const INNER_TILDE_RE = /(?<![0-9０-９])[〜～~]+(?![0-9０-９])/g;
+/** Ellipsis runs: … ‥ or three or more dots. */
+const ELLIPSIS_RE = /[…‥]+|[.．]{3,}/g;
+/** One parenthetical, half- or full-width, no nesting. */
+const PAREN_RE = /[（(]\s*([^（）()]*?)\s*[）)]/g;
+/** An optional particle / okurigana shown in parentheses: (は) (に) (さ) (ら) (よ) (も). */
+const OPTIONAL_KANA_RE = /^[ぁ-ゖァ-ヺー]{1,2}$/;
+/** A whole text wrapped in one pair of corner quotes. */
+const BARE_QUOTE_RE = /^[「『]([^「」『』]*)[」』]$/;
+/** A spaced slash or a full-width one between alternatives (〜ゆえに / 〜ゆえの). */
+const ALT_SLASH_RE = /[\s　]*[／/][\s　]*/g;
+/** Pause clean-up: runs, a pause before other punctuation, after an opening quote, at either end. */
+const PAUSE_RUN_RE = /、{2,}/g;
+const PAUSE_BEFORE_PUNCT_RE = /、(?=[。、，，！？!?.．」』])/g;
+const PAUSE_AFTER_OPEN_RE = /(?<=[「『])、/g;
+const PAUSE_EDGE_RE = /^、+|、+$/g;
+const HAS_SPEAKABLE_RE = /[\p{L}\p{N}]/u;
+
 /**
- * What to hand the engine: the plain surface (ruby stripped) for sentences;
- * the kana reading for an isolated word when the caller supplied one
- * (単漢字 like 日 / 人 are misread in isolation, sentences are not).
+ * Removes the marks a card shows but a voice must not read: leading / trailing
+ * 〜 ～ ~, an interior 〜 slot and … ‥ runs (→ 、), 「」 around a bare pattern,
+ * a spaced / between alternatives (→ 、) and parentheticals — unwrapped when
+ * they hold a 1–2 kana optional piece ((は), (ら)), dropped otherwise ((N),
+ * (V), (imperative)). Ruby must already be stripped. Returns '' when nothing
+ * speakable is left, so `speak()` resolves without an utterance.
+ */
+export function stripDisplayMarks(text: string): string {
+  let s = text.trim();
+  const bare = BARE_QUOTE_RE.exec(s);
+  if (bare) s = (bare[1] as string).trim();
+  s = s.replace(PAREN_RE, (_m, inner: string) => (OPTIONAL_KANA_RE.test(inner) ? inner : ''));
+  s = s.replace(EDGE_TILDE_RE, '');
+  s = s.replace(INNER_TILDE_RE, '、');
+  s = s.replace(ELLIPSIS_RE, '、');
+  s = s.replace(ALT_SLASH_RE, '、');
+  s = s.replace(PAUSE_RUN_RE, '、').replace(PAUSE_BEFORE_PUNCT_RE, '').replace(PAUSE_AFTER_OPEN_RE, '').replace(PAUSE_EDGE_RE, '');
+  s = s.replace(/[ \t]{2,}/g, ' ').trim();
+  return HAS_SPEAKABLE_RE.test(s) ? s : '';
+}
+
+/**
+ * What to hand the engine: the plain surface (ruby stripped, display marks
+ * removed by `stripDisplayMarks`) for sentences; the kana reading for an
+ * isolated word when the caller supplied one (単漢字 like 日 / 人 are misread
+ * in isolation, sentences are not). The word test runs on the cleaned
+ * surface, so 〜放題 with kana ほうだい speaks ほうだい.
  */
 export function textToSpeak(text: string, kana?: string): string {
-  const plain = toPlain(text).trim();
-  if (kana && kana.trim().length > 0) {
-    const isWord = !SENTENCE_PUNCT_RE.test(plain) && Array.from(plain).length <= WORD_MAX_CHARS && !/[\s　]/.test(plain);
-    if (isWord) return kana.trim();
+  const plain = stripDisplayMarks(toPlain(text));
+  if (kana) {
+    const reading = stripDisplayMarks(kana);
+    if (reading.length > 0) {
+      const isWord = !SENTENCE_PUNCT_RE.test(plain) && Array.from(plain).length <= WORD_MAX_CHARS && !/[\s　]/.test(plain);
+      if (isWord) return reading;
+    }
   }
   return plain;
 }

@@ -1295,7 +1295,7 @@
         "雷が鳴る",
         "雷が落ちる"
       ],
-      "station": 29
+      "station": 30
     },
     {
       "id": "v-n3-0606",
@@ -4865,6 +4865,43 @@
       "collocations": [
         "くしゃみが出る",
         "くしゃみをする"
+      ],
+      "station": 30
+    },
+    {
+      "id": "v-n3-1703",
+      "word": "鉄砲",
+      "kana": "てっぽう",
+      "meanings": [
+        "gun",
+        "firearm (historical)"
+      ],
+      "pos": "n",
+      "jlpt": 3,
+      "tags": [
+        "objects",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{昔|むかし}は、{鉄砲|てっぽう}を{持|も}って{町|まち}に{入|はい}る{人|ひと}を{厳|きび}しく{調|しら}べました。",
+          "kana": "むかしは、てっぽうをもってまちにはいるひとをきびしくしらべました。",
+          "en": "In the old days, people entering a town with a gun were checked strictly."
+        },
+        {
+          "ja": "この{博物館|はくぶつかん}には、{四百年前|よんひゃくねんまえ}の{鉄砲|てっぽう}が{飾|かざ}ってある。",
+          "kana": "このはくぶつかんには、よんひゃくねんまえのてっぽうがかざってある。",
+          "en": "This museum displays a gun from four hundred years ago."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{火薬|かやく}の{力|ちから}で{小|ちい}さなたまを{遠|とお}くまで{飛|と}ばす、{昔|むかし}の{道具|どうぐ}。",
+        "kana": "かやくのちからでちいさなたまをとおくまでとばす、むかしのどうぐ。"
+      },
+      "notes": "Historical word for a matchlock or any gun; in modern usage 銃 is more common. 入り鉄砲に出女 names the Edo barrier checks on guns coming in and women going out.",
+      "collocations": [
+        "鉄砲を撃つ",
+        "入り鉄砲に出女"
       ],
       "station": 30
     }

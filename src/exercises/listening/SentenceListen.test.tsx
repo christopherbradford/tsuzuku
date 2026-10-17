@@ -7,8 +7,9 @@ import { installServices, nullAudio, resetServices, type AudioService, type Spea
 import { bus } from '@/shared/events';
 import type { AttemptResult, Step } from '@/shared/session-types';
 import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
+import { store } from '@/store';
 import { captureEvents, makeTestStore } from '@/store/testing';
-import { MAX_REPLAYS, SentenceListen, choiceAnswerIndex, diffTags, implicitGrades, meta, moraDiff, slipTag } from './SentenceListen';
+import { DICTATED_MIN_RATE, MAX_REPLAYS, SentenceListen, choiceAnswerIndex, diffTags, implicitGrades, meta, moraDiff, slipTag } from './SentenceListen';
 
 const SENTENCE = '{犬|いぬ}は{水|みず}を{飲|の}みます。'; // いぬはみずをのみます (10 morae)
 
@@ -251,6 +252,55 @@ describe('<SentenceListen> dictation', () => {
     cap.stop();
     const ev = cap.events.find(([n]) => n === 'line:scored');
     expect(ev?.[1]).toEqual({ kind: 'dictation', score: 1, pass: true, tier: 3, replays: 1 });
+  });
+
+  it('a perfect dictation at ≥ 1× becomes profile.dictatedSentence (plain surface, newest wins); Hard, slowed, hinted or replay-capped ones do not', async () => {
+    expect(DICTATED_MIN_RATE).toBe(1);
+    expect(store.profile.value.dictatedSentence).toBeUndefined();
+    const CAT = '{猫|ねこ}が{来|き}ます。';
+    const a = await mount(step({ id: 'sl-d1', params: { sentence: CAT, rate: 1 } }));
+    type(a.input as HTMLInputElement, 'nekogakimasu');
+    enter(a.input as HTMLInputElement);
+    expect(a.onResult.mock.calls[0]?.[0]?.correct).toBe(true);
+    expect(store.profile.value.dictatedSentence).toBe('猫が来ます。');
+
+    // Hard (one mora off) at 1×: not written
+    const b = await mount(step({ id: 'sl-d2', params: { sentence: SENTENCE, rate: 1 } }));
+    type(b.input as HTMLInputElement, 'inuhamisuwonomimasu');
+    enter(b.input as HTMLInputElement);
+    expect(b.onResult.mock.calls[0]?.[0]?.nearMiss).toBe(true);
+    expect(store.profile.value.dictatedSentence).toBe('猫が来ます。');
+
+    // perfect but slowed (0.9×): not written
+    const c = await mount(step({ id: 'sl-d3', params: { sentence: SENTENCE, rate: 0.9 } }));
+    type(c.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(c.input as HTMLInputElement);
+    expect(c.onResult.mock.calls[0]?.[0]?.correct).toBe(true);
+    expect(store.profile.value.dictatedSentence).toBe('猫が来ます。');
+
+    // perfect at 1× after the hint: not written (the hint caps the rating at Hard)
+    const d = await mount(step({ id: 'sl-d4', params: { sentence: SENTENCE, rate: 1, promptEn: 'The dog drinks water.' } }));
+    await clickAsync(Array.from(root.querySelectorAll<HTMLButtonElement>('button')).find((x) => x.textContent === 'Hint') ?? null);
+    type(d.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(d.input as HTMLInputElement);
+    expect(d.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, hintUsed: true });
+    expect(store.profile.value.dictatedSentence).toBe('猫が来ます。');
+
+    // perfect at 1.25× under the second-replay ceiling: not written
+    const e = await mount(step({ id: 'sl-d5', params: { sentence: SENTENCE, rate: 1.25 } }));
+    await clickAsync(playBtn());
+    await clickAsync(playBtn());
+    type(e.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(e.input as HTMLInputElement);
+    expect(e.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, replays: 2 });
+    expect(store.profile.value.dictatedSentence).toBe('猫が来ます。');
+
+    // perfect at 1.25× with one replay: the newest wins
+    const f = await mount(step({ id: 'sl-d6', params: { sentence: SENTENCE, rate: 1.25 } }));
+    await clickAsync(playBtn());
+    type(f.input as HTMLInputElement, 'inuhamizuwonomimasu');
+    enter(f.input as HTMLInputElement);
+    expect(store.profile.value.dictatedSentence).toBe('犬は水を飲みます。');
   });
 
   it('hint reveals the English (promptEn) and marks hintUsed; empty submits are nudged', async () => {

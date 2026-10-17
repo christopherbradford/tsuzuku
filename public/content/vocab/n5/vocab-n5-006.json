@@ -38,35 +38,35 @@
       "station": 13
     },
     {
-      "id": "v-n5-0672",
-      "word": "あまり",
-      "kana": "あまり",
+      "id": "v-n5-0680",
+      "word": "よく",
+      "kana": "よく",
       "meanings": [
-        "not very",
-        "not much"
+        "often",
+        "well"
       ],
       "pos": "adv",
       "jlpt": 5,
       "tags": [
-        "quantity",
+        "time",
         "states"
       ],
-      "pitch": 0,
+      "pitch": 1,
       "pitchConfidence": "high",
-      "notes": "Takes a negative: あまり好きじゃない (I don’t like it much). Positive use (あまりに, too much) is N3.",
+      "notes": "Frequency (よく行く, often go) or quality (よく分かる, understand well).",
       "confusables": [
-        "v-n5-0682"
+        "v-n5-0679"
       ],
       "examples": [
         {
-          "ja": "{今日|きょう}はあまり{寒|さむ}くないですね。",
-          "kana": "きょうはあまりさむくないですね。",
-          "en": "It’s not very cold today, is it?"
+          "ja": "ケンはよく{図書館|としょかん}で{勉強|べんきょう}する。",
+          "kana": "ケンはよくとしょかんでべんきょうする。",
+          "en": "Ken often studies at the library."
         },
         {
-          "ja": "ケンはあまりテレビを{見|み}ません。",
-          "kana": "ケンはあまりテレビをみません。",
-          "en": "Ken doesn’t watch much TV."
+          "ja": "{子供|こども}の{時|とき}、よくこの{川|かわ}で{遊|あそ}びました。",
+          "kana": "こどものとき、よくこのかわであそびました。",
+          "en": "When I was a child, I often played in this river."
         }
       ],
       "station": 13
@@ -306,38 +306,38 @@
       "station": 13
     },
     {
-      "id": "v-n5-0680",
-      "word": "よく",
-      "kana": "よく",
+      "id": "v-n5-0672",
+      "word": "あまり",
+      "kana": "あまり",
       "meanings": [
-        "often",
-        "well"
+        "not very",
+        "not much"
       ],
       "pos": "adv",
       "jlpt": 5,
       "tags": [
-        "time",
+        "quantity",
         "states"
       ],
-      "pitch": 1,
+      "pitch": 0,
       "pitchConfidence": "high",
-      "notes": "Frequency (よく行く, often go) or quality (よく分かる, understand well).",
+      "notes": "Takes a negative: あまり好きじゃない (I don’t like it much). Positive use (あまりに, too much) is N3.",
       "confusables": [
-        "v-n5-0679"
+        "v-n5-0682"
       ],
       "examples": [
         {
-          "ja": "ケンはよく{図書館|としょかん}で{勉強|べんきょう}する。",
-          "kana": "ケンはよくとしょかんでべんきょうする。",
-          "en": "Ken often studies at the library."
+          "ja": "{今日|きょう}はあまり{寒|さむ}くないですね。",
+          "kana": "きょうはあまりさむくないですね。",
+          "en": "It’s not very cold today, is it?"
         },
         {
-          "ja": "{子供|こども}の{時|とき}、よくこの{川|かわ}で{遊|あそ}びました。",
-          "kana": "こどものとき、よくこのかわであそびました。",
-          "en": "When I was a child, I often played in this river."
+          "ja": "ケンはあまりテレビを{見|み}ません。",
+          "kana": "ケンはあまりテレビをみません。",
+          "en": "Ken doesn’t watch much TV."
         }
       ],
-      "station": 13
+      "station": 14
     },
     {
       "id": "v-n5-0681",
@@ -2286,6 +2286,34 @@
       "station": 14
     },
     {
+      "id": "v-n5-0802",
+      "word": "〜ちゃん",
+      "kana": "ちゃん",
+      "meanings": [
+        "(affectionate suffix after a name)"
+      ],
+      "pos": "suf",
+      "jlpt": 5,
+      "tags": [
+        "people",
+        "casual"
+      ],
+      "notes": "Attaches to a child’s or close friend’s first name or nickname, and to pets; warmer than さん. Children also add it to family words (おばあちゃん). Never for your own name.",
+      "examples": [
+        {
+          "ja": "{妹|いもうと}はアオちゃんが{大好|だいす}きだ。",
+          "kana": "いもうとはアオちゃんがだいすきだ。",
+          "en": "My little sister loves Ao."
+        },
+        {
+          "ja": "ハナちゃん、{今日|きょう}は{何|なに}を{食|た}べる？",
+          "kana": "ハナちゃん、きょうはなにをたべる？",
+          "en": "Hana, what are you going to eat today?"
+        }
+      ],
+      "station": 14
+    },
+    {
       "id": "v-n5-0739",
       "word": "プレゼント",
       "kana": "プレゼント",
@@ -2318,7 +2346,7 @@
           "en": "What will you give your father as a present?"
         }
       ],
-      "station": 14
+      "station": 15
     },
     {
       "id": "v-n5-0740",
@@ -2348,7 +2376,7 @@
           "en": "Was yesterday’s party fun?"
         }
       ],
-      "station": 14
+      "station": 15
     },
     {
       "id": "v-n5-0741",
@@ -4318,6 +4346,148 @@
           "ja": "{来週|らいしゅう}、{箱根|はこね}までドライブしませんか。",
           "kana": "らいしゅう、はこねまでドライブしませんか。",
           "en": "Shall we drive to Hakone next week?"
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0803",
+      "word": "同じ",
+      "kana": "おなじ",
+      "meanings": [
+        "same",
+        "identical"
+      ],
+      "pos": "adj-na",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "states"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Attaches straight to a noun with no な (同じ日, 同じ店); as a predicate 同じだ / 同じです. 〜と同じ compares two things (私と同じ).",
+      "collocations": [
+        "同じ日",
+        "同じ店"
+      ],
+      "examples": [
+        {
+          "ja": "{私|わたし}とケンは{同|おな}じ{学校|がっこう}です。",
+          "kana": "わたしとケンはおなじがっこうです。",
+          "en": "Ken and I go to the same school."
+        },
+        {
+          "ja": "{昨日|きのう}と{同|おな}じ{店|みせ}でコーヒーを{飲|の}んだ。",
+          "kana": "きのうとおなじみせでコーヒーをのんだ。",
+          "en": "I had coffee at the same cafe as yesterday."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0804",
+      "word": "音",
+      "kana": "おと",
+      "meanings": [
+        "sound",
+        "noise"
+      ],
+      "pos": "n",
+      "jlpt": 5,
+      "tags": [
+        "music",
+        "nature"
+      ],
+      "pitch": 2,
+      "pitchConfidence": "low",
+      "notes": "Any sound or noise (footsteps, rain, a door, an instrument); a person’s or animal’s voice is 声.",
+      "collocations": [
+        "音がする",
+        "大きい音"
+      ],
+      "examples": [
+        {
+          "ja": "{外|そと}で{大|おお}きい{音|おと}がしました。",
+          "kana": "そとでおおきいおとがしました。",
+          "en": "There was a loud noise outside."
+        },
+        {
+          "ja": "{夜|よる}、{雨|あめ}の{音|おと}を{聞|き}いた。",
+          "kana": "よる、あめのおとをきいた。",
+          "en": "At night I listened to the sound of the rain."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0805",
+      "word": "どうぞ",
+      "kana": "どうぞ",
+      "meanings": [
+        "please (go ahead)",
+        "here you are"
+      ],
+      "pos": "adv",
+      "jlpt": 5,
+      "tags": [
+        "communication",
+        "greetings"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "Offers and permits: handing something over, inviting someone to sit or go first, or answering a request (使ってもいい？ — どうぞ). To ask for something use ください / お願いします.",
+      "examples": [
+        {
+          "ja": "どうぞ、こちらに{座|すわ}ってください。",
+          "kana": "どうぞ、こちらにすわってください。",
+          "en": "Please, have a seat here."
+        },
+        {
+          "ja": "「これ、{使|つか}ってもいい？」「どうぞ。」",
+          "kana": "「これ、つかってもいい？」「どうぞ。」",
+          "en": "Can I use this? Sure, go ahead."
+        }
+      ],
+      "station": 15
+    },
+    {
+      "id": "v-n5-0806",
+      "word": "なる",
+      "kana": "なる",
+      "meanings": [
+        "to become",
+        "to turn into",
+        "to reach (a time, an age, a state)"
+      ],
+      "pos": "v5",
+      "jlpt": 5,
+      "tags": [
+        "abstract",
+        "usually-kana"
+      ],
+      "altForms": [
+        "成る"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "trans": "vi",
+      "notes": "Change of state: a noun or な-adjective takes に (先生になる), an い-adjective its く-form (暗くなる). Written in kana; 成る is rare. Not 鳴る (to ring, to sound).",
+      "collocations": [
+        "大人になる",
+        "暗くなる",
+        "元気になる"
+      ],
+      "examples": [
+        {
+          "ja": "{来年|らいねん}、{弟|おとうと}は{大学生|だいがくせい}になります。",
+          "kana": "らいねん、おとうとはだいがくせいになります。",
+          "en": "Next year my younger brother will become a university student."
+        },
+        {
+          "ja": "{空|そら}が{暗|くら}くなった。",
+          "kana": "そらがくらくなった。",
+          "en": "The sky got dark."
         }
       ],
       "station": 15

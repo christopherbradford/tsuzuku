@@ -3068,8 +3068,8 @@
         }
       ],
       "definitionJa": {
-        "ja": "{会社|かいしゃ}が{普通|ふつう}の{給料|きゅうりょう}に{加|くわ}えて、{年|ねん}に{一回|いっかい}か{二回|にかい}{払|はら}うお{金|かね}。ボーナス。",
-        "kana": "かいしゃがふつうのきゅうりょうにくわえて、ねんにいっかいかにかいはらうおかね。ボーナス。"
+        "ja": "{会社|かいしゃ}が{普通|ふつう}の{給料|きゅうりょう}に{加|くわ}えて、{夏|なつ}や{冬|ふゆ}などに{特別|とくべつ}に{払|はら}うお{金|かね}。ボーナス。",
+        "kana": "かいしゃがふつうのきゅうりょうにくわえて、なつやふゆなどにとくべつにはらうおかね。ボーナス。"
       },
       "notes": "Formal term seen on pay slips and in contracts; in conversation ボーナス.",
       "station": 40
@@ -4858,8 +4858,8 @@
         }
       ],
       "definitionJa": {
-        "ja": "{悪|わる}いことが{起|お}きないように、{注意|ちゅうい}して{見|み}{続|つづ}けること。",
-        "kana": "わるいことがおきないように、ちゅういしてみつづけること。"
+        "ja": "{悪|わる}いことが{起|お}きないように、{注意|ちゅうい}してずっと{見|み}ていること。",
+        "kana": "わるいことがおきないように、ちゅういしてずっとみていること。"
       },
       "collocations": [
         "監視カメラ",
@@ -4968,6 +4968,84 @@
       "collocations": [
         "労働組合",
         "組合員"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-1701",
+      "word": "藍",
+      "kana": "あい",
+      "meanings": [
+        "indigo (plant, dye)",
+        "deep blue"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "colors",
+        "plants",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "この{手|て}ぬぐいは{藍|あい}で{染|そ}めてあるので、{洗|あら}うたびに{色|いろ}が{落|お}ち{着|つ}いてきます。",
+          "kana": "このてぬぐいはあいでそめてあるので、あらうたびにいろがおちついてきます。",
+          "en": "This hand towel is dyed with indigo, so the color settles a little more with every wash."
+        },
+        {
+          "ja": "{職人|しょくにん}は{藍|あい}の{葉|は}を{発酵|はっこう}させて、{深|ふか}い{青|あお}を{作|つく}り{出|だ}す。",
+          "kana": "しょくにんはあいのはをはっこうさせて、ふかいあおをつくりだす。",
+          "en": "The craftsman ferments indigo leaves to produce a deep blue."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{葉|は}から{青|あお}い{色|いろ}を{取|と}って{布|ぬの}を{染|そ}めるのに{使|つか}う{植物|しょくぶつ}。また、その{深|ふか}い{青|あお}。",
+        "kana": "はからあおいいろをとってぬのをそめるのにつかうしょくぶつ。また、そのふかいあお。"
+      },
+      "notes": "Both the plant and the dye made from it; 藍染め cloth was everyday wear in Edo Japan. The Arimatsu and Narumi tie-dye tradition on the Tōkaidō uses it.",
+      "collocations": [
+        "藍染め",
+        "藍色"
+      ],
+      "station": 40
+    },
+    {
+      "id": "v-n2-1702",
+      "word": "煮込み",
+      "kana": "にこみ",
+      "meanings": [
+        "stew",
+        "simmered dish"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "cooking"
+      ],
+      "examples": [
+        {
+          "ja": "{寒|さむ}い{日|ひ}は、{鍋|なべ}でことこと{作|つく}った{煮込|にこ}みが{一番|いちばん}です。",
+          "kana": "さむいひは、なべでことことつくったにこみがいちばんです。",
+          "en": "On a cold day, nothing beats a stew simmered slowly in a pot."
+        },
+        {
+          "ja": "{店|みせ}で{食|た}べた{味噌|みそ}{煮込|にこ}みうどんは、{麺|めん}が{固|かた}くて{驚|おどろ}いた。",
+          "kana": "みせでたべたみそにこみうどんは、めんがかたくておどろいた。",
+          "en": "The miso-simmered udon I ate at the shop surprised me with its firm noodles."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{肉|にく}や{野菜|やさい}などを{長|なが}い{時間|じかん}{煮|に}て、{中|なか}まで{味|あじ}をしみこませた{料理|りょうり}。",
+        "kana": "にくややさいなどをながいじかんにて、なかまであじをしみこませたりょうり。"
+      },
+      "notes": "From 煮込む, to simmer for a long time. 味噌煮込みうどん cooks the noodles in a thick miso broth in an earthenware pot.",
+      "collocations": [
+        "味噌煮込みうどん",
+        "牛すじの煮込み"
+      ],
+      "altForms": [
+        "煮込"
       ],
       "station": 40
     }

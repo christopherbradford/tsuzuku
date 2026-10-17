@@ -326,6 +326,20 @@ describe('head word from the step (grammar prod cards: params.pos / params.accep
     expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [], answer: 'かえります / かえって / かえらない / かえった / かえれる' });
   });
 
+  it('an adjective head word (adj-* point, params.pos adj-i) builds every link from the engine and runs to Good', () => {
+    const ADJ_FORMS = ['adj-neg', 'adj-past', 'adj-past-neg', 'adj-te', 'adj-adv'] as ConjForm[];
+    const params = { forms: ADJ_FORMS, answers: ['おいしくない', 'おいしかった', 'おいしくなかった', 'おいしくて', 'おいしく'], pos: 'adj-i' as const, sentence: 'おいしい', kana: 'おいしい', promptEn: 'delicious' };
+    expect(inferHeadWord(params)).toEqual({ word: 'おいしい', kana: 'おいしい', pos: 'adj-i' });
+    expect(buildChain(null, params)?.map((l) => l.accept[0])).toEqual(params.answers);
+    const pr = props({ item: MASU, step: step({ itemId: MASU.id, params }) });
+    mount(pr);
+    expect(q('.gr-chain')?.getAttribute('data-state')).toBeNull();
+    expect(q('[data-dictionary="true"]')?.textContent).toBe('おいしい');
+    for (const t of ['oishikunai', 'oishikatta', 'oishikunakatta', 'oishikute', 'oishiku']) answer(t);
+    expect(states()).toEqual(['right', 'right', 'right', 'right', 'right']);
+    expect(pr.onResult.mock.calls[0]?.[0]).toMatchObject({ correct: true, nearMiss: false, errorTags: [] });
+  });
+
   it("the frame's ? key opens the current form's rule once (hintUsed), then the Hint button is withdrawn until the next form", () => {
     const pr = props();
     act(() =>

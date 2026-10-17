@@ -1144,8 +1144,8 @@
         }
       ],
       "definitionJa": {
-        "ja": "{長年|ながねん}の{経験|けいけん}から、{理由|りゆう}を{言|い}えなくても{正|ただ}しい{答|こた}えをつかむ{力|ちから}。",
-        "kana": "ながねんのけいけんから、りゆうをいえなくてもただしいこたえをつかむちから。"
+        "ja": "{長|なが}い{間|あいだ}の{経験|けいけん}から、{理由|りゆう}を{言|い}えなくても{正|ただ}しい{答|こた}えをつかむ{力|ちから}。",
+        "kana": "ながいあいだのけいけんから、りゆうをいえなくてもただしいこたえをつかむちから。"
       },
       "collocations": [
         "勘がいい",
@@ -4925,7 +4925,8 @@
         "emotions",
         "communication",
         "slang",
-        "casual"
+        "casual",
+        "usually-kana"
       ],
       "examples": [
         {
@@ -5018,6 +5019,120 @@
       "notes": "From 受ける (to be well received). ウケる！ alone = That is hilarious!",
       "altForms": [
         "うける"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1715",
+      "word": "田楽",
+      "kana": "でんがく",
+      "meanings": [
+        "dengaku (skewered tofu with miso)",
+        "dengaku (field dance)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "food",
+        "culture"
+      ],
+      "examples": [
+        {
+          "ja": "{店|みせ}で、{味噌|みそ}をぬった{豆腐|とうふ}の{田楽|でんがく}を{二本|にほん}{注文|ちゅうもん}しました。",
+          "kana": "みせで、みそをぬったとうふのでんがくをにほんちゅうもんしました。",
+          "en": "At the shop I ordered two skewers of tofu dengaku coated with miso."
+        },
+        {
+          "ja": "{炭火|すみび}で{焼|や}いた{田楽|でんがく}は、{味噌|みそ}の{焦|こ}げる{匂|にお}いがたまらない。",
+          "kana": "すみびでやいたでんがくは、みそのこげるにおいがたまらない。",
+          "en": "Dengaku grilled over charcoal smells irresistible as the miso chars."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{豆腐|とうふ}やこんにゃくなどを{細|ほそ}い{竹|たけ}に{刺|さ}して{焼|や}き、{甘|あま}い{味噌|みそ}をぬった{料理|りょうり}。",
+        "kana": "とうふやこんにゃくなどをほそいたけにさしてやき、あまいみそをぬったりょうり。"
+      },
+      "notes": "Tofu, konnyaku or eggplant on skewers, grilled and coated with sweet miso; named after an old rice-planting dance whose performers balanced on a single stilt like the skewer.",
+      "collocations": [
+        "豆腐の田楽",
+        "味噌田楽"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1716",
+      "word": "春雨",
+      "kana": "はるさめ",
+      "meanings": [
+        "gentle spring rain",
+        "glass noodles (harusame)"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "weather",
+        "food",
+        "literary"
+      ],
+      "examples": [
+        {
+          "ja": "{春雨|はるさめ}の{中|なか}を、{傘|かさ}をささずにゆっくり{歩|ある}きました。",
+          "kana": "はるさめのなかを、かさをささずにゆっくりあるきました。",
+          "en": "I walked slowly through the spring rain without an umbrella."
+        },
+        {
+          "ja": "{昼|ひる}ご{飯|はん}は、きゅうりとハムの{入|はい}った{春雨|はるさめ}サラダにした。",
+          "kana": "ひるごはんは、きゅうりとハムのはいったはるさめサラダにした。",
+          "en": "For lunch I had a glass-noodle salad with cucumber and ham."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{春|はる}に{静|しず}かに{降|ふ}る{細|こま}かい{雨|あめ}。また、{豆|まめ}やいもから{作|つく}る{細|ほそ}くて{透明|とうめい}な{麺|めん}。",
+        "kana": "はるにしずかにふるこまかいあめ。また、まめやいもからつくるほそくてとうめいなめん。"
+      },
+      "notes": "The soft, quiet rain of early spring; the thin, clear noodles took the same name because they look like threads of spring rain.",
+      "collocations": [
+        "春雨サラダ",
+        "春雨に濡れる"
+      ],
+      "station": 46
+    },
+    {
+      "id": "v-n2-1717",
+      "word": "串",
+      "kana": "くし",
+      "meanings": [
+        "skewer",
+        "spit"
+      ],
+      "pos": "n",
+      "jlpt": 2,
+      "tags": [
+        "objects",
+        "food",
+        "cooking"
+      ],
+      "examples": [
+        {
+          "ja": "{焼|や}き{鳥|とり}を{串|くし}から{外|はず}して、みんなで{分|わ}けて{食|た}べました。",
+          "kana": "やきとりをくしからはずして、みんなでわけてたべました。",
+          "en": "We took the yakitori off the skewers and shared it."
+        },
+        {
+          "ja": "{肉|にく}と{野菜|やさい}を{交互|こうご}に{串|くし}に{刺|さ}して、{庭|にわ}で{焼|や}いた。",
+          "kana": "にくとやさいをこうごにくしにさして、にわでやいた。",
+          "en": "I threaded meat and vegetables alternately onto skewers and grilled them in the garden."
+        }
+      ],
+      "definitionJa": {
+        "ja": "{肉|にく}や{野菜|やさい}などを{刺|さ}して{焼|や}くための、{竹|たけ}や{金属|きんぞく}でできた{細長|ほそなが}いもの。",
+        "kana": "にくややさいなどをさしてやくための、たけやきんぞくでできたほそながいもの。"
+      },
+      "notes": "A thin bamboo or metal stick for grilling: 焼き鳥, 田楽, 串カツ. Counted 一串, 二串.",
+      "collocations": [
+        "串に刺す",
+        "焼き鳥の串",
+        "串カツ"
       ],
       "station": 46
     }

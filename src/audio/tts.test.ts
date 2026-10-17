@@ -13,6 +13,7 @@ import {
   createWebAudio,
   estimateMs,
   splitUtterance,
+  stripDisplayMarks,
   textToSpeak,
   voiceAudible,
   type SynthLike,
@@ -196,6 +197,77 @@ describe('estimateMs / textToSpeak', () => {
   });
 });
 
+describe('stripDisplayMarks (display-only marks never reach the engine)', () => {
+  it('strips a leading or trailing 〜 ～ ~ (grammar / michikusa patterns, suffix vocab)', () => {
+    expect(stripDisplayMarks('〜てはいけない')).toBe('てはいけない');
+    expect(stripDisplayMarks('〜ざるを得ない')).toBe('ざるを得ない');
+    expect(stripDisplayMarks('～ている')).toBe('ている');
+    expect(stripDisplayMarks('御〜')).toBe('御');
+    expect(stripDisplayMarks('~ばかり ~')).toBe('ばかり');
+    expect(stripDisplayMarks('〜に越したことはない')).toBe('に越したことはない');
+  });
+
+  it('an interior 〜 slot becomes a pause; a 〜 between digits is a range and stays', () => {
+    expect(stripDisplayMarks('必ずしも〜ではない')).toBe('必ずしも、ではない');
+    expect(stripDisplayMarks('〜より〜の方が')).toBe('より、の方が');
+    expect(stripDisplayMarks('10〜20分かかる')).toBe('10〜20分かかる');
+  });
+
+  it('… and ‥ runs collapse to one pause, never doubling existing punctuation', () => {
+    expect(stripDisplayMarks('ええと……二月に仕事を辞めたんです。')).toBe('ええと、二月に仕事を辞めたんです。');
+    expect(stripDisplayMarks('そう‥‥かな')).toBe('そう、かな');
+    expect(stripDisplayMarks('「けんは？」「……。」')).toBe('「けんは？」「。」');
+    expect(stripDisplayMarks('まあ…。')).toBe('まあ。');
+    expect(stripDisplayMarks('いや...そうだね')).toBe('いや、そうだね');
+    expect(stripDisplayMarks('うーん……')).toBe('うーん');
+  });
+
+  it('「」 around a bare pattern are unwrapped; quotes inside a sentence stay', () => {
+    expect(stripDisplayMarks('「〜てはいけない」')).toBe('てはいけない');
+    expect(stripDisplayMarks('『感動』')).toBe('感動');
+    expect(stripDisplayMarks('明日、「概ねまっすぐ」って書く。')).toBe('明日、「概ねまっすぐ」って書く。');
+    expect(stripDisplayMarks('「はい」「いいえ」')).toBe('「はい」「いいえ」');
+  });
+
+  it('a 1–2 kana optional piece in parentheses is unwrapped; other parentheticals are dropped', () => {
+    expect(stripDisplayMarks('〜に至って(は)')).toBe('に至っては');
+    expect(stripDisplayMarks('〜(ら)れる')).toBe('られる');
+    expect(stripDisplayMarks('〜(さ)せられる')).toBe('させられる');
+    expect(stripDisplayMarks('〜なり (as soon as)')).toBe('なり');
+    expect(stripDisplayMarks('命令形 (imperative)')).toBe('命令形');
+    expect(stripDisplayMarks('（N）のために')).toBe('のために');
+    expect(stripDisplayMarks('(V)ことがある')).toBe('ことがある');
+    expect(stripDisplayMarks('〜(ら)れる (direct passive 受身)')).toBe('られる');
+  });
+
+  it('a spaced / or ／ between alternatives becomes a pause', () => {
+    expect(stripDisplayMarks('〜に至る / 〜に至るまで')).toBe('に至る、に至るまで');
+    expect(stripDisplayMarks('〜ゆえ(に)／〜ゆえの')).toBe('ゆえに、ゆえの');
+  });
+
+  it("nothing speakable left → '' (speak resolves without an utterance)", () => {
+    expect(stripDisplayMarks('〜')).toBe('');
+    expect(stripDisplayMarks('「……」')).toBe('');
+    expect(stripDisplayMarks('(N)')).toBe('');
+  });
+
+  it('real sentence text is untouched (ruby already stripped by textToSpeak)', () => {
+    const line = '石部は、昔、京都から一日で着く宿場町だったそうだ。「京立ち石部泊まり」っていうんだって。';
+    expect(stripDisplayMarks(line)).toBe(line);
+    expect(stripDisplayMarks('私はコーヒーを飲みます。')).toBe('私はコーヒーを飲みます。');
+    expect(stripDisplayMarks('大丈夫ですか？ はい、大丈夫です！')).toBe('大丈夫ですか？ はい、大丈夫です！');
+  });
+
+  it('textToSpeak applies it to the surface and the kana; the word test runs on the cleaned surface', () => {
+    expect(textToSpeak('〜放題', 'ほうだい')).toBe('ほうだい');
+    expect(textToSpeak('〜限り')).toBe('限り');
+    expect(textToSpeak('〜に{越|こ}したことはない', '〜にこしたことはない')).toBe('に越したことはない');
+    expect(textToSpeak('〜てはいけない')).toBe('てはいけない');
+    expect(textToSpeak('{私|わたし}は「〜てはいけない」と{言|い}った。', 'わたしは「〜てはいけない」といった。')).toBe('私は「てはいけない」と言った。');
+    expect(textToSpeak('〜', '〜')).toBe('');
+  });
+});
+
 /* ────────────────────────────────────────────────────────────────────────── */
 /* Voices                                                                     */
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -276,6 +348,20 @@ describe('voices', () => {
 /* ────────────────────────────────────────────────────────────────────────── */
 
 describe('speak', () => {
+  it('display marks never reach the utterance; mark-only text makes no utterance and resolves at once', async () => {
+    const synth = new FakeSynth([ja('Kyoko')]);
+    const svc = make(synth);
+    void svc.speak('〜てはいけない');
+    expect(synth.spoken.map((u) => u.text)).toEqual(['てはいけない']);
+    void svc.speak('〜に至って(は)');
+    expect(synth.spoken[1]?.text).toBe('に至っては');
+    void svc.speak('〜放題', { kana: 'ほうだい' });
+    expect(synth.spoken[2]?.text).toBe('ほうだい');
+    const before = synth.spoken.length;
+    await expect(svc.speak('「……」')).resolves.toBeUndefined();
+    expect(synth.spoken.length).toBe(before);
+  });
+
   it('rateForTier follows SPEED_TIER_RATES and the default rate is the settings tier', () => {
     const synth = new FakeSynth([ja('Kyoko')]);
     const settings = signal<TtsSettings>({ ...baseSettings(), speedTier: 1 });

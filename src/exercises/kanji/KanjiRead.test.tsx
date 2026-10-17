@@ -107,6 +107,30 @@ describe('KanjiRead helpers', () => {
     expect(buildReadPrompt(null, { sentence: SENTENCE }, 0)).toBeNull();
     expect(buildReadPrompt(null, { sentence: SENTENCE, answer: 'のみます', blank: [4, 8] }, 0)?.word).toBe('飲みます');
   });
+
+  it('blanks the occurrence the ruby names: a blank that cuts a compound or reads differently is re-located; without a blank the aligned occurrence beats the first', () => {
+    const SUN = FIXTURE.items['j-日'] as KanjiItem; // examples: 日 ひ · 毎日 まいにち
+    const JA = '{日本|にほん}の{日|ひ}は{日曜日|にちようび}です。'; // plain: 日本の日は日曜日です。
+    // no blank: 日 first appears inside {日本|にほん} (cut) → the aligned 日/ひ at 3
+    const a = buildReadPrompt(SUN, { sentence: JA }, 0);
+    expect(a).toMatchObject({ word: '日', answer: 'ひ', gloss: 'day' });
+    expect(a?.sentence).toEqual(['{日本|にほん}の', '{日|ひ}', 'は{日曜日|にちようび}です。']);
+    // a blank cutting {日本} → re-located to the occurrence that reads ひ
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [0, 1], answer: 'ひ' }, 0)?.sentence).toEqual(a?.sentence);
+    // a blank cutting {日曜日} → the same
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [7, 8], answer: 'ひ' }, 0)?.sentence).toEqual(a?.sentence);
+    // the example's kana decides when the step has no answer
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [0, 1] }, 0)?.sentence).toEqual(a?.sentence);
+    // a blank whose ruby reads as the answer stays where the planner put it
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [3, 4], answer: 'ひ' }, 0)?.sentence).toEqual(a?.sentence);
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [5, 8], answer: 'にちようび' }, 0)).toMatchObject({ word: '日曜日', answer: 'にちようび' });
+    expect(buildReadPrompt(SUN, { sentence: JA, blank: [0, 2], answer: 'にほん' }, 0)?.sentence).toEqual(['', '{日本|にほん}', 'の{日|ひ}は{日曜日|にちようび}です。']);
+    // no aligned occurrence at all → the given blank is kept (bare kanji each side, as before)
+    const NIHON = '{日本|にほん}は{広|ひろ}い。';
+    expect(buildReadPrompt(SUN, { sentence: NIHON, blank: [0, 1], answer: 'ひ' }, 0)?.sentence).toEqual(['', '日', '本は{広|ひろ}い。']);
+    // no blank, no aligned occurrence → the first plain hit, as before
+    expect(buildReadPrompt(SUN, { sentence: NIHON }, 0)?.sentence).toEqual(['', '日', '本は{広|ひろ}い。']);
+  });
 });
 
 describe('<KanjiRead>', () => {

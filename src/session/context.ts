@@ -173,7 +173,7 @@ export async function loadPlanContext(o: PlanOptions & { mode?: string } = {}): 
     daysBack: 0,
   });
 
-  // Only the cards a plan can draw need their items in memory (design 07 §6/§9: station entry ≤ 400 KB, not
+  // Only the cards a plan can draw need their items in memory (design 07 §6/§9: station entry ≤ 1 MB raw, not
   // the whole corpus behind every due card): the due queue up to `showDue` plus a reserve, in the same order
   // `dueQueue` uses, arcade rechecks, and the Weak Point set when a tag is in play. The Dojo needs counts only.
   const dueItems: string[] = [];

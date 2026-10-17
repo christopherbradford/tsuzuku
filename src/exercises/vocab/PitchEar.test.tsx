@@ -1,5 +1,13 @@
 import { render } from 'preact';
 import { act } from 'preact/test-utils';
+
+// The contrast pool comes from the content singleton; serve test items from it.
+const H = vi.hoisted(() => ({ items: new Map<string, unknown>() }));
+vi.mock('@/content/loader', async (importOriginal) => {
+  const orig = await importOriginal<typeof import('@/content/loader')>();
+  return { ...orig, content: { ...orig.content, get: (id: string) => H.items.get(id) } };
+});
+
 import { FIXTURE, V } from '@/content/fixtures';
 import type { VocabItem } from '@/content/types';
 import { installServices, nullAudio, resetServices } from '@/shared/audio';
@@ -8,7 +16,7 @@ import type { Step } from '@/shared/session-types';
 import { ExerciseFrame } from '@/shared/ui/ExerciseFrame';
 import { makeTestStore } from '@/store/testing';
 import { PITCH_TYPES, pitchType } from '../PitchLine';
-import { PitchEar, meta, minimalPairOf, pitchChoiceTypes, pitchTypeOfLabel } from './PitchEar';
+import { PitchEar, meta, minimalPairOf, pitchChoiceTypes, pitchPairPool, pitchTypeOfLabel } from './PitchEar';
 
 let root: HTMLDivElement;
 let clock = 1_000_000;
@@ -16,6 +24,7 @@ const speak = vi.fn<(text: string, o?: unknown) => Promise<void>>(() => Promise.
 
 beforeEach(async () => {
   clock = 1_000_000;
+  H.items.clear();
   speak.mockClear();
   await makeTestStore({ now: () => clock });
   installServices({ audio: { ...nullAudio, speak } });
@@ -160,6 +169,39 @@ describe('<PitchEar>', () => {
     expect(q('.pitch-ear')?.getAttribute('data-correct-index')).toBe('2');
     act(() => glyphs()[2]?.click());
     expect(result(p)).toMatchObject({ correct: true, answer: '頭高' });
+  });
+
+  it('the contrast pair is drawn from params.distractorIds when the planner sets them, else from the item’s confusables', () => {
+    const ten: VocabItem = { ...MIZU, id: 'v-n5-0103', word: '天', kana: 'あめ', meanings: ['heaven'], pitch: 1 };
+    const ame0: VocabItem = { ...MIZU, id: 'v-n5-0102', word: '飴', kana: 'あめ', meanings: ['candy'], pitch: 0 };
+    const ame1: VocabItem = { ...MIZU, id: 'v-n5-0101', word: '雨', kana: 'あめ', meanings: ['rain'], pitch: 1, confusables: [ten.id] };
+    H.items.set(ten.id, ten);
+    H.items.set(ame0.id, ame0);
+    H.items.set(NOMU.id, NOMU);
+    const base = step(ame1).params;
+
+    // planner homophones: 飴 (pitch 0) is the contrast; the pool lists it first, before the confusables
+    expect(pitchPairPool(ame1, { ...base, distractorIds: [ame0.id, 'v-n5-9999'] }).map((v) => v.id)).toEqual([ame0.id, ten.id]);
+    const p = props(ame1, { step: step(ame1, { params: { ...base, distractorIds: [ame0.id, 'v-n5-9999'] } }) });
+    mount(p);
+    expect(q('[data-pair]')).toBeNull();
+    act(() => glyphs()[1]?.click());
+    expect(q('[data-pair]')?.getAttribute('data-pair')).toBe(ame0.id);
+    expect(q('[data-pair] .pitch-line')?.getAttribute('data-type')).toBe('heiban');
+    expect(root.textContent).toContain('candy');
+
+    // without distractorIds the confusables decide: 天 shares the pitch → no contrast
+    const p2 = props(ame1, { step: step(ame1) });
+    mount(p2);
+    act(() => glyphs()[1]?.click());
+    expect(q('[data-pair]')).toBeNull();
+
+    // distractorIds that hold no pitch homophone (飲む) fall back to confusables that do
+    const ame1b: VocabItem = { ...ame1, confusables: [ame0.id] };
+    const p3 = props(ame1b, { step: step(ame1b, { params: { ...base, distractorIds: [NOMU.id] } }) });
+    mount(p3);
+    act(() => glyphs()[1]?.click());
+    expect(q('[data-pair]')?.getAttribute('data-pair')).toBe(ame0.id);
   });
 
   it('a word without pitch data, or no item, shows the notice and continues as a soft timeout', () => {

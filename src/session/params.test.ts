@@ -213,3 +213,52 @@ describe('splitBunsetsu cuts after も and before a bunsetsu-initial hiragana wo
     expect(splitBunsetsu('ケンでもいいです。')).toEqual(['ケンでもいいです', '。']);
   });
 });
+
+describe('Pitch Ear minimal pairs (design 04 §2): distractorIds carries the loaded homophones with a different pitch', () => {
+  const base = (): VocabItem => loader.get<VocabItem>(V.飲む)!;
+  const 雨 = (): VocabItem => ({ ...base(), id: 'v-n5-9801', word: '雨', kana: 'あめ', pos: 'n', meanings: ['rain'], pitch: 1, pitchConfidence: 'high', confusables: undefined, pairId: undefined, kanjiIds: undefined });
+  const 飴 = (): VocabItem => ({ ...雨(), id: 'v-n5-9802', word: '飴', meanings: ['candy'], pitch: 0 });
+
+  it('a kana-equal lookup over the loaded vocab finds the high-confidence homophone, both ways', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const ame1 = 雨();
+    const ame0 = 飴();
+    const pool = { ...ctx, vocabPool: [...ctx.vocabPool, ame1, ame0] };
+    const rain = resolveParams(pool, 'pitch-ear', ame1, { rep: 0 });
+    expect(rain.answer).toBe('頭高');
+    expect(rain.choices).toEqual(['平板', '頭高', '中高', '尾高']);
+    expect(rain.distractorIds).toEqual([ame0.id]);
+    expect(resolveParams(pool, 'pitch-ear', ame0, { rep: 0 }).distractorIds).toEqual([ame1.id]);
+  });
+
+  it('a same-pitch or low-confidence twin is not a contrast; with no homophone the field stays unset (confusables fallback kept)', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const ame1 = 雨();
+    const samePitch: VocabItem = { ...飴(), pitch: 1 };
+    const low: VocabItem = { ...飴(), pitchConfidence: 'low' };
+    expect(resolveParams({ ...ctx, vocabPool: [...ctx.vocabPool, ame1, samePitch] }, 'pitch-ear', ame1, { rep: 0 }).distractorIds).toBeUndefined();
+    expect(resolveParams({ ...ctx, vocabPool: [...ctx.vocabPool, ame1, low] }, 'pitch-ear', ame1, { rep: 0 }).distractorIds).toBeUndefined();
+    // 飲む has confusables (食べる) but no homophone: the planner leaves distractorIds alone so the drill's own fallback applies.
+    const nomu = resolveParams(ctx, 'pitch-ear', base(), { rep: 0 });
+    expect(nomu.answer).toBe('頭高');
+    expect(nomu.distractorIds).toBeUndefined();
+  });
+
+  it('pairId wins when it names a homophone, else confusables (low confidence allowed there), and a non-homophone pairId is ignored', async () => {
+    await makeTestStore({ save: { progress: { station: 4 } }, cards: allCards() });
+    const ctx = await loadPlanContext({ loader, station: 4 });
+    const ame0 = 飴();
+    const lowTwin: VocabItem = { ...飴(), id: 'v-n5-9803', pitchConfidence: 'low' };
+    const pool = { ...ctx, vocabPool: [...ctx.vocabPool, ame0, lowTwin] };
+    // pairId → only that one, even though a second homophone is loaded
+    expect(resolveParams(pool, 'pitch-ear', { ...雨(), pairId: ame0.id }, { rep: 0 }).distractorIds).toEqual([ame0.id]);
+    // a transitivity partner that is not a homophone is ignored; the lookup takes over (high only)
+    expect(resolveParams(pool, 'pitch-ear', { ...雨(), pairId: V.食べる }, { rep: 0 }).distractorIds).toEqual([ame0.id]);
+    // confusables: the listed homophones, whatever their confidence, and nothing else
+    expect(resolveParams(pool, 'pitch-ear', { ...雨(), confusables: [lowTwin.id, V.食べる] }, { rep: 0 }).distractorIds).toEqual([lowTwin.id]);
+    // an unloaded confusable resolves to nothing → lookup
+    expect(resolveParams(pool, 'pitch-ear', { ...雨(), confusables: ['v-n5-0000'] }, { rep: 0 }).distractorIds).toEqual([ame0.id]);
+  });
+});

@@ -18,6 +18,10 @@
  *    listen cards on a clean dictation, Again for a content word the learner
  *    mis-transcribed (word found in the sentence, absent from the answer).
  *  · Emits `line:scored {kind:'dictation'}` for B's stats.
+ *  · A perfect dictation — Good band, no hint, under the replay ceiling — at
+ *    a rate ≥ `DICTATED_MIN_RATE` (1×) becomes `profile.dictatedSentence`
+ *    (the plain surface, newest wins): the Waveform kakejiku's text, written
+ *    the same way as the Listening Arena's `submitDictation` (round 2c).
  * Without an audible Japanese voice (`voiceAudible(services.audio)`: a voice
  * exists AND the master volume is above 0) the sentence is shown (honest
  * degrade). In typed mode the frame's Enter (focus outside the field)
@@ -62,6 +66,14 @@ export const meta: ExerciseMeta = {
 
 /** Replays allowed per rep (design 04 §5); the second one caps the rating at Hard. */
 export const MAX_REPLAYS = 2;
+
+/**
+ * A dictation counts as "perfect" for `profile.dictatedSentence` at normal
+ * speed or faster (≥ 0.95 at 1×, store-types `Profile`) — the same bar as the
+ * Listening Arena's `DICTATED_MIN_RATE` (`src/input/listening`), kept here
+ * because the exercise tier never imports the input tier.
+ */
+export const DICTATED_MIN_RATE = 1;
 
 export type SentenceListenParams = { sentence: string; rate: number; pool?: CardKey[] };
 
@@ -343,6 +355,10 @@ export function SentenceListen(p: ExerciseProps<SentenceListenParams>): JSX.Elem
     r.errorTags = tags;
     const implicit = implicitGrades(params.pool ?? [], kana, given, score, (id) => content.get(id));
     if (implicit.length > 0) r.implicit = implicit;
+    if (r.correct && !s.hint && s.replays < MAX_REPLAYS && rate >= DICTATED_MIN_RATE) {
+      // The Waveform kakejiku's text: the most recent perfect dictation, plain surface (mirrors the Listening Arena).
+      store.patch('profile', (pr) => (pr.dictatedSentence === plain ? pr : { ...pr, dictatedSentence: plain }));
+    }
     bus.emit('line:scored', { kind: 'dictation', score, pass: score >= SCORE_BANDS.good, tier: p.speedTier, replays: s.replays });
     setDone({ result: r, diff, score });
     p.onResult(r);

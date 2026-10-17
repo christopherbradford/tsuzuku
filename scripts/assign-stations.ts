@@ -24,6 +24,10 @@
  *    kanji that uses them; the N5 set is spread over Stations 2–3; never Station 1.
  * 6. Writes `station` IN PLACE (pretty JSON, key order preserved), emits
  *    `stations/NN.json` StationBundles and `docs/allowlists/station-NN.json`.
+ * 7. Links every story (`linkStories`): `StoryLine.tokenIds` from the V20 match
+ *    against the station's cumulative allowlist. The matcher itself
+ *    (`buildMatchPool` / `matchToken`, inflected forms, function tokens) lives
+ *    in `scripts/linker.ts`, shared with the validator and re-exported here.
  *
  * Idempotent: a second run rewrites byte-identical files. Bundles are derived
  * from the `station` fields on disk (`bundlesFromCorpus`), which is also what
@@ -34,7 +38,7 @@ import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { STATIONS } from '../src/content/types.ts';
-import { hasKanji } from '../src/content/ruby.ts';
+import { allowlistStationFor, buildMatchPool, CAST_NAMES, cumulativeIds, matchToken } from './linker.ts';
 import type {
   ComponentDef,
   ContentKind,
@@ -135,9 +139,6 @@ export interface AssignResult {
   /** Story lines linked with tokenIds (0 on a dry run). */
   linked: number;
 }
-
-/** Fixed Tabi Nikki cast (CONTENT_GUIDE §14.1): always allowlisted names. */
-export const CAST_NAMES: ReadonlySet<string> = new Set(['ハナ', 'ケン', 'アオ', '田中', '田中さん']);
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* JSON helpers                                                               */
@@ -842,138 +843,11 @@ function buildAllowlists(bundles: StationBundle[], storyNames: Map<number, strin
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */
-/* Linker: token → item id (CONTENT_GUIDE §14.2 / V20), shared with the validator */
+/* Linker: token → item id lives in scripts/linker.ts (shared with the validator); re-exported here */
 /* ────────────────────────────────────────────────────────────────────────── */
 
-/**
- * Function tokens that never count as unknown in V20: particles, copula and
- * ます-forms, て-form auxiliaries (dictionary, ます and て forms), する-forms and
- * name suffixes (CONTENT_GUIDE §14.2, extended with their inflections).
- */
-export const FUNCTION_TOKENS: ReadonlySet<string> = new Set([
-  // particles
-  'は', 'が', 'を', 'に', 'で', 'と', 'へ', 'から', 'まで', 'より', 'の', 'も', 'か', 'ね', 'よ', 'な', 'わ', 'って',
-  'や', 'し', 'ば', 'ても', 'でも', 'のに', 'ので', 'けど', 'けれど', 'けれども', 'のは', 'のが', 'には', 'では', 'とは', 'へは',
-  'からは', 'までは', 'とか', 'だけ', 'しか', 'ほど', 'くらい', 'ぐらい', 'ずつ', 'など', 'なんて', 'かな', 'よね', 'ぞ', 'ぜ', 'さ', 'っけ',
-  // copula and ます-forms
-  'です', 'だ', 'でした', 'だった', 'じゃない', 'ではない', 'じゃありません', 'ではありません', 'じゃなかった', 'ではなかった',
-  'でしょう', 'だろう', 'ます', 'ません', 'ました', 'ましょう', 'ませんでした', 'ましょうか', 'ませんか', 'なら', 'なの', 'なん',
-  // て-form auxiliaries
-  'いる', 'います', 'いた', 'いました', 'いない', 'いません', 'いて', 'ある', 'あります', 'あった', 'ありました', 'ない', 'ありません', 'あって',
-  'おく', 'おきます', 'おいた', 'おいて', 'みる', 'みます', 'みた', 'みて', 'しまう', 'しまいます', 'しまった', 'しまって',
-  'くれる', 'くれます', 'くれた', 'くれて', 'もらう', 'もらいます', 'もらった', 'もらって', 'あげる', 'あげます', 'あげた', 'あげて',
-  'いく', 'いきます', 'いった', 'いって', 'くる', 'きます', 'きた', 'きて', 'する', 'します', 'した', 'して', 'しない', 'しません',
-  // name suffixes
-  'さん', 'ちゃん', 'くん', '様', 'さま', 'たち',
-]);
-
-const PUNCT_TOKEN_RE = /^[\p{P}\p{S}\s]+$/u;
-const KANJI_NUMERAL_RE = /^[〇零一二三四五六七八九十百千万億兆]+$/;
-
-export interface MatchPool {
-  /** exact surface → vocab id */
-  exact: Map<string, string>;
-  /** inflection stems (longest first) → vocab id */
-  prefixes: { s: string; id: string }[];
-  /** counter surfaces (numeral prefix required) → vocab id */
-  counters: { s: string; id: string }[];
-  /** grammar clozeHints (longest first) → grammar id */
-  hints: { h: string; id: string }[];
-  /** plusOne vocab ids included in the pool */
-  plusOne: Set<string>;
-}
-
-export interface TokenMatch {
-  /** vocab/grammar id the token resolved to, or null (function token, name, numeral, punctuation, unknown). */
-  id: string | null;
-  known: boolean;
-  punct: boolean;
-}
-
-function bareSurface(s: string): string {
-  return s.replace(/^〜/, '').replace(/〜$/, '');
-}
-
-export function buildMatchPool(vocab: Iterable<VocabItem>, grammar: Iterable<GrammarItem>, plusOne: Iterable<VocabItem> = []): MatchPool {
-  const pool: MatchPool = { exact: new Map(), prefixes: [], counters: [], hints: [], plusOne: new Set() };
-  const add = (v: VocabItem) => {
-    const word = typeof v.word === 'string' ? v.word : '';
-    const kana = typeof v.kana === 'string' ? v.kana : '';
-    const alts = Array.isArray(v.altForms) ? v.altForms.filter((a): a is string => typeof a === 'string') : [];
-    if (v.pos === 'counter') {
-      for (const s of [word, kana, ...alts]) if (s) pool.counters.push({ s: bareSurface(s), id: v.id });
-      return;
-    }
-    const surfaces = [word, kana, ...alts].map(bareSurface).filter(Boolean);
-    for (const s of surfaces) if (!pool.exact.has(s)) pool.exact.set(s, v.id);
-    if (v.pos === 'v1' || v.pos === 'v5' || v.pos === 'adj-i') {
-      for (const s of surfaces) {
-        const stem = s.slice(0, -1);
-        if (stem.length > 0 && (hasKanji(stem) || stem.length >= 2)) pool.prefixes.push({ s: stem, id: v.id });
-      }
-    } else if (v.pos === 'adj-na' || v.pos === 'n-suru') {
-      for (const s of surfaces) if (s.length >= 2 || hasKanji(s)) pool.prefixes.push({ s, id: v.id });
-    } else if (v.pos === 'v-irr' && word.endsWith('来る')) {
-      pool.prefixes.push({ s: word.slice(0, -1), id: v.id });
-    }
-  };
-  for (const v of vocab) add(v);
-  for (const v of plusOne) {
-    pool.plusOne.add(v.id);
-    add(v);
-  }
-  pool.prefixes.sort((a, b) => b.s.length - a.s.length);
-  for (const g of grammar) {
-    if (!Array.isArray(g.clozeHints)) continue;
-    for (const h of g.clozeHints) if (typeof h === 'string' && h.length >= 2) pool.hints.push({ h, id: g.id });
-  }
-  pool.hints.sort((a, b) => b.h.length - a.h.length);
-  return pool;
-}
-
-const OKURIGANA_START_RE = /^[ぁ-ゟ]/;
-
-/**
- * Whether an inflection-stem prefix may claim `token`. A stem of two or more
- * characters always may: that is how compound forms link to their head word
- * (食べ始めた → 食べる, 建て直した → 建てる, 考え方 → 考える). A single-kanji stem
- * (有 ← 有る, 巻 ← 巻く, 甘 ← 甘い, 見 ← 見る) only may when what follows is
- * okurigana — or nothing, the bare ren'yōkei (見に行く) — because a kanji after
- * it starts a different word: 有名, 巻物, 甘酒, 包丁 are not forms of ある, 巻く,
- * 甘い, 包む.
- */
-export function stemApplies(stem: string, token: string): boolean {
-  if (stem.length > 1) return true;
-  const rest = token.slice(stem.length);
-  return rest.length === 0 || OKURIGANA_START_RE.test(rest);
-}
-
-export function matchToken(pool: MatchPool, token: string, names: ReadonlySet<string> = new Set()): TokenMatch {
-  if (PUNCT_TOKEN_RE.test(token)) return { id: null, known: true, punct: true };
-  const exact = pool.exact.get(token);
-  if (exact !== undefined) return { id: exact, known: true, punct: false };
-  if (FUNCTION_TOKENS.has(token)) return { id: null, known: true, punct: false };
-  if (names.has(token) || CAST_NAMES.has(token)) return { id: null, known: true, punct: false };
-  if (KANJI_NUMERAL_RE.test(token)) return { id: null, known: true, punct: false };
-  for (const p of pool.prefixes) if (token.startsWith(p.s) && stemApplies(p.s, token)) return { id: p.id, known: true, punct: false };
-  for (const c of pool.counters) {
-    if (token.endsWith(c.s) && token.length > c.s.length && KANJI_NUMERAL_RE.test(token.slice(0, -c.s.length))) return { id: c.id, known: true, punct: false };
-  }
-  for (const h of pool.hints) if (token === h.h || token.includes(h.h) || (token.length >= 2 && h.h.includes(token))) return { id: h.id, known: true, punct: false };
-  for (const nm of [...names, ...CAST_NAMES]) if (token.startsWith(nm) && FUNCTION_TOKENS.has(token.slice(nm.length))) return { id: null, known: true, punct: false };
-  return { id: null, known: false, punct: false };
-}
-
-/** Allowlist station for a text: Stations 1–3 share the White set. */
-export function allowlistStationFor(station: number): number {
-  return station <= 3 ? 3 : station;
-}
-
-export function cumulativeIds(bundles: readonly StationBundle[], upTo: number, key: 'kanaIds' | 'vocabIds' | 'grammarIds'): Set<string> {
-  const out = new Set<string>();
-  for (const b of bundles) if (b.number <= upTo) for (const id of b[key] ?? []) out.add(id);
-  return out;
-}
+export { allowlistStationFor, AUX_VERBS, buildMatchPool, CAST_NAMES, cumulativeIds, FUNCTION_TOKENS, inflectedForms, matchToken, stemApplies } from './linker.ts';
+export type { MatchPool, TokenMatch } from './linker.ts';
 
 export interface LinkResult {
   /** Story lines whose tokenIds were computed. */
@@ -1007,7 +881,7 @@ export function linkStories(root: string, bundles: readonly StationBundle[], wri
       const plusIds = new Set<string>();
       for (const ln of s.lines) if (ln && Array.isArray(ln.plusOne)) for (const p of ln.plusOne) if (typeof p === 'string') plusIds.add(p);
       const plus = [...plusIds].map((id) => vocabById.get(id)).filter((v): v is VocabItem => v !== undefined);
-      const pool = buildMatchPool(vocab, grammar, plus);
+      const pool = buildMatchPool(vocab, grammar, plus, { kanaStage: upTo <= 3 });
       const names = new Set(Array.isArray(s.names) ? s.names.filter((x): x is string => typeof x === 'string') : []);
       for (const ln of s.lines) {
         if (!ln || !Array.isArray(ln.tokens)) continue;

@@ -1754,7 +1754,7 @@
       "confusables": [
         "v-n4-0575"
       ],
-      "station": 23
+      "station": 24
     },
     {
       "id": "v-n4-0577",
@@ -3426,7 +3426,8 @@
       "pos": "adv",
       "jlpt": 4,
       "tags": [
-        "quantity"
+        "quantity",
+        "usually-kana"
       ],
       "pitch": 0,
       "pitchConfidence": "high",
@@ -3931,7 +3932,8 @@
       "jlpt": 4,
       "tags": [
         "quantity",
-        "time"
+        "time",
+        "usually-kana"
       ],
       "pitch": 0,
       "pitchConfidence": "high",
@@ -3996,7 +3998,8 @@
       "pos": "conj",
       "jlpt": 4,
       "tags": [
-        "abstract"
+        "abstract",
+        "usually-kana"
       ],
       "pitch": 2,
       "pitchConfidence": "high",
@@ -4101,6 +4104,196 @@
           "ja": "ところで、{昨日|きのう}のテストはどうだった？",
           "kana": "ところで、きのうのテストはどうだった？",
           "en": "By the way, how was yesterday's test?"
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0652",
+      "word": "メロン",
+      "kana": "メロン",
+      "meanings": [
+        "melon"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "food",
+        "plants",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "A luxury fruit in Japan; a boxed melon is a classic gift.",
+      "examples": [
+        {
+          "ja": "{夏|なつ}になると、メロンが{安|やす}くなります。",
+          "kana": "なつになると、メロンがやすくなります。",
+          "en": "When summer comes, melons get cheaper."
+        },
+        {
+          "ja": "{誕生日|たんじょうび}に{大|おお}きいメロンをもらった。",
+          "kana": "たんじょうびにおおきいメロンをもらった。",
+          "en": "I got a big melon for my birthday."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0653",
+      "word": "ベンチ",
+      "kana": "ベンチ",
+      "meanings": [
+        "bench"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "places",
+        "objects",
+        "loanword"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "examples": [
+        {
+          "ja": "{公園|こうえん}のベンチで{昼|ひる}ご{飯|はん}を{食|た}べました。",
+          "kana": "こうえんのベンチでひるごはんをたべました。",
+          "en": "I ate lunch on a bench in the park."
+        },
+        {
+          "ja": "{駅|えき}の{前|まえ}のベンチに{座|すわ}って、バスを{待|ま}った。",
+          "kana": "えきのまえのベンチにすわって、バスをまった。",
+          "en": "I sat on the bench in front of the station and waited for the bus."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0654",
+      "word": "もやし",
+      "kana": "もやし",
+      "meanings": [
+        "bean sprouts"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "food",
+        "cooking",
+        "usually-kana"
+      ],
+      "pitch": 3,
+      "pitchConfidence": "low",
+      "notes": "The cheapest vegetable in any supermarket; often written モヤシ on packaging. A thin, pale person is teased as もやし.",
+      "altForms": [
+        "モヤシ"
+      ],
+      "examples": [
+        {
+          "ja": "もやしは{安|やす}いので、よく{買|か}います。",
+          "kana": "もやしはやすいので、よくかいます。",
+          "en": "Bean sprouts are cheap, so I buy them often."
+        },
+        {
+          "ja": "{今日|きょう}はもやしと{豚肉|ぶたにく}を{炒|いた}めた。",
+          "kana": "きょうはもやしとぶたにくをいためた。",
+          "en": "Today I stir-fried bean sprouts and pork."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0655",
+      "word": "そんなに",
+      "kana": "そんなに",
+      "meanings": [
+        "that much",
+        "(not) so …"
+      ],
+      "pos": "adv",
+      "jlpt": 4,
+      "tags": [
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Mostly with a negative (そんなに高くない: not that expensive) or as a surprised reply (そんなに？). こんなに / あんなに point to the speaker’s side or a distant one.",
+      "examples": [
+        {
+          "ja": "そんなに{急|いそ}がなくても、{間|ま}に{合|あ}いますよ。",
+          "kana": "そんなにいそがなくても、まにあいますよ。",
+          "en": "You don’t have to hurry that much; we’ll make it in time."
+        },
+        {
+          "ja": "そんなに{高|たか}くないよ。{千円|せんえん}ぐらい。",
+          "kana": "そんなにたかくないよ。せんえんぐらい。",
+          "en": "It’s not that expensive. About a thousand yen."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0656",
+      "word": "空っぽ",
+      "kana": "からっぽ",
+      "meanings": [
+        "empty"
+      ],
+      "pos": "adj-na",
+      "jlpt": 4,
+      "tags": [
+        "states",
+        "quantity"
+      ],
+      "pitch": 0,
+      "pitchConfidence": "low",
+      "notes": "Colloquial “completely empty”: a box, a wallet, a stomach, a head (頭が空っぽ). Predicate 空っぽだ; before a noun with の (空っぽの袋).",
+      "examples": [
+        {
+          "ja": "{財布|さいふ}の{中|なか}が{空|から}っぽで、{何|なに}も{買|か}えませんでした。",
+          "kana": "さいふのなかがからっぽで、なにもかえませんでした。",
+          "en": "My wallet was empty, so I couldn’t buy anything."
+        },
+        {
+          "ja": "{冷蔵庫|れいぞうこ}が{空|から}っぽだ。{買|か}い{物|もの}に{行|い}かなきゃ。",
+          "kana": "れいぞうこがからっぽだ。かいものにいかなきゃ。",
+          "en": "The fridge is empty. I have to go shopping."
+        }
+      ],
+      "station": 24
+    },
+    {
+      "id": "v-n4-0657",
+      "word": "影",
+      "kana": "かげ",
+      "meanings": [
+        "shadow",
+        "silhouette"
+      ],
+      "pos": "n",
+      "jlpt": 4,
+      "tags": [
+        "nature",
+        "shapes"
+      ],
+      "pitch": 1,
+      "pitchConfidence": "low",
+      "notes": "A shadow cast by light, or a dark outline seen from afar (人の影). The shade you rest in is 陰 (also read かげ), a different kanji.",
+      "collocations": [
+        "影が長い",
+        "人の影"
+      ],
+      "examples": [
+        {
+          "ja": "{夕方|ゆうがた}になると、{木|き}の{影|かげ}が{長|なが}くなります。",
+          "kana": "ゆうがたになると、きのかげがながくなります。",
+          "en": "In the evening, the trees’ shadows get longer."
+        },
+        {
+          "ja": "{壁|かべ}に{大|おお}きい{猫|ねこ}の{影|かげ}が{見|み}えた。",
+          "kana": "かべにおおきいねこのかげがみえた。",
+          "en": "I saw the shadow of a big cat on the wall."
         }
       ],
       "station": 24
