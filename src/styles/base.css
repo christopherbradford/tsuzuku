@@ -1,7 +1,7 @@
 /*
  * TSUZUKU — base styles (group A). Imported once by src/main.tsx after
- * tokens.css. Reset, @font-face (self-hosted subsets, swap, system fallbacks
- * so everything renders before — or without — the woff2 files), type scale,
+ * tokens.css. Imports fonts.css (self-hosted OFL subsets in unicode-range slices,
+ * swap + local() fallbacks so everything renders before — or without — them), reset, type scale,
  * Japanese typography, focus ring, scrollbars, print, utility classes.
  *
  * Classes: .ja .pixel .brush .mincho .neon .visually-hidden .sr-only
@@ -10,36 +10,8 @@
  * No color literals: every color is a token from tokens.css.
  */
 
-/* ── webfonts (OFL, public/fonts/*.woff2; the page works without them) ─── */
-@font-face {
-  font-family: "DotGothic16";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("DotGothic16"), url("/fonts/DotGothic16-subset.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Yuji Syuku";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Yuji Syuku"), local("YujiSyuku-Regular"), url("/fonts/YujiSyuku-subset.woff2") format("woff2");
-}
-/* lazy: only downloaded when .mincho / .neon text is rendered */
-@font-face {
-  font-family: "Shippori Mincho B1";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Shippori Mincho B1"), url("/fonts/ShipporiMinchoB1.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Dela Gothic One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Dela Gothic One"), url("/fonts/DelaGothicOne.woff2") format("woff2");
-}
+/* ── webfonts: 24 unicode-range slices of the four OFL faces, generated into fonts.css ─ */
+@import "./fonts.css";
 
 /* ── reset ───────────────────────────────────────────────────────────── */
 *,

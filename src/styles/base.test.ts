@@ -45,14 +45,28 @@ describe('base.css', () => {
     expect(rules.length).toBeGreaterThan(40);
   });
 
-  it('declares @font-face for the four OFL fonts with swap and a local() fallback', () => {
-    const faces = rules.filter((r) => r.selector === '@font-face');
-    const families = faces.map((f) => /font-family:\s*"([^"]+)"/.exec(f.body)?.[1]);
+  it('imports fonts.css first and declares no @font-face of its own', () => {
+    expect(noComments.trimStart().startsWith('@import "./fonts.css";')).toBe(true);
+    expect(rules.filter((r) => r.selector === '@font-face')).toHaveLength(0);
+  });
+
+  it('fonts.css declares unicode-range slices for the four OFL fonts with swap and a local() fallback', () => {
+    const fontsCss = readFileSync(resolve(process.cwd(), 'src/styles/fonts.css'), 'utf8');
+    const faces = parse(fontsCss.replace(/\/\*[\s\S]*?\*\//g, '')).filter((r) => r.selector === '@font-face');
+    const families = [...new Set(faces.map((f) => /font-family:\s*"([^"]+)"/.exec(f.body)?.[1]))];
     expect(families).toEqual(['DotGothic16', 'Yuji Syuku', 'Shippori Mincho B1', 'Dela Gothic One']);
+    // six slices per family: rest (declared first, lowest precedence), n2, n3, n4, n5, base
+    expect(faces).toHaveLength(families.length * 6);
     for (const f of faces) {
       expect(f.body).toMatch(/font-display:\s*swap/);
       expect(f.body).toMatch(/local\(/);
-      expect(f.body).toMatch(/url\("\/fonts\/[^"]+\.woff2"\)\s*format\("woff2"\)/);
+      expect(f.body).toMatch(/url\("\/fonts\/[A-Za-z0-9]+-(rest|n2|n3|n4|n5|base)\.woff2"\)\s*format\("woff2"\)/);
+      expect(f.body).toMatch(/unicode-range:\s*U\+[0-9A-F]/);
+    }
+    // every referenced slice file ships in public/fonts/
+    for (const f of faces) {
+      const file = /url\("\/fonts\/([^"]+)"\)/.exec(f.body)![1];
+      expect(() => readFileSync(resolve(process.cwd(), 'public/fonts', file))).not.toThrow();
     }
   });
 

@@ -71,7 +71,7 @@ Node 24+ (content pipeline scripts are TypeScript run directly by Node).
 | Path | What |
 |---|---|
 | `index.html`, `vite.config.ts`, `tsconfig.json` | Vite + Preact shell; relative `base: './'`, hash routing, `VITE_APP_VERSION` from `package.json` |
-| `public/` | static files copied as-is: `sw.js` (relative-scope service worker), `manifest.webmanifest`, `favicon.svg` |
+| `public/` | static files copied as-is: `sw.js` (relative-scope service worker), `manifest.webmanifest`, `favicon.svg`, `fonts/` (the four OFL faces as 24 unicode-range woff2 slices + licenses; regenerate with `scripts/fonts/build-fonts.py`) |
 | `public/content/` | the corpus: `kana/`, `vocab/` (N5–N1), `kanji/` (N5–N2), `grammar/` (N5–N1), `michikusa/` (53 stations), `conjugation/`, `_meta/` (components, denylist). `stories/`, `stations/` and `manifest.json` are produced by the content pipeline |
 | `scripts/` | content pipeline run directly by Node: `validate-content.ts` (rules V01–V36), `assign-stations.ts`, `build-content-index.ts`, `check-components.mjs` |
 | `src/main.tsx` | composition root: `initStore` → Perapera snapshot → audio services → exercise registry → `<App>` → router → service worker |
